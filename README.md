@@ -2,7 +2,6 @@
 Used for performing auto tests on various modules
 ## Compile and run test case on local
 ### Building all project
-```shell
 ```powershell
 .\mvnw.cmd clean install
 ```
