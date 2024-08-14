@@ -1,7 +1,6 @@
 package inetsoft.test
 
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.web.admin.content.plugins.PluginsService
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 
@@ -48,7 +47,6 @@ class ActionEventsUtil {
             return false
          }
       }
-
       return event
    }
 
@@ -69,7 +67,7 @@ class ActionEventsUtil {
    /**
     * install plugins to env
     */
-   def installPlugins() {
+  /* def installPlugins() {
       controllersResource.initControllers()
       PluginsService pluginsService = controllersResource.getPluginsService()
       String pluginDir = System.getProperty('pluginDir')
@@ -79,7 +77,7 @@ class ActionEventsUtil {
          println '====install plugins from=======' + pluginDir
          pluginsService.installPluginsForTester(pluginDir, admin)
       }
-   }
+   }*/
 
    SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
    ControllersResource controllersResource = new ControllersResource()

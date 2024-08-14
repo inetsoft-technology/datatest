@@ -2,6 +2,7 @@ package inetsoft.test;
 
 import inetsoft.analytic.composition.ViewsheetEngine;
 import inetsoft.analytic.composition.ViewsheetService;
+import inetsoft.enterprise.web.api.file.FileApiService;
 import inetsoft.report.composition.RuntimeWorksheet;
 import inetsoft.report.composition.WorksheetEngine;
 import inetsoft.report.composition.WorksheetService;
@@ -238,6 +239,8 @@ public class ControllersResource extends MockMessageResource {
       vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, placeholderService, viewsheetService);
 
       pluginsService = new PluginsService(new UploadService(new MavenClientService()), securityEngine);
+
+      fileApiService = new FileApiService(deployService, contentRepositoryTreeService);
    }
 
    @Override
@@ -273,7 +276,9 @@ public class ControllersResource extends MockMessageResource {
 
    public VSChartBrushController getVSChartBrushController() { return vschartBrushController; }
 
-   public PluginsService getPluginsService() {return  pluginsService; }
+   public PluginsService getPluginsService() { return  pluginsService; }
+
+   public FileApiService getFileApiService() { return fileApiService; }
 
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
@@ -314,4 +319,5 @@ public class ControllersResource extends MockMessageResource {
    private ScheduleTaskFolderService scheduleTaskFolderService;
    private PluginsService pluginsService;
 
+   private FileApiService fileApiService;
 }

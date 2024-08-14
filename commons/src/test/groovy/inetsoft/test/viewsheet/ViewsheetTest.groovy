@@ -51,20 +51,10 @@ class ViewsheetTest {
 
    static initHome(String suiteName) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
-      println '----suitename--------' + suiteName
+      //println '----suitename--------' + suiteName
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-
-      FSUser user = new FSUser(new IdentityID("admin", "Default Organization"));
-      HashedPassword hash = Tool.hash("admin", "bcrypt");
-
-      System.err.println("===admin pass=======\n" + hash.getHash());
-      user.setPassword(hash.getHash());
-
-      //install plugins
-      //ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      //actionEventsUtil.installPlugins()
    }
 
    /**
@@ -119,9 +109,8 @@ class ViewsheetTest {
       File outFile
       try{
          assemblies.each {
-            //Ignore, and unexport assembly data when :
-            //2. assembly is shape,group,selectionContainer, tab
             assemblyName = it.getName()
+            //Ignore, and unexport assembly data when assembly is shape,group,selectionContainer, tab
             if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
                     it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
                     it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {

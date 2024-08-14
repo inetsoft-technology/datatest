@@ -67,9 +67,6 @@ class WorksheetTest {
          }
          SreeEnv.save()
       }
-      //install plugins
-     // ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      // actionEventsUtil.installPlugins()
    }
 
    /**
@@ -302,7 +299,7 @@ class WorksheetTest {
     */
    def createExportFileByCase(String asset_id, String assemblyName, String bk) {
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
-      String objName
+      String objName = ''
       if(asset_id.startsWith('1^128^')) {
          objName = 'VS' + File.separator + assemblyName + '.txt'
       }
@@ -323,16 +320,6 @@ class WorksheetTest {
       }
       return tempFile
    }
-
-   /**
-    * use go get show plan SQL
-    */
-   /*def getShowPlanSQL(TableAssembly tableAssembly) {
-      AssetQuery assetQuery = AssetQuery.createAssetQuery(tableAssembly, AssetQuerySandbox.RUNTIME_MODE, assetQuerySandbox,
-              false, -1L, true, true)
-      assetQuery.setLevel(1)
-      return assetQuery.getQueryPlan().getDescription()
-   }*/
 
    /**
     * folderName: the VS or Report folder, can be 'VS' or 'Report'

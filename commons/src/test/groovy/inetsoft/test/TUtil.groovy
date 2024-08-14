@@ -24,7 +24,7 @@ class TUtil {
       IdentityID identityUser = new IdentityID(userName, 'Host Organization')
       IdentityID[] identityRoles = new IdentityID[0]
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'Host Organization'): new IdentityID()
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'Host Organization'): new IdentityID(role, null)
          newRole.setName(role)
          identityRoles += newRole
       }

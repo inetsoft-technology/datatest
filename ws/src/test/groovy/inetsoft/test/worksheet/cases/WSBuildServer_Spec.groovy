@@ -14,9 +14,9 @@ class WSBuildServer_Spec extends Specification {
 
    def setupSpec() {
       WorksheetTest.initHome(this.class.getName())
-      ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
+      /*ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       String path = this.class.getClassLoader().getResource("assets/BuildServer.zip")
-      actionEventsUtil.importAssetsFile(path)
+      actionEventsUtil.importAssetsFile(path)*/
    }
 
    def 'Actions' () {
