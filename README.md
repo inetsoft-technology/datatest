@@ -12,7 +12,7 @@ Used for performing auto tests on various modules
 ```
 #### 2. the project have multi test modes, for vsothers, you need set ${test.model}
 ```powershell
-.\mvnw.cmd test -pl vscalc -Pvscalc
+.\mvnw.cmd test -pl vsothers -Pvscalc
 ```
 
 ## Run test case on docker

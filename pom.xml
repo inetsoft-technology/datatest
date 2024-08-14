@@ -116,6 +116,12 @@
         </dependency>
         <dependency>
             <groupId>com.inetsoft.stylebi</groupId>
+            <artifactId>inetsoft-enterprise</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft.stylebi</groupId>
             <artifactId>inetsoft-integration-mapdb</artifactId>
             <version>${project.version}</version>
             <scope>runtime</scope>
@@ -212,6 +218,14 @@
                 <version>3.3.0</version>
                 <executions>
                     <execution>
+                        <id>default-jar</id>
+                        <phase>none</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>test-jar</goal>
                         </goals>
@@ -243,7 +257,7 @@
             <plugin>
                 <groupId>com.inetsoft.stylebi.build</groupId>
                 <artifactId>keygen-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <configuration>
                     <type>SESSION</type>
                     <standalone>true</standalone>
