@@ -116,6 +116,12 @@
         </dependency>
         <dependency>
             <groupId>com.inetsoft.stylebi</groupId>
+            <artifactId>inetsoft-enterprise</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft.stylebi</groupId>
             <artifactId>inetsoft-integration-mapdb</artifactId>
             <version>${project.version}</version>
             <scope>runtime</scope>
@@ -275,6 +281,7 @@
         <module>docker</module>
         <module>ws</module>
         <module>vsothers</module>
+        <module>vpm</module>
     </modules>
 
     <profiles>
