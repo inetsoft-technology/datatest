@@ -272,6 +272,7 @@
 
     <modules>
         <module>commons</module>
+        <module>docker</module>
         <module>ws</module>
         <module>vsothers</module>
     </modules>
