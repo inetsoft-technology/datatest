@@ -112,6 +112,31 @@
                     </properties>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <excludes>
+                        <exclude>config/**</exclude>
+                        <exclude>expectData/**</exclude>
+                        <exclude>exportData/**</exclude>
+                    </excludes>
+                    <!--<archive>
+                        <manifestEntries>
+                            <Main-Class>inetsoft.test.worksheet.TestRunner</Main-Class>
+                        </manifestEntries>
+                    </archive>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
