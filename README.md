@@ -4,7 +4,7 @@ Used for performing auto tests on various modules
 ### Building all project
 
 ```powershell
-.\mvnw.cmd clean install
+.\mvnw.cmd clean package
 ```
 ### Execute different project auto case
 #### 1. The project only have one test model
@@ -22,7 +22,7 @@ Used for performing auto tests on various modules
 ```powershell
 .\mvnw.cmd clean -pl vsothers -Pvscalc
 .\mvnw.cmd generate-test-resources -pl vsothers -Pvscalc -X 
-.\mvnw.cmd package -pl commons
+.\mvnw.cmd package -DskipTest -pl ws
 ```
 
 ## Run test case on docker

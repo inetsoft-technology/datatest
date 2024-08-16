@@ -30,9 +30,21 @@
         <dependency>
             <groupId>com.inetsoft.test</groupId>
             <artifactId>commons</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
             <classifier>tests</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.11.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.11.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -75,8 +87,8 @@
                         --add-opens=java.management/sun.management=ALL-UNNAMED
                     </argLine>
                     <includes>
-                        <!--<include>**/*_Case.groovy</include>-->
-                        <include>**/TestSpec</include>
+                        <include>**/*_Spec.groovy</include>
+                        <!--<include>**/TestSpec</include>-->
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
@@ -89,7 +101,7 @@
             <plugin>
                 <groupId>com.inetsoft.stylebi.build</groupId>
                 <artifactId>inetsoft-runner-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <executions>
                     <execution>
                         <id>configure-server</id>
@@ -110,6 +122,53 @@
                         <security.login.orgLocation>domain</security.login.orgLocation>
                     </properties>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <archive>
+                        <manifestFile>${project.build.directory}/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                    <descriptors>
+                        <descriptor>src/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <excludes>
+                        <exclude>config/**</exclude>
+                        <exclude>expectData/**</exclude>
+                        <exclude>exportData/**</exclude>
+                    </excludes>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>inetsoft.test.worksheet.TestRunner</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
