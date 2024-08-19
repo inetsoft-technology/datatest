@@ -21,10 +21,10 @@ class TUtil {
     * @return
     */
    static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
-      IdentityID identityUser = new IdentityID(userName, 'Host Organization')
+      IdentityID identityUser = new IdentityID(userName, 'host-org')
       IdentityID[] identityRoles = new IdentityID[0]
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'Host Organization'): new IdentityID(role, null)
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID(role, null)
          newRole.setName(role)
          identityRoles += newRole
       }

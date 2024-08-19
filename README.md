@@ -1,5 +1,6 @@
 # DataTest Summary
 Used for performing auto tests on various modules
+
 **Set 'root.dir' to your path on pom.xml**
 ## Compile and run test case on local
 ### Building all project
