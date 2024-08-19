@@ -46,7 +46,9 @@
                 <configuration>
                     <additionalClasspathElements>
                         <element>../commons/target/test-classes</element>
-                        <element>../docker/src/test/config/orders.jar</element>
+                        <element>${root.dir}/docker/src/test/resources/libs/orders.jar</element>
+                        <element>${root.dir}/docker/src/test/resources/libs/orders_133.jar</element>
+                        <element>${root.dir}/docker/src/test/resources/libs/orders_134.jar</element>
                     </additionalClasspathElements>
                     <argLine>-Xmx1g -Dfile.encoding=UTF-8
                         -XX:ReservedCodeCacheSize=100m -XX:+UseCodeCacheFlushing
@@ -109,6 +111,8 @@
                         <log.level.org.apache.ignite>WARN</log.level.org.apache.ignite>
                         <security.enabled>true</security.enabled>
                         <security.login.orgLocation>domain</security.login.orgLocation>
+                        <adm.home>${basedir}/target/test-resources/server/config-${test.module}</adm.home>
+                        <data.home>${root.dir}/docker/src/test/resources/H2Data</data.home>
                     </properties>
                 </configuration>
             </plugin>

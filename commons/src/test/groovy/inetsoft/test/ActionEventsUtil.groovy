@@ -67,12 +67,11 @@ class ActionEventsUtil {
    /**
     * install plugins to env
     */
-  /* def installPlugins() {
+   /*def installPlugins() {
       controllersResource.initControllers()
       PluginsService pluginsService = controllersResource.getPluginsService()
-      String pluginDir = System.getProperty('pluginDir')
-
-      println "----------" + pluginsService.getModel(admin).plugins().size()
+      String pluginDir = System.getProperty('plugin.dir')
+      println "-----install plugin-----" + pluginsService.getModel(admin).plugins().size()
       if(pluginsService.getModel(admin).plugins().size() == 0) {
          println '====install plugins from=======' + pluginDir
          pluginsService.installPluginsForTester(pluginDir, admin)

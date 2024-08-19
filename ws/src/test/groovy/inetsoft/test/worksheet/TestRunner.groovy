@@ -15,9 +15,16 @@ class TestRunner {
          args = ['inetsoft.test.worksheet.cases.TestSpec']
       }
 
-      Launcher launcher = LauncherFactory.create();
+      Launcher launcher = LauncherFactory.create()
 
-      System.setProperty("sree.home", "/server/config-ws")
+      String sreeHome = System.getProperty("sree.home");
+      if (sreeHome == null) {
+         System.out.println("System property 'sree.home' is not set.");
+      } else {
+         System.out.println("System property 'sree.home': " + sreeHome);
+      }
+
+      System.setProperty("sree.home", sreeHome);
 
       for (String testClassName : args) {
          try {
@@ -29,10 +36,13 @@ class TestRunner {
             launcher.execute(request, new TestExecutionListener() {
                @Override
                public void executionFinished(TestIdentifier testIdentifier, TestExecutionResult testExecutionResult) {
-                  System.out.println("Test result for " + testClassName + ": " + testExecutionResult);
+                  System.out.println("Test result for " + testClassName + ": " + testExecutionResult)
+                  if(testExecutionResult.status == 'FAILED') {
+                     println "----------" + testExecutionResult.throwable.toString()
+                  }
                }
             });
-         } catch (ClassNotFoundException e) {
+         } catch (Exception e) {
             e.printStackTrace();
          }
       }

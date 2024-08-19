@@ -1,0 +1,514 @@
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]
+2024-08-19 11:26:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ORDERDETAILS" not found (this database is empty); SQL statement:
+select query1_O.company,
+       query1_O.customer_id,
+       query1_O.discount,
+       query1_O.orderdate,
+       query1_O.orderdate as Calc_date,
+       query1_O.orderno,
+       query1_O.orderno_2,
+       query1_O.quantity,
+       query1_O.reseller 
+from   (       
+select customers.COMPANY as company,
+       customers.RESELLER as reseller,
+       orderdetails.ORDERNO as orderno,
+       orderdetails.QUANTITY as quantity,
+       orders.CUSTOMER_ID as customer_id,
+       orders.DISCOUNT as discount,
+       orders.ORDERDATE as orderdate,
+       orders.ORDERNO as orderno_2 
+from   orderdetails,
+       orders,
+       customers 
+where  orderdetails.ORDERNO < 10
+       and orderdetails.ORDERNO = orders.ORDERNO
+       and orders.CUSTOMER_ID = customers.CUSTOMER_ID) query1_O      [42104-210]

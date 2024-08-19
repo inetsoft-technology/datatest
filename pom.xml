@@ -36,6 +36,8 @@
         <groovy.version>4.0.18</groovy.version>
         <spring.version>6.1.9</spring.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
+        <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>
+        <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
 
     <dependencies>
@@ -164,51 +166,110 @@
             <version>2.4-M4-groovy-4.0</version>
         </dependency>
 
+        <!--load plugin from local for testing env -->
         <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
-            <artifactId>jdbc-derby</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
+            <groupId>com.inetsoft</groupId>
             <artifactId>jdbc-access</artifactId>
-            <version>${project.version}</version>
+            <version>13.7-SNAPSHOT</version>
             <type>zip</type>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-access-13.7-SNAPSHOT.zip</systemPath>
         </dependency>
         <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-db2</artifactId>
+            <version>13.7.625</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-db2-13.7.625.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
             <artifactId>jdbc-h2</artifactId>
-            <version>${project.version}</version>
+            <version>13.7.625</version>
             <type>zip</type>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-h2-13.7.625.zip</systemPath>
         </dependency>
-
         <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
+            <groupId>com.inetsoft</groupId>
             <artifactId>jdbc-mysql</artifactId>
-            <version>${project.version}</version>
+            <version>13.7-SNAPSHOT</version>
             <type>zip</type>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-mysql-13.7-SNAPSHOT.zip</systemPath>
         </dependency>
-
         <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-derby</artifactId>
+            <version>13.7-SNAPSHOT</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-derby-13.7-SNAPSHOT.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-derbyclient</artifactId>
+            <version>13.7.625</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-derbyclient-13.7.625.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-informix</artifactId>
+            <version>13.7.625</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-informix-13.7.625.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-mariadb</artifactId>
+            <version>13.7.625</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-mariadb-13.7.625.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-sqlite</artifactId>
+            <version>13.7.625</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-sqlite-13.7.625.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
             <artifactId>jdbc-oracle</artifactId>
-            <version>${project.version}</version>
+            <version>13.7-SNAPSHOT</version>
             <type>zip</type>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-oracle-13.7-SNAPSHOT.zip</systemPath>
         </dependency>
-
         <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
+            <groupId>com.inetsoft</groupId>
             <artifactId>jdbc-postgresql</artifactId>
-            <version>${project.version}</version>
+            <version>13.7-SNAPSHOT</version>
             <type>zip</type>
-            <scope>provided</scope>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-postgresql-13.7-SNAPSHOT.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-snowflake</artifactId>
+            <version>13.7-SNAPSHOT</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-snowflake-13.7-SNAPSHOT.zip</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-sqlserver</artifactId>
+            <version>13.7-SNAPSHOT</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-sqlserver-13.7-SNAPSHOT.zip</systemPath>
         </dependency>
     </dependencies>
 
