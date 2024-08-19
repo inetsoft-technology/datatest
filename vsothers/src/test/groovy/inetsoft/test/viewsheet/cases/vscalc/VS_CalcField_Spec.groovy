@@ -349,7 +349,6 @@ class VS_CalcField_Spec extends Specification{
     /*
     check mix calc on worksheet
    */
-   @IgnoreRest
    def 'testWorksheet'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/testWorksheet', caseName)

@@ -27,16 +27,6 @@ class WSBuildServer_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
-
-   // def 'Airport' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/Airport', null, null)
-
-   //    expect:
-   //    wstest.compareData(null)
-   // }
-
    def 'Attribution - OWC' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
@@ -54,32 +44,7 @@ class WSBuildServer_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
-   // def 'BIA Report' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/BIA Report', null, null)
 
-   //    expect:
-   //    wstest.compareData(null)
-   // }
-   // def 'Call Center Monitoring' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    def paras = new HashMap<String, Object>()
-   //    paras.put('counter', 2035)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/Call Center Monitoring', paras, null)
-
-   //    expect:
-   //    wstest.compareData(null)
-   // }
-   // def 'Call Details' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/Call Details', null, null)
-
-   //    expect:
-   //    wstest.compareData(null)
-   // }
    def 'Check in Summary' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
@@ -394,24 +359,6 @@ class WSBuildServer_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
-
-   // def 'Single Component Dashboard' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/Single Component Dashboard', null, null)
-
-   //    expect:
-   //    wstest.compareData(null)
-   // }
-
-   // def 'Single Critical Process Dashboard' () {
-   //    caseName =  specificationContext.currentIteration.name
-   //    wstest = new WorksheetTest(caseName)
-   //    wstest.executeWS('1^2^__NULL__^BuildServer/Single Critical Process Dashboard', null, null)
-
-   //    expect:
-   //    wstest.compareData(null)
-   // }
 
    def 'Single Plausible Scenario Dashboard' () {
       caseName =  specificationContext.currentIteration.name
