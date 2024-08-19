@@ -34,18 +34,6 @@
             <scope>runtime</scope>
             <classifier>tests</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>1.11.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -121,7 +109,7 @@
                     <properties>
                         <license.key>${inetsoft.license.key}</license.key>
                         <log.level.org.apache.ignite>WARN</log.level.org.apache.ignite>
-                        <security.enabled>false</security.enabled>
+                        <security.enabled>true</security.enabled>
                         <security.login.orgLocation>domain</security.login.orgLocation>
                         <adm.home>${basedir}/target/test-resources/server/config-${test.module}</adm.home>
                         <data.home>${root.dir}/docker/src/test/resources/H2Data</data.home>
