@@ -346,7 +346,7 @@
         <module>docker</module>
         <module>ws</module>
         <module>vsothers</module>
-       <!-- <module>vpm</module>-->
+        <module>vpm</module>
         <module>chart</module>
     </modules>
 
