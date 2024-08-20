@@ -39,7 +39,6 @@ class WSProperty_Spec extends Specification {
       wstest.compareData(null)
    }
 
-   @Ignore
    def 'property_crossJoin.maxCellCount' () {
       def properties = ["crossJoin.maxCellCount":"5000000000"]
       wstest = new WorksheetTest('property_crossJoin.maxCellCount')
