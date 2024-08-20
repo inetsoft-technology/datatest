@@ -31,8 +31,8 @@
             <groupId>com.inetsoft.test</groupId>
             <artifactId>commons</artifactId>
             <version>${project.version}</version>
-            <scope>runtime</scope>
-            <classifier>tests</classifier>
+            <scope>system</scope>
+            <systemPath>${root.dir}/commons/target/commons-1.0.0-SNAPSHOT-tests.jar</systemPath>
         </dependency>
     </dependencies>
 
