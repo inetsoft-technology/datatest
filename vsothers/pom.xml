@@ -162,5 +162,11 @@
                 <test.module>vsfreehand</test.module>
             </properties>
         </profile>
+        <profile>
+            <id>vspara</id>
+            <properties>
+                <test.module>vspara</test.module>
+            </properties>
+        </profile>
     </profiles>
 </project>
