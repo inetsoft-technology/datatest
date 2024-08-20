@@ -348,6 +348,7 @@
         <module>vsothers</module>
         <module>vpm</module>
         <module>chart</module>
+        <module>css</module>
     </modules>
 
     <profiles>
