@@ -211,7 +211,7 @@ class WorksheetTest {
     */
    def importCSVToEMTable(String asset_id, String file, def fileModel, def sleepSecond, String suffix) {
       initWS(asset_id, admin)
-      File excelFile = new File(System.getProperty("sree.home") + '/files/' + file)
+      File  excelFile= new File(this.class.getResource('/files').getPath() + '/' + file)
       FileInputStream fileInputStream = new FileInputStream(excelFile)
       MultipartFile multipartFile = new MockMultipartFile(excelFile.getName(), excelFile.getName(), "text/plain", fileInputStream)
       def result = JsonOutput.toJson(fileModel)
