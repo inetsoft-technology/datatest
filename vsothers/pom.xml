@@ -156,5 +156,11 @@
                 <test.module>vscrosstab</test.module>
             </properties>
         </profile>
+        <profile>
+            <id>vsfreehand</id>
+            <properties>
+                <test.module>vsfreehand</test.module>
+            </properties>
+        </profile>
     </profiles>
 </project>
