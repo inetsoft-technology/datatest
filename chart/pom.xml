@@ -78,7 +78,7 @@
                         --add-opens=java.management/sun.management=ALL-UNNAMED
                     </argLine>
                     <includes>
-                        <include>**/ChartProperties_Spec</include>
+                        <include>**/*_Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
