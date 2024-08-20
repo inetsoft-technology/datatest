@@ -168,5 +168,11 @@
                 <test.module>vspara</test.module>
             </properties>
         </profile>
+        <profile>
+            <id>otherassembly</id>
+            <properties>
+                <test.module>otherassembly</test.module>
+            </properties>
+        </profile>
     </profiles>
 </project>
