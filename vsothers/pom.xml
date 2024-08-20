@@ -75,7 +75,8 @@
                         --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
                         --add-opens=java.base/java.time=ALL-UNNAMED
                         --add-opens=java.base/java.text=ALL-UNNAMED
-                        --add-opens=java.management/sun.management=ALL-UNNAMED
+                        --add-opens=java.management/sun.management=ALL-UNNAMED\
+                        -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
                         <include>${test.module}/*Spec</include>
