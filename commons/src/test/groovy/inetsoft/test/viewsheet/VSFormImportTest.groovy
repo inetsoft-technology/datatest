@@ -48,7 +48,7 @@ class VSFormImportTest {
     */
    def importXLSToVS(String file) {
       initVS()
-      File excelFile = new File(System.getProperty("sree.home") + '/excelFiles/' + file)
+      File  excelFile= new File(this.class.getResource('/excelFiles').getPath() + '/' + file)
       FileInputStream fileInputStream = new FileInputStream(excelFile)
       MultipartFile multipartFile = new MockMultipartFile(excelFile.getName(), excelFile.getName(), 'text/plain', fileInputStream)
       viewsheetResource.processImportXLS(principal, multipartFile)
