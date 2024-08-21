@@ -15,7 +15,6 @@ class WSData_Spec extends Specification {
       WorksheetTest.initHome(this.class.getName())
    }
 
-   @Ignore
    def 'Bug' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
@@ -24,7 +23,7 @@ class WSData_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
-   @Ignore
+
    def 'innerJoin1' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
@@ -34,7 +33,6 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
-   @Ignore
    @Retry(count = 3)
    def 'innerJoin2' () {
       caseName =  specificationContext.currentIteration.name
@@ -53,7 +51,7 @@ class WSData_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
-   @Ignore
+
    def 'concatenate' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
@@ -156,7 +154,6 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
-    @Ignore
     def 'upload file' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
