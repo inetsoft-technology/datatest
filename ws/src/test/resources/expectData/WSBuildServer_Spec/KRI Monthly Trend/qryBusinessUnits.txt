@@ -1,0 +1,66 @@
+The table size(row x col) is:(65 x 3)
+Id, Parent Id, Name
+1, NULL, XYZ Limited
+100060, 1, Corporate Office
+100061, 100060, Finance
+100062, 100060, Information Technology
+100063, 100060, Legal, Risk & Compliance
+100064, 100060, Marketing
+100065, 100060, People & Culture
+100066, 1, Regions
+100067, 1, Projects
+100068, 100063, Risk and Compliance
+100069, 100067, Project A
+100070, 100067, Project B
+100071, 100067, Project C
+100072, 100066, Region 1
+100073, 100066, Region 2
+100075, 100104, Call Centre
+100080, 100073, Branch 1
+100081, 100072, Branch 2
+100100, 100060, Treasury Sydney
+100103, 100060, Operations
+100104, 100060, Sales
+100105, 100060, Internal Audit
+100106, 100060, Corporate Office & Strategy
+100107, 100060, Product
+100120, 100060, Procurement
+100200, 100060, Environment
+100201, 100069, Project 1
+100260, 1, Clients
+100261, 100260, Client 1
+100262, 100260, Client 2
+100280, NULL, YFG
+100281, 100280, Country Club
+100282, 100280, Wrest Point
+100283, 100280, Saffire Freycinet
+100284, 100280, Henry Jones Art Hotel
+100300, 1, Training
+100320, 100060, Environment Health and Safety
+100321, 1, Contractors
+100322, 100323, ABC Cleaning Pty Ltd
+100323, 100321, Excavation Bros
+100324, 100060, Workplace Health & Safety
+100325, 100281, test
+100326, 100073, Warehouse 1
+100327, 100072, Store 1
+100328, 100072, Store 2
+100329, 100073, Store 3
+100330, 100072, Warehouse 2
+100342, 100280, AFG
+100343, 100342, Amani Finance
+100344, 100342, Australian Finance Solutions
+100345, 100342, Capita Finance Solutions
+100346, 100342, Finance Corp
+100347, 100342, IFG Home Loans
+100348, 100342, Loanmonster
+100349, 100342, Mortgage Australia Group
+100350, 100342, Swan River Finance
+100351, 100342, Lending Design
+100352, 100342, Peard Finance
+100360, 100072, Mine 1
+100361, 100073, Mine 2
+100362, 100280, Invocare
+100363, 100362, Invocare Location 1
+100364, 100362, Invocare Location 2
+100365, 100362, Invocare Location 3

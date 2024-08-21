@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 5)
+total_closed_book_daily_pnl, total_closed_position_scenario_date_adjusted, total_closed_ytd_pnl, total_closed_mtd_pnl, total_closed_threeBGRiskCurrency
+-109.9541, 2020-04-03, 841902.6085, -119.8805, GBP
+0, 2020-04-03, -1291702.0029, 0, NOK
+0, 2020-04-03, -368868.415, 0, DKK
+0, 2020-04-03, -133982.2687, 0, SEK
+0, 2020-04-03, 563627.3336, 0, CHF
+0, 2020-04-03, 630000.6551, 10997.61, USD
+2.6964, 2020-04-03, 3205920.2351, 19266.7754, EUR

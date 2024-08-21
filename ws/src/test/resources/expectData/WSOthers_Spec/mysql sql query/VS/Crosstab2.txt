@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 3)
+state, NULL, 2005
+CA, Sum(sub-add), 8
+NULL, Sum(product_id), 528
+MA, Sum(sub-add), 17
+NULL, Sum(product_id), 745
+MD, Sum(sub-add), 6
+NULL, Sum(product_id), 431
+NJ, Sum(sub-add), 6
+NULL, Sum(product_id), 433
+NV, Sum(sub-add), 8
+NULL, Sum(product_id), 284
+NY, Sum(sub-add), 3
+NULL, Sum(product_id), 231
+PA, Sum(sub-add), 3
+NULL, Sum(product_id), 296
+TX, Sum(sub-add), 18
+NULL, Sum(product_id), 667
+WA, Sum(sub-add), 13
+NULL, Sum(product_id), 472

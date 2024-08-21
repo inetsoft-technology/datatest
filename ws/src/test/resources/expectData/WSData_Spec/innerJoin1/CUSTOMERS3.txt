@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 4)
+CITY, CUSTOMER_ID, RESELLER, f_state
+Albany, 16, true, CA
+Austin, 11, true, TX
+Baltimore, 5, true, MD
+Baltimore, 33, true, MD
+Boston, 18, true, MA
+Boston, 23, false, MA
+Boulder, 4, false, CO
+Cambridge, 34, false, MA
+Camden, 15, true, NJ
+Chicago, 10, false, IL
+Dallas, 26, true, TX
+Dallas, 31, true, TX
+Denver, 8, true, CO
+Hartford, 6, true, CT
+Houston, 22, true, TX
+Las Vegas, 32, true, NV
+Los Angeles, 13, false, CA
+Los Angeles, 21, true, CA
+Middletown, 2, true, NJ
+Newark, 19, false, NJ
+New Brunswick, 25, true, NJ
+New York, 3, true, NY
+New York, 7, true, NY
+New York, 17, true, NY
+New York, 24, true, NY
+Olympia, 29, true, WA
+Orlando, 12, true, FL
+Plainfield, 35, true, NJ
+Rockville, 14, true, MD
+San Francisco, 9, false, CA
+Seattle, 27, false, WA
+Springfield, 30, true, MA
+Tucson, 20, true, AZ
+Wayne, 1, true, NJ
+York, 28, true, PA

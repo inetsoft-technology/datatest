@@ -1,0 +1,14 @@
+The table size(row x col) is:(5 x 17)
+Scenario ID, Scenario Name, Scenario Description, Risk Rating - Likelihood Name, Risk Rating - Consequence Name, Risk Rating - Rating Name, Risk Rating - Consequence, Risk Rating - Likelihood, Risk Rating - Total Score, Test Plan, Test Owner Name, Last Test Date, Test Result, Next Test Date, Linking to BI Analysis_Scenarios Table_Hardware Affected By Scenario, Linking to BI Analysis_Scenarios Table_Software Affected By Scenario, Linking to BI Analysis_Scenarios Table_Locations Affected By Scenario
+1000040, Single virtual machine failure, One of the Production virtual machines becomes unresponsive, and can not be started again. , Likely - Once per year, Major, High, 4, 4, 16, Call Macquarie Telecom
+Request a "Dry run" Zerto failover test.
+The technician will run a test on our DR site to make sure the machines are able to start and that Data replication completed., First Line, 2018-11-08, Pass, 2019-11-08 21:00:00, 1000022, NULL, NULL
+1000040, Single virtual machine failure, One of the Production virtual machines becomes unresponsive, and can not be started again. , Likely - Once per year, Major, High, 4, 4, 16, Call Macquarie Telecom
+Request a "Dry run" Zerto failover test.
+The technician will run a test on our DR site to make sure the machines are able to start and that Data replication completed., First Line, 2018-11-08, Pass, 2019-11-08 21:00:00, 1000056, NULL, NULL
+1000040, Single virtual machine failure, One of the Production virtual machines becomes unresponsive, and can not be started again. , Likely - Once per year, Major, High, 4, 4, 16, Call Macquarie Telecom
+Request a "Dry run" Zerto failover test.
+The technician will run a test on our DR site to make sure the machines are able to start and that Data replication completed., First Line, 2018-11-08, Pass, 2019-11-08 21:00:00, 1000058, NULL, NULL
+1000040, Single virtual machine failure, One of the Production virtual machines becomes unresponsive, and can not be started again. , Likely - Once per year, Major, High, 4, 4, 16, Call Macquarie Telecom
+Request a "Dry run" Zerto failover test.
+The technician will run a test on our DR site to make sure the machines are able to start and that Data replication completed., First Line, 2018-11-08, Pass, 2019-11-08 21:00:00, 1000060, NULL, NULL

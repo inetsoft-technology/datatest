@@ -1,0 +1,62 @@
+The table size(row x col) is:(61 x 6)
+Risk Id, ID, Inherent Risk Rating - Rating Name, Residual Risk Rating - Rating Name, Controls Overall Effectiveness, Date of assessment
+100080, 1000020, High, Low, Effective, 2018-09-06
+100082, 1000024, Moderate, Low, Effective, 2018-09-12
+100084, 1000033, High, Moderate, Effective, 2018-09-12
+100084, 1000048, High, Low, Effective, 2018-08-30
+100105, 1000027, Moderate, Low, Effective, 2018-08-06
+100106, 1000029, High, Low, Effective, 2018-08-06
+100114, 1000051, High, Moderate, Effective, 2019-10-30
+100116, 1000054, High, Low, Effective, 2018-08-30
+100123, 1000036, Moderate, Moderate, Effective, 2018-08-13
+100142, 1000039, High, Moderate, Effective, 2020-03-22
+100144, 1000042, High, Low, Partially Effective, 2019-07-29
+100145, 1000045, High, Low, Effective, 2019-09-10
+100150, 1000308, High, Moderate, Effective, 2019-10-12
+100156, 1000088, Moderate, Moderate, Effective, 2018-09-05
+100158, 1000100, High, Moderate, Effective, 2018-09-06
+100159, 1000124, High, Moderate, Effective, 2018-09-12
+100161, 1000057, High, Moderate, Effective, 2018-08-30
+100162, 1000060, High, Moderate, Effective, 2018-08-30
+100163, 1000063, High, Moderate, Effective, 2018-08-30
+100164, 1000066, High, Low, Effective, 2018-08-30
+100165, 1000094, High, Moderate, Effective, 2018-09-06
+100166, 1000090, High, Moderate, Effective, 2018-09-05
+100169, 1000070, High, Low, Effective, 2018-09-05
+100170, 1000078, Moderate, High, Effective, 2018-09-05
+100171, 1000082, High, Moderate, Effective, 2018-09-05
+100172, 1000072, High, Moderate, Effective, 2018-09-05
+100173, 1000074, High, Low, Effective, 2018-09-05
+100174, 1000076, High, Moderate, Effective, 2018-09-05
+100175, 1000084, High, Moderate, Effective, 2018-09-05
+100177, 1000086, High, Moderate, Effective, 2018-09-05
+100179, 1000080, High, Low, Effective, 2018-09-05
+100180, 1000092, High, Moderate, Effective, 2018-09-06
+100181, 1000096, High, Low, Effective, NULL
+100183, 1000098, High, Moderate, Effective, 2018-09-06
+100184, 1000102, High, Moderate, Effective, 2018-09-06
+100200, 1000104, High, Moderate, Effective, 2018-09-10
+100201, 1000106, High, Moderate, Effective, 2018-09-10
+100202, 1000108, High, Moderate, Effective, 2018-09-10
+100203, 1000110, High, Moderate, Effective, 2018-09-10
+100204, 1000112, High, Moderate, Effective, 2018-09-10
+100205, 1000114, High, Moderate, Effective, 2018-09-10
+100206, 1000116, High, Moderate, Effective, 2018-09-10
+100207, 1000118, High, Moderate, Effective, 2018-09-10
+100208, 1000120, High, Moderate, Effective, 2018-09-10
+100209, 1000122, High, Moderate, Effective, 2018-09-10
+100221, 1000126, High, Moderate, Effective, 2018-09-18
+100222, 1000128, High, Moderate, Effective, 2018-09-18
+100261, 1000312, High, Low, Effective, 2019-10-13
+100387, 1000900, Moderate, Moderate, Partially Effective, 2019-10-02
+100389, 1000909, High, Moderate, Partially Effective, 2019-06-30
+100422, 1000594, High, Low, Effective, 2019-05-07
+100727, 1001128, High, Moderate, NULL, NULL
+100760, 1001132, High, Low, Effective, 2019-05-27
+100883, 1001134, High, Moderate, Effective, 2019-05-27
+100885, 1001092, Moderate, Low, Effective, 2019-06-30
+100888, 1001088, High, Low, Effective, 2019-06-30
+100892, 1001138, Moderate, Low, Effective, 2019-05-27
+100897, 1001090, Moderate, Low, Effective, 2019-05-27
+100902, 1001136, High, Low, Effective, 2019-05-27
+100985, 1001179, Moderate, Moderate, Partially Effective, 2020-03-14

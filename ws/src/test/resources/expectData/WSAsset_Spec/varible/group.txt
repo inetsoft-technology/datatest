@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 2)
+Year(rangecolumn), CUSTOMER_ID
+2002, 3236
+2003, 3418
+2004, 3505
+2005, 2629

@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 14)
+Path, Country, Quantity, Shipping Warehouse, Place, Dest Lat, Dest Long, Place_1, WH Lat, WH Long, Pair, Pair Long, Pair Lat, Pair Amt
+1, Austria, 153771, New Jersey, Austria, 47.5162, 14.5501, New Jersey, 40.0566, -74.4013, New JerseyAustria, -74.4013, 40.0566, 0
+1, Brazil, 138812, Texas, Brazil, -14.235, -51.9253, Texas, 31.9686, -99.9018, TexasBrazil, -99.9018, 31.9686, 0
+1, Canada, 260202, Kansas, Canada, 56.1304, -106.3468, Kansas, 39.0119, -98.4842, KansasCanada, -98.4842, 39.0119, 0
+1, France, 100059, New Jersey, France, 46.2276, 2.2137, New Jersey, 40.0566, -74.4013, New JerseyFrance, -74.4013, 40.0566, 0
+1, Germany, 189597, New Jersey, Germany, 51.1657, 10.4515, New Jersey, 40.0566, -74.4013, New JerseyGermany, -74.4013, 40.0566, 0
+1, New Zealand, 19561, California, New Zealand, -40.9006, 174.886, California, 36.7783, -119.4179, CaliforniaNew Zealand, -119.4179, 36.7783, 0
+1, Sweden, 211236, New Jersey, Sweden, 60.1282, 18.6435, New Jersey, 40.0566, -74.4013, New JerseySweden, -74.4013, 40.0566, 0
+2, Austria, 153771, New Jersey, Austria, 47.5162, 14.5501, New Jersey, 40.0566, -74.4013, New JerseyAustria, 14.5501, 47.5162, 153771
+2, Brazil, 138812, Texas, Brazil, -14.235, -51.9253, Texas, 31.9686, -99.9018, TexasBrazil, -51.9253, -14.235, 138812
+2, Canada, 260202, Kansas, Canada, 56.1304, -106.3468, Kansas, 39.0119, -98.4842, KansasCanada, -106.3468, 56.1304, 260202
+2, France, 100059, New Jersey, France, 46.2276, 2.2137, New Jersey, 40.0566, -74.4013, New JerseyFrance, 2.2137, 46.2276, 100059
+2, Germany, 189597, New Jersey, Germany, 51.1657, 10.4515, New Jersey, 40.0566, -74.4013, New JerseyGermany, 10.4515, 51.1657, 189597
+2, New Zealand, 19561, California, New Zealand, -40.9006, 174.886, California, 36.7783, -119.4179, CaliforniaNew Zealand, 174.886, -40.9006, 19561
+2, Sweden, 211236, New Jersey, Sweden, 60.1282, 18.6435, New Jersey, 40.0566, -74.4013, New JerseySweden, 18.6435, 60.1282, 211236

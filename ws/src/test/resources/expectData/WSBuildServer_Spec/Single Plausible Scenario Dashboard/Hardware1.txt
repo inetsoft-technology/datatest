@@ -1,0 +1,20 @@
+The table size(row x col) is:(8 x 8)
+Hardware ID, Technology / Device Name, Technology Type, Functional Description, Criticality Factor, RTO, Component Type, fx Hardware RTO
+1000022, erm-App1, Server, HTTP Frontend proxy server for all erm application servers
+Application server
+, Critical, 3, Hardware, Modified
+1000025, Hera, Storage, Network, High, 9, Hardware, Return to work was not a goal of rehabilitation program
+1000044, Protecht Website Server (www.protecht.com.au), Server, Web server for corporate websites
+protecht.com.au
+protecht.co.ke
+protecht.eu, High, 9, Hardware, Return to work was not a goal of rehabilitation program
+1000046, HPE1950-24G-Protecht, Switch, Switch, Critical, 18, Hardware, 12-24 hours
+1000056, erm-App2, Server, Application Server
+Inetsoft Reporting Server
+Hosts help menu application for erm + alm, Critical, 9, Hardware, Return to work was not a goal of rehabilitation program
+1000058, erm-App3, Server, ERM Application Server
+Inetsoft Server
+, High, 18, Hardware, 12-24 hours
+1000060, erm-App4, Server, ERM Application Server
+Inetsoft Server
+, Critical, 36, Hardware, 24-48 hours

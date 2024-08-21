@@ -1,0 +1,768 @@
+The table size(row x col) is:(767 x 9)
+Status, WO Status, Work Order, WO Description, Location, Asset, Scheduled Start, Priority, Site
+APPR, Approved, 1002, Rebuild Feedwater Pump, BR450, 11450, NULL, 9, BEDFORD
+APPR, Approved, 1003, Check for Plumbing Problem, BOILER, NULL, NULL, 5, BEDFORD
+APPR, Approved, 1005, Electric Cart Tune-Up, SHIPPING, 12300, NULL, 7, BEDFORD
+APPR, Approved, 1006, Feedwater Pump Service, BR450, 11450, NULL, 7, BEDFORD
+APPR, Approved, 1007, Packaging Mach. Elevator & Drainpan Inspection, BPM3100, 13141, NULL, 8, BEDFORD
+APPR, Approved, 1013, Inspect and Repair Pump as Required, REPAIR, 11470, NULL, 5, BEDFORD
+APPR, Approved, 1158, Calibration 101, NULL, CAL101, NULL, 2, BEDFORD
+APPR, Approved, 1159, Calibration Loop 1, LOOP1, NULL, NULL, 2, BEDFORD
+APPR, Approved, 1227, Calibration 101, NULL, CAL101, NULL, 2, BEDFORD
+APPR, Approved, 1228, Calibration Loop 1, LOOP1, NULL, NULL, 2, BEDFORD
+APPR, Approved, 30056, 13120 problem, BPM3100, 13120, 10/25/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 30058, 13170 problem, BPM3100, 13170, 10/20/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 30065, problem at 13120, BPM3100, 13120, 8/16/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 30066, problem at 13140, BPM3100, 13140, 8/11/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 30067, problem at 13170, BPM3100, 13170, 8/6/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 30157, 13110 problem, BPM3100, 13110, 10/25/01 2:29 PM, 2, BEDFORD
+APPR, Approved, 31150, 11430 prob work, BR430, 11430, 11/24/01 11:24 AM, 2, BEDFORD
+APPR, Approved, 31250, 11200 prob work, BR200, 11200, 11/26/01 11:24 AM, 2, BEDFORD
+APPR, Approved, 31350, see connelly - 13180 prob work, BPM3100, 13180, 11/24/01 11:24 AM, 2, BEDFORD
+APPR, Approved, 31450, see boyd - 12610 prob work, SHIPPING, 12610, 8/23/01 4:02 PM, 2, BEDFORD
+APPR, Approved, 31555, 12710 prob work-check w/boyd on details, SHIPPING, 12710, 11/28/01 10:33 AM, 2, BEDFORD
+APPR, Approved, 31655, 13140 prob work-check w/connelly on details, BPM3100, 13140, 12/11/01 10:18 AM, 2, BEDFORD
+APPR, Approved, 31755, 11300 prob work-see miller, BR300, 11300, 12/17/01 1:28 PM, 2, BEDFORD
+APPR, Approved, 40060, Inspection, BR431, 23972, 6/24/00 3:45 PM, 4, BEDFORD
+APPR, Approved, 40092, ROUTINE MAINTENANCE, BR460, 11460, 10/7/00 3:45 PM, 2, BEDFORD
+APPR, Approved, 40093, MAINTENANCE, BR430, 11430, 10/3/00 3:45 PM, 3, BEDFORD
+APPR, Approved, 40101, ROUTINE MAINTENANCE, BR460, 11460, 11/6/00 3:45 PM, 3, BEDFORD
+APPR, Approved, 40111, ROUTINE MAINTENANCE, BR460, 11460, 12/6/00 3:45 PM, 3, BEDFORD
+APPR, Approved, 40112, MAINTENANCE, BR430, 11430, 12/2/00 3:45 PM, 3, BEDFORD
+APPR, Approved, 40121, Inspection and Certification, BR430, 11430, 12/31/00 3:45 PM, 3, BEDFORD
+APPR, Approved, 40122, Inspection, BR400, 11400, 12/6/00 3:45 PM, 2, BEDFORD
+APPR, Approved, 40123, Inspection and Certification, BR460, 11460, 1/5/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 40124, ROUTINE MAINTENANCE, BR460, 11460, 1/5/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41011, Inspection, BR431, 23972, 2/4/01 3:45 PM, 4, BEDFORD
+APPR, Approved, 41012, ROUTINE MAINTENANCE, BR460, 11460, 2/4/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41013, R&R, BR430, 11430, 2/4/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41021, Inspection and Certification, BR430, 11430, 4/5/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41023, ROUTINE MAINTENANCE, BR460, 11460, 3/11/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41031, ROUTINE MAINTENANCE, BR460, 11460, 4/10/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41032, R&R, BR430, 11430, 3/29/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41041, Inspection and Certification, BR400, 11400, 5/5/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41042, ROUTINE MAINTENANCE, BR460, 11460, 5/10/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41051, ROUTINE MAINTENANCE, BR460, 11460, 6/6/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41052, R&R, BR430, 11430, 5/28/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41061, Inspection, BR300, 11340, 7/4/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41062, Inspection, BR431, 23972, 7/4/01 3:45 PM, 4, BEDFORD
+APPR, Approved, 41064, ROUTINE MAINTENANCE, BR460, 11460, 6/29/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41071, Inspection, BR300, 11340, 8/3/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41073, R&R, BR430, 11430, 7/29/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 41081, Inspection, BR400, 11400, 8/28/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41082, ROUTINE MAINTENANCE, BR460, 11460, 9/2/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 41091, R&R, BR430, 11430, 10/12/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 4200, Annual Pump Maintenance, BR430, 11430, 3/1/11 2:00 PM, 8, BEDFORD
+APPR, Approved, 42001, Inspection and Certification, BR430, 11430, 10/27/01 3:45 PM, 3, BEDFORD
+APPR, Approved, 42002, Inspection and Certification, BR400, 11400, 11/6/01 3:45 PM, 2, BEDFORD
+APPR, Approved, 42003, Inspection, BR431, 23972, 10/12/01 3:45 PM, 4, BEDFORD
+APPR, Approved, 42005, Inspection, BR431, 23972, 1/20/02 3:45 PM, 4, BEDFORD
+APPR, Approved, 42006, Inspection, BR460, 11460, 9/10/01 3:45 PM, 4, BEDFORD
+APPR, Approved, 42007, Inspection, BR460, 11460, 12/13/01 3:45 PM, 4, BEDFORD
+APPR, Approved, 43001, 11340 PM, BR300, 11340, 1/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43002, 11300 PM, BR300, 11300, 1/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43003, 11340 PM, BR300, 11340, 3/12/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43004, 11300 PM, BR300, 11300, 3/12/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43005, 11340 PM WORK, BR300, 11340, 5/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43006, 11300 PM work, BR300, 11300, 5/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43007, 11340 PM, BR300, 11340, 7/10/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43008, 11300 PM WORK, BR300, 11300, 7/10/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43009, 11340 PM work, BR300, 11340, 9/8/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43010, 11300 PM, BR300, 11300, 9/8/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43011, 11400 PM WORK, BR400, 11400, 1/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43012, 11400 PM work, BR400, 11400, 3/12/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43013, 11400 PM work, BR400, 11400, 5/11/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43014, 11400 PM WORK, BR400, 11400, 7/10/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43015, 11400 PM work, BR400, 11400, 9/8/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43016, 11460 PM work, BR460, 11460, 12/27/01 9:45 AM, 3, BEDFORD
+APPR, Approved, 43017, 11460 PM WORK, BR460, 11460, 2/25/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43018, 11460 PM work, BR460, 11460, 4/26/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43019, 11460 PM tasks, BR460, 11460, 6/25/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43020, 11460 PM WORK, BR460, 11460, 8/24/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43021, 13120 PM work, BPM3100, 13120, 8/14/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43022, 13110 PM tasks, BPM3100, 13110, 8/14/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43023, 13170 PM WORK, BPM3100, 13170, 8/14/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43024, 13140 PM work, BPM3100, 13140, 8/14/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43025, 13120 PM tasks, BPM3100, 13120, 10/13/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43026, 13110 PM WORK, BPM3100, 13110, 10/13/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43027, 13170 PM work jobs, BPM3100, 13170, 10/13/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43028, 13140 PM tasks, BPM3100, 13140, 10/13/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43029, 13120 PM WORK, BPM3100, 13120, 12/12/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43030, 13110 PM work jobs, BPM3100, 13110, 12/12/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43031, 13170 PM tasks, BPM3100, 13170, 12/12/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43032, 13140 PM WORK, BPM3100, 13140, 12/12/01 9:45 AM, 4, BEDFORD
+APPR, Approved, 43033, 13120 PM work jobs, BPM3100, 13120, 2/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43034, 13110 PM tasks, BPM3100, 13110, 2/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43035, 13170 PM WORK, BPM3100, 13170, 2/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43036, 13140 PM work jobs, BPM3100, 13140, 2/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43037, 13120 PM tasks, BPM3100, 13120, 4/11/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43038, 13110 PM WORK, BPM3100, 13110, 4/11/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43039, 13170 PM work jobs, BPM3100, 13170, 4/11/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43040, 13140 PM tasks, BPM3100, 13140, 4/11/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43041, 11430 PM WORK, BR430, 11430, 1/1/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43042, 11430 PM work jobs, BR430, 11430, 3/2/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43043, 11430 PM tasks, BR430, 11430, 5/1/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43044, 11430 PM WORK, BR430, 11430, 6/30/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43045, 11430 PM work jobs, BR430, 11430, 8/29/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43046, 11430 PM tasks, BR430, 11430, 10/28/02 9:45 AM, 3, BEDFORD
+APPR, Approved, 43047, 23972 PM WORK, BR431, 23972, 1/26/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43048, 23972 PM work jobs, BR431, 23972, 3/17/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43049, 23972 PM tasks, BR431, 23972, 5/6/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43050, 23972 PM WORK, BR431, 23972, 6/25/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43051, 23972 PM work jobs, BR431, 23972, 8/14/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43052, 23972 PM tasks, BR431, 23972, 10/3/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43053, 23972 PM WORK, BR431, 23972, 11/22/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43054, 23972 PM WORK, BR431, 23972, 1/11/03 9:45 AM, 4, BEDFORD
+APPR, Approved, 43055, 23972 PM tasks, BR431, 23972, 3/2/03 9:45 AM, 4, BEDFORD
+APPR, Approved, 43070, 11200 PM WORK, BR200, 11200, 1/26/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43071, 11200 PM tasks, BR200, 11200, 3/17/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43072, 11200 pm tasks, BR200, 11200, 5/6/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43073, 11200 PM WORK, BR200, 11200, 6/25/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43074, 11200 PM tasks, BR200, 11200, 8/14/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43075, 11200 pm tasks, BR200, 11200, 10/3/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43076, 11200 PM WORK, BR200, 11200, 11/22/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43077, 11250 PM tasks, BR200, 11250, 1/26/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43078, 11250 pm tasks, BR200, 11250, 3/17/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43079, 11250 work - pm, BR200, 11250, 5/6/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43080, 11250 PM tasks, BR200, 11250, 6/25/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43081, 11250 pm tasks, BR200, 11250, 8/14/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43082, 11250 work - pm, BR200, 11250, 10/3/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43083, 11250 PM tasks, BR200, 11250, 11/22/02 9:45 AM, 2, BEDFORD
+APPR, Approved, 43084, 11250 pm tasks, BR200, 11250, 1/11/03 9:45 AM, 2, BEDFORD
+APPR, Approved, 43085, 13120 work - pm, BPM3100, 13120, 6/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43086, 13110 PM tasks, BPM3100, 13110, 6/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43087, 13170 pm tasks, BPM3100, 13170, 6/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43088, 13140 work - pm, BPM3100, 13140, 6/10/02 9:45 AM, 4, BEDFORD
+APPR, Approved, 43089, 13120 PM tasks, BPM3100, 13120, 8/9/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43090, 13110 pm tasks, BPM3100, 13110, 8/9/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43091, 13170 work - pm, BPM3100, 13170, 8/9/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43092, 13140 PM tasks, BPM3100, 13140, 8/9/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43093, 13120 pm tasks, BPM3100, 13120, 10/8/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43094, 13110 pm tasks, BPM3100, 13110, 10/8/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43095, 13170 work - pm, BPM3100, 13170, 10/8/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43096, 13140 pm tasks, BPM3100, 13140, 10/8/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43097, 13110 pm tasks, BPM3100, 13110, 12/7/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43098, 13170 work - pm, BPM3100, 13170, 12/7/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43099, 13140 pm tasks, BPM3100, 13140, 12/7/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 43100, 13120 pm tasks, BPM3100, 13120, 12/7/02 9:46 AM, 4, BEDFORD
+APPR, Approved, 51011, PM Work - 11430, BR430, 11430, 3/27/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51012, PM Work - 11430, BR430, 11430, 5/26/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51013, PM Work - 11430, BR430, 11430, 7/5/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51014, PM Work - 11430, BR430, 11430, 9/23/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51015, PM Work - 11430, BR430, 11430, 11/22/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51016, PM Work - 11430, BR430, 11430, 1/21/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51017, PM Work - 11430, BR430, 11430, 3/22/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51018, PM Work - 11430, BR430, 11430, 3/22/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51021, PM Service - 6 Month, BPM3100, 13160, 12/22/00 1:29 PM, 4, BEDFORD
+APPR, Approved, 51022, PM Service - 6 Month, BPM3100, 13160, 6/20/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51023, PM Service - 6 Month, BPM3100, 13160, 12/17/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51024, PM Service - 6 Month, BPM3100, 13160, 6/15/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51025, PM Service - 6 Month, BPM3100, 13160, 12/12/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51026, PM Service - 6 Month, BPM3100, 13160, 6/10/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51031, PM Service - 6 Month, BPM3100, 13180, 6/20/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51032, PM Service - 6 Month, BPM3100, 13180, 12/17/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51033, PM Service - 6 Month, BPM3100, 13180, 6/15/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51034, PM Service - 6 Month, BPM3100, 13180, 12/12/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51035, PM Service - 6 Month, BPM3100, 13180, 6/10/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51036, PM Service - 6 Month, BPM3100, 13180, 12/7/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51037, PM Service - 6 Month, BPM3100, 13180, 6/4/04 1:29 PM, 4, BEDFORD
+APPR, Approved, 51041, PM Service - 3 Month, SHIPPING, 12600, 9/18/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51042, PM Service - 3 Month, SHIPPING, 12600, 12/17/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51043, PM Service - 3 Month, SHIPPING, 12600, 3/17/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51044, PM Service - 3 Month, SHIPPING, 12600, 6/15/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51045, PM Service - 3 Month, SHIPPING, 12600, 9/13/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51046, PM Service - 3 Month, SHIPPING, 12600, 12/12/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51047, PM Service - 3 Month, SHIPPING, 12600, 3/12/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51048, PM Service - 3 Month, SHIPPING, 12600, 6/10/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51051, PM Service - 3 Month, SHIPPING, 12700, 9/19/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51052, PM Service - 3 Month, SHIPPING, 12700, 12/18/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51053, PM Service - 3 Month, SHIPPING, 12700, 3/18/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51054, PM Service - 3 Month, SHIPPING, 12700, 6/16/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51055, PM Service - 3 Month, SHIPPING, 12700, 9/14/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51056, PM Service - 3 Month, SHIPPING, 12700, 12/13/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51057, PM Service - 3 Month, SHIPPING, 12700, 5/1/05 1:29 PM, 4, BEDFORD
+APPR, Approved, 51058, PM Service - 3 Month, SHIPPING, 12700, 6/11/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51061, Quarterly Insp & Certification, SHIPPING, 12500, 9/21/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51062, Quarterly Insp & Certification, SHIPPING, 12500, 12/20/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51063, Quarterly Insp & Certification, SHIPPING, 12500, 3/20/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51064, Quarterly Insp & Certification, SHIPPING, 12500, 6/18/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51065, Quarterly Insp & Certification, SHIPPING, 12500, 9/16/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51066, Quarterly Insp & Certification, SHIPPING, 12500, 12/15/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51067, Quarterly Insp & Certification, SHIPPING, 12500, 5/3/05 1:29 PM, 4, BEDFORD
+APPR, Approved, 51068, Quarterly Insp & Certification, SHIPPING, 12500, 6/13/03 1:29 PM, 4, BEDFORD
+APPR, Approved, 51071, Quarterly Insp & Certification, SHIPPING, 12400, 9/21/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51072, Quarterly Insp & Certification, SHIPPING, 12400, 12/20/01 1:29 PM, 4, BEDFORD
+APPR, Approved, 51073, Quarterly Insp & Certification, SHIPPING, 12400, 3/20/02 1:29 PM, 4, BEDFORD
+APPR, Approved, 51074, Quarterly Insp & Certification, SHIPPING, 12400, 6/18/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51075, Quarterly Insp & Certification, SHIPPING, 12400, 9/16/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51076, Quarterly Insp & Certification, SHIPPING, 12400, 12/15/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51077, Quarterly Insp & Certification, SHIPPING, 12400, 6/12/05 1:30 PM, 4, BEDFORD
+APPR, Approved, 51078, Quarterly Insp & Certification, SHIPPING, 12400, 6/13/03 1:30 PM, 4, BEDFORD
+APPR, Approved, 51081, Quarterly Insp & Certification, SHIPPING, 12210, 9/28/01 1:30 PM, 4, BEDFORD
+APPR, Approved, 51082, Quarterly Insp & Certification, SHIPPING, 12210, 12/27/01 1:30 PM, 4, BEDFORD
+APPR, Approved, 51083, Quarterly Insp & Certification, SHIPPING, 12210, 3/27/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51084, Quarterly Insp & Certification, SHIPPING, 12210, 6/25/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51085, Quarterly Insp & Certification, SHIPPING, 12210, 9/23/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51086, Quarterly Insp & Certification, SHIPPING, 12210, 12/22/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51087, Quarterly Insp & Certification, SHIPPING, 12210, 3/22/03 1:30 PM, 4, BEDFORD
+APPR, Approved, 51088, Quarterly Insp & Certification, SHIPPING, 12210, 6/20/03 1:30 PM, 4, BEDFORD
+APPR, Approved, 51091, Quarterly Insp & Certification, SHIPPING, 12510, 10/8/01 1:30 PM, 4, BEDFORD
+APPR, Approved, 51092, Quarterly Insp & Certification, SHIPPING, 12510, 1/6/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51093, Quarterly Insp & Certification, SHIPPING, 12510, 4/6/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51094, Quarterly Insp & Certification, SHIPPING, 12510, 7/5/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51095, Quarterly Insp & Certification, SHIPPING, 12510, 10/3/02 1:30 PM, 4, BEDFORD
+APPR, Approved, 51096, Quarterly Insp & Certification, SHIPPING, 12510, 1/1/03 1:30 PM, 4, BEDFORD
+APPR, Approved, 51097, Quarterly Insp & Certification, SHIPPING, 12510, 7/19/05 1:30 PM, 4, BEDFORD
+APPR, Approved, 51098, Quarterly Insp & Certification, SHIPPING, 12510, 9/17/05 1:30 PM, 4, BEDFORD
+APPR, Approved, 6003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 1, BEDFORD
+APPR, Approved, 91091, 11450 BREAKDOWN, BR450, 11450, 10/12/01 3:45 PM, 1, BEDFORD
+APPR, Approved, T1076, Put Measures in place to avoid future re-occurrence., NULL, NULL, NULL, 2, BEDFORD
+APPR, Approved, T1103, Provide cleaning supplies to employees., NULL, NULL, NULL, 3, BEDFORD
+COMP, Completed, 1000, Relocate Guard Rails Around Compressor, BR300, 11300, NULL, 2, BEDFORD
+COMP, Completed, 1001, 12 Month Service on Shipping Dept #1 Conveyor, SHIPPING, 12600, NULL, 5, BEDFORD
+COMP, Completed, 1001, 12 Month Service on Shipping Dept #1 Conveyor, SHIPPING, 12600, NULL, 5, BEDFORD
+COMP, Completed, 1002, Rebuild Feedwater Pump, BR450, 11450, NULL, 9, BEDFORD
+COMP, Completed, 1003, Check for Plumbing Problem, BOILER, NULL, NULL, 5, BEDFORD
+COMP, Completed, 1004, Generator Overhaul, BR230, 11230, NULL, 1, BEDFORD
+COMP, Completed, 1005, Electric Cart Tune-Up, SHIPPING, 12300, NULL, 7, BEDFORD
+COMP, Completed, 1006, Feedwater Pump Service, BR450, 11450, NULL, 7, BEDFORD
+COMP, Completed, 1007, Packaging Mach. Elevator & Drainpan Inspection, BPM3100, 13141, NULL, 8, BEDFORD
+COMP, Completed, 1008, Repair Damaged Conduit Feeding Generator, BR230, 11230, NULL, 7, BEDFORD
+COMP, Completed, 1009, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, NULL, 8, BEDFORD
+COMP, Completed, 1013, Inspect and Repair Pump as Required, REPAIR, 11470, NULL, 5, BEDFORD
+COMP, Completed, 1018, Paint Guard Rail Around #1 Fan, BR210, 11210, NULL, 4, BEDFORD
+COMP, Completed, 1019, Conveyor Overhaul- Pkg. Dept., BPM3100, 13140, NULL, 8, BEDFORD
+COMP, Completed, 1019, Conveyor Overhaul- Pkg. Dept., BPM3100, 13140, NULL, 8, BEDFORD
+COMP, Completed, 1020, Generator Overhaul, BR230, 11230, 4/22/02 9:51 AM, 2, BEDFORD
+COMP, Completed, 1021, Conveyor Overhaul- Conveyor #2, SHIPPING, 12700, NULL, 8, BEDFORD
+COMP, Completed, 1022, Electric Cart Tune-Up, SHIPPING, 12300, NULL, 3, BEDFORD
+COMP, Completed, 1023, Conveyor Overhaul- Conveyor #1, SHIPPING, 12600, NULL, 8, BEDFORD
+COMP, Completed, 1024, Condensate Return Pump Quarterly Service, BR430, 11430, NULL, 9, BEDFORD
+COMP, Completed, 1025, Conveyor Overhaul- Pkg. Dept., BPM3100, 13140, NULL, 8, BEDFORD
+COMP, Completed, 1026, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 9, BEDFORD
+COMP, Completed, 1027, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 9, BEDFORD
+COMP, Completed, 1028, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 9, BEDFORD
+COMP, Completed, 1029, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 7, BEDFORD
+COMP, Completed, 1030, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 7, BEDFORD
+COMP, Completed, 1031, Top Breaker Quarterly Inspection and Certification, BPM3100, 13150, NULL, 9, BEDFORD
+COMP, Completed, 1032, Feeder System Inspection and Certification, BPM3100, 13110, NULL, 9, BEDFORD
+COMP, Completed, 1033, Filler/Lifter System Inspection and Certification, BPM3100, 13160, NULL, 9, BEDFORD
+COMP, Completed, 1034, Bottom Sealing System Inspection and Certification, BPM3100, 13120, NULL, 9, BEDFORD
+COMP, Completed, 1035, PKG Dept. Elevator Inspections & Certification, BPM3100, 13141, NULL, 9, BEDFORD
+COMP, Completed, 1045, Replace broken office window, OFF103, NULL, NULL, 2, BEDFORD
+COMP, Completed, 1096, Investigate DB - ERP Down, NULL, NULL, NULL, 1, BEDFORD
+COMP, Completed, 1096, Investigate DB - ERP Down, NULL, NULL, NULL, 1, BEDFORD
+COMP, Completed, 1097, Investigate Network - ERP down, NULL, NULL, NULL, 1, BEDFORD
+COMP, Completed, 1097, Investigate Network - ERP down, NULL, NULL, NULL, 1, BEDFORD
+COMP, Completed, 1104, Purchase a new Mouse, NULL, NULL, NULL, 3, BEDFORD
+COMP, Completed, 1104, Purchase a new Mouse, NULL, NULL, NULL, 3, BEDFORD
+COMP, Completed, 1158, Calibration 101, NULL, CAL101, NULL, 2, BEDFORD
+COMP, Completed, 1159, Calibration Loop 1, LOOP1, NULL, NULL, 2, BEDFORD
+COMP, Completed, 1221, Centrifugal Pump Service- 12 Month, NULL, NULL, NULL, 8, BEDFORD
+COMP, Completed, 1222, Fire door not working K-15, NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, 1227, Calibration 101, NULL, CAL101, NULL, 2, BEDFORD
+COMP, Completed, 1228, Calibration Loop 1, LOOP1, NULL, NULL, 2, BEDFORD
+COMP, Completed, 1235, Maintenance of WINS and DHCP Server, SHIPPING, NULL, NULL, 12, BEDFORD
+COMP, Completed, 1246, NULL, MOFLOOR1, 1001, NULL, 3, BEDFORD
+COMP, Completed, 2000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+COMP, Completed, 2001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+COMP, Completed, 2002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 3, BEDFORD
+COMP, Completed, 2003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 5, BEDFORD
+COMP, Completed, 2004, Feeder Jammed, BPM3100, 13110, NULL, 8, BEDFORD
+COMP, Completed, 2005, Check-out Leaking, BPM3100, 13145, NULL, 8, BEDFORD
+COMP, Completed, 2006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 5, BEDFORD
+COMP, Completed, 2007, Air Filter - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+COMP, Completed, 2008, Fire Door Cable Broken, BOILER, NULL, NULL, 8, BEDFORD
+COMP, Completed, 2009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+COMP, Completed, 3000, New fall 97 outage, NULL, NULL, NULL, 7, BEDFORD
+COMP, Completed, 3000, New fall 97 outage, NULL, NULL, NULL, 7, BEDFORD
+COMP, Completed, 3001, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 9, BEDFORD
+COMP, Completed, 3002, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 9, BEDFORD
+COMP, Completed, 3003, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 9, BEDFORD
+COMP, Completed, 3004, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 7, BEDFORD
+COMP, Completed, 3005, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 7, BEDFORD
+COMP, Completed, 30056, 13120 problem, BPM3100, 13120, 10/25/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 30058, 13170 problem, BPM3100, 13170, 10/20/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 3006, Top Breaker Quarterly Inspection and Certification, BPM3100, 13150, NULL, 9, BEDFORD
+COMP, Completed, 30065, problem at 13120, BPM3100, 13120, 8/16/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 30066, problem at 13140, BPM3100, 13140, 8/11/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 30067, problem at 13170, BPM3100, 13170, 8/6/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 3007, Feeder System Inspection and Certification, BPM3100, 13110, NULL, 9, BEDFORD
+COMP, Completed, 3008, Filler/Lifter System Inspection and Certification, BPM3100, 13160, NULL, 9, BEDFORD
+COMP, Completed, 3009, Bottom Sealing System Inspection and Certification, BPM3100, 13120, NULL, 9, BEDFORD
+COMP, Completed, 3010, Forklift #2 Quarterly Inspection and Certification, SHIPPING, 12400, NULL, 7, BEDFORD
+COMP, Completed, 3011, PKG Dept. Elevator Inspections & Certification, BPM3100, 13141, NULL, 9, BEDFORD
+COMP, Completed, 30157, 13110 problem, BPM3100, 13110, 10/25/01 2:29 PM, 2, BEDFORD
+COMP, Completed, 31150, 11430 prob work, BR430, 11430, 11/24/01 11:24 AM, 2, BEDFORD
+COMP, Completed, 31250, 11200 prob work, BR200, 11200, 11/26/01 11:24 AM, 2, BEDFORD
+COMP, Completed, 31350, see connelly - 13180 prob work, BPM3100, 13180, 11/24/01 11:24 AM, 2, BEDFORD
+COMP, Completed, 31450, see boyd - 12610 prob work, SHIPPING, 12610, 8/23/01 4:02 PM, 2, BEDFORD
+COMP, Completed, 31555, 12710 prob work-check w/boyd on details, SHIPPING, 12710, 11/28/01 10:33 AM, 2, BEDFORD
+COMP, Completed, 31655, 13140 prob work-check w/connelly on details, BPM3100, 13140, 12/11/01 10:18 AM, 2, BEDFORD
+COMP, Completed, 31755, 11300 prob work-see miller, BR300, 11300, 12/17/01 1:28 PM, 2, BEDFORD
+COMP, Completed, 40060, Inspection, BR431, 23972, 6/24/00 3:45 PM, 4, BEDFORD
+COMP, Completed, 40092, ROUTINE MAINTENANCE, BR460, 11460, 10/7/00 3:45 PM, 2, BEDFORD
+COMP, Completed, 40093, MAINTENANCE, BR430, 11430, 10/3/00 3:45 PM, 3, BEDFORD
+COMP, Completed, 40101, ROUTINE MAINTENANCE, BR460, 11460, 11/6/00 3:45 PM, 3, BEDFORD
+COMP, Completed, 40111, ROUTINE MAINTENANCE, BR460, 11460, 12/6/00 3:45 PM, 3, BEDFORD
+COMP, Completed, 40112, MAINTENANCE, BR430, 11430, 12/2/00 3:45 PM, 3, BEDFORD
+COMP, Completed, 40121, Inspection and Certification, BR430, 11430, 12/31/00 3:45 PM, 3, BEDFORD
+COMP, Completed, 40122, Inspection, BR400, 11400, 12/6/00 3:45 PM, 2, BEDFORD
+COMP, Completed, 40123, Inspection and Certification, BR460, 11460, 1/5/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 40124, ROUTINE MAINTENANCE, BR460, 11460, 1/5/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 4050, Service Call - Manhole Overflow, BLK2000, NULL, NULL, 5, BEDFORD
+COMP, Completed, 4051, Visual Inspection for Sanitary Line, SAN101, NULL, NULL, 3, BEDFORD
+COMP, Completed, 41011, Inspection, BR431, 23972, 2/4/01 3:45 PM, 4, BEDFORD
+COMP, Completed, 41012, ROUTINE MAINTENANCE, BR460, 11460, 2/4/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41013, R&R, BR430, 11430, 2/4/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41021, Inspection and Certification, BR430, 11430, 4/5/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41023, ROUTINE MAINTENANCE, BR460, 11460, 3/11/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41031, ROUTINE MAINTENANCE, BR460, 11460, 4/10/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41032, R&R, BR430, 11430, 3/29/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41041, Inspection and Certification, BR400, 11400, 5/5/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41042, ROUTINE MAINTENANCE, BR460, 11460, 5/10/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41051, ROUTINE MAINTENANCE, BR460, 11460, 6/6/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41052, R&R, BR430, 11430, 5/28/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41061, Inspection, BR300, 11340, 7/4/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41062, Inspection, BR431, 23972, 7/4/01 3:45 PM, 4, BEDFORD
+COMP, Completed, 41064, ROUTINE MAINTENANCE, BR460, 11460, 6/29/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41071, Inspection, BR300, 11340, 8/3/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41073, R&R, BR430, 11430, 7/29/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 41081, Inspection, BR400, 11400, 8/28/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41082, ROUTINE MAINTENANCE, BR460, 11460, 9/2/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 41091, R&R, BR430, 11430, 10/12/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 4200, Annual Pump Maintenance, BR430, 11430, 3/1/11 2:00 PM, 8, BEDFORD
+COMP, Completed, 42001, Inspection and Certification, BR430, 11430, 10/27/01 3:45 PM, 3, BEDFORD
+COMP, Completed, 42002, Inspection and Certification, BR400, 11400, 11/6/01 3:45 PM, 2, BEDFORD
+COMP, Completed, 42003, Inspection, BR431, 23972, 10/12/01 3:45 PM, 4, BEDFORD
+COMP, Completed, 42005, Inspection, BR431, 23972, 1/20/02 3:45 PM, 4, BEDFORD
+COMP, Completed, 42006, Inspection, BR460, 11460, 9/10/01 3:45 PM, 4, BEDFORD
+COMP, Completed, 42007, Inspection, BR460, 11460, 12/13/01 3:45 PM, 4, BEDFORD
+COMP, Completed, 4202, Fire Extinguisher Inspection, NULL, NULL, NULL, 6, BEDFORD
+COMP, Completed, 43001, 11340 PM, BR300, 11340, 1/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43002, 11300 PM, BR300, 11300, 1/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43003, 11340 PM, BR300, 11340, 3/12/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43004, 11300 PM, BR300, 11300, 3/12/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43005, 11340 PM WORK, BR300, 11340, 5/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43006, 11300 PM work, BR300, 11300, 5/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43007, 11340 PM, BR300, 11340, 7/10/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43008, 11300 PM WORK, BR300, 11300, 7/10/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43009, 11340 PM work, BR300, 11340, 9/8/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43010, 11300 PM, BR300, 11300, 9/8/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43011, 11400 PM WORK, BR400, 11400, 1/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43012, 11400 PM work, BR400, 11400, 3/12/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43013, 11400 PM work, BR400, 11400, 5/11/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43014, 11400 PM WORK, BR400, 11400, 7/10/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43015, 11400 PM work, BR400, 11400, 9/8/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43016, 11460 PM work, BR460, 11460, 12/27/01 9:45 AM, 3, BEDFORD
+COMP, Completed, 43017, 11460 PM WORK, BR460, 11460, 2/25/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43018, 11460 PM work, BR460, 11460, 4/26/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43019, 11460 PM tasks, BR460, 11460, 6/25/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43020, 11460 PM WORK, BR460, 11460, 8/24/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43021, 13120 PM work, BPM3100, 13120, 8/14/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43022, 13110 PM tasks, BPM3100, 13110, 8/14/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43023, 13170 PM WORK, BPM3100, 13170, 8/14/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43024, 13140 PM work, BPM3100, 13140, 8/14/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43025, 13120 PM tasks, BPM3100, 13120, 10/13/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43026, 13110 PM WORK, BPM3100, 13110, 10/13/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43027, 13170 PM work jobs, BPM3100, 13170, 10/13/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43028, 13140 PM tasks, BPM3100, 13140, 10/13/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43029, 13120 PM WORK, BPM3100, 13120, 12/12/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43030, 13110 PM work jobs, BPM3100, 13110, 12/12/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43031, 13170 PM tasks, BPM3100, 13170, 12/12/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43032, 13140 PM WORK, BPM3100, 13140, 12/12/01 9:45 AM, 4, BEDFORD
+COMP, Completed, 43033, 13120 PM work jobs, BPM3100, 13120, 2/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43034, 13110 PM tasks, BPM3100, 13110, 2/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43035, 13170 PM WORK, BPM3100, 13170, 2/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43036, 13140 PM work jobs, BPM3100, 13140, 2/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43037, 13120 PM tasks, BPM3100, 13120, 4/11/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43038, 13110 PM WORK, BPM3100, 13110, 4/11/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43039, 13170 PM work jobs, BPM3100, 13170, 4/11/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43040, 13140 PM tasks, BPM3100, 13140, 4/11/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43041, 11430 PM WORK, BR430, 11430, 1/1/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43042, 11430 PM work jobs, BR430, 11430, 3/2/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43043, 11430 PM tasks, BR430, 11430, 5/1/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43044, 11430 PM WORK, BR430, 11430, 6/30/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43045, 11430 PM work jobs, BR430, 11430, 8/29/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43046, 11430 PM tasks, BR430, 11430, 10/28/02 9:45 AM, 3, BEDFORD
+COMP, Completed, 43047, 23972 PM WORK, BR431, 23972, 1/26/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43048, 23972 PM work jobs, BR431, 23972, 3/17/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43049, 23972 PM tasks, BR431, 23972, 5/6/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43050, 23972 PM WORK, BR431, 23972, 6/25/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43051, 23972 PM work jobs, BR431, 23972, 8/14/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43052, 23972 PM tasks, BR431, 23972, 10/3/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43053, 23972 PM WORK, BR431, 23972, 11/22/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43054, 23972 PM WORK, BR431, 23972, 1/11/03 9:45 AM, 4, BEDFORD
+COMP, Completed, 43055, 23972 PM tasks, BR431, 23972, 3/2/03 9:45 AM, 4, BEDFORD
+COMP, Completed, 43070, 11200 PM WORK, BR200, 11200, 1/26/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43071, 11200 PM tasks, BR200, 11200, 3/17/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43072, 11200 pm tasks, BR200, 11200, 5/6/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43073, 11200 PM WORK, BR200, 11200, 6/25/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43074, 11200 PM tasks, BR200, 11200, 8/14/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43075, 11200 pm tasks, BR200, 11200, 10/3/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43076, 11200 PM WORK, BR200, 11200, 11/22/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43077, 11250 PM tasks, BR200, 11250, 1/26/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43078, 11250 pm tasks, BR200, 11250, 3/17/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43079, 11250 work - pm, BR200, 11250, 5/6/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43080, 11250 PM tasks, BR200, 11250, 6/25/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43081, 11250 pm tasks, BR200, 11250, 8/14/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43082, 11250 work - pm, BR200, 11250, 10/3/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43083, 11250 PM tasks, BR200, 11250, 11/22/02 9:45 AM, 2, BEDFORD
+COMP, Completed, 43084, 11250 pm tasks, BR200, 11250, 1/11/03 9:45 AM, 2, BEDFORD
+COMP, Completed, 43085, 13120 work - pm, BPM3100, 13120, 6/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43086, 13110 PM tasks, BPM3100, 13110, 6/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43087, 13170 pm tasks, BPM3100, 13170, 6/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43088, 13140 work - pm, BPM3100, 13140, 6/10/02 9:45 AM, 4, BEDFORD
+COMP, Completed, 43089, 13120 PM tasks, BPM3100, 13120, 8/9/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43090, 13110 pm tasks, BPM3100, 13110, 8/9/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43091, 13170 work - pm, BPM3100, 13170, 8/9/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43092, 13140 PM tasks, BPM3100, 13140, 8/9/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43093, 13120 pm tasks, BPM3100, 13120, 10/8/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43094, 13110 pm tasks, BPM3100, 13110, 10/8/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43095, 13170 work - pm, BPM3100, 13170, 10/8/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43096, 13140 pm tasks, BPM3100, 13140, 10/8/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43097, 13110 pm tasks, BPM3100, 13110, 12/7/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43098, 13170 work - pm, BPM3100, 13170, 12/7/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43099, 13140 pm tasks, BPM3100, 13140, 12/7/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 43100, 13120 pm tasks, BPM3100, 13120, 12/7/02 9:46 AM, 4, BEDFORD
+COMP, Completed, 5000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+COMP, Completed, 5001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+COMP, Completed, 5002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 1, BEDFORD
+COMP, Completed, 5003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 1, BEDFORD
+COMP, Completed, 5004, Feeder Jammed, BPM3100, 13110, NULL, 5, BEDFORD
+COMP, Completed, 5005, Check-out Leaking, BPM3100, 13145, NULL, 4, BEDFORD
+COMP, Completed, 5006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 2, BEDFORD
+COMP, Completed, 5007, Air Filter - Check-out, BOILER, NULL, NULL, 2, BEDFORD
+COMP, Completed, 5008, Fire Door Cable Broken, BOILER, NULL, NULL, 5, BEDFORD
+COMP, Completed, 5009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+COMP, Completed, 5010, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, NULL, 5, BEDFORD
+COMP, Completed, 5011, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 3, BEDFORD
+COMP, Completed, 5012, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 4, BEDFORD
+COMP, Completed, 5013, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 4, BEDFORD
+COMP, Completed, 5014, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 4, BEDFORD
+COMP, Completed, 5015, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 3, BEDFORD
+COMP, Completed, 51011, PM Work - 11430, BR430, 11430, 3/27/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51012, PM Work - 11430, BR430, 11430, 5/26/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51013, PM Work - 11430, BR430, 11430, 7/5/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51014, PM Work - 11430, BR430, 11430, 9/23/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51015, PM Work - 11430, BR430, 11430, 11/22/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51016, PM Work - 11430, BR430, 11430, 1/21/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51017, PM Work - 11430, BR430, 11430, 3/22/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51018, PM Work - 11430, BR430, 11430, 3/22/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51021, PM Service - 6 Month, BPM3100, 13160, 12/22/00 1:29 PM, 4, BEDFORD
+COMP, Completed, 51022, PM Service - 6 Month, BPM3100, 13160, 6/20/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51023, PM Service - 6 Month, BPM3100, 13160, 12/17/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51024, PM Service - 6 Month, BPM3100, 13160, 6/15/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51025, PM Service - 6 Month, BPM3100, 13160, 12/12/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51026, PM Service - 6 Month, BPM3100, 13160, 6/10/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51031, PM Service - 6 Month, BPM3100, 13180, 6/20/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51032, PM Service - 6 Month, BPM3100, 13180, 12/17/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51033, PM Service - 6 Month, BPM3100, 13180, 6/15/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51034, PM Service - 6 Month, BPM3100, 13180, 12/12/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51035, PM Service - 6 Month, BPM3100, 13180, 6/10/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51036, PM Service - 6 Month, BPM3100, 13180, 12/7/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51037, PM Service - 6 Month, BPM3100, 13180, 6/4/04 1:29 PM, 4, BEDFORD
+COMP, Completed, 51041, PM Service - 3 Month, SHIPPING, 12600, 9/18/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51042, PM Service - 3 Month, SHIPPING, 12600, 12/17/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51043, PM Service - 3 Month, SHIPPING, 12600, 3/17/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51044, PM Service - 3 Month, SHIPPING, 12600, 6/15/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51045, PM Service - 3 Month, SHIPPING, 12600, 9/13/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51046, PM Service - 3 Month, SHIPPING, 12600, 12/12/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51047, PM Service - 3 Month, SHIPPING, 12600, 3/12/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51048, PM Service - 3 Month, SHIPPING, 12600, 6/10/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51051, PM Service - 3 Month, SHIPPING, 12700, 9/19/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51052, PM Service - 3 Month, SHIPPING, 12700, 12/18/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51053, PM Service - 3 Month, SHIPPING, 12700, 3/18/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51054, PM Service - 3 Month, SHIPPING, 12700, 6/16/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51055, PM Service - 3 Month, SHIPPING, 12700, 9/14/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51056, PM Service - 3 Month, SHIPPING, 12700, 12/13/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51057, PM Service - 3 Month, SHIPPING, 12700, 5/1/05 1:29 PM, 4, BEDFORD
+COMP, Completed, 51058, PM Service - 3 Month, SHIPPING, 12700, 6/11/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51061, Quarterly Insp & Certification, SHIPPING, 12500, 9/21/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51062, Quarterly Insp & Certification, SHIPPING, 12500, 12/20/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51063, Quarterly Insp & Certification, SHIPPING, 12500, 3/20/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51064, Quarterly Insp & Certification, SHIPPING, 12500, 6/18/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51065, Quarterly Insp & Certification, SHIPPING, 12500, 9/16/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51066, Quarterly Insp & Certification, SHIPPING, 12500, 12/15/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51067, Quarterly Insp & Certification, SHIPPING, 12500, 5/3/05 1:29 PM, 4, BEDFORD
+COMP, Completed, 51068, Quarterly Insp & Certification, SHIPPING, 12500, 6/13/03 1:29 PM, 4, BEDFORD
+COMP, Completed, 51071, Quarterly Insp & Certification, SHIPPING, 12400, 9/21/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51072, Quarterly Insp & Certification, SHIPPING, 12400, 12/20/01 1:29 PM, 4, BEDFORD
+COMP, Completed, 51073, Quarterly Insp & Certification, SHIPPING, 12400, 3/20/02 1:29 PM, 4, BEDFORD
+COMP, Completed, 51074, Quarterly Insp & Certification, SHIPPING, 12400, 6/18/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51075, Quarterly Insp & Certification, SHIPPING, 12400, 9/16/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51076, Quarterly Insp & Certification, SHIPPING, 12400, 12/15/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51077, Quarterly Insp & Certification, SHIPPING, 12400, 6/12/05 1:30 PM, 4, BEDFORD
+COMP, Completed, 51078, Quarterly Insp & Certification, SHIPPING, 12400, 6/13/03 1:30 PM, 4, BEDFORD
+COMP, Completed, 51081, Quarterly Insp & Certification, SHIPPING, 12210, 9/28/01 1:30 PM, 4, BEDFORD
+COMP, Completed, 51082, Quarterly Insp & Certification, SHIPPING, 12210, 12/27/01 1:30 PM, 4, BEDFORD
+COMP, Completed, 51083, Quarterly Insp & Certification, SHIPPING, 12210, 3/27/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51084, Quarterly Insp & Certification, SHIPPING, 12210, 6/25/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51085, Quarterly Insp & Certification, SHIPPING, 12210, 9/23/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51086, Quarterly Insp & Certification, SHIPPING, 12210, 12/22/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51087, Quarterly Insp & Certification, SHIPPING, 12210, 3/22/03 1:30 PM, 4, BEDFORD
+COMP, Completed, 51088, Quarterly Insp & Certification, SHIPPING, 12210, 6/20/03 1:30 PM, 4, BEDFORD
+COMP, Completed, 51091, Quarterly Insp & Certification, SHIPPING, 12510, 10/8/01 1:30 PM, 4, BEDFORD
+COMP, Completed, 51092, Quarterly Insp & Certification, SHIPPING, 12510, 1/6/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51093, Quarterly Insp & Certification, SHIPPING, 12510, 4/6/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51094, Quarterly Insp & Certification, SHIPPING, 12510, 7/5/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51095, Quarterly Insp & Certification, SHIPPING, 12510, 10/3/02 1:30 PM, 4, BEDFORD
+COMP, Completed, 51096, Quarterly Insp & Certification, SHIPPING, 12510, 1/1/03 1:30 PM, 4, BEDFORD
+COMP, Completed, 51097, Quarterly Insp & Certification, SHIPPING, 12510, 7/19/05 1:30 PM, 4, BEDFORD
+COMP, Completed, 51098, Quarterly Insp & Certification, SHIPPING, 12510, 9/17/05 1:30 PM, 4, BEDFORD
+COMP, Completed, 6000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+COMP, Completed, 6001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+COMP, Completed, 6002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 3, BEDFORD
+COMP, Completed, 6003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 1, BEDFORD
+COMP, Completed, 6004, Feeder Jammed, BPM3100, 13110, NULL, 2, BEDFORD
+COMP, Completed, 6005, Check-out Leaking, BPM3100, 13145, NULL, 2, BEDFORD
+COMP, Completed, 6006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 2, BEDFORD
+COMP, Completed, 6007, Air Filter - Check-out, BOILER, NULL, NULL, 2, BEDFORD
+COMP, Completed, 6008, Fire Door Cable Broken, BOILER, NULL, NULL, 1, BEDFORD
+COMP, Completed, 6009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, 12/18/01 5:13 PM, 2, BEDFORD
+COMP, Completed, 6010, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, 1/23/02 8:04 AM, 2, BEDFORD
+COMP, Completed, 6011, HVAC Quarterly Inspections & Certification, BR200, 11200, 1/19/02 12:00 AM, 2, BEDFORD
+COMP, Completed, 6012, Compressor Quarterly Inspection and Certification, BR300, 11300, 2/8/02 12:00 AM, 2, BEDFORD
+COMP, Completed, 6013, Burner Quarterly Inspection and Certification, BR460, 11460, 2/8/02 5:31 AM, 2, BEDFORD
+COMP, Completed, 6014, Crane Quarterly Inspection and Certification, SHIPPING, 12210, 2/8/02 5:31 AM, 2, BEDFORD
+COMP, Completed, 6015, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, 2/8/02 5:31 AM, 2, BEDFORD
+COMP, Completed, 6016, Vents Blowing Warm Air, CONF200, NULL, 1/5/00 10:10 PM, 3, BEDFORD
+COMP, Completed, 7000, FUEL STORAGE PROJECT, NEEDHAM, NULL, 3/28/99 10:00 AM, 6, BEDFORD
+COMP, Completed, 7100, Design and Procurement - Phase 1, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+COMP, Completed, 7110, Service building, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+COMP, Completed, 7111, Modification engineering, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+COMP, Completed, 7112, Detailed engineering, NEEDHAM, NULL, 3/28/99 7:00 PM, 5, BEDFORD
+COMP, Completed, 7113, Modifications procurement, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7114, Structural steel procurement, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7115, Bid and award construction contract, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7130, Hoists and cranes, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7131, Hoists and cranes procurement, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7132, Fabrication/delivery of 20 ton crane, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7133, Fabrication/delivery of 30 ton crane, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7134, Fabrication/delivery of 3 ton monorail, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7150, Canisters, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7151, Technical specifications, OFFICE, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7152, Canister drawings, NEEDHAM, NULL, 3/30/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7153, Canister engineering, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7154, Design manual, NEEDHAM, NULL, 4/1/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7170, Fuel handling system, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7171, Design description/design manual, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7172, Design detail drawings, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7173, Technical specifications, NEEDHAM, NULL, 3/29/99 8:00 AM, 5, BEDFORD
+COMP, Completed, 7174, Static analysis, NEEDHAM, NULL, 3/29/99 4:00 PM, 5, BEDFORD
+COMP, Completed, 7175, Dynamic analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7176, Pressure analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7177, Thermal analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7178, Container procurement, NEEDHAM, NULL, 3/30/99 8:00 AM, 5, BEDFORD
+COMP, Completed, 7179, Engineering quotation request prep, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7180, Commercial bid package prep, NEEDHAM, NULL, 3/30/99 4:00 PM, 5, BEDFORD
+COMP, Completed, 7181, Quotation, NEEDHAM, NULL, 3/31/99 4:00 PM, 5, BEDFORD
+COMP, Completed, 7182, Commercial bid evaluation, NEEDHAM, NULL, 4/1/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7183, Engineering bid evaluation, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7184, Bid approval, NEEDHAM, NULL, 4/1/99 4:00 PM, 5, BEDFORD
+COMP, Completed, 7185, Purchase order placed, NEEDHAM, NULL, 4/2/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7186, Fabrication, NEEDHAM, NULL, 4/2/99 8:00 AM, 5, BEDFORD
+COMP, Completed, 7187, Procurement quality assurance, NEEDHAM, NULL, 4/2/99 4:00 PM, 5, BEDFORD
+COMP, Completed, 7188, Acceptance, NEEDHAM, NULL, 4/3/99 12:00 AM, 5, BEDFORD
+COMP, Completed, 7189, Delivery, NEEDHAM, NULL, 4/3/99 8:00 AM, 5, BEDFORD
+COMP, Completed, 7200, Contruction - Phase 2, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7210, Service building, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7211, Building equipment commissioning, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7212, Service building construction, NEEDHAM, NULL, 3/29/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7213, Mechanical and electrical installation, NEEDHAM, NULL, 3/31/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7214, Service building commissioning, NEEDHAM, NULL, 4/2/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7215, Mechanical equipment commissioning, NEEDHAM, NULL, 4/3/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7230, Storage site, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7231, Storage site commissioning, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7232, HVAC inspection & preparation, NEEDHAM, NULL, 3/29/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7233, Fabrication liners, NEEDHAM, NULL, 3/31/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7234, Crane inspection, NEEDHAM, NULL, 4/2/99 4:00 PM, 7, BEDFORD
+COMP, Completed, 7235, Canister construction/installation, NEEDHAM, NULL, 4/3/99 12:00 AM, 7, BEDFORD
+COMP, Completed, 7300, Tool Installation - Phase 3, NEEDHAM, NULL, 3/28/99 8:00 PM, 9, BEDFORD
+COMP, Completed, 7310, Chute and trolley system, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7311, System engineering, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7312, Detail drawings, NEEDHAM, NULL, 3/29/99 4:00 PM, 9, BEDFORD
+COMP, Completed, 7313, Operating and maintenance manual, NEEDHAM, NULL, 3/31/99 4:00 PM, 9, BEDFORD
+COMP, Completed, 7314, Installation procedures, NEEDHAM, NULL, 4/2/99 4:00 PM, 9, BEDFORD
+COMP, Completed, 7315, Design completion, NEEDHAM, NULL, 4/3/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7330, Fuel handling tools, NEEDHAM, NULL, 3/28/99 8:00 PM, 9, BEDFORD
+COMP, Completed, 7331, Engineering and layout drawings, BR300, 11300, 3/28/99 8:00 PM, 9, BEDFORD
+COMP, Completed, 7332, Install latches and dowels, NEEDHAM, NULL, 3/29/99 4:00 PM, 9, BEDFORD
+COMP, Completed, 7333, Install turntable, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7334, Install transfer table, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7335, Build out-bay work platform, NEEDHAM, NULL, 3/30/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7336, Install tool rack, NEEDHAM, NULL, 3/30/99 4:00 PM, 9, BEDFORD
+COMP, Completed, 7337, Build/install in-bay covers, NEEDHAM, NULL, 3/31/99 8:00 AM, 9, BEDFORD
+COMP, Completed, 7338, Install manual grapples, NEEDHAM, NULL, 4/1/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7339, Install pneumatic grapples, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7340, Install flask grapples, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7341, Install inspection telescope, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7342, Install lay-down drip tray, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7343, Install high range gamma meter, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7344, Review tools controls drawings, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 7345, Perform in-bay table seismic analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+COMP, Completed, 91091, 11450 BREAKDOWN, BR450, 11450, 10/12/01 3:45 PM, 1, BEDFORD
+COMP, Completed, T1074, Interview eyewitnesses or affected person., NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, T1074, Interview eyewitnesses or affected person., NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, T1075, Determine root cause of near miss., NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, T1075, Determine root cause of near miss., NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, T1076, Put Measures in place to avoid future re-occurrence., NULL, NULL, NULL, 2, BEDFORD
+COMP, Completed, T1102, Clean up  areas., NULL, NULL, NULL, 3, BEDFORD
+COMP, Completed, T1103, Provide cleaning supplies to employees., NULL, NULL, NULL, 3, BEDFORD
+INPRG, In Progress, 1004, Generator Overhaul, BR230, 11230, NULL, 1, BEDFORD
+INPRG, In Progress, 1009, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, NULL, 8, BEDFORD
+INPRG, In Progress, 1222, Fire door not working K-15, NULL, NULL, NULL, 2, BEDFORD
+INPRG, In Progress, 2004, Feeder Jammed, BPM3100, 13110, NULL, 8, BEDFORD
+WAPPR, Waitng on Approval, 1000, Relocate Guard Rails Around Compressor, BR300, 11300, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 1008, Repair Damaged Conduit Feeding Generator, BR230, 11230, NULL, 7, BEDFORD
+WAPPR, Waitng on Approval, 1018, Paint Guard Rail Around #1 Fan, BR210, 11210, NULL, 4, BEDFORD
+WAPPR, Waitng on Approval, 1221, Centrifugal Pump Service- 12 Month, NULL, NULL, NULL, 8, BEDFORD
+WAPPR, Waitng on Approval, 1246, NULL, MOFLOOR1, 1001, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 2000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 2001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 2002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 2003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 2005, Check-out Leaking, BPM3100, 13145, NULL, 8, BEDFORD
+WAPPR, Waitng on Approval, 2006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 2007, Air Filter - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 2008, Fire Door Cable Broken, BOILER, NULL, NULL, 8, BEDFORD
+WAPPR, Waitng on Approval, 2009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 4050, Service Call - Manhole Overflow, BLK2000, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 4051, Visual Inspection for Sanitary Line, SAN101, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 4202, Fire Extinguisher Inspection, NULL, NULL, NULL, 6, BEDFORD
+WAPPR, Waitng on Approval, 5000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 5001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 5002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 1, BEDFORD
+WAPPR, Waitng on Approval, 5003, Scale Calibration on Dock Mis-reading, SHIPPING, NULL, NULL, 1, BEDFORD
+WAPPR, Waitng on Approval, 5004, Feeder Jammed, BPM3100, 13110, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 5005, Check-out Leaking, BPM3100, 13145, NULL, 4, BEDFORD
+WAPPR, Waitng on Approval, 5006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 5007, Air Filter - Check-out, BOILER, NULL, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 5008, Fire Door Cable Broken, BOILER, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 5009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 5010, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, NULL, 5, BEDFORD
+WAPPR, Waitng on Approval, 5011, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 5012, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 4, BEDFORD
+WAPPR, Waitng on Approval, 5013, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 4, BEDFORD
+WAPPR, Waitng on Approval, 5014, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 4, BEDFORD
+WAPPR, Waitng on Approval, 5015, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 6000, Window Broken in Shipping Dept., SHIPPING, NULL, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 6001, Ventilation Fan - Check-out Noise, SHIPPING, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 6002, Stop Guard on Shipping Dock, SHIPPING, NULL, NULL, 3, BEDFORD
+WAPPR, Waitng on Approval, 6004, Feeder Jammed, BPM3100, 13110, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 6005, Check-out Leaking, BPM3100, 13145, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 6006, Check-out Alignment of Steel Support Bracket, BPM3100, 13143, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 6007, Air Filter - Check-out, BOILER, NULL, NULL, 2, BEDFORD
+WAPPR, Waitng on Approval, 6008, Fire Door Cable Broken, BOILER, NULL, NULL, 1, BEDFORD
+WAPPR, Waitng on Approval, 6009, Ventilator in Boiler Room Making Noise - Check-out, BOILER, NULL, 12/18/01 5:13 PM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6010, 12 Month Service on Shipping Dept #2 Conveyor, SHIPPING, 12700, 1/23/02 8:04 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6011, HVAC Quarterly Inspections & Certification, BR200, 11200, 1/19/02 12:00 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6012, Compressor Quarterly Inspection and Certification, BR300, 11300, 2/8/02 12:00 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6013, Burner Quarterly Inspection and Certification, BR460, 11460, 2/8/02 5:31 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6014, Crane Quarterly Inspection and Certification, SHIPPING, 12210, 2/8/02 5:31 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6015, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, 2/8/02 5:31 AM, 2, BEDFORD
+WAPPR, Waitng on Approval, 6016, Vents Blowing Warm Air, CONF200, NULL, 1/5/00 10:10 PM, 3, BEDFORD
+WAPPR, Waitng on Approval, 7000, FUEL STORAGE PROJECT, NEEDHAM, NULL, 3/28/99 10:00 AM, 6, BEDFORD
+WAPPR, Waitng on Approval, 7100, Design and Procurement - Phase 1, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7110, Service building, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7111, Modification engineering, NEEDHAM, NULL, 3/28/99 10:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7112, Detailed engineering, NEEDHAM, NULL, 3/28/99 7:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7113, Modifications procurement, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7114, Structural steel procurement, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7115, Bid and award construction contract, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7130, Hoists and cranes, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7131, Hoists and cranes procurement, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7132, Fabrication/delivery of 20 ton crane, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7133, Fabrication/delivery of 30 ton crane, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7134, Fabrication/delivery of 3 ton monorail, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7150, Canisters, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7151, Technical specifications, OFFICE, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7152, Canister drawings, NEEDHAM, NULL, 3/30/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7153, Canister engineering, NEEDHAM, NULL, 3/31/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7154, Design manual, NEEDHAM, NULL, 4/1/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7170, Fuel handling system, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7171, Design description/design manual, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7172, Design detail drawings, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7173, Technical specifications, NEEDHAM, NULL, 3/29/99 8:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7174, Static analysis, NEEDHAM, NULL, 3/29/99 4:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7175, Dynamic analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7176, Pressure analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7177, Thermal analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7178, Container procurement, NEEDHAM, NULL, 3/30/99 8:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7179, Engineering quotation request prep, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7180, Commercial bid package prep, NEEDHAM, NULL, 3/30/99 4:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7181, Quotation, NEEDHAM, NULL, 3/31/99 4:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7182, Commercial bid evaluation, NEEDHAM, NULL, 4/1/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7183, Engineering bid evaluation, NEEDHAM, NULL, 3/29/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7184, Bid approval, NEEDHAM, NULL, 4/1/99 4:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7185, Purchase order placed, NEEDHAM, NULL, 4/2/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7186, Fabrication, NEEDHAM, NULL, 4/2/99 8:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7187, Procurement quality assurance, NEEDHAM, NULL, 4/2/99 4:00 PM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7188, Acceptance, NEEDHAM, NULL, 4/3/99 12:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7189, Delivery, NEEDHAM, NULL, 4/3/99 8:00 AM, 5, BEDFORD
+WAPPR, Waitng on Approval, 7200, Contruction - Phase 2, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7210, Service building, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7211, Building equipment commissioning, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7212, Service building construction, NEEDHAM, NULL, 3/29/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7213, Mechanical and electrical installation, NEEDHAM, NULL, 3/31/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7214, Service building commissioning, NEEDHAM, NULL, 4/2/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7215, Mechanical equipment commissioning, NEEDHAM, NULL, 4/3/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7230, Storage site, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7231, Storage site commissioning, NEEDHAM, NULL, 3/29/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7232, HVAC inspection & preparation, NEEDHAM, NULL, 3/29/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7233, Fabrication liners, NEEDHAM, NULL, 3/31/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7234, Crane inspection, NEEDHAM, NULL, 4/2/99 4:00 PM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7235, Canister construction/installation, NEEDHAM, NULL, 4/3/99 12:00 AM, 7, BEDFORD
+WAPPR, Waitng on Approval, 7300, Tool Installation - Phase 3, NEEDHAM, NULL, 3/28/99 8:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7310, Chute and trolley system, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7311, System engineering, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7312, Detail drawings, NEEDHAM, NULL, 3/29/99 4:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7313, Operating and maintenance manual, NEEDHAM, NULL, 3/31/99 4:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7314, Installation procedures, NEEDHAM, NULL, 4/2/99 4:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7315, Design completion, NEEDHAM, NULL, 4/3/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7330, Fuel handling tools, NEEDHAM, NULL, 3/28/99 8:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7331, Engineering and layout drawings, BR300, 11300, 3/28/99 8:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7332, Install latches and dowels, NEEDHAM, NULL, 3/29/99 4:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7333, Install turntable, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7334, Install transfer table, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7335, Build out-bay work platform, NEEDHAM, NULL, 3/30/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7336, Install tool rack, NEEDHAM, NULL, 3/30/99 4:00 PM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7337, Build/install in-bay covers, NEEDHAM, NULL, 3/31/99 8:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7338, Install manual grapples, NEEDHAM, NULL, 4/1/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7339, Install pneumatic grapples, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7340, Install flask grapples, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7341, Install inspection telescope, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7342, Install lay-down drip tray, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7343, Install high range gamma meter, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7344, Review tools controls drawings, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, 7345, Perform in-bay table seismic analysis, NEEDHAM, NULL, 3/29/99 12:00 AM, 9, BEDFORD
+WAPPR, Waitng on Approval, T1102, Clean up  areas., NULL, NULL, NULL, 3, BEDFORD
+WMATL, Waitng on Material, 1045, Replace broken office window, OFF103, NULL, NULL, 2, BEDFORD
+WSCH, Waitng to be Scheduled, 1020, Generator Overhaul, BR230, 11230, 4/22/02 9:51 AM, 2, BEDFORD
+WSCH, Waitng to be Scheduled, 1021, Conveyor Overhaul- Conveyor #2, SHIPPING, 12700, NULL, 8, BEDFORD
+WSCH, Waitng to be Scheduled, 1022, Electric Cart Tune-Up, SHIPPING, 12300, NULL, 3, BEDFORD
+WSCH, Waitng to be Scheduled, 1023, Conveyor Overhaul- Conveyor #1, SHIPPING, 12600, NULL, 8, BEDFORD
+WSCH, Waitng to be Scheduled, 1024, Condensate Return Pump Quarterly Service, BR430, 11430, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1025, Conveyor Overhaul- Pkg. Dept., BPM3100, 13140, NULL, 8, BEDFORD
+WSCH, Waitng to be Scheduled, 1026, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1027, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1028, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1029, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 7, BEDFORD
+WSCH, Waitng to be Scheduled, 1030, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 7, BEDFORD
+WSCH, Waitng to be Scheduled, 1031, Top Breaker Quarterly Inspection and Certification, BPM3100, 13150, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1032, Feeder System Inspection and Certification, BPM3100, 13110, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1033, Filler/Lifter System Inspection and Certification, BPM3100, 13160, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1034, Bottom Sealing System Inspection and Certification, BPM3100, 13120, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1035, PKG Dept. Elevator Inspections & Certification, BPM3100, 13141, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 1235, Maintenance of WINS and DHCP Server, SHIPPING, NULL, NULL, 12, BEDFORD
+WSCH, Waitng to be Scheduled, 3001, HVAC Quarterly Inspections & Certification, BR200, 11200, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3002, Compressor Quarterly Inspection and Certification, BR300, 11300, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3003, Burner Quarterly Inspection and Certification, BR460, 11460, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3004, Crane Quarterly Inspection and Certification, SHIPPING, 12210, NULL, 7, BEDFORD
+WSCH, Waitng to be Scheduled, 3005, Forklift #1 Quarterly Inspection and Certification, SHIPPING, 12100, NULL, 7, BEDFORD
+WSCH, Waitng to be Scheduled, 3006, Top Breaker Quarterly Inspection and Certification, BPM3100, 13150, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3007, Feeder System Inspection and Certification, BPM3100, 13110, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3008, Filler/Lifter System Inspection and Certification, BPM3100, 13160, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3009, Bottom Sealing System Inspection and Certification, BPM3100, 13120, NULL, 9, BEDFORD
+WSCH, Waitng to be Scheduled, 3010, Forklift #2 Quarterly Inspection and Certification, SHIPPING, 12400, NULL, 7, BEDFORD
+WSCH, Waitng to be Scheduled, 3011, PKG Dept. Elevator Inspections & Certification, BPM3100, 13141, NULL, 9, BEDFORD

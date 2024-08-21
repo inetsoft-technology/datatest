@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 8)
+ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, RESELLER, STATE, ZIP
+1230 Hoes Lane, New York, Old World Insurance, 7, 1, 0, NY, 08854
+123 Summer Rd., Middletown, Daycare One, 2, 1, 0, NJ, 09882
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322
+389 Jardim Rd., Baltimore, George Services, 5, 1, 0, MD, 82938
+4500 River Rd., San Francisco, Direct Sales, 9, 2, 1, CA, 08854
+5 Baker's Lane, Hartford, Loctite Corp., 6, 1, 0, CT, 39283
+71 Mulberry St., Denver, Quick Stop, 8, 2, 0, CO, 98839
+7262 18th St., New York, Eastern Data, 3, 1, 0, NY, 03887
+88 Rio Grand Ave., Boulder, Ernst Handel, 4, 2, 1, CO, 38923
+88 Specialty Dr., Chicago, Specialty Retail, 10, 2, 1, IL, 88938

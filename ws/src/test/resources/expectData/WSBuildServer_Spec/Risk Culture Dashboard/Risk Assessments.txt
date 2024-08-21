@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 13)
+Period, Total, PeriodStart, PeriodEnd, Period_1, Period_2, Risk Refreshes, Period_3, High Refreshes, Period_4, Average Refreshes, Average High Refreshes, High Total
+12M, 49, 2018-10-01 00:00:00, 2019-10-01 00:00:00, 12M, 12M, 48, 12M, 45, 12M, 0.9796, 0.9796, 47
+1M, 60, 2019-10-01 00:00:00, 2020-10-01 00:00:00, 1M, 1M, 18, 1M, 12, 1M, 0.3, 0.3, 53
+3M, 60, 2020-07-01 00:00:00, 2020-10-01 00:00:00, 3M, 3M, 1, 3M, 1, 3M, 0.0167, 0.0167, 53

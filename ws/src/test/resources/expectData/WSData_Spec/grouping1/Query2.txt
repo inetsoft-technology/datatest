@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 2)
+Year(order_date), RESELLER
+2002, false
+2002, g_true

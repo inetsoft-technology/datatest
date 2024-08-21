@@ -1,0 +1,418 @@
+The table size(row x col) is:(417 x 2)
+Id, Name
+100007, System or Hardware Failure
+100040, Member/Customer Growth Inadequate
+100041, Strategy Execution Risk
+100042, Product Offering Uncompetitive
+100043, Harassment, Bullying or Discrimination
+100044, Employee injury
+100045, Customer or contractor injury
+100046, Payroll calculations incorrect
+100047, Unfair dismissal
+100048, Supplier Payment Fraud
+100049, Unauthorised Data Access
+100050, Loan, Deposit or Credit Card Fraud
+100051, Asset Theft
+100052, Armed Hold Up
+100053, Head Office or Store Damage
+100054, Technology Equipment Damage
+100055, Key Software Failure
+100056, Key Server or Hardware Failure
+100057, Power Failure
+100058, Head Office Unavailability
+100059, Unauthorised System Activity
+100060, Audit Items not Followed Up
+100061, Payments to Wrong Supplier
+100062, Contracts unfavourable
+100063, Third party failure
+100064, Model Errors
+100065, Non Compliance with Privacy Laws
+100066, Non-Compliance with Work Health and Safety Acts
+100067, Non Compliance with Prudential/Accounting Standards
+100068, Non Compliance with Competition and Consumer Law
+100069, Non Compliance with Corporations Act
+100080, Inadequate insurance coverage
+100081, Unauthorised collection, dissemination and maintenance of sensitive / personal information
+100082, Staff bullying or misconduct
+100083, High Staff Turnover
+100084, Unauthorized access to sensitive and employee data
+100087, Unsatisfied or unhappy customers
+100088, Inappropriate financial advice given to customers
+100089, Unauthorised statements provided to media
+100100, Misleading information in marketing materials
+100101, Marketing material distributed externally contains errors
+100102, Marketing material disributed externally is non compliant with privacy and consumer law
+100104, Negative social media exposure
+100105, Poor recruitment and selection process
+100106, Breach of employment legislation / regulations
+100107, Data breach
+100108, External market or competitor threats
+100109, Product innovation risk
+100110, Merger and acquisition risk
+100111, Geographic expansion risk
+100112, Customer growth or operating model unsustainable
+100114, External cyber attacks, virus, malware and denial of service
+100115, Key software unavailability
+100116, Internet, telecommunications and other public utility outage
+100117, Key hardware failure - servers, routers, switches
+100120, Failure of third party service provider (OLD - still linked to compl.obl.))
+100121, Unavailability of systems, services or data
+100123, Continuous disclosure
+100124, Unauthorised transfer or disclosure of data
+100126, Breach of Privacy Laws
+100127, Unauthorised collection and or dissemination of personal information
+100128, Collection and retention of member or customer information that is not required
+100129, Personal information retainerd is outdated or contains errors
+100140, Theft of cash or assets
+100142, Rogue trading
+100143, Erroneous trading positions
+100144, Misuse of models and spreadsheets
+100145, Erroneous financial position reporting
+100147, Failed or late payments
+100148, Unauthorized payments
+100149, Misselling
+100150, Wholesale counterparty credit default
+100151, Inaccurate information used for decision making
+100152, Transaction processing errors
+100153, Pricing errors
+100154, Model risk
+100155, Inappropriate customer service
+100156, Unavailability of CRM systems
+100157, Regulatory change
+100158, External fraud
+100159, Deteriorating staff morale and behaviours
+100160, Unauthorised staff activity
+100161, Data compromise
+100162, IT change management failure
+100163, Unavailability of IT systems, services or data
+100164, Failure of third party service providers
+100165, Misleading marketing material
+100166, Product flaws
+100167, Unauthorized or inappropriate advice
+100169, Errors in the unit pricing process
+100170, Payment errors
+100171, Transaction processing errors (excl. payments)
+100172, Fraudulent payments
+100173, Inaccurate information used for decision making
+100174, Model risk
+100175, Inappropriate customer service
+100176, Unauthorized or inappropriate advice
+100177, Inappropriate or misleading advice incl. mis-selling
+100178, Unavailability of CRM systems
+100179, Failure to manage Corporate Actions on behalf of customers
+100180, Unauthorised access to customer data
+100181, Unauthorised disclosure to media
+100183, Negative social media exposure
+100184, Armed hold-up, physical threat or injury
+100200, Poor selection and prioritisation of key projects
+100201, Failure to effectively manage IT change
+100202, Project delivery and implementation
+100203, Competitor positioning
+100204, Natural disasters and terrorist events
+100205, Key personnel risk
+100206, Corporate culture
+100207, Deteriorating investor sentiment
+100208, Regulatory change
+100209, Brand damage
+100221, Poor execution of mergers, acquisitions or divestitures.
+100222, Failure of internal governance processes
+100223, Anti-money laundering / Counter-terrorism financing (AML/CTF)
+100261, Interest rate risk
+100262, Foreign exchange rate risk
+100320, Anti-bribery and corruption
+100340, Scope creep
+100341, Incorrect budget estimate
+100342, Resistance to change
+100343, Technology integration failure
+100344, Insufficient resources
+100345, Contractor failure
+100346, Contract dispute
+100347, Delay of project dependency
+100348, Invalid project assumptions
+100349, Failure of supplier
+100350, Resistance to change
+100380, Inappropriate financial advice given to customers
+100381, Negligent or careless actions by employees
+100382, Non compliance with regulatory requirements
+100383, Breach of market conduct
+100384, Delegation authorities exceeded
+100385, Soil erosion
+100386, Spills - Vapour discharge
+100387, Spills - Chemical discharge
+100389, Slips, Trips or Fall of a Person
+100422, Retail counterpary credit default
+100424, Credit risk
+100425, Market and investment risk
+100426, Environmental risk
+100427, Employment practices and safety risk
+100428, Criminal activity risk
+100429, Execution and process risk
+100430, Technology risk - cyber attacks, disruption, data breach
+100431, Strategic risk - wrong strategy or poor execution
+100433, Product risk
+100434, Third party supplier risk
+100435, Conduct risk
+100436, Project risk
+100437, Product risk
+100438, Regulatory and legislative risk
+100439, Brand risk
+100440, Insurance risk
+100441, SG Fleet Loss of Key Personnel
+100460, Brand damage
+100461, Head Office Unavailability
+100462, Customer growth or operating model unsustainable
+100463, Scope creep
+100464, Negative social media exposure
+100465, Strategy Execution Risk
+100466, Poor selection and prioritisation of key projects
+100467, Transaction processing errors (excl. payments)
+100468, Foreign exchange rate risk
+100469, Marketing material disributed externally is non compliant with privacy and consumer law
+100470, Non Compliance with Privacy Laws
+100471, Unauthorised staff activity
+100472, IT change management failure
+100473, System or Hardware Failure
+100474, Conduct risk
+100475, Inappropriate customer service
+100476, Loan, Deposit or Credit Card Fraud
+100477, External market or competitor threats
+100478, Model risk
+100479, Retail counterpary credit default
+100480, Unavailability of IT systems, services or data
+100481, Anti-bribery and corruption
+100482, Staff bullying or misconduct
+100483, Non-Compliance with Work Health and Safety Acts
+100484, Contractor failure
+100485, Asset Theft
+100486, Inappropriate financial advice given to customers
+100487, Interest rate risk
+100488, Unauthorised Data Access
+100489, Invalid project assumptions
+100490, Product Offering Uncompetitive
+100491, Erroneous trading positions
+100492, Unauthorised transfer or disclosure of data
+100493, Regulatory and legislative risk
+100494, Failure of supplier
+100495, Data compromise
+100496, Slip, trip or fall
+100497, Employee injury
+100498, Third party failure
+100499, Credit risk
+100500, Poor execution of mergers, acquisitions or divestitures.
+100501, Collection and retention of member or customer information that is not required
+100502, Technology risk - cyber attacks, disruption, data breach
+100503, Project delivery and implementation
+100504, Failure to effectively manage IT change
+100505, Deteriorating investor sentiment
+100506, Unauthorised collection and or dissemination of personal information
+100507, Resistance to change
+100508, Model Errors
+100509, Breach of market conduct
+100510, Armed Hold Up
+100511, Market and investment risk
+100512, Misleading information in marketing materials
+100513, Non Compliance with Competition and Consumer Law
+100514, Erroneous financial position reporting
+100515, Harassment, Bullying or Discrimination
+100516, External cyber attacks, virus, malware and denial of service
+100517, Product flaws
+100518, Unauthorised access to customer data
+100519, Continuous disclosure
+100520, Unauthorized or inappropriate advice
+100521, Key Server or Hardware Failure
+100522, Non Compliance with Prudential/Accounting Standards
+100523, Brand risk
+100524, Technology Equipment Damage
+100525, Negative social media exposure
+100526, Member/Customer Growth Inadequate
+100527, Unsatisfied or unhappy customers
+100528, Unavailability of CRM systems
+100529, Insufficient resources
+100530, Customer or contractor injury
+100531, High Staff Turnover
+100532, Personal information retainerd is outdated or contains errors
+100533, Failed or late payments
+100534, Misselling
+100535, Unauthorised statements provided to media
+100536, Payments to Wrong Supplier
+100537, Inappropriate or misleading advice incl. mis-selling
+100538, Unauthorized access to sensitive and employee data
+100539, Regulatory change
+100540, Delay of project dependency
+100541, Unavailability of systems, services or data
+100542, Natural disasters and terrorist events
+100543, Product risk
+100544, Soil erosion
+100545, Third party supplier risk
+100546, Contracts unfavourable
+100547, Failure of third party service provider (OLD - still linked to compl.obl.))
+100548, Power Failure
+100549, Supplier Payment Fraud
+100550, Fraudulent payments
+100551, Key hardware failure - servers, routers, switches
+100552, Employment practices and safety risk
+100553, Errors in the unit pricing process
+100554, Competitor positioning
+100555, Internet, telecommunications and other public utility outage
+100556, Armed hold-up, physical threat or injury
+100557, Failure to manage Corporate Actions on behalf of customers
+100558, Product innovation risk
+100559, Poor recruitment and selection process
+100560, Head Office or Store Damage
+100561, Audit Items not Followed Up
+100562, Theft of cash or assets
+100563, Criminal activity risk
+100564, Project risk
+100565, Unauthorised disclosure to media
+100566, Model risk
+100567, Rogue trading
+100568, External fraud
+100569, Key software unavailability
+100570, Payment errors
+100571, Breach of Privacy Laws
+100572, Strategic risk - wrong strategy or poor execution
+100573, Non Compliance with Corporations Act
+100574, Data breach
+100575, Negligent or careless actions by employees
+100576, Insurance risk
+100577, Unauthorised collection, dissemination and maintenance of sensitive / personal information
+100578, Unauthorized payments
+100579, Contract dispute
+100580, Misuse of models and spreadsheets
+100581, Non compliance with regulatory requirements
+100582, Failure of internal governance processes
+100583, Transaction processing errors
+100584, Vapour discharge
+100585, Deteriorating staff morale and behaviours
+100586, Anti-money laundering / Counter-terrorism financing (AML/CTF)
+100587, Unauthorised System Activity
+100588, Wholesale counterparty credit default
+100589, Merger and acquisition risk
+100590, Unavailability of CRM systems
+100591, SG Fleet Loss of Key Personnel
+100592, Inappropriate financial advice given to customers
+100593, Resistance to change
+100594, Marketing material distributed externally contains errors
+100595, Toxic discharge to land
+100596, Unauthorized or inappropriate advice
+100597, Regulatory change
+100598, Inadequate insurance coverage
+100599, Misleading marketing material
+100600, Corporate culture
+100601, Execution and process risk
+100602, Unfair dismissal
+100603, Product risk
+100604, Payroll calculations incorrect
+100605, Incorrect budget estimate
+100606, Inappropriate customer service
+100607, Delegation authorities exceeded
+100608, Environmental risk
+100609, Technology integration failure
+100610, Geographic expansion risk
+100611, Pricing errors
+100612, Inaccurate information used for decision making
+100613, Breach of employment legislation / regulations
+100614, Key Software Failure
+100615, Failure of third party service providers
+100616, Inaccurate information used for decision making
+100617, Key personnel risk
+100707, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100708, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100709, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100710, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100711, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information (including University IP)
+100712, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information (including University IP)
+100713, Incorrect, incomplete, conflicting or untimely information provided to a critical stakeholder
+100714, Incorrect, incomplete, conflicting or untimely information provided to a critical stakeholder
+100715, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically
+100716, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically
+100717, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy
+100718, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy
+100719, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically
+100720, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically
+100721, Incorrect information provided to rankings organisation (not deliberate)
+100722, Incorrect information provided to rankings organisation (not deliberate)
+100723, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically
+100724, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy
+100725, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically
+100726, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically
+100727, Heat, Electricity and Other Environmental
+100728, Annual review of fire extinguishers
+100729, Failure to review fire extinguishers
+100760, Hitting Objects With Part of the Body
+100761, Falling down the stairs
+100800, Technology risk - cyber attacks, disruption, data breach
+100801, Insurance risk
+100802, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100803, Adverse event affecting attractiveness of Australia or South Australia to International students generally
+100805, Strategic risk - wrong strategy or poor execution
+100807, Fire related injury
+100881, Fire
+100882, Explosion
+100883, Mental Stress
+100884, Electrocution
+100885, Sound and Pressure
+100886, Gas Poisoning
+100887, Hazardous Gas Leak
+100888, Chemicals and Other Substances
+100889, Hazardous Chemical Spill
+100891, Hazardous Chemical Spill
+100892, Being Hit by Moving Objects
+100893, Crushing
+100894, Crushing
+100895, Slip, Trip or Fall
+100896, Crush or Cut
+100897, Biological Factors
+100898, Virus or Disease
+100899, Virus or Disease
+100900, Asphyxiation
+100901, Chemical Burn
+100902, Body Stressing
+100903, Manual Lifting, Pulling, Pushing
+100904, Heat, Electricity and Other Environmental
+100914, Chemicals and Other Substances
+100915, Being Hit by Moving Objects
+100916, Biological Factors
+100917, Slip, Trip or Fall
+100918, Chemicals and Other Substances
+100919, Heat, Electricity and Other Environmental
+100920, Sound and Pressure
+100921, Body Stressing
+100922, Hitting Objects With Part of the Body
+100923, Mental Stress
+100924, Other and Unspecified Mechanisms of Incident
+100925, Other and Unspecified Mechanisms of Incident
+100926, Other and Unspecified Mechanisms of Incident
+100927, Slips, Trips or Fall of a Person
+100946, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+100947, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+100948, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+100952, Inappropriate financial advice given to customers
+100953, Inappropriate financial advice given to customers
+100954, Inappropriate financial advice given to customers
+100960, Soil erosion
+100961, Soil erosion
+100962, Spills - vapour discharge
+100963, Spills - vapour discharge
+100964, Spills - chemical discharge
+100965, Spills - chemical discharge
+100966, Environmental risk
+100967, Environmental risk
+100968, Spills - Water
+100969, Spills - water
+100970, Environmental risk
+100971, Spills - Vapour discharge
+100972, Spills - Chemical discharge
+100973, Soil erosion
+100974, Spills - Vapour discharge
+100975, Spills - Chemical discharge
+100976, Spills - Water
+100977, Spills - vapour discharge
+100978, Spills - chemical discharge
+100979, Soil erosion
+100980, Environmental risk
+100982, Global Pandemic
+100983, Global Pandemic
+100985, COVID-19 Infection
+100986, COVID-19 Infection
+101000, COVID-19 Infection

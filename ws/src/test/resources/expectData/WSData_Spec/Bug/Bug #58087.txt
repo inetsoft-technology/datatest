@@ -1,0 +1,62 @@
+The table size(row x col) is:(61 x 4)
+Country Name, Year, AccessPercentage, YearWithType
+Arab World, 2014, 30.47, 2014-01-01
+Arab World, 2017, 37.23, 2017-01-01
+Arab World, 2021, 40.21, 2021-01-01
+East Asia & Pacific, 2014, 71.86, 2014-01-01
+East Asia & Pacific, 2017, 73.39, 2017-01-01
+East Asia & Pacific, 2021, 82.85, 2021-01-01
+East Asia & Pacific (excluding high income), 2014, 68.92, 2014-01-01
+East Asia & Pacific (excluding high income), 2017, 70.37, 2017-01-01
+East Asia & Pacific (excluding high income), 2021, 80.78, 2021-01-01
+Euro area, 2014, 94.68, 2014-01-01
+Euro area, 2017, 95.3, 2017-01-01
+Euro area, 2021, 98.51, 2021-01-01
+Europe & Central Asia, 2014, 77.79, 2014-01-01
+Europe & Central Asia, 2017, 81.49, 2017-01-01
+Europe & Central Asia, 2021, 89.57, 2021-01-01
+Europe & Central Asia (excluding high income), 2014, 57.56, 2014-01-01
+Europe & Central Asia (excluding high income), 2017, 65.14, 2017-01-01
+Europe & Central Asia (excluding high income), 2021, 77.79, 2021-01-01
+High income, 2014, 92.79, 2014-01-01
+High income, 2017, 93.67, 2017-01-01
+High income, 2021, 96.36, 2021-01-01
+Latin America & Caribbean, 2014, 52.02, 2014-01-01
+Latin America & Caribbean, 2017, 55.24, 2017-01-01
+Latin America & Caribbean, 2021, 73.55, 2021-01-01
+Latin America & Caribbean (excluding high income), 2014, 51.56, 2014-01-01
+Latin America & Caribbean (excluding high income), 2017, 54.49, 2017-01-01
+Latin America & Caribbean (excluding high income), 2021, 72.95, 2021-01-01
+Low & middle income, 2014, 54.99, 2014-01-01
+Low & middle income, 2017, 62.98, 2017-01-01
+Low & middle income, 2021, 71.38, 2021-01-01
+Lower middle income, 2014, 43.7, 2014-01-01
+Lower middle income, 2017, 58.27, 2017-01-01
+Lower middle income, 2021, 62.38, 2021-01-01
+Low income, 2014, 18.74, 2014-01-01
+Low income, 2017, 31.53, 2017-01-01
+Low income, 2021, 38.99, 2021-01-01
+Middle income, 2014, 57.26, 2014-01-01
+Middle income, 2017, 64.86, 2017-01-01
+Middle income, 2021, 72.37, 2021-01-01
+North America, 2014, 94.16, 2014-01-01
+North America, 2017, 93.81, 2017-01-01
+North America, 2021, 95.45, 2021-01-01
+OECD members, 2014, 93.76, 2014-01-01
+OECD members, 2017, 94.46, 2017-01-01
+OECD members, 2021, 97.19, 2021-01-01
+South Asia, 2014, 46.49, 2014-01-01
+South Asia, 2017, 69.46, 2017-01-01
+South Asia, 2021, 67.89, 2021-01-01
+Sub-Saharan Africa, 2014, 34.27, 2014-01-01
+Sub-Saharan Africa, 2017, 42.63, 2017-01-01
+Sub-Saharan Africa, 2021, 55.07, 2021-01-01
+Sub-Saharan Africa (excluding high income), 2014, 34.27, 2014-01-01
+Sub-Saharan Africa (excluding high income), 2017, 42.63, 2017-01-01
+Sub-Saharan Africa (excluding high income), 2021, 55.07, 2021-01-01
+Upper middle income, 2014, 70.93, 2014-01-01
+Upper middle income, 2017, 72.35, 2017-01-01
+Upper middle income, 2021, 84.33, 2021-01-01
+World, 2014, 61.92, 2014-01-01
+World, 2017, 68.5, 2017-01-01
+World, 2021, 76.2, 2021-01-01

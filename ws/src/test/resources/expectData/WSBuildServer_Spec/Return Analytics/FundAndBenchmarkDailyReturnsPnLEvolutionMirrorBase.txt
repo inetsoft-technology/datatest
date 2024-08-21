@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 7)
+position_scenario_date_adjusted, fund_id, fund_compounded_return_pbd, benchmark_1_compounded_return_pbd, benchmark_2_compounded_return_pbd, benchmark_3_compounded_return_pbd, benchmark_4_compounded_return_pbd
+2018-01-01, 450055, 0.2241, 0.3081, 0.265, 0.2316, 0.3653
+2018-01-01, 450230, 0.1558, 0.1803, 0.1808, 0.075, 0.3066
+2018-01-01, 469574, 0.1366, 0.3284, 0.2898, 0.2616, 0.4029
+2018-01-01, 544600, 0, 0.0098, 0.0126, 0.0493, 0.0254

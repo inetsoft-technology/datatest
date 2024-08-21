@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+CUSTOMER_ID, EMPLOYEE_ID, DISCOUNT
+7, 1, 0
+7, 1, 0
+13, 4, 0
+15, 2, 0
+23, 1, 0

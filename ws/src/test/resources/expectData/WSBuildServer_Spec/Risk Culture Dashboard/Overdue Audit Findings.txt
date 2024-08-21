@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Overdue
+12M, 8
+1M, 5
+3M, 1

@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 1)
+state
+CA
+CO
+CT
+MD
+NJ
+NY

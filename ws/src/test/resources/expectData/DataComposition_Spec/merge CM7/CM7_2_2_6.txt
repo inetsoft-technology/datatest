@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 4)
+CATEGORY_ID_1, CATEGORY_ID, REGION_ID, SUPPLIER_ID
+1, 1, 1, 1
+1, 1, 1, 1
+1, 1, 1, 1
+1, 1, 1, 1
+1, 1, 1, 1
+1, 1, 1, 1
+2, 2, 2, 2
+2, 2, 2, 2
+2, 2, 2, 2

@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 1)
+123 Summer Rd.
+09882
+2
+groupContains_e
+Lisa Smith
+NJ

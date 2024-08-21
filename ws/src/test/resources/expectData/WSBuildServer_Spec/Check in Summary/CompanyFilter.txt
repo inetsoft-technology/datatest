@@ -1,0 +1,20 @@
+The table size(row x col) is:(19 x 2)
+user_id, Company Name
+1, Arnott's
+1, Cummins
+1, Exercise Training Program
+1, Maroondah City Council
+1, mitesh test 123
+1, Newcrest
+1, The Commons
+2, Public User Company
+3, Testing company
+4, HealthCi Demo
+4, St Lukes 
+7, Evolution Mining
+9, Tasplan
+29, SIW
+56, Hydro Tasmania
+63, Fonterra
+65, Healthy Business Staff
+123, Jacobs

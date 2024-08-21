@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 2)
+newAlias, COMPANY_NAME
+12762, 700

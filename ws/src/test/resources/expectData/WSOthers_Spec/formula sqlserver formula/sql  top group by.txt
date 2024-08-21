@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 2)
+customer_id, state
+6, CT
+10, IL
+12, CO
+12, FL
+20, AZ
+32, NV
+52, MD
+59, CA
+97, NJ
+105, MA

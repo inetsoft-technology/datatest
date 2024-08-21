@@ -1,0 +1,28 @@
+The table size(row x col) is:(27 x 8)
+city, cid, state, fx merge, fx agg on state, fx boolean, fx lead on fx boolean, fx rank on fx boolean
+Albany, 16, CA, ynablA-AC, 50, 1, 17, 4
+Austin, 11, TX, nitsuA-XT, 90, 1, 12, 9
+Baltimore, 33, MD, D-Baltimore, 14, 0, 35, 3
+Boston, 18, MA, notsoB-AM, 105, 1, 19, 2
+Boston, 23, MA, A-Boston, 18, 0, 25, 13
+Cambridge, 34, MA, A-Cambridge, 18, 0, 0, 2
+Camden, 15, NJ, nedmaC-JN, 94, 1, 16, 5
+Chicago, 10, IL, ogacihC-LI, 10, 1, 11, 10
+Dallas, 26, TX, X-Dallas, 11, 0, 28, 10
+Dallas, 31, TX, X-Dallas, 11, 0, 33, 5
+Houston, 22, TX, X-Houston, 11, 0, 24, 14
+Las Vegas, 32, NV, V-Las Vegas, 32, 0, 34, 4
+Los Angeles, 13, CA, selegnA soL-AC, 50, 1, 14, 7
+Los Angeles, 21, CA, A-Los Angeles, 13, 0, 23, 15
+Newark, 19, NJ, kraweN-JN, 94, 1, NULL, 1
+New Brunswick, 25, NJ, J-New Brunswick, 15, 0, 27, 11
+New York, 17, NY, kroY weN-YN, 41, 1, 18, 3
+New York, 24, NY, Y-New York, 17, 0, 26, 12
+Olympia, 29, WA, A-Olympia, 27, 0, 31, 7
+Orlando, 12, FL, odnalrO-LF, 12, 1, 13, 8
+Plainfield, 35, NJ, J-Plainfield, 15, 0, 0, 1
+Rockville, 14, MD, ellivkcoR-DM, 47, 1, 15, 6
+Seattle, 27, WA, A-Seattle, 27, 0, 29, 9
+Springfield, 30, MA, A-Springfield, 18, 0, 32, 6
+Tucson, 20, AZ, Z-Tucson, 20, 0, 22, 16
+York, 28, PA, A-York, 28, 0, 30, 8

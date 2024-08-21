@@ -1,0 +1,30 @@
+The table size(row x col) is:(29 x 2)
+js, CUSTOMER_ID
+AZTucson, 20
+CAAlbany, 16
+CALos Angeles, 34
+CASan Francisco, 9
+COBoulder, 4
+CODenver, 8
+CTHartford, 6
+FLOrlando, 12
+ILChicago, 10
+MABoston, 41
+MACambridge, 34
+MASpringfield, 30
+MDBaltimore, 38
+MDRockville, 14
+NJCamden, 15
+NJMiddletown, 2
+NJNewark, 19
+NJNew Brunswick, 25
+NJPlainfield, 35
+NJWayne, 1
+NVLas Vegas, 32
+NYNew York, 51
+PAYork, 28
+TXAustin, 11
+TXDallas, 57
+TXHouston, 22
+WAOlympia, 29
+WASeattle, 27

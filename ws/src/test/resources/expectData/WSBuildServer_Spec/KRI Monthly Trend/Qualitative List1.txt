@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 4)
+Id, Green, Amber, Red
+1, Very Good, Good, Average
+2, No, Yes, NULL
+1000, Yes, No, NULL
+1001, Yes, No, NULL
+100040, All administration errors reported during the quarter are not expected to result in: - a loss to members or the fund greater than $100k (per incident); or - impact more than 1% of members (per incident), All administration errors reported during the quarter are not expected to result in: - a loss to members or the fund greater than $200k (per incident); or - impact more than 1% of members (per incident), All administration errors reported during the quarter are not expected to result in: - a loss to members or the fund greater than $300k (per incident); or - impact more than 1% of members (per incident)

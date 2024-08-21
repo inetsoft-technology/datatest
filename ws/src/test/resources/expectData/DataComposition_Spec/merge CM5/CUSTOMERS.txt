@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 8)
+STATE, CUSTOMER_ID, COMPANY_NAME, ADDRESS, CITY, ZIP, REGION_ID, RESELLER
+AZ, 20, Folk Mining, 345 Sewgen Dr., Tucson, 11234, 2, true
+CA, 9, Direct Sales, 4500 River Rd., San Francisco, 08854, 2, false
+CA, 13, Computer Tech, 90 First Ave., Los Angeles, 11223, 2, false
+CA, 16, Whittaker & Co, Inc, 44 Islander Lane, Albany, 83923, 2, true
+CA, 21, West Coast Customs, 460 Newcomb Dr., Los Angeles, 73646, 2, true
+CO, 4, Ernst Handel, 88 Rio Grand Ave., Boulder, 38923, 1, false
+CO, 8, Quick Stop, 71 Mulberry St., Denver, 98839, 2, true
+CT, 6, Loctite Corp., 5 Baker's Lane, Hartford, 39283, 1, true
+FL, 12, Fast Transportation, 77 Druguz Blvd., Orlando, 12343, 1, true
+IL, 10, Specialty Retail, 88 Specialty Dr., Chicago, 88938, 2, false
+MA, 18, Ubermeyer, 8300 Cleveland St., Boston, 29183, 1, true
+MA, 23, World Software Resellers, 563 Uptown Dr., Boston, 28275, 1, false
+MA, 30, AMG Logistics, 283 Handley Rd., Springfield, 01923, 1, true
+MA, 34, XO Resellers, 77 Huntington Ave., Cambridge, 02938, 1, false
+MD, 5, George Services, 389 Jardim Rd., Baltimore, 82938, 2, true
+MD, 14, InterLand Services, 822 Technology Dr., Rockville, 83923, 1, true
+MD, 33, FMG Consulting, 9381 Mayor Brown Hwy., Baltimore, 53747, 1, true
+NJ, 1, Interstate Shop, 384 Broad St., Wayne, 18322, 1, true
+NJ, 2, Daycare One, 123 Summer Rd., Middletown, 09882, 1, true
+NJ, 15, Scheggie Services, 839 Via Gaty Dr., Camden, 12334, 1, true
+NJ, 19, Software Specialists, 300 Great Swamp Rd., Newark, 23445, 1, false
+NJ, 25, Rutgers Bank, 283 Davidson Dr., New Brunswick, 08854, 1, true
+NJ, 35, Pharma Research, 38 Commercial Ave., Plainfield, 08273, 1, true
+NV, 32, Tumbleweed Gaming, 487 City St., Las Vegas, 93847, 2, true
+NY, 3, Eastern Data, 7262 18th St., New York, 03887, 1, true
+NY, 7, Old World Insurance, 1230 Hoes Lane, New York, 08854, 1, true
+NY, 17, FISGA Corp, 21 Doger Sound Blvd., New York, 28122, 2, true
+NY, 24, High Society Investments, 1248 Broadway, New York, 27834, 1, true
+PA, 28, Tricounty Auto, 389 York St., York, 48873, 1, true
+TX, 11, The Big Cat, 12 Woodpark Ave., Austin, 32343, 2, true
+TX, 22, Big Ed's BBQ, 23 Tasaga Ave., Houston, 23421, 2, true
+TX, 26, Nova Tera, 987 First Ave., Dallas, 23123, 2, true
+TX, 31, BigMart Foodstores, 8874 Shiphouse Rd., Dallas, 48374, 2, true
+WA, 27, Infinity Software, 32 West Boyd Ave., Seattle, 93847, 2, false
+WA, 29, Northwest Outfitters, 17 Main St., Olympia, 93717, 2, true

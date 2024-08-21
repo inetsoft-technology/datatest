@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 4)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME
+1, 1, John, Kelly
+2, 2, Lisa, Smith
+3, 3, Anna, Lincoln
+4, 4, Patrico, Brown
+5, 5, Steven, Devon
+6, 6, Aria, Duz
+7, 7, Lino, Rodrigez
+8, 8, Richard, Isantengse
+9, 9, Luke, Baker

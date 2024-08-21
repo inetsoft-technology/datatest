@@ -1,0 +1,284 @@
+The table size(row x col) is:(283 x 7)
+CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
+9, false, CA, Albany, 16, true, CA
+9, false, CA, Austin, 11, true, TX
+9, false, CA, Baltimore, 5, true, MD
+9, false, CA, Baltimore, 33, true, MD
+9, false, CA, Boston, 18, true, MA
+9, false, CA, Boston, 23, false, MA
+9, false, CA, Boulder, 4, false, CO
+9, false, CA, Cambridge, 34, false, MA
+9, false, CA, Camden, 15, true, NJ
+9, false, CA, Chicago, 10, false, IL
+9, false, CA, Dallas, 26, true, TX
+9, false, CA, Dallas, 31, true, TX
+9, false, CA, Denver, 8, true, CO
+9, false, CA, Hartford, 6, true, CT
+9, false, CA, Houston, 22, true, TX
+9, false, CA, Las Vegas, 32, true, NV
+9, false, CA, Los Angeles, 13, false, CA
+9, false, CA, Los Angeles, 21, true, CA
+9, false, CA, Middletown, 2, true, NJ
+9, false, CA, Newark, 19, false, NJ
+9, false, CA, New Brunswick, 25, true, NJ
+9, false, CA, New York, 3, true, NY
+9, false, CA, New York, 7, true, NY
+9, false, CA, New York, 17, true, NY
+9, false, CA, New York, 24, true, NY
+9, false, CA, Olympia, 29, true, WA
+9, false, CA, Orlando, 12, true, FL
+9, false, CA, Plainfield, 35, true, NJ
+9, false, CA, Rockville, 14, true, MD
+9, false, CA, San Francisco, 9, false, CA
+9, false, CA, Seattle, 27, false, WA
+9, false, CA, Springfield, 30, true, MA
+9, false, CA, Wayne, 1, true, NJ
+9, false, CA, York, 28, true, PA
+13, false, CA, Albany, 16, true, CA
+13, false, CA, Austin, 11, true, TX
+13, false, CA, Baltimore, 5, true, MD
+13, false, CA, Baltimore, 33, true, MD
+13, false, CA, Boston, 18, true, MA
+13, false, CA, Boston, 23, false, MA
+13, false, CA, Boulder, 4, false, CO
+13, false, CA, Cambridge, 34, false, MA
+13, false, CA, Camden, 15, true, NJ
+13, false, CA, Chicago, 10, false, IL
+13, false, CA, Dallas, 26, true, TX
+13, false, CA, Dallas, 31, true, TX
+13, false, CA, Denver, 8, true, CO
+13, false, CA, Hartford, 6, true, CT
+13, false, CA, Houston, 22, true, TX
+13, false, CA, Las Vegas, 32, true, NV
+13, false, CA, Los Angeles, 13, false, CA
+13, false, CA, Los Angeles, 21, true, CA
+13, false, CA, Middletown, 2, true, NJ
+13, false, CA, Newark, 19, false, NJ
+13, false, CA, New Brunswick, 25, true, NJ
+13, false, CA, New York, 3, true, NY
+13, false, CA, New York, 7, true, NY
+13, false, CA, New York, 17, true, NY
+13, false, CA, New York, 24, true, NY
+13, false, CA, Olympia, 29, true, WA
+13, false, CA, Orlando, 12, true, FL
+13, false, CA, Plainfield, 35, true, NJ
+13, false, CA, Rockville, 14, true, MD
+13, false, CA, San Francisco, 9, false, CA
+13, false, CA, Seattle, 27, false, WA
+13, false, CA, Springfield, 30, true, MA
+13, false, CA, Wayne, 1, true, NJ
+13, false, CA, York, 28, true, PA
+16, true, CA, Albany, 16, true, CA
+16, true, CA, Austin, 11, true, TX
+16, true, CA, Baltimore, 5, true, MD
+16, true, CA, Baltimore, 33, true, MD
+16, true, CA, Boston, 18, true, MA
+16, true, CA, Boston, 23, false, MA
+16, true, CA, Boulder, 4, false, CO
+16, true, CA, Cambridge, 34, false, MA
+16, true, CA, Camden, 15, true, NJ
+16, true, CA, Chicago, 10, false, IL
+16, true, CA, Dallas, 26, true, TX
+16, true, CA, Dallas, 31, true, TX
+16, true, CA, Denver, 8, true, CO
+16, true, CA, Hartford, 6, true, CT
+16, true, CA, Houston, 22, true, TX
+16, true, CA, Las Vegas, 32, true, NV
+16, true, CA, Los Angeles, 13, false, CA
+16, true, CA, Los Angeles, 21, true, CA
+16, true, CA, Middletown, 2, true, NJ
+16, true, CA, Newark, 19, false, NJ
+16, true, CA, New Brunswick, 25, true, NJ
+16, true, CA, New York, 3, true, NY
+16, true, CA, New York, 7, true, NY
+16, true, CA, New York, 17, true, NY
+16, true, CA, New York, 24, true, NY
+16, true, CA, Olympia, 29, true, WA
+16, true, CA, Orlando, 12, true, FL
+16, true, CA, Plainfield, 35, true, NJ
+16, true, CA, Rockville, 14, true, MD
+16, true, CA, San Francisco, 9, false, CA
+16, true, CA, Seattle, 27, false, WA
+16, true, CA, Springfield, 30, true, MA
+16, true, CA, Wayne, 1, true, NJ
+16, true, CA, York, 28, true, PA
+18, true, MA, Austin, 11, true, TX
+18, true, MA, Baltimore, 5, true, MD
+18, true, MA, Baltimore, 33, true, MD
+18, true, MA, Boston, 18, true, MA
+18, true, MA, Boston, 23, false, MA
+18, true, MA, Cambridge, 34, false, MA
+18, true, MA, Camden, 15, true, NJ
+18, true, MA, Dallas, 26, true, TX
+18, true, MA, Dallas, 31, true, TX
+18, true, MA, Houston, 22, true, TX
+18, true, MA, Las Vegas, 32, true, NV
+18, true, MA, Middletown, 2, true, NJ
+18, true, MA, Newark, 19, false, NJ
+18, true, MA, New Brunswick, 25, true, NJ
+18, true, MA, New York, 3, true, NY
+18, true, MA, New York, 7, true, NY
+18, true, MA, New York, 17, true, NY
+18, true, MA, New York, 24, true, NY
+18, true, MA, Olympia, 29, true, WA
+18, true, MA, Plainfield, 35, true, NJ
+18, true, MA, Rockville, 14, true, MD
+18, true, MA, Seattle, 27, false, WA
+18, true, MA, Springfield, 30, true, MA
+18, true, MA, Wayne, 1, true, NJ
+18, true, MA, York, 28, true, PA
+20, true, AZ, Albany, 16, true, CA
+20, true, AZ, Austin, 11, true, TX
+20, true, AZ, Baltimore, 5, true, MD
+20, true, AZ, Baltimore, 33, true, MD
+20, true, AZ, Boston, 18, true, MA
+20, true, AZ, Boston, 23, false, MA
+20, true, AZ, Boulder, 4, false, CO
+20, true, AZ, Cambridge, 34, false, MA
+20, true, AZ, Camden, 15, true, NJ
+20, true, AZ, Chicago, 10, false, IL
+20, true, AZ, Dallas, 26, true, TX
+20, true, AZ, Dallas, 31, true, TX
+20, true, AZ, Denver, 8, true, CO
+20, true, AZ, Hartford, 6, true, CT
+20, true, AZ, Houston, 22, true, TX
+20, true, AZ, Las Vegas, 32, true, NV
+20, true, AZ, Los Angeles, 13, false, CA
+20, true, AZ, Los Angeles, 21, true, CA
+20, true, AZ, Middletown, 2, true, NJ
+20, true, AZ, Newark, 19, false, NJ
+20, true, AZ, New Brunswick, 25, true, NJ
+20, true, AZ, New York, 3, true, NY
+20, true, AZ, New York, 7, true, NY
+20, true, AZ, New York, 17, true, NY
+20, true, AZ, New York, 24, true, NY
+20, true, AZ, Olympia, 29, true, WA
+20, true, AZ, Orlando, 12, true, FL
+20, true, AZ, Plainfield, 35, true, NJ
+20, true, AZ, Rockville, 14, true, MD
+20, true, AZ, San Francisco, 9, false, CA
+20, true, AZ, Seattle, 27, false, WA
+20, true, AZ, Springfield, 30, true, MA
+20, true, AZ, Tucson, 20, true, AZ
+20, true, AZ, Wayne, 1, true, NJ
+20, true, AZ, York, 28, true, PA
+21, true, CA, Albany, 16, true, CA
+21, true, CA, Austin, 11, true, TX
+21, true, CA, Baltimore, 5, true, MD
+21, true, CA, Baltimore, 33, true, MD
+21, true, CA, Boston, 18, true, MA
+21, true, CA, Boston, 23, false, MA
+21, true, CA, Boulder, 4, false, CO
+21, true, CA, Cambridge, 34, false, MA
+21, true, CA, Camden, 15, true, NJ
+21, true, CA, Chicago, 10, false, IL
+21, true, CA, Dallas, 26, true, TX
+21, true, CA, Dallas, 31, true, TX
+21, true, CA, Denver, 8, true, CO
+21, true, CA, Hartford, 6, true, CT
+21, true, CA, Houston, 22, true, TX
+21, true, CA, Las Vegas, 32, true, NV
+21, true, CA, Los Angeles, 13, false, CA
+21, true, CA, Los Angeles, 21, true, CA
+21, true, CA, Middletown, 2, true, NJ
+21, true, CA, Newark, 19, false, NJ
+21, true, CA, New Brunswick, 25, true, NJ
+21, true, CA, New York, 3, true, NY
+21, true, CA, New York, 7, true, NY
+21, true, CA, New York, 17, true, NY
+21, true, CA, New York, 24, true, NY
+21, true, CA, Olympia, 29, true, WA
+21, true, CA, Orlando, 12, true, FL
+21, true, CA, Plainfield, 35, true, NJ
+21, true, CA, Rockville, 14, true, MD
+21, true, CA, San Francisco, 9, false, CA
+21, true, CA, Seattle, 27, false, WA
+21, true, CA, Springfield, 30, true, MA
+21, true, CA, Wayne, 1, true, NJ
+21, true, CA, York, 28, true, PA
+23, false, MA, Austin, 11, true, TX
+23, false, MA, Baltimore, 5, true, MD
+23, false, MA, Baltimore, 33, true, MD
+23, false, MA, Boston, 18, true, MA
+23, false, MA, Boston, 23, false, MA
+23, false, MA, Cambridge, 34, false, MA
+23, false, MA, Camden, 15, true, NJ
+23, false, MA, Dallas, 26, true, TX
+23, false, MA, Dallas, 31, true, TX
+23, false, MA, Houston, 22, true, TX
+23, false, MA, Las Vegas, 32, true, NV
+23, false, MA, Middletown, 2, true, NJ
+23, false, MA, Newark, 19, false, NJ
+23, false, MA, New Brunswick, 25, true, NJ
+23, false, MA, New York, 3, true, NY
+23, false, MA, New York, 7, true, NY
+23, false, MA, New York, 17, true, NY
+23, false, MA, New York, 24, true, NY
+23, false, MA, Olympia, 29, true, WA
+23, false, MA, Plainfield, 35, true, NJ
+23, false, MA, Rockville, 14, true, MD
+23, false, MA, Seattle, 27, false, WA
+23, false, MA, Springfield, 30, true, MA
+23, false, MA, Wayne, 1, true, NJ
+23, false, MA, York, 28, true, PA
+27, false, WA, Olympia, 29, true, WA
+27, false, WA, Seattle, 27, false, WA
+28, true, PA, Austin, 11, true, TX
+28, true, PA, Dallas, 26, true, TX
+28, true, PA, Dallas, 31, true, TX
+28, true, PA, Houston, 22, true, TX
+28, true, PA, Olympia, 29, true, WA
+28, true, PA, Seattle, 27, false, WA
+28, true, PA, York, 28, true, PA
+29, true, WA, Olympia, 29, true, WA
+29, true, WA, Seattle, 27, false, WA
+30, true, MA, Austin, 11, true, TX
+30, true, MA, Baltimore, 5, true, MD
+30, true, MA, Baltimore, 33, true, MD
+30, true, MA, Boston, 18, true, MA
+30, true, MA, Boston, 23, false, MA
+30, true, MA, Cambridge, 34, false, MA
+30, true, MA, Camden, 15, true, NJ
+30, true, MA, Dallas, 26, true, TX
+30, true, MA, Dallas, 31, true, TX
+30, true, MA, Houston, 22, true, TX
+30, true, MA, Las Vegas, 32, true, NV
+30, true, MA, Middletown, 2, true, NJ
+30, true, MA, Newark, 19, false, NJ
+30, true, MA, New Brunswick, 25, true, NJ
+30, true, MA, New York, 3, true, NY
+30, true, MA, New York, 7, true, NY
+30, true, MA, New York, 17, true, NY
+30, true, MA, New York, 24, true, NY
+30, true, MA, Olympia, 29, true, WA
+30, true, MA, Plainfield, 35, true, NJ
+30, true, MA, Rockville, 14, true, MD
+30, true, MA, Seattle, 27, false, WA
+30, true, MA, Springfield, 30, true, MA
+30, true, MA, Wayne, 1, true, NJ
+30, true, MA, York, 28, true, PA
+34, false, MA, Austin, 11, true, TX
+34, false, MA, Baltimore, 5, true, MD
+34, false, MA, Baltimore, 33, true, MD
+34, false, MA, Boston, 18, true, MA
+34, false, MA, Boston, 23, false, MA
+34, false, MA, Cambridge, 34, false, MA
+34, false, MA, Camden, 15, true, NJ
+34, false, MA, Dallas, 26, true, TX
+34, false, MA, Dallas, 31, true, TX
+34, false, MA, Houston, 22, true, TX
+34, false, MA, Las Vegas, 32, true, NV
+34, false, MA, Middletown, 2, true, NJ
+34, false, MA, Newark, 19, false, NJ
+34, false, MA, New Brunswick, 25, true, NJ
+34, false, MA, New York, 3, true, NY
+34, false, MA, New York, 7, true, NY
+34, false, MA, New York, 17, true, NY
+34, false, MA, New York, 24, true, NY
+34, false, MA, Olympia, 29, true, WA
+34, false, MA, Plainfield, 35, true, NJ
+34, false, MA, Rockville, 14, true, MD
+34, false, MA, Seattle, 27, false, WA
+34, false, MA, Springfield, 30, true, MA
+34, false, MA, Wayne, 1, true, NJ
+34, false, MA, York, 28, true, PA

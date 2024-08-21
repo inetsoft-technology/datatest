@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+Period, ID, Username
+12M, 2, Anonymous User
+12M, 6, Lower User 1
+12M, 49, protecht.support
+12M, 252, protecht.consulting
+12M, 1680, Content Integration

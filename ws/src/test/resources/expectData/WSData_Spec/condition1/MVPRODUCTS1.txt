@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 5)
+CATEGORY_ID, DESCRIPTION, INSTOCK, PRICE, PRODUCT_NAME
+NULL, Java game toolkit, false, 398, True Action
+1, NULL, true, 29, Combat Hero
+1, Bridge game, false, 105, Web Bridge
+1, Chess game, false, 35, Easy Chess
+1, Chinese Go game, true, 200, Fast Go Game
+1, Girl's game, false, 79, Barbie's Fashion
+2, Educational software, false, 59, Animal World
+2, Learn ABC, true, 75, Learn ABC
+2, Math tutor, true, 235, Math for Me
+3, Application server, true, 3000, MeToo AppServer
+3, Database browser, true, 125, InsideView
+3, XML connectivity tool, true, 2250, Xconnect Server
+4, House hunting assistant, false, 129, House Hunter
+4, Palm power sync, true, 145, Sync Me
+4, Personal health monitor, true, 75, Green Planet
+5, Collection of menus, true, 49, Fancy Menus
+5, Over 10,000 icons, true, NULL, Mega Icons
+6, Document management tool, false, 399, Info Folder
+6, Lightweight email agent, true, 39, NULL
+6, Web enabled calendar/org, true, 248, WebCalendar

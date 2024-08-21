@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 6)
+Quantity Purchased, Total, f_boolean, Total_1, Total_2, Quantity Purchased_1
+13.4295, 94696809.8503, true, 94669668.3169, 1155, 18
+14.0085, 103021155.3938, false, 102789647.1794, 1161, 4

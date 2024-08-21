@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 13)
+fund_id, fund_benchmark_1_covariance, fund_benchmark_2_covariance, fund_benchmark_3_covariance, fund_benchmark_4_covariance, benchmark_1_daily_return_variance, benchmark_2_daily_return_variance, benchmark_3_daily_return_variance, benchmark_4_daily_return_variance, benchmark_1_beta, benchmark_2_beta, benchmark_3_beta, benchmark_4_beta
+450055, 0.0002, 0.0002, 0.0001, 0.0001, 0.0002, 0.0002, 0.0001, 0.0001, 0.8209, 1.0222, 0.8102, 0.3776
+450230, 0, 0, 0, 0, 0.0002, 0.0002, 0.0001, 0.0001, 0.0803, 0.1045, 0.0859, 0.0433
+469574, 0.0002, 0.0002, 0.0001, 0, 0.0002, 0.0002, 0.0001, 0.0001, 0.8631, 1.0164, 0.7008, 0.3271
+544600, 0, 0, 0, 0, 0.0002, 0.0002, 0.0001, 0.0001, 0.1054, 0.1356, 0.0969, 0.0902

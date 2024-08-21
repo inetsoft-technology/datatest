@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 3)
+PRICE, INSTOCK, CATEGORY_ID
+NULL, false, NULL
+-0.479, true, 6
+-0.3545, false, 1
+0.6733, true, 3
+0.9042, false, 2
+0.9117, true, 4
+1, true, 5

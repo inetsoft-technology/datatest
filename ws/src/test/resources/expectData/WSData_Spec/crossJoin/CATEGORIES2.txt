@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 2)
+CATEGORY_ID, CATEGORY_NAME
+1, Games
+2, Educational
+3, Business
+4, Personal
+5, Graphics
+6, Office Tools

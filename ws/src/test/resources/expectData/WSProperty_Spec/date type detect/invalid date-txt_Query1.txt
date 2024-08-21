@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 5)
+YYYY-MM-DD, YY-MM-DD, YYMMDD, YYMMMDD, YY/M/D
+1902-11-11, 02-11-11, 021111, 02Nov11, 02/11/11
+2022-03-13, 22-03-13, 220313, 22Mar13, 22/3/13
+2020-05-25, 20-05-25, 200525, 20May25, 20/5/25
+2019-01-10, 19-01-10, 190110, 19Jan10, 19/1/10
+N/A, N/A, N/A, N/A, N/A
+Not in DB, Not in DB, Not in DB, Not in DB, Not in DB

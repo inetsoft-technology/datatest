@@ -1,0 +1,1002 @@
+The table size(row x col) is:(1001 x 13)
+Application Id, Application, Register, Section, Section Order, Column, Column Type, Data Type, Layout Row, Layout Column, Archived, Display, Column Sorting
+3, Actions, Actions, Action - Details, 1, Action Type, List, varchar, 0, left, false, Display, 0.2
+3, Actions, Actions, Action - Details, 1, Description, Multi-line Text, text, 2, left, false, Display, 0.2
+3, Actions, Actions, Action - Details, 1, Linked To, Linked To, void, 4, left, false, Display, 0.2
+3, Actions, Actions, Action - Details, 1, Name, Single-line Text, varchar, 1, left, false, Display, 0.2
+3, Actions, Actions, Action - Details, 1, Worklog, WorkLog, integer, 3, left, false, Display, 0.2
+3, Actions, Actions, Action - Essentials, 0, Assignee, User, integer, 1, left, false, Display, 0.2
+3, Actions, Actions, Action - Essentials, 0, Contributor, Role, integer, 2, right, false, Display, 0.3
+3, Actions, Actions, Action - Essentials, 0, Due Date, Due Date, date, 0, right, false, Display, 0.3
+3, Actions, Actions, Action - Essentials, 0, Original Due Date, Due Date, date, -1, both, false, Hidden, 0.1
+3, Actions, Actions, Action - Essentials, 0, Overdue, Boolean (Yes/No), boolean, 2, both, false, Display, 0.1
+3, Actions, Actions, Action - Essentials, 0, Priority, List, varchar, 0, left, false, Display, 0.2
+3, Actions, Actions, Action - Essentials, 0, Supervisor, User, integer, 1, right, false, Display, 0.3
+3, Actions, Actions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+3, Actions, Actions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+3, Actions, Actions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+3, Actions, Actions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+3, Actions, Actions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+3, Actions, Actions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+3, Actions, Actionss, Action Detailss, 0, Action Description, Multi-line Text, text, 2, left, false, Display, 0.2
+3, Actions, Actionss, Action Detailss, 0, Action Name, Single-line Text, varchar, 1, left, false, Display, 0.2
+3, Actions, Actionss, Action Detailss, 0, Action Owner, User, integer, 0, left, false, Display, 0.2
+3, Actions, Actionss, Action Detailss, 0, Action Source, Linked To, void, 2, right, false, Display, 0.3
+3, Actions, Actionss, Action Detailss, 0, Close Date, Date, date, 1, right, false, Display, 0.3
+3, Actions, Actionss, Action Detailss, 0, Due Date, Due Date, date, 0, right, false, Display, 0.3
+3, Actions, Actionss, Action Detailss, 0, Linkages, Rich Text, text, 3, left, false, Display, 0.2
+3, Actions, Actionss, Action Detailss, 0, Original Due Date, Due Date, date, -1, both, false, Hidden, 0.1
+3, Actions, Actionss, Action Detailss, 0, Overdue, Boolean (Yes/No), boolean, -1, both, false, Hidden, 0.1
+3, Actions, Actionss, Action Progress, 1, Progress update, WorkLog, integer, 0, left, false, Display, 0.2
+3, Actions, Actionss, Action Progress, 1, Relevant attachment(s), Attachment, integer, 0, right, false, Display, 0.3
+3, Actions, Actionss, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+3, Actions, Actionss, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+3, Actions, Actionss, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+3, Actions, Actionss, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+3, Actions, Actionss, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+3, Actions, Actionss, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+3, Actions, Corrective Actions, CA - Details, 0, Action Taken, Multi-line Text, text, 4, left, false, Display, 0.2
+3, Actions, Corrective Actions, CA - Details, 0, CA Description, Multi-line Text, text, 2, both, false, Display, 0.1
+3, Actions, Corrective Actions, CA - Details, 0, CA Due Date, Date, date, 3, left, false, Display, 0.2
+3, Actions, Corrective Actions, CA - Details, 0, CA Owner, User, integer, 0, right, false, Display, 0.3
+3, Actions, Corrective Actions, CA - Details, 0, CA Title, Single-line Text, varchar, 1, both, false, Display, 0.1
+3, Actions, Corrective Actions, CA - Details, 0, Outcome, Multi-line Text, text, 4, right, false, Display, 0.3
+3, Actions, Corrective Actions, CA - Details, 0, Parent Reference Number, Linked To, void, 5, left, false, Display, 0.2
+3, Actions, Corrective Actions, CA - Details, 0, Parent Type, List, varchar, 0, left, false, Display, 0.2
+3, Actions, Corrective Actions, CA - Details, 0, Risk Priority, List, varchar, 3, right, false, Display, 0.3
+3, Actions, Corrective Actions, CA - Review Details, 1, Comments, WorkLog, integer, 1, left, false, Display, 0.2
+3, Actions, Corrective Actions, CA - Review Details, 1, Reviewed By, Single-line Text, varchar, 0, left, false, Display, 0.2
+3, Actions, Corrective Actions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+3, Actions, Corrective Actions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+3, Actions, Corrective Actions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+3, Actions, Corrective Actions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+3, Actions, Corrective Actions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+3, Actions, Corrective Actions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+3, Actions, WHS Actions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+3, Actions, WHS Actions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+3, Actions, WHS Actions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+3, Actions, WHS Actions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+3, Actions, WHS Actions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+3, Actions, WHS Actions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+3, Actions, WHS Actions, WHS Action Details, 1, Description, Multi-line Text, text, 1, both, false, Display, 0.1
+3, Actions, WHS Actions, WHS Action Details, 1, Linked To, Linked To, void, 4, left, false, Display, 0.2
+3, Actions, WHS Actions, WHS Action Details, 1, Name, Single-line Text, varchar, 0, both, false, Display, 0.1
+3, Actions, WHS Actions, WHS Action Details, 1, Tags, Tags, array, 3, both, false, Display, 0.1
+3, Actions, WHS Actions, WHS Action Details, 1, Worklog, WorkLog, integer, 2, both, false, Display, 0.1
+3, Actions, WHS Actions, WHS Action Essentials, 0, Assignee, User, integer, 1, left, false, Display, 0.2
+3, Actions, WHS Actions, WHS Action Essentials, 0, Due Date, Due Date, date, 0, right, false, Display, 0.3
+3, Actions, WHS Actions, WHS Action Essentials, 0, Original Due Date, Due Date, date, -1, both, false, Hidden, 0.1
+3, Actions, WHS Actions, WHS Action Essentials, 0, Overdue, Boolean (Yes/No), boolean, -1, both, false, Hidden, 0.1
+3, Actions, WHS Actions, WHS Action Essentials, 0, Priority, List, varchar, 0, left, false, Display, 0.2
+3, Actions, WHS Actions, WHS Action Essentials, 0, Supervisor, User, integer, 1, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+3, Actions, WHS Actions CSU, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+3, Actions, WHS Actions CSU, WHS Action - Details, 1, Action Description, Multi-line Text, text, 1, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Details, 1, Action Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Details, 1, Contributing Factor, Single-line Text, varchar, 0, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, WHS Action - Details, 1, Linked To, Linked To, void, 2, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Details, 1, Type of Control, List, varchar, 1, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Action Officer, Single-line Text, varchar, 1, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Action Officer Email, Email, varchar, 1, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Due Date, Due Date, date, 0, right, false, Display, 0.3
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Original Due Date, Due Date, date, -1, both, false, Hidden, 0.1
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Overdue, Boolean (Yes/No), boolean, -1, both, false, Hidden, 0.1
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Priority, List, varchar, 0, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Supervisor, Single-line Text, varchar, 2, left, false, Display, 0.2
+3, Actions, WHS Actions CSU, WHS Action - Essentials, 0, Supervisor Email, Email, varchar, 2, right, false, Display, 0.3
+1061, BCP, BI Analysis, BIA-Approval, 4, Approval sign-off, Sign-off, integer, 0, left, false, Display, 0.2
+1061, BCP, BI Analysis, BIA-Approval, 4, Next Review Date, Date, date, 3, left, false, Display, 0.2
+1061, BCP, BI Analysis, BIA-Approval, 4, Number of Critical Components Whose RTO Exceeds the Required MAO - 2, Complex Formula - Text, varchar, 2, left, false, Display, 0.2
+1061, BCP, BI Analysis, BIA-Approval, 4, Number of High Components Whose RTO Exceeds the Required MAO, Complex Formula - Text, varchar, 2, right, false, Display, 0.3
+1061, BCP, BI Analysis, BIA-Approval, 4, Review Comments, Multi-line Text, text, 3, right, false, Display, 0.3
+1061, BCP, BI Analysis, BIA-Approval, 4, Spacer, Spacer, void, 1, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Component Sign Off, Sign-off, integer, 0, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Hardware, Table, varchar, 2, both, false, Display, 0.1
+1061, BCP, BI Analysis, Components, 1, Locations, Table, varchar, 6, both, false, Display, 0.1
+1061, BCP, BI Analysis, Components, 1, Software, Table, varchar, 4, both, false, Display, 0.1
+1061, BCP, BI Analysis, Components, 1, Spacer, Spacer, void, 1, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Spacer, Spacer, void, 3, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Spacer, Spacer, void, 5, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Spacer, Spacer, void, 7, left, false, Display, 0.2
+1061, BCP, BI Analysis, Components, 1, Teams, Table, varchar, 8, both, false, Display, 0.1
+1061, BCP, BI Analysis, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, BI Analysis, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, BI Analysis, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, BI Analysis, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, BI Analysis, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, BI Analysis, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, BI Analysis, Critical Process, 0, < 6 hours, List, varchar, 7, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, > 5 days, List, varchar, 13, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, 12-24 hours, List, varchar, 9, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, 2-3 days, List, varchar, 11, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, 24-48 hours, List, varchar, 10, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, 3-5 days, List, varchar, 12, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, 6-12 hours, List, varchar, 8, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Availability, List, varchar, 3, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Confidentiality, List, varchar, 4, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Criticality, List, varchar, 4, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Customer, List, varchar, 13, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Financial, List, varchar, 8, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Integrity, List, varchar, 3, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, MAO Requirement, List, varchar, 15, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Note, Static Text, void, 0, both, false, Display, 0.1
+1061, BCP, BI Analysis, Critical Process, 0, Note, Static Text, void, 6, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Note, Static Text, void, 6, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Note, Static Text, void, 7, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Number of Users Impacted, List, varchar, 2, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Operational, List, varchar, 9, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Outage Impact, Multi-line Text, text, 5, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Process Description, Multi-line Text, text, 2, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Process Name, Multi-line Text, text, 1, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, Process Owner, User, integer, 1, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Regulatory, List, varchar, 10, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Reputational, List, varchar, 11, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, RPO Requirement, List, varchar, 15, right, false, Display, 0.3
+1061, BCP, BI Analysis, Critical Process, 0, Spacer, Spacer, void, 14, left, false, Display, 0.2
+1061, BCP, BI Analysis, Critical Process, 0, WHS, List, varchar, 12, right, false, Display, 0.3
+1061, BCP, BI Analysis, Human Resources, 3, Human Resources, Table, varchar, 0, both, false, Display, 0.1
+1061, BCP, BI Analysis, Scenarios, 2, Scenario Acceptance, Sign-off, integer, 0, left, false, Display, 0.2
+1061, BCP, BI Analysis, Scenarios, 2, Scenarios Table, Table, varchar, 1, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Are all public liability, workers comp and other insurances current and adequate?, List, varchar, 17, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Are implementation dates flexible?, List, varchar, 3, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Are other activities dependent on the timing of completion of works?, List, varchar, 6, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Does the contractor have a certified quality management system?, List, varchar, 11, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Does the contractor have a certified safety management system?, List, varchar, 12, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Duration of work?, List, varchar, 2, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Geographic location of works, List, varchar, 5, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Has a list of all plant & equipment proposed to be used been provided?, List, varchar, 14, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Has Mitolo used the contractor previously and did their performance meet all expectations?, List, varchar, 10, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Has the certainty & clarity of contract requirements / specifications been documented and agreed?, List, varchar, 0, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Has the Contractor furnished JSA/SWMS for the proposed work?, List, varchar, 16, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Have all applicable SDSs been provided?, List, varchar, 15, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Have staff already received contractor induction for the site/s where work is to be performed?, List, varchar, 8, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Number of contractor staff involved?, Whole Number, integer, 7, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Value of works, List, varchar, 4, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, What is the contractor’s safety statistic performance for the past 3 years – fatalities, LTIFR, TRIFR?, Multi-line Text, text, 13, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, What is the degree of innovation needed?, Multi-line Text, text, 1, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, What is the risk level of works and associated controls?, List, varchar, 9, both, false, Display, 0.1
+1061, BCP, Contracts, Contract - Assessment, 1, Will the contractors be working under direct Mitolo supervision at all times?, List, varchar, 18, both, false, Display, 0.1
+1061, BCP, Contracts, Contract Details, 0, Contract Brief, Multi-line Text, text, 1, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, Contract End Date, Date, date, 2, right, false, Display, 0.3
+1061, BCP, Contracts, Contract Details, 0, Contract Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, Contract Owner, User, integer, 4, right, false, Display, 0.3
+1061, BCP, Contracts, Contract Details, 0, Contract Start Date, Date, date, 2, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, Contract Value, Currency, numeric, 4, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, Copy of Contract, Attachment, integer, 1, right, false, Display, 0.3
+1061, BCP, Contracts, Contract Details, 0, First Notice Date, Date, date, 3, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, Last Notice Date, Date, date, 3, right, false, Display, 0.3
+1061, BCP, Contracts, Contract Details, 0, Linked To, Linked To, void, 6, right, false, Display, 0.3
+1061, BCP, Contracts, Contract Details, 0, Review Details, WorkLog, integer, 6, left, false, Display, 0.2
+1061, BCP, Contracts, Contract Details, 0, SLAs, Multi-line Text, text, 5, left, false, Display, 0.2
+1061, BCP, Contracts, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Contracts, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Contracts, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Contracts, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Contracts, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Contracts, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Hardware Library, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Hardware Library, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Hardware Library, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Hardware Library, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Hardware Library, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Hardware Library, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Hardware Library, Hardware, 0, 3rd Party Provider, List, varchar, 3, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, Brand, Single-line Text, varchar, 3, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Criticality Factor, List, varchar, 1, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, End of Life, Date, date, 5, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, Functional Description, Multi-line Text, text, 2, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Linked To, Linked To, void, 6, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, Model Number, Single-line Text, varchar, 4, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Physical Location, Single-line Text, varchar, 6, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, RTO, List, varchar, 2, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, Serial Number, Single-line Text, varchar, 5, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Supplier Name, Single-line Text, varchar, 1, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Technology / Device Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Hardware Library, Hardware, 0, Technology Type, List, varchar, 0, right, false, Display, 0.3
+1061, BCP, Hardware Library, Hardware, 0, Warranty Expiry, Date, date, 4, right, false, Display, 0.3
+1061, BCP, Human Resources, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Human Resources, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Human Resources, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Human Resources, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Human Resources, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Human Resources, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Human Resources, Teams, 0, Function, Multi-line Text, text, 1, left, false, Display, 0.2
+1061, BCP, Human Resources, Teams, 0, Location(s), Table, varchar, 4, both, false, Display, 0.1
+1061, BCP, Human Resources, Teams, 0, Team Leader, User, integer, 2, left, false, Display, 0.2
+1061, BCP, Human Resources, Teams, 0, Team Member Count, Whole Number, integer, 3, left, false, Display, 0.2
+1061, BCP, Human Resources, Teams, 0, Team Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Locations, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Locations, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Locations, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Locations, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Locations, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Locations, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Locations, Locations, 0, Functions, Multi-line Text, text, 1, left, false, Display, 0.2
+1061, BCP, Locations, Locations, 0, Location name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Locations, Locations, 0, Multi business units, Multi-select Library, array, 2, left, false, Display, 0.2
+1061, BCP, Locations, Locations, 0, Number of Employees, List, varchar, 3, left, false, Display, 0.2
+1061, BCP, Locations Library, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Locations Library, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Locations Library, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Locations Library, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Locations Library, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Locations Library, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Locations Library, Location, 0, Alternate Location, Single-line Text, varchar, 6, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Business Units at Location, Multi-select Library, array, 3, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Criticality Rating, List, varchar, 5, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Employee Numbers at Location, Whole Number, integer, 4, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Location Address, Single-line Text, varchar, 2, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Location Function, Multi-line Text, text, 1, left, false, Display, 0.2
+1061, BCP, Locations Library, Location, 0, Location Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Recovery Tasks, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Recovery Tasks, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Recovery Tasks, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Additional Comments, Multi-line Text, text, 4, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Recovery Task, Multi-line Text, text, 2, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Scenario, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Supporting Files, Attachment, integer, 5, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Task Number, Whole Number, integer, 1, left, false, Display, 0.2
+1061, BCP, Recovery Tasks, Recovery Tasks, 0, Task Owner, User, integer, 3, left, false, Display, 0.2
+1061, BCP, Scenarios, Components Impacted, 2, Components Impacted, Multi-select List, array, 0, left, false, Display, 0.2
+1061, BCP, Scenarios, Components Impacted, 2, Hardware Affected By Scenario, Table, varchar, 1, both, false, Display, 0.1
+1061, BCP, Scenarios, Components Impacted, 2, Locations Affected By Scenario, Table, varchar, 3, both, false, Display, 0.1
+1061, BCP, Scenarios, Components Impacted, 2, Software Affected By Scenario, Table, varchar, 2, both, false, Display, 0.1
+1061, BCP, Scenarios, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Scenarios, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Scenarios, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Scenarios, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Scenarios, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Scenarios, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Key risk Indicators, Multi-select Library, array, 2, right, false, Display, 0.3
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Events, Multi-select Library, array, 2, left, false, Display, 0.2
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating, Risk Matrix, integer, 4, left, false, Display, 0.2
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating - Consequence, Consequence, integer, -1, both, false, Hidden, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating - Likelihood, Likelihood, integer, -1, both, false, Hidden, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating - Rating, Risk Rating, integer, -1, both, false, Hidden, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating Rationale, Multi-line Text, text, 4, right, false, Display, 0.3
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Risk Rating - Total Score, Whole Number, integer, -1, both, false, Hidden, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Scenario Description, Multi-line Text, text, 1, both, false, Display, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Scenario Name, Single-line Text, varchar, 0, both, false, Display, 0.1
+1061, BCP, Scenarios, Plausible Disruption Scenarios, 0, Spacer, Spacer, void, 3, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Steps, 1, Recovery Task, Table, varchar, 1, both, false, Display, 0.1
+1061, BCP, Scenarios, Recovery Steps, 1, Spacer, Spacer, void, 0, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Attachments, Attachment, integer, 7, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Comments and Findings, WorkLog, integer, 6, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Last Test Date, Date, date, 3, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Next Test Date, Date Formula, date, 4, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Test Frequency, List, varchar, 2, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Test Owner, User, integer, 1, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Test Plan, Multi-line Text, text, 0, left, false, Display, 0.2
+1061, BCP, Scenarios, Recovery Tests, 3, Test Result, List, varchar, 5, left, false, Display, 0.2
+1061, BCP, Software Library, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Software Library, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Software Library, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Software Library, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Software Library, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Software Library, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Software Library, Software, 0, Approximate Licence Count, Whole Number, integer, 4, left, false, Display, 0.2
+1061, BCP, Software Library, Software, 0, Business Units, Multi-select Library, array, 3, left, false, Display, 0.2
+1061, BCP, Software Library, Software, 0, Criticality Rating, List, varchar, 2, left, false, Display, 0.2
+1061, BCP, Software Library, Software, 0, Function, Multi-line Text, text, 1, both, false, Display, 0.1
+1061, BCP, Software Library, Software, 0, RTO, List, varchar, 2, right, false, Display, 0.3
+1061, BCP, Software Library, Software, 0, Software Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Software Library, Software, 0, Supplier, Single-line Text, varchar, 0, right, false, Display, 0.3
+1061, BCP, Suppliers, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1061, BCP, Suppliers, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1061, BCP, Suppliers, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1061, BCP, Suppliers, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1061, BCP, Suppliers, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1061, BCP, Suppliers, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1061, BCP, Suppliers, Supplier Register, 0, ABN, Single-line Text, varchar, 1, left, false, Display, 0.2
+1061, BCP, Suppliers, Supplier Register, 0, Associated Documents, Table, varchar, 5, both, false, Display, 0.1
+1061, BCP, Suppliers, Supplier Register, 0, Contract Heading, Static Text, void, 3, both, false, Display, 0.1
+1061, BCP, Suppliers, Supplier Register, 0, Contracts, Table, varchar, 4, both, false, Display, 0.1
+1061, BCP, Suppliers, Supplier Register, 0, Linked Inductions and Assessments, Linked To, void, 6, left, false, Display, 0.2
+1061, BCP, Suppliers, Supplier Register, 0, NAV Vendor Number, Single-line Text, varchar, 1, right, false, Display, 0.3
+1061, BCP, Suppliers, Supplier Register, 0, Postal Address, Multi-line Text, text, 2, right, false, Display, 0.3
+1061, BCP, Suppliers, Supplier Register, 0, Supplier Address, Multi-line Text, text, 2, left, false, Display, 0.2
+1061, BCP, Suppliers, Supplier Register, 0, Supplier Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1061, BCP, Suppliers, Supplier Register, 0, Supplier Phone, Single-line Text, varchar, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Detailed Responsibilities, Table, varchar, 7, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Employer, Single-line Text, varchar, 2, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Last Updated, Date, date, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Name, Single-line Text, varchar, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Reports To, Single-line Text, varchar, 5, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Responsibilities, Multi-select List, array, 6, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Role Start Date, Date, date, 4, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, BEAR Accountabilities, 0, Role Title, Single-line Text, varchar, 3, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Accountabilties, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Functions, BEAR Functions, 0, Function, Single-line Text, varchar, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Functions, BEAR Functions, 0, Grouping, Single-line Text, varchar, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Functions, BEAR Functions, 0, Linked To, Linked To, void, 2, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Functions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Responsibilities, BEAR Responsibilities, 0, Area, List, varchar, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, BEAR Responsibilities, 0, Comment, Multi-line Text, text, 3, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, BEAR Responsibilities, 0, Function, Table, varchar, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, BEAR Responsibilities, 0, Jointly Responsible, List, varchar, 2, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, BEAR Responsibilities, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, Committees, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, Committees, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, Committees, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, Committees, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Chair, User, integer, 2, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Comittee Purpose, Multi-line Text, text, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Committee Charter, Attachment, integer, 5, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Committee Meeting Frequency, List, varchar, 4, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Committee Members, Multi-select Library, array, 3, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Committee Title, Single-line Text, varchar, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, Committees, SMR - Committees, 0, Number of Times Per Year, Whole Number, integer, 4, right, false, Display, 0.3
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, Prescribed Responsibilities, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, Prescribed Responsibilities, SMR - Prescribed Responsibilities, 0, Applicability, List, varchar, 3, left, false, Display, 0.2
+1100, Exec Responsibilities, Prescribed Responsibilities, SMR - Prescribed Responsibilities, 0, Function, Multi-select List, array, 2, left, false, Display, 0.2
+1100, Exec Responsibilities, Prescribed Responsibilities, SMR - Prescribed Responsibilities, 0, Prescribed Responsibility, Multi-line Text, text, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, Prescribed Responsibilities, SMR - Prescribed Responsibilities, 0, Reference, Single-line Text, varchar, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1100, Exec Responsibilities, Senior Management Functions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1100, Exec Responsibilities, Senior Management Functions, SMR - Senior Management Functions, 0, Reference, Single-line Text, varchar, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Behaviour, 4, Type of Behaviour Incident, List, varchar, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Fall, 2, Did a head injury occur?, List, varchar, 2, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Fall, 2, Fall resulted in what grade of injury, List, varchar, 1, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Fall, 2, Is Resident prescribed anticoagulant therapy?, List, varchar, 3, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Fall, 2, Resident was Wearing Hip Protectors, List, varchar, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Fall, 2, Were neurological observations commenced?, List, varchar, 2, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 1, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 7, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 15, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 23, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 35, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 39, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 42, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 44, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 46, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 50, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 59, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, <b></b>, Static Text, void, 61, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Antibiotics/Treatment used and date prescribed, Multi-line Text, text, 63, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Cause of Infection, List, varchar, 62, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Cellulitis/Soft Tissue/Wound Infection, Boolean (Yes/No), boolean, 27, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Common Cold Symptoms or Pharyngitis, Boolean (Yes/No), boolean, 10, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Common Cold Symptoms or Pharyngitis Signs and Symptoms, Multi-select List, array, 9, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Conjunctivitis, Boolean (Yes/No), boolean, 38, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Diarrhoea, Boolean (Yes/No), boolean, 54, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Does the Interpretation of a chest radio-graph demonstrate Pneumonia, probable Pneumonia, or the presence of an infiltrate? If a previous x-ray exists for comparison, the infiltrate should be new, List, varchar, 16, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Ear Infection, Boolean (Yes/No), boolean, 41, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Ear Signs and Symptoms, Multi-select List, array, 40, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Eye / Ear / Oral / Sinusitis Infection, List, varchar, 36, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Eye Signs and Symptoms, Multi-select List, array, 37, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Food Poisoning, Boolean (Yes/No), boolean, 57, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Food Poisoning Signs or Symptoms, Multi-select List, array, 53, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Fungal Signs and Symptoms, Multi-select List, array, 28, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Fungal Skin Infection, Boolean (Yes/No), boolean, 29, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Gastroenteritis, Boolean (Yes/No), boolean, 56, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Gastroenteritis Signs or  Symptoms, Multi-select List, array, 52, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Herpes Signs or Symptoms, Multi-select List, array, 30, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Herpes Simplex (Cold Sore) Infection, Boolean (Yes/No), boolean, 32, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Herpes Zoster (Shingles) Infection, Boolean (Yes/No), boolean, 31, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Infection Category, List, varchar, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Influenza - Like Illness, Boolean (Yes/No), boolean, 14, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Influenza Signs or Symptoms, Multi-select List, array, 13, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 4, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 6, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 10, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 12, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 14, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 17, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 19, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 22, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 27, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 29, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 31, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 34, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 38, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 41, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 49, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 54, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 55, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 56, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Instruction, Static Text, void, 57, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Oral or Perioral Infection, including oral candida, requires Doctor or Dentist review and diagnosis, Boolean (Yes/No), boolean, 43, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Organism isolated as confirmed by pathology, Multi-line Text, text, 63, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Other Infections, Boolean (Yes/No), boolean, 58, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Other Infection Type Details, Multi-line Text, text, 60, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Other Lower Respiratory/Bronchitis/Tracheobronchitis Sign or Symptoms, Multi-select List, array, 21, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Other Lower Respiratory Tract Infection (bronchitis,tracheobronchitis), Boolean (Yes/No), boolean, 22, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Pneumonia, Boolean (Yes/No), boolean, 19, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Pneumonia Signs or Symptoms, Multi-select List, array, 18, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Pus Present at a wound, skin or soft tissue site, Boolean (Yes/No), boolean, 25, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Resident/ Change or Status in Breathing, Multi-select List, array, 20, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Resident/Customer has a fever greater than 38 degrees, List, varchar, 11, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Resident has Indwelling Urinary Catheter, List, varchar, 2, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Respiratory Infection Category, List, varchar, 8, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Scabies, Boolean (Yes/No), boolean, 34, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Scabies Signs or Symptoms, Multi-select List, array, 33, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Signs and Symptoms With indwelling Catheter, Multi-select List, array, 5, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Signs and Symptoms Without Indwelling Catheter, Multi-select List, array, 3, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Sinusitis requires Medical Officer review and diagnosis, Boolean (Yes/No), boolean, 45, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Skin / Wound Infection, List, varchar, 24, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Systemic Infection, Boolean (Yes/No), boolean, 49, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Systemic Infection Signs or Symptoms, Multi-select List, array, 48, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Two or more blood cultures are positive for the same organism, Boolean (Yes/No), boolean, 47, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, UTI - with Indwelling Catheter, Boolean (Yes/No), boolean, 6, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, UTI - Without Indwelling Catheter, Boolean (Yes/No), boolean, 4, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Vomiting, Boolean (Yes/No), boolean, 55, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Vomiting and Diarrhoea Signs or Symptoms, Multi-select List, array, 51, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Infection, 5, Wound/Skin/Cellulitis Signs or Symptoms, Multi-select List, array, 26, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Area of Body Injured, Multi-select List, array, 2, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Injury Occurred, List, varchar, 3, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Injury resulted in what grade of injury, List, varchar, 2, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Instruction, Static Text, void, 0, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Resident Prescribed Anticoagulant Therapy, List, varchar, 1, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Injury, 3, Type of Injury, List, varchar, 1, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, <b></b>, Static Text, void, 2, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, <b></b>, Static Text, void, 4, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, <b></b>, Static Text, void, 6, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, <b></b>, Static Text, void, 8, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Dose administered to Resident, List, varchar, 3, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Instruction, Static Text, void, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Medication Incident Type, List, varchar, 1, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Name of Medication (s) Involved, Multi-line Text, text, 10, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Other Administration Error Type, Multi-select List, array, 9, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Pharmacy Administration Error Type, Multi-select List, array, 3, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Self Administration Error Type, Multi-select List, array, 7, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Spacer, Spacer, void, 0, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Medication, 1, Staff Administration Error Type, Multi-select List, array, 5, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Care Centre, Single-line Text, varchar, 3, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Date and Time of Incident, Date and Time, timestamp, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Details of Incident/Explanation, Single-line Text, varchar, 7, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Direct Manager for Report, Single-line Text, varchar, 6, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Hospital Transferred Required, List, varchar, 9, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Identified Risk of Incident at initial reporting, Risk Matrix, integer, 10, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Identified Risk of Incident at initial reporting - Consequence, Consequence, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Identified Risk of Incident at initial reporting - Likelihood, Likelihood, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Identified Risk of Incident at initial reporting - Rating, Risk Rating, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Identified Risk of Incident at initial reporting - Total Score, Whole Number, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Immediate actions taken, Single-line Text, varchar, 7, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Incident Witnessed By, Multi-select List, array, 4, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Instruction for Behaviour Selection, Static Text, void, 2, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Location of Resident when Infection was Acquired, List, varchar, 8, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Reported By, Single-line Text, varchar, 5, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Reported By Phone Number, Single-line Text, varchar, 6, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Reported By Position, Single-line Text, varchar, 5, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Residents Full Name, Single-line Text, varchar, 3, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Type of Incident, Multi-select List, array, 1, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Notification, 0, Witness Name and Contact Details, Multi-line Text, text, 4, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Record of Notification, 6, Notification Issued To, Multi-select List, array, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Mitigated Risk of Incident post Investigation and Evaluation, Risk Matrix, integer, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Mitigated Risk of Incident post Investigation and Evaluation - Consequence, Consequence, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Mitigated Risk of Incident post Investigation and Evaluation - Likelihood, Likelihood, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Mitigated Risk of Incident post Investigation and Evaluation - Rating, Risk Rating, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Mitigated Risk of Incident post Investigation and Evaluation - Total Score, Whole Number, integer, -1, both, false, Hidden, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CIM - Incident Risk Assessment, 7, Was this a significant / near miss Incident, List, varchar, 1, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1200, Clinical Management, Clinical Incident Management Register, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1200, Clinical Management, New Register 150240, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1200, Clinical Management, New Register 150240, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1200, Clinical Management, New Register 150240, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1200, Clinical Management, New Register 150240, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1200, Clinical Management, New Register 150240, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1200, Clinical Management, New Register 150240, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Actions, AFG Action Details, 0, Action Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG Actions, AFG Action Details, 0, Action Owner, User, integer, 2, left, false, Display, 0.2
+1201, AFG, AFG Actions, AFG Action Details, 0, Action Type, List, varchar, 0, right, false, Display, 0.3
+1201, AFG, AFG Actions, AFG Action Details, 0, Attachments, Attachment, integer, 4, right, false, Display, 0.3
+1201, AFG, AFG Actions, AFG Action Details, 0, Description, Multi-line Text, text, 1, both, false, Display, 0.1
+1201, AFG, AFG Actions, AFG Action Details, 0, Due Date, Due Date, date, 2, right, false, Display, 0.3
+1201, AFG, AFG Actions, AFG Action Details, 0, Linked To, Linked To, void, 4, left, false, Display, 0.2
+1201, AFG, AFG Actions, AFG Action Details, 0, Original Due Date, Due Date, date, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Actions, AFG Action Details, 0, Overdue, Boolean (Yes/No), boolean, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Actions, AFG Action Details, 0, Progress Update, WorkLog, integer, 3, both, false, Display, 0.1
+1201, AFG, AFG Actions, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Actions, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Actions, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Actions, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Actions, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Actions, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Acknowledgement Due Date, Date Formula, date, 0, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Attachments, Attachment, integer, 7, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Brokers, Business Unit, integer, 5, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Channel, List, varchar, 5, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Compensation, Currency, numeric, 8, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complainant's Email, Email, varchar, 3, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complainant's Name, Single-line Text, varchar, 3, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complainant's Phone Number, Single-line Text, varchar, 4, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complaint Description, Multi-line Text, text, 6, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complaint Source, List, varchar, 2, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Complaint Type, List, varchar, 2, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Date Acknowledged, Date, date, 1, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Date Complaint Received, Date, date, 0, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Executive Summary, Multi-line Text, text, 6, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Final response due date, Date Formula, date, 1, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Outcome sought by the complainant, Multi-line Text, text, 7, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Details, 0, Severity Rating, List, varchar, 8, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Actions, Actions, varchar, 5, both, false, Display, 0.1
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Attachments, Attachment, integer, 3, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Classification, List, varchar, 1, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Compensation (if any), Multi-line Text, text, 3, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Date of Initial Contact, Date, date, 0, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Determination, Multi-line Text, text, 2, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, EDR Notes, WorkLog, integer, 4, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Responded Date, Date, date, 1, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Response, Multi-line Text, text, 2, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint - EDR, 2, Response Due Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Actions, Actions, varchar, 5, both, false, Display, 0.1
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Attachments, Attachment, integer, 3, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Compensation (if any), Multi-line Text, text, 3, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Complaint Investigator, User, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Complaint Owner, User, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Date Responded, Date, date, 1, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, IDR Determination, Multi-line Text, text, 2, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Investigation Notes, WorkLog, integer, 4, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint IDR, 1, Response to Complainant, Multi-line Text, text, 2, right, false, Display, 0.3
+1201, AFG, AFG Complaints, AFG - Complaint Links, 3, Incidents/Issues, Table, varchar, 2, both, false, Display, 0.1
+1201, AFG, AFG Complaints, AFG - Complaint Links, 3, Related Controls, Multi-select Library, array, 1, left, false, Display, 0.2
+1201, AFG, AFG Complaints, AFG - Complaint Links, 3, Related Risk, Risk Event, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Complaints, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Complaints, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Complaints, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Complaints, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Complaints, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Complaints, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG - Control Library, AFG - Control Library - Actions, 2, Actions, Actions, varchar, 0, both, false, Display, 0.1
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Comments, Multi-line Text, text, 5, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Control, Multi-select Library, array, 0, both, false, Display, 0.1
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Control Assessed Date, Date, date, 3, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Control Method, List, varchar, 1, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Control Objective, Multi-line Text, text, 1, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Control Owner, User, integer, 2, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Design Effectiveness, List, varchar, 4, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Key Control?, Boolean (Yes/No), boolean, 2, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Next Review Date, Date, date, 3, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, AFG Control Library - Details, 0, Operating Effectiveness, List, varchar, 4, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, AFG Control Library - Testing, 1, Testing, Table, varchar, 0, both, false, Display, 0.1
+1201, AFG, AFG - Control Library, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG - Control Library, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG - Control Library, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG - Control Library, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Control, Control, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Control Effective?, List, varchar, 8, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Control Objective, Multi-line Text, text, 2, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Control Results, List, varchar, 8, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Control Testing Performed by, User, integer, 9, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Date Reviewed, Date, date, 11, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Date Test Performed, Date, date, 4, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Design Test Comments, Multi-line Text, text, 5, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Evidence, Attachment, integer, 10, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Guide, Static Text, void, 12, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Number of Samples, Single-line Text, varchar, 7, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Number Passed, Whole Number, integer, 7, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Operating Test Comments, Multi-line Text, text, 6, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Reviewed By, User, integer, 11, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Testing, List, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Test Objective, Multi-line Text, text, 3, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, AFG Control Testing - Details, 0, Test Script, Multi-line Text, text, 3, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG - Control Testing, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG - Control Testing, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG - Control Testing, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG - Corrective & Preventative Action, 2, Corrective & Preventative Action, Table, varchar, 0, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG - Corrective & Preventative Action, 2, Note, Static Text, void, 2, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG - Corrective & Preventative Action, 2, Upon completion of the above, summarise action(s) taken to address issue/ action plan, Multi-line Text, text, 1, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Actual loss or gain, Currency, numeric, 6, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Attachments relating to the Incident/ Issue, Attachment, integer, 13, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Estimated loss / gain, Currency, numeric, 3, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Estimated lost hours, if applicable, Decimal, numeric, 7, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Estimated recovery amount, Currency, numeric, 5, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, How was the Incident or Issue identified?, Multi-line Text, text, 0, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Impact Rating, List, varchar, 9, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident / Issue Approver, User, integer, 10, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident/ Issue Details, Multi-line Text, text, 0, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident / Issue Owner, User, integer, 10, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident/ Issue Stakeholder (1), User, integer, 11, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident/ Issue Stakeholder (2), User, integer, 11, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident/ Issue Stakeholder (3), User, integer, 12, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Incident/ Issue Stakeholder (4), User, integer, 12, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Is a dollar loss or gain expected?, List, varchar, 2, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Is a recovery/refund expected?, List, varchar, 4, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Is there any control weakness or process failure?, Multi-line Text, text, 1, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Progress Update, WorkLog, integer, 13, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Rationale, Multi-line Text, text, 9, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Root cause(s), Multi-line Text, text, 1, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Details, 1, Select non-financial impact(s) expected, Multi-select List, array, 8, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Business Unit that identified the Incident / Issue, Business Unit, integer, 2, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Date Incident / Issue Identified, Date, date, 1, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Date Incident / Issue Occurred, Date, date, 1, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Have you notified all impacted Business Units of the Incident / Issue?, List, varchar, 3, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Incident / Issue Identified By, List, varchar, 2, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Incident / Issue Name, Single-line Text, varchar, 0, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Is this a sensitive Incident / Issue, Boolean (Yes/No), boolean, 4, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Primary Business Unit Impacted, Business Unit, integer, 3, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG Incident / Issue Identification, 0, Ref. ID, Single-line Text, varchar, 5, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident/ Issue Line 2 Risk Review, 4, Incident/ Issue Closed Date, Date, date, 0, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident/ Issue Line 2 Risk Review, 4, Line 2 Risk - Commentary, Multi-line Text, text, 1, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Classification, List, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Closure Due Date, Date, date, 3, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Incident/ Issue reportable to regulator, List, varchar, 2, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Incident / Issue Theme, Single-line Text, varchar, 0, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Issue Complexity Rating, List, varchar, 1, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Issue Complexity Rationale, Multi-line Text, text, 1, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, AFG - Incident / Issue Resolution (Line 1 Risk to complete), 3, Linked risk, Risk Event, integer, 2, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Incident / Issues, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Incident / Issues, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Incident / Issues, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Policies, AFG Policy - Details, 0, Applicable to BU, Multi-select Library, array, 1, right, false, Display, 0.3
+1201, AFG, AFG Policies, AFG Policy - Details, 0, Policy, Attachment, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Policies, AFG Policy - Details, 0, Policy Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG Policies, AFG Policy - Details, 0, Policy Owner, User, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Controls in Place to Maintain Policy, Multi-select Library, array, 2, right, false, Display, 0.3
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Last Review Date, Date, date, 0, left, false, Display, 0.2
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Next Review Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Related Risk, Risk Event, integer, 2, left, false, Display, 0.2
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Review Comments, WorkLog, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Policies, AFG Policy - Review, 1, Source Document, Attachment, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Policies, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Policies, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Policies, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Policies, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Policies, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Policies, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Continual Monitoring, 3, Linked Attestations, Multi-select Library, array, 0, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Continual Monitoring, 3, Linked KRIs, Multi-select Library, array, 0, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Continual Monitoring, 3, Review Notes, WorkLog, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Control Methodology, List, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Control Rating Commentary, Multi-line Text, text, 1, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Controls, Table, varchar, 2, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Controls Assessed, Multi-select Library, array, 1, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Controls Overall Effectiveness, List, varchar, 3, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, Control Testing, Table, varchar, 5, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Control, 1, CT, Boolean (Yes/No), boolean, 4, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Connected Strategy, Table, varchar, 3, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Date of assessment, Date, date, 0, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Impacts, Multi-select List, array, 4, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Inherent Risk Rating, Risk Matrix, integer, 4, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Inherent Risk Rating - Consequence, Consequence, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Inherent Risk Rating - Likelihood, Likelihood, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Inherent Risk Rating - Rating, Risk Rating, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Inherent Risk Rating - Total Score, Whole Number, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Linked Group Risk, Risk Event, integer, 3, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Next Review Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Rationale for Inherent Assessment, Multi-line Text, text, 5, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Risk, Risk Event, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Risk Description, Multi-line Text, text, 2, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG Risk Assessment - Inherent Risk, 0, Risk Owner, User, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Acceptance Commentary, Multi-line Text, text, 3, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Accept or Treat?, List, varchar, 2, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Authorisation, Sign-off, integer, 6, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Assessment Rationale, Multi-line Text, text, 0, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Risk Rating, Risk Matrix, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Risk Rating - Consequence, Consequence, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Risk Rating - Likelihood, Likelihood, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Risk Rating - Rating, Risk Rating, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Residual Risk Rating - Total Score, Whole Number, integer, -1, both, false, Hidden, 0.1
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Spacer, Spacer, void, 5, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Treatment Plan, Static Text, void, 1, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, AFG - Risk Assessment - Residual Risk, 2, Treatment Required, Actions, varchar, 4, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Risk Assessment, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Risk Assessment, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Risk Assessment, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Classification, Multi-select List, array, 2, left, false, Display, 0.2
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Impact, Multi-line Text, text, 1, right, false, Display, 0.3
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Metrics, Multi-select Library, array, 3, left, false, Display, 0.2
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Objective, Multi-line Text, text, 1, left, false, Display, 0.2
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Strategy Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, AFG Strategy, AFG Strategy - Details, 0, Strategy Title, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, AFG Strategy, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, AFG Strategy, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, AFG Strategy, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, AFG Strategy, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, AFG Strategy, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, AFG Strategy, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, Broker - Approval, 3, Approval Comments, Multi-line Text, text, 1, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, Broker - Approval, 3, Date of Apprval, Date, date, 0, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Approval, 3, Vendor Approved by, Sign-off, integer, 0, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Company Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Contact Email, Email, varchar, 3, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Contact Mobile, Single-line Text, varchar, 4, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Contact Telephone, Single-line Text, varchar, 4, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Email Address, Email, varchar, 2, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Fax, Single-line Text, varchar, 2, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Mailing Address, Multi-line Text, text, 1, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Point of Contact, Single-line Text, varchar, 3, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Telephone, Single-line Text, varchar, 1, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Details, 0, Web Address, Single-line Text, varchar, 0, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker Performance, 4, Company Performance, Table, varchar, 0, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, ABN, Whole Number, integer, 2, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, ACN, Whole Number, integer, 2, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Business Type, List, varchar, 1, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Compliance Questions, Multi-select Library, array, 3, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Contract, Attachment, integer, 3, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Contract Duration, Decimal, numeric, 4, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Date Company Established, Date, date, 1, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Date Contract Commenced, Date, date, 4, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Details of Goods / Services Provided, Multi-line Text, text, 0, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Insurance COC, Attachment, integer, 5, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Insurance Review, List, varchar, 6, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Insurances, Multi-select List, array, 5, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Licence Review, List, varchar, 8, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Licences, Attachment, integer, 7, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Licences held, Multi-line Text, text, 7, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Next Review Date - Insurance, Date, date, 6, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Next Review Date - Licences, Date, date, 8, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, Broker - Profile Overview, 2, Other Information, Multi-line Text, text, 9, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, Broker - Staff, 1, Vendor Staff, Table, varchar, 0, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, Broker 360 Profile, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, Broker 360 Profile, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, Broker 360 Profile, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Company Performance Report, Multi-line Text, text, 3, both, false, Display, 0.1
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Company Start Date, Date, date, 1, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Overall Performance Rating, List, varchar, 4, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Project Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Project Start Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Project Status, List, varchar, 1, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Reason for Rating, Multi-select List, array, 4, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Report Date, Date, date, 2, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Reporter Name, User, integer, 2, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Use Company Again, List, varchar, 5, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, Brokers Performance, 0, Worklog, WorkLog, integer, 5, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, Broker Company Performance, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, Broker Company Performance, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, Broker Company Performance, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, Broker Competency Register, Broker Competency Description, 0, Competency or Training completed, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, Broker Competency Register, Broker Competency Description, 0, Date completed, Date, date, 0, right, false, Display, 0.3
+1201, AFG, Broker Competency Register, Broker Competency Description, 0, Description, Multi-line Text, text, 1, left, false, Display, 0.2
+1201, AFG, Broker Competency Register, Broker Competency Description, 0, Evidence of competency or completed training, Attachment, integer, 2, both, false, Display, 0.1
+1201, AFG, Broker Competency Register, Broker Competency Description, 0, Hours, Decimal, numeric, 1, right, false, Display, 0.3
+1201, AFG, Broker Competency Register, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, Broker Competency Register, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, Broker Competency Register, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, Broker Competency Register, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, Broker Competency Register, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, Broker Competency Register, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, <b></b>, Static Text, void, 0, both, false, Display, 0.1
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Communication procedures in place for remote / rural/ in isolation work, Multi-select List, array, 12, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Completed Permits to Work (PTW), Multi-select List, array, 8, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Contractor certification & licences, Multi-select List, array, 1, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Lock out / tag out procedures, Multi-select List, array, 9, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Other Document (if applicable), Multi-line Text, text, 13, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Plant / equipment certification / registration, Multi-select List, array, 5, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Professional indemnity insurance, Multi-select List, array, 3, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Public liability insurance, Multi-select List, array, 2, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Safety Data Sheets (SDS) for all hazardous chemicals to be used, Multi-select List, array, 7, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Safe work methods & procedures & instructions for work, Multi-select List, array, 6, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Site plans and services reviewed where digging / trenching will be completed, Multi-select List, array, 11, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Traffic/ environmental/ site management plan, Multi-select List, array, 10, left, false, Display, 0.2
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Communication procedures, Attachment, integer, 12, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Completed PTW, Attachment, integer, 8, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Contractor certification & licences, Attachment, integer, 1, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Lock out / tag out procedures, Attachment, integer, 9, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Other documents, Attachment, integer, 13, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Plant / equipment certification / registration, Attachment, integer, 5, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Professional indemnity insurance, Attachment, integer, 3, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Public liability insurance, Attachment, integer, 2, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Safe work methods & procedures & instructions for work, Attachment, integer, 6, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload SDS, Attachment, integer, 7, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Site plans and services reviewed, Attachment, integer, 11, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Traffic/ environmental/ site management plan, Attachment, integer, 10, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Upload Workers compensation/ personal accident insurance, Attachment, integer, 4, right, false, Display, 0.3
+1201, AFG, Brokers, Broker Documentation Reviewed, 1, Workers compensation/ personal accident insurance, Multi-select List, array, 4, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, <b></b>, Static Text, void, 1, both, false, Display, 0.1
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Incident reporting and investigation process, Boolean (Yes/No), boolean, 6, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Induction Completed By, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Induction Date, Date, date, 0, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Overview of general access and restricted access areas, Boolean (Yes/No), boolean, 8, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Overview of site hazards including those from work on site, Boolean (Yes/No), boolean, 9, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Risk control requirements (Hazardous chemicals /plant /equipment /excavation /confined space work etc), Boolean (Yes/No), boolean, 10, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site amenities and facilities, Boolean (Yes/No), boolean, 11, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site emergency evacuation procedures, Boolean (Yes/No), boolean, 4, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site first aid/ medical emergency procedures, Boolean (Yes/No), boolean, 5, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site parking arrangements, Boolean (Yes/No), boolean, 12, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site rules (Mandatory PPE /drugs /alcohol /smoking etc), Boolean (Yes/No), boolean, 3, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Site sign-in / sign-out register, Boolean (Yes/No), boolean, 7, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Sub-contractor management processes, Boolean (Yes/No), boolean, 13, left, false, Display, 0.2
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Incident reporting and investigation process, Attachment, integer, 6, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Overview of general access and restricted access areas, Attachment, integer, 8, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Overview of site hazards, Attachment, integer, 9, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Risk control requirements, Attachment, integer, 10, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site amenities and facilities document, Attachment, integer, 11, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site emergency evacuation procedures, Attachment, integer, 4, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site first aid/ medical emergency procedures, Attachment, integer, 5, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site parking arrangements document, Attachment, integer, 12, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site rules, Attachment, integer, 3, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Site sign-in / sign-out register, Attachment, integer, 7, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload Sub-contractor management processes document, Attachment, integer, 13, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, Upload WHS Policy, Attachment, integer, 2, right, false, Display, 0.3
+1201, AFG, Brokers, Broker - Induction Checklist, 2, WHS Policy, Boolean (Yes/No), boolean, 2, left, false, Display, 0.2
+1201, AFG, Brokers, Brokers Staff, 0, Competencies and Inductions, Table, varchar, 2, both, false, Display, 0.1
+1201, AFG, Brokers, Brokers Staff, 0, Email, Email, varchar, 1, left, false, Display, 0.2
+1201, AFG, Brokers, Brokers Staff, 0, First Name, Single-line Text, varchar, 0, left, false, Display, 0.2
+1201, AFG, Brokers, Brokers Staff, 0, Last Name, Single-line Text, varchar, 0, right, false, Display, 0.3
+1201, AFG, Brokers, Brokers Staff, 0, Mobile Phone, Single-line Text, varchar, 1, right, false, Display, 0.3
+1201, AFG, Brokers, Brokers Staff, 0, Next Review Date, Date, date, 3, left, false, Display, 0.2
+1201, AFG, Brokers, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, Brokers, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, Brokers, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, Brokers, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, Brokers, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, Brokers, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Instructions, 0, Attestation Due Date, Date, date, 1, right, false, Display, 0.3
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Instructions, 0, Instructions, Static Text, void, 0, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Instructions, 0, Name, User, integer, 0, right, false, Display, 0.3
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Instructions, 0, Role, List, varchar, 1, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, AFG has been advised within 2 days of any change of name, business address, professional indemnity insurance details, EDR membership and appointments/terminations of directors, employees, contractors or admin assistants, List, varchar, 13, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, All customer requests for marketing opt outs have been acted upon; only customers who are aware of and agreed to receive direct marketing, are on the nurture program, List, varchar, 51, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, All insurance premiums, including monthly payments, were made by the due date. Proof of insurance currency available on request, List, varchar, 7, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, All my marketing including websites and social media has been approved in accordance with AFG requirements, List, varchar, 64, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, All potential insurance claims have been immediately advised to my insurer. Proof of notification is available on request, List, varchar, 9, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, All support staff and store brokers have contracts in place with my company, which contain confidentiality, restraint of trade and privacy clauses, List, varchar, 53, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 2, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 4, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 6, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 8, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 10, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 12, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 14, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 16, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 18, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 20, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 22, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 24, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 26, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 28, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 30, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 32, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 34, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 36, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 38, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 40, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 42, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 44, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 46, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 48, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 50, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 52, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 54, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 56, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 59, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 61, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 63, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 65, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 67, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 69, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 71, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 73, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 75, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, Comment, Multi-line Text, text, 77, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, How to close, Static Text, void, 78, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, How to complete, Static Text, void, 0, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I always completed an online complaint form within 24 hours of receipt of complaint, List, varchar, 47, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am a credit representative only of AFG and not of any other Australian Credit Licencee, List, varchar, 1, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am aware and familiar with AFG's Whistleblower Policy, List, varchar, 68, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am aware that if I breach the AFG Code of Conduct or policies or procedures, I may be issued with a notice by AFG which may result in the termination of my appointment as an authorised credit representative of AFG, List, varchar, 74, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am aware that if I cease to be a Credit Representative, my insurer must be advised that run-off cover is to be activated, List, varchar, 11, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am not banned or suspended from engaging in a credit activity under any National or State/Territory Law, List, varchar, 17, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I am not subject to a banning order or disqualification under the Corporations Act 2001, List, varchar, 15, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I comply with AFG's Responsible Lending Policy, List, varchar, 70, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I comply with the Anti Bribery and Corruption Policy, List, varchar, 37, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I do not hold my own Australian Credit Licence, List, varchar, 3, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I do not hold or send any customer personal information offshore (unless to a customer's authorised email address) via a Non AFG system, List, varchar, 60, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I do not receive any fees from my customers for the provision of credit assistance, List, varchar, 39, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I have advised Risk and Compliance of all suspicious matters and lodged a Fraud and Suspect Transactions form, List, varchar, 66, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I have not made or received any payment in relation to referrals or received any payment as commission from any source other than AFG, List, varchar, 41, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I have not received or provided any Gifts and Entertainment in my capacity as an AFG Broker that could be perceived as inappropriate or give rise to (actual, potential or perceived) conflicts of interest, List, varchar, 33, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm I have recorded all Gifts and Entertainment in accordance with policy together with required approvals.  A register of Gifts and Entertainment is available on request, List, varchar, 35, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm myself and my company are not insolvent nor am I an undischarged bankrupt, List, varchar, 21, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm that customers are not disadvantaged by any (actual, potential or perceived) conflict of interest, List, varchar, 31, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I confirm that in accordance with the IT Security Policy I do not share, and I keep secure, all usernames and passwords of AFG systems, List, varchar, 62, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I declare that all information provided in this Annual attestation is true, correct and complete, List, varchar, 76, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I do not hold an Australian Financial Services Licence (AFSL) nor am I a representative under any other AFSL, List, varchar, 5, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have an agreement in place with my franchisee/ mobile broker which covers confidentiality, restraint of trade and privacy clauses, List, varchar, 55, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have met all my customers face to face and have sighted all original identification documents, List, varchar, 49, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have not been charged or convicted of any charges during the past 24 months, List, varchar, 29, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have not been convicted or charged within the last ten years of fraud and am not subject to any order under the Crimes, List, varchar, 25, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have not been disqualified from managing corporations nor am I, or my company under any investigation, List, varchar, 23, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have not held an Australian Financial Services Licence that was either cancelled or suspended within the last 7 years due to mental or physical incapacity or after a hearing, List, varchar, 19, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I have read, understood and comply with the Aussie Broker Code of Conduct, contained in the Broker Governance Policy, List, varchar, 72, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I register all my referrers who pass on potential customer details to me, by completing the NCCP Referral form, List, varchar, 43, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, I use the services of an Administration Assistant/Loan Packager, List, varchar, 57, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, My company's directors, secretaries, employees or contractors who perform duties in relation to the credit activities, List, varchar, 27, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, My support staff and I only handle customer information and data within AFG's systems and do not collect or store any non AFG related information, List, varchar, 58, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, Attestation - Questionnaire, 1, On receipt of a referral I always contact the customer within 10 days, inform the customer of the source of their details and specifically ask the customer if they are happy to continue with the conversation, List, varchar, 45, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, NCCP Annual Compliance Attestation, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1201, AFG, New Register 158110, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1201, AFG, New Register 158110, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1201, AFG, New Register 158110, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1201, AFG, New Register 158110, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1201, AFG, New Register 158110, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1201, AFG, New Register 158110, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Company ABN, Whole Number, integer, 0, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, How did you come across Protecht, Other?, Single-line Text, varchar, 7, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, How did you come across Protecht?, List, varchar, 6, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, How many company locations (head office, branches, centres, stores etc.)?, List, varchar, 6, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Industry, List, varchar, 2, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Industry Other, Single-line Text, varchar, 3, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Key Contact Name, Single-line Text, varchar, 1, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Key Contact Role, List, varchar, 1, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Key Stakeholders in your organisation, Multi-select List, array, 4, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Name of Company, Single-line Text, varchar, 0, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Number of Employees, List, varchar, 2, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Details, 0, Other Key Stakeholders, Multi-line Text, text, 5, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Requirements, 1, Do you have an allocated budget in place to acquire a system?, List, varchar, 1, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Client Requirements, 1, What is your motivation for talking to us?, Multi-select List, array, 0, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, Client Requirements, 1, When are you looking to implement your new risk/compliance framework or system?, List, varchar, 1, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Client Requirements, 1, When are you looking to implement your new risk/compliance framework or system? Other?, Single-line Text, varchar, 2, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, Business Unit, Business Unit, integer, 1, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, Create Date, Date and Time, timestamp, 2, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, Created By, User-info, integer, 0, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, ID, Whole Number, integer, 0, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, Last Modified By, User-info, integer, 1, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, CORE, -1, Last Modified Date, Date and Time, timestamp, 4, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Are any of the below relevant?, Multi-select List, array, 8, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Are controls captured?, List, varchar, 3, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Are you interested in the system capturing information in other areas?, Multi-select List, array, 8, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Comments, Single-line Text, varchar, 4, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Comments, Single-line Text, varchar, 4, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Comments, Single-line Text, varchar, 6, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Comments, Single-line Text, varchar, 6, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Do you capture any key risk indicators or metrics linked to risks or controls?, List, varchar, 5, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Do you capture incidents?, List, varchar, 7, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Do you have a developed Risk Appetite Statement in Place?, List, varchar, 5, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, How would you rate the maturity of risk management in your organisation?, List, varchar, 0, both, false, Display, 0.1
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Is control testing done?, List, varchar, 3, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Please explain how you capture incidents?, Single-line Text, varchar, 7, right, false, Display, 0.3
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, Please explain other areas that may be of interest, Multi-line Text, text, 9, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, What are the key pain points in the current process?, Multi-select List, array, 1, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, What are the key pain points in the current process? Other?, Multi-line Text, text, 2, left, false, Display, 0.2
+1220, Customer, Pre-Meeting Questionnaire, Current Risk Framework and Processes, 2, What risk assessment methodology do you use? (Inherent to Residual, Target), Multi-line Text, text, 1, right, false, Display, 0.3

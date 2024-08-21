@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 4)
+string, integer, Hour(time), f_date
+inetsoft, 1, 10, 2009-01-09
+inetsoft, 135, 00, 2009-01-01
+microsoft, 2, 00, 2009-01-01

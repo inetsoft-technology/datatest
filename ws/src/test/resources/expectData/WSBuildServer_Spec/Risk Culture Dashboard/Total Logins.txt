@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, ID
+12M, 1993
+1M, 2499
+3M, 2499

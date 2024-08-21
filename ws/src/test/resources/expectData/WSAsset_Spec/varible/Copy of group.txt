@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 2)
+Year(f_date), PRODUCT_ID
+2003, 41
+2004, 112

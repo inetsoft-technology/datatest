@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 2)
+state, fx id
+CA, 1
+CO, 2
+CT, 3
+MD, 4
+NJ, 5
+NY, 6

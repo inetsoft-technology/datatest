@@ -1,0 +1,66 @@
+The table size(row x col) is:(65 x 5)
+Residual Cell Color, Residual Likelihood Axis, Residual Consequence Axis, Residual ID, Residual
+aed581, 1 - Rare - Once in every 30 years, 1 - Insignificant, NULL, Residual
+aed581, 1 - Rare - Once in every 30 years, 2 - Minor, NULL, Residual
+aed581, 1 - Rare - Once in every 30 years, 3 - Moderate, NULL, Residual
+aed581, 1 - Rare - Once in every 30 years, 4 - Major, NULL, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 1 - Insignificant, NULL, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000020, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000024, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000027, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000029, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000045, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000048, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000054, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000066, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000070, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000074, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1000080, Residual
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, 1001088, Residual
+aed581, 3 - Possible  - Once in every 3 years, 1 - Insignificant, NULL, Residual
+aed581, 4 - Likely - Once per year, 1 - Insignificant, NULL, Residual
+FF6B58, 3 - Possible  - Once in every 3 years, 4 - Major, NULL, Residual
+FF6B58, 3 - Possible  - Once in every 3 years, 5 - Extreme, NULL, Residual
+FF6B58, 4 - Likely - Once per year, 4 - Major, NULL, Residual
+FF6B58, 4 - Likely - Once per year, 5 - Extreme, 1000078, Residual
+FF6B58, 5 - Almost Certain - More than once per year, 3 - Moderate, NULL, Residual
+FF6B58, 5 - Almost Certain - More than once per year, 4 - Major, NULL, Residual
+FF6B58, 5 - Almost Certain - More than once per year, 5 - Extreme, NULL, Residual
+FFD740, 1 - Rare - Once in every 30 years, 5 - Extreme, NULL, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 3 - Moderate, 1000036, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 3 - Moderate, 1000094, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 3 - Moderate, 1000308, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 3 - Moderate, 1000900, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 4 - Major, 1000088, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 4 - Major, 1000090, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 4 - Major, 1000098, Residual
+FFD740, 2 - Unlikely - Once in every 10 years, 5 - Extreme, NULL, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000072, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000076, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000082, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000084, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000086, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000096, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000100, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000102, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000104, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000106, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000108, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000110, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000112, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000114, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000116, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000118, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000120, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000122, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000124, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000126, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, 1000128, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 3 - Moderate, 1000057, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 3 - Moderate, 1000060, Residual
+FFD740, 3 - Possible  - Once in every 3 years, 3 - Moderate, 1000063, Residual
+FFD740, 4 - Likely - Once per year, 2 - Minor, NULL, Residual
+FFD740, 4 - Likely - Once per year, 3 - Moderate, 1000033, Residual
+FFD740, 4 - Likely - Once per year, 3 - Moderate, 1000909, Residual
+FFD740, 5 - Almost Certain - More than once per year, 1 - Insignificant, 1000092, Residual
+FFD740, 5 - Almost Certain - More than once per year, 2 - Minor, NULL, Residual

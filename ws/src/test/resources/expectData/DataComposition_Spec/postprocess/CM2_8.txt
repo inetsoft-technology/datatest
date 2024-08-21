@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 2)
+CITY, CUSTOMER_ID
+Dallas, 57
+G1, 169
+G2, 68
+G3, 66
+New York, 51

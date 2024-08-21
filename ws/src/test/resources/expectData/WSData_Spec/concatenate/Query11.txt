@@ -1,0 +1,17 @@
+The table size(row x col) is:(16 x 5)
+PRODUCT_NAME, PRICE, INSTOCK, PRODUCT_ID, CATEGORY_ID
+Animal World, 59, false, 17, 2
+Barbie's Fashion, 79, false, 20, 1
+Combat Hero, 29, true, 16, 1
+Easy Chess, 35, false, 13, 1
+Fancy Menus, 49, true, 10, 5
+Fast Go Game, 200, true, 14, 1
+Fast Mail, 39, true, 6, 6
+Learn ABC, 75, true, 18, 2
+Math for Me, 235, true, 19, 2
+Mega Icons, 550, true, 11, 5
+MeToo AppServer, 3000, true, 12, 3
+Sync Me, 145, true, 7, 4
+True Action, 398, false, 9, 4
+Web Bridge, 105, false, 15, 1
+WebCalendar, 248, true, 8, 6

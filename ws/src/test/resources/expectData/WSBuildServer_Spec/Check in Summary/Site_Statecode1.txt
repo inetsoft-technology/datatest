@@ -1,0 +1,136 @@
+The table size(row x col) is:(135 x 5)
+id, name, company_id, Company Name, state_code
+860, HB, 208, Cummins, NULL
+860, HB, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+862, Laverton, 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+864, Campbellfield , 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+866, Pakenham, 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL
+868, Devonport , 208, Cummins, NULL

@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 8)
+Software ID, Software Name, Software Type, Function, Criticality Rating, RTO, Component Type, fx Software RTO
+1000000, Symantec Anti Virus, NULL, Anti virus software, Critical, 3, Software, Modified
+1000002, Microsoft Office, NULL, Spreadsheets, word, outlook etc., High, 9, Software, Return to work was not a goal of rehabilitation program
+1000010, Java, NULL, Virtual machine for Tomcats, High, 3, Software, Modified
+1000012, Postgres, NULL, Database server used for ERM/ALM software, High, 3, Software, Modified
+1000015, Inetsoft, NULL, Analytics reporting engine used in ERM and ALM applications, High, 9, Software, Return to work was not a goal of rehabilitation program
+1000060, Salesforce, NULL, CRM system that captures all of our leads, opportunities and accounts., High, 9, Software, Return to work was not a goal of rehabilitation program
+1000062, Hubspot, NULL, Cloud solution for social media marketing, content management, web analytics and search engine optimization, High, 3, Software, Modified
+1000064, Corporate website, NULL, Lead generation, brand awareness, High, 3, Software, Modified

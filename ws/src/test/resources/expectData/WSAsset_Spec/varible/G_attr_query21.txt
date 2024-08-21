@@ -1,0 +1,27 @@
+The table size(row x col) is:(26 x 2)
+PRODUCT_EXIST, PRODUCE_TIME
+false, NULL
+false, NULL
+false, 05:17:17
+false, 05:17:17
+false, 09:09:09
+false, 09:09:09
+false, 09:09:09
+false, 09:09:09
+false, 12:12:12
+false, 12:12:12
+false, 12:12:12
+true, NULL
+true, NULL
+true, 01:01:01
+true, 01:01:01
+true, 01:01:01
+true, 01:13:13
+true, 01:13:13
+true, 01:13:13
+true, 05:17:17
+true, 05:17:17
+true, 11:59:59
+true, 11:59:59
+true, 11:59:59
+true, 12:12:12

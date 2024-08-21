@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 3)
+STATE, citynums, fx id
+AZ, 1, 1
+CA, 4, 2
+CO, 2, 3
+CT, 1, 4
+FL, 1, 5
+IL, 1, 6
+MA, 4, 7
+MD, 3, 8
+NJ, 6, 9
+NV, 1, 10
+NY, 4, 11
+PA, 1, 12
+TX, 4, 13
+WA, 2, 14

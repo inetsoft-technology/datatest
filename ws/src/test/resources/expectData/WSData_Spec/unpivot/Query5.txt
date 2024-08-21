@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 5)
+order_date, customer_id, f_boolean, Dimension, Measure
+2002-01-06, 32, true, order_time, 12:59:01
+2002-06-13, 35, false, order_time, 12:55:25

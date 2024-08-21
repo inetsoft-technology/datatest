@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 5)
+STATE, newAlias_1, normal_exp_2, newAlias_2, agg_exp_2
+AZ, parseable: Folk Mining, not parseable: Tucson, 70, 22
+CA, parseable: Computer Tech, not parseable: Los Angeles, 15, 21
+CA, parseable: Direct Sales, not parseable: San Francisco, 10, 24
+CA, parseable: West Coast Customs, not parseable: Los Angeles, 45, 22
+CA, parseable: Whittaker & Co, Inc, not parseable: Albany, 25, 17
+CO, parseable: Ernst Handel, not parseable: Boulder, 15, 15
+CO, parseable: Quick Stop, not parseable: Denver, 15, 20
+CT, parseable: Loctite Corp., not parseable: Hartford, 25, 13
+FL, parseable: Fast Transportation, not parseable: Orlando, 35, 20
+IL, parseable: Specialty Retail, not parseable: Chicago, 20, 17
+MA, parseable: AMG Logistics, not parseable: Springfield, 15, 19
+MA, parseable: Ubermeyer, not parseable: Boston, 0, 24
+MA, parseable: World Software Resellers, not parseable: Boston, 25, 18
+MA, parseable: XO Resellers, not parseable: Cambridge, 10, 19
+MD, parseable: FMG Consulting, not parseable: Baltimore, 30, 18
+MD, parseable: George Services, not parseable: Baltimore, 5, 18
+MD, parseable: InterLand Services, not parseable: Rockville, 0, 21
+NJ, parseable: Daycare One, not parseable: Middletown, 50, 18
+NJ, parseable: Interstate Shop, not parseable: Wayne, 35, 16
+NJ, parseable: Pharma Research, not parseable: Plainfield, 35, 22
+NJ, parseable: Rutgers Bank, not parseable: New Brunswick, 30, 21
+NJ, parseable: Scheggie Services, not parseable: Camden, 10, 17
+NJ, parseable: Software Specialists, not parseable: Newark, 95, 26
+NV, parseable: Tumbleweed Gaming, not parseable: Las Vegas, 25, 18
+NY, parseable: Eastern Data, not parseable: New York, 15, 25
+NY, parseable: FISGA Corp, not parseable: New York, 60, 24
+NY, parseable: High Society Investments, not parseable: New York, 0, 15
+NY, parseable: Old World Insurance, not parseable: New York, 95, 22
+PA, parseable: Tricounty Auto, not parseable: York, 15, 22
+TX, parseable: Big Ed's BBQ, not parseable: Houston, 35, 22
+TX, parseable: BigMart Foodstores, not parseable: Dallas, 10, 22
+TX, parseable: Nova Tera, not parseable: Dallas, 15, 18
+TX, parseable: The Big Cat, not parseable: Austin, 30, 22
+WA, parseable: Infinity Software, not parseable: Seattle, 0, 14
+WA, parseable: Northwest Outfitters, not parseable: Olympia, 55, 28

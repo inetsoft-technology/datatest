@@ -1,0 +1,13 @@
+The table size(row x col) is:(12 x 4)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, formula1
+2, 2, Lisa, false
+20, 20, Janine, false
+21, 21, William, true
+22, 22, Nick, true
+23, 23, Jason, true
+24, 24, Gary, true
+25, 25, Howard, true
+26, 26, Chris, true
+27, 27, Jill, true
+28, 28, Nicole, true
+29, 29, Adam, true

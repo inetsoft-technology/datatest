@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 2)
+PRODUCT_NAME, REGION_ID
+Animal World, 2
+Barbie"s Fashion, 1
+Combat Hero, 1
+Easy Chess, 1
+Fast Go Game, 1
+Learn ABC, 2
+Math for Me, 2
+True Action, 1
+Web Bridge, 1

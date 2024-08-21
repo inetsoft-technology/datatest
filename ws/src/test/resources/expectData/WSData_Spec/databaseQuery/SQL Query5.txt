@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 5)
+CITY, CUSTOMER_ID, STATE, range_cid, state_city
+Albany, 16, CA, <20, CA==Albany
+Austin, 11, TX, <20, TX==Austin
+Baltimore, 33, MD, >=30, MD==Baltimore
+Boston, 23, MA, 20-30, MA==Boston
+Cambridge, 34, MA, >=30, MA==Cambridge
+Camden, 15, NJ, <20, NJ==Camden
+Las Vegas, 32, NV, >=30, NV==Las Vegas
+Los Angeles, 13, CA, <20, CA==Los Angeles
+Los Angeles, 21, CA, 20-30, CA==Los Angeles
+Newark, 19, NJ, <20, NJ==Newark
+New Brunswick, 25, NJ, 20-30, NJ==New Brunswick
+New York, 17, NY, <20, NY==New York
+New York, 24, NY, 20-30, NY==New York
+Olympia, 29, WA, 20-30, WA==Olympia
+Plainfield, 35, NJ, >=30, NJ==Plainfield
+Rockville, 14, MD, <20, MD==Rockville
+Seattle, 27, WA, 20-30, WA==Seattle
+Springfield, 30, MA, >=30, MA==Springfield
+Tucson, 20, AZ, 20-30, AZ==Tucson
+York, 28, PA, 20-30, PA==York

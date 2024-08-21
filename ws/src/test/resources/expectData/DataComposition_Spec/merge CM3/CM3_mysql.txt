@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 2)
+city, sql_exp1
+Albany, 116
+Austin, 111
+Baltimore, 105
+Baltimore, 133
+Boston, 118
+Boston, 123
+Boulder, 104
+Cambridge, 134
+Camden, 115
+Chicago, 110
+Dallas, 126
+Dallas, 131
+Denver, 108
+Hartford, 106
+Houston, 122
+Las Vegas, 132
+Los Angeles, 113
+Los Angeles, 121
+Middletown, 102
+Newark, 119
+New Brunswick, 125
+New York, 103
+New York, 107
+New York, 117
+New York, 124
+Olympia, 129
+Orlando, 112
+Plainfield, 135
+Rockville, 114
+San Francisco, 109
+Seattle, 127
+Springfield, 130
+Tucson, 120
+Wayne, 101
+York, 128

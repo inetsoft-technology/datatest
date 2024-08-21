@@ -1,0 +1,122 @@
+The table size(row x col) is:(121 x 3)
+Risk Event Id, Id, KRI Name
+NULL, 100242, % of cross selling/product bundling over total sales of products last quarter
+NULL, 100414, Total number of employees
+NULL, 100418, Number of employees who has completed the mandatory Media Policy awareness training
+NULL, 100424, Total number of posts on the company's social media channels
+NULL, 100427, Total number of negative posts on the company's social media channels
+NULL, 100431, Total number of models and spreadsheet (as per Model Policy)
+NULL, 100439, Number of incidents due to failed or late payments
+NULL, 100445, Number of incidents due to processing errors monthly
+NULL, 100448, Number of near misses due to processing errors monthly
+NULL, 100452, Total number of payments made above $ X m
+NULL, 100455, Number of payments above $ X m that are processed manually
+NULL, 100460, Total number of staff in the Contact Center
+NULL, 100463, Total number of Contact Center staff that have completed mandatory training
+NULL, 100468, Total number of advisors / sales staff
+NULL, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date
+NULL, 100474, Number of staff taking sick leave
+NULL, 100478, Number of staff that joined the company last month
+NULL, 100567, Interest rate risk - Value at Risk
+NULL, 100944, WHS audit actions overdue more than 90 days
+NULL, 100947, WHS inspections conducted during the month
+NULL, 100951, Lost time injury frequency rate (LTIRF) as at month end
+NULL, 100953, Workcover claim commenced during the month
+NULL, 100956, WHS training hours conducted during the month
+NULL, 100960, Medically treated injury frequency rate (MTIFR) as at month end
+NULL, 100964, WHS update meetings (toolbox) held during the month
+NULL, 101060, Inventory of Assets audit 2
+100080, 100084, The number of times an insurance review due date has been missed
+100081, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient
+100082, 100047, Number of staff incident (relating to HR issues) reported in a month
+100083, 100056, Percentage of staff taken sick leave per month
+100084, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient
+100084, 100226, Number of open actions relating to "User Access Controls" (incl. Audit)
+100105, 100272, Staff turn over rates
+100106, 100047, Number of staff incident (relating to HR issues) reported in a month
+100114, 100212, Number of external cyber attacks and penetration attempts
+100114, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests
+100116, 100208, Average (# mins) downtime in minutes of "material" IT systems
+100123, 100141, Number of reporting errors noted per month
+100142, 100163, Number of intra-day limit breaches (VaR etc.)
+100142, 100226, Number of open actions relating to "User Access Controls" (incl. Audit)
+100144, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months.
+100144, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy)
+100150, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure
+100156, 100208, Average (# mins) downtime in minutes of "material" IT systems
+100158, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis
+100158, 100295, Number of blocked accounts reported on a monthly basis
+100159, 100315, Semi-annual employee satisfaction survey results
+100161, 100212, Number of external cyber attacks and penetration attempts
+100161, 100226, Number of open actions relating to "User Access Controls" (incl. Audit)
+100162, 100214, Number of "material" incidents due to failed implementation IT system changes
+100162, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades)
+100163, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems
+100163, 100208, Average (# mins) downtime in minutes of "material" IT systems
+100163, 100210, Number of "material" incidents relating to IT systems failure
+100163, 100214, Number of "material" incidents due to failed implementation IT system changes
+100163, 100216, Number of incidents that are due to failures 3rd party vendors
+100163, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests
+100164, 100216, Number of incidents that are due to failures 3rd party vendors
+100164, 100228, Number of open actions relating to 3rd party Vendors
+100164, 100230, Number of outstanding quarterly attestations by 3rd party Vendors
+100165, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital)
+100166, 100248, Number of complaints relating to products, sales & service on a monthly basis
+100166, 100276, Number of new or changes to existing legislation affecting the entity
+100166, 100801, Number of complaints escalated to the ombudsman
+100169, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis
+100169, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.)
+100169, 100262, Number of monthly reconciliation errors
+100169, 100264, Number of open actions relating to key controls in the Operations (processing) area
+100170, 100254, Number of incidents (incl. near misses) due to failed or late payments
+100170, 100270, Number of unsuccessful IT change management implementations
+100170, 100274, % proportion of payments above $ X m that are processed manually
+100170, 100441, Number of near misses due to failed or late payments
+100171, 100258, Number of incidents (incl. near misses) due to processing errors monthly
+100171, 100262, Number of monthly reconciliation errors
+100171, 100264, Number of open actions relating to key controls in the Operations (processing) area
+100172, 100266, Number of payments that failed initial auto-verification checks
+100172, 100274, % proportion of payments above $ X m that are processed manually
+100174, 100236, Number of stand-alone incl. spreadsheet models
+100174, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis
+100174, 100270, Number of unsuccessful IT change management implementations
+100175, 100244, % completion rates of mandatory training programs of Contact Center staff
+100177, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date.
+100177, 100248, Number of complaints relating to products, sales & service on a monthly basis
+100177, 100801, Number of complaints escalated to the ombudsman
+100181, 100284, % completion rates of mandatory training programs on Media Policy awareness
+100183, 100287, % proportion of negative vs. total posts on the company's social media channels
+100201, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades)
+100201, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods).
+100202, 100214, Number of "material" incidents due to failed implementation IT system changes
+100202, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades)
+100204, 100540, (Data) - Number of critical business processes and IT systems
+100204, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests
+100204, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above
+100205, 100272, Staff turn over rates
+100206, 100315, Semi-annual employee satisfaction survey results
+100207, 100303, % divergence of shareholder value (equity price, dividends etc) against key competitors on a quarterly basis
+100207, 100307, Ranking against key competitors in analysts reports
+100207, 100500, (Data) - Entity's market capitalisation and asset/dividend distribution in the last quarter
+100207, 100504, (Data) - Market capitalisation and asset/dividend distribution of competitor-A in the last quarter
+100207, 100508, (Data) - Market capitalisation and asset/dividend distribution of competitor-B in the last quarter
+100207, 100512, (Data) - Market capitalisation and asset/dividend distribution of competitor-C in the last quarter
+100207, 100530, (Data) - Quarterly sales volumes of entity
+100207, 100532, (Data) - Quarterly sales volumes of competitor-A
+100207, 100534, (Data) - Quarterly sales volumes of competitor-B
+100207, 100536, (Data) - Quarterly sales volumes of competitor-C
+100208, 100276, Number of new or changes to existing legislation affecting the entity
+100208, 100318, Reported number of compliance breaches monthly
+100209, 100287, % proportion of negative vs. total posts on the company's social media channels
+100223, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk
+100223, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk
+100223, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring
+100223, 100524, (Data) - Projected (6 months) business volume
+100223, 100526, (Data) - Target (%) of AML/Sanctions monitoring
+100261, 100563, Interest rate risk -  PVBP
+100386, 100941, Number of Hazards Recorded Last Month
+100435, 100248, Number of complaints relating to products, sales & service on a monthly basis
+100435, 100801, Number of complaints escalated to the ombudsman
+100985, 101027, Number of COVID19 infected employees
+100985, 101033, Number of employees tested for COVID19
+100985, 101038, % of staff temperature checked on entry to company premises

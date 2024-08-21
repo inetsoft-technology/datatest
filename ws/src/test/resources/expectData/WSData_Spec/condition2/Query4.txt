@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 2)
+Year(order_date), paid
+2002, false
+2002, true
+2003, false
+2003, true
+2004, false
+2004, true
+2005, false
+2005, true

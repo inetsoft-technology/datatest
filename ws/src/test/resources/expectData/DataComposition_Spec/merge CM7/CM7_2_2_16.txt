@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 2)
+SUPPLIER_ID, CATEGORY_ID
+1, 1
+1, 1
+1, 1
+1, 1
+1, 1
+1, 1
+2, 2
+2, 2
+2, 2

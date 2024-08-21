@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 2)
+state, count city
+AZ, 1
+CA, 4
+CO, 2
+CT, 1
+FL, 1
+MA, 4
+NJ, 6
+NV, 1
+NY, 4
+WA, 2

@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Risk Refreshes
+12M, 48
+1M, 18
+3M, 1

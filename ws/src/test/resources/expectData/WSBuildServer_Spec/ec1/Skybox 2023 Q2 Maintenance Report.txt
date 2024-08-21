@@ -1,0 +1,488 @@
+The table size(row x col) is:(487 x 13)
+Qtr, Contract Number, Subscription #, Account: Account Name, Account License Model, ProductCode, Product Name, Contract Term (months), Start Date, End Date, Status, Asset: Product: Product Code, Asset Quantity
+23Q2, 00005681, SUB-0003038, DHFL, Perpetual, TS-S, Standard Technical Support, 61, 2018-11-01, 2023-11-30, NULL, SBV-S, 1
+23Q2, 00008762, SUB-0007558, Posti Oy, Royalties, MSSP, MSSP-S, 60, 2019-08-22, 2024-08-21, NULL, NULL, NULL
+23Q2, 00010321, SUB-0011453, PT. Bank Syariah Indonesia (BSI), Perpetual, TS-S-VC-AA-100, Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 36, 2020-05-01, 2023-04-30, NULL, NULL, NULL
+23Q2, 00010378, SUB-0011625, HSBC, Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 42, 2020-09-29, 2023-09-28, NULL, NULL, NULL
+23Q2, 00010467, SUB-0011793, Michelin SCA, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 56, 2020-08-03, 2025-03-31, NULL, NULL, NULL
+23Q2, 00010478, SUB-0011871, Government Saving Bank, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 62, 2020-04-15, 2025-06-14, NULL, NULL, NULL
+23Q2, 00010574, SUB-0012089, Ageas Insurance Limited, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 36, 2020-04-17, 2023-04-16, NULL, NULL, NULL
+23Q2, 00010977, SUB-0012683, Jabatan Pendaftaran Negara, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 36, 2020-05-31, 2023-05-30, NULL, NULL, NULL
+23Q2, 00011155, SUB-0012996, American Express, Perpetual, TS-P-SBV-ES, Premium Support -SBV-ES, 36, 2020-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00011198, SUB-0013108, Guardia Civil, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 42, 2020-07-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00011221, SUB-0013295, Direccion General Policia, Perpetual, TS-S-CM-10, Standard Support -CM-10, 40, 2020-07-01, 2023-10-31, NULL, NULL, NULL
+23Q2, 00011281, SUB-0013432, VTV VN, Perpetual, CON-VD-FA-10, Content-FA-10, 36, 2020-09-01, 2023-08-31, NULL, NULL, NULL
+23Q2, 00012158, SUB-0014069, Bank Islam, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 36, 2020-08-31, 2023-08-30, NULL, NULL, NULL
+23Q2, 00012159, SUB-0014073, UniCredit Bank - IT, Perpetual, TS-S-FA-10, Standard Support -FA-10, 41, 2020-08-31, 2023-12-31, NULL, NULL, NULL
+23Q2, 00012279, SUB-0014256, Seqirus US, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 27, 2021-04-13, 2023-06-30, NULL, NULL, NULL
+23Q2, 00012365, SUB-0014355, Aflac Life Insurance Japan Ltd, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 60, 2020-09-18, 2025-09-17, NULL, NULL, NULL
+23Q2, 00012496, SUB-0014500, Boston Private Bank and Trust, Perpetual, R-CON-VD-CM-1, Renewal Content-CM-1, 36, 2020-09-25, 2023-09-24, NULL, NULL, NULL
+23Q2, 00012499, SUB-0014513, Etisalat, Perpetual, TS-S-FA-100, Standard Support -FA-100, 61, 2020-09-29, 2025-10-28, NULL, NULL, NULL
+23Q2, 00012518, SUB-0014582, Telkom South Africa, Perpetual, R-TS-S-NA-1k, Renewal Standard Support-NA-1k, 36, 2020-07-03, 2023-07-02, NULL, NULL, NULL
+23Q2, 00012520, SUB-0014593, Iveco CNH Industrial, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 36, 2020-06-30, 2023-06-29, NULL, NULL, NULL
+23Q2, 00012522, SUB-0014614, EXL Service, Perpetual, R-TS-P-NA-100, Renewal Premium Support-NA-100, 36, 2021-03-24, 2023-10-01, NULL, NULL, NULL
+23Q2, 00012526, SUB-0014643, Nokia, Subscription, TS-P-SBV-HW-8050, Premium Support -SBV-HW-8050, 60, 2020-09-30, 2025-09-29, NULL, SBV-HW-8050, 1
+23Q2, 00012835, SUB-0014956, Comando Operazioni in Rete (C.O.R.), Perpetual, TS-S-FA-10, Standard Support -FA-10, 39, 2020-10-21, 2024-01-20, NULL, NULL, NULL
+23Q2, 00012839, SUB-0014976, Fujitsu - SG, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 36, 2020-05-01, 2023-04-30, NULL, NULL, NULL
+23Q2, 00012841, SUB-0014985, Scottish Water, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 36, 2020-10-24, 2023-10-23, NULL, NULL, NULL
+23Q2, 00012887, SUB-0015205, Bakwena Toll Concession, Perpetual, CON-VD-NA-10, Content-NA-10, 36, 2020-10-30, 2023-10-29, NULL, NULL, NULL
+23Q2, 00012904, SUB-0015265, Iberdrola, Perpetual, TS-S-SBV-HW-8050, Standard Support -SBV-HW-8050, 36, 2020-11-06, 2023-11-05, NULL, SBV-HW-8050, 1
+23Q2, 00012907, SUB-0015281, XalqBank, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 36, 2020-11-09, 2023-11-08, NULL, NULL, NULL
+23Q2, 00012909, SUB-0015295, CSG - Omaha, Perpetual, R-TS-P-SBV-HW-7000, Renewal Premium Support-SBV-HW-7000, 36, 2020-12-27, 2023-12-26, NULL, SBV-HW-7000, 1
+23Q2, 00013041, SUB-0015434, Fascet LLC, Perpetual, TS-S-FA-1, Standard Support -FA-1, 33, 2020-11-17, 2023-08-16, NULL, NULL, NULL
+23Q2, 00013048, SUB-0015459, Lagardere Groupe, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 37, 2020-12-03, 2023-12-31, NULL, NULL, NULL
+23Q2, 00013049, SUB-0015462, Northern Powergrid, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 36, 2020-12-13, 2023-12-12, NULL, NULL, NULL
+23Q2, 00013050, SUB-0015465, Powerco, Perpetual, TS-P-FA-1BA, Premium Support-FA-1BA, 36, 2020-11-19, 2023-11-18, NULL, NULL, NULL
+23Q2, 00013080, SUB-0015525, Finanz Informatik GmbH & Co. KG, Perpetual, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 36, 2021-02-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00013138, SUB-0015673, M&T Bank Corporation, Perpetual, CON-VD-FA-10, Content-FA-10, 60, 2020-12-01, 2025-11-30, NULL, NULL, NULL
+23Q2, 00013164, SUB-0015746, Engen South Africa, Perpetual, TS-P-CM-10, Premium Support -CM-10, 36, 2020-12-03, 2023-12-02, NULL, NULL, NULL
+23Q2, 00013216, SUB-0015921, Garanti Bankasi, Perpetual, TS-S-FA-10, Standard Support -FA-10, 36, 2020-12-09, 2023-12-08, NULL, NULL, NULL
+23Q2, 00013218, SUB-0015927, Suez, Perpetual, R-CON-VD-FA-UNL, Renewal Content-FA-UNL, 35, 2020-11-01, 2023-09-30, NULL, NULL, NULL
+23Q2, 00013228, SUB-0015998, MBDA - UK, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 38, 2021-04-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00013252, SUB-0016073, United Card Services (UCS), Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 36, 2021-06-01, 2024-05-31, NULL, NULL, NULL
+23Q2, 00013274, SUB-0016187, GROUPE BEL, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 40, 2020-12-21, 2024-04-20, NULL, NULL, NULL
+23Q2, 00013275, SUB-0016202, Cooperative Bank ltd, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 36, 2021-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00013319, SUB-0016323, Renaissance Credit, Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 24, 2021-06-17, 2023-06-16, NULL, NULL, NULL
+23Q2, 00013321, SUB-0016328, France Medias Monde, Perpetual, CON-VD-FA-1BA, Content-FA-1BA, 36, 2020-12-23, 2023-12-22, NULL, NULL, NULL
+23Q2, 00013324, SUB-0016356, Electrolux Home Products, Perpetual, TS-S-FA-10, Standard Support -FA-10, 60, 2020-12-23, 2025-12-22, NULL, NULL, NULL
+23Q2, 00013365, SUB-0016467, Telefonica - DE, Subscription, VC-AA-10K-S-S-Pre, Vulnerability Control Advanced Analytics 10,000 asset pack - Subscription (Prepaid) with Standard Support, 36, 2020-12-29, 2023-12-28, NULL, NULL, NULL
+23Q2, 00013374, SUB-0016533, CDSL, Perpetual, TS-P-SBV-ES, Premium Support -SBV-ES, 60, 2020-12-30, 2025-12-29, NULL, NULL, NULL
+23Q2, 00013383, SUB-0016598, Telekom Malaysia Berhad, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 39, 2020-12-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00013439, SUB-0016786, Indian Overseas Bank, Perpetual, TS-P-SBV-HW-7000, Premium Support -SBV-HW-7000, 37, 2020-12-31, 2023-12-31, NULL, NULL, 0
+23Q2, 00013446, SUB-0016815, Orange - HQ, Perpetual, TAM-S, Skybox Technical Account Management (TAM) Support Program, 36, 2020-10-23, 2023-10-22, NULL, NULL, NULL
+23Q2, 00013657, SUB-0017044, Ooredoo Oman, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 40, 2020-09-10, 2024-01-01, NULL, NULL, NULL
+23Q2, 00013781, SUB-0017465, Bank Muscat, Perpetual, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 36, 2021-03-01, 2024-02-29, NULL, SBV-HW-8000, 1
+23Q2, 00013999, SUB-0017875, ATM Azienda Trasporti Milanesi, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 36, 2020-12-27, 2023-12-26, NULL, NULL, NULL
+23Q2, 00014109, SUB-0018116, Coles Group, Perpetual, TS-P-SBV-HW-7000, Premium Support -SBV-HW-7000, 60, 2021-04-01, 2026-03-31, NULL, SBV-HW-7000, 1
+23Q2, 00014127, SUB-0018204, Crédit Agricole Indosuez Luxembourg, Perpetual, TS-S-FA-10, Standard Support -FA-10, 36, 2021-04-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00014131, SUB-0018217, MegaFon, Perpetual, TS-S-NA-100, Standard Support -NA-100, 24, 2021-04-05, 2023-04-04, NULL, NULL, NULL
+23Q2, 00014191, SUB-0018351, Organisation for the Prohibition of Chemical Weapons - OPCW, Perpetual, CON-VD-NA-10, Content-NA-10, 60, 2021-05-01, 2026-04-30, NULL, NULL, NULL
+23Q2, 00014247, SUB-0018461, Three Ireland, Subscription, TS-S-SBV-HW-7000-Annual, Standard Support -SBV-HW-7000 - Paid-Annually, 36, 2021-04-29, 2024-04-28, NULL, SBV-HW-7000, 1
+23Q2, 00014252, SUB-0018497, Mohegan Tribal Gaming Authority, Subscription, CM-1-S-S-Pre, Change Manager 1 firewall pack - Subscription with standard support and content, 24, 2021-05-22, 2023-05-21, NULL, NULL, NULL
+23Q2, 00014257, SUB-0018509, IRIDEOS, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 36, 2021-05-01, 2024-04-30, NULL, NULL, NULL
+23Q2, 00014366, SUB-0018645, Metropolitan Transportation Authority (MTA), Perpetual, TS-S-SBV-HW-8050, Standard Support -SBV-HW-8050, 36, 2021-05-20, 2024-05-19, NULL, SBV-HW-8050, 1
+23Q2, 00014438, SUB-0018784, The Standard, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2021-07-01, 2024-06-30, NULL, NULL, NULL
+23Q2, 00014489, SUB-0018862, Wayne County, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 36, 2021-09-29, 2024-09-28, NULL, NULL, NULL
+23Q2, 00014509, SUB-0018899, KFTC (Korea Financial Telecommunications & Clearings Institute), Perpetual, TS-S-FA-10-Annual, Standard Support -FA-10 - Paid-Annually, 36, 2021-06-15, 2024-06-14, NULL, NULL, NULL
+23Q2, 00014556, SUB-0019020, NH Investment & Securities, Perpetual, TS-S-NA-100-Annual, Standard Support -NA-100 - Paid-Annually, 36, 2021-07-23, 2024-07-22, NULL, NULL, NULL
+23Q2, 00014563, SUB-0019058, NICE Payments, Perpetual, TS-S-NA-10-Annual, Standard Support -NA-10 - Paid-Annually, 36, 2021-07-16, 2024-07-15, NULL, NULL, NULL
+23Q2, 00014570, SUB-0019079, Avangrid, Inc., Perpetual, TS-S-SBV-HW-8050, Standard Support -SBV-HW-8050, 36, 2021-06-30, 2024-06-29, NULL, SBV-HW-8050, 1
+23Q2, 00014572, SUB-0019106, HMRC, Perpetual, TS-P-SBV-HW-12100, Premium Support -SBV-HW-12100, 36, 2021-07-01, 2024-06-30, NULL, SBV-HW-12100, 1
+23Q2, 00014581, SUB-0019158, Royal Bank of Scotland, Perpetual, R-CON-VD-NA-1k, Renewal Content-NA-1k, 36, 2021-07-01, 2024-06-30, NULL, NULL, NULL
+23Q2, 00014588, SUB-0019202, ITC, Perpetual, R-TS-P-NA-10, Renewal Premium Support-NA-10, 24, 2021-05-27, 2023-05-26, NULL, NULL, NULL
+23Q2, 00014589, SUB-0019211, HireRight, Perpetual, R-CON-VD-FA-10-annual, Renewal Content-FA-10 annually paid, 37, 2021-11-02, 2024-11-01, NULL, NULL, NULL
+23Q2, 00014608, SUB-0019257, Jaguar Land Rover, Perpetual, TS-S-FA-100, Standard Support -FA-100, 36, 2021-07-08, 2024-07-07, NULL, NULL, NULL
+23Q2, 00014656, SUB-0019318, CCBA - Coca-Cola Beverages Africa, Subscription, FA-1-S-S-Annual, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 48, 2021-07-14, 2025-07-13, NULL, NULL, NULL
+23Q2, 00014721, SUB-0019392, Government of Saskatchewan, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 24, 2021-07-22, 2023-07-21, NULL, NULL, NULL
+23Q2, 00014880, SUB-0019639, Blue Yonder, Perpetual, CON-VD-NA-100, Content-NA-100, 36, 2021-08-02, 2024-08-01, NULL, NULL, NULL
+23Q2, 00014943, SUB-0019781, FŐTÁV - Budapest Public Works Office, Perpetual, TS-S-FA-1, Standard Support -FA-1, 24, 2021-08-16, 2023-08-15, NULL, NULL, NULL
+23Q2, 00014966, SUB-0019822, State of California, Subscription, CM-10-S-S-Annual, Change Manager 10 firewall pack- Subscription with standard support and content, 36, 2021-08-23, 2024-08-22, NULL, NULL, NULL
+23Q2, 00014968, SUB-0019838, Inmarsat, Perpetual, R-TS-S-VC-AA-1K-Annual, Renewal - Standard Support Vulnerability Control Advanced Analytics 1,000 asset pack - Paid-Annually, 36, 2022-07-03, 2024-07-02, NULL, NULL, NULL
+23Q2, 00015050, SUB-0019905, Volvo Group, Subscription, FA-10-S-S-Annual, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 32, 2021-08-24, 2024-04-23, NULL, NULL, NULL
+23Q2, 00015092, SUB-0019977, Credorax Germany GmbH, Subscription, VC-AA-1K-S-S-Annual, Vulnerability Control Advanced Analytics 1,000 asset pack - Subscription (Annual) with Standard Support, 36, 2021-08-31, 2024-08-30, NULL, NULL, NULL
+23Q2, 00015136, SUB-0020077, University of Johannesburg, Perpetual, TS-S-SBV-HW-7000, Standard Support -SBV-HW-7000, 36, 2021-09-09, 2024-09-08, NULL, SBV-HW-7000, 1
+23Q2, 00015141, SUB-0020105, ABL Life Insurance, Perpetual, R-TS-S-FA-1-Annual, Renewal Standard Support-FA-1 - Paid-Annually, 36, 2021-09-26, 2024-09-25, NULL, NULL, NULL
+23Q2, 00015231, SUB-0020244, VyStar Credit Union, Subscription, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 30, 2021-09-29, 2024-03-29, NULL, NULL, NULL
+23Q2, 00015247, SUB-0020332, eApteka, Perpetual, CON-VD-FA-1, Content-FA-1, 36, 2021-10-01, 2024-09-30, NULL, NULL, NULL
+23Q2, 00015248, SUB-0020338, Neoenergia S.A., Perpetual, TS-S-FA-10, Standard Support -FA-10, 24, 2021-10-01, 2023-09-30, NULL, NULL, NULL
+23Q2, 00015271, SUB-0020358, SBA Communications Corporation, Perpetual, CON-VD-FA-1BA, Content-FA-1BA, 29, 2021-10-29, 2024-03-11, NULL, NULL, NULL
+23Q2, 00015274, SUB-0020368, Bridgestone Americas, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 36, 2021-10-31, 2024-10-30, NULL, NULL, NULL
+23Q2, 00015323, SUB-0020428, Edison S.p.A., Perpetual, CON-VD-NA-100, Content-NA-100, 36, 2021-10-13, 2024-10-12, NULL, NULL, NULL
+23Q2, 00015325, SUB-0020437, Sempra Energy, Perpetual, TS-P-CM-10, Premium Support -CM-10, 52, 2021-10-13, 2026-02-12, NULL, NULL, NULL
+23Q2, 00015330, SUB-0020495, Ross Stores, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 39, 2022-02-25, 2024-09-29, NULL, NULL, NULL
+23Q2, 00015358, SUB-0020544, Sabah Electricity Sdn Bhd, Subscription, FA-1-S-S-Annual, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 61, 2021-11-08, 2026-12-07, NULL, NULL, NULL
+23Q2, 00015364, SUB-0020588, NBN Co, Subscription, NA-100-S-P-Annual, Network Assurance 100 n-node pack - Subscription with premium support and content, 36, 2021-10-28, 2024-10-27, NULL, NULL, NULL
+23Q2, 00015375, SUB-0020631, Mubadala, Perpetual, R-CON-VD-CM-10, Renewal Content-CM-10, 36, 2021-12-27, 2024-12-25, NULL, NULL, NULL
+23Q2, 00015376, SUB-0020635, POSCO, Perpetual, R-TS-S-NA-1k-Annual, Renewal Standard Support-NA-1k - Paid-Annually, 36, 2021-11-06, 2024-11-05, NULL, NULL, NULL
+23Q2, 00015445, SUB-0020725, National Settlement Depository (NSD), Perpetual, TS-S-FA-1, Standard Support -FA-1, 36, 2021-11-04, 2024-11-03, NULL, NULL, NULL
+23Q2, 00015484, SUB-0020868, The Hartford, Subscription, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 24, 2021-12-15, 2023-12-14, NULL, SBV-HW-12100, 1
+23Q2, 00015674, SUB-0021096, ECOFIS GmbH, Perpetual, TS-S-NA-10, Standard Support -NA-10, 24, 2021-12-03, 2023-12-28, NULL, NULL, NULL
+23Q2, 00015681, SUB-0021121, BW Maritime, Subscription, FA-10-S-S-Annual, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 39, 2021-12-01, 2025-02-28, NULL, NULL, NULL
+23Q2, 00015708, SUB-0021203, Gazprombank, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 36, 2021-10-30, 2024-10-29, NULL, NULL, NULL
+23Q2, 00015753, SUB-0021251, Iren SpA, Perpetual, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 37, 2022-01-03, 2025-01-02, NULL, SBV-HW-12100, 1
+23Q2, 00015910, SUB-0021558, Leroy Merlin SA - IT, Perpetual, R-TS-S-VC-AA-100, Renewal - Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 36, 2021-12-29, 2024-12-28, NULL, NULL, NULL
+23Q2, 00015915, SUB-0021619, Nationwide Building Society, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 42, 2022-07-02, 2025-07-01, NULL, NULL, NULL
+23Q2, 00015924, SUB-0021711, Bank Hapoalim, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 18, 2022-02-01, 2023-07-31, NULL, NULL, NULL
+23Q2, 00015928, SUB-0021780, Standard Chartered, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 24, 2023-02-09, 2023-12-31, NULL, NULL, NULL
+23Q2, 00015941, SUB-0021877, Bank Muamalat Malaysia Berhad, Subscription, FA-1-S-P-Pre, Firewall Assurance 1 firewall pack - Subscription with premium support and content, 12, 2022-09-02, 2023-09-01, NULL, NULL, NULL
+23Q2, 00015942, SUB-0021883, Esselunga, Perpetual, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 36, 2021-12-17, 2024-12-16, NULL, SBV-HW-12100, 1
+23Q2, 00015947, SUB-0021912, Royal Friesland Campina, Subscription, FA-10-S-S-Annual, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 38, 2021-12-31, 2025-02-27, NULL, NULL, NULL
+23Q2, 00015948, SUB-0021920, Direct Line Insurance Group, Perpetual, CON-VD-NA-V-100, Content-NA-V-100, 30, 2021-12-20, 2024-06-19, NULL, NULL, NULL
+23Q2, 00015950, SUB-0021926, Lantmannen, Subscription, FA-1-S-S-Annual, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 36, 2021-12-07, 2024-12-06, NULL, NULL, NULL
+23Q2, 00016000, SUB-0022026, Injazat Data Systems, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2021-12-23, 2024-12-22, NULL, NULL, NULL
+23Q2, 00016001, SUB-0022028, Tenaga Nasional Berhad, Subscription, R-TS-S-SBV-HW-8000-Annual, Renewal Standard Support-SBV-HW-8000 - Paid-Annually, 36, 2021-12-12, 2024-12-11, NULL, SBV-HW-8000, 1
+23Q2, 00016010, SUB-0022070, Maxis, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 24, 2021-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00016016, SUB-0022110, Sejel Technology, Subscription, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 39, 2021-12-24, 2025-03-14, NULL, SBV-HW-12100, 1
+23Q2, 00016067, SUB-0022221, OTP Bank, Perpetual, TS-S-FA-1, Standard Support -FA-1, 63, 2021-12-28, 2027-03-27, NULL, NULL, NULL
+23Q2, 00016069, SUB-0022240, Turksat-Production, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 38, 2021-11-02, 2024-11-01, NULL, NULL, NULL
+23Q2, 00016074, SUB-0022281, Walmart Stores Inc, Subscription, CM-S-P-UNL, Change Manager Unlimited firewall pack - Subscription with Premium Support and Content, 36, 2022-01-01, 2024-12-31, NULL, NULL, NULL
+23Q2, 00016077, SUB-0022296, BOLLORE TRANSPORT LOGISTIQUE, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 36, 2021-12-29, 2024-12-28, NULL, NULL, NULL
+23Q2, 00016081, SUB-0022313, TEDAŞ, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 35, 2022-02-18, 2024-12-31, NULL, NULL, NULL
+23Q2, 00016083, SUB-0022332, Barclays, Perpetual, R-TS-P-CM-100, Renewal Premium Support-CM-100, 24, 2022-10-01, 2024-09-30, NULL, NULL, NULL
+23Q2, 00016084, SUB-0022334, PepsiCo, Perpetual, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 24, 2021-12-29, 2023-12-28, NULL, NULL, NULL
+23Q2, 00016090, SUB-0022360, Qatar Ministry of Commerce and Industry, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2021-12-30, 2024-12-29, NULL, NULL, NULL
+23Q2, 00016098, SUB-0022416, Reliance Industries Limited, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 36, 2021-12-31, 2024-12-30, NULL, NULL, NULL
+23Q2, 00016099, SUB-0022422, VAR Group SpA, Subscription, VC-AA-100-S-S-Annual, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Annual) with Standard Support, 36, 2022-01-01, 2024-12-31, NULL, NULL, NULL
+23Q2, 00016108, SUB-0022500, Magnit, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 17, 2021-12-20, 2023-05-11, NULL, NULL, NULL
+23Q2, 00016116, SUB-0022577, Swiss Life SA France, Perpetual, CON-VD-FA-10, Content-FA-10, 36, 2022-01-05, 2025-01-04, NULL, NULL, NULL
+23Q2, 00016119, SUB-0022600, Slovenia Air traffic Control, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 53, 2020-12-24, 2024-12-14, NULL, NULL, NULL
+23Q2, 00016300, SUB-0022883, FIFA, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 18, 2022-02-09, 2023-08-08, NULL, NULL, NULL
+23Q2, 00016305, SUB-0022893, National Bank of Romania, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 39, 2022-01-31, 2025-04-29, NULL, NULL, NULL
+23Q2, 00016424, SUB-0023062, Defence Science & Technology Agency (DSTA), Perpetual, R-TS-S-VC-AA-50K, Renewal - Standard Support Vulnerability Control Advanced Analytics 50,000 asset pack, 24, 2022-04-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00016490, SUB-0023120, Alberta Electric System Operator (AESO), Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 36, 2022-04-12, 2025-04-11, NULL, NULL, NULL
+23Q2, 00016590, SUB-0023257, Capita Plc - HQ, Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 72, 2022-04-01, 2025-03-31, NULL, NULL, NULL
+23Q2, 00016670, SUB-0023397, Kutxabank, Perpetual, TS-S-SBV-HW-11000, Standard Support -SBV-HW-11000, 60, 2022-04-15, 2027-04-14, NULL, SBV-HW-11000, 1
+23Q2, 00016677, SUB-0023452, eurafric information, Perpetual, R-TS-S-CM-100, Renewal Standard Support-CM-100, 32, 2022-04-01, 2024-05-31, NULL, NULL, NULL
+23Q2, 00016678, SUB-0023468, Finanz Informatik Technology Service GmbH & Co. KG, Perpetual, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 21, 2022-04-03, 2023-12-31, NULL, NULL, NULL
+23Q2, 00016680, SUB-0023474, NCH, Subscription, TS-P-SBV-HW-11000, Premium Support -SBV-HW-11000, 36, 2022-03-31, 2025-03-30, NULL, SBV-HW-11000, 1
+23Q2, 00016685, SUB-0023498, Reliance JIO, Perpetual, R-TS-S-CM-1, Renewal Standard Support-CM-1, 36, 2022-03-29, 2025-03-30, NULL, NULL, NULL
+23Q2, 00016690, SUB-0023516, Scottish Power, Perpetual, CON-VD-NA-100, Content-NA-100, 30, 2022-03-31, 2024-09-08, NULL, NULL, NULL
+23Q2, 00016691, SUB-0023529, ACOSS, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 37, 2022-03-31, 2025-03-31, NULL, NULL, NULL
+23Q2, 00016749, SUB-0023594, Magellan Midstream Partners, Perpetual, R-TS-P-FA-1BA, Renewal Premium Support-FA-1BA, 19, 2022-10-31, 2023-10-30, NULL, NULL, NULL
+23Q2, 00016750, SUB-0023610, Lina Financial Services, Perpetual, R-TS-S-NA-100-Annual, Renewal Standard Support-NA-100 - Paid-Annually, 36, 2022-04-08, 2025-04-07, NULL, NULL, NULL
+23Q2, 00016751, SUB-0023616, Provincial Electricity Authority, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 55, 2020-09-26, 2025-04-01, NULL, NULL, NULL
+23Q2, 00016838, SUB-0023721, Union Bank of Colombo Ltd, Perpetual, CON-VD-NA-10, Content-NA-10, 47, 2022-04-12, 2026-03-14, NULL, NULL, NULL
+23Q2, 00016843, SUB-0023728, CGI Group Inc (Logica CMG) - UK, Perpetual, R-TS-S-SBV-HW-7000, Renewal Standard Support-SBV-HW-7000, 36, 2022-04-15, 2023-04-15, NULL, SBV-HW-7000, 1
+23Q2, 00016888, SUB-0023761, HealthPlan Services, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 36, 2022-05-06, 2025-04-03, NULL, NULL, NULL
+23Q2, 00016889, SUB-0023786, PT. Pegadaian.co.id, Perpetual, TS-S-SBV-HW-11000-Annual, Standard Support -SBV-HW-11000 - Paid-Annually, 27, 2022-04-19, 2024-07-18, NULL, SBV-HW-11000, 1
+23Q2, 00016891, SUB-0023791, Business Service Organisation, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 36, 2022-05-19, 2025-05-18, NULL, NULL, NULL
+23Q2, 00016894, SUB-0023805, Public Safety Business Agency, Perpetual, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2022-06-20, 2023-06-19, NULL, NULL, NULL
+23Q2, 00016898, SUB-0023816, ServiceNow (Customer Cloud), Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2022-08-30, 2025-06-19, NULL, NULL, NULL
+23Q2, 00016899, SUB-0023820, African Export-Import Bank, Subscription, CM-1-S-S-Pre, Change Manager 1 firewall pack - Subscription with standard support and content, 12, 2022-04-29, 2023-04-28, NULL, NULL, NULL
+23Q2, 00016901, SUB-0023833, ARIA Spa (Azienda regionale per l’Innovazione egli Acquisti), Subscription, NA-10-S-S-Annual, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2022-04-30, 2025-04-29, NULL, NULL, NULL
+23Q2, 00016906, SUB-0023856, IberiaBank, Perpetual, R-CON-VD-CM-10, Renewal Content-CM-10, 24, 2022-09-25, 2024-09-24, NULL, NULL, NULL
+23Q2, 00016933, SUB-0023911, Estee Lauder, Subscription, FA-100-S-S-Pre, Firewall Assurance 100 firewall pack - Subscription with standard support and content, 12, 2022-06-29, 2023-06-28, NULL, NULL, NULL
+23Q2, 00016978, SUB-0023970, Flowbird, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 24, 2021-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00016980, SUB-0023980, Berkshire Bank, SaaS, SaaS-BTF-A-S-EN-PREPAID, Skybox Cloud Base Tenant Fee - North America Tenant, 12, 2022-05-19, 2023-05-18, NULL, NULL, NULL
+23Q2, 00016982, SUB-0023984, Aditya Birla Group, Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2022-04-16, 2023-04-15, NULL, NULL, NULL
+23Q2, 00016984, SUB-0023989, LINA Life Insurance Co, Perpetual, R-TS-S-NA-10-Annual, Renewal Standard Support-NA-10 - Paid-Annually, 36, 2022-05-31, 2025-05-30, NULL, NULL, NULL
+23Q2, 00017052, SUB-0024091, First International Bank Israel (FIBI), Perpetual, R-CON-VD-NA-1k, Renewal Content-NA-1k, 12, 2022-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017054, SUB-0024120, JSW Steel, Perpetual, R-CON-VD-FA-1BA-annual, Renewal Content-FA-1BA annually paid, 36, 2022-04-21, 2025-04-20, NULL, NULL, NULL
+23Q2, 00017056, SUB-0024143, Blue Cross Blue Shield of Michigan, Perpetual, R-CON-VD-FA-1, Renewal Content-FA-1, 13, 2022-07-23, 2023-07-22, NULL, NULL, NULL
+23Q2, 00017095, SUB-0024176, Ternium México S.A. de C.V, Perpetual, TS-S-CM-100, Standard Support -CM-100, 38, 2022-05-31, 2025-07-15, NULL, NULL, NULL
+23Q2, 00017122, SUB-0024241, ADIB Egypt, Perpetual, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2022-05-01, 2023-04-30, NULL, NULL, NULL
+23Q2, 00017126, SUB-0024257, Credit-Suisse, Perpetual, R-TS-P-SBV-HW-8050, Renewal Premium Support-SBV-HW-8050, 14, 2022-07-01, 2023-06-30, NULL, SBV-HW-8050, 1
+23Q2, 00017191, SUB-0024319, First American Bank, Perpetual, R-TS-P-FA-1, Renewal Premium Support-FA-1, 12, 2022-10-31, 2023-07-21, NULL, NULL, NULL
+23Q2, 00017199, SUB-0024359, Menards, Perpetual, R-TS-P-NA-V-100, Renewal Premium Support-NA-V-100, 12, 2022-06-21, 2023-06-20, NULL, NULL, NULL
+23Q2, 00017200, SUB-0024363, Applied Materials, Inc., Subscription, CM-10-S-P-Pre, Change Manager 10 firewall pack- Subscription with premium support and content, 36, 2022-06-17, 2025-06-16, NULL, NULL, NULL
+23Q2, 00017202, SUB-0024368, Relay Health-CMS, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 14, 2023-06-17, 2024-07-31, NULL, NULL, NULL
+23Q2, 00017205, SUB-0024373, MTN Ghana, Perpetual, CON-VD-FA-1, Content-FA-1, 12, 2022-06-21, 2023-06-20, NULL, NULL, NULL
+23Q2, 00017206, SUB-0024379, OneAmerica Financial, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-08-01, 2023-07-31, NULL, NULL, NULL
+23Q2, 00017207, SUB-0024382, Bank of South Pacific, Subscription, FA-10-S-P-Pre, Firewall Assurance 10 firewall pack - Subscription with premium support and content, 36, 2022-06-21, 2025-06-20, NULL, NULL, NULL
+23Q2, 00017208, SUB-0025067, Etihad Etisalat Company (Mobily), Perpetual, TS-S-SBV-HW-12200, Standard Support -SBV-HW-12200, 12, 2022-08-15, 2023-08-14, NULL, SBV-HW-12200, 1
+23Q2, 00017209, SUB-0024393, Banco Desio, Subscription, VC-AA-100-S-S-Pre, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Prepaid) with Standard Support, 12, 2022-06-30, 2023-06-29, NULL, NULL, NULL
+23Q2, 00017211, SUB-0024405, The TriZetto Group Inc (Cognizant Healthcare), Perpetual, R-TS-P-NA-10, Renewal Premium Support-NA-10, 12, 2022-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017212, SUB-0024406, Lloyds Banking Group, Perpetual, TS-P-SBV-HW-12200, Premium Support -SBV-HW-12200, 37, 2022-07-01, 2025-08-01, NULL, SBV-HW-12200, 1
+23Q2, 00017216, SUB-0024421, Lien Viet Post Joint Stock Commercial Bank (LienVietPostBank), Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 36, 2022-05-10, 2025-05-09, NULL, NULL, NULL
+23Q2, 00017217, SUB-0024426, HCMC Office of the Party Committee, Perpetual, TS-S-FA-1, Standard Support -FA-1, 18, 2022-06-24, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017219, SUB-0024446, ABSA Bank Limited, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-08-18, 2023-07-14, NULL, NULL, NULL
+23Q2, 00017223, SUB-0024468, U.S. Department of Health and Human Services, Perpetual, R-TS-P-SBV-HW-8000, Renewal Premium Support-SBV-HW-8000, 12, 2022-07-11, 2023-07-10, NULL, SBV-HW-8000, 1
+23Q2, 00017225, SUB-0024473, Pacific Gas and Electric Company, Perpetual, CON-VD-NA-100, Content-NA-100, 31, 2022-06-28, 2025-01-27, NULL, NULL, NULL
+23Q2, 00017226, SUB-0024474, CACEIS Bank, Perpetual, TS-S-VC-AA-1K, Standard Support Vulnerability Control Advanced Analytics 1,000 asset pack, 20, 2022-07-12, 2024-03-11, NULL, NULL, NULL
+23Q2, 00017229, SUB-0024486, La Francaise des Jeux, Perpetual, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2022-09-18, 2023-09-17, NULL, NULL, NULL
+23Q2, 00017230, SUB-0024503, First Bank Nigeria, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 36, 2022-06-28, 2025-06-27, NULL, NULL, NULL
+23Q2, 00017231, SUB-0024507, Banca Popolare di Sondrio, Subscription, VC-AA-100-S-S-Annual, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Annual) with Standard Support, 36, 2022-06-30, 2025-06-29, NULL, NULL, NULL
+23Q2, 00017237, SUB-0024546, AIA Group, Subscription, NA-100-S-S-Annual, Network Assurance 100 n-node pack - Subscription with standard support and content, 36, 2023-03-24, 2025-09-30, NULL, NULL, NULL
+23Q2, 00017240, SUB-0024551, Vattenfall IT Services Poland Sp, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2022-12-24, 2023-12-23, NULL, NULL, NULL
+23Q2, 00017243, SUB-0024562, Bank of Ireland, Perpetual, TS-S-SBV-HW-11000, Standard Support -SBV-HW-11000, 36, 2022-07-11, 2025-07-10, NULL, SBV-HW-11000, 1
+23Q2, 00017245, SUB-0024569, BCX, Subscription, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 36, 2022-04-01, 2025-03-31, NULL, NULL, NULL
+23Q2, 00017255, SUB-0024610, Wells Fargo, Perpetual, RE-S-PRE, Skybox Platform Operation Engineer Full-Time (40 Hours average per week) - Subscription - Prepaid, 31, 2022-11-12, 2025-06-19, NULL, NULL, NULL
+23Q2, 00017257, SUB-0024632, Dell Inc. (Federal), Subscription, NA-100-S-P-Pre, Network Assurance 100 n-node pack - Subscription with premium support and content, 12, 2022-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017258, SUB-0024638, MailChimp, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2022-07-09, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017259, SUB-0024646, Tatra Banka a.s., Perpetual, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2022-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017261, SUB-0024663, Banco de Crédito Social Cooperativo, S.A., Perpetual, TS-S-FA-1, Standard Support -FA-1, 12, 2022-07-08, 2023-07-07, NULL, NULL, NULL
+23Q2, 00017266, SUB-0024674, Bank of America Corp, Perpetual, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 60, 2022-09-01, 2027-08-31, NULL, SBV-HW-12100, 1
+23Q2, 00017267, SUB-0024677, KPMG FIDES SERVIZI DI AMMINISTRAZIONE S.P.A., Subscription, NA-10-S-S-Annual, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2022-07-11, 2025-07-10, NULL, NULL, NULL
+23Q2, 00017290, SUB-0024701, Amdocs, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2022-07-16, 2023-07-15, NULL, NULL, NULL
+23Q2, 00017294, SUB-0024736, Hungarian Post, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 24, 2022-06-29, 2024-06-28, NULL, NULL, NULL
+23Q2, 00017325, SUB-0024786, Axis Bank, Perpetual, R-TS-P-CM-10, Renewal Premium Support-CM-10, 12, 2022-06-17, 2023-06-16, NULL, NULL, NULL
+23Q2, 00017326, SUB-0024787, Getronics - CMC Holding B.V., Royalties, MSSP-FA-10-S-S-PRE, MSSP - Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2022-07-22, 2023-07-21, NULL, NULL, NULL
+23Q2, 00017371, SUB-0024825, MBSB Bank Berhad, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-07-29, 2023-07-28, NULL, NULL, NULL
+23Q2, 00017375, SUB-0024837, LMNTRIX, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-07-29, 2023-07-28, NULL, NULL, NULL
+23Q2, 00017409, SUB-0024864, SITA Quebec, Perpetual, R-TS-S-FA-1BA-Annual, Renewal Standard Support-FA-1BA - Paid-Annually, 24, 2022-08-02, 2024-07-20, NULL, NULL, NULL
+23Q2, 00017410, SUB-0024865, PROS, Inc., Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-08-16, 2023-08-15, NULL, NULL, NULL
+23Q2, 00017412, SUB-0024871, Williams Companies, Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2022-08-09, 2023-08-08, NULL, NULL, NULL
+23Q2, 00017416, SUB-0024875, Edenred SA, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-08-10, 2023-08-09, NULL, NULL, NULL
+23Q2, 00017417, SUB-0024879, Vanguard Group - HQ, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 36, 2022-09-18, 2025-09-17, NULL, NULL, NULL
+23Q2, 00017418, SUB-0024883, CSE Consorzio Servizi Bancari, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-07-01, 2023-06-30, NULL, NULL, NULL
+23Q2, 00017426, SUB-0024913, Wellmark, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2022-09-06, 2023-09-05, NULL, NULL, NULL
+23Q2, 00017427, SUB-0024920, Banque de Luxembourg, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2022-08-16, 2023-08-15, NULL, NULL, NULL
+23Q2, 00017430, SUB-0024931, Hong Leong Bank Berhad, Perpetual, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2022-09-01, 2023-08-31, NULL, NULL, NULL
+23Q2, 00017463, SUB-0024968, WEX, Inc., Subscription, NA-V-1k-S-P-Pre, Network Assurance for Cloud 1,000 virtual workload pack - Subscription with premium support and content, 12, 2022-08-23, 2023-08-22, NULL, NULL, NULL
+23Q2, 00017465, SUB-0024979, PAET Kuwait, Subscription, TS-S-SBV-HW-11000, Standard Support -SBV-HW-11000, 36, 2022-02-20, 2025-02-19, NULL, SBV-HW-11000, 1
+23Q2, 00017466, SUB-0024991, BT Managed Services | BT Global Services | MSSP, Royalties, MSSP-CM-10-S-P-PRE, MSSP - Change Manager 10 firewall pack- Subscription with Premium support and content, 36, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017496, SUB-0025016, Hagerty Insurance, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-08-09, 2023-08-08, NULL, NULL, NULL
+23Q2, 00017497, SUB-0025029, Texas HHSC, Perpetual, R-CON-VD-NA-1k, Renewal Content-NA-1k, 12, 2022-09-15, 2023-09-14, NULL, NULL, NULL
+23Q2, 00017499, SUB-0025033, Mastercard Technologies, LLC, Perpetual, R-TS-P-SBV-HW-8050, Renewal Premium Support-SBV-HW-8050, 12, 2022-09-01, 2023-08-31, NULL, SBV-HW-8050, 1
+23Q2, 00017500, SUB-0025039, Texas Department of Motor Vehicles, Perpetual, R-TS-S-NA-100-Annual, Renewal Standard Support-NA-100 - Paid-Annually, 36, 2022-09-01, 2025-08-30, NULL, NULL, NULL
+23Q2, 00017502, SUB-0025054, Becton, Dickinson and Company, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2022-08-22, 2025-08-21, NULL, NULL, NULL
+23Q2, 00017503, SUB-0025059, Worley Canada, Subscription, NA-100-S-S-Pre, Network Assurance 100 n-node pack - Subscription with standard support and content, 12, 2022-11-19, 2023-08-31, NULL, NULL, NULL
+23Q2, 00017541, SUB-0025100, NICE Actimize, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2022-07-28, 2023-07-27, NULL, NULL, NULL
+23Q2, 00017542, SUB-0025106, Orica, Subscription, CM-10-S-P-Pre, Change Manager 10 firewall pack- Subscription with premium support and content, 24, 2022-09-07, 2024-09-06, NULL, NULL, NULL
+23Q2, 00017544, SUB-0025126, U.S. Securities and Exchange Commission, Perpetual, R-TS-P-SBV-HW-8050, Renewal Premium Support-SBV-HW-8050, 12, 2022-10-01, 2023-09-30, NULL, SBV-HW-8050, 1
+23Q2, 00017546, SUB-0025140, Procter & Gamble, Subscription, FA-10-S-P-Pre, Firewall Assurance 10 firewall pack - Subscription with premium support and content, 12, 2022-09-12, 2023-09-11, NULL, NULL, NULL
+23Q2, 00017548, SUB-0025148, KAR Auction Services, Subscription, SBV-ES-S-S-Annual, Skybox Enterprise Server Software License - Subscription with standard support and content, 24, 2022-09-15, 2024-09-14, NULL, NULL, NULL
+23Q2, 00017549, SUB-0025153, Wipro Ltd - Internal Use, Subscription, FA-1BA-S-P-Pre, Firewall Assurance-Branch Office-1 Firewall (Subscription with Premium Support & Content), 12, 2022-09-20, 2023-09-19, NULL, NULL, NULL
+23Q2, 00017552, SUB-0025158, Constant Contact (Endurance) Inc, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2022-09-10, 2023-09-09, NULL, NULL, NULL
+23Q2, 00017553, SUB-0025161, AAA Life Insurance, Perpetual, TS-S-FA-1, Standard Support -FA-1, 15, 2022-09-20, 2023-12-25, NULL, NULL, NULL
+23Q2, 00017554, SUB-0025165, ADP LLC, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-09-29, 2023-09-28, NULL, NULL, NULL
+23Q2, 00017555, SUB-0025170, MOJ -IL IMPA, Perpetual, R-TS-S-VC-AA-100, Renewal - Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 12, 2022-08-08, 2023-08-07, NULL, NULL, NULL
+23Q2, 00017557, SUB-0025180, Suncorp, Perpetual, R-CON-VD-VC-AA-100, Renewal - Vulnerability Content Updates Vulnerability Control Advanced Analytics 100 asset pack, 12, 2022-09-28, 2023-09-27, NULL, NULL, NULL
+23Q2, 00017559, SUB-0025184, GITN Sdn Bhd, Perpetual, R-CON-VD-FA-1, Renewal Content-FA-1, 24, 2022-08-01, 2024-07-31, NULL, NULL, NULL
+23Q2, 00017560, SUB-0025197, Qatar National Bank, Perpetual, R-CON-VD-NA-100, Renewal Content-NA-100, 37, 2023-01-10, 2025-12-31, NULL, NULL, NULL
+23Q2, 00017562, SUB-0025214, EDF Luminus, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-09-26, 2023-09-25, NULL, NULL, NULL
+23Q2, 00017563, SUB-0025216, Cadence Design Systems, Subscription, NA-100-S-P-Pre, Network Assurance 100 n-node pack - Subscription with premium support and content, 36, 2022-09-29, 2025-09-28, NULL, NULL, NULL
+23Q2, 00017565, SUB-0025228, TM Technology Services Sdn Bhd ( Webe Digital Sdn Bhd)., Perpetual, R-TS-S-SBV-ES-Annual, Renewal Standard Support-SBV-ES - Paid-Annually, 36, 2022-08-21, 2025-08-20, NULL, NULL, NULL
+23Q2, 00017567, SUB-0025233, Ooredoo Qatar (Qatar Telecom), Subscription, VC-AA-100-S-S-Pre, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Prepaid) with Standard Support, 12, 2022-09-30, 2023-09-29, NULL, NULL, NULL
+23Q2, 00017569, SUB-0025241, Groupe POMONA, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 27, 2022-09-30, 2024-12-29, NULL, NULL, NULL
+23Q2, 00017570, SUB-0025243, Gemalto - HQ, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 36, 2022-10-03, 2025-10-02, NULL, NULL, NULL
+23Q2, 00017571, SUB-0025262, Mylan, Perpetual, R-TS-S-CM-SASE-10, Renewal - Standard Support for Secure Access Service Edge Change Manager 10 locations, 12, 2022-11-13, 2023-11-07, NULL, NULL, NULL
+23Q2, 00017572, SUB-0025272, Financial Security Institute, Subscription, NA-100-S-S-Annual, Network Assurance 100 n-node pack - Subscription with standard support and content, 36, 2022-10-29, 2025-10-28, NULL, NULL, NULL
+23Q2, 00017573, SUB-0025284, Navistar International, Perpetual, R-CON-VD-VC-AA-1K-annual, Renewal - Vulnerability Content Updates Vulnerability Control Advanced Analytics 1,000 asset pack annually paid, 38, 2022-11-22, 2025-11-21, NULL, NULL, NULL
+23Q2, 00017575, SUB-0025295, QBE Australia, Subscription, CM-10-S-P-Pre, Change Manager 10 firewall pack- Subscription with premium support and content, 36, 2022-09-30, 2025-09-29, NULL, NULL, NULL
+23Q2, 00017576, SUB-0025299, Maire Tecnimont, Subscription, FA-1-S-S-Annual, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 36, 2022-09-30, 2025-09-29, NULL, NULL, NULL
+23Q2, 00017577, SUB-0025307, Falck, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-09-26, 2023-09-25, NULL, NULL, NULL
+23Q2, 00017578, SUB-0025309, Philippines Navy, Perpetual, TS-S-VC-AA-100, Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 16, 2022-10-01, 2024-01-31, NULL, NULL, NULL
+23Q2, 00017582, SUB-0025324, EDF ENERGIES NOUVELLES, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-08-31, 2023-08-30, NULL, NULL, NULL
+23Q2, 00017583, SUB-0025325, Electricite de France - HQ, Perpetual, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 36, 2022-10-10, 2025-10-09, NULL, SBV-HW-12100, 1
+23Q2, 00017585, SUB-0025336, Magneti Marelli, Subscription, NA-1k-S-S-Annual, Network Assurance 1,000 n-node pack - Subscription with standard support and content, 36, 2022-09-30, 2025-09-29, NULL, NULL, NULL
+23Q2, 00017586, SUB-0025338, Infosys Technologies, Perpetual, R-TS-P-FA-100, Renewal Premium Support-FA-100, 12, 2022-07-03, 2023-07-02, NULL, NULL, NULL
+23Q2, 00017617, SUB-0025365, Viseca Card Services SA (former Aduno SA), Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017620, SUB-0025370, Mediobanca, Perpetual, TS-S-FA-1, Standard Support -FA-1, 36, 2022-10-10, 2025-10-09, NULL, NULL, NULL
+23Q2, 00017621, SUB-0025375, Hargreaves Lansdown, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 36, 2022-09-20, 2025-09-19, NULL, NULL, NULL
+23Q2, 00017622, SUB-0025377, Income Insurance Limited, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00017623, SUB-0025380, 24/7 Inc, Perpetual, R-TS-P-FA-1BA, Renewal Premium Support-FA-1BA, 12, 2022-10-01, 2023-09-30, NULL, NULL, NULL
+23Q2, 00017624, SUB-0025385, Mundipharma, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-10-11, 2023-10-10, NULL, NULL, NULL
+23Q2, 00017629, SUB-0025411, Meridian Health System, Perpetual, R-TS-S-SBV-HW-12100, Renewal Standard Support-SBV-HW-12100, 12, 2022-12-13, 2023-10-18, NULL, SBV-HW-12100, 1
+23Q2, 00017630, SUB-0025414, Neiman Marcus, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-10-01, 2023-09-30, NULL, NULL, NULL
+23Q2, 00017631, SUB-0025423, Eni, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 18, 2022-07-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017632, SUB-0025433, Bristol-Myers Squibb Company, Perpetual, R-TS-P-SBV-HW-8050, Renewal Premium Support-SBV-HW-8050, 25, 2022-11-09, 2024-11-08, NULL, SBV-HW-8050, 1
+23Q2, 00017636, SUB-0025436, Keppel, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-10-24, 2023-10-23, NULL, NULL, NULL
+23Q2, 00017637, SUB-0025440, Gruppo ITAS ASSICURAZIONI, Subscription, NA-10-S-S-Annual, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2022-10-24, 2025-10-23, NULL, NULL, NULL
+23Q2, 00017638, SUB-0025446, Phoenix Contact GmbH & Co. KG, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2022-12-19, 2023-12-18, NULL, NULL, NULL
+23Q2, 00017639, SUB-0025455, Aeronautica Militare Italiana - Re.S.I.A., Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 15, 2022-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00017669, SUB-0025499, Excellus, Perpetual, R-TS-S-SBV-HW-7000, Renewal Standard Support-SBV-HW-7000, 36, 2022-12-09, 2023-12-09, NULL, SBV-HW-7000, 1
+23Q2, 00017670, SUB-0025504, ESL Federal Credit Union, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-01-01, 2023-10-28, NULL, NULL, NULL
+23Q2, 00017673, SUB-0025532, Institute for Defense Analyses, Perpetual, CON-VD-NA-100, Content-NA-100, 12, 2022-10-27, 2023-10-26, NULL, NULL, NULL
+23Q2, 00017674, SUB-0025534, Panda Restaurant Group, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2022-10-30, 2023-10-29, NULL, NULL, NULL
+23Q2, 00017675, SUB-0025540, Jysan (Tsesnabank), Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 12, 2022-10-27, 2023-10-26, NULL, NULL, NULL
+23Q2, 00017676, SUB-0025546, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2022-11-06, 2023-11-05, NULL, NULL, NULL
+23Q2, 00017677, SUB-0025548, SDWORX, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2022-10-28, 2023-10-27, NULL, NULL, NULL
+23Q2, 00017808, SUB-0025661, Social Security Administration, Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2022-11-08, 2023-11-07, NULL, NULL, NULL
+23Q2, 00017809, SUB-0025662, PT Bank Commonwealth, Perpetual, R-TS-S-SBV-HW-7000-Annual, Renewal Standard Support-SBV-HW-7000 - Paid-Annually, 36, 2022-08-10, 2025-08-09, NULL, SBV-HW-7000, 1
+23Q2, 00017811, SUB-0025679, National Grid UK, Perpetual, R-CON-VD-NA-1k, Renewal Content-NA-1k, 12, 2022-10-01, 2023-09-30, NULL, NULL, NULL
+23Q2, 00017812, SUB-0025714, John Lewis Partnership, Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 41, 2022-05-15, 2025-09-30, NULL, NULL, NULL
+23Q2, 00017814, SUB-0025728, Paramount Global (Formerly Viacom), Perpetual, R-TS-S-SBV-HW-8000, Renewal Standard Support-SBV-HW-8000, 12, 2022-11-02, 2023-11-01, NULL, SBV-HW-8000, 1
+23Q2, 00017815, SUB-0025729, CSU Fullerton, Perpetual, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 12, 2022-07-26, 2023-07-25, NULL, NULL, NULL
+23Q2, 00017816, SUB-0025744, J's Communications, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-11-01, 2023-10-31, NULL, NULL, NULL
+23Q2, 00017817, SUB-0025746, AAA Northern California, Nevada and Utah (AAA NCNU), Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 24, 2022-10-23, 2024-10-22, NULL, NULL, NULL
+23Q2, 00017818, SUB-0025751, Interswitch Group, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-11-07, 2023-11-06, NULL, NULL, NULL
+23Q2, 00017820, SUB-0025758, SOMPO RISK MANAGEMENT Inc., Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-12-03, 2023-12-02, NULL, NULL, NULL
+23Q2, 00017821, SUB-0025760, İstanbul Yeni Havalimanı İnşaatı, İGA Airport, Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2022-12-28, 2023-12-27, NULL, NULL, NULL
+23Q2, 00017823, SUB-0025769, Weil Gotshal & Manges, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2022-12-01, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017853, SUB-0025794, Odea Bank, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017855, SUB-0025804, Fuji Xerox Document Management Solutions Pty Ltd, Subscription, VC-AA-100-S-S-Pre, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Prepaid) with Standard Support, 12, 2022-11-18, 2023-11-17, NULL, NULL, NULL
+23Q2, 00017856, SUB-0025815, PSCU, Perpetual, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2022-12-02, 2023-12-01, NULL, NULL, NULL
+23Q2, 00017857, SUB-0025832, Sacyl, Subscription, TS-S-SBV-HW-11000, Standard Support -SBV-HW-11000, 33, 2022-11-28, 2025-08-27, NULL, SBV-HW-11000, 1
+23Q2, 00017858, SUB-0025834, Telefonica EC, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-12-15, 2023-12-14, NULL, NULL, NULL
+23Q2, 00017859, SUB-0025841, SOLVAY (France), Subscription, CM-V-1k-S-P-Pre, Change Manager for Cloud 1,000 virtual workload pack - Subscription with premium support and content, 12, 2022-11-29, 2023-11-28, NULL, NULL, NULL
+23Q2, 00017860, SUB-0025850, AFLAC, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2022-12-16, 2023-12-15, NULL, NULL, NULL
+23Q2, 00017861, SUB-0025856, Aeronautica Militare Italiana - Re.G.I.S.C.C. Pratica di Mare, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 15, 2022-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00017862, SUB-0025870, Repsol, Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2022-12-01, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017863, SUB-0025874, Credit Agricole - IT, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-08-06, 2023-08-05, NULL, NULL, NULL
+23Q2, 00017864, SUB-0025890, BankservAfrica, Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2022-12-23, 2023-12-22, NULL, NULL, NULL
+23Q2, 00017865, SUB-0025902, Old Mutual Insure, Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 12, 2022-11-29, 2023-11-28, NULL, NULL, NULL
+23Q2, 00017866, SUB-0025904, Amadeus Deutschland GmbH, Perpetual, R-TS-P-FA-10, Renewal Premium Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017868, SUB-0025909, Atos Information Technology HK Limited, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2023-02-19, 2024-02-18, NULL, NULL, NULL
+23Q2, 00017869, SUB-0025910, European Space Agency (ESA) - ESO, Subscription, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 14, 2022-11-29, 2024-01-28, NULL, NULL, NULL
+23Q2, 00017870, SUB-0025913, ICICI Bank, Perpetual, R-TS-P-FA-100, Renewal Premium Support-FA-100, 15, 2022-09-28, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017871, SUB-0025918, Henry Schein, Perpetual, R-TS-S-VC-AA-10K, Renewal - Standard Support Vulnerability Control Advanced Analytics 10,000 asset pack, 12, 2022-12-22, 2023-12-21, NULL, NULL, NULL
+23Q2, 00017872, SUB-0025928, OCLC, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2022-12-01, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017873, SUB-0025929, The Siam Commercial Bank Public Company, Perpetual, TS-S-FA-10, Standard Support -FA-10, 14, 2022-12-01, 2024-01-31, NULL, NULL, NULL
+23Q2, 00017878, SUB-0025939, ABB Information Systems Ltd., Perpetual, CON-VD-NA-10, Content-NA-10, 25, 2022-12-06, 2024-12-31, NULL, NULL, NULL
+23Q2, 00017879, SUB-0025949, RBS Financial Markets, Perpetual, R-TS-S-SBV-HW-7000, Renewal Standard Support-SBV-HW-7000, 12, 2022-12-21, 2023-12-21, NULL, SBV-HW-7000, 1
+23Q2, 00017880, SUB-0025951, Unicredit Tiriac Bank - Romania, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017881, SUB-0025957, IRobot Corporation, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2022-12-21, 2023-12-15, NULL, NULL, NULL
+23Q2, 00017885, SUB-0025968, Public Consulting Group, Subscription, NA-100-S-S-Pre, Network Assurance 100 n-node pack - Subscription with standard support and content, 12, 2023-01-05, 2024-01-04, NULL, NULL, NULL
+23Q2, 00017886, SUB-0025974, Sasol, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-01-27, 2024-01-26, NULL, NULL, NULL
+23Q2, 00017887, SUB-0025978, DNB, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2022-12-21, 2023-12-20, NULL, NULL, NULL
+23Q2, 00017889, SUB-0025992, Acuity Mutual Insurance, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2022-12-19, 2023-12-18, NULL, NULL, NULL
+23Q2, 00017919, SUB-0026014, Bright Horizons Family Solutions, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017921, SUB-0026017, Jabil Circuit, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-12-27, 2023-12-26, NULL, NULL, NULL
+23Q2, 00017928, SUB-0026055, SSE, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2022-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00017935, SUB-0026060, CapitaLand, SaaS, SaaS-FA-S-EN-PREPAID, Skybox Cloud Firewall Assurance, 12, 2022-12-19, 2023-12-18, NULL, NULL, NULL
+23Q2, 00017936, SUB-0026063, SNAM Rete Gas, Subscription, FA-1BA-S-S-Pre, Firewall Assurance-Branch Office-1 Firewall (Subscription with Standard Support & Content), 33, 2022-12-16, 2025-09-15, NULL, NULL, NULL
+23Q2, 00017939, SUB-0026112, United States Environmental Protection Agency (EPA), Perpetual, R-TS-S-SBV-HW-8050, Renewal Standard Support-SBV-HW-8050, 12, 2022-12-21, 2023-12-20, NULL, SBV-HW-8050, 1
+23Q2, 00017940, SUB-0026126, Costa Crociere, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-12-01, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017947, SUB-0026139, ANZ GCIS/Wholesale Digital, Subscription, VC-AA-100-S-P-Pre, Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Prepaid) with Premium Support, 12, 2023-02-23, 2024-02-01, NULL, NULL, NULL
+23Q2, 00017948, SUB-0026142, KRUNGTHAI CARD PUBLIC COMPANY LIMITED, Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 12, 2022-12-19, 2023-12-18, NULL, NULL, NULL
+23Q2, 00017949, SUB-0026143, PHOENIX Pharmahandel GmbH & Co. KG, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 36, 2023-01-01, 2025-12-31, NULL, NULL, NULL
+23Q2, 00017950, SUB-0026148, Intercontinental Hotels Group (IHG), Perpetual, R-CON-VD-CM-1, Renewal Content-CM-1, 36, 2022-12-30, 2025-12-29, NULL, NULL, NULL
+23Q2, 00017952, SUB-0026163, SFR, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 36, 2023-01-01, 2025-12-31, NULL, NULL, NULL
+23Q2, 00017953, SUB-0026173, Allitude S.p.A., Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017954, SUB-0026176, HCL Technologies (HQ), Royalties, MSSP-FA-1-S-S-PRE, MSSP - Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2022-12-12, 2023-12-11, NULL, NULL, NULL
+23Q2, 00017957, SUB-0026207, Follett Corporation, Perpetual, R-TS-S-FA-1BA, Renewal Standard Support-FA-1BA, 12, 2022-12-29, 2023-12-28, NULL, NULL, NULL
+23Q2, 00017958, SUB-0026216, Vodafone Australia, Perpetual, R-TS-P-FA-1, Renewal Premium Support-FA-1, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017973, SUB-0026232, Cygate Oy, NDA, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 36, 2023-01-01, 2025-12-31, NULL, NULL, NULL
+23Q2, 00017974, SUB-0026238, MPI Generali Insurans Berhad, Subscription, R-TS-S-SBV-HW-7000, Renewal Standard Support-SBV-HW-7000, 12, 2022-12-28, 2023-12-27, NULL, SBV-HW-7000, 1
+23Q2, 00017975, SUB-0026240, Japan Air Self-Defense Force, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-03-11, 2024-03-10, NULL, NULL, NULL
+23Q2, 00017977, SUB-0026251, Nexi, Subscription, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017979, SUB-0026263, Santa Lucia SA, Perpetual, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017984, SUB-0026270, Capita Customer Management (Ventura), Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017985, SUB-0026277, Liberty Holdings Limited, Subscription, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 12, 2022-12-10, 2023-12-09, NULL, NULL, NULL
+23Q2, 00017988, SUB-0026286, DOCOMO Digital Italy S.r.l., Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017989, SUB-0026294, AirITSystems GmbH, Royalties, MSSP-VC-AA-100-S-S-PRE, MSSP - Vulnerability Control Advanced Analytics 100 asset pack - Subscription (Prepaid) with Standard Support, 9, 2023-04-27, 2023-11-30, NULL, NULL, NULL
+23Q2, 00017990, SUB-0026298, Retail Business Services, Perpetual, TS-S-CM-1BA, Standard Support-CM-1BA, 60, 2022-12-21, 2027-12-20, NULL, NULL, NULL
+23Q2, 00017992, SUB-0026306, BBVA Peru, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017993, SUB-0026310, Telefonica - UY, Subscription, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017994, SUB-0026314, Telefonica - ES, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00017995, SUB-0026327, Lloyds of London, Perpetual, R-CON-VD-CM-10, Renewal Content-CM-10, 36, 2022-11-17, 2025-11-16, NULL, NULL, NULL
+23Q2, 00018002, SUB-0026378, Veolia, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 36, 2022-12-23, 2025-12-22, NULL, NULL, NULL
+23Q2, 00018006, SUB-0026405, BRICOMAN ITALIA S.R.L., Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2022-12-08, 2023-12-07, NULL, NULL, NULL
+23Q2, 00018009, SUB-0026421, CENTRE HOSPITALIER PRINCESSE GRACE, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018010, SUB-0026429, CLSA Limited, Subscription, NA-100-S-P-Annual, Network Assurance 100 n-node pack - Subscription with premium support and content, 29, 2023-05-18, 2025-09-30, NULL, NULL, NULL
+23Q2, 00018011, SUB-0026431, Israel Discount Bank, Perpetual, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018013, SUB-0026443, Dogus Planet N11, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-01-02, 2024-01-01, NULL, NULL, NULL
+23Q2, 00018014, SUB-0026449, Walgreen Boots Alliance, Perpetual, CON-VD-FA-100, Content-FA-100, 62, 2022-12-28, 2028-02-27, NULL, NULL, NULL
+23Q2, 00018015, SUB-0026455, National Pension Service, Perpetual, TS-S-CM-10, Standard Support -CM-10, 39, 2022-12-31, 2026-03-30, NULL, NULL, NULL
+23Q2, 00018016, SUB-0026463, Verisk Analytics, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2022-12-22, 2023-12-21, NULL, NULL, NULL
+23Q2, 00018018, SUB-0026469, MTN Group, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018019, SUB-0026480, Cognizant Technology Solutions - IN, Perpetual, R-TS-P-NA-10, Renewal Premium Support-NA-10, 12, 2022-12-31, 2023-12-30, NULL, NULL, NULL
+23Q2, 00018022, SUB-0026501, XPO Logistics Supply Chain, Inc. and it’s Affiliates (GXO), Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018023, SUB-0026509, BDO Unibank Inc, Perpetual, CON-VD-FA-10, Content-FA-10, 10, 2022-12-31, 2023-10-01, NULL, NULL, NULL
+23Q2, 00018024, SUB-0026513, Leonardo Corporate, Perpetual, R-TS-S-NA-1k, Renewal Standard Support-NA-1k, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018025, SUB-0026515, Flughafen Hannover, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 33, 2023-01-01, 2025-09-30, NULL, NULL, NULL
+23Q2, 00018026, SUB-0026523, PMO IL – Manof, Royalties, MSSP-FA-100-S-S-PRE, MSSP - Firewall Assurance 100 firewall pack - Subscription with standard support and content, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018027, SUB-0026524, Kementerian Hukum dan HAM R.I. (Direktorat Jenderal Kekayaan Intelektual-DJKI), Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-12-30, 2023-12-29, NULL, NULL, NULL
+23Q2, 00018028, SUB-0026532, Fortinet Corporation, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-01-03, 2023-12-15, NULL, NULL, NULL
+23Q2, 00018032, SUB-0026549, Leonardo Divisione Velivoli, Perpetual, R-CON-VD-VC-AA-100, Renewal - Vulnerability Content Updates Vulnerability Control Advanced Analytics 100 asset pack, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018033, SUB-0026565, European External Action Service, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 15, 2023-01-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00018034, SUB-0026577, Melbourne Water, Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 24, 2022-12-29, 2024-12-28, NULL, NULL, NULL
+23Q2, 00018035, SUB-0026585, ADAMA Agricultural Solutions (Agan), SaaS, SaaS-BTF-E-S-EN-ANNUAL, Skybox Cloud Base Tenant Fee - Europe Tenant, 36, 2022-12-31, 2025-12-30, NULL, NULL, NULL
+23Q2, 00018038, SUB-0026599, Leonardo Divisione Cyber, Perpetual, R-TS-S-VC-AA-100, Renewal - Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018039, SUB-0026601, Ministry of Health IL, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2022-12-07, 2023-12-06, NULL, NULL, NULL
+23Q2, 00018040, SUB-0026609, YPF, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-01-18, 2024-01-17, NULL, NULL, NULL
+23Q2, 00018053, SUB-0026621, RWS - Rijkswaterstaat (Dutch Ministry of Infrastructure and the Environment), Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-11-26, 2023-11-25, NULL, NULL, NULL
+23Q2, 00018054, SUB-0026626, FWD Group, Subscription, FA-1-S-P-Annual, Firewall Assurance 1 firewall pack - Subscription with premium support and content, 36, 2022-12-30, 2025-12-29, NULL, NULL, NULL
+23Q2, 00018055, SUB-0026641, Adidas, Subscription, CM-SASE-500-S-S-PRE, Secure Access Service Edge - Change Manager 500 locations - Subscription (Prepaid) with Standard Support, 12, 2023-02-12, 2024-02-11, NULL, NULL, NULL
+23Q2, 00018057, SUB-0026659, OMV Petrom, Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018058, SUB-0026667, China Construction Bank Bank (Malaysia) Berhad, Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2023-01-12, 2024-01-11, NULL, NULL, NULL
+23Q2, 00018060, SUB-0026681, Legal & General (Europe), Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 13, 2023-02-18, 2024-02-17, NULL, NULL, NULL
+23Q2, 00018101, SUB-0026703, Chevron, Perpetual, RE-S-PRE, Skybox Platform Operation Engineer Full-Time (40 Hours average per week) - Subscription - Prepaid, 12, 2022-12-01, 2023-11-30, NULL, NULL, NULL
+23Q2, 00018196, SUB-0026769, Banca Farmafactoring, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-12-19, 2023-12-18, NULL, NULL, NULL
+23Q2, 00018198, SUB-0026773, Kraft Foods, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 3, 2023-01-16, 2023-04-15, NULL, NULL, NULL
+23Q2, 00018217, SUB-0026775, Emirates Aluminium Global (EGAL), Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2022-10-03, 2023-10-02, NULL, NULL, NULL
+23Q2, 00018218, SUB-0026778, Bank Negara Malaysia (BNM), Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 12, 2023-01-16, 2024-01-15, NULL, NULL, NULL
+23Q2, 00018225, SUB-0026784, Royal and Sun Alliance, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-02-13, 2024-02-12, NULL, NULL, NULL
+23Q2, 00018229, SUB-0026805, Qlarant Integrity Solutions, Perpetual, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2023-01-19, 2024-01-18, NULL, NULL, NULL
+23Q2, 00018273, SUB-0026838, Federal Deposit Insurance Corporation (FDIC), Perpetual, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2023-02-23, 2024-02-22, NULL, NULL, NULL
+23Q2, 00018334, SUB-0026849, Legal & General Group, Perpetual, TS-P-FA-10, Premium Support -FA-10, 12, 2023-01-30, 2024-01-29, NULL, NULL, NULL
+23Q2, 00018392, SUB-0026886, The Co-operative Group, Perpetual, R-TS-S-SBV-S-Annual, Renewal Standard Support-SBV-S - Paid-Annually, 36, 2022-12-24, 2025-12-18, NULL, NULL, NULL
+23Q2, 00018416, SUB-0026912, Banco BPM, Perpetual, R-TS-S-VC-AA-100, Renewal - Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 11, 2023-02-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018517, SUB-0026944, AERAsec Network Services and Security GmbH, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 3, 2023-02-09, 2023-05-08, NULL, NULL, NULL
+23Q2, 00018518, SUB-0026948, Secure-24, Perpetual, R-CON-VD-NA-V-100, Renewal Content-NA-V-100, 12, 2023-06-22, 2023-11-11, NULL, NULL, NULL
+23Q2, 00018520, SUB-0026965, Innovapost, Subscription, CM-1-S-S-Pre, Change Manager 1 firewall pack - Subscription with standard support and content, 36, 2023-01-08, 2026-01-07, NULL, NULL, NULL
+23Q2, 00018521, SUB-0026975, Nasdaq OMX Group, Perpetual, CON-VD-FA-100, Content-FA-100, 11, 2023-02-10, 2024-01-10, NULL, NULL, NULL
+23Q2, 00018522, SUB-0026977, Wipro - HQ, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2023-02-10, 2024-02-09, NULL, NULL, NULL
+23Q2, 00018524, SUB-0026978, URENCO Group, Subscription, SBV-ES-S-S-Annual, Skybox Enterprise Server Software License - Subscription with standard support and content, 41, 2023-02-13, 2026-07-12, NULL, NULL, NULL
+23Q2, 00018556, SUB-0027004, Sallie Mae, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2023-02-16, 2024-02-15, NULL, NULL, NULL
+23Q2, 00018558, SUB-0027006, Crane Holdings, Co, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 14, 2023-02-16, 2024-04-05, NULL, NULL, NULL
+23Q2, 00018592, SUB-0027035, Tenaris, Perpetual, CON-VD-FA-1, Content-FA-1, 5, 2023-02-22, 2023-07-30, NULL, NULL, NULL
+23Q2, 00018593, SUB-0027036, LifeStyle, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2022-12-10, 2023-12-09, NULL, NULL, NULL
+23Q2, 00018594, SUB-0027039, Punjab National Bank, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2022-12-02, 2023-12-01, NULL, NULL, NULL
+23Q2, 00018598, SUB-0027047, Kwangju Bank, Perpetual, R-TS-S-CM-1, Renewal Standard Support-CM-1, 36, 2023-02-27, 2026-02-26, NULL, NULL, NULL
+23Q2, 00018630, SUB-0027101, Ministero dell'Interno, Perpetual, TS-S-VC-AA-10K, Standard Support Vulnerability Control Advanced Analytics 10,000 asset pack, 39, 2023-02-28, 2026-05-27, NULL, NULL, NULL
+23Q2, 00018634, SUB-0027103, Securities and Exchange Board of India, Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 11, 2023-03-01, 2024-02-28, NULL, NULL, NULL
+23Q2, 00018635, SUB-0027108, Carnival Corporation, Perpetual, R-CON-VD-FA-500, Renewal Content-FA-500, 12, 2023-03-11, 2024-03-10, NULL, NULL, NULL
+23Q2, 00018636, SUB-0027116, Consorzio Operativo Gruppo Montepaschi (MPS), Perpetual, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2023-01-01, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018637, SUB-0027122, CGI ISMC Inc Canada, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 17, 2023-02-16, 2024-07-30, NULL, NULL, NULL
+23Q2, 00018639, SUB-0027132, AfroCentric Technologies, Perpetual, R-CON-VD-FA-1, Renewal Content-FA-1, 15, 2023-03-05, 2024-03-04, NULL, NULL, NULL
+23Q2, 00018698, SUB-0027180, Merchant eSolutions, Perpetual, R-TS-S-CM-1, Renewal Standard Support-CM-1, 36, 2023-03-07, 2026-03-06, NULL, NULL, NULL
+23Q2, 00018703, SUB-0027190, National Student Clearinghouse, Subscription, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 24, 2023-05-04, 2025-05-27, NULL, NULL, NULL
+23Q2, 00018771, SUB-0027239, SFBLI | Southern Farm Bureau Life Insurance Co Inc, Subscription, R-TS-P-SBV-HW-7000, Renewal Premium Support-SBV-HW-7000, 12, 2023-06-09, 2024-06-08, NULL, SBV-HW-7000, 1
+23Q2, 00018773, SUB-0027247, PPS (Professional Provident Society), Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 8, 2023-03-14, 2023-11-13, NULL, NULL, NULL
+23Q2, 00018774, SUB-0027249, EVN - Ho Chi Minh City, Perpetual, TS-S-CM-1, Standard Support -CM-1, 39, 2023-03-15, 2026-06-14, NULL, NULL, NULL
+23Q2, 00018775, SUB-0027257, TataConsultancyServicesHQ, Subscription, SBV-ES-S-S-Annual, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2023-03-15, 2026-03-14, NULL, NULL, NULL
+23Q2, 00018776, SUB-0027260, Tevora, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2023-03-15, 2024-03-14, NULL, NULL, NULL
+23Q2, 00018777, SUB-0027261, Cwm Taf Morgannwg (NHS Wales), Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018779, SUB-0027265, Tesco PLC, Perpetual, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 14, 2023-05-26, 2024-05-25, NULL, NULL, NULL
+23Q2, 00018780, SUB-0027271, Relay Health, Subscription, TS-S-SBV-HW-12100, Standard Support -SBV-HW-12100, 12, 2023-03-17, 2024-03-16, NULL, SBV-HW-12100, 1
+23Q2, 00018781, SUB-0027276, General Electric (GE) - HQ, Perpetual, R-TS-S-SBV-HW-7000, Renewal Standard Support-SBV-HW-7000, 15, 2023-03-17, 2024-03-16, NULL, SBV-HW-7000, 1
+23Q2, 00018812, SUB-0027300, Ministry of Human Resource and Social Development, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2023-03-21, 2024-03-20, NULL, NULL, NULL
+23Q2, 00018814, SUB-0027309, Ministry of Justice Kuwait, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-03-22, 2024-03-21, NULL, NULL, NULL
+23Q2, 00018820, SUB-0027317, Mobitel (Pvt) Ltd., Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-01-30, 2024-01-29, NULL, NULL, NULL
+23Q2, 00018853, SUB-0027352, Jumeirah Group, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2023-02-01, 2024-01-31, NULL, NULL, NULL
+23Q2, 00018854, SUB-0027353, Standard Chartered Bank Korea, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 36, 2023-04-01, 2026-03-31, NULL, NULL, NULL
+23Q2, 00018855, SUB-0027359, Slovenska sporitelna, a.s., Perpetual, R-CON-VD-VC-AA-100, Renewal - Vulnerability Content Updates Vulnerability Control Advanced Analytics 100 asset pack, 12, 2023-03-23, 2024-03-22, NULL, NULL, NULL
+23Q2, 00018856, SUB-0027360, Abu Dhabi Airports Company (ADAC), Perpetual, R-TS-S-SBV-S-Annual, Renewal Standard Support-SBV-S - Paid-Annually, 36, 2022-12-31, 2025-12-30, NULL, NULL, NULL
+23Q2, 00018857, SUB-0027367, Oman Telecommunications Company (Omantel), Perpetual, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 15, 2023-03-31, 2024-06-29, NULL, NULL, NULL
+23Q2, 00018858, SUB-0027371, Gov.il (Tehila) - Israeli Government Portal, Perpetual, CON-VD-VC-AA-100, Vulnerability Content Updates Vulnerability Control Advanced Analytics 100 asset pack, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018859, SUB-0027374, Saras SpA, Subscription, FA-1-S-S-Annual, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 39, 2023-03-31, 2026-06-18, NULL, NULL, NULL
+23Q2, 00018860, SUB-0027377, Netcare, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2023-04-08, 2024-04-07, NULL, NULL, NULL
+23Q2, 00018862, SUB-0027382, Cedge Technologies :Ltd, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018864, SUB-0027390, United States Agency for International Development (USAID), Perpetual, R-TS-S-NA-1k-Annual, Renewal Standard Support-NA-1k - Paid-Annually, 24, 2023-04-01, 2025-03-31, NULL, NULL, NULL
+23Q2, 00018865, SUB-0027394, Centers for Medicare & Medicaid Service (CMS), Subscription, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018866, SUB-0027396, OQ, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 10, 2023-03-31, 2023-12-31, NULL, NULL, NULL
+23Q2, 00018867, SUB-0027399, Southern Company Services, Perpetual, RE-S-PRE, Skybox Platform Operation Engineer Full-Time (40 Hours average per week) - Subscription - Prepaid, 8, 2023-04-17, 2023-12-15, NULL, NULL, NULL
+23Q2, 00018870, SUB-0027400, comdirect bank AG, Perpetual, R-TS-P-NA-10, Renewal Premium Support-NA-10, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018872, SUB-0027419, Atlantic Data Security, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018873, SUB-0027422, ALSTOM, Perpetual, TS-P-VC-AA-1K, Premium Support Vulnerability Control Advanced Analytics 1,000 asset pack, 41, 2023-03-31, 2026-07-31, NULL, NULL, NULL
+23Q2, 00018874, SUB-0027423, Vodafone - IN, Perpetual, TS-P-SBV-HW-12200, Premium Support -SBV-HW-12200, 12, 2023-04-10, 2024-04-09, NULL, SBV-HW-12200, 1
+23Q2, 00018876, SUB-0027433, City Union Bank, Perpetual, R-TS-S-NA-10, Renewal Standard Support-NA-10, 39, 2023-01-26, 2026-04-09, NULL, NULL, NULL
+23Q2, 00018877, SUB-0027441, European Space Agency (ESA) - ESRIN, Perpetual, R-CON-VD-VC-AA-1K, Renewal - Vulnerability Content Updates Vulnerability Control Advanced Analytics 1,000 asset pack, 12, 2023-03-01, 2024-02-29, NULL, NULL, NULL
+23Q2, 00018878, SUB-0027442, Burberry Group, Subscription, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 12, 2023-04-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00018910, SUB-0027477, Tata Consultancy Services, Subscription, FA-10-S-S-Annual, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 60, 2023-04-03, 2028-04-02, NULL, NULL, NULL
+23Q2, 00018912, SUB-0027479, FSDH MERCHANT BANK, Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-03-02, 2024-03-01, NULL, NULL, NULL
+23Q2, 00018913, SUB-0027482, Croatian Ministry of Defense, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2023-04-03, 2024-04-02, NULL, NULL, NULL
+23Q2, 00018917, SUB-0027485, Permata Bank, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2023-05-01, 2024-04-30, NULL, NULL, NULL
+23Q2, 00018918, SUB-0027490, BT Spain, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-03-31, 2024-03-30, NULL, NULL, NULL
+23Q2, 00018919, SUB-0027493, Post Luxembourg, Perpetual, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2023-04-01, 2024-03-31, NULL, NULL, NULL
+23Q2, 00018920, SUB-0027494, Datacentrix, Royalties, MSSP-FA-10-S-S-PRE, MSSP - Firewall Assurance 10 firewall pack - Subscription with standard support and content, 3, 2023-04-20, 2023-07-19, NULL, NULL, NULL
+23Q2, 00018923, SUB-0027495, Afni Incorporated, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-04-25, 2024-04-24, NULL, NULL, NULL
+23Q2, 00018924, SUB-0027498, Shire (Takeda) Pharmaceuticals, LLC., Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 36, 2023-04-21, 2026-04-20, NULL, NULL, NULL
+23Q2, 00018955, SUB-0027520, VocaLINK, Perpetual, CON-VD-FA-100, Content-FA-100, 36, 2023-04-26, 2026-04-25, NULL, NULL, NULL
+23Q2, 00018957, SUB-0027527, Abu Dhabi Islamic Bank, Perpetual, R-TS-S-FA-10-Annual, Renewal Standard Support-FA-10 - Paid-Annually, 37, 2023-01-03, 2026-01-02, NULL, NULL, NULL
+23Q2, 00018960, SUB-0027534, The Bank of N.T. Butterfield & Son Limited, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-05-01, 2024-04-30, NULL, NULL, NULL
+23Q2, 00018961, SUB-0027537, General Authority for Competition, Subscription, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 36, 2023-04-28, 2026-04-27, NULL, NULL, NULL
+23Q2, 00018963, SUB-0027540, Infosys BPO Ltd, Perpetual, R-TS-P-FA-100, Renewal Premium Support-FA-100, 12, 2023-04-15, 2024-04-14, NULL, NULL, NULL
+23Q2, 00018964, SUB-0027555, Rio Tinto Limited, Subscription, FA-500-S-S-Annual, Firewall Assurance 500 firewall pack - Subscription with standard support and content, 63, 2023-04-28, 2028-07-27, NULL, NULL, NULL
+23Q2, 00019023, SUB-0027601, Council Of The European Union, Perpetual, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 11, 2023-05-27, 2024-03-31, NULL, NULL, NULL
+23Q2, 00019025, SUB-0027602, FinansBank, Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 12, 2023-05-13, 2024-05-12, NULL, NULL, NULL
+23Q2, 00019056, SUB-0027634, Australia Department of Defence, Subscription, NA-10-S-P-Pre, Network Assurance 10 n-node pack- Subscription with premium support and content, 12, 2023-05-16, 2024-05-15, NULL, NULL, NULL
+23Q2, 00019060, SUB-0027641, Link Market Services Limited, Subscription, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-05-29, 2024-05-28, NULL, NULL, NULL
+23Q2, 00019063, SUB-0027655, Hitachi Rail STS, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-03-30, 2024-03-29, NULL, NULL, NULL
+23Q2, 00019065, SUB-0027663, MTN Cameroon, Perpetual, TS-S-FA-1, Standard Support -FA-1, 12, 2023-05-26, 2024-05-25, NULL, NULL, NULL
+23Q2, 00019067, SUB-0027669, Husqvarna, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-05-27, 2024-05-26, NULL, NULL, NULL
+23Q2, 00019068, SUB-0027674, Morrisons, Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-05-28, 2024-05-27, NULL, NULL, NULL
+23Q2, 00019069, SUB-0027676, Raytheon Company, Subscription, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2023-06-08, 2024-06-07, NULL, NULL, NULL
+23Q2, 00019072, SUB-0027678, General Mills, Perpetual, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2023-05-20, 2024-05-19, NULL, NULL, NULL
+23Q2, 00019073, SUB-0027687, Tabadul, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-06-24, 2024-06-23, NULL, NULL, NULL
+23Q2, 00019074, SUB-0027700, Federal Reserve Bank of Dallas, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-06-13, 2024-06-12, NULL, NULL, NULL
+23Q2, 00019075, SUB-0027702, SISAL, Subscription, VC-AA-1K-S-S-Annual, Vulnerability Control Advanced Analytics 1,000 asset pack - Subscription (Annual) with Standard Support, 36, 2023-05-26, 2026-05-25, NULL, NULL, NULL
+23Q2, 00019076, SUB-0027710, SOGEI, Perpetual, R-TS-S-VC-AA-100, Renewal - Standard Support Vulnerability Control Advanced Analytics 100 asset pack, 18, 2023-04-30, 2024-06-30, NULL, NULL, NULL
+23Q2, 00019077, SUB-0027712, SEPS A.S., Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-06-05, 2024-06-04, NULL, NULL, NULL
+23Q2, 00019078, SUB-0027717, WNS Global Services Private Limited, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-05-01, 2024-04-30, NULL, NULL, NULL
+23Q2, 00019171, SUB-0027794, BNK SYSTEM, Subscription, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2023-06-06, 2026-06-05, NULL, NULL, NULL
+23Q2, 00019173, SUB-0027795, HCL | MSSP, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2023-05-23, 2024-05-22, NULL, NULL, NULL
+23Q2, 00019174, SUB-0027796, Citigroup Inc (Citi), Perpetual, R-CON-VD-FA-UNL, Renewal Content-FA-UNL, 12, 2023-06-01, 2024-05-31, NULL, NULL, NULL
+23Q2, 00019179, SUB-0027805, AirIT Systems GmbH | MSSP, Subscription, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 14, 2023-06-09, 2024-07-31, NULL, NULL, NULL
+23Q2, 00019182, SUB-0027820, Liquid Telecom (fka Neotel), Perpetual, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2023-04-26, 2024-04-25, NULL, NULL, NULL
+23Q2, 00019183, SUB-0027827, The Herjavec Group, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-06-01, 2024-05-31, NULL, NULL, NULL
+23Q2, 00019273, SUB-0027897, Logwin Holding Aschaffenburg GmbH, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-06-20, 2024-06-19, NULL, NULL, NULL
+23Q2, 00019275, SUB-0027919, Agbar (Aguas de Barcelona), Perpetual, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2023-06-30, 2024-06-29, NULL, NULL, NULL
+23Q2, 00019276, SUB-0027924, Bombay Stock Exchange, Perpetual, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2023-05-27, 2024-05-26, NULL, NULL, NULL
+23Q2, 00019279, SUB-0027945, Sharjah Islamic Bank, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-06-30, 2024-06-29, NULL, NULL, NULL
+23Q2, 00019280, SUB-0027960, Bank Aljazira, Subscription, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2023-06-23, 2024-06-22, NULL, NULL, NULL
+23Q2, 00019281, SUB-0027964, Vodafone Qatar, Perpetual, R-TS-S-SBV-HW-8050, Renewal Standard Support-SBV-HW-8050, 18, 2022-07-30, 2023-12-31, NULL, SBV-HW-8050, 1
+23Q2, 00019282, SUB-0027967, AMX Argentina (Claro), Perpetual, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2023-03-29, 2023-12-29, NULL, NULL, NULL
+23Q2, 00019283, SUB-0027972, MTN SA, Perpetual, TS-S-NA-100, Standard Support -NA-100, 11, 2023-06-28, 2024-05-27, NULL, NULL, NULL
+23Q2, 00019286, SUB-0027996, Apollo Global Management, SaaS, SaaS-VC-AA-P-EN-PREPAID, Skybox Cloud Vulnerability Control Advanced Analytics, 12, 2023-06-30, 2024-06-29, NULL, NULL, NULL
+23Q2, 00019289, SUB-0028007, Aon plc - United States, Subscription, RE-PT-10-S-PRE, Skybox Platform Operation Engineer Remote Part-Time (10 Hours average per week) - Subscription - Prepaid, 12, 2023-06-29, 2024-06-28, NULL, NULL, NULL
+23Q2, 00019291, SUB-0028011, First National Bank (South Africa), Subscription, TS-S-SBV-HW-12200, Standard Support -SBV-HW-12200, 12, 2023-06-29, 2024-06-28, NULL, SBV-HW-12200, 1
+23Q2, 00019292, SUB-0028014, Luxottica Group S.p.A, SaaS, SaaS-FA-S-EN-PREPAID, Skybox Cloud Firewall Assurance, 17, 2023-06-30, 2024-10-31, NULL, NULL, NULL
+23Q2, 00019296, SUB-0028045, ENEDIS, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2023-06-30, 2024-06-29, NULL, NULL, NULL
+23Q2, 00019298, SUB-0028060, Military Commercial Joint Stock Bank, Perpetual, TS-S-SBV-ES, Standard Support -SBV-ES, 16, 2023-06-30, 2024-09-30, NULL, NULL, NULL
+23Q2, 00019299, SUB-0028074, Chanel, Perpetual, R-CON-VD-FA-100, Renewal Content-FA-100, 36, 2023-04-01, 2026-03-31, NULL, NULL, NULL
+23Q2, 00019303, SUB-0028090, Hutchison 3G UK Limited, Perpetual, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2023-06-21, 2024-06-20, NULL, NULL, NULL
+23Q2, 00019305, SUB-0028110, Trustmark National Bank, Perpetual, TS-P-FA-100, Premium Support -FA-100, 26, 2023-06-30, 2025-08-29, NULL, NULL, NULL
+23Q2, 00019306, SUB-0028114, Telefonica - AR, Perpetual, R-TS-S-VC-AA-1K, Renewal - Standard Support Vulnerability Control Advanced Analytics 1,000 asset pack, 12, 2023-03-01, 2024-02-29, NULL, NULL, NULL

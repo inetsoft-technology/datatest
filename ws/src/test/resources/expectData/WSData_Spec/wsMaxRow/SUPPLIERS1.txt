@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 4)
+CITY, CONTACT, STATE, SUPPLIER_ID
+Burlington, Edwina Defreitas, VT, 5
+Edison, Cody Chynoweth, NJ, 4
+Morristown, Jerri Govea, NJ, 8
+New York, Avis Pons, NY, 2
+Oakland, Steve Ploom, CA, 9
+Pittsburgh, Jessie Fehrenbach, PA, 6
+Rye, Clinton Orsi, NY, 7
+San Diego, Allan Haefner, CA, 3
+Seattle, Matthew Prasad, WA, 1

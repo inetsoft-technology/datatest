@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 4)
+Country Name, 2014, 2017, 2021
+Arab World, 30.47, 37.23, 40.21
+East Asia & Pacific, 71.86, 73.39, 82.85
+East Asia & Pacific (excluding high income), 68.92, 70.37, 80.78
+Euro area, 94.68, 95.3, 98.51
+Europe & Central Asia, 77.79, 81.49, 89.57
+Europe & Central Asia (excluding high income), 57.56, 65.14, 77.79
+High income, 92.79, 93.67, 96.36
+Latin America & Caribbean, 52.02, 55.24, 73.55
+Latin America & Caribbean (excluding high income), 51.56, 54.49, 72.95
+Low & middle income, 54.99, 62.98, 71.38
+Lower middle income, 43.7, 58.27, 62.38
+Low income, 18.74, 31.53, 38.99
+Middle income, 57.26, 64.86, 72.37
+North America, 94.16, 93.81, 95.45
+OECD members, 93.76, 94.46, 97.19
+South Asia, 46.49, 69.46, 67.89
+Sub-Saharan Africa, 34.27, 42.63, 55.07
+Sub-Saharan Africa (excluding high income), 34.27, 42.63, 55.07
+Upper middle income, 70.93, 72.35, 84.33
+World, 61.92, 68.5, 76.2

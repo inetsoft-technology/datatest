@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 8)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
+1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, false, NJ, 08854
+123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, false, NJ, 09882
+12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, false, OH, 32343
+21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, true, TX, 28122
+23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, true, TX, 03887
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445
+345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234
+384 Broad St., Littletown, Interstate Shop, John Kelly, 1, true, NY, 18322
+389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, false, AK, 82938
+44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854
+5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, false, CA, 98839
+77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, false, AK, 12343
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
+8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
+88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, false, PA, 38923
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938
+90 First Ave., New York, Computer Tech, Jean Crowther, 13, false, NY, 11223

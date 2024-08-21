@@ -1,0 +1,702 @@
+The table size(row x col) is:(701 x 6)
+customer_id), STATE, newAlias, exp_notparseable, ValueRange, exp
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+1, NJ, 10, WayneInterstate Shop, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+2, NJ, 10, MiddletownDaycare One, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+3, NY, 10, New YorkEastern Data, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+4, CO, 10, BoulderErnst Handel, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+5, MD, 20, BaltimoreGeorge Services, 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+6, CT, 10, HartfordLoctite Corp., 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+7, NY, 10, New YorkOld World Insurance, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+8, CO, 20, DenverQuick Stop, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+9, CA, 20, San FranciscoDirect Sales, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+10, IL, 20, ChicagoSpecialty Retail, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+11, TX, 20, AustinThe Big Cat, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+12, FL, 10, OrlandoFast Transportation, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+13, CA, 20, Los AngelesComputer Tech, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+14, MD, 10, RockvilleInterLand Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+15, NJ, 10, CamdenScheggie Services, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+16, CA, 20, AlbanyWhittaker & Co, Inc, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+17, NY, 20, New YorkFISGA Corp, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+18, MA, 10, BostonUbermeyer, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+19, NJ, 10, NewarkSoftware Specialists, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+20, AZ, 20, TucsonFolk Mining, 1-20, 1-20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+21, CA, 20, Los AngelesWest Coast Customs, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+22, TX, 20, HoustonBig Ed's BBQ, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+23, MA, 10, BostonWorld Software Resellers, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+24, NY, 10, New YorkHigh Society Investments, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+25, NJ, 10, New BrunswickRutgers Bank, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+26, TX, 20, DallasNova Tera, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+27, WA, 20, SeattleInfinity Software, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+28, PA, 10, YorkTricounty Auto, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+29, WA, 20, OlympiaNorthwest Outfitters, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+30, MA, 10, SpringfieldAMG Logistics, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+31, TX, 20, DallasBigMart Foodstores, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+32, NV, 20, Las VegasTumbleweed Gaming, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+33, MD, 10, BaltimoreFMG Consulting, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+34, MA, 10, CambridgeXO Resellers, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20
+35, NJ, 10, PlainfieldPharma Research, >20, >20

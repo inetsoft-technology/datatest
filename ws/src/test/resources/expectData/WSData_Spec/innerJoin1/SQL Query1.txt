@@ -1,0 +1,17 @@
+The table size(row x col) is:(16 x 3)
+CONTACT_ID, CUSTOMER_ID, LAST_NAME
+21, 21, Alen
+22, 22, Pantaliano
+23, 23, Gray
+24, 24, Parket
+25, 25, Ledes
+26, 26, Gonzalez
+27, 27, Oshinsky
+28, 28, Bartles
+29, 29, Curtiss
+30, 30, Wallace
+31, 31, Gillette
+32, 32, Francone
+33, 33, Lewis
+34, 34, Dreckle
+35, 35, Kline

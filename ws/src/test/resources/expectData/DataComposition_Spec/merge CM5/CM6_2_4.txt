@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 6)
+newAlias_1, M6_2_18, newAlias_2, M6_2_22, ZIP, M6_2_23
+11, Interstate Shop@@, ##384 Broad St., true F, 18322, aa18322bb
+12, Daycare One@@, ##123 Summer Rd., true F, 09882, aa09882bb
+13, Eastern Data@@, ##7262 18th St., true F, 03887, aa03887bb
+14, Ernst Handel@@, ##88 Rio Grand Ave., false F, 38923, aa38923bb
+15, George Services@@, ##389 Jardim Rd., true F, 82938, aa82938bb
+16, Loctite Corp.@@, ##5 Baker's Lane, true F, 39283, aa39283bb
+17, Old World Insurance@@, ##1230 Hoes Lane, true F, 08854, aa08854bb
+18, Quick Stop@@, ##71 Mulberry St., true F, 98839, aa98839bb
+19, Direct Sales@@, ##4500 River Rd., false F, 08854, aa08854bb
+20, Specialty Retail@@, ##88 Specialty Dr., false F, 88938, aa88938bb
+21, The Big Cat@@, ##12 Woodpark Ave., true F, 32343, aa32343bb
+22, Fast Transportation@@, ##77 Druguz Blvd., true F, 12343, aa12343bb
+23, Computer Tech@@, ##90 First Ave., false F, 11223, aa11223bb
+24, InterLand Services@@, ##822 Technology Dr., true F, 83923, aa83923bb
+25, Scheggie Services@@, ##839 Via Gaty Dr., true F, 12334, aa12334bb
+26, Whittaker & Co, Inc@@, ##44 Islander Lane, true F, 83923, aa83923bb
+27, FISGA Corp@@, ##21 Doger Sound Blvd., true F, 28122, aa28122bb
+28, Ubermeyer@@, ##8300 Cleveland St., true F, 29183, aa29183bb
+29, Software Specialists@@, ##300 Great Swamp Rd., false F, 23445, aa23445bb
+30, Folk Mining@@, ##345 Sewgen Dr., true F, 11234, aa11234bb
+31, West Coast Customs@@, ##460 Newcomb Dr., true F, 73646, aa73646bb
+32, Big Ed's BBQ@@, ##23 Tasaga Ave., true F, 23421, aa23421bb
+33, World Software Resellers@@, ##563 Uptown Dr., false F, 28275, aa28275bb
+34, High Society Investments@@, ##1248 Broadway, true F, 27834, aa27834bb
+35, Rutgers Bank@@, ##283 Davidson Dr., true F, 08854, aa08854bb
+36, Nova Tera@@, ##987 First Ave., true F, 23123, aa23123bb
+37, Infinity Software@@, ##32 West Boyd Ave., false F, 93847, aa93847bb
+38, Tricounty Auto@@, ##389 York St., true F, 48873, aa48873bb
+39, Northwest Outfitters@@, ##17 Main St., true F, 93717, aa93717bb
+40, AMG Logistics@@, ##283 Handley Rd., true F, 01923, aa01923bb
+41, BigMart Foodstores@@, ##8874 Shiphouse Rd., true F, 48374, aa48374bb
+42, Tumbleweed Gaming@@, ##487 City St., true F, 93847, aa93847bb
+43, FMG Consulting@@, ##9381 Mayor Brown Hwy., true F, 53747, aa53747bb
+44, XO Resellers@@, ##77 Huntington Ave., false F, 02938, aa02938bb
+45, Pharma Research@@, ##38 Commercial Ave., true F, 08273, aa08273bb

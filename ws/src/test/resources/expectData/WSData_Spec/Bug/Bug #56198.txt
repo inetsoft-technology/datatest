@@ -1,0 +1,895 @@
+The table size(row x col) is:(726 x 30)
+Class, Date of Birth, First Name, Gender ID, Group, House, SID, Surname, Tutor Group, IsLP, HasPastoralAlert, Class Listing, Year Label, Period, Numeric Results, Subject, Year, Semester, Numeric Results Class Max, Numeric Results Class Average, Numeric Results  Class Min, Status, Text Result, StudentStatusColor, Sem Order, MaxSemOrderRef, IsMaxSemesterYes, LPYes, IsPastoralAlertYes, Categories
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, NULL, Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, Create a 1 page summary for each subject per lesson, with clear concise points. It should be clear which unit and topic this summary is part of so I can tick it off the summary guide. Create weekly 10 question quizlets to check my recall skills., Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, NULL, Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, Create a 1 page summary for each subject per lesson, with clear concise points. It should be clear which unit and topic this summary is part of so I can tick it off the summary guide. Create weekly 10 question quizlets to check my recall skills., Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , NULL, xsupport, K  , K   S1 , NULL, NULL, NULL, No Value, NULL, No Value, 3 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , -3, Disparity, K  , K   S1 , 11, -7, -16, Incomplete, NULL, Dark Green, 3 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 0, Goal, K  , K   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 0, Goal, K  , K   S1 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 0, Numeracy, K  , K   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 1, PBL, K  , K   S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 1, Writing, K  , K   S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 3, Learning Environment, K  , K   S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 4, Globe, K  , K   S1 , 4, 3.8, 3, Incomplete, NULL, Light Green, 3 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 5, Attendance, K  , K   S1 , 9, 6.6, 5, Average, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 5, PBL, K  , K   S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 9, Attendance, K  , K   S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 3 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 11, Disparity, K  , K   S1 , 11, -7, -16, Incomplete, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 11, Writing, K  , K   S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 77, Academic Score, K  , K   S1 , 83, 76.6, 67, Light Green, NULL, Light Green, 3 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 77, ATL, K  , K   S1 , 83, 76.6, 67, Incomplete, NULL, Light Green, 3 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 77, Community, K  , K   S1 , 83, 76.6, 67, Incomplete, NULL, Light Green, 3 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 83, Academic Score, K  , K   S1 , 83, 76.6, 67, Dark Green, NULL, Dark Green, 3 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 83, ATL, K  , K   S1 , 83, 76.6, 67, Incomplete, NULL, Dark Green, 3 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 83, Community, K  , K   S1 , 83, 76.6, 67, Incomplete, NULL, Dark Green, 3 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 379, Reading, K  , K   S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S1 , 383, Reading, K  , K   S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , NULL, Disparity, K  , K   S2 , 6, 2, -6, No Value, NULL, No Value, 3 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , NULL, xsupport, K  , K   S2 , NULL, NULL, NULL, No Value, NULL, No Value, 3 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , -6, Disparity, K  , K   S2 , 6, 2, -6, Incomplete, NULL, Light Green, 3 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 0, Goal, K  , K   S2 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 0, Goal, K  , K   S2 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete, 3 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 1, PBL, K  , K   S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 1, Writing, K  , K   S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 3, Globe, K  , K   S2 , 4, 3.2, 3, Incomplete, NULL, Light Red, 3 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 3, Learning Environment, K  , K   S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 3, Numeracy, K  , K   S2 , 3, 2.8, 2, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 5, Attendance, K  , K   S2 , 9, 6.6, 5, Average, NULL, Average, 3 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 5, PBL, K  , K   S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 9, Attendance, K  , K   S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 3 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 11, Writing, K  , K   S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 72, Academic Score, K  , K   S2 , 82, 75.2, 67, Light Red, NULL, Light Red, 3 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 72, ATL, K  , K   S2 , 82, 75.2, 67, Incomplete, NULL, Light Red, 3 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 72, Community, K  , K   S2 , 82, 75.2, 67, Incomplete, NULL, Light Red, 3 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 82, Academic Score, K  , K   S2 , 82, 75.2, 67, Dark Green, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 82, ATL, K  , K   S2 , 82, 75.2, 67, Incomplete, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 82, Community, K  , K   S2 , 82, 75.2, 67, Incomplete, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 100, Reading, K  , K   S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Kindergarden, S2 , 379, Reading, K  , K   S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , NULL, Disparity, RHJ, RHJ S1 , 6, 2, -6, No Value, NULL, No Value, 0 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , NULL, xsupport, RHJ, RHJ S1 , NULL, NULL, NULL, No Value, NULL, No Value, 0 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , -6, Disparity, RHJ, RHJ S1 , 6, 2, -6, Incomplete, NULL, NULL, 0 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 0, Goal, RHJ, RHJ S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 0, Goal, RHJ, RHJ S1 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 1, PBL, RHJ, RHJ S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 1, Writing, RHJ, RHJ S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 2, Reading, RHJ, RHJ S1 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 3, Learning Environment, RHJ, RHJ S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 3, Reading, RHJ, RHJ S1 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 4, Globe, RHJ, RHJ S1 , 4, 3.8, 3, Incomplete, NULL, Light Green, 0 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 5, Attendance, RHJ, RHJ S1 , 9, 6.6, 5, Average, NULL, Average, 0 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 5, PBL, RHJ, RHJ S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 9, Attendance, RHJ, RHJ S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 0 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 11, Writing, RHJ, RHJ S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 77, Academic Score, RHJ, RHJ S1 , 84, 72.6, 52, Light Green, NULL, Light Green, 0 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 77, ATL, RHJ, RHJ S1 , 84, 72.6, 52, Incomplete, NULL, Light Green, 0 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 77, Community, RHJ, RHJ S1 , 84, 72.6, 52, Incomplete, NULL, Light Green, 0 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 83, Academic Score, RHJ, RHJ S1 , 84, 72.6, 52, Dark Green, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 83, ATL, RHJ, RHJ S1 , 84, 72.6, 52, Incomplete, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S1 , 83, Community, RHJ, RHJ S1 , 84, 72.6, 52, Incomplete, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , NULL, Disparity, RHJ, RHJ S2 , 2, -3.6667, -7, No Value, NULL, No Value, 0 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , NULL, xsupport, RHJ, RHJ S2 , NULL, NULL, NULL, No Value, NULL, No Value, 0 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , -7, Disparity, RHJ, RHJ S2 , 2, -3.6667, -7, Incomplete, NULL, NULL, 0 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , -2, Numeracy, RHJ, RHJ S2 , -2, -2, -2, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 0, Goal, RHJ, RHJ S2 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 0, Goal, RHJ, RHJ S2 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete, 0 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 1, PBL, RHJ, RHJ S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 1, Writing, RHJ, RHJ S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 3, Globe, RHJ, RHJ S2 , 4, 3.2, 3, Incomplete, NULL, Light Red, 0 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 3, Learning Environment, RHJ, RHJ S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 5, Attendance, RHJ, RHJ S2 , 9, 6.6, 5, Average, NULL, Average, 0 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 5, PBL, RHJ, RHJ S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 9, Attendance, RHJ, RHJ S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 0 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 11, Writing, RHJ, RHJ S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 75, Academic Score, RHJ, RHJ S2 , 82, 71, 51, Light Green, NULL, Light Green, 0 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 75, ATL, RHJ, RHJ S2 , 82, 71, 51, Incomplete, NULL, Light Green, 0 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 75, Community, RHJ, RHJ S2 , 82, 71, 51, Incomplete, NULL, Light Green, 0 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 82, Academic Score, RHJ, RHJ S2 , 82, 71, 51, Dark Green, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 82, ATL, RHJ, RHJ S2 , 82, 71, 51, Incomplete, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 82, Community, RHJ, RHJ S2 , 82, 71, 51, Incomplete, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 408, Reading, RHJ, RHJ S2 , 437, 373.2, 277, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Junior, S2 , 437, Reading, RHJ, RHJ S2 , 437, 373.2, 277, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , NULL, Disparity, RHS, RHS S1 , -4, -7.3333, -13, No Value, NULL, No Value, 1 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , NULL, Numeracy, RHS, RHS S1 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , NULL, xsupport, RHS, RHS S1 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , -13, Disparity, RHS, RHS S1 , -4, -7.3333, -13, Incomplete, NULL, NULL, 1 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 0, Goal, RHS, RHS S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 0, Goal, RHS, RHS S1 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 1, PBL, RHS, RHS S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 1, Writing, RHS, RHS S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 3, Globe, RHS, RHS S1 , 5, 3.6, 3, Incomplete, NULL, Light Red, 1 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 3, Learning Environment, RHS, RHS S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 5, Attendance, RHS, RHS S1 , 9, 6.6, 5, Average, NULL, Average, 1 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 5, PBL, RHS, RHS S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 9, Attendance, RHS, RHS S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 1 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 11, Writing, RHS, RHS S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 73, Academic Score, RHS, RHS S1 , 85, 73, 57, Average, NULL, Average, 1 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 73, ATL, RHS, RHS S1 , 85, 73, 57, Incomplete, NULL, Average, 1 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 73, Community, RHS, RHS S1 , 85, 73, 57, Incomplete, NULL, Average, 1 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 85, Academic Score, RHS, RHS S1 , 85, 73, 57, Dark Green, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 85, ATL, RHS, RHS S1 , 85, 73, 57, Incomplete, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 85, Community, RHS, RHS S1 , 85, 73, 57, Incomplete, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 408, Reading, RHS, RHS S1 , 437, 373.2, 277, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S1 , 437, Reading, RHS, RHS S1 , 437, 373.2, 277, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , NULL, Numeracy, RHS, RHS S2 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , NULL, xsupport, RHS, RHS S2 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 0, Goal, RHS, RHS S2 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 0, Goal, RHS, RHS S2 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete, 1 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 1, Disparity, RHS, RHS S2 , 7, -4, -17, Incomplete, NULL, NULL, 1 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 1, PBL, RHS, RHS S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 1, Writing, RHS, RHS S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 3, Learning Environment, RHS, RHS S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 4, Globe, RHS, RHS S2 , 4, 3.6, 3, Incomplete, NULL, Light Green, 1 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 5, Attendance, RHS, RHS S2 , 9, 6.6, 5, Average, NULL, Average, 1 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 5, PBL, RHS, RHS S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 7, Disparity, RHS, RHS S2 , 7, -4, -17, Incomplete, NULL, NULL, 1 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 9, Attendance, RHS, RHS S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 1 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 11, Writing, RHS, RHS S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 87, Academic Score, RHS, RHS S2 , 99, 86.4, 63, Light Green, NULL, Light Green, 1 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 87, ATL, RHS, RHS S2 , 99, 86.4, 63, Incomplete, NULL, Light Green, 1 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 87, Community, RHS, RHS S2 , 99, 86.4, 63, Incomplete, NULL, Light Green, 1 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 99, Academic Score, RHS, RHS S2 , 99, 86.4, 63, Dark Green, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 99, ATL, RHS, RHS S2 , 99, 86.4, 63, Incomplete, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 99, Community, RHS, RHS S2 , 99, 86.4, 63, Incomplete, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 100, Reading, RHS, RHS S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Redlands High Senior, S2 , 379, Reading, RHS, RHS S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , NULL, Disparity, T  , T   S1 , -6, -11.6667, -16, No Value, NULL, No Value, 2 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , NULL, xsupport, T  , T   S1 , NULL, NULL, NULL, No Value, NULL, No Value, 2 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , -6, Disparity, T  , T   S1 , -6, -11.6667, -16, Incomplete, NULL, Light Green, 2 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , -1, Numeracy, T  , T   S1 , -1, -1, -1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 0, Goal, T  , T   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 0, Goal, T  , T   S1 , 0, 0, 0, Incomplete, S: I will practice areas in maths I have difficulty with. M: Scores in practice tests will increase. A: I will constantly revise topics to make sure I understand them. R: I will have a better grasp of more complicated concepts. T: I want to improve¬?, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 1, PBL, T  , T   S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 1, Writing, T  , T   S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 3, Globe, T  , T   S1 , 4, 3.8, 3, Incomplete, NULL, Light Red, 2 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 3, Learning Environment, T  , T   S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 4, Globe, T  , T   S1 , 4, 3.8, 3, Incomplete, NULL, Light Green, 2 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 5, Attendance, T  , T   S1 , 9, 6.6, 5, Average, NULL, Average, 2 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 5, PBL, T  , T   S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 9, Attendance, T  , T   S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 2 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 11, Writing, T  , T   S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 68, Academic Score, T  , T   S1 , 83, 77.6, 68, Dark Red, NULL, Dark Red, 2 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 68, ATL, T  , T   S1 , 83, 77.6, 68, Incomplete, NULL, Dark Red, 2 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 68, Community, T  , T   S1 , 83, 77.6, 68, Incomplete, NULL, Dark Red, 2 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 81, Academic Score, T  , T   S1 , 83, 77.6, 68, Dark Green, NULL, Dark Green, 2 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 81, ATL, T  , T   S1 , 83, 77.6, 68, Incomplete, NULL, Dark Green, 2 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 81, Community, T  , T   S1 , 83, 77.6, 68, Incomplete, NULL, Dark Green, 2 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 379, Reading, T  , T   S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S1 , 383, Reading, T  , T   S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , NULL, xsupport, T  , T   S2 , NULL, NULL, NULL, No Value, NULL, No Value, 2 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , -11, Disparity, T  , T   S2 , -1, -12.6, -23, Incomplete, NULL, Average, 2 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , -1, Disparity, T  , T   S2 , -1, -12.6, -23, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 0, Goal, T  , T   S2 , 0, 0, 0, Incomplete, S: I will finish my History Assignment and work closely with my partner
+ 
+ M: On the due date I will have completed it
+ 
+ A: It will require work, but will not be incredibly challenging
+ 
+ R: I have two weeks to complete it so it will be doable
+ 
+ T: I will work on it up to the due date, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 0, Goal, T  , T   S2 , 0, 0, 0, Incomplete, Smart
+ 
+ Â 
+ 
+ I would like prioritise study on weekdays so that I donâ??t have to cram as much before exams. I will attempt to achieve this by creating a schedule based on my weekly activities and specific subjects that need completing. I would like to have these study practises in place for the yearly exams next term.
+ 
+ Â 
+ 
+ I would like to split up my time between chores, relaxing, friends, school and sport. So that I have a balanced life staying fit, while still completing school to the best of my abilities., Incomplete, 2 S2 , 9 S2 , no, 0, 0, Goal
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 1, PBL, T  , T   S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 1, Writing, T  , T   S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 3, Learning Environment, T  , T   S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 5, Attendance, T  , T   S2 , 9, 6.6, 5, Average, NULL, Average, 2 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 5, Globe, T  , T   S2 , 5, 4.6, 4, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 5, PBL, T  , T   S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 9, Attendance, T  , T   S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 2 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 11, Writing, T  , T   S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 92, Academic Score, T  , T   S2 , 97, 87.8, 75, Light Green, NULL, Light Green, 2 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 92, ATL, T  , T   S2 , 97, 87.8, 75, Incomplete, NULL, Light Green, 2 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 92, Community, T  , T   S2 , 97, 87.8, 75, Incomplete, NULL, Light Green, 2 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 97, Academic Score, T  , T   S2 , 97, 87.8, 75, Dark Green, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 97, ATL, T  , T   S2 , 97, 87.8, 75, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 97, Community, T  , T   S2 , 97, 87.8, 75, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 100, Reading, T  , T   S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Transition, S2 , 379, Reading, T  , T   S2 , 437, 333.4, 100, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , NULL, Disparity, Y1 , Y1  S1 , 2, -3.6667, -7, No Value, NULL, No Value, 4 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , NULL, xsupport, Y1 , Y1  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 4 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , -7, Disparity, Y1 , Y1  S1 , 2, -3.6667, -7, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 1, PBL, Y1 , Y1  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 1, Writing, Y1 , Y1  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 2, Numeracy, Y1 , Y1  S1 , 3, 2.2, 2, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 3, Globe, Y1 , Y1  S1 , 5, 3.6, 3, Incomplete, NULL, Light Red, 4 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 3, Learning Environment, Y1 , Y1  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 5, Attendance, Y1 , Y1  S1 , 9, 6.6, 5, Average, NULL, Average, 4 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 5, PBL, Y1 , Y1  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 9, Attendance, Y1 , Y1  S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 4 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 11, Writing, Y1 , Y1  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 77, Academic Score, Y1 , Y1  S1 , 83, 76.2, 67, Light Green, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 77, ATL, Y1 , Y1  S1 , 83, 76.2, 67, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 77, Community, Y1 , Y1  S1 , 83, 76.2, 67, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 83, Academic Score, Y1 , Y1  S1 , 83, 76.2, 67, Dark Green, NULL, Dark Green, 4 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 83, ATL, Y1 , Y1  S1 , 83, 76.2, 67, Incomplete, NULL, Dark Green, 4 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 83, Community, Y1 , Y1  S1 , 83, 76.2, 67, Incomplete, NULL, Dark Green, 4 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 379, Reading, Y1 , Y1  S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S1 , 383, Reading, Y1 , Y1  S1 , 437, 389.4, 340, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , NULL, Disparity, Y1 , Y1  S2 , -4, -7.3333, -13, No Value, NULL, No Value, 4 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , NULL, xsupport, Y1 , Y1  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 4 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , -13, Disparity, Y1 , Y1  S2 , -4, -7.3333, -13, Incomplete, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 1, Numeracy, Y1 , Y1  S2 , 2, 1.6, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 1, PBL, Y1 , Y1  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 1, Writing, Y1 , Y1  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 2, Numeracy, Y1 , Y1  S2 , 2, 1.6, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 3, Learning Environment, Y1 , Y1  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 4, Globe, Y1 , Y1  S2 , 4, 3.8, 3, Incomplete, NULL, Light Green, 4 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 5, Attendance, Y1 , Y1  S2 , 9, 6.6, 5, Average, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 5, PBL, Y1 , Y1  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 9, Attendance, Y1 , Y1  S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 4 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 11, Writing, Y1 , Y1  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 72, Academic Score, Y1 , Y1  S2 , 95, 80.6, 67, Dark Red, NULL, Dark Red, 4 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 72, ATL, Y1 , Y1  S2 , 95, 80.6, 67, Incomplete, NULL, Dark Red, 4 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 72, Community, Y1 , Y1  S2 , 95, 80.6, 67, Incomplete, NULL, Dark Red, 4 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 82, Academic Score, Y1 , Y1  S2 , 95, 80.6, 67, Average, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 82, ATL, Y1 , Y1  S2 , 95, 80.6, 67, Incomplete, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 82, Community, Y1 , Y1  S2 , 95, 80.6, 67, Incomplete, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 324, Reading, Y1 , Y1  S2 , 420, 354.6, 277, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 1, S2 , 420, Reading, Y1 , Y1  S2 , 420, 354.6, 277, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 5, Writing, Y2 , Y2  NPI, 535, 383.6, 5, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 484, Reading, Y2 , Y2  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 491, Numeracy, Y2 , Y2  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 498, Reading, Y2 , Y2  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 535, Writing, Y2 , Y2  NPI, 535, 383.6, 5, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, NPI, 573, Numeracy, Y2 , Y2  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , NULL, xsupport, Y2 , Y2  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 5 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 1, Disparity, Y2 , Y2  S1 , 7, -4, -17, Incomplete, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 1, PBL, Y2 , Y2  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 1, Writing, Y2 , Y2  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 2, Numeracy, Y2 , Y2  S1 , 2, 2, 2, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 3, Globe, Y2 , Y2  S1 , 4, 3.2, 3, Incomplete, NULL, Light Red, 5 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 3, Learning Environment, Y2 , Y2  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 5, Attendance, Y2 , Y2  S1 , 9, 6.6, 5, Average, NULL, Average, 5 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 5, PBL, Y2 , Y2  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 7, Disparity, Y2 , Y2  S1 , 7, -4, -17, Incomplete, NULL, Light Green, 5 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 9, Attendance, Y2 , Y2  S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 5 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 11, Writing, Y2 , Y2  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 68, Academic Score, Y2 , Y2  S1 , 83, 77.6, 68, Dark Red, NULL, Dark Red, 5 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 77, ATL, Y2 , Y2  S1 , 84, 72.6, 52, Incomplete, NULL, Light Green, 5 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 77, Community, Y2 , Y2  S1 , 84, 72.6, 52, Incomplete, NULL, Light Green, 5 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 81, Academic Score, Y2 , Y2  S1 , 83, 77.6, 68, Dark Green, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 83, ATL, Y2 , Y2  S1 , 84, 72.6, 52, Incomplete, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 83, Community, Y2 , Y2  S1 , 84, 72.6, 52, Incomplete, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 368, Reading, Y2 , Y2  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S1 , 437, Reading, Y2 , Y2  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , NULL, Disparity, Y2 , Y2  S2 , -6, -11.6667, -16, No Value, NULL, No Value, 5 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , NULL, xsupport, Y2 , Y2  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 5 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , -6, Disparity, Y2 , Y2  S2 , -6, -11.6667, -16, Incomplete, NULL, Light Green, 5 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 1, PBL, Y2 , Y2  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 1, Writing, Y2 , Y2  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 3, Globe, Y2 , Y2  S2 , 5, 3.6, 3, Incomplete, NULL, Light Red, 5 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 3, Learning Environment, Y2 , Y2  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 3, Numeracy, Y2 , Y2  S2 , 5, 3.4, 2, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 5, Attendance, Y2 , Y2  S2 , 9, 6.6, 5, Average, NULL, Average, 5 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 5, Numeracy, Y2 , Y2  S2 , 5, 3.4, 2, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 5, PBL, Y2 , Y2  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 9, Attendance, Y2 , Y2  S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 5 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 11, Writing, Y2 , Y2  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 75, ATL, Y2 , Y2  S2 , 82, 71, 51, Incomplete, NULL, Light Green, 5 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 75, Community, Y2 , Y2  S2 , 82, 71, 51, Incomplete, NULL, Light Green, 5 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 82, ATL, Y2 , Y2  S2 , 82, 71, 51, Incomplete, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 82, Community, Y2 , Y2  S2 , 82, 71, 51, Incomplete, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 92, Academic Score, Y2 , Y2  S2 , 97, 87.8, 75, Light Green, NULL, Light Green, 5 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 97, Academic Score, Y2 , Y2  S2 , 97, 87.8, 75, Dark Green, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 340, Reading, Y2 , Y2  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 2, S2 , 437, Reading, Y2 , Y2  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 484, Reading, Y3 , Y3  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 491, Numeracy, Y3 , Y3  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 498, Reading, Y3 , Y3  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 504, Writing, Y3 , Y3  NPI, 535, 483.4, 402, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 535, Writing, Y3 , Y3  NPI, 535, 483.4, 402, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, NPI, 573, Numeracy, Y3 , Y3  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , NULL, xsupport, Y3 , Y3  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 6 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , -11, Disparity, Y3 , Y3  S1 , -1, -12.6, -23, Incomplete, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , -1, Disparity, Y3 , Y3  S1 , -1, -12.6, -23, Incomplete, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 1, PBL, Y3 , Y3  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 1, Writing, Y3 , Y3  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 3, Learning Environment, Y3 , Y3  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 3, Numeracy, Y3 , Y3  S1 , 3, 2.8, 2, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 4, Globe, Y3 , Y3  S1 , 4, 3.8, 3, Incomplete, NULL, Light Green, 6 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 5, Attendance, Y3 , Y3  S1 , 9, 6.6, 5, Average, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 5, PBL, Y3 , Y3  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 9, Attendance, Y3 , Y3  S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 6 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 11, Writing, Y3 , Y3  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 73, ATL, Y3 , Y3  S1 , 85, 73, 57, Incomplete, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 73, Community, Y3 , Y3  S1 , 85, 73, 57, Incomplete, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 77, Academic Score, Y3 , Y3  S1 , 83, 76.2, 67, Light Green, NULL, Light Green, 6 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 83, Academic Score, Y3 , Y3  S1 , 83, 76.2, 67, Dark Green, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 85, ATL, Y3 , Y3  S1 , 85, 73, 57, Incomplete, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 85, Community, Y3 , Y3  S1 , 85, 73, 57, Incomplete, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 368, Reading, Y3 , Y3  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S1 , 437, Reading, Y3 , Y3  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , NULL, xsupport, Y3 , Y3  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 6 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , -3, Disparity, Y3 , Y3  S2 , 11, -7, -16, Incomplete, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 1, PBL, Y3 , Y3  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 1, Writing, Y3 , Y3  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 3, Globe, Y3 , Y3  S2 , 4, 3.2, 3, Incomplete, NULL, Light Red, 6 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 3, Learning Environment, Y3 , Y3  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 5, Attendance, Y3 , Y3  S2 , 9, 6.6, 5, Average, NULL, Average, 6 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 5, PBL, Y3 , Y3  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 9, Attendance, Y3 , Y3  S2 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 6 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 11, Disparity, Y3 , Y3  S2 , 11, -7, -16, Incomplete, NULL, Average, 6 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 11, Writing, Y3 , Y3  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 72, Academic Score, Y3 , Y3  S2 , 95, 80.6, 67, Dark Red, NULL, Dark Red, 6 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 82, Academic Score, Y3 , Y3  S2 , 95, 80.6, 67, Average, NULL, Average, 6 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 87, ATL, Y3 , Y3  S2 , 99, 86.4, 63, Incomplete, NULL, Light Green, 6 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 87, Community, Y3 , Y3  S2 , 99, 86.4, 63, Incomplete, NULL, Light Green, 6 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 99, ATL, Y3 , Y3  S2 , 99, 86.4, 63, Incomplete, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 99, Community, Y3 , Y3  S2 , 99, 86.4, 63, Incomplete, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 340, Reading, Y3 , Y3  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 3, S2 , 437, Reading, Y3 , Y3  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 484, Reading, Y4 , Y4  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 491, Numeracy, Y4 , Y4  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 498, Reading, Y4 , Y4  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 504, Writing, Y4 , Y4  NPI, 535, 483.4, 402, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 535, Writing, Y4 , Y4  NPI, 535, 483.4, 402, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, NPI, 573, Numeracy, Y4 , Y4  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , NULL, Attendance, Y4 , Y4  S1 , 5, 3, 1, No Value, NULL, No Value, 7 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , NULL, Disparity, Y4 , Y4  S1 , 6, 2, -6, No Value, NULL, No Value, 7 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , NULL, xsupport, Y4 , Y4  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 7 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , -6, Disparity, Y4 , Y4  S1 , 6, 2, -6, Incomplete, NULL, Light Green, 7 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 0, Numeracy, Y4 , Y4  S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 1, Attendance, Y4 , Y4  S1 , 5, 3, 1, Dark Green, NULL, Dark Green, 7 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 1, PBL, Y4 , Y4  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 1, Writing, Y4 , Y4  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 3, Globe, Y4 , Y4  S1 , 5, 3.6, 3, Incomplete, NULL, Light Red, 7 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 3, Learning Environment, Y4 , Y4  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 5, PBL, Y4 , Y4  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 11, Writing, Y4 , Y4  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 68, ATL, Y4 , Y4  S1 , 83, 77.6, 68, Incomplete, NULL, Dark Red, 7 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 68, Community, Y4 , Y4  S1 , 83, 77.6, 68, Incomplete, NULL, Dark Red, 7 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 77, Academic Score, Y4 , Y4  S1 , 84, 75.6, 67, Average, NULL, Average, 7 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 81, ATL, Y4 , Y4  S1 , 83, 77.6, 68, Incomplete, NULL, Dark Green, 7 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 81, Community, Y4 , Y4  S1 , 83, 77.6, 68, Incomplete, NULL, Dark Green, 7 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 83, Academic Score, Y4 , Y4  S1 , 84, 75.6, 67, Dark Green, NULL, Dark Green, 7 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 368, Reading, Y4 , Y4  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S1 , 437, Reading, Y4 , Y4  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , NULL, Attendance, Y4 , Y4  S2 , 9, 4.25, 1, No Value, NULL, No Value, 7 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , NULL, Disparity, Y4 , Y4  S2 , 2, -3.6667, -7, No Value, NULL, No Value, 7 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , NULL, xsupport, Y4 , Y4  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 7 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , -7, Disparity, Y4 , Y4  S2 , 2, -3.6667, -7, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 1, PBL, Y4 , Y4  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 1, Writing, Y4 , Y4  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 2, Numeracy, Y4 , Y4  S2 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 3, Learning Environment, Y4 , Y4  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 3, Numeracy, Y4 , Y4  S2 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 4, Globe, Y4 , Y4  S2 , 4, 3.8, 3, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 5, PBL, Y4 , Y4  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 9, Attendance, Y4 , Y4  S2 , 9, 4.25, 1, Dark Red, NULL, Dark Red, 7 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 11, Writing, Y4 , Y4  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 72, Academic Score, Y4 , Y4  S2 , 82, 73.6, 67, Light Red, NULL, Light Red, 7 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 82, Academic Score, Y4 , Y4  S2 , 82, 73.6, 67, Dark Green, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 92, ATL, Y4 , Y4  S2 , 97, 87.8, 75, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 92, Community, Y4 , Y4  S2 , 97, 87.8, 75, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 97, ATL, Y4 , Y4  S2 , 97, 87.8, 75, Incomplete, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 97, Community, Y4 , Y4  S2 , 97, 87.8, 75, Incomplete, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 340, Reading, Y4 , Y4  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 4, S2 , 437, Reading, Y4 , Y4  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 484, Reading, Y5 , Y5  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 491, Numeracy, Y5 , Y5  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 491, Writing, Y5 , Y5  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 498, Reading, Y5 , Y5  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 573, Numeracy, Y5 , Y5  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, NPI, 573, Writing, Y5 , Y5  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , NULL, Disparity, Y5 , Y5  S1 , -4, -7.3333, -13, No Value, NULL, No Value, 8 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , NULL, xsupport, Y5 , Y5  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 8 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , -13, Disparity, Y5 , Y5  S1 , -4, -7.3333, -13, Incomplete, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 1, PBL, Y5 , Y5  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 1, Writing, Y5 , Y5  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 2, Attendance, Y5 , Y5  S1 , 8, 6.25, 2, Light Green, NULL, Light Green, 8 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 2, Numeracy, Y5 , Y5  S1 , 3, 2.2, 2, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 3, Globe, Y5 , Y5  S1 , 4, 3.2, 3, Incomplete, NULL, Light Red, 8 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 3, Learning Environment, Y5 , Y5  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 5, PBL, Y5 , Y5  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 8, Attendance, Y5 , Y5  S1 , 8, 6.25, 2, Dark Red, NULL, Dark Red, 8 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 11, Writing, Y5 , Y5  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 73, Academic Score, Y5 , Y5  S1 , 85, 73, 57, Average, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 77, ATL, Y5 , Y5  S1 , 83, 76.6, 67, Incomplete, NULL, Light Green, 8 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 77, Community, Y5 , Y5  S1 , 83, 76.6, 67, Incomplete, NULL, Light Green, 8 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 83, ATL, Y5 , Y5  S1 , 83, 76.6, 67, Incomplete, NULL, Dark Green, 8 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 83, Community, Y5 , Y5  S1 , 83, 76.6, 67, Incomplete, NULL, Dark Green, 8 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 85, Academic Score, Y5 , Y5  S1 , 85, 73, 57, Dark Green, NULL, Dark Green, 8 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 368, Reading, Y5 , Y5  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S1 , 437, Reading, Y5 , Y5  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , NULL, xsupport, Y5 , Y5  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 8 S2 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 1, Disparity, Y5 , Y5  S2 , 7, -4, -17, Incomplete, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 1, Numeracy, Y5 , Y5  S2 , 2, 1.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 1, PBL, Y5 , Y5  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 1, Writing, Y5 , Y5  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 2, Numeracy, Y5 , Y5  S2 , 2, 1.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 3, Globe, Y5 , Y5  S2 , 5, 3.6, 3, Incomplete, NULL, Light Red, 8 S2 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 3, Learning Environment, Y5 , Y5  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 5, Attendance, Y5 , Y5  S2 , 8, 7, 5, Average, NULL, Average, 8 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 5, PBL, Y5 , Y5  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 7, Disparity, Y5 , Y5  S2 , 7, -4, -17, Incomplete, NULL, Light Green, 8 S2 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 8, Attendance, Y5 , Y5  S2 , 8, 7, 5, Dark Red, NULL, Dark Red, 8 S2 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 11, Writing, Y5 , Y5  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 72, ATL, Y5 , Y5  S2 , 82, 75.2, 67, Incomplete, NULL, Light Red, 8 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 72, Community, Y5 , Y5  S2 , 82, 75.2, 67, Incomplete, NULL, Light Red, 8 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 82, ATL, Y5 , Y5  S2 , 82, 75.2, 67, Incomplete, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 82, Community, Y5 , Y5  S2 , 82, 75.2, 67, Incomplete, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 87, Academic Score, Y5 , Y5  S2 , 99, 86.4, 63, Light Green, NULL, Light Green, 8 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 99, Academic Score, Y5 , Y5  S2 , 99, 86.4, 63, Dark Green, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 340, Reading, Y5 , Y5  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 5, S2 , 437, Reading, Y5 , Y5  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 484, Numeracy, Y6 , Y6  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 484, Writing, Y6 , Y6  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 491, Reading, Y6 , Y6  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 498, Numeracy, Y6 , Y6  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 498, Writing, Y6 , Y6  NPI, 536, 426.6, 254, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, NPI, 573, Reading, Y6 , Y6  NPI, 573, 437.2, 330, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , NULL, Disparity, Y6 , Y6  S1 , -6, -11.6667, -16, No Value, NULL, No Value, 9 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , NULL, xsupport, Y6 , Y6  S1 , NULL, NULL, NULL, No Value, NULL, No Value, 9 S1 , 9 S2 , no, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , -6, Disparity, Y6 , Y6  S1 , -6, -11.6667, -16, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 1, PBL, Y6 , Y6  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 1, Writing, Y6 , Y6  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 2, Numeracy, Y6 , Y6  S1 , 2, 2, 2, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 3, Learning Environment, Y6 , Y6  S1 , 5, 3.4, 2, no shading, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 4, Globe, Y6 , Y6  S1 , 4, 3.8, 3, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 5, Attendance, Y6 , Y6  S1 , 9, 6.6, 5, Average, NULL, Average, 9 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 5, PBL, Y6 , Y6  S1 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 9, Attendance, Y6 , Y6  S1 , 9, 6.6, 5, Dark Red, NULL, Dark Red, 9 S1 , 9 S2 , no, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 11, Writing, Y6 , Y6  S1 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 77, Academic Score, Y6 , Y6  S1 , 84, 72.6, 52, Light Green, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 77, ATL, Y6 , Y6  S1 , 83, 76.2, 67, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 77, Community, Y6 , Y6  S1 , 83, 76.2, 67, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 83, Academic Score, Y6 , Y6  S1 , 84, 72.6, 52, Dark Green, NULL, Dark Green, 9 S1 , 9 S2 , no, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 83, ATL, Y6 , Y6  S1 , 83, 76.2, 67, Incomplete, NULL, Dark Green, 9 S1 , 9 S2 , no, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 83, Community, Y6 , Y6  S1 , 83, 76.2, 67, Incomplete, NULL, Dark Green, 9 S1 , 9 S2 , no, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 368, Reading, Y6 , Y6  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S1 , 437, Reading, Y6 , Y6  S1 , 437, 370.4, 324, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , NULL, xsupport, Y6 , Y6  S2 , NULL, NULL, NULL, No Value, NULL, No Value, 9 S2 , 9 S2 , yes, 0, 0, xsupport
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , -11, Disparity, Y6 , Y6  S2 , -1, -12.6, -23, Incomplete, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , -1, Disparity, Y6 , Y6  S2 , -1, -12.6, -23, Incomplete, NULL, Dark Green, 9 S2 , 9 S2 , yes, 0, 0, Disparity
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 1, PBL, Y6 , Y6  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 1, Writing, Y6 , Y6  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 2, Numeracy, Y6 , Y6  S2 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 3, Globe, Y6 , Y6  S2 , 4, 3.2, 3, Incomplete, NULL, Light Red, 9 S2 , 9 S2 , yes, 0, 0, Globe
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 3, Learning Environment, Y6 , Y6  S2 , 5, 3.4, 2, no shading, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Learning Environment
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 3, Numeracy, Y6 , Y6  S2 , 3, 2.6, 2, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Numeracy
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 4, Attendance, Y6 , Y6  S2 , 9, 6.4, 4, Average, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 5, PBL, Y6 , Y6  S2 , 8, 4.4, 1, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, PBL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 9, Attendance, Y6 , Y6  S2 , 9, 6.4, 4, Dark Red, NULL, Dark Red, 9 S2 , 9 S2 , yes, 0, 0, Attendance
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 11, Writing, Y6 , Y6  S2 , 18, 9.4, 1, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Writing
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 72, ATL, Y6 , Y6  S2 , 95, 80.6, 67, Incomplete, NULL, Dark Red, 9 S2 , 9 S2 , yes, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 72, Community, Y6 , Y6  S2 , 95, 80.6, 67, Incomplete, NULL, Dark Red, 9 S2 , 9 S2 , yes, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 75, Academic Score, Y6 , Y6  S2 , 82, 71, 51, Light Green, NULL, Light Green, 9 S2 , 9 S2 , yes, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 82, Academic Score, Y6 , Y6  S2 , 82, 71, 51, Dark Green, NULL, Dark Green, 9 S2 , 9 S2 , yes, 0, 0, Academic Score
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 82, ATL, Y6 , Y6  S2 , 95, 80.6, 67, Incomplete, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, ATL
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 82, Community, Y6 , Y6  S2 , 95, 80.6, 67, Incomplete, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, Community
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 340, Reading, Y6 , Y6  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Reading
+2030, 2015-12-17, NULL, NULL, Year 4, Dumolo, 213265, Gordon, NULL, NULL, NULL, Gordon, , 213265, 2030, Year 6, S2 , 437, Reading, Y6 , Y6  S2 , 437, 385.8, 324, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, NULL, Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, By the end of semester 1 I will allocate 2 hours 3x per week after school in my student diary and through Google calendar in order to go over content in Maths, such as textbook work, and Spanish, such as conjugations, to ensure understanding and improve performance in both classwork and exams., Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S1 , 0, Goal, NULL,  S1 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete,  S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, NULL, Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, By the end of semester 1 I will allocate 2 hours 3x per week after school in my student diary and through Google calendar in order to go over content in Maths, such as textbook work, and Spanish, such as conjugations, to ensure understanding and improve performance in both classwork and exams., Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, NULL, S2 , 0, Goal, NULL,  S2 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete,  S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , NULL, xsupport, K  , K   S1 , 3, 2.5, 2, No Value, NULL, No Value, 3 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , -12, Disparity, K  , K   S1 , -12, -18.6667, -29, Incomplete, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 0, Goal, K  , K   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 0, Numeracy, K  , K   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 3, Learning Environment, K  , K   S1 , 3, 2, 1, no shading, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 4, Globe, K  , K   S1 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 3 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 5, Attendance, K  , K   S1 , 6, 5.6667, 5, Average, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 5, PBL, K  , K   S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 11, Writing, K  , K   S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 80, Academic Score, K  , K   S1 , 83, 80.3333, 78, Average, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 80, ATL, K  , K   S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 80, Community, K  , K   S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 3 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S1 , 420, Reading, K  , K   S1 , 420, 389.3333, 369, Incomplete, NULL, Incomplete, 3 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , NULL, Disparity, K  , K   S2 , -2, -7.5, -13, No Value, NULL, No Value, 3 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , NULL, xsupport, K  , K   S2 , 3, 2.5, 2, No Value, NULL, No Value, 3 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 0, Goal, K  , K   S2 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete, 3 S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 3, Globe, K  , K   S2 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 3 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 3, Learning Environment, K  , K   S2 , 3, 2, 1, no shading, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 3, Numeracy, K  , K   S2 , 3, 2.6667, 2, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 5, Attendance, K  , K   S2 , 6, 5.6667, 5, Average, NULL, Average, 3 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 5, PBL, K  , K   S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 11, Writing, K  , K   S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 80, Academic Score, K  , K   S2 , 80, 79.3333, 79, Dark Green, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 80, ATL, K  , K   S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 80, Community, K  , K   S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 3 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Kindergarden, S2 , 368, Reading, K  , K   S2 , 383, 363.6667, 340, Incomplete, NULL, Incomplete, 3 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , NULL, Disparity, RHJ, RHJ S1 , -2, -7.5, -13, No Value, NULL, No Value, 0 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , NULL, xsupport, RHJ, RHJ S1 , 3, 2.5, 2, No Value, NULL, No Value, 0 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 0, Goal, RHJ, RHJ S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 2, Reading, RHJ, RHJ S1 , 3, 2.3333, 2, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 3, Learning Environment, RHJ, RHJ S1 , 3, 2, 1, no shading, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 4, Globe, RHJ, RHJ S1 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 0 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 5, Attendance, RHJ, RHJ S1 , 6, 5.6667, 5, Average, NULL, Average, 0 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 5, PBL, RHJ, RHJ S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 11, Writing, RHJ, RHJ S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 0 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 79, Academic Score, RHJ, RHJ S1 , 79, 69.3333, 52, Dark Green, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 79, ATL, RHJ, RHJ S1 , 79, 69.3333, 52, Incomplete, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S1 , 79, Community, RHJ, RHJ S1 , 79, 69.3333, 52, Incomplete, NULL, Dark Green, 0 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , NULL, xsupport, RHJ, RHJ S2 , 3, 2.5, 2, No Value, NULL, No Value, 0 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , -8, Disparity, RHJ, RHJ S2 , -8, -12.3333, -15, Incomplete, NULL, NULL, 0 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , -2, Numeracy, RHJ, RHJ S2 , -2, -2, -2, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 0, Goal, RHJ, RHJ S2 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete, 0 S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 3, Globe, RHJ, RHJ S2 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 0 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 3, Learning Environment, RHJ, RHJ S2 , 3, 2, 1, no shading, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 5, Attendance, RHJ, RHJ S2 , 6, 5.6667, 5, Average, NULL, Average, 0 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 5, PBL, RHJ, RHJ S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 11, Writing, RHJ, RHJ S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 80, Academic Score, RHJ, RHJ S2 , 80, 68.6667, 51, Dark Green, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 80, ATL, RHJ, RHJ S2 , 80, 68.6667, 51, Incomplete, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 80, Community, RHJ, RHJ S2 , 80, 68.6667, 51, Incomplete, NULL, Dark Green, 0 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Junior, S2 , 324, Reading, RHJ, RHJ S2 , 324, 233.6667, 100, Incomplete, NULL, Incomplete, 0 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , NULL, Numeracy, RHS, RHS S1 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , NULL, xsupport, RHS, RHS S1 , 3, 2.5, 2, No Value, NULL, No Value, 1 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , -12, Disparity, RHS, RHS S1 , -12, -12, -12, Incomplete, NULL, NULL, 1 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 0, Goal, RHS, RHS S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 3, Globe, RHS, RHS S1 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 1 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 3, Learning Environment, RHS, RHS S1 , 3, 2, 1, no shading, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 5, Attendance, RHS, RHS S1 , 6, 5.6667, 5, Average, NULL, Average, 1 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 5, PBL, RHS, RHS S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 11, Writing, RHS, RHS S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 81, Academic Score, RHS, RHS S1 , 81, 70.3333, 57, Dark Green, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 81, ATL, RHS, RHS S1 , 81, 70.3333, 57, Incomplete, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 81, Community, RHS, RHS S1 , 81, 70.3333, 57, Incomplete, NULL, Dark Green, 1 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S1 , 383, Reading, RHS, RHS S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 1 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , NULL, Numeracy, RHS, RHS S2 , NULL, NULL, NULL, No Value, NULL, No Value, 1 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , NULL, xsupport, RHS, RHS S2 , 3, 2.5, 2, No Value, NULL, No Value, 1 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , -6, Disparity, RHS, RHS S2 , -6, -11, -20, Incomplete, NULL, NULL, 1 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 0, Goal, RHS, RHS S2 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete, 1 S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 3, Learning Environment, RHS, RHS S2 , 3, 2, 1, no shading, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 4, Globe, RHS, RHS S2 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 1 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 5, Attendance, RHS, RHS S2 , 6, 5.6667, 5, Average, NULL, Average, 1 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 5, PBL, RHS, RHS S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 11, Writing, RHS, RHS S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 95, Academic Score, RHS, RHS S2 , 95, 81.6667, 63, Dark Green, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 95, ATL, RHS, RHS S2 , 95, 81.6667, 63, Incomplete, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 95, Community, RHS, RHS S2 , 95, 81.6667, 63, Incomplete, NULL, Dark Green, 1 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Redlands High Senior, S2 , 368, Reading, RHS, RHS S2 , 383, 363.6667, 340, Incomplete, NULL, Incomplete, 1 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , NULL, xsupport, T  , T   S1 , 3, 2.5, 2, No Value, NULL, No Value, 2 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , -4, Disparity, T  , T   S1 , -4, -10, -21, Incomplete, NULL, Dark Green, 2 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , -1, Numeracy, T  , T   S1 , -1, -1, -1, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 0, Goal, T  , T   S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 3, Learning Environment, T  , T   S1 , 3, 2, 1, no shading, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 4, Globe, T  , T   S1 , 4, 4, 4, Incomplete, NULL, Light Green, 2 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 5, Attendance, T  , T   S1 , 6, 5.6667, 5, Average, NULL, Average, 2 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 5, PBL, T  , T   S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 11, Writing, T  , T   S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 80, Academic Score, T  , T   S1 , 83, 80.3333, 78, Average, NULL, Average, 2 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 80, ATL, T  , T   S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 2 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 80, Community, T  , T   S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 2 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S1 , 420, Reading, T  , T   S1 , 420, 389.3333, 369, Incomplete, NULL, Incomplete, 2 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , NULL, xsupport, T  , T   S2 , 3, 2.5, 2, No Value, NULL, No Value, 2 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , -12, Disparity, T  , T   S2 , -12, -18.6667, -32, Incomplete, NULL, Average, 2 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 0, Goal, T  , T   S2 , 0, 0, 0, Incomplete, Home-learning
+ 
+ Target: I will spend time everyday after school to complete work.
+ 
+ S -Â I will spend time after school to do homework and unfinished work
+ 
+ M - I will set reminders and write down what I need to do.
+ 
+ A - I will use a pomodoro study schedule to complete my work in an efficient way.
+ 
+ R - I have the time everyday and resources to complete this goalÂ 
+ 
+ T - I will spend at least an hour each day after school and on weekends., Incomplete, 2 S2 , 9 S2 , no, 0, 0, Goal
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 3, Learning Environment, T  , T   S2 , 3, 2, 1, no shading, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 4, Globe, T  , T   S2 , 4, 4, 4, Incomplete, NULL, Light Green, 2 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 5, Attendance, T  , T   S2 , 6, 5.6667, 5, Average, NULL, Average, 2 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 5, PBL, T  , T   S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 11, Writing, T  , T   S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 80, Academic Score, T  , T   S2 , 80, 79.3333, 79, Dark Green, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 80, ATL, T  , T   S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 80, Community, T  , T   S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 2 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Transition, S2 , 368, Reading, T  , T   S2 , 383, 363.6667, 340, Incomplete, NULL, Incomplete, 2 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , NULL, xsupport, Y1 , Y1  S1 , 3, 2.5, 2, No Value, NULL, No Value, 4 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , -8, Disparity, Y1 , Y1  S1 , -8, -12.3333, -15, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 2, Numeracy, Y1 , Y1  S1 , 2, 2, 2, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 3, Globe, Y1 , Y1  S1 , 5, 4, 3, Incomplete, NULL, Light Red, 4 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 3, Learning Environment, Y1 , Y1  S1 , 3, 2, 1, no shading, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 5, Attendance, Y1 , Y1  S1 , 6, 5.6667, 5, Average, NULL, Average, 4 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 5, PBL, Y1 , Y1  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 11, Writing, Y1 , Y1  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 81, Academic Score, Y1 , Y1  S1 , 83, 79.3333, 74, Light Green, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 81, ATL, Y1 , Y1  S1 , 83, 79.3333, 74, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 81, Community, Y1 , Y1  S1 , 83, 79.3333, 74, Incomplete, NULL, Light Green, 4 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S1 , 420, Reading, Y1 , Y1  S1 , 420, 389.3333, 369, Incomplete, NULL, Incomplete, 4 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , NULL, xsupport, Y1 , Y1  S2 , 3, 2.5, 2, No Value, NULL, No Value, 4 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , -12, Disparity, Y1 , Y1  S2 , -12, -12, -12, Incomplete, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 1, Numeracy, Y1 , Y1  S2 , 2, 1.3333, 1, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 3, Learning Environment, Y1 , Y1  S2 , 3, 2, 1, no shading, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 4, Globe, Y1 , Y1  S2 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 4 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 5, Attendance, Y1 , Y1  S2 , 6, 5.6667, 5, Average, NULL, Average, 4 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 5, PBL, Y1 , Y1  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 11, Writing, Y1 , Y1  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 97, Academic Score, Y1 , Y1  S2 , 97, 96.3333, 95, Dark Green, NULL, Dark Green, 4 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 97, ATL, Y1 , Y1  S2 , 97, 96.3333, 95, Incomplete, NULL, Dark Green, 4 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 97, Community, Y1 , Y1  S2 , 97, 96.3333, 95, Incomplete, NULL, Dark Green, 4 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 1, S2 , 340, Reading, Y1 , Y1  S2 , 420, 389.3333, 340, Incomplete, NULL, Incomplete, 4 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, NPI, 461, Numeracy, Y2 , Y2  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, NPI, 476, Writing, Y2 , Y2  NPI, 552, 344.3333, 5, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, NPI, 494, Reading, Y2 , Y2  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 5 NPI, 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , NULL, xsupport, Y2 , Y2  S1 , 3, 2.5, 2, No Value, NULL, No Value, 5 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , -6, Disparity, Y2 , Y2  S1 , -6, -11, -20, Incomplete, NULL, Light Green, 5 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 2, Numeracy, Y2 , Y2  S1 , 2, 2, 2, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 3, Globe, Y2 , Y2  S1 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 5 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 3, Learning Environment, Y2 , Y2  S1 , 3, 2, 1, no shading, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 5, Attendance, Y2 , Y2  S1 , 6, 5.6667, 5, Average, NULL, Average, 5 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 5, PBL, Y2 , Y2  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 11, Writing, Y2 , Y2  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 79, ATL, Y2 , Y2  S1 , 79, 69.3333, 52, Incomplete, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 79, Community, Y2 , Y2  S1 , 79, 69.3333, 52, Incomplete, NULL, Dark Green, 5 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 80, Academic Score, Y2 , Y2  S1 , 83, 80.3333, 78, Average, NULL, Average, 5 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S1 , 383, Reading, Y2 , Y2  S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 5 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , NULL, xsupport, Y2 , Y2  S2 , 3, 2.5, 2, No Value, NULL, No Value, 5 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , -4, Disparity, Y2 , Y2  S2 , -4, -10, -21, Incomplete, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 3, Globe, Y2 , Y2  S2 , 5, 4, 3, Incomplete, NULL, Light Red, 5 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 3, Learning Environment, Y2 , Y2  S2 , 3, 2, 1, no shading, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 3, Numeracy, Y2 , Y2  S2 , 3, 2.6667, 2, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 5, Attendance, Y2 , Y2  S2 , 6, 5.6667, 5, Average, NULL, Average, 5 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 5, PBL, Y2 , Y2  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 11, Writing, Y2 , Y2  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 80, Academic Score, Y2 , Y2  S2 , 80, 79.3333, 79, Dark Green, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 80, ATL, Y2 , Y2  S2 , 80, 68.6667, 51, Incomplete, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 80, Community, Y2 , Y2  S2 , 80, 68.6667, 51, Incomplete, NULL, Dark Green, 5 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 2, S2 , 369, Reading, Y2 , Y2  S2 , 437, 395, 369, Incomplete, NULL, Incomplete, 5 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, NPI, 461, Numeracy, Y3 , Y3  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, NPI, 476, Writing, Y3 , Y3  NPI, 552, 510.6667, 476, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, NPI, 494, Reading, Y3 , Y3  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 6 NPI, 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , NULL, xsupport, Y3 , Y3  S1 , 3, 2.5, 2, No Value, NULL, No Value, 6 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , -12, Disparity, Y3 , Y3  S1 , -12, -18.6667, -32, Incomplete, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 3, Learning Environment, Y3 , Y3  S1 , 3, 2, 1, no shading, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 3, Numeracy, Y3 , Y3  S1 , 3, 2.6667, 2, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 4, Globe, Y3 , Y3  S1 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 6 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 5, Attendance, Y3 , Y3  S1 , 6, 5.6667, 5, Average, NULL, Average, 6 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 5, PBL, Y3 , Y3  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 11, Writing, Y3 , Y3  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 81, Academic Score, Y3 , Y3  S1 , 83, 79.3333, 74, Light Green, NULL, Light Green, 6 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 81, ATL, Y3 , Y3  S1 , 81, 70.3333, 57, Incomplete, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 81, Community, Y3 , Y3  S1 , 81, 70.3333, 57, Incomplete, NULL, Dark Green, 6 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S1 , 383, Reading, Y3 , Y3  S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 6 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , NULL, xsupport, Y3 , Y3  S2 , 3, 2.5, 2, No Value, NULL, No Value, 6 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , -12, Disparity, Y3 , Y3  S2 , -12, -18.6667, -29, Incomplete, NULL, Average, 6 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 3, Globe, Y3 , Y3  S2 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 6 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 3, Learning Environment, Y3 , Y3  S2 , 3, 2, 1, no shading, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 5, Attendance, Y3 , Y3  S2 , 6, 5.6667, 5, Average, NULL, Average, 6 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 5, PBL, Y3 , Y3  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 11, Writing, Y3 , Y3  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 95, ATL, Y3 , Y3  S2 , 95, 81.6667, 63, Incomplete, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 95, Community, Y3 , Y3  S2 , 95, 81.6667, 63, Incomplete, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 97, Academic Score, Y3 , Y3  S2 , 97, 96.3333, 95, Dark Green, NULL, Dark Green, 6 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 3, S2 , 369, Reading, Y3 , Y3  S2 , 437, 395, 369, Incomplete, NULL, Incomplete, 6 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, NPI, 461, Numeracy, Y4 , Y4  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, NPI, 476, Writing, Y4 , Y4  NPI, 552, 510.6667, 476, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, NPI, 494, Reading, Y4 , Y4  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 7 NPI, 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , NULL, Disparity, Y4 , Y4  S1 , -2, -7.5, -13, No Value, NULL, No Value, 7 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , NULL, xsupport, Y4 , Y4  S1 , 3, 2.5, 2, No Value, NULL, No Value, 7 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 0, Numeracy, Y4 , Y4  S1 , 0, 0, 0, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 3, Attendance, Y4 , Y4  S1 , 5, 3.3333, 2, Light Green, NULL, Light Green, 7 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 3, Globe, Y4 , Y4  S1 , 5, 4, 3, Incomplete, NULL, Light Red, 7 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 3, Learning Environment, Y4 , Y4  S1 , 3, 2, 1, no shading, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 5, PBL, Y4 , Y4  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 11, Writing, Y4 , Y4  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 80, Academic Score, Y4 , Y4  S1 , 83, 80.3333, 78, Average, NULL, Average, 7 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 80, ATL, Y4 , Y4  S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 7 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 80, Community, Y4 , Y4  S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 7 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S1 , 383, Reading, Y4 , Y4  S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 7 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , NULL, xsupport, Y4 , Y4  S2 , 3, 2.5, 2, No Value, NULL, No Value, 7 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , -8, Disparity, Y4 , Y4  S2 , -8, -12.3333, -15, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 3, Attendance, Y4 , Y4  S2 , 5, 3.3333, 2, Light Green, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 3, Learning Environment, Y4 , Y4  S2 , 3, 2, 1, no shading, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 3, Numeracy, Y4 , Y4  S2 , 3, 2.3333, 2, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 4, Globe, Y4 , Y4  S2 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 7 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 5, PBL, Y4 , Y4  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 11, Writing, Y4 , Y4  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 80, Academic Score, Y4 , Y4  S2 , 80, 79.3333, 79, Dark Green, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 80, ATL, Y4 , Y4  S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 80, Community, Y4 , Y4  S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 7 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 4, S2 , 369, Reading, Y4 , Y4  S2 , 437, 395, 369, Incomplete, NULL, Incomplete, 7 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, NPI, 461, Numeracy, Y5 , Y5  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, NPI, 461, Writing, Y5 , Y5  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, NPI, 494, Reading, Y5 , Y5  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 8 NPI, 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , NULL, xsupport, Y5 , Y5  S1 , 3, 2.5, 2, No Value, NULL, No Value, 8 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , -12, Disparity, Y5 , Y5  S1 , -12, -12, -12, Incomplete, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 2, Numeracy, Y5 , Y5  S1 , 3, 2.3333, 2, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 3, Globe, Y5 , Y5  S1 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 8 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 3, Learning Environment, Y5 , Y5  S1 , 3, 2, 1, no shading, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 5, Attendance, Y5 , Y5  S1 , 5, 4.6667, 4, Average, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 5, PBL, Y5 , Y5  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 11, Writing, Y5 , Y5  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 80, ATL, Y5 , Y5  S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 80, Community, Y5 , Y5  S1 , 83, 80.3333, 78, Incomplete, NULL, Average, 8 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 81, Academic Score, Y5 , Y5  S1 , 83, 79.3333, 74, Light Green, NULL, Light Green, 8 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S1 , 383, Reading, Y5 , Y5  S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 8 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , -6, Disparity, Y5 , Y5  S2 , -6, -11, -20, Incomplete, NULL, Light Green, 8 S2 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 1, xsupport, Y5 , Y5  S2 , 3, 2, 1, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 2, Numeracy, Y5 , Y5  S2 , 2, 2, 2, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 3, Globe, Y5 , Y5  S2 , 5, 4, 3, Incomplete, NULL, Light Red, 8 S2 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 3, Learning Environment, Y5 , Y5  S2 , 3, 2, 1, no shading, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 5, Attendance, Y5 , Y5  S2 , 5, 4.6667, 4, Average, NULL, Average, 8 S2 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 5, PBL, Y5 , Y5  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 11, Writing, Y5 , Y5  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 80, ATL, Y5 , Y5  S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 80, Community, Y5 , Y5  S2 , 80, 79.3333, 79, Incomplete, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 97, Academic Score, Y5 , Y5  S2 , 97, 96.3333, 95, Dark Green, NULL, Dark Green, 8 S2 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 5, S2 , 369, Reading, Y5 , Y5  S2 , 437, 395, 369, Incomplete, NULL, Incomplete, 8 S2 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, NPI, 461, Reading, Y6 , Y6  NPI, 573, 528.3333, 461, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, NPI, 494, Numeracy, Y6 , Y6  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, NPI, 494, Writing, Y6 , Y6  NPI, 632, 536.6667, 484, Incomplete, NULL, Incomplete, 9 NPI, 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , NULL, xsupport, Y6 , Y6  S1 , 3, 2.5, 2, No Value, NULL, No Value, 9 S1 , 9 S2 , no, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , -4, Disparity, Y6 , Y6  S1 , -4, -10, -21, Incomplete, NULL, Dark Green, 9 S1 , 9 S2 , no, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 2, Numeracy, Y6 , Y6  S1 , 2, 2, 2, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 3, Learning Environment, Y6 , Y6  S1 , 3, 2, 1, no shading, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 4, Globe, Y6 , Y6  S1 , 4, 3.6667, 3, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 5, Attendance, Y6 , Y6  S1 , 6, 5.6667, 5, Average, NULL, Average, 9 S1 , 9 S2 , no, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 5, PBL, Y6 , Y6  S1 , 5, 4, 2, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 11, Writing, Y6 , Y6  S1 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 81, ATL, Y6 , Y6  S1 , 83, 79.3333, 74, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 81, Community, Y6 , Y6  S1 , 83, 79.3333, 74, Incomplete, NULL, Light Green, 9 S1 , 9 S2 , no, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 87, Academic Score, Y6 , Y6  S1 , 87, 81, 77, Dark Green, NULL, Dark Green, 9 S1 , 9 S2 , no, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S1 , 383, Reading, Y6 , Y6  S1 , 408, 377, 340, Incomplete, NULL, Incomplete, 9 S1 , 9 S2 , no, 0, 0, Reading
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , NULL, xsupport, Y6 , Y6  S2 , 3, 2.5, 2, No Value, NULL, No Value, 9 S2 , 9 S2 , yes, 0, 0, xsupport
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , -12, Disparity, Y6 , Y6  S2 , -12, -18.6667, -32, Incomplete, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, Disparity
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 3, Globe, Y6 , Y6  S2 , 4, 3.6667, 3, Incomplete, NULL, Light Red, 9 S2 , 9 S2 , yes, 0, 0, Globe
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 3, Learning Environment, Y6 , Y6  S2 , 3, 2, 1, no shading, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Learning Environment
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 3, Numeracy, Y6 , Y6  S2 , 3, 2.3333, 2, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Numeracy
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 5, Attendance, Y6 , Y6  S2 , 6, 5.6667, 5, Average, NULL, Average, 9 S2 , 9 S2 , yes, 0, 0, Attendance
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 5, PBL, Y6 , Y6  S2 , 5, 4, 2, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, PBL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 11, Writing, Y6 , Y6  S2 , 18, 14.6667, 11, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Writing
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 81, Academic Score, Y6 , Y6  S2 , 81, 76.3333, 72, Dark Green, NULL, Dark Green, 9 S2 , 9 S2 , yes, 0, 0, Academic Score
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 97, ATL, Y6 , Y6  S2 , 97, 96.3333, 95, Incomplete, NULL, Dark Green, 9 S2 , 9 S2 , yes, 0, 0, ATL
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 97, Community, Y6 , Y6  S2 , 97, 96.3333, 95, Incomplete, NULL, Dark Green, 9 S2 , 9 S2 , yes, 0, 0, Community
+2035, 2015-12-17, NULL, NULL, Kindergarten, Roseby, 220241, Mascheroni, NULL, NULL, NULL, Mascheroni, , 220241, 2035, Year 6, S2 , 369, Reading, Y6 , Y6  S2 , 437, 395, 369, Incomplete, NULL, Incomplete, 9 S2 , 9 S2 , yes, 0, 0, Reading

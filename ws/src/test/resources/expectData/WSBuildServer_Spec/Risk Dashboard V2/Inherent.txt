@@ -1,0 +1,66 @@
+The table size(row x col) is:(65 x 5)
+Inherent Cell Color, Inherent Likelihood Axis, Inherent Consequence Axis, Inherent ID, Inherent
+aed581, 1 - Rare - Once in every 30 years, 1 - Insignificant, NULL, Inherent
+aed581, 1 - Rare - Once in every 30 years, 2 - Minor, NULL, Inherent
+aed581, 1 - Rare - Once in every 30 years, 3 - Moderate, NULL, Inherent
+aed581, 1 - Rare - Once in every 30 years, 4 - Major, NULL, Inherent
+aed581, 2 - Unlikely - Once in every 10 years, 1 - Insignificant, NULL, Inherent
+aed581, 2 - Unlikely - Once in every 10 years, 2 - Minor, NULL, Inherent
+aed581, 3 - Possible  - Once in every 3 years, 1 - Insignificant, NULL, Inherent
+aed581, 4 - Likely - Once per year, 1 - Insignificant, NULL, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 4 - Major, 1000024, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 4 - Major, 1000027, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 5 - Extreme, 1000045, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 5 - Extreme, 1000054, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 5 - Extreme, 1000308, Inherent
+FF6B58, 3 - Possible  - Once in every 3 years, 5 - Extreme, 1001088, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000020, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000029, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000033, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000057, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000060, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000063, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000066, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000070, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000072, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000074, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000076, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000080, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000082, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000084, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000086, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000090, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000092, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000094, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000096, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000098, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000100, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000102, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000104, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000106, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000108, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000110, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000112, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000114, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000116, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000118, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000120, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000122, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000124, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000126, Inherent
+FF6B58, 4 - Likely - Once per year, 4 - Major, 1000128, Inherent
+FF6B58, 4 - Likely - Once per year, 5 - Extreme, 1000048, Inherent
+FF6B58, 5 - Almost Certain - More than once per year, 3 - Moderate, 1000909, Inherent
+FF6B58, 5 - Almost Certain - More than once per year, 4 - Major, NULL, Inherent
+FF6B58, 5 - Almost Certain - More than once per year, 5 - Extreme, NULL, Inherent
+FFD740, 1 - Rare - Once in every 30 years, 5 - Extreme, NULL, Inherent
+FFD740, 2 - Unlikely - Once in every 10 years, 3 - Moderate, NULL, Inherent
+FFD740, 2 - Unlikely - Once in every 10 years, 4 - Major, 1000078, Inherent
+FFD740, 2 - Unlikely - Once in every 10 years, 5 - Extreme, NULL, Inherent
+FFD740, 3 - Possible  - Once in every 3 years, 2 - Minor, NULL, Inherent
+FFD740, 3 - Possible  - Once in every 3 years, 3 - Moderate, 1000088, Inherent
+FFD740, 3 - Possible  - Once in every 3 years, 3 - Moderate, 1000900, Inherent
+FFD740, 4 - Likely - Once per year, 2 - Minor, NULL, Inherent
+FFD740, 4 - Likely - Once per year, 3 - Moderate, 1000036, Inherent
+FFD740, 5 - Almost Certain - More than once per year, 1 - Insignificant, NULL, Inherent
+FFD740, 5 - Almost Certain - More than once per year, 2 - Minor, NULL, Inherent

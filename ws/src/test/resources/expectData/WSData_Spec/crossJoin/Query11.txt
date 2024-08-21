@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 4)
+RESELLER, STATE, CUSTOMER_ID, CATEGORY_ID
+false, AK, 1, NULL
+false, AK, 1, 6
+false, CA, 3, NULL
+false, FL, 2, NULL
+false, NJ, 1, 2
+false, NJ, 2, NULL
+false, NY, 3, NULL
+false, OH, 1, NULL
+false, PA, 1, 5
+true, IL, 1, 4
+true, NY, 1, 3
+true, PA, 1, NULL
+true, TX, 1, NULL
+true, TX, 1, 1

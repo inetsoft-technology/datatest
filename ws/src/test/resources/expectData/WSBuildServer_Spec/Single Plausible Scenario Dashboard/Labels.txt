@@ -1,0 +1,1963 @@
+The table size(row x col) is:(1962 x 2)
+value, fx Label
+NULL, NULL
+NULL, NULL
+NULL, NULL
+NULL, NULL
+NULL, Africa
+NULL, Ambulance
+NULL, Ambulance
+NULL, America
+NULL, Asia 
+NULL, Australia
+NULL, Client
+NULL, Contractor
+NULL, Doctor
+NULL, Doctor
+NULL, Employee
+NULL, First Aid
+NULL, First Aid
+NULL, Hospital
+NULL, Hospital
+NULL, Member of the Public
+NULL, Other
+NULL, Visitor
+NULL, Volunteer 
+&gt;15 Years, >15 Years
+&gt;500, >500
+&gt; 5 days, > 5 days
+&lt; 6 hours, < 6 hours
+0, None of the above
+0, Not Required
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0, Very Low
+0-3 Years, 0-3 Years
+1, 1 - $0 - 50k
+1, 1 - Authorising Executive
+1, 1 - Completely internally supported/managed by MoE
+1, 1 -  Insignificant impact on reputation
+1, 1 - Limited access for MoE staff through the internal network only (including by VPN)
+1, 1 - Minimal sensitive information
+1, 1 - No impact
+1, 1 - No impact to other systems controls
+1, 1 - No known harm
+1, 1 - No known opportunity for personal gain or activism
+1, 1 - No or minor changes in the way we work
+1, 1 - No other systems
+1, 1 - No personal information
+1, 1 - No relationship to regulatory requirements
+1, 1 - Only named MoE administrators
+1, 1 - Personal information is sourced directly from the individual concerned or publically available sources
+1, 1 - System can be down for a week or more
+1, 1 - Systems are hosted by the Ministry and under direct Ministry adminstrative control
+1, 1 - The data can be a week or more old
+1, 1 - The security team is aware of the system and has controls and process in place to maintain a risk-based level of security (which may include risk assessment
+1, 1 - These would not have an impact upon critical business functions/core business systems
+1, 1 - The system
+1, 1 - The system is completely independent and isolated
+1, 1 - The system is completely physically hosted by MoE on-site
+1, 1 - This system has no effect on or involvement with vital business systems.
+1, At work
+1, At work - pre-injury status
+1, Early intervention
+1, Employee is totally and permanently incapacitated
+1, Return to work
+1, Same
+1, Same
+1, Same
+1, Same
+1, Same
+1, Same
+1, Services finalised and program completed
+1, Yes
+1, Yes
+1, Yes
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+10, Very High
+101-500, 101-500
+101-500, 101-500
+1-10, 1-10
+11-50, 11-50
+120, > 5 days
+120, > 5 days
+120, > 5 days
+1-20, 1-20
+12-24 hours, 12-24 hours
+12m, Annual
+18, 12-24 hours
+18, 12-24 hours
+18, 12-24 hours
+1y, 1 Year
+1y, Yearly
+1y, Yearly
+1 Year, 1 Year
+2, 2 - $50-250k
+2, 2 - 3 or less personal attributes i.e. name
+2, 2 - Authorising Executive
+2, 2 - Available to a wide group of MoE staff through the internal network only (including by VPN)
+2, 2 - inconsequential inaccuracies in documentation/low amount of documentation OR small number of SMEs
+2, 2 - Information is only considered in bulk for trending and therefore minor variations/margin of error is acceptable
+2, 2 - Information that is not sensitive
+2, 2 - Issue managed internally with no media coverage
+2, 2 - Issues with this system would cause some minor annoyance
+2, 2 - Less than 500 records containing personal information stored at any one point in expected system lifetime
+2, 2 - Leverages current control/s
+2, 2 - Limited opportunity for personal gain (i.e. would require other systems also)
+2, 2 - Minimal likelihood that the information can be used to harm a third party
+2, 2 - Minor sensitivity such as name only or name and address
+2, 2 - MoE administrators and contract centre users
+2, 2 - Mostly internally supported/managed by MoE
+2, 2 - No anticipated increased interest for unions
+2, 2 - Normal business as usual changes 
+2, 2 - Other systems draw on information or functionality of this but this but it is not needed for other systems to function
+2, 2 - Personal information concerned is shared within the Ministry
+2, 2 - Personal information is sourced from Ministry systems which lawfully collect the information for the same purpose as originally collected. 
+2, 2 - Personal information which is already publicly available or limited information about a few internal staff who use the system
+2, 2 - System can be down for no more than a day
+2, 2 - Systems are hosted by the Ministry and under joint Ministry and third party administrative control
+2, 2 - The data should be no more than a week old
+2, 2 - The Security team has carried out activities with regards to the system
+2, 2 - The system is completely physically hosted in NZ by an entity that is part of ICT Common Capabilities or a similar NZ Government panel
+2, 2 - This system enables staff to complete duties related to regulatory requirements
+2, 2 - This system is used by staff who are directly involved with vital business systems.
+2, Compensable
+2, Employee is partially incapacitated but unable to be placed in suitable employment
+2, Employee not capable of continuing program
+2, Low
+2, Low
+2, Low
+2, Low
+2, Low
+2, Low
+2, Low
+2, Low
+2, Low
+2, New
+2, New
+2, New
+2, New
+2, New
+2, No
+2, No
+2, No
+2, Not at work
+2, Redeployment
+2, Reduced
+2`, At work - reduced hours
+21-50, 21-50
+2-3 days, 2-3 days
+24-48 hours, 24-48 hours
+2y, 2 Years
+2y, Bi-Yearly
+2y, Bi-Yearly
+2 Years, 2 Years
+3, < 6 hours
+3, < 6 hours
+3, < 6 hours
+3, 3 - $250-500k
+3, 3 - Affects a few security controls that have moderate impact
+3, 3 - Documentation is not useful/out-of date/inaccurate OR SMEs are unavailable some of the time OR vendor managed with low levels of communication OR lack of clarity about the detail of the system
+3, 3 - Isolated story critical of MoE
+3, 3 -  Limited personal information such as name and phone number
+3, 3 - Modifications or uncertainty would be of concern
+3, 3 - MoE adinistrators
+3, 3 - Mostly externally supported/maintained
+3, 3 - Opportunity for minimal non-financial personal gain / political impact
+3, 3 - Other systems would require manual process / operational costs if this system was unavailable
+3, 3 - Personal information is shared within the Sector
+3, 3 - Personal information is sourced from systems within the sectors which collect the information for the same purposes or collected within the Ministry or sector with a different purpose than it was originally collected for
+3, 3 - Publically accessible through the internet (including monitored vendor or third party access) but restricted to specific users
+3, 3 - Sensitive information that would have a moderate impact if released
+3, 3 - Streamlines current practices
+3, 3 - System can be down for no more than a few hours
+3, 3 - Systems are hosted on shared third party infrastructure and data is resident in NZ
+3, 3 - Systems which enable us to meet regulatory requirements are reliant on this system
+3, 3 - The data should be no more than a day old
+3, 3 - The people in some of these roles are able to be found
+3, 3 -  The Security team has identified risks
+3, 3 - These would cause disruption and/or a measurable increase in effort to achieve critical business outcomes
+3, 3 - The system is hosted in NZ by another party
+3, 3 - This information could be used to gain further access to third party information
+3, 3 - This is a vital business system but an outage or integrity breach will only have a minor impact
+3, At work - modified duties
+3, Employee is temporarily incapacitated for work
+3, Maintain work
+3, Modified
+3, Modified
+3, New rehabilitation program required
+3, Non-compensable
+3-5 days, 3-5 days
+36, 24-48 hours
+36, 24-48 hours
+36, 24-48 hours
+3-7 Years, 3-7 Years
+3m, Quarterly
+3 Months, 3 Months
+3y, 3 Years
+3 Years, 3 Years
+4, 4 - $500k-1m
+4, 4 - 4-5 personal attributes
+4, 4 - Affects a significant number of material controls used to protect our people
+4, 4 - A responsible party cannot be found for one or more of these roles
+4, 4 - Changes to multiple processes or practices (across multiple systems
+4, 4 - Concerns about MoE expressed by NZ Govt or other third parties
+4, 4 - core business systems could be unavailable/critical business functions unachievable for a period of time and/or financial losses that are impossible to recover
+4, 4 - critical systems/functions OR a number of other systems/functions are highly dependent on this system and business functions could be affected.
+4, 4 - Modifications or uncertainty around the integrity would be of concern
+4, 4 - MoE administrators
+4, 4 - More sensitive attributes such as date of birth
+4, 4 - More than 500 but less than 5
+4, 4 - Personal information is shared with agencies and systems external to the Sector
+4, 4 - Personal information is sourced from systems/records external to the sector which collect the information for the same purpose or collected within the Ministry or sector with a different purpose than it was originally collected for.
+4, 4 - Personal information such as payment details  
+4, 4 - Sensitive information that could cause significant organisational or reputational damage if released
+4, 4 - Significant opportunity for personal gain or political impact
+4, 4 - System can be down for no more than a few minutes
+4, 4 - Systems are hosted on shared third party infrastructure and data is resident outside of NZ
+4, 4 - Systems which enable us to meet regulatory requirements are reliant on this system
+4, 4 - The data should be no more than an hour old
+4, 4 - The proposal is likely to generate minor interest from unions
+4, 4 - There are known vulnerabilities with this system
+4, 4 - The system is based in a “near-shore” datacentre (i.e. in Australasia)
+4, 4 - The system is mission-critical and externally supported/maintained
+4, 4 - This information can be used to leverage or harm a third party
+4, 4 - This is a vital business system:  an outage or integrity breach will have a moderate impact. 
+4, 4 - Vendor responsible for the system
+4, 4 - visible to (but not editable by) the public and/or select third parties have ongoing access to provide or receive inputs from the system
+4, At work - both reduced hours and modified duties
+4, Non return to work
+4, Other
+4, Rehabilitation provider ceased involvement
+4y, 4 Years
+4 Years, 4 Years
+5, 5 - >$1m
+5, 5 - A large number of systems / functions are highly dependent on this system and/or critical systems could be disrupted.
+5, 5 - Available for access and use by the public or many third parties
+5, 5 - Confirmed lack of governance of the system for two or more of these roles. 
+5, 5 - Detailed information such as physical address
+5, 5 - No documentation OR SMEs largely unavailable OR no knowledge of the architecture/management processes of the system
+5, 5 - Public loss of confidence in MoE and/or widespread adverse media attention
+5, 5 - Requires the development or re-development of substantial new controls affecting multiple systems
+5, 5 - Sensitive information that could have a major impact upon financial markets
+5, 5 - Significant changes in the way we work (e.g. organisational restructure
+5, 5 - Significant opportunity for material personal gain or damage to New Zealand Government
+5, 5 - Significant reliance on the absolute integrity of the information (i.e. this system is a source of truth and/or key decisions are driven by information from this system)
+5, 5 - The data needs to be completely current
+5, 5 - There is zero tolerance for the system going down
+5, 5 - The security posture of the system is unknown.
+5, 5 - The system is mission-critical and completely externally supported/maintained
+5, 5 - The system is not restricted to a certain geography and/or is hosted off-shore
+5, 5 - This information is sensitive and disclosure of it would directly lead to significant harm to a third party organisation
+5, 5 - This is a vital business system:  an outage or integrity breach will have a high impact. 
+5, 5 - This system directly enables us to meet regulatory requirements
+5, 5 - vital to MoEs core systems
+5, Employed but not at work
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Moderate
+5, Voluntary retirement
+51-100, 51-100
+51-100, 51-100
+5y, 5 Years
+5 Years, 5 Years
+6, 6 - 6-8 personal attributes
+6, 6 - More than 5
+6, 6 - Sensitive attributes such as race
+6, 6 - The proposal is likely to result in significant interest from unions
+6, Redundancy
+60, 2-3 days
+60, 2-3 days
+60, 2-3 days
+6-12 hours, 6-12 hours
+6m, Half-Yearly
+6m, Half-Yearly
+6m, Semi Annual
+6 Months, 6 Months
+7, Employer ceased involvement
+7-15 Years, 7-15 Years
+8, 8 - Highly sensitive attributes and information such as health information
+8, 8 - More than 10
+8, 8 - More than 8 personal attributes
+8, 8 - The proposal will result in substaintial public
+8, High
+8, High
+8, High
+8, High
+8, High
+8, High
+8, High
+8, High
+8, High
+85%, 85%
+9, 6-12 hours
+9, 6-12 hours
+9, 6-12 hours
+9, Return to work was not a goal of rehabilitation program
+90%, 90%
+96, 3-5 days
+96, 3-5 days
+96, 3-5 days
+Abnormal operational situation / condition, NULL
+Abrasion, NULL
+Abrasion, NULL
+Abrasion, Abrasion
+Accept, Accept
+Accepted - Medical Expenses Only, Accepted - Medical Expenses Only
+Accepted - Standard, Accepted - Standard
+Access / Egress, Access / Egress
+Accidental, Accidental
+Accomodation, Accomodation
+Achieve results, Achieve results
+Act, Act
+ACT, NULL
+ACT, NULL
+ACT, NULL
+ACT, ACT
+Action Required, Action Required
+Action Required, Action Required
+Actions of individual/s, Actions of individual/s
+Actual, Actual
+Adelaide, Adelaide
+Administration, Administration
+Adversarial, Adversarial
+Adversarial, Adversarial
+Advice, Advice
+A - Front Bumper, NULL
+Age related, Age related
+Airline Tickets, Airline Tickets
+Air pressure, Air pressure
+All, All
+A major spinal injury, A major spinal injury
+Ambulance, Ambulance
+AML CTF, AML CTF
+Amputation, NULL
+Amputation, NULL
+Amputation of any part of the body, Amputation of any part of the body
+Animal, Animal
+Animal,  Human and Biological Factors
+Animal,  Human and Biological Factors
+an incident that causes a risk of serious injury to persons adjacent to a construction site or as a result of construction activities., an incident that causes a risk of serious injury to persons adjacent to a construction site or as a result of construction activities.
+an incident that causes a risk of serious injury to persons adjacent to a construction site or as a result of construction activities., an incident that causes a risk of serious injury to persons adjacent to a construction site or as a result of construction activities.
+an incident that could cause a risk of serious injury to persons adjacent to a construction site or as a result of construction activities., an incident that could cause a risk of serious injury to persons adjacent to a construction site or as a result of construction activities.
+Ankle, NULL
+Ankle, NULL
+Ankle, NULL
+Annual, Annual
+Annual, Annual
+Annually, Annually
+an object like a hand tool falls off a multistorey building under construction hitting a person below, an object like a hand tool falls off a multistorey building under construction hitting a person below
+an object like a hand tool falls off a multistorey building under construction hitting a person below, an object like a hand tool falls off a multistorey building under construction hitting a person below
+Anticipated, Anticipated - reported by trusted source
+an uncontrolled escape,  spillage or leakage of a substance
+an uncontrolled escape,  spillage or leakage of a substance
+an uncontrolled escape,  spillage or leakage of a substance
+an uncontrolled escape of a pressurised substance, an uncontrolled escape of a pressurised substance
+an uncontrolled escape of a pressurised substance, an uncontrolled escape of a pressurised substance
+an uncontrolled escape of a pressurised substance, an uncontrolled escape of a pressurised substance
+an uncontrolled escape of gas or steam, an uncontrolled escape of gas or steam
+an uncontrolled escape of gas or steam, an uncontrolled escape of gas or steam
+an uncontrolled escape of gas or steam, an uncontrolled escape of gas or steam
+an uncontrolled implosion,  explosion or fire
+an uncontrolled implosion,  explosion or fire
+an uncontrolled implosion,  explosion or fire
+Any infection where the work is a significant contributing factor, Any infection where the work is a significant contributing factor
+Any infection where the work is a significant contributing factor, Any infection where the work is a significant contributing factor
+Applicable, Applicable
+Applicable, Applicable
+Applicable, Applicable
+Approve, Approve
+Approve, Approve
+Approved, Approved
+Approved, Approved
+Approved Limits exceeded, Approved Limits exceeded
+Approved with Modifications, Approved with Modifications
+Arm, NULL
+Arm, NULL
+Asbestos, Asbestos
+A serious burn, A serious burn
+A serious eye injury, A serious eye injury
+A serious head injury, A serious head injury
+Asphyxiation, Asphyxiation
+Asset Damage, Asset Damage
+Asset Loss or Damage, NULL
+Assets, Assets
+Asthmagens, Asthmagens
+ASX Equity Only, ASX Equity Only
+Auckland, Auckland
+Auckland, Auckland
+Auckland, Auckland
+Audit, Audit
+Audit, Audit
+Australia, NULL
+Australia, NULL
+Australia, NULL
+Automated, Automated
+Average, Average
+Avoid, Avoid
+Avoid prolonged sitting, Avoid prolonged sitting
+Avoid prolonged standing, Avoid prolonged standing
+Avoid prolonged walking, Avoid prolonged walking
+Avoid repetitive bending / lifting, Avoid repetitive bending / lifting
+Avoid repetitive use of affected body part, Avoid repetitive use of affected body part
+Back, NULL
+Back, NULL
+Back (upper/lower), NULL
+Ballarat, Ballarat
+Bay of Plenty/ Rotorua/ Taupo, Bay of Plenty/ Rotorua/ Taupo
+Bay of Plenty / Rotorua / Taupo, Bay of Plenty / Rotorua / Taupo
+Beijing, Beijing
+Being hit by something (Hitting Moving Objects), NULL
+Bendigo, Bendigo
+B - Front Panel / Wheel (Right), NULL
+Bi-annual, Bi-annual
+Bi-annual, Bi-Annual
+Bio-active substances, Bio-active substances
+Biological, Biological
+Biological Factors, Biological Factors
+Biological Hazardous Waste, Biological Hazardous Waste
+Bite, Bite
+BL0100 - Corporate Finance, BL0100 - Corporate Finance
+BL0101 - Corporate Finance, BL0101 - Corporate Finance
+BL0102 - Municipal Government Finance, BL0102 - Municipal Government Finance
+BL0103 - Advisory Services, BL0103 - Advisory Services
+BL0200 - Trading &amp; Sales, BL0200 - Trading &amp; Sales
+BL0201 - Equities, BL0201 - Equities
+BL0202 - Global Markets, BL0202 - Global Markets
+BL0203 - Corporate Investments, BL0203 - Corporate Investments
+BL0204 - Treasury or Funding, BL0204 - Treasury or Funding
+BL0300 - Retail Banking, BL0300 - Retail Banking
+BL0301 - Retail Banking, BL0301 - Retail Banking
+BL0302 - Card Services, BL0302 - Card Services
+BL0400 - Commercial Banking, BL0400 - Commercial Banking
+BL0401 - Commercial Banking, BL0401 - Commercial Banking
+BL0500 - Clearing, BL0500 - Clearing
+BL0501 - Cash Clearing, BL0501 - Cash Clearing
+BL0502 - Securities Clearing, BL0502 - Securities Clearing
+BL0600 - Agency Services, BL0600 - Agency Services
+BL0601 - Custody Services, BL0601 - Custody Services
+BL0602 - Corporate Trust and Agency, BL0602 - Corporate Trust and Agency
+BL0700 - Asset Management, BL0700 - Asset Management
+BL0703 - Fund Management, BL0703 - Fund Management
+BL0800 - Retail Brokerage, BL0800 - Retail Brokerage
+BL0801 - Retail Brokerage, BL0801 - Retail Brokerage
+BL0900 - Private Banking, BL0900 - Private Banking
+BL0901 - Private Banking, BL0901- Private Banking
+BL1000 - Corporate Items, BL1000 - Corporate Items
+BL1001 - Corporate Items, BL1001 - Corporate Items
+Board, Board
+Body Stressing, Body Stressing
+Bond and Package, Bond and Package
+Books and Stationery, Books and Stationery
+Both, Both
+Bouquet of Flowers, Bouquet of Flowers
+Branches, Branches
+Break, Break
+Brisbane, Brisbane
+Broken Hill, Broken Hill
+Bruise, NULL
+Bruise, NULL
+Bruise, Bruise
+Bullying/ Harassment, Bullying/ Harassment
+Bump, Bump
+Bundaberg, Bundaberg
+Burn (Cold,  Scald
+Burn (Cold,  Scald
+Burnie, Burnie
+Burns, Burns
+Business Disruption or System Failure, Business Disruption or System Failure
+Business Meeting, Business Meeting
+Buy, Buy
+Caboolture, Caboolture
+Cairns, Cairns
+Call, Call
+Caloundra, Caloundra
+Canberra, Canberra
+Cancellerd, Cancelled
+Canterbury, Canterbury
+Canterbury, Canterbury
+Capital, NULL
+Carcinogens, Carcinogens
+Catastrophic, Catastrophic - Death or multiple life threatening injuries.
+Catastrophic, Catastrophic - Death or multiple life threatening injuries.
+Catastrophic, Catastrophic - Death or multiple life threatening injuries.
+C - Doors (Right), NULL
+Certification, Certification
+Change Management Error, NULL
+Change the consequence, Change the consequence
+Change the likelihood, Change the likelihood
+Charity, Charity
+Charity Event Tickets, Charity Event Tickets
+Cheating, Cheating
+Chemical burn, NULL
+Chemical burn, NULL
+Chemicals, NULL
+Chemicals, NULL
+Chips, Chips
+Classification Above In Confidence, NULL
+Client, Client
+Client, Client
+Closed, Closed
+Closed / Finalised, Closed / Finalised
+Cloud, NULL
+Code of Practice,  Code of Practice
+Commissioner, Commissioner
+COMMONWEALTH, NULL
+COMMONWEALTH, NULL
+COMMONWEALTH, NULL
+Communication, NULL
+Communication, NULL
+Community (Reputation/Image), NULL
+Company, Company
+Competency, NULL
+Complaint, Complaint
+Completed, Completed
+Complex, Complex
+Compliance, Compliance
+Compliance / Regulation, NULL
+Compliance / Regulator, Compliance / Regulator
+Compliance Breach, Compliance Breach
+Compliant, Complaint
+Compliant, Compliant
+Compliant, Compliant
+Compressed air/gas, Compressed air/gas
+Compromise would adversely affect national interests, Compromise would adversely affect national interests
+Compromise would damage government interests or endanger citizens, Compromise would damage government interests or endanger citizens
+Compromise would damage national interests in an exceptionally grave manner, Compromise would damage national interests in an exceptionally grave manner
+Compromise would damage national interests in a serious manner, Compromise would damage national interests in a serious manner
+Compromise would damage national interests in a significant manner, Compromise would damage national interests in a significant manner
+Compromise would prejudice law &amp; order,  impede Govt business
+Concert Tickets, Concert Tickets
+Concussion, NULL
+Concussion, NULL
+Conduct an attack, Conduct an attack
+Confined Space, Confined Space
+Confirmed, Confirmed
+Confirmed, Confirmed - seen by organisation
+Congestion / Restriction / Access, NULL
+Contact with,  or exposure to biological factors (including bodily fluids and live cultures)
+Contact with animal or insects (including spider bites and stings), NULL
+Contact with chemical substances including Synthetic Mineral Fibres (Asbestos etc), NULL
+Contact with electricity, NULL
+Contact with electricity, NULL
+Contact with electricity, NULL
+Contaminated Material, Contaminated Material
+Continued Working, Continued Working
+Contractor, Contractor
+Contractor, Contractor
+Contractor, Contractor
+Contractor, Contractor
+Contractor, Contractor
+Contractor Management, NULL
+Contusion, NULL
+Contusion, NULL
+Coordinate a campaign, Coordinate a campaign
+Corporate Social Responsibility, Corporate Social Responsibility
+Cost, NULL
+Cost Benefit - Dollar, Cost Benefit - Dollar
+Cost Benefit - Time, Cost Benefit - Time
+Country Club, Country Club
+Craft or create attack tools, Craft or create attack tools.
+Credit, Credit
+Criminal Association, Criminal Association
+Criminal Groups, NULL
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical, Critical
+Critical Business Functions, NULL
+Crush, Crush
+CS0102  - Assault by Criminals or Terrorists, CS0102 - Assault by Criminals or Terrorists
+CS0103 - Natural Disasters, CS0103 - Natural Disasters
+CS0104 - Man-Made Disasters, CS0104 - Man-Made Disasters
+CS0105 - Political Social or Cultural Environment, CS0105 - Political Social or Cultural Environment
+CS0106 - Actions of External Staff, CS0106 - Actions of External Staff
+CS0199 - Decline, CS0199 - Decline
+CS0200 - People or Staff, CS0200 - People or Staff
+CS0201 - Inadequate Resources, CS0201 - Inadequate Resources
+CS0203 - Criminal Activity by Internal or External Staff, CS0203 - Criminal Activity by Internal or External Staff
+CS0204 - Management or Control of Staff, CS0204 - Management or Control of Staff
+CS0205 - Human Error, CS0205 - Human Error
+CS0206 - Unauthorised Activity, CS0206 - Unauthorised Activity
+CS0207 - Workplace Environment, CS0207 - Workplace Environment
+CS0299 - Decline, CS0299 - Decline
+CS0300 - Governance and Structure, CS0300 - Governance and Structure
+CS0301 - Remote Business Unit, CS0301 - Remote Business Unit
+CS0302 - Subsidiaries Control &amp; Consolidation, CS0302 - Subsidiaries Control &amp; Consolidation
+CS0303 - Financial Reporting, CS0303 - Financial Reporting
+CS0304 - Organisational Controls, CS0304 - Organisational Controls
+CS0399 - Decline, CS0399 -Decline
+CS0400 - Processes, CS0400 - Processes
+CS0401 - Organisational Structure, CS0401- Organisational Structure
+CS0402 - Process Design, CS0402 - Process Design
+CS0403 - Inadequate Policy or Procedure, CS0403 - Inadequate Policy or Procedure
+CS0404 - Inadequate Segregation of Duties, CS0404 - Inadequate Segregation of Duties
+CS0405 - Data Quality, CS0405 - Data Quality
+CS0499 - Decline, CS0499 - Decline
+CS0500 - Internal Systems Failures, CS0500 - Internal Systems Failures
+CS0501 - Hardware Inadequate Maintenance, CS0501 - Hardware Inadequate Maintenance
+CS0502 - Hardware Performance Degradation, CS0502 - Hardware Performance Degradation
+CS0503 - Software Inadequate Maintenance, CS0503 - Software Inadequate Maintenance
+CS0504 - Software Performance Degradation, CS0504 - Software Performance Degradation
+CS0505 - Infrastructure Inadequate Maintenance, CS0505 - Infrastructure Inadequate Maintenance
+CS0506 - Infrastructure Performance Degradation, CS0506 - Infrastructure Performance Degradation
+CS0599 - Decline, CS0599 - Decline
+CSO100 - External, CSO100 - External
+Customer, NULL
+Customer Satisfaction, NULL
+Customer Satisfaction, Customer Satisfaction
+Cut, Cut
+Cyber, NULL
+Cyber Security, Cyber Security
+Damage to Environment, Damage to Environment
+Damage to Property, Damage to Property
+Danger to Health, Danger to Health
+Darwin, Darwin
+D - Back Panel / Wheel (Right), NULL
+Decision, Decision
+Decline, Decline
+Decline, Decline
+Declined, Declined
+Deferred, Deferred
+Delivered, Delivered
+Demolition, Demolition
+Denied, Denied
+Denied, Denied
+Dermatitis, NULL
+Dermatitis, NULL
+Dermatologic agents, Dermatologic agents
+Design Considerations, NULL
+Design Effectiveness, Design Effectiveness
+Devonport, Devonport
+Digestive, Digestive
+Dining, Dining
+Directors Liability, Directors Liability
+Discomfort and Pain, Discomfort and Pain
+Dislocation, NULL
+Dislocation, NULL
+Dislocation, Dislocation
+Disruption, Disruption 
+Distraction / Pre occupation, NULL
+Doctor, Doctor
+Does not meet above criteria and No reason exists to apply a particular classification., Does not meet above criteria and No reason exists to apply a particular classification.
+Dr, Dr
+Dr, Dr
+Drowning /immersion, NULL
+Drowning /immersion, NULL
+Drugs, Drugs
+Drugs, Drugs
+Dry, Dry
+Dust, Dust
+Dust, Dust
+Ear, NULL
+Ear, NULL
+Ear, NULL
+Effective, Effective
+Effective, Effective
+Effective, Effective
+Effective, Effective
+EL0101 - Unauthorised Activity, EL0101 - Unauthorised Activity
+EL0102 - Internal Theft &amp; Fraud, EL0102 - Internal Theft &amp; Fraud
+EL0103 - System Security Internal– Wilful Damage, EL0103 - System Security Internal– Wilful Damage
+EL0201 - External Theft &amp; Fraud, EL0201 - External Theft &amp; Fraud
+EL0202 -  System Security External – Wilful Damage, EL0202 -  System Security External – Wilful Damage
+EL02 - External Fraud, EL02 - External Fraud
+EL0301 - Employee Relations, EL0301 - Employee Relations
+EL0302 - Safe Workplace Environment, EL0302 - Safe Workplace Environment
+EL0303 - Employment Diversity &amp; Discrimination, EL0303 - Employment Diversity &amp; Discrimination
+EL03 - Employee Practices and Workplace Safety, EL03 - Employee Practices and Workplace Safety
+EL0401 - Suitability Disclosure &amp; Fiduciary, EL0401 - Suitability Disclosure &amp; Fiduciary
+EL0402 - Improper Business or Market Practices, EL0402 - Improper Business or Market Practices
+EL0403 - Product Flaws, EL0403 - Product Flaws
+EL0404 - Selection Sponsorship &amp; Exposure, EL0404 - Selection Sponsorship &amp; Exposure
+EL0405 - Advisory Activities, EL0405 - Advisory Activities
+EL04 - Clients Products and Business Practices, EL04 - Clients Products and Business Practices
+EL0501 - Natural disasters &amp; Other Events, EL0501 - Natural disasters &amp; Other Events
+EL0502 - Accidents &amp; Public Safety, EL0502 - Accidents &amp; Public Safety
+EL0503 - Wilful Damage &amp; Terrorism, EL0503 - Wilful Damage &amp; Terrorism
+EL05 - Disasters and Public Safety, EL05 - Disasters and Public Safety
+EL0601 - Technology &amp; Infrastructure Failures, EL0601 - Technology &amp; Infrastructure Failures
+EL06 - Technology and Infrastructure, EL06 - Technology and Infrastructure
+EL0701 - Transaction Capture Execution &amp; Maintenance, EL0701 - Transaction Capture Execution &amp; Maintenance
+EL0702 - Monitoring &amp; Reporting, EL0702 - Monitoring &amp; Reporting
+EL0703 - Customer Intake &amp; Documentation, EL0703 - Customer Intake &amp; Documentation
+EL0704 - Customer or Client Account Mgt, EL0704 - Customer or Client Account Mgt
+EL07 - Execution Delivery and Process Management, EL07 - Execution Delivery and Process Management
+Elbow, NULL
+Elbow, NULL
+Electrical/radiation, Electrical/radiation
+electric shock, electric shock
+electric shock, electric shock
+electric shock, electric shock
+Electrocution, NULL
+Electrocution, NULL
+Electronic Gaming, Electronic Gaming
+Elimination, Elimination
+ELO1 - Internal Fraud, EL01 - Internal Fraud
+Email, Email
+Emergency Drill, Emergency Drill
+Employee, Employee
+Employee, Employee
+Employee, Employee
+Employee Health and Wellbeing, NULL
+Employee - Permanent, Employee - Permanent
+Employee Satisfaction, Employee Satisfaction
+Employers Mutual SA, Employers Mutual SA
+Employment Practices and Safety, Employment Practices and Safety
+End of Year Gift, End of Year Gift
+Engineering, Engineering
+Engulfment, Engulfment
+Enhance, Enhance
+Enterprise, Enterprise
+Enterprise Risk Management, Enterprise Risk Management
+Entrance, Entrance
+Environment, NULL
+Environment, Environment
+Environmental, NULL
+Environmental, NULL
+Environmental, NULL
+Environmental, Environmental
+Environmental, Environmental
+Environmental, Environmental
+Environmental, Environmental
+Environmental Agencies, NULL
+Environmental Agencies, NULL
+Environment factors (Heat or Cold), NULL
+Equipment, Equipment
+Equipment / Tools, NULL
+Equipment Integrity, NULL
+E - Rear Bumper, NULL
+Ergonomic, Ergonomic
+Escalate, Escalate
+Escape / Rescue Provisions, NULL
+Excellent, Excellent
+Execution,  Delivery or Process Failure
+Execution, Execution
+Expected, Expected - seen by peers
+Exploit and compromise, Exploit and compromise
+Exposure to ionising radiation, NULL
+Exposure to ionising radiation, NULL
+Exposure to mechanical vibration, NULL
+Exposure to mechanical vibration, NULL
+Exposure to mental stress factors, NULL
+Exposure to radiation (includes radiation based equipment), NULL
+Exposure to single sudden sound, NULL
+Exposure to single sudden sound, NULL
+Exposure to sound - Noise exposure, NULL
+Exposure to traumatic event, NULL
+Exposure to traumatic event, NULL
+Extended, Extended
+External Factors, External Factors
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme, Extreme
+Extreme - Death, Extreme - Death
+Extremely-low frequency, Extremely-low frequency
+Extreme temperatures, Extreme temperatures
+Extrinsic, Extrinsic
+Eye, NULL
+Eyes, NULL
+Eyes, NULL
+Face, NULL
+Face, NULL
+Face (including mouth and teeth), NULL
+Fail, Fail
+Fail, Fail
+Failure to follow documented procedure, Failure to follow documented procedure
+Failure to make a decision, Failure to make a decision
+Fall from a height, NULL
+Fall from a height, NULL
+Fall from a height, Fall from a height
+Fall from heights, NULL
+Fall from same level (including trips and slips), NULL
+Falling Objects, Falling Objects
+Fall on the same level, NULL
+Fall on the same level, NULL
+Fatigue, Fatigue
+Fatigue / stress, Fatigue / stress
+F - Back Panel / Wheel (Left), NULL
+Feet and Toes, NULL
+Female, Female
+Final, Final
+Finance, Finance
+Financial, NULL
+Financial, Financial
+Financial, Financial
+Financial Conduct Authority (FCA), NULL
+Financial Conduct Authority (FCA), NULL
+Financial Loss, Financial Loss
+Financial Services, Financial Services
+Financial Services, Financial Services
+Financial Stability, NULL
+Fingers, NULL
+Fingers, NULL
+Fire, Fire
+Fire, Fire
+Firewall, Firewall
+First, First
+First &amp; Final, First &amp; Final
+First Aid, First Aid
+First Aid Injury, First Aid Injury
+Fit for Pre-Injury Duties, Fit for Pre-Injury Duties
+Fit for Suitable Duties, Fit for Suitable Duties
+Fitness for Work, NULL
+Fixed plant, Fixed plant
+Flammable gas/liquid, Flammable gas/liquid
+Foreign body, NULL
+Foreign body, NULL
+Found, Found
+Fracture, NULL
+Fracture, NULL
+Fracture, Fracture
+Fraud, Fraud
+Fremantle, Fremantle
+Full Time, Full Time
+Fully Unfit, Fully Unfit
+Fumes, Fumes
+Fungi, Fungi
+FYI, FYI
+Gambling, Gambling
+Gaming Floor, Gaming Floor
+G - Doors (Left), NULL
+Gift Hamper, Gift Hamper
+Gift Voucher, Gift Voucher
+GIO NSW, GIO NSW
+Gladstone, Gladstone
+Gold Coast, Gold Coast
+Good, Good
+Groin, NULL
+Groin, NULL
+Ground condition, Ground condition
+Group, Group
+Guarding / Barriers, NULL
+Habitat Destruction, Habitat Destruction
+Hand, NULL
+Hand, NULL
+Hands and Fingers, NULL
+Hard Hat, NULL
+Hardware, NULL
+Harm to Assets, NULL
+Harm to Individuals, NULL
+Harm to Operations, NULL
+Harm to Other Organisations, NULL
+Hawkes Bay/ Gisborne, Hawkes Bay/ Gisborne
+Hawkes Bay / Gisborne, Hawkes Bay / Gisborne
+Hazard Analysis &amp; Management, NULL
+Hazard Awareness / Identification of Risk Controls, NULL
+Hazardous area, Hazardous area
+Hazardous Substance, Hazardous Substance
+Hazard recognition / Management Error, NULL
+Head (other than eye,  ear or face)
+Head other than eyes or face, NULL
+Head other than eyes or face, NULL
+Health and Safety, Health and Safety
+Hearing Loss, Hearing Loss
+Hearing Protection, NULL
+Heat/Radiation or Energy, Heat/Radiation or Energy
+Hernia, NULL
+Hernia, NULL
+Hernia, Hernia
+H - Front Panel  / Wheel (Left), NULL
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+High, High
+Highly Effective, Highly Effective
+High Risk, High Risk
+Hip, NULL
+Hip, NULL
+Hip,  Knees and Legs
+Hit by falling object, NULL
+Hit by falling object, NULL
+Hit by Moving Object, Hit by Moving Object
+Hit by person accidentally, NULL
+Hit by person accidentally, NULL
+Hitting moving object, NULL
+Hitting moving object, NULL
+Hitting something (Stationary Objects), NULL
+Hitting stationary object, NULL
+Hitting stationary object, NULL
+Hobart, Hobart
+Homewares, Homewares
+Hospital, Hospital
+Hotel, Hotel
+Housekeeping, Housekeeping
+Housekeeping/Workplace Conditions, NULL
+Human bodily matter, Human bodily matter
+Human error, Human error
+Human Resources, Human Resources
+Hydrocarbon, Hydrocarbon
+Hygiene, Hygiene
+ICT, ICT
+ICT, ICT
+Identifiable 3rd Party, Identifiable 3rd Party
+I - Hood and/or Windshield, NULL
+Immediate treatment as an in-patient in a hospital, Immediate treatment as an in-patient in a hospital
+Immediate treatment as an in-patient in a hospital, Immediate treatment as an in-patient in a hospital
+Immediate treatment as an in-patient in the hospital, Immediate treatment as an in-patient in the hospital
+Immediate treatment for a serious burn, Immediate treatment for a serious burn
+Immediate treatment for a serious burn, Immediate treatment for a serious burn
+Immediate treatment for a serious eye injury, Immediate treatment for a serious eye injury
+Immediate treatment for a serious eye injury, Immediate treatment for a serious eye injury
+Immediate treatment for a serious head injury, Immediate treatment for a serious head injury
+Immediate treatment for a serious head injury, Immediate treatment for a serious head injury
+Immediate treatment for a spinal injury, Immediate treatment for a spinal injury
+Immediate treatment for a spinal injury, Immediate treatment for a spinal injury
+Immediate treatment for serious lacerations, Immediate treatment for serious lacerations
+Immediate treatment for serious lacerations, Immediate treatment for serious lacerations
+Immediate treatment for serious lacerations, Immediate treatment for serious lacerations
+Immediate treatment for the amputation of any part of the body, Immediate treatment for the amputation of any part of the body
+Immediate treatment for the amputation of any part of the body, Immediate treatment for the amputation of any part of the body
+Immediate treatment for the loss of a bodily function, Immediate treatment for the loss of a bodily function
+Immediate treatment for the loss of a bodily function, Immediate treatment for the loss of a bodily function
+Immediate treatment for the loss of a bodily function, Immediate treatment for the loss of a bodily function
+Immediate treatment for the separation of skin from an underlying tissue (such as degloving or scalping), Immediate treatment for the separation of skin from an underlying tissue (such as degloving or scalping)
+Immediate treatment for the separation of skin from an underlying tissue (such as degloving or scalping), Immediate treatment for the separation of skin from an underlying tissue (such as degloving or scalping)
+Immune agents, Immune agents
+Impact, NULL
+Incident, Incident
+Incident / Hazard, Incident / Hazard
+Incompatible Goals, NULL
+Incorrect or inadequate disclosure, Incorrect or inadequate disclosure
+Individual, NULL
+Individual, Individual
+Industrial deafness, NULL
+Industrial deafness, NULL
+Information Security, NULL
+Information Technology, Information Technology
+Infrared, Infrared
+Initial Estimation Confirmed, Initial Estimation Confirmed
+Injury, NULL
+Injury, Injury
+Injury/Illness, NULL
+Injury or Illness, Injury or Illness
+Injury or Illness to People, Injury or Illness to People
+Injury to nerves, NULL
+Injury to nerves, NULL
+Innovation, NULL
+In Progress, In Progress
+Insect bite or sting, NULL
+Insect bite or sting, NULL
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant
+Insignificant, Insignificant - Injuries or ailments not requiring medical treatment.
+Insignificant, Insignificant - Injuries or ailments not requiring medical treatment.
+Insignificant, Insignificant - Injuries or ailments not requiring medical treatment.
+Insignificant - No Lost Time, Insignificant - No Lost Time
+Inspection, Inspection
+Insurance, Insurance
+Internal Audit, Internal Audit
+Internal Notification, Internal Notification
+Internal organs, NULL
+Internal organs, NULL
+International Locations, International Locations
+Intrinsic, Intrinsic
+Investment Purpose - NZD FX over $50, 000
+J - Roof, NULL
+Karratha, Karrath
+Keep injured area clean and dry, Keep injured area clean and dry
+Knee, NULL
+Knee, NULL
+K - Rear Window, NULL
+Labour Hire, Labour Hire
+Laceration, NULL
+Laceration, NULL
+Laptop, Laptop
+Large, Large
+Large, Large (>250m assets)
+Launceston, Launceston
+Leg, NULL
+Leg, NULL
+Legal, Legal
+Lending, Lending
+Lifting and handling, NULL
+Lifting and handling, NULL
+Light, Light
+Lighting, Lighting
+Likelihood, NULL
+Limited, Limited
+Liquidity, NULL
+Liquidity, Liquidity
+Liquidity, Liquidity
+Liquidity, Liquidity
+Listed Security (e.g. Equity,  Bond
+Load Restraint, Load Restraint
+Location, Location
+Location 1, Location 1
+Location 2, Location 2
+Location 3, Location 3
+Locations, NULL
+London, London
+Long term contact with chemical, NULL
+Long term contact with chemical, NULL
+Long term exposure to sound P, NULL
+Long term exposure to sound P, NULL
+Loss of Body Part, Loss of Body Part
+Lost, Lost
+Lost Time Injury, Lost Time Injury
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low, Low
+Low Frequency, Low Frequency
+Low Risk, Low Risk
+Machinery and Fixed Plant, NULL
+Machinery and Fixed Plant, NULL
+Maintain a presence or set of capabilities, Maintain a presence or set of capabilities
+Maintenance Management, NULL
+Maintenance Services, Maintenance Services
+Maintenance Services, Maintenance Services
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major
+Major, Major - Life threatening injury or multiple serious injuries causing hospitalisation.
+Major, Major - Life threatening injury or multiple serious injuries causing hospitalisation.
+Major, Major - Life threatening injury or multiple serious injuries causing hospitalisation.
+Major - Lost Time Several Weeks or More, Major - Lost Time Several Weeks or More
+Male, Male
+Malicious capabilities, Malicious capabilities
+Mandatory, Mandatory
+Mandurah, Mandurah
+Manual, Manual
+Manual handling, Manual handling
+Manual Handling, Manual Handling
+Manual Handling, Manual Handling
+Many, Many
+Market, Market
+Marketing Material, Marketing Material
+Materials and Substances, NULL
+Materials and Substances, NULL
+Medical practitioner, NULL
+Medical Treatment Injury, Medical Treatment Injury
+Medical treatment within 48 hours of exposure to a substance, Medical treatment within 48 hours of exposure to a substance
+Medical treatment within 48 hours of exposure to a substance, Medical treatment within 48 hours of exposure to a substance
+Medical treatment within 48 hours of exposure to a substance, Medical treatment within 48 hours of exposure to a substance
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium, Medium
+Medium Risk, Medium Risk
+Medlium, Medium
+Meeting, Meeting
+Melbourne, Melbourne
+Member of Public, Member of Public
+Member of the Board, NULL
+Member of the Public, Member of the Public
+Mental illness, Mental illness
+Mental stress, NULL
+Mental stress, NULL
+Mildura, Mildura
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor
+Minor, Minor - Minor injury or First Aid Treatment Case.
+Minor, Minor - Minor injury or First Aid Treatment Case.
+Minor, Minor - Minor injury or First Aid Treatment Case.
+Minor Issue, Minor Issue
+Minor Issues, Minor Issues
+Minor - Lost Time 1 Shift or Less, Minor - Lost Time 1 Shift or Less
+Misconceived or vexatious complaint, Misconceived or vexatious complaint
+Miss, Miss
+Mobile Plant/Equipment, Mobile Plant/Equipment
+Mobile Plant and Transport, NULL
+Mobile Plant and Transport, NULL
+Modem, Modem
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate
+Moderate, Moderate - Serious injury causing hospitalisation or multiple medical treatment cases.
+Moderate, Moderate - Serious injury causing hospitalisation or multiple medical treatment cases.
+Moderate, Moderate - Serious injury causing hospitalisation or multiple medical treatment cases.
+Moderate - Lost Time of 2 - 5 Working Days, Moderate - Lost Time of 2 - 5 Working Days
+Monitor, Monitor
+Monitor, Monitor
+Monthly, Monthly
+Motor Vehicle Accident, Motor Vehicle Accident
+Motor Vehicle Incident, NULL
+Mount Gambier, Mount Gambier
+Mr, Mr
+Mr, Mr
+Mrs, Mrs
+Mrs, Mrs
+Ms, Ms
+Ms, Ms
+Multiple, Multiple
+Multiple Injuries, Multiple Injuries
+Multiple Locations, NULL
+Muscular, Muscular
+Muscular stress (non-repetitive), NULL
+Muscular stress (repetitive movement with low muscle loading), NULL
+Muscular stress no object handles, NULL
+Muscular stress no object handles, NULL
+MVA (no injury), MVA (no injury)
+MVA (with injury), MVA (with injury)
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, NULL
+N/A, N/A
+N/A, N/A
+Nation States, NULL
+Nausea, NULL
+Nausea, NULL
+Near Miss, Near Miss
+Near Miss, Near Miss
+Near Miss Incident, NULL
+Neck, NULL
+Neck, NULL
+Neck , NULL
+Nelson/ Marlbourough/ West Coast, Nelson/ Marlbourough/ West Coast
+Nelson / Marlbourough  / West Coast, Nelson / Marlbourough  / West Coast
+Networking, Networking
+Neurotoxins, Neurotoxins
+Newcastle, Newcastle
+New Organsiational structure / New Entities, NULL
+News, News
+New York, New York
+NEW ZEALAND, NULL
+NEW ZEALAND, NULL
+NEW ZEALAND, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, NULL
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No
+No, No - existing risk
+No, Not Accepted
+No Action, No Action
+Noise, Noise
+Noise, Noise
+Noise, Noise
+Non-adversarial, Non-adversarial
+Non-adversarial, Non-adversarial
+Non-Compliance, Non-Compliance
+Non Compliant, Non Compliant
+Non-Compliant, Non-Compliant
+Non-Compliant, Non-Compliant
+Non Critical, Non Critical
+None, None
+Non-Investment Purpose - NZD FX over $50, 000
+Normal, Normal
+Nose, NULL
+Nose, NULL
+Not applicable, Not applicable 
+Not Applicable, Not Applicable
+Not Applicable, Not Applicable
+Not Applicable, Not Applicable
+Not Applicable, Not Applicable
+Not Applicable, Not Applicable
+Not Applicable, Not Applicable
+Not Effective, Not Effective
+Not Effective, Not Effective
+Not Effective, Not Effective
+Not Effective, Not Effective
+Not fit for work, Not fit for work
+Not Insured, Not Insured
+No Treatment Required, No Treatment Required
+Not Work Related, Not Work Related
+Not Yet Determined, Not Yet Determined
+NSW, NULL
+NSW, NULL
+NSW, NULL
+NSW, NSW
+NT, NULL
+NT, NULL
+NT, NULL
+NT, NT
+NZX Equity Only, NZX Equity Only
+Offered, Offered
+Offshore Data (Outside NZ &amp; Australia), NULL
+One, One
+On Hold, On Hold
+On time delivery, NULL
+Open, Open
+Open, Open
+Operating Effectiveness, Operating Effectiveness
+Operational, NULL
+Operational, Operational
+Operations, Operations
+Opportunity, Opportunity
+Orange, Orange
+Otago Southland, Otago Southland
+Otago Southland, Otago Southland
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, NULL
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other
+Other, Other 
+Other Community Fallout, Other Community Fallout
+Other or unspecified, NULL
+Other or unspecified, NULL
+Our Driver, Our Driver
+Outsourcing, Outsourcing
+Over, Over
+Override: Full Approach, Override: Full Approach
+Override: Lite Approach, Override: Lite Approach
+Override: No Significant Implications, Override: No Significant Implications
+P1, P1
+P2, P2
+P3, P3
+Palmerston, Palmerston
+Panel, NULL
+Partial, Partial
+Partially Effective, Partially Effective
+Partially Effective, Partially Effective
+Partially Effective, Partially Effective
+Partially Effective, Partially Effective
+Partnership, Partnership
+Partnership, Partnership
+Part Time, Part Time
+Pass, Pass
+Pass, Pass
+Pathogenic micro-organisms, Pathogenic micro-organisms
+Payments, Payments
+PC0100 - Develop Design and Maintain Products or Services, PC0100 - Develop Design and Maintain Products or Services
+PC0101 - Market Analysis or Research, PC0101 - Market Analysis or Research
+PC0102 - Product Development, PC0102 - Product Development
+PC0103 - Reference Data Management, PC0103 - Reference Data Management
+PC0200 - Markets Products and Services, PC0200 - Markets Products and Services
+PC0201 - Research and Marketing, PC0201 - Research and Marketing
+PC0202 - Publishing Price Quotes, PC0202 - Publishing Price Quotes
+PC0203 - Marketing Other, PC0203 - Marketing Other
+PC0300 - Sell or Reach Agreement to Conduct Specific Business, PC0300 - Sell or Reach Agreement to Conduct Specific Business
+PC0301 - Advisory or Pitch or Pre-Sales, PC0301 - Advisory or Pitch or Pre-Sales
+PC0302 - Pricing &amp; Quotation, PC0302 - Pricing &amp; Quotation
+PC0303 - Transaction or Limit Check, PC0303 - Transaction or Limit Check
+PC0304 - Reach Agreement or Receipt of Order, PC0304 - Reach Agreement or Receipt of Order
+PC0400 - Take on and Maintain Counterparties, PC0400 - Take on and Maintain Counterparties
+PC0401 - New Client Account, PC0401 - New Client Account
+PC0402 - Customer Relationship Management or Client Services, PC0402 - Customer Relationship Management or Client Services
+PC0403 - Client due Diligence, PC0403 - Client due Diligence
+PC0404 - Loan Defaults, PC0404 - Loan Defaults
+PC0500 - Capture and Document Transactions, PC0500 - Capture and Document Transactions
+PC0600 - Deliver Products or Services, PC0600 - Deliver Products or Services
+PC0700 - Perform Settlements and Closing Activities, PC0700 - Perform Settlements and Closing Activities
+PC0800 - Perform Transaction Accounting, PC0800 - Perform Transaction Accounting
+PC0900 - Manage Human Resources, PC0900 - Manage Human Resources
+PC1000 - Manage Information Technology, PC1000 - Manage Information Technology
+PC1100 - Manage Financial Reporting &amp; Taxation, PC1100 - Manage Financial Reporting &amp; Taxation
+PC1200 - Manage Capital Funding &amp; Liquidity, PC1200 - Manage Capital Funding &amp; Liquidity
+PC1300 - Manage Suppliers and Outsourcing Service Suppliers, PC1300 - Manage Suppliers and Outsourcing Service Suppliers
+PC1400 - Manage Physical Assets and Facilities, PC1400 - Manage Physical Assets and Facilities
+PC1500 - Manage Compliance Legal Governance and Audit, PC1500 - Manage Compliance Legal Governance and Audit
+PC1600 - Manage Risk Systems, PC1600 - Manage Risk Systems
+PC9900 - Not Process Related, PC9900 - Not Process Related
+PD0101 - Equity Issuance, PD0101 - Equity Issuance
+PD0102 - Bond Issuance, PD0102 - Bond Issuance
+PD0103 - Structured Product Issuance, PD0103 - Structured Product Issuance
+PD0104 - Securitisations, PD0104 - Securitisations
+PD0105 - Private Placements, PD0105 - Private Placements
+PD0106 - Syndications, PD0106 - Syndications
+PD0200 - Corporate Finance Services, PD0200 - Corporate Finance Services
+PD0201 - Mergers and Acquisitions, PD0201 - Mergers and Acquisitions
+PD0202 - Corporate Advisory Services, PD0202 - Corporate Advisory Services
+PD0300 - Derivatives and Securities, PD0300 - Derivatives and Securities
+PD0301 - FIxed Income, PD0301 - Fixed Income
+PD0302 - Equities, PD0302 - Equities
+PD0303 - Commodities, PD0303 - Commodities
+PD0304 - FX and Money Markets, PD0304 - FX and Money Markets
+PD0305 - Repos and Securities Lending, PD0305 - Repos and Securities Lending
+PD0306 - Investment Funds, PD0306 - Investment Funds
+PD0307 - Interest Rate Derivatives, PD0307 - Interest Rate Derivatives
+PD0308 - Credit Derivatives, PD0308 - Credit Derivatives
+PD0309 - FX Derivatives, PD0309 - FX Derivatives
+PD0310 - Equity Derivatives, PD0310 - Equity Derivatives
+PD0311 - Commodity Derivatives, PD0311 - Commodity Derivatives
+PD0312 - Other Derivatives, PD0312 - Other Derivatives
+PD0400 - Retail Credit, PD0400 - Retail Credit
+PD0401 - Retail Cards, PD0401 - Retail Cards
+PD0402 - Vehicle Loans, PD0402 - Vehicle Loans
+PD0403 - Vehicle Leasing, PD0403 - Vehicle Leasing
+PD0404 - Student Loans, PD0404 - Student Loans
+PD0405 - Mortgages, PD0405 - Mortgages
+PD0406 - Home Equity and Lines of Credit, PD0406 - Home Equity and Lines of Credit
+PD0407 - Other Secured Consumer Loans, PD0407 - Other Secured Consumer Loans
+PD0408 - Other Unsecured Consumer Loans, PD0408 - Other Unsecured Consumer Loans
+PD0409 - Other Consumer Leasing, PD0409 - Other Consumer Leasing
+PD0410 - Personal Standby Letters of Credit or Guarantees, PD0410 - Personal Standby Letters of Credit or Guarantees
+PD0500 - Commercial Credit, PD0500 - Commercial Credit
+PD0600 - Deposits, PD0600 - Deposits
+PD0700 - Cash Management,  Payments and Settlements
+PD0800 - Trust / Investment Management, PD0800 - Trust / Investment Management
+PD0900 - Investment Products, PD0900 - Investment Products
+PD1000 - Brokerage, PD1000 - Brokerage
+PDO100 - Capital Raising, PD0100 - Capital Raising
+Pending, Pending
+Pending , Pending
+Perceived, Perceived
+Perform reconnaissance and gather information, Perform reconnaissance and gather information
+Permanently Modified Duties, Permanently Modified Duties
+Personal Error or Violation, NULL
+Personal Security, NULL
+Perth, Perth
+Pest Management, Pest Management
+Phone, Phone
+Physical, Physical
+Plant/Machinery, Plant/Machinery
+Plant or equipment, Plant or equipment
+Pneumoconiotic agents, Pneumoconiotic agents
+Poisoning or toxic effect, NULL
+Poisoning or toxic effect, NULL
+Pollutant (other than hydrocarbon), Pollutant (other than hydrocarbon)
+Poor, Poor
+Poor, Poor
+Poor body positioning, Poor body positioning
+Port Augusta, Port Augusta
+Possible, Possible - described by credible source
+Possible Financial Harm, NULL
+Post, Post
+Potential, Potential
+Powered Equipment,  Tools and Appliances
+Powered Equipment,  Tools and Appliances
+PPE, NULL
+PPE, PPE
+Predicted, Predicted - predicted by trusted source
+Premises Security, NULL
+Pressurised fluids or gases, NULL
+Pressurised fluids or gases, NULL
+Printer, Printer
+Privacy, Privacy
+Private, Private
+Procedure / Work Method Compliance, NULL
+Procedures, NULL
+Product, Product
+Professional Indemnity, NULL
+Professional Indemnity, Professional Indemnity
+Professional Services, Professional Services
+Professional Services, Professional Services
+Profit, NULL
+Progress, Progress
+Project Specific, Project Specific
+Property, Property
+Property, Property
+Property loss or Damage, Property loss or Damage
+Property or Equipment Damage, NULL
+Property Services, Property Services
+Property Services, Property Services
+Prudential Regulation Authority (PRA), NULL
+Prudential Regulation Authority (PRA), NULL
+Psychological, Psychological
+Psychological, Psychological
+Public, Public
+Publically Accessible / Facing, NULL
+Public Liability, NULL
+Puncture, Puncture
+Pyrophoric substances, NULL
+Pyrophoric substances, NULL
+QLD, NULL
+QLD, NULL
+QLD, NULL
+QLD, QLD
+Qualitative, Qualitative
+Quality, NULL
+Quality, NULL
+Quantitative, Quantitative
+Quarterly, Quarterly
+Radio Emissions, Radio Emissions
+Received, Received
+Reclaimed, Reclaimed
+Recovery Partners, Recovery Partners
+Regulation, Regulation
+Regulatory, NULL
+Regulatory, Regulatory
+Regulatory Notice, Regulatory Notice
+Rehabilitation, Rehabilitation
+Rejected, Rejected
+Relationship Management, Relationship Management
+Renewed, Renewed
+Re-open, Re-open
+Repetitive movement, Repetitive movement
+Repetitive Tasks, Repetitive Tasks
+Reproductive toxins, Reproductive toxins
+Reputation, NULL
+Reputation, NULL
+Reputation, Reputation
+Reputation, Reputation
+Reputation, Reputation
+Reputational, NULL
+Resident, Resident
+Resilience (BCP/DR), NULL
+Resources, NULL
+Resources, Resources
+Respiratory, Respiratory
+Respiratory irritation, NULL
+Respiratory irritation, NULL
+Responsible Gambling, Responsible Gambling
+Restricted Work Injury, Restricted Work Injury
+Return to work, Return to work
+Return to work but further treatment required, Return to work but further treatment required
+Return to work with restrictions, Return to work with restrictions
+Revenue, Revenue
+Risk, Risk
+Risk, Risk
+Risk Assessment, Risk Assessment
+SA, NULL
+SA, NULL
+SA, NULL
+SA, SA
+Safety, Safety
+Safety Glasses, NULL
+Safety Gloves, NULL
+Safety Shoes, NULL
+Salary, Salary
+Sales, Sales
+Satisfactory, Satisfactory
+Satisfactory, Satisfactory
+Satisfactory, Satisfactory
+Schedule, NULL
+Schedule, NULL
+Schedule, Schedule
+Scope, Scope
+Self, Self
+Sell, Sell
+Semi Annually, Semi Annually
+Senior executive responsibility for carrying out management of the business activities, NULL
+Senior executive responsibility for management of the ADIs financial resources, NULL
+Senior executive responsibility for management of the ADIs operations, NULL
+Senior executive responsibility for management of the AML-CTF function, NULL
+Senior executive responsibility for management of the compliance function, NULL
+Senior executive responsibility for management of the human resources function, NULL
+Senior executive responsibility for management of the internal audit function, NULL
+Senior executive responsibilty for overall risk controls and or overall risk management arrangements, NULL
+Senior executive responsiblity for information management,  including information technology systems
+Sensitisers, Sensitisers
+Separation of skin from an underlying tissue (such as deglloving or scalping), Separation of skin from an underlying tissue (such as deglloving or scalping)
+Server, Server
+Services, Services
+Severe, Severe
+Share / Transfer, Share / Transfer
+Short term contact with chemical, NULL
+Short term contact with chemical, NULL
+Shortwave, Shortwave
+Shoulder, NULL
+Shoulder, NULL
+Shoulders and Arms, NULL
+Significant - Lost Time &gt; 1 Week, Significant - Lost Time > 1 Week
+Significant Weather event, Significant Weather event
+Simple, Simple
+Site Water / Run-off, Site Water / Run-off
+Situational Awareness, NULL
+Skin, Skin
+Skin irritation, NULL
+Skin irritation, NULL
+Slide or cave in, NULL
+Slide or cave in, NULL
+Slip and Trip, Slip and Trip
+Slip Trip or Fall, Slip Trip or Fall
+Small, Small
+Small, Small (<250m assets)
+SME Assertion, SME Assertion
+Social Media, Social Media
+Software, NULL
+Soil and plant materials, Soil and plant materials
+Sole Trader, Sole Trader
+Sole Trader, Sole Trader
+Sound Pressure, Sound Pressure
+Spill,  Emission or uncontrolled discharge
+Spores, Spores
+Sports event, Sports event
+Sprain, Sprain
+Sprain,  strain
+Sprain,  strain
+Staff, Staff 
+Standard, Standard
+Storage, Storage
+Strain, Strain
+Stress, NULL
+Stress, NULL
+Structural, NULL
+Substance abuse, Substance abuse
+Substitution, Substitution
+Suitably qualified person as described in Section 41 Guidelines for Rehabilitation Authorities 2012, NULL
+Sunlight, Sunlight
+Superficial, Superficial
+Supervision, NULL
+Supervisory Error or Violation, NULL
+Switch, Switch
+Sydney, Sydney
+Systemic toxins, Systemic toxins
+Tai Tokerau, Tai Tokerau
+Tai Tokerau, Tai Tokerau
+Taranaki/ Wanganui/ Manawatu, Taranaki/ Wanganui/ Manawatu
+Taranaki / Whanganui / Manawatu, Taranaki / Whanganui / Manawatu
+TAS, NULL
+TAS, NULL
+TAS, NULL
+TAS, TAS
+Task Familiarity, NULL
+Task Planning, NULL
+Tear, Tear
+Technology, NULL
+Technology, Technology
+Temperature, Temperature
+Terminated, Terminated
+the collapse,  overturning
+the collapse,  overturning
+the collapse,  overturning
+the collapse or failure of an excavation or of any shoring supporting an excavation, the collapse or failure of an excavation or of any shoring supporting an excavation
+the collapse or failure of an excavation or of any shoring supporting an excavation, the collapse or failure of an excavation or of any shoring supporting an excavation
+the collapse or failure of an excavation or of any shoring supporting an excavation, the collapse or failure of an excavation or of any shoring supporting an excavation
+the collapse or partial collapse of a structure, the collapse or partial collapse of a structure
+the collapse or partial collapse of a structure, the collapse or partial collapse of a structure
+the collapse or partial collapse of a structure, the collapse or partial collapse of a structure
+the fall or release from a height of any plant,  substance or thing
+the fall or release from a height of any plant,  substance or thing
+the fall or release from a height of any plant,  substance or thing
+the inrush of water,  mud or gas in workings
+the inrush of water,  mud or gas in workings
+the inrush of water,  mud or gas in workings
+the interruption of the main system of ventilation in an underground excavation or tunnel, the interruption of the main system of ventilation in an underground excavation or tunnel
+the interruption of the main system of ventilation in an underground excavation or tunnel, the interruption of the main system of ventilation in an underground excavation or tunnel
+the interruption of the main system of ventilation in an underground excavation or tunnel, the interruption of the main system of ventilation in an underground excavation or tunnel
+Third Party, Third Party
+Threat, Threat
+Tier 1, Tier 1
+Tier 2, Tier 2
+Tier 3, Tier 3
+Time / Productivity Pressures, NULL
+Tolerance of Violations, NULL
+Tolerate, Tolerate
+Tools / Material Availability, NULL
+Toxins (from biological sources), Toxins (from biological sources)
+Training, NULL
+Training/Conference, Training/Conference
+Transport, Transport
+Trapped between stationary object, NULL
+Trapped between stationary object, NULL
+Trapped by moving machinery, NULL
+Trapped by moving machinery, NULL
+Treasury, Treasury
+Treasury, Treasury
+Treat, Treat
+Tri-annual, Tri-annual
+Tri-annual, Tri-annual
+Trivial, Trivial
+Trunk (other than back), NULL
+Trust, Trust
+Trust, Trust
+Tumour, Tumour
+Type 1, Type 1
+Type 2, Type 2
+Ultraviolet, Ultraviolet
+Unable to Continue, Unable to Continue
+Unapproved waste management, Unapproved waste management
+Unauthorised interference/disruption, Unauthorised interference/disruption
+Unauthorised land use, Unauthorised land use
+Uncomfortable workstation height, Uncomfortable workstation height
+Unconfirmed, Unconfirmed
+Uncontrolled, Uncontrolled
+Under, Under
+Unidentifiable 3rd Party, Unidentifiable 3rd Party
+Unknown, Unknown
+Unknown, Unknown
+Unknown, Unknown
+Unknown, Unknown
+Unpowered Tools,  Appliances
+Unpowered Tools,  Appliances
+Unsatisfactory, Unsatisfactory
+Unsatisfactory, Unsatisfactory
+Unsatisfactory, Unsatisfactory
+Unspecified, NULL
+Unspecified, NULL
+Unspecified Agencies, NULL
+Unspecified Agencies, NULL
+Unspecified Mechanisms, NULL
+Unspecified Mechanisms, NULL
+UPS, UPS
+Value for money, NULL
+Vehicle accident, NULL
+Vehicle accident, NULL
+Vehicle accident, NULL
+Venue, Venue
+Very Good, Very Good
+Very High Risk, Very High Risk
+Very low, Very low
+Very Low Risk, Very Low Risk
+Vibration, Vibration
+Vibration, Vibration
+Vibration (E.G. Use of Power Tools), NULL
+VIC, NULL
+VIC, NULL
+VIC, NULL
+VIC, VIC
+Violence, Violence
+Violence, Violence
+Violence/Threats, Violence/Threats
+Violence or aggressive behaviour by other., NULL
+Viruses, Viruses
+Visible light, Visible light
+Vision Loss, Vision Loss
+Visitor, Visitor
+Visitor, Visitor
+Visitor, Visitor
+Visitor or Member of Public, Visitor or Member of Public
+Volunteer, Volunteer
+Volunteer, Volunteer 
+WA, NULL
+WA, NULL
+WA, NULL
+WA, WA
+Wages, Wages
+Waikato, Waikato
+Waikato, Waikato
+Warning or Safety Systems, NULL
+Weather, NULL
+Weather Event, Weather Event
+Wellington, Wellington
+Wellington, Wellington
+Wet, Wet
+WHS, NULL
+WHS, WHS
+WHS Risks Register, WHS Risks Register
+WIFI, WIFI
+Wodonga, Wodonga
+Wollongong, Wollongong
+Work / life conflict, Work / life conflict
+Work change, Work change
+Workcover, Workcover
+WorkCover QLD, WorkCover QLD
+Workers Compensation, NULL
+Workers Compensation, Workers Compensation
+Working alone, Working alone
+Work Method, NULL
+Workplace/job/task design, Workplace/job/task design
+Workplace Stress, Workplace Stress
+Work Related, Work Related
+Workstation, Workstation
+Wrest Point, Wrest Point
+Wrist, NULL
+XChanging VIC, XChanging Vic
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, NULL
+Yes, Accepted
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes
+Yes, Yes 
+Yes, Yes - new risk
+Yes, Yes - Please complete the injury details section
+Yes - (If Yes ensure that you add your email address on this form), NULL

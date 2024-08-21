@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 12)
+Year(order_datetime), Quarter(order_datetime), QuarterOfYear(order_datetime), SecondOfMinute(order_datetime), Hour(order_time), Minute(order_time), HourOfDay(order_time), MinuteOfHour(order_time), Month(order_date), MonthOfYear(order_date), DayOfMonth(order_date), employee_id
+2002, 2002 1st, 1st, 59, NULL, NULL, NULL, NULL, 2002 2月, 2月, 1, 3
+2002, 2002 1st, 1st, 59, 11, 11:59, 11, 59, 2002 2月, 2月, 1, 7
+2003, 2003 1st, 1st, 15, 02, 02:10, 2, 10, 2003 2月, 2月, 3, 1
+2003, 2003 1st, 1st, 15, 04, 04:25, 4, 25, 2003 2月, 2月, 1, 1
+2004, 2004 1st, 1st, 1, 01, 01:01, 1, 1, 2004 2月, 2月, 1, 3
+2005, 2005 1st, 1st, 1, 09, 09:01, 9, 1, 2005 2月, 2月, 1, 3
+2005, 2005 1st, 1st, 13, 10, 10:22, 10, 22, 2005 2月, 2月, 3, 2
+2005, 2005 1st, 1st, 45, 09, 09:15, 9, 15, 2005 2月, 2月, 2, 4

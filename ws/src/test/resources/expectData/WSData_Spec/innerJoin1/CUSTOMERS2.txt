@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 3)
+REGION_ID, RESELLER, CITY
+1, false, Newark
+1, true, York
+2, false, Seattle
+2, true, Tucson

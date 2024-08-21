@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 4)
+ORDERDATE, CITY, COMPANY, f_date
+NULL, Akergen, Ernst Handel, NULL
+NULL, Los Angles, Specialty Retail, NULL
+NULL, San Francisco, Quick Stop, NULL

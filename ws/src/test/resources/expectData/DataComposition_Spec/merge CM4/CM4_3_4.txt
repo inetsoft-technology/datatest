@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 2)
+STATE, CUSTOMER_ID
+CA, 9
+CA, 13
+CA, 16
+CA, 21
+CO, 4
+MD, 5

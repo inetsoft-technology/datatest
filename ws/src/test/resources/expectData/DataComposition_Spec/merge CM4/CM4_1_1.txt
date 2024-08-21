@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 9)
+customer_id), discount(, CUSTOMER_ID, COMPANY_NAME, CITY, STATE, REGION_ID, sql_exp1, sql_exp2
+2, 0.25, 2, Daycare One, Middletown, NJ, 1, Middletown@@, 2.5
+22, 0.2, 22, Big Ed's BBQ, Houston, TX, 2, Houston@@, 2
+29, 0.25, 29, Northwest Outfitters, Olympia, WA, 2, Olympia@@, 2.5

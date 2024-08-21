@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+Consequence Label, Consequence Value, Consequence Axis
+Extreme, 5, 5 - Extreme
+Insignificant, 1, 1 - Insignificant
+Major, 4, 4 - Major
+Minor, 2, 2 - Minor
+Moderate, 3, 3 - Moderate

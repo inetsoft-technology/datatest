@@ -1,0 +1,27 @@
+The table size(row x col) is:(26 x 5)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME, js
+11, 11, Michael, Kumar, 10
+12, 12, George, Kloss, 10
+13, 13, Jean, Crowther, 10
+14, 14, Horst, Braunschwad, 10
+15, 15, Paula, Camino, 10
+16, 16, Giovanni, Feuter, 10
+17, 17, Marie, Castro, 10
+18, 18, Roland, Sommer, 10
+19, 19, Eduardo, Freyre, 10
+20, 20, Janine, Lebithal, 10
+21, 21, William, Alen, 10
+22, 22, Nick, Pantaliano, 10
+23, 23, Jason, Gray, 10
+24, 24, Gary, Parket, 10
+25, 25, Howard, Ledes, 10
+26, 26, Chris, Gonzalez, 10
+27, 27, Jill, Oshinsky, 10
+28, 28, Nicole, Bartles, 10
+29, 29, Adam, Curtiss, 10
+30, 30, Bill, Wallace, 10
+31, 31, Amy, Gillette, 10
+32, 32, Gilbert, Francone, 10
+33, 33, Michael, Lewis, 10
+34, 34, Fran, Dreckle, 10
+35, 35, Pat, Kline, 10

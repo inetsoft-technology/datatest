@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 7)
+CITY, CUSTOMER_ID, STATE, CITY_1, CONTACT, STATE_1, SUPPLIER_ID
+New York, 51, NY, New York, Avis Pons, NY, 2
+New York, 51, NY, Rye, Clinton Orsi, NY, 7
+Plainfield, 35, NJ, Edison, Cody Chynoweth, NJ, 4
+Plainfield, 35, NJ, Morristown, Jerri Govea, NJ, 8

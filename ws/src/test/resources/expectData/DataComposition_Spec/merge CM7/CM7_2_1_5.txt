@@ -1,0 +1,152 @@
+The table size(row x col) is:(151 x 2)
+CATEGORY_ID, DESCRIPTION
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, NULL
+1, Chess game
+1, Chess game
+1, Chess game
+1, Chess game
+1, Chess game
+1, Chess game
+1, Chinese Go game
+1, Chinese Go game
+1, Chinese Go game
+1, Chinese Go game
+1, Chinese Go game
+1, Chinese Go game
+1, Girl"s game
+1, Girl"s game
+1, Girl"s game
+1, Girl"s game
+1, Girl"s game
+1, Girl"s game
+1, Java game toolkit
+1, Java game toolkit
+1, Java game toolkit
+1, Java game toolkit
+1, Java game toolkit
+1, Java game toolkit
+2, Educational software
+2, Educational software
+2, Educational software
+2, Educational software
+2, Educational software
+2, Educational software
+2, Learn ABC
+2, Learn ABC
+2, Learn ABC
+2, Learn ABC
+2, Learn ABC
+2, Learn ABC
+2, Math tutor
+2, Math tutor
+2, Math tutor
+2, Math tutor
+2, Math tutor
+2, Math tutor
+3, NULL
+3, NULL
+3, NULL
+3, NULL
+3, NULL
+3, NULL
+3, Application server
+3, Application server
+3, Application server
+3, Application server
+3, Application server
+3, Application server
+3, Database browser
+3, Database browser
+3, Database browser
+3, Database browser
+3, Database browser
+3, Database browser
+4, House hunting assistant
+4, House hunting assistant
+4, House hunting assistant
+4, House hunting assistant
+4, House hunting assistant
+4, House hunting assistant
+4, Palm power sync
+4, Palm power sync
+4, Palm power sync
+4, Palm power sync
+4, Palm power sync
+4, Palm power sync
+4, Personal health monitor
+4, Personal health monitor
+4, Personal health monitor
+4, Personal health monitor
+4, Personal health monitor
+4, Personal health monitor
+5, Collection of menus
+5, Collection of menus
+5, Collection of menus
+5, Collection of menus
+5, Collection of menus
+5, Collection of menus
+5, Over 10,000 icons
+5, Over 10,000 icons
+5, Over 10,000 icons
+5, Over 10,000 icons
+5, Over 10,000 icons
+5, Over 10,000 icons
+6, Document management tool
+6, Document management tool
+6, Document management tool
+6, Document management tool
+6, Document management tool
+6, Document management tool
+6, Lightweight email agent
+6, Lightweight email agent
+6, Lightweight email agent
+6, Lightweight email agent
+6, Lightweight email agent
+6, Lightweight email agent
+6, Web enabled calendar/org
+6, Web enabled calendar/org
+6, Web enabled calendar/org
+6, Web enabled calendar/org
+6, Web enabled calendar/org
+6, Web enabled calendar/org
+7, 17 inch LCD monitor
+7, 17 inch LCD monitor
+7, 17 inch LCD monitor
+7, 17 inch LCD monitor
+7, 17 inch LCD monitor
+7, 17 inch LCD monitor
+7, 19 inch LCD monitor
+7, 19 inch LCD monitor
+7, 19 inch LCD monitor
+7, 19 inch LCD monitor
+7, 19 inch LCD monitor
+7, 19 inch LCD monitor
+7, 500 GB network storage
+7, 500 GB network storage
+7, 500 GB network storage
+7, 500 GB network storage
+7, 500 GB network storage
+7, 500 GB network storage
+7, Wireless optical USB mouse
+7, Wireless optical USB mouse
+7, Wireless optical USB mouse
+7, Wireless optical USB mouse
+7, Wireless optical USB mouse
+7, Wireless optical USB mouse
+7, Wireless USB keyboard
+7, Wireless USB keyboard
+7, Wireless USB keyboard
+7, Wireless USB keyboard
+7, Wireless USB keyboard
+7, Wireless USB keyboard

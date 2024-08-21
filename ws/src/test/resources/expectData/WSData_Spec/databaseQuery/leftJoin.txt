@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 4)
+CATEGORY_ID, CATEGORY_NAME, CUSTOMER_ID, CITY
+NULL, NULL, 7, Piscataway
+NULL, NULL, 8, San Francisco
+NULL, NULL, 9, Middletown
+NULL, NULL, 10, Los Angles
+NULL, NULL, 11, Cleveland
+NULL, NULL, 12, Little Rock
+NULL, NULL, 13, New York
+NULL, NULL, 14, San Jose
+NULL, NULL, 15, Long Island
+NULL, NULL, 16, Orlando
+NULL, NULL, 17, Austin
+NULL, NULL, 18, Ankertown
+NULL, NULL, 19, George Park
+NULL, NULL, 20, Boomtown
+1, Games, 1, Littletown
+2, Educational, 2, Pitterson
+3, Business, 3, Aachen
+4, Personal, 4, Akergen
+5, Graphics, 5, Sevilla
+6, Office Tools, 6, Chicago

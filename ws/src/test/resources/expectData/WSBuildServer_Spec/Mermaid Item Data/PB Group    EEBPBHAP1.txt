@@ -1,0 +1,440 @@
+The table size(row x col) is:(439 x 3)
+Co, PB Group Code, PB Group Desc
+  1,     1, HILLCREST PB FAMILY      
+  1,    10, BUTTER-PORTIONS          
+  1,   102, SHRIMP-RAW               
+  1,   104, SHRIMP-COOKED            
+  1,   106, SHRIMP-BREADED           
+  1,   108, SCALLOPS                 
+  1,   112, FROG LEGS                
+  1,   113, SHELL FISH               
+  1,   114, LOBSTER TAILS-MEAT       
+  1,   116, CRAB PRODUCTS            
+  1,   117, SEAFOOD-FRESHWATER       
+  1,   118, SEAFOOD-STEAKS           
+  1,    12, OLEO-SOLIDS-SPREAD       
+  1,   120, SEAFOOD-RAW              
+  1,   122, SEAFOOD-BREADED          
+  1,   124, SEAFOOD-BATTERED         
+  1,   128, SEAFOOD-SPECIALTY        
+  1,    13, OLEO-PORTIONS            
+  1,   130, SURIMI                   
+  1,   132, SEAFOOD-CANNED           
+  1,   138, SOUPS-CANNED             
+  1,    14, CHEESES-NATURAL          
+  1,   140, SOUPS-FROZEN             
+  1,   142, ENTREES-CANNED           
+  1,   143, ENTREES-FROZEN           
+  1,   144, ENTREES-MISC             
+  1,   146, PIZZA-FROZEN             
+  1,   148, APPETIZERS-HORDRVS       
+  1,   150, APPETIZERS-CHINESE       
+  1,   152, APPETIZERS-MEXICAN       
+  1,   154, APPETIZERS-BRD-BAT       
+  1,   155, APPETIZERS-GRANT         
+  1,   156, FRENCHFRIES-PLAIN        
+  1,   158, FRENCHFRIES-SEASON       
+  1,    16, CHEESES-SHREDDED         
+  1,   160, SALADS-PREPARED          
+  1,   162, HASHBROWNS               
+  1,   170, VEGETABLE-FRZ-PORT       
+  1,   172, VEGETABLE-FRZ-BLEN       
+  1,   174, VEGETABLE-FRZ-BULK       
+  1,   176, VEGETABLE-CANNED         
+  1,   178, FRUIT-CANNED             
+  1,    18, CHEESES-GRATED           
+  1,   180, FRUIT-FROZEN             
+  1,   182, SAUCES-PC                
+  1,   184, JUICES-FRESH-CHILL       
+  1,   186, JUICES-FROZEN            
+  1,   188, JUICES-CANNED            
+  1,   190, JUICE-FRZ-CON-DISP       
+  1,   192, JUICES-DRINK-BASES       
+  1,   194, JUICES-VEG-CANNED        
+  1,   196, SOFT-DRINKS-BEV          
+  1,     2, EGGS-FRESH               
+  1,    20, CHEESES-IMPORTED         
+  1,   200, CAKES-TORTES-FRZ         
+  1,  2000, PREMIER CUSTOMER         
+  1,   202, PIES-FROZEN              
+  1,   204, MUFFINS-FROZEN           
+  1,   206, DANISH-BROWNIES          
+  1,   208, DONUTS-STRUDEL           
+  1,    21, CHEESES-HAOLOM           
+  1,   210, CROISSANTS               
+  1,   212, BAGELS                   
+  1,   214, BREADS-BISCUITS          
+  1,   216, BREAKFAST-ITEM-FRZ       
+  1,   218, PITA BREAD               
+  1,    22, CHEESES-PROCCESSED       
+  1,   220, PRETZELS-FRZ             
+  1,   222, BREADS-PAR-BAKED         
+  1,   224, PUFF PUSTRY DOUGHS       
+  1,   226, BREADS-DOUGH             
+  1,   228, MUFFIN-BUTTERS           
+  1,   230, COOKIE-DOUGHS            
+  1,   232, PIE-PASTRY SHELLS        
+  1,   234, TORTILLA SHELLS          
+  1,    24, CHEESE-SPREADS           
+  1,   247, TEST WEB EXCLUSIONS PBH  
+  1,   252, TOPPINGS-FROZEN          
+  1,   254, CREAMERS-DRY             
+  1,   256, COFFEE-TEA               
+  1,   258, E-S DINING AREA          
+  1,   260, HOT COCOA                
+  1,   262, E-S BAR SUPPLIES         
+  1,   264, SPICES-DRY               
+  1,   266, FLAVORS-FOODCOLOR        
+  1,   268, BASES-PREPS              
+  1,   270, TOPPING-DRY              
+  1,   272, NUTS-SNACK MIX           
+  1,   274, MINTS-MARSHMELLOWS       
+  1,   276, POTATOCHIPS-SNACKS       
+  1,   278, POPCORN-FLAVORINS        
+  1,    28, DAIRY-MILK-LIQUID        
+  1,   280, TOMATO PRODUCTS          
+  1,   282, KETCHUP                  
+  1,    29, DAIRY-CREAMS             
+  1,   290, CHINESE PRODUCTS         
+  1,   292, MEXICAN PRODUCTS         
+  1,    30, DAIRY-DRY-MILK           
+  1,   300, SAUCE-MIXES-CANNED       
+  1,   302, GOURMET GROCERIES        
+  1,   310, FLOUR                    
+  1,   312, BAKING-SUPPLIES          
+  1,   314, CAKE-MUFFIN-MIXES        
+  1,   316, CHOCOLATE PRODUCTS       
+  1,   318, PANCAKE MIXES            
+  1,    32, ICECREAM-SHER-SORB       
+  1,   320, BREADING-BATTERS         
+  1,   322, SUGAR                    
+  1,   324, SALT                     
+  1,   326, RICE                     
+  1,   328, POTATOS-DRY              
+  1,   330, OIL-SHORTENTING          
+  1,    34, YOGURT-SOFTSERVE         
+  1,   340, BEANS-DRY                
+  1,   350, PASTA-DRY                
+  1,   352, PASTA-FROZEN             
+  1,    36, FRUIT-FRESH              
+  1,   360, MUSTARDS                 
+  1,   370, SAUCE-BBQ                
+  1,    38, FRUIT-PROCCES-FRESH      
+  1,   380, SAUCE-HOT-ORIENTAL       
+  1,   390, VINEGAR                  
+  1,     4, EGGS-PROCCES-FRESH       
+  1,    40, PRODUCE-FRESH            
+  1,   400, CONDIMENTS-MISC          
+  1,   402, CONDIMENTS-SABRETT       
+  1,    41, PRODUCE-POTATOES         
+  1,   410, PICKLES                  
+  1,   412, PEPPERS                  
+  1,   414, OLIVES                   
+  1,    42, PRODUCE-PROCCESSED       
+  1,   420, SALAD DR-FLAVORED        
+  1,   422, SALAD DR-MAYOS           
+  1,    43, MUSHROOM                 
+  1,    44, HERBS-FRESH              
+  1,    45, DRIED-FRUIT-BEANS        
+  1,   450, CEREALS                  
+  1,   452, STARCHS                  
+  1,   454, CRACKERS-CROUTONS        
+  1,   456, COOKIES-DRY              
+  1,   470, PIE FILLINGS             
+  1,   480, PUDDINGS-DRY-CAN         
+  1,   481, PUDDINGS-FROZEN          
+  1,   482, GELATINS                 
+  1,   484, MOUSSE-MIXES             
+  1,   486, PEANUT BUTTERS           
+  1,   488, JELLY-PRESERVES          
+  1,   490, HONEY-SYRUP-MOLAS        
+  1,   492, RAISINS                  
+  1,   500, BAGS-GROCERY             
+  1,  5000, BAGS/GROCERY/BROWN       
+  1,  5002, BAGS/GROCERY/WHITE       
+  1,  5004, BAGS/GROCERY/HANDLED     
+  1,  5006, BAGS/SANDWICH            
+  1,  5008, BAGS/SPECIALTY           
+  1,  5010, BAGS/BAKERY              
+  1,   502, BAGS-SPECIALTY           
+  1,  5030, BAGS/PLASTIC/FOODSERVICE 
+  1,  5032, BAGS/PLASTIC/UTILITY     
+  1,  5034, BAGS/PLASTIC/CARRYOUT    
+  1,   504, CUPS-FOAM                
+  1,  5050, TRASH BAGS/SMALL         
+  1,  5052, TRASH BAGS/MEDIUM        
+  1,  5054, TRASH BAGS/LARGE         
+  1,  5056, TRASH BAGS/X-LARGE       
+  1,   506, CUPS-PAPER               
+  1,   508, CUPS-PLASTIC             
+  1,   510, CUPS-SOUFFLE-PAPER       
+  1,   512, CUPS-SOUFFLE-PLAST       
+  1,   514, LIDS-FOAM                
+  1,   516, LIDS-PAPER               
+  1,   518, LIDS-PLASTIC             
+  1,   520, LIDS-SOUFFLE             
+  1,   522, PLATES-PAPER             
+  1,   524, PLATES-PLASTIC-FOAM      
+  1,   528, BOWLS-PAPER-FOAM         
+  1,   532, CONTAINER-DELI           
+  1,   534, TRAYS-FOOD               
+  1,   536, TRAYS-PAPER/PLAST        
+  1,   538, E-S REFRIGERATION        
+  1,   540, PIZZA BOXS               
+  1,   542, CARRYOUTS                
+  1,   546, HEALTHCARE ITEMS         
+  1,   548, FEMALE-HYGIENE           
+  1,   550, FOIL-PANS-LIDS           
+  1,   552, FOIL-WRAP-SHEETS         
+  1,   553, FILM-WRAP                
+  1,   556, NAPKINS                  
+  1,   558, CUTLERY-PLASTIC          
+  1,   560, E-S KITCHEN              
+  1,  5600, NAPKIN/FOLDED            
+  1,  5602, NAPKIN/COCKTAIL          
+  1,  5604, NAPKIN/DISPENSER         
+  1,  5606, NAPKIN/LINEN REPLCMNT    
+  1,  5608, NAPKIN/SEASONAL          
+  1,  5610, NAPKINS/DINNER COLOR     
+  1,  5612, DISPENSERS/NAPKIN        
+  1,  5614, DISPENSER/TOWELS         
+  1,  5616, NAPKIN BANDS             
+  1,   562, STRAWS-TOOTHPICKS        
+  1,  5630, TOWELS/ROLL              
+  1,  5632, TOWELS/PERFORATED        
+  1,  5634, TOWELS/FOLDED            
+  1,  5635, TOWELS/CENTERPULL        
+  1,  5636, WIPERS                   
+  1,  5638, TOWELETTES               
+  1,   564, STEAK MARKERS            
+  1,  5650, FACIAL TISSUE            
+  1,   566, GUEST CHECKS             
+  1,  5660, BATH TISSUE/REG ROLL     
+  1,  5664, BATH TISSUE/JUMBO        
+  1,  5666, BATH TISSUE/SPECIALTY    
+  1,  5672, DISPENSERS/BATH TISSUE   
+  1,   568, PAPER-DELI-BAKERY        
+  1,   570, GLOVES-HATS              
+  1,  5700, FILM WRAP                
+  1,  5702, WRAPS/BASKET LINER       
+  1,   572, FILTERS                  
+  1,   574, TOWELS-WIPES             
+  1,   576, PAPER-TOILET-FACE        
+  1,   578, BAGS-TRASH               
+  1,   580, TABLE COVER              
+  1,   582, PAPER-PLACEMATS          
+  1,  5822, COASTERS/PAPER           
+  1,   584, PAPER-DOILIES            
+  1,   586, MOPS-BROOMS              
+  1,   588, CHARCOAL-CAN HEAT        
+  1,   590, E-S COUNTER EQUIP        
+  1,   591, CHEMICALS-AEROSAL        
+  1,   592, CHEMICALS-POT/PAN        
+  1,   594, CHEMICALS-LAUNDRY        
+  1,   598, CHEMICALS-DISHSOAP       
+  1,   600, PIZZA BOX PRODUCTION     
+  1,   601, SOAP-HAND                
+  1,   604, MIX MATE PRODUCTS        
+  1,   606, CHEMICALS-ALL PURP       
+  1,   608, CHEMICALS-SANITIZE       
+  1,   612, URINAL SCREENS ETC       
+  1,   614, E-S TABLETOP             
+  1,   616, E-S TABLE SERVICE        
+  1,   618, E-S STORAGE-TRANS        
+  1,   620, E-S BUFFET-CATERING      
+  1,   621, SCOUR-GRILL-PAD          
+  1,   700, BACON                    
+  1,   702, GYRO-MEAT                
+  1,   704, HOT DOGS                 
+  1,   706, MEATS-DELI               
+  1,   708, MEATS-BREADED            
+  1,   710, MEATS-PRECOOKED          
+  1,   712, BEEF-BUFFALLO            
+  1,   714, BEEF-BOXED               
+  1,   716, BEEF-COOKED              
+  1,   718, BEEF-GROUND              
+  1,   721, BEEF-CORNED/COOKED       
+  1,   722, BEEF-PATTIES-FRESH       
+  1,   724, BEEF-PATTIES-FROZE       
+  1,   726, BEEF-STEAKS-FRESH        
+  1,   729, BEEF-STEAKS-SEASON       
+  1,   730, BEEF-SPECIALTY ITM       
+  1,   732, VEAL-FORMULA FEED        
+  1,   734, VEAL PROCESSED           
+  1,   736, PORK-RIBS                
+  1,   738, PORK-FRESH               
+  1,   740, PORK-FROZEN              
+  1,   742, PORK-COOKED              
+  1,   744, LAMB                     
+  1,   750, HAMS-FRESH-FROZEN        
+  1,   752, TURKEY                   
+  1,   756, TURKEY-PROCESSED         
+  1,   758, CHICKEN-PERDUE           
+  1,   759, CHICKEN-TYSON            
+  1,   760, CHICKEN FROZEN           
+  1,   761, CHICKEN-MISK             
+  1,   762, CHICKEN-PECO             
+  1,   764, DUCKS-QUAIL-ECT          
+  1,   765, OSTRICH                  
+  1,   766, SAUSAGE-FRESH            
+  1,   768, SAUSAGE-FROZEN           
+  1,   795, CHICKEN-BREAKBUSH        
+  1,     8, BUTTER                   
+  1,   801, SILVERWARE               
+  1,   802, ANGUS-BLACK              
+  1,   803, E-S EQUIPMENT            
+  1,   812, A-SERVICE ITEMS          
+  1,   820, A-SPEC-ORD-DISPOSE       
+  1,   821, E-S JANITORIAL           
+  1,   830, SEAFOOD-FRESH            
+  1,   850, Z-CLEV-SCHOOL-ONLY       
+  1,   860, DAVE'S RETAIL            
+  1,   900, MISC SUPPLIES            
+  2,    02, TUNA                     
+  2,    04, SEABASS                  
+  2,    10, MAHI/MAHI                
+  2,   100, SHRIMP/SCALLOP           
+  2,   101, OYSTERS                  
+  2,   102, CLAMS                    
+  2,   104, CAVIAR                   
+  2,   105, LOBSTER/LANGOSTINO       
+  2,    11, TRIPLE TAIL              
+  2,   110, FROG LEGS/SNAIL          
+  2,    12, CORVINA                  
+  2,    13, SWORDFISH                
+  2,    14, DRUM                     
+  2,    15, AMBERJACK                
+  2,   150, SEAFOOD SOUP/BISQUE      
+  2,   151, SEAFOOD SPREAD           
+  2,    16, KINGFISH                 
+  2,    17, WAHOO                    
+  2,    18, HALIBUT                  
+  2,    19, POMPANO                  
+  2,    20, GROUPER BLACK            
+  2,    21, GROUPER RED              
+  2,    23, GROUPER LEOPARD          
+  2,    24, GROUPER PINK/SCAMP       
+  2,    25, GROUPER STRAWBERRY       
+  2,    26, GROUPER SNOWY            
+  2,    27, GROUPER YELLOWEDGE       
+  2,     3, ASST SPECIES             
+  2,    30, PANGA/SWAI               
+  2,   300, BOXED BEEF NATIVE        
+  2,   301, BOXED BEEF NATURAL/ABF   
+  2,   302, BOXED BEEF ORGANIC       
+  2,   305, PORTION BEEF NATIVE      
+  2,   306, PORTION BEEF NATURAL/ABF 
+  2,   307, PORTION BEEF ORGANIC     
+  2,   310, VALUE ADDED BEEF NATIVE  
+  2,   311, VALUE ADDED BEF NAUTRAL/A
+  2,   312, VALUE ADDED BEEF ORGANIC 
+  2,   315, CUT STEAKS               
+  2,    32, FLOUNDER                 
+  2,   320, PORK BOXED NATIVE        
+  2,   321, PORK BOXED NATURAL/ABF   
+  2,   322, PORK BOXED ORGANIC       
+  2,   325, PORK PORTION NATIVE      
+  2,   326, PORK PORTION NATURAL/ABF 
+  2,   327, PORTION PORK ORGANIC     
+  2,   330, VALUE ADDED PORK NATIVE  
+  2,   331, VALUE ADDED PORK NATL/ABF
+  2,   332, VALUE ADDED PORK ORGANIC 
+  2,   340, COMMODITY POULTRY        
+  2,   341, POULTRY NATURAL/ABF      
+  2,   342, POULTRY ORGANIC          
+  2,   350, LAMB DOMESTIC            
+  2,   351, LAMB IMPORTED            
+  2,   360, VEAL DOMESTIC            
+  2,   361, VEAL IMPORTED            
+  2,   370, WILD GAME                
+  2,    40, COD/HADDOCK              
+  2,   400, BAKERY MIX               
+  2,   405, BEVERAGE                 
+  2,   410, BREAD/BREADING/BAKERY    
+  2,    42, COBIA                    
+  2,   420, CANDY/TOPPING            
+  2,   430, CANNED FRIUT/VEG/BEANS   
+  2,   435, CANNED SEAFOOD           
+  2,    44, OPAH                     
+  2,   440, CONDIMENTS TT/BOH        
+  2,   450, DRESSINGS AND MAYO       
+  2,   455, FLAVORED FOOD BASE       
+  2,   460, IMPORTED FOODS           
+  2,   470, INGREDIENTS FLOUR/SUGAR/R
+  2,   480, JUICE PRODUCTS           
+  2,   490, SHORTENING AND OIL       
+  2,     5, KING KLIP                
+  2,    50, SALMON                   
+  2,   500, PASTA/RICE/DRY BEANS     
+  2,   510, SPICES AND HERBS         
+  2,    52, SALMON EURO              
+  2,   520, VINEGARS                 
+  2,    55, STUGEON                  
+  2,    56, SHEEPHEAD                
+  2,    58, SNAPPER YELLOW           
+  2,    59, SNAPPER SILK             
+  2,     6, MAKO SHARK               
+  2,    60, SNAPPER AMERICAN         
+  2,   600, CHEESE                   
+  2,   603, CHEESE IMPORTED          
+  2,    61, SNAPPER CARIBBEAN        
+  2,   610, SHELL AND PROCESSED EGGS 
+  2,    62, SNAPPER GULF             
+  2,   620, BUTTER                   
+  2,    63, SNAPPER HOG              
+  2,   630, FLUID DAIRY MILK/CREAM   
+  2,   635, CULTURED DAIRY PRODUCTS  
+  2,    64, SNAPPER LANE             
+  2,    65, SNAPPER MANGROVE         
+  2,   650, PRODUCE                  
+  2,    66, SNAPPER MUTTON           
+  2,    67, SNAPPER QUEEN            
+  2,    68, SNAPPER YELLOWEYE        
+  2,    69, SNAPPER YELLOW TAIL      
+  2,    70, TILAPIA                  
+  2,   700, FROZEN BREAD             
+  2,    71, SEABASS                  
+  2,   710, FROZEN DESSERTS          
+  2,   720, FROZEN FRUIT/VEG         
+  2,    73, STRIPED BASS             
+  2,   730, FROZEN MEAT              
+  2,   740, FROZEN MISC              
+  2,    75, TRIGGER FISH             
+  2,   750, FROZEN POULTRY           
+  2,    77, TILEFISH                 
+  2,    80, SQUID/OCTO/MUSSEL        
+  2,    85, SHARK/SWORDFISH          
+  2,   895, CHEMICALS                
+  2,   899, DISPOSABLES              
+  2,    90, CRAB                     
+  2,   900, SUPPLIES                 
+  2,    91, CRAB CLAW                
+  2,    92, PAST CRABMEAT            
+  2,    93, MUSSELS                  
+  2,    95, ALLIGATOR                
+  3,    10, RIBBON/INK/TONER         
+  3,   100, WHS SUPPLIES             
+  3,   110, REPACK SUPPLIES          
+  3,   120, SOUFFLE CUPS             
+  3,   130, FOOD ITEMS               
+  3,   140, CHARCOAL                 
+  3,   150, GLOVES                   
+  3,   155, SOCKS                    
+  3,   160, BOOKS                    
+  3,    20, PAPER/CONT/CUT           
+  3,   210, MOPS-BROOMS-CLEANING     
+  3,   215, BATH-BED-SHOWER-DRAWER   
+  3,   220, PLASTICS                 
+  3,   224, FOOD STORAGE             
+  3,   228, BAKEWARE/COOKWARE        
+  3,   232, KITCHEN TOOLS/GADGETS    
+  3,   240, READING/SUNGLASSES       
+  3,   292, HARDWARE                 
+  3,    30, PAPER/ROLLS              
+  3,    40, ENVELOPES                
+  3,   400, FUMA                     
+  3,    50, CHECKS                   
+  3,    60, CUSTOM CUT/PRT FORM      
+  3,    70, LABELS                   
+  3,    80, MISC OFFICE              
+  3,    90, NON STOCK ITEM           

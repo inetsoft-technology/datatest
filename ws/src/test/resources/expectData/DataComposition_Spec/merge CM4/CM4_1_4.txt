@@ -1,0 +1,36 @@
+The table size(row x col) is:(35 x 8)
+CUSTOMER_ID, REGION_ID, CITY, STATE, COMPANY_NAME, sql_exp1, sql_exp2, sql_exp3
+2, 1, Middletown, NJ, Daycare One, 2, 2, Daycare One@
+3, 1, New York, NY, Eastern Data, 2, 3, Eastern Data@
+4, 1, Boulder, CO, Ernst Handel, 2, 4, Ernst Handel@
+5, 2, Baltimore, MD, George Services, 3, 5, George Services@
+6, 1, Hartford, CT, Loctite Corp., 2, 6, Loctite Corp.@
+7, 1, New York, NY, Old World Insurance, 2, 7, Old World Insurance@
+8, 2, Denver, CO, Quick Stop, 3, 8, Quick Stop@
+9, 2, San Francisco, CA, Direct Sales, 3, 9, Direct Sales@
+10, 2, Chicago, IL, Specialty Retail, 3, 10, Specialty Retail@
+11, 2, Austin, TX, The Big Cat, 3, 11, The Big Cat@
+12, 1, Orlando, FL, Fast Transportation, 2, 12, Fast Transportation@
+13, 2, Los Angeles, CA, Computer Tech, 3, 13, Computer Tech@
+14, 1, Rockville, MD, InterLand Services, 2, 14, InterLand Services@
+15, 1, Camden, NJ, Scheggie Services, 2, 15, Scheggie Services@
+16, 2, Albany, CA, Whittaker & Co, Inc, 3, 16, Whittaker & Co, Inc@
+17, 2, New York, NY, FISGA Corp, 3, 17, FISGA Corp@
+18, 1, Boston, MA, Ubermeyer, 2, 18, Ubermeyer@
+19, 1, Newark, NJ, Software Specialists, 2, 19, Software Specialists@
+20, 2, Tucson, AZ, Folk Mining, 3, 20, Folk Mining@
+21, 2, Los Angeles, CA, West Coast Customs, 3, 21, West Coast Customs@
+22, 2, Houston, TX, Big Ed's BBQ, 3, 22, Big Ed's BBQ@
+23, 1, Boston, MA, World Software Resellers, 2, 23, World Software Resellers@
+24, 1, New York, NY, High Society Investments, 2, 24, High Society Investments@
+25, 1, New Brunswick, NJ, Rutgers Bank, 2, 25, Rutgers Bank@
+26, 2, Dallas, TX, Nova Tera, 3, 26, Nova Tera@
+27, 2, Seattle, WA, Infinity Software, 3, 27, Infinity Software@
+28, 1, York, PA, Tricounty Auto, 2, 28, Tricounty Auto@
+29, 2, Olympia, WA, Northwest Outfitters, 3, 29, Northwest Outfitters@
+30, 1, Springfield, MA, AMG Logistics, 2, 30, AMG Logistics@
+31, 2, Dallas, TX, BigMart Foodstores, 3, 31, BigMart Foodstores@
+32, 2, Las Vegas, NV, Tumbleweed Gaming, 3, 32, Tumbleweed Gaming@
+33, 1, Baltimore, MD, FMG Consulting, 2, 33, FMG Consulting@
+34, 1, Cambridge, MA, XO Resellers, 2, 34, XO Resellers@
+35, 1, Plainfield, NJ, Pharma Research, 2, 35, Pharma Research@

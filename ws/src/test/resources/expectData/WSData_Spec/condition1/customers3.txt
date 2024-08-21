@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+Year(order_date), Quarter(order_datetime), Hour(order_time)
+2002, 2002 1st, 12
+2002, 2002 2nd, 12
+2002, 2002 3rd, 12
+2003, 2003 1st, 12
+2003, 2003 2nd, 12

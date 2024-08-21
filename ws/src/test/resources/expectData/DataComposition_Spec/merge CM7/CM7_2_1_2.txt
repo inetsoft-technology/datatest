@@ -1,0 +1,80 @@
+The table size(row x col) is:(79 x 2)
+exp1, exp2
+2, AMG Logistics
+2, Daycare One
+2, Eastern Data
+2, Ernst Handel
+2, Fast Transportation
+2, FMG Consulting
+2, High Society Investments
+2, InterLand Services
+2, Loctite Corp.
+2, Old World Insurance
+2, Pharma Research
+2, Rutgers Bank
+2, Scheggie Services
+2, Software Specialists
+2, Tricounty Auto
+2, Ubermeyer
+2, World Software Resellers
+2, XO Resellers
+3, AMG Logistics
+3, Big Ed's BBQ
+3, BigMart Foodstores
+3, Computer Tech
+3, Direct Sales
+3, Fast Transportation
+3, FISGA Corp
+3, FMG Consulting
+3, Folk Mining
+3, High Society Investments
+3, Infinity Software
+3, InterLand Services
+3, Loctite Corp.
+3, Northwest Outfitters
+3, Nova Tera
+3, Old World Insurance
+3, Pharma Research
+3, Quick Stop
+3, Rutgers Bank
+3, Scheggie Services
+3, Software Specialists
+3, Specialty Retail
+3, The Big Cat
+3, Tricounty Auto
+3, Tumbleweed Gaming
+3, Ubermeyer
+3, West Coast Customs
+3, Whittaker & Co, Inc
+3, World Software Resellers
+3, XO Resellers
+4, AMG Logistics
+4, Big Ed's BBQ
+4, BigMart Foodstores
+4, Computer Tech
+4, Direct Sales
+4, Fast Transportation
+4, FISGA Corp
+4, FMG Consulting
+4, Folk Mining
+4, High Society Investments
+4, Infinity Software
+4, InterLand Services
+4, Loctite Corp.
+4, Northwest Outfitters
+4, Nova Tera
+4, Old World Insurance
+4, Pharma Research
+4, Quick Stop
+4, Rutgers Bank
+4, Scheggie Services
+4, Software Specialists
+4, Specialty Retail
+4, The Big Cat
+4, Tricounty Auto
+4, Tumbleweed Gaming
+4, Ubermeyer
+4, West Coast Customs
+4, Whittaker & Co, Inc
+4, World Software Resellers
+4, XO Resellers

@@ -1,0 +1,18 @@
+The table size(row x col) is:(17 x 6)
+CITY, REGION_ID, Region, State, City_1, RESELLER
+NULL, NULL, USA East, CT, Hartford, NULL
+NULL, NULL, USA East, FL, Orlando, NULL
+NULL, NULL, USA East, MA, Cambridge, NULL
+NULL, NULL, USA East, MD, Baltimore, NULL
+NULL, NULL, USA East, NJ, New Brunswick, NULL
+NULL, NULL, USA East, NY, New York, NULL
+NULL, NULL, USA West, CA, Los Angeles, NULL
+NULL, NULL, USA West, CO, Denver, NULL
+NULL, NULL, USA West, IL, Chicago, NULL
+NULL, NULL, USA West, NV, Las Vegas, NULL
+NULL, NULL, USA West, TX, Houston, NULL
+NULL, NULL, USA West, WA, Olympia, NULL
+Newark, 1, NULL, NULL, NULL, false
+Seattle, 2, NULL, NULL, NULL, false
+Tucson, 2, USA West, AZ, Tucson, true
+York, 1, USA East, PA, York, true

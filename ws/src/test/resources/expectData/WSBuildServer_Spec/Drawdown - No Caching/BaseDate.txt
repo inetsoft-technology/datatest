@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+fund_id, base_date
+450055, 2016-02-17
+450230, 2018-06-11
+469574, 2016-01-22

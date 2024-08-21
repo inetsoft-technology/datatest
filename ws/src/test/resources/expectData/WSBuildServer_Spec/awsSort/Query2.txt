@@ -1,0 +1,21 @@
+The table size(row x col) is:(20 x 3)
+RESELLER, STATE, CUSTOMER_ID
+0, AZ, 20
+0, CA, 37
+0, CO, 8
+0, CT, 6
+0, FL, 12
+0, MA, 48
+0, MD, 52
+0, NJ, 78
+0, NV, 32
+0, NY, 51
+0, PA, 28
+0, TX, 90
+0, WA, 29
+1, CA, 22
+1, CO, 4
+1, IL, 10
+1, MA, 57
+1, NJ, 19
+1, WA, 27

@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 5)
+PAID, Year(ORDER_DATE), CUSTOMER_ID, fx sum, fx max
+false, 2002, 2784, 3210, 3306
+false, 2003, 3156, 3418, 3306
+false, 2004, 3306, 3505, 3306
+false, 2005, 2209, 2629, 3306
+true, 2002, 426, 3210, 426
+true, 2003, 262, 3418, 426
+true, 2004, 199, 3505, 426
+true, 2005, 420, 2629, 426

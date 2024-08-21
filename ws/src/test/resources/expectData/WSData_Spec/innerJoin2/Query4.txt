@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 4)
+Dimension, Measure, Quantity Purchased, Total
+f_boolean, false, 14.0085, 103021155.3938
+f_boolean, true, 13.4295, 94696809.8503
+Quantity Purchased_1, 18, 13.4295, 94696809.8503
+Quantity Purchased_1, 4, 14.0085, 103021155.3938
+Total_1, 102789647.1794, 14.0085, 103021155.3938
+Total_1, 94669668.3169, 13.4295, 94696809.8503
+Total_2, 1155.00, 13.4295, 94696809.8503
+Total_2, 1161.00, 14.0085, 103021155.3938

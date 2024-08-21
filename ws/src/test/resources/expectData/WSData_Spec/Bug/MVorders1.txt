@@ -1,0 +1,15 @@
+The table size(row x col) is:(14 x 3)
+Year(orderdate), QuarterOfYear(orderdate), customer_id
+NULL, NULL, 22
+2001, 1st, 129
+2001, 2nd, 120
+2001, 3rd, 84
+2001, 4th, 70
+2002, 1st, 88
+2002, 2nd, 90
+2002, 3rd, 81
+2002, 4th, 152
+2003, 1st, 111
+2003, 2nd, 59
+2003, 3rd, 135
+2003, 4th, 66

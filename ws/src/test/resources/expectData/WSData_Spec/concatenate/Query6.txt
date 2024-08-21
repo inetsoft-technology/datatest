@@ -1,0 +1,18 @@
+The table size(row x col) is:(17 x 6)
+RESELLER, Year(ORDERDATE), CUSTOMER_ID_1, PRICE, INSTOCK, CATEGORY_ID
+false, 2001-01-01 00:00:00, NULL, NULL, false, NULL
+false, 2001-01-01 00:00:00, NULL, -0.3545, false, 1
+false, 2001-01-01 00:00:00, NULL, 0.9042, false, 2
+false, 2001-01-01 00:00:00, 13, NULL, false, NULL
+false, 2001-01-01 00:00:00, 13, -0.3545, false, 1
+false, 2001-01-01 00:00:00, 13, 0.9042, false, 2
+false, 2002-01-01 00:00:00, NULL, NULL, false, NULL
+false, 2002-01-01 00:00:00, NULL, -0.3545, false, 1
+false, 2002-01-01 00:00:00, NULL, 0.9042, false, 2
+false, 2002-01-01 00:00:00, 4, NULL, false, NULL
+false, 2002-01-01 00:00:00, 4, -0.3545, false, 1
+false, 2002-01-01 00:00:00, 4, 0.9042, false, 2
+true, 2002-01-01 00:00:00, 14, -0.479, true, 6
+true, 2002-01-01 00:00:00, 14, 0.6733, true, 3
+true, 2002-01-01 00:00:00, 14, 0.9117, true, 4
+true, 2002-01-01 00:00:00, 14, 1, true, 5

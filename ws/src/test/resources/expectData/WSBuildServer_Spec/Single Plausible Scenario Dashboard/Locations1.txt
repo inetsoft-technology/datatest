@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 7)
+Location ID, Location Name, Location Type, Location Function, Criticality Rating, fx RTO, Component Type
+1000003, Protecht Head Office, NULL, Head office - accounting, sales marketing, support, development and infrastructure functions, Medium, NULL, Location
+1000007, Macquarie Telecom - IC1, NULL, Primary data centre for hosting of ERM and ALM applications for Australia and NZ clients., Critical, NULL, Location
+1000013, AWS London, NULL, Primary data centre for hosting of ERM and ALM applications for UK clients, Low, NULL, Location

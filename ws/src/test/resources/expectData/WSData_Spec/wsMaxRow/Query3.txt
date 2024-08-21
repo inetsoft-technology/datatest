@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 14)
+ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, RESELLER, STATE, ZIP, CUSTOMER_ID_1, DISCOUNT, EMPLOYEE_ID, ORDER_DATE, ORDER_ID, PAID
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 1, 2018-12-03 00:00:00, 12309, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 1, 2019-06-25 00:00:00, 12421, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 1, 2020-11-11 00:00:00, 12678, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 2, 2019-01-05 00:00:00, 12331, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 2, 2019-05-31 00:00:00, 12407, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 2, 2020-06-21 00:00:00, 12606, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 2, 2020-07-22 00:00:00, 12620, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0, 2, 2020-10-26 00:00:00, 12669, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0.1, 2, 2019-09-08 00:00:00, 12455, 1
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 1, 0.25, 2, 2018-09-04 00:00:00, 12261, 1

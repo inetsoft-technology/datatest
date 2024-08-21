@@ -1,0 +1,39 @@
+The table size(row x col) is:(26 x 4)
+ID, Control Name, Linking to Risk Assessment_Controls_Testing, Comments
+1000000, Anti-virus software and network firewall protection installed and updated on a regular basis by IT Security, NULL, NULL
+1000004, Daily monitoring of IT system performance with escalation of system downtime, NULL, NULL
+1000008, All marketing and sales material (physical and digital) undergoes a dual review process within the Marketing function and is signed-off by the Head of Marketing, NULL, NULL
+1000010, Staff induction training including media policy awareness with annual refresher training, NULL, NULL
+1000012, Subscription to external legal expert advice monitoring regulatory changes which is reported to business stakeholders, NULL, NULL
+1000014, Media policy is in place including authorised media contacts, social media response etc. which is disseminated and reviewed on an annual basis by Legal & Compliance, NULL, NULL
+1000016, Adequate position profiles are developed to ensure that expectations and responsibilities of a position is identified and approved by line manager prior to commencing the recruitment process., 1000000, Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+1000016, Adequate position profiles are developed to ensure that expectations and responsibilities of a position is identified and approved by line manager prior to commencing the recruitment process., 1000002, Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+
+Position profiles exist for all positions and are reviewed prior to the recruitment process commencing.
+1000018, A Fit and Proper policy reviewed annually by HR Manager, to ensure that recruitment process and activities are aligned with specific role requirements., 1000004, Existence of the policy does help with the recruitment process in most cases.
+1000020, A Remuneration Policy is in place, reviewed annually by the HR Manager and approved by the Board, to ensure that remuneration for a position is commensurate with the responsibilities of the position., NULL, NULL
+1000057, Access to systems is restricted and requires appropriate authorisation, NULL, NULL
+1000057, Anti-virus software and network firewall protection installed and updated on a regular basis by IT Security, NULL, NULL
+1000057, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line managament, NULL, NULL
+1000057, User access is reviewed on a quarterly basis and signed off by line management, NULL, NULL
+1000059, Access to systems is restricted and requires appropriate authorisation, NULL, NULL
+1000059, Anti-virus software and network firewall protection installed and updated on a regular basis by IT Security, NULL, NULL
+1000059, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line managament, NULL, NULL
+1000059, User access is reviewed on a quarterly basis and signed off by line management, NULL, NULL
+1000082, Segregation of duties separating the roles of processing, assessment/approval and execution signed-off by line manager, NULL, NULL
+1000086, Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off, 1000000, Some issues with volume of models and being able to complete all reviews required in the year.
+1000086, Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off, 1000002, Some issues with volume of models and being able to complete all reviews required in the year.
+1000086, Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off, 1000004, Some issues with volume of models and being able to complete all reviews required in the year.
+1000089, Independent third party annual review and validation of financial models (incl. spreadsheets) calculations which is evidenced and reviewed by line manager, NULL, Some issues with volume of models and being able to complete all reviews required in the year.
+1000220, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line managament, NULL, NULL
+1000222, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line managament, NULL, NULL

@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 2)
+HourOfDay(ORDER_TIME), ORDER_DATETIME
+1, 2005-10-24 01:07:10
+2, 2005-10-25 02:10:15
+22, 2005-10-11 22:48:36
+23, 2005-10-18 23:59:59

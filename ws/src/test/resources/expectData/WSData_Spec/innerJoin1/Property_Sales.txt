@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 3)
+Region, State, City
+USA East, CT, Hartford
+USA East, FL, Orlando
+USA East, MA, Cambridge
+USA East, MD, Baltimore
+USA East, NJ, New Brunswick
+USA East, NY, New York
+USA East, PA, York
+USA West, AZ, Tucson
+USA West, CA, Los Angeles
+USA West, CO, Denver
+USA West, IL, Chicago
+USA West, NV, Las Vegas
+USA West, TX, Houston
+USA West, WA, Olympia

@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 4)
+Year(order_datetime), product_id, employee_id, customer_id
+2002, 1, 2, 1
+2003, 1, 2, 2

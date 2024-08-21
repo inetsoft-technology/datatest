@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 1)
+Full & Raw Data
+NULL
+NULL
+20201029-20201116
+Audience Overview
+Links to data:

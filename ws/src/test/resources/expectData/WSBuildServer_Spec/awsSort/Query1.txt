@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 8)
+ADDRESS, RESELLER, STATE, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, ZIP
+1230 Hoes Lane, 0, NY, New York, Old World Insurance, 7, 1, 08854
+123 Summer Rd., 0, NJ, Middletown, Daycare One, 2, 1, 09882
+1248 Broadway, 0, NY, New York, High Society Investments, 24, 1, 27834
+12 Woodpark Ave., 0, TX, Austin, The Big Cat, 11, 2, 32343
+17 Main St., 0, WA, Olympia, Northwest Outfitters, 29, 2, 93717
+21 Doger Sound Blvd., 0, NY, New York, FISGA Corp, 17, 1, 28122
+23 Tasaga Ave., 0, TX, Houston, Big Ed's BBQ, 22, 2, 23421
+283 Davidson Dr., 0, NJ, New Brunswick, Rutgers Bank, 25, 1, 08854
+283 Handley Rd., 0, MA, Springfield, AMG Logistics, 30, 1, 01923
+300 Great Swamp Rd., 1, NJ, Newark, Software Specialists, 19, 1, 23445
+32 West Boyd Ave., 1, WA, Seattle, Infinity Software, 27, 2, 93847
+345 Sewgen Dr., 0, AZ, Tucson, Folk Mining, 20, 2, 11234
+384 Broad St., 0, NJ, Wayne, Interstate Shop, 1, 1, 18322
+389 Jardim Rd., 0, MD, Baltimore, George Services, 5, 1, 82938
+389 York St., 0, PA, York, Tricounty Auto, 28, 1, 48873
+38 Commercial Ave., 0, NJ, Plainfield, Pharma Research, 35, 1, 08273
+44 Islander Lane, 0, CA, Albany, Whittaker & Co, Inc, 16, 2, 83923
+4500 River Rd., 1, CA, San Francisco, Direct Sales, 9, 2, 08854
+460 Newcomb Dr., 0, CA, Los Angeles, West Coast Customs, 21, 2, 73646
+487 City St., 0, NV, Las Vegas, Tumbleweed Gaming, 32, 2, 93847
+563 Uptown Dr., 1, MA, Boston, World Software Resellers, 23, 1, 28275
+5 Baker's Lane, 0, CT, Hartford, Loctite Corp., 6, 1, 39283
+71 Mulberry St., 0, CO, Denver, Quick Stop, 8, 2, 98839
+7262 18th St., 0, NY, New York, Eastern Data, 3, 1, 03887
+77 Druguz Blvd., 0, FL, Orlando, Fast Transportation, 12, 1, 12343
+77 Huntington Ave., 1, MA, Cambridge, XO Resellers, 34, 1, 02938
+822 Technology Dr., 0, MD, Rockville, InterLand Services, 14, 1, 83923
+8300 Cleveland St., 0, MA, Boston, Ubermeyer, 18, 1, 29183
+839 Via Gaty Dr., 0, NJ, Camden, Scheggie Services, 15, 1, 12334
+8874 Shiphouse Rd., 0, TX, Dallas, BigMart Foodstores, 31, 2, 48374
+88 Rio Grand Ave., 1, CO, Boulder, Ernst Handel, 4, 2, 38923
+88 Specialty Dr., 1, IL, Chicago, Specialty Retail, 10, 2, 88938
+90 First Ave., 1, CA, Los Angeles, Computer Tech, 13, 2, 11223
+9381 Mayor Brown Hwy., 0, MD, Baltimore, FMG Consulting, 33, 1, 53747
+987 First Ave., 0, TX, Dallas, Nova Tera, 26, 2, 23123

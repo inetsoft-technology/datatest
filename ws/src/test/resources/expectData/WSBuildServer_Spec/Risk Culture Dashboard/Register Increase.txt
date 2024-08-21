@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Registers
+12M, 50
+1M, 86
+3M, 1

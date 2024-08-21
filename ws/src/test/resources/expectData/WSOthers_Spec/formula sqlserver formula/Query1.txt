@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 4)
+state, fx id, customer_id, state_1
+AZ, 1, 20, AZ
+CA, 2, 59, CA
+CO, 3, 12, CO
+CT, 4, 6, CT
+FL, 5, 12, FL
+IL, 6, 10, IL
+MA, 7, 105, MA
+MD, 8, 52, MD
+NJ, 9, 97, NJ
+NV, 10, 32, NV
+NY, 11, NULL, NULL
+PA, 12, NULL, NULL
+TX, 13, NULL, NULL
+WA, 14, NULL, NULL

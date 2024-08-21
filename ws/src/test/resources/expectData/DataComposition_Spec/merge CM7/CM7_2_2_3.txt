@@ -1,0 +1,27 @@
+The table size(row x col) is:(26 x 2)
+PRODUCT_NAME, CATEGORY_NAME
+17 Inch LCD, Hardware
+19 inch LCD, Hardware
+Animal World, Educational
+Barbie"s Fashion, Games
+Combat Hero, Games
+Easy Chess, Games
+Fancy Menus, Graphics
+Fast Go Game, Games
+Fast Mail, Office Tools
+Green Planet, Personal
+House Hunter, Personal
+Info Folder, Office Tools
+InsideView, Business
+Learn ABC, Educational
+Math for Me, Educational
+Mega Icons, Graphics
+MeToo AppServer, Business
+NetStorage, Hardware
+Sync Me, Personal
+True Action, Games
+Web Bridge, Games
+WebCalendar, Office Tools
+Wireless Keyboard, Hardware
+Wireless Mouse, Hardware
+Xconnect Server, Business

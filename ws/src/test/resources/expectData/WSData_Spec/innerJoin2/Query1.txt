@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 9)
+RESELLER, f_orderdate, range_orderdate, f_boolean, Total, Quantity Purchased, Total_1, Total_2, Quantity Purchased_1
+false, greater than 2005, 0.0404, true, 94696809.8503, 13.4295, 94669668.3169, 1155, 18
+false, less than 2005, 0.0943, true, 94696809.8503, 13.4295, 94669668.3169, 1155, 18
+false, y2005, 0.0755, true, 94696809.8503, 13.4295, 94669668.3169, 1155, 18
+true, greater than 2005, 0.1779, false, 103021155.3938, 14.0085, 102789647.1794, 1161, 4
+true, less than 2005, 0.4259, false, 103021155.3938, 14.0085, 102789647.1794, 1161, 4
+true, y2005, 0.186, false, 103021155.3938, 14.0085, 102789647.1794, 1161, 4

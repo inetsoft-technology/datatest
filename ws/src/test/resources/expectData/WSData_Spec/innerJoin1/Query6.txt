@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 3)
+CUSTOMER_ID, RESELLER, f_state
+9, false, CA
+13, false, CA
+16, true, CA
+18, true, MA
+20, true, AZ
+21, true, CA
+23, false, MA
+27, false, WA
+28, true, PA
+29, true, WA
+30, true, MA
+34, false, MA

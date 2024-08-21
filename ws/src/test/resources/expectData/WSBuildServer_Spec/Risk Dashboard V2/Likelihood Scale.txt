@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+Likelihood Value, Likelihood Label, Likelihood Axis
+1, Rare - Once in every 30 years, 1 - Rare - Once in every 30 years
+2, Unlikely - Once in every 10 years, 2 - Unlikely - Once in every 10 years
+3, Possible  - Once in every 3 years, 3 - Possible  - Once in every 3 years
+4, Likely - Once per year, 4 - Likely - Once per year
+5, Almost Certain - More than once per year, 5 - Almost Certain - More than once per year

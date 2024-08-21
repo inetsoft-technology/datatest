@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 3)
+value, textcolour, fxcolour
+NULL, NULL, 99CC00
+Extreme, #FFFFFF, FF0000
+Insignificant, NULL, 99CC00
+Major, #FFFFFF, FF6600
+Minor, NULL, FFFF99
+Moderate, NULL, FFCC99

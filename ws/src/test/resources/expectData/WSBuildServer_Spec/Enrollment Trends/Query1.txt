@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 2)
+Student ID, Appl Year2
+151, Y2
+185, Y5
+255, Y6
+274, Y0
+372, Y1
+377, Y4
+386, Y3

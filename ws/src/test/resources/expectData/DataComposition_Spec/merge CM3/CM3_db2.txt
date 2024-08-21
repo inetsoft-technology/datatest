@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 2)
+CITY, sql_exp1
+Albany, 1600
+Austin, 1100
+Baltimore, 500
+Baltimore, 3300
+Boston, 1800
+Boston, 2300
+Boulder, 400
+Cambridge, 3400
+Camden, 1500
+Chicago, 1000
+Dallas, 2600
+Dallas, 3100
+Denver, 800
+Hartford, 600
+Houston, 2200
+Las Vegas, 3200
+Los Angeles, 1300
+Los Angeles, 2100
+Middletown, 200
+Newark, 1900
+New Brunswick, 2500
+New York, 300
+New York, 700
+New York, 1700
+New York, 2400
+Olympia, 2900
+Orlando, 1200
+Plainfield, 3500
+Rockville, 1400
+San Francisco, 900
+Seattle, 2700
+Springfield, 3000
+Tucson, 2000
+Wayne, 100
+York, 2800

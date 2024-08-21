@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 12)
+string, bollean, integer, double, timeinstant, date, time, float, char, byte, short, long
+inetsoft, false, 12, 12.35, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 123.65, a, 123, 12654, 122456565
+inetsoft, false, 123, 6, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 23, ,, 2, 1, 1
+inetsoft, true, 1, 12500, 2009-01-09 10:23:34, 2009-01-09, 10:23:34, 1.2346, I, -128, -32768, -2147483648
+microsoft, false, 2, 225000.23, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 36.599, M, 127, 32767, 2147483647

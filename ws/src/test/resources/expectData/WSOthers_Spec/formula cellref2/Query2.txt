@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 11)
+fx id, fx date, fx char, fx sum, fx state, fx city, fx time, fx datetime, fx boolan, fx url, fx url2
+1, 2023-01-02, ▬, 78, NJ, Wayne, 23:01:02, 2023-01-02 23:01:02, true, https://www.baidu.com/, fx url
+2, 2022-02-04, ▬, 39, NJ, Middletown, 22:02:04, 2022-02-04 22:02:04, true, https://www.baidu.com/, www.baidu.com/
+3, 2021-03-06, ▲, 26, NY, New York, 21:03:06, 2021-03-06 21:03:06, true, https://www.inetsoft.com/, www.baidu.com/
+4, 2020-04-08, ▲, 19.5, CO, Boulder, 20:04:08, 2020-04-08 20:04:08, false, https://www.inetsoft.com/, www.inetsoft.com/
+5, 2019-05-10, ▲, 15.6, MD, Baltimore, 19:05:10, 2019-05-10 19:05:10, false, https://www.inetsoft.com/, www.inetsoft.com/
+6, 2018-06-12, ▼, 13, CT, Hartford, 18:06:12, 2018-06-12 18:06:12, false, https://www.inetsoft.com/images/homepage/InetSoft_web_white.png, www.inetsoft.com/
+7, 2017-07-14, ▼, 11.14, NY, New York, 17:07:14, 2017-07-14 17:07:14, true, https://www.inetsoft.com/images/homepage/InetSoft_web_white.png, www.inetsoft.com/images/homepage/InetSoft_web_white.png
+8, 2016-08-16, ▼, 9.75, CO, Denver, 16:08:16, 2016-08-16 16:08:16, false, https://www.inetsoft.com/images/homepage/InetSoft_web_white.png, www.inetsoft.com/images/homepage/InetSoft_web_white.png
+9, 2015-09-18, ▼, 8.67, CA, San Francisco, 15:09:18, 2015-09-18 15:09:18, false, https://www.inetsoft.com/images/homepage/InetSoft_web_white.png, www.inetsoft.com/images/homepage/InetSoft_web_white.png
+10, 2014-10-20, √, 7.8, IL, Chicago, 14:10:20, 2014-10-20 14:10:20, false, NA, www.inetsoft.com/images/homepage/InetSoft_web_white.png
+11, 2013-11-22, √, 7.09, TX, Austin, 13:11:22, 2013-11-22 13:11:22, false, NA, NA
+12, 2012-12-24, √, 6.5, FL, Orlando, 00:12:24, 2012-12-24 00:12:24, false, NA, NA

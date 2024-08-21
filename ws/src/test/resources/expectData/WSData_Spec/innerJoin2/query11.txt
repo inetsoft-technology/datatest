@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 3)
+RESELLER, f_orderdate, range_orderdate
+false, greater than 2005, 0.0404
+false, less than 2005, 0.0943
+false, y2005, 0.0755
+true, greater than 2005, 0.1779
+true, less than 2005, 0.4259
+true, y2005, 0.186

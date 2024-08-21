@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 12)
+employee_name_lastname, employee_name_firstname, employee_birthday, employee_salary, employee_location_city, employee_location_lcode, employee_location_state, employee_location_zip, employee_skill_description, employee_link_@manager, employee_link_@subordinates, employee_@id
+Brown, Gloria, 1978-10-15, 31000, East Brunswick, NULL, NJ, NULL, NULL, NULL, NULL, 11
+Chaney, Allen, 1973-10-15, 61000, Boston, NULL, MA, NULL, NULL, NULL, NULL, 10
+Chaney, Allen, 1973-10-15, 61000, Boston, NULL, MA, NULL, Unix, NULL, NULL, 10
+Gallaher, Samuel, 1968-10-15, 57000, Boston, NULL, MA, NULL, NULL, NULL, NULL, 9
+Hartel, Sanford, 1975-10-15, 38000, Boston, NULL, MA, NULL, NULL, NULL, NULL, 8
+Hartnack, Rebecca, 1963-1-5, 62000, East Brunswick, NULL, NJ, NULL, NULL, 1, 11 12 13, 2
+Hoppock, Joanne, 1973-10-15, 46000, Middletown, NULL, NJ, NULL, NULL, NULL, NULL, 12
+Jacob, Jeffrey, 1954-2-15, 98000, New York, NULL, NY, NULL, NULL, 3, 10 14, 7
+Jacques, Smita, 1972-4-15, 68000, Middletown, NULL, NJ, NULL, Motif, Unix, NULL, NULL, 3
+Johnson, Ellen, 1966-10-15, 68000, East Brunswick, NULL, NJ, NULL, NULL, NULL, NULL, 1
+Johnson, Ellen, 1966-10-15, 68000, East Brunswick, NULL, NJ, NULL, Motif, Unix, NULL, NULL, 1
+Lotzer, Robert, 1969-8-15, 65000, New York, NULL, NY, NULL, NULL, NULL, NULL, 6
+Lotzer, Robert, 1969-8-15, 65000, New York, NULL, NY, NULL, NULL, NULL, NULL, 6
+McDonald, John, 1967-10-15, 88000, New York, NULL, NY, NULL, NULL, NULL, NULL, 13
+McDonald, John, 1967-10-15, 88000, New York, NULL, NY, NULL, NULL, NULL, NULL, 13
+Natalevic, Anthony, 1971-10-15, 53000, New York, NULL, NY, NULL, NULL, NULL, NULL, 14
+Oakley, Frank, 1954-9-6, 79000, Middletown, NULL, NJ, NULL, NULL, NULL, NULL, 4
+Pasula, James, 1967-10-15, 53000, Middletown, NULL, NJ, NULL, NULL, NULL, NULL, 15
+Shyko, Sherri, 1968-9-15, 58000, New York, NULL, NY, NULL, NULL, NULL, NULL, 5
+Shyko, Sherri, 1968-9-15, 58000, New York, NULL, NY, NULL, NULL, NULL, NULL, 5

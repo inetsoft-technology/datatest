@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 4)
+CATEGORY_ID_1, CATEGORY_ID, REGION, ADDRESS
+1, 1, USA East, 1035 Riverview Rd.
+1, 1, USA East, 1035 Riverview Rd.
+1, 1, USA East, 1035 Riverview Rd.
+1, 1, USA East, 1035 Riverview Rd.
+1, 1, USA East, 1035 Riverview Rd.
+1, 1, USA East, 1035 Riverview Rd.
+2, 2, USA West, 111 Biltmore Dr.
+2, 2, USA West, 111 Biltmore Dr.
+2, 2, USA West, 111 Biltmore Dr.

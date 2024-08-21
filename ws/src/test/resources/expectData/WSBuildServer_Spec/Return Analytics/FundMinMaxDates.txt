@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 2)
+fund_id, max_date
+544600, 2020-04-29

@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 2)
+company_name, fx id
+AMG Logistics, 10
+Big Ed"s BBQ, 9
+BigMart Foodstores, 11
+Computer Tech, 6
+Daycare One, 1
+Direct Sales, 4
+Eastern Data, 2
+Ernst Handel, 3
+Fast Transportation, 5
+FISGA Corp, 7
+FMG Consulting, 12
+Folk Mining, 8

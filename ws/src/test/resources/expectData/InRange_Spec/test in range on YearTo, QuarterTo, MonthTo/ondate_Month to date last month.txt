@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 2)
+order_date, order_datetime
+2024-01-01, 2024-01-01 00:00:00
+2024-01-01, 2024-01-01 05:23:00

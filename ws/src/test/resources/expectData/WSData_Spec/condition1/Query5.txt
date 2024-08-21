@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 4)
+customer_id, city, Dimension, Measure
+16, Albany, order_date, 2002-03-31
+16, Albany, order_date, 2003-07-12
+16, Albany, order_time, 11:59:59
+16, Albany, reseller, true
+16, Albany, reseller, true

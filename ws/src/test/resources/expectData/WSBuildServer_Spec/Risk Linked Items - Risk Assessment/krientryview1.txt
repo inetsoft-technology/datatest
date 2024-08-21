@@ -1,0 +1,1118 @@
+The table size(row x col) is:(1117 x 7)
+id, kriid, name, KRI completionbusinessunitname, KRI endofperiod, KRI value, bgcolor
+102020, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2019-10-30, 7, #CCFF99
+102021, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2019-10-30, 2, #CCFF99
+102022, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2019-10-30, 4500, #CCFF99
+102023, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2019-10-30, 3000, #CCFF99
+102024, 100441, Number of near misses due to failed or late payments, Operations, 2019-10-30, 4, #CCFF99
+102025, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2019-10-30, 254, #CCFF99
+102026, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2019-10-30, 3, #CCFF99
+102027, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2019-10-30, 3, #FFCC66
+102028, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2019-10-30, 2, #CCFF99
+102029, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2019-10-30, 1, #CCFF99
+102030, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2019-10-30, 2, #CCFF99
+102031, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2019-10-30, 5, #FF0033
+102032, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2019-10-30, 0.12, #CCFF99
+102033, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2019-10-30, 55, #FF0033
+102034, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2019-10-30, 2, #CCFF99
+102035, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2019-10-30, 7, #FF0033
+102036, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2019-10-30, 15, #CCFF99
+102037, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2019-10-30, 9, #FF0033
+102038, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-10-30, 0.1, #CCFF99
+102039, 100439, Number of incidents due to failed or late payments, Operations, 2019-10-30, 5, #CCFF99
+102040, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2019-10-30, 25000, #FFCC66
+102041, 100424, Total number of posts on the company's social media channels, Marketing, 2019-10-30, 150, #FF0033
+102042, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2019-10-30, 0.15, #FF0033
+102043, 100468, Total number of advisors / sales staff, People & Culture, 2019-10-30, 525, #CCFF99
+102044, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2019-10-30, 15000, #CCFF99
+102045, 100266, Number of payments that failed initial auto-verification checks, Operations, 2019-10-30, 11, #FF0033
+102046, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2019-10-30, 35, #CCFF99
+102047, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2019-10-30, 12, #FF0033
+102048, 100445, Number of incidents due to processing errors monthly, Operations, 2019-10-30, 10, #FF0033
+102049, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2019-10-30, 0.22, #FF0033
+102050, 100084, The number of times an insurance review due date has been missed, Finance, 2019-10-30, 3, #FF0033
+102051, 100474, Number of staff taking sick leave, People & Culture, 2019-10-30, 28, #CCFF99
+102052, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2019-10-30, 3, #FFCC66
+102053, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2019-10-30, 2, #CCFF99
+102054, 100427, Total number of negative posts on the company's social media channels, Marketing, 2019-10-30, 45, #CCFF99
+102055, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2019-10-30, 11, #FFCC66
+102056, 100452, Total number of payments made above $ X m, Operations, 2019-10-30, 44, #CCFF99
+102057, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2019-10-30, 5, #FFCC66
+102058, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2019-10-30, 54, #FF0033
+102059, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2019-10-30, 45, #CCFF99
+102060, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2019-10-30, 15, #FF0033
+102061, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2019-10-30, 0.11, #CCFF99
+102062, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2019-10-30, 1, #CCFF99
+102063, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2019-10-30, 7, #CCFF99
+102064, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2019-10-30, 5, #CCFF99
+102065, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2019-10-30, 9, #FF0033
+102066, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2019-10-30, 4, #CCFF99
+102067, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2019-10-30, 2, #CCFF99
+102068, 100272, Staff turn over rates, People & Culture, 2019-10-30, 3, #FF0033
+102069, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2019-10-30, 26000, #FF0033
+102070, 100448, Number of near misses due to processing errors monthly, Operations, 2019-10-30, 2, #CCFF99
+102071, 100455, Number of payments above $ X m that are processed manually, Operations, 2019-10-30, 55, #CCFF99
+102072, 100141, Number of reporting errors noted per month, Finance, 2019-10-30, 7, #FFCC66
+102073, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2019-10-30, 30, #CCFF99
+102074, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2019-10-30, 4, #FFCC66
+102075, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2019-10-30, 4, #FFCC66
+102076, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2019-10-30, 2, #CCFF99
+102077, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-10-30, 9, #CCFF99
+102078, 100262, Number of monthly reconciliation errors, Operations, 2019-10-30, 9, #FFCC66
+102079, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2019-10-30, 2, #CCFF99
+102080, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2019-10-30, 512, #CCFF99
+102081, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2019-10-30, 8, #CCFF99
+102082, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2019-10-30, 5, #CCFF99
+102083, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2019-10-30, 0.11, #CCFF99
+102084, 100056, Percentage of staff taken sick leave per month, People & Culture, 2019-10-30, 2, #CCFF99
+102085, 100414, Total number of employees, People & Culture, 2019-10-30, 3000, #CCFF99
+102086, 100141, Number of reporting errors noted per month, Branch 1, 2019-10-30, 5, #FF0033
+102087, 100460, Total number of staff in the Contact Center, People & Culture, 2019-10-30, 425, #FF0033
+102088, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2019-10-30, 6, #FF0033
+102089, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2019-10-30, 6, #FFCC66
+102090, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2019-10-30, 55, #FFCC66
+102091, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2019-10-30, 5, #CCFF99
+102092, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2019-10-30, 10, #CCFF99
+102093, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2019-10-30, 8, #CCFF99
+102094, 100478, Number of staff that joined the company last month, People & Culture, 2019-10-30, 24, #CCFF99
+102095, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2019-10-30, 0.12, #CCFF99
+102096, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2019-10-30, 1.2222, #CCFF99
+102097, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-10-30, 0.3, #FFCC66
+102098, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2019-10-30, NULL, #FFFFFF
+102099, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2019-10-30, 0.2286, #FF0033
+102100, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2019-10-30, 0.0484, #FF0033
+102101, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-10-30, 1, #CCFF99
+102120, 100468, Total number of advisors / sales staff, People & Culture, 2019-11-29, 675, #FF0033
+102121, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2019-11-29, 29, #FFCC66
+102122, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2019-11-29, 2, #FF0033
+102123, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-11-29, 0.25, #CCFF99
+102124, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2019-11-29, 0.1, #CCFF99
+102125, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2019-11-29, 47, #FFCC66
+102126, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2019-11-29, 0.88, #FF0033
+102127, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2019-11-29, 2, #CCFF99
+102128, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2019-11-29, 11, #FFCC66
+102129, 100424, Total number of posts on the company's social media channels, Marketing, 2019-11-29, 170, #FF0033
+102130, 100439, Number of incidents due to failed or late payments, Operations, 2019-11-29, 6, #CCFF99
+102131, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2019-11-29, 1, #CCFF99
+102132, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2019-11-29, 15, #FF0033
+102133, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2019-11-29, 15, #FF0033
+102134, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2019-11-29, 3, #FFCC66
+102135, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2019-11-29, 2785, #FFCC66
+102136, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2019-11-29, 3, #FFCC66
+102137, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2019-11-29, 4, #FF0033
+102138, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2019-11-29, 210, #CCFF99
+102139, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2019-11-29, 41, #FF0033
+102140, 100478, Number of staff that joined the company last month, People & Culture, 2019-11-29, 175, #FF0033
+102141, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2019-11-29, 3, #CCFF99
+102142, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2019-11-29, 2, #CCFF99
+102143, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2019-11-29, 2, #CCFF99
+102144, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2019-11-29, 2256, #CCFF99
+102145, 100441, Number of near misses due to failed or late payments, Operations, 2019-11-29, 12, #FF0033
+102146, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2019-11-29, 6, #CCFF99
+102147, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2019-11-29, 0, #CCFF99
+102148, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2019-11-29, 0.13, #FFCC66
+102149, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2019-11-29, 2, #CCFF99
+102150, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2019-11-29, 22, #CCFF99
+102151, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2019-11-29, 11, #FFCC66
+102152, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2019-11-29, 12, #CCFF99
+102153, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2019-11-29, 25000, #FFCC66
+102154, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2019-11-29, 6, #FFCC66
+102155, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2019-11-29, 3, #CCFF99
+102156, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-11-29, 0.1, #FF0033
+102157, 100414, Total number of employees, People & Culture, 2019-11-29, 3120, #FFCC66
+102158, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2019-11-29, 450, #CCFF99
+102159, 100262, Number of monthly reconciliation errors, Operations, 2019-11-29, 10, #FFCC66
+102160, 100141, Number of reporting errors noted per month, Branch 1, 2019-11-29, 9, #FF0033
+102161, 100460, Total number of staff in the Contact Center, People & Culture, 2019-11-29, 202, #CCFF99
+102162, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2019-11-29, 4, #CCFF99
+102163, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2019-11-29, 85000, #FF0033
+102164, 100056, Percentage of staff taken sick leave per month, People & Culture, 2019-11-29, 3, #CCFF99
+102165, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2019-11-29, 3, #FFCC66
+102166, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2019-11-29, 22, #CCFF99
+102167, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2019-11-29, 2, #CCFF99
+102168, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2019-11-29, 10, #FF0033
+102169, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2019-11-29, 2, #CCFF99
+102170, 100448, Number of near misses due to processing errors monthly, Operations, 2019-11-29, 32, #FF0033
+102171, 100474, Number of staff taking sick leave, People & Culture, 2019-11-29, 256, #FF0033
+102172, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2019-11-29, 8, #FF0033
+102173, 100141, Number of reporting errors noted per month, Finance, 2019-11-29, 8, #FFCC66
+102174, 100455, Number of payments above $ X m that are processed manually, Operations, 2019-11-29, 45, #CCFF99
+102175, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2019-11-29, 6, #FFCC66
+102176, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2019-11-29, 8, #CCFF99
+102177, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2019-11-29, 33, #FF0033
+102178, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2019-11-29, 0.12, #CCFF99
+102179, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2019-11-29, 2, #CCFF99
+102180, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2019-11-29, 3, #CCFF99
+102181, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2019-11-29, 48, #FFCC66
+102182, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2019-11-29, 0.13, #FFCC66
+102183, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2019-11-29, 8, #CCFF99
+102184, 100272, Staff turn over rates, People & Culture, 2019-11-29, 0.05, #FFCC66
+102185, 100452, Total number of payments made above $ X m, Operations, 2019-11-29, 95, #FF0033
+102186, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2019-11-29, 0.35, #FF0033
+102187, 100445, Number of incidents due to processing errors monthly, Operations, 2019-11-29, 4, #CCFF99
+102188, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2019-11-29, 21, #FF0033
+102189, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2019-11-29, 1, #CCFF99
+102190, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2019-11-29, 8, #FF0033
+102191, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2019-11-29, 22000, #FF0033
+102192, 100084, The number of times an insurance review due date has been missed, Finance, 2019-11-29, 1, #CCFF99
+102193, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2019-11-29, 8, #FF0033
+102194, 100427, Total number of negative posts on the company's social media channels, Marketing, 2019-11-29, 110, #FF0033
+102195, 100266, Number of payments that failed initial auto-verification checks, Operations, 2019-11-29, 6, #FFCC66
+102196, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2019-11-29, 0.021, #FF0033
+102197, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-11-29, 0.7231, #FF0033
+102198, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2019-11-29, 0.0833, #CCFF99
+102199, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2019-11-29, 0.9792, #CCFF99
+102200, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2019-11-29, NULL, #FFFFFF
+102201, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-11-29, 0.6471, #FF0033
+102220, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2019-12-30, 5, #FFCC66
+102221, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2019-12-30, 9, #FF0033
+102222, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2019-12-30, 2, #CCFF99
+102223, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2019-12-30, 46, #FFCC66
+102224, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2019-12-30, 3, #CCFF99
+102225, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2019-12-30, 7, #CCFF99
+102226, 100474, Number of staff taking sick leave, People & Culture, 2019-12-30, 222, #FFCC66
+102227, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2019-12-30, 18000, #CCFF99
+102228, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2019-12-30, 7, #FF0033
+102229, 100427, Total number of negative posts on the company's social media channels, Marketing, 2019-12-30, 69, #CCFF99
+102230, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2019-12-30, 4, #FF0033
+102231, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2019-12-30, 6, #FFCC66
+102232, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2019-12-30, 0.12, #CCFF99
+102233, 100272, Staff turn over rates, People & Culture, 2019-12-30, 0.011, #CCFF99
+102234, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2019-12-30, 3, #CCFF99
+102235, 100452, Total number of payments made above $ X m, Operations, 2019-12-30, 82, #FFCC66
+102236, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2019-12-30, 7, #FFCC66
+102237, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2019-12-30, 0.86, #FF0033
+102238, 100084, The number of times an insurance review due date has been missed, Finance, 2019-12-30, 0, #CCFF99
+102239, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2019-12-30, 4, #FFCC66
+102240, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2019-12-30, 0.11, #CCFF99
+102241, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2019-12-30, 7, #CCFF99
+102242, 100424, Total number of posts on the company's social media channels, Marketing, 2019-12-30, 69, #CCFF99
+102243, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2019-12-30, 4, #FFCC66
+102244, 100266, Number of payments that failed initial auto-verification checks, Operations, 2019-12-30, 7, #FFCC66
+102245, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2019-12-30, 0.13, #FFCC66
+102246, 100468, Total number of advisors / sales staff, People & Culture, 2019-12-30, 612, #FFCC66
+102247, 100445, Number of incidents due to processing errors monthly, Operations, 2019-12-30, 6, #CCFF99
+102248, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2019-12-30, 3, #CCFF99
+102249, 100439, Number of incidents due to failed or late payments, Operations, 2019-12-30, 5, #CCFF99
+102250, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-12-30, 0.26, #FFCC66
+102251, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2019-12-30, 44, #CCFF99
+102252, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2019-12-30, 7, #CCFF99
+102253, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2019-12-30, 6, #FFCC66
+102254, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2019-12-30, 25, #FFCC66
+102255, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2019-12-30, 4, #FFCC66
+102256, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2019-12-30, 3, #FFCC66
+102257, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2019-12-30, 2965, #CCFF99
+102258, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2019-12-30, 3123, #FFCC66
+102259, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2019-12-30, 4, #FFCC66
+102260, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2019-12-30, 0.11, #CCFF99
+102261, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2019-12-30, 16, #CCFF99
+102262, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2019-12-30, 3, #FFCC66
+102263, 100512, (Data) - Market capitalisation and asset/dividend distribution of competitor-C in the last quarter, Corporate Office & Strategy, 2019-12-30, 0.13, #CCFF99
+102264, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2019-12-30, 4, #FFCC66
+102265, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2019-12-30, 289, #CCFF99
+102266, 100441, Number of near misses due to failed or late payments, Operations, 2019-12-30, 9, #FFCC66
+102267, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2019-12-30, 4, #FFCC66
+102268, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2019-12-30, 0.9, #FFCC66
+102269, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2019-12-30, 4, #CCFF99
+102270, 100141, Number of reporting errors noted per month, Branch 1, 2019-12-30, 6, #FFCC66
+102271, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2019-12-30, 8, #CCFF99
+102272, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2019-12-30, 5, #CCFF99
+102273, 100414, Total number of employees, People & Culture, 2019-12-30, 3129, #FFCC66
+102274, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2019-12-30, 5, #CCFF99
+102275, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2019-12-30, 26, #CCFF99
+102276, 100478, Number of staff that joined the company last month, People & Culture, 2019-12-30, 69, #CCFF99
+102277, 100504, (Data) - Market capitalisation and asset/dividend distribution of competitor-A in the last quarter, Corporate Office & Strategy, 2019-12-30, 0.16, #CCFF99
+102278, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2019-12-30, 8, #CCFF99
+102279, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2019-12-30, 25965, #CCFF99
+102280, 100460, Total number of staff in the Contact Center, People & Culture, 2019-12-30, 198, #CCFF99
+102281, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2019-12-30, 598, #CCFF99
+102282, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-12-30, 0.99, #CCFF99
+102283, 100508, (Data) - Market capitalisation and asset/dividend distribution of competitor-B in the last quarter, Corporate Office & Strategy, 2019-12-30, 0.16, #CCFF99
+102284, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2019-12-30, 24, #CCFF99
+102285, 100056, Percentage of staff taken sick leave per month, People & Culture, 2019-12-30, 0.8, #FF0033
+102286, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2019-12-30, 0.14, #FFCC66
+102287, 100141, Number of reporting errors noted per month, Finance, 2019-12-30, 8, #FFCC66
+102288, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2019-12-30, 5, #CCFF99
+102289, 100448, Number of near misses due to processing errors monthly, Operations, 2019-12-30, 9, #FFCC66
+102290, 100500, (Data) - Entity's market capitalisation and asset/dividend distribution in the last quarter, Corporate Office & Strategy, 2019-12-30, 0.15, #CCFF99
+102291, 100262, Number of monthly reconciliation errors, Operations, 2019-12-30, 7, #CCFF99
+102292, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2019-12-30, 4, #FFCC66
+102293, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2019-12-30, 5, #CCFF99
+102294, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2019-12-30, 27000, #FFCC66
+102295, 100455, Number of payments above $ X m that are processed manually, Operations, 2019-12-30, 78, #CCFF99
+102296, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2019-12-30, 4, #FFCC66
+102297, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2019-12-30, 0.11, #CCFF99
+102298, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2019-12-30, 3, #FFCC66
+102299, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2019-12-30, 5, #FFCC66
+102300, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2019-12-30, 0, #FFCC66
+102301, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2019-12-30, 0.9565, #CCFF99
+102302, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2019-12-30, 0.375, #FF0033
+102303, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2019-12-30, 0.4236, #FF0033
+102304, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2019-12-30, 0.9981, #CCFF99
+102305, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2019-12-30, 1, #FF0033
+102341, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2019-12-30, 1, #CCFF99
+102350, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2019-11-29, 2, #FFCC66
+102351, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2019-11-29, 0, #CCFF99
+102352, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2019-11-29, 4, #CCFF99
+102353, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2019-10-30, 0, #CCFF99
+102354, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2019-12-30, 0, #FF0033
+102355, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2019-12-30, 5, #CCFF99
+102356, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2019-12-30, 50, #FFCC66
+102357, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2019-10-30, 1, #FFCC66
+102358, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2019-10-30, 4, #CCFF99
+102359, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2019-10-30, 0, #FF0033
+102360, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2019-11-29, 4, #CCFF99
+102361, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2019-11-29, 3, #FFCC66
+102362, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2019-12-30, 5, #FFCC66
+102363, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2019-11-29, 100, #CCFF99
+102364, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2019-11-29, 1, #CCFF99
+102366, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2019-12-30, 1, #FFCC66
+102367, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2019-12-30, 0, #CCFF99
+102368, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2019-10-30, 100, #CCFF99
+102369, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2019-10-30, 1, #CCFF99
+102370, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2019-10-30, 4, #CCFF99
+102371, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2019-12-30, 5, #CCFF99
+102372, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-01-29, 2, #CCFF99
+102373, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-01-30, 20000, #CCFF99
+102374, 100424, Total number of posts on the company's social media channels, Marketing, 2020-01-30, 85, #FFCC66
+102375, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-01-30, 15, #CCFF99
+102376, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-01-30, 85, #CCFF99
+102377, 100439, Number of incidents due to failed or late payments, Operations, 2020-01-30, 8, #CCFF99
+102378, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-01-30, 22, #FFCC66
+102379, 100468, Total number of advisors / sales staff, People & Culture, 2020-01-30, 556, #CCFF99
+102380, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-01-30, 0.89, #FF0033
+102381, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-01-30, 2, #CCFF99
+102382, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-01-30, 2, #CCFF99
+102383, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-01-30, 220, #CCFF99
+102384, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-01-30, 5, #FFCC66
+102385, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-01-30, 12, #CCFF99
+102386, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-01-30, 55, #FF0033
+102387, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-01-30, 0.2, #CCFF99
+102388, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-01-30, 6, #FF0033
+102389, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-01-30, 8, #CCFF99
+102390, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-01-30, 9, #FF0033
+102391, 100474, Number of staff taking sick leave, People & Culture, 2020-01-30, 262, #FF0033
+102392, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-01-30, 1, #CCFF99
+102393, 100478, Number of staff that joined the company last month, People & Culture, 2020-01-30, 88, #CCFF99
+102394, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-01-30, 28000, #CCFF99
+102395, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-01-30, 5, #CCFF99
+102396, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-01-30, 15, #FFCC66
+102397, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-01-30, 10, #CCFF99
+102398, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-01-30, 3, #FFCC66
+102399, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-01-30, 4, #FF0033
+102400, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-01-30, 2600, #CCFF99
+102401, 100441, Number of near misses due to failed or late payments, Operations, 2020-01-30, 9, #FFCC66
+102402, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-01-30, 1, #FFCC66
+102403, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-01-30, 0.12, #CCFF99
+102404, 100460, Total number of staff in the Contact Center, People & Culture, 2020-01-30, 225, #CCFF99
+102405, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-01-30, 3, #CCFF99
+102406, 100141, Number of reporting errors noted per month, Branch 1, 2020-01-30, 8, #FFCC66
+102407, 100272, Staff turn over rates, People & Culture, 2020-01-30, 2, #FF0033
+102408, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-01-30, 33, #CCFF99
+102409, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-01-30, 8, #FFCC66
+102410, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-01-30, 6, #FFCC66
+102411, 100262, Number of monthly reconciliation errors, Operations, 2020-01-30, 8, #CCFF99
+102412, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-01-30, 3, #FFCC66
+102413, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-01-30, 2, #CCFF99
+102414, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-01-30, 3, #FFCC66
+102415, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-01-30, 8, #FF0033
+102416, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-01-30, 4, #CCFF99
+102417, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-01-30, 0.1, #CCFF99
+102418, 100414, Total number of employees, People & Culture, 2020-01-30, 3135, #FFCC66
+102419, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-01-30, 3, #CCFF99
+102420, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-01-30, 2, #CCFF99
+102421, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-01-30, 520, #CCFF99
+102422, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-01-30, 6, #FFCC66
+102423, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-01-30, 0.9, #FF0033
+102424, 100448, Number of near misses due to processing errors monthly, Operations, 2020-01-30, 7, #CCFF99
+102425, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-01-30, 4, #FFCC66
+102426, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-01-30, 3, #CCFF99
+102427, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-01-30, 0.11, #CCFF99
+102428, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-01-30, 4, #CCFF99
+102429, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-01-30, 4, #CCFF99
+102430, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-01-30, 28, #CCFF99
+102431, 100141, Number of reporting errors noted per month, Finance, 2020-01-30, 6, #CCFF99
+102432, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-01-30, 72, #CCFF99
+102433, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-01-30, 5, #FFCC66
+102434, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-01-30, 5, #FFCC66
+102435, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-01-30, 5, #FFCC66
+102436, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-01-30, 3, #FFCC66
+102437, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-01-30, 3500, #CCFF99
+102438, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-01-30, 8, #FF0033
+102439, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-01-30, 12, #FF0033
+102440, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-01-30, 3, #CCFF99
+102441, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-01-30, 8, #FF0033
+102442, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-01-30, 35, #CCFF99
+102443, 100084, The number of times an insurance review due date has been missed, Finance, 2020-01-30, 2, #FFCC66
+102444, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-01-30, 0.16, #FFCC66
+102445, 100445, Number of incidents due to processing errors monthly, Operations, 2020-01-30, 9, #FFCC66
+102446, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-01-30, 26000, #CCFF99
+102447, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-01-30, 0.2, #CCFF99
+102448, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-01-30, 8, #FF0033
+102449, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-01-30, 1, #CCFF99
+102450, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-01-30, 12, #FFCC66
+102451, 100452, Total number of payments made above $ X m, Operations, 2020-01-30, 83, #FFCC66
+102452, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-01-30, 8, #FF0033
+102453, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-01-30, 0.13, #FFCC66
+102454, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-01-30, 79, #CCFF99
+102455, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-01-30, 2, #CCFF99
+102456, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-01-30, 0.3465, #FF0033
+102457, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-01-30, 0.9294, #FF0033
+102458, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-01-30, NULL, #FFFFFF
+102459, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-01-30, 0.8293, #FF0033
+102460, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-01-30, 0.4, #FF0033
+102461, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-01-30, 1.5714, #CCFF99
+102480, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-02-28, 5, #CCFF99
+102481, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-02-28, 0.1, #CCFF99
+102482, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-02-28, 0.99, #CCFF99
+102483, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-02-28, 0.1, #FFCC66
+102484, 100141, Number of reporting errors noted per month, Branch 1, 2020-02-28, 7, #FFCC66
+102485, 100460, Total number of staff in the Contact Center, People & Culture, 2020-02-28, 225, #CCFF99
+102486, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-02-28, 8, #FFCC66
+102487, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-02-28, 5, #FF0033
+102488, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-02-28, 5, #FFCC66
+102489, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-02-28, 38, #CCFF99
+102490, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-02-28, 2, #CCFF99
+102491, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-02-28, 7, #FFCC66
+102492, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-02-28, 0.94, #FFCC66
+102493, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-02-28, 9, #FFCC66
+102494, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-02-28, 21, #FFCC66
+102495, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-02-28, 13, #CCFF99
+102496, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-02-28, 5, #FF0033
+102497, 100478, Number of staff that joined the company last month, People & Culture, 2020-02-28, 99, #CCFF99
+102498, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-02-28, 5.7, #FFCC66
+102499, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-02-28, 0.13, #FFCC66
+102500, 100272, Staff turn over rates, People & Culture, 2020-02-28, 0.04, #FFCC66
+102501, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-02-28, 2650, #CCFF99
+102502, 100441, Number of near misses due to failed or late payments, Operations, 2020-02-28, 8, #CCFF99
+102503, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-02-28, 27987, #CCFF99
+102504, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-02-28, 3, #FFCC66
+102505, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-02-28, 225, #CCFF99
+102506, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-02-28, 3, #FFCC66
+102507, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-02-28, 4, #FFCC66
+102508, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-02-28, 23900, #CCFF99
+102509, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-02-28, 4, #FFCC66
+102510, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-02-28, 4, #CCFF99
+102511, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-02-28, 11, #FFCC66
+102512, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-02-28, 26, #CCFF99
+102513, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-02-28, 8, #FF0033
+102514, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-02-28, 50, #FFCC66
+102515, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-02-28, 2, #FFCC66
+102516, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-02-28, 0.11, #CCFF99
+102517, 100424, Total number of posts on the company's social media channels, Marketing, 2020-02-28, 81, #FFCC66
+102518, 100439, Number of incidents due to failed or late payments, Operations, 2020-02-28, 6, #CCFF99
+102519, 100474, Number of staff taking sick leave, People & Culture, 2020-02-28, 289, #FF0033
+102520, 100468, Total number of advisors / sales staff, People & Culture, 2020-02-28, 558, #CCFF99
+102521, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-02-28, 11, #FFCC66
+102522, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-02-28, 0.91, #FFCC66
+102523, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-02-28, 31, #FF0033
+102524, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-02-28, 0.18, #CCFF99
+102525, 100084, The number of times an insurance review due date has been missed, Finance, 2020-02-28, 3, #FF0033
+102526, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-02-28, 81, #FFCC66
+102527, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-02-28, 7, #FFCC66
+102528, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-02-28, 6, #FFCC66
+102529, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-02-28, 0.29, #FFCC66
+102530, 100445, Number of incidents due to processing errors monthly, Operations, 2020-02-28, 8, #CCFF99
+102531, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-02-28, 0.15, #CCFF99
+102532, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-02-28, 4, #FFCC66
+102533, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-02-28, 59, #FFCC66
+102534, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-02-28, 25899, #CCFF99
+102535, 100452, Total number of payments made above $ X m, Operations, 2020-02-28, 82, #FFCC66
+102536, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-02-28, 16, #FF0033
+102537, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-02-28, 4, #FFCC66
+102538, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-02-28, 5, #FFCC66
+102539, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-02-28, 4, #FFCC66
+102540, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-02-28, 6, #FFCC66
+102541, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-02-28, 4, #FFCC66
+102542, 100448, Number of near misses due to processing errors monthly, Operations, 2020-02-28, 9, #FFCC66
+102543, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-02-28, 6, #FF0033
+102544, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-02-28, 6, #FFCC66
+102545, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-02-28, 32, #CCFF99
+102546, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-02-28, 6, #FFCC66
+102547, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-02-28, 0.97, #FFCC66
+102548, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-02-28, 0.12, #CCFF99
+102549, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-02-28, 4, #FFCC66
+102550, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-02-28, 6, #FFCC66
+102551, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-02-28, 3200, #CCFF99
+102552, 100141, Number of reporting errors noted per month, Finance, 2020-02-28, 7, #FFCC66
+102553, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-02-28, 79, #CCFF99
+102554, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-02-28, 6, #FFCC66
+102555, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-02-28, 0.94, #FF0033
+102556, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-02-28, 34, #FFCC66
+102557, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-02-28, 2, #CCFF99
+102558, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-02-28, 4, #FFCC66
+102559, 100262, Number of monthly reconciliation errors, Operations, 2020-02-28, 11, #FFCC66
+102560, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-02-28, 4, #FFCC66
+102561, 100414, Total number of employees, People & Culture, 2020-02-28, 3131, #FFCC66
+102562, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-02-28, 538, #CCFF99
+102563, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-02-28, 0.98, #CCFF99
+102564, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-02-28, 1.5625, #CCFF99
+102565, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-02-28, 0.2308, #FF0033
+102566, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-02-28, 0.8464, #FF0033
+102567, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-02-28, NULL, #FFFFFF
+102568, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-02-28, 1, #FF0033
+102569, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-02-28, 0.3507, #FF0033
+102580, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-03-30, 32, #CCFF99
+102581, 100439, Number of incidents due to failed or late payments, Operations, 2020-03-30, 11, #FF0033
+102582, 100424, Total number of posts on the company's social media channels, Marketing, 2020-03-30, 75, #CCFF99
+102583, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-03-30, 5, #FF0033
+102584, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-03-30, 5, #FFCC66
+102585, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-03-30, 1, #FF0033
+102586, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-03-30, 3, #CCFF99
+102587, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-03-30, 4, #CCFF99
+102588, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-03-30, 4, #FFCC66
+102589, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-03-30, 600, #CCFF99
+102590, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-03-30, 3, #CCFF99
+102591, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-03-30, 0.85, #FF0033
+102592, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-03-30, 1, #CCFF99
+102593, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-03-30, 12, #FFCC66
+102594, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-03-30, 6, #FFCC66
+102595, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-03-30, 0.1, #CCFF99
+102596, 100468, Total number of advisors / sales staff, People & Culture, 2020-03-30, 459, #CCFF99
+102597, 100084, The number of times an insurance review due date has been missed, Finance, 2020-03-30, 1, #CCFF99
+102598, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-03-30, 2900, #CCFF99
+102599, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-03-30, 7, #FF0033
+102600, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-03-30, 0.2, #FFCC66
+102601, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-03-30, 9, #CCFF99
+102602, 100478, Number of staff that joined the company last month, People & Culture, 2020-03-30, 94, #CCFF99
+102603, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-03-30, 10, #CCFF99
+102604, 100452, Total number of payments made above $ X m, Operations, 2020-03-30, 80, #CCFF99
+102605, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-03-30, 1, #CCFF99
+102606, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-03-30, 95, #FF0033
+102607, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-03-30, 9, #CCFF99
+102608, 100272, Staff turn over rates, People & Culture, 2020-03-30, 0.03, #CCFF99
+102609, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-03-30, 4, #FFCC66
+102610, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-03-30, 6, #FFCC66
+102611, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-03-30, 6, #FFCC66
+102612, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-03-30, 9, #FF0033
+102613, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-03-30, 0.11, #CCFF99
+102614, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-03-30, 7, #FF0033
+102615, 100448, Number of near misses due to processing errors monthly, Operations, 2020-03-30, 8, #CCFF99
+102616, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-03-30, 7, #CCFF99
+102617, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-03-30, 5, #FF0033
+102618, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-03-30, 6, #FFCC66
+102619, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-03-30, 5, #FFCC66
+102620, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-03-30, 4, #FFCC66
+102621, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-03-30, 1, #FF0033
+102622, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-03-30, 1, #FFCC66
+102623, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-03-30, 2, #CCFF99
+102624, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-03-30, 20, #CCFF99
+102625, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-03-30, 48, #FFCC66
+102626, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-03-30, 21500, #CCFF99
+102627, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-03-30, 15000, #FF0033
+102628, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-03-30, 5, #FF0033
+102629, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-03-30, 82, #FFCC66
+102630, 100474, Number of staff taking sick leave, People & Culture, 2020-03-30, 210, #CCFF99
+102631, 100445, Number of incidents due to processing errors monthly, Operations, 2020-03-30, 7, #CCFF99
+102632, 100141, Number of reporting errors noted per month, Finance, 2020-03-30, 6, #CCFF99
+102633, 100500, (Data) - Entity's market capitalisation and asset/dividend distribution in the last quarter, Corporate Office & Strategy, 2020-03-30, 0.13, #CCFF99
+102634, 100141, Number of reporting errors noted per month, Branch 1, 2020-03-30, 9, #FF0033
+102635, 100460, Total number of staff in the Contact Center, People & Culture, 2020-03-30, 245, #CCFF99
+102636, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-03-30, 2, #CCFF99
+102637, 100414, Total number of employees, People & Culture, 2020-03-30, 3200, #FFCC66
+102638, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-03-30, 0.12, #CCFF99
+102639, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-03-30, 45, #FFCC66
+102640, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-03-30, 62, #CCFF99
+102641, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-03-30, 0.84, #FF0033
+102642, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-03-30, 38, #CCFF99
+102643, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-03-30, 1, #CCFF99
+102644, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-03-30, 5, #CCFF99
+102645, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-03-30, 3, #FFCC66
+102646, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-03-30, 4, #FFCC66
+102647, 100262, Number of monthly reconciliation errors, Operations, 2020-03-30, 7, #CCFF99
+102648, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-03-30, 0, #CCFF99
+102649, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-03-30, 2, #CCFF99
+102650, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-03-30, 8, #FF0033
+102651, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-03-30, 25600, #CCFF99
+102652, 100508, (Data) - Market capitalisation and asset/dividend distribution of competitor-B in the last quarter, Corporate Office & Strategy, 2020-03-30, 0.14, #CCFF99
+102653, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-03-30, 45, #FFCC66
+102654, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-03-30, 0.19, #CCFF99
+102655, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-03-30, 10, #CCFF99
+102656, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-03-30, 3, #FFCC66
+102657, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-03-30, 3, #FFCC66
+102658, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-03-30, 7, #FF0033
+102659, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-03-30, 4, #FF0033
+102660, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-03-30, 6, #CCFF99
+102661, 100504, (Data) - Market capitalisation and asset/dividend distribution of competitor-A in the last quarter, Corporate Office & Strategy, 2020-03-30, 0.17, #FFCC66
+102662, 100512, (Data) - Market capitalisation and asset/dividend distribution of competitor-C in the last quarter, Corporate Office & Strategy, 2020-03-30, 0.11, #CCFF99
+102663, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-03-30, 245, #CCFF99
+102664, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-03-30, 2, #CCFF99
+102665, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-03-30, 6, #FFCC66
+102666, 100441, Number of near misses due to failed or late payments, Operations, 2020-03-30, 9, #FFCC66
+102667, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-03-30, 3130, #FFCC66
+102668, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-03-30, 1.2667, #FF0033
+102669, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-03-30, 0.4049, #FF0033
+102670, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-03-30, 0.1562, #FF0033
+102671, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-03-30, 1.2632, #CCFF99
+102672, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-03-30, -0.01, #FFCC66
+102673, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-03-30, 0.9781, #FFCC66
+102674, 101033, Number of employees tested for COVID19, People & Culture, 2020-03-30, 80, #FF0033
+102675, 101027, Number of COVID19 infected employees, People & Culture, 2020-03-30, 1, #FFCC66
+102676, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-03-30, 10, #FF0033
+102680, 100445, Number of incidents due to processing errors monthly, Operations, 2020-04-29, NULL, #FFFFFF
+102681, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-04-29, NULL, #FFFFFF
+102682, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-04-29, NULL, #FFFFFF
+102683, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-04-29, NULL, #FFFFFF
+102684, 100141, Number of reporting errors noted per month, Finance, 2020-04-29, NULL, #FFFFFF
+102685, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102686, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-04-29, NULL, #FFFFFF
+102687, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-04-29, NULL, #FFFFFF
+102688, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-04-29, NULL, #FFFFFF
+102689, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102690, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-04-29, NULL, #FFFFFF
+102691, 100272, Staff turn over rates, People & Culture, 2020-04-29, NULL, #FFFFFF
+102692, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102693, 100141, Number of reporting errors noted per month, Branch 1, 2020-04-29, NULL, #FFFFFF
+102694, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-04-29, NULL, #FFFFFF
+102695, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-04-29, NULL, #FFFFFF
+102696, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102697, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-04-29, NULL, #FFFFFF
+102698, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-04-29, NULL, #FFFFFF
+102699, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-04-29, NULL, #FFFFFF
+102700, 100414, Total number of employees, People & Culture, 2020-04-29, NULL, #FFFFFF
+102701, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-04-29, NULL, #FFFFFF
+102702, 100474, Number of staff taking sick leave, People & Culture, 2020-04-29, NULL, #FFFFFF
+102703, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-04-29, NULL, #FFFFFF
+102704, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-04-29, NULL, #FFFFFF
+102705, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-04-29, NULL, #FFFFFF
+102706, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-04-29, NULL, #FFFFFF
+102707, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-04-29, NULL, #FFFFFF
+102708, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102709, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102710, 100460, Total number of staff in the Contact Center, People & Culture, 2020-04-29, NULL, #FFFFFF
+102711, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-04-29, NULL, #FFFFFF
+102712, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102713, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-04-29, NULL, #FFFFFF
+102714, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102715, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-04-29, NULL, #FFFFFF
+102716, 100441, Number of near misses due to failed or late payments, Operations, 2020-04-29, NULL, #FFFFFF
+102717, 100262, Number of monthly reconciliation errors, Operations, 2020-04-29, NULL, #FFFFFF
+102718, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-04-29, NULL, #FFFFFF
+102719, 101027, Number of COVID19 infected employees, People & Culture, 2020-04-29, NULL, #FFFFFF
+102720, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-04-29, NULL, #FFFFFF
+102721, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-04-29, NULL, #FFFFFF
+102722, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-04-29, NULL, #FFFFFF
+102723, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102724, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-04-29, NULL, #FFFFFF
+102725, 100424, Total number of posts on the company's social media channels, Marketing, 2020-04-29, NULL, #FFFFFF
+102726, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102727, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-04-29, NULL, #FFFFFF
+102728, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-04-29, NULL, #FFFFFF
+102729, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-04-29, NULL, #FFFFFF
+102730, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-04-29, NULL, #FFFFFF
+102731, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-04-29, NULL, #FFFFFF
+102732, 101033, Number of employees tested for COVID19, People & Culture, 2020-04-29, NULL, #FFFFFF
+102733, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102734, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102735, 100468, Total number of advisors / sales staff, People & Culture, 2020-04-29, NULL, #FFFFFF
+102736, 100478, Number of staff that joined the company last month, People & Culture, 2020-04-29, NULL, #FFFFFF
+102737, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-04-29, NULL, #FFFFFF
+102738, 100084, The number of times an insurance review due date has been missed, Finance, 2020-04-29, NULL, #FFFFFF
+102739, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102740, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-04-29, NULL, #FFFFFF
+102741, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102742, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-04-29, NULL, #FFFFFF
+102743, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-04-29, NULL, #FFFFFF
+102744, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-04-29, NULL, #FFFFFF
+102745, 100439, Number of incidents due to failed or late payments, Operations, 2020-04-29, NULL, #FFFFFF
+102746, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102747, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102748, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-04-29, NULL, #FFFFFF
+102749, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-04-29, NULL, #FFFFFF
+102750, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-04-29, NULL, #FFFFFF
+102751, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102752, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-04-29, NULL, #FFFFFF
+102753, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-04-29, NULL, #FFFFFF
+102754, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-04-29, NULL, #FFFFFF
+102755, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-04-29, NULL, #FFFFFF
+102756, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-04-29, NULL, #FFFFFF
+102757, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102758, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-04-29, NULL, #FFFFFF
+102759, 100448, Number of near misses due to processing errors monthly, Operations, 2020-04-29, NULL, #FFFFFF
+102760, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-04-29, NULL, #FFFFFF
+102761, 100452, Total number of payments made above $ X m, Operations, 2020-04-29, NULL, #FFFFFF
+102762, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-04-29, NULL, #FFFFFF
+102763, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-04-29, NULL, #FFFFFF
+102764, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102765, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-04-29, NULL, #FFFFFF
+102766, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-04-29, NULL, #FFFFFF
+102767, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-04-29, NULL, #FFFFFF
+102768, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102769, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102770, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-04-29, NULL, #FFFFFF
+102771, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-04-29, NULL, #FFFFFF
+102772, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-04-29, NULL, #FFFFFF
+102780, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-05-30, NULL, #FFFFFF
+102781, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-05-30, 0, #CCFF99
+102782, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102783, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-05-30, 2, #CCFF99
+102784, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-05-30, NULL, #FFFFFF
+102785, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-05-30, NULL, #FFFFFF
+102786, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-05-30, NULL, #FFFFFF
+102787, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-05-30, NULL, #FFFFFF
+102788, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-05-30, NULL, #FFFFFF
+102789, 100445, Number of incidents due to processing errors monthly, Operations, 2020-05-30, NULL, #FFFFFF
+102790, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-05-30, NULL, #FFFFFF
+102791, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-05-30, NULL, #FFFFFF
+102792, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-05-30, NULL, #FFFFFF
+102793, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-05-30, NULL, #FFFFFF
+102794, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102795, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-05-30, NULL, #FFFFFF
+102796, 100272, Staff turn over rates, People & Culture, 2020-05-30, NULL, #FFFFFF
+102797, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102798, 100452, Total number of payments made above $ X m, Operations, 2020-05-30, NULL, #FFFFFF
+102799, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102800, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-05-30, NULL, #FFFFFF
+102801, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102802, 100084, The number of times an insurance review due date has been missed, Finance, 2020-05-30, NULL, #FFFFFF
+102803, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-05-30, NULL, #FFFFFF
+102804, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-05-30, NULL, #FFFFFF
+102805, 100424, Total number of posts on the company's social media channels, Marketing, 2020-05-30, NULL, #FFFFFF
+102806, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-05-30, NULL, #FFFFFF
+102807, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-05-30, NULL, #FFFFFF
+102808, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-05-30, NULL, #FFFFFF
+102809, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-05-30, NULL, #FFFFFF
+102810, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-05-30, NULL, #FFFFFF
+102811, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102812, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-05-30, NULL, #FFFFFF
+102813, 100468, Total number of advisors / sales staff, People & Culture, 2020-05-30, NULL, #FFFFFF
+102814, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-05-30, NULL, #FFFFFF
+102815, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102816, 100439, Number of incidents due to failed or late payments, Operations, 2020-05-30, NULL, #FFFFFF
+102817, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102818, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-05-30, NULL, #FFFFFF
+102819, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102820, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102821, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-05-30, NULL, #FFFFFF
+102822, 100478, Number of staff that joined the company last month, People & Culture, 2020-05-30, NULL, #FFFFFF
+102823, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-05-30, NULL, #FFFFFF
+102824, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-05-30, NULL, #FFFFFF
+102825, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-05-30, NULL, #FFFFFF
+102826, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-05-30, NULL, #FFFFFF
+102827, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-05-30, NULL, #FFFFFF
+102828, 101033, Number of employees tested for COVID19, People & Culture, 2020-05-30, NULL, #FFFFFF
+102829, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-05-30, NULL, #FFFFFF
+102830, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102831, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-05-30, NULL, #FFFFFF
+102832, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-05-30, NULL, #FFFFFF
+102833, 100441, Number of near misses due to failed or late payments, Operations, 2020-05-30, NULL, #FFFFFF
+102834, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102835, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102836, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-05-30, NULL, #FFFFFF
+102837, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102838, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-05-30, NULL, #FFFFFF
+102839, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-05-30, NULL, #FFFFFF
+102840, 100141, Number of reporting errors noted per month, Branch 1, 2020-05-30, 22, #FF0033
+102841, 100262, Number of monthly reconciliation errors, Operations, 2020-05-30, NULL, #FFFFFF
+102842, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-05-30, NULL, #FFFFFF
+102843, 100414, Total number of employees, People & Culture, 2020-05-30, NULL, #FFFFFF
+102844, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-05-30, NULL, #FFFFFF
+102845, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102846, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-05-30, NULL, #FFFFFF
+102847, 100460, Total number of staff in the Contact Center, People & Culture, 2020-05-30, NULL, #FFFFFF
+102848, 101027, Number of COVID19 infected employees, People & Culture, 2020-05-30, NULL, #FFFFFF
+102849, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-05-30, NULL, #FFFFFF
+102850, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-05-30, NULL, #FFFFFF
+102851, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102852, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102853, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-05-30, NULL, #FFFFFF
+102854, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-05-30, NULL, #FFFFFF
+102855, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-05-30, NULL, #FFFFFF
+102856, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-05-30, NULL, #FFFFFF
+102857, 100141, Number of reporting errors noted per month, Finance, 2020-05-30, NULL, #FFFFFF
+102858, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-05-30, NULL, #FFFFFF
+102859, 100448, Number of near misses due to processing errors monthly, Operations, 2020-05-30, NULL, #FFFFFF
+102860, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-05-30, NULL, #FFFFFF
+102861, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-05-30, NULL, #FFFFFF
+102862, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-05-30, NULL, #FFFFFF
+102863, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-05-30, NULL, #FFFFFF
+102864, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102865, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-05-30, NULL, #FFFFFF
+102866, 100474, Number of staff taking sick leave, People & Culture, 2020-05-30, NULL, #FFFFFF
+102867, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102868, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-05-30, NULL, #FFFFFF
+102869, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102870, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-05-30, NULL, #FFFFFF
+102871, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-05-30, NULL, #FFFFFF
+102872, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-05-30, NULL, #FFFFFF
+102880, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-05-24, NULL, #FFFFFF
+102900, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-06-29, NULL, #FFFFFF
+102901, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-06-29, NULL, #FFFFFF
+102902, 100141, Number of reporting errors noted per month, Finance, 2020-06-29, NULL, #FFFFFF
+102903, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-06-29, NULL, #FFFFFF
+102904, 100448, Number of near misses due to processing errors monthly, Operations, 2020-06-29, NULL, #FFFFFF
+102905, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-06-29, NULL, #FFFFFF
+102906, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102907, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-06-29, NULL, #FFFFFF
+102908, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102909, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-06-29, NULL, #FFFFFF
+102910, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-06-29, NULL, #FFFFFF
+102911, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102912, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-06-29, NULL, #FFFFFF
+102913, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-06-29, NULL, #FFFFFF
+102914, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-06-29, NULL, #FFFFFF
+102915, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-06-29, NULL, #FFFFFF
+102916, 100474, Number of staff taking sick leave, People & Culture, 2020-06-29, NULL, #FFFFFF
+102917, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-06-29, NULL, #FFFFFF
+102918, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102919, 100414, Total number of employees, People & Culture, 2020-06-29, NULL, #FFFFFF
+102920, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-06-29, NULL, #FFFFFF
+102921, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102922, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-06-29, NULL, #FFFFFF
+102923, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-06-29, NULL, #FFFFFF
+102924, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-06-29, NULL, #FFFFFF
+102925, 100460, Total number of staff in the Contact Center, People & Culture, 2020-06-29, NULL, #FFFFFF
+102926, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102927, 100141, Number of reporting errors noted per month, Branch 1, 2020-06-29, NULL, #FFFFFF
+102928, 101027, Number of COVID19 infected employees, People & Culture, 2020-06-29, NULL, #FFFFFF
+102929, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102930, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-06-29, NULL, #FFFFFF
+102931, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-06-29, NULL, #FFFFFF
+102932, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102933, 100262, Number of monthly reconciliation errors, Operations, 2020-06-29, NULL, #FFFFFF
+102934, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-06-29, NULL, #FFFFFF
+102935, 100441, Number of near misses due to failed or late payments, Operations, 2020-06-29, NULL, #FFFFFF
+102936, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102937, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-06-29, NULL, #FFFFFF
+102938, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-06-29, NULL, #FFFFFF
+102939, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-06-29, NULL, #FFFFFF
+102940, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-06-29, NULL, #FFFFFF
+102941, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102942, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102943, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-06-29, NULL, #FFFFFF
+102944, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-06-29, NULL, #FFFFFF
+102945, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-06-29, NULL, #FFFFFF
+102946, 100500, (Data) - Entity's market capitalisation and asset/dividend distribution in the last quarter, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102947, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102948, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-06-29, NULL, #FFFFFF
+102949, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-06-29, NULL, #FFFFFF
+102950, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102951, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-06-29, NULL, #FFFFFF
+102952, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-06-29, NULL, #FFFFFF
+102953, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-06-29, NULL, #FFFFFF
+102954, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102955, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-06-29, NULL, #FFFFFF
+102956, 101033, Number of employees tested for COVID19, People & Culture, 2020-06-29, NULL, #FFFFFF
+102957, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-06-29, NULL, #FFFFFF
+102958, 100478, Number of staff that joined the company last month, People & Culture, 2020-06-29, NULL, #FFFFFF
+102959, 100424, Total number of posts on the company's social media channels, Marketing, 2020-06-29, NULL, #FFFFFF
+102960, 100439, Number of incidents due to failed or late payments, Operations, 2020-06-29, NULL, #FFFFFF
+102961, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-06-29, NULL, #FFFFFF
+102962, 100508, (Data) - Market capitalisation and asset/dividend distribution of competitor-B in the last quarter, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102963, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102964, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-06-29, NULL, #FFFFFF
+102965, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-06-29, NULL, #FFFFFF
+102966, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102967, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102968, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-06-29, NULL, #FFFFFF
+102969, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-06-29, NULL, #FFFFFF
+102970, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-06-29, NULL, #FFFFFF
+102971, 100468, Total number of advisors / sales staff, People & Culture, 2020-06-29, NULL, #FFFFFF
+102972, 100084, The number of times an insurance review due date has been missed, Finance, 2020-06-29, NULL, #FFFFFF
+102973, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-06-29, NULL, #FFFFFF
+102974, 100512, (Data) - Market capitalisation and asset/dividend distribution of competitor-C in the last quarter, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102975, 100504, (Data) - Market capitalisation and asset/dividend distribution of competitor-A in the last quarter, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102976, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-06-29, NULL, #FFFFFF
+102977, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-06-29, NULL, #FFFFFF
+102978, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102979, 100452, Total number of payments made above $ X m, Operations, 2020-06-29, NULL, #FFFFFF
+102980, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-06-29, NULL, #FFFFFF
+102981, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-06-29, NULL, #FFFFFF
+102982, 100272, Staff turn over rates, People & Culture, 2020-06-29, NULL, #FFFFFF
+102983, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-06-29, NULL, #FFFFFF
+102984, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-06-29, NULL, #FFFFFF
+102985, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-06-29, NULL, #FFFFFF
+102986, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-06-29, NULL, #FFFFFF
+102987, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-06-29, NULL, #FFFFFF
+102988, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102989, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-06-29, NULL, #FFFFFF
+102990, 100445, Number of incidents due to processing errors monthly, Operations, 2020-06-29, NULL, #FFFFFF
+102991, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102992, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-06-29, NULL, #FFFFFF
+102993, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-06-29, NULL, #FFFFFF
+102994, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+102995, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-06-29, NULL, #FFFFFF
+102996, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-06-29, NULL, #FFFFFF
+103000, 101033, Number of employees tested for COVID19, People & Culture, 2020-07-30, NULL, #FFFFFF
+103001, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-07-30, NULL, #FFFFFF
+103002, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-07-30, NULL, #FFFFFF
+103003, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-07-30, NULL, #FFFFFF
+103004, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-07-30, NULL, #FFFFFF
+103005, 101027, Number of COVID19 infected employees, People & Culture, 2020-07-30, NULL, #FFFFFF
+103006, 100439, Number of incidents due to failed or late payments, Operations, 2020-07-30, NULL, #FFFFFF
+103007, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-07-30, NULL, #FFFFFF
+103008, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-07-30, NULL, #FFFFFF
+103009, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103010, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-07-30, NULL, #FFFFFF
+103011, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103012, 100084, The number of times an insurance review due date has been missed, Finance, 2020-07-30, NULL, #FFFFFF
+103013, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103014, 100424, Total number of posts on the company's social media channels, Marketing, 2020-07-30, NULL, #FFFFFF
+103015, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-07-30, NULL, #FFFFFF
+103016, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-07-30, NULL, #FFFFFF
+103017, 100262, Number of monthly reconciliation errors, Operations, 2020-07-30, NULL, #FFFFFF
+103018, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-07-30, NULL, #FFFFFF
+103019, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-07-30, NULL, #FFFFFF
+103020, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103021, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-07-30, NULL, #FFFFFF
+103022, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-07-30, NULL, #FFFFFF
+103023, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-07-30, NULL, #FFFFFF
+103024, 100474, Number of staff taking sick leave, People & Culture, 2020-07-30, NULL, #FFFFFF
+103025, 100441, Number of near misses due to failed or late payments, Operations, 2020-07-30, NULL, #FFFFFF
+103026, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103027, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-07-30, NULL, #FFFFFF
+103028, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-07-30, NULL, #FFFFFF
+103029, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-07-30, NULL, #FFFFFF
+103030, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103031, 100460, Total number of staff in the Contact Center, People & Culture, 2020-07-30, NULL, #FFFFFF
+103032, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-07-30, NULL, #FFFFFF
+103033, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-07-30, NULL, #FFFFFF
+103034, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-07-30, NULL, #FFFFFF
+103035, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-07-30, NULL, #FFFFFF
+103036, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-07-30, NULL, #FFFFFF
+103037, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103038, 100141, Number of reporting errors noted per month, Branch 1, 2020-07-30, NULL, #FFFFFF
+103039, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-07-30, NULL, #FFFFFF
+103040, 100445, Number of incidents due to processing errors monthly, Operations, 2020-07-30, NULL, #FFFFFF
+103041, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-07-30, NULL, #FFFFFF
+103042, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103043, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-07-30, NULL, #FFFFFF
+103044, 100272, Staff turn over rates, People & Culture, 2020-07-30, NULL, #FFFFFF
+103045, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-07-30, NULL, #FFFFFF
+103046, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-07-30, NULL, #FFFFFF
+103047, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103048, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103049, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-07-30, NULL, #FFFFFF
+103050, 100414, Total number of employees, People & Culture, 2020-07-30, NULL, #FFFFFF
+103051, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-07-30, NULL, #FFFFFF
+103052, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-07-30, NULL, #FFFFFF
+103053, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-07-30, NULL, #FFFFFF
+103054, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-07-30, NULL, #FFFFFF
+103055, 100141, Number of reporting errors noted per month, Finance, 2020-07-30, NULL, #FFFFFF
+103056, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-07-30, NULL, #FFFFFF
+103057, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103058, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-07-30, NULL, #FFFFFF
+103059, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103060, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-07-30, NULL, #FFFFFF
+103061, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103062, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-07-30, NULL, #FFFFFF
+103063, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103064, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103065, 100452, Total number of payments made above $ X m, Operations, 2020-07-30, NULL, #FFFFFF
+103066, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-07-30, NULL, #FFFFFF
+103067, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-07-30, NULL, #FFFFFF
+103068, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-07-30, NULL, #FFFFFF
+103069, 100448, Number of near misses due to processing errors monthly, Operations, 2020-07-30, NULL, #FFFFFF
+103070, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-07-30, NULL, #FFFFFF
+103071, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-07-30, NULL, #FFFFFF
+103072, 100478, Number of staff that joined the company last month, People & Culture, 2020-07-30, NULL, #FFFFFF
+103073, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-07-30, NULL, #FFFFFF
+103074, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-07-30, NULL, #FFFFFF
+103075, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-07-30, NULL, #FFFFFF
+103076, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103077, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103078, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103079, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-07-30, NULL, #FFFFFF
+103080, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-07-30, NULL, #FFFFFF
+103081, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-07-30, NULL, #FFFFFF
+103082, 100468, Total number of advisors / sales staff, People & Culture, 2020-07-30, NULL, #FFFFFF
+103083, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103084, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-07-30, NULL, #FFFFFF
+103085, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-07-30, NULL, #FFFFFF
+103086, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-07-30, NULL, #FFFFFF
+103087, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103088, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-07-30, NULL, #FFFFFF
+103089, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-07-30, NULL, #FFFFFF
+103090, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-07-30, NULL, #FFFFFF
+103091, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103092, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-07-30, NULL, #FFFFFF
+103100, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-08-30, NULL, #FFFFFF
+103101, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-08-30, NULL, #FFFFFF
+103102, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-08-30, NULL, #FFFFFF
+103103, 100262, Number of monthly reconciliation errors, Operations, 2020-08-30, NULL, #FFFFFF
+103104, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-08-30, NULL, #FFFFFF
+103105, 100084, The number of times an insurance review due date has been missed, Finance, 2020-08-30, NULL, #FFFFFF
+103106, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103107, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-08-30, NULL, #FFFFFF
+103108, 100424, Total number of posts on the company's social media channels, Marketing, 2020-08-30, NULL, #FFFFFF
+103109, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-08-30, NULL, #FFFFFF
+103110, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103111, 100474, Number of staff taking sick leave, People & Culture, 2020-08-30, NULL, #FFFFFF
+103112, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-08-30, NULL, #FFFFFF
+103113, 100441, Number of near misses due to failed or late payments, Operations, 2020-08-30, NULL, #FFFFFF
+103114, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-08-30, NULL, #FFFFFF
+103115, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103116, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103117, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-08-30, NULL, #FFFFFF
+103118, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-08-30, NULL, #FFFFFF
+103119, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-08-30, NULL, #FFFFFF
+103120, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103121, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-08-30, NULL, #FFFFFF
+103122, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103123, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-08-30, NULL, #FFFFFF
+103124, 100460, Total number of staff in the Contact Center, People & Culture, 2020-08-30, NULL, #FFFFFF
+103125, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-08-30, NULL, #FFFFFF
+103126, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103127, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-08-30, NULL, #FFFFFF
+103128, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-08-30, NULL, #FFFFFF
+103129, 100272, Staff turn over rates, People & Culture, 2020-08-30, NULL, #FFFFFF
+103130, 100141, Number of reporting errors noted per month, Branch 1, 2020-08-30, NULL, #FFFFFF
+103131, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-08-30, NULL, #FFFFFF
+103132, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-08-30, NULL, #FFFFFF
+103133, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103134, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-08-30, NULL, #FFFFFF
+103135, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-08-30, NULL, #FFFFFF
+103136, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-08-30, NULL, #FFFFFF
+103137, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-08-30, NULL, #FFFFFF
+103138, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-08-30, NULL, #FFFFFF
+103139, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-08-30, NULL, #FFFFFF
+103140, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103141, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-08-30, NULL, #FFFFFF
+103142, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-08-30, NULL, #FFFFFF
+103143, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103144, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-08-30, NULL, #FFFFFF
+103145, 100414, Total number of employees, People & Culture, 2020-08-30, NULL, #FFFFFF
+103146, 100445, Number of incidents due to processing errors monthly, Operations, 2020-08-30, NULL, #FFFFFF
+103147, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-08-30, NULL, #FFFFFF
+103148, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103149, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-08-30, NULL, #FFFFFF
+103150, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-08-30, NULL, #FFFFFF
+103151, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103152, 100141, Number of reporting errors noted per month, Finance, 2020-08-30, NULL, #FFFFFF
+103153, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-08-30, NULL, #FFFFFF
+103154, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-08-30, NULL, #FFFFFF
+103155, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-08-30, NULL, #FFFFFF
+103156, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-08-30, NULL, #FFFFFF
+103157, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103158, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-08-30, NULL, #FFFFFF
+103159, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103160, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-08-30, NULL, #FFFFFF
+103161, 100448, Number of near misses due to processing errors monthly, Operations, 2020-08-30, NULL, #FFFFFF
+103162, 100452, Total number of payments made above $ X m, Operations, 2020-08-30, NULL, #FFFFFF
+103163, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103164, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-08-30, NULL, #FFFFFF
+103165, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-08-30, NULL, #FFFFFF
+103166, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-08-30, NULL, #FFFFFF
+103167, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103168, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-08-30, NULL, #FFFFFF
+103169, 100468, Total number of advisors / sales staff, People & Culture, 2020-08-30, NULL, #FFFFFF
+103170, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103171, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-08-30, NULL, #FFFFFF
+103172, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-08-30, NULL, #FFFFFF
+103173, 100478, Number of staff that joined the company last month, People & Culture, 2020-08-30, NULL, #FFFFFF
+103174, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-08-30, NULL, #FFFFFF
+103175, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103176, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-08-30, NULL, #FFFFFF
+103177, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-08-30, NULL, #FFFFFF
+103178, 100439, Number of incidents due to failed or late payments, Operations, 2020-08-30, NULL, #FFFFFF
+103179, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-08-30, NULL, #FFFFFF
+103180, 101033, Number of employees tested for COVID19, People & Culture, 2020-08-30, NULL, #FFFFFF
+103181, 101027, Number of COVID19 infected employees, People & Culture, 2020-08-30, NULL, #FFFFFF
+103182, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-08-30, NULL, #FFFFFF
+103183, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-08-30, NULL, #FFFFFF
+103184, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103185, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-08-30, NULL, #FFFFFF
+103186, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-08-30, NULL, #FFFFFF
+103187, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103188, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-08-30, NULL, #FFFFFF
+103189, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-08-30, NULL, #FFFFFF
+103190, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103191, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-08-30, NULL, #FFFFFF
+103192, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-08-30, NULL, #FFFFFF
+103200, 100540, (Data) - Number of critical business processes and IT systems, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103201, 100441, Number of near misses due to failed or late payments, Operations, 2020-09-29, NULL, #FFFFFF
+103202, 100520, (Data) - Actual volume of transactions monitored internally for AML/Sanctions risk, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103203, 100270, Number of unsuccessful IT change management implementations, Information Technology, 2020-09-29, NULL, #FFFFFF
+103204, 100244, % completion rates of mandatory training programs of Contact Center staff, People & Culture, 2020-09-29, NULL, #FFFFFF
+103205, 100460, Total number of staff in the Contact Center, People & Culture, 2020-09-29, NULL, #FFFFFF
+103206, 100953, Workcover claim commenced during the month, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103207, 100434, Total number of models and spreadsheet independently reviewed in the last 12 months (as per Model Policy), Operations, 2020-09-29, NULL, #FFFFFF
+103208, 100222, Number of open actions (incl. Audit) relating to IT systems including failed DRP/BCP tests, Information Technology, 2020-09-29, NULL, #FFFFFF
+103209, 100291, Number of suspicious activity on customer accounts escalated to management on a monthly basis, Branch 1, 2020-09-29, NULL, #FFFFFF
+103210, 100272, Staff turn over rates, People & Culture, 2020-09-29, NULL, #FFFFFF
+103211, 100287, % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-09-29, NULL, #FFFFFF
+103212, 100318, Reported number of compliance breaches monthly, Legal, Risk & Compliance, 2020-09-29, NULL, #FFFFFF
+103213, 100256, Number of actions relating to static data errors (e.g. tax rates, premiums etc.), Operations, 2020-09-29, NULL, #FFFFFF
+103214, 100445, Number of incidents due to processing errors monthly, Operations, 2020-09-29, NULL, #FFFFFF
+103215, 100418, Number of employees who has completed the mandatory Media Policy awareness training, People & Culture, 2020-09-29, NULL, #FFFFFF
+103216, 100274, % proportion of payments above $ X m that are processed manually, Operations, 2020-09-29, NULL, #FFFFFF
+103217, 100284, % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-09-29, NULL, #FFFFFF
+103218, 100504, (Data) - Market capitalisation and asset/dividend distribution of competitor-A in the last quarter, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103219, 100530, (Data) - Quarterly sales volumes of entity, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103220, 100141, Number of reporting errors noted per month, Branch 1, 2020-09-29, NULL, #FFFFFF
+103221, 100508, (Data) - Market capitalisation and asset/dividend distribution of competitor-B in the last quarter, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103222, 100248, Number of complaints relating to products, sales & service on a monthly basis, Call Centre, 2020-09-29, NULL, #FFFFFF
+103223, 100801, Number of complaints escalated to the ombudsman, XYZ Limited, 2020-09-29, NULL, #FFFFFF
+103224, 100315, Semi-annual employee satisfaction survey results, People & Culture, 2020-09-29, NULL, #FFFFFF
+103225, 100951, Lost time injury frequency rate (LTIRF) as at month end, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103226, 100266, Number of payments that failed initial auto-verification checks, Operations, 2020-09-29, NULL, #FFFFFF
+103227, 100512, (Data) - Market capitalisation and asset/dividend distribution of competitor-C in the last quarter, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103228, 100206, Ageing (# days) of open actions (incl. Audit) relating to IT systems, Information Technology, 2020-09-29, NULL, #FFFFFF
+103229, 100455, Number of payments above $ X m that are processed manually, Operations, 2020-09-29, NULL, #FFFFFF
+103230, 100964, WHS update meetings (toolbox) held during the month, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103231, 100282, Number of scheduled (pipeline) new or changes to marketing disclosures (physical & digital), Marketing, 2020-09-29, NULL, #FFFFFF
+103232, 100414, Total number of employees, People & Culture, 2020-09-29, NULL, #FFFFFF
+103233, 100478, Number of staff that joined the company last month, People & Culture, 2020-09-29, NULL, #FFFFFF
+103234, 100526, (Data) - Target (%) of AML/Sanctions monitoring, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103235, 100500, (Data) - Entity's market capitalisation and asset/dividend distribution in the last quarter, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103236, 100141, Number of reporting errors noted per month, Finance, 2020-09-29, NULL, #FFFFFF
+103237, 101038, % of staff temperature checked on entry to company premises, People & Culture, 2020-09-29, NULL, #FFFFFF
+103238, 100254, Number of incidents (incl. near misses) due to failed or late payments, Operations, 2020-09-29, NULL, #FFFFFF
+103239, 100236, Number of stand-alone incl. spreadsheet models, Operations, 2020-09-29, NULL, #FFFFFF
+103240, 100947, WHS inspections conducted during the month, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103241, 100230, Number of outstanding quarterly attestations by 3rd party Vendors, Information Technology, 2020-09-29, NULL, #FFFFFF
+103242, 100563, Interest rate risk -  PVBP, Treasury Sydney, 2020-09-29, NULL, #FFFFFF
+103243, 100056, Percentage of staff taken sick leave per month, People & Culture, 2020-09-29, NULL, #FFFFFF
+103244, 100536, (Data) - Quarterly sales volumes of competitor-C, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103245, 100216, Number of incidents that are due to failures 3rd party vendors, Information Technology, 2020-09-29, NULL, #FFFFFF
+103246, 100448, Number of near misses due to processing errors monthly, Operations, 2020-09-29, NULL, #FFFFFF
+103247, 100208, Average (# mins) downtime in minutes of "material" IT systems, Information Technology, 2020-09-29, NULL, #FFFFFF
+103248, 100258, Number of incidents (incl. near misses) due to processing errors monthly, Information Technology, 2020-09-29, NULL, #FFFFFF
+103249, 100276, Number of new or changes to existing legislation affecting the entity, Legal, Risk & Compliance, 2020-09-29, NULL, #FFFFFF
+103250, 100452, Total number of payments made above $ X m, Operations, 2020-09-29, NULL, #FFFFFF
+103251, 100518, (Data) - Monthly volume of transactions relevant for AML/Sanctions risk, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103252, 100470, Total number of advisors / sales staff who's mandatory training requirements is completed and up to date, People & Culture, 2020-09-29, NULL, #FFFFFF
+103253, 100960, Medically treated injury frequency rate (MTIFR) as at month end, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103254, 100212, Number of external cyber attacks and penetration attempts, Information Technology, 2020-09-29, NULL, #FFFFFF
+103255, 100544, (Data) - Number of business processes or IT systems with oustanding actions (incl. Audit) that are rated "medium" or above, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103256, 100524, (Data) - Projected (6 months) business volume, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103257, 100163, Number of intra-day limit breaches (VaR etc.), Treasury Sydney, 2020-09-29, NULL, #FFFFFF
+103258, 100301, Number of program level projects that are flagged as RED or AMBER (for 3 consecutive reporting periods)., Information Technology, 2020-09-29, NULL, #FFFFFF
+103259, 100047, Number of staff incident (relating to HR issues) reported in a month, People & Culture, 2020-09-29, NULL, #FFFFFF
+103260, 100561, Treasury counterparty exposure sub BBB as percentage of overall exposure, Treasury Sydney, 2020-09-29, NULL, #FFFFFF
+103261, 100264, Number of open actions relating to key controls in the Operations (processing) area, Operations, 2020-09-29, NULL, #FFFFFF
+103262, 100228, Number of open actions relating to 3rd party Vendors, Information Technology, 2020-09-29, NULL, #FFFFFF
+103263, 100439, Number of incidents due to failed or late payments, Operations, 2020-09-29, NULL, #FFFFFF
+103264, 100944, WHS audit actions overdue more than 90 days, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103265, 100427, Total number of negative posts on the company's social media channels, Marketing, 2020-09-29, NULL, #FFFFFF
+103266, 100214, Number of "material" incidents due to failed implementation IT system changes, Information Technology, 2020-09-29, NULL, #FFFFFF
+103267, 100468, Total number of advisors / sales staff, People & Culture, 2020-09-29, NULL, #FFFFFF
+103268, 101027, Number of COVID19 infected employees, People & Culture, 2020-09-29, NULL, #FFFFFF
+103269, 100534, (Data) - Quarterly sales volumes of competitor-B, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103270, 100174, % of all models and spreadsheets (as per Model Policy) independently reviewed in the last 12 months., Operations, 2020-09-29, NULL, #FFFFFF
+103271, 100246, % proportion of advisors / sales staff who's mandatory training requirements is completed and up to date., People & Culture, 2020-09-29, NULL, #FFFFFF
+103272, 101033, Number of employees tested for COVID19, People & Culture, 2020-09-29, NULL, #FFFFFF
+103273, 100226, Number of open actions relating to "User Access Controls" (incl. Audit), Information Technology, 2020-09-29, NULL, #FFFFFF
+103274, 100522, (Data) - Number of FTE resources available for AML/Sanction monitoring, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103275, 100542, (Data) - Number of critical business processes or IT systems with ANY failed BCP control tests, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103276, 100956, WHS training hours conducted during the month, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103277, 100250, Number of exceptions from model or spreadsheet calculations on a monthly basis, Operations, 2020-09-29, NULL, #FFFFFF
+103278, 100262, Number of monthly reconciliation errors, Operations, 2020-09-29, NULL, #FFFFFF
+103279, 100941, Number of Hazards Recorded Last Month, Workplace Health & Safety, 2020-09-29, NULL, #FFFFFF
+103280, 100424, Total number of posts on the company's social media channels, Marketing, 2020-09-29, NULL, #FFFFFF
+103281, 100295, Number of blocked accounts reported on a monthly basis, Branch 1, 2020-09-29, NULL, #FFFFFF
+103282, 100084, The number of times an insurance review due date has been missed, Finance, 2020-09-29, NULL, #FFFFFF
+103283, 100463, Total number of Contact Center staff that have completed mandatory training, People & Culture, 2020-09-29, NULL, #FFFFFF
+103284, 100268, Number of scheduled system changes (pipeline of bugs, fixes & upgrades), Information Technology, 2020-09-29, NULL, #FFFFFF
+103285, 100210, Number of "material" incidents relating to IT systems failure, Information Technology, 2020-09-29, NULL, #FFFFFF
+103286, 100474, Number of staff taking sick leave, People & Culture, 2020-09-29, NULL, #FFFFFF
+103287, 100532, (Data) - Quarterly sales volumes of competitor-A, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103288, 100567, Interest rate risk - Value at Risk, Treasury Sydney, 2020-09-29, NULL, #FFFFFF
+103289, 100431, Total number of models and spreadsheet (as per Model Policy), Operations, 2020-09-29, NULL, #FFFFFF
+103290, 100081, Number of occassions where emails containing personal information have been sent to an unsolicited recipient, Marketing, 2020-09-29, NULL, #FFFFFF
+103291, NULL, % divergence of entity's shareholder value against key competitors in the last quarter, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103292, NULL, Composite - % of all models and spreadsheets (as per model policy) independently reviewed in the last 12 months., Operations, 2020-09-29, NULL, #FFFFFF
+103293, NULL, Composite - % proportion of negative vs. total posts on the company's social media channels, Marketing, 2020-09-29, NULL, #FFFFFF
+103294, NULL, Composite - % completion rates of mandatory training programs on Media Policy awareness, Marketing, 2020-09-29, NULL, #FFFFFF
+103295, NULL, Actual AML/Sanctions monitoring as % of required target capacity, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF
+103296, NULL, % of critical business processes or IT systems with any failed BCP tests or VH/H actions oustanding, Corporate Office & Strategy, 2020-09-29, NULL, #FFFFFF

@@ -1,0 +1,284 @@
+The table size(row x col) is:(282 x 5)
+Risk Event Id, Id, Control Name, Control Description, Control Type
+NULL, 100201, Regular staff attestations mare around HR policies, reinforcement and sign-off required in annual process., NULL, CONTROL
+NULL, 100209, Background checks (criminal and credit history) are conducted on all new employees., NULL, CONTROL
+NULL, 100210, Contracts contain clauses around confidentiality and privacy requirements, where applicable., NULL, CONTROL
+NULL, 100216, Staff retention plans and appraisal processes in places, reviewed annually by HR., NULL, CONTROL
+NULL, 100219, Adequate position profiles are developed to ensure the expectations and responsibilities of a position are known and identified prior to commencing the recruitment process., NULL, CONTROL
+NULL, 100221, A Fit and Proper policy is in place to ensure that recruitment process and activities are aligned with specific role requirements., NULL, CONTROL
+NULL, 100224, A Remuneration Policy is in place, and reviewed annually by the HR Manager, NULL, CONTROL
+NULL, 100225, A Remuneration Policy is in place,reviewed annually by the HR Manager and approved by the Board, to ensure that remuneration for a postion is commensurate with the responsibilities of the position., NULL, CONTROL
+NULL, 100227, Annual subscription to Lexis Nexis Regulatory content, for technical legal updates., NULL, CONTROL
+NULL, 100240, Information security training and awareness conducted yearly for all staff, NULL, CONTROL
+NULL, 100261, Maintenance and support agreements in place with key SLAs in all Service Agreements., NULL, CONTROL
+NULL, 100269, Reconcilliation of general ledger accounts performed daily., NULL, CONTROL
+NULL, 100280, Maintenance and support agreements in place with key SLAs in all Service Agreements, reviewed annually, NULL, CONTROL
+NULL, 100281, Annual review of insurances policy by Legal Team., NULL, CONTROL
+NULL, 100282, Annual subscription to Lexis Nexis Regulatory content, for technical legal updates, content reviewed and assigned to obligation owners., NULL, CONTROL
+NULL, 100285, Regular discussions between the business and Legal Team to ensure currency of insurance and coverage levels are maintained., NULL, CONTROL
+NULL, 100288, Privacy policy containing privacy impact analysis is reviewed annually and authorised by the obligation owner, NULL, CONTROL
+NULL, 100296, Personal data captured is reviewed on a sampled appriach monthly by team manager, NULL, CONTROL
+NULL, 100308, Personal data captured is reviewed on a sampled approach monthly by team manager, NULL, CONTROL
+NULL, 100309, Reconcilliation of general ledger accounts performed daily by Finance Team., NULL, CONTROL
+NULL, 100323, Delegated authority levels, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">System enforced delegated authority levels</span></font>, CONTROL
+NULL, 100325, Segregation of duties, Segregation of duties separating execution, validation and approval&nbsp;, CONTROL
+NULL, 100327, User access validation, User access validation controls, CONTROL
+NULL, 100329, Validation of spreadsheet calculations, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">Regular review and independent validation of spreadsheets calculations</span></font>, CONTROL
+NULL, 100331, Independent sign-off on spreadsheet calculations, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">Independent sign-off on management input from spreadsheet calculations</span></font>, CONTROL
+NULL, 100332, Validation of financial models and spreadsheet calculations, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Regular review and independent validation of financial models and spreadsheets calculations</span></font>, CONTROL
+NULL, 100333, Independent sign-off on financial models and spreadsheet calculations, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Independent sign-off on management input from models and spreadsheet calculations</span></font>, CONTROL
+NULL, 100335, Reconciliation of financial data, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">Financial models must contain fully reconciled data or independently signed-off data</span></font>, CONTROL
+NULL, 100339, Non-conformance with vacation policy, Monitoring that staff adheres to the approved vacation policy, CONTROL
+NULL, 100343, System enforced delegated authority levels that are reviewed on a monthly basis, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">System enforced delegated authority levels that are reviewed on a monthly basis</span></font>, CONTROL
+NULL, 100347, Monthly monitoring that staff adheres to the approved vacation policy signed-off by line manager, Monthly monitoring that staff adheres to the approved vacation policy signed-off by line manager, CONTROL
+NULL, 100353, Stakeholder review and sign-off on implementation of system changes (incl. data migration) prior to release, NULL, CONTROL
+NULL, 100364, ABNs for new suppliers are checked to government website, prior to being loaded into payments system., NULL, CONTROL
+NULL, 100374, Counterparty credit limits are reviewed and approved annually by the ALM Committee, NULL, CONTROL
+NULL, 100376, ALM transactions are automatically checked against Treasury system counterparty limits, exceptions requiring dual authorisation, NULL, CONTROL
+NULL, 100378, Wholesale counterparty credit limit breaches are reported to the ALM Committee monthly for review., NULL, CONTROL
+NULL, 100395, Straight through processing (STP) with automated exception reporting reviewed and signed-off by process owner, NULL, CONTROL
+NULL, 100401, Annual review and approval of product disclosure statements signed-off (at the minimum) by Product, Marketing, Legal & Compliance, NULL, CONTROL
+NULL, 100407, ATM anti skimming devices managed and reviewed by branch managers, NULL, CONTROL
+NULL, 100409, Blocking of compromised cards and accounts in case of suspicious activity reported via daily transaction monitoring, NULL, CONTROL
+NULL, 100415, Customers contacted for confirmation prior to unusual payments, changing address, email, etc. and in case of suspicious activity, NULL, CONTROL
+NULL, 100419, Daily monitoring of IT system performance with escalation of system downtime, NULL, CONTROL
+NULL, 100423, Daily monitoring of trading activities with escalations of any breaches of intra day limits, NULL, CONTROL
+NULL, 100429, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line managament, NULL, CONTROL
+NULL, 100433, DRP/BCP process in place which is tested on an annual basis evidencing any exceptions, NULL, CONTROL
+NULL, 100437, Formal activity and performance monitoring of sales staff and advisors to detect any unusual behaviours reviewed by line-manager quarterly, NULL, CONTROL
+NULL, 100455, Monthly IT Governance process in place with formal oversight and approval of IT lifecycle and IT change management pipeline, NULL, CONTROL
+NULL, 100457, Quarterly monitoring of 3rd party Vendor service levels against agreed SLA, evidenced by relationship manager sign-off and issues/actions raised for any exceptions, NULL, CONTROL
+NULL, 100459, Quarterly (or semi-annual) attestation and sign-off by 3rd party Vendor against SLA including relevant breach/incident reporting, NULL, CONTROL
+NULL, 100461, Vendor policy framework reviewed and approved on an annual basis, NULL, CONTROL
+NULL, 100467, Daily capture and monitoring of a corporate actions events calendar which consolidates impacts to both customers and affected securities across the managing entity for downstream processing and external reporting purposes (incl. substantial shareholding), NULL, CONTROL
+NULL, 100469, Daily reconciliation of bank accounts, GL accounts, asset accounts, custodian accounts and position reports with any exceptions reviewed and evidenced in a reconciliation report that is escalated to line manager, NULL, CONTROL
+NULL, 100471, Independent review and approval of financial reports evidenced by sign-off prior to submitting key internal financial reports, NULL, CONTROL
+NULL, 100477, Independent review of model and spreadsheet outputs prior to being deployed as input into follow-on process with any exceptions being reviewed and escalated to line manager, NULL, CONTROL
+NULL, 100479, Independent third party annual review and validation of financial models (incl. spreadsheets) calculations which is evidenced and reviewed by line manager, NULL, CONTROL
+NULL, 100481, IT change management controls in place with monthly stakeholder review and sign-off (incl. specifications, data migration and application/regression/user testing) prior to implementation of IT change, NULL, CONTROL
+NULL, 100483, IT change management controls in place with stakeholder review and sign-off ensuring that periferal and stand-alone applications including models and spreadsheets have been covered by the change controls prior to implementation, NULL, CONTROL
+NULL, 100485, Model policy disseminated to relevant processing functions which is reviewed and approved on an annual basis, NULL, CONTROL
+NULL, 100489, Pricing policy disseminated to relevant pricing staff which is reviewed and approved on an annual basis, NULL, CONTROL
+NULL, 100493, Static data is reviewed, updated (where required) and a central log is independently signed-off on a monthly basis, NULL, CONTROL
+NULL, 100503, Variance and movement analysis is performed with any exceptions being evidenced and escalated to line-manager, NULL, CONTROL
+NULL, 100512, Daily capture and monitoring of a corporate action events calendar which consolidates impacts to both customers and affected securities across the managing entity for downstream processing and external reporting purposes, NULL, CONTROL
+NULL, 100516, User access is reviewed on a quarterly basis and signed off by line management, NULL, CONTROL
+NULL, 100517, Independent review and approval of financial reports evidenced by sign-off prior to submitting reports to business stakeholders, NULL, CONTROL
+NULL, 100521, Daily record keeping (call recording) of all interactions between Contact Center staff and customers that is monitored by line management, NULL, CONTROL
+NULL, 100523, Documented scripts available to Contact Center staff which are reviewed and updated on quarterly basis, NULL, CONTROL
+NULL, 100525, Mandatory training programs with system generated attendance reports that are monitored on a quarterly basis by line management, NULL, CONTROL
+NULL, 100530, Monitoring and reporting of complaints data to senior management on a monthly basis, NULL, CONTROL
+NULL, 100531, Mystery shopping exercise conducted on semi-annual basis reviewed by line management, NULL, CONTROL
+NULL, 100535, Product governance controls with monthly stakeholder review and approval of the product lifecycle and development pipeline (optional: ….incl. Product, IT, Marketing, Operations, Legal amd Risk&Compliance), NULL, CONTROL
+NULL, 100540, IT change management controls in place with stakeholder review and sign-off (incl. specifications, data migration and application/regression/user testing) prior to implementation, NULL, CONTROL
+NULL, 100542, Monthly monitoring and review of new and changes to the regulatory environment relating to the development, marketing or selling of financial products by Legal & Compliance (or outsourced) for review by Senior Management to ensure regulatory compliance, NULL, CONTROL
+NULL, 100543, Daily monitoring of trading activities with escalation of any intra-day breaches of limits to line management, NULL, CONTROL
+NULL, 100544, Customers contacted for confirmation prior to making changes to address/email or processing unusual payments or any other suspicious activity, NULL, CONTROL
+NULL, 100547, Daily monitoring of customer accounts to identify any unusual payments or other suspicious activity with alerts back to customer if required, NULL, CONTROL
+NULL, 100548, Documented scripts available to contact center staff which are reviewed and updated on quarterly basis, NULL, CONTROL
+NULL, 100550, Marketing disclosure and governance control with monthly review and sign-off on material marketing material and campaigns by business stakeholders incl. at the minimum Marketing, Product, Legal & Compliance., NULL, CONTROL
+NULL, 100552, All marketing and sales material (physical and digital) undergoes a dual review process within the Marketing function and is signed-off by the Head of Marketing, NULL, CONTROL
+NULL, 100554, Media policy is in place including authorised media contacts, social media response etc. which is disseminated and reviewed on an annual basis by Legal & Compliance, NULL, CONTROL
+NULL, 100556, Staff induction training and annual refresher training on medial policy awareness, NULL, CONTROL
+NULL, 100560, Customers contacted to re-confirm any changes to address, email or other account details., NULL, CONTROL
+NULL, 100566, Daily monitoring of suspicious credit card and other transactions with escalation of suspicious activity to management, NULL, CONTROL
+NULL, 100569, Annual review of insurance requirements and coverage of existing policies by Legal Team., NULL, CONTROL
+NULL, 100570, Quarterly review by Legal Team of existing insurance arrangements against current state of business, growth, increase in staff, building etc. together with key business stakeholders to ensure currency and adequacy of corporate insurance coverage., NULL, CONTROL
+NULL, 100572, Business criticality assessment conducted to identify key IT systems and processes and respective business impact and maximum outage capacity in the event of a business failure. 
+(This should feed into BCP/DRP control), NULL, CONTROL
+NULL, 100573, Variance and movement analysis is performed on a monthly basis with any exceptions being evidenced and escalated to line-manager, NULL, CONTROL
+NULL, 100574, Independent review and approval of financial reports evidenced by sign-off prior to submitting to business stakeholders, NULL, CONTROL
+NULL, 100575, Counter-party credit limits and delegated authority levels are reviewed and approved quarterly by the ALM Committee., NULL, CONTROL
+NULL, 100576, Counter-party credit limit utilization is monitored and reported to the ALM Committee monthly and any limit breaches are escalated via standard escalation report., NULL, CONTROL
+NULL, 100595, Rigid data migration process including back-testing using a non-production IT environment prior to release into business., NULL, CONTROL
+NULL, 100598, Initiation and scoping of key projects includes business stakeholders as well as Finance, Operations and Legal, Risk & Compliance., NULL, CONTROL
+NULL, 100599, Project approval process with sign-off by relevant business stakeholders including Executive Committee approval of projects above $Xm., NULL, CONTROL
+NULL, 100600, Weekly status reporting of ongoing projects to relevant stakeholders that covers milestones, costs, timeline with escalation of any delays, issues, inter-dependencies., NULL, CONTROL
+NULL, 100601, Monthly program level reporting of company wide ongoing key projects on a "traffic light" basis covering milestones, tracking to target and outstanding issues., NULL, CONTROL
+NULL, 100604, Post implementation project review including functionality and data issues, end-user / customer feedback and delivery of financial targets., NULL, CONTROL
+NULL, 100605, Robust testing regime involving application, user and regression testing with logging of deficiencies for re-work and re-testing prior to sign-off and release., NULL, CONTROL
+NULL, 100606, Detailed business and functional specifications are developed and peer reviewed by relevant business stakeholders and approved by project steering group prior to commencing any development., NULL, CONTROL
+NULL, 100610, Annual articulation of the desired brand positioning within the competitive landscape including SWOT analysis and listing key initiatives for approval at the annual strategic review., NULL, CONTROL
+NULL, 100612, Annual benchmarking of the competitive landscape and offer/capability of individual competitors reported as key input to the annual strategic review., NULL, CONTROL
+NULL, 100614, Annual setting, approval and communication of a Risk Appetite Statement which underpins strategic decision making, corporate behaviours and remuneration to Executive Management., NULL, CONTROL
+NULL, 100616, Employee remuneration and incentive schemes are linked to behaviours that are monitored on a semi-annual basis., NULL, CONTROL
+NULL, 100618, Legal & Compliance are key stakeholders in Governance Forums overseeing and approving decisions around IT Change, Product Lifecycle and Marketing Disclosure, NULL, CONTROL
+NULL, 100620, Maintenance of regulatory compliance plans with quarterly attestation, NULL, CONTROL
+NULL, 100624, Monthly monitoring of the regulatory environment and interpretating any new or changes to legislation with reporting to business stakeholders, NULL, CONTROL
+NULL, 100628, Semi-annual career progression planning for key senior staff reviewed by Executive Management., NULL, CONTROL
+NULL, 100630, Semi-annual employee satisfaction surveys that are reviewed in team meetings with actionnable outcomes., NULL, CONTROL
+NULL, 100632, Semi-annual strategic planning process with Executive Management that considers Product lifecycle, IT change, external competitive landscape, financial metrics, marketing plan etc., NULL, CONTROL
+NULL, 100634, Structured staff rotation process to avoid concentration of skills and key person dependency reviewed with line management on a semi-annual basis, NULL, CONTROL
+NULL, 100636, Subscription to external legal expert advice monitoring regulatory changes which is reported to business stakeholders, NULL, CONTROL
+NULL, 100639, Security personnel, CCTV and other security monitoring devices in the bank branches 24/7., NULL, CONTROL
+NULL, 100641, Periodic monitoring of social media networks with escalation to Head of Marketing for any emerging adverse activity, NULL, CONTROL
+NULL, 100642, Quarterly communication with investors, media and analysts with material approved by senior management, legal and communications expert., NULL, CONTROL
+NULL, 100643, External data feeds from third party provider with daily updates on corporate action events, NULL, CONTROL
+NULL, 100645, Monthly monitoring of the financial performance and media coverage of key competitors reported to senior management., NULL, CONTROL
+NULL, 100646, Ongoing monitoring of customer accounts to identify any unusual payments or other suspicious activity with alerts back to customer if required, NULL, CONTROL
+NULL, 100647, ATM anti skimming devices managed and updated by branch managers on an ongoing basis, NULL, CONTROL
+NULL, 100648, Business criticality assessment conducted to identify key IT systems and processes and respective business impact and maximum outage capacity in the event of a business failure., NULL, CONTROL
+NULL, 100649, Ongoing monitoring of customer accounts to identify any suspicious credit card, unusual payments or other suspicious activity with escalation to management and alerts back to customer if required, NULL, CONTROL
+NULL, 100652, Industry trends and statistics relating to fraud (incl. cyber crime) reviewed and reported to business stakeholders quarterly, NULL, CONTROL
+NULL, 100653, Monitoring and reporting of complaints data to senior management, NULL, CONTROL
+NULL, 100654, Monthly monitoring and review of new or changes to the regulatory environment relating to the development, marketing or selling of financial products by Legal & Compliance (or outsourced) for review by Senior Management to ensure regulatory compliance, NULL, CONTROL
+NULL, 100655, Semi-annual oversight and approval of product strategy incl. cross-selling and product bundling to ensure fit for purpose, NULL, CONTROL
+NULL, 100657, Straight through processing (STP) with automated exception reporting reviewed and escalated to process owner, NULL, CONTROL
+NULL, 100659, Daily reconciliation of bank accounts, GL accounts, asset accounts and position reports with exceptions reviewed evidenced signed-off reconciliation report, NULL, CONTROL
+NULL, 100660, All marketing (digital and print) and sales materials goes through a dual review process within the Marketing Team., NULL, CONTROL
+NULL, 100662, Annual review and validation of financial models (incl. spreadsheets) by independent third party evidenced by sign-off, NULL, CONTROL
+NULL, 100663, Disaster Recovery Plan in place, reviewed annually for currency., NULL, CONTROL
+NULL, 100664, Formal activity and performance monitoring of sales staff and advisors to detect any unusual behaviors reviewed by line-manager quarterly, NULL, CONTROL
+NULL, 100665, Independent review and approval evidenced by sign-off prior to being submitting key internal financial reports, NULL, CONTROL
+NULL, 100668, Independent review and sign-off on manual payments above $ XX m, NULL, CONTROL
+NULL, 100670, Independent review and sign-off on payments that fails auto trade verification, NULL, CONTROL
+NULL, 100671, Independent review of model and spreadsheet outputs prior to being deployed as input into follow-on process with any exceptions being evidenced and escalated, NULL, CONTROL
+NULL, 100672, Ongoing monitoring of customer accounts to identify any unusual payments or other suspicious activity with escalation to management and alerts back to customer if required, NULL, CONTROL
+NULL, 100673, Segregation of duties separating the roles of processing, assessment/approval and execution signed-off by process owner, NULL, CONTROL
+NULL, 100674, Segregation of duties separating the roles of processing, assessment/approval and execution signed-off by line manager, NULL, CONTROL
+NULL, 100675, Segregation of duties separating the roles of assessment, approval and execution signed-off by line management, Segregation of duties separating the roles of assessment, approval and execution signed-off by line management, CONTROL
+NULL, 100676, Accreditation of sales staff and advisers which is reviewed on a quarterly basis by line management, NULL, CONTROL
+NULL, 100677, Accreditation of sales staff and advisors which is reviewed on a quarterly basis by line management, NULL, CONTROL
+NULL, 100678, Mandatory training programs where attendance is monitored on a quarterly basis, NULL, CONTROL
+NULL, 100679, Staff induction training including media policy awareness with annual refresher training, NULL, CONTROL
+NULL, 100680, Staff induction training includes media policy awareness, and refresher training are conducted yearly., NULL, CONTROL
+NULL, 100683, Variance and movement analysis is performed aligned to the pricing process frequency with evidence of any exceptions being signed-off and escalated, NULL, CONTROL
+NULL, 100684, Variance and movement analysis is performed aligned to the frequency of the pricing process with evidence of any exceptions being signed-off and escalated, NULL, CONTROL
+NULL, 100685, Counter-party and/or customer confirmation required prior to executing payments above $Xm evidenced by (Head of payment function ?)., NULL, CONTROL
+NULL, 100686, Record keeping (call recording) of all interactions between sales staff and customers, NULL, CONTROL
+NULL, 100687, Information security training and awareness conducted yearly for all staff with automated attendance reporting, NULL, CONTROL
+NULL, 100689, Monthly monitoring of staff sick leave with reporting to line management, NULL, CONTROL
+NULL, 100690, Anti-bullying and harrassment policy in place outlining behaviours and conduct that are not acceptable in the workspace, policy reviewed and updated annually by HR., NULL, CONTROL
+NULL, 100691, Annual training and awareness programs around HR policies, code of conduct etc. with automated attendance reporting., NULL, CONTROL
+NULL, 100695, Adequate position profiles are developed to ensure that expectations and responsibilities of a position is identified and approved by line manager prior to commencing the recruitment process., NULL, CONTROL
+NULL, 100696, A Fit and Proper policy reviewed annually by HR Manager, to ensure that recruitment process and activities are aligned with specific role requirements., NULL, CONTROL
+NULL, 100697, All new staff are inducted, and existing staff receive annual refresher training around AFSL requirements., NULL, CONTROL
+NULL, 100698, All new staff are inducted, and existing staff receive annual refresher training around AFSL requirements with attendance reported to management., NULL, CONTROL
+NULL, 100699, ALM transactions are automatically checked against Treasury system counter-party limits with exceptions requiring dual authorisation which is logged, monitored and reported monthly to ALM Committee., NULL, CONTROL
+NULL, 100700, Annual subscription to Lexis Nexis Regulatory content, for technical legal updates, which is reviewed and assigned to obligation owners., NULL, CONTROL
+NULL, 100701, A register of authorised media contacts are in place, reviewed annually and signed-off by Marketing Director., NULL, CONTROL
+NULL, 100702, A Remuneration Policy is in place, reviewed annually by the HR Manager and approved by the Board, to ensure that remuneration for a position is commensurate with the responsibilities of the position., NULL, CONTROL
+NULL, 100703, Claims are reviewed by relevant manager for authorisation, NULL, CONTROL
+NULL, 100704, Independent review and sign-off on inputs and outputs from models and spreadsheet calculations, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Independent review and sign-off on inputs and outputs from models and spreadsheet calculations</span></font>, CONTROL
+NULL, 100706, Financial models must contain fully reconciled data independently signed-off before running models., <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Financial models must contain fully reconciled data&nbsp;</span></font>before running models followed by variance / movement analysis<font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">&nbsp;independently signed-off.</span></font>, CONTROL
+NULL, 100707, Legal review all marketing material for compliance issues prior to release, NULL, CONTROL
+NULL, 100708, Contracts contain clauses around confidentiality and privacy requirements, where applicable, reviewed annually by Legal Team., NULL, CONTROL
+NULL, 100709, Key systems are being monitored daily and alerts are operational reviewed daily., NULL, CONTROL
+NULL, 100710, Monthly monitoring that staff adheres to the approved vacation policy reviewed and signed-off by line manager., NULL, CONTROL
+NULL, 100712, Product disclosure statements are reviewed annually by the Financial Planning Unit and updated for currency., NULL, CONTROL
+NULL, 100713, Contractual arrangements incl. Service Level Agreement must be in place as per Vendor Policy prior to inception of a new service provider and reviewed annually., NULL, CONTROL
+NULL, 100714, Key systems (including machines and software) are updated regularly for known bugs and vulnerabilitiesm., NULL, CONTROL
+NULL, 100715, Patch management applications performed regularlys i.e. security patches for servers, endpoint devices, operationg systems and applications., NULL, CONTROL
+NULL, 100717, Background checks (criminal and credit history) are conducted on all new employees and reviewed by hiring manager., NULL, CONTROL
+NULL, 100718, Personal data breach policy including incident reporting is reviewed annually and approved by the Executive Team, NULL, CONTROL
+NULL, 100720, Personal customer data captured is reviewed on a sampled approach monthly by team manager., NULL, CONTROL
+NULL, 100721, Reconciliation of cash drawers daily, results recorded in reconciliation report, NULL, CONTROL
+NULL, 100724, Purchase Order / Invoices approved by relevant Line Manager, NULL, CONTROL
+NULL, 100725, Social media response policy and process for monitoring social media networks., NULL, CONTROL
+NULL, 100726, Staff retention plans and appraisal review processes in places, reviewed annually by HR and line manager., NULL, CONTROL
+NULL, 100727, STI / bonus remuneration must be linked to behaviours that are reviewed and approved by line-management on a quarterly basis, NULL, CONTROL
+NULL, 100728, Stakeholder approval and sign-off on implementation of system changes (incl. data migration) prior to release, Stakeholders to include product, marketing, customer service,&nbsp;<div>legal, risk&amp;compliance</div>, CONTROL
+NULL, 100729, Stakeholder approval and sign-off of product development process, NULL, CONTROL
+NULL, 100730, User access to systems and networks are regularly reviewed by the IT Division., NULL, CONTROL
+NULL, 100731, System enforced and user access specific delegated authority levels that are reviewed on a monthly basis by line manager., <br>, CONTROL
+NULL, 100732, Monthly monitoring of the regulatory environment and interpretation of any new or changes to legislation with reporting to business stakeholders and Senior Management., NULL, CONTROL
+NULL, 100733, Robust compliance program in place to ensure currency and consistency with regulatory requirements., NULL, CONTROL
+NULL, 100734, Supplier details validated prior to establishment in Purchase Order system, NULL, CONTROL
+NULL, 100735, Virtual Private Network (VPN) is in place to protect the private network., NULL, CONTROL
+NULL, 100736, Respectful Workplace Program carried out by the HR Committee yearly, communitcated to all staff within the organisation., NULL, CONTROL
+NULL, 100737, Existence of an Enterprise Agreement as an option to all staff, terms and conditions are in line with Fair Work Act., NULL, CONTROL
+NULL, 100738, Health and wellness programs are in place and conducted every quarter, to promote work-life balance., NULL, CONTROL
+NULL, 100739, Privacy policy containing privacy impact analysis is reviewed annually and communicated to all employees with annual refresher awareness., NULL, CONTROL
+NULL, 100740, Daily record keeping (call recording) of all interactions between sales staff and customers that is monitored by line management, NULL, CONTROL
+NULL, 100741, Overnight back-up process in place with approved 3rd party vendor, NULL, CONTROL
+NULL, 100742, Quarterly user access validation review signed-off by line management, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Quarterly user access validation review signed-off by line management</span></font>, CONTROL
+NULL, 100743, System enforced and user access specific delegated authority levels for automated (STP) payments above $Xm, NULL, CONTROL
+NULL, 100744, Variance and movement analysis for financial reporting is performed on a monthly basis with any exceptions being evidenced and escalated to line-manager, NULL, CONTROL
+NULL, 100745, Variance and movement analysis for financial reporting is performed on a monthly basis with any exceptions being reviewed and escalated to line-manager., NULL, CONTROL
+NULL, 100746, Variance and movement analysis is performed aligned to the pricing process frequency with any exceptions being reviewed and escalated to line manager., NULL, CONTROL
+NULL, 100747, Reconciliation of general ledger accounts performed daily by Finance Team with exceptions reviewed by line manager., NULL, CONTROL
+NULL, 100749, Contractual arrangements that incl. Service Level Agreement, breach reporting and operational BCP process must be in place as per Vendor Policy prior to inception of a new service provider and reviewed annually....., NULL, CONTROL
+NULL, 100750, Contractual arrangements that incl. Service Level Agreement, breach reporting and operational BCP process must be in place as per Vendor Policy prior to inception of a new service provider and reviewed annually., NULL, CONTROL
+NULL, 100751, Contractual arrangements with 3rd party Vendors that incl. Service Level Agreement, breach reporting and operational BCP process must be in place as per Vendor Policy prior to inception of new service provider and reviewed annually., NULL, CONTROL
+NULL, 100752, Contractual arrangements with 3rd party IT vendors that includes SLA obligations, breach reporting and operational BCP process, NULL, CONTROL
+NULL, 100756, Static data used in the pricing process is reviewed and updated on a quarterly basis evidenced with sign-off by line manager., NULL, CONTROL
+NULL, 100822, Interest rate risk policy containing PVBP and VaR limits is reviewed annually and approved by ALCO., NULL, CONTROL
+NULL, 100824, Interest rate risk monitored monthly by ALCO through PVBP, VAR reporting, NULL, CONTROL
+NULL, 100841, ABNs for new suppliers are checked and verified against government website, prior to being loaded into payments system., NULL, CONTROL
+NULL, 100845, Annual articulation of the desired brand positioning within the competitive landscape including SWOT analysis,  listing key initiatives for approval at the annual strategic review., NULL, CONTROL
+NULL, 100860, Access to systems is restricted and requires appropriate authorisation., NULL, CONTROL
+NULL, 100861, Access to systems is restricted and requires appropriate authorisation, NULL, CONTROL
+NULL, 100898, AML/CTF Sanctions Policy is in place which is disseminated to relevant employees and is reviewed and approved on an annual basis, NULL, CONTROL
+NULL, 100900, A Gifts and Entertainment Policy is in place which is disseminated to all employees and is reviewed and approved on an annual basis, NULL, CONTROL
+NULL, 100902, Gifts and Entertainment provided or received is recorded in a Gifts and Entertainment register which is reviewed by line management on a regular basis., NULL, CONTROL
+NULL, 101444, Lending policy reviewed annually and approved by Board, NULL, CONTROL
+NULL, 101528, Quality Assurance check on goods inward, NULL, CONTROL
+NULL, 102051, Information Security Policies, NULL, CONTROL
+NULL, 102085, Desktops and laptops require encrypted and password protected USB sticks and similar devices that are authorized by line management, NULL, CONTROL
+NULL, 102427, Hazchem induction program, NULL, CONTROL
+NULL, 102428, Essential PPE worn with all hazardous chemical handling activities, NULL, CONTROL
+NULL, 102429, HAZCHEM induction program, NULL, CONTROL
+NULL, 102431, Restricted access to all stored HAZCHEM, NULL, CONTROL
+NULL, 102436, HAZCHEM purchasing and inventory volume control, NULL, CONTROL
+NULL, 102440, Asphxyiation induction program, NULL, CONTROL
+NULL, 102442, Mandatory confined spaces JSA or risk analysis, NULL, CONTROL
+NULL, 102444, Carbon monoxide sensors operational on all confined space work, NULL, CONTROL
+NULL, 102445, Carbon monoxide and oxygen sensors mandatory for all confined space work, NULL, CONTROL
+NULL, 102456, Diversification of revenue sources, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">Diversification of revenue sources - [offshore International?], short-courses, domestic fee paying, philanthropy etc</span></font>, CONTROL
+NULL, 102458, Information Security Governance (Roles and Responsibilities), NULL, CONTROL
+NULL, 102459, Information Security Policies reviewed annually and approved by ISMS Committee, NULL, CONTROL
+NULL, 102468, Bunding and Spill Management, NULL, CONTROL
+NULL, 102562, Health and wellness programs are in place and conducted every week., NULL, CONTROL
+100007, 100102, Backup Server Tested Quarterly by IT, Control Description, CONTROL
+100114, 100754, Network penetration test conducted quarterly by an independent 3rd party with findings actioned and reported to IT Security Committee., NULL, CONTROL
+100114, 101319, Anti-virus software and network firewall protection installed and updated on a regular basis by IT Security, NULL, CONTROL
+100114, 102448, Daily monitoring of external cyber attacks and network penetration attempts with escalation to Senior Management, NULL, CONTROL
+100126, 100310, Privacy training conducted at induction with biannual refreshers. Evidence recorded  in HR system., NULL, CONTROL
+100126, 100711, Privacy training conducted at staff induction with annual refreshers. Evidence recorded  in HR system., NULL, CONTROL
+100126, 100757, Privacy training conducted at staff induction with annual refreshers. Evidence recorded in HR system., NULL, CONTROL
+100129, 100307, Personal data quality controls include system data entry controls on input and rectification procedures upon notification of incorrect data, NULL, CONTROL
+100129, 100719, Personal data quality controls include system data entry controls, monthly review of personal data on a sample approach and rectification procedures upon notification of incorrect data., NULL, CONTROL
+100144, 102361, Peer review of model and spreadsheet outputs prior to being deployed as input into follow-on process with any exceptions being reviewed and escalated to line manager, NULL, CONTROL
+100144, 102363, Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11.0px;">Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off</span></font>, CONTROL
+100161, 100754, Network penetration test conducted quarterly by an independent 3rd party with findings actioned and reported to IT Security Committee., NULL, CONTROL
+100164, 100795, Due diligence required as per Vendor policy and signed-off relationship manager prior to inception of a new 3rd party Vendor, NULL, CONTROL
+100184, 100759, Safes requires dual authorisation incl. a Senior Manager, NULL, CONTROL
+100184, 100761, Cash limits that require a Senior Manager to override, NULL, CONTROL
+100221, 100781, Rigid due diligence process with oversight and approval required by executive management., NULL, CONTROL
+100221, 100783, Independent legal and advisory expertise hired with reporting to Executive Management., NULL, CONTROL
+100221, 100784, Rigid due diligence process with oversight and approval required by Executive Management., NULL, CONTROL
+100221, 100787, Weekly Governance meetings of onkgoing M&A projects incl. (due diligence, legal, valuation, negotiations, branding) with weekly reporting and escalation of issues to Executive Management., NULL, CONTROL
+100221, 100789, Structured post-M&A integration (or disintegration) process with work streams (incl. operations, branding, communications, IT etc.) chaired by Senior Management with escalation of issues to Executive Management, NULL, CONTROL
+100222, 100792, Key governance processes are in place incl. (Risk & Compliance, Sales & Marketing, IT, Treasury & ALM) with quarterly reporting to the Board., NULL, CONTROL
+100222, 100794, A separate remuneration committee is in place which reports to the Board on a quarterly basis., NULL, CONTROL
+100223, 100797, Robust KYC procedures in place which are communicated to staff and reviewed on a quarterly basis., NULL, CONTROL
+100223, 100799, Daily transaction monitoring program with any exceptions or suspicious activity escalated to supervisor., NULL, CONTROL
+100385, 101363, Large scale land clearing to be undertaken during dry conditions only, NULL, CONTROL
+100385, 101365, Erosion protection infrastructure implemented, NULL, CONTROL
+100385, 101374, Stabilisation of cleared area with mulch, dust suppressants and / or slope stabilisation products, NULL, CONTROL
+100386, 101369, Maintenance on pipes and release valves is undertaken as per maintenance schedule, NULL, CONTROL
+100387, 101369, Maintenance on pipes and release valves is undertaken as per maintenance schedule, NULL, CONTROL
+100387, 101371, Liquid spill barriers available within 1km of site, NULL, CONTROL
+100387, 101373, Ground water testing conducted on a monthly basis, NULL, CONTROL
+100389, 102568, Abrasive floor mats or replacing worn flooring, NULL, CONTROL
+100389, 102570, Wet floor signs displayed, NULL, CONTROL
+100389, 102572, Cover cables or cords in walkways, NULL, CONTROL
+100441, 101524, SG Fleet cross training, NULL, CONTROL
+100707, 102460, Lobbying Federal and State government stakeholders, <font face="tahoma, arial, helvetica, sans-serif"><span style="font-size: 11px;">Lobbying Federal and State government stakeholders (the latter having a significant stake in the success of the Universities in South Australia)</span></font>, CONTROL
+100727, 102067, Annual testing and tagging of equipment, Independent testing and tagging of WHS related equipment including fire extinguishers, CONTROL
+100760, 102457, Holding a hand rail when walking down or u the stairs, NULL, CONTROL
+100760, 102461, Not talking on the phone while walking, NULL, CONTROL
+100885, 102574, Noise Abatement, <span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);">control&nbsp;</span><b style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);">noise</b><span style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);">&nbsp;caused by amplified sound and other specified equipment</span>, CONTROL
+100888, 102446, HAZCHEM spillkits and washstations available at all HAZCHEM storage locations, NULL, CONTROL
+100888, 102447, Essential PPE worn with all HAZCHEM handling activities, NULL, CONTROL
+100892, 102577, Proper PPE such as, hi vi vests hard hats, safety glasses, goggles and face shields  worn., NULL, CONTROL
+100892, 102578, Always wear proper PPE (hi vi vest, hard hats, safety glasses, goggles, and face shields), NULL, CONTROL
+100892, 102580, Ensure barricades and barriers are maintained in their work areas, and that they remain fit for purpose including tags and signage., NULL, CONTROL
+100892, 102581, Machine guarding, including fixed, interlocked, photoelectric or a combination of those., Example:&nbsp;Ensure barricades and barriers are maintained in their work areas, and that they remain fit for purpose including tags and signage., CONTROL
+100952, 102504, A Code of Conduct is in place which is reviewed and approved on an annual basis and disseminated to all employees., AFG, CONTROL
+100985, 102535, Isolation, NULL, CONTROL
+100985, 102537, Protective equipment, eg. face mask, protective closing, gloves etc, NULL, CONTROL
+100985, 102539, Extensive testing, NULL, CONTROL
+100985, 102541, Medical attention, NULL, CONTROL
+100985, 102543, Social support, NULL, CONTROL
+100985, 102552, Temperature checking of employees, Temperature checking of employees on entry into company premises, CONTROL

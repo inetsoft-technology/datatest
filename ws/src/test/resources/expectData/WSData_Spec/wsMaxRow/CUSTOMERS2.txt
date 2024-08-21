@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+CITY, CUSTOMER_ID, STATE
+Baltimore, 38, MD
+Boston, 41, MA
+Dallas, 57, TX
+New York, 51, NY
+Plainfield, 35, NJ

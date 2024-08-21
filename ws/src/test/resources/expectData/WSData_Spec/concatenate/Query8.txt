@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 5)
+PRODUCT_NAME, PRICE, INSTOCK, PRODUCT_ID, CATEGORY_ID
+Green Planet, 75, true, 4, 4
+House Hunter, 129, false, 5, 4
+Info Folder, 399, false, 3, 6
+Sync Me, 145, true, 7, 4
+WebCalendar, 248, true, 8, 6

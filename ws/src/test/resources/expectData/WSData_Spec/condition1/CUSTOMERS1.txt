@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 5)
+CITY, CUSTOMER_ID, RESELLER, STATE, ZIP
+Aachen, 3, true, TX, 03887
+Akergen, 4, false, PA, 38923
+Ankertown, 18, false, FL, 29183
+Austin, 17, true, TX, 28122
+Boomtown, 20, false, NY, 11234
+Chicago, 6, true, IL, 39283
+Cleveland, 11, false, OH, 32343
+George Park, 19, true, PA, 23445
+Little Rock, 12, false, AK, 12343
+Littletown, 1, true, NY, 18322
+Long Island, 15, true, NY, 12334
+Los Angles, 10, true, CA, 88938
+Middletown, 9, true, NJ, 08854
+New York, 13, false, NY, 11223
+Orlando, 16, false, FL, 83923
+Piscataway, 7, false, NJ, 08854
+Pitterson, 2, false, NJ, 09882
+San Francisco, 8, false, CA, 98839
+San Jose, 14, true, CA, 83923
+Sevilla, 5, false, AK, 82938

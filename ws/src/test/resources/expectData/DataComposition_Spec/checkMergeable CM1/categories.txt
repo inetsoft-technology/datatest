@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 1)
+category_id
+1
+2
+3
+4
+5
+6

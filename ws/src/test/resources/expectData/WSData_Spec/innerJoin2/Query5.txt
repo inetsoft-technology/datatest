@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 13)
+string, integer, double, timeinstant, date, time, byte, short, long, Dimension, Measure, Quantity Purchased, Total
+inetsoft, 1, 12500, 2009-01-09 10:23:34, 2009-01-09, 10:23:34, -128, -32768, -2147483648, f_boolean, true, 13.4295, 94696809.8503
+inetsoft, 12, 12.35, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 123, 12654, 122456565, f_boolean, false, 14.0085, 103021155.3938
+inetsoft, 123, 6, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 2, 1, 1, f_boolean, false, 14.0085, 103021155.3938
+microsoft, 2, 225000.23, 2009-01-01 00:00:00, 2009-01-01, 00:00:00, 127, 32767, 2147483647, f_boolean, false, 14.0085, 103021155.3938

@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 5)
+col0, 1, 2, CATEGORY_ID, CATEGORY_NAME
+NULL, NULL, NULL, 2, Educational
+NULL, NULL, NULL, 3, Business
+NULL, NULL, NULL, 4, Personal
+NULL, NULL, NULL, 5, Graphics
+NULL, NULL, NULL, 6, Office Tools
+NULL, NULL, NULL, 7, Hardware
+test, 1, 15, 1, Games

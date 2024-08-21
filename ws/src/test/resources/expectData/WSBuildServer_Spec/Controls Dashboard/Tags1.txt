@@ -1,0 +1,3553 @@
+The table size(row x col) is:(3552 x 3)
+Link Id, Tag Category Name, Label
+100100, Control Classification, Monitor, review and check
+100100, Control Execution, Manual
+100100, Control Type, Detective
+100101, Control Type, Detective
+100103, Control Type, Detective
+100104, Control Classification, Monitor, review and check
+100104, Control Execution, Manual
+100104, Control Type, Detective
+100105, Control Type, Detective
+100106, Control Classification, Monitor, review and check
+100106, Control Execution, Manual
+100106, Control Type, Detective
+100107, Control Type, Detective
+100120, Control Classification, Access
+100120, Control Execution, Automated
+100120, Control Type, Preventive
+100121, Control Type, Preventive
+100122, Control Classification, Access
+100122, Control Execution, Automated
+100122, Control Type, Preventive
+100123, Control Type, Preventive
+100124, Control Classification, Limits and exception reporting
+100124, Control Execution, Combination
+100124, Control Key, Key Control
+100124, Control Type, Preventive
+100125, Control Type, Preventive
+100126, Business Unit, People and Culture
+100126, Control Classification, Governance
+100126, Control Execution, Manual
+100126, Control Key, Key Control
+100126, Control Type, Preventive
+100127, Control Type, Preventive
+100128, Business Unit, People and Culture
+100128, Control Classification, Training
+100128, Control Execution, Automated
+100128, Control Key, Key Control
+100128, Control Type, Preventive
+100129, Operational Risk, Employment Practices
+100130, Control Type, Preventive
+100131, Control Type, Detective
+100132, Business Unit, People and Culture
+100132, Control Classification, Human resource controls
+100132, Control Execution, Manual
+100132, Control Key, Key Control
+100132, Control Type, Preventive
+100133, Control Type, Preventive
+100134, Business Unit, People and Culture
+100134, Control Classification, Human resource controls
+100134, Control Execution, Combination
+100134, Control Key, Key Control
+100134, Control Type, Preventive
+100135, Control Type, Preventive
+100136, Business Unit, People and Culture
+100136, Control Classification, Human resource controls
+100136, Control Execution, Manual
+100136, Control Key, Key Control
+100136, Control Type, Preventive
+100137, Control Type, Preventive
+100138, Business Unit, Legal, Risk & Compliance
+100138, Control Classification, Governance
+100138, Control Execution, Manual
+100138, Control Key, Key Control
+100138, Control Type, Preventive
+100139, Control Type, Preventive
+100140, Business Unit, Legal, Risk & Compliance
+100140, Control Classification, Monitor, review and check
+100140, Control Execution, Manual
+100140, Control Key, Key Control
+100140, Control Type, Preventive
+100141, Control Type, Preventive
+100142, Business Unit, Legal, Risk & Compliance
+100142, Control Classification, Monitor, review and check
+100142, Control Execution, Manual
+100142, Control Key, Key Control
+100142, Control Type, Preventive
+100143, Control Type, Preventive
+100155, Business Unit, People and Culture
+100155, Control Classification, Training
+100155, Control Execution, Manual
+100155, Control Key, Key Control
+100155, Control Type, Preventive
+100156, Control Type, Preventive
+100157, Control Classification, Monitor, review and check
+100157, Control Execution, Manual
+100157, Control Type, Detective
+100157, Control Type, Preventive
+100158, Control Type, Detective
+100158, Control Type, Preventive
+100159, Business Unit, Marketing
+100159, Control Classification, Governance
+100159, Control Execution, Manual
+100159, Control Key, Key Control
+100159, Control Type, Preventive
+100160, Control Type, Preventive
+100161, Control Classification, Monitor, review and check
+100161, Control Execution, Manual
+100161, Control Type, Detective
+100161, Control Type, Preventive
+100162, Control Type, Detective
+100162, Control Type, Preventive
+100163, Control Classification, Training
+100163, Control Execution, Manual
+100163, Control Type, Preventive
+100164, Control Type, Preventive
+100189, Control Classification, Monitor, review and check
+100189, Control Type, Detective
+100190, Control Classification, Monitor, review and check
+100190, Control Execution, Manual
+100190, Control Type, Detective
+100191, Control Classification, Monitor, review and check
+100191, Control Execution, Manual
+100191, Control Key, Key Control
+100191, Control Type, Preventive
+100192, Control Classification, Monitor, review and check
+100192, Control Execution, Manual
+100192, Control Key, Key Control
+100192, Control Type, Preventive
+100193, Control Classification, Monitor, review and check
+100193, Control Execution, Manual
+100193, Control Key, Key Control
+100193, Control Type, Reactive
+100194, Control Classification, Monitor, review and check
+100194, Control Execution, Manual
+100194, Control Key, Key Control
+100194, Control Type, Reactive
+100199, Control Execution, Manual
+100199, Control Type, Detective
+100200, Control Classification, Monitor, review and check
+100200, Control Execution, Manual
+100200, Control Type, Detective
+100201, Control Classification, Confirmations
+100201, Control Execution, Manual
+100201, Control Type, Detective
+100202, Control Classification, Monitor, review and check
+100202, Control Execution, Manual
+100202, Control Type, Detective
+100203, Control Classification, Monitor, review and check
+100203, Control Execution, Manual
+100203, Control Type, Detective
+100203, Control Type, Preventive
+100204, Control Classification, Monitor, review and check
+100204, Control Execution, Manual
+100204, Control Type, Detective
+100204, Control Type, Preventive
+100205, Control Classification, Human resource controls
+100205, Control Execution, Manual
+100205, Control Type, Preventive
+100206, Control Classification, Governance
+100206, Control Execution, Manual
+100206, Control Type, Preventive
+100207, Control Classification, Human resource controls
+100207, Control Execution, Manual
+100207, Control Type, Preventive
+100208, Control Classification, Governance
+100208, Control Execution, Manual
+100208, Control Type, Preventive
+100209, Control Classification, Human resource controls
+100209, Control Execution, Combination
+100209, Control Type, Preventive
+100210, Control Classification, Governance
+100210, Control Execution, Manual
+100210, Control Type, Preventive
+100211, Control Classification, Human resource controls
+100211, Control Execution, Manual
+100211, Control Type, Preventive
+100212, Control Classification, Limits and exception reporting
+100212, Control Execution, Combination
+100212, Control Type, Preventive
+100213, Control Classification, Access
+100213, Control Execution, Automated
+100213, Control Type, Preventive
+100214, Control Classification, Governance
+100214, Control Execution, Manual
+100214, Control Type, Preventive
+100215, Control Classification, Training
+100215, Control Execution, Manual
+100215, Control Type, Preventive
+100216, Control Classification, Human resource controls
+100216, Control Execution, Manual
+100216, Control Type, Preventive
+100217, Control Classification, Access
+100217, Control Execution, Automated
+100217, Control Type, Preventive
+100218, Business Unit, People and Culture
+100218, Control Classification, Human resource controls
+100218, Control Execution, Manual
+100218, Control Key, Key Control
+100218, Control Type, Preventive
+100219, Control Classification, Human resource controls
+100219, Control Execution, Manual
+100219, Control Type, Preventive
+100220, Business Unit, People and Culture
+100220, Control Classification, Human resource controls
+100220, Control Execution, Manual
+100220, Control Key, Key Control
+100220, Control Type, Preventive
+100221, Control Classification, Human resource controls
+100221, Control Execution, Manual
+100221, Control Type, Preventive
+100222, Control Classification, Human resource controls
+100222, Control Execution, Manual
+100222, Control Type, Preventive
+100223, Business Unit, People and Culture
+100223, Control Classification, Human resource controls
+100223, Control Execution, Manual
+100223, Control Key, Key Control
+100223, Control Type, Preventive
+100224, Control Classification, Human resource controls
+100224, Control Execution, Manual
+100224, Control Type, Preventive
+100225, Control Classification, Human resource controls
+100225, Control Execution, Manual
+100225, Control Type, Preventive
+100226, Business Unit, Legal, Risk & Compliance
+100226, Control Classification, Monitor, review and check
+100226, Control Execution, Automated
+100226, Control Key, Key Control
+100226, Control Type, Preventive
+100227, Control Classification, Governance
+100227, Control Execution, Automated
+100227, Control Type, Preventive
+100228, Business Unit, People and Culture
+100228, Control Classification, Governance
+100228, Control Execution, Manual
+100228, Control Key, Key Control
+100228, Control Type, Preventive
+100229, Control Classification, Governance
+100229, Control Execution, Manual
+100229, Control Type, Preventive
+100230, Business Unit, People and Culture
+100230, Control Classification, Human resource controls
+100230, Control Execution, Manual
+100230, Control Key, Key Control
+100230, Control Type, Preventive
+100231, Control Classification, Human resource controls
+100231, Control Execution, Manual
+100231, Control Type, Preventive
+100237, Control Classification, Access
+100237, Control Execution, Combination
+100237, Control Type, Preventive
+100238, Control Classification, Monitor, review and check
+100238, Control Execution, Combination
+100238, Control Type, Preventive
+100239, Business Unit, People and Culture
+100239, Control Classification, Training
+100239, Control Execution, Combination
+100239, Control Key, Key Control
+100239, Control Type, Preventive
+100240, Control Classification, Training
+100240, Control Execution, Manual
+100240, Control Type, Preventive
+100260, Business Unit, Information Technology
+100260, Control Classification, Governance
+100260, Control Execution, Manual
+100260, Control Key, Key Control
+100260, Control Type, Preventive
+100261, Control Classification, Governance
+100261, Control Execution, Manual
+100261, Control Type, Preventive
+100262, Control Classification, Monitor, review and check
+100262, Control Execution, Combination
+100262, Control Key, Key Control
+100262, Control Type, Reactive
+100263, Control Classification, Governance
+100263, Control Execution, Combination
+100263, Control Type, Reactive
+100264, Business Unit, Information Technology
+100264, Control Classification, Monitor, review and check
+100264, Control Execution, Combination
+100264, Control Key, Key Control
+100264, Control Type, Preventive
+100265, Control Classification, Monitor, review and check
+100265, Control Execution, Combination
+100265, Control Type, Preventive
+100268, Business Unit, Finance
+100268, Control Classification, Reconciliations
+100268, Control Execution, Manual
+100268, Control Key, Key Control
+100268, Control Type, Detective
+100269, Control Classification, Monitor, review and check
+100269, Control Execution, Manual
+100269, Control Type, Detective
+100270, Control Classification, Monitor, review and check
+100270, Control Execution, Manual
+100270, Control Key, Key Control
+100270, Control Type, Preventive
+100271, Control Classification, Governance
+100271, Control Execution, Manual
+100271, Control Type, Preventive
+100279, Control Classification, Governance
+100279, Control Execution, Manual
+100279, Control Type, Preventive
+100280, Control Classification, Monitor, review and check
+100280, Control Execution, Manual
+100280, Control Type, Preventive
+100281, Control Classification, Monitor, review and check
+100281, Control Execution, Manual
+100281, Control Type, Preventive
+100282, Control Classification, Monitor, review and check
+100282, Control Execution, Automated
+100282, Control Type, Preventive
+100283, Control Classification, Monitor, review and check
+100283, Control Execution, Manual
+100283, Control Type, Preventive
+100284, Control Classification, Monitor, review and check
+100284, Control Execution, Combination
+100284, Control Type, Reactive
+100285, Control Classification, Monitor, review and check
+100285, Control Execution, Manual
+100285, Control Type, Preventive
+100286, Control Classification, Monitor, review and check
+100286, Control Execution, Manual
+100286, Control Type, Preventive
+100287, Business Unit, People and Culture
+100287, Control Classification, Governance
+100287, Control Execution, Manual
+100287, Control Key, Key Control
+100287, Control Type, Preventive
+100288, Control Classification, Monitor, review and check
+100288, Control Execution, Manual
+100288, Control Type, Preventive
+100293, Business Unit, People and Culture
+100293, Control Classification, Governance
+100293, Control Execution, Manual
+100293, Control Key, Key Control
+100293, Control Type, Preventive
+100294, Control Classification, Monitor, review and check
+100294, Control Execution, Manual
+100294, Control Type, Preventive
+100295, Business Unit, Sales & Contact Center
+100295, Control Classification, Monitor, review and check
+100295, Control Execution, Manual
+100295, Control Key, Key Control
+100295, Control Type, Preventive
+100296, Control Classification, Monitor, review and check
+100296, Control Execution, Manual
+100296, Control Type, Preventive
+100298, Business Unit, People and Culture
+100298, Control Classification, Training
+100298, Control Execution, Combination
+100298, Control Key, Key Control
+100298, Control Type, Preventive
+100301, Control Classification, Training
+100301, Control Execution, Manual
+100301, Control Type, Preventive
+100306, Business Unit, Sales & Contact Center
+100306, Control Classification, Monitor, review and check
+100306, Control Execution, Manual
+100306, Control Key, Key Control
+100306, Control Type, Detective
+100307, Control Classification, Monitor, review and check
+100307, Control Execution, Manual
+100307, Control Type, Detective
+100308, Control Classification, Monitor, review and check
+100308, Control Execution, Manual
+100308, Control Type, Preventive
+100309, Control Classification, Monitor, review and check
+100309, Control Execution, Manual
+100309, Control Type, Detective
+100310, Control Classification, Training
+100310, Control Execution, Manual
+100310, Control Key, Key Control
+100310, Control Type, Preventive
+100311, Control Classification, Monitor, review and check
+100311, Control Execution, Manual
+100311, Control Key, Key Control
+100311, Control Type, Preventive
+100312, Control Classification, Monitor, review and check
+100312, Control Execution, Manual
+100312, Control Key, Key Control
+100312, Control Type, Preventive
+100313, Control Classification, Monitor, review and check
+100313, Control Execution, Combination
+100313, Control Key, Key Control
+100313, Control Type, Reactive
+100314, Control Classification, Limits and exception reporting
+100314, Control Execution, Combination
+100314, Control Key, Key Control
+100314, Control Type, Preventive
+100320, Control Classification, Reconciliations
+100320, Control Execution, Manual
+100320, Control Key, Key Control
+100320, Control Type, Detective
+100321, Control Classification, Reconciliations
+100321, Control Execution, Manual
+100321, Control Key, Key Control
+100321, Control Type, Detective
+100322, Business Unit, Treasury
+100322, Control Classification, Limits and exception reporting
+100322, Control Execution, Automated
+100322, Control Key, Key Control
+100322, Control Type, Preventive
+100323, Control Classification, Limits and exception reporting
+100323, Control Execution, Automated
+100323, Control Key, Key Control
+100323, Control Type, Preventive
+100324, Control Classification, Segregation of duties
+100324, Control Execution, Combination
+100324, Control Key, Key Control
+100324, Control Type, Preventive
+100325, Control Classification, Segregation of duties
+100325, Control Execution, Combination
+100325, Control Key, Key Control
+100325, Control Type, Preventive
+100326, Business Unit, Information Technology
+100326, Control Classification, Access
+100326, Control Execution, Combination
+100326, Control Key, Key Control
+100326, Control Type, Detective
+100327, Control Classification, Access
+100327, Control Execution, Automated
+100327, Control Key, Key Control
+100327, Control Type, Preventive
+100328, Business Unit, Operations
+100328, Control Classification, Monitor, review and check
+100328, Control Execution, Manual
+100328, Control Key, Key Control
+100328, Control Type, Preventive
+100329, Control Classification, Monitor, review and check
+100329, Control Execution, Manual
+100329, Control Key, Key Control
+100329, Control Type, Preventive
+100330, Control Classification, Monitor, review and check
+100330, Control Execution, Manual
+100330, Control Key, Key Control
+100330, Control Type, Preventive
+100331, Control Classification, Monitor, review and check
+100331, Control Execution, Manual
+100331, Control Key, Key Control
+100331, Control Type, Preventive
+100332, Control Classification, Monitor, review and check
+100332, Control Execution, Manual
+100332, Control Key, Key Control
+100332, Control Type, Preventive
+100333, Control Classification, Monitor, review and check
+100333, Control Execution, Manual
+100333, Control Key, Key Control
+100333, Control Type, Preventive
+100334, Control Classification, Reconciliations
+100334, Control Execution, Combination
+100334, Control Key, Key Control
+100334, Control Type, Preventive
+100335, Control Classification, Reconciliations
+100335, Control Execution, Combination
+100335, Control Key, Key Control
+100335, Control Type, Preventive
+100337, Business Unit, People and Culture
+100337, Control Classification, Human resource controls
+100337, Control Execution, Automated
+100337, Control Key, Key Control
+100337, Control Type, Detective
+100338, Control Classification, Monitor, review and check
+100338, Control Execution, Automated
+100338, Control Key, Key Control
+100338, Control Type, Detective
+100339, Control Classification, Human resource controls
+100339, Control Execution, Automated
+100339, Control Key, Key Control
+100339, Control Type, Detective
+100341, Control Classification, Access
+100341, Control Execution, Automated
+100341, Control Key, Key Control
+100341, Control Type, Preventive
+100342, Control Classification, Reconciliations
+100342, Control Execution, Combination
+100342, Control Key, Key Control
+100342, Control Type, Preventive
+100343, Control Classification, Limits and exception reporting
+100343, Control Execution, Automated
+100343, Control Key, Key Control
+100343, Control Type, Preventive
+100344, Control Classification, Segregation of duties
+100344, Control Execution, Combination
+100344, Control Key, Key Control
+100344, Control Type, Preventive
+100345, Control Classification, Monitor, review and check
+100345, Control Execution, Manual
+100345, Control Key, Key Control
+100345, Control Type, Preventive
+100346, Control Classification, Monitor, review and check
+100346, Control Execution, Manual
+100346, Control Key, Key Control
+100346, Control Type, Preventive
+100347, Control Classification, Human resource controls
+100347, Control Execution, Automated
+100347, Control Key, Key Control
+100347, Control Type, Detective
+100348, Control Classification, Monitor, review and check
+100348, Control Execution, Combination
+100348, Control Key, Key Control
+100348, Control Type, Preventive
+100349, Control Classification, Monitor, review and check
+100349, Control Execution, Combination
+100349, Control Key, Key Control
+100349, Control Type, Preventive
+100350, Control Classification, Monitor, review and check
+100350, Control Execution, Combination
+100350, Control Key, Key Control
+100350, Control Type, Preventive
+100351, Control Classification, Monitor, review and check
+100351, Control Execution, Combination
+100351, Control Key, Key Control
+100351, Control Type, Preventive
+100352, Control Classification, Governance
+100352, Control Classification, Monitor, review and check
+100352, Control Execution, Manual
+100352, Control Key, Key Control
+100352, Control Type, Preventive
+100353, Control Classification, Governance
+100353, Control Classification, Monitor, review and check
+100353, Control Execution, Manual
+100353, Control Key, Key Control
+100353, Control Type, Preventive
+100355, Control Classification, Governance
+100355, Control Classification, Monitor, review and check
+100355, Control Execution, Manual
+100355, Control Key, Key Control
+100355, Control Type, Preventive
+100356, Control Classification, Governance
+100356, Control Classification, Monitor, review and check
+100356, Control Execution, Manual
+100356, Control Key, Key Control
+100356, Control Type, Preventive
+100357, Control Classification, Governance
+100357, Control Classification, Monitor, review and check
+100357, Control Execution, Manual
+100357, Control Key, Key Control
+100357, Control Type, Preventive
+100358, Control Classification, Governance
+100358, Control Classification, Monitor, review and check
+100358, Control Execution, Manual
+100358, Control Key, Key Control
+100358, Control Type, Preventive
+100359, Control Classification, Human resource controls
+100359, Control Classification, Monitor, review and check
+100359, Control Execution, Combination
+100359, Control Key, Key Control
+100359, Control Type, Detective
+100360, Control Classification, Human resource controls
+100360, Control Classification, Monitor, review and check
+100360, Control Execution, Combination
+100360, Control Key, Key Control
+100360, Control Type, Detective
+100361, Control Classification, Human resource controls
+100361, Control Classification, Monitor, review and check
+100361, Control Type, Detective
+100362, Control Classification, Human resource controls
+100362, Control Classification, Monitor, review and check
+100362, Control Type, Detective
+100363, Business Unit, Finance
+100363, Control Classification, Monitor, review and check
+100363, Control Execution, Manual
+100363, Control Key, Key Control
+100363, Control Type, Preventive
+100364, Control Classification, Monitor, review and check
+100364, Control Execution, Manual
+100364, Control Key, Key Control
+100364, Control Type, Preventive
+100365, Control Classification, Governance
+100365, Control Execution, Combination
+100365, Control Key, Key Control
+100365, Control Type, Detective
+100366, Control Classification, Governance
+100366, Control Execution, Combination
+100366, Control Key, Key Control
+100366, Control Type, Detective
+100367, Control Classification, Training
+100367, Control Execution, Combination
+100367, Control Key, Key Control
+100367, Control Type, Preventive
+100368, Control Classification, Training
+100368, Control Execution, Combination
+100368, Control Key, Key Control
+100368, Control Type, Preventive
+100369, Control Classification, Governance
+100369, Control Execution, Manual
+100369, Control Key, Key Control
+100369, Control Type, Preventive
+100370, Control Type, Preventive
+100371, Control Classification, Governance
+100371, Control Execution, Manual
+100371, Control Key, Key Control
+100371, Control Type, Preventive
+100373, Business Unit, Treasury
+100373, Control Classification, Limits and exception reporting
+100373, Control Execution, Manual
+100373, Control Key, Key Control
+100373, Control Type, Preventive
+100374, Business Unit, Treasury
+100374, Control Classification, Limits and exception reporting
+100374, Control Execution, Manual
+100374, Control Key, Key Control
+100374, Control Type, Preventive
+100375, Business Unit, Treasury
+100375, Control Classification, Limits and exception reporting
+100375, Control Execution, Automated
+100375, Control Key, Key Control
+100375, Control Type, Preventive
+100376, Control Classification, Limits and exception reporting
+100376, Control Execution, Automated
+100376, Control Key, Key Control
+100376, Control Type, Preventive
+100377, Business Unit, Treasury
+100377, Control Classification, Limits and exception reporting
+100377, Control Execution, Manual
+100377, Control Key, Key Control
+100377, Control Type, Reactive
+100378, Business Unit, Treasury
+100378, Control Classification, Limits and exception reporting
+100378, Control Execution, Manual
+100378, Control Type, Reactive
+100379, Control Classification, Monitor, review and check
+100379, Control Execution, Combination
+100379, Control Key, Key Control
+100379, Control Type, Detective
+100380, Control Classification, Monitor, review and check
+100380, Control Execution, Combination
+100380, Control Key, Key Control
+100380, Control Type, Detective
+100381, Business Unit, Operations
+100381, Control Classification, Reconciliations
+100381, Control Execution, Combination
+100381, Control Key, Key Control
+100381, Control Type, Preventive
+100382, Business Unit, Operations
+100382, Control Classification, Monitor, review and check
+100382, Control Execution, Combination
+100382, Control Key, Key Control
+100382, Control Type, Preventive
+100383, Business Unit, Operations
+100383, Control Classification, Monitor, review and check
+100383, Control Execution, Manual
+100383, Control Key, Key Control
+100383, Control Type, Preventive
+100384, Business Unit, Operations
+100384, Control Classification, Monitor, review and check
+100384, Control Execution, Manual
+100384, Control Key, Key Control
+100384, Control Type, Preventive
+100385, Business Unit, Temp
+100385, Control Classification, Segregation of duties
+100385, Control Execution, Combination
+100385, Control Key, Key Control
+100385, Control Type, Preventive
+100386, Business Unit, Operations
+100386, Control Classification, Segregation of duties
+100386, Control Execution, Combination
+100386, Control Key, Key Control
+100386, Control Type, Preventive
+100388, Business Unit, Temp
+100388, Control Classification, Reconciliations
+100388, Control Execution, Combination
+100388, Control Key, Key Control
+100388, Control Type, Detective
+100389, Business Unit, Operations
+100389, Control Classification, Monitor, review and check
+100389, Control Execution, Combination
+100389, Control Key, Key Control
+100389, Control Type, Detective
+100390, Business Unit, Operations
+100390, Control Classification, Limits and exception reporting
+100390, Control Execution, Automated
+100390, Control Key, Key Control
+100390, Control Type, Preventive
+100391, Business Unit, Operations
+100391, Control Classification, Reconciliations
+100391, Control Execution, Automated
+100391, Control Key, Key Control
+100391, Control Type, Preventive
+100392, Business Unit, Temp
+100392, Control Classification, Monitor, review and check
+100392, Control Execution, Manual
+100392, Control Key, Key Control
+100392, Control Type, Preventive
+100393, Business Unit, Operations
+100393, Control Classification, Monitor, review and check
+100393, Control Execution, Manual
+100393, Control Key, Key Control
+100393, Control Type, Preventive
+100394, Business Unit, Operations
+100394, Control Classification, Reconciliations
+100394, Control Execution, Combination
+100394, Control Key, Key Control
+100394, Control Type, Detective
+100395, Business Unit, Operations
+100395, Control Classification, Limits and exception reporting
+100395, Control Execution, Automated
+100395, Control Key, Key Control
+100395, Control Type, Preventive
+100396, Business Unit, Information Technology
+100396, Control Classification, Access
+100396, Control Execution, Automated
+100396, Control Key, Key Control
+100396, Control Type, Preventive
+100397, Business Unit, Information Technology
+100397, Control Classification, Access
+100397, Control Execution, Automated
+100397, Control Key, Key Control
+100397, Control Type, Preventive
+100398, Business Unit, People and Culture
+100398, Control Classification, Training
+100398, Control Execution, Combination
+100398, Control Key, Key Control
+100398, Control Type, Preventive
+100399, Business Unit, Sales & Contact Center
+100399, Control Classification, Training
+100399, Control Execution, Combination
+100399, Control Key, Key Control
+100399, Control Type, Preventive
+100400, Business Unit, Product
+100400, Control Classification, Governance
+100400, Control Execution, Manual
+100400, Control Key, Key Control
+100400, Control Type, Preventive
+100401, Business Unit, Product
+100401, Control Classification, Governance
+100401, Control Execution, Manual
+100401, Control Key, Key Control
+100401, Control Type, Preventive
+100402, Business Unit, Operations
+100402, Control Classification, Monitor, review and check
+100402, Control Execution, Combination
+100402, Control Key, Key Control
+100402, Control Type, Detective
+100403, Business Unit, Operations
+100403, Control Classification, Monitor, review and check
+100403, Control Execution, Combination
+100403, Control Key, Key Control
+100403, Control Type, Detective
+100404, Business Unit, Information Technology
+100404, Control Classification, Access
+100404, Control Execution, Automated
+100404, Control Key, Key Control
+100404, Control Type, Preventive
+100405, Business Unit, Information Technology
+100405, Control Execution, Automated
+100405, Control Key, Key Control
+100405, Control Type, Preventive
+100406, Business Unit, Branch
+100406, Control Classification, Monitor, review and check
+100406, Control Execution, Automated
+100406, Control Key, Key Control
+100406, Control Type, Preventive
+100407, Business Unit, Branch
+100407, Control Execution, Automated
+100407, Control Key, Key Control
+100407, Control Type, Preventive
+100408, Business Unit, Branch
+100408, Control Classification, Monitor, review and check
+100408, Control Execution, Combination
+100408, Control Key, Key Control
+100408, Control Type, Detective
+100409, Business Unit, Branch
+100409, Control Classification, Monitor, review and check
+100409, Control Execution, Combination
+100409, Control Key, Key Control
+100409, Control Type, Detective
+100410, Business Unit, Information Technology
+100410, Control Classification, Governance
+100410, Control Execution, Manual
+100410, Control Key, Key Control
+100410, Control Type, Reactive
+100411, Business Unit, Information Technology
+100411, Control Classification, Governance
+100411, Control Execution, Manual
+100411, Control Key, Key Control
+100411, Control Type, Reactive
+100412, Business Unit, Temp
+100412, Control Classification, Monitor, review and check
+100412, Control Execution, Combination
+100412, Control Key, Key Control
+100412, Control Type, Preventive
+100413, Business Unit, Operations
+100413, Control Classification, Monitor, review and check
+100413, Control Execution, Combination
+100413, Control Key, Key Control
+100413, Control Type, Preventive
+100414, Business Unit, Branch
+100414, Business Unit, Sales & Contact Center
+100414, Control Classification, Confirmations
+100414, Control Execution, Combination
+100414, Control Key, Key Control
+100414, Control Type, Preventive
+100415, Business Unit, Sales & Contact Center
+100415, Control Classification, Confirmations
+100415, Control Execution, Combination
+100415, Control Key, Key Control
+100415, Control Type, Preventive
+100416, Business Unit, Information Technology
+100416, Control Classification, Monitor, review and check
+100416, Control Execution, Combination
+100416, Control Key, Key Control
+100416, Control Type, Detective
+100417, Business Unit, Information Technology
+100417, Control Execution, Combination
+100417, Control Key, Key Control
+100417, Control Type, Detective
+100418, Business Unit, Information Technology
+100418, Control Classification, Monitor, review and check
+100418, Control Execution, Combination
+100418, Control Key, Key Control
+100418, Control Type, Detective
+100419, Business Unit, Information Technology
+100419, Control Classification, Monitor, review and check
+100419, Control Execution, Combination
+100419, Control Key, Key Control
+100419, Control Type, Detective
+100420, Business Unit, Branch
+100420, Control Classification, Monitor, review and check
+100420, Control Execution, Combination
+100420, Control Key, Key Control
+100420, Control Type, Detective
+100421, Business Unit, Branch
+100421, Control Classification, Monitor, review and check
+100421, Control Execution, Combination
+100421, Control Key, Key Control
+100421, Control Type, Detective
+100422, Business Unit, Treasury
+100422, Control Classification, Limits and exception reporting
+100422, Control Execution, Combination
+100422, Control Key, Key Control
+100422, Control Type, Detective
+100423, Business Unit, Treasury
+100423, Control Classification, Monitor, review and check
+100423, Control Execution, Combination
+100423, Control Key, Key Control
+100423, Control Type, Detective
+100424, Business Unit, Temp
+100424, Control Classification, Reconciliations
+100424, Control Execution, Combination
+100424, Control Key, Key Control
+100424, Control Type, Detective
+100425, Business Unit, Operations
+100425, Control Classification, Reconciliations
+100425, Control Execution, Combination
+100425, Control Key, Key Control
+100425, Control Type, Detective
+100426, Business Unit, Sales & Contact Center
+100426, Control Classification, Confirmations
+100426, Control Execution, Automated
+100426, Control Key, Key Control
+100426, Control Type, Detective
+100427, Business Unit, Sales & Contact Center
+100427, Control Classification, Confirmations
+100427, Control Execution, Automated
+100427, Control Key, Key Control
+100427, Control Type, Detective
+100428, Business Unit, Information Technology
+100428, Control Classification, Access
+100428, Control Execution, Automated
+100428, Control Key, Key Control
+100428, Control Type, Preventive
+100429, Business Unit, Information Technology
+100429, Control Classification, Access
+100429, Control Execution, Automated
+100429, Control Key, Key Control
+100429, Control Type, Preventive
+100430, Business Unit, Sales & Contact Center
+100430, Control Classification, Training
+100430, Control Execution, Combination
+100430, Control Key, Key Control
+100430, Control Type, Preventive
+100431, Business Unit, Sales & Contact Center
+100431, Control Classification, Training
+100431, Control Execution, Combination
+100431, Control Key, Key Control
+100431, Control Type, Preventive
+100432, Business Unit, Information Technology
+100432, Control Classification, Monitor, review and check
+100432, Control Execution, Combination
+100432, Control Key, Key Control
+100432, Control Type, Preventive
+100433, Business Unit, Information Technology
+100433, Control Classification, Monitor, review and check
+100433, Control Execution, Combination
+100433, Control Key, Key Control
+100433, Control Type, Preventive
+100434, Business Unit, Information Technology
+100434, Control Classification, Governance
+100434, Control Execution, Manual
+100434, Control Key, Key Control
+100434, Control Type, Preventive
+100435, Business Unit, Information Technology
+100435, Control Classification, Governance
+100435, Control Execution, Manual
+100435, Control Key, Key Control
+100435, Control Type, Preventive
+100436, Business Unit, Sales & Contact Center
+100436, Control Classification, Monitor, review and check
+100436, Control Execution, Combination
+100436, Control Key, Key Control
+100436, Control Type, Detective
+100437, Business Unit, Sales & Contact Center
+100437, Control Classification, Monitor, review and check
+100437, Control Execution, Combination
+100437, Control Key, Key Control
+100437, Control Type, Detective
+100438, Business Unit, Finance
+100438, Control Classification, Monitor, review and check
+100438, Control Execution, Combination
+100438, Control Key, Key Control
+100438, Control Type, Preventive
+100439, Business Unit, Finance
+100439, Control Classification, Monitor, review and check
+100439, Control Execution, Combination
+100439, Control Key, Key Control
+100439, Control Type, Preventive
+100440, Business Unit, Temp
+100440, Control Classification, Monitor, review and check
+100440, Control Execution, Combination
+100440, Control Key, Key Control
+100440, Control Type, Preventive
+100441, Business Unit, Operations
+100441, Control Classification, Monitor, review and check
+100441, Control Execution, Combination
+100441, Control Key, Key Control
+100441, Control Type, Preventive
+100442, Business Unit, Temp
+100442, Control Classification, Monitor, review and check
+100442, Control Execution, Combination
+100442, Control Key, Key Control
+100442, Control Type, Preventive
+100443, Business Unit, Operations
+100443, Control Classification, Monitor, review and check
+100443, Control Execution, Combination
+100443, Control Key, Key Control
+100443, Control Type, Preventive
+100444, Business Unit, Temp
+100444, Control Classification, Monitor, review and check
+100444, Control Execution, Combination
+100444, Control Key, Key Control
+100444, Control Type, Preventive
+100445, Business Unit, Operations
+100445, Control Classification, Monitor, review and check
+100445, Control Execution, Combination
+100445, Control Key, Key Control
+100445, Control Type, Preventive
+100446, Business Unit, Information Technology
+100446, Control Classification, Monitor, review and check
+100446, Control Execution, Manual
+100446, Control Key, Key Control
+100446, Control Type, Preventive
+100447, Business Unit, Information Technology
+100447, Control Execution, Manual
+100447, Control Key, Key Control
+100447, Control Type, Preventive
+100448, Business Unit, Information Technology
+100448, Control Classification, Governance
+100448, Control Execution, Manual
+100448, Control Key, Key Control
+100448, Control Type, Preventive
+100449, Business Unit, Information Technology
+100449, Control Classification, Governance
+100449, Control Execution, Manual
+100449, Control Key, Key Control
+100449, Control Type, Preventive
+100450, Business Unit, Information Technology
+100450, Control Classification, Monitor, review and check
+100450, Control Execution, Automated
+100450, Control Key, Key Control
+100450, Control Type, Preventive
+100451, Business Unit, Information Technology
+100451, Control Execution, Automated
+100451, Control Key, Key Control
+100451, Control Type, Preventive
+100452, Business Unit, Information Technology
+100452, Control Classification, Access
+100452, Control Execution, Combination
+100452, Control Key, Key Control
+100452, Control Type, Preventive
+100453, Business Unit, Information Technology
+100453, Control Classification, Access
+100453, Control Execution, Combination
+100453, Control Key, Key Control
+100453, Control Type, Preventive
+100454, Business Unit, Information Technology
+100454, Control Classification, Governance
+100454, Control Execution, Manual
+100454, Control Key, Key Control
+100454, Control Type, Detective
+100455, Business Unit, Information Technology
+100455, Control Classification, Governance
+100455, Control Execution, Manual
+100455, Control Key, Key Control
+100455, Control Type, Detective
+100456, Business Unit, Information Technology
+100456, Control Classification, Monitor, review and check
+100456, Control Execution, Combination
+100456, Control Key, Key Control
+100456, Control Type, Detective
+100457, Business Unit, Information Technology
+100457, Control Classification, Monitor, review and check
+100457, Control Execution, Combination
+100457, Control Key, Key Control
+100457, Control Type, Detective
+100458, Business Unit, Information Technology
+100458, Control Classification, Confirmations
+100458, Control Execution, Manual
+100458, Control Key, Key Control
+100458, Control Type, Detective
+100459, Business Unit, Information Technology
+100459, Control Classification, Confirmations
+100459, Control Execution, Manual
+100459, Control Key, Key Control
+100459, Control Type, Detective
+100460, Business Unit, Information Technology
+100460, Control Classification, Governance
+100460, Control Execution, Manual
+100460, Control Key, Key Control
+100460, Control Type, Preventive
+100461, Business Unit, Information Technology
+100461, Control Classification, Governance
+100461, Control Execution, Manual
+100461, Control Key, Key Control
+100461, Control Type, Preventive
+100462, Business Unit, Information Technology
+100462, Control Classification, Access
+100462, Control Execution, Automated
+100462, Control Key, Key Control
+100462, Control Type, Preventive
+100463, Business Unit, Information Technology
+100463, Control Classification, Access
+100463, Control Execution, Automated
+100463, Control Key, Key Control
+100463, Control Type, Preventive
+100464, Business Unit, Operations
+100464, Control Classification, Monitor, review and check
+100464, Control Execution, Combination
+100464, Control Key, Key Control
+100464, Control Type, Preventive
+100465, Business Unit, Operations
+100465, Control Classification, Monitor, review and check
+100465, Control Execution, Combination
+100465, Control Key, Key Control
+100465, Control Type, Preventive
+100466, Business Unit, Operations
+100466, Control Classification, Reconciliations
+100466, Control Execution, Combination
+100466, Control Key, Key Control
+100466, Control Type, Preventive
+100467, Business Unit, Operations
+100467, Control Classification, Reconciliations
+100467, Control Execution, Combination
+100467, Control Key, Key Control
+100467, Control Type, Preventive
+100468, Business Unit, Operations
+100468, Control Classification, Reconciliations
+100468, Control Execution, Combination
+100468, Control Key, Key Control
+100468, Control Type, Detective
+100469, Business Unit, Operations
+100469, Control Classification, Reconciliations
+100469, Control Execution, Combination
+100469, Control Key, Key Control
+100469, Control Type, Detective
+100470, Business Unit, Finance
+100470, Control Classification, Monitor, review and check
+100470, Control Execution, Combination
+100470, Control Key, Key Control
+100470, Control Type, Preventive
+100471, Business Unit, Finance
+100471, Control Classification, Monitor, review and check
+100471, Control Execution, Combination
+100471, Control Key, Key Control
+100471, Control Type, Preventive
+100472, Business Unit, Operations
+100472, Control Classification, Monitor, review and check
+100472, Control Execution, Combination
+100472, Control Key, Key Control
+100472, Control Type, Preventive
+100473, Business Unit, Operations
+100473, Control Classification, Monitor, review and check
+100473, Control Execution, Combination
+100473, Control Key, Key Control
+100473, Control Type, Preventive
+100474, Business Unit, Operations
+100474, Control Classification, Monitor, review and check
+100474, Control Execution, Combination
+100474, Control Key, Key Control
+100474, Control Type, Preventive
+100475, Business Unit, Operations
+100475, Control Classification, Monitor, review and check
+100475, Control Execution, Combination
+100475, Control Key, Key Control
+100475, Control Type, Preventive
+100476, Business Unit, Operations
+100476, Control Classification, Monitor, review and check
+100476, Control Execution, Combination
+100476, Control Key, Key Control
+100476, Control Type, Preventive
+100477, Business Unit, Operations
+100477, Control Classification, Monitor, review and check
+100477, Control Execution, Combination
+100477, Control Key, Key Control
+100477, Control Type, Preventive
+100478, Business Unit, Operations
+100478, Control Classification, Monitor, review and check
+100478, Control Execution, Combination
+100478, Control Key, Key Control
+100478, Control Type, Detective
+100479, Business Unit, Operations
+100479, Control Classification, Monitor, review and check
+100479, Control Execution, Combination
+100479, Control Key, Key Control
+100479, Control Type, Detective
+100480, Business Unit, Information Technology
+100480, Control Classification, Governance
+100480, Control Execution, Manual
+100480, Control Key, Key Control
+100480, Control Type, Preventive
+100481, Business Unit, Information Technology
+100481, Control Classification, Governance
+100481, Control Execution, Manual
+100481, Control Key, Key Control
+100481, Control Type, Preventive
+100482, Business Unit, Information Technology
+100482, Control Classification, Governance
+100482, Control Execution, Manual
+100482, Control Key, Key Control
+100482, Control Type, Preventive
+100483, Business Unit, Information Technology
+100483, Control Classification, Governance
+100483, Control Execution, Manual
+100483, Control Key, Key Control
+100483, Control Type, Preventive
+100484, Business Unit, Legal, Risk & Compliance
+100484, Control Classification, Governance
+100484, Control Execution, Manual
+100484, Control Key, Key Control
+100484, Control Type, Preventive
+100485, Business Unit, Legal, Risk & Compliance
+100485, Control Classification, Governance
+100485, Control Execution, Manual
+100485, Control Key, Key Control
+100485, Control Type, Preventive
+100486, Business Unit, Information Technology
+100486, Control Classification, Governance
+100486, Control Execution, Manual
+100486, Control Key, Key Control
+100486, Control Type, Preventive
+100487, Business Unit, Information Technology
+100487, Control Classification, Governance
+100487, Control Execution, Manual
+100487, Control Key, Key Control
+100487, Control Type, Preventive
+100488, Business Unit, Legal, Risk & Compliance
+100488, Control Classification, Governance
+100488, Control Execution, Manual
+100488, Control Key, Key Control
+100488, Control Type, Preventive
+100489, Business Unit, Legal, Risk & Compliance
+100489, Control Classification, Governance
+100489, Control Execution, Manual
+100489, Control Key, Key Control
+100489, Control Type, Preventive
+100490, Business Unit, Operations
+100490, Control Classification, Segregation of duties
+100490, Control Execution, Combination
+100490, Control Key, Key Control
+100490, Control Type, Preventive
+100491, Business Unit, Operations
+100491, Control Classification, Segregation of duties
+100491, Control Execution, Combination
+100491, Control Key, Key Control
+100491, Control Type, Preventive
+100492, Business Unit, Operations
+100492, Control Classification, Monitor, review and check
+100492, Control Execution, Combination
+100492, Control Key, Key Control
+100492, Control Type, Preventive
+100493, Business Unit, Operations
+100493, Control Classification, Monitor, review and check
+100493, Control Execution, Combination
+100493, Control Key, Key Control
+100493, Control Type, Preventive
+100494, Business Unit, Information Technology
+100494, Control Classification, Limits and exception reporting
+100494, Control Execution, Automated
+100494, Control Key, Key Control
+100494, Control Type, Detective
+100495, Business Unit, Information Technology
+100495, Control Execution, Automated
+100495, Control Key, Key Control
+100495, Control Type, Detective
+100496, Business Unit, Operations
+100496, Control Classification, Limits and exception reporting
+100496, Control Execution, Combination
+100496, Control Key, Key Control
+100496, Control Type, Preventive
+100497, Business Unit, Operations
+100497, Control Classification, Monitor, review and check
+100497, Control Execution, Combination
+100497, Control Key, Key Control
+100497, Control Type, Preventive
+100498, Business Unit, Information Technology
+100498, Control Classification, Access
+100498, Control Execution, Combination
+100498, Control Key, Key Control
+100498, Control Type, Preventive
+100499, Business Unit, Information Technology
+100499, Control Classification, Access
+100499, Control Execution, Combination
+100499, Control Key, Key Control
+100499, Control Type, Preventive
+100500, Business Unit, Operations
+100500, Control Classification, Reconciliations
+100500, Control Execution, Combination
+100500, Control Key, Key Control
+100500, Control Type, Detective
+100501, Business Unit, Operations
+100501, Control Classification, Reconciliations
+100501, Control Execution, Combination
+100501, Control Key, Key Control
+100501, Control Type, Detective
+100502, Business Unit, Finance
+100502, Control Classification, Reconciliations
+100502, Control Execution, Combination
+100502, Control Key, Key Control
+100502, Control Type, Detective
+100503, Business Unit, Finance
+100503, Control Classification, Reconciliations
+100503, Control Execution, Combination
+100503, Control Key, Key Control
+100503, Control Type, Detective
+100504, Business Unit, Temp
+100504, Control Classification, Reconciliations
+100504, Control Execution, Combination
+100504, Control Key, Key Control
+100504, Control Type, Detective
+100505, Business Unit, Temp
+100505, Control Classification, Reconciliations
+100505, Control Execution, Combination
+100505, Control Key, Key Control
+100505, Control Type, Detective
+100506, Business Unit, Temp
+100506, Control Classification, Monitor, review and check
+100506, Control Execution, Combination
+100506, Control Key, Key Control
+100506, Control Type, Preventive
+100507, Business Unit, Temp
+100507, Control Classification, Monitor, review and check
+100507, Control Execution, Manual
+100507, Control Key, Key Control
+100507, Control Type, Preventive
+100508, Business Unit, Temp
+100508, Control Classification, Monitor, review and check
+100508, Control Execution, Combination
+100508, Control Key, Key Control
+100508, Control Type, Preventive
+100509, Business Unit, Temp
+100509, Control Classification, Monitor, review and check
+100509, Control Execution, Combination
+100509, Control Key, Key Control
+100509, Control Type, Preventive
+100510, Business Unit, Temp
+100510, Control Classification, Monitor, review and check
+100510, Control Execution, Combination
+100510, Control Key, Key Control
+100510, Control Type, Preventive
+100511, Business Unit, Temp
+100511, Control Classification, Segregation of duties
+100511, Control Execution, Combination
+100511, Control Key, Key Control
+100511, Control Type, Preventive
+100512, Business Unit, Operations
+100512, Control Classification, Reconciliations
+100512, Control Execution, Combination
+100512, Control Key, Key Control
+100512, Control Type, Preventive
+100513, Business Unit, Operations
+100513, Control Classification, Monitor, review and check
+100513, Control Execution, Combination
+100513, Control Key, Key Control
+100513, Control Type, Preventive
+100514, Business Unit, Operations
+100514, Control Execution, Combination
+100514, Control Key, Key Control
+100514, Control Type, Preventive
+100515, Business Unit, Information Technology
+100515, Control Classification, Access
+100515, Control Execution, Automated
+100515, Control Key, Key Control
+100515, Control Type, Preventive
+100516, Business Unit, Information Technology
+100516, Control Classification, Access
+100516, Control Execution, Combination
+100516, Control Key, Key Control
+100516, Control Type, Preventive
+100517, Business Unit, Finance
+100517, Control Classification, Monitor, review and check
+100517, Control Execution, Combination
+100517, Control Key, Key Control
+100517, Control Type, Preventive
+100518, Business Unit, Finance
+100518, Control Classification, Monitor, review and check
+100518, Control Execution, Combination
+100518, Control Key, Key Control
+100518, Control Type, Preventive
+100520, Business Unit, Sales & Contact Center
+100520, Control Classification, Confirmations
+100520, Control Execution, Automated
+100520, Control Key, Key Control
+100520, Control Type, Detective
+100521, Business Unit, Sales & Contact Center
+100521, Control Classification, Confirmations
+100521, Control Execution, Automated
+100521, Control Key, Key Control
+100521, Control Type, Detective
+100522, Business Unit, Sales & Contact Center
+100522, Control Classification, Training
+100522, Control Execution, Combination
+100522, Control Key, Key Control
+100522, Control Type, Preventive
+100523, Business Unit, Sales & Contact Center
+100523, Control Classification, Training
+100523, Control Execution, Combination
+100523, Control Key, Key Control
+100523, Control Type, Preventive
+100524, Business Unit, People and Culture
+100524, Control Classification, Training
+100524, Control Execution, Combination
+100524, Control Key, Key Control
+100524, Control Type, Detective
+100525, Business Unit, People and Culture
+100525, Control Classification, Training
+100525, Control Execution, Combination
+100525, Control Key, Key Control
+100525, Control Type, Detective
+100526, Business Unit, Sales & Contact Center
+100526, Control Classification, Governance
+100526, Control Execution, Combination
+100526, Control Key, Key Control
+100526, Control Type, Detective
+100527, Business Unit, Legal, Risk & Compliance
+100527, Control Classification, Governance
+100527, Control Execution, Combination
+100527, Control Key, Key Control
+100527, Control Type, Detective
+100528, Business Unit, Sales & Contact Center
+100528, Control Classification, Monitor, review and check
+100528, Control Execution, Manual
+100528, Control Key, Key Control
+100528, Control Type, Detective
+100529, Business Unit, Legal, Risk & Compliance
+100529, Control Classification, Monitor, review and check
+100529, Control Execution, Manual
+100529, Control Key, Key Control
+100529, Control Type, Detective
+100530, Business Unit, Sales & Contact Center
+100530, Control Classification, Governance
+100530, Control Execution, Combination
+100530, Control Key, Key Control
+100530, Control Type, Detective
+100531, Business Unit, Sales & Contact Center
+100531, Control Classification, Monitor, review and check
+100531, Control Execution, Manual
+100531, Control Key, Key Control
+100531, Control Type, Detective
+100532, Business Unit, People and Culture
+100532, Control Classification, Training
+100532, Control Execution, Combination
+100532, Control Key, Key Control
+100532, Control Type, Preventive
+100533, Business Unit, People and Culture
+100533, Control Classification, Training
+100533, Control Execution, Combination
+100533, Control Key, Key Control
+100533, Control Type, Preventive
+100534, Business Unit, Product
+100534, Control Classification, Governance
+100534, Control Execution, Manual
+100534, Control Key, Key Control
+100534, Control Type, Preventive
+100535, Business Unit, Product
+100535, Control Classification, Governance
+100535, Control Execution, Manual
+100535, Control Key, Key Control
+100535, Control Type, Preventive
+100536, Business Unit, Product
+100536, Control Classification, Governance
+100536, Control Execution, Manual
+100536, Control Key, Key Control
+100536, Control Type, Preventive
+100537, Business Unit, Product
+100537, Control Classification, Governance
+100537, Control Execution, Manual
+100537, Control Key, Key Control
+100537, Control Type, Preventive
+100538, Business Unit, Sales & Contact Center
+100538, Control Classification, Governance
+100538, Control Execution, Combination
+100538, Control Key, Key Control
+100538, Control Type, Detective
+100539, Business Unit, Sales & Contact Center
+100539, Control Classification, Governance
+100539, Control Execution, Combination
+100539, Control Key, Key Control
+100539, Control Type, Detective
+100540, Business Unit, Information Technology
+100540, Control Classification, Governance
+100540, Control Execution, Manual
+100540, Control Key, Key Control
+100540, Control Type, Preventive
+100541, Business Unit, Legal, Risk & Compliance
+100541, Control Classification, Governance
+100541, Control Execution, Manual
+100541, Control Key, Key Control
+100541, Control Type, Preventive
+100542, Business Unit, Legal, Risk & Compliance
+100542, Control Classification, Governance
+100542, Control Execution, Manual
+100542, Control Key, Key Control
+100542, Control Type, Preventive
+100543, Business Unit, Treasury
+100543, Control Classification, Limits and exception reporting
+100543, Control Execution, Combination
+100543, Control Key, Key Control
+100543, Control Type, Detective
+100544, Business Unit, Sales & Contact Center
+100544, Control Classification, Confirmations
+100544, Control Execution, Combination
+100544, Control Key, Key Control
+100544, Control Type, Preventive
+100545, Business Unit, Sales & Contact Center
+100545, Control Classification, Confirmations
+100545, Control Execution, Combination
+100545, Control Key, Key Control
+100545, Control Type, Preventive
+100546, Business Unit, Sales & Contact Center
+100546, Control Classification, Monitor, review and check
+100546, Control Execution, Combination
+100546, Control Key, Key Control
+100546, Control Type, Detective
+100547, Business Unit, Sales & Contact Center
+100547, Control Execution, Combination
+100547, Control Key, Key Control
+100547, Control Type, Detective
+100548, Business Unit, Sales & Contact Center
+100548, Control Classification, Training
+100548, Control Execution, Combination
+100548, Control Key, Key Control
+100548, Control Type, Preventive
+100549, Business Unit, Marketing
+100549, Control Classification, Governance
+100549, Control Execution, Manual
+100549, Control Key, Key Control
+100549, Control Type, Preventive
+100550, Business Unit, Marketing
+100550, Control Classification, Governance
+100550, Control Execution, Manual
+100550, Control Key, Key Control
+100550, Control Type, Preventive
+100551, Business Unit, Marketing
+100551, Control Classification, Monitor, review and check
+100551, Control Execution, Manual
+100551, Control Key, Key Control
+100551, Control Type, Preventive
+100552, Business Unit, Marketing
+100552, Control Classification, Monitor, review and check
+100552, Control Execution, Manual
+100552, Control Key, Key Control
+100552, Control Type, Preventive
+100553, Business Unit, Legal, Risk & Compliance
+100553, Control Classification, Governance
+100553, Control Execution, Manual
+100553, Control Key, Key Control
+100553, Control Type, Preventive
+100554, Business Unit, Legal, Risk & Compliance
+100554, Control Classification, Governance
+100554, Control Execution, Manual
+100554, Control Key, Key Control
+100554, Control Type, Preventive
+100555, Business Unit, People and Culture
+100555, Control Classification, Training
+100555, Control Execution, Combination
+100555, Control Key, Key Control
+100555, Control Type, Preventive
+100556, Business Unit, People and Culture
+100556, Control Classification, Training
+100556, Control Execution, Combination
+100556, Control Key, Key Control
+100556, Control Type, Preventive
+100557, Business Unit, Marketing
+100557, Control Classification, Monitor, review and check
+100557, Control Execution, Manual
+100557, Control Key, Key Control
+100557, Control Type, Detective
+100558, Business Unit, Marketing
+100558, Control Execution, Manual
+100558, Control Key, Key Control
+100558, Control Type, Detective
+100559, Business Unit, Branch
+100559, Business Unit, Sales & Contact Center
+100559, Control Execution, Combination
+100559, Control Key, Key Control
+100559, Control Type, Detective
+100560, Business Unit, Branch
+100560, Business Unit, Sales & Contact Center
+100560, Control Classification, Confirmations
+100560, Control Execution, Combination
+100560, Control Key, Key Control
+100560, Control Type, Preventive
+100561, Business Unit, Branch
+100561, Control Execution, Automated
+100561, Control Key, Key Control
+100561, Control Type, Preventive
+100562, Business Unit, Sales & Contact Center
+100562, Control Execution, Combination
+100562, Control Key, Key Control
+100562, Control Type, Detective
+100563, Business Unit, Branch
+100563, Control Classification, Monitor, review and check
+100563, Control Execution, Combination
+100563, Control Key, Key Control
+100563, Control Type, Detective
+100564, Business Unit, Branch
+100564, Control Classification, Limits and exception reporting
+100564, Control Execution, Combination
+100564, Control Key, Key Control
+100564, Control Type, Detective
+100565, Business Unit, Branch
+100565, Control Execution, Combination
+100565, Control Key, Key Control
+100565, Control Type, Detective
+100566, Business Unit, Branch
+100566, Control Classification, Monitor, review and check
+100566, Control Execution, Combination
+100566, Control Key, Key Control
+100566, Control Type, Detective
+100567, Business Unit, Branch
+100567, Control Classification, Monitor, review and check
+100567, Control Execution, Combination
+100567, Control Key, Key Control
+100567, Control Type, Detective
+100568, Business Unit, Branch
+100568, Control Execution, Combination
+100568, Control Key, Key Control
+100568, Control Type, Detective
+100569, Business Unit, Legal, Risk & Compliance
+100569, Control Classification, Monitor, review and check
+100569, Control Execution, Manual
+100569, Control Key, Key Control
+100569, Control Type, Preventive
+100570, Business Unit, Legal, Risk & Compliance
+100570, Control Classification, Monitor, review and check
+100570, Control Execution, Manual
+100570, Control Key, Key Control
+100570, Control Type, Preventive
+100571, Business Unit, Information Technology
+100571, Control Classification, Governance
+100571, Control Execution, Manual
+100571, Control Key, Key Control
+100571, Control Type, Preventive
+100572, Business Unit, Information Technology
+100572, Control Execution, Manual
+100572, Control Key, Key Control
+100572, Control Type, Preventive
+100573, Business Unit, Finance
+100573, Control Classification, Reconciliations
+100573, Control Execution, Combination
+100573, Control Key, Key Control
+100573, Control Type, Detective
+100574, Business Unit, Finance
+100574, Control Classification, Monitor, review and check
+100574, Control Execution, Combination
+100574, Control Key, Key Control
+100574, Control Type, Preventive
+100575, Business Unit, Treasury
+100575, Control Classification, Limits and exception reporting
+100575, Control Execution, Manual
+100575, Control Key, Key Control
+100575, Control Type, Preventive
+100576, Business Unit, Treasury
+100576, Control Classification, Limits and exception reporting
+100576, Control Execution, Manual
+100576, Control Key, Key Control
+100576, Control Type, Reactive
+100582, Business Unit, Projects
+100582, Control Classification, Governance
+100582, Control Execution, Combination
+100582, Control Key, Key Control
+100582, Control Type, Preventive
+100583, Business Unit, Information Technology
+100583, Control Classification, Governance
+100583, Control Execution, Combination
+100583, Control Key, Key Control
+100583, Control Type, Preventive
+100584, Business Unit, Projects
+100584, Control Classification, Governance
+100584, Control Execution, Combination
+100584, Control Key, Key Control
+100584, Control Type, Preventive
+100585, Business Unit, Information Technology
+100585, Control Classification, Governance
+100585, Control Execution, Combination
+100585, Control Key, Key Control
+100585, Control Type, Preventive
+100586, Business Unit, Projects
+100586, Control Classification, Governance
+100586, Control Execution, Combination
+100586, Control Key, Key Control
+100586, Control Type, Preventive
+100587, Business Unit, Information Technology
+100587, Control Classification, Governance
+100587, Control Execution, Combination
+100587, Control Key, Key Control
+100587, Control Type, Preventive
+100588, Business Unit, Projects
+100588, Control Classification, Governance
+100588, Control Execution, Combination
+100588, Control Key, Key Control
+100588, Control Type, Preventive
+100589, Business Unit, Information Technology
+100589, Control Classification, Governance
+100589, Control Execution, Combination
+100589, Control Key, Key Control
+100589, Control Type, Preventive
+100590, Business Unit, Information Technology
+100590, Control Classification, Governance
+100590, Control Execution, Combination
+100590, Control Key, Key Control
+100590, Control Type, Preventive
+100591, Business Unit, Information Technology
+100591, Control Classification, Governance
+100591, Control Execution, Combination
+100591, Control Key, Key Control
+100591, Control Type, Preventive
+100592, Business Unit, Information Technology
+100592, Control Classification, Governance
+100592, Control Execution, Combination
+100592, Control Key, Key Control
+100592, Control Type, Preventive
+100593, Business Unit, Information Technology
+100593, Control Classification, Governance
+100593, Control Execution, Combination
+100593, Control Key, Key Control
+100593, Control Type, Preventive
+100594, Business Unit, Information Technology
+100594, Control Classification, Reconciliations
+100594, Control Execution, Combination
+100594, Control Key, Key Control
+100594, Control Type, Preventive
+100595, Business Unit, Information Technology
+100595, Control Classification, Reconciliations
+100595, Control Execution, Combination
+100595, Control Key, Key Control
+100595, Control Type, Preventive
+100596, Business Unit, Projects
+100596, Control Classification, Governance
+100596, Control Execution, Combination
+100596, Control Key, Key Control
+100596, Control Type, Preventive
+100597, Business Unit, Information Technology
+100597, Control Classification, Governance
+100597, Control Execution, Combination
+100597, Control Key, Key Control
+100597, Control Type, Preventive
+100598, Business Unit, Projects
+100598, Control Classification, Governance
+100598, Control Execution, Combination
+100598, Control Key, Key Control
+100598, Control Type, Preventive
+100599, Business Unit, Projects
+100599, Control Classification, Governance
+100599, Control Execution, Combination
+100599, Control Key, Key Control
+100599, Control Type, Preventive
+100600, Business Unit, Projects
+100600, Control Classification, Governance
+100600, Control Execution, Combination
+100600, Control Key, Key Control
+100600, Control Type, Preventive
+100601, Business Unit, Projects
+100601, Control Classification, Governance
+100601, Control Execution, Combination
+100601, Control Key, Key Control
+100601, Control Type, Preventive
+100602, Business Unit, Projects
+100602, Control Classification, Governance
+100602, Control Execution, Combination
+100602, Control Key, Key Control
+100602, Control Type, Preventive
+100603, Business Unit, Projects
+100603, Control Classification, Governance
+100603, Control Execution, Combination
+100603, Control Key, Key Control
+100603, Control Type, Preventive
+100604, Business Unit, Projects
+100604, Control Classification, Governance
+100604, Control Execution, Combination
+100604, Control Key, Key Control
+100604, Control Type, Preventive
+100605, Business Unit, Information Technology
+100605, Control Classification, Governance
+100605, Control Execution, Combination
+100605, Control Key, Key Control
+100605, Control Type, Preventive
+100606, Business Unit, Information Technology
+100606, Control Classification, Governance
+100606, Control Execution, Combination
+100606, Control Key, Key Control
+100606, Control Type, Preventive
+100609, Business Unit, Corporate Office & Strategy
+100609, Control Classification, Governance
+100609, Control Execution, Manual
+100609, Control Key, Key Control
+100609, Control Type, Preventive
+100610, Business Unit, Corporate Office & Strategy
+100610, Control Classification, Governance
+100610, Control Execution, Manual
+100610, Control Key, Key Control
+100610, Control Type, Preventive
+100611, Business Unit, Corporate Office & Strategy
+100611, Control Classification, Governance
+100611, Control Execution, Manual
+100611, Control Key, Key Control
+100611, Control Type, Preventive
+100612, Business Unit, Corporate Office & Strategy
+100612, Control Classification, Governance
+100612, Control Execution, Manual
+100612, Control Key, Key Control
+100612, Control Type, Preventive
+100613, Business Unit, Corporate Office & Strategy
+100613, Control Classification, Governance
+100613, Control Execution, Manual
+100613, Control Key, Key Control
+100613, Control Type, Preventive
+100614, Business Unit, Corporate Office & Strategy
+100614, Control Classification, Governance
+100614, Control Execution, Manual
+100614, Control Key, Key Control
+100614, Control Type, Preventive
+100615, Business Unit, People and Culture
+100615, Control Classification, Human resource controls
+100615, Control Execution, Manual
+100615, Control Key, Key Control
+100615, Control Type, Preventive
+100616, Business Unit, People and Culture
+100616, Control Classification, Human resource controls
+100616, Control Execution, Manual
+100616, Control Key, Key Control
+100616, Control Type, Preventive
+100617, Business Unit, Legal, Risk & Compliance
+100617, Control Classification, Governance
+100617, Control Execution, Manual
+100617, Control Key, Key Control
+100617, Control Type, Preventive
+100618, Business Unit, Legal, Risk & Compliance
+100618, Control Classification, Governance
+100618, Control Execution, Manual
+100618, Control Key, Key Control
+100618, Control Type, Preventive
+100619, Business Unit, Legal, Risk & Compliance
+100619, Control Classification, Governance
+100619, Control Execution, Manual
+100619, Control Key, Key Control
+100619, Control Type, Preventive
+100620, Business Unit, Legal, Risk & Compliance
+100620, Control Classification, Governance
+100620, Control Execution, Manual
+100620, Control Key, Key Control
+100620, Control Type, Preventive
+100621, Business Unit, Corporate Office & Strategy
+100621, Control Classification, Monitor, review and check
+100621, Control Execution, Manual
+100621, Control Key, Key Control
+100621, Control Type, Detective
+100622, Business Unit, Corporate Office & Strategy
+100622, Control Execution, Manual
+100622, Control Key, Key Control
+100622, Control Type, Detective
+100623, Business Unit, Legal, Risk & Compliance
+100623, Control Classification, Governance
+100623, Control Execution, Manual
+100623, Control Key, Key Control
+100623, Control Type, Preventive
+100624, Business Unit, Legal, Risk & Compliance
+100624, Control Classification, Governance
+100624, Control Execution, Manual
+100624, Control Key, Key Control
+100624, Control Type, Preventive
+100625, Business Unit, Corporate Office & Strategy
+100625, Control Classification, Monitor, review and check
+100625, Control Execution, Manual
+100625, Control Key, Key Control
+100625, Control Type, Preventive
+100626, Business Unit, Corporate Office & Strategy
+100626, Control Execution, Manual
+100626, Control Key, Key Control
+100626, Control Type, Preventive
+100627, Business Unit, People and Culture
+100627, Control Classification, Human resource controls
+100627, Control Execution, Manual
+100627, Control Key, Key Control
+100627, Control Type, Preventive
+100628, Business Unit, People and Culture
+100628, Control Classification, Human resource controls
+100628, Control Execution, Manual
+100628, Control Key, Key Control
+100628, Control Type, Preventive
+100629, Business Unit, People and Culture
+100629, Control Classification, Human resource controls
+100629, Control Execution, Combination
+100629, Control Key, Key Control
+100629, Control Type, Detective
+100630, Business Unit, People and Culture
+100630, Control Classification, Human resource controls
+100630, Control Execution, Combination
+100630, Control Key, Key Control
+100630, Control Type, Detective
+100631, Business Unit, Corporate Office & Strategy
+100631, Control Classification, Governance
+100631, Control Execution, Manual
+100631, Control Key, Key Control
+100631, Control Type, Preventive
+100632, Business Unit, Corporate Office & Strategy
+100632, Control Classification, Governance
+100632, Control Execution, Manual
+100632, Control Key, Key Control
+100632, Control Type, Preventive
+100633, Business Unit, People and Culture
+100633, Control Classification, Human resource controls
+100633, Control Execution, Manual
+100633, Control Key, Key Control
+100633, Control Type, Preventive
+100634, Business Unit, People and Culture
+100634, Control Classification, Human resource controls
+100634, Control Execution, Manual
+100634, Control Key, Key Control
+100634, Control Type, Preventive
+100635, Business Unit, Legal, Risk & Compliance
+100635, Control Classification, Governance
+100635, Control Execution, Manual
+100635, Control Key, Key Control
+100635, Control Type, Preventive
+100636, Business Unit, Legal, Risk & Compliance
+100636, Control Classification, Governance
+100636, Control Execution, Manual
+100636, Control Key, Key Control
+100636, Control Type, Preventive
+100639, Business Unit, Branch
+100639, Control Classification, Monitor, review and check
+100639, Control Execution, Combination
+100639, Control Key, Key Control
+100639, Control Type, Detective
+100640, Business Unit, Information Technology
+100640, Control Classification, Limits and exception reporting
+100640, Control Execution, Automated
+100640, Control Key, Key Control
+100640, Control Type, Detective
+100641, Business Unit, Marketing
+100641, Control Classification, Monitor, review and check
+100641, Control Execution, Manual
+100641, Control Key, Key Control
+100641, Control Type, Detective
+100642, Business Unit, Corporate Office & Strategy
+100642, Control Classification, Monitor, review and check
+100642, Control Execution, Manual
+100642, Control Key, Key Control
+100642, Control Type, Preventive
+100643, Business Unit, Operations
+100643, Control Classification, Monitor, review and check
+100643, Control Execution, Combination
+100643, Control Key, Key Control
+100643, Control Type, Preventive
+100644, Business Unit, Information Technology
+100644, Control Classification, Monitor, review and check
+100644, Control Execution, Combination
+100644, Control Key, Key Control
+100644, Control Type, Detective
+100645, Business Unit, Corporate Office & Strategy
+100645, Control Classification, Monitor, review and check
+100645, Control Execution, Manual
+100645, Control Key, Key Control
+100645, Control Type, Detective
+100646, Business Unit, Sales & Contact Center
+100646, Control Classification, Monitor, review and check
+100646, Control Execution, Combination
+100646, Control Key, Key Control
+100646, Control Type, Detective
+100647, Business Unit, Branch
+100647, Control Classification, Monitor, review and check
+100647, Control Execution, Automated
+100647, Control Key, Key Control
+100647, Control Type, Preventive
+100648, Business Unit, Information Technology
+100648, Control Classification, Governance
+100648, Control Execution, Manual
+100648, Control Key, Key Control
+100648, Control Type, Preventive
+100649, Business Unit, Branch
+100649, Control Classification, Monitor, review and check
+100649, Control Execution, Combination
+100649, Control Key, Key Control
+100649, Control Type, Detective
+100650, Business Unit, Information Technology
+100650, Control Classification, Access
+100650, Control Execution, Automated
+100650, Control Key, Key Control
+100650, Control Type, Preventive
+100651, Business Unit, Information Technology
+100651, Control Classification, Monitor, review and check
+100651, Control Execution, Automated
+100651, Control Key, Key Control
+100651, Control Type, Preventive
+100652, Business Unit, Information Technology
+100652, Control Classification, Monitor, review and check
+100652, Control Execution, Manual
+100652, Control Key, Key Control
+100652, Control Type, Preventive
+100653, Control Classification, Governance
+100653, Control Execution, Combination
+100653, Control Key, Key Control
+100653, Control Type, Detective
+100654, Business Unit, Legal, Risk & Compliance
+100654, Control Classification, Governance
+100654, Control Execution, Manual
+100654, Control Key, Key Control
+100654, Control Type, Preventive
+100655, Control Classification, Governance
+100655, Control Execution, Manual
+100655, Control Key, Key Control
+100655, Control Type, Preventive
+100656, Business Unit, Operations
+100656, Control Classification, Limits and exception reporting
+100656, Control Execution, Automated
+100656, Control Key, Key Control
+100656, Control Type, Preventive
+100657, Business Unit, Information Technology
+100657, Control Classification, Limits and exception reporting
+100657, Control Execution, Automated
+100657, Control Key, Key Control
+100657, Control Type, Detective
+100658, Business Unit, Temp
+100658, Control Classification, Reconciliations
+100658, Control Execution, Combination
+100658, Control Key, Key Control
+100658, Control Type, Detective
+100659, Business Unit, Temp
+100659, Control Classification, Reconciliations
+100659, Control Execution, Combination
+100659, Control Key, Key Control
+100659, Control Type, Detective
+100660, Control Classification, Monitor, review and check
+100660, Control Execution, Manual
+100660, Control Type, Detective
+100660, Control Type, Preventive
+100661, Business Unit, Operations
+100661, Control Classification, Monitor, review and check
+100661, Control Execution, Manual
+100661, Control Key, Key Control
+100661, Control Type, Preventive
+100662, Business Unit, Operations
+100662, Control Classification, Monitor, review and check
+100662, Control Execution, Combination
+100662, Control Key, Key Control
+100662, Control Type, Detective
+100663, Control Classification, Monitor, review and check
+100663, Control Execution, Combination
+100663, Control Key, Key Control
+100663, Control Type, Reactive
+100664, Control Classification, Monitor, review and check
+100664, Control Execution, Combination
+100664, Control Key, Key Control
+100664, Control Type, Detective
+100665, Business Unit, Operations
+100665, Control Classification, Monitor, review and check
+100665, Control Execution, Manual
+100665, Control Key, Key Control
+100665, Control Type, Preventive
+100666, Business Unit, Temp
+100666, Control Classification, Monitor, review and check
+100666, Control Execution, Manual
+100666, Control Key, Key Control
+100666, Control Type, Preventive
+100667, Business Unit, Temp
+100667, Control Classification, Monitor, review and check
+100667, Control Execution, Combination
+100667, Control Key, Key Control
+100667, Control Type, Preventive
+100668, Control Classification, Monitor, review and check
+100668, Control Execution, Combination
+100668, Control Key, Key Control
+100668, Control Type, Preventive
+100669, Business Unit, Temp
+100669, Control Classification, Monitor, review and check
+100669, Control Execution, Combination
+100669, Control Key, Key Control
+100669, Control Type, Preventive
+100670, Control Classification, Monitor, review and check
+100670, Control Execution, Combination
+100670, Control Key, Key Control
+100670, Control Type, Preventive
+100671, Business Unit, Temp
+100671, Control Classification, Monitor, review and check
+100671, Control Execution, Combination
+100671, Control Key, Key Control
+100671, Control Type, Preventive
+100672, Business Unit, Sales & Contact Center
+100672, Control Classification, Monitor, review and check
+100672, Control Execution, Combination
+100672, Control Key, Key Control
+100672, Control Type, Detective
+100673, Business Unit, Temp
+100673, Control Classification, Segregation of duties
+100673, Control Execution, Combination
+100673, Control Key, Key Control
+100673, Control Type, Preventive
+100674, Business Unit, Operations
+100674, Control Classification, Segregation of duties
+100674, Control Execution, Combination
+100674, Control Key, Key Control
+100674, Control Type, Preventive
+100675, Control Classification, Segregation of duties
+100675, Control Execution, Combination
+100675, Control Key, Key Control
+100675, Control Type, Preventive
+100676, Business Unit, People and Culture
+100676, Control Classification, Training
+100676, Control Execution, Combination
+100676, Control Key, Key Control
+100676, Control Type, Preventive
+100677, Business Unit, People and Culture
+100677, Control Classification, Training
+100677, Control Execution, Combination
+100677, Control Key, Key Control
+100677, Control Type, Preventive
+100678, Control Classification, Training
+100678, Control Execution, Combination
+100678, Control Key, Key Control
+100678, Control Type, Preventive
+100679, Business Unit, People and Culture
+100679, Control Classification, Training
+100679, Control Execution, Combination
+100679, Control Key, Key Control
+100679, Control Type, Preventive
+100680, Control Classification, Training
+100680, Control Execution, Manual
+100680, Control Type, Preventive
+100681, Business Unit, Operations
+100681, Control Classification, Access
+100681, Control Execution, Combination
+100681, Control Key, Key Control
+100681, Control Type, Preventive
+100682, Control Classification, Access
+100682, Control Execution, Combination
+100682, Control Type, Preventive
+100683, Business Unit, Operations
+100683, Control Classification, Reconciliations
+100683, Control Execution, Combination
+100683, Control Key, Key Control
+100683, Control Type, Preventive
+100684, Business Unit, Operations
+100684, Control Classification, Reconciliations
+100684, Control Execution, Combination
+100684, Control Key, Key Control
+100684, Control Type, Detective
+100685, Business Unit, Temp
+100685, Control Classification, Monitor, review and check
+100685, Control Execution, Combination
+100685, Control Key, Key Control
+100685, Control Type, Preventive
+100686, Control Classification, Human resource controls
+100686, Control Classification, Monitor, review and check
+100686, Control Type, Detective
+100687, Business Unit, People and Culture
+100687, Control Classification, Training
+100687, Control Execution, Combination
+100687, Control Key, Key Control
+100687, Control Type, Preventive
+100688, Business Unit, People and Culture
+100688, Control Classification, Human resource controls
+100688, Control Execution, Automated
+100688, Control Key, Key Control
+100688, Control Type, Detective
+100689, Business Unit, People and Culture
+100689, Control Classification, Human resource controls
+100689, Control Execution, Automated
+100689, Control Key, Key Control
+100689, Control Type, Detective
+100690, Business Unit, People and Culture
+100690, Control Classification, Governance
+100690, Control Execution, Manual
+100690, Control Key, Key Control
+100690, Control Type, Preventive
+100691, Business Unit, People and Culture
+100691, Control Classification, Training
+100691, Control Execution, Automated
+100691, Control Key, Key Control
+100691, Control Type, Preventive
+100694, Business Unit, Information Technology
+100694, Control Classification, Monitor, review and check
+100694, Control Execution, Manual
+100694, Control Key, Key Control
+100694, Control Type, Preventive
+100695, Business Unit, People and Culture
+100695, Control Classification, Human resource controls
+100695, Control Execution, Manual
+100695, Control Key, Key Control
+100695, Control Type, Preventive
+100696, Business Unit, People and Culture
+100696, Control Classification, Human resource controls
+100696, Control Execution, Manual
+100696, Control Key, Key Control
+100696, Control Type, Preventive
+100697, Business Unit, People and Culture
+100697, Control Classification, Training
+100697, Control Execution, Manual
+100697, Control Key, Key Control
+100697, Control Type, Preventive
+100698, Business Unit, People and Culture
+100698, Control Classification, Training
+100698, Control Execution, Manual
+100698, Control Key, Key Control
+100698, Control Type, Preventive
+100699, Business Unit, Treasury
+100699, Control Classification, Limits and exception reporting
+100699, Control Execution, Automated
+100699, Control Key, Key Control
+100699, Control Type, Preventive
+100700, Business Unit, Legal, Risk & Compliance
+100700, Control Classification, Monitor, review and check
+100700, Control Execution, Automated
+100700, Control Key, Key Control
+100700, Control Type, Preventive
+100701, Business Unit, Marketing
+100701, Control Classification, Governance
+100701, Control Execution, Manual
+100701, Control Key, Key Control
+100701, Control Type, Preventive
+100702, Business Unit, People and Culture
+100702, Control Classification, Human resource controls
+100702, Control Execution, Manual
+100702, Control Key, Key Control
+100702, Control Type, Preventive
+100703, Control Classification, Monitor, review and check
+100703, Control Execution, Manual
+100703, Control Type, Detective
+100704, Control Classification, Monitor, review and check
+100704, Control Execution, Manual
+100704, Control Key, Key Control
+100704, Control Type, Preventive
+100705, Control Classification, Reconciliations
+100705, Control Execution, Combination
+100705, Control Key, Key Control
+100705, Control Type, Preventive
+100706, Control Classification, Reconciliations
+100706, Control Execution, Combination
+100706, Control Key, Key Control
+100706, Control Type, Preventive
+100707, Control Classification, Monitor, review and check
+100707, Control Execution, Manual
+100707, Control Key, Key Control
+100707, Control Type, Preventive
+100708, Business Unit, Legal, Risk & Compliance
+100708, Control Classification, Governance
+100708, Control Execution, Manual
+100708, Control Key, Key Control
+100708, Control Type, Preventive
+100709, Control Classification, Limits and exception reporting
+100709, Control Execution, Combination
+100709, Control Key, Key Control
+100709, Control Type, Preventive
+100710, Business Unit, People and Culture
+100710, Control Classification, Human resource controls
+100710, Control Execution, Automated
+100710, Control Key, Key Control
+100710, Control Type, Detective
+100711, Business Unit, People and Culture
+100711, Control Classification, Training
+100711, Control Execution, Combination
+100711, Control Key, Key Control
+100711, Control Type, Preventive
+100712, Control Classification, Monitor, review and check
+100712, Control Execution, Manual
+100712, Control Type, Detective
+100712, Control Type, Preventive
+100713, Business Unit, Information Technology
+100713, Control Classification, Governance
+100713, Control Execution, Manual
+100713, Control Key, Key Control
+100713, Control Type, Preventive
+100714, Control Classification, Access
+100714, Control Execution, Automated
+100714, Control Type, Preventive
+100715, Business Unit, Information Technology
+100715, Control Classification, Monitor, review and check
+100715, Control Execution, Combination
+100715, Control Key, Key Control
+100715, Control Type, Preventive
+100716, Business Unit, Sales & Contact Center
+100716, Control Classification, Monitor, review and check
+100716, Control Execution, Manual
+100716, Control Key, Key Control
+100716, Control Type, Preventive
+100717, Business Unit, People and Culture
+100717, Control Classification, Human resource controls
+100717, Control Execution, Combination
+100717, Control Key, Key Control
+100717, Control Type, Preventive
+100718, Business Unit, People and Culture
+100718, Control Classification, Governance
+100718, Control Execution, Manual
+100718, Control Key, Key Control
+100718, Control Type, Preventive
+100719, Business Unit, Sales & Contact Center
+100719, Control Classification, Monitor, review and check
+100719, Control Execution, Manual
+100719, Control Key, Key Control
+100719, Control Type, Detective
+100720, Business Unit, Sales & Contact Center
+100720, Control Classification, Monitor, review and check
+100720, Control Execution, Manual
+100720, Control Key, Key Control
+100720, Control Type, Preventive
+100721, Control Classification, Reconciliations
+100721, Control Execution, Manual
+100721, Control Key, Key Control
+100721, Control Type, Detective
+100722, Business Unit, Information Technology
+100722, Control Classification, Access
+100722, Control Execution, Combination
+100722, Control Key, Key Control
+100722, Control Type, Detective
+100723, Business Unit, Finance
+100723, Control Classification, Monitor, review and check
+100723, Control Execution, Manual
+100723, Control Key, Key Control
+100723, Control Type, Detective
+100724, Control Classification, Monitor, review and check
+100724, Control Execution, Manual
+100724, Control Type, Detective
+100725, Control Classification, Monitor, review and check
+100725, Control Execution, Manual
+100725, Control Key, Key Control
+100725, Control Type, Reactive
+100726, Business Unit, People and Culture
+100726, Control Classification, Human resource controls
+100726, Control Execution, Manual
+100726, Control Key, Key Control
+100726, Control Type, Preventive
+100727, Control Classification, Human resource controls
+100727, Control Classification, Monitor, review and check
+100727, Control Execution, Combination
+100727, Control Key, Key Control
+100727, Control Type, Detective
+100728, Control Classification, Governance
+100728, Control Classification, Monitor, review and check
+100728, Control Execution, Manual
+100728, Control Key, Key Control
+100728, Control Type, Preventive
+100729, Control Classification, Governance
+100729, Control Classification, Monitor, review and check
+100729, Control Execution, Manual
+100729, Control Key, Key Control
+100729, Control Type, Preventive
+100730, Control Classification, Access
+100730, Control Execution, Combination
+100730, Control Type, Preventive
+100731, Business Unit, Treasury
+100731, Control Classification, Limits and exception reporting
+100731, Control Execution, Automated
+100731, Control Key, Key Control
+100731, Control Type, Preventive
+100732, Business Unit, Legal, Risk & Compliance
+100732, Control Classification, Governance
+100732, Control Execution, Manual
+100732, Control Key, Key Control
+100732, Control Type, Preventive
+100733, Control Classification, Monitor, review and check
+100733, Control Execution, Manual
+100733, Control Key, Key Control
+100733, Control Type, Preventive
+100734, Control Classification, Monitor, review and check
+100734, Control Execution, Manual
+100734, Control Type, Detective
+100735, Control Classification, Access
+100735, Control Execution, Automated
+100735, Control Type, Preventive
+100736, Business Unit, People and Culture
+100736, Control Classification, Human resource controls
+100736, Control Execution, Manual
+100736, Control Key, Key Control
+100736, Control Type, Preventive
+100737, Business Unit, People and Culture
+100737, Control Classification, Governance
+100737, Control Execution, Manual
+100737, Control Key, Key Control
+100737, Control Type, Preventive
+100738, Business Unit, People and Culture
+100738, Control Classification, Human resource controls
+100738, Control Execution, Manual
+100738, Control Key, Key Control
+100738, Control Type, Preventive
+100739, Business Unit, People and Culture
+100739, Control Classification, Governance
+100739, Control Execution, Manual
+100739, Control Key, Key Control
+100739, Control Type, Preventive
+100740, Business Unit, Sales & Contact Center
+100740, Control Classification, Confirmations
+100740, Control Execution, Automated
+100740, Control Key, Key Control
+100740, Control Type, Detective
+100741, Business Unit, Information Technology
+100741, Control Classification, Governance
+100741, Control Execution, Manual
+100741, Control Key, Key Control
+100741, Control Type, Preventive
+100742, Business Unit, Information Technology
+100742, Control Classification, Access
+100742, Control Execution, Combination
+100742, Control Key, Key Control
+100742, Control Type, Detective
+100743, Business Unit, Operations
+100743, Control Classification, Limits and exception reporting
+100743, Control Execution, Combination
+100743, Control Key, Key Control
+100743, Control Type, Preventive
+100744, Business Unit, Finance
+100744, Control Classification, Reconciliations
+100744, Control Execution, Combination
+100744, Control Key, Key Control
+100744, Control Type, Detective
+100745, Business Unit, Finance
+100745, Control Classification, Reconciliations
+100745, Control Execution, Combination
+100745, Control Key, Key Control
+100745, Control Type, Detective
+100746, Business Unit, Operations
+100746, Control Classification, Reconciliations
+100746, Control Execution, Combination
+100746, Control Key, Key Control
+100746, Control Type, Preventive
+100747, Business Unit, Finance
+100747, Control Classification, Reconciliations
+100747, Control Execution, Manual
+100747, Control Key, Key Control
+100747, Control Type, Detective
+100748, Business Unit, Information Technology
+100748, Control Classification, Governance
+100748, Control Execution, Manual
+100748, Control Key, Key Control
+100748, Control Type, Preventive
+100749, Business Unit, Information Technology
+100749, Control Classification, Governance
+100749, Control Execution, Manual
+100749, Control Key, Key Control
+100749, Control Type, Preventive
+100750, Business Unit, Information Technology
+100750, Control Classification, Governance
+100750, Control Execution, Manual
+100750, Control Key, Key Control
+100750, Control Type, Preventive
+100751, Business Unit, Information Technology
+100751, Control Classification, Governance
+100751, Control Execution, Manual
+100751, Control Key, Key Control
+100751, Control Type, Preventive
+100752, Business Unit, Information Technology
+100752, Control Classification, Governance
+100752, Control Execution, Manual
+100752, Control Key, Key Control
+100752, Control Type, Reactive
+100753, Business Unit, Information Technology
+100753, Control Classification, Monitor, review and check
+100753, Control Execution, Combination
+100753, Control Key, Key Control
+100753, Control Type, Detective
+100754, Business Unit, Information Technology
+100754, Control Classification, Monitor, review and check
+100754, Control Execution, Combination
+100754, Control Key, Key Control
+100754, Control Type, Detective
+100755, Business Unit, Operations
+100755, Control Classification, Monitor, review and check
+100755, Control Execution, Combination
+100755, Control Key, Key Control
+100755, Control Type, Preventive
+100756, Business Unit, Operations
+100756, Control Classification, Monitor, review and check
+100756, Control Execution, Combination
+100756, Control Key, Key Control
+100756, Control Type, Preventive
+100757, Business Unit, People and Culture
+100757, Control Classification, Training
+100757, Control Execution, Combination
+100757, Control Key, Key Control
+100757, Control Type, Preventive
+100758, Business Unit, Branch
+100758, Control Classification, Segregation of duties
+100758, Control Execution, Manual
+100758, Control Key, Key Control
+100758, Control Type, Preventive
+100759, Business Unit, Branch
+100759, Control Classification, Segregation of duties
+100759, Control Execution, Manual
+100759, Control Key, Key Control
+100759, Control Type, Preventive
+100760, Business Unit, Branch
+100760, Control Classification, Limits and exception reporting
+100760, Control Execution, Automated
+100760, Control Key, Key Control
+100760, Control Type, Preventive
+100761, Business Unit, Branch
+100761, Control Classification, Limits and exception reporting
+100761, Control Execution, Automated
+100761, Control Key, Key Control
+100761, Control Type, Preventive
+100780, Business Unit, Corporate Office & Strategy
+100780, Control Classification, Governance
+100780, Control Execution, Manual
+100780, Control Key, Key Control
+100780, Control Type, Preventive
+100781, Business Unit, Corporate Office & Strategy
+100781, Control Classification, Governance
+100781, Control Execution, Manual
+100781, Control Key, Key Control
+100781, Control Type, Preventive
+100782, Business Unit, Corporate Office & Strategy
+100782, Control Classification, Governance
+100782, Control Execution, Manual
+100782, Control Key, Key Control
+100782, Control Type, Preventive
+100783, Business Unit, Corporate Office & Strategy
+100783, Control Classification, Governance
+100783, Control Execution, Manual
+100783, Control Key, Key Control
+100783, Control Type, Preventive
+100784, Business Unit, Corporate Office & Strategy
+100784, Control Classification, Governance
+100784, Control Execution, Manual
+100784, Control Key, Key Control
+100784, Control Type, Preventive
+100786, Business Unit, Corporate Office & Strategy
+100786, Control Classification, Governance
+100786, Control Execution, Manual
+100786, Control Key, Key Control
+100786, Control Type, Preventive
+100787, Business Unit, Corporate Office & Strategy
+100787, Control Classification, Governance
+100787, Control Execution, Manual
+100787, Control Key, Key Control
+100787, Control Type, Preventive
+100788, Business Unit, Corporate Office & Strategy
+100788, Control Classification, Governance
+100788, Control Execution, Manual
+100788, Control Key, Key Control
+100788, Control Type, Preventive
+100789, Business Unit, Corporate Office & Strategy
+100789, Control Classification, Governance
+100789, Control Execution, Manual
+100789, Control Key, Key Control
+100789, Control Type, Preventive
+100791, Business Unit, Corporate Office & Strategy
+100791, Control Classification, Governance
+100791, Control Execution, Manual
+100791, Control Key, Key Control
+100791, Control Type, Preventive
+100792, Business Unit, Corporate Office & Strategy
+100792, Control Classification, Governance
+100792, Control Execution, Manual
+100792, Control Key, Key Control
+100792, Control Type, Preventive
+100793, Business Unit, Corporate Office & Strategy
+100793, Control Classification, Governance
+100793, Control Execution, Manual
+100793, Control Key, Key Control
+100793, Control Type, Preventive
+100794, Business Unit, Corporate Office & Strategy
+100794, Control Classification, Governance
+100794, Control Execution, Manual
+100794, Control Key, Key Control
+100794, Control Type, Preventive
+100795, Business Unit, Information Technology
+100795, Control Classification, Governance
+100795, Control Execution, Manual
+100795, Control Key, Key Control
+100795, Control Type, Preventive
+100796, Business Unit, Operations
+100796, Control Classification, Monitor, review and check
+100796, Control Execution, Combination
+100796, Control Key, Key Control
+100796, Control Type, Preventive
+100797, Business Unit, Operations
+100797, Control Classification, Monitor, review and check
+100797, Control Execution, Combination
+100797, Control Key, Key Control
+100797, Control Type, Preventive
+100798, Business Unit, Operations
+100798, Control Classification, Monitor, review and check
+100798, Control Execution, Combination
+100798, Control Key, Key Control
+100798, Control Type, Detective
+100799, Business Unit, Operations
+100799, Control Classification, Monitor, review and check
+100799, Control Execution, Combination
+100799, Control Key, Key Control
+100799, Control Type, Detective
+100821, Control Classification, Governance
+100821, Control Execution, Manual
+100821, Control Type, Preventive
+100822, Control Classification, Governance
+100822, Control Execution, Manual
+100822, Control Type, Preventive
+100823, Control Classification, Limits and exception reporting
+100823, Control Execution, Automated
+100823, Control Key, Key Control
+100823, Control Type, Detective
+100824, Control Classification, Limits and exception reporting
+100824, Control Execution, Automated
+100824, Control Key, Key Control
+100824, Control Type, Detective
+100841, Business Unit, Finance
+100841, Control Classification, Monitor, review and check
+100841, Control Execution, Manual
+100841, Control Key, Key Control
+100841, Control Type, Preventive
+100845, Business Unit, Corporate Office & Strategy
+100845, Control Classification, Governance
+100845, Control Execution, Manual
+100845, Control Key, Key Control
+100845, Control Type, Preventive
+100860, Business Unit, Information Technology
+100860, Control Classification, Access
+100860, Control Execution, Automated
+100860, Control Key, Key Control
+100860, Control Type, Preventive
+100861, Business Unit, Information Technology
+100861, Control Classification, Access
+100861, Control Execution, Automated
+100861, Control Key, Key Control
+100861, Control Type, Preventive
+100897, Business Unit, Legal, Risk & Compliance
+100897, Control Classification, Governance
+100897, Control Execution, Manual
+100897, Control Key, Key Control
+100897, Control Type, Preventive
+100898, Business Unit, Legal, Risk & Compliance
+100898, Control Classification, Governance
+100898, Control Execution, Manual
+100898, Control Key, Key Control
+100898, Control Type, Preventive
+100899, Business Unit, Legal, Risk & Compliance
+100899, Control Classification, Governance
+100899, Control Execution, Manual
+100899, Control Key, Key Control
+100899, Control Type, Preventive
+100900, Business Unit, Legal, Risk & Compliance
+100900, Control Classification, Governance
+100900, Control Execution, Manual
+100900, Control Key, Key Control
+100900, Control Type, Preventive
+100901, Business Unit, Legal, Risk & Compliance
+100901, Control Classification, Governance
+100901, Control Execution, Manual
+100901, Control Key, Key Control
+100901, Control Type, Preventive
+100902, Business Unit, Legal, Risk & Compliance
+100902, Control Classification, Governance
+100902, Control Execution, Manual
+100902, Control Key, Key Control
+100902, Control Type, Preventive
+100915, Business Unit, Legal, Risk & Compliance
+100915, Control Classification, Governance
+100915, Control Execution, Manual
+100915, Control Key, Key Control
+100915, Control Type, Preventive
+100916, Business Unit, Legal, Risk & Compliance
+100916, Control Classification, Governance
+100916, Control Execution, Manual
+100916, Control Key, Key Control
+100916, Control Type, Preventive
+101319, Business Unit, Information Technology
+101319, Control Classification, Access
+101319, Control Execution, Automated
+101319, Control Key, Key Control
+101319, Control Type, Preventive
+101362, Business Unit, Projects
+101362, Control Classification, Monitor, review and check
+101362, Control Execution, Manual
+101362, Control Type, Preventive
+101363, Business Unit, Projects
+101363, Control Classification, Monitor, review and check
+101363, Control Execution, Manual
+101363, Control Type, Preventive
+101364, Business Unit, Projects
+101364, Control Classification, Monitor, review and check
+101364, Control Execution, Manual
+101364, Control Type, Preventive
+101365, Business Unit, Projects
+101365, Control Classification, Monitor, review and check
+101365, Control Execution, Manual
+101365, Control Type, Preventive
+101366, Business Unit, Projects
+101366, Control Classification, Monitor, review and check
+101366, Control Execution, Manual
+101366, Control Key, Key Control
+101366, Control Type, Preventive
+101367, Business Unit, Projects
+101367, Control Classification, Monitor, review and check
+101367, Control Execution, Manual
+101367, Control Key, Key Control
+101367, Control Type, Detective
+101368, Business Unit, Operations
+101368, Control Classification, Monitor, review and check
+101368, Control Execution, Combination
+101368, Control Key, Key Control
+101368, Control Type, Preventive
+101369, Business Unit, Operations
+101369, Control Classification, Monitor, review and check
+101369, Control Execution, Combination
+101369, Control Key, Key Control
+101369, Control Type, Preventive
+101370, Business Unit, Projects
+101370, Control Classification, Access
+101370, Control Execution, Manual
+101370, Control Type, Reactive
+101371, Business Unit, Projects
+101371, Control Classification, Access
+101371, Control Execution, Manual
+101371, Control Type, Reactive
+101372, Business Unit, Projects
+101372, Control Classification, Monitor, review and check
+101372, Control Execution, Combination
+101372, Control Type, Detective
+101373, Business Unit, Projects
+101373, Control Classification, Monitor, review and check
+101373, Control Execution, Combination
+101373, Control Type, Detective
+101374, Business Unit, Projects
+101374, Control Classification, Monitor, review and check
+101374, Control Execution, Manual
+101374, Control Key, Key Control
+101374, Control Type, Preventive
+101443, Control Classification, Governance
+101444, Control Classification, Governance
+101447, Theme, Committees / Board
+101448, Theme, Committees / Board
+101449, Theme, Committees / Board
+101450, Theme, Committees / Board
+101451, Theme, Committees / Board
+101452, Theme, Committees / Board
+101453, Theme, Committees / Board
+101453, Theme, Issues and Actions
+101454, Theme, Committees / Board
+101454, Theme, Issues and Actions
+101455, Theme, Reporting
+101456, Theme, Reporting
+101457, Theme, Accountability / Responsibility
+101458, Theme, Accountability / Responsibility
+101459, Theme, Accountability / Responsibility
+101459, Theme, Challenge / Trust
+101459, Theme, Voices
+101460, Theme, Accountability / Responsibility
+101460, Theme, Challenge / Trust
+101460, Theme, Voices
+101461, Theme, Committees / Board
+101461, Theme, Non-financial
+101462, Theme, Committees / Board
+101462, Theme, Non-financial
+101465, Theme, Challenge / Trust
+101466, Theme, Challenge / Trust
+101469, Theme, Issues and Actions
+101469, Theme, Minimum Standards / Policies
+101469, Theme, RAS
+101469, Theme, Reporting
+101470, Theme, Issues and Actions
+101470, Theme, Minimum Standards / Policies
+101470, Theme, RAS
+101470, Theme, Reporting
+101471, Theme, Training
+101472, Theme, Training
+101473, Theme, Accountability / Responsibility
+101473, Theme, Committees / Board
+101474, Theme, Accountability / Responsibility
+101474, Theme, Committees / Board
+101475, Theme, Conduct / Culture
+101476, Theme, Conduct / Culture
+101477, Theme, Accountability / Responsibility
+101478, Theme, Accountability / Responsibility
+101479, Theme, Committees / Board
+101479, Theme, Incidents
+101479, Theme, Reporting
+101480, Theme, Committees / Board
+101480, Theme, Incidents
+101480, Theme, Reporting
+101481, Theme, Incidents
+101481, Theme, Issues and Actions
+101482, Theme, Incidents
+101482, Theme, Issues and Actions
+101483, Theme, Challenge / Trust
+101483, Theme, Reactive
+101484, Theme, Challenge / Trust
+101484, Theme, Reactive
+101485, Theme, Decision Making
+101485, Theme, Reactive
+101485, Theme, Risk and Compliance Functions
+101486, Theme, Decision Making
+101486, Theme, Reactive
+101486, Theme, Risk and Compliance Functions
+101487, Theme, Decision Making
+101488, Theme, Decision Making
+101489, Theme, Accountability / Responsibility
+101489, Theme, Incentives
+101490, Theme, Accountability / Responsibility
+101490, Theme, Incentives
+101491, Theme, Incentives
+101492, Theme, Incentives
+101493, Theme, Incentives
+101494, Theme, Incentives
+101495, Theme, Incentives
+101496, Theme, Incentives
+101497, Theme, Incentives
+101498, Theme, Incentives
+101499, Theme, Challenge / Trust
+101499, Theme, Conduct / Culture
+101500, Theme, Challenge / Trust
+101500, Theme, Conduct / Culture
+101501, Theme, Conduct / Culture
+101502, Theme, Conduct / Culture
+101503, Theme, Risk and Compliance Functions
+101504, Theme, Risk and Compliance Functions
+101505, Theme, Conduct / Culture
+101505, Theme, Good Intent
+101506, Theme, Conduct / Culture
+101506, Theme, Good Intent
+101507, Theme, Accountability / Responsibility
+101508, Theme, Accountability / Responsibility
+101509, Theme, Accountability / Responsibility
+101509, Theme, Incentives
+101510, Theme, Accountability / Responsibility
+101510, Theme, Incentives
+101511, Theme, Projects
+101512, Theme, Projects
+101513, Theme, Projects
+101514, Theme, Projects
+101515, Theme, Projects
+101516, Theme, Projects
+101519, Theme, Accountability / Responsibility
+101520, Theme, Accountability / Responsibility
+101522, Control Type, Preventive
+101523, Control Type, Preventive
+101524, Control Type, Preventive
+101527, Control Classification, Monitor, review and check
+101527, Control Type, Detective
+101528, Control Classification, Monitor, review and check
+101528, Control Type, Detective
+101560, Theme, Committees / Board
+101561, Theme, Committees / Board
+101562, Theme, Committees / Board
+101563, Theme, Committees / Board
+101564, Theme, Committees / Board
+101565, Theme, Committees / Board
+101566, Theme, Committees / Board
+101567, Theme, Committees / Board
+101568, Theme, Committees / Board
+101569, Theme, Committees / Board
+101570, Theme, Committees / Board
+101571, Theme, Challenge / Trust
+101572, Theme, Challenge / Trust
+101575, Theme, Challenge / Trust
+101576, Theme, Challenge / Trust
+101578, Theme, Challenge / Trust
+101579, Theme, Challenge / Trust
+101580, Theme, Challenge / Trust
+101581, Theme, Challenge / Trust
+101582, Theme, Challenge / Trust
+101583, Theme, Committees / Board
+101584, Theme, Committees / Board
+101585, Theme, Committees / Board
+101585, Theme, Issues and Actions
+101586, Theme, Reporting
+101587, Theme, Accountability / Responsibility
+101588, Theme, Accountability / Responsibility
+101588, Theme, Challenge / Trust
+101588, Theme, Voices
+101589, Theme, Committees / Board
+101589, Theme, Non-financial
+101590, Theme, Challenge / Trust
+101592, Theme, Issues and Actions
+101592, Theme, Minimum Standards / Policies
+101592, Theme, RAS
+101592, Theme, Reporting
+101593, Theme, Accountability / Responsibility
+101593, Theme, Committees / Board
+101594, Theme, Training
+101595, Theme, Conduct / Culture
+101598, Theme, Accountability / Responsibility
+101599, Theme, Accountability / Responsibility
+101600, Theme, Committees / Board
+101601, Theme, Committees / Board
+101601, Theme, Incidents
+101601, Theme, Reporting
+101602, Theme, Incidents
+101602, Theme, Issues and Actions
+101603, Theme, Challenge / Trust
+101603, Theme, Reactive
+101604, Theme, Decision Making
+101604, Theme, Reactive
+101604, Theme, Risk and Compliance Functions
+101605, Theme, Decision Making
+101606, Theme, Accountability / Responsibility
+101606, Theme, Incentives
+101607, Theme, Incentives
+101608, Theme, Incentives
+101609, Theme, Incentives
+101610, Theme, Incentives
+101611, Theme, Challenge / Trust
+101611, Theme, Conduct / Culture
+101612, Theme, Conduct / Culture
+101613, Theme, Risk and Compliance Functions
+101614, Theme, Conduct / Culture
+101614, Theme, Good Intent
+101615, Theme, Accountability / Responsibility
+101616, Theme, Accountability / Responsibility
+101616, Theme, Incentives
+101617, Theme, Projects
+101618, Theme, Projects
+101619, Theme, Projects
+101642, Business Unit, Environmental
+101642, Metric Lead Lag, Lead
+101645, Business Unit, Environmental
+101645, Metric Lead Lag, Lead
+101702, Theme, Decision Making
+101702, Theme, Reactive
+101702, Theme, Risk and Compliance Functions
+101703, Theme, Committees / Board
+101704, Theme, Accountability / Responsibility
+101705, Theme, Incentives
+101706, Theme, Conduct / Culture
+101707, Theme, Committees / Board
+101708, Theme, Training
+101709, Theme, Accountability / Responsibility
+101710, Theme, Decision Making
+101711, Theme, Incentives
+101712, Theme, Committees / Board
+101713, Theme, Incidents
+101713, Theme, Issues and Actions
+101715, Theme, Accountability / Responsibility
+101715, Theme, Committees / Board
+101716, Theme, Committees / Board
+101716, Theme, Issues and Actions
+101717, Theme, Accountability / Responsibility
+101717, Theme, Challenge / Trust
+101717, Theme, Voices
+101718, Theme, Accountability / Responsibility
+101719, Theme, Accountability / Responsibility
+101721, Theme, Challenge / Trust
+101722, Theme, Challenge / Trust
+101722, Theme, Conduct / Culture
+101723, Theme, Challenge / Trust
+101723, Theme, Reactive
+101724, Theme, Risk and Compliance Functions
+101725, Theme, Committees / Board
+101726, Theme, Reporting
+101727, Theme, Committees / Board
+101727, Theme, Incidents
+101727, Theme, Reporting
+101728, Theme, Committees / Board
+101728, Theme, Non-financial
+101729, Theme, Incentives
+101730, Theme, Challenge / Trust
+101731, Theme, Conduct / Culture
+101732, Theme, Accountability / Responsibility
+101732, Theme, Incentives
+101733, Theme, Issues and Actions
+101733, Theme, Minimum Standards / Policies
+101733, Theme, RAS
+101733, Theme, Reporting
+101734, Theme, Challenge / Trust
+101735, Theme, Incentives
+101736, Theme, Conduct / Culture
+101736, Theme, Good Intent
+101737, Theme, Projects
+101738, Theme, Projects
+101739, Theme, Projects
+101740, Theme, Accountability / Responsibility
+101740, Theme, Incentives
+101741, Theme, Committees / Board
+101742, Theme, Committees / Board
+101743, Theme, Challenge / Trust
+101743, Theme, Committees / Board
+101744, Theme, Challenge / Trust
+101745, Theme, Challenge / Trust
+101745, Theme, Committees / Board
+101747, Theme, Committees / Board
+101748, Theme, Committees / Board
+101749, Theme, Committees / Board
+101750, Theme, Committees / Board
+101751, Theme, Committees / Board
+101751, Theme, Issues and Actions
+101752, Theme, Committees / Board
+101752, Theme, Issues and Actions
+101753, Theme, Reporting
+101754, Theme, Reporting
+101755, Theme, Accountability / Responsibility
+101756, Theme, Accountability / Responsibility
+101757, Theme, Accountability / Responsibility
+101757, Theme, Challenge / Trust
+101757, Theme, Voices
+101758, Theme, Accountability / Responsibility
+101758, Theme, Challenge / Trust
+101758, Theme, Voices
+101759, Theme, Committees / Board
+101759, Theme, Non-financial
+101760, Theme, Committees / Board
+101760, Theme, Non-financial
+101765, Theme, Challenge / Trust
+101766, Theme, Challenge / Trust
+101769, Theme, Issues and Actions
+101769, Theme, Minimum Standards / Policies
+101769, Theme, RAS
+101769, Theme, Reporting
+101770, Theme, Issues and Actions
+101770, Theme, Minimum Standards / Policies
+101770, Theme, RAS
+101770, Theme, Reporting
+101771, Theme, Training
+101772, Theme, Training
+101773, Theme, Accountability / Responsibility
+101773, Theme, Committees / Board
+101774, Theme, Accountability / Responsibility
+101774, Theme, Committees / Board
+101775, Theme, Conduct / Culture
+101776, Theme, Conduct / Culture
+101777, Theme, Accountability / Responsibility
+101778, Theme, Accountability / Responsibility
+101779, Theme, Accountability / Responsibility
+101780, Theme, Accountability / Responsibility
+101781, Theme, Committees / Board
+101781, Theme, Incidents
+101781, Theme, Reporting
+101782, Theme, Committees / Board
+101782, Theme, Incidents
+101782, Theme, Reporting
+101783, Theme, Incidents
+101783, Theme, Issues and Actions
+101784, Theme, Incidents
+101784, Theme, Issues and Actions
+101785, Theme, Challenge / Trust
+101785, Theme, Reactive
+101786, Theme, Challenge / Trust
+101786, Theme, Reactive
+101787, Theme, Decision Making
+101787, Theme, Reactive
+101787, Theme, Risk and Compliance Functions
+101788, Theme, Decision Making
+101788, Theme, Reactive
+101788, Theme, Risk and Compliance Functions
+101789, Theme, Decision Making
+101790, Theme, Decision Making
+101791, Theme, Accountability / Responsibility
+101791, Theme, Incentives
+101792, Theme, Accountability / Responsibility
+101792, Theme, Incentives
+101793, Theme, Incentives
+101794, Theme, Incentives
+101795, Theme, Incentives
+101796, Theme, Incentives
+101797, Theme, Incentives
+101798, Theme, Incentives
+101799, Theme, Incentives
+101800, Theme, Incentives
+101801, Theme, Challenge / Trust
+101801, Theme, Conduct / Culture
+101802, Theme, Challenge / Trust
+101802, Theme, Conduct / Culture
+101803, Theme, Conduct / Culture
+101804, Theme, Conduct / Culture
+101805, Theme, Risk and Compliance Functions
+101806, Theme, Risk and Compliance Functions
+101807, Theme, Conduct / Culture
+101807, Theme, Good Intent
+101808, Theme, Conduct / Culture
+101808, Theme, Good Intent
+101809, Theme, Accountability / Responsibility
+101810, Theme, Accountability / Responsibility
+101811, Theme, Accountability / Responsibility
+101811, Theme, Incentives
+101812, Theme, Accountability / Responsibility
+101812, Theme, Incentives
+101813, Theme, Projects
+101814, Theme, Projects
+101815, Theme, Projects
+101816, Theme, Projects
+101817, Theme, Projects
+101818, Theme, Projects
+101819, Theme, Committees / Board
+101821, Theme, Committees / Board
+101823, Theme, Committees / Board
+101825, Theme, Committees / Board
+101827, Theme, Committees / Board
+101829, Theme, Committees / Board
+101831, Theme, Committees / Board
+101833, Theme, Committees / Board
+101835, Theme, Committees / Board
+101837, Theme, Committees / Board
+101837, Theme, Issues and Actions
+101839, Theme, Committees / Board
+101839, Theme, Issues and Actions
+101841, Theme, Committees / Board
+101841, Theme, Issues and Actions
+101843, Theme, Committees / Board
+101843, Theme, Issues and Actions
+101845, Theme, Committees / Board
+101845, Theme, Issues and Actions
+101847, Theme, Committees / Board
+101847, Theme, Issues and Actions
+101849, Theme, Committees / Board
+101849, Theme, Issues and Actions
+101851, Theme, Reporting
+101853, Theme, Reporting
+101855, Theme, Reporting
+101857, Theme, Reporting
+101859, Theme, Accountability / Responsibility
+101861, Theme, Committees / Board
+101861, Theme, Non-financial
+101863, Theme, Committees / Board
+101863, Theme, Non-financial
+101867, Theme, Challenge / Trust
+101869, Theme, Challenge / Trust
+101871, Theme, Challenge / Trust
+101873, Theme, Challenge / Trust
+101875, Theme, Minimum Standards / Policies
+101875, Theme, RAS
+101877, Theme, Minimum Standards / Policies
+101877, Theme, RAS
+101879, Theme, Minimum Standards / Policies
+101879, Theme, RAS
+101881, Theme, Minimum Standards / Policies
+101881, Theme, RAS
+101883, Theme, Minimum Standards / Policies
+101883, Theme, RAS
+101885, Theme, Minimum Standards / Policies
+101885, Theme, RAS
+101887, Theme, Minimum Standards / Policies
+101887, Theme, RAS
+101889, Theme, Minimum Standards / Policies
+101889, Theme, RAS
+101891, Theme, Training
+101893, Theme, Training
+101895, Theme, Training
+101897, Theme, Training
+101899, Theme, Accountability / Responsibility
+101899, Theme, Committees / Board
+101901, Theme, Accountability / Responsibility
+101901, Theme, Committees / Board
+101903, Theme, Accountability / Responsibility
+101905, Theme, Accountability / Responsibility
+101907, Theme, Accountability / Responsibility
+101909, Theme, Accountability / Responsibility
+101911, Theme, Accountability / Responsibility
+101913, Theme, Accountability / Responsibility
+101915, Theme, Accountability / Responsibility
+101917, Theme, Committees / Board
+101917, Theme, Incidents
+101917, Theme, Reporting
+101919, Theme, Committees / Board
+101919, Theme, Incidents
+101919, Theme, Reporting
+101921, Theme, Committees / Board
+101921, Theme, Incidents
+101921, Theme, Reporting
+101923, Theme, Committees / Board
+101923, Theme, Incidents
+101923, Theme, Reporting
+101925, Theme, Committees / Board
+101925, Theme, Incidents
+101925, Theme, Reporting
+101927, Theme, Committees / Board
+101927, Theme, Incidents
+101927, Theme, Reporting
+101929, Theme, Committees / Board
+101929, Theme, Incidents
+101929, Theme, Reporting
+101931, Theme, Incidents
+101931, Theme, Issues and Actions
+101933, Theme, Incidents
+101933, Theme, Issues and Actions
+101935, Theme, Incidents
+101935, Theme, Issues and Actions
+101937, Theme, Incidents
+101937, Theme, Issues and Actions
+101939, Theme, Incidents
+101939, Theme, Issues and Actions
+101941, Theme, Challenge / Trust
+101941, Theme, Reactive
+101943, Theme, Decision Making
+101943, Theme, Reactive
+101943, Theme, Risk and Compliance Functions
+101945, Theme, Decision Making
+101945, Theme, Reactive
+101945, Theme, Risk and Compliance Functions
+101947, Theme, Decision Making
+101947, Theme, Reactive
+101947, Theme, Risk and Compliance Functions
+101949, Theme, Decision Making
+101949, Theme, Reactive
+101949, Theme, Risk and Compliance Functions
+101951, Theme, Accountability / Responsibility
+101951, Theme, Incentives
+101953, Theme, Accountability / Responsibility
+101953, Theme, Incentives
+101955, Theme, Accountability / Responsibility
+101955, Theme, Incentives
+101957, Theme, Accountability / Responsibility
+101957, Theme, Incentives
+101959, Theme, Accountability / Responsibility
+101959, Theme, Incentives
+101961, Theme, Accountability / Responsibility
+101961, Theme, Incentives
+101963, Theme, Accountability / Responsibility
+101963, Theme, Incentives
+101965, Theme, Accountability / Responsibility
+101965, Theme, Incentives
+101967, Theme, Accountability / Responsibility
+101967, Theme, Incentives
+101969, Theme, Accountability / Responsibility
+101969, Theme, Incentives
+101971, Theme, Incentives
+101973, Theme, Incentives
+101975, Theme, Incentives
+101977, Theme, Incentives
+101979, Theme, Incentives
+101981, Theme, Incentives
+101983, Theme, Challenge / Trust
+101983, Theme, Conduct / Culture
+101985, Theme, Challenge / Trust
+101985, Theme, Conduct / Culture
+101987, Theme, Challenge / Trust
+101987, Theme, Conduct / Culture
+101989, Theme, Challenge / Trust
+101989, Theme, Conduct / Culture
+101991, Theme, Challenge / Trust
+101991, Theme, Conduct / Culture
+101993, Theme, Challenge / Trust
+101993, Theme, Conduct / Culture
+101995, Theme, Conduct / Culture
+101997, Theme, Conduct / Culture
+101999, Theme, Conduct / Culture
+102001, Theme, Risk and Compliance Functions
+102003, Theme, Conduct / Culture
+102003, Theme, Good Intent
+102005, Theme, Conduct / Culture
+102005, Theme, Good Intent
+102050, Business Unit, Information Technology
+102050, Control Classification, Governance
+102050, Control Execution, Manual
+102050, Control Key, Key Control
+102050, Control Type, Preventive
+102052, Business Unit, Information Technology
+102052, Control Classification, Governance
+102052, Control Execution, Manual
+102052, Control Type, Preventive
+102066, Control Classification, Monitor, review and check
+102067, Control Classification, Monitor, review and check
+102085, Business Unit, Information Technology
+102085, Control Classification, Access
+102085, Control Execution, Automated
+102085, Control Key, Key Control
+102085, Control Type, Preventive
+102107, Control Type, Preventive
+102108, Control Type, Preventive
+102109, Control Type, Preventive
+102110, Control Type, Preventive
+102140, Theme, Committees / Board
+102141, Theme, Challenge / Trust
+102141, Theme, Committees / Board
+102142, Theme, Challenge / Trust
+102142, Theme, Committees / Board
+102143, Theme, Committees / Board
+102144, Theme, Committees / Board
+102145, Theme, Committees / Board
+102145, Theme, Issues and Actions
+102146, Theme, Reporting
+102147, Theme, Accountability / Responsibility
+102148, Theme, Accountability / Responsibility
+102148, Theme, Challenge / Trust
+102148, Theme, Voices
+102149, Theme, Committees / Board
+102149, Theme, Non-financial
+102152, Theme, Challenge / Trust
+102154, Theme, Issues and Actions
+102154, Theme, Minimum Standards / Policies
+102154, Theme, RAS
+102154, Theme, Reporting
+102155, Theme, Training
+102156, Theme, Accountability / Responsibility
+102156, Theme, Committees / Board
+102157, Theme, Conduct / Culture
+102158, Theme, Accountability / Responsibility
+102159, Theme, Accountability / Responsibility
+102160, Theme, Committees / Board
+102160, Theme, Incidents
+102160, Theme, Reporting
+102161, Theme, Incidents
+102161, Theme, Issues and Actions
+102162, Theme, Challenge / Trust
+102162, Theme, Reactive
+102163, Theme, Decision Making
+102163, Theme, Reactive
+102163, Theme, Risk and Compliance Functions
+102164, Theme, Decision Making
+102165, Theme, Accountability / Responsibility
+102165, Theme, Incentives
+102166, Theme, Incentives
+102167, Theme, Incentives
+102168, Theme, Incentives
+102169, Theme, Incentives
+102170, Theme, Challenge / Trust
+102170, Theme, Conduct / Culture
+102171, Theme, Conduct / Culture
+102172, Theme, Risk and Compliance Functions
+102173, Theme, Conduct / Culture
+102173, Theme, Good Intent
+102174, Theme, Accountability / Responsibility
+102175, Theme, Accountability / Responsibility
+102175, Theme, Incentives
+102176, Theme, Projects
+102177, Theme, Projects
+102178, Theme, Projects
+102179, Theme, Committees / Board
+102180, Theme, Committees / Board
+102181, Theme, Committees / Board
+102182, Theme, Committees / Board
+102183, Theme, Committees / Board
+102184, Theme, Committees / Board
+102185, Theme, Committees / Board
+102186, Theme, Committees / Board
+102187, Theme, Committees / Board
+102188, Theme, Committees / Board
+102188, Theme, Issues and Actions
+102189, Theme, Committees / Board
+102189, Theme, Issues and Actions
+102190, Theme, Committees / Board
+102190, Theme, Issues and Actions
+102191, Theme, Committees / Board
+102191, Theme, Issues and Actions
+102192, Theme, Committees / Board
+102192, Theme, Issues and Actions
+102193, Theme, Committees / Board
+102193, Theme, Issues and Actions
+102194, Theme, Committees / Board
+102194, Theme, Issues and Actions
+102195, Theme, Reporting
+102196, Theme, Reporting
+102197, Theme, Reporting
+102198, Theme, Reporting
+102199, Theme, Accountability / Responsibility
+102200, Theme, Committees / Board
+102200, Theme, Non-financial
+102201, Theme, Committees / Board
+102201, Theme, Non-financial
+102203, Theme, Challenge / Trust
+102204, Theme, Challenge / Trust
+102205, Theme, Challenge / Trust
+102206, Theme, Challenge / Trust
+102207, Theme, Minimum Standards / Policies
+102207, Theme, RAS
+102208, Theme, Minimum Standards / Policies
+102208, Theme, RAS
+102209, Theme, Minimum Standards / Policies
+102209, Theme, RAS
+102210, Theme, Minimum Standards / Policies
+102210, Theme, RAS
+102211, Theme, Minimum Standards / Policies
+102211, Theme, RAS
+102212, Theme, Minimum Standards / Policies
+102212, Theme, RAS
+102213, Theme, Minimum Standards / Policies
+102213, Theme, RAS
+102214, Theme, Minimum Standards / Policies
+102214, Theme, RAS
+102215, Theme, Training
+102216, Theme, Training
+102217, Theme, Training
+102218, Theme, Training
+102219, Theme, Accountability / Responsibility
+102219, Theme, Committees / Board
+102220, Theme, Accountability / Responsibility
+102220, Theme, Committees / Board
+102221, Theme, Accountability / Responsibility
+102222, Theme, Accountability / Responsibility
+102223, Theme, Accountability / Responsibility
+102224, Theme, Accountability / Responsibility
+102225, Theme, Accountability / Responsibility
+102226, Theme, Accountability / Responsibility
+102227, Theme, Accountability / Responsibility
+102228, Theme, Committees / Board
+102228, Theme, Incidents
+102228, Theme, Reporting
+102229, Theme, Committees / Board
+102229, Theme, Incidents
+102229, Theme, Reporting
+102230, Theme, Committees / Board
+102230, Theme, Incidents
+102230, Theme, Reporting
+102231, Theme, Committees / Board
+102231, Theme, Incidents
+102231, Theme, Reporting
+102232, Theme, Committees / Board
+102232, Theme, Incidents
+102232, Theme, Reporting
+102233, Theme, Committees / Board
+102233, Theme, Incidents
+102233, Theme, Reporting
+102234, Theme, Committees / Board
+102234, Theme, Incidents
+102234, Theme, Reporting
+102235, Theme, Incidents
+102235, Theme, Issues and Actions
+102236, Theme, Incidents
+102236, Theme, Issues and Actions
+102237, Theme, Incidents
+102237, Theme, Issues and Actions
+102238, Theme, Incidents
+102238, Theme, Issues and Actions
+102239, Theme, Incidents
+102239, Theme, Issues and Actions
+102240, Theme, Challenge / Trust
+102240, Theme, Reactive
+102241, Theme, Decision Making
+102241, Theme, Reactive
+102241, Theme, Risk and Compliance Functions
+102242, Theme, Decision Making
+102242, Theme, Reactive
+102242, Theme, Risk and Compliance Functions
+102243, Theme, Decision Making
+102243, Theme, Reactive
+102243, Theme, Risk and Compliance Functions
+102244, Theme, Decision Making
+102244, Theme, Reactive
+102244, Theme, Risk and Compliance Functions
+102245, Theme, Accountability / Responsibility
+102245, Theme, Incentives
+102246, Theme, Accountability / Responsibility
+102246, Theme, Incentives
+102247, Theme, Accountability / Responsibility
+102247, Theme, Incentives
+102248, Theme, Accountability / Responsibility
+102248, Theme, Incentives
+102249, Theme, Accountability / Responsibility
+102249, Theme, Incentives
+102250, Theme, Accountability / Responsibility
+102250, Theme, Incentives
+102251, Theme, Accountability / Responsibility
+102251, Theme, Incentives
+102252, Theme, Accountability / Responsibility
+102252, Theme, Incentives
+102253, Theme, Accountability / Responsibility
+102253, Theme, Incentives
+102254, Theme, Accountability / Responsibility
+102254, Theme, Incentives
+102255, Theme, Incentives
+102256, Theme, Incentives
+102257, Theme, Incentives
+102258, Theme, Incentives
+102259, Theme, Incentives
+102260, Theme, Incentives
+102261, Theme, Challenge / Trust
+102261, Theme, Conduct / Culture
+102262, Theme, Challenge / Trust
+102262, Theme, Conduct / Culture
+102263, Theme, Challenge / Trust
+102263, Theme, Conduct / Culture
+102264, Theme, Challenge / Trust
+102264, Theme, Conduct / Culture
+102265, Theme, Challenge / Trust
+102265, Theme, Conduct / Culture
+102266, Theme, Challenge / Trust
+102266, Theme, Conduct / Culture
+102267, Theme, Conduct / Culture
+102268, Theme, Conduct / Culture
+102269, Theme, Conduct / Culture
+102270, Theme, Risk and Compliance Functions
+102271, Theme, Conduct / Culture
+102271, Theme, Good Intent
+102272, Theme, Conduct / Culture
+102272, Theme, Good Intent
+102361, Business Unit, Operations
+102361, Control Classification, Monitor, review and check
+102361, Control Execution, Combination
+102361, Control Key, Key Control
+102361, Control Type, Preventive
+102363, Business Unit, Operations
+102363, Control Classification, Monitor, review and check
+102363, Control Execution, Manual
+102363, Control Key, Key Control
+102363, Control Type, Preventive
+102423, Control Classification,  Safety
+102423, Control Execution, Manual
+102423, Control Type, Preventive
+102424, Control Classification,  Safety
+102425, Control Classification,  Safety
+102425, Control Execution, Manual
+102425, Control Key, Key Control
+102425, Control Type, Preventive
+102426, Control Classification,  Safety
+102427, Control Classification,  Safety
+102427, Control Execution, Manual
+102427, Control Type, Preventive
+102428, Control Classification,  Safety
+102428, Control Execution, Manual
+102428, Control Key, Key Control
+102428, Control Type, Preventive
+102429, Control Classification,  Safety
+102429, Control Execution, Manual
+102429, Control Type, Preventive
+102430, Control Classification,  Safety
+102430, Control Execution, Manual
+102430, Control Type, Preventive
+102431, Control Classification,  Safety
+102431, Control Execution, Manual
+102431, Control Type, Preventive
+102432, Control Classification,  Safety
+102432, Control Execution, Manual
+102432, Control Type, Reactive
+102434, Control Classification,  Safety
+102434, Control Execution, Manual
+102434, Control Type, Reactive
+102435, Control Classification,  Safety
+102435, Control Execution, Automated
+102435, Control Type, Preventive
+102436, Control Classification,  Safety
+102436, Control Execution, Automated
+102436, Control Type, Preventive
+102437, Control Classification,  Safety
+102437, Control Execution, Manual
+102437, Control Key, Key Control
+102437, Control Type, Preventive
+102438, Control Classification,  Safety
+102438, Control Execution, Manual
+102438, Control Key, Key Control
+102438, Control Type, Preventive
+102439, Control Classification,  Safety
+102439, Control Execution, Manual
+102439, Control Type, Preventive
+102440, Control Classification,  Safety
+102440, Control Execution, Manual
+102440, Control Type, Preventive
+102441, Control Classification,  Safety
+102441, Control Execution, Manual
+102441, Control Type, Preventive
+102442, Control Classification,  Safety
+102442, Control Execution, Manual
+102442, Control Type, Preventive
+102443, Control Classification,  Safety
+102443, Control Execution, Automated
+102443, Control Type, Preventive
+102444, Control Classification,  Safety
+102444, Control Execution, Automated
+102444, Control Type, Preventive
+102445, Control Classification,  Safety
+102445, Control Execution, Automated
+102445, Control Type, Preventive
+102446, Control Classification,  Safety
+102446, Control Execution, Manual
+102446, Control Type, Reactive
+102447, Control Classification,  Safety
+102447, Control Execution, Manual
+102447, Control Key, Key Control
+102447, Control Type, Preventive
+102448, Business Unit, Information Technology
+102448, Control Classification, Monitor, review and check
+102448, Control Execution, Combination
+102448, Control Key, Key Control
+102448, Control Type, Detective
+102457, Control Type, Preventive
+102458, Business Unit, Information Technology
+102458, Control Classification, Governance
+102458, Control Execution, Manual
+102458, Control Type, Preventive
+102459, Business Unit, Information Technology
+102459, Control Classification, Governance
+102459, Control Execution, Manual
+102459, Control Key, Key Control
+102459, Control Type, Preventive
+102461, Control Type, Preventive
+102467, Control Classification,  Safety
+102467, Environmental Risk, Flora and Fauna
+102468, Control Classification,  Safety
+102468, Environmental Risk, Flora and Fauna
+102501, Business Unit, Brokers
+102501, Control Classification, Governance
+102501, Control Key, Key Control
+102501, Control Type, Preventive
+102502, Control Key, Key Control
+102502, Control Type, Preventive
+102503, Control Classification, Governance
+102503, Control Key, Key Control
+102503, Control Type, Preventive
+102504, Business Unit, Brokers
+102504, Control Classification, Governance
+102504, Control Key, Key Control
+102504, Control Type, Preventive
+102547, Operational Risk, Employment Practices
+102549, Business Unit, People and Culture
+102551, Business Unit, People and Culture
+102552, Business Unit, People and Culture
+102560, Operational Risk, Employment Practices
+102562, Business Unit, People and Culture
+102562, Control Classification, Human resource controls
+102562, Control Execution, Manual
+102562, Control Key, Key Control
+102562, Control Type, Preventive
+102564, Operational Risk, Employment Practices
+102565, Business Unit, People and Culture
+102566, Business Unit, People and Culture
+102567, Control Classification,  Safety
+102567, Control Execution, Manual
+102567, Control Type, Preventive
+102568, Control Classification,  Safety
+102568, Control Execution, Manual
+102568, Control Type, Preventive
+102569, Control Classification,  Safety
+102569, Control Execution, Manual
+102569, Control Type, Preventive
+102570, Control Classification,  Safety
+102570, Control Execution, Manual
+102570, Control Type, Preventive
+102571, Control Classification,  Safety
+102571, Control Execution, Manual
+102571, Control Type, Preventive
+102572, Control Classification,  Safety
+102572, Control Execution, Manual
+102572, Control Type, Preventive
+102573, Control Classification,  Safety
+102573, Control Execution, Automated
+102573, Control Type, Preventive
+102574, Control Classification,  Safety
+102574, Control Execution, Automated
+102574, Control Type, Preventive
+102576, Control Classification,  Safety
+102576, Control Execution, Manual
+102576, Control Type, Preventive
+102577, Control Classification,  Safety
+102577, Control Execution, Manual
+102577, Control Type, Preventive
+102578, Control Classification,  Safety
+102578, Control Execution, Manual
+102578, Control Type, Preventive
+102579, Control Classification,  Safety
+102579, Control Execution, Manual
+102579, Control Type, Preventive
+102580, Control Classification,  Safety
+102580, Control Execution, Manual
+102580, Control Type, Preventive
+102581, Control Classification,  Safety
+102581, Control Execution, Manual
+102581, Control Type, Preventive

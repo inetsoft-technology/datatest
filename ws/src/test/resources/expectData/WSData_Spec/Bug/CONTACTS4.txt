@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 4)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME
+30, 30, Bill, Wallace
+31, 31, Amy, Gillette
+32, 32, Gilbert, Francone
+33, 33, Michael, Lewis
+34, 34, Fran, Dreckle
+35, 35, Pat, Kline

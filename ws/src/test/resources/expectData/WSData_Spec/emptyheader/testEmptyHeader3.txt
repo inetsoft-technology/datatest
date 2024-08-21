@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 2)
+col0, name
+0, abc
+1, def

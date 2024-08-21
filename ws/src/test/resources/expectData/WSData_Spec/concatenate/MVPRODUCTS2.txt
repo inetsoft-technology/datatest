@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 3)
+PRODUCT_NAME, PRICE, INSTOCK
+NULL, 39, true
+Animal World, 59, false
+Barbie's Fashion, 79, false
+Combat Hero, 29, true
+Easy Chess, 35, false
+Fancy Menus, 49, true
+Fast Go Game, 200, true
+Green Planet, 75, true
+House Hunter, 129, false
+Info Folder, 399, false
+InsideView, 125, true
+Learn ABC, 75, true
+Math for Me, 235, true
+Mega Icons, NULL, true
+MeToo AppServer, 3000, true
+Sync Me, 145, true
+True Action, 398, false
+Web Bridge, 105, false
+WebCalendar, 248, true
+Xconnect Server, 2250, true

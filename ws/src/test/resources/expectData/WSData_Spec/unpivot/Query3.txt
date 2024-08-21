@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 6)
+CUSTOMER_ID, STATE, order_date, customer_id_1, f_boolean, order_time
+NULL, NULL, 2002-01-06, 32, true, 12:59:01
+NULL, NULL, 2002-06-13, 35, false, 12:55:25
+18, NJ, NULL, NULL, NULL, NULL

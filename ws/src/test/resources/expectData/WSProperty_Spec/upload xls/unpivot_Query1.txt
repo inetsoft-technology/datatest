@@ -1,0 +1,32 @@
+The table size(row x col) is:(31 x 3)
+Interger, Dimension, Measure
+1, date, 2018-09-10
+1, timeinstant, 2018-09-10 10:12:23.0
+1, time, 20:23:12
+2, date, 2018-09-01
+2, timeinstant, 2018-09-12 12:12:23.0
+2, time, 23:23:12
+3, date, 2018-08-23
+3, timeinstant, 2018-09-14 14:12:23.0
+3, time, 02:23:12
+4, date, 2018-08-14
+4, timeinstant, 2018-09-16 16:12:23.0
+4, time, 05:23:12
+5, date, 2018-08-05
+5, timeinstant, 2018-09-18 18:12:23.0
+5, time, 08:23:12
+6, date, 2018-07-27
+6, timeinstant, 2018-09-20 20:12:23.0
+6, time, 11:23:12
+7, date, 2018-07-18
+7, timeinstant, 2018-09-22 22:12:23.0
+7, time, 14:23:12
+8, date, 2018-07-09
+8, timeinstant, 2018-09-25 00:12:23.0
+8, time, 17:23:12
+9, date, 2018-06-30
+9, timeinstant, 2018-09-27 02:12:23.0
+9, time, 20:23:12
+10, date, 2018-06-21
+10, timeinstant, 2018-09-29 04:12:23.0
+10, time, 23:23:12

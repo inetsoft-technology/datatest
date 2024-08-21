@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 21)
+Project ID, Customer, State, Region, Assigned Consultant Name, Project Name, Project Type, Department, Project Status, ProjectPlan, Project Start Date, Project Completion Date, StartDaysFromPresent, EndDaysFromPresent, Project total  Cost, Client Project Expenses, Project Actual Hours, Project Manager  Labor Hours, Project Manager Payout Fee, Planned Cost, Project Planned Labor Hours
+231000, CD Industrials, CA, West, Tom Ban, Concrete Manufacturing Landing Page, Increase Site Traffic, Marketing, Completed, Actual, 2015-05-15, 2015-11-11, -50, 100, 6000, 2000, 35, 20, 2000, 16000, 160
+231000, CD Industrials, CA, West, Tom Ban, Concrete Manufacturing Landing Page, Increase Site Traffic, Marketing, Completed, Planned, 2015-05-15, 2015-11-11, -5, 100, 6000, 2000, 35, 20, 2000, 16000, 160
+231001, CD Industrials, CA, West, Tom Ban, AC & Heating Landing Page, Increase Site Traffic, Marketing, Pending, Actual, NULL, NULL, -50, -250, 4500, 1500, 23, 14, 1485, 9000, 90
+231001, CD Industrials, CA, West, Tom Ban, AC & Heating Landing Page, Increase Site Traffic, Marketing, Pending, Planned, 2016-06-17, 2016-06-19, -300, -250, 4500, 1500, 23, 14, 1485, 9000, 90
+231002, CD Industrials, CA, West, Tom Ban, Construction Landing Page, Increase Site Traffic, Marketing, Incomplete, Actual, 2015-05-17, 2015-11-13, -50, -250, 6000, 2000, 35, 20, 2000, 12000, 120
+231002, CD Industrials, CA, West, Tom Ban, Construction Landing Page, Increase Site Traffic, Marketing, Incomplete, Planned, 2015-05-17, 2015-11-13, -300, -250, 6000, 2000, 35, 20, 2000, 12000, 120
+231003, CD Industrials, CA, West, Tom Ban, Contractor Landing Page, Increase Site Traffic, Marketing, Incomplete, Actual, 2015-05-18, 2015-11-14, -50, -250, 6000, 1990, 35, 20, 2000, 12000, 120
+231003, CD Industrials, CA, West, Tom Ban, Contractor Landing Page, Increase Site Traffic, Marketing, Incomplete, Planned, 2015-05-18, 2015-11-14, -300, -250, 6000, 1990, 35, 20, 2000, 12000, 120
+231004, CD Industrials, CA, West, Tom Ban, Plumbing Landing Page, Increase Site Traffic, Marketing, Incomplete, Actual, 2015-05-19, 2015-11-15, -50, -250, 6000, 1890, 35, 20, 2000, 12000, 120
+231004, CD Industrials, CA, West, Tom Ban, Plumbing Landing Page, Increase Site Traffic, Marketing, Incomplete, Planned, 2015-05-19, 2015-11-15, -300, -250, 6000, 1890, 35, 20, 2000, 12000, 120
+231005, CD Industrials, CA, West, Tori Webb, Services Dashboard, Digital Marketing, Marketing, Pending, Actual, NULL, NULL, -300, -250, 2000, 700, 10, 6, 660, 2000, 20
+231005, CD Industrials, CA, West, Tori Webb, Services Dashboard, Digital Marketing, Marketing, Pending, Planned, 2016-06-17, 2016-06-19, -300, -250, 2000, 700, 10, 6, 660, 2000, 20
+231006, CD Industrials, CA, West, Majore Daniels, Search Engine Advertising with Google, Digital Marketing, Marketing, Completed, Actual, 2015-12-22, 2016-06-19, -300, -250, 8950, 1800, 40, 29, 2953, 9000, 90
+231006, CD Industrials, CA, West, Majore Daniels, Search Engine Advertising with Google, Digital Marketing, Marketing, Completed, Planned, 2015-12-22, 2016-06-19, -300, 100, 8950, 1800, 40, 29, 2953, 9000, 90
+231007, CD Industrials, CA, West, Frank Polis, Social Media Marketing with Instagram, Digital Marketing, Marketing, Completed, Actual, 2015-12-22, 2016-06-19, -300, -250, 7950, 1800, 40, 26, 2623, 9000, 90
+231007, CD Industrials, CA, West, Frank Polis, Social Media Marketing with Instagram, Digital Marketing, Marketing, Completed, Planned, 2015-12-22, 2016-06-19, -300, -250, 7950, 1800, 40, 26, 2623, 9000, 90
+231008, CD Industrials, CA, West, Christopher Salls, Beta Testing, Digital Marketing, Marketing, Completed, Actual, 2015-12-22, 2016-06-19, -300, -250, 6950, 1800, 40, 22, 2293, 6000, 60
+231008, CD Industrials, CA, West, Christopher Salls, Beta Testing, Digital Marketing, Marketing, Completed, Planned, 2015-12-22, 2016-06-19, -300, -250, 6950, 1800, 40, 22, 2293, 6000, 60
+231009, CD Industrials, CA, West, Majore Daniels, Search Engine Advertising with Google, Digital Marketing, Marketing, Completed, Actual, 2015-12-22, 2016-06-19, -300, -250, 6950, 1800, 40, 22, 2293, 6000, 60
+231009, CD Industrials, CA, West, Majore Daniels, Search Engine Advertising with Google, Digital Marketing, Marketing, Completed, Planned, 2015-12-22, 2016-06-19, -50, -250, 6950, 1800, 40, 22, 2293, 6000, 60

@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Duration
+12M, 1065934
+1M, 3005905
+3M, 3005905

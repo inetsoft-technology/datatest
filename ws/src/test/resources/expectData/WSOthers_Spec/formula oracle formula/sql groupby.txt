@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 2)
+sum_cid, state
+6, CT
+10, IL
+12, CO
+12, FL
+20, AZ
+28, PA
+32, NV
+51, NY
+52, MD
+56, WA
+59, CA
+90, TX
+97, NJ
+105, MA

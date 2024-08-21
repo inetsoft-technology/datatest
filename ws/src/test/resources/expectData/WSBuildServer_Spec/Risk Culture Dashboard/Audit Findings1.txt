@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 19)
+ID, Create Date, End date, Status Name, Overdue, Business Unit Name, Severity, fxCreate1Month, fxCreate3Month, fxCreate12Month, fxClosed1Month, fxClosed3Month, fxClosed12Month, fxCompletionPC1Month, fxCompletionPC3Month, fxCompletionPC12Month, fxOverduePC1Month, fxOverduePC3Month, fxOverduePC12Month
+1000001, 2018-08-23 06:12:42, NULL, Awaiting Closure, true, Finance, Medium, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000021, 2018-09-10 12:28:14, NULL, Awaiting Closure, true, Operations, Low, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000023, 2018-09-10 12:31:28, NULL, Draft, true, Finance, Medium, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000025, 2018-09-10 12:34:16, NULL, Awaiting Owner, true, Information Technology, High, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000027, 2018-09-10 12:36:19, NULL, Awaiting Owner, true, Treasury Sydney, High, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000081, 2018-10-12 11:24:08, NULL, Awaiting Closure, true, Finance, High, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000162, 2019-03-07 09:00:02, NULL, Awaiting Owner, true, Information Technology, High, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000449, 2020-02-18 07:03:12, NULL, Awaiting Owner, true, Warehouse 1, Medium, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL
+1000455, 2020-02-18 07:22:26, NULL, Draft, true, Warehouse 1, Medium, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 0, NULL, NULL, NULL

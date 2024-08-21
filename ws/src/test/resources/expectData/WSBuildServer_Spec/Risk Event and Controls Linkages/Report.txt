@@ -1,0 +1,418 @@
+The table size(row x col) is:(417 x 6)
+Id, Name, Controls, Risks, KRIs, Compliance
+100007, System or Hardware Failure, 3, NULL, NULL, NULL
+100040, Member/Customer Growth Inadequate, NULL, NULL, NULL, NULL
+100041, Strategy Execution Risk, NULL, NULL, NULL, NULL
+100042, Product Offering Uncompetitive, NULL, NULL, NULL, NULL
+100043, Harassment, Bullying or Discrimination, NULL, NULL, NULL, NULL
+100044, Employee injury, NULL, NULL, NULL, NULL
+100045, Customer or contractor injury, NULL, NULL, NULL, NULL
+100046, Payroll calculations incorrect, NULL, NULL, NULL, NULL
+100047, Unfair dismissal, NULL, NULL, NULL, NULL
+100048, Supplier Payment Fraud, NULL, NULL, NULL, NULL
+100049, Unauthorised Data Access, NULL, NULL, NULL, NULL
+100050, Loan, Deposit or Credit Card Fraud, NULL, NULL, NULL, NULL
+100051, Asset Theft, NULL, NULL, NULL, NULL
+100052, Armed Hold Up, NULL, NULL, NULL, NULL
+100053, Head Office or Store Damage, NULL, NULL, NULL, NULL
+100054, Technology Equipment Damage, NULL, NULL, NULL, NULL
+100055, Key Software Failure, NULL, NULL, NULL, NULL
+100056, Key Server or Hardware Failure, NULL, NULL, NULL, NULL
+100057, Power Failure, NULL, NULL, NULL, NULL
+100058, Head Office Unavailability, NULL, NULL, NULL, NULL
+100059, Unauthorised System Activity, NULL, NULL, NULL, NULL
+100060, Audit Items not Followed Up, NULL, NULL, NULL, NULL
+100061, Payments to Wrong Supplier, NULL, NULL, NULL, NULL
+100062, Contracts unfavourable, NULL, NULL, NULL, NULL
+100063, Third party failure, NULL, NULL, NULL, NULL
+100064, Model Errors, NULL, NULL, NULL, NULL
+100065, Non Compliance with Privacy Laws, NULL, NULL, NULL, NULL
+100066, Non-Compliance with Work Health and Safety Acts, NULL, NULL, NULL, NULL
+100067, Non Compliance with Prudential/Accounting Standards, NULL, NULL, NULL, NULL
+100068, Non Compliance with Competition and Consumer Law, NULL, NULL, NULL, NULL
+100069, Non Compliance with Corporations Act, NULL, NULL, NULL, NULL
+100080, Inadequate insurance coverage, 2, 1, 1, 1
+100081, Unauthorised collection, dissemination and maintenance of sensitive / personal information, 7, NULL, 1, 3
+100082, Staff bullying or misconduct, 6, 1, 1, 1
+100083, High Staff Turnover, NULL, NULL, 1, NULL
+100084, Unauthorized access to sensitive and employee data, 17, 2, 2, 5
+100087, Unsatisfied or unhappy customers, NULL, NULL, NULL, NULL
+100088, Inappropriate financial advice given to customers, 4, NULL, NULL, 2
+100089, Unauthorised statements provided to media, 2, NULL, NULL, 1
+100100, Misleading information in marketing materials, NULL, NULL, NULL, NULL
+100101, Marketing material distributed externally contains errors, NULL, NULL, NULL, NULL
+100102, Marketing material disributed externally is non compliant with privacy and consumer law, 2, NULL, NULL, 1
+100104, Negative social media exposure, NULL, NULL, NULL, NULL
+100105, Poor recruitment and selection process, 5, 1, 1, 2
+100106, Breach of employment legislation / regulations, 14, 1, 1, 5
+100107, Data breach, NULL, NULL, NULL, NULL
+100108, External market or competitor threats, NULL, NULL, NULL, NULL
+100109, Product innovation risk, NULL, NULL, NULL, NULL
+100110, Merger and acquisition risk, NULL, NULL, NULL, NULL
+100111, Geographic expansion risk, NULL, NULL, NULL, NULL
+100112, Customer growth or operating model unsustainable, NULL, NULL, NULL, NULL
+100114, External cyber attacks, virus, malware and denial of service, 12, 1, 2, 3
+100115, Key software unavailability, NULL, NULL, NULL, NULL
+100116, Internet, telecommunications and other public utility outage, NULL, 1, 1, NULL
+100117, Key hardware failure - servers, routers, switches, NULL, NULL, NULL, NULL
+100120, Failure of third party service provider (OLD - still linked to compl.obl.)), 3, NULL, NULL, 1
+100121, Unavailability of systems, services or data, 3, NULL, NULL, 1
+100123, Continuous disclosure, 3, 1, 1, 1
+100124, Unauthorised transfer or disclosure of data, 4, NULL, NULL, 2
+100126, Breach of Privacy Laws, 17, NULL, NULL, 5
+100127, Unauthorised collection and or dissemination of personal information, NULL, NULL, NULL, NULL
+100128, Collection and retention of member or customer information that is not required, NULL, NULL, NULL, NULL
+100129, Personal information retainerd is outdated or contains errors, 3, NULL, NULL, NULL
+100140, Theft of cash or assets, NULL, NULL, NULL, NULL
+100142, Rogue trading, NULL, 1, 2, NULL
+100143, Erroneous trading positions, NULL, NULL, NULL, NULL
+100144, Misuse of models and spreadsheets, 7, 1, 2, 1
+100145, Erroneous financial position reporting, NULL, 1, NULL, NULL
+100147, Failed or late payments, NULL, NULL, NULL, NULL
+100148, Unauthorized payments, NULL, NULL, NULL, NULL
+100149, Misselling, NULL, NULL, NULL, NULL
+100150, Wholesale counterparty credit default, NULL, 1, 1, NULL
+100151, Inaccurate information used for decision making, NULL, NULL, NULL, NULL
+100152, Transaction processing errors, NULL, NULL, NULL, NULL
+100153, Pricing errors, NULL, NULL, NULL, NULL
+100154, Model risk, NULL, NULL, NULL, NULL
+100155, Inappropriate customer service, NULL, NULL, NULL, NULL
+100156, Unavailability of CRM systems, NULL, 1, 1, NULL
+100157, Regulatory change, NULL, NULL, NULL, NULL
+100158, External fraud, NULL, 1, 2, NULL
+100159, Deteriorating staff morale and behaviours, NULL, 1, 1, NULL
+100160, Unauthorised staff activity, NULL, NULL, NULL, NULL
+100161, Data compromise, 2, 1, 2, NULL
+100162, IT change management failure, NULL, 1, 2, NULL
+100163, Unavailability of IT systems, services or data, NULL, 1, 6, NULL
+100164, Failure of third party service providers, 2, 1, 3, NULL
+100165, Misleading marketing material, 2, 1, 1, 1
+100166, Product flaws, NULL, 1, 3, NULL
+100167, Unauthorized or inappropriate advice, NULL, NULL, NULL, NULL
+100169, Errors in the unit pricing process, NULL, 1, 4, NULL
+100170, Payment errors, NULL, 1, 4, NULL
+100171, Transaction processing errors (excl. payments), NULL, 1, 3, NULL
+100172, Fraudulent payments, NULL, 1, 2, NULL
+100173, Inaccurate information used for decision making, NULL, 1, NULL, NULL
+100174, Model risk, NULL, 1, 3, NULL
+100175, Inappropriate customer service, 4, 1, 1, 2
+100176, Unauthorized or inappropriate advice, NULL, NULL, NULL, NULL
+100177, Inappropriate or misleading advice incl. mis-selling, NULL, 1, 3, NULL
+100178, Unavailability of CRM systems, NULL, NULL, NULL, NULL
+100179, Failure to manage Corporate Actions on behalf of customers, NULL, 1, NULL, NULL
+100180, Unauthorised access to customer data, NULL, 1, NULL, NULL
+100181, Unauthorised disclosure to media, NULL, 1, 1, NULL
+100183, Negative social media exposure, NULL, 1, 1, NULL
+100184, Armed hold-up, physical threat or injury, 4, 1, NULL, NULL
+100200, Poor selection and prioritisation of key projects, NULL, 1, NULL, NULL
+100201, Failure to effectively manage IT change, NULL, 1, 2, NULL
+100202, Project delivery and implementation, NULL, 1, 2, NULL
+100203, Competitor positioning, NULL, 1, NULL, NULL
+100204, Natural disasters and terrorist events, NULL, 1, 3, NULL
+100205, Key personnel risk, NULL, 1, 1, NULL
+100206, Corporate culture, NULL, 1, 1, NULL
+100207, Deteriorating investor sentiment, NULL, 1, 10, NULL
+100208, Regulatory change, NULL, 1, 2, NULL
+100209, Brand damage, NULL, 1, 1, NULL
+100221, Poor execution of mergers, acquisitions or divestitures., 9, 1, NULL, NULL
+100222, Failure of internal governance processes, 4, 1, NULL, NULL
+100223, Anti-money laundering / Counter-terrorism financing (AML/CTF), 22, NULL, 5, 5
+100261, Interest rate risk, NULL, 1, 1, NULL
+100262, Foreign exchange rate risk, NULL, NULL, NULL, NULL
+100320, Anti-bribery and corruption, 22, NULL, NULL, 5
+100340, Scope creep, NULL, NULL, NULL, NULL
+100341, Incorrect budget estimate, NULL, NULL, NULL, NULL
+100342, Resistance to change, NULL, NULL, NULL, NULL
+100343, Technology integration failure, NULL, NULL, NULL, NULL
+100344, Insufficient resources, NULL, NULL, NULL, NULL
+100345, Contractor failure, NULL, NULL, NULL, NULL
+100346, Contract dispute, NULL, NULL, NULL, NULL
+100347, Delay of project dependency, NULL, NULL, NULL, NULL
+100348, Invalid project assumptions, NULL, NULL, NULL, NULL
+100349, Failure of supplier, NULL, NULL, NULL, NULL
+100350, Resistance to change, NULL, NULL, NULL, NULL
+100380, Inappropriate financial advice given to customers, 2, NULL, NULL, 1
+100381, Negligent or careless actions by employees, 4, NULL, NULL, 2
+100382, Non compliance with regulatory requirements, 6, NULL, NULL, 3
+100383, Breach of market conduct, 2, NULL, NULL, 1
+100384, Delegation authorities exceeded, 2, NULL, NULL, 1
+100385, Soil erosion, 15, NULL, NULL, 2
+100386, Spills - Vapour discharge, 10, NULL, 1, 2
+100387, Spills - Chemical discharge, 14, 1, NULL, 2
+100389, Slips, Trips or Fall of a Person, 6, 1, NULL, NULL
+100422, Retail counterpary credit default, NULL, 1, NULL, NULL
+100424, Credit risk, NULL, NULL, NULL, NULL
+100425, Market and investment risk, NULL, NULL, NULL, NULL
+100426, Environmental risk, 8, NULL, NULL, 2
+100427, Employment practices and safety risk, NULL, NULL, NULL, NULL
+100428, Criminal activity risk, NULL, NULL, NULL, NULL
+100429, Execution and process risk, NULL, NULL, NULL, NULL
+100430, Technology risk - cyber attacks, disruption, data breach, NULL, NULL, NULL, NULL
+100431, Strategic risk - wrong strategy or poor execution, NULL, NULL, NULL, NULL
+100433, Product risk, NULL, NULL, NULL, NULL
+100434, Third party supplier risk, NULL, NULL, NULL, NULL
+100435, Conduct risk, NULL, NULL, 2, NULL
+100436, Project risk, NULL, NULL, NULL, NULL
+100437, Product risk, NULL, NULL, NULL, NULL
+100438, Regulatory and legislative risk, NULL, NULL, NULL, NULL
+100439, Brand risk, NULL, NULL, NULL, NULL
+100440, Insurance risk, NULL, NULL, NULL, NULL
+100441, SG Fleet Loss of Key Personnel, 3, NULL, NULL, NULL
+100460, Brand damage, NULL, NULL, NULL, NULL
+100461, Head Office Unavailability, NULL, NULL, NULL, NULL
+100462, Customer growth or operating model unsustainable, NULL, NULL, NULL, NULL
+100463, Scope creep, NULL, NULL, NULL, NULL
+100464, Negative social media exposure, NULL, NULL, NULL, NULL
+100465, Strategy Execution Risk, NULL, NULL, NULL, NULL
+100466, Poor selection and prioritisation of key projects, NULL, NULL, NULL, NULL
+100467, Transaction processing errors (excl. payments), NULL, NULL, NULL, NULL
+100468, Foreign exchange rate risk, NULL, NULL, NULL, NULL
+100469, Marketing material disributed externally is non compliant with privacy and consumer law, NULL, NULL, NULL, NULL
+100470, Non Compliance with Privacy Laws, NULL, NULL, NULL, NULL
+100471, Unauthorised staff activity, NULL, NULL, NULL, NULL
+100472, IT change management failure, NULL, NULL, NULL, NULL
+100473, System or Hardware Failure, NULL, NULL, NULL, NULL
+100474, Conduct risk, NULL, NULL, NULL, NULL
+100475, Inappropriate customer service, NULL, NULL, NULL, NULL
+100476, Loan, Deposit or Credit Card Fraud, NULL, NULL, NULL, NULL
+100477, External market or competitor threats, NULL, NULL, NULL, NULL
+100478, Model risk, NULL, NULL, NULL, NULL
+100479, Retail counterpary credit default, NULL, NULL, NULL, NULL
+100480, Unavailability of IT systems, services or data, NULL, NULL, NULL, NULL
+100481, Anti-bribery and corruption, NULL, NULL, NULL, NULL
+100482, Staff bullying or misconduct, NULL, NULL, NULL, NULL
+100483, Non-Compliance with Work Health and Safety Acts, NULL, NULL, NULL, NULL
+100484, Contractor failure, NULL, NULL, NULL, NULL
+100485, Asset Theft, NULL, NULL, NULL, NULL
+100486, Inappropriate financial advice given to customers, NULL, NULL, NULL, NULL
+100487, Interest rate risk, NULL, NULL, NULL, NULL
+100488, Unauthorised Data Access, NULL, NULL, NULL, NULL
+100489, Invalid project assumptions, NULL, NULL, NULL, NULL
+100490, Product Offering Uncompetitive, NULL, NULL, NULL, NULL
+100491, Erroneous trading positions, NULL, NULL, NULL, NULL
+100492, Unauthorised transfer or disclosure of data, NULL, NULL, NULL, NULL
+100493, Regulatory and legislative risk, NULL, NULL, NULL, NULL
+100494, Failure of supplier, NULL, NULL, NULL, NULL
+100495, Data compromise, NULL, NULL, NULL, NULL
+100496, Slip, trip or fall, NULL, NULL, NULL, NULL
+100497, Employee injury, NULL, NULL, NULL, NULL
+100498, Third party failure, NULL, NULL, NULL, NULL
+100499, Credit risk, NULL, NULL, NULL, NULL
+100500, Poor execution of mergers, acquisitions or divestitures., NULL, NULL, NULL, NULL
+100501, Collection and retention of member or customer information that is not required, NULL, NULL, NULL, NULL
+100502, Technology risk - cyber attacks, disruption, data breach, NULL, NULL, NULL, NULL
+100503, Project delivery and implementation, NULL, NULL, NULL, NULL
+100504, Failure to effectively manage IT change, NULL, NULL, NULL, NULL
+100505, Deteriorating investor sentiment, NULL, NULL, NULL, NULL
+100506, Unauthorised collection and or dissemination of personal information, NULL, NULL, NULL, NULL
+100507, Resistance to change, NULL, NULL, NULL, NULL
+100508, Model Errors, NULL, NULL, NULL, NULL
+100509, Breach of market conduct, NULL, NULL, NULL, NULL
+100510, Armed Hold Up, NULL, NULL, NULL, NULL
+100511, Market and investment risk, NULL, NULL, NULL, NULL
+100512, Misleading information in marketing materials, NULL, NULL, NULL, NULL
+100513, Non Compliance with Competition and Consumer Law, NULL, NULL, NULL, NULL
+100514, Erroneous financial position reporting, NULL, NULL, NULL, NULL
+100515, Harassment, Bullying or Discrimination, NULL, NULL, NULL, NULL
+100516, External cyber attacks, virus, malware and denial of service, NULL, NULL, NULL, NULL
+100517, Product flaws, NULL, NULL, NULL, NULL
+100518, Unauthorised access to customer data, NULL, NULL, NULL, NULL
+100519, Continuous disclosure, NULL, NULL, NULL, NULL
+100520, Unauthorized or inappropriate advice, NULL, NULL, NULL, NULL
+100521, Key Server or Hardware Failure, NULL, NULL, NULL, NULL
+100522, Non Compliance with Prudential/Accounting Standards, NULL, NULL, NULL, NULL
+100523, Brand risk, NULL, NULL, NULL, NULL
+100524, Technology Equipment Damage, NULL, NULL, NULL, NULL
+100525, Negative social media exposure, NULL, NULL, NULL, NULL
+100526, Member/Customer Growth Inadequate, NULL, NULL, NULL, NULL
+100527, Unsatisfied or unhappy customers, NULL, NULL, NULL, NULL
+100528, Unavailability of CRM systems, NULL, NULL, NULL, NULL
+100529, Insufficient resources, NULL, NULL, NULL, NULL
+100530, Customer or contractor injury, NULL, NULL, NULL, NULL
+100531, High Staff Turnover, NULL, NULL, NULL, NULL
+100532, Personal information retainerd is outdated or contains errors, NULL, NULL, NULL, NULL
+100533, Failed or late payments, NULL, NULL, NULL, NULL
+100534, Misselling, NULL, NULL, NULL, NULL
+100535, Unauthorised statements provided to media, NULL, NULL, NULL, NULL
+100536, Payments to Wrong Supplier, NULL, NULL, NULL, NULL
+100537, Inappropriate or misleading advice incl. mis-selling, NULL, NULL, NULL, NULL
+100538, Unauthorized access to sensitive and employee data, NULL, NULL, NULL, NULL
+100539, Regulatory change, NULL, NULL, NULL, NULL
+100540, Delay of project dependency, NULL, NULL, NULL, NULL
+100541, Unavailability of systems, services or data, NULL, NULL, NULL, NULL
+100542, Natural disasters and terrorist events, NULL, NULL, NULL, NULL
+100543, Product risk, NULL, NULL, NULL, NULL
+100544, Soil erosion, NULL, NULL, NULL, NULL
+100545, Third party supplier risk, NULL, NULL, NULL, NULL
+100546, Contracts unfavourable, NULL, NULL, NULL, NULL
+100547, Failure of third party service provider (OLD - still linked to compl.obl.)), NULL, NULL, NULL, NULL
+100548, Power Failure, NULL, NULL, NULL, NULL
+100549, Supplier Payment Fraud, NULL, NULL, NULL, NULL
+100550, Fraudulent payments, NULL, NULL, NULL, NULL
+100551, Key hardware failure - servers, routers, switches, NULL, NULL, NULL, NULL
+100552, Employment practices and safety risk, NULL, NULL, NULL, NULL
+100553, Errors in the unit pricing process, NULL, NULL, NULL, NULL
+100554, Competitor positioning, NULL, NULL, NULL, NULL
+100555, Internet, telecommunications and other public utility outage, NULL, NULL, NULL, NULL
+100556, Armed hold-up, physical threat or injury, NULL, NULL, NULL, NULL
+100557, Failure to manage Corporate Actions on behalf of customers, NULL, NULL, NULL, NULL
+100558, Product innovation risk, NULL, NULL, NULL, NULL
+100559, Poor recruitment and selection process, NULL, NULL, NULL, NULL
+100560, Head Office or Store Damage, NULL, NULL, NULL, NULL
+100561, Audit Items not Followed Up, NULL, NULL, NULL, NULL
+100562, Theft of cash or assets, NULL, NULL, NULL, NULL
+100563, Criminal activity risk, NULL, NULL, NULL, NULL
+100564, Project risk, NULL, NULL, NULL, NULL
+100565, Unauthorised disclosure to media, NULL, NULL, NULL, NULL
+100566, Model risk, NULL, NULL, NULL, NULL
+100567, Rogue trading, NULL, NULL, NULL, NULL
+100568, External fraud, NULL, NULL, NULL, NULL
+100569, Key software unavailability, NULL, NULL, NULL, NULL
+100570, Payment errors, NULL, NULL, NULL, NULL
+100571, Breach of Privacy Laws, NULL, NULL, NULL, NULL
+100572, Strategic risk - wrong strategy or poor execution, NULL, NULL, NULL, NULL
+100573, Non Compliance with Corporations Act, NULL, NULL, NULL, NULL
+100574, Data breach, NULL, NULL, NULL, NULL
+100575, Negligent or careless actions by employees, NULL, NULL, NULL, NULL
+100576, Insurance risk, NULL, NULL, NULL, NULL
+100577, Unauthorised collection, dissemination and maintenance of sensitive / personal information, NULL, NULL, NULL, NULL
+100578, Unauthorized payments, NULL, NULL, NULL, NULL
+100579, Contract dispute, NULL, NULL, NULL, NULL
+100580, Misuse of models and spreadsheets, NULL, NULL, NULL, NULL
+100581, Non compliance with regulatory requirements, NULL, NULL, NULL, NULL
+100582, Failure of internal governance processes, NULL, NULL, NULL, NULL
+100583, Transaction processing errors, NULL, NULL, NULL, NULL
+100584, Vapour discharge, NULL, NULL, NULL, NULL
+100585, Deteriorating staff morale and behaviours, NULL, NULL, NULL, NULL
+100586, Anti-money laundering / Counter-terrorism financing (AML/CTF), NULL, NULL, NULL, NULL
+100587, Unauthorised System Activity, NULL, NULL, NULL, NULL
+100588, Wholesale counterparty credit default, NULL, NULL, NULL, NULL
+100589, Merger and acquisition risk, NULL, NULL, NULL, NULL
+100590, Unavailability of CRM systems, NULL, NULL, NULL, NULL
+100591, SG Fleet Loss of Key Personnel, NULL, NULL, NULL, NULL
+100592, Inappropriate financial advice given to customers, NULL, NULL, NULL, NULL
+100593, Resistance to change, NULL, NULL, NULL, NULL
+100594, Marketing material distributed externally contains errors, NULL, NULL, NULL, NULL
+100595, Toxic discharge to land, NULL, NULL, NULL, NULL
+100596, Unauthorized or inappropriate advice, NULL, NULL, NULL, NULL
+100597, Regulatory change, NULL, NULL, NULL, NULL
+100598, Inadequate insurance coverage, NULL, NULL, NULL, NULL
+100599, Misleading marketing material, NULL, NULL, NULL, NULL
+100600, Corporate culture, NULL, NULL, NULL, NULL
+100601, Execution and process risk, NULL, NULL, NULL, NULL
+100602, Unfair dismissal, NULL, NULL, NULL, NULL
+100603, Product risk, NULL, NULL, NULL, NULL
+100604, Payroll calculations incorrect, NULL, NULL, NULL, NULL
+100605, Incorrect budget estimate, NULL, NULL, NULL, NULL
+100606, Inappropriate customer service, NULL, NULL, NULL, NULL
+100607, Delegation authorities exceeded, NULL, NULL, NULL, NULL
+100608, Environmental risk, NULL, NULL, NULL, NULL
+100609, Technology integration failure, NULL, NULL, NULL, NULL
+100610, Geographic expansion risk, NULL, NULL, NULL, NULL
+100611, Pricing errors, NULL, NULL, NULL, NULL
+100612, Inaccurate information used for decision making, NULL, NULL, NULL, NULL
+100613, Breach of employment legislation / regulations, NULL, NULL, NULL, NULL
+100614, Key Software Failure, NULL, NULL, NULL, NULL
+100615, Failure of third party service providers, NULL, NULL, NULL, NULL
+100616, Inaccurate information used for decision making, NULL, NULL, NULL, NULL
+100617, Key personnel risk, NULL, NULL, NULL, NULL
+100707, Adverse event affecting attractiveness of Australia or South Australia to International students generally, 3, NULL, NULL, NULL
+100708, Adverse event affecting attractiveness of Australia or South Australia to International students generally, NULL, NULL, NULL, NULL
+100709, Adverse event affecting attractiveness of Australia or South Australia to International students generally, NULL, NULL, NULL, NULL
+100710, Adverse event affecting attractiveness of Australia or South Australia to International students generally, NULL, NULL, NULL, NULL
+100711, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information (including University IP), NULL, NULL, NULL, NULL
+100712, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information (including University IP), NULL, NULL, NULL, NULL
+100713, Incorrect, incomplete, conflicting or untimely information provided to a critical stakeholder, NULL, NULL, NULL, NULL
+100714, Incorrect, incomplete, conflicting or untimely information provided to a critical stakeholder, NULL, NULL, NULL, NULL
+100715, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100716, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100717, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy, NULL, NULL, NULL, NULL
+100718, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy, NULL, NULL, NULL, NULL
+100719, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100720, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100721, Incorrect information provided to rankings organisation (not deliberate), NULL, NULL, NULL, NULL
+100722, Incorrect information provided to rankings organisation (not deliberate), NULL, NULL, NULL, NULL
+100723, Unauthorised release of/amendment to/use of and/or loss of 3rd Party corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100724, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored in hard copy, NULL, NULL, NULL, NULL
+100725, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100726, Unauthorised release of/amendment to/use of and/or loss of corporate/confidential information stored electronically, NULL, NULL, NULL, NULL
+100727, Heat, Electricity and Other Environmental, 2, 1, NULL, NULL
+100728, Annual review of fire extinguishers, NULL, NULL, NULL, NULL
+100729, Failure to review fire extinguishers, NULL, NULL, NULL, NULL
+100760, Hitting Objects With Part of the Body, 6, 1, NULL, NULL
+100761, Falling down the stairs, NULL, NULL, NULL, NULL
+100800, Technology risk - cyber attacks, disruption, data breach, NULL, NULL, NULL, NULL
+100801, Insurance risk, NULL, NULL, NULL, NULL
+100802, Adverse event affecting attractiveness of Australia or South Australia to International students generally, NULL, NULL, NULL, NULL
+100803, Adverse event affecting attractiveness of Australia or South Australia to International students generally, NULL, NULL, NULL, NULL
+100805, Strategic risk - wrong strategy or poor execution, NULL, NULL, NULL, NULL
+100807, Fire related injury, NULL, NULL, NULL, NULL
+100881, Fire, NULL, NULL, NULL, NULL
+100882, Explosion, NULL, NULL, NULL, NULL
+100883, Mental Stress, NULL, 1, NULL, NULL
+100884, Electrocution, NULL, NULL, NULL, NULL
+100885, Sound and Pressure, 2, 1, NULL, NULL
+100886, Gas Poisoning, NULL, NULL, NULL, NULL
+100887, Hazardous Gas Leak, NULL, NULL, NULL, NULL
+100888, Chemicals and Other Substances, 4, 1, NULL, NULL
+100889, Hazardous Chemical Spill, NULL, NULL, NULL, NULL
+100891, Hazardous Chemical Spill, NULL, NULL, NULL, NULL
+100892, Being Hit by Moving Objects, 6, 1, NULL, NULL
+100893, Crushing, NULL, NULL, NULL, NULL
+100894, Crushing, NULL, NULL, NULL, NULL
+100895, Slip, Trip or Fall, NULL, NULL, NULL, NULL
+100896, Crush or Cut, NULL, NULL, NULL, NULL
+100897, Biological Factors, NULL, 1, NULL, NULL
+100898, Virus or Disease, NULL, NULL, NULL, NULL
+100899, Virus or Disease, NULL, NULL, NULL, NULL
+100900, Asphyxiation, NULL, NULL, NULL, NULL
+100901, Chemical Burn, NULL, NULL, NULL, NULL
+100902, Body Stressing, NULL, 1, NULL, NULL
+100903, Manual Lifting, Pulling, Pushing, NULL, NULL, NULL, NULL
+100904, Heat, Electricity and Other Environmental, NULL, NULL, NULL, NULL
+100914, Chemicals and Other Substances, NULL, NULL, NULL, NULL
+100915, Being Hit by Moving Objects, NULL, NULL, NULL, NULL
+100916, Biological Factors, NULL, NULL, NULL, NULL
+100917, Slip, Trip or Fall, NULL, NULL, NULL, NULL
+100918, Chemicals and Other Substances, NULL, NULL, NULL, NULL
+100919, Heat, Electricity and Other Environmental, NULL, NULL, NULL, NULL
+100920, Sound and Pressure, NULL, NULL, NULL, NULL
+100921, Body Stressing, NULL, NULL, NULL, NULL
+100922, Hitting Objects With Part of the Body, NULL, NULL, NULL, NULL
+100923, Mental Stress, NULL, NULL, NULL, NULL
+100924, Other and Unspecified Mechanisms of Incident, NULL, NULL, NULL, NULL
+100925, Other and Unspecified Mechanisms of Incident, NULL, NULL, NULL, NULL
+100926, Other and Unspecified Mechanisms of Incident, NULL, NULL, NULL, NULL
+100927, Slips, Trips or Fall of a Person, NULL, NULL, NULL, NULL
+100946, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890, NULL, NULL, NULL, NULL
+100947, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890, NULL, NULL, NULL, NULL
+100948, 12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890, NULL, NULL, NULL, NULL
+100952, Inappropriate financial advice given to customers, 4, NULL, NULL, NULL
+100953, Inappropriate financial advice given to customers, NULL, NULL, NULL, NULL
+100954, Inappropriate financial advice given to customers, NULL, NULL, NULL, NULL
+100960, Soil erosion, NULL, NULL, NULL, NULL
+100961, Soil erosion, NULL, NULL, NULL, NULL
+100962, Spills - vapour discharge, NULL, NULL, NULL, NULL
+100963, Spills - vapour discharge, NULL, NULL, NULL, NULL
+100964, Spills - chemical discharge, NULL, NULL, NULL, NULL
+100965, Spills - chemical discharge, NULL, NULL, NULL, NULL
+100966, Environmental risk, NULL, NULL, NULL, NULL
+100967, Environmental risk, NULL, NULL, NULL, NULL
+100968, Spills - Water, NULL, NULL, NULL, NULL
+100969, Spills - water, NULL, NULL, NULL, NULL
+100970, Environmental risk, NULL, NULL, NULL, NULL
+100971, Spills - Vapour discharge, NULL, NULL, NULL, NULL
+100972, Spills - Chemical discharge, NULL, NULL, NULL, NULL
+100973, Soil erosion, NULL, NULL, NULL, NULL
+100974, Spills - Vapour discharge, NULL, NULL, NULL, NULL
+100975, Spills - Chemical discharge, NULL, NULL, NULL, NULL
+100976, Spills - Water, NULL, NULL, NULL, NULL
+100977, Spills - vapour discharge, NULL, NULL, NULL, NULL
+100978, Spills - chemical discharge, NULL, NULL, NULL, NULL
+100979, Soil erosion, NULL, NULL, NULL, NULL
+100980, Environmental risk, NULL, NULL, NULL, NULL
+100982, Global Pandemic, NULL, NULL, NULL, NULL
+100983, Global Pandemic, NULL, NULL, NULL, NULL
+100985, COVID-19 Infection, 25, 1, 3, 2
+100986, COVID-19 Infection, NULL, NULL, NULL, NULL
+101000, COVID-19 Infection, NULL, NULL, NULL, NULL

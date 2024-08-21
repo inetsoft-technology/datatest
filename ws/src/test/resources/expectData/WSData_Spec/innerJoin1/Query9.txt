@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 5)
+CONTACT_ID, CUSTOMER_ID, LAST_NAME, CUSTOMER_ID_1, f_cid
+15, 25, Ledes, 13, 13
+21, 21, Alen, 1, 1
+22, 22, Pantaliano, 10, 10
+22, 22, Pantaliano, 10, 10
+23, 23, Gray, 11, 11
+24, 24, Parket, 12, 12

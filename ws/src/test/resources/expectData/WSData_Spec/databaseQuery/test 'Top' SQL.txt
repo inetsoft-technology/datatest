@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 8)
+CUSTOMER_ID, CONTACT, COMPANY, ADDRESS, CITY, STATE, ZIP, RESELLER
+1, John Kelly, Interstate Shop, 384 Broad St., Littletown, NY, 18322, true
+2, Lisa Smith, Daycare One, 123 Summer Rd., Pitterson, NJ, 09882, false
+3, Anna Lincoln, Eastern Data, 23 Tasaga Ave., Aachen, TX, 03887, true

@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 4)
+PRODUCT_NAME, CATEGORY_NAME, REGION_ID, SUPPLIER_ID
+Animal World, Educational, 2, 2
+Barbie"s Fashion, Games, 1, 1
+Combat Hero, Games, 1, 1
+Easy Chess, Games, 1, 1
+Fast Go Game, Games, 1, 1
+Learn ABC, Educational, 2, 2
+Math for Me, Educational, 2, 2
+True Action, Games, 1, 1
+Web Bridge, Games, 1, 1

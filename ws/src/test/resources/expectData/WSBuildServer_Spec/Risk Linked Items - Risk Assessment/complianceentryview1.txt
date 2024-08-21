@@ -1,0 +1,351 @@
+The table size(row x col) is:(275 x 6)
+id, controlid, controlname, businessunitname, endofperiod, completed
+100460, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Corporate Office & Strategy, 2019-10-30, Yes
+100461, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Call Centre, 2019-10-30, No
+100462, 101318, Can you confirm that all computer devices have firewall installed and maintained?, Information Technology, 2019-10-30, Yes
+100463, 100148, Can you confirm that all key contracts have an adequate confidentiality clause in place? Where applicable and NDA has been issued?, Legal, Risk & Compliance, 2019-10-30, Yes
+100464, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Environment, 2019-10-30, No
+100465, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-10-30, Yes
+100466, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2019-10-30, Yes
+100467, 100234, Can you confirm that all new staff joining the organisation have been provided the opportunity to read and review the Enterprise Agreement?, People & Culture, 2019-10-30, Yes
+100468, 100198, Can you confirm that you have read, understood and agree to abide by the followingHR policies and procedures?
+(i) Anti Bullying, Discrimination and Harassment; 
+(ii) Learning and Development; 
+(iii) Working from Home., People & Culture, 2019-10-30, Yes
+100469, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2019-10-30, Yes
+100470, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Environment, 2019-10-30, Yes
+100471, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Finance, 2019-10-30, No
+100472, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2019-10-30, No
+100473, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-10-30, Yes
+100474, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-10-30, No
+100475, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2019-10-30, Yes
+100476, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Corporate Office & Strategy, 2019-10-30, Yes
+100477, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Finance, 2019-10-30, Yes
+100478, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-10-30, No
+100479, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2019-10-30, Yes
+100480, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Information Technology, 2019-10-30, No
+100481, 100182, Can you please confirm that you have fully read and understand the company's social media policy?, Marketing, 2019-10-30, Yes
+100482, 101316, Can you confirm that anti-virus software have been installed on all devices annd updated regularly?, Information Technology, 2019-10-30, Yes
+100483, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2019-10-30, No
+100500, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2019-11-29, Yes
+100501, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-11-29, Yes
+100502, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-11-29, No
+100503, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2019-11-29, Yes
+100504, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2019-11-29, Yes
+100505, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2019-11-29, No
+100506, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2019-11-29, Yes
+100507, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-11-29, No
+100508, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2019-11-29, Yes
+100509, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-11-29, No
+100510, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Information Technology, 2019-11-29, Yes
+100511, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2019-11-29, Yes
+100512, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2019-11-29, No
+100513, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2019-11-29, No
+100520, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-12-30, Yes
+100521, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2019-12-30, No
+100522, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2019-12-30, No
+100523, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2019-12-30, Yes
+100524, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-12-30, Yes
+100525, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2019-12-30, Yes
+100526, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2019-12-30, Yes
+100527, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2019-12-30, Yes
+100528, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Product, 2019-12-30, Yes
+100529, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Product, 2019-12-30, Yes
+100530, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Product, 2019-12-30, No
+100531, 100907, Can you confirm that the AML/CTF reporting entity has conducted an AML/CTF risk awareness training program for employees, including new staff, and that attendance is monitored on a periodic basis?, Product, 2019-12-30, No
+100540, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Call Centre, 2020-01-30, No
+100541, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-01-30, Not Entered
+100542, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Finance, 2020-01-30, No
+100543, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-01-30, Yes
+100544, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-01-30, Yes
+100545, 100234, Can you confirm that all new staff joining the organisation have been provided the opportunity to read and review the Enterprise Agreement?, People & Culture, 2020-01-30, Yes
+100546, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-01-30, Yes
+100547, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-01-30, No
+100548, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Environment, 2020-01-30, Yes
+100549, 101316, Can you confirm that anti-virus software have been installed on all devices annd updated regularly?, Information Technology, 2020-01-30, No
+100550, 101318, Can you confirm that all computer devices have firewall installed and maintained?, Information Technology, 2020-01-30, No
+100551, 100198, Can you confirm that you have read, understood and agree to abide by the followingHR policies and procedures?
+(i) Anti Bullying, Discrimination and Harassment; 
+(ii) Learning and Development; 
+(iii) Working from Home., People & Culture, 2020-01-30, Not Entered
+100552, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Corporate Office & Strategy, 2020-01-30, No
+100553, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Environment, 2020-01-30, Yes
+100554, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Information Technology, 2020-01-30, No
+100555, 101110, Can you confirm that the entity is aware of and complied with its obligations in relation to personal information, confidential information, surveillance, and workplace privacy?  Are there appropriate policies, procedures and systems in place to ensure compliance with privacy laws?, Legal, Risk & Compliance, 2020-01-30, No
+100556, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-01-30, No
+100557, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-01-30, Yes
+100558, 100182, Can you please confirm that you have fully read and understand the company's social media policy?, Marketing, 2020-01-30, Yes
+100559, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-01-30, No
+100560, 100290, Can you confirm that the privacy policy has been reviewed this year, including privacy impact analysis for any new products released or companies acquired?, Legal, Risk & Compliance, 2020-01-30, Yes
+100561, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-01-30, Yes
+100562, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-01-30, No
+100563, 100148, Can you confirm that all key contracts have an adequate confidentiality clause in place? Where applicable and NDA has been issued?, Legal, Risk & Compliance, 2020-01-30, Yes
+100564, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Corporate Office & Strategy, 2020-01-30, Yes
+100565, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Finance, 2020-01-30, Yes
+100580, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-02-28, Yes
+100581, 101272, Can you confirm that the organisation consult, cooperate and coordinate with other duty holders where it shares responsibility for a health and safety matter with those duty holders?, Information Technology, 2020-02-28, Yes
+100582, 100290, Can you confirm that the privacy policy has been reviewed this year, including privacy impact analysis for any new products released or companies acquired?, Information Technology, 2020-02-28, No
+100583, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-02-28, No
+100584, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-02-28, Yes
+100585, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-02-28, Yes
+100586, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-02-28, Yes
+100587, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-02-28, No
+100588, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-02-28, Yes
+100589, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-02-28, Yes
+100590, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-02-28, Yes
+100591, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-02-28, Yes
+100592, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-02-28, No
+100593, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-02-28, Yes
+100594, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Information Technology, 2020-02-28, Yes
+100595, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-02-28, Yes
+100600, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-03-30, No
+100601, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-03-30, Yes
+100602, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-03-30, Yes
+100603, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Product, 2020-03-30, Yes
+100604, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-03-30, Yes
+100605, 100907, Can you confirm that the AML/CTF reporting entity has conducted an AML/CTF risk awareness training program for employees, including new staff, and that attendance is monitored on a periodic basis?, Product, 2020-03-30, No
+100606, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-03-30, No
+100607, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-03-30, Yes
+100608, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Product, 2020-03-30, Yes
+100609, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Product, 2020-03-30, Yes
+100610, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-03-30, No
+100611, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-03-30, No
+100612, 102548, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-03-30, Yes
+100613, 102550, Can you confirm that you have practiced safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-03-30, No
+100614, 102550, Can you confirm that you have practiced safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-03-30, Yes
+100615, 102548, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-03-30, Yes
+100616, 102548, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-03-30, Yes
+100617, 102550, Can you confirm that you have practiced safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-03-30, Yes
+100620, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-04-29, Not Entered
+100621, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-04-29, Not Entered
+100622, 101316, Can you confirm that anti-virus software have been installed on all devices annd updated regularly?, Information Technology, 2020-04-29, Not Entered
+100623, 100234, Can you confirm that all new staff joining the organisation have been provided the opportunity to read and review the Enterprise Agreement?, People & Culture, 2020-04-29, Not Entered
+100624, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Environment, 2020-04-29, Not Entered
+100625, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-04-29, Not Entered
+100626, 102385, Can you confirm that a privacy impact review has been conducted as part of the internal audit process over the last 2 years?, Call Centre, 2020-04-29, Not Entered
+100627, 101110, Can you confirm that the entity is aware of and complied with its obligations in relation to personal information, confidential information, surveillance, and workplace privacy?  Are there appropriate policies, procedures and systems in place to ensure compliance with privacy laws?, Information Technology, 2020-04-29, Not Entered
+100628, 100955, Can you confirm that the organisation maintain required employment records in an accessible form for seven years, and that it collects, stores, uses and disposes of particular records in accordance with privacy laws?, Information Technology, 2020-04-29, Not Entered
+100629, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-04-29, Not Entered
+100630, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-04-29, Not Entered
+100631, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-04-29, Not Entered
+100632, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Corporate Office & Strategy, 2020-04-29, Not Entered
+100633, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Call Centre, 2020-04-29, Not Entered
+100634, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-04-29, Not Entered
+100635, 100182, Can you please confirm that you have fully read and understand the company's social media policy?, Marketing, 2020-04-29, Not Entered
+100636, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-04-29, Not Entered
+100637, 100198, Can you confirm that you have read, understood and agree to abide by the followingHR policies and procedures?
+(i) Anti Bullying, Discrimination and Harassment; 
+(ii) Learning and Development; 
+(iii) Working from Home., People & Culture, 2020-04-29, Not Entered
+100638, 101318, Can you confirm that all computer devices have firewall installed and maintained?, Information Technology, 2020-04-29, Not Entered
+100639, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-04-29, Not Entered
+100640, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Finance, 2020-04-29, Not Entered
+100641, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-04-29, Not Entered
+100642, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-04-29, Not Entered
+100643, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Information Technology, 2020-04-29, Not Entered
+100644, 101230, Can you confirm that the organisation understand and comply with its obligations under the employment law the Fair Work Act 2009 including remuneration, fair treatment, leave, termination and record keeping?  In addition, has policy and procedures been established and have these been disseminated to staff to ensure that they are aware of their obligations?, Information Technology, 2020-04-29, Not Entered
+100645, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-04-29, Not Entered
+100646, 101110, Can you confirm that the entity is aware of and complied with its obligations in relation to personal information, confidential information, surveillance, and workplace privacy?  Are there appropriate policies, procedures and systems in place to ensure compliance with privacy laws?, Information Technology, 2020-04-29, Not Entered
+100647, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-04-29, Not Entered
+100648, 100148, Can you confirm that all key contracts have an adequate confidentiality clause in place? Where applicable and NDA has been issued?, Legal, Risk & Compliance, 2020-04-29, Not Entered
+100649, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Corporate Office & Strategy, 2020-04-29, Not Entered
+100650, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-04-29, Not Entered
+100651, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-04-29, Not Entered
+100652, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Finance, 2020-04-29, Not Entered
+100653, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-04-29, Not Entered
+100654, 100290, Can you confirm that the privacy policy has been reviewed this year, including privacy impact analysis for any new products released or companies acquired?, Call Centre, 2020-04-29, Not Entered
+100655, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Environment, 2020-04-29, Not Entered
+100660, 101197, Can you confirm that financial services licensee have procedures in place to ensure that it complies with the obligations around providing required warnings and information in promotional material, and that it does not engage in conduct that is misleading or deceptive, or that constitutes prohibited hawking of financial products?  These policies and procedures must be kept up to date and relevant staff comprehensively trained and that all promotional material is subject to internal review and approval by legal resources., Information Technology, 2020-05-30, Not Entered
+100661, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-05-30, Yes
+100662, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-05-30, Not Entered
+100663, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-05-30, Not Entered
+100664, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Information Technology, 2020-05-30, Not Entered
+100665, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-05-30, Not Entered
+100666, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-05-30, Not Entered
+100667, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100668, 101197, Can you confirm that financial services licensee have procedures in place to ensure that it complies with the obligations around providing required warnings and information in promotional material, and that it does not engage in conduct that is misleading or deceptive, or that constitutes prohibited hawking of financial products?  These policies and procedures must be kept up to date and relevant staff comprehensively trained and that all promotional material is subject to internal review and approval by legal resources., Information Technology, 2020-05-30, Not Entered
+100669, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-05-30, Not Entered
+100670, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-05-30, Not Entered
+100671, 101141, Can you confirm that the entity is aware of and complied with all obligations relating to carrying on business as an authorised deposit-taking institution (ADI) in Australia?, Information Technology, 2020-05-30, Not Entered
+100672, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100673, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100674, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-05-30, Not Entered
+100675, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-05-30, Not Entered
+100676, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-05-30, Not Entered
+100677, 101143, Can you confirm that the entity has obtained authorisation from the Australian Prudential Regulation Authority (APRA) to carry on a banking business?, Information Technology, 2020-05-30, Not Entered
+100678, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100679, 101197, Can you confirm that financial services licensee have procedures in place to ensure that it complies with the obligations around providing required warnings and information in promotional material, and that it does not engage in conduct that is misleading or deceptive, or that constitutes prohibited hawking of financial products?  These policies and procedures must be kept up to date and relevant staff comprehensively trained and that all promotional material is subject to internal review and approval by legal resources., Information Technology, 2020-05-30, Not Entered
+100680, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-05-30, Not Entered
+100681, 101147, Can you confirm that the entity has complied with all prudential requirements relating to auditing of the authorised deposit-taking institutions (ADI), and that an auditor has been duly appointed with a legally binding contract that sets out the terms of engagement?, Information Technology, 2020-05-30, Not Entered
+100682, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100683, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-05-30, Not Entered
+100684, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-05-30, Not Entered
+100685, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-05-30, Not Entered
+100686, 101195, Can you confirm that the licensee is aware of and have policies and procedures in place to ensure it complies with the general operational requirements imposed on financial services licensees, and that a breach register is maintained with breaches being reported to ASIC within 10 days of becoming aware of it??, Information Technology, 2020-05-30, Not Entered
+100687, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-05-30, Not Entered
+100688, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-05-30, Not Entered
+100689, 101195, Can you confirm that the licensee is aware of and have policies and procedures in place to ensure it complies with the general operational requirements imposed on financial services licensees, and that a breach register is maintained with breaches being reported to ASIC within 10 days of becoming aware of it??, Information Technology, 2020-05-30, Not Entered
+100690, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-05-30, Yes
+100691, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-05-30, Not Entered
+100692, 101193, Can you confirm that the entity complies with ASIC’s financial requirements as outlined in ASIC’s Regulatory Guide 166 Financial requirements (unless formally excluded by ASIC), and that it is continuously monitoring its compliance with the obligations with any breaches reported to ASIC within 10 days of becoming aware of it?, Information Technology, 2020-05-30, Not Entered
+100693, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-05-30, Not Entered
+100694, 101149, Can you confirm that the entity meet the Australian Prudential Regulatory Authority’s requirements in relation to size, composition and qualifications for its board and that it has implemented other necessary governance policies and committees?, Information Technology, 2020-05-30, Not Entered
+100695, 101195, Can you confirm that the licensee is aware of and have policies and procedures in place to ensure it complies with the general operational requirements imposed on financial services licensees, and that a breach register is maintained with breaches being reported to ASIC within 10 days of becoming aware of it??, Information Technology, 2020-05-30, Not Entered
+100700, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-06-29, Not Entered
+100701, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-06-29, Not Entered
+100702, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-06-29, Not Entered
+100703, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-06-29, Not Entered
+100704, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-06-29, Not Entered
+100705, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-06-29, Not Entered
+100706, 100907, Can you confirm that the AML/CTF reporting entity has conducted an AML/CTF risk awareness training program for employees, including new staff, and that attendance is monitored on a periodic basis?, Product, 2020-06-29, Not Entered
+100707, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-06-29, Not Entered
+100708, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-06-29, Not Entered
+100709, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Product, 2020-06-29, Not Entered
+100710, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Product, 2020-06-29, Not Entered
+100711, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-06-29, Not Entered
+100712, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-06-29, Not Entered
+100713, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-06-29, Not Entered
+100714, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-06-29, Not Entered
+100715, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Product, 2020-06-29, Not Entered
+100716, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-06-29, Not Entered
+100717, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-06-29, Not Entered
+100720, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Finance, 2020-07-30, Not Entered
+100721, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Corporate Office & Strategy, 2020-07-30, Not Entered
+100722, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Call Centre, 2020-07-30, Not Entered
+100723, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Environment, 2020-07-30, Not Entered
+100724, 100152, Can you confirm that the Product Disclosure Statement has been reviewed and updated in the last 12 months?, Call Centre, 2020-07-30, Not Entered
+100725, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-07-30, Not Entered
+100726, 101318, Can you confirm that all computer devices have firewall installed and maintained?, Information Technology, 2020-07-30, Not Entered
+100727, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-07-30, Not Entered
+100728, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-07-30, Not Entered
+100729, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-07-30, Not Entered
+100730, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-07-30, Not Entered
+100731, 101732, Q22.0 Have your organisation started incorporating the accountability principles established by BEAR?, Finance, 2020-07-30, Not Entered
+100732, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-07-30, Not Entered
+100733, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-07-30, Not Entered
+100734, 101489, Q22.0 Have your organisation started incorporating the accountability principles established by BEAR?, Environment, 2020-07-30, Not Entered
+100735, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Finance, 2020-07-30, Not Entered
+100736, 100182, Can you please confirm that you have fully read and understand the company's social media policy?, Marketing, 2020-07-30, Not Entered
+100737, 100198, Can you confirm that you have read, understood and agree to abide by the followingHR policies and procedures?
+(i) Anti Bullying, Discrimination and Harassment; 
+(ii) Learning and Development; 
+(iii) Working from Home., People & Culture, 2020-07-30, Not Entered
+100738, 100154, Can you confirm that all staff within the Contact Centre have been inducted and received yearly refresher training?, Call Centre, 2020-07-30, Not Entered
+100739, 100148, Can you confirm that all key contracts have an adequate confidentiality clause in place? Where applicable and NDA has been issued?, Legal, Risk & Compliance, 2020-07-30, Not Entered
+100740, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-07-30, Not Entered
+100741, 101489, Q22.0 Have your organisation started incorporating the accountability principles established by BEAR?, Corporate Office & Strategy, 2020-07-30, Not Entered
+100742, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Corporate Office & Strategy, 2020-07-30, Not Entered
+100743, 100150, Can you confirm that all insurance policies have been reviewed for currency and adequacy prior to renewal term?, Legal, Risk & Compliance, 2020-07-30, Not Entered
+100744, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-07-30, Not Entered
+100745, 101316, Can you confirm that anti-virus software have been installed on all devices annd updated regularly?, Information Technology, 2020-07-30, Not Entered
+100746, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-07-30, Not Entered
+100747, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-07-30, Not Entered
+100748, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-07-30, Not Entered
+100749, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Information Technology, 2020-07-30, Not Entered
+100750, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-07-30, Not Entered
+100751, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-07-30, Not Entered
+100752, 101317, Can you confirm that security systems are frequently tested and any issues identified are raised and planned for treatment?, Information Technology, 2020-07-30, Not Entered
+100753, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Environment, 2020-07-30, Not Entered
+100754, 100234, Can you confirm that all new staff joining the organisation have been provided the opportunity to read and review the Enterprise Agreement?, People & Culture, 2020-07-30, Not Entered
+100755, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-07-30, Not Entered
+100760, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-08-30, Not Entered
+100761, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-08-30, Not Entered
+100762, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-08-30, Not Entered
+100763, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-08-30, Not Entered
+100764, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Information Technology, 2020-08-30, Not Entered
+100765, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-08-30, Not Entered
+100766, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-08-30, Not Entered
+100767, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-08-30, Not Entered
+100768, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-08-30, Not Entered
+100769, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-08-30, Not Entered
+100770, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-08-30, Not Entered
+100771, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Information Technology, 2020-08-30, Not Entered
+100772, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-08-30, Not Entered
+100773, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-08-30, Not Entered
+100774, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-08-30, Not Entered
+100775, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-08-30, Not Entered
+100776, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-08-30, Not Entered
+100777, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-08-30, Not Entered
+100778, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-08-30, Not Entered
+100779, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-08-30, Not Entered
+100780, 100305, Can you confirm that all unintentional disclosures of personal information have been reported in accordance with the Privacy Act and our internal breach reporting policy?, Call Centre, 2020-09-29, Not Entered
+100781, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, Information Technology, 2020-09-29, Not Entered
+100782, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-09-29, Not Entered
+100783, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-09-29, Not Entered
+100784, 101094, Can you confirm that the reporting entity has investigated and reviewed all remitted and received international funds or property transfer instructions (IFTIs) captured by the AML/CTF Act, and submitted a complete and accurate IFTI report to AUSTRAC within 10 days of either receiving or sending the instructions., Product, 2020-09-29, Not Entered
+100785, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-09-29, Not Entered
+100786, 100278, Can you confirm that all key supplier / service agreements have been reviewed for currency of their SLA?, Information Technology, 2020-09-29, Not Entered
+100787, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-09-29, Not Entered
+100788, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Product, 2020-09-29, Not Entered
+100789, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, Information Technology, 2020-09-29, Not Entered
+100790, 100274, Can you confirm that all key Finance Staff are aware of the Compliance Program requirement pertaining to financial reporting and aware of any changing regulatory requirements?, Information Technology, 2020-09-29, Not Entered
+100791, 100907, Can you confirm that the AML/CTF reporting entity has conducted an AML/CTF risk awareness training program for employees, including new staff, and that attendance is monitored on a periodic basis?, Product, 2020-09-29, Not Entered
+100792, 101645, Has the organisation met its environmental compliance obligations?, Environment, 2020-09-29, Not Entered
+100793, 102040, Can you confirm that only authorised spreadsheet models are being used and no modifications to those models have been made., Treasury Sydney, 2020-09-29, Not Entered
+100794, 102560, Can you confirm that you have practiced self isolation for 14 days when you have:
+a) come in contact with a person under investigation
+b) have traveled overseas for the last 14 days
+c) have any of the following symptoms: sore throat, cough, colds, body pain and other flu-like symptoms?, XYZ Limited, 2020-09-29, Not Entered
+100795, 102566, Can you confirm that you have practised safe self distancing and avoided unessential activities outside your home during the period?, XYZ Limited, 2020-09-29, Not Entered
+100796, 100908, Can you confirm that the AML/CTF reporting entity has conducted due diligence reviews prior to entering into a new correspondent banking relationship as well as ongoing regular risk and due diligence assessments on existing correspondent banking relationships?  Can you additionally confirm that, as part of these reviews, any correspondent banking relationships with shell banks has been terminated?, Product, 2020-09-29, Not Entered
+100797, 101645, Has the organisation met its environmental compliance obligations?, Information Technology, 2020-09-29, Not Entered

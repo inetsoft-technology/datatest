@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 2)
+CUSTOMER_ID, CATEGORY_ID
+630, 1
+630, 2
+630, 3
+630, 4
+630, 5
+630, 6
+630, 7

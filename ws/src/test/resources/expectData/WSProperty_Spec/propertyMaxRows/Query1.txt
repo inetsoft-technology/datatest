@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 16)
+ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, RESELLER, STATE, ZIP, CATEGORY_ID, DESCRIPTION, NUMBER_INSTOCK, PRICE, PRODUCT_ID, PRODUCT_NAME, REORDER_LEVEL, SUPPLIER_ID
+123 Summer Rd., Middletown, Daycare One, 2, 1, 0, NJ, 09882, 3, XML connectivity tool, 7, 2250, 1, Xconnect Server, 10, 5
+384 Broad St., Wayne, Interstate Shop, 1, 1, 0, NJ, 18322, 3, XML connectivity tool, 7, 2250, 1, Xconnect Server, 10, 5
+389 Jardim Rd., Baltimore, George Services, 5, 1, 0, MD, 82938, 3, XML connectivity tool, 7, 2250, 1, Xconnect Server, 10, 5
+7262 18th St., New York, Eastern Data, 3, 1, 0, NY, 03887, 3, XML connectivity tool, 7, 2250, 1, Xconnect Server, 10, 5
+88 Rio Grand Ave., Boulder, Ernst Handel, 4, 2, 1, CO, 38923, 3, XML connectivity tool, 7, 2250, 1, Xconnect Server, 10, 5

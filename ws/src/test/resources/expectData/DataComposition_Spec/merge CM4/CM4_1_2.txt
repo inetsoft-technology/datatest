@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 7)
+CUSTOMER_ID, COMPANY_NAME, CITY, STATE, sql_exp1, sql_exp2, sql_exp3
+1, Interstate Shop, Wayne, NJ, Wayne@, NJ@, 11
+2, Daycare One, Middletown, NJ, Middletown@, NJ@, 12
+3, Eastern Data, New York, NY, New York@, NY@, 13
+4, Ernst Handel, Boulder, CO, Boulder@, CO@, 14
+5, George Services, Baltimore, MD, Baltimore@, MD@, 15
+6, Loctite Corp., Hartford, CT, Hartford@, CT@, 16
+7, Old World Insurance, New York, NY, New York@, NY@, 17
+8, Quick Stop, Denver, CO, Denver@, CO@, 18
+9, Direct Sales, San Francisco, CA, San Francisco@, CA@, 19
+10, Specialty Retail, Chicago, IL, Chicago@, IL@, 20
+11, The Big Cat, Austin, TX, Austin@, TX@, 21
+12, Fast Transportation, Orlando, FL, Orlando@, FL@, 22
+13, Computer Tech, Los Angeles, CA, Los Angeles@, CA@, 23
+14, InterLand Services, Rockville, MD, Rockville@, MD@, 24
+15, Scheggie Services, Camden, NJ, Camden@, NJ@, 25
+16, Whittaker & Co, Inc, Albany, CA, Albany@, CA@, 26
+17, FISGA Corp, New York, NY, New York@, NY@, 27
+18, Ubermeyer, Boston, MA, Boston@, MA@, 28
+19, Software Specialists, Newark, NJ, Newark@, NJ@, 29
+20, Folk Mining, Tucson, AZ, Tucson@, AZ@, 30
+21, West Coast Customs, Los Angeles, CA, Los Angeles@, CA@, 31
+22, Big Ed's BBQ, Houston, TX, Houston@, TX@, 32
+23, World Software Resellers, Boston, MA, Boston@, MA@, 33
+24, High Society Investments, New York, NY, New York@, NY@, 34
+25, Rutgers Bank, New Brunswick, NJ, New Brunswick@, NJ@, 35
+26, Nova Tera, Dallas, TX, Dallas@, TX@, 36
+27, Infinity Software, Seattle, WA, Seattle@, WA@, 37
+28, Tricounty Auto, York, PA, York@, PA@, 38
+29, Northwest Outfitters, Olympia, WA, Olympia@, WA@, 39
+30, AMG Logistics, Springfield, MA, Springfield@, MA@, 40
+31, BigMart Foodstores, Dallas, TX, Dallas@, TX@, 41
+32, Tumbleweed Gaming, Las Vegas, NV, Las Vegas@, NV@, 42
+33, FMG Consulting, Baltimore, MD, Baltimore@, MD@, 43
+34, XO Resellers, Cambridge, MA, Cambridge@, MA@, 44
+35, Pharma Research, Plainfield, NJ, Plainfield@, NJ@, 45

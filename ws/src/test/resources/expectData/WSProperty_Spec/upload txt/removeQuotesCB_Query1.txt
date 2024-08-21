@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 2)
+String1, String2
+hello,bonnie, this is a testing
+hi, 'this is my test', my file name is "ok"

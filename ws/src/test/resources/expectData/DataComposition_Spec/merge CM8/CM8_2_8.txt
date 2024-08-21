@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 2)
+CUSTOMER_ID, COMPANY_NAME
+7, Old World Insurance
+13, Computer Tech
+15, Scheggie Services
+23, World Software Resellers

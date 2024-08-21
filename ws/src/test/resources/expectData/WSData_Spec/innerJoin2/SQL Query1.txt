@@ -1,0 +1,37 @@
+The table size(row x col) is:(36 x 6)
+CITY, CUSTOMER_ID, RESELLER, STATE, range_cid, f-city
+Albany, 16, true, CA, 10-20, Albany
+Austin, 11, true, TX, 10-20, Austin
+Baltimore, 5, true, MD, <10, Baltimore
+Baltimore, 33, true, MD, >=30, Baltimore
+Boston, 18, true, MA, 10-20, Boston
+Boston, 23, false, MA, 20-30, Boston
+Boulder, 4, false, CO, <10, Boulder
+Cambridge, 34, false, MA, >=30, Cambridge
+Camden, 15, true, NJ, 10-20, Camden
+Chicago, 10, false, IL, 10-20, Chicago
+Dallas, 26, true, TX, 20-30, Dallas
+Dallas, 31, true, TX, >=30, Dallas
+Denver, 8, true, CO, <10, Denver
+Hartford, 6, true, CT, <10, Hartford
+Houston, 22, true, TX, 20-30, Houston
+Las Vegas, 32, true, NV, >=30, Las Vegas
+Los Angeles, 13, false, CA, 10-20, Los Angeles
+Los Angeles, 21, true, CA, 20-30, Los Angeles
+Middletown, 2, true, NJ, <10, Middletown
+Newark, 19, false, NJ, 10-20, Newark
+New Brunswick, 25, true, NJ, 20-30, New Brunswick
+New York, 3, true, NY, <10, New York
+New York, 7, true, NY, <10, New York
+New York, 17, true, NY, 10-20, New York
+New York, 24, true, NY, 20-30, New York
+Olympia, 29, true, WA, 20-30, Olympia
+Orlando, 12, true, FL, 10-20, Orlando
+Plainfield, 35, true, NJ, >=30, Plainfield
+Rockville, 14, true, MD, 10-20, Rockville
+San Francisco, 9, false, CA, <10, San Francisco
+Seattle, 27, false, WA, 20-30, Seattle
+Springfield, 30, true, MA, >=30, Springfield
+Tucson, 20, true, AZ, 20-30, Tucson
+Wayne, 1, true, NJ, <10, Wayne
+York, 28, true, PA, 20-30, York

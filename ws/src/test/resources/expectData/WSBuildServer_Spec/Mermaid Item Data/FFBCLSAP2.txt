@@ -1,0 +1,86 @@
+The table size(row x col) is:(85 x 3)
+FFBCMPN, Classs, Class Description
+  1,   1, EGGS ONLY                
+  1,  10, OILS,SHORTENING          
+  1,  11, FROZEN,POTATO,VEG        
+  1,  12, FROZEN,ENTREES           
+  1,  13, BAKERY                   
+  1,  14, FROZEN,HOR'S,BRD,BAT     
+  1,  15, BEVERAGE,COFFEE          
+  1,  16, PAPER,DISPOSABLES        
+  1,  17, CHEMICAL,JANITORIAL      
+  1,  18, EQUIPMENT,SUPPLY         
+  1,  19, SPECIAL ORDER ITEMS      
+  1,   2, DAIRY/ALL OTHER          
+  1,  20, SEAFOOD,FRESH            
+  1,  21, NON INVENTORY CLASS      
+  1,  22, ADVERTISING-YP           
+  1,  23, FUEL CHARGE              
+  1,  24, DELIVERY CHARGE          
+  1,  25, TM ACCRUAL FEE           
+  1,  26, BOX PRINTING PLATES      
+  1,  27, CUSTOMER PROPRIETARY     
+  1,  28, CLOSEOUT INVENTORY       
+  1,  29, YOUR PIZZA AD FEE        
+  1,   3, PRODUCE                  
+  1,  30, WAREHOUSE ITEMS USE      
+  1,  31, PR PROBATION ITEMS       
+  1,  32, DAIRY-VOLUME CHEESE      
+  1,  33, POULTRY- FRESH           
+  1,  34, FLOUR                    
+  1,  35, REFIGERATED-OTHER        
+  1,  36, DAIRY-BUTTER             
+  1,  37, GLOBAL SUPPLY            
+  1,  38, DAIRY FLUID MILK/MIX     
+  1,   4, POULTRY-FROZEN           
+  1,   5, PORK                     
+  1,  50, OPS ITEMS USE ONLY       
+  1,   6, BEEF,FRESH,FROZEN        
+  1,  60, PIZZA BOX PRODUCTION     
+  1,   7, SEAFOOD-FILET/STEAK CRAB 
+  1,   8, SEAFOOD-FROZEN,BRD,BAT   
+  1,   9, GENERAL DRY GOODS        
+  2,  10, DRY/GROCERY              
+  2, 100, IN HOUSE                 
+  2,  19, SPECIAL ORDER            
+  2,  20, DAIRY REFRIGERATED       
+  2,  23, FUEL CHARGE              
+  2,  24, CC FEE                   
+  2,  30, BEEF/VEAL/LAMB           
+  2,  32, BEEF                     
+  2,  34, PORK                     
+  2,  36, POULTRY                  
+  2,  38, LAMB/VEAL                
+  2,  40, FRESH SEAFOOD            
+  2,  42, FRESH SEAFOOD PROCESSED  
+  2,  50, FRESH CUT SEAFOOD        
+  2,  52, FRESH CUT PROCESSED SEAFD
+  2,  60, FROZEN SEAFOOD           
+  2,  70, FROZEN FOOD              
+  2,  80, PAPER & CHEMICALS        
+  2, 800, PAPER & CHEMICALS        
+  2,  90, PRODUCE                  
+  3,   1, RIBBON/INK/TONER         
+  3,  10, FREIGHT IN               
+  3,  11, FREIGHT OUT              
+  3,  12, WHS SUPPLIES             
+  3,  13, REPACK SUPPLIES          
+  3,  14, NON INVENTORY CHARGES    
+  3,  15, CUST REBATE              
+  3,  16, SOUFFLE CUPS             
+  3,  17, FOOD ITEMS               
+  3,  18, PREMIER ITEMS            
+  3,   2, PAPER/CONT/CUT           
+  3,   3, PAPER/ROLLS              
+  3,   4, ENVELOPES                
+  3,   5, CHECKS                   
+  3,   6, CUSTOM CUT/PRT FRM       
+  3,  60, DDM HOUSEWARES           
+  3,  61, DDM MOPS/BROOMS          
+  3,  62, DDM HILLMAN/HARDWARE     
+  3,  63, DDM BATH                 
+  3,  69, DDM FUMA                 
+  3,   7, LABELS                   
+  3,  70, RV INVENTORY             
+  3,   8, MISC OFFICE              
+  3,   9, NON STOCK ITEM           

@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 16)
+Period, Total Logins, PeriodStart, PeriodEnd, Period_1, Period_2, Username, Period_3, Duration, Period_4, Logins Outside Top 5 1M, Period_5, Time per user, Logins Outside Top 5 12M, Logins Per User, Users
+12M, 1993, 2018-10-01 00:00:00, 2019-10-01 00:00:00, 12M, 12M, 8, 12M, 1065934, 12M, 10, 12M, 657.984, 4, 249.125, 27
+1M, 2499, 2019-10-01 00:00:00, 2020-10-01 00:00:00, 1M, 1M, 13, 1M, 3005905, 1M, 33, NULL, 1855.4969, NULL, 192.23076923076923, 27
+3M, 2499, 2020-07-01 00:00:00, 2020-10-01 00:00:00, 3M, 3M, 13, 3M, 3005905, 3M, 33, NULL, 1855.4969, NULL, 192.23076923076923, 27

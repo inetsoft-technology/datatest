@@ -1,0 +1,15 @@
+The table size(row x col) is:(14 x 5)
+PRODUCT_NAME, PRICE, INSTOCK, PRODUCT_ID, CATEGORY_ID
+Easy Chess, 35, false, 23, 1
+Fancy Menus, 49, true, 10, 5
+Fast Mail, 39, true, 6, 6
+Green Planet, 75, true, 4, 4
+House Hunter, 129, false, 5, 4
+Info Folder, 399, false, 3, 6
+InsideView, 125, true, 2, 3
+Mega Icons, 550, true, 21, 5
+MeToo AppServer, 3000, true, 22, 3
+Sync Me, 145, true, 7, 4
+True Action, 398, false, 9, 4
+WebCalendar, 248, true, 8, 6
+Xconnect Server, 2250, true, 1, 3

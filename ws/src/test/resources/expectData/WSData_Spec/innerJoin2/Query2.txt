@@ -1,0 +1,219 @@
+The table size(row x col) is:(218 x 10)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESELLER, STATE, range_cid, f-city
+1, 1, John, <10, Baltimore, 5, true, MD, <10, Baltimore
+1, 1, John, <10, Boulder, 4, false, CO, <10, Boulder
+1, 1, John, <10, Denver, 8, true, CO, <10, Denver
+1, 1, John, <10, Hartford, 6, true, CT, <10, Hartford
+1, 1, John, <10, Middletown, 2, true, NJ, <10, Middletown
+1, 1, John, <10, New York, 3, true, NY, <10, New York
+1, 1, John, <10, New York, 7, true, NY, <10, New York
+1, 1, John, <10, San Francisco, 9, false, CA, <10, San Francisco
+1, 1, John, <10, Wayne, 1, true, NJ, <10, Wayne
+2, 2, Lisa, <10, Baltimore, 5, true, MD, <10, Baltimore
+2, 2, Lisa, <10, Boulder, 4, false, CO, <10, Boulder
+2, 2, Lisa, <10, Denver, 8, true, CO, <10, Denver
+2, 2, Lisa, <10, Hartford, 6, true, CT, <10, Hartford
+2, 2, Lisa, <10, Middletown, 2, true, NJ, <10, Middletown
+2, 2, Lisa, <10, New York, 3, true, NY, <10, New York
+2, 2, Lisa, <10, New York, 7, true, NY, <10, New York
+2, 2, Lisa, <10, San Francisco, 9, false, CA, <10, San Francisco
+2, 2, Lisa, <10, Wayne, 1, true, NJ, <10, Wayne
+3, 3, Anna, <10, Baltimore, 5, true, MD, <10, Baltimore
+3, 3, Anna, <10, Boulder, 4, false, CO, <10, Boulder
+3, 3, Anna, <10, Denver, 8, true, CO, <10, Denver
+3, 3, Anna, <10, Hartford, 6, true, CT, <10, Hartford
+3, 3, Anna, <10, Middletown, 2, true, NJ, <10, Middletown
+3, 3, Anna, <10, New York, 3, true, NY, <10, New York
+3, 3, Anna, <10, New York, 7, true, NY, <10, New York
+3, 3, Anna, <10, San Francisco, 9, false, CA, <10, San Francisco
+3, 3, Anna, <10, Wayne, 1, true, NJ, <10, Wayne
+4, 4, Patrico, <10, Baltimore, 5, true, MD, <10, Baltimore
+4, 4, Patrico, <10, Boulder, 4, false, CO, <10, Boulder
+4, 4, Patrico, <10, Denver, 8, true, CO, <10, Denver
+4, 4, Patrico, <10, Hartford, 6, true, CT, <10, Hartford
+4, 4, Patrico, <10, Middletown, 2, true, NJ, <10, Middletown
+4, 4, Patrico, <10, New York, 3, true, NY, <10, New York
+4, 4, Patrico, <10, New York, 7, true, NY, <10, New York
+4, 4, Patrico, <10, San Francisco, 9, false, CA, <10, San Francisco
+4, 4, Patrico, <10, Wayne, 1, true, NJ, <10, Wayne
+5, 5, Steven, <10, Baltimore, 5, true, MD, <10, Baltimore
+5, 5, Steven, <10, Boulder, 4, false, CO, <10, Boulder
+5, 5, Steven, <10, Denver, 8, true, CO, <10, Denver
+5, 5, Steven, <10, Hartford, 6, true, CT, <10, Hartford
+5, 5, Steven, <10, Middletown, 2, true, NJ, <10, Middletown
+5, 5, Steven, <10, New York, 3, true, NY, <10, New York
+5, 5, Steven, <10, New York, 7, true, NY, <10, New York
+5, 5, Steven, <10, San Francisco, 9, false, CA, <10, San Francisco
+5, 5, Steven, <10, Wayne, 1, true, NJ, <10, Wayne
+6, 6, Aria, <10, Baltimore, 5, true, MD, <10, Baltimore
+6, 6, Aria, <10, Boulder, 4, false, CO, <10, Boulder
+6, 6, Aria, <10, Denver, 8, true, CO, <10, Denver
+6, 6, Aria, <10, Hartford, 6, true, CT, <10, Hartford
+6, 6, Aria, <10, Middletown, 2, true, NJ, <10, Middletown
+6, 6, Aria, <10, New York, 3, true, NY, <10, New York
+6, 6, Aria, <10, New York, 7, true, NY, <10, New York
+6, 6, Aria, <10, San Francisco, 9, false, CA, <10, San Francisco
+6, 6, Aria, <10, Wayne, 1, true, NJ, <10, Wayne
+7, 7, Lino, <10, Baltimore, 5, true, MD, <10, Baltimore
+7, 7, Lino, <10, Boulder, 4, false, CO, <10, Boulder
+7, 7, Lino, <10, Denver, 8, true, CO, <10, Denver
+7, 7, Lino, <10, Hartford, 6, true, CT, <10, Hartford
+7, 7, Lino, <10, Middletown, 2, true, NJ, <10, Middletown
+7, 7, Lino, <10, New York, 3, true, NY, <10, New York
+7, 7, Lino, <10, New York, 7, true, NY, <10, New York
+7, 7, Lino, <10, San Francisco, 9, false, CA, <10, San Francisco
+7, 7, Lino, <10, Wayne, 1, true, NJ, <10, Wayne
+8, 8, Richard, <10, Baltimore, 5, true, MD, <10, Baltimore
+8, 8, Richard, <10, Boulder, 4, false, CO, <10, Boulder
+8, 8, Richard, <10, Denver, 8, true, CO, <10, Denver
+8, 8, Richard, <10, Hartford, 6, true, CT, <10, Hartford
+8, 8, Richard, <10, Middletown, 2, true, NJ, <10, Middletown
+8, 8, Richard, <10, New York, 3, true, NY, <10, New York
+8, 8, Richard, <10, New York, 7, true, NY, <10, New York
+8, 8, Richard, <10, San Francisco, 9, false, CA, <10, San Francisco
+8, 8, Richard, <10, Wayne, 1, true, NJ, <10, Wayne
+9, 9, Luke, <10, Baltimore, 5, true, MD, <10, Baltimore
+9, 9, Luke, <10, Boulder, 4, false, CO, <10, Boulder
+9, 9, Luke, <10, Denver, 8, true, CO, <10, Denver
+9, 9, Luke, <10, Hartford, 6, true, CT, <10, Hartford
+9, 9, Luke, <10, Middletown, 2, true, NJ, <10, Middletown
+9, 9, Luke, <10, New York, 3, true, NY, <10, New York
+9, 9, Luke, <10, New York, 7, true, NY, <10, New York
+9, 9, Luke, <10, San Francisco, 9, false, CA, <10, San Francisco
+9, 9, Luke, <10, Wayne, 1, true, NJ, <10, Wayne
+10, 10, Simon, 10-20, Albany, 16, true, CA, 10-20, Albany
+10, 10, Simon, 10-20, Austin, 11, true, TX, 10-20, Austin
+10, 10, Simon, 10-20, Boston, 18, true, MA, 10-20, Boston
+10, 10, Simon, 10-20, Camden, 15, true, NJ, 10-20, Camden
+10, 10, Simon, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+10, 10, Simon, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+10, 10, Simon, 10-20, Newark, 19, false, NJ, 10-20, Newark
+10, 10, Simon, 10-20, New York, 17, true, NY, 10-20, New York
+10, 10, Simon, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+10, 10, Simon, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+11, 11, Michael, 10-20, Albany, 16, true, CA, 10-20, Albany
+11, 11, Michael, 10-20, Austin, 11, true, TX, 10-20, Austin
+11, 11, Michael, 10-20, Boston, 18, true, MA, 10-20, Boston
+11, 11, Michael, 10-20, Camden, 15, true, NJ, 10-20, Camden
+11, 11, Michael, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+11, 11, Michael, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+11, 11, Michael, 10-20, Newark, 19, false, NJ, 10-20, Newark
+11, 11, Michael, 10-20, New York, 17, true, NY, 10-20, New York
+11, 11, Michael, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+11, 11, Michael, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+12, 12, George, 10-20, Albany, 16, true, CA, 10-20, Albany
+12, 12, George, 10-20, Austin, 11, true, TX, 10-20, Austin
+12, 12, George, 10-20, Boston, 18, true, MA, 10-20, Boston
+12, 12, George, 10-20, Camden, 15, true, NJ, 10-20, Camden
+12, 12, George, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+12, 12, George, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+12, 12, George, 10-20, Newark, 19, false, NJ, 10-20, Newark
+12, 12, George, 10-20, New York, 17, true, NY, 10-20, New York
+12, 12, George, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+12, 12, George, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+13, 13, Jean, 10-20, Albany, 16, true, CA, 10-20, Albany
+13, 13, Jean, 10-20, Austin, 11, true, TX, 10-20, Austin
+13, 13, Jean, 10-20, Boston, 18, true, MA, 10-20, Boston
+13, 13, Jean, 10-20, Camden, 15, true, NJ, 10-20, Camden
+13, 13, Jean, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+13, 13, Jean, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+13, 13, Jean, 10-20, Newark, 19, false, NJ, 10-20, Newark
+13, 13, Jean, 10-20, New York, 17, true, NY, 10-20, New York
+13, 13, Jean, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+13, 13, Jean, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+14, 14, Horst, 10-20, Albany, 16, true, CA, 10-20, Albany
+14, 14, Horst, 10-20, Austin, 11, true, TX, 10-20, Austin
+14, 14, Horst, 10-20, Boston, 18, true, MA, 10-20, Boston
+14, 14, Horst, 10-20, Camden, 15, true, NJ, 10-20, Camden
+14, 14, Horst, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+14, 14, Horst, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+14, 14, Horst, 10-20, Newark, 19, false, NJ, 10-20, Newark
+14, 14, Horst, 10-20, New York, 17, true, NY, 10-20, New York
+14, 14, Horst, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+14, 14, Horst, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+15, 15, Paula, 10-20, Albany, 16, true, CA, 10-20, Albany
+15, 15, Paula, 10-20, Austin, 11, true, TX, 10-20, Austin
+15, 15, Paula, 10-20, Boston, 18, true, MA, 10-20, Boston
+15, 15, Paula, 10-20, Camden, 15, true, NJ, 10-20, Camden
+15, 15, Paula, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+15, 15, Paula, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+15, 15, Paula, 10-20, Newark, 19, false, NJ, 10-20, Newark
+15, 15, Paula, 10-20, New York, 17, true, NY, 10-20, New York
+15, 15, Paula, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+15, 15, Paula, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+16, 16, Giovanni, 10-20, Albany, 16, true, CA, 10-20, Albany
+16, 16, Giovanni, 10-20, Austin, 11, true, TX, 10-20, Austin
+16, 16, Giovanni, 10-20, Boston, 18, true, MA, 10-20, Boston
+16, 16, Giovanni, 10-20, Camden, 15, true, NJ, 10-20, Camden
+16, 16, Giovanni, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+16, 16, Giovanni, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+16, 16, Giovanni, 10-20, Newark, 19, false, NJ, 10-20, Newark
+16, 16, Giovanni, 10-20, New York, 17, true, NY, 10-20, New York
+16, 16, Giovanni, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+16, 16, Giovanni, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+17, 17, Marie, 10-20, Albany, 16, true, CA, 10-20, Albany
+17, 17, Marie, 10-20, Austin, 11, true, TX, 10-20, Austin
+17, 17, Marie, 10-20, Boston, 18, true, MA, 10-20, Boston
+17, 17, Marie, 10-20, Camden, 15, true, NJ, 10-20, Camden
+17, 17, Marie, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+17, 17, Marie, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+17, 17, Marie, 10-20, Newark, 19, false, NJ, 10-20, Newark
+17, 17, Marie, 10-20, New York, 17, true, NY, 10-20, New York
+17, 17, Marie, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+17, 17, Marie, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+18, 18, Roland, 10-20, Albany, 16, true, CA, 10-20, Albany
+18, 18, Roland, 10-20, Austin, 11, true, TX, 10-20, Austin
+18, 18, Roland, 10-20, Boston, 18, true, MA, 10-20, Boston
+18, 18, Roland, 10-20, Camden, 15, true, NJ, 10-20, Camden
+18, 18, Roland, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+18, 18, Roland, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+18, 18, Roland, 10-20, Newark, 19, false, NJ, 10-20, Newark
+18, 18, Roland, 10-20, New York, 17, true, NY, 10-20, New York
+18, 18, Roland, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+18, 18, Roland, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+19, 19, Eduardo, 10-20, Albany, 16, true, CA, 10-20, Albany
+19, 19, Eduardo, 10-20, Austin, 11, true, TX, 10-20, Austin
+19, 19, Eduardo, 10-20, Boston, 18, true, MA, 10-20, Boston
+19, 19, Eduardo, 10-20, Camden, 15, true, NJ, 10-20, Camden
+19, 19, Eduardo, 10-20, Chicago, 10, false, IL, 10-20, Chicago
+19, 19, Eduardo, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
+19, 19, Eduardo, 10-20, Newark, 19, false, NJ, 10-20, Newark
+19, 19, Eduardo, 10-20, New York, 17, true, NY, 10-20, New York
+19, 19, Eduardo, 10-20, Orlando, 12, true, FL, 10-20, Orlando
+19, 19, Eduardo, 10-20, Rockville, 14, true, MD, 10-20, Rockville
+30, 30, Bill, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+30, 30, Bill, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+30, 30, Bill, >=30, Dallas, 31, true, TX, >=30, Dallas
+30, 30, Bill, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+30, 30, Bill, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+30, 30, Bill, >=30, Springfield, 30, true, MA, >=30, Springfield
+31, 31, Amy, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+31, 31, Amy, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+31, 31, Amy, >=30, Dallas, 31, true, TX, >=30, Dallas
+31, 31, Amy, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+31, 31, Amy, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+31, 31, Amy, >=30, Springfield, 30, true, MA, >=30, Springfield
+32, 32, Gilbert, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+32, 32, Gilbert, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+32, 32, Gilbert, >=30, Dallas, 31, true, TX, >=30, Dallas
+32, 32, Gilbert, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+32, 32, Gilbert, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+32, 32, Gilbert, >=30, Springfield, 30, true, MA, >=30, Springfield
+33, 33, Michael, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+33, 33, Michael, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+33, 33, Michael, >=30, Dallas, 31, true, TX, >=30, Dallas
+33, 33, Michael, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+33, 33, Michael, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+33, 33, Michael, >=30, Springfield, 30, true, MA, >=30, Springfield
+34, 34, Fran, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+34, 34, Fran, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+34, 34, Fran, >=30, Dallas, 31, true, TX, >=30, Dallas
+34, 34, Fran, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+34, 34, Fran, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+34, 34, Fran, >=30, Springfield, 30, true, MA, >=30, Springfield
+35, 35, Pat, >=30, Baltimore, 33, true, MD, >=30, Baltimore
+35, 35, Pat, >=30, Cambridge, 34, false, MA, >=30, Cambridge
+35, 35, Pat, >=30, Dallas, 31, true, TX, >=30, Dallas
+35, 35, Pat, >=30, Las Vegas, 32, true, NV, >=30, Las Vegas
+35, 35, Pat, >=30, Plainfield, 35, true, NJ, >=30, Plainfield
+35, 35, Pat, >=30, Springfield, 30, true, MA, >=30, Springfield

@@ -1,0 +1,2805 @@
+The table size(row x col) is:(2804 x 3)
+Contract Number, Account Name, ProductCode
+00001582, BT plc, 0
+00002127, State Bank of India, 2
+00002163, SNAM Rete Gas, 0
+00002164, SNAM Rete Gas, 0
+00002175, Synchrony Financial, 0
+00002216, Nationwide Building Society, 0
+00002218, Turkish Central Procurement Authority (KIK), 0
+00002230, Wipro - CA, 0
+00002242, Depository Trust & Clearing Corporation (DTCC), 0
+00002292, RBS Financial Markets, 0
+00002308, VF Corporation, 0
+00002318, Sony Mobile Communications, 0
+00002352, Capital One Bank, 0
+00002363, Najran University, 0
+00002374, Intercontinental Hotels Group (IHG), 0
+00002376, SNAM Rete Gas, 0
+00002380, Barclays, 0
+00002404, Bakwena Toll Concession, 0
+00002410, Takeda Pharmaceutical, 2
+00002414, Costa Crociere, 0
+00002421, Lloyds Banking Group, 0
+00002426, Nestle, 0
+00002428, Intercontinental Hotels Group (IHG), 0
+00002456, Skyguide, 0
+00002461, Intercontinental Hotels Group (IHG), 0
+00002466, CGI Group Inc. (Logica CMG) - UK, 0
+00002467, Silicon Valley Bank, 0
+00002469, Silicon Valley Bank, 0
+00002498, Credit Suisse, 0
+00002523, Credit Suisse, 0
+00002527, Credit Suisse, 0
+00002535, P&T Luxembourg, 0
+00002596, HCL Technologies (Partner), 0
+00002611, INSA, 0
+00002613, Capita Plc - HQ, 0
+00002655, SIA SSB, 0
+00002661, Royal Bank of Scotland, 0
+00002666, Eurasian Bank, 0
+00002683, RackSpace, 0
+00002690, Expedia, 0
+00002705, Sasol, 1
+00002714, ServiceNow, 0
+00002736, Federal Reserve Bank - FRIT, 0
+00002796, MSCI, 2
+00002806, Abu Dhabi Company for onshore oil operations (ADCO), 0
+00002812, Procter & Gamble, 0
+00002815, La Francaise des Jeux, 0
+00002820, Skyguide, 0
+00002825, Royal Bank of Scotland, 0
+00002830, Wayne County, 0
+00002832, China Finanical Futures Exchange (CFFEX), 1
+00002833, SNAM Rete Gas, 0
+00002864, National Grid UK, 1
+00002868, ADP, 0
+00002879, Carrefour - ES, 2
+00002904, ING Group - BE, 1
+00002929, National Grid UK, 1
+00002941, Mubadala, 1
+00002959, HCL Technologies - IN, 0
+00002970, Vanguard Group - HQ, 0
+00002986, Elavon Merchant Services, 1
+00003001, CACEIS Bank Luxembourg SA, 1
+00003004, Universität Bern, 1
+00003009, Wal-Mart Stores Inc, 0
+00003024, GE Appliance, 0
+00003035, Bank of Singapore (BOS), 0
+00003038, ICBPI, 0
+00003038, Nexi, 1
+00003070, P&T Luxembourg, 0
+00003071, Intercontinental Hotels Group (IHG), 0
+00003073, Intercontinental Hotels Group (IHG), 0
+00003083, Trenchant Limited, 1
+00003089, National Grid UK, 0
+00003097, Croatian Ministry of Defense, 0
+00003099, Lloyds Banking Group, 0
+00003102, DIRCO (Dept. of International Relations and Cooperation), 2
+00003107, Infosys BPO Ltd, 1
+00003116, America First Credit Union, 0
+00003117, Ministerio de Defensa, 0
+00003119, Ministerio de Defensa, 0
+00003120, Otkritie FC Bank, 0
+00003122, CIT Group Inc (CIT), 0
+00003124, WGL Holdings, Inc., 2
+00003129, Sony Europe, 0
+00003133, SITA South Africa (State Information Technology Agency), 1
+00003140, National Grid UK, 0
+00003142, PepsiCo, 0
+00003148, Tatra Banka a.s., 0
+00003151, Direct Line Insurance Group, 2
+00003174, United Card Services (UCS), 0
+00003176, Generali Italy, 0
+00003179, Board of Public Utilities, 0
+00003183, AESO, 0
+00003186, Seqirus US, 2
+00003188, ARUP, 0
+00003189, Tennessee Valley Authority, 0
+00003192, Tesoro Corporation, 0
+00003193, Wellmark, 0
+00003197, HealthPlan Services, 0
+00003198, General Mills, 0
+00003200, ICON Clinical, 0
+00003203, AMX Argentina (Claro), 0
+00003204, Capita Registrars, 0
+00003205, EDF Energy (formerly British Energy), 0
+00003209, Securities and Exchange Commission, 0
+00003212, Atos - HQ (Partner), 0
+00003213, Atos - HQ (Partner), 0
+00003214, Department of Health and Human Services - National Institutes of Health, 0
+00003218, Lloyds of London, 0
+00003221, SOGEI, 0
+00003223, National Student Clearinghouse, 0
+00003225, Dubai Municipality, 0
+00003227, ITC, 2
+00003228, WorldPay, 0
+00003231, General Electric (GE) - HQ, 0
+00003232, MINDBODY, 0
+00003234, ARUP, 0
+00003238, American Student Assistance, 0
+00003239, Everything Everywhere, 0
+00003241, Anglo American plc - IN, 0
+00003243, Lloyds Banking Group, 0
+00003248, BT plc, 0
+00003249, TD Ameritrade, 0
+00003251, National Mortgage Insurance, 0
+00003253, TD Ameritrade, 0
+00003255, DCNS, 0
+00003255, Naval Group (ex-DCNS), 1
+00003257, Russian Railways, 0
+00003259, SITA Quebec, 0
+00003267, MINDBODY, 0
+00003269, Arqiva, 0
+00003271, Lottomatica SPA, 0
+00003273, CSE Consorzio Servizi Bancari, 0
+00003275, First Bank Nigeria, 0
+00003276, RBS Services (Switzerland) Ltd, 0
+00003279, Samba Bank, 0
+00003281, ARUP, 0
+00003283, HCA, 0
+00003290, Constant Contact Inc, 0
+00003292, Banco Sabadell, 2
+00003294, Amdocs, 0
+00003296, Banco de Crédito Social Cooperativo, S.A., 2
+00003298, Clal Insurance, 0
+00003300, Barclays, 1
+00003301, Nationwide Building Society, 0
+00003303, Bank of America Corp, 0
+00003312, Bank of Greece, 0
+00003317, City of Calgary, 0
+00003319, Bell Canada Enterprises (BCE), 0
+00003320, SNAM Rete Gas, 2
+00003328, Lottomatica SPA, 0
+00003329, California State American Automobile Association, 0
+00003348, Orpic (Oman Oil refineries and petroleum industries), 0
+00003358, TCF National Bank, 0
+00003361, DNB, 0
+00003363, Arqiva, 2
+00003370, Blue Cross and Blue Shield of Vermont, 0
+00003378, IberiaBank, 0
+00003380, MBDA - UK, 0
+00003382, Apollo Global Management, 0
+00003384, SNAM Rete Gas, 0
+00003386, Michelin SCA, 0
+00003387, CGI Group Inc., 0
+00003388, California ISO, 0
+00003390, Dah Sing Bank Limited, 0
+00003392, TD Bank Financial Group, 0
+00003394, Israel Defense Forces (IDF), 0
+00003395, Mediobanca, 0
+00003397, Depository Trust & Clearing Corporation (DTCC), 0
+00003398, Delta Dental of California, 0
+00003402, Vanguard Group - HQ, 0
+00003404, Universal Music Group, 0
+00003406, SecureData MSSP Account, 0
+00003409, SATA GmbH & Co. KG, 0
+00003414, Texas HHSC, 0
+00003416, JP Morgan Chase - HQ, 0
+00003419, Cadence Design Systems, Inc., 0
+00003420, Department of Energy, 0
+00003423, Bank of Ireland, 2
+00003425, IFDS, 0
+00003426, IFDS, 0
+00003427, Wellmark, 0
+00003429, Wellmark, 0
+00003430, Aduno SA, 0
+00003432, Aduno SA, 0
+00003433, Ross Stores, 0
+00003435, Bakwena Toll Concession, 0
+00003438, ARUP, 0
+00003441, Johnson & Johnson, 0
+00003442, Hong Leong Group, 0
+00003444, RBS Financial Markets, 0
+00003449, Neiman Marcus, 0
+00003450, USDA/NASS, 0
+00003452, Apollo Global Management, 0
+00003453, Department of Defense (DOD), 0
+00003455, Lloyds of London, 0
+00003457, Panda Restaurant Group, 0
+00003462, ABB Ltd., 0
+00003463, VocaLink, 0
+00003466, CGI Federal, 0
+00003468, Securities Exchange Commission (OIC-Network Assurance), 0
+00003470, Grow Financial Federal CU, 0
+00003472, Ministerio de Defensa, 0
+00003474, AFLAC, 0
+00003477, Harland Clarke, 2
+00003478, Cariparma, 0
+00003480, Defense Threat Reduction Agency, 0
+00003482, Neiman Marcus, 0
+00003483, ICICI Bank, 0
+00003484, SIA SSB, 0
+00003486, Agos, 0
+00003487, First American Bank, 0
+00003489, Reliance JIO, 0
+00003493, Berge, 0
+00003494, CIT Group Inc (CIT), 0
+00003495, Edison S.p.A., 0
+00003497, Agrobank, 0
+00003498, Western Provident Association (WPA), 0
+00003499, Visa Europe, 0
+00003501, 24/7 Customer, 2
+00003503, Saks, Inc., 0
+00003505, S C Johnson - IN, 0
+00003507, Orange Cyberdefense Belgium, 0
+00003508, Pago Facil Argentina, 0
+00003509, ServiceNow, 0
+00003510, Instituto Nacional de Estadistica, 0
+00003511, Santander Rio, 0
+00003517, MBDA - UK, 0
+00003518, Abu Dhabi Media Company, 0
+00003519, Direct Line Insurance Group, 0
+00003521, Old Mutual Wealth, 0
+00003527, RBS Services (Switzerland) Ltd, 0
+00003528, Tsesnabank, 0
+00003531, Apollo Global Management, 0
+00003532, University of Pittsburgh, 0
+00003533, Worldpay US, 0
+00003535, Gemalto, 0
+00003537, Coral Racing, 0
+00003540, Amadeus Deutschland GmbH, 0
+00003544, Western Provident Association (WPA), 0
+00003548, Canal de Isabel II Gestión, 0
+00003550, Tesoro Corporation, 0
+00003553, FAA, 0
+00003555, Barclays, 0
+00003556, Barclays, 0
+00003558, General Electric (GE) - HQ, 0
+00003559, Callcredit, 0
+00003561, Grow Financial Federal CU, 0
+00003562, OCLC, 0
+00003564, Costa Crociere, 0
+00003566, SNAM Rete Gas, 0
+00003567, Payback GmbH, 0
+00003569, Dairy Farm Singapore, 0
+00003572, The Coca-Cola Company, Bottling Investments Group, 0
+00003573, The Coca-Cola Company, Bottling Investments Group, 0
+00003575, ARUP, 0
+00003577, Lloyds of London, 0
+00003579, DCNS, 1
+00003581, BankServ Africa, 0
+00003583, Abu Dhabi Islamic Bank, 1
+00003584, The Goldman Sachs Group, 0
+00003585, Giffgaff, 0
+00003588, Ministry of environment and urbanisation, 0
+00003589, Kcell, 0
+00003591, Federal Reserve Bank of Boston, 0
+00003592, BAE Systems - Applied Intelligence (Detica) - US, 0
+00003593, Abu Dhabi Islamic Bank, 0
+00003594, Serco Group Plc, 0
+00003596, NXP, 0
+00003598, ADIB Egypt, 0
+00003599, ADIB Egypt, 0
+00003602, BAE Systems - Applied Intelligence (Detica) - US, 0
+00003603, Target Group Ltd, 0
+00003604, Jabil Circuit, 0
+00003605, Rolls-Royce, 0
+00003606, Piraeus Bank, 0
+00003608, Barclays, 0
+00003609, Barclays, 0
+00003612, Ministerio de Defensa, 0
+00003613, Intercontinental Hotels Group (IHG), 0
+00003617, Natixis, 0
+00003621, ConvergEx Group, 0
+00003622, Blue Cross Blue Shield of Michigan, 0
+00003623, Unicredit Tiriac Bank - Romania, 0
+00003625, Santa Lucía, S.A. Compañía de Seguros y Reaseguros, 0
+00003629, Wing Hang Bank, 0
+00003631, Health Integrity, 0
+00003632, HSBC Mexico, 0
+00003633, BUONGIORNO, 0
+00003635, U.S. Army Information Technology Agency (ITA-JSP) Pentagon, 0
+00003638, Meridian Health System, 0
+00003639, eHealth Insurance, 0
+00003640, Haltik, 0
+00003641, Nationwide Building Society, 0
+00003642, European External Action Service, 0
+00003643, STM-Defense Technology Divisions of Turkish Government, 2
+00003645, Banco BPM, 0
+00003646, Shire Pharmaceuticals, LLC., 0
+00003648, Slovakian National Security Authority (NBU), 2
+00003649, Convergys, 0
+00003652, Wing Hang Bank, 0
+00003653, Mylan, 0
+00003654, Vodafone - IN, 0
+00003656, Henry Schein, 0
+00003657, Tenaga Nasional Berhad, 0
+00003659, Excellus, 0
+00003660, Paddy Power Betfair, 0
+00003661, Paddy Power, 0
+00003662, PepsiCo, 0
+00003665, Veolia Environnement - PL, 0
+00003666, BW Maritime, 0
+00003667, Primark, 0
+00003668, SEC SERVIZI, 0
+00003669, CERT Romania, 0
+00003671, Babcock International, 0
+00003673, BNSF Railway, 0
+00003675, Tesoro Corporation, 0
+00003677, 7-Eleven, 0
+00003679, 7-Eleven, 0
+00003680, B&N Bank, 0
+00003682, Haltik, 0
+00003684, Universiti Teknologi Mara, 0
+00003685, AMX Argentina (Claro), 0
+00003686, Leonardo-Finmeccanica, 0
+00003688, EBRC, 0
+00003689, Otkritie FC Bank, 0
+00003690, Otkritie FC Bank, 0
+00003691, Verisk Analytics, 0
+00003694, Verisure, 0
+00003695, Rheinmetall AG, 0
+00003696, Lottomatica SPA, 0
+00003697, GEODIS, 0
+00003699, SIA SSB, 0
+00003701, Iren SpA, 0
+00003703, Leroy Merlin SA - IT, 0
+00003705, UniCredit Bank - IT, 0
+00003707, TABUNG HAJI, 0
+00003708, HSBC Bank Plc - TR, 0
+00003710, Yesser MCIT, 0
+00003712, ANSALDO, 0
+00003714, Sharjah Islamic Bank, 0
+00003715, Delhaize Group, 0
+00003716, SFR, 0
+00003717, Colt Telecom, 0
+00003718, OMV Petrom, 0
+00003719, Banca Intesa - Russia, 0
+00003720, Finanz Informatik GmbH & Co. KG Hannover, 0
+00003721, Jive Software, 0
+00003722, Repsol, 0
+00003724, Metropolitan Transportation Authority (MTA), 2
+00003726, Delphi, 0
+00003727, Finanz Informatik Technology Service GmbH & Co. KG, 0
+00003729, YPF, 0
+00003730, Quadis, 0
+00003731, Cognizant Technology Solutions - IN, 0
+00003733, Cognizant Technology Solutions - IN, 0
+00003734, Jumeirah Group, 0
+00003735, Banco BPM, 0
+00003737, Bank Rakyat - HQ, 0
+00003738, Woodside Energy, 0
+00003740, B&H Photo, 0
+00003742, Fortinet Corporation, 0
+00003744, Cariparma, 0
+00003745, SOGEI, 0
+00003747, Russian Railways, 0
+00003748, AEAT - Agencia Tributaria, 0
+00003749, CFS, 0
+00003750, CFS, 0
+00003752, Citigroup Inc (Citi), 0
+00003754, Citigroup Inc (Citi), 0
+00003756, Citigroup Inc (Citi), 0
+00003758, Cirsa, 0
+00003760, WorldPay, 0
+00003761, WorldPay, 0
+00003763, WorldPay, 0
+00003765, A1 Telekom Austria AG, 0
+00003766, A1 Telekom Austria AG, 0
+00003767, American Airlines, 0
+00003768, The Co-operative Insurance, 0
+00003769, Grupo BBVA, 0
+00003771, Universal Music Group, 0
+00003774, Sony Europe, 0
+00003775, Bridgestone Americas, 0
+00003776, J.P. Morgan Suisse SA, 0
+00003777, EMC² Corporation (internal), 0
+00003778, WorleyParsons Limited, 0
+00003779, National Student Clearinghouse, 0
+00003783, Secure-24, 0
+00003785, Aspire, 0
+00003786, Bank of Singapore (BOS), 0
+00003791, Cisco Systems InfoSec, 0
+00003794, John Lewis Partnership, 0
+00003801, Secure-24, 0
+00003802, Gemalto, 0
+00003805, GSE Gestore dei Servizi Energetici, 2
+00003808, Tesco Bank, 0
+00003810, Saxo Bank A/S, 0
+00003811, SELEX ES, 0
+00003814, Overseas Chinese Banking Corporation (OCBC), 0
+00003815, Overseas Chinese Banking Corporation (OCBC), 0
+00003817, Carige Assicurazioni, 0
+00003819, AERMACCHI, 0
+00003820, National Bank of Greece, 0
+00003822, Capita Customer Management (Ventura), 0
+00003823, Sony Europe, 0
+00003826, America First Credit Union, 0
+00003827, Guardia Civil, 0
+00003829, Verisure, 0
+00003831, Ageas Insurance Limited, 0
+00003833, Colt Telecom, 0
+00003834, Capita Registrars, 0
+00003837, Concur, 0
+00003839, U.S. Army Information Technology Agency (ITA-JSP) Pentagon, 0
+00003841, AAA Life Company, 0
+00003844, The Saudi British Bank, 0
+00003846, Sheetz, Inc., 0
+00003849, Merchant eSolutions, 0
+00003850, Standard Chartered - IN, 0
+00003852, Everything Everywhere, 0
+00003853, Everything Everywhere, 0
+00003855, 7-Eleven, 0
+00003856, Tesco PLC, 1
+00003859, Changi General Hospital, 1
+00003863, Berkshire Bank, 2
+00003865, Mubadala, 1
+00003866, Visa Europe, 0
+00003867, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 0
+00003868, Infosec Corporation, 0
+00003869, NSE IT, 0
+00003870, NSE IT, 0
+00003872, Barclays, 0
+00003873, Barclays, 0
+00003875, Finanz Informatik Technology Service GmbH & Co. KG, 0
+00003876, Haltik, 0
+00003877, PepsiCo, 0
+00003878, Univar Inc., 0
+00003879, Bank Of China Hong Kong (BOCHK) - HK, 0
+00003881, Slovenska sporitelna, a.s., 0
+00003882, Abu Dhabi Islamic Bank, 0
+00003886, Barclays, 0
+00003887, Barclays, 0
+00003888, Morrisons, 0
+00003889, General Electric (GE) - HQ, 0
+00003891, CGI Group Inc., 0
+00003891, CGI Information Systems and Management Consultants Inc., 2
+00003893, Boehringer Ingelheim GmbH, 2
+00003893, Boehringer Ingelheim Pharma GmbH & Co. KG, 0
+00003894, Solutionary, 0
+00003895, Tesoro Corporation, 0
+00003897, Defence Science & Technology Agency (DSTA), 0
+00003898, The Co-operative Group, 0
+00003899, Tennessee Valley Authority, 0
+00003901, CGI Group Inc. (Logica CMG) - UK, 0
+00003901, CGI Group Inc (Logica CMG) - UK, 2
+00003903, Deloitte Touche Tohmatsu Limited (Deloitte) - TN, US, 0
+00003905, Apollo Global Management, 0
+00003907, Citigroup Inc (Citi), 1
+00003908, RAK Bank, 0
+00003911, MTS Bank, 0
+00003913, Sony Interactive Entertainment, 0
+00003914, Aditya Birla Group, 0
+00003915, Arcos Dorados / McDonalds Latin America, 0
+00003916, MultiCarta - Russia, 0
+00003918, Netmagic Solutions Pvt Ltd, 0
+00003919, Fullerton India Credit Company Ltd, 0
+00003921, Axis Bank, 2
+00003922, Ministry of Defense, 1
+00003923, Burberry Group, 0
+00003924, Alliance Bernstein, 0
+00003925, ServiceNow, 0
+00003927, Financial Conduct Authority, 0
+00003928, BUPA, 0
+00003930, Carhartt, 0
+00003931, Generali Italy, 0
+00003932, Produban (old Alliance & Leicester estate), 0
+00003933, Thomson Reuters - UK, 0
+00003934, Orange Cyberdefense Belgium, 0
+00003935, Debenhams Plc, 2
+00003936, Estee Lauder, 0
+00003937, The TriZetto Group Inc, 0
+00003939, Delphi, 0
+00003940, CESA - Compañía Española de Sistemas Aeronáuticos S.A., 0
+00003941, USAID, 0
+00003943, P&T Luxembourg, 0
+00003944, Neotel, 0
+00003945, ARUP, 0
+00003947, Bank Jugra, 0
+00003948, Fujitsu Singapore, 0
+00003949, Anglo American plc - IN, 0
+00003950, Maxis, 0
+00003951, Bank Of China Hong Kong (BOCHK) - HK, 0
+00003952, Cathay Pacific Airways, 0
+00003953, Deloitte Global Services Limited ES, 0
+00003956, Wal-Mart Stores Inc, 0
+00003958, Vanguard Group - HQ, 0
+00003960, Delta Dental of California, 0
+00003961, WorldPay, 0
+00003963, California State American Automobile Association, 0
+00003965, Meridian Health System, 1
+00003966, Dongbu Insurance, 0
+00003968, Texas HHSC, 0
+00003970, Direccion General Policia, 0
+00003971, Diligent Board Member Services, 0
+00003972, Sony Europe, 0
+00003973, Lloyds of London, 1
+00003977, Dr. Reddy's Laboratories Ltd., 0
+00003979, Synchrony Financial, 2
+00003980, Synchrony Financial, 0
+00003981, Board of Public Utilities, 0
+00003983, UPS-IL, 0
+00003984, General Mills, 0
+00003986, Colt Telecom, 0
+00003987, Orange - HQ, 0
+00003988, HealthPlan Services, 0
+00003989, Northrop Grumman, 0
+00003990, Croatian Ministry of Defense, 0
+00003991, Telcel, 0
+00003992, ICON Clinical, 0
+00003994, John Lewis Partnership, 0
+00003997, Zhilstroysberbank (HCSBK), 0
+00003999, Barclays, 0
+00004000, Barclays, 0
+00004002, Barclays, 0
+00004003, Barclays, 0
+00004008, Atos - HQ (Partner), 0
+00004012, AFLAC, 0
+00004014, Charles River Labs, 2
+00004017, Oncor, 0
+00004018, Endesa, 0
+00004020, Barclays, 0
+00004021, Barclays, 0
+00004023, LINA Life Insurance Co, 0
+00004025, PT Bank DBS Indonesia, 0
+00004026, AESO, 0
+00004028, Lombard Odier, 0
+00004029, Tatra Banka a.s., 0
+00004032, TABUNG HAJI, 0
+00004034, Jabatan Pendaftaran Negara, 0
+00004038, Project Spider, 0
+00004040, Atomic Weapons Establishment (AWE), 2
+00004040, AWE, 0
+00004041, British American Tobacco, 0
+00004044, Colt Telecom, 0
+00004046, The Siam Commercial Bank Public Company, 0
+00004048, Department of Health and Human Services - National Institutes of Health, 0
+00004050, Standard Chartered - IN, 0
+00004055, Barclays, 0
+00004056, Barclays, 0
+00004058, SecureData MSSP Account, 0
+00004059, SITA Quebec, 0
+00004061, Barclays, 0
+00004062, Barclays, 0
+00004063, Bank of Greece, 0
+00004065, Woolworths Limited, 0
+00004067, Orange - HQ, 0
+00004068, National Mortgage Insurance, 0
+00004070, NXP, 0
+00004092, Ministerio de Agricultura y Pesca, Alimentación y Medio Ambiente (MAPAMA), 2
+00004133, European Central Bank (ECB), 1
+00004144, Fascet LLC, 2
+00004150, Target Group Ltd, 1
+00004162, Integrated Health Information Systems (IHIS), 2
+00004173, PHOENIX INFORMATICA BANCARIA, 2
+00004184, Grow Financial Federal CU, 1
+00004228, KPMG, 2
+00004238, Social Security Administration, 1
+00004244, Toyota Motor North America, 2
+00004245, Wing Hang Bank, 1
+00004268, Provincial Electricity Authority, 2
+00004270, Boston Private Bank and Trust, 2
+00004274, Electricite de France - HQ, 1
+00004285, Payback GmbH, 1
+00004287, HSBC, 2
+00004291, VocaLINK, 1
+00004292, Hudson's Bay Company, 1
+00004299, Lloyds Banking Group, 1
+00004304, Amadeus Deutschland GmbH, 1
+00004308, The Post Office (UK), 2
+00004310, Rolls-Royce, 1
+00004312, EVN Power, 1
+00004313, ADIB Egypt, 1
+00004314, Samba Financial Group, 2
+00004315, Excellus, 1
+00004318, Pago Facil Argentina, 2
+00004319, eHealth Insurance, 1
+00004322, Panda Restaurant Group, 1
+00004323, Bakwena Toll Concession, 1
+00004326, EXL Services, 2
+00004329, Telefonica International Whole Sales, 1
+00004334, Agbar (Aguas de Barcelona), 1
+00004336, Orange - ES, 1
+00004338, Reliance Industries, 1
+00004346, Bristol-Myers Squibb Company, 2
+00004351, Old Mutual Wealth, 1
+00004353, First American Bank, 1
+00004357, University of Pittsburgh, 1
+00004361, Communications Security Establishment, 1
+00004367, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), 1
+00004368, American Airlines, 1
+00004370, Babcock International, 1
+00004373, Delek US Holdings, Inc., 1
+00004376, The Co-operative Insurance, 1
+00004379, Blue Cross Blue Shield of Michigan, 1
+00004383, Piraeus Bank, 1
+00004385, Kansas City Southern, 2
+00004387, KLX, 1
+00004388, BAE Systems - Applied Intelligence (Detica) - US, 1
+00004389, Saxo Bank A/S, 1
+00004395, Worldpay US, 1
+00004397, Andeavor, 1
+00004398, Jumeirah Group, 1
+00004406, Kcell, 1
+00004408, National Bank of Greece, 1
+00004412, Pacific Gas and Electric Company, 1
+00004416, Inmarsat, 1
+00004420, Standard Chartered - IN, 1
+00004428, Cygate NDA, 1
+00004429, Callcredit, 1
+00004430, Credit-Suisse, 1
+00004431, Credit-Suisse, 1
+00004435, NXP, 1
+00004438, Fortinet Corporation, 1
+00004446, Orange - HQ, 1
+00004447, Mylan, 1
+00004449, BankservAfrica, 1
+00004451, SELEX ES, 1
+00004453, Intercontinental Hotels Group (IHG), 1
+00004455, Federal Reserve Bank of Boston, 1
+00004456, OCLC, 1
+00004457, Natixis, 1
+00004468, Incomm, 1
+00004473, Vanguard Group - HQ, 1
+00004477, Segezha Group, 1
+00004479, Unison Capital, 1
+00004486, Qlarant Integrity Solutions, 1
+00004494, Nationwide Building Society, 1
+00004496, STC, 1
+00004498, Phoenix Contact GmbH & Co. KG, 1
+00004500, Magyar Telekom, 2
+00004503, Banca Farmafactoring, 2
+00004505, Indonesia National Police, 1
+00004506, B&N Bank, 1
+00004507, Colt Telecom, 1
+00004508, Skyguide, 1
+00004509, Veolia Environnement - PL, 1
+00004511, Ministry of environment and urbanisation, 1
+00004512, Bridgestone Americas, 1
+00004515, Delhaize Group, 1
+00004517, Defence Science & Technology Agency (DSTA), 1
+00004518, Buongiorno, 1
+00004520, Northern Powergrid, 2
+00004523, Viseca Card Services SA (former Aduno SA), 1
+00004525, ABB Information Systems Ltd., 1
+00004526, Repsol, 1
+00004528, AAA Life Insurance, 1
+00004529, AAA Life Insurance, 1
+00004530, 7-Eleven, 1
+00004532, Verisk Analytics, 1
+00004533, The Goldman Sachs Group, 1
+00004534, European External Action Service, 1
+00004536, MTN SA, 1
+00004537, Procter & Gamble, 1
+00004539, Carleton University, 1
+00004541, Secure-24, 2
+00004543, ICON Clinical, 1
+00004545, Slovenska sporitelna, a.s., 1
+00004553, Nasdaq OMX Group, 1
+00004557, Blackbaud Inc, 2
+00004558, B&H Photo & Electronics Corp, 1
+00004561, Consorzio Operativo Gruppo Montepaschi, 1
+00004564, Prime Minister's Office KD - IL, 1
+00004565, AMX Argentina (Claro), 1
+00004566, Bank of Singapore (BOS), 1
+00004567, SEC SERVIZI, 1
+00004570, European Space Agency (ESA), 1
+00004571, Finanz Informatik GmbH & Co. KG, 1
+00004577, YPF, 1
+00004578, Iren SpA, 2
+00004579, Shire (Tekeda) Pharmaceuticals, LLC., 1
+00004579, Shire Pharmaceuticals, LLC., 1
+00004581, Slovenia Air traffic Control, 1
+00004583, Uludag Electricity Distribution Corporation ( UEDA?) ., 2
+00004586, Overseas Chinese Banking Corporation (OCBC), 1
+00004589, Cognizant Technology Solutions - IN, 1
+00004591, Banco BPM, 1
+00004595, Telefonica - UY, 1
+00004597, Federalnaya Nalogovaya Sluzhba (FNS) (Federal Tax Service of Russia), 1
+00004599, Verisure, 1
+00004601, Cirsa, 1
+00004603, Aeronautica Militare Italiana - Re.S.I.A., 1
+00004604, Guardia Civil, 1
+00004605, Leroy Merlin SA - IT, 1
+00004607, William Hill plc, 1
+00004609, ADIB Egypt, 1
+00004610, ADAMA Agricultural Solutions (Agan), 1
+00004612, Maxis, 1
+00004616, Arcos Dorados Holdings (McDonalds), 2
+00004617, GEODIS, 1
+00004620, OMV Petrom, 1
+00004622, Tatra Banka a.s., 1
+00004626, DHMI (General Directorate Of State Airports Authority, 1
+00004629, Giffgaff, 1
+00004631, ECOFIS GmbH, 1
+00004635, Clal Insurance, 1
+00004636, CFS, 1
+00004638, Henry Schein, 1
+00004640, Capital One Bank - HQ, 1
+00004642, CSG - Omaha, 2
+00004643, Universal Music Group, 1
+00004644, Finanz Informatik Technology Service GmbH & Co. KG, 1
+00004645, WorldPay, 1
+00004646, Capita Customer Management (Ventura), 1
+00004648, PepsiCo, 1
+00004649, SIA SSB, 1
+00004650, SFR, 1
+00004651, Costa Crociere, 2
+00004653, ?stanbul Yeni Havaliman? ?n?aat?, ?GA Airport, 2
+00004670, Injazat Data Systems, 1
+00004672, Federal Deposit Insurance Corporation (FDIC), 1
+00004673, Iveco CNH Industrial, 1
+00004674, CBOE V, LLC, 1
+00004677, The Hartford, 1
+00004678, FSDH MERCHANT BANK, 1
+00004682, Santa Lucía, S.A. Compañía de Seguros y Reaseguros, 1
+00004683, Mizuho Bank (USA) - NY, 1
+00004687, Sony Interactive Entertainment, 1
+00004688, Gemalto - HQ, 1
+00004689, General Mills, 2
+00004690, Legal & General (Europe), 1
+00004692, AllianceBernstein, 1
+00004694, Prosodie, 1
+00004698, Carhartt, 2
+00004700, Northrop Grumman, 1
+00004701, AAA Northern California, Nevada and Utah (AAA NCNU), 1
+00004704, USAID, 1
+00004705, AAA Northern California, Nevada and Utah (AAA NCNU), 1
+00004706, Capita Plc - HQ, 1
+00004707, TCF National Bank, 1
+00004709, America First Credit Union, 2
+00004712, Infosec Corporation, 1
+00004713, Board of Public Utilities, 2
+00004722, Aditya Birla Group, 1
+00004724, Direccion General Policia, 2
+00004728, Guardian Analytics, 1
+00004729, Bank BTPN, 1
+00004730, Burberry Group, 2
+00004731, BT plc, 1
+00004745, MTS Bank, 1
+00004746, Bank Otkritie Financial Corporation, 1
+00004747, Bank Otkritie Financial Corporation, 1
+00004748, Financial Conduct Authority, 1
+00004751, MTS Retail, 2
+00004752, BGFI Banque, 2
+00004753, Cedge Technologies :Ltd, 1
+00004761, Adaptive Netpoleon Malaysia Sdn. Bhd., 1
+00004762, Netpoleon Solutions Pte Ltd (Singapore), 1
+00004765, Visa Europe, 1
+00004768, Universiti Teknologi Mara, 1
+00004769, TABUNG HAJI, 1
+00004770, Corporation Bank, 1
+00004771, Unicredit Tiriac Bank - Romania, 1
+00004773, John Lewis Partnership, 2
+00004774, Tenaga Nasional Berhad, 1
+00004775, Vodafone - IN, 1
+00004782, Cavium, 1
+00004784, DST, 1
+00004793, Delphi, 2
+00004798, Univar Inc., 1
+00004799, Ageas Insurance Limited, 2
+00004803, Generali Italy, 1
+00004804, Merchant-e Solutions, 1
+00004805, Bupa, 1
+00004806, HealthPlan Services, 2
+00004807, Alberta Electric System Operator (AESO), 2
+00004808, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 1
+00004813, William Hill plc, 1
+00004817, Standard Chartered - IN, 1
+00004818, Jabil Circuit, 1
+00004819, Michelin SCA, 2
+00004820, Walmart Stores Inc, 1
+00004821, TD Ameritrade, 1
+00004835, Everything Everywhere, 2
+00004836, CESA - Compañía Española de Sistemas Aeronáuticos S.A., 2
+00004862, Finanz Informatik Technology Service GmbH & Co. KG, 1
+00004863, Ansaldo STS, 1
+00004864, John Wiley & Sons, Inc., 2
+00004873, Emirates Aluminium Global (EGAL), 2
+00004874, Liquid Telecom (fka Neotel), 1
+00004875, National Student Clearinghouse, 2
+00004876, Cellcom Israel Ltd, 2
+00004912, MSHS, 2
+00004913, Telefonica - AR, 1
+00004935, Morrisons, 1
+00004937, Noble Group Asia Pacific, 2
+00004938, Bank of Greece, 2
+00004942, OTC Markets Group, 2
+00004943, HCL Technologies (HQ), 1
+00004944, Flughafen Hannover, 1
+00004946, BW Maritime, 1
+00004947, PWC South Africa, 1
+00004948, Ministerio de Defensa, 1
+00004949, Convergys, 1
+00004950, Dah Sing Bank Limited, 1
+00004954, ServiceNow (Customer Cloud), 2
+00004955, NTT - Solutionary, 1
+00004960, Produban (old Alliance & Leicester estate), 1
+00004961, RAK Bank, 1
+00004963, MultiCarta - Russia, 1
+00004964, Santander Rio, 1
+00004965, Liberbank, 1
+00004969, Volvo Group, 2
+00004981, Financial Conduct Authority, 1
+00004982, CLSA Limited, 2
+00004983, General Electric (GE) - HQ, 1
+00004984, Colt Telecom, 1
+00004986, Wal-Mart Stores Inc, 1
+00004988, Tsesnabank, 1
+00004989, Woodside Energy, 2
+00004990, National Bank for Agriculture and Rural Development (NABARD Bank), 2
+00004991, ING Group HQ - NL, 2
+00004992, Fujitsu Singapore, 2
+00005009, GE Aviation - UK, 2
+00005011, SOGEI, 1
+00005015, Securities Exchange Commission (OIC-Network Assurance), 1
+00005016, NN Romania, 2
+00005029, Finanz Informatik GmbH & Co. KG, 1
+00005047, Abu Dhabi Airports Company (ADAC), 2
+00005049, Capita Registrars, 2
+00005050, Bank of America Corp, 1
+00005051, UPS-IL, 2
+00005077, Lombard Odier, 2
+00005079, Daimler AG, 1
+00005081, SIA SSB, 1
+00005082, Mizuho Bank (USA) - NY, 1
+00005084, Estee Lauder, 1
+00005085, Univar Inc., 1
+00005086, Dubai Municipality, 1
+00005097, Korea Credit Bureau, 2
+00005099, Tata Consultancy Services (HQ), 1
+00005100, Federal Reserve Bank of Dallas, 2
+00005102, Yandex.Money, 2
+00005103, Donner & Reuschel AG, 2
+00005104, Orona Sociedad Cooperativa, 1
+00005106, Zhilstroysberbank (HCSBK), 2
+00005118, Public Safety Business Agency, 2
+00005147, Federación Catalana de Futbol, 1
+00005149, Providence Equity, 2
+00005161, Johnson & Johnson, 2
+00005162, Post Luxembourg, 1
+00005163, S C Johnson, 2
+00005169, Bank of Singapore (BOS), 1
+00005175, Leonardo (Aermacchi), 1
+00005176, Tesco Bank, 2
+00005180, Amdocs, 2
+00005183, Clal Insurance, 1
+00005184, CSE Consorzio Servizi Bancari, 2
+00005189, Royal Bank of Scotland, 2
+00005191, IberiaBank, 2
+00005193, UniCredit Bank - IT, 1
+00005194, Iveco CNH Industrial, 1
+00005195, Agbar (Aguas de Barcelona), 1
+00005196, Orange - HQ, 1
+00005197, MOJ -IL IMPA, 2
+00005201, Telcel, 1
+00005202, United Card Services (UCS), 2
+00005206, Mediobanca, 2
+00005207, Anglo American, 2
+00005211, MailChimp, 2
+00005219, Infosys Technologies, 2
+00005226, Constant Contact (Endurance) Inc, 1
+00005226, Constant Contact Inc, 1
+00005228, SITA Quebec, 1
+00005229, SITA Quebec, 1
+00005250, MTN SA, 1
+00005251, Reliaquest, 1
+00005252, Lloyds Banking Group, 1
+00005253, DNB, 2
+00005254, Sony Interactive Entertainment, 1
+00005260, Department of Health and Human Services - National Institutes of Health, 2
+00005261, Netmagic Solutions Pvt Ltd, 2
+00005270, Atos - HQ (Partner), 2
+00005271, Khoo Teck Puat Hospital (KTPH), 2
+00005272, Neiman Marcus, 2
+00005273, Saudi Arabian Monetary Authority, 1
+00005274, Carnival Corporation, 2
+00005275, Delta Dental of California, 2
+00005276, Apollo Global Management, 2
+00005278, Sony Europe, 1
+00005281, LINA Life Insurance Co, 2
+00005316, BT plc, 1
+00005317, Deloitte Global Services Limited ES, 2
+00005319, Abu Dhabi Islamic Bank, 1
+00005327, ABSA Bank Limited, 2
+00005339, comdirect bank AG, 2
+00005343, Williams Companies, 2
+00005344, Wipro - HQ, 2
+00005430, BNSF Railway, 2
+00005435, Defense Threat Reduction Agency, 2
+00005436, Inmarsat, 1
+00005437, CBOE V, LLC, 1
+00005468, Jabatan Pendaftaran Negara, 2
+00005469, National Bank of Belgium, 2
+00005470, AFLAC, 2
+00005471, Rosbank, 2
+00005474, CIT Group Inc (CIT), 2
+00005485, Texas HHSC, 2
+00005486, The Siam Commercial Bank Public Company, 2
+00005487, EBRC, 1
+00005487, EBRC - European Business Reliance Centre, 1
+00005534, TCF National Bank, 1
+00005535, Mercedes-Benz Bank AG, 2
+00005541, Republic of Serbia National Employment Service, 2
+00005542, Becton, Dickinson and Company, 2
+00005548, EDF ENERGIES NOUVELLES, 2
+00005549, SATA GmbH & Co. KG, 2
+00005551, Bank Muamalat Malaysia Berhad, 2
+00005557, NEC, 1
+00005558, Wellmark, 2
+00005595, Vanguard Group - HQ, 1
+00005596, MegaFon, 2
+00005599, Menards, 2
+00005600, Infosys BPO Ltd, 1
+00005601, Cadence Design Systems, 2
+00005604, Turksat - Ministry of Health (Sagl?k Bakanl?g?), 2
+00005607, OneAmerica Financial, 2
+00005610, MBSB Bank Berhad, 2
+00005611, Vodafone - ES, 2
+00005614, California Independent System Operator - CAISO, 2
+00005615, Wayne County, 2
+00005616, BDO Unibank Inc, 2
+00005617, McKesson, 2
+00005618, Nationale-Nederlanden, 2
+00005619, Punjab National Bank, 2
+00005620, UAE Ministry of Justice, 2
+00005624, Old Mutual Wealth, 1
+00005625, Ross Stores, 2
+00005627, Oncor, 2
+00005629, Delek US Holdings, Inc., 1
+00005630, La Francaise des Jeux, 2
+00005631, Telkom South Africa, 2
+00005636, First Command Financial, 2
+00005638, USDA/NASS, 2
+00005639, Meridian Health System, 1
+00005641, Woolworths Limited, 2
+00005642, Department of Economic Development (Abu Dhabi), 1
+00005643, KRUNGTHAI CARD PUBLIC COMPANY LIMITED, 2
+00005644, NTUC Income, 2
+00005645, Hargreaves Lansdown, 2
+00005646, Lina Financial Services, 2
+00005648, Brookcourt Solutions, 1
+00005649, Kwangju Bank, 2
+00005651, Getronics, 2
+00005658, Sony Corporation, 2
+00005659, Cast & Crew, 2
+00005660, HCL Technologies Denmark ApS, 2
+00005661, ADP LLC, 2
+00005662, National Card Payment System Joint Stock Company, 2
+00005663, Ministerio de Defensa, 1
+00005670, Viacom, 2
+00005672, Gazprombank, 2
+00005673, X5 Retail Group, 2
+00005674, Russian Railways, 2
+00005675, US Marine Corps, 2
+00005677, The Herjavec Group, 2
+00005678, Panda Restaurant Group, 1
+00005679, IRIDEOS, 2
+00005681, DHFL, 2
+00005682, STC Solutions, 2
+00005683, Procter & Gamble, 1
+00005684, Oriental Bank of Commerce, 2
+00005685, Edison S.p.A., 2
+00005686, Cariparma, 2
+00005687, Oman Telecommunications Company (Omantel), 2
+00005689, Royal and Sun Alliance, 2
+00005690, RBS Financial Markets, 2
+00005692, Hong Leong Group, 2
+00005693, VocaLINK, 1
+00005694, Nationwide Building Society, 1
+00005696, US Department of State, 2
+00005712, Police Department of Turkish Government -EGM, 2
+00005724, First Bank Nigeria, 2
+00005725, American Airlines, 1
+00005727, Banque de Luxembourg, 2
+00005728, Tabadul, 2
+00005729, CENTRE HOSPITALIER PRINCESSE GRACE, 2
+00005730, GITN Sdn Bhd, 2
+00005731, Hudson's Bay Company, 1
+00005732, Despegar.com, 2
+00005734, Israel Defense Forces (IDF), 2
+00005762, Universal Music Group, 1
+00005765, First American Bank, 1
+00005820, Tsesnabank, 1
+00005821, Scottish Water, 2
+00005833, Amadeus Deutschland GmbH, 1
+00005835, University of Pittsburgh, 1
+00005837, Social Security Administration, 1
+00005838, PepsiCo, 1
+00005890, Berge, 1
+00005891, Berge, 1
+00005892, Sasol, 1
+00005893, Deluxe Entertainment Services, 2
+00005899, Worldpay US, 1
+00005966, WNS Global Services Private Limited, 2
+00005967, Piraeus Bank, 1
+00005970, National Mortgage Insurance, 2
+00005971, Qatar Petrochemical Company (QAPCO), 1
+00005972, Payback GmbH, 1
+00005980, Rostelecom, 1
+00005981, eHealth Insurance, 1
+00005983, Cottage Health Systems, 2
+00005994, Target Group Ltd, 1
+00005995, Mylan, 1
+00005996, Viseca Card Services SA (former Aduno SA), 1
+00005997, OCLC, 1
+00005998, TD Ameritrade, 1
+00005999, Turkish State Railways (TCDD), 2
+00006000, Dairy Farm Singapore, 2
+00006001, The Co-operative Insurance, 1
+00006002, The Co-operative Group, 2
+00006003, Aeronautica Militare Italiana - Re.S.I.A., 1
+00006083, Tatra Banka a.s., 1
+00006084, Macedon Ranges Shire Council, 2
+00006110, Rijkswaterstaat (Dutch Ministry of Infrastructure and the Environment), 1
+00006112, Kcell, 1
+00006113, KLX, 1
+00006115, Yesser MCIT, 2
+00006118, Blue Cross Blue Shield of Michigan, 1
+00006120, Verisk Analytics, 1
+00006137, Santander Rio, 1
+00006138, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), 1
+00006139, Croatian Ministry of Defense, 2
+00006140, Bombay Stock Exchange, 2
+00006141, RAK Bank, 1
+00006142, Saxo Bank A/S, 1
+00006143, Phoenix Contact GmbH & Co. KG, 1
+00006144, Universität Bern, 1
+00006148, Engen South Africa, 2
+00006149, SecureData MSSP Account, 1
+00006150, Exxaro Resources Limited, 1
+00006151, Bakwena Toll Concession, 1
+00006153, BBVA Peru, 1
+00006154, Cygate Oy, NDA, 1
+00006157, Telefonica - UY, 1
+00006158, RBS Services (Switzerland) Ltd, 2
+00006159, Intercontinental Hotels Group (IHG), 1
+00006160, Cooperative Bank ltd, 1
+00006163, Callcredit, 1
+00006166, BAE Systems - Applied Intelligence (Detica) - US, 1
+00006167, Lloyds of London, 1
+00006168, Grow Financial Federal CU, 1
+00006169, Tata Consultancy Services (HQ), 1
+00006241, British American Tobacco, 1
+00006243, SELEX ES, 1
+00006262, Esselunga, 2
+00006289, Nationale Nederlanden ES, 2
+00006290, Fortinet Corporation, 1
+00006291, Citigroup Inc (Citi), 1
+00006293, Bank of America Corp, 1
+00006348, Veolia Environnement - PL, 1
+00006349, Federal Reserve Bank of Boston, 1
+00006350, DHL Express, 1
+00006351, Henry Schein, 1
+00006358, Giffgaff, 1
+00006359, ECOFIS GmbH, 1
+00006360, AMX Argentina (Claro), 1
+00006361, Skyguide, 1
+00006362, Excellus, 1
+00006363, Cognizant Technology Solutions - IN, 1
+00006374, DST, 1
+00006394, B&N Bank, 1
+00006397, HCL Technologies (HQ), 1
+00006398, ArcelorMittal, 2
+00006399, PWC South Africa, 1
+00006400, HMRC, 1
+00006462, Conseillers Gestion & Informatique CGI Inc., 2
+00006463, General Electric (GE) - HQ, 1
+00006465, Leonardo-Finmeccanica, 2
+00006472, Jabil Circuit, 1
+00006473, Banca Intesa - Russia, 1
+00006474, YPF, 1
+00006475, The Hartford, 1
+00006476, Acuity Mutual Insurance, 2
+00006477, OMV Petrom, 1
+00006478, UBIS, 2
+00006479, Reliance JIO, 2
+00006480, The Goldman Sachs Group, 1
+00006481, Babcock International, 1
+00006482, Thomson Reuters - UK, 2
+00006485, Wells Fargo, 2
+00006492, Ministry of environment and urbanisation, 1
+00006493, Santa Lucia SA, 1
+00006494, Helios IT Solutions, 2
+00006500, Pacific Gas and Electric Company, 1
+00006501, Daimler AG, 1
+00006505, BT Managed Services, 2
+00006506, ALD Automotive, 2
+00006507, Nasdaq OMX Group, 1
+00006508, Repsol, 1
+00006510, Electricite de France - HQ, 1
+00006513, WorldPay, 1
+00006525, ABB Information Systems Ltd., 1
+00006526, Capita Customer Management (Ventura), 1
+00006527, SFR, 1
+00006528, GEODIS, 1
+00006530, BankservAfrica, 1
+00006535, Defence Health, 2
+00006536, Natixis, 1
+00006537, Flughafen Hannover, 1
+00006538, AirIT Systems GmbH, 1
+00006542, ADAMA Agricultural Solutions (Agan), 1
+00006543, Telefonica International Wholesale Services, 1
+00006544, Cirsa, 1
+00006545, Delhaize Group, 1
+00006546, Buongiorno, 1
+00006547, SEC SERVIZI, 1
+00006548, Wing Hang Bank, 1
+00006549, Barclays, 1
+00006550, Trenchant Limited, 1
+00006551, SOGEI, 1
+00006552, ICICI Bank, 2
+00006553, The TriZetto Group Inc (Cognizant Healthcare), 1
+00006554, CACEIS Bank Luxembourg SA, 1
+00006555, Leroy Merlin SA - IT, 1
+00006556, European External Action Service, 1
+00006557, Orange Cyberdefense Belgium, 1
+00006559, Aon plc - IL, 2
+00006560, Securities and Exchange Board of India, 2
+00006561, Abu Dhabi Company for onshore oil operations (ADCO), 2
+00006562, Carleton University, 1
+00006565, Macquarie Group, 2
+00006566, Post Luxembourg, 1
+00006567, Aeronautica Regiscc, 2
+00006568, PT. Federal International Finance, 2
+00006569, ATM Azienda Trasporti Milanesi, 2
+00006570, Unicredit Tiriac Bank - Romania, 1
+00006571, Banco Santander - IT, 2
+00006573, Blue Cross Blue Shield of Kansas CIty, 2
+00006574, Consorzio Operativo Gruppo Montepaschi, 1
+00006575, Guardia Civil, 1
+00006595, XPO Logistics, 1
+00006596, Verisure, 1
+00006600, ESL Federal Credit Union, 1
+00006601, New Jersey Resources, 1
+00006603, Bright Horizons Family Solutions, 1
+00006604, MOF Saudi Arabia, 1
+00006610, Visa Europe, 1
+00006612, Banco BPM, 1
+00006613, European Space Agency (ESA) - ESRIN, 1
+00006614, Ministerie van Defensie, 1
+00006618, Prime Minister's Office KD - IL, 1
+00006622, UniCredit Bank - IT, 1
+00006641, Gemalto - HQ, 1
+00006681, Dun & Bradstreet, 1
+00006713, Accellence Thailand, 1
+00006750, Saudi Customs, 1
+00006751, Qlarant Integrity Solutions, 1
+00006752, Unison Capital, 1
+00006756, Mobitel (Pvt) Ltd., 1
+00006757, Council Of The European Union, 1
+00006759, Ministry of Justice Kuwait, 1
+00006762, Overseas Chinese Banking Corporation (OCBC), 1
+00006766, Discount Bank, 1
+00006774, ICON Clinical, 1
+00006859, Concur, 1
+00006860, NXP, 1
+00006915, Dah Sing Bank Limited, 1
+00006916, Merchant-e Solutions, 1
+00006917, Jumeirah Group, 1
+00006919, TEDA?, 1
+00006923, Nevo Technologies, 1
+00006927, Federal Deposit Insurance Corporation (FDIC), 1
+00006931, Magellan Midstream Partners, 1
+00006932, Injazat Data Systems, 1
+00006936, Maxis, 1
+00007335, Securities Exchange Commission (OIC-Network Assurance), 1
+00007336, Securities and Exchange Commission, 1
+00007337, TSB Bank, 1
+00007338, JMOD/AIR, 1
+00007340, Adaptive Netpoleon Malaysia Sdn. Bhd., 1
+00007633, Legal & General (Europe), 1
+00007634, Communications Security Establishment, 1
+00007659, Tesco PLC, 1
+00007660, 7-Eleven, 1
+00007661, Netpoleon Solutions Pte Ltd (Singapore), 1
+00007670, Berufsgenossenschaft Holz und Metall, 1
+00007671, Ansaldo STS, 1
+00007673, Corporation Bank, 1
+00007679, Turkcell, 1
+00007682, Bridgestone Americas, 1
+00007704, National Bank of Oman (NBO), 1
+00007705, Volke Entwicklungsring, 1
+00007706, Infosec Corporation, 1
+00007708, Torstar Corporation, 1
+00007709, Dubai Tourism Authority, 1
+00007710, Orange Cyberdefense Belgium, 1
+00007711, Segezha Group, 1
+00007729, NTT - Solutionary, 1
+00007730, Generali Italy, 1
+00007732, LC Waikiki, 1
+00007734, DHS NCATS, 1
+00007735, Prosodie, 1
+00007738, HCA Healthcare UK, 1
+00007742, Marathon, 1
+00007743, MultiCarta - Russia, 1
+00007744, European Central Bank (ECB), 1
+00007748, Carige Assicurazioni, 1
+00007750, Carlisle City Council, 1
+00007753, Telefonica - AR, 1
+00007756, Telcel, 1
+00007763, Capita Plc - HQ, 1
+00007765, A2A, 1
+00007795, Aditya Birla Group, 1
+00007797, Cedge Technologies :Ltd, 1
+00007836, Guidepoint Security, 1
+00007839, Universiti Teknologi Mara, 1
+00007883, USAID, 1
+00007885, TABUNG HAJI, 1
+00007886, ReliaQuest, 1
+00007903, TrueBlue, Inc., 1
+00007949, Mohegan Tribal Gaming Authority, 1
+00007950, Bank BTPN, 1
+00007953, First Abu Dhabi Bank, 1
+00007978, Estee Lauder, 1
+00007981, Slovenska sporitelna, a.s., 1
+00007982, Slovenia Air traffic Control, 1
+00007985, Defence Science & Technology Agency (DSTA), 1
+00007988, The Bank of N.T. Butterfield & Son Limited, 1
+00007990, Banca 5 S.p.A., 1
+00007991, Saudi Ministry of Labor and Social Development, 1
+00007992, ING Group - BE, 1
+00008001, Bank Hapoalim, 1
+00008016, Qatar Petrochemical Company (QAPCO), 1
+00008019, MBDA - UK, 1
+00008024, DHMI (General Directorate Of State Airports Authority, 1
+00008027, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 1
+00008043, IL-CERT (Israel?s Computer Emergency Response Team), 1
+00008045, Mastercard Technologies, LLC, 1
+00008050, Sharjah Islamic Bank, 1
+00008053, Reckitt Benckiser Group, 1
+00008058, Interpublic Group of Companies, 1
+00008112, PMO IL National Cyber Directorate, 1
+00008118, Orpic (Oman Oil refineries and petroleum industries), 1
+00008122, Turkish Land Forces, 1
+00008138, British American Tobacco, 1
+00008184, Skybox_IL, 1
+00008200, Vodafone - IN, 1
+00008208, SEPS A.S., 1
+00008211, Rosgosstrakh, 1
+00008221, Rosgosstrah Bank, 1
+00008254, Bank SOYUZ, 1
+00008283, SecureData MSSP Account, 1
+00008286, Orica, 1
+00008298, CapitaLand, 1
+00008309, Tenaris, 1
+00008314, BW Maritime, 1
+00008319, Liquid Telecom (fka Neotel), 1
+00008321, Dubai Municipality, 1
+00008324, Leonardo (Aermacchi), 1
+00008344, Exxaro Resources Limited, 1
+00008358, MTS Bank, 1
+00008364, Orange - ES, 1
+00008367, Etihad Etisalat Company (Mobily), 1
+00008369, Federal Tax Service of Russia, 1
+00008392, Reliance Industries, 1
+1582, BT plc, 0
+2127, State Bank of India, 4
+2163, SNAM Rete Gas, 0
+2164, SNAM Rete Gas, 0
+2218, Turkish Central Procurement Authority (KIK), 0
+2230, Wipro - CA, 0
+2242, Depository Trust & Clearing Corporation (DTCC), 0
+2292, RBS Financial Markets, 0
+2308, VF Corporation, 0
+2318, Sony Mobile Communications, 0
+2352, Capital One Bank, 0
+2363, Najran University, 0
+2374, Intercontinental Hotels Group (IHG), 0
+2376, SNAM Rete Gas, 0
+2380, Barclays, 0
+2404, Bakwena Toll Concession, 0
+2410, Takeda Pharmaceutical, 4
+2414, Costa Crociere, 0
+2421, Lloyds Banking Group, 0
+2426, Nestlé, 0
+2428, Intercontinental Hotels Group (IHG), 0
+2456, Skyguide, 0
+2461, Intercontinental Hotels Group (IHG), 0
+2466, CGI Group Inc (Logica CMG) - UK, 0
+2467, Silicon Valley Bank, 0
+2469, Silicon Valley Bank, 0
+2498, Credit Suisse, 0
+2523, Credit Suisse, 0
+2527, Credit Suisse, 0
+2535, P&T Luxembourg, 0
+2535, Post Luxembourg, 0
+2596, HCL Technologies (Partner), 0
+2611, INSA, 0
+2613, Capita Plc - HQ, 0
+2655, SIA SSB, 0
+2666, Eurasian Bank, 0
+2683, RackSpace, 1
+2705, Sasol, 2
+2736, Federal Reserve Bank - FRIT, 2
+2796, MSCI, 4
+2806, Abu Dhabi Company for onshore oil operations (ADCO), 2
+2812, Procter & Gamble, 0
+2815, La Francaise des Jeux, 2
+2820, Skyguide, 0
+2825, Royal Bank of Scotland, 1
+2830, Wayne County, 2
+2832, China Finanical Futures Exchange (CFFEX), 3
+2833, SNAM Rete Gas, 1
+2864, National Grid UK, 3
+2868, ADP LLC, 2
+2879, Carrefour - ES, 4
+2904, ING Group - BE, 4
+2929, National Grid UK, 0
+2941, Mubadala, 2
+2959, HCL Technologies - IN, 0
+2970, Vanguard Group - HQ, 0
+2986, Elavon Merchant Services, 2
+3001, CACEIS Bank Luxembourg SA, 2
+3004, Universität Bern, 2
+3009, Wal-Mart Stores Inc, 0
+3035, Bank of Singapore (BOS), 0
+3038, ICBPI, 0
+3038, Nexi, 2
+3070, P&T Luxembourg, 0
+3070, Post Luxembourg, 0
+3071, Intercontinental Hotels Group (IHG), 0
+3073, Intercontinental Hotels Group (IHG), 0
+3083, Trenchant Limited, 0
+3089, National Grid UK, 1
+3099, Lloyds Banking Group, 0
+3102, DIRCO (Dept. of International Relations and Cooperation), 4
+3107, Infosys BPO Ltd, 2
+3117, Ministerio de Defensa, 0
+3119, Ministerio de Defensa, 0
+3120, Otkritie FC Bank, 0
+3122, CIT Group Inc (CIT), 0
+3124, WGL Holdings, Inc., 4
+3133, SITA South Africa (State Information Technology Agency), 3
+3140, National Grid UK, 0
+3151, Direct Line Insurance Group, 3
+3186, Seqirus US, 4
+3193, Wellmark, 0
+3209, Securities and Exchange Commission, 0
+3223, National Student Clearinghouse, 0
+3227, ITC, 3
+3228, WorldPay, 0
+3231, General Electric (GE) - HQ, 0
+3232, MINDBODY, 0
+3243, Lloyds Banking Group, 1
+3248, BT plc, 0
+3255, DCNS, 1
+3269, Arqiva, 1
+3276, RBS Services (Switzerland) Ltd, 0
+3290, Constant Contact Inc, 0
+3292, Banco Sabadell, 3
+3294, Amdocs, 0
+3296, Banco de Crédito Social Cooperativo, S.A., 3
+3300, Barclays, 1
+3319, Bell Canada Enterprises (BCE), 0
+3320, SNAM Rete Gas, 1
+3328, Lottomatica SPA, 0
+3348, Orpic (Oman Oil refineries and petroleum industries), 0
+3358, TCF National Bank, 0
+3363, Arqiva, 2
+3370, BlueCross BlueShield of Vermont, 0
+3378, IberiaBank, 0
+3380, MBDA - UK, 0
+3382, Apollo Global Management, 0
+3384, SNAM Rete Gas, 1
+3386, Michelin SCA, 0
+3387, CGI Group Inc - HQ, 0
+3388, California Independent System Operator - CAISO, 0
+3390, Dah Sing Bank Limited, 0
+3392, TD Bank Financial Group, 0
+3397, Depository Trust & Clearing Corporation (DTCC), 0
+3398, Delta Dental of California, 0
+3402, Vanguard Group - HQ, 0
+3404, Universal Music Group, 0
+3406, SecureData MSSP Account, 0
+3409, SATA GmbH & Co. KG, 0
+3414, Texas HHSC, 0
+3416, JP Morgan Chase - HQ, 0
+3419, Cadence Design Systems, 0
+3420, Department of Energy, 0
+3423, Bank of Ireland, 4
+3425, IFDS, 0
+3426, IFDS, 0
+3427, Wellmark, 0
+3429, Wellmark, 0
+3430, Aduno SA, 0
+3430, Viseca Card Services SA (former Aduno SA), 0
+3432, Aduno SA, 0
+3433, Ross Stores, 0
+3435, Bakwena Toll Concession, 0
+3438, Arup Group Limited, 0
+3441, Johnson & Johnson, 0
+3442, Hong Leong Group, 0
+3444, RBS Financial Markets, 0
+3449, Neiman Marcus, 0
+3450, USDA/NASS, 0
+3452, Apollo Global Management, 0
+3453, Department of Defense (DOD), 0
+3455, Lloyds of London, 0
+3457, Panda Restaurant Group, 0
+3462, ABB Ltd, 0
+3463, VocaLink, 0
+3466, CGI Federal, 0
+3468, Securities Exchange Commission (OIC-Network Assurance), 0
+3470, Grow Financial Federal CU, 0
+3472, Ministerio de Defensa, 0
+3474, AFLAC, 0
+3477, Harland Clarke, 2
+3478, Cariparma, 0
+3480, Defense Threat Reduction Agency, 0
+3482, Neiman Marcus, 0
+3483, ICICI Bank, 0
+3484, SIA SSB, 0
+3486, Agos-Ducato, 0
+3487, First American Bank, 0
+3489, Reliance JIO, 0
+3493, Berge, 0
+3494, CIT Group Inc (CIT), 0
+3495, Edison S.p.A., 0
+3497, Bank Pertanian Malaysia Berhad (Agrobank), 0
+3498, Western Provident Association (WPA), 0
+3499, Visa Europe, 0
+3501, 24/7 Customer, 4
+3503, Hudson's Bay Company, 0
+3505, S C Johnson - IN, 0
+3507, Orange Cyberdefense Belgium, 0
+3508, Pago Facil Argentina, 0
+3509, ServiceNow, 0
+3511, Santander Rio, 0
+3517, MBDA - UK, 0
+3518, Abu Dhabi Media Company, 0
+3519, Direct Line Insurance Group, 0
+3521, Old Mutual Wealth, 0
+3527, RBS Services (Switzerland) Ltd, 0
+3528, Tsesnabank, 0
+3531, Apollo Global Management, 0
+3532, University of Pittsburgh, 0
+3533, Worldpay US, 0
+3535, Gemalto, 0
+3535, Gemalto - HQ, 0
+3537, Coral Racing, 0
+3540, Amadeus Deutschland GmbH, 0
+3544, Western Provident Association (WPA), 0
+3548, Canal de Isabel II Gestión, 0
+3550, Andeavor, 0
+3553, FAA, 0
+3555, Barclays, 1
+3556, Barclays, 0
+3558, General Electric (GE) - HQ, 0
+3559, Callcredit, 0
+3561, Grow Financial Federal CU, 0
+3562, OCLC, 0
+3564, Costa Crociere, 0
+3566, SNAM Rete Gas, 0
+3567, Payback GmbH, 0
+3569, Dairy Farm Singapore, 0
+3572, The Coca-Cola Company, Bottling Investments Group, 0
+3573, The Coca-Cola Company, Bottling Investments Group, 0
+3577, Lloyds of London, 0
+3579, DCNS, 2
+3579, Naval Group (ex-DCNS), 1
+3581, BankServ Africa, 0
+3583, Abu Dhabi Islamic Bank, 3
+3584, The Goldman Sachs Group, 0
+3585, Giffgaff, 0
+3588, Ministry of environment and urbanisation, 0
+3589, Kcell, 0
+3591, Federal Reserve Bank of Boston, 0
+3592, BAE Systems - Applied Intelligence (Detica) - US, 0
+3593, Abu Dhabi Islamic Bank, 0
+3594, Serco Group Plc, 0
+3596, NXP, 0
+3598, ADIB Egypt, 0
+3599, ADIB Egypt, 0
+3602, BAE Systems - Applied Intelligence (Detica) - US, 0
+3603, Target Group Ltd, 0
+3604, Jabil Circuit, 0
+3605, Rolls-Royce, 0
+3606, Piraeus Bank, 0
+3608, Barclays, 0
+3609, Barclays, 0
+3612, Ministerio de Defensa, 0
+3613, Intercontinental Hotels Group (IHG), 0
+3617, Natixis, 0
+3621, ConvergEx Group, 0
+3622, Blue Cross Blue Shield of Michigan, 0
+3623, Unicredit Tiriac Bank - Romania, 0
+3625, Santa Lucía, S.A. Compañía de Seguros y Reaseguros, 0
+3629, Wing Hang Bank, 0
+3631, Health Integrity, 0
+3633, Buongiorno, 0
+3635, U.S. Army Information Technology Agency (ITA-JSP) Pentagon, 0
+3638, Meridian Health System, 0
+3639, eHealth Insurance, 0
+3640, Haltik, 0
+3641, Nationwide Building Society, 0
+3642, European External Action Service, 0
+3643, STM-Defense Technology Divisions of Turkish Government, 4
+3645, Banco BPM, 0
+3646, Shire Pharmaceuticals, LLC., 0
+3648, Slovakian National Security Authority (NBU), 4
+3649, Convergys, 0
+3652, Wing Hang Bank, 0
+3653, Mylan, 0
+3654, Vodafone - IN, 0
+3656, Henry Schein, 0
+3657, Tenaga Nasional Berhad, 0
+3659, Excellus, 0
+3660, Paddy Power Betfair, 0
+3661, Paddy Power, 0
+3662, PepsiCo, 0
+3663, ECCOM Network System Co. LTD, 0
+3665, Veolia Environnement - PL, 0
+3666, BW Maritime, 0
+3667, Primark, 0
+3668, SEC SERVIZI, 0
+3669, CERT Romania, 0
+3671, Babcock International, 0
+3673, BNSF Railway, 0
+3675, Andeavor, 0
+3677, 7-Eleven, 0
+3679, 7-Eleven, 0
+3680, B&N Bank, 0
+3682, Haltik, 0
+3684, Universiti Teknologi Mara, 0
+3685, AMX Argentina (Claro), 0
+3686, Leonardo-Finmeccanica, 0
+3688, EBRC, 0
+3689, Otkritie FC Bank, 0
+3690, Bank Otkritie Financial Corporation, 0
+3690, Otkritie FC Bank, 0
+3691, Verisk Analytics, 0
+3694, Verisure, 0
+3695, Rheinmetall AG, 0
+3696, Lottomatica SPA, 0
+3697, GEODIS, 0
+3699, SIA SSB, 0
+3701, Iren SpA, 0
+3703, Leroy Merlin SA - IT, 0
+3705, UniCredit Bank - IT, 0
+3707, TABUNG HAJI, 0
+3710, Yesser MCIT, 1
+3712, Ansaldo STS, 0
+3714, Sharjah Islamic Bank, 0
+3715, Delhaize Group, 0
+3716, SFR, 0
+3717, Colt Telecom, 0
+3718, OMV Petrom, 0
+3719, Banca Intesa - Russia, 0
+3720, Finanz Informatik GmbH & Co. KG Hannover, 0
+3721, Jive Software, 0
+3722, Repsol, 0
+3724, Metropolitan Transportation Authority (MTA), 4
+3726, Delphi, 1
+3727, Finanz Informatik Technology Service GmbH & Co. KG, 0
+3729, YPF, 0
+3731, Cognizant Technology Solutions - IN, 0
+3733, Cognizant Technology Solutions - IN, 0
+3734, Jumeirah Group, 0
+3735, Banco BPM, 0
+3737, Bank Rakyat - HQ, 0
+3738, Woodside Energy, 0
+3740, B&H Photo & Electronics Corp, 0
+3742, Fortinet Corporation, 0
+3744, Cariparma, 0
+3745, SOGEI, 0
+3748, AEAT - Agencia Tributaria, 0
+3749, CFS, 0
+3750, CFS, 0
+3752, Citigroup Inc (Citi), 0
+3754, Citigroup Inc (Citi), 0
+3756, Citigroup Inc (Citi), 0
+3758, Cirsa, 0
+3760, WorldPay, 0
+3761, WorldPay, 0
+3763, WorldPay, 0
+3765, A1 Telekom Austria AG, 0
+3766, A1 Telekom Austria AG, 0
+3767, American Airlines, 0
+3768, The Co-operative Insurance, 0
+3769, Grupo BBVA, 0
+3771, Universal Music Group, 0
+3774, Sony Europe, 0
+3775, Bridgestone Americas, 0
+3776, J.P. Morgan Suisse SA, 0
+3778, WorleyParsons Limited, 0
+3779, National Student Clearinghouse, 0
+3783, Secure-24, 0
+3785, Aspire (Acquiring Strategic Partners for the Inland Revenue), 0
+3785, HMRC, 0
+3786, Bank of Singapore (BOS), 0
+3791, Cisco Systems InfoSec, 0
+3794, John Lewis Partnership, 0
+3801, Secure-24, 0
+3802, Gemalto, 0
+3802, Gemalto - HQ, 0
+3805, GSE Gestore dei Servizi Energetici, 4
+3808, Tesco Bank, 0
+3810, Saxo Bank A/S, 0
+3811, SELEX ES, 0
+3814, Overseas Chinese Banking Corporation (OCBC), 0
+3815, Overseas Chinese Banking Corporation (OCBC), 0
+3817, Carige Assicurazioni, 0
+3819, Leonardo (Aermacchi), 0
+3820, National Bank of Greece, 0
+3822, Capita Customer Management (Ventura), 0
+3826, America First Credit Union, 1
+3827, Guardia Civil, 0
+3829, Verisure, 0
+3831, Ageas Insurance Limited, 0
+3833, Colt Telecom, 0
+3834, Capita Registrars, 1
+3837, Concur, 0
+3839, U.S. Army Information Technology Agency (ITA-JSP) Pentagon, 0
+3841, AAA Life Insurance, 0
+3846, Sheetz, Inc., 0
+3849, Merchant eSolutions, 0
+3850, Standard Chartered - IN, 0
+3853, Everything Everywhere, 1
+3855, 7-Eleven, 0
+3856, Tesco PLC, 1
+3859, Changi General Hospital, 3
+3863, Berkshire Bank, 3
+3865, Mubadala, 2
+3866, Visa Europe, 0
+3867, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 0
+3868, Infosec Corporation, 0
+3872, Barclays, 0
+3873, Barclays, 0
+3875, Finanz Informatik Technology Service GmbH & Co. KG, 0
+3876, Haltik, 0
+3877, PepsiCo, 1
+3878, Univar Inc., 0
+3879, Bank Of China Hong Kong (BOCHK) - HK, 0
+3881, Slovenska sporitelna, a.s., 0
+3882, Abu Dhabi Islamic Bank, 0
+3886, Barclays, 0
+3887, Barclays, 0
+3888, Morrisons, 0
+3889, General Electric (GE) - HQ, 0
+3891, CGI Group Inc - HQ, 0
+3891, CGI Information Systems and Management Consultants Inc., 1
+3893, Boehringer Ingelheim GmbH, 3
+3893, Boehringer Ingelheim Pharma GmbH & Co. KG, 1
+3894, Solutionary, 0
+3895, Andeavor, 0
+3897, Defence Science & Technology Agency (DSTA), 0
+3898, The Co-operative Group, 0
+3899, Tennessee Valley Authority, 1
+3901, CGI Group Inc (Logica CMG) - UK, 4
+3905, Apollo Global Management, 0
+3907, Citigroup Inc (Citi), 3
+3908, RAK Bank, 0
+3911, MTS Bank, 0
+3913, Sony Interactive Entertainment, 0
+3914, Aditya Birla Group, 0
+3915, Arcos Dorados Holdings (McDonalds), 0
+3916, MultiCarta - Russia, 0
+3918, Netmagic Solutions Pvt Ltd, 0
+3921, Axis Bank, 4
+3922, Ministry of Defense, 3
+3923, Burberry Group, 0
+3924, Alliance Bernstein, 0
+3925, ServiceNow, 0
+3925, ServiceNow (Customer Cloud), 0
+3927, Financial Conduct Authority, 1
+3928, Bupa, 0
+3930, Carhartt, 1
+3931, Generali Italy, 0
+3932, Produban (old Alliance & Leicester estate), 0
+3933, Thomson Reuters - UK, 0
+3935, Debenhams Plc, 4
+3936, Estee Lauder, 0
+3937, The TriZetto Group Inc (Cognizant Healthcare), 0
+3939, Delphi, 0
+3940, CESA - Compañía Española de Sistemas Aeronáuticos S.A., 0
+3941, USAID, 0
+3943, P&T Luxembourg, 0
+3943, Post Luxembourg, 1
+3944, Liquid Telecom (fka Neotel), 0
+3945, Arup Group Limited, 0
+3947, Bank Jugra, 1
+3948, Fujitsu Singapore, 0
+3949, Anglo American plc - IN, 0
+3950, Maxis, 0
+3951, Bank Of China Hong Kong (BOCHK) - HK, 0
+3952, Cathay Pacific Airways, 0
+3953, Deloitte Global Services Limited ES, 0
+3956, Wal-Mart Stores Inc, 1
+3958, Vanguard Group - HQ, 0
+3960, Delta Dental of California, 1
+3961, WorldPay, 0
+3963, AAA Northern California, Nevada and Utah (AAA NCNU), 1
+3965, Meridian Health System, 1
+3966, Dongbu Insurance, 0
+3968, Texas HHSC, 1
+3970, Direccion General Policia, 1
+3972, Sony Europe, 0
+3973, Lloyds of London, 2
+3977, Dr. Reddy's Laboratories Ltd., 1
+3979, Synchrony Financial, 4
+3980, Synchrony Financial, 0
+3981, Board of Public Utilities, 1
+3983, UPS-IL, 1
+3984, General Mills, 1
+3986, Colt Telecom, 1
+3987, Orange - HQ, 0
+3988, HealthPlan Services, 1
+3989, Northrop Grumman, 0
+3990, Croatian Ministry of Defense, 1
+3992, ICON Clinical, 1
+3994, John Lewis Partnership, 1
+3997, Zhilstroysberbank (HCSBK), 1
+3999, Barclays, 0
+4000, Barclays, 0
+4002, Barclays, 0
+4003, Barclays, 0
+4004, DNB, 1
+4008, Atos - HQ (Partner), 0
+4012, AFLAC, 1
+4014, Charles River Labs, 3
+4017, Oncor, 0
+4018, Endesa, 0
+4020, Barclays, 0
+4021, Barclays, 0
+4023, LINA Life Insurance Co, 1
+4025, PT Bank DBS Indonesia, 1
+4026, Alberta Electric System Operator (AESO), 1
+4028, Lombard Odier, 1
+4029, Tatra Banka a.s., 0
+4030, Israel Defense Forces (IDF), 1
+4032, TABUNG HAJI, 1
+4034, Jabatan Pendaftaran Negara, 1
+4036, Israel Defense Forces (IDF), 0
+4038, Project Spider, 1
+4040, Atomic Weapons Establishment (AWE), 4
+4044, Colt Telecom, 0
+4046, The Siam Commercial Bank Public Company, 1
+4048, Department of Health and Human Services - National Institutes of Health, 0
+4050, Standard Chartered - IN, 1
+4052, Securities and Exchange Commission, 2
+4053, Securities and Exchange Commission, 0
+4055, Barclays, 0
+4056, Barclays, 0
+4057, Bank of America Corp, 1
+4059, SITA Quebec, 1
+4061, Barclays, 0
+4062, Barclays, 1
+4063, Bank of Greece, 1
+4065, Woolworths Limited, 1
+4067, Orange - HQ, 1
+4068, National Mortgage Insurance, 1
+4070, NXP, 0
+4074, Department of Health and Human Services - National Institutes of Health, 2
+4075, Dairy Farm Singapore, 2
+4076, Ministry of Foreign Affairs (MOFA) Qatar, 2
+4078, Ross Stores, 1
+4082, US Marine Corps, 2
+4083, Diligent Board Member Services, 1
+4084, TD Ameritrade, 1
+4085, GE Aviation - UK, 1
+4087, Financial Conduct Authority, 0
+4088, Telefonica - AR, 0
+4090, BankServ Africa, 0
+4092, Ministerio de Agricultura y Pesca, Alimentación y Medio Ambiente (MAPAMA), 4
+4093, United Card Services (UCS), 1
+4095, Barclays, 0
+4096, Barclays, 0
+4098, Amdocs, 2
+4099, Amdocs, 0
+4100, Wipro - IN, 0
+4101, Orange Cyberdefense Belgium, 0
+4103, Johnson & Johnson, 1
+4104, Volvo Group, 0
+4105, Endesa, 0
+4106, First Bank Nigeria, 1
+4108, Telkom South Africa, 2
+4109, ING Group HQ - NL, 0
+4111, Hargreaves Lansdown, 2
+4113, Barclays, 0
+4114, Barclays, 0
+4116, Inmarsat, 2
+4118, comdirect bank AG, 2
+4120, 7-Eleven, 2
+4121, Constant Contact Inc, 2
+4123, Fortinet Corporation, 0
+4124, CSE Consorzio Servizi Bancari, 1
+4126, Andeavor, 1
+4127, Mediobanca, 1
+4128, HSBC Bank Plc - TR, 0
+4129, HSBC, 0
+4130, The Saudi British Bank, 0
+4132, Etihad Etisalat Company (Mobily), 1
+4132, Mobily, 0
+4133, European Central Bank (ECB), 2
+4135, ABSA Bank Limited, 1
+4137, MINDBODY, 2
+4138, MINDBODY, 0
+4141, Telcel, 0
+4142, Metropolitan Transportation Authority (MTA), 0
+4144, Fascet LLC, 4
+4145, Apollo Global Management, 2
+4147, Wellmark, 2
+4148, Royal Bank of Scotland, 1
+4149, Royal Bank of Scotland, 0
+4150, Target Group Ltd, 2
+4151, TCF National Bank, 2
+4152, IberiaBank, 2
+4153, SATA GmbH & Co. KG, 2
+4154, Johnson & Johnson, 1
+4156, GITN Sdn Bhd, 2
+4157, Universal Music Group, 0
+4158, Cadence Design Systems, 2
+4162, Integrated Health Information Systems (IHIS), 4
+4163, SkyTV Italy, 0
+4168, PWC South Africa, 0
+4170, National Bank of Belgium, 2
+4171, Ross Stores, 0
+4173, PHOENIX INFORMATICA BANCARIA, 2
+4174, Federalnaya Nalogovaya Sluzhba (FNS) (Federal Tax Service of Russia), 0
+4176, British American Tobacco, 0
+4177, BDO Unibank Inc, 0
+4179, Banque de Luxembourg, 2
+4179, Banque du Luxembourg, 0
+4180, Khoo Teck Puat Hospital (KTPH), 2
+4181, Defense Threat Reduction Agency, 2
+4182, Becton, Dickinson and Company, 0
+4183, Orpic (Oman Oil refineries and petroleum industries), 2
+4184, Grow Financial Federal CU, 2
+4185, AFLAC, 1
+4192, Clal Insurance, 1
+4195, comdirect bank AG, 0
+4196, Neiman Marcus, 2
+4197, YPF, 0
+4198, Neiman Marcus, 0
+4199, Viacom, 0
+4200, Citigroup Inc (Citi), 0
+4201, Citigroup Inc (Citi), 0
+4204, Trenchant Limited, 3
+4207, Uni Systems, 0
+4209, Viacom, 2
+4211, Hong Leong Group, 2
+4217, National Bank for Agriculture and Rural Development (NABARD Bank), 0
+4220, Standard Chartered - IN, 0
+4221, Delta Dental of California, 1
+4222, Vanguard Group - HQ, 2
+4223, Meridian Health System, 0
+4224, US Marine Corps, 0
+4226, MOJ -IL IMPA, 2
+4228, KPMG, 4
+4230, Cariparma, 2
+4231, RBS Financial Markets, 2
+4232, British American Tobacco, 0
+4234, Kwangju Bank, 2
+4235, Viacom, 0
+4236, Deloitte Global Services Limited ES, 2
+4238, Social Security Administration, 2
+4240, Vanguard Group - HQ, 0
+4242, Kwangju Bank, 0
+4244, Toyota Motor North America, 3
+4245, Wing Hang Bank, 2
+4248, SecureData MSSP Account, 0
+4249, SecureData MSSP Account, 0
+4251, Lloyds Banking Group, 1
+4253, Standard Chartered - IN, 0
+4255, Callcredit, 2
+4257, CBOE V, LLC, 1
+4259, National Card Payment System Joint Stock Company, 2
+4259, National System of Payment Cards Joint-Stock Company, 0
+4259, Natsionalnaya Sistema Platezhnykh Kart (NSPK), 0
+4266, Santander Rio, 0
+4268, Provincial Electricity Authority, 4
+4270, Boston Private Bank and Trust, 4
+4272, Cavium, 1
+4274, Electricite de France - HQ, 2
+4276, BNSF Railway, 2
+4277, S C Johnson - IN, 0
+4278, California Independent System Operator - CAISO, 1
+4280, Financial Conduct Authority, 1
+4281, USDA/NASS, 2
+4282, Panda Restaurant Group, 2
+4284, Lina Financial Services, 2
+4285, Payback GmbH, 2
+4287, HSBC, 3
+4288, HSBC, 0
+4289, HSBC, 0
+4291, VocaLink, 3
+4292, Hudson's Bay Company, 2
+4294, CIT Group Inc (CIT), 2
+4295, CIT Group Inc (CIT), 0
+4296, Paddy Power, 2
+4297, Paddy Power Betfair, 2
+4299, Lloyds Banking Group, 0
+4301, Lloyds Banking Group, 0
+4302, Orange Cyberdefense Belgium, 0
+4304, Amadeus Deutschland GmbH, 2
+4305, Amadeus Deutschland GmbH, 0
+4306, Sony Europe, 0
+4308, The Post Office (UK), 4
+4310, Rolls-Royce, 2
+4312, EVN Power, 2
+4313, ADIB Egypt, 2
+4314, Samba Bank, 0
+4314, Samba Financial Group, 4
+4315, Excellus, 2
+4317, Excellus, 0
+4318, Pago Facil Argentina, 4
+4319, eHealth Insurance, 2
+4320, ICICI Bank, 0
+4320, U.S. Army Information Technology Agency (ITA-JSP) Pentagon, 2
+4322, Panda Restaurant Group, 0
+4323, Bakwena Toll Concession, 2
+4324, Reliance JIO, 2
+4326, EXL Services, 3
+4327, Edison S.p.A., 2
+4329, Telefonica International Whole Sales, 2
+4330, SNAM Rete Gas, 0
+4332, SNAM Rete Gas, 0
+4334, Agbar, 1
+4336, Orange - ES, 2
+4338, Reliance Industries, 2
+4340, Constant Contact Inc, 0
+4342, 7-Eleven, 0
+4343, Tsesnabank, 0
+4346, Bristol-Myers Squibb Company, 4
+4350, CBOE V, LLC, 0
+4351, Old Mutual Wealth, 1
+4352, Texas HHSC, 0
+4353, First American Bank, 2
+4354, Dimension Data India Private Ltd, 0
+4355, Booking.com, 0
+4357, University of Pittsburgh, 2
+4359, Barclays, 0
+4361, Communications Security Establishment, 2
+4363, Ministry of Defense, 0
+4367, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), 2
+4368, American Airlines, 2
+4369, Liberbank, 0
+4370, Babcock International, 2
+4371, Agos-Ducato, 0
+4373, Delek US Holdings, Inc., 2
+4375, The Co-operative Group, 0
+4376, The Co-operative Insurance, 2
+4379, Blue Cross Blue Shield of Michigan, 2
+4380, Blue Cross Blue Shield of Michigan, 0
+4381, Leonardo (Aermacchi), 0
+4382, British American Tobacco, 0
+4383, Piraeus Bank, 2
+4385, Kansas City Southern, 4
+4387, KLX, 2
+4388, BAE Systems - Applied Intelligence (Detica) - US, 0
+4389, Saxo Bank A/S, 2
+4394, CACEIS Bank Luxembourg SA, 1
+4395, Worldpay US, 2
+4397, Andeavor, 0
+4398, Jumeirah Group, 2
+4399, Dubai Municipality, 0
+4402, Standard Chartered - IN, 1
+4403, Mitsubishi Corporation, 0
+4405, Babcock International, 0
+4406, Kcell, 2
+4408, National Bank of Greece, 2
+4409, National Bank of Greece, 0
+4412, Pacific Gas and Electric Company, 2
+4413, ITCsecure, 0
+4414, Berge, 0
+4416, Inmarsat, 0
+4417, Department of Health and Human Services - National Institutes of Health, 0
+4418, Meuhedet health care, 0
+4420, Standard Chartered - IN, 0
+4422, Standard Chartered - IN, 0
+4423, Telecom Italia, 0
+4425, Standard Chartered - IN, 0
+4428, Haltik, 2
+4429, Callcredit, 0
+4430, Credit Suisse, 2
+4432, SecureData MSSP Account, 0
+4434, Barclays, 0
+4435, NXP, 0
+4438, Fortinet Corporation, 1
+4440, Fortinet Corporation, 0
+4442, Pacific Gas and Electric Company, 0
+4443, Dah Sing Bank Limited, 0
+4446, Orange - HQ, 0
+4447, Mylan, 2
+4448, Intercontinental Hotels Group (IHG), 0
+4449, BankServ Africa, 2
+4450, Haltik, 0
+4451, SELEX ES, 2
+4453, Intercontinental Hotels Group (IHG), 2
+4454, BBVA Peru, 0
+4455, Federal Reserve Bank of Boston, 2
+4456, OCLC, 2
+4457, Natixis, 1
+4458, Natixis, 1
+4460, ServiceNow (Customer Cloud), 0
+4462, Bank of America Corp, 0
+4468, Incomm, 3
+4473, Vanguard Group - HQ, 0
+4477, Segezha Group, 3
+4479, Unison Capital, 3
+4483, Veolia Environnement - PL, 3
+4485, Banco BPM, 1
+4486, Health Integrity, 2
+4486, Qlarant Integrity Solutions, 1
+4489, Standard Chartered - IN, 0
+4496, STC, 2
+4498, Phoenix Contact GmbH & Co. KG, 2
+4500, Magyar Telekom, 4
+4503, Banca Farmafactoring, 4
+4505, Indonesia National Police, 3
+4506, B&N Bank, 2
+4508, Skyguide, 2
+4509, Veolia Environnement - PL, 0
+4510, Rolls-Royce, 0
+4511, Ministry of environment and urbanisation, 2
+4512, Bridgestone Americas, 2
+4513, Nationwide Building Society, 3
+4514, PHOENIX INFORMATICA BANCARIA, 2
+4515, Delhaize Group, 2
+4517, Defence Science & Technology Agency (DSTA), 2
+4518, Buongiorno, 2
+4520, Northern Powergrid, 2
+4520, Northern Power Grid, 2
+4522, California Independent System Operator - CAISO, 1
+4523, Viseca Card Services SA (former Aduno SA), 2
+4524, Leonardo-Finmeccanica, 1
+4525, ABB Information Systems Ltd., 2
+4526, Repsol, 2
+4528, AAA Life Insurance, 3
+4529, AAA Life Insurance, 1
+4533, The Goldman Sachs Group, 2
+4534, European External Action Service, 2
+4536, MTN SA, 1
+4537, Procter & Gamble, 2
+4539, Carleton University, 2
+4541, Secure-24, 3
+4545, Slovenska sporitelna, a.s., 2
+4547, Electricite de France - HQ, 1
+4551, CGI Group Inc (Logica CMG) - UK, 0
+4553, Nasdaq OMX Group, 0
+4557, Blackbaud Inc, 4
+4558, B&H Photo & Electronics Corp, 3
+4561, Consorzio Operativo Gruppo Montepaschi, 2
+4563, Verisk Analytics, 2
+4564, Prime Minister's Office - IL, 1
+4564, Prime Minister's Office KD - IL, 1
+4565, AMX Argentina (Claro), 2
+4566, Bank of Singapore (BOS), 2
+4567, SEC SERVIZI, 2
+4570, European Space Agency (ESA), 2
+4571, Finanz Informatik GmbH & Co. KG, 2
+4571, Finanz Informatik GmbH & Co. KG Hannover, 0
+4575, Tesco PLC, 2
+4577, YPF, 2
+4578, Iren SpA, 4
+4579, Shire (Tekeda) Pharmaceuticals, LLC., 1
+4579, Shire Pharmaceuticals, LLC., 3
+4581, Slovenia Air traffic Control, 2
+4583, Uludag Electricity Distribution Corporation ( UEDA?) ., 4
+4586, Overseas Chinese Banking Corporation (OCBC), 2
+4589, Cognizant Technology Solutions - IN, 2
+4591, Banco BPM, 2
+4595, Telefonica - UY, 2
+4597, Federalnaya Nalogovaya Sluzhba (FNS) (Federal Tax Service of Russia), 2
+4597, Federal Tax Service of Russia, 1
+4599, Verisure, 2
+4601, Cirsa, 2
+4603, Aeronautica Militare Italiana - Re.S.I.A., 2
+4604, Guardia Civil, 2
+4605, Leroy Merlin SA - IT, 2
+4607, William Hill plc, 1
+4610, ADAMA Agricultural Solutions (Agan), 2
+4612, Maxis, 2
+4614, Maxis, 1
+4616, Arcos Dorados Holdings (McDonalds), 2
+4617, GEODIS, 2
+4620, OMV Petrom, 2
+4622, Tatra Banka a.s., 2
+4626, DHMI (General Directorate Of State Airports Authority, 2
+4629, Giffgaff, 2
+4631, ECOFIS GmbH, 2
+4633, Ministerio de Defensa, 2
+4636, CFS, 2
+4638, Henry Schein, 2
+4640, Capital One Bank - HQ, 2
+4642, CSG - Omaha, 4
+4643, Universal Music Group, 3
+4644, Finanz Informatik Technology Service GmbH & Co. KG, 2
+4645, WorldPay, 2
+4646, Capita Customer Management (Ventura), 2
+4648, PepsiCo, 0
+4649, SIA SSB, 2
+4650, SFR, 2
+4651, Costa Crociere, 4
+4653, ?stanbul Yeni Havaliman? ?n?aat?, ?GA Airport, 4
+4663, Skybox_IL, 0
+4668, ABSA Bank Limited, 0
+4669, Toyota Motor North America, 1
+4670, Injazat Data Systems, 3
+4672, Federal Deposit Insurance Corporation (FDIC), 3
+4673, Iveco CNH Industrial, 3
+4674, CBOE V, LLC, 2
+4677, The Hartford, 1
+4678, FSDH MERCHANT BANK, 3
+4681, CGI Information Systems and Management Consultants Inc., 3
+4682, Santa Lucía, S.A. Compañía de Seguros y Reaseguros, 3
+4683, Mizuho Bank (USA) - NY, 3
+4687, Sony Interactive Entertainment, 2
+4688, Gemalto - HQ, 3
+4689, General Mills, 2
+4690, Legal & General (Europe), 3
+4691, BankservAfrica, 1
+4692, AllianceBernstein, 1
+4692, Alliance Bernstein, 2
+4694, Prosodie, 3
+4698, Carhartt, 2
+4700, Northrop Grumman, 3
+4701, AAA Northern California, Nevada and Utah (AAA NCNU), 2
+4702, PepsiCo, 1
+4703, Slovenska sporitelna, a.s., 1
+4704, USAID, 3
+4706, Capita Plc - HQ, 3
+4707, TCF National Bank, 1
+4708, Arcos Dorados Holdings (McDonalds), 1
+4709, America First Credit Union, 2
+4712, Infosec Corporation, 3
+4713, Board of Public Utilities, 2
+4714, Nasdaq OMX Group, 1
+4715, Babcock International, 1
+4719, Vodafone - ES, 1
+4722, Aditya Birla Group, 1
+4723, Aditya Birla Group, 2
+4724, Direccion General Policia, 2
+4725, Orange - HQ, 1
+4728, Guardian Analytics, 3
+4729, Bank BTPN, 3
+4730, Burberry Group, 3
+4731, BT plc, 2
+4732, OneAmerica Financial, 1
+4735, Finanz Informatik Technology Service GmbH & Co. KG, 1
+4745, MTS Bank, 3
+4746, Bank Otkritie Financial Corporation, 1
+4747, Bank Otkritie Financial Corporation, 1
+4748, Financial Conduct Authority, 1
+4751, MTS Retail, 3
+4752, BGFI Banque, 3
+4753, Cedge Technologies :Ltd, 3
+4761, Adaptive Netpoleon Malaysia Sdn. Bhd., 3
+4762, Netpoleon Solutions Pte Ltd (Singapore), 3
+4763, Flughafen Hannover, 3
+4765, Visa Europe, 3
+4766, Harland Clarke, 1
+4768, Universiti Teknologi Mara, 3
+4769, TABUNG HAJI, 2
+4770, Corporation Bank, 3
+4771, Unicredit Tiriac Bank - Romania, 2
+4773, John Lewis Partnership, 2
+4774, Tenaga Nasional Berhad, 3
+4775, Vodafone - IN, 2
+4776, Bank Otkritie Financial Corporation, 2
+4782, Cavium, 1
+4783, The Hartford, 2
+4784, DST, 1
+4784, IFDS, 1
+4792, Ross Stores, 1
+4793, Delphi, 1
+4798, Univar Inc., 1
+4799, Ageas Insurance Limited, 2
+4800, Ageas Insurance Limited, 1
+4801, Texas HHSC, 1
+4803, Generali Italy, 3
+4804, Merchant eSolutions, 2
+4804, Merchant-e Solutions, 1
+4805, Bupa, 3
+4806, HealthPlan Services, 2
+4807, Alberta Electric System Operator (AESO), 2
+4808, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 3
+4813, William Hill plc, 1
+4814, McKesson, 1
+4817, Standard Chartered - IN, 1
+4819, Michelin SCA, 2
+4835, Everything Everywhere, 2
+4836, CESA - Compañía Española de Sistemas Aeronáuticos S.A., 2
+4863, Ansaldo STS, 2
+4864, John Wiley & Sons, Inc., 3
+4873, Emirates Aluminium Global (EGAL), 3
+4874, Liquid Telecom (fka Neotel), 3
+4875, National Student Clearinghouse, 2
+4876, Cellcom Israel Ltd, 3
+4912, MSHS, 3
+4913, Telefonica - AR, 3
+4935, Morrisons, 3
+4937, Noble Group Asia Pacific, 3
+4938, Bank of Greece, 2
+4941, ICON Clinical, 1
+4942, OTC Markets Group, 4
+4943, HCL Technologies (HQ), 2
+4946, BW Maritime, 2
+4947, PWC South Africa, 2
+4949, Convergys, 2
+4950, Dah Sing Bank Limited, 2
+4953, Sony Europe, 2
+4954, ServiceNow (Customer Cloud), 4
+4955, NTT - Solutionary, 3
+4956, ICICI Bank, 2
+4957, Delphi, 1
+4960, Produban (old Alliance & Leicester estate), 3
+4961, RAK Bank, 3
+4963, MultiCarta - Russia, 3
+4964, Santander Rio, 2
+4965, Liberbank, 2
+4966, Atos - HQ (Partner), 1
+4969, Volvo Group, 4
+4970, CESA - Compañía Española de Sistemas Aeronáuticos S.A., 1
+4973, Endesa, 1
+4977, Becton, Dickinson and Company, 2
+4979, Jabil Circuit, 2
+4980, Andeavor, 1
+4980, Marathon, 1
+4982, CLSA Limited, 3
+4983, General Electric (GE) - HQ, 3
+4984, Colt Telecom, 2
+4986, Wal-Mart Stores Inc, 1
+4988, Tsesnabank, 2
+4989, Woodside Energy, 3
+4990, National Bank for Agriculture and Rural Development (NABARD Bank), 4
+4991, ING Group HQ - NL, 4
+4992, Fujitsu Singapore, 4
+5009, GE Aviation - UK, 2
+5011, SOGEI, 1
+5015, Securities Exchange Commission (OIC-Network Assurance), 1
+5016, NN Romania, 3
+5029, Finanz Informatik GmbH & Co. KG, 2
+5047, Abu Dhabi Airports Company (ADAC), 3
+5050, Bank of America Corp, 1
+5051, UPS-IL, 1
+5068, Capita Registrars, 1
+5070, SOGEI, 1
+5077, Lombard Odier, 2
+5079, Daimler AG, 3
+5081, SIA SSB, 1
+5084, Estee Lauder, 3
+5085, Univar Inc., 2
+5086, Dubai Municipality, 2
+5097, Korea Credit Bureau, 3
+5099, Tata Consultancy Services (HQ), 2
+5100, Federal Reserve Bank of Dallas, 3
+5102, Yandex.Money, 3
+5103, Donner & Reuschel AG, 3
+5104, Orona Sociedad Cooperativa, 2
+5106, Zhilstroysberbank (HCSBK), 2
+5116, Fortinet Corporation, 2
+5118, Public Safety Business Agency, 3
+5125, Turksat - Ministry of Health (Sagl?k Bakanl?g?), 1
+5128, Menards, 1
+5131, SNAM Rete Gas, 1
+5138, First Command Financial, 1
+5147, Federación Catalana de Futbol, 2
+5149, Providence Equity, 3
+5161, Johnson & Johnson, 2
+5162, Post Luxembourg, 2
+5163, S C Johnson, 3
+5167, MegaFon, 1
+5169, Bank of Singapore (BOS), 1
+5173, BAE Systems - Applied Intelligence (Detica) - US, 2
+5174, Nasdaq OMX Group, 2
+5175, Leonardo (Aermacchi), 3
+5176, Tesco Bank, 3
+5177, BDO Unibank Inc, 1
+5180, Amdocs, 2
+5183, Clal Insurance, 2
+5184, CSE Consorzio Servizi Bancari, 2
+5186, MBSB Bank Berhad, 1
+5189, Royal Bank of Scotland, 1
+5191, IberiaBank, 2
+5192, UAE Ministry of Justice, 1
+5193, UniCredit Bank - IT, 2
+5195, Agbar, 1
+5195, Agbar (Aguas de Barcelona), 1
+5196, Orange - HQ, 1
+5197, MOJ -IL IMPA, 1
+5201, Telcel, 2
+5202, United Card Services (UCS), 2
+5203, NXP, 2
+5205, Financial Conduct Authority, 1
+5206, Mediobanca, 2
+5207, Anglo American, 3
+5211, MailChimp, 3
+5219, Infosys Technologies, 3
+5226, Constant Contact (Endurance) Inc, 2
+5228, SITA Quebec, 3
+5250, MTN SA, 3
+5251, Reliaquest, 1
+5252, Lloyds Banking Group, 1
+5253, DNB, 2
+5254, Sony Interactive Entertainment, 1
+5260, Department of Health and Human Services - National Institutes of Health, 2
+5261, Netmagic Solutions Pvt Ltd, 3
+5270, Atos - HQ (Partner), 2
+5271, Khoo Teck Puat Hospital (KTPH), 2
+5272, Neiman Marcus, 2
+5273, Saudi Arabian Monetary Authority, 2
+5274, Carnival Corporation, 2
+5274, Holland America Line Inc., 1
+5275, Delta Dental of California, 2
+5276, Apollo Global Management, 2
+5278, Sony Europe, 1
+5279, UPS-IL, 2
+5281, LINA Life Insurance Co, 2
+5282, TD Ameritrade, 2
+5316, BT plc, 2
+5317, Deloitte Global Services Limited ES, 2
+5319, Abu Dhabi Islamic Bank, 1
+5327, ABSA Bank Limited, 3
+5338, Orange - HQ, 1
+5339, comdirect bank AG, 2
+5343, Williams Companies, 3
+5344, Wipro - HQ, 3
+5430, BNSF Railway, 2
+5431, Agbar (Aguas de Barcelona), 1
+5435, Defense Threat Reduction Agency, 2
+5436, Inmarsat, 2
+5437, CBOE V, LLC, 1
+5468, Jabatan Pendaftaran Negara, 2
+5469, National Bank of Belgium, 2
+5470, AFLAC, 2
+5471, Rosbank, 3
+5472, Michelin SCA, 1
+5473, Michelin SCA, 1
+5474, CIT Group Inc (CIT), 2
+5485, Texas HHSC, 2
+5486, The Siam Commercial Bank Public Company, 2
+5487, EBRC, 2
+5534, TCF National Bank, 1
+5535, Mercedes-Benz Bank AG, 3
+5541, Repubic of Serbia National Employment Service, 1
+5541, Republic of Serbia National Employment Service, 2
+5542, Becton, Dickinson and Company, 2
+5548, EDF ENERGIES NOUVELLES, 3
+5549, SATA GmbH & Co. KG, 2
+5550, EXL Services, 1
+5551, Bank Muamalat Malaysia Berhad, 3
+5557, NEC, 2
+5558, Wellmark, 2
+5579, 7-Eleven, 1
+5595, Vanguard Group - HQ, 2
+5596, MegaFon, 3
+5599, Menards, 3
+5600, Infosys BPO Ltd, 2
+5601, Cadence Design Systems, 2
+5602, Harland Clarke, 1
+5603, Charles River Labs, 1
+5604, Turksat - Ministry of Health (Sagl?k Bakanl?g?), 3
+5607, OneAmerica Financial, 3
+5610, MBSB Bank Berhad, 3
+5611, Vodafone - ES, 3
+5613, Secure-24, 1
+5614, California Independent System Operator - CAISO, 2
+5615, Wayne County, 2
+5616, BDO Unibank Inc, 3
+5617, McKesson, 3
+5618, Nationale-Nederlanden, 3
+5619, Punjab National Bank, 3
+5620, UAE Ministry of Justice, 3
+5624, Old Mutual Wealth, 3
+5625, Ross Stores, 2
+5627, Oncor, 3
+5628, HSBC, 1
+5629, Delek US Holdings, Inc., 2
+5630, La Francaise des Jeux, 2
+5631, Telkom South Africa, 2
+5636, First Command Financial, 3
+5638, USDA/NASS, 2
+5639, Meridian Health System, 3
+5641, Woolworths Limited, 2
+5642, Department of Economic Development (Abu Dhabi), 2
+5643, KRUNGTHAI CARD PUBLIC COMPANY LIMITED, 3
+5644, NTUC Income, 3
+5645, Hargreaves Lansdown, 2
+5646, Lina Financial Services, 2
+5647, MOJ -IL IMPA, 1
+5648, Brookcourt Solutions, 1
+5649, Kwangju Bank, 2
+5651, Getronics, 3
+5658, Sony Corporation, 3
+5659, Cast & Crew, 3
+5660, HCL Technologies Denmark ApS, 3
+5661, ADP LLC, 2
+5662, National Card Payment System Joint Stock Company, 2
+5663, Ministerio de Defensa, 2
+5670, Viacom, 2
+5672, Gazprombank, 3
+5673, X5 Retail Group, 2
+5674, Russian Railways, 3
+5675, US Marine Corps, 2
+5676, Berkshire Bank, 1
+5677, The Herjavec Group, 3
+5678, Panda Restaurant Group, 2
+5679, IRIDEOS, 3
+5681, DHFL, 2
+5682, STC Solutions, 3
+5683, Procter & Gamble, 2
+5684, Oriental Bank of Commerce, 2
+5685, Edison S.p.A., 2
+5686, Cariparma, 2
+5687, Oman Telecommunications Company (Omantel), 2
+5689, Royal and Sun Alliance, 2
+5690, RBS Financial Markets, 2
+5692, Hong Leong Group, 2
+5693, VocaLINK, 1
+5694, Nationwide Building Society, 1
+5695, William Hill plc, 2
+5696, US Department of State, 2
+5712, Police Department of Turkish Government -EGM, 2
+5724, First Bank Nigeria, 1
+5725, American Airlines, 2
+5727, Banque de Luxembourg, 2
+5728, Tabadul, 2
+5729, CENTRE HOSPITALIER PRINCESSE GRACE, 2
+5730, GITN Sdn Bhd, 2
+5731, Hudson's Bay Company, 2
+5732, Despegar.com, 2
+5734, Israel Defense Forces (IDF), 1
+5762, Universal Music Group, 1
+5765, First American Bank, 2
+5820, Tsesnabank, 2
+5821, Scottish Water, 1
+5833, Amadeus Deutschland GmbH, 2
+5835, University of Pittsburgh, 2
+5837, Social Security Administration, 2
+5838, PepsiCo, 2
+5891, Berge, 2
+5892, Sasol, 2
+5893, Deluxe Entertainment Services, 2
+5899, Worldpay US, 1
+5966, WNS Global Services Private Limited, 1
+5967, Piraeus Bank, 2
+5970, National Mortgage Insurance, 1
+5971, Qatar Petrochemical Company (QAPCO), 1
+5972, Payback GmbH, 2
+5974, ReliaQuest, 1
+5980, Rostelecom, 2
+5981, eHealth Insurance, 2
+5983, Cottage Health Systems, 2
+5994, Target Group Ltd, 2
+5995, Mylan, 2
+5996, Viseca Card Services SA (former Aduno SA), 2
+5997, OCLC, 2
+5999, Turkish State Railways (TCDD), 2
+6000, Dairy Farm Singapore, 2
+6001, The Co-operative Insurance, 2
+6002, The Co-operative Group, 2
+6003, Aeronautica Militare Italiana - Re.S.I.A., 2
+6083, Tatra Banka a.s., 1
+6084, Macedon Ranges Shire Council, 2
+6110, Rijkswaterstaat (Dutch Ministry of Infrastructure and the Environment), 1
+6112, Kcell, 2
+6113, KLX, 2
+6115, Yesser MCIT, 1
+6118, Blue Cross Blue Shield of Michigan, 2
+6120, Verisk Analytics, 2
+6137, Santander Rio, 2
+6138, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), 2
+6139, Croatian Ministry of Defense, 1
+6140, Bombay Stock Exchange, 2
+6141, RAK Bank, 1
+6142, Saxo Bank A/S, 2
+6143, Phoenix Contact GmbH & Co. KG, 2
+6144, Universität Bern, 2
+6148, Engen South Africa, 2
+6151, Bakwena Toll Concession, 2
+6152, ADIB Egypt, 2
+6153, BBVA Peru, 2
+6154, Cygate NDA, 1
+6154, Cygate Oy, NDA, 1
+6157, Telefonica - UY, 2
+6158, RBS Services (Switzerland) Ltd, 2
+6159, Intercontinental Hotels Group (IHG), 2
+6160, CFS, 1
+6160, Cooperative Bank ltd, 1
+6163, Callcredit, 2
+6166, BAE Systems - Applied Intelligence (Detica) - US, 2
+6167, Lloyds of London, 2
+6168, Grow Financial Federal CU, 2
+6169, Tata Consultancy Services (HQ), 1
+6243, SELEX ES, 2
+6262, Esselunga, 2
+6289, Nationale Nederlanden ES, 1
+6290, Fortinet Corporation, 1
+6293, Bank of America Corp, 1
+6348, Veolia Environnement - PL, 1
+6349, Federal Reserve Bank of Boston, 2
+6350, DHL Express, 1
+6351, Henry Schein, 2
+6358, Giffgaff, 2
+6359, ECOFIS GmbH, 2
+6360, AMX Argentina (Claro), 2
+6361, Skyguide, 2
+6362, Excellus, 2
+6363, Cognizant Technology Solutions - IN, 2
+6374, DST, 2
+6394, B&N Bank, 2
+6397, HCL Technologies (HQ), 2
+6398, ArcelorMittal, 2
+6399, PWC South Africa, 2
+6400, HMRC, 1
+6401, TD Ameritrade, 1
+6462, Conseillers Gestion & Informatique CGI Inc., 2
+6463, General Electric (GE) - HQ, 1
+6465, Leonardo-Finmeccanica, 2
+6472, Jabil Circuit, 2
+6473, Banca Intesa - Russia, 2
+6474, YPF, 1
+6475, The Hartford, 1
+6476, Acuity Mutual Insurance, 2
+6477, OMV Petrom, 2
+6478, UBIS, 2
+6479, Reliance JIO, 2
+6480, The Goldman Sachs Group, 2
+6481, Babcock International, 1
+6482, Thomson Reuters - UK, 2
+6485, Wells Fargo, 2
+6492, Ministry of environment and urbanisation, 2
+6493, Santa Lucia SA, 1
+6494, Helios IT Solutions, 2
+6497, Finanz Informatik Technology Service GmbH & Co. KG, 1
+6500, Pacific Gas and Electric Company, 2
+6501, Daimler AG, 1
+6505, BT Managed Services, 2
+6506, ALD Automotive, 2
+6507, Nasdaq OMX Group, 1
+6508, Repsol, 2
+6513, WorldPay, 1
+6525, ABB Information Systems Ltd., 2
+6526, Capita Customer Management (Ventura), 2
+6527, SFR, 2
+6528, GEODIS, 2
+6530, BankservAfrica, 1
+6535, Defence Health, 2
+6536, Natixis, 2
+6537, Flughafen Hannover, 1
+6538, AirIT Systems GmbH, 2
+6539, Orange Cyberdefense Belgium, 1
+6542, ADAMA Agricultural Solutions (Agan), 2
+6543, Telefonica International Wholesale Services, 2
+6544, Cirsa, 2
+6545, Delhaize Group, 2
+6546, Buongiorno, 2
+6547, SEC SERVIZI, 2
+6548, Wing Hang Bank, 2
+6549, Barclays, 1
+6550, Trenchant Limited, 1
+6551, SOGEI, 2
+6552, ICICI Bank, 2
+6553, The TriZetto Group Inc (Cognizant Healthcare), 2
+6554, CACEIS Bank Luxembourg SA, 1
+6555, Leroy Merlin SA - IT, 2
+6556, European External Action Service, 2
+6559, Aon plc - IL, 2
+6560, Securities and Exchange Board of India, 2
+6561, Abu Dhabi Company for onshore oil operations (ADCO), 2
+6562, Carleton University, 2
+6564, Banco de Crédito Social Cooperativo, S.A., 1
+6565, Macquarie Group, 2
+6566, Post Luxembourg, 1
+6567, Aeronautica Regiscc, 2
+6568, PT. Federal International Finance, 2
+6569, ATM Azienda Trasporti Milanesi, 2
+6570, Unicredit Tiriac Bank - Romania, 2
+6571, Banco Santander - IT, 2
+6572, SIA SSB, 1
+6573, Blue Cross Blue Shield of Kansas CIty, 2
+6574, Consorzio Operativo Gruppo Montepaschi, 2
+6575, Guardia Civil, 2
+6595, XPO Logistics, 1
+6596, Verisure, 2
+6600, ESL Federal Credit Union, 2
+6601, New Jersey Resources, 2
+6603, Bright Horizons Family Solutions, 2
+6604, MOF Saudi Arabia, 2
+6605, Credit-Suisse, 1
+6606, Credit-Suisse, 1
+6612, Banco BPM, 1
+6613, European Space Agency (ESA) - ESRIN, 2
+6614, Ministerie van Defensie, 2
+6618, Prime Minister's Office KD - IL, 1
+6619, Prime Minister's Office KD - IL, 1
+6620, Colt Telecom, 1
+6622, UniCredit Bank - IT, 2
+6641, Gemalto - HQ, 1
+6681, Dun & Bradstreet, 2
+6713, Accellence Thailand, 2
+6735, Capita Registrars, 1
+6750, Saudi Customs, 1
+6751, Qlarant Integrity Solutions, 1
+6752, Unison Capital, 1
+6753, Delphi, 1
+6755, Royal and Sun Alliance, 1
+6756, Mobitel (Pvt) Ltd., 2
+6757, Council Of The European Union, 2
+6759, Ministry of Justice Kuwait, 2
+6762, Overseas Chinese Banking Corporation (OCBC), 2
+6763, Bank of Singapore (BOS), 1
+6765, Mediobanca, 1
+6766, Discount Bank, 2
+6770, Standard Chartered, 1
+6772, National Student Clearinghouse, 2
+6774, ICON Clinical, 1
+6854, Alberta Electric System Operator (AESO), 1
+6859, Concur, 2
+6860, NXP, 2
+6913, SecureData MSSP Account, 1
+6914, Scottish Water, 1
+6915, Dah Sing Bank Limited, 2
+6916, Merchant-e Solutions, 1
+6917, Jumeirah Group, 2
+6918, Nationale Nederlanden ES, 1
+6919, TEDA?, 2
+6923, Nevo Technologies, 2
+6925, Walmart Stores Inc, 2
+6927, Federal Deposit Insurance Corporation (FDIC), 1
+6929, Mizuho Bank (USA) - NY, 1
+6931, Magellan Midstream Partners, 2
+6932, Injazat Data Systems, 1
+6936, Maxis, 1
+6937, British American Tobacco, 1
+7335, Securities Exchange Commission (OIC-Network Assurance), 2
+7336, Securities and Exchange Commission, 2
+7337, TSB Bank, 2
+7338, JMOD/AIR, 2
+7340, Adaptive Netpoleon Malaysia Sdn. Bhd., 1
+7629, Citigroup Inc (Citi), 1
+7633, Legal & General (Europe), 1
+7634, Communications Security Establishment, 2
+7659, Tesco PLC, 1
+7660, 7-Eleven, 1
+7661, Netpoleon Solutions Pte Ltd (Singapore), 1
+7670, Berufsgenossenschaft Holz und Metall, 2
+7671, Ansaldo STS, 2
+7673, Corporation Bank, 1
+7679, Turkcell, 2
+7682, Bridgestone Americas, 2
+7704, National Bank of Oman (NBO), 1
+7705, Volke Entwicklungsring, 2
+7706, Infosec Corporation, 1
+7708, Torstar Corporation, 2
+7709, Dubai Tourism Authority, 1
+7711, Segezha Group, 1
+7728, Carhartt, 1
+7729, NTT - Solutionary, 1
+7730, Generali Italy, 1
+7732, LC Waikiki, 2
+7734, Cybersecurity and Infrastructure Security Agency (CISA), 1
+7735, Prosodie, 1
+7738, HCA Healthcare UK, 2
+7742, Marathon, 1
+7743, MultiCarta - Russia, 1
+7744, European Central Bank (ECB), 2
+7745, Iveco CNH Industrial, 1
+7748, Carige Assicurazioni, 1
+7748, Dock Joined in tech S.r.l, 1
+7750, Carlisle City Council, 1
+7753, Telefonica - AR, 1
+7754, Sony Interactive Entertainment, 1
+7756, Telcel, 2
+7763, Capita Plc - HQ, 1
+7765, A2A, 1
+7765, A2A SpA, 1
+7795, Aditya Birla Group, 1
+7797, Cedge Technologies :Ltd, 1
+7836, Guidepoint Security, 1
+7837, AAA Northern California, Nevada and Utah (AAA NCNU), 1
+7839, Universiti Teknologi Mara, 1
+7840, MSHS, 1
+7881, HealthPlan Services, 1
+7882, Ageas Insurance Limited, 1
+7883, USAID, 1
+7885, TABUNG HAJI, 1
+7886, ReliaQuest, 1
+7893, Burberry Group, 1
+7898, John Wiley & Sons, Inc., 1
+7901, Arcos Dorados Holdings (McDonalds), 1
+7903, TrueBlue, Inc., 1
+7949, Mohegan Tribal Gaming Authority, 1
+7953, First Abu Dhabi Bank, 1
+7978, Estee Lauder, 1
+7981, Slovenska sporitelna, a.s., 1
+7983, America First Credit Union, 1
+7984, Emirates Aluminium Global (EGAL), 1
+7987, Noble Group Asia Pacific, 1
+7988, The Bank of N.T. Butterfield & Son Limited, 1
+7990, Banca 5 S.p.A., 1
+8016, Qatar Petrochemical Company (QAPCO), 1
+8017, General Mills, 1
+8019, MBDA - UK, 1
+8024, DHMI (General Directorate Of State Airports Authority, 1
+8025, Capita Registrars, 1
+8027, The Church of Jesus Christ of Latter-Day Saints (LDS Church), 1
+8028, Direccion General Policia, 1
+8043, IL-CERT (Israel?s Computer Emergency Response Team), 1
+8045, Mastercard Technologies, LLC, 1
+8053, Reckitt Benckiser Group, 1
+8056, Bank of America Corp, 1
+8058, Interpublic Group of Companies, 1
+8059, ICON Clinical, 1
+8063, John Lewis Partnership, 1
+8108, Cellcom Israel Ltd, 1
+8109, Tata Consultancy Services (HQ), 1
+8110, Defence Science & Technology Agency (DSTA), 1
+8112, PMO IL National Cyber Directorate, 1
+8114, Jabatan Pendaftaran Negara, 1
+8116, Providence Equity, 1
+8118, Orpic (Oman Oil refineries and petroleum industries), 1
+8121, Everything Everywhere, 1
+8122, Turkish Land Forces, 1
+8184, Skybox_IL, 1
+8200, Vodafone - IN, 1
+8208, SEPS A.S., 1
+8211, Rosgosstrakh, 1
+8219, CLSA Limited, 1
+8221, Rosgosstrah Bank, 1
+8224, Direct Line Insurance Group, 1
+8228, NN Romania, 1
+8250, Federal Reserve Bank of Dallas, 1
+8251, Donner & Reuschel AG, 1
+8254, Bank SOYUZ, 1
+8268, LINA Life Insurance Co, 1
+8280, Korea Credit Bureau, 1
+8286, Orica, 1
+8291, Electricite de France - HQ, 1
+8292, Anglo American, 1
+8293, National Mortgage Insurance, 1
+8294, Public Safety Business Agency, 1
+8298, CapitaLand, 1
+8309, Tenaris, 1
+8310, Ternium (ex Siderar) - AR, 1
+8314, BW Maritime, 1
+8319, Liquid Telecom (fka Neotel), 1
+8320, EBRC - European Business Reliance Centre, 1
+8321, Dubai Municipality, 1
+8322, Arqiva, 1
+8324, Leonardo (Aermacchi), 1
+8325, BGFI Banque, 1
+8339, CUSCAL, 1
+8340, First Bank Nigeria, 1
+8341, Tatra Banka a.s., 1
+8342, Fujitsu Consulting India, 1
+8343, United Card Services (UCS), 1
+8346, The Standard, 1
+8353, Afrikantov OKB Mechanical Engineering, 1
+8355, ITC, 1
+8358, MTS Bank, 1
+8359, AIA Group, 1
+8362, Promsvyazbank, 1
+8364, Orange - ES, 1
+8365, ANZ GCIS/Wholesale Digital, 1
+8367, Etihad Etisalat Company (Mobily), 1
+8369, Federal Tax Service of Russia, 1
+8388, First International Bank Israel (FIBI), 1
+8392, Reliance Industries, 1
+8443, Royal Bank of Scotland, 1
+8445, PNC Bank - PA, 1
+8447, DNB, 1
+8448, Sharjah Islamic Bank, 1
+8455, Freshfields Bruckhaus Deringer, 1
+8485, Hitachi, 1
+8486, Saudi Ministry of Labor and Social Development (MLSD), 1
+8499, Bank BTPN, 1
+8606, Webe Digital Sdn Bhd, 1
+8609, CSU Fullerton, 1
+8610, Guardian Analytics, 1
+8723, Business Service Organisation, 1
+8728, CSE Consorzio Servizi Bancari, 1
+8729, Guernsey Electricity Ltd, 1
+8734, Texas Department of Motor Vehicles, 1
+8735, Relay Health, 1
+8739, Lloyds Banking Group, 1
+8741, Telefonica - ES, 1
+8745, United Arab Bank, 1
+8751, PROS, Inc., 1
+8753, Meuhedet health care, 1
+8755, Produban (old Alliance & Leicester estate), 1
+8762, Posti, 1
+8763, SecureData MSSP Account, 1
+8764, British American Tobacco, 1
+8870, Ooredoo Oman, 1
+8893, Department of Economic Development (Abu Dhabi), 1
+8962, MTS Retail, 1
+9005, GE Aviation - UK, 1
+9008, Visa Europe, 1
+9016, ABL Life Insurance, 1
+9017, Abu Dhabi Airports Company (ADAC), 1
+9043, Orange Cyberdefense Belgium, 1
+9050, Exxaro Resources Limited, 1

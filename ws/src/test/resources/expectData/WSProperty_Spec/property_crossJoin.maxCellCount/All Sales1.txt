@@ -1,0 +1,702 @@
+The table size(row x col) is:(701 x 5)
+Employee, Order Number, Company, Order Date, Total
+Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211
+Annie, 12003, Folk Mining, 2017-03-14 00:00:00, 6735
+Annie, 12005, Quick Stop, 2017-03-19 00:00:00, 10526
+Annie, 12007, Specialty Retail, 2017-03-20 00:00:00, 19895
+Annie, 12012, Folk Mining, 2017-04-01 00:00:00, 11400
+Annie, 12014, Nova Tera, 2017-04-09 00:00:00, 50882
+Annie, 12020, Computer Tech, 2017-04-14 00:00:00, 21119
+Annie, 12030, West Coast Customs, 2017-05-01 00:00:00, 25389
+Annie, 12033, Nova Tera, 2017-05-07 00:00:00, 94937
+Annie, 12035, Direct Sales, 2017-05-11 00:00:00, 5085
+Annie, 12037, Northwest Outfitters, 2017-05-12 00:00:00, 5818
+Annie, 12043, Folk Mining, 2017-05-31 00:00:00, 49370
+Annie, 12048, Whittaker & Co, Inc, 2017-06-06 00:00:00, 12761
+Annie, 12052, George Services, 2017-06-11 00:00:00, 20783
+Annie, 12053, Specialty Retail, 2017-06-15 00:00:00, 5679
+Annie, 12060, Tumbleweed Gaming, 2017-06-23 00:00:00, 354
+Annie, 12068, Direct Sales, 2017-07-05 00:00:00, 21056
+Annie, 12069, FISGA Corp, 2017-07-05 00:00:00, 88173
+Annie, 12070, The Big Cat, 2017-07-07 00:00:00, 35475
+Annie, 12075, Northwest Outfitters, 2017-07-16 00:00:00, 15158
+Annie, 12076, Infinity Software, 2017-07-20 00:00:00, 5308
+Annie, 12091, Direct Sales, 2017-08-28 00:00:00, 6300
+Annie, 12092, West Coast Customs, 2017-08-29 00:00:00, 447
+Annie, 12094, Folk Mining, 2017-09-03 00:00:00, 74155
+Annie, 12097, West Coast Customs, 2017-09-10 00:00:00, 8936
+Annie, 12099, Northwest Outfitters, 2017-09-11 00:00:00, 5001
+Annie, 12102, BigMart Foodstores, 2017-09-18 00:00:00, 50541
+Annie, 12106, Infinity Software, 2017-10-01 00:00:00, 48093
+Annie, 12117, The Big Cat, 2017-11-02 00:00:00, 57976
+Annie, 12118, Specialty Retail, 2017-11-05 00:00:00, 5949
+Annie, 12119, Quick Stop, 2017-11-05 00:00:00, 25123
+Annie, 12122, Computer Tech, 2017-11-15 00:00:00, 47922
+Annie, 12126, BigMart Foodstores, 2017-11-20 00:00:00, 8305
+Annie, 12130, Quick Stop, 2017-11-22 00:00:00, 38808
+Annie, 12137, Tumbleweed Gaming, 2017-12-06 00:00:00, 18000
+Annie, 12140, Infinity Software, 2017-12-17 00:00:00, 2125
+Annie, 12145, The Big Cat, 2017-12-29 00:00:00, 51549
+Annie, 12150, Folk Mining, 2018-01-08 00:00:00, 15236
+Annie, 12152, Infinity Software, 2018-01-15 00:00:00, 80034
+Annie, 12162, Direct Sales, 2018-02-11 00:00:00, 34331
+Annie, 12164, Direct Sales, 2018-02-16 00:00:00, 3090
+Annie, 12165, FISGA Corp, 2018-02-19 00:00:00, 3680
+Annie, 12186, Quick Stop, 2018-04-06 00:00:00, 8649
+Annie, 12190, Quick Stop, 2018-04-13 00:00:00, 41250
+Annie, 12201, Big Ed's BBQ, 2018-05-04 00:00:00, 10915
+Annie, 12207, Tumbleweed Gaming, 2018-05-19 00:00:00, 8438
+Annie, 12209, BigMart Foodstores, 2018-05-26 00:00:00, 36060
+Annie, 12214, Quick Stop, 2018-06-03 00:00:00, 76140
+Annie, 12215, George Services, 2018-06-07 00:00:00, 58155
+Annie, 12220, Big Ed's BBQ, 2018-06-16 00:00:00, 73409
+Annie, 12224, West Coast Customs, 2018-06-17 00:00:00, 7736
+Annie, 12230, FISGA Corp, 2018-07-02 00:00:00, 9282
+Annie, 12234, Folk Mining, 2018-07-09 00:00:00, 35
+Annie, 12237, Folk Mining, 2018-07-18 00:00:00, 12498
+Annie, 12238, Northwest Outfitters, 2018-07-18 00:00:00, 8406
+Annie, 12240, Nova Tera, 2018-07-22 00:00:00, 8032
+Annie, 12245, Specialty Retail, 2018-08-03 00:00:00, 3991
+Annie, 12252, BigMart Foodstores, 2018-08-17 00:00:00, 10390
+Annie, 12254, West Coast Customs, 2018-08-22 00:00:00, 3500
+Annie, 12263, Northwest Outfitters, 2018-09-09 00:00:00, 50431
+Annie, 12265, Direct Sales, 2018-09-12 00:00:00, 37752
+Annie, 12267, George Services, 2018-09-13 00:00:00, 25709
+Annie, 12268, Folk Mining, 2018-09-15 00:00:00, 3224
+Annie, 12269, Whittaker & Co, Inc, 2018-09-17 00:00:00, 44486
+Annie, 12275, George Services, 2018-09-26 00:00:00, 60573
+Annie, 12278, FISGA Corp, 2018-10-04 00:00:00, 52460
+Annie, 12280, Folk Mining, 2018-10-08 00:00:00, 11934
+Annie, 12281, Direct Sales, 2018-10-10 00:00:00, 4565
+Annie, 12282, Folk Mining, 2018-10-11 00:00:00, 1890
+Annie, 12292, Whittaker & Co, Inc, 2018-11-04 00:00:00, 9028
+Annie, 12302, FISGA Corp, 2018-11-17 00:00:00, 10543
+Annie, 12304, Direct Sales, 2018-11-23 00:00:00, 62383
+Annie, 12316, Computer Tech, 2018-12-10 00:00:00, 30429
+Annie, 12321, West Coast Customs, 2018-12-19 00:00:00, 23542
+Annie, 12322, BigMart Foodstores, 2018-12-19 00:00:00, 2460
+Annie, 12323, FISGA Corp, 2018-12-21 00:00:00, 2556
+Annie, 12335, Whittaker & Co, Inc, 2019-01-14 00:00:00, 1160
+Annie, 12338, The Big Cat, 2019-01-23 00:00:00, 31245
+Annie, 12339, Whittaker & Co, Inc, 2019-01-25 00:00:00, 13281
+Annie, 12340, FISGA Corp, 2019-01-27 00:00:00, 25510
+Annie, 12349, FISGA Corp, 2019-02-09 00:00:00, 10845
+Annie, 12353, Whittaker & Co, Inc, 2019-02-17 00:00:00, 12698
+Annie, 12354, Direct Sales, 2019-02-21 00:00:00, 43025
+Annie, 12358, Computer Tech, 2019-03-04 00:00:00, 15212
+Annie, 12362, Computer Tech, 2019-03-14 00:00:00, 2624
+Annie, 12368, George Services, 2019-03-28 00:00:00, 1197
+Annie, 12371, West Coast Customs, 2019-04-02 00:00:00, 27347
+Annie, 12378, Big Ed's BBQ, 2019-04-12 00:00:00, 51000
+Annie, 12382, Northwest Outfitters, 2019-04-14 00:00:00, 2316
+Annie, 12384, West Coast Customs, 2019-04-14 00:00:00, 10555
+Annie, 12386, FISGA Corp, 2019-04-15 00:00:00, 10202
+Annie, 12389, Nova Tera, 2019-04-23 00:00:00, 25790
+Annie, 12393, Whittaker & Co, Inc, 2019-05-04 00:00:00, 8704
+Annie, 12397, FISGA Corp, 2019-05-13 00:00:00, 705
+Annie, 12405, Whittaker & Co, Inc, 2019-05-29 00:00:00, 240
+Annie, 12410, Northwest Outfitters, 2019-05-31 00:00:00, 13411
+Annie, 12418, Direct Sales, 2019-06-17 00:00:00, 7246
+Annie, 12419, FISGA Corp, 2019-06-19 00:00:00, 3939
+Annie, 12426, West Coast Customs, 2019-07-06 00:00:00, 1692
+Annie, 12427, Computer Tech, 2019-07-08 00:00:00, 41027
+Annie, 12428, Tumbleweed Gaming, 2019-07-11 00:00:00, 53109
+Annie, 12429, Whittaker & Co, Inc, 2019-07-13 00:00:00, 14334
+Annie, 12442, The Big Cat, 2019-08-09 00:00:00, 996
+Annie, 12449, FISGA Corp, 2019-08-25 00:00:00, 2500
+Annie, 12450, Folk Mining, 2019-08-28 00:00:00, 61146
+Annie, 12451, BigMart Foodstores, 2019-09-01 00:00:00, 4086
+Annie, 12452, BigMart Foodstores, 2019-09-01 00:00:00, 82838
+Annie, 12458, Big Ed's BBQ, 2019-09-17 00:00:00, 56573
+Annie, 12474, Computer Tech, 2019-10-17 00:00:00, 1464
+Annie, 12476, Big Ed's BBQ, 2019-10-21 00:00:00, 15793
+Annie, 12478, West Coast Customs, 2019-10-28 00:00:00, 37900
+Annie, 12479, Specialty Retail, 2019-11-01 00:00:00, 63362
+Annie, 12483, Tumbleweed Gaming, 2019-11-05 00:00:00, 11033
+Annie, 12484, Whittaker & Co, Inc, 2019-11-06 00:00:00, 12593
+Annie, 12487, Direct Sales, 2019-11-13 00:00:00, 64425
+Annie, 12488, Quick Stop, 2019-11-14 00:00:00, 6868
+Annie, 12490, Big Ed's BBQ, 2019-11-21 00:00:00, 36713
+Annie, 12491, Direct Sales, 2019-11-22 00:00:00, 9532
+Annie, 12493, Northwest Outfitters, 2019-11-22 00:00:00, 20026
+Annie, 12499, Big Ed's BBQ, 2019-11-30 00:00:00, 38289
+Annie, 12502, Nova Tera, 2019-12-01 00:00:00, 2600
+Annie, 12505, Quick Stop, 2019-12-08 00:00:00, 8550
+Annie, 12506, West Coast Customs, 2019-12-08 00:00:00, 58481
+Annie, 12510, Northwest Outfitters, 2019-12-19 00:00:00, 5136
+Annie, 12517, Northwest Outfitters, 2020-01-09 00:00:00, 6649
+Annie, 12519, Tumbleweed Gaming, 2020-01-10 00:00:00, 5745
+Annie, 12522, Whittaker & Co, Inc, 2020-01-17 00:00:00, 1200
+Annie, 12526, Quick Stop, 2020-01-25 00:00:00, 82902
+Annie, 12528, Computer Tech, 2020-01-30 00:00:00, 24765
+Annie, 12529, George Services, 2020-02-01 00:00:00, 80098
+Annie, 12531, BigMart Foodstores, 2020-02-04 00:00:00, 38684
+Annie, 12532, Northwest Outfitters, 2020-02-08 00:00:00, 4525
+Annie, 12535, Specialty Retail, 2020-02-12 00:00:00, 16859
+Annie, 12539, Quick Stop, 2020-02-23 00:00:00, 4368
+Annie, 12540, BigMart Foodstores, 2020-02-24 00:00:00, 21959
+Annie, 12543, Tumbleweed Gaming, 2020-03-01 00:00:00, 4605
+Annie, 12546, Whittaker & Co, Inc, 2020-03-05 00:00:00, 534
+Annie, 12553, Folk Mining, 2020-03-20 00:00:00, 300
+Annie, 12560, Specialty Retail, 2020-04-01 00:00:00, 6793
+Annie, 12562, The Big Cat, 2020-04-05 00:00:00, 40274
+Annie, 12563, Big Ed's BBQ, 2020-04-07 00:00:00, 20846
+Annie, 12565, George Services, 2020-04-10 00:00:00, 61452
+Annie, 12567, The Big Cat, 2020-04-14 00:00:00, 49980
+Annie, 12569, Folk Mining, 2020-04-18 00:00:00, 1736
+Annie, 12573, Infinity Software, 2020-04-26 00:00:00, 4465
+Annie, 12574, Northwest Outfitters, 2020-04-27 00:00:00, 89494
+Annie, 12578, Computer Tech, 2020-05-08 00:00:00, 42607
+Annie, 12585, Northwest Outfitters, 2020-05-19 00:00:00, 4146
+Annie, 12588, Quick Stop, 2020-05-21 00:00:00, 5585
+Annie, 12590, Northwest Outfitters, 2020-05-23 00:00:00, 47761
+Annie, 12598, Computer Tech, 2020-06-09 00:00:00, 3360
+Annie, 12600, Big Ed's BBQ, 2020-06-10 00:00:00, 1719
+Annie, 12602, FISGA Corp, 2020-06-13 00:00:00, 19571
+Annie, 12604, BigMart Foodstores, 2020-06-18 00:00:00, 13047
+Annie, 12608, Northwest Outfitters, 2020-06-27 00:00:00, 111202
+Annie, 12610, Nova Tera, 2020-07-04 00:00:00, 455
+Annie, 12611, Folk Mining, 2020-07-07 00:00:00, 6622
+Annie, 12613, Big Ed's BBQ, 2020-07-09 00:00:00, 55379
+Annie, 12615, Quick Stop, 2020-07-14 00:00:00, 7871
+Annie, 12616, FISGA Corp, 2020-07-17 00:00:00, 1028
+Annie, 12618, Tumbleweed Gaming, 2020-07-18 00:00:00, 26371
+Annie, 12630, Infinity Software, 2020-08-07 00:00:00, 14987
+Annie, 12632, West Coast Customs, 2020-08-11 00:00:00, 7786
+Annie, 12634, Big Ed's BBQ, 2020-08-12 00:00:00, 6329
+Annie, 12638, Specialty Retail, 2020-08-20 00:00:00, 83171
+Annie, 12639, Big Ed's BBQ, 2020-08-24 00:00:00, 87402
+Annie, 12641, The Big Cat, 2020-08-28 00:00:00, 14145
+Annie, 12649, Folk Mining, 2020-09-14 00:00:00, 44874
+Annie, 12654, Whittaker & Co, Inc, 2020-09-30 00:00:00, 13897
+Annie, 12658, Computer Tech, 2020-10-09 00:00:00, 23852
+Annie, 12660, FISGA Corp, 2020-10-11 00:00:00, 10380
+Annie, 12661, Computer Tech, 2020-10-12 00:00:00, 26866
+Annie, 12662, George Services, 2020-10-13 00:00:00, 8677
+Annie, 12663, Folk Mining, 2020-10-14 00:00:00, 37061
+Annie, 12671, Northwest Outfitters, 2020-10-31 00:00:00, 10451
+Annie, 12674, George Services, 2020-11-07 00:00:00, 48154
+Annie, 12680, BigMart Foodstores, 2020-11-14 00:00:00, 59272
+Annie, 12683, Nova Tera, 2020-11-16 00:00:00, 25783
+Annie, 12685, Nova Tera, 2020-11-22 00:00:00, 29570
+Annie, 12692, Northwest Outfitters, 2020-12-13 00:00:00, 2625
+Annie, 12696, Infinity Software, 2020-12-23 00:00:00, 375
+Annie, 12698, The Big Cat, 2020-12-26 00:00:00, 9485
+Eric, 12001, FMG Consulting, 2017-03-13 00:00:00, 30628
+Eric, 12008, Software Specialists, 2017-03-23 00:00:00, 33431
+Eric, 12010, Loctite Corp., 2017-03-29 00:00:00, 16410
+Eric, 12011, XO Resellers, 2017-03-29 00:00:00, 38840
+Eric, 12018, Tricounty Auto, 2017-04-14 00:00:00, 15773
+Eric, 12019, FMG Consulting, 2017-04-14 00:00:00, 75379
+Eric, 12021, FMG Consulting, 2017-04-14 00:00:00, 3571
+Eric, 12022, Eastern Data, 2017-04-16 00:00:00, 46400
+Eric, 12023, XO Resellers, 2017-04-17 00:00:00, 72564
+Eric, 12025, XO Resellers, 2017-04-23 00:00:00, 3990
+Eric, 12026, Daycare One, 2017-04-27 00:00:00, 76504
+Eric, 12028, Interstate Shop, 2017-04-30 00:00:00, 21913
+Eric, 12029, Loctite Corp., 2017-04-30 00:00:00, 32218
+Eric, 12031, XO Resellers, 2017-05-05 00:00:00, 9407
+Eric, 12032, Tricounty Auto, 2017-05-07 00:00:00, 50240
+Eric, 12034, World Software Resellers, 2017-05-07 00:00:00, 19736
+Eric, 12036, Ubermeyer, 2017-05-12 00:00:00, 3072
+Eric, 12040, Ubermeyer, 2017-05-21 00:00:00, 26384
+Eric, 12044, Ubermeyer, 2017-05-31 00:00:00, 53805
+Eric, 12045, InterLand Services, 2017-05-31 00:00:00, 46830
+Eric, 12046, Daycare One, 2017-06-01 00:00:00, 6222
+Eric, 12049, Rutgers Bank, 2017-06-07 00:00:00, 53944
+Eric, 12054, Fast Transportation, 2017-06-16 00:00:00, 4064
+Eric, 12056, World Software Resellers, 2017-06-21 00:00:00, 1666
+Eric, 12057, Rutgers Bank, 2017-06-21 00:00:00, 32365
+Eric, 12067, AMG Logistics, 2017-07-04 00:00:00, 27098
+Eric, 12072, High Society Investments, 2017-07-10 00:00:00, 6413
+Eric, 12082, World Software Resellers, 2017-08-04 00:00:00, 23005
+Eric, 12083, InterLand Services, 2017-08-06 00:00:00, 13802
+Eric, 12084, Eastern Data, 2017-08-10 00:00:00, 94524
+Eric, 12085, AMG Logistics, 2017-08-14 00:00:00, 54117
+Eric, 12086, Ubermeyer, 2017-08-17 00:00:00, 39843
+Eric, 12088, Ernst Handel, 2017-08-19 00:00:00, 1650
+Eric, 12096, Fast Transportation, 2017-09-07 00:00:00, 1000
+Eric, 12107, Loctite Corp., 2017-10-05 00:00:00, 6198
+Eric, 12109, High Society Investments, 2017-10-11 00:00:00, 44044
+Eric, 12113, Tricounty Auto, 2017-10-24 00:00:00, 16254
+Eric, 12124, Scheggie Services, 2017-11-16 00:00:00, 25911
+Eric, 12131, Pharma Research, 2017-11-26 00:00:00, 48901
+Eric, 12134, Fast Transportation, 2017-11-30 00:00:00, 63185
+Eric, 12136, Rutgers Bank, 2017-12-03 00:00:00, 4971
+Eric, 12142, Software Specialists, 2017-12-25 00:00:00, 22157
+Eric, 12144, Eastern Data, 2017-12-26 00:00:00, 51396
+Eric, 12146, Fast Transportation, 2018-01-03 00:00:00, 6837
+Eric, 12147, Rutgers Bank, 2018-01-06 00:00:00, 4350
+Eric, 12151, Old World Insurance, 2018-01-12 00:00:00, 19085
+Eric, 12154, Ernst Handel, 2018-01-19 00:00:00, 840
+Eric, 12155, Software Specialists, 2018-01-22 00:00:00, 1614
+Eric, 12156, Daycare One, 2018-01-25 00:00:00, 15571
+Eric, 12161, Daycare One, 2018-02-08 00:00:00, 8739
+Eric, 12166, Loctite Corp., 2018-02-19 00:00:00, 19226
+Eric, 12167, InterLand Services, 2018-02-19 00:00:00, 87441
+Eric, 12169, Fast Transportation, 2018-02-24 00:00:00, 49271
+Eric, 12170, InterLand Services, 2018-02-28 00:00:00, 549
+Eric, 12172, Rutgers Bank, 2018-03-07 00:00:00, 53255
+Eric, 12173, Pharma Research, 2018-03-09 00:00:00, 395
+Eric, 12174, InterLand Services, 2018-03-13 00:00:00, 11196
+Eric, 12184, Eastern Data, 2018-04-02 00:00:00, 79675
+Eric, 12185, World Software Resellers, 2018-04-02 00:00:00, 12705
+Eric, 12192, Pharma Research, 2018-04-17 00:00:00, 19991
+Eric, 12193, Pharma Research, 2018-04-20 00:00:00, 3093
+Eric, 12194, Scheggie Services, 2018-04-20 00:00:00, 52654
+Eric, 12196, Eastern Data, 2018-04-23 00:00:00, 8774
+Eric, 12197, XO Resellers, 2018-04-24 00:00:00, 40837
+Eric, 12198, High Society Investments, 2018-04-28 00:00:00, 8599
+Eric, 12206, Ubermeyer, 2018-05-15 00:00:00, 6352
+Eric, 12208, Daycare One, 2018-05-22 00:00:00, 32674
+Eric, 12211, Tricounty Auto, 2018-06-02 00:00:00, 13850
+Eric, 12212, XO Resellers, 2018-06-02 00:00:00, 22500
+Eric, 12217, AMG Logistics, 2018-06-08 00:00:00, 56614
+Eric, 12223, Daycare One, 2018-06-17 00:00:00, 6449
+Eric, 12225, Software Specialists, 2018-06-21 00:00:00, 5463
+Eric, 12226, Pharma Research, 2018-06-22 00:00:00, 52945
+Eric, 12232, Daycare One, 2018-07-06 00:00:00, 1596
+Eric, 12244, High Society Investments, 2018-07-31 00:00:00, 21556
+Eric, 12250, Scheggie Services, 2018-08-16 00:00:00, 11365
+Eric, 12256, Software Specialists, 2018-08-24 00:00:00, 48700
+Eric, 12260, Daycare One, 2018-09-03 00:00:00, 46355
+Eric, 12261, Interstate Shop, 2018-09-04 00:00:00, 19736
+Eric, 12266, Pharma Research, 2018-09-12 00:00:00, 92183
+Eric, 12270, Eastern Data, 2018-09-18 00:00:00, 57574
+Eric, 12285, Ernst Handel, 2018-10-20 00:00:00, 7079
+Eric, 12286, Tricounty Auto, 2018-10-21 00:00:00, 27437
+Eric, 12296, Ubermeyer, 2018-11-08 00:00:00, 4802
+Eric, 12297, Daycare One, 2018-11-08 00:00:00, 11796
+Eric, 12299, Old World Insurance, 2018-11-09 00:00:00, 18258
+Eric, 12306, Pharma Research, 2018-11-27 00:00:00, 4727
+Eric, 12308, Ubermeyer, 2018-11-29 00:00:00, 6470
+Eric, 12312, XO Resellers, 2018-12-04 00:00:00, 90422
+Eric, 12313, Eastern Data, 2018-12-05 00:00:00, 21302
+Eric, 12314, Old World Insurance, 2018-12-05 00:00:00, 23497
+Eric, 12319, Fast Transportation, 2018-12-17 00:00:00, 3504
+Eric, 12320, AMG Logistics, 2018-12-19 00:00:00, 10602
+Eric, 12324, Pharma Research, 2018-12-23 00:00:00, 553
+Eric, 12325, Software Specialists, 2018-12-24 00:00:00, 3868
+Eric, 12326, Fast Transportation, 2018-12-26 00:00:00, 65353
+Eric, 12327, Software Specialists, 2018-12-27 00:00:00, 48000
+Eric, 12330, FMG Consulting, 2019-01-02 00:00:00, 30212
+Eric, 12331, Interstate Shop, 2019-01-05 00:00:00, 3568
+Eric, 12337, Loctite Corp., 2019-01-20 00:00:00, 79
+Eric, 12342, Tricounty Auto, 2019-02-01 00:00:00, 10623
+Eric, 12344, InterLand Services, 2019-02-03 00:00:00, 13916
+Eric, 12345, InterLand Services, 2019-02-04 00:00:00, 35390
+Eric, 12346, World Software Resellers, 2019-02-07 00:00:00, 52328
+Eric, 12347, Loctite Corp., 2019-02-07 00:00:00, 14870
+Eric, 12348, Eastern Data, 2019-02-07 00:00:00, 61928
+Eric, 12352, Tricounty Auto, 2019-02-16 00:00:00, 1583
+Eric, 12355, Daycare One, 2019-02-25 00:00:00, 26458
+Eric, 12357, Ubermeyer, 2019-02-28 00:00:00, 7518
+Eric, 12360, Scheggie Services, 2019-03-10 00:00:00, 20754
+Eric, 12363, Scheggie Services, 2019-03-16 00:00:00, 16953
+Eric, 12380, Loctite Corp., 2019-04-12 00:00:00, 5852
+Eric, 12387, InterLand Services, 2019-04-19 00:00:00, 32338
+Eric, 12391, Ubermeyer, 2019-04-29 00:00:00, 64105
+Eric, 12395, World Software Resellers, 2019-05-07 00:00:00, 4244
+Eric, 12396, Ernst Handel, 2019-05-09 00:00:00, 16797
+Eric, 12400, AMG Logistics, 2019-05-15 00:00:00, 48287
+Eric, 12403, Software Specialists, 2019-05-27 00:00:00, 7562
+Eric, 12404, Rutgers Bank, 2019-05-29 00:00:00, 46016
+Eric, 12407, Interstate Shop, 2019-05-31 00:00:00, 18835
+Eric, 12413, Pharma Research, 2019-06-08 00:00:00, 47335
+Eric, 12416, Software Specialists, 2019-06-16 00:00:00, 69350
+Eric, 12422, World Software Resellers, 2019-06-26 00:00:00, 5797
+Eric, 12423, Ernst Handel, 2019-06-29 00:00:00, 1506
+Eric, 12425, Rutgers Bank, 2019-07-03 00:00:00, 6740
+Eric, 12430, World Software Resellers, 2019-07-15 00:00:00, 9440
+Eric, 12431, FMG Consulting, 2019-07-15 00:00:00, 120
+Eric, 12432, FMG Consulting, 2019-07-15 00:00:00, 2425
+Eric, 12435, Daycare One, 2019-07-25 00:00:00, 100925
+Eric, 12436, XO Resellers, 2019-07-29 00:00:00, 4162
+Eric, 12443, Software Specialists, 2019-08-13 00:00:00, 15069
+Eric, 12444, Ernst Handel, 2019-08-16 00:00:00, 10397
+Eric, 12446, Ubermeyer, 2019-08-17 00:00:00, 52950
+Eric, 12448, Scheggie Services, 2019-08-25 00:00:00, 66105
+Eric, 12454, Old World Insurance, 2019-09-04 00:00:00, 160
+Eric, 12455, Interstate Shop, 2019-09-08 00:00:00, 41552
+Eric, 12456, XO Resellers, 2019-09-09 00:00:00, 2858
+Eric, 12462, Software Specialists, 2019-09-25 00:00:00, 6250
+Eric, 12463, Software Specialists, 2019-09-29 00:00:00, 13850
+Eric, 12472, World Software Resellers, 2019-10-13 00:00:00, 4836
+Eric, 12473, Old World Insurance, 2019-10-15 00:00:00, 3632
+Eric, 12477, FMG Consulting, 2019-10-24 00:00:00, 44461
+Eric, 12481, Tricounty Auto, 2019-11-04 00:00:00, 32522
+Eric, 12482, Software Specialists, 2019-11-05 00:00:00, 496
+Eric, 12485, Eastern Data, 2019-11-06 00:00:00, 6485
+Eric, 12496, High Society Investments, 2019-11-23 00:00:00, 49512
+Eric, 12497, Eastern Data, 2019-11-24 00:00:00, 3613
+Eric, 12498, XO Resellers, 2019-11-27 00:00:00, 15739
+Eric, 12500, Old World Insurance, 2019-11-30 00:00:00, 23149
+Eric, 12507, InterLand Services, 2019-12-12 00:00:00, 7761
+Eric, 12511, AMG Logistics, 2019-12-21 00:00:00, 55785
+Eric, 12521, AMG Logistics, 2020-01-16 00:00:00, 50310
+Eric, 12523, Ubermeyer, 2020-01-19 00:00:00, 41468
+Eric, 12524, AMG Logistics, 2020-01-21 00:00:00, 1984
+Eric, 12530, Tricounty Auto, 2020-02-01 00:00:00, 56800
+Eric, 12544, Scheggie Services, 2020-03-01 00:00:00, 54000
+Eric, 12548, XO Resellers, 2020-03-07 00:00:00, 1650
+Eric, 12554, Rutgers Bank, 2020-03-20 00:00:00, 57262
+Eric, 12556, Daycare One, 2020-03-28 00:00:00, 13138
+Eric, 12561, Rutgers Bank, 2020-04-01 00:00:00, 855
+Eric, 12566, Ernst Handel, 2020-04-11 00:00:00, 39260
+Eric, 12570, Scheggie Services, 2020-04-20 00:00:00, 5554
+Eric, 12572, Daycare One, 2020-04-23 00:00:00, 7514
+Eric, 12576, InterLand Services, 2020-05-04 00:00:00, 4400
+Eric, 12582, Fast Transportation, 2020-05-15 00:00:00, 2591
+Eric, 12586, Pharma Research, 2020-05-19 00:00:00, 11749
+Eric, 12592, Old World Insurance, 2020-05-29 00:00:00, 3396
+Eric, 12595, Loctite Corp., 2020-06-02 00:00:00, 2510
+Eric, 12596, Eastern Data, 2020-06-06 00:00:00, 32539
+Eric, 12597, Pharma Research, 2020-06-09 00:00:00, 6852
+Eric, 12599, Software Specialists, 2020-06-10 00:00:00, 1890
+Eric, 12606, Interstate Shop, 2020-06-21 00:00:00, 8514
+Eric, 12614, Software Specialists, 2020-07-11 00:00:00, 2545
+Eric, 12617, XO Resellers, 2020-07-18 00:00:00, 8290
+Eric, 12620, Interstate Shop, 2020-07-22 00:00:00, 28711
+Eric, 12624, Eastern Data, 2020-07-28 00:00:00, 15785
+Eric, 12637, Eastern Data, 2020-08-19 00:00:00, 41249
+Eric, 12642, Ubermeyer, 2020-09-01 00:00:00, 19700
+Eric, 12644, Rutgers Bank, 2020-09-06 00:00:00, 2038
+Eric, 12645, Pharma Research, 2020-09-08 00:00:00, 28397
+Eric, 12647, AMG Logistics, 2020-09-13 00:00:00, 66991
+Eric, 12650, Eastern Data, 2020-09-16 00:00:00, 86729
+Eric, 12657, Ernst Handel, 2020-10-05 00:00:00, 28761
+Eric, 12659, Daycare One, 2020-10-11 00:00:00, 21295
+Eric, 12666, Old World Insurance, 2020-10-18 00:00:00, 23692
+Eric, 12668, Eastern Data, 2020-10-22 00:00:00, 3815
+Eric, 12669, Interstate Shop, 2020-10-26 00:00:00, 62686
+Eric, 12670, Eastern Data, 2020-10-30 00:00:00, 22347
+Eric, 12672, Ubermeyer, 2020-10-31 00:00:00, 56679
+Eric, 12673, FMG Consulting, 2020-11-03 00:00:00, 4193
+Eric, 12675, Ubermeyer, 2020-11-08 00:00:00, 36824
+Eric, 12676, Old World Insurance, 2020-11-10 00:00:00, 46049
+Eric, 12677, Rutgers Bank, 2020-11-11 00:00:00, 16793
+Eric, 12679, Ubermeyer, 2020-11-14 00:00:00, 36727
+Eric, 12681, AMG Logistics, 2020-11-15 00:00:00, 5267
+Eric, 12682, AMG Logistics, 2020-11-16 00:00:00, 62631
+Eric, 12687, Tricounty Auto, 2020-11-28 00:00:00, 760
+Eric, 12690, World Software Resellers, 2020-12-09 00:00:00, 24236
+Eric, 12691, AMG Logistics, 2020-12-13 00:00:00, 2733
+Eric, 12693, XO Resellers, 2020-12-14 00:00:00, 14861
+Eric, 12697, Scheggie Services, 2020-12-25 00:00:00, 21000
+Robert, 12006, Northwest Outfitters, 2017-03-19 00:00:00, 10842
+Robert, 12009, Big Ed's BBQ, 2017-03-26 00:00:00, 4694
+Robert, 12015, BigMart Foodstores, 2017-04-09 00:00:00, 20441
+Robert, 12016, Nova Tera, 2017-04-09 00:00:00, 360
+Robert, 12027, Folk Mining, 2017-04-29 00:00:00, 33377
+Robert, 12039, Direct Sales, 2017-05-18 00:00:00, 60757
+Robert, 12059, Specialty Retail, 2017-06-21 00:00:00, 117494
+Robert, 12061, The Big Cat, 2017-06-26 00:00:00, 3591
+Robert, 12062, Northwest Outfitters, 2017-06-27 00:00:00, 27984
+Robert, 12063, West Coast Customs, 2017-06-27 00:00:00, 3380
+Robert, 12065, Big Ed's BBQ, 2017-07-01 00:00:00, 3761
+Robert, 12066, Big Ed's BBQ, 2017-07-03 00:00:00, 1132
+Robert, 12073, Direct Sales, 2017-07-14 00:00:00, 33914
+Robert, 12074, Nova Tera, 2017-07-14 00:00:00, 378
+Robert, 12077, George Services, 2017-07-24 00:00:00, 16649
+Robert, 12078, West Coast Customs, 2017-07-26 00:00:00, 117
+Robert, 12079, Quick Stop, 2017-07-26 00:00:00, 2940
+Robert, 12080, BigMart Foodstores, 2017-07-29 00:00:00, 147
+Robert, 12087, Quick Stop, 2017-08-17 00:00:00, 97245
+Robert, 12089, Direct Sales, 2017-08-23 00:00:00, 5755
+Robert, 12098, BigMart Foodstores, 2017-09-11 00:00:00, 24826
+Robert, 12100, Folk Mining, 2017-09-11 00:00:00, 15719
+Robert, 12101, Northwest Outfitters, 2017-09-15 00:00:00, 54470
+Robert, 12103, Nova Tera, 2017-09-22 00:00:00, 7863
+Robert, 12104, Nova Tera, 2017-09-26 00:00:00, 35783
+Robert, 12111, West Coast Customs, 2017-10-16 00:00:00, 9104
+Robert, 12114, Northwest Outfitters, 2017-10-27 00:00:00, 23305
+Robert, 12127, Direct Sales, 2017-11-20 00:00:00, 30491
+Robert, 12133, Infinity Software, 2017-11-30 00:00:00, 6376
+Robert, 12138, Direct Sales, 2017-12-10 00:00:00, 7522
+Robert, 12139, Infinity Software, 2017-12-13 00:00:00, 90952
+Robert, 12141, Direct Sales, 2017-12-21 00:00:00, 18960
+Robert, 12153, Infinity Software, 2018-01-17 00:00:00, 5240
+Robert, 12157, Computer Tech, 2018-01-27 00:00:00, 203
+Robert, 12160, Specialty Retail, 2018-02-04 00:00:00, 59939
+Robert, 12163, FISGA Corp, 2018-02-13 00:00:00, 76652
+Robert, 12175, Northwest Outfitters, 2018-03-14 00:00:00, 48480
+Robert, 12176, George Services, 2018-03-18 00:00:00, 9126
+Robert, 12177, West Coast Customs, 2018-03-21 00:00:00, 11227
+Robert, 12180, Quick Stop, 2018-03-25 00:00:00, 385
+Robert, 12181, Nova Tera, 2018-03-28 00:00:00, 6233
+Robert, 12191, Tumbleweed Gaming, 2018-04-17 00:00:00, 30375
+Robert, 12200, Big Ed's BBQ, 2018-05-01 00:00:00, 21334
+Robert, 12213, Nova Tera, 2018-06-03 00:00:00, 18541
+Robert, 12228, Tumbleweed Gaming, 2018-06-28 00:00:00, 258
+Robert, 12231, Specialty Retail, 2018-07-03 00:00:00, 12202
+Robert, 12236, BigMart Foodstores, 2018-07-17 00:00:00, 31504
+Robert, 12242, Tumbleweed Gaming, 2018-07-25 00:00:00, 46071
+Robert, 12243, The Big Cat, 2018-07-27 00:00:00, 12040
+Robert, 12247, Direct Sales, 2018-08-07 00:00:00, 10143
+Robert, 12251, Tumbleweed Gaming, 2018-08-16 00:00:00, 25633
+Robert, 12255, Computer Tech, 2018-08-22 00:00:00, 3300
+Robert, 12258, West Coast Customs, 2018-08-30 00:00:00, 60332
+Robert, 12259, The Big Cat, 2018-09-02 00:00:00, 37410
+Robert, 12262, BigMart Foodstores, 2018-09-06 00:00:00, 2288
+Robert, 12264, The Big Cat, 2018-09-11 00:00:00, 16874
+Robert, 12272, George Services, 2018-09-21 00:00:00, 23211
+Robert, 12274, Tumbleweed Gaming, 2018-09-24 00:00:00, 20673
+Robert, 12277, FISGA Corp, 2018-09-30 00:00:00, 39615
+Robert, 12279, BigMart Foodstores, 2018-10-05 00:00:00, 6725
+Robert, 12288, Quick Stop, 2018-10-26 00:00:00, 33343
+Robert, 12289, Nova Tera, 2018-10-29 00:00:00, 68899
+Robert, 12291, The Big Cat, 2018-11-03 00:00:00, 9402
+Robert, 12293, FISGA Corp, 2018-11-05 00:00:00, 3968
+Robert, 12294, FISGA Corp, 2018-11-05 00:00:00, 45205
+Robert, 12303, West Coast Customs, 2018-11-19 00:00:00, 31918
+Robert, 12315, Folk Mining, 2018-12-08 00:00:00, 11320
+Robert, 12317, Whittaker & Co, Inc, 2018-12-10 00:00:00, 4521
+Robert, 12318, Whittaker & Co, Inc, 2018-12-14 00:00:00, 6345
+Robert, 12328, Computer Tech, 2018-12-29 00:00:00, 85835
+Robert, 12336, Quick Stop, 2019-01-18 00:00:00, 8412
+Robert, 12343, Big Ed's BBQ, 2019-02-02 00:00:00, 70400
+Robert, 12359, George Services, 2019-03-08 00:00:00, 8745
+Robert, 12361, West Coast Customs, 2019-03-13 00:00:00, 8952
+Robert, 12365, Tumbleweed Gaming, 2019-03-22 00:00:00, 70908
+Robert, 12366, BigMart Foodstores, 2019-03-24 00:00:00, 7181
+Robert, 12369, Folk Mining, 2019-03-28 00:00:00, 2560
+Robert, 12370, West Coast Customs, 2019-04-01 00:00:00, 4235
+Robert, 12373, Infinity Software, 2019-04-06 00:00:00, 2619
+Robert, 12375, Northwest Outfitters, 2019-04-07 00:00:00, 4995
+Robert, 12376, Big Ed's BBQ, 2019-04-09 00:00:00, 4276
+Robert, 12377, BigMart Foodstores, 2019-04-12 00:00:00, 46877
+Robert, 12383, Direct Sales, 2019-04-14 00:00:00, 45107
+Robert, 12394, The Big Cat, 2019-05-07 00:00:00, 71434
+Robert, 12399, Northwest Outfitters, 2019-05-15 00:00:00, 8466
+Robert, 12401, Nova Tera, 2019-05-19 00:00:00, 41241
+Robert, 12406, Quick Stop, 2019-05-29 00:00:00, 14283
+Robert, 12412, FISGA Corp, 2019-06-04 00:00:00, 23645
+Robert, 12414, Tumbleweed Gaming, 2019-06-12 00:00:00, 12072
+Robert, 12415, Specialty Retail, 2019-06-12 00:00:00, 29023
+Robert, 12417, Specialty Retail, 2019-06-16 00:00:00, 31281
+Robert, 12433, FISGA Corp, 2019-07-17 00:00:00, 84295
+Robert, 12439, Infinity Software, 2019-08-05 00:00:00, 4730
+Robert, 12447, Specialty Retail, 2019-08-21 00:00:00, 41524
+Robert, 12457, Specialty Retail, 2019-09-13 00:00:00, 18155
+Robert, 12459, Big Ed's BBQ, 2019-09-19 00:00:00, 70
+Robert, 12461, The Big Cat, 2019-09-22 00:00:00, 11230
+Robert, 12466, West Coast Customs, 2019-10-03 00:00:00, 1250
+Robert, 12467, BigMart Foodstores, 2019-10-05 00:00:00, 3567
+Robert, 12475, Computer Tech, 2019-10-17 00:00:00, 12088
+Robert, 12489, BigMart Foodstores, 2019-11-18 00:00:00, 38821
+Robert, 12494, Tumbleweed Gaming, 2019-11-22 00:00:00, 35
+Robert, 12495, Specialty Retail, 2019-11-23 00:00:00, 29492
+Robert, 12503, Northwest Outfitters, 2019-12-01 00:00:00, 7048
+Robert, 12504, Computer Tech, 2019-12-04 00:00:00, 51237
+Robert, 12509, The Big Cat, 2019-12-15 00:00:00, 97434
+Robert, 12514, Folk Mining, 2020-01-01 00:00:00, 39199
+Robert, 12516, Computer Tech, 2020-01-05 00:00:00, 4178
+Robert, 12520, Tumbleweed Gaming, 2020-01-12 00:00:00, 57340
+Robert, 12527, Infinity Software, 2020-01-29 00:00:00, 11866
+Robert, 12536, Infinity Software, 2020-02-15 00:00:00, 2250
+Robert, 12537, Whittaker & Co, Inc, 2020-02-17 00:00:00, 42975
+Robert, 12538, FISGA Corp, 2020-02-21 00:00:00, 54840
+Robert, 12541, The Big Cat, 2020-02-25 00:00:00, 3873
+Robert, 12549, Direct Sales, 2020-03-09 00:00:00, 57481
+Robert, 12550, Big Ed's BBQ, 2020-03-12 00:00:00, 400
+Robert, 12564, Whittaker & Co, Inc, 2020-04-09 00:00:00, 3537
+Robert, 12568, Northwest Outfitters, 2020-04-15 00:00:00, 37652
+Robert, 12580, Big Ed's BBQ, 2020-05-13 00:00:00, 45217
+Robert, 12581, Computer Tech, 2020-05-14 00:00:00, 4581
+Robert, 12583, Computer Tech, 2020-05-18 00:00:00, 22682
+Robert, 12587, Big Ed's BBQ, 2020-05-19 00:00:00, 16888
+Robert, 12589, FISGA Corp, 2020-05-23 00:00:00, 12789
+Robert, 12591, Direct Sales, 2020-05-27 00:00:00, 22191
+Robert, 12601, The Big Cat, 2020-06-12 00:00:00, 70477
+Robert, 12607, Northwest Outfitters, 2020-06-24 00:00:00, 15740
+Robert, 12609, Tumbleweed Gaming, 2020-07-01 00:00:00, 6600
+Robert, 12619, Computer Tech, 2020-07-18 00:00:00, 41605
+Robert, 12622, West Coast Customs, 2020-07-25 00:00:00, 5636
+Robert, 12623, George Services, 2020-07-28 00:00:00, 10866
+Robert, 12625, The Big Cat, 2020-07-31 00:00:00, 43585
+Robert, 12627, The Big Cat, 2020-08-05 00:00:00, 66207
+Robert, 12628, Northwest Outfitters, 2020-08-06 00:00:00, 5605
+Robert, 12635, The Big Cat, 2020-08-12 00:00:00, 82712
+Robert, 12640, Nova Tera, 2020-08-24 00:00:00, 57787
+Robert, 12643, Quick Stop, 2020-09-02 00:00:00, 11844
+Robert, 12646, George Services, 2020-09-09 00:00:00, 6120
+Robert, 12648, George Services, 2020-09-13 00:00:00, 2635
+Robert, 12652, BigMart Foodstores, 2020-09-24 00:00:00, 45650
+Robert, 12655, Quick Stop, 2020-10-02 00:00:00, 40477
+Robert, 12656, Specialty Retail, 2020-10-02 00:00:00, 14692
+Robert, 12664, Direct Sales, 2020-10-15 00:00:00, 17837
+Robert, 12665, Direct Sales, 2020-10-15 00:00:00, 18988
+Robert, 12686, George Services, 2020-11-25 00:00:00, 31765
+Robert, 12689, FISGA Corp, 2020-12-06 00:00:00, 4715
+Robert, 12694, George Services, 2020-12-16 00:00:00, 5209
+Robert, 12695, Folk Mining, 2020-12-19 00:00:00, 27707
+Sue, 12004, Old World Insurance, 2017-03-18 00:00:00, 59155
+Sue, 12013, XO Resellers, 2017-04-05 00:00:00, 6680
+Sue, 12017, Tricounty Auto, 2017-04-12 00:00:00, 10870
+Sue, 12024, Rutgers Bank, 2017-04-20 00:00:00, 61092
+Sue, 12038, Loctite Corp., 2017-05-15 00:00:00, 3844
+Sue, 12041, High Society Investments, 2017-05-25 00:00:00, 59845
+Sue, 12042, Tricounty Auto, 2017-05-27 00:00:00, 36610
+Sue, 12047, Ubermeyer, 2017-06-05 00:00:00, 962
+Sue, 12050, Tricounty Auto, 2017-06-08 00:00:00, 387
+Sue, 12051, Interstate Shop, 2017-06-08 00:00:00, 5580
+Sue, 12055, Fast Transportation, 2017-06-19 00:00:00, 6652
+Sue, 12058, Ubermeyer, 2017-06-21 00:00:00, 50673
+Sue, 12064, AMG Logistics, 2017-06-29 00:00:00, 24139
+Sue, 12071, Pharma Research, 2017-07-09 00:00:00, 53724
+Sue, 12081, World Software Resellers, 2017-08-01 00:00:00, 76389
+Sue, 12090, World Software Resellers, 2017-08-26 00:00:00, 15980
+Sue, 12093, High Society Investments, 2017-08-30 00:00:00, 525
+Sue, 12095, Fast Transportation, 2017-09-06 00:00:00, 8149
+Sue, 12105, Rutgers Bank, 2017-09-28 00:00:00, 5657
+Sue, 12108, Ubermeyer, 2017-10-07 00:00:00, 16092
+Sue, 12110, XO Resellers, 2017-10-12 00:00:00, 61429
+Sue, 12112, Old World Insurance, 2017-10-20 00:00:00, 43346
+Sue, 12115, Tricounty Auto, 2017-10-30 00:00:00, 2967
+Sue, 12116, FMG Consulting, 2017-11-02 00:00:00, 2598
+Sue, 12120, World Software Resellers, 2017-11-09 00:00:00, 5973
+Sue, 12121, World Software Resellers, 2017-11-13 00:00:00, 21528
+Sue, 12123, Old World Insurance, 2017-11-15 00:00:00, 58444
+Sue, 12125, Old World Insurance, 2017-11-20 00:00:00, 290
+Sue, 12128, Interstate Shop, 2017-11-22 00:00:00, 22077
+Sue, 12129, High Society Investments, 2017-11-22 00:00:00, 36875
+Sue, 12132, Ernst Handel, 2017-11-28 00:00:00, 69113
+Sue, 12135, Interstate Shop, 2017-12-03 00:00:00, 41152
+Sue, 12143, FMG Consulting, 2017-12-26 00:00:00, 12528
+Sue, 12148, Software Specialists, 2018-01-08 00:00:00, 40810
+Sue, 12149, AMG Logistics, 2018-01-08 00:00:00, 3160
+Sue, 12158, Interstate Shop, 2018-01-31 00:00:00, 34632
+Sue, 12159, High Society Investments, 2018-02-04 00:00:00, 95449
+Sue, 12168, FMG Consulting, 2018-02-23 00:00:00, 37201
+Sue, 12171, Fast Transportation, 2018-03-03 00:00:00, 1050
+Sue, 12178, Scheggie Services, 2018-03-23 00:00:00, 16267
+Sue, 12179, Rutgers Bank, 2018-03-23 00:00:00, 47661
+Sue, 12182, Fast Transportation, 2018-03-29 00:00:00, 6030
+Sue, 12183, Scheggie Services, 2018-03-31 00:00:00, 59685
+Sue, 12187, FMG Consulting, 2018-04-06 00:00:00, 8370
+Sue, 12188, Tricounty Auto, 2018-04-09 00:00:00, 10429
+Sue, 12189, Ernst Handel, 2018-04-11 00:00:00, 62773
+Sue, 12195, Ubermeyer, 2018-04-20 00:00:00, 18000
+Sue, 12199, Eastern Data, 2018-04-28 00:00:00, 9911
+Sue, 12202, Software Specialists, 2018-05-05 00:00:00, 45920
+Sue, 12203, XO Resellers, 2018-05-08 00:00:00, 3380
+Sue, 12204, Ernst Handel, 2018-05-10 00:00:00, 40383
+Sue, 12205, Rutgers Bank, 2018-05-12 00:00:00, 3760
+Sue, 12210, Tricounty Auto, 2018-05-30 00:00:00, 27900
+Sue, 12216, Eastern Data, 2018-06-07 00:00:00, 53327
+Sue, 12218, Interstate Shop, 2018-06-11 00:00:00, 69022
+Sue, 12219, AMG Logistics, 2018-06-12 00:00:00, 16934
+Sue, 12221, Scheggie Services, 2018-06-16 00:00:00, 522
+Sue, 12222, Software Specialists, 2018-06-16 00:00:00, 62231
+Sue, 12227, Rutgers Bank, 2018-06-24 00:00:00, 32344
+Sue, 12229, Scheggie Services, 2018-06-30 00:00:00, 49
+Sue, 12233, Rutgers Bank, 2018-07-08 00:00:00, 56687
+Sue, 12235, Tricounty Auto, 2018-07-13 00:00:00, 6200
+Sue, 12239, Ubermeyer, 2018-07-18 00:00:00, 375
+Sue, 12241, Pharma Research, 2018-07-23 00:00:00, 33082
+Sue, 12246, Fast Transportation, 2018-08-07 00:00:00, 744
+Sue, 12248, Fast Transportation, 2018-08-09 00:00:00, 16002
+Sue, 12249, FMG Consulting, 2018-08-13 00:00:00, 10594
+Sue, 12253, High Society Investments, 2018-08-21 00:00:00, 78805
+Sue, 12257, Tricounty Auto, 2018-08-26 00:00:00, 59268
+Sue, 12271, FMG Consulting, 2018-09-19 00:00:00, 28251
+Sue, 12273, AMG Logistics, 2018-09-23 00:00:00, 22390
+Sue, 12276, Ubermeyer, 2018-09-28 00:00:00, 1905
+Sue, 12283, Software Specialists, 2018-10-13 00:00:00, 8757
+Sue, 12284, Pharma Research, 2018-10-16 00:00:00, 4712
+Sue, 12287, Eastern Data, 2018-10-25 00:00:00, 2580
+Sue, 12290, InterLand Services, 2018-10-30 00:00:00, 47028
+Sue, 12295, Tricounty Auto, 2018-11-08 00:00:00, 6825
+Sue, 12298, InterLand Services, 2018-11-08 00:00:00, 9361
+Sue, 12300, InterLand Services, 2018-11-10 00:00:00, 7184
+Sue, 12301, High Society Investments, 2018-11-14 00:00:00, 65550
+Sue, 12305, Scheggie Services, 2018-11-27 00:00:00, 32550
+Sue, 12307, Eastern Data, 2018-11-29 00:00:00, 2000
+Sue, 12309, Interstate Shop, 2018-12-03 00:00:00, 67632
+Sue, 12310, Eastern Data, 2018-12-04 00:00:00, 20316
+Sue, 12311, Tricounty Auto, 2018-12-04 00:00:00, 20717
+Sue, 12329, AMG Logistics, 2018-12-29 00:00:00, 240
+Sue, 12332, InterLand Services, 2019-01-07 00:00:00, 2320
+Sue, 12333, High Society Investments, 2019-01-08 00:00:00, 496
+Sue, 12334, Pharma Research, 2019-01-11 00:00:00, 50815
+Sue, 12341, Old World Insurance, 2019-01-30 00:00:00, 6951
+Sue, 12350, Scheggie Services, 2019-02-13 00:00:00, 6150
+Sue, 12351, Pharma Research, 2019-02-14 00:00:00, 58
+Sue, 12356, World Software Resellers, 2019-02-28 00:00:00, 11302
+Sue, 12364, Ubermeyer, 2019-03-20 00:00:00, 4082
+Sue, 12367, Old World Insurance, 2019-03-28 00:00:00, 17790
+Sue, 12372, Software Specialists, 2019-04-06 00:00:00, 75021
+Sue, 12374, World Software Resellers, 2019-04-07 00:00:00, 67347
+Sue, 12379, Tricounty Auto, 2019-04-12 00:00:00, 7702
+Sue, 12381, Old World Insurance, 2019-04-12 00:00:00, 59290
+Sue, 12385, Daycare One, 2019-04-14 00:00:00, 60218
+Sue, 12388, Loctite Corp., 2019-04-21 00:00:00, 5970
+Sue, 12390, Software Specialists, 2019-04-25 00:00:00, 1440
+Sue, 12392, Eastern Data, 2019-05-03 00:00:00, 1783
+Sue, 12398, High Society Investments, 2019-05-15 00:00:00, 11835
+Sue, 12402, Daycare One, 2019-05-23 00:00:00, 14567
+Sue, 12408, Rutgers Bank, 2019-05-31 00:00:00, 17697
+Sue, 12409, Loctite Corp., 2019-05-31 00:00:00, 10970
+Sue, 12411, Fast Transportation, 2019-06-01 00:00:00, 63038
+Sue, 12420, Eastern Data, 2019-06-23 00:00:00, 14148
+Sue, 12421, Interstate Shop, 2019-06-25 00:00:00, 50167
+Sue, 12424, InterLand Services, 2019-07-03 00:00:00, 47238
+Sue, 12434, Software Specialists, 2019-07-21 00:00:00, 107037
+Sue, 12437, FMG Consulting, 2019-08-02 00:00:00, 72597
+Sue, 12438, Rutgers Bank, 2019-08-04 00:00:00, 4465
+Sue, 12440, AMG Logistics, 2019-08-06 00:00:00, 47264
+Sue, 12441, Old World Insurance, 2019-08-06 00:00:00, 59192
+Sue, 12445, Loctite Corp., 2019-08-16 00:00:00, 7222
+Sue, 12453, Old World Insurance, 2019-09-04 00:00:00, 9821
+Sue, 12460, Ernst Handel, 2019-09-19 00:00:00, 943
+Sue, 12464, World Software Resellers, 2019-10-02 00:00:00, 94553
+Sue, 12465, InterLand Services, 2019-10-03 00:00:00, 1422
+Sue, 12468, Old World Insurance, 2019-10-05 00:00:00, 4543
+Sue, 12469, FMG Consulting, 2019-10-09 00:00:00, 24559
+Sue, 12470, Rutgers Bank, 2019-10-09 00:00:00, 60267
+Sue, 12471, Eastern Data, 2019-10-10 00:00:00, 42840
+Sue, 12480, Software Specialists, 2019-11-01 00:00:00, 3575
+Sue, 12486, XO Resellers, 2019-11-10 00:00:00, 4434
+Sue, 12492, InterLand Services, 2019-11-22 00:00:00, 55220
+Sue, 12501, Software Specialists, 2019-11-30 00:00:00, 7120
+Sue, 12508, Ernst Handel, 2019-12-15 00:00:00, 18708
+Sue, 12512, Scheggie Services, 2019-12-25 00:00:00, 15796
+Sue, 12513, High Society Investments, 2019-12-29 00:00:00, 10318
+Sue, 12515, FMG Consulting, 2020-01-05 00:00:00, 50205
+Sue, 12518, Old World Insurance, 2020-01-09 00:00:00, 21201
+Sue, 12525, InterLand Services, 2020-01-25 00:00:00, 39494
+Sue, 12533, Ubermeyer, 2020-02-12 00:00:00, 17613
+Sue, 12534, XO Resellers, 2020-02-12 00:00:00, 19588
+Sue, 12542, Loctite Corp., 2020-02-28 00:00:00, 36948
+Sue, 12545, InterLand Services, 2020-03-04 00:00:00, 17783
+Sue, 12547, Fast Transportation, 2020-03-05 00:00:00, 60377
+Sue, 12551, Daycare One, 2020-03-12 00:00:00, 50471
+Sue, 12552, Fast Transportation, 2020-03-16 00:00:00, 8822
+Sue, 12555, Rutgers Bank, 2020-03-24 00:00:00, 6481
+Sue, 12557, Pharma Research, 2020-03-30 00:00:00, 17011
+Sue, 12558, Ernst Handel, 2020-03-30 00:00:00, 18858
+Sue, 12559, Old World Insurance, 2020-04-01 00:00:00, 49475
+Sue, 12571, Daycare One, 2020-04-21 00:00:00, 13054
+Sue, 12575, FMG Consulting, 2020-04-30 00:00:00, 5080
+Sue, 12577, Pharma Research, 2020-05-05 00:00:00, 507
+Sue, 12579, Pharma Research, 2020-05-12 00:00:00, 490
+Sue, 12584, Ernst Handel, 2020-05-19 00:00:00, 1161
+Sue, 12593, Tricounty Auto, 2020-05-29 00:00:00, 10819
+Sue, 12594, Fast Transportation, 2020-06-01 00:00:00, 3291
+Sue, 12603, Software Specialists, 2020-06-17 00:00:00, 46782
+Sue, 12605, AMG Logistics, 2020-06-21 00:00:00, 29352
+Sue, 12612, XO Resellers, 2020-07-09 00:00:00, 2745
+Sue, 12621, Fast Transportation, 2020-07-24 00:00:00, 7566
+Sue, 12626, Scheggie Services, 2020-08-02 00:00:00, 25131
+Sue, 12629, Ubermeyer, 2020-08-07 00:00:00, 106133
+Sue, 12631, InterLand Services, 2020-08-07 00:00:00, 2100
+Sue, 12633, Pharma Research, 2020-08-11 00:00:00, 29891
+Sue, 12636, World Software Resellers, 2020-08-15 00:00:00, 1645
+Sue, 12651, High Society Investments, 2020-09-20 00:00:00, 4635
+Sue, 12653, Software Specialists, 2020-09-27 00:00:00, 108683
+Sue, 12667, Pharma Research, 2020-10-22 00:00:00, 464
+Sue, 12678, Interstate Shop, 2020-11-11 00:00:00, 4008
+Sue, 12684, Eastern Data, 2020-11-19 00:00:00, 34830
+Sue, 12688, Old World Insurance, 2020-12-02 00:00:00, 10145
+Sue, 12699, Fast Transportation, 2020-12-29 00:00:00, 13115
+Sue, 12700, InterLand Services, 2020-12-30 00:00:00, 839

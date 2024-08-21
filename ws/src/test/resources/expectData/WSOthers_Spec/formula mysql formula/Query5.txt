@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 3)
+state, fx id, fx new category
+AZ, 1, Games
+CA, 2, Educational
+CO, 3, Business
+CT, 4, Personal
+FL, 5, Graphics
+IL, 6, Others
+MA, 7, Others
+MD, 8, Others
+NJ, 9, Others
+NV, 10, Others
+NY, 11, Others
+PA, 12, Others
+TX, 13, Others
+WA, 14, Others

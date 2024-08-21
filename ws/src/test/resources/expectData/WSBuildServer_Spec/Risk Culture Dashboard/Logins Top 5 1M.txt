@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+Period, ID, Username
+1M, 18, EHS Manager
+1M, 24, Anonymous User
+1M, 75, protecht.support
+1M, 669, protecht.consulting
+1M, 1680, Content Integration

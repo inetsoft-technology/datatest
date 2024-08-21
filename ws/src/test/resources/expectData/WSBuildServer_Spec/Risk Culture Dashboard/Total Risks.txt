@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Total
+12M, 49
+1M, 60
+3M, 60

@@ -1,0 +1,2 @@
+The table size(row x col) is:(1 x 4)
+Sequence week, Variant, Percentage, VariantShort

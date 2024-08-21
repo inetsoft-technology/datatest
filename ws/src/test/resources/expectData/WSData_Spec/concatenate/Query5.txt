@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+RESELLER, Year(ORDERDATE), CUSTOMER_ID_1
+false, 2001, NULL
+false, 2001, 13
+false, 2002, NULL
+false, 2002, 4
+true, 2002, 14

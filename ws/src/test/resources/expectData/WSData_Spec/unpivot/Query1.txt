@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 2)
+state, Measure
+AZ, 2005-10-14
+CA, 2003-01-13
+CO, 2004-07-13
+CT, NULL
+FL, NULL
+IL, NULL
+MA, 2002-09-08
+MD, 2003-09-03
+NJ, 2002-12-30

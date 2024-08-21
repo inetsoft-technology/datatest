@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 7)
+CATEGORY_ID, CATEGORY_NAME, CITY, CUSTOMER_ID, RESELLER, STATE, ZIP
+1, Games, Aachen, 3, true, TX, 03887
+1, Games, Austin, 17, true, TX, 28122
+2, Educational, Aachen, 3, true, TX, 03887
+2, Educational, Austin, 17, true, TX, 28122
+3, Business, Aachen, 3, true, TX, 03887
+3, Business, Austin, 17, true, TX, 28122
+4, Personal, Aachen, 3, true, TX, 03887
+4, Personal, Austin, 17, true, TX, 28122
+5, Graphics, Aachen, 3, true, TX, 03887
+5, Graphics, Austin, 17, true, TX, 28122
+6, Office Tools, Aachen, 3, true, TX, 03887
+6, Office Tools, Austin, 17, true, TX, 28122

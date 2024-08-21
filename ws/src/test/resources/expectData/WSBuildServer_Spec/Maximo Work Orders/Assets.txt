@@ -1,0 +1,550 @@
+The table size(row x col) is:(549 x 7)
+Asset ID, Asset Description, Loop Location, Parent, Rotating Item, Is M&TE, Calibration
+1000, Microsoft Office XP Pro, ADDR2001, NULL, MSOFFICE, N, Y
+1001, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1002, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1003, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1004, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1005, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1006, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1007, Fire Extinguisher, NULL, NULL, FIRE-100, N, N
+1008, Windows XP Operating System, NULL, A7800, WINXP, N, N
+1009, Laser printer (local), NULL, A7800, HPLASER, N, N
+1010, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1011, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1012, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1013, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1014, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1015, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1016, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1017, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1018, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1019, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1020, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1021, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1022, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1023, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1024, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1025, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1026, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1027, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1028, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1029, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1030, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1031, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1032, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1033, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1100, Dump Truck, International Harvester, Triaxle, 30 CU Yds, NULL, NULL, DUMPTRUCK, N, N
+11200, HVAC System- 50 Ton Cool Cap/ 450000 Btu Heat Cap, NULL, NULL, NULL, N, N
+11210, Circulation Fan- Centrifugal/ 20/000 CFM, NULL, 11200, NULL, N, N
+11211, Motor Starter- Size 2/440v/3ph/60cy, NULL, 11210, NULL, N, N
+11220, Electrical Control Panel- HVAC System, NULL, NULL, NULL, N, N
+11230, Emergency Generator, NULL, NULL, NULL, N, N
+11240, Circulation Fan- Centrifugal/ 20/000 CFM, NULL, 11200, NULL, N, N
+11250, Circulation Fan- Centrifugal/ 20/000 CFM, NULL, 11200, NULL, N, N
+11300, Reciprocating Compressor- Air Cooled/100 CFM, NULL, NULL, NULL, N, N
+11340, Motor Starter- Size 4/NEMA 12/440v/3ph/60hz, NULL, 11300, NULL, N, N
+11400, Boiler- 50,000 Lb/Hr/ Gas Fired/ Water Tube, NULL, NULL, NULL, N, N
+11430, Centrifugal Pump 100GPM/60FT HD, NULL, 11400, PUMP100, N, N
+11450, Centrifugal Pump 100GPM/60FTHD, NULL, 11400, PUMP100, N, N
+11460, Burner, Gas Fired- For Boiler, NULL, 11400, NULL, N, N
+11470, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+11480, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+12100, Forklift #1, NULL, NULL, NULL, N, N
+12200, Overhead Crane #1, NULL, NULL, NULL, N, N
+12210, Brake System- Overhead Crane #1, NULL, 12200, NULL, N, N
+12222, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+12300, Electric Cart, NULL, NULL, NULL, N, N
+12345, Pump, Centrifugal, Goulds 3196, NULL, NULL, CENTPUMP, N, N
+12400, Forklift #2, NULL, NULL, NULL, N, N
+12500, Overhead Crane #2, NULL, NULL, NULL, N, N
+12510, Brake System- Overhead Crane #2, NULL, 12500, NULL, N, N
+12600, Conveyor System #1, NULL, NULL, NULL, N, N
+12610, 30 Hp Drive Motor- Conveyor System #1, NULL, 12600, NULL, N, N
+12700, Conveyor System #2, NULL, NULL, NULL, N, N
+12710, 30 Hp Drive Motor- Conveyor System #2, NULL, 12700, NULL, N, N
+13110, Feeder System, NULL, NULL, NULL, N, N
+13120, Bottom Sealing System, NULL, NULL, NULL, N, N
+13130, Stripper System, NULL, NULL, NULL, N, N
+13140, Conveyor System- Pkg. Dept., NULL, NULL, NULL, N, N
+13141, Elevator Rails And Drainpan Assembly, NULL, 13140, NULL, N, N
+13142, Carton Escapement Assembly #2, NULL, 13140, NULL, N, N
+13143, Chain Wash Assembly, NULL, 13140, NULL, N, N
+13144, Carton Escapement Assembly #1, NULL, 13140, NULL, N, N
+13145, Indexing Drive Assembly, NULL, 13140, NULL, N, N
+13150, Top Breaker System, NULL, NULL, NULL, N, N
+13160, Filler And Lifter System, NULL, NULL, NULL, N, N
+13170, Top Sealer System, NULL, NULL, NULL, N, N
+13180, Lubrication System, NULL, NULL, NULL, N, N
+1866, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1867, Microsoft Office XP Pro, NULL, NULL, MSOFFICE, N, N
+1869, Microsoft Office XP Pro, NULL, NULL, MSOFFICE, N, N
+1870, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1871, Windows Server 2003 License, NULL, 9010, WIN2003SVR, N, N
+1872, Windows XP Operating System, NULL, NULL, WINXP, N, N
+1873, Microsoft Office XP Pro, NULL, NULL, MSOFFICE, N, N
+1874, Windows XP Operating System, NULL, A7701, WINXP, N, N
+1875, Microsoft Office XP Pro, NULL, A7701, MSOFFICE, N, N
+1877, Windows XP Operating System, NULL, 7111, WINXP, N, N
+1878, Microsoft Office XP Pro, NULL, 7111, MSOFFICE, N, N
+1880, Windows XP Operating System, NULL, A7702, WINXP, N, N
+1881, Microsoft Office XP Pro, NULL, A7702, MSOFFICE, N, N
+1883, Unix Operating System, NULL, A8005, UNIXOS, N, N
+1884, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1885, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1886, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1887, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1888, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1889, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1890, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1891, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1892, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1893, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1894, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1895, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1896, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1897, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1898, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1899, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1900, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1901, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1902, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1903, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+1904, MS Visio, NULL, NULL, VISIO, N, N
+1905, MS Visio, NULL, NULL, VISIO, N, N
+1906, MS Visio, NULL, NULL, VISIO, N, N
+1907, MS Visio, NULL, NULL, VISIO, N, N
+1908, MS Visio, NULL, NULL, VISIO, N, N
+1909, MS Visio, NULL, NULL, VISIO, N, N
+1910, MS Visio, NULL, NULL, VISIO, N, N
+1911, MS Visio, NULL, NULL, VISIO, N, N
+1912, MS Visio, NULL, NULL, VISIO, N, N
+1913, MS Visio, NULL, NULL, VISIO, N, N
+1914, MS Visio, NULL, NULL, VISIO, N, N
+1915, MS Visio, NULL, NULL, VISIO, N, N
+1916, MS Visio, NULL, NULL, VISIO, N, N
+1917, MS Visio, NULL, NULL, VISIO, N, N
+1918, MS Visio, NULL, NULL, VISIO, N, N
+1919, MS Visio, NULL, NULL, VISIO, N, N
+1920, MS Visio, NULL, NULL, VISIO, N, N
+1921, MS Visio, NULL, NULL, VISIO, N, N
+1922, MS Visio, NULL, NULL, VISIO, N, N
+1923, MS Visio, NULL, NULL, VISIO, N, N
+1944, Hard Drive, NULL, NULL, HD4532, N, N
+1945, Hard Drive, NULL, NULL, HD4532, N, N
+1946, Hard Drive, NULL, NULL, HD4532, N, N
+1947, Hard Drive, NULL, NULL, HD4532, N, N
+1948, Hard Drive, NULL, NULL, HD4532, N, N
+1949, Hard Drive, NULL, NULL, HD4532, N, N
+1950, Hard Drive, NULL, NULL, HD4532, N, N
+1951, Hard Drive, NULL, NULL, HD4532, N, N
+1952, Hard Drive, NULL, NULL, HD4532, N, N
+1953, Hard Drive, NULL, NULL, HD4532, N, N
+1954, Hard Drive, NULL, NULL, HD4532, N, N
+1955, Hard Drive, NULL, NULL, HD4532, N, N
+1956, Hard Drive, NULL, NULL, HD4532, N, N
+1957, Hard Drive, NULL, NULL, HD4532, N, N
+1958, Hard Drive, NULL, NULL, HD4532, N, N
+1959, Hard Drive, NULL, NULL, HD4532, N, N
+1960, Hard Drive, NULL, NULL, HD4532, N, N
+1961, Hard Drive, NULL, NULL, HD4532, N, N
+1962, Hard Drive, NULL, NULL, HD4532, N, N
+1963, Hard Drive, NULL, NULL, HD4532, N, N
+1964, Standard Laptop Computer, NULL, NULL, D600, N, N
+1965, Standard Laptop Computer, NULL, NULL, D600, N, N
+1966, Standard Laptop Computer, NULL, NULL, D600, N, N
+1967, Standard Laptop Computer, NULL, NULL, D600, N, N
+1968, Standard Laptop Computer, NULL, NULL, D600, N, N
+1969, Standard Laptop Computer, NULL, NULL, D600, N, N
+1970, Standard Laptop Computer, NULL, NULL, D600, N, N
+1971, Standard Laptop Computer, NULL, NULL, D600, N, N
+1972, Standard Laptop Computer, NULL, NULL, D600, N, N
+1973, Standard Laptop Computer, NULL, NULL, D600, N, N
+1974, Standard Laptop Computer, NULL, NULL, D600, N, N
+1975, Standard Laptop Computer, NULL, NULL, D600, N, N
+1976, Standard Laptop Computer, NULL, NULL, D600, N, N
+1977, Standard Laptop Computer, NULL, NULL, D600, N, N
+1978, Standard Laptop Computer, NULL, NULL, D600, N, N
+1979, Series II Laptop, NULL, NULL, D650, N, N
+1980, Series II Laptop, NULL, NULL, D650, N, N
+1981, Series II Laptop, NULL, NULL, D650, N, N
+1982, Series II Laptop, NULL, NULL, D650, N, N
+1983, Series II Laptop, NULL, NULL, D650, N, N
+1984, Series II Laptop, NULL, NULL, D650, N, N
+1985, Series II Laptop, NULL, NULL, D650, N, N
+1986, Series II Laptop, NULL, NULL, D650, N, N
+1987, Series II Laptop, NULL, NULL, D650, N, N
+1988, Series II Laptop, NULL, NULL, D650, N, N
+1989, Series II Laptop, NULL, NULL, D650, N, N
+1990, Series II Laptop, NULL, NULL, D650, N, N
+1991, Series II Laptop, NULL, NULL, D650, N, N
+1992, Series II Laptop, NULL, NULL, D650, N, N
+1993, Series II Laptop, NULL, NULL, D650, N, N
+1994, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+1995, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+1996, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+1997, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+1998, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+1999, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+19998, IT (UNSPSC),Computer_Equipment,Computer,Desktop, 64.00 MB, 4.00 GB, 266.00 PROSPEED, NULL, NULL, DT66, N, N
+19999, IT (UNSPSC),Computer_Equipment,Computer,Desktop, 64.00 MB, 4.00 GB, 266.00 PROSPEED, NULL, NULL, NULL, N, N
+2000, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+20000, IT (UNSPSC),Computer_Equipment,Computer,Desktop, 96.00 MB, 4.00 GB, 266.00 PROSPEED, NULL, NULL, DT66, N, N
+2001, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2002, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2003, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2004, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2005, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2006, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2007, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2008, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2009, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2010, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2011, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2012, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2013, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2014, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2015, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2016, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2017, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2018, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2019, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2020, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2021, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2022, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2023, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2024, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2025, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2026, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2027, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2028, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2029, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2030, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2031, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2032, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2033, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2034, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2035, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2036, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2037, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2038, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2039, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2040, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2041, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2042, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2043, Antivirus software, NULL, NULL, ANTIVIRUS, N, N
+2044, Windows XP Operating System, NULL, 7500, WINXP, N, N
+2045, Microsoft Office XP Pro, NULL, NULL, MSOFFICE, N, N
+2046, Hard Drive, NULL, 7500, HD4532, N, N
+2047, Windows XP Operating System, NULL, A7804, WINXP, N, N
+2048, Microsoft Office XP Pro, NULL, A7804, MSOFFICE, N, N
+2049, Hard Drive, NULL, A7804, HD4532, N, N
+2050, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2051, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2052, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2053, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2054, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2055, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2056, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2057, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2058, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2059, Accu Draw Software, NULL, NULL, ACCUDRAW, N, N
+2060, Windows 2003 Server, NULL, 9012, NULL, N, N
+2061, Windows 2003 Server, NULL, 9011, NULL, N, N
+2062, Unix Operating System, NULL, A8004, UNIXOS, N, N
+2063, Windows 2003 Server, NULL, 9000, NULL, N, N
+2068, Windows XP Operating System, NULL, 7112, WINXP, N, N
+2069, Microsoft Office XP Pro, NULL, 7112, MSOFFICE, N, N
+2070, Hard Drive, NULL, NULL, HD4532, N, N
+2077, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2078, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2079, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2080, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2081, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2082, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2083, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2084, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2085, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2086, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+2087, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2088, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2089, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2090, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2091, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2092, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2093, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2094, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2095, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2096, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2097, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2098, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2099, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2100, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+21000, Database software for the desktop, NULL, NULL, ACCESS 2002, N, N
+2101, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2102, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2103, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2104, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2105, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2106, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2107, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2108, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2109, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2110, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2111, Rotary PD Pump, 100 GPM, Asceptic, NULL, NULL, P-896, N, N
+2112, Crew Truck, Ford F350 Crew Cab, 2013 Model., NULL, NULL, 100, N, N
+23972, Motor- 10hp/1750rpm/TEFC/254T Frame/440v/3ph/60hz, NULL, 11430, MOT10, N, N
+26000, Motor Controlled Valve, NULL, NULL, MCV-60, N, N
+26020, 24 Volt-DC Motor, NULL, 26000, MOTR-24, N, N
+26200, Motor Controlled Valve, NULL, NULL, NULL, N, N
+49332, Motor- 10hp/1750rpm/TEFC/254T Frame/440v/3ph/60hz, NULL, 11450, MOT10, N, N
+52300, Electrical Service Pole #300/Wood/45 ft/Class 5, NULL, NULL, NULL, N, N
+61001, Freightliner #61001, NULL, NULL, NULL, N, N
+61002, Freightliner #61002, NULL, NULL, NULL, N, N
+61003, Freightliner #61003, NULL, NULL, NULL, N, N
+61004, Freightliner #61004, NULL, NULL, NULL, N, N
+7000, Standard Laptop Computer, NULL, NULL, D600, N, N
+7001, Windows XP Operating System, NULL, 7000, WINXP, N, N
+7003, Laser printer (local), NULL, 7000, HPLASER, N, N
+7100, Standard Laptop Computer, NULL, NULL, D600, N, N
+7111, Standard Laptop Computer, NULL, NULL, D600, N, N
+7112, Standard Laptop Computer, NULL, NULL, D600, N, N
+7113, Standard Laptop Computer, NULL, NULL, D600, N, N
+7114, Standard Laptop Computer, NULL, NULL, D600, N, N
+7115, Standard Laptop Computer, NULL, NULL, D600, N, N
+7116, Standard Laptop Computer, NULL, NULL, D600, N, N
+7117, Standard Laptop Computer, NULL, NULL, D600, N, N
+7118, Standard Laptop Computer, NULL, NULL, D600, N, N
+7119, Standard laptop Computer, NULL, NULL, D600, N, N
+7120, Standard Laptop Computer, NULL, NULL, D600, N, N
+7121, Standard Laptop Computer, NULL, NULL, D600, N, N
+7122, Standard Laptop Computer, NULL, NULL, D600, N, N
+7123, Standard Laptop Computer, NULL, NULL, D600, N, N
+7124, Standard Laptop Computer, NULL, NULL, D600, N, N
+7125, Standard Laptop Computer, NULL, NULL, D600, N, N
+7126, Standard Laptop Computer, NULL, NULL, D600, N, N
+7127, Standard Laptop Computer, NULL, NULL, D600, N, N
+7128, Standard Laptop Computer, NULL, NULL, D600, N, N
+7129, Standard Laptop Computer, NULL, NULL, D600, N, N
+7130, Standard Laptop Computer, NULL, NULL, D600, N, N
+7131, Standard Laptop Computer, NULL, NULL, D600, N, N
+7150, Laser Printer B/W - Network, NULL, NULL, LASER-PRT, N, N
+7151, Laser Printer B/W - Network, NULL, NULL, LASER-PRT, N, N
+7152, Laser Printer B/W - Network, NULL, NULL, LASER-PRT, N, N
+7153, Laser Printer B/W - Network, NULL, NULL, LASER-PRT, N, N
+7160, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7161, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7162, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7163, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7164, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7165, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7166, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7167, 6800 Cell Phone, NULL, NULL, 6800, N, N
+7168, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7169, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7170, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7171, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7172, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7173, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7174, 3600 Cell Phone, NULL, NULL, 3600, N, N
+7175, 752 Cell Phone, NULL, NULL, 752, N, N
+7176, 752 Cell Phone, NULL, NULL, 752, N, N
+7177, 752 Cell Phone, NULL, NULL, 752, N, N
+7178, 752 Cell Phone, NULL, NULL, 752, N, N
+7179, 752 Cell Phone, NULL, NULL, 752, N, N
+7200, Standard Laptop Computer, NULL, NULL, D600, N, N
+7220, Standard Laptop Computer, NULL, NULL, D600, N, N
+7300, Standard Laptop Computer, NULL, NULL, D600, N, N
+7400, Standard Laptop Computer, NULL, NULL, D600, N, N
+7500, Standard Laptop Computer, NULL, NULL, D600, N, N
+7501, Standard Laptop Computer, NULL, NULL, D600, N, N
+7502, Standard Laptop Computer, NULL, NULL, D600, N, N
+7503, Standard Laptop Computer, NULL, NULL, D600, N, N
+7505, Standard Laptop Computer, NULL, NULL, D600, N, N
+7506, Standard Laptop Computer, NULL, NULL, D600, N, N
+7507, Standard Laptop Computer, NULL, NULL, D600, N, N
+7508, Standard Laptop Computer, NULL, NULL, D600, N, N
+84001, Hard Drive, NULL, 7111, HD4532, N, N
+84002, Hard Drive, NULL, 7112, HD4532, N, N
+84003, Hard Drive, NULL, 7113, HD4532, N, N
+84004, Hard Drive, NULL, 7114, HD4532, N, N
+84005, Hard Drive, NULL, 7115, HD4532, N, N
+84006, Hard Drive, NULL, 7116, HD4532, N, N
+84007, Hard Drive, NULL, 7117, HD4532, N, N
+84008, Hard Drive, NULL, 7118, HD4532, N, N
+84009, Hard Drive, NULL, 7119, HD4532, N, N
+84010, Hard Drive, NULL, 7220, HD4532, N, N
+84011, Hard Drive, NULL, 7123, HD4532, N, N
+84012, Hard Drive, NULL, 7121, HD4532, N, N
+84013, Hard Drive, NULL, 7125, HD4532, N, N
+84014, Hard Drive, NULL, 7126, HD4532, N, N
+9000, Network Server, NULL, NULL, S430, N, N
+90001, Standard Laptop Computer, NULL, NULL, D600, N, N
+9001, Server, Email, NULL, NULL, S430, N, N
+9002, Server, Email, NULL, NULL, S430, N, N
+9004, Server, Email, NULL, NULL, S430, N, N
+9010, Server, ERP, NULL, NULL, S430, N, N
+9011, Server, ERP, NULL, NULL, S430, N, N
+9012, Server, ERP, NULL, NULL, S430, N, N
+9997, PowerEdge 500SC Server, NULL, NULL, S900, N, N
+9998, COMP_EQU,COMPUTER,DESKTOP, 4.00 GB, 266.00 MHZ, 64.00 MB, NULL, NULL, D66, N, N
+9999, COMP_EQU,COMPUTER,DESKTOP, 266.00 GHZ, 64.00 MB, 4.00 GB, NULL, NULL, D66, N, N
+A6703, Standard Desktop Computer, NULL, NULL, D700, N, N
+A6704, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7600, Standard Desktop (Configured), NULL, NULL, D700, N, N
+A7601, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7602, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7603, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7604, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7700, Standard Desktop (Configured), NULL, NULL, D700, N, N
+A7701, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7702, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7703, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7704, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7705, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7800, Standard Desktop (Configured), NULL, NULL, D700, N, N
+A7801, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7802, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7803, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7804, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7805, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7806, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7807, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7808, Standard Desktop Computer, NULL, NULL, D700, N, N
+A7900, Standard Desktop (Configured), NULL, NULL, D700, N, N
+A8000, Standard Desktop (Configured), NULL, NULL, D700, N, N
+A8001, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8002, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8004, Unix Server, NULL, NULL, S700, N, N
+A8005, Unix Server, NULL, NULL, S700, N, N
+A8006, Unix Server, NULL, NULL, S700, N, N
+A8007, Unix Server, NULL, NULL, S700, N, N
+A8008, Unix Server, NULL, NULL, S700, N, N
+A8009, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8010, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8011, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8012, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8013, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8014, Standard Desktop Computer, NULL, NULL, D700, N, N
+A8015, Standard Desktop Computer, NULL, NULL, D700, N, N
+A9000, Standard Laptop Computer, NULL, NULL, D600, N, N
+ASSET1, Asset 1, NULL, NULL, NULL, N, N
+ASSET12, Asset 12, NULL, ASSET1, NULL, N, N
+ASSET123, Asset 123, NULL, ASSET12, NULL, N, N
+ASSET1234, Asset 1234, NULL, ASSET123, NULL, N, N
+ASSET12345, Asset 12345, NULL, ASSET1234, NULL, N, N
+B12210, pellet blower, NULL, NULL, NULL, N, N
+B12510, stamping machine, NULL, NULL, NULL, N, N
+B12540, STAMPING MACH, NULL, NULL, NULL, N, N
+B12550, stamping machine, NULL, NULL, NULL, N, N
+B12560, marking machine, NULL, NULL, NULL, N, N
+B12570, stamping machine, NULL, NULL, NULL, N, N
+B12600, Pneumatic Sealer, NULL, NULL, NULL, N, N
+B12700, Pneumatic Sealer, NULL, NULL, NULL, N, N
+BREAKER1001, Substation Breaker 1001 Gulfstream, NULL, GULFSTREAM, NULL, N, N
+BREAKER1002, Substation Breaker 1002 Gulfstream, NULL, GULFSTREAM, NULL, N, N
+BREAKER1003, Substation Breaker 1003 Gulfstream, NULL, GULFSTREAM, NULL, N, N
+BREAKER1004, Substation Breaker 1004 Gulfstream, NULL, GULFSTREAM, NULL, N, N
+CAL100, CAL100, LOOP1, NULL, NULL, N, Y
+CAL101, Calibration 101, NULL, NULL, NULL, N, Y
+CAL102, Calibration 102, NULL, NULL, NULL, N, Y
+CAL103, Calibration 103, NULL, NULL, NULL, N, Y
+CAL200, CAL200, LOOP1, NULL, NULL, N, Y
+CAL300, CAL300, LOOP1, NULL, NULL, N, Y
+CONE-001, Waste Catch Cone - Unit #001, NULL, MH#1660, NULL, N, N
+COVER-01, Manhole Cover Unit #01, NULL, MH#1660, NULL, N, N
+CROSS_SITE, Centrifugal Pump 100 GPM, 60 FT-HD, NULL, NULL, PUMP100, N, N
+CS11400, BEDFORD CS Boiler- 50,000 Lb/Hr/ Gas Fired/ Water Tube, NULL, NULL, NULL, N, N
+CS11430, BEDFORD CS Centrifugal Pump 100 GPM, 60 FT-HD, NULL, CS11400, CSPUMP10, N, N
+CS52300, BEDFORD CS Electrical Service Pole #300/Wood/45 ft/Class 5, NULL, NULL, NULL, N, N
+DAVIS INT, Davis Interlocking, NULL, NULL, NULL, N, N
+DISPL1, DataStar ViewAll Display Monitor, NULL, NULL, NULL, N, N
+FEEDER1001, Feeder 1001 Gulfstream sub, NULL, GULFSTREAM, NULL, N, N
+FEEDER1002, Feeder 1002 Gulfstream sub, NULL, GULFSTREAM, NULL, N, N
+FEEDER1003, Feeder 1003 Gulfstream sub, NULL, GULFSTREAM, NULL, N, N
+FEEDER1004, Feeder 1004 Gulfstream sub, NULL, GULFSTREAM, NULL, N, N
+GRT-001, Manhole Grating Structure Unit #001, NULL, MH#1660, NULL, N, N
+GULFSTREAM, Gulfstream Substation, NULL, NULL, NULL, N, N
+I-95N, Interstate 95 Northbound, NULL, NULL, NULL, N, N
+I-95S, Interstate 95 Southbound, NULL, NULL, NULL, N, N
+KEVINTEST, kevintest, NULL, NULL, NULL, N, N
+LCD1, LCD Panel for Overhead, NULL, OVHD1, NULL, N, N
+MANHOLE 1, NULL, NULL, NULL, NULL, N, N
+MANHOLE 2, NULL, NULL, NULL, NULL, N, N
+MD 198, Maryland State Route 198, NULL, NULL, NULL, N, N
+MD 202, Maryland State Route 202, NULL, NULL, NULL, N, N
+MD 212, Maryland State Route 212, NULL, NULL, NULL, N, N
+MD 4, Maryland State Route 4, NULL, NULL, NULL, N, N
+MD 414, Maryland State Route 414, NULL, NULL, NULL, N, N
+MD 5, Maryland State Route 5, NULL, NULL, NULL, N, N
+MH#1660, Manhole Assembly Unit #1660, NULL, NULL, NULL, N, N
+MYRNA1, Myrna 1 Equipment, NULL, NULL, NULL, N, N
+MYRNA2, Myrna 2 Equipment, NULL, NULL, NULL, N, N
+OVHD1, Overhead Projector, NULL, NULL, NULL, N, N
+PC1001, DataStar Desk Wizard PC, NULL, NULL, NULL, N, N
+PC1002, DataStar Desk Wizard PC, NULL, NULL, NULL, N, N
+PIPELINE 1, Pipeline, NULL, NULL, NULL, N, N
+PRN0401, All In One Office Printer, NULL, 7111, ALLIN1, N, N
+PRN0402, All In One Office Printer, NULL, 7112, ALLIN1, N, N
+PRN0403, All In One Office Printer, NULL, 7113, ALLIN1, N, N
+PRN0404, All In One Office Printer, NULL, 7114, ALLIN1, N, N
+PRN0405, All In One Office Printer, NULL, 7115, ALLIN1, N, N
+SEWER MN 1, Sewer Main 1, NULL, NULL, NULL, N, N
+SWITCH 12D, Switch, NULL, NULL, NULL, N, N
+SWITCH 12R, Switch, NULL, NULL, NULL, N, N
+TEST1, NULL, NULL, NULL, NULL, N, N
+TEST-DRAFT, test draft asset, NULL, NULL, NULL, N, N
+TEST-DRAFT2, TEST-DRAFT2, NULL, NULL, NULL, N, N
+TEST-METER, test meter, NULL, NULL, NULL, N, N
+TEST-METER2, test meter 2, NULL, NULL, NULL, N, N
+TJM BRIDGE, Thomas Johnson Memorial Bridge, NULL, NULL, NULL, N, N
+TRACK 1, Track 1 - Ragan-Davis, NULL, NULL, NULL, N, N
+TRACK 2, Track 2 - Ragan-Davis, NULL, NULL, NULL, N, N
+TRACK 3, Track 3 - Ragan-Davis, NULL, NULL, NULL, N, N
+US 50, US Route 50, NULL, NULL, NULL, N, N
+V1001, MS Visio, NULL, 7500, VISIO, N, N
+V1002, MS Visio, NULL, 7300, VISIO, N, N
+V1003, MS Visio, NULL, 7400, VISIO, N, N
+V1004, MS Visio, NULL, A7800, VISIO, N, N
+V1005, MS Visio, NULL, A7804, VISIO, N, N
+V1006, MS Visio, NULL, A7805, VISIO, N, N
+V1007, MS Visio, NULL, A7806, VISIO, N, N
+V1008, MS Visio, NULL, A7807, VISIO, N, N
+V1009, MS Visio, NULL, A7808, VISIO, N, N
+V1010, MS Visio, NULL, A7701, VISIO, N, N
+V10103, MS Visio, NULL, A7705, VISIO, N, N
+V1011, MS Visio, NULL, A7702, VISIO, N, N
+V1012, MS Visio, NULL, A7703, VISIO, N, N
+V1013, MS Visio, NULL, 90001, VISIO, N, N
+V1014, MS Visio, NULL, A7601, VISIO, N, N
+V1015, MS Visio, NULL, A7602, VISIO, N, N
+V1016, MS Visio, NULL, A7603, VISIO, N, N
+V1017, MS Visio, NULL, A6703, VISIO, N, N
+V1018, MS Visio, NULL, A6704, VISIO, N, N
+V1019, MS Visio, NULL, A7604, VISIO, N, N
+V1020, MS Visio, NULL, A7801, VISIO, N, N
+V1021, MS Visio, NULL, A7802, VISIO, N, N
+V1022, MS Visio, NULL, A7803, VISIO, N, N
+V1023, MS Visio, NULL, 7111, VISIO, N, N
+V1024, MS Visio, NULL, 7112, VISIO, N, N
+V1025, MS Visio, NULL, 7113, VISIO, N, N
+V1026, MS Visio, NULL, 7114, VISIO, N, N
+V1027, MS Visio, NULL, 7115, VISIO, N, N
+V1028, MS Visio, NULL, 7116, VISIO, N, N
+V1029, MS Visio, NULL, 7117, VISIO, N, N
+V1030, MS Visio, NULL, 7118, VISIO, N, N
+V1031, MS Visio, NULL, 7119, VISIO, N, N
+V1032, MS Visio, NULL, 7220, VISIO, N, N
+V1033, MS Visio, NULL, 7123, VISIO, N, N
+V1034, MS Visio, NULL, 7121, VISIO, N, N
+V1035, MS Visio, NULL, 7125, VISIO, N, N
+V1036, MS Visio, NULL, 7126, VISIO, N, N
+V1037, MS Visio, NULL, 7127, VISIO, N, N
+V1038, MS Visio, NULL, 7128, VISIO, N, N
+V1039, MS Visio, NULL, 7130, VISIO, N, N
+V1040, MS Visio, NULL, 7129, VISIO, N, N
+V1041, MS Visio, NULL, 7131, VISIO, N, N
+V1042, MS Visio, NULL, 7122, VISIO, N, N
+V1043, MS Visio, NULL, 7124, VISIO, N, N
+V1044, MS Visio, NULL, 7120, VISIO, N, N
+V1050, MS Visio, NULL, A7704, VISIO, N, N

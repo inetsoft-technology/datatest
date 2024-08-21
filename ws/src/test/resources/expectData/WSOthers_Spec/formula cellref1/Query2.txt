@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 7)
+boolean, state, 2024, 2025, 2026, 2027, 2028
+false, FL, -1, NULL, NULL, NULL, NULL
+false, MD, -1, NULL, NULL, NULL, NULL
+true, CA, 74, 155, 170, 217, NULL
+true, FL, 273, 145, 62, 163, NULL
+true, MD, 43, 155, 246, 209, 38

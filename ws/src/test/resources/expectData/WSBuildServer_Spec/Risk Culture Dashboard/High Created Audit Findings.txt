@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, High Created
+12M, 2
+1M, 0
+3M, 0

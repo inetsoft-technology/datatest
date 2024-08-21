@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 17)
+Survey Name, Risk ID, user_id, first_name, last_name, email, dob, Reporting Metric, pretty_name, Previous Risk Date, Risk Modified Date, Initial Risk, Previous Risk, Current Risk, Site Name, Company Name, Risk Score
+HealthCi, 293105, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Sleep and Fatigue, How well have you slept, 2020-04-02 21:34:52, 2020-04-02 21:43:24, Elevated, Elevated, Elevated, Laverton, Cummins, 2
+HealthCi, 293106, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Injury Prevention, Level of pain, 2020-04-02 21:34:52, 2020-04-02 21:43:25, Low, Low, Low, Laverton, Cummins, 1
+HealthCi, 293107, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Injury Prevention, Over the past month my back gave me some trouble or pain., 2020-04-02 21:34:52, 2020-04-02 21:43:25, Low, Low, Low, Laverton, Cummins, 1
+HealthCi, 293108, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Injury Prevention, Over the past month my shoulder or neck gave me some trouble or pain, 2020-04-02 21:34:53, 2020-04-02 21:43:25, Low, Low, Low, Laverton, Cummins, 1
+HealthCi, 293109, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Mental Health, Something to look forward to, 2020-04-02 21:34:53, 2020-04-02 21:43:25, Elevated, Elevated, Elevated, Laverton, Cummins, 2
+HealthCi, 293110, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Lifestyle Health, Lifestyle Health, 2020-04-02 21:34:54, 2020-04-02 21:43:26, Moderately High, Moderately High, Moderately High, Laverton, Cummins, 4
+HealthCi, 293111, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Mental Health, Mental health, 2020-04-02 21:34:54, 2020-04-02 21:43:27, Elevated, Elevated, Elevated, Laverton, Cummins, 2
+HealthCi, 293112, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Injury Prevention, Physical Health, 2020-04-02 21:34:54, 2020-04-02 21:43:27, Low, Low, Low, Laverton, Cummins, 1
+HealthCi, 293113, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Sleep and Fatigue, Fatigue Health, 2020-04-02 21:34:55, 2020-04-02 21:43:27, Elevated, Elevated, Elevated, Laverton, Cummins, 2
+HealthCi, 293114, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Mental Health, Coping skill, 2020-04-02 21:34:55, 2020-04-02 21:43:27, Elevated, Elevated, Elevated, Laverton, Cummins, 2

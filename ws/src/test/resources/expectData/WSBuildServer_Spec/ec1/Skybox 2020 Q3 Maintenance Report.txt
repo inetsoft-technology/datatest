@@ -1,0 +1,539 @@
+The table size(row x col) is:(538 x 13)
+Qtr, Contract Number, Subscription #, Account: Account Name, Account License Model, ProductCode, Product Name, Contract Term (months), Start Date, End Date, Active Contract, Asset: Product: Product Code, Asset Quantity
+20Q3, 00004144, SUB-0000302, Fascet LLC, NULL, TS-S, Standard Technical Support, 36, 2017-07-24, 2020-07-23, 0, VC-100, 5
+20Q3, 00004144, SUB-0000302, KPMG, NULL, TS-S, Standard Technical Support, 36, 2017-07-24, 2020-07-23, 0, NA-10, 2
+20Q3, 00004144, SUB-0000302, PHOENIX INFORMATICA BANCARIA, NULL, TS-S, Standard Technical Support, 36, 2017-07-24, 2020-07-23, 0, SBV-S, 1
+20Q3, 00004144, SUB-0000302, Provincial Electricity Authority, NULL, TS-S, Standard Technical Support, 36, 2017-07-24, 2020-07-23, 0, CM-1, 5
+20Q3, 00004144, SUB-0000302, Toyota Motor North America, NULL, TS-S, Standard Technical Support, 36, 2017-07-24, 2020-07-23, 0, FA-1, 5
+20Q3, 00004144, SUB-0000303, Boston Private Bank and Trust, NULL, CON-VD, Vulnerability Content Updates, 36, 2017-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00004173, SUB-0000343, HSBC, NULL, TS-S, Standard Technical Support, 36, 2017-08-08, 2020-08-07, 0, SBV-S, 1
+20Q3, 00004228, SUB-0000368, EXL Service, NULL, TS-S, Standard Technical Support, 36, 2017-09-11, 2020-09-10, 0, VC-100, 1
+20Q3, 00004228, SUB-0000368, OTC Markets Group, NULL, TS-S, Standard Technical Support, 36, 2017-09-11, 2020-09-10, 0, NA-100, 2
+20Q3, 00004228, SUB-0000368, SNAM Rete Gas, NULL, TS-S, Standard Technical Support, 36, 2017-09-11, 2020-09-10, 0, SBV-ES, 1
+20Q3, 00004228, SUB-0000368, Volvo Group, NULL, TS-S, Standard Technical Support, 36, 2017-09-11, 2020-09-10, 0, NA-10, 5
+20Q3, 00004228, SUB-0000368, Woodside Energy, NULL, TS-S, Standard Technical Support, 36, 2017-09-11, 2020-09-10, 0, FA-10, 1
+20Q3, 00004228, SUB-0000369, National Bank for Agriculture and Rural Development (NABARD Bank), NULL, CON-VD, Vulnerability Content Updates, 36, 2017-09-11, 2020-09-10, 0, NULL, NULL
+20Q3, 00004244, SUB-0000173, Acuity Mutual Insurance, NULL, TS-P, Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, FA-100, 1
+20Q3, 00004244, SUB-0000173, Cast & Crew, NULL, TS-P, Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, VC-50K, 1
+20Q3, 00004244, SUB-0000173, Leonardo Corporate, NULL, TS-P, Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, NA-1K, 1
+20Q3, 00004244, SUB-0000173, Wells Fargo, NULL, TS-P, Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, CM-100, 1
+20Q3, 00004244, SUB-0000173, Yesser MCIT, NULL, TS-P, Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-ES, 1
+20Q3, 00004244, SUB-0000174, Orange - HQ, NULL, CON-VD, Vulnerability Content Updates, 36, 2017-09-19, 2020-09-18, 0, NULL, NULL
+20Q3, 00004244, SUB-0000175, Inmarsat, NULL, TS-AMS, Advanced Monitoring Service, 36, 2017-09-19, 2020-09-18, 0, NULL, NULL
+20Q3, 00004244, SUB-0000176, ABB Information Systems Ltd., NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004244, SUB-0000176, Anglo American, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004244, SUB-0000176, Apollo Global Management, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004244, SUB-0000176, Finanz Informatik Technology Service GmbH & Co. KG, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004244, SUB-0000176, First American Bank, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004244, SUB-0000176, TCF National Bank, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2017-09-19, 2020-09-18, 0, SBV-HW-6000, 1
+20Q3, 00004268, SUB-0000086, Carnival Corporation, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, SBV-ES, 1
+20Q3, 00004268, SUB-0000086, Infosys Technologies, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, NA-10, 1
+20Q3, 00004268, SUB-0000086, MailChimp, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, NA-100, 6
+20Q3, 00004268, SUB-0000086, MTN SA, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, FA-10, 3
+20Q3, 00004268, SUB-0000086, Texas HHSC, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, FA-1, 5
+20Q3, 00004268, SUB-0000086, U.S. Department of Health and Human Services, NULL, TS-S, Standard Technical Support, 36, 2017-09-26, 2020-09-25, 0, FA-1BA, 501
+20Q3, 00004270, SUB-0000844, Consorzio Operativo Gruppo Montepaschi (MPS), NULL, TS-S, Standard Technical Support, 36, 2017-09-25, 2020-09-24, 0, CM-1, 5
+20Q3, 00004270, SUB-0000844, Electricite de France - HQ, NULL, TS-S, Standard Technical Support, 36, 2017-09-25, 2020-09-24, 0, FA-10, 1
+20Q3, 00004270, SUB-0000844, Michelin SCA, NULL, TS-S, Standard Technical Support, 36, 2017-09-25, 2020-09-24, 0, CM-10, 1
+20Q3, 00004270, SUB-0000844, Republic of Serbia National Employment Service, NULL, TS-S, Standard Technical Support, 36, 2017-09-25, 2020-09-24, 0, FA-1, 5
+20Q3, 00004270, SUB-0000844, Saudi Ministry of Labor and Social Development (MLSD), NULL, TS-S, Standard Technical Support, 36, 2017-09-25, 2020-09-24, 0, SBV-S, 1
+20Q3, 00004270, SUB-0000845, Agbar (Aguas de Barcelona), NULL, CON-VD, Vulnerability Content Updates, 36, 2017-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00004287, SUB-0000010, ABSA Bank Limited, NULL, TS-P, Premium Technical Support, 36, 2017-09-29, 2020-09-28, 0, NA-100, 1
+20Q3, 00004287, SUB-0000010, BT plc, NULL, TS-P, Premium Technical Support, 36, 2017-09-29, 2020-09-28, 0, SBV-S, 2
+20Q3, 00004287, SUB-0000010, IberiaBank, NULL, TS-P, Premium Technical Support, 36, 2017-09-29, 2020-09-28, 0, NA-1K, 2
+20Q3, 00004326, SUB-0000129, Amdocs, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, NA-V-100, 6
+20Q3, 00004326, SUB-0000129, Credit Agricole, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, FA-10, 9
+20Q3, 00004326, SUB-0000129, CSU Fullerton, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, VC-1K, 2
+20Q3, 00004326, SUB-0000129, Guardian Analytics, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, SBV-ES, 1
+20Q3, 00004326, SUB-0000129, Telkom South Africa, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, NA-100, 2
+20Q3, 00004326, SUB-0000129, Webe Digital Sdn Bhd, NULL, TS-P, Premium Technical Support, 36, 2017-10-02, 2020-10-01, 0, CM-10, 9
+20Q3, 00004326, SUB-0000130, MOJ -IL IMPA, NULL, CON-VD, Vulnerability Content Updates, 36, 2017-10-02, 2020-10-01, 0, NULL, NULL
+20Q3, 00004332, SUB-0000681, GITN Sdn Bhd, NULL, CON-VD, Vulnerability Content Updates, 36, 2017-10-02, 2020-10-01, 0, NULL, NULL
+20Q3, 00004332, SUB-0000682, Magellan Midstream Partners, NULL, TS-S, Standard Technical Support, 36, 2017-10-02, 2020-10-01, 0, CM-1, 1
+20Q3, 00004332, SUB-0000682, TD Ameritrade, NULL, TS-S, Standard Technical Support, 36, 2017-10-02, 2020-10-01, 0, SBV-S, 1
+20Q3, 00004332, SUB-0000682, Telefonica - ES, NULL, TS-S, Standard Technical Support, 36, 2017-10-02, 2020-10-01, 0, NA-10, 1
+20Q3, 00004332, SUB-0000682, Texas Department of Motor Vehicles, NULL, TS-S, Standard Technical Support, 36, 2017-10-02, 2020-10-01, 0, VC-100, 1
+20Q3, 00004332, SUB-0000682, United Arab Bank, NULL, TS-S, Standard Technical Support, 36, 2017-10-02, 2020-10-01, 0, FA-1, 1
+20Q3, 00004942, SUB-0001750, BDO Unibank Inc, NULL, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001751, Netmagic Solutions Pvt Ltd, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001752, Mercedes-Benz Bank AG, NULL, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001753, Wellmark, NULL, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001754, PROS, Inc., NULL, NA-100-S-S-Pre, Network Assurance 100 n-node pack - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001755, Becton, Dickinson and Company, NULL, NA-V-100-S-S-Pre, Network Assurance for Cloud 100 virtual workload pack - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004942, SUB-0001756, Banque de Luxembourg, NULL, VC-1K-S-S-Pre, Vulnerability Control 1,000 asset pack - Subscription with standard support and content, 36, 2017-12-29, 2020-12-28, 0, NULL, NULL
+20Q3, 00004969, SUB-0001847, Berkshire Bank, NULL, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 36, 2017-11-01, 2020-10-31, 0, NULL, NULL
+20Q3, 00004969, SUB-0001848, Viacom, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 36, 2017-11-01, 2020-10-31, 0, NULL, NULL
+20Q3, 00004969, SUB-0001849, Ooredoo Oman, NULL, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 36, 2017-11-01, 2020-10-31, 0, NULL, NULL
+20Q3, 00004969, SUB-0001850, BNSF Railway, NULL, NA-10-S-S-Pre, Network Assurance 10 n-node pack - Subscription with standard support and content, 36, 2017-11-01, 2020-10-31, 0, NULL, NULL
+20Q3, 00004989, SUB-0001949, Neiman Marcus, NULL, SBV-S-S, Skybox Server Software License - Subscription with standard support and content and content, 72, 2017-01-01, 2022-12-31, 0, NULL, NULL
+20Q3, 00004989, SUB-0001950, Constant Contact (Endurance) Inc, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 72, 2017-01-01, 2022-12-31, 0, NULL, NULL
+20Q3, 00004990, SUB-0001952, Invitro, NULL, SBV-S-S, Skybox Server Software License - Subscription with standard support and content and content, 60, 2017-09-08, 2022-09-07, 0, NULL, NULL
+20Q3, 00004990, SUB-0001953, AFLAC, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 60, 2017-09-08, 2022-09-07, 0, NULL, NULL
+20Q3, 00005659, SUB-0002999, Williams Companies, NULL, SUB-S-PKG-Pre, Subscription w/ Standard Support Package - Prepaid, 24, 2018-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00005659, SUB-0003000, Wipro Ltd, NULL, SBV-S-S, Skybox Server Software License - Subscription with standard support and content and content, 24, 2018-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00005659, SUB-0003001, Bank of Ireland, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 24, 2018-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00006115, SUB-0003433, EDF ENERGIES NOUVELLES, NULL, TS-S, Standard Technical Support, 36, 2018-06-30, 2021-06-29, 0, NA-10, 2
+20Q3, 00006115, SUB-0003433, GE Aviation - UK, NULL, TS-S, Standard Technical Support, 36, 2018-06-30, 2021-06-29, 0, FA-10, 1
+20Q3, 00006115, SUB-0003433, MTS Retail, NULL, TS-S, Standard Technical Support, 36, 2018-06-30, 2021-06-29, 0, VC-100, 1
+20Q3, 00006115, SUB-0003433, Sony Corporation HQ, NULL, TS-S, Standard Technical Support, 36, 2018-06-30, 2021-06-29, 0, SBV-S, 1
+20Q3, 00006115, SUB-0003434, Kwangju Bank, NULL, CON-VD, Vulnerability Content Updates, 36, 2018-06-30, 2021-06-29, 0, NULL, NULL
+20Q3, 00006465, SUB-0003815, Hong Leong Bank Berhad, NULL, CON-VD, Vulnerability Content Updates, 28, 2018-12-01, 2021-03-31, 0, NULL, NULL
+20Q3, 00006465, SUB-0003816, ABL Life Insurance, NULL, TS-S, Standard Technical Support, 28, 2018-12-01, 2021-03-31, 0, VC-10K, 1
+20Q3, 00006465, SUB-0003816, ADP LLC, NULL, TS-S, Standard Technical Support, 28, 2018-12-01, 2021-03-31, 0, NA-1K, 1
+20Q3, 00006465, SUB-0003816, CIT Group Inc (CIT), NULL, TS-S, Standard Technical Support, 28, 2018-12-01, 2021-03-31, 0, FA-100, 5
+20Q3, 00006465, SUB-0003816, Lina Financial Services, NULL, TS-S, Standard Technical Support, 28, 2018-12-01, 2021-03-31, 0, CM-100, 5
+20Q3, 00006465, SUB-0003816, RBS Financial Markets, NULL, TS-S, Standard Technical Support, 28, 2018-12-01, 2021-03-31, 0, SBV-ES, 2
+20Q3, 00006476, SUB-0003840, HCL Technologies Denmark ApS, NULL, TS-S, Standard Technical Support, 36, 2018-12-19, 2021-12-18, 0, NA-10, 6
+20Q3, 00006476, SUB-0003840, Royal and Sun Alliance, NULL, TS-S, Standard Technical Support, 36, 2018-12-19, 2021-12-18, 0, SBV-S, 1
+20Q3, 00006476, SUB-0003840, Social Security Administration, NULL, TS-S, Standard Technical Support, 36, 2018-12-19, 2021-12-18, 0, CM-1, 6
+20Q3, 00006476, SUB-0003840, U.S. Securities and Exchange Commission, NULL, TS-S, Standard Technical Support, 36, 2018-12-19, 2021-12-18, 0, FA-1, 6
+20Q3, 00006476, SUB-0003841, Direct Line Insurance Group, NULL, CON-VD, Vulnerability Content Updates, 36, 2018-12-19, 2021-12-18, 0, NULL, NULL
+20Q3, 00006485, SUB-0003856, Dock Joined in tech S.r.l, NULL, TS-P, Premium Technical Support, 36, 2018-12-20, 2021-12-19, 0, VC-50K, 30
+20Q3, 00006485, SUB-0003856, Vanguard Group - HQ, NULL, TS-P, Premium Technical Support, 36, 2018-12-20, 2021-12-19, 0, SBV-ES, 2
+20Q3, 00006485, SUB-0003856, William Hill plc, NULL, TS-P, Premium Technical Support, 36, 2018-12-20, 2021-12-19, 0, NA-1K, 50
+20Q3, 00006485, SUB-0003857, US Department of State, NULL, CON-VD, Vulnerability Content Updates, 36, 2018-12-20, 2021-12-19, 0, NULL, NULL
+20Q3, 00006498, SUB-0003877, ICICI Bank, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, FA-100, 3
+20Q3, 00006498, SUB-0003878, First Quantum Minerals Limited (FQML), NULL, CON-VD, Vulnerability Content Updates, 12, 2020-03-16, 2021-03-28, 0, NULL, NULL
+20Q3, 00006498, SUB-0003879, NEC, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, CM-100, 2
+20Q3, 00006498, SUB-0003879, YPF, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, FA-100, 2
+20Q3, 00006498, SUB-0003880, Panda Restaurant Group, NULL, TS-APP-P, Appliance Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-HW-8000, 1
+20Q3, 00006498, SUB-0003880, Tenaga Nasional Berhad, NULL, TS-APP-P, Appliance Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-HW-8000, 1
+20Q3, 00006498, SUB-0003881, Bank Muamalat Malaysia Berhad, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-ES, 1
+20Q3, 00006498, SUB-0003881, Defence Science & Technology Agency (DSTA), NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, NA-1K, 1
+20Q3, 00006498, SUB-0003881, Edison S.p.A., NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, FA-100, 1
+20Q3, 00006498, SUB-0003881, European External Action Service, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, NA-1K, 2
+20Q3, 00006498, SUB-0003881, First International Bank Israel (FIBI), NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-M, 45
+20Q3, 00006498, SUB-0003881, Johnson & Johnson, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-M, 25
+20Q3, 00006498, SUB-0003881, Mubadala, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, SBV-ES, 1
+20Q3, 00006498, SUB-0003881, PSCU, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, NA-10, 1
+20Q3, 00006498, SUB-0003881, Rostelecom, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, NA-100, 3
+20Q3, 00006498, SUB-0003881, Russian Railways, NULL, TS-P, Premium Technical Support, 12, 2020-03-16, 2021-03-28, 0, CM-100, 4
+20Q3, 00006525, SUB-0003934, Radian Group, NULL, TS-APP-P, Appliance Premium Technical Support, 36, 2018-12-24, 2021-12-23, 0, SBV-HW-8000, 1
+20Q3, 00007631, SUB-0005051, Council Of The European Union, NULL, TS-APP-S, Appliance Standard Technical Support, 17, 2019-03-20, 2020-08-19, 0, SBV-HW-7000, 1
+20Q3, 00007674, SUB-0005107, Bank Syariah Mandiri, NULL, TS-S, Standard Technical Support, 17, 2019-03-29, 2020-08-28, 0, CM-10, 5
+20Q3, 00007841, SUB-0005352, MBDA - UK, NULL, TS-S, Standard Technical Support, 16, 2019-04-05, 2020-08-04, 0, FA-1, 3
+20Q3, 00007841, SUB-0005352, Veolia Environnement - PL, NULL, TS-S, Standard Technical Support, 16, 2019-04-05, 2020-08-04, 0, CM-1, 3
+20Q3, 00007841, SUB-0005353, Estee Lauder, NULL, CON-VD, Vulnerability Content Updates, 16, 2019-04-05, 2020-08-04, 0, NULL, NULL
+20Q3, 00008139, SUB-0005792, Ministry of Justice Kuwait, NULL, TS-P, Premium Technical Support, 16, 2019-06-03, 2020-10-02, 0, NA-10, 4
+20Q3, 00008139, SUB-0005793, Government Saving Bank, NULL, CON-VD, Vulnerability Content Updates, 16, 2019-06-03, 2020-10-02, 0, NULL, NULL
+20Q3, 00008292, SUB-0006168, Synchrony Financial, NULL, SUB-S-PKG-Pre, Subscription w/ Standard Support Package - Prepaid, 13, 2019-06-30, 2020-07-01, 0, NULL, NULL
+20Q3, 00008292, SUB-0006169, SITA Quebec, NULL, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 13, 2019-06-30, 2020-07-01, 0, NULL, NULL
+20Q3, 00008292, SUB-0006170, TrueBlue, Inc., NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 13, 2019-06-30, 2020-07-01, 0, NULL, NULL
+20Q3, 00008292, SUB-0006171, JSW Steel, NULL, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 13, 2019-07-02, 2020-07-01, 0, NULL, NULL
+20Q3, 00008295, SUB-0006186, Landmark Group, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008295, SUB-0006187, Jabatan Pendaftaran Negara, NULL, R-TS-S-CM-100, Renewal Standard Support-CM-100, 12, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008296, SUB-0006188, Raytheon Company, NULL, R-TS-S-CM-100, Renewal Standard Support-CM-100, 13, 2019-06-30, 2020-07-01, 0, NULL, NULL
+20Q3, 00008331, SUB-0006368, Torstar Corporation, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008331, SUB-0006369, Relay Health-CMS, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008331, SUB-0006370, Electric Power Industry of Serbia, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008331, SUB-0006371, BT Managed Services | BT Global Services, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008331, SUB-0006372, Finanz Informatik GmbH & Co. KG, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008348, SUB-0006480, Exxaro Resources Limited, NULL, SUB-P-PKG-Pre, Subscription w/ Premium Support Package - Prepaid, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008348, SUB-0006481, Reckitt Benckiser Group, NULL, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008348, SUB-0006482, Lloyds Banking Group, NULL, FA-100-S-P-Pre, Firewall Assurance 100 firewall pack - Subscription with premium support and content, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008348, SUB-0006484, Nokia, NULL, NA-100-S-P-Pre, Network Assurance 100 n-node pack - Subscription with premium support and content, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008354, SUB-0006516, Orange Cyberdefense Belgium, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008354, SUB-0006517, ING Group - BE, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008354, SUB-0006518, Carrefour - ES, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008354, SUB-0006519, WGL Holdings, Inc., NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008354, SUB-0006520, DIRCO (Dept. of International Relations and Cooperation), NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008354, SUB-0006521, Takeda Pharmaceutical, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-07-09, 2020-07-08, 0, NULL, NULL
+20Q3, 00008444, SUB-0006775, Kansas City Southern, NULL, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008444, SUB-0006776, Magyar Telekom, NULL, R-TS-P-FA-100, Renewal Premium Support-FA-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008444, SUB-0006777, 24/7 Inc, NULL, R-TS-P-CM-100, Renewal Premium Support-CM-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008444, SUB-0006778, The Post Office (UK), NULL, R-TS-P-NA-1k, Renewal Premium Support-NA-1k, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008444, SUB-0006779, Seqirus US, NULL, R-TS-P-VC-50K, Renewal Premium Support-VC-50K, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008446, SUB-0006793, Uludag Electricity Distribution Corporation ( UEDA?) ., NULL, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 12, 2019-07-16, 2020-07-10, 0, NULL, NULL
+20Q3, 00008446, SUB-0006794, Iren SpA, NULL, R-TS-P-FA-10, Renewal Premium Support-FA-10, 12, 2019-07-16, 2020-07-10, 0, NULL, NULL
+20Q3, 00008446, SUB-0006795, Shire (Takeda) Pharmaceuticals, LLC., NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-16, 2020-07-10, 0, NULL, NULL
+20Q3, 00008446, SUB-0006796, Banca Farmafactoring, NULL, R-TS-P-SBV-HW-5500, Renewal Premium Support-SBV-HW-5500, 12, 2019-07-11, 2020-07-10, 0, SBV-HW-5500, 1
+20Q3, 00008446, SUB-0006797, Blackbaud Inc, NULL, R-TS-P-FA-10, Renewal Premium Support-FA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008446, SUB-0006798, AAA Life Insurance, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006824, Infosys BPO Ltd, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006825, CBOE V, LLC, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006826, Menards, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006827, Costa Crociere, NULL, CON-VD-NA-10, Content-NA-10, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006828, ?stanbul Yeni Havaliman? ?n?aat?, ?GA Airport, NULL, TS-S-NA-100, Standard Support -NA-100, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008451, SUB-0006829, CSG - Omaha, NULL, CON-VD-NA-100, Content-NA-100, 12, 2019-07-11, 2020-07-10, 0, NULL, NULL
+20Q3, 00008458, SUB-0006863, Cadence Design Systems, NULL, NA-100-S-P-Pre, Network Assurance 100 n-node pack - Subscription with premium support and content, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008458, SUB-0006864, Turksat - Ministry of Health (Sagl?k Bakanl?g?), NULL, FA-100-S-P-Pre, Firewall Assurance 100 firewall pack - Subscription with premium support and content, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008460, SUB-0006876, California Independent System Operator - CAISO, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008460, SUB-0006877, Wayne County, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008460, SUB-0006878, MBSB Bank Berhad, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008460, SUB-0006879, Vodafone - ES, NULL, TS-S-NA-1k, Standard Support -NA-1k, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008460, SUB-0006880, OneAmerica Financial, NULL, CON-VD-NA-1k, Content-NA-1k, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008486, SUB-0006908, McKesson, NULL, TS-S-FA-1, Standard Support -FA-1, 12, 2019-07-17, 2020-07-16, 0, NULL, NULL
+20Q3, 00008486, SUB-0006909, Nationale-Nederlanden, NULL, TS-S-CM-1, Standard Support -CM-1, 12, 2019-07-17, 2020-07-16, 0, NULL, NULL
+20Q3, 00008490, SUB-0006955, Punjab National Bank, NULL, TS-S-SBV-HW-8050, Standard Support -SBV-HW-8050, 12, 2019-07-19, 2020-07-18, 0, SBV-HW-8050, 1
+20Q3, 00008490, SUB-0006955, UAE Ministry of Justice, NULL, TS-S-SBV-HW-8050, Standard Support -SBV-HW-8050, 12, 2019-07-19, 2020-07-18, 0, SBV-HW-8050, 1
+20Q3, 00008492, SUB-0006964, Metropolitan Transportation Authority (MTA), NULL, TS-S-NA-100, Standard Support -NA-100, 12, 2019-07-23, 2020-07-22, 0, NULL, NULL
+20Q3, 00008492, SUB-0006965, Oncor Electric Delivery Company LLC, NULL, CON-VD-NA-100, Content-NA-100, 12, 2019-07-23, 2020-07-22, 0, NULL, NULL
+20Q3, 00008492, SUB-0006966, Old Mutual Wealth, NULL, TS-S-VC-100, Standard Support -VC-100, 12, 2019-07-23, 2020-07-22, 0, NULL, NULL
+20Q3, 00008492, SUB-0006967, Ross Stores, NULL, CON-VD-VC-100, Content-VC-100, 12, 2019-07-23, 2020-07-22, 0, NULL, NULL
+20Q3, 00008493, SUB-0006968, First Command Financial, NULL, R-TS-P-SBV-HW-8000, Renewal Premium Support-SBV-HW-8000, 12, 2019-07-24, 2020-07-23, 0, SBV-HW-8000, 1
+20Q3, 00008493, SUB-0006968, NTUC Income, NULL, R-TS-P-SBV-HW-8000, Renewal Premium Support-SBV-HW-8000, 12, 2019-07-24, 2020-07-23, 0, SBV-HW-8000, 1
+20Q3, 00008495, SUB-0006972, ALD Automotive, NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006973, UniCredit Bank - IT, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006974, Ministry of environment and urbanisation, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006975, Esselunga, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006976, The Hartford, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006977, Bombay Stock Exchange, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006978, VocaLINK, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006979, Despegar.com, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006980, WNS Global Services Private Limited, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006981, Police Department of Turkish Government -EGM, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006982, Barclays, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006983, DHFL, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006984, Oriental Bank of Commerce, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006985, Nationwide Building Society, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008495, SUB-0006986, Natixis, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-08-03, 2020-08-02, 0, NULL, NULL
+20Q3, 00008496, SUB-0006987, Post Luxembourg, NULL, TS-S-VC-100, Standard Support -VC-100, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008496, SUB-0006988, Securities and Exchange Board of India, NULL, CON-VD-VC-100, Content-VC-100, 12, 2019-07-24, 2020-07-23, 0, NULL, NULL
+20Q3, 00008500, SUB-0007005, MOF Saudi Arabia, NULL, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008500, SUB-0007006, ATM Azienda Trasporti Milanesi, NULL, R-TS-P-VC-100, Renewal Premium Support-VC-100, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008500, SUB-0007007, Blue Cross Blue Shield of Kansas CIty, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008595, SUB-0007123, Walmart Stores Inc, NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007124, JMOD/AIR, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007125, TEDA?, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007126, Bank Otkritie Financial Corporation, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007127, Merchant-e Solutions, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007128, Alberta Electric System Operator (AESO), NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007129, Mobitel (Pvt) Ltd., NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008595, SUB-0007130, Mediobanca, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008599, SUB-0007140, Turkcell, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008599, SUB-0007141, Prosodie, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008599, SUB-0007142, Tesco PLC, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008603, SUB-0007164, ServiceNow (Customer Cloud), NULL, R-TS-S-VC-10K, Renewal Standard Support-VC-10K, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007165, Amadeus Deutschland GmbH, NULL, R-CON-VD-VC-10k, Renewal Content-VC-10k, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007166, Banca 5 S.p.A., NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007167, DHMI (General Directorate Of State Airports Authority, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007168, Mohegan Tribal Gaming Authority, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007169, RAK Bank, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007170, A2A, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007171, John Wiley & Sons, Inc., NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008603, SUB-0007172, Capita Plc - HQ, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-28, 2020-07-27, 0, NULL, NULL
+20Q3, 00008604, SUB-0007173, USDA/NASS, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007174, ESL Federal Credit Union, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007175, Posti Oy, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007176, Business Service Organisation, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007177, Badan intelegent Negara (BIN), NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007178, Royal Bank of Scotland, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007179, PNC Bank - PA, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007180, AIA Group, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007181, ANZ GCIS/Wholesale Digital, NULL, R-TS-S-CM-100, Renewal Standard Support-CM-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007182, ITC, NULL, R-CON-VD-CM-100, Renewal Content-CM-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007183, Gemalto - HQ, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007184, First Bank Nigeria, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007185, Vodafone - IN, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007186, National Grid UK, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007187, Naval Group (ex-DCNS), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007188, Arqiva, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007189, BGFI Banque, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007190, SEPS A.S., NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007191, Donner & Reuschel AG, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007192, Credit-Suisse, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007193, Turkish Land Forces, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007194, Mastercard Technologies, LLC, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007195, Providence Equity, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007196, IL-CERT (Israel?s Computer Emergency Response Team), NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007197, Dun & Bradstreet, NULL, R-TS-S-CM-100, Renewal Standard Support-CM-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008604, SUB-0007198, Department of Economic Development (Abu Dhabi), NULL, R-CON-VD-CM-100, Renewal Content-CM-100, 12, 2019-07-15, 2020-07-14, 0, NULL, NULL
+20Q3, 00008606, SUB-0007208, The Siam Commercial Bank Public Company, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-08-21, 2020-08-20, 0, NULL, NULL
+20Q3, 00008606, SUB-0007209, ING Group HQ - NL, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-08-21, 2020-08-20, 0, NULL, NULL
+20Q3, 00008606, SUB-0007210, Deluxe Entertainment Services, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-08-21, 2020-08-20, 0, NULL, NULL
+20Q3, 00008609, SUB-0007225, Intercontinental Hotels Group (IHG), NULL, TS-P-SBV-ES, Premium Support -SBV-ES, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007226, Procter & Gamble, NULL, TS-P-FA-1, Premium Support -FA-1, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007227, Jysan (Tsesnabank), NULL, CON-VD-FA-1, Content-FA-1, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007228, Concur, NULL, TS-P-FA-10, Premium Support -FA-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007229, Henry Schein, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007230, HireRight, NULL, TS-P-CM-1, Premium Support -CM-1, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007231, OCLC, NULL, CON-VD-CM-1, Content-CM-1, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007232, Nasdaq OMX Group, NULL, TS-P-CM-10, Premium Support -CM-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007233, Meridian Health System, NULL, CON-VD-CM-10, Content-CM-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007234, Telefonica - UY, NULL, TS-P-NA-10, Premium Support -NA-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007235, Gazprombank, NULL, CON-VD-NA-10, Content-NA-10, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007236, X5 Retail Group, NULL, TS-P-NA-V-100, Premium Support -NA-V-100, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007237, Aeronautica Regiscc, NULL, CON-VD-NA-V-100, Content-NA-V-100, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007238, Securities Exchange Commission (OIC-Network Assurance), NULL, TS-P-VC-100, Premium Support -VC-100, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008609, SUB-0007239, Aeronautica Militare Italiana - Re.S.I.A., NULL, CON-VD-VC-100, Content-VC-100, 12, 2019-07-26, 2020-07-25, 0, NULL, NULL
+20Q3, 00008610, SUB-0007240, PepsiCo, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 16, 2019-03-27, 2020-07-27, 0, NULL, NULL
+20Q3, 00008610, SUB-0007241, SFR, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 16, 2019-03-27, 2020-07-27, 0, NULL, NULL
+20Q3, 00008610, SUB-0007242, Kudelski Group, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 16, 2019-03-27, 2020-07-27, 0, NULL, NULL
+20Q3, 00008610, SUB-0007243, Giffgaff, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 16, 2019-03-27, 2020-07-27, 0, NULL, NULL
+20Q3, 00008610, SUB-0007244, University of Pittsburgh, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 16, 2019-03-27, 2020-07-27, 0, NULL, NULL
+20Q3, 00008612, SUB-0007248, Saipem SpA, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007249, J's Communications, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007250, Bridgestone Americas, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007251, Delek US Holdings, Inc., NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007252, Relay Health, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2018-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007253, BanglaLink, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007254, IRIDEOS, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007255, National Pension Service, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007256, Wipro - HQ, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007257, Grow Financial Federal CU, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008612, SUB-0007258, Ferrari Spa, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2019-07-16, 2020-07-15, 0, NULL, NULL
+20Q3, 00008724, SUB-0007351, BAE Systems - Applied Intelligence (Detica) - US, NULL, R-TS-P-CM-100, Renewal Premium Support-CM-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007352, Cottage Health, NULL, R-CON-VD-CM-100, Renewal Content-CM-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007353, Zenit Bank, NULL, R-TS-P-FA-100, Renewal Premium Support-FA-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007354, Fortinet Corporation, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007355, Mylan, NULL, R-TS-P-NA-1k, Renewal Premium Support-NA-1k, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007356, Northern Powergrid, NULL, R-CON-VD-NA-1k, Renewal Content-NA-1k, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008724, SUB-0007357, Macquarie Group, NULL, R-TS-P-SBV-HW-6000, Renewal Premium Support-SBV-HW-6000, 12, 2019-07-03, 2020-07-02, 0, SBV-HW-6000, 1
+20Q3, 00008724, SUB-0007358, Santander Rio, NULL, R-TS-P-SBV-ES, Renewal Premium Support-SBV-ES, 12, 2019-07-03, 2020-07-02, 0, NULL, NULL
+20Q3, 00008732, SUB-0007393, La Francaise des Jeux, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 19, 2019-01-02, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007394, OMV Petrom, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 19, 2019-01-02, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007395, Bakwena Toll Concession, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 19, 2019-01-02, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007396, Mowasalat, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 19, 2019-01-02, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007397, Universität Bern, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007398, AfroCentric Technologies, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007399, STC, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007400, The Co-operative Group, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007401, Hargreaves Lansdown, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007402, Fuji Xerox Document Management Solutions Pty Ltd, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007403, The Co-operative Insurance, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007404, Excellus, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007405, Capita Customer Management (Ventura), NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007406, The Federal Treasury, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007407, Unicredit Tiriac Bank - Romania, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007408, NTV (TV Company), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008732, SUB-0007409, Engen South Africa, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 19, 2019-08-06, 2020-08-05, 0, NULL, NULL
+20Q3, 00008733, SUB-0007410, Standard Chartered Bank Korea, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007411, Vodafone Qatar, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007412, ECOFIS GmbH, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007413, Laboratory Corporation of America Holdings, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007414, Gov.il (Tehila) - Israeli Government Portal, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007415, RWS - Rijkswaterstaat (Dutch Ministry of Infrastructure and the Environment), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007416, Bausparkasse Schwäbisch Hall AG, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 13, 2019-08-08, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007417, Lloyds of London, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 13, 2019-07-01, 2020-08-07, 0, NULL, NULL
+20Q3, 00008733, SUB-0007418, CACEIS Bank Luxembourg SA, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 13, 2019-07-01, 2020-08-07, 0, NULL, NULL
+20Q3, 00008734, SUB-0007419, Cygate Oy, NDA, NULL, TS-S-SBV-HW-7000, Standard Support -SBV-HW-7000, 12, 2019-08-09, 2020-08-08, 0, SBV-HW-7000, 1
+20Q3, 00008734, SUB-0007420, Viseca Card Services SA (former Aduno SA), NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008734, SUB-0007421, Payback GmbH, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008734, SUB-0007422, Lagardere Groupe, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008734, SUB-0007423, Cooperative Bank ltd, NULL, TS-S-NA-100, Standard Support -NA-100, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008734, SUB-0007424, Telefonica EC, NULL, CON-VD-NA-100, Content-NA-100, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008740, SUB-0007447, SOGEI, NULL, TS-S-VC-10K, Standard Support -VC-10K, 11, 2019-08-13, 2020-07-12, 0, NULL, NULL
+20Q3, 00008740, SUB-0007448, Thomson Reuters - UK, NULL, CON-VD-VC-10k, Content-VC-10k, 11, 2019-08-13, 2020-07-12, 0, NULL, NULL
+20Q3, 00008741, SUB-0007449, Kohlberg Kravis Roberts & Co. L.P., NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-08-13, 2020-08-12, 0, NULL, NULL
+20Q3, 00008741, SUB-0007450, Standard Chartered, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-08-13, 2020-08-12, 0, NULL, NULL
+20Q3, 00008741, SUB-0007451, NTT Security (UK) Limited - UK, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-08-13, 2020-08-12, 0, NULL, NULL
+20Q3, 00008745, SUB-0007465, American Airlines, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008745, SUB-0007466, Pacific Gas and Electric Company, NULL, TS-S-FA-1, Standard Support -FA-1, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008745, SUB-0007467, New Jersey Resources, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008748, SUB-0007472, Toronto District School Board, NULL, TS-P-FA-1, Premium Support -FA-1, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008748, SUB-0007473, Sasol, NULL, TS-P-CM-1, Premium Support -CM-1, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008748, SUB-0007474, FSDH MERCHANT BANK, NULL, TS-P-NA-10, Premium Support -NA-10, 12, 2019-08-15, 2020-08-14, 0, NULL, NULL
+20Q3, 00008749, SUB-0007475, Scottish Water, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007476, Blue Cross Blue Shield of Michigan, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007477, State Bank of India, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007478, XPO Logistics, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007479, Buongiorno, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007480, Leonardo Divisione Velivoli, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008749, SUB-0007481, Magnit, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-08-01, 2020-07-31, 0, NULL, NULL
+20Q3, 00008751, SUB-0007483, CENTRE HOSPITALIER PRINCESSE GRACE, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008751, SUB-0007484, Polska Wytwornia Papierow Wartosciowych (PWPW) (Polish Security Printing Works), NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008751, SUB-0007485, Bright Horizons Family Solutions, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008751, SUB-0007486, BW Maritime, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008751, SUB-0007487, Santa Lucia SA, NULL, CON-VD-NA-10, Content-NA-10, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008752, SUB-0007488, Comando C4 Esercito, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007489, KRUNGTHAI CARD PUBLIC COMPANY LIMITED, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007490, Israel Defense Forces (IDF), NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007491, Presidential Flight, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007492, Bank Saint Petersburg, NULL, R-TS-S-NA-V-100, Renewal Standard Support-NA-V-100, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007493, Verisk Analytics, NULL, R-CON-VD-NA-V-100, Renewal Content-NA-V-100, 14, 2019-09-02, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007494, Follett Corporation, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007495, Leroy Merlin SA - IT, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007496, Slovenia Air traffic Control, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007497, Cognizant Technology Solutions - IN, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007498, SIA SSB, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007499, BBVA Peru, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007500, DNB, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007501, Jabil Circuit, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007502, Deakin University, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007503, Tabadul, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007504, Phoenix Contact GmbH & Co. KG, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007505, Protek, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007506, BankservAfrica, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008752, SUB-0007507, Nación Servicios, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 14, 2019-07-30, 2020-09-01, 0, NULL, NULL
+20Q3, 00008754, SUB-0007517, Colt Telecom, NULL, TS-S-FA-1, Standard Support -FA-1, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008754, SUB-0007518, Lottomatica SPA, NULL, CON-VD-FA-1, Content-FA-1, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008754, SUB-0007519, City Union Bank, NULL, TS-S-CM-1, Standard Support -CM-1, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008754, SUB-0007520, Visa Europe, NULL, CON-VD-CM-1, Content-CM-1, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008754, SUB-0007521, Secure-24, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008754, SUB-0007522, NN Life Japan, NULL, CON-VD-NA-10, Content-NA-10, 12, 2019-08-19, 2020-08-18, 0, NULL, NULL
+20Q3, 00008756, SUB-0007529, Aon plc - IL, NULL, TS-P-FA-1, Premium Support -FA-1, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008756, SUB-0007530, Ministerie van Defensie, NULL, TS-P-CM-1, Premium Support -CM-1, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008757, SUB-0007531, European Space Agency (ESA) - ESRIN, NULL, TS-P-FA-1BA, Premium Support-FA-1BA, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008757, SUB-0007532, Prime Minister's Office KD - IL, NULL, TS-P-CM-1BA, Premium Support-CM-1BA, 12, 2019-08-20, 2020-08-19, 0, NULL, NULL
+20Q3, 00008759, SUB-0007546, Sia S.p.A., NULL, SUB-S-PKG-Pre, Subscription w/ Standard Support Package - Prepaid, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007547, Daimler AG, NULL, FA-1-S-S-Pre, Firewall Assurance 1 firewall pack - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007548, Dogus Planet N11, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007549, European Central Bank (ECB), NULL, FA-100-S-S-Pre, Firewall Assurance 100 firewall pack - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007550, Patria Bank Romania, NULL, CM-1-S-S-Pre, Change Manager 1 firewall pack - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007551, Qatar National Bank, NULL, CM-10-S-S-Pre, Change Manager 10 firewall pack- Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007552, Babcock International, NULL, CM-100-S-S-Pre, Change Manager 100 firewall pack - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008759, SUB-0007553, Repsol, NULL, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2019-08-22, 2020-08-21, 0, NULL, NULL
+20Q3, 00008760, SUB-0007554, Overseas Chinese Banking Corporation (OCBC), NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008760, SUB-0007555, Wing Hang Bank, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-08-16, 2020-08-15, 0, NULL, NULL
+20Q3, 00008765, SUB-0007561, Citigroup Inc (Citi), NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007562, PMO IL National Cyber Directorate, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007563, UPS-IL, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007564, Human Managed, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007565, Reliance JIO, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007566, Banco Santander - IT, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008765, SUB-0007567, Bank of Singapore (BOS), NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2019-07-29, 2020-07-28, 0, NULL, NULL
+20Q3, 00008767, SUB-0007572, AMX Argentina (Claro), NULL, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 12, 2019-08-27, 2020-08-26, 0, NULL, NULL
+20Q3, 00008767, SUB-0007573, Innovapost, NULL, FA-10-S-P-Pre, Firewall Assurance 10 firewall pack - Subscription with premium support and content, 12, 2019-08-27, 2020-08-26, 0, NULL, NULL
+20Q3, 00008768, SUB-0007574, Vedanta Ltd., NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007575, HCL Technologies (HQ), NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007576, Cirsa, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007577, Kcell, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007578, First Abu Dhabi Bank, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007579, CGI-WSIB, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007580, Unison Capital, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007581, Netpoleon Solutions Pte Ltd (Singapore), NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007582, PHOENIX Pharmahandel GmbH & Co. KG, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2019-08-29, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007583, Sharjah Islamic Bank, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2020-06-17, 2020-08-28, 0, NULL, NULL
+20Q3, 00008768, SUB-0007584, Flughafen Hannover, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2020-06-17, 2020-08-28, 0, NULL, NULL
+20Q3, 00008769, SUB-0007585, The Bank of N.T. Butterfield & Son Limited, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007586, Nationale Nederlanden ES, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007587, Datacentrix, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007588, EDF Luminus, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007589, ADAMA Agricultural Solutions (Agan), NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007590, Mizuho Bank (USA) - NY, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008769, SUB-0007591, Federal Deposit Insurance Corporation (FDIC), NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-09-01, 2020-08-31, 0, NULL, NULL
+20Q3, 00008770, SUB-0007592, Cybersecurity and Infrastructure Security Agency (CISA), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007593, Changi General Hospital, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007594, Kier Group Plc, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007595, Carhartt, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007596, Communications Security Establishment, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007597, Carlisle City Council, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007598, America First Credit Union, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007599, Saxo Bank A/S, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007600, Infosec Corporation, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007601, Israel Discount Bank, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007602, Dah Sing Bank Limited, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007603, Qlarant Integrity Solutions, NULL, R-TS-S-VC-1K, Renewal Standard Support-VC-1K, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008770, SUB-0007604, Corporation Bank, NULL, R-CON-VD-VC-1k, Renewal Content-VC-1k, 12, 2019-09-06, 2020-09-05, 0, NULL, NULL
+20Q3, 00008838, SUB-0007661, Getronics - CMC Holding B.V., NULL, R-TS-S-SBV-HW-6000, Renewal Standard Support-SBV-HW-6000, 12, 2019-09-27, 2020-09-26, 0, SBV-HW-6000, 1
+20Q3, 00008838, SUB-0007662, The TriZetto Group Inc (Cognizant Healthcare), NULL, R-TS-S-NA-1k, Renewal Standard Support-NA-1k, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007663, Berufsgenossenschaft Holz und Metall, NULL, R-TS-S-CM-100, Renewal Standard Support-CM-100, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007664, Volke Entwicklungsring, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007665, CGI Group Inc (Logica CMG) - UK, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007666, Ternium México S.A. de C.V, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007667, Burberry Group, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008838, SUB-0007668, Legal & General (Europe), NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-09-27, 2020-09-26, 0, NULL, NULL
+20Q3, 00008840, SUB-0007670, King Saud bin Abdulaziz University for Health Sciences (KSAU-HS), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-28, 2020-09-27, 0, NULL, NULL
+20Q3, 00008840, SUB-0007671, Volksbank, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-09-28, 2020-09-27, 0, NULL, NULL
+20Q3, 00008843, SUB-0007706, Netcare, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 12, 2019-09-28, 2020-09-27, 0, NULL, NULL
+20Q3, 00008843, SUB-0007707, Slovenska sporitelna, a.s., NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 12, 2019-09-28, 2020-09-27, 0, NULL, NULL
+20Q3, 00008870, SUB-0007728, Leonardo Divisione Cyber, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008870, SUB-0007729, General Electric (GE) - HQ, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008870, SUB-0007730, Federal Reserve Bank of Dallas, NULL, TS-S-CM-10, Standard Support -CM-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008870, SUB-0007731, Ansaldo STS, NULL, TS-S-NA-100, Standard Support -NA-100, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008894, SUB-0007755, ADIB Egypt, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007756, Bristol-Myers Squibb Company, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007757, Noble Group Asia Pacific, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007758, Banco BPM, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007759, Telefonica - AR, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007760, Chanel, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007761, Accellence Thailand, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007762, Boehringer Ingelheim GmbH, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007763, comdirect bank AG, NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007764, Agos-Ducato, NULL, R-TS-S-FA-100, Renewal Standard Support-FA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007765, BT Spain, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007766, STC Solutions, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007767, Southern Company Services, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007768, Financial Conduct Authority, NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008894, SUB-0007769, Qatar General Electricity & Water Corporation KAHRAMAA, NULL, R-CON-VD-NA-100, Renewal Content-NA-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008895, SUB-0007770, United States Agency for International Development (USAID), NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007771, AAA Northern California, Nevada and Utah (AAA NCNU), NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007772, General Mills, NULL, R-TS-S-NA-V-100, Renewal Standard Support-NA-V-100, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007773, National Student Clearinghouse, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007774, Ageas Insurance Limited, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007775, Cedge Technologies :Ltd, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008895, SUB-0007776, PT Bank Commonwealth, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-09-10, 2020-09-09, 0, NULL, NULL
+20Q3, 00008917, SUB-0007800, Mount Sinai Hospital, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007801, Centers for Medicare & Medicaid Service (CMS), NULL, TS-S-FA-1, Standard Support -FA-1, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007802, Suncorp, NULL, CON-VD-FA-1, Content-FA-1, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007803, MultiCarta - Russia, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007804, CLSA Limited, NULL, CON-VD-NA-10, Content-NA-10, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007805, HealthPlan Services, NULL, TS-S-VC-100, Standard Support -VC-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008917, SUB-0007806, Segezha Group, NULL, CON-VD-VC-100, Content-VC-100, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00008955, SUB-0007865, ICON Clinical, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007866, Liquid Telecom (fka Neotel), NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007867, Chevron, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007868, NN Romania, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007869, Jumeirah Group, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007870, KPMG FIDES SERVIZI DI AMMINISTRAZIONE S.P.A., NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007871, Interpublic Group of Companies, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007872, Bank of America Corp, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008955, SUB-0007873, Hudson's Bay Company, NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-09-14, 2020-09-13, 0, NULL, NULL
+20Q3, 00008957, SUB-0007880, Husqvarna, NULL, R-TS-P-SBV-S, Renewal Premium Support-SBV-S, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008957, SUB-0007881, John Lewis Partnership, NULL, R-TS-P-FA-100, Renewal Premium Support-FA-100, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008957, SUB-0007882, LINA Life Insurance Co, NULL, R-CON-VD-FA-100, Renewal Content-FA-100, 12, 2019-08-09, 2020-08-08, 0, NULL, NULL
+20Q3, 00008960, SUB-0007894, Aditya Birla Group, NULL, TS-P-SBV-ES, Premium Support -SBV-ES, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007895, EBRC - European Business Reliance Centre, NULL, TS-P-FA-10, Premium Support -FA-10, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007896, Aby3 Secure System, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007897, National Mortgage Insurance, NULL, TS-P-CM-10, Premium Support -CM-10, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007898, Woolworths Group, NULL, CON-VD-CM-10, Content-CM-10, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007899, Emirates Aluminium Global (EGAL), NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, Link Market Services Limited, NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, Morrisons, NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, Rosgosstrah Bank, NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, Telefonica International Wholesale Services, NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, The Standard, NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007899, United Card Services (UCS), NULL, TS-P-SBV-HW-8000, Premium Support -SBV-HW-8000, 12, 2019-09-13, 2020-09-12, 0, SBV-HW-8000, 1
+20Q3, 00008960, SUB-0007900, Croatian Ministry of Defense, NULL, TS-P-NA-V-100, Premium Support -NA-V-100, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007901, B&N Bank, NULL, CON-VD-NA-V-100, Content-NA-V-100, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008960, SUB-0007902, Lottereie Treuhandgesellschaft Hessen mbH, NULL, AMS-UNL, Advanced Monitoring Service UNL, 12, 2019-09-13, 2020-09-12, 0, NULL, NULL
+20Q3, 00008961, SUB-0007904, Tesco Bank, NULL, TS-P-SBV-HW-7000, Premium Support -SBV-HW-7000, 12, 2019-09-20, 2020-09-19, 0, SBV-HW-7000, 1
+20Q3, 00008961, SUB-0007905, Tata Consultancy Services (HQ), NULL, TS-P-SBV-HW-8050, Premium Support -SBV-HW-8050, 12, 2019-09-20, 2020-09-19, 0, SBV-HW-8050, 1
+20Q3, 00008961, SUB-0007906, American Express, NULL, SBV-ES-S-P-Pre, Skybox Enterprise Server Software License - Subscription with premium support and content, 12, 2019-09-20, 2020-09-19, 0, NULL, NULL
+20Q3, 00008961, SUB-0007907, Qatar Telecom, NULL, FA-1BA-S-P-Pre, Firewall Assurance-Branch Office-1 Firewall (Subscription with Premium Support & Content), 12, 2019-09-20, 2020-09-19, 0, NULL, NULL
+20Q3, 00008961, SUB-0007908, Banco de Crédito Social Cooperativo, S.A., NULL, FA-10-S-P-Pre, Firewall Assurance 10 firewall pack - Subscription with premium support and content, 12, 2019-09-20, 2020-09-19, 0, NULL, NULL
+20Q3, 00008961, SUB-0007909, Renaissance Credit, NULL, NA-100-S-P-Pre, Network Assurance 100 n-node pack - Subscription with premium support and content, 12, 2019-09-20, 2020-09-19, 0, NULL, NULL
+20Q3, 00008961, SUB-0007910, Public Safety Business Agency, NULL, NA-1k-S-P-Pre, Network Assurance 1,000 n-node pack - Subscription with premium support and content, 12, 2019-09-20, 2020-09-19, 0, NULL, NULL
+20Q3, 00008962, SUB-0007911, TESSA, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 24, 2019-04-16, 2021-04-15, 0, NULL, NULL
+20Q3, 00008962, SUB-0007912, Bank BTPN, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 24, 2019-04-16, 2021-04-15, 0, NULL, NULL
+20Q3, 00008962, SUB-0007913, Etihad Etisalat Company (Mobily), NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 24, 2019-04-16, 2021-04-15, 0, NULL, NULL
+20Q3, 00008962, SUB-0007914, VTB Bank, NULL, R-TS-S-VC-100, Renewal Standard Support-VC-100, 24, 2019-04-16, 2021-04-15, 0, NULL, NULL
+20Q3, 00008962, SUB-0007915, MegaFon, NULL, R-CON-VD-VC-100, Renewal Content-VC-100, 24, 2019-04-16, 2021-04-15, 0, NULL, NULL
+20Q3, 00008963, SUB-0007916, Coles Group, NULL, R-TS-S-SBV-ES, Renewal Standard Support-SBV-ES, 12, 2019-08-31, 2020-08-30, 0, NULL, NULL
+20Q3, 00008963, SUB-0007917, Guardia Civil, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-08-31, 2020-08-30, 0, NULL, NULL
+20Q3, 00008963, SUB-0007918, Promsvyazbank (PSB), NULL, R-TS-S-NA-100, Renewal Standard Support-NA-100, 12, 2019-08-31, 2020-08-30, 0, NULL, NULL
+20Q3, 00009006, SUB-0007954, Powerco, NULL, TS-S-SBV-HW-7000, Standard Support -SBV-HW-7000, 12, 2019-09-24, 2020-09-23, 0, SBV-HW-7000, 1
+20Q3, 00009009, SUB-0007963, IT Service, NULL, CON-VD-FA-1, Content-FA-1, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007964, Weil Gotshal & Manges, NULL, TS-S-FA-1, Standard Support -FA-1, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007965, Eni, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007966, Iecisa, NULL, CON-VD-FA-10, Content-FA-10, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007967, Banca Popolare di Sondrio, NULL, TS-S-CM-1, Standard Support -CM-1, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007968, Direccion General Policia, NULL, CON-VD-CM-1, Content-CM-1, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007969, Tatra Banka a.s., NULL, TS-S-CM-10, Standard Support -CM-10, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007970, Abu Dhabi Islamic Bank, NULL, CON-VD-CM-10, Content-CM-10, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007971, Oman Telecommunications Company (Omantel), NULL, TS-S-NA-100, Standard Support -NA-100, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009009, SUB-0007972, CUSCAL, NULL, CON-VD-NA-100, Content-NA-100, 12, 2019-09-25, 2020-09-24, 0, NULL, NULL
+20Q3, 00009011, SUB-0007978, Tenaris, NULL, FA-10-S-S-Pre, Firewall Assurance 10 firewall pack - Subscription with standard support and content, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00009011, SUB-0007979, Bank SOYUZ, NULL, NA-100-S-S-Pre, Network Assurance 100 n-node pack - Subscription with standard support and content, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00009011, SUB-0007980, CSE Consorzio Servizi Bancari, NULL, SBV-ES-S-S-Pre, Skybox Enterprise Server Software License - Subscription with standard support and content, 12, 2019-10-01, 2020-09-30, 0, NULL, NULL
+20Q3, 00009013, SUB-0007985, VTV VN, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-18, 2020-09-17, 0, NULL, NULL
+20Q3, 00009013, SUB-0007986, Bank Hapoalim, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-09-18, 2020-09-17, 0, NULL, NULL
+20Q3, 00009014, SUB-0007987, Axis Bank, NULL, R-TS-S-FA-10, Renewal Standard Support-FA-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007988, Abu Dhabi Airports Company (ADAC), NULL, R-CON-VD-FA-10, Renewal Content-FA-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007989, Afrikantov OKB Mechanical Engineering, NULL, R-TS-S-FA-1, Renewal Standard Support-FA-1, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007990, MPI Generali Insurans Berhad, NULL, R-CON-VD-FA-1, Renewal Content-FA-1, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007991, NBN Co, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007992, Bank Islam, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007993, NTT - Solutionary, NULL, R-TS-S-CM-10, Renewal Standard Support-CM-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007994, Federal Tax Service of Russia, NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007995, eurafric information, NULL, R-TS-S-NA-10, Renewal Standard Support-NA-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007996, The Herjavec Group, NULL, R-CON-VD-NA-10, Renewal Content-NA-10, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009014, SUB-0007997, CapitaLand, NULL, R-TS-S-SBV-S, Renewal Standard Support-SBV-S, 12, 2019-09-29, 2020-09-28, 0, NULL, NULL
+20Q3, 00009015, SUB-0007998, ENEDIS, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 12, 2019-09-18, 2020-09-17, 0, NULL, NULL
+20Q3, 00009015, SUB-0007999, AFLAC - Japan, NULL, R-CON-VD-CM-1, Renewal Content-CM-1, 12, 2019-09-18, 2020-09-17, 0, NULL, NULL
+20Q3, 00009016, SUB-0008000, Trustmark National Bank, NULL, TS-S-SBV-ES, Standard Support -SBV-ES, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00009016, SUB-0008002, Iveco CNH Industrial, NULL, TS-S-FA-10, Standard Support -FA-10, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00009016, SUB-0008003, Navistar International, NULL, TS-S-CM-1, Standard Support -CM-1, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00009016, SUB-0008004, NHS Digital, NULL, TS-S-CM-10, Standard Support -CM-10, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00009016, SUB-0008005, Etisalat, NULL, CON-VD-CM-10, Content-CM-10, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL
+20Q3, 00009016, SUB-0008006, Fujitsu Singapore, NULL, TS-S-NA-10, Standard Support -NA-10, 12, 2019-09-26, 2020-09-25, 0, NULL, NULL

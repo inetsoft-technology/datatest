@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 5)
+fund_id, fund_return_mean, fund_return_stddev, fund_return_min, fund_return_max
+450055, 0.0002, 0.0232, -0.2934, 0.1471
+450230, -0.0001, 0.002, -0.0145, 0.0101
+469574, 0.0002, 0.0132, -0.0954, 0.0881
+544600, 0.0005, 0.0044, -0.0222, 0.0347

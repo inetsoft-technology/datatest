@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 8)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
+384 Broad St@a, Littletown`a, Interstate Shop, John Kelly, 1, true, NY, NULL
+123 Summer Rd%a, Pitterson~a, Daycare One, Lisa Smith, 2, false, NJ, 09882
+23 Tasaga Ave#a, Aachen, Eastern Data, Anna Lincoln, 3, true, TX, 03887

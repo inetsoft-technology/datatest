@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 6)
+ORDER_ID, PRODUCT_ID, QUANTITY, REASON, RETURN_DATE, RMA_NUMBER
+12005, 3, 1, Insufficient support, 2017-04-05 00:00:00, 165912
+12005, 9, 7, Wrong specifications, 2017-04-16 00:00:00, 113777
+12005, 14, 2, Found a better price, 2017-03-20 00:00:00, 173792
+12005, 17, 9, Did not want, 2017-04-12 00:00:00, 129887
+12005, 19, 20, Defective, 2017-04-02 00:00:00, 133405
+12005, 24, 5, Found a better price, 2017-04-15 00:00:00, 112686

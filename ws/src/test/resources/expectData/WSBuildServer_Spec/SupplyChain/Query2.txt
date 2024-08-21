@@ -1,0 +1,13 @@
+The table size(row x col) is:(12 x 3)
+Country, Quantity, Shipping Warehouse
+Austria, 153771, New Jersey
+Brazil, 138812, Texas
+Canada, 260202, Kansas
+France, 100059, New Jersey
+Germany, 189597, New Jersey
+New Zealand, 19561, California
+Sweden, 211236, New Jersey
+United States, 9132, California
+United States, 31007, Texas
+United States, 170509, New Jersey
+United States, 232960, Kansas

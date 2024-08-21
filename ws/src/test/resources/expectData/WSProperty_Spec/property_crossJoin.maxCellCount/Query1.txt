@@ -1,0 +1,32 @@
+The table size(row x col) is:(31 x 19)
+id, ctiy, alias, number_small, number_big, double, type, type_AB, date, time, date_time, boolean, Employee, Order Number, Company, Order Date, Total, State, Reseller
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, AZ, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CA, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CA, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CO, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CO, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, CT, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, FL, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, IL, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, MA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, MA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, MA, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, MD, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, MD, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NJ, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NJ, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NJ, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NJ, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NJ, 1
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NY, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NY, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NY, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, NY, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, PA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, TX, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, TX, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, TX, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, WA, 0
+1, Middletown, Daycare One, 32, 324, 13.2, A, AB, 2017-02-15, 02:54:00, 2000-09-04 13:21:00, false, Annie, 12002, Nova Tera, 2017-03-13 00:00:00, 1211, WA, 1

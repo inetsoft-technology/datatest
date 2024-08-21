@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 5)
+PRODUCT_NAME, PRICE, INSTOCK, PRODUCT_ID, CATEGORY_ID
+Sync Me, 145, true, 7, 4
+WebCalendar, 248, true, 8, 6

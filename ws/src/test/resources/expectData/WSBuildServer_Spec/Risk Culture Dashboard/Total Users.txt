@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Username
+12M, 8
+1M, 13
+3M, 13

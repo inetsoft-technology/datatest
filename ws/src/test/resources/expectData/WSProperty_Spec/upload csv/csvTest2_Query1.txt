@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 5)
+Abweichung1, Bemerkung1, a , b, c d
+VP 4-5, letzter "Ans".16 CM Entscheid, 1 , 2, 3 3

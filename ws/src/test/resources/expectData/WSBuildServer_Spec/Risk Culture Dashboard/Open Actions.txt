@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+Period, Open
+12M, 31
+1M, 51
+3M, 42

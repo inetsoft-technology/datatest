@@ -1,0 +1,27 @@
+The table size(row x col) is:(26 x 4)
+Cell Color, Cell Value, Consequence Value, Likelihood Value
+aed581, 1, 1, 1
+aed581, 2, 1, 2
+aed581, 2, 2, 1
+aed581, 3, 1, 3
+aed581, 3, 3, 1
+aed581, 4, 1, 4
+aed581, 4, 2, 2
+aed581, 4, 4, 1
+FF6B58, 12, 4, 3
+FF6B58, 15, 3, 5
+FF6B58, 15, 5, 3
+FF6B58, 16, 4, 4
+FF6B58, 20, 4, 5
+FF6B58, 20, 5, 4
+FF6B58, 25, 5, 5
+FFD740, 5, 1, 5
+FFD740, 5, 5, 1
+FFD740, 6, 2, 3
+FFD740, 6, 3, 2
+FFD740, 8, 2, 4
+FFD740, 8, 4, 2
+FFD740, 9, 3, 3
+FFD740, 10, 2, 5
+FFD740, 10, 5, 2
+FFD740, 12, 3, 4

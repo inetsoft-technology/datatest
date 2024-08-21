@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 11)
+PeriodStart, PeriodEnd, Period, Closed, Period_1, Period_2, overdue, Extended, Period_3, Period_4, Created
+2018-10-01 00:00:00, 2019-10-01 00:00:00, 12M, 12, 12M, 12M, 20, 22, 12M, 12M, 12
+2019-10-01 00:00:00, 2020-10-01 00:00:00, 1M, 9, 1M, 1M, 36, 15, 1M, 1M, 25
+2020-07-01 00:00:00, 2020-10-01 00:00:00, 3M, NULL, NULL, 3M, 1, NULL, NULL, 3M, 0

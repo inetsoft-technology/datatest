@@ -1,0 +1,17 @@
+The table size(row x col) is:(16 x 5)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME, f1
+1, 1, John, Kelly, JohnKelly
+2, 2, Lisa, Smith, LisaSmith
+3, 3, Anna, Lincoln, AnnaLincoln
+4, 4, Patrico, Brown, PatricoBrown
+5, 5, Steven, Devon, StevenDevon
+6, 6, Aria, Duz, AriaDuz
+7, 7, Lino, Rodrigez, LinoRodrigez
+8, 8, Richard, Isantengse, RichardIsantengse
+9, 9, Luke, Baker, LukeBaker
+30, 30, Bill, Wallace, BillWallace
+31, 31, Amy, Gillette, AmyGillette
+32, 32, Gilbert, Francone, GilbertFrancone
+33, 33, Michael, Lewis, MichaelLewis
+34, 34, Fran, Dreckle, FranDreckle
+35, 35, Pat, Kline, PatKline

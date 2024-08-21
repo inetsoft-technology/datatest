@@ -1,0 +1,32 @@
+The table size(row x col) is:(12 x 5)
+Recovery ID, Scenario, Task Number, Recovery Task, Task Owner Name
+1000018, Single virtual machine failure, 1, Call Macquarie Telecoms on 1800 789 999.Let the technician know which server is unresponsive. Request they investigate, and specifically try to console onto the problematic machine. Depending on their findings, request a restart of the machine. , First Line
+1000057, Single virtual machine failure, 2, If the restart does fix the Issue. Immediately log an ISMS incident report and begin the Investigation into the root cause., First Line
+1000059, Single virtual machine failure, 3, If the machine is still unresponsive, notify Head of Development and Support that we will be switching to DR. 
+Request the Macquarie Telecom technician Invoke DR to our mirrored location.., First Line
+1000077, Macquarie Telecom Hosting (Sydney) services unavailable, 1, Contact Macquarie Telecoms to understand nature of the problem
+, First Line
+1000079, Macquarie Telecom Hosting (Sydney) services unavailable, 2, Notify internal recovery team as per attached call tree and commence communications with relevant stakeholders.
+, First Line
+1000082, Macquarie Telecom Hosting (Sydney) services unavailable, 3, Draft email template for notification outage and have approved by member of ELT.
+Check with support if recovery time known prior to issuing notification.
+Generate list for all affected clients and send notification via hubspot.
+, First Line
+1000084, Macquarie Telecom Hosting (Sydney) services unavailable, 4, Initiate Failover with Macquarie Telecom (Role:Infrastructure)
+  - Contact Macquarie Hub (ph 1800 789 999 ext 2)
+  - log ticket
+  - Request initiate failover to DR 
+, First Line
+1000086, Macquarie Telecom Hosting (Sydney) services unavailable, 5, Validate DR Restore (Role: ALM/ERM-OPS)
+  - verify database restored and started (ip's, accounts, passwords)
+  - verify application start - and are available (list of applications/client sites in order of importance)
+  - communication any failures to Infastructure
+, First Line
+1000089, Macquarie Telecom Hosting (Sydney) services unavailable, 6, Notification Service Restored (Role:client comms)
+ - email template
+ - list of users (from previous)
+ - hubspot mail out
+
+, First Line
+1000200, Salesforce unavailable, 1, If outage > 6 hours, contact account manager and understand recovery plan, estimated outage., protecht.support
+1000202, Salesforce unavailable, 2, Start capturing lead activities and opportunity updates in Excel back up files., Exec

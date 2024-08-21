@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 3)
+e_id, year, fx id
+397, 2005, 1
+425, 2002, 4
+441, 2003, 2
+478, 2004, 3

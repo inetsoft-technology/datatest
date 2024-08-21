@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 5)
+PRODUCT_NAME, PRICE, INSTOCK, PRODUCT_ID, CATEGORY_ID
+Fast Mail, 39, true, 6, 6
+Mega Icons, 550, true, 11, 5
+True Action, 398, false, 9, 4
