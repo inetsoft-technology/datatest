@@ -1,0 +1,166 @@
+The data size(row x col) is:(165 x 4)
+DataGroup(Date), Week(Date), NULL, Sum(Quantity Purchased)/Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+2018, 2018-02-04, Sum(Quantity Purchased), 92
+2018, 2018-02-04, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-02-11, Sum(Quantity Purchased), 198
+2018, 2018-02-11, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-02-18, Sum(Quantity Purchased), 255
+2018, 2018-02-18, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-02-25, Sum(Quantity Purchased), 256
+2018, 2018-02-25, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-03-04, Sum(Quantity Purchased), 223
+2018, 2018-03-04, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-03-11, Sum(Quantity Purchased), 219
+2018, 2018-03-11, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-03-18, Sum(Quantity Purchased), 226
+2018, 2018-03-18, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-03-25, Sum(Quantity Purchased), 228
+2018, 2018-03-25, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-04-01, Sum(Quantity Purchased), 192
+2018, 2018-04-01, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-04-08, Sum(Quantity Purchased), 253
+2018, 2018-04-08, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-04-15, Sum(Quantity Purchased), 215
+2018, 2018-04-15, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-04-22, Sum(Quantity Purchased), 229
+2018, 2018-04-22, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-04-29, Sum(Quantity Purchased), 223
+2018, 2018-04-29, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-05-06, Sum(Quantity Purchased), 208
+2018, 2018-05-06, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-05-13, Sum(Quantity Purchased), 195
+2018, 2018-05-13, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-05-20, Sum(Quantity Purchased), 200
+2018, 2018-05-20, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-05-27, Sum(Quantity Purchased), 234
+2018, 2018-05-27, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-06-03, Sum(Quantity Purchased), 212
+2018, 2018-06-03, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-06-10, Sum(Quantity Purchased), 186
+2018, 2018-06-10, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-06-17, Sum(Quantity Purchased), 137
+2018, 2018-06-17, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-06-24, Sum(Quantity Purchased), 171
+2018, 2018-06-24, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-07-01, Sum(Quantity Purchased), 204
+2018, 2018-07-01, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-07-08, Sum(Quantity Purchased), 201
+2018, 2018-07-08, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-07-15, Sum(Quantity Purchased), 234
+2018, 2018-07-15, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-07-22, Sum(Quantity Purchased), 234
+2018, 2018-07-22, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-07-29, Sum(Quantity Purchased), 173
+2018, 2018-07-29, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-08-05, Sum(Quantity Purchased), 247
+2018, 2018-08-05, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-08-12, Sum(Quantity Purchased), 232
+2018, 2018-08-12, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-08-19, Sum(Quantity Purchased), 181
+2018, 2018-08-19, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-08-26, Sum(Quantity Purchased), 223
+2018, 2018-08-26, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-09-02, Sum(Quantity Purchased), 246
+2018, 2018-09-02, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-09-09, Sum(Quantity Purchased), 194
+2018, 2018-09-09, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2018, 2018-09-16, Sum(Quantity Purchased), 158
+2018, 2018-09-16, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-01-03, Sum(Quantity Purchased), 23
+2021, 2021-01-03, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -69
+2021, 2021-01-10, Sum(Quantity Purchased), 128
+2021, 2021-01-10, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -70
+2021, 2021-01-17, Sum(Quantity Purchased), 136
+2021, 2021-01-17, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -119
+2021, 2021-01-24, Sum(Quantity Purchased), 140
+2021, 2021-01-24, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -116
+2021, 2021-01-31, Sum(Quantity Purchased), 151
+2021, 2021-01-31, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -72
+2021, 2021-02-07, Sum(Quantity Purchased), 128
+2021, 2021-02-07, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -91
+2021, 2021-02-14, Sum(Quantity Purchased), 161
+2021, 2021-02-14, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -65
+2021, 2021-02-21, Sum(Quantity Purchased), 133
+2021, 2021-02-21, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -95
+2021, 2021-02-28, Sum(Quantity Purchased), 134
+2021, 2021-02-28, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -58
+2021, 2021-03-07, Sum(Quantity Purchased), 93
+2021, 2021-03-07, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -160
+2021, 2021-03-14, Sum(Quantity Purchased), 126
+2021, 2021-03-14, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -89
+2021, 2021-03-21, Sum(Quantity Purchased), 145
+2021, 2021-03-21, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -84
+2021, 2021-03-28, Sum(Quantity Purchased), 100
+2021, 2021-03-28, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -123
+2021, 2021-04-04, Sum(Quantity Purchased), 116
+2021, 2021-04-04, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -92
+2021, 2021-04-11, Sum(Quantity Purchased), 161
+2021, 2021-04-11, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -34
+2021, 2021-04-18, Sum(Quantity Purchased), 147
+2021, 2021-04-18, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -53
+2021, 2021-04-25, Sum(Quantity Purchased), 170
+2021, 2021-04-25, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -64
+2021, 2021-05-02, Sum(Quantity Purchased), 149
+2021, 2021-05-02, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -63
+2021, 2021-05-09, Sum(Quantity Purchased), 163
+2021, 2021-05-09, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -23
+2021, 2021-05-16, Sum(Quantity Purchased), 160
+2021, 2021-05-16, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), 23
+2021, 2021-05-23, Sum(Quantity Purchased), 157
+2021, 2021-05-23, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -14
+2021, 2021-05-30, Sum(Quantity Purchased), 129
+2021, 2021-05-30, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -75
+2021, 2021-06-06, Sum(Quantity Purchased), 184
+2021, 2021-06-06, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -17
+2021, 2021-06-13, Sum(Quantity Purchased), 156
+2021, 2021-06-13, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -78
+2021, 2021-06-20, Sum(Quantity Purchased), 139
+2021, 2021-06-20, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -95
+2021, 2021-06-27, Sum(Quantity Purchased), 115
+2021, 2021-06-27, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -58
+2021, 2021-07-04, Sum(Quantity Purchased), 156
+2021, 2021-07-04, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -91
+2021, 2021-07-11, Sum(Quantity Purchased), 147
+2021, 2021-07-11, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -85
+2021, 2021-07-18, Sum(Quantity Purchased), 178
+2021, 2021-07-18, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -3
+2021, 2021-07-25, Sum(Quantity Purchased), 115
+2021, 2021-07-25, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -108
+2021, 2021-08-01, Sum(Quantity Purchased), 143
+2021, 2021-08-01, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -103
+2021, 2021-08-08, Sum(Quantity Purchased), 183
+2021, 2021-08-08, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -11
+2021, 2021-08-15, Sum(Quantity Purchased), 122
+2021, 2021-08-15, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), -36
+2021, 2021-08-22, Sum(Quantity Purchased), 160
+2021, 2021-08-22, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-08-29, Sum(Quantity Purchased), 125
+2021, 2021-08-29, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-09-05, Sum(Quantity Purchased), 147
+2021, 2021-09-05, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-09-12, Sum(Quantity Purchased), 162
+2021, 2021-09-12, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-09-19, Sum(Quantity Purchased), 148
+2021, 2021-09-19, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-09-26, Sum(Quantity Purchased), 143
+2021, 2021-09-26, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-10-03, Sum(Quantity Purchased), 182
+2021, 2021-10-03, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-10-10, Sum(Quantity Purchased), 135
+2021, 2021-10-10, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-10-17, Sum(Quantity Purchased), 163
+2021, 2021-10-17, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-10-24, Sum(Quantity Purchased), 162
+2021, 2021-10-24, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-10-31, Sum(Quantity Purchased), 177
+2021, 2021-10-31, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-11-07, Sum(Quantity Purchased), 171
+2021, 2021-11-07, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-11-14, Sum(Quantity Purchased), 135
+2021, 2021-11-14, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-11-21, Sum(Quantity Purchased), 140
+2021, 2021-11-21, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-11-28, Sum(Quantity Purchased), 153
+2021, 2021-11-28, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL
+2021, 2021-12-05, Sum(Quantity Purchased), 39
+2021, 2021-12-05, Change from previous range of DataGroup(Date): Sum(Quantity Purchased), NULL

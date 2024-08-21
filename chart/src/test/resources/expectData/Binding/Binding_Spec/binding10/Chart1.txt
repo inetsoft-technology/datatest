@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 6)
+RESELLER, Year(ORDER_DATETIME), Count(ADDRESS), Max(ORDER_ID), Value of previous Year(ORDER_DATETIME): Count(ADDRESS), Change from first Year(ORDER_DATETIME): Max(ORDER_ID)
+false, 2002-01-01 00:00:00, 46, 12164, NULL, 0
+false, 2003-01-01 00:00:00, 28, 12358, 46, 194
+false, 2004-01-01 00:00:00, 50, 12548, 28, 384
+false, 2005-01-01 00:00:00, 30, 12696, 50, 532
+true, 2002-01-01 00:00:00, 126, 12172, NULL, 0
+true, 2003-01-01 00:00:00, 159, 12359, 126, 187
+true, 2004-01-01 00:00:00, 139, 12547, 159, 375
+true, 2005-01-01 00:00:00, 122, 12700, 139, 528

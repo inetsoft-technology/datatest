@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 8)
+state, reseller, customer_id, M, company_name, address, city, zip
+WA, 1, 27, 30, Infinity Software, 32 West Boyd Ave., Seattle, 93847
+WA, 0, 29, 32, Northwest Outfitters, 17 Main St., Olympia, 93717

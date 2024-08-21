@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 4)
+Region, State, Sum(TotalReturned), % of Region: Sum(TotalReturned)
+USA East, CT, 48765, 0.0059
+USA East, FL, 556312, 0.0674
+USA East, MA, 1904995, 0.2309
+USA East, MD, 675376, 0.0819
+USA East, NJ, 3746806, 0.4542
+USA East, NY, 1298609, 0.1574
+USA East, PA, 18512, 0.0022
+USA West, AZ, NULL, NULL
+USA West, CA, 1805637, 0.4261
+USA West, CO, 650218, 0.1534
+USA West, IL, NULL, NULL
+USA West, NV, 1548, 0.0004
+USA West, TX, 1560153, 0.3682
+USA West, WA, 220087, 0.0519

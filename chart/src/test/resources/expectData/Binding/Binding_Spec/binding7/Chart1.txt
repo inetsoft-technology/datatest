@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 7)
+DayOfWeek(order_date), employee_id, Min_employee_id, Q25_employee_id, Medium_employee_id, Q75_employee_id, Max_employee_id
+1, NULL, 1, 2, 2, 3, 4
+2, NULL, 1, 1, 2, 3, 4
+3, NULL, 1, 1, 2, 3, 4
+4, NULL, 1, 1, 2, 4, 4
+5, NULL, 1, 2, 2, 4, 4
+6, NULL, 1, 2, 3, 4, 4
+7, NULL, 1, 2, 3, 4, 4

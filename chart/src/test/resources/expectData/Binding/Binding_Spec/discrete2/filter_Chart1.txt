@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+reseller, Year(order_date), NthSmallest(contact id and customer id, 1), Sum(customer_id), Moving Average of 4: NthSmallest(contact id and customer id, 1), discrete_Moving Average of 4: NthSmallest(contact id and customer id, 1)
+false, 2002-01-01, 8, 731, 8, 8
+false, 2003-01-01, 8, 422, 8, 8
+false, 2004-01-01, 8, 735, 8, 8
+true, 2002-01-01, 2, 2058, 2, 2
+true, 2003-01-01, 2, 2545, 2, 2
+true, 2004-01-01, 2, 2152, 2, 2

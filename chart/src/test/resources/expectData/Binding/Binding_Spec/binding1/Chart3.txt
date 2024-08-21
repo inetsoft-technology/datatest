@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 13)
+Calc_state, Calc_cid, CalcField1, Min_Calc_cid, Q25_Calc_cid, Medium_Calc_cid, Q75_Calc_cid, Max_Calc_cid, Min_CalcField1, Q25_CalcField1, Medium_CalcField1, Q75_CalcField1, Max_CalcField1
+WA, NULL, NULL, 27, 27, 29, 29, 29, 1, 1, 2, 3.5, 4
+TX, NULL, NULL, 11, 11, 22, 31, 31, 1, 1, 2, 3, 4
+PA, NULL, NULL, 28, 28, 28, 28, 28, 1, 1, 2, 3, 4
+NY, NULL, NULL, 3, 3, 7, 17, 24, 1, 2, 3, 3, 4
+NV, NULL, NULL, 32, 32, 32, 32, 32, 1, 2, 2, 3, 4
+NJ, NULL, NULL, 1, 2, 19, 25, 35, 1, 1, 2, 3, 4
+MD, NULL, NULL, 5, 5, 14, 33, 33, 1, 2, 3, 4, 4
+MA, NULL, NULL, 18, 18, 23, 30, 34, 1, 1, 2, 3, 4
+IL, NULL, NULL, 10, 10, 10, 10, 10, 1, 2, 2, 3, 4
+FL, NULL, NULL, 12, 12, 12, 12, 12, 1, 1.5, 2.5, 4, 4
+CT, NULL, NULL, 6, 6, 6, 6, 6, 1, 1, 1, 4, 4
+CO, NULL, NULL, 4, 4, 8, 8, 8, 1, 1, 2, 3, 4
+CA, NULL, NULL, 9, 9, 13, 21, 21, 1, 2, 3, 3.5, 4
+AZ, NULL, NULL, 20, 20, 20, 20, 20, 1, 1, 2, 3, 4

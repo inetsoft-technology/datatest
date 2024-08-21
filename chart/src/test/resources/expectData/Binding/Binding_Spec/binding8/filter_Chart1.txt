@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+Customer.Country.Country, Date.Date.Calendar.Calendar Year, Average Unit Price
+United Kingdom, CY 2001, 1221.6642
+United Kingdom, CY 2002, 752.0143
+United Kingdom, CY 2003, 392.9869
+France, CY 2001, 1221.6642
+France, CY 2002, 752.0143
+France, CY 2003, 392.9869
+Australia, CY 2001, 1221.6642
+Australia, CY 2002, 752.0143
+Australia, CY 2003, 392.9869

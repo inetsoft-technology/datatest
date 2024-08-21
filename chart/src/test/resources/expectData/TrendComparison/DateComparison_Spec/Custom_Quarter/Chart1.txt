@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 5)
+Quarter(Date), Sum(Quantity Purchased), Sum(Paid), Value of previous range of Quarter(Date): Sum(Quantity Purchased), Value of previous range of Quarter(Date): Sum(Paid)
+2021-01-01 00:00:00, 1518, 144, NULL, NULL
+2021-04-01 00:00:00, 1771, 141, 1518, 144
+2021-07-01 00:00:00, 1735, 141, 1771, 141

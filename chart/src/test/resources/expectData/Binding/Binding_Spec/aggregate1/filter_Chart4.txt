@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 6)
+MinuteOfHour(ORDERS.ORDERS:ORDER_TIME), ORDERS.CUSTOMERS:RESELLER, PopulationStandardDeviation(ORDERS.ORDERS:CUSTOMER_ID), Min(ORDERS.ORDERS:ORDER_ID), % of total: PopulationStandardDeviation(ORDERS.ORDERS:CUSTOMER_ID), % Change from previous MinuteOfHour(ORDERS.ORDERS:ORDER_TIME): Min(ORDERS.ORDERS:ORDER_ID)
+14, true, 13, 12084, 0.0861, NULL
+26, true, 12.6362, 12101, 0.0837, 0.0014
+23, true, 11.3248, 12001, 0.075, -0.0083
+30, true, 11.0277, 12061, 0.0731, 0.005
+30, Others, 6.6813, 12118, 0.0443, NULL
+25, true, 10.6961, 12026, 0.0709, -0.0029
+25, Others, 8.6795, 12068, 0.0575, -0.0041
+55, true, 10.5396, 12030, 0.0698, 0.0003
+55, Others, 9.7228, 12035, 0.0644, -0.0027
+1, true, 10.5267, 12018, 0.0697, -0.001
+1, Others, 9.7043, 12020, 0.0643, -0.0012
+35, false, 10.5, 12011, 0.0696, NULL
+35, Others, 2.4267, 12010, 0.0161, -0.0008
+Others, true, 9.5632, 12004, 0.0634, NULL
+Others, false, 6.3836, 12039, 0.0423, 0.0023
+Others, Others, 7.5163, 12007, 0.0498, -0.0002

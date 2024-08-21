@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+Quarter(Date), Sum(Quantity Purchased)
+2021-04-01 00:00:00, 125
+2021-07-01 00:00:00, 122
+2021-10-01 00:00:00, 178

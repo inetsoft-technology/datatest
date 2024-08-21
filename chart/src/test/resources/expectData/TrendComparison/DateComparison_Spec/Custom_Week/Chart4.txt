@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+Week(Date), Sum(Quantity Purchased), Change from previous range of Week(Date): Sum(Quantity Purchased)
+2021-06-27 00:00:00, 70, NULL
+2021-07-04 00:00:00, 99, 29
+2021-08-01 00:00:00, 143, NULL
+2021-08-08 00:00:00, 150, 7

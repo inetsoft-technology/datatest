@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 5)
+YearOfWeek(Date), WeekOfQuarter(Date), QuarterOfWeekN(Date), Sum(Quantity Purchased), % Change from previous year of YearOfWeek(Date): Sum(Quantity Purchased)
+2020-01-01 00:00:00, 1-13, 1, 179, -0.1268
+2020-01-01 00:00:00, 2-13, 2, 129, -0.4464
+2020-01-01 00:00:00, 3-13, 3, 147, -0.2576
+2020-01-01 00:00:00, 4-13, 4, 139, -0.2684
+2021-01-01 00:00:00, 1-13, 1, 69, -0.6145
+2021-01-01 00:00:00, 2-13, 2, 104, -0.1938
+2021-01-01 00:00:00, 3-13, 3, 121, -0.1769

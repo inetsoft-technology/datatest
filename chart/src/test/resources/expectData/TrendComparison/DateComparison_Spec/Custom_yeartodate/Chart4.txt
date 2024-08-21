@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Year(Date), Sum(Total), Change from previous range of Year(Date): Sum(Total)
+2018-01-01 00:00:00, 2151318, NULL
+2019-01-01 00:00:00, 5403374, NULL
+2021-01-01 00:00:00, 2639030, -2764344

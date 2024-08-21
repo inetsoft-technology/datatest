@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+QuarterOfYear(Date), Region, Count(startDate), Count(City), Value of previous QuarterOfYear(Date): Count(startDate), Running Sum: Count(City)
+3, USA East, 18, 18, NULL, 18
+3, USA West, 14, 14, NULL, 14
+1, USA East, 21, 21, 18, 39
+1, USA West, 20, 20, 14, 34
+2, USA East, 31, 31, 21, 70
+2, USA West, 20, 20, 20, 54

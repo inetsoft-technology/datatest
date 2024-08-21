@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 5)
+Quarter(Date), Sum(Quantity Purchased), Sum(Discount), % Change from previous quarter of Quarter(Date): Sum(Quantity Purchased), % Change from previous quarter of Quarter(Date): Sum(Discount)
+2020-04-01 00:00:00, 2905, 3.6, NULL, NULL
+2020-07-01 00:00:00, 2820, 3.6, -0.0293, 0
+2020-10-01 00:00:00, 2874, 3, 0.0191, -0.1667
+2021-01-01 00:00:00, 1712, 3.55, -0.4043, 0.1833
+2021-04-01 00:00:00, NULL, NULL, -1, -1
+2021-07-01 00:00:00, 1930, 2.95, NULL, NULL
+2021-10-01 00:00:00, 942, 0.6, -0.5119, -0.7966

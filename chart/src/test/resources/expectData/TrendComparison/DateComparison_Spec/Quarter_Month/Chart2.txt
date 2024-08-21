@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 5)
+Quarter(Date), MonthOfQuarter(Date), Region, Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased)
+2021-04-01 00:00:00, 1, USA East, 372, 0
+2021-04-01 00:00:00, 1, USA West, 252, -3
+2021-07-01 00:00:00, 1, USA East, 241, -131
+2021-07-01 00:00:00, 1, USA West, 400, 148
+2021-04-01 00:00:00, 2, USA East, 482, 223
+2021-04-01 00:00:00, 2, USA West, 202, -84
+2021-07-01 00:00:00, 2, USA East, 415, -67
+2021-07-01 00:00:00, 2, USA West, 249, 47
+2021-04-01 00:00:00, 3, USA East, 450, 153
+2021-04-01 00:00:00, 3, USA West, 194, -49
+2021-07-01 00:00:00, 3, USA East, 389, -61
+2021-07-01 00:00:00, 3, USA West, 236, 42

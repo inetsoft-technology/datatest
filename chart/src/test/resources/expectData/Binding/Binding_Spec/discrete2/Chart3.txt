@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Year(order_date), Sum(contact id and customer id), NthMostFrequent(employee_id, 1), discrete_NthMostFrequent(employee_id, 1)
+2002-01-01, 6420, 2, 2
+2003-01-01, 6836, 1, 1
+2004-01-01, 7010, 4, 4
+2005-01-01, 5258, 4, 4

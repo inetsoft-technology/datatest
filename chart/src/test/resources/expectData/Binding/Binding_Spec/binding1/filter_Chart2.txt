@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 5)
+ORDERS.CUSTOMERS:EMPLOYEE_ID, ORDERS.CUSTOMERS:STATE, ORDERS.CUSTOMERS:CITY, Sum(ORDERS.CUSTOMERS:CUSTOMER_ID), Running Sum: Sum(ORDERS.CUSTOMERS:CUSTOMER_ID)
+3, CO, Denver, 48, 48
+4, CO, Denver, 48, 48
+Others, CO, Boulder, 40, 40
+Others, CT, Hartford, 66, 66
+3, IL, Chicago, 70, 70
+4, IL, Chicago, 40, 40
+3, Others, New York, 102, 102
+3, Others, Olympia, 203, 305
+3, Others, Dallas, 487, 792
+3, Others, Austin, 77, 869
+3, Others, Seattle, 135, 1004
+3, Others, Houston, 154, 1158
+4, Others, Olympia, 203, 407
+4, Others, Austin, 55, 809
+4, Others, New York, 204, 204
+4, Others, Seattle, 108, 917
+4, Others, Dallas, 347, 754
+4, Others, Houston, 88, 1005
+Others, Others, Orlando, 168, 599
+Others, Others, New York, 431, 431

@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Week(Date), Sum(Paid), Sum(Reseller)
+2021-05-09 00:00:00, 13, 4
+2021-08-08 00:00:00, 10, 4
+2021-11-07 00:00:00, 7, 1

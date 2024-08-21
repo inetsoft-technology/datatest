@@ -1,0 +1,128 @@
+The data size(row x col) is:(127 x 12)
+Date, Paid, Region, State, City, Company, Reseller, Discount, Category, Name, Quantity Purchased, Total
+2019-01-01, 1, USA East, NY, New York, FISGA Corp, 0, 0.25, Games, Fast Go Game, 12, 2400
+2019-01-02, 1, USA West, CA, Los Angeles, Computer Tech, 1, 0.05, Games, Fast Go Game, 6, 1200
+2019-01-03, 1, USA West, AZ, Tucson, Folk Mining, 0, 0, Games, Fast Go Game, 19, 3800
+2019-01-04, 1, USA West, CA, San Francisco, Direct Sales, 1, 0, Games, Fast Go Game, 10, 2000
+2019-01-05, 0, USA East, MA, Boston, Ubermeyer, 0, 0, Games, Fast Go Game, 2, 400
+2019-01-06, 1, USA East, MA, Boston, Ubermeyer, 0, 0, Games, Fast Go Game, 11, 2200
+2019-01-07, 0, USA East, NY, New York, Old World Insurance, 0, 0.1, Games, Fast Go Game, 10, 2000
+2019-04-01, 1, USA East, MA, Springfield, AMG Logistics, 0, 0, Games, Web Bridge, 13, 1365
+2019-04-02, 1, USA East, NJ, Newark, Software Specialists, 1, 0, Games, Web Bridge, 3, 315
+2019-04-03, 1, USA East, FL, Orlando, Fast Transportation, 0, 0, Games, Web Bridge, 2, 210
+2019-04-04, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0.05, Games, Web Bridge, 7, 735
+2019-04-05, 1, USA East, PA, York, Tricounty Auto, 0, 0, Games, Web Bridge, 3, 315
+2019-04-06, 1, USA East, MD, Rockville, InterLand Services, 0, 0, Games, Web Bridge, 5, 525
+2019-04-07, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Games, Web Bridge, 20, 2100
+2019-07-01, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Games, Combat Hero, 15, 435
+2019-07-02, 1, USA West, TX, Dallas, Nova Tera, 0, 0, Games, Combat Hero, 7, 203
+2019-07-03, 1, USA West, CA, San Francisco, Direct Sales, 1, 0.1, Games, Combat Hero, 18, 522
+2019-07-04, 1, USA East, NJ, Middletown, Daycare One, 0, 0, Games, Combat Hero, 15, 435
+2019-07-05, 1, USA East, MA, Boston, Ubermeyer, 0, 0, Games, Combat Hero, 3, 87
+2019-07-06, 1, USA East, MD, Baltimore, George Services, 0, 0, Games, Combat Hero, 15, 435
+2019-07-07, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Games, Combat Hero, 11, 319
+2019-10-01, 1, USA East, MD, Rockville, InterLand Services, 0, 0, Games, Combat Hero, 9, 261
+2019-10-02, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Games, Combat Hero, 7, 203
+2019-10-03, 1, USA West, CO, Boulder, Ernst Handel, 1, 0, Games, Combat Hero, 8, 232
+2019-10-04, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0, Games, Combat Hero, 14, 406
+2019-10-05, 1, USA East, NJ, Camden, Scheggie Services, 0, 0, Games, Combat Hero, 11, 319
+2019-10-06, 1, USA West, AZ, Tucson, Folk Mining, 0, 0.25, Games, Combat Hero, 14, 406
+2019-10-07, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0, Games, Combat Hero, 11, 319
+2020-01-01, 1, USA East, NJ, Plainfield, Pharma Research, 0, 0, Games, Barbie's Fashion, 5, 395
+2020-01-02, 1, USA East, MD, Baltimore, George Services, 0, 0, Games, Barbie's Fashion, 6, 474
+2020-01-03, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Games, Barbie's Fashion, 19, 1501
+2020-01-04, 1, USA East, NJ, Camden, Scheggie Services, 0, 0, Games, Barbie's Fashion, 2, 158
+2020-01-05, 1, USA East, NJ, Plainfield, Pharma Research, 0, 0, Games, Barbie's Fashion, 7, 553
+2020-01-06, 0, USA East, NY, New York, Eastern Data, 0, 0, Games, Barbie's Fashion, 12, 948
+2020-01-07, 1, USA East, MA, Cambridge, XO Resellers, 1, 0, Games, Barbie's Fashion, 14, 1106
+2020-04-01, 1, USA West, AZ, Tucson, Folk Mining, 0, 0.25, Games, Barbie's Fashion, 8, 632
+2020-04-02, 1, USA East, MA, Boston, Ubermeyer, 0, 0, Games, Barbie's Fashion, 3, 237
+2020-04-03, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Games, Barbie's Fashion, 11, 869
+2020-04-04, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0, Games, Barbie's Fashion, 6, 474
+2020-04-05, 1, USA East, NY, New York, FISGA Corp, 0, 0, Games, Barbie's Fashion, 18, 1422
+2020-04-06, 1, USA East, CT, Hartford, Loctite Corp., 0, 0, Games, Barbie's Fashion, 12, 948
+2020-04-07, 1, USA East, MD, Rockville, InterLand Services, 0, 0, Games, Barbie's Fashion, 7, 553
+2019-01-01, 0, USA West, CA, San Francisco, Direct Sales, 1, 0, Business, Xconnect Server, 19, 42750
+2019-01-02, 1, USA West, CO, Boulder, Ernst Handel, 1, 0, Business, Xconnect Server, 2, 4500
+2019-01-03, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Business, Xconnect Server, 4, 9000
+2019-01-04, 0, USA East, MD, Baltimore, George Services, 0, 0, Business, Xconnect Server, 3, 6750
+2019-01-05, 1, USA West, CO, Boulder, Ernst Handel, 1, 0, Business, Xconnect Server, 3, 6750
+2019-01-06, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0, Business, Xconnect Server, 8, 18000
+2019-01-07, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Business, Xconnect Server, 2, 4500
+2019-04-01, 1, USA West, CO, Denver, Quick Stop, 0, 0, Business, InsideView, 19, 2375
+2019-04-02, 1, USA East, PA, York, Tricounty Auto, 0, 0, Business, InsideView, 19, 2375
+2019-04-03, 1, USA East, MD, Rockville, InterLand Services, 0, 0, Business, InsideView, 6, 750
+2019-04-04, 0, USA East, CT, Hartford, Loctite Corp., 0, 0, Business, InsideView, 14, 1750
+2019-04-05, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0, Business, InsideView, 20, 2500
+2019-04-06, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Business, InsideView, 20, 2500
+2019-04-07, 1, USA East, NJ, Camden, Scheggie Services, 0, 0, Business, InsideView, 14, 1750
+2019-07-01, 1, USA East, NJ, Middletown, Daycare One, 0, 0, Business, MeToo AppServer, 12, 36000
+2019-07-02, 1, USA West, AZ, Tucson, Folk Mining, 0, 0, Business, MeToo AppServer, 2, 6000
+2019-07-03, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Business, MeToo AppServer, 8, 24000
+2019-07-04, 1, USA East, PA, York, Tricounty Auto, 0, 0, Business, MeToo AppServer, 15, 45000
+2019-07-05, 1, USA West, TX, Dallas, Nova Tera, 0, 0, Business, MeToo AppServer, 14, 42000
+2019-07-06, 1, USA West, CA, San Francisco, Direct Sales, 1, 0.1, Business, MeToo AppServer, 12, 36000
+2019-07-07, 1, USA East, PA, York, Tricounty Auto, 0, 0, Business, MeToo AppServer, 6, 18000
+2019-10-01, 1, USA East, NY, New York, Old World Insurance, 0, 0, Business, MeToo AppServer, 13, 39000
+2019-10-02, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Business, MeToo AppServer, 11, 33000
+2019-10-03, 1, USA West, AZ, Tucson, Folk Mining, 0, 0, Business, MeToo AppServer, 17, 51000
+2019-10-04, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Business, MeToo AppServer, 3, 9000
+2019-10-05, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Business, MeToo AppServer, 13, 39000
+2019-10-06, 1, USA East, NJ, New Brunswick, Rutgers Bank, 0, 0, Business, MeToo AppServer, 10, 30000
+2019-10-07, 1, USA East, MD, Baltimore, FMG Consulting, 0, 0, Business, MeToo AppServer, 12, 36000
+2020-01-01, 1, USA East, NJ, Camden, Scheggie Services, 0, 0, Personal, Green Planet, 4, 300
+2020-01-02, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Personal, Green Planet, 20, 1500
+2020-01-03, 1, USA East, PA, York, Tricounty Auto, 0, 0, Personal, Green Planet, 7, 525
+2020-01-04, 1, USA West, CO, Boulder, Ernst Handel, 1, 0, Personal, Green Planet, 3, 225
+2020-01-05, 1, USA East, NJ, Middletown, Daycare One, 0, 0.25, Personal, Green Planet, 19, 1425
+2020-01-06, 0, USA East, PA, York, Tricounty Auto, 0, 0, Personal, Green Planet, 19, 1425
+2020-01-07, 0, USA West, CO, Denver, Quick Stop, 0, 0, Personal, Green Planet, 4, 300
+2020-04-01, 1, USA West, CO, Denver, Quick Stop, 0, 0.15, Personal, Green Planet, 20, 1500
+2020-04-02, 1, USA West, CA, Los Angeles, Computer Tech, 1, 0, Personal, Green Planet, 20, 1500
+2020-04-03, 1, USA West, TX, Austin, The Big Cat, 0, 0, Personal, Green Planet, 3, 225
+2020-04-04, 0, USA West, IL, Chicago, Specialty Retail, 1, 0, Personal, Green Planet, 12, 900
+2020-04-05, 0, USA West, TX, Austin, The Big Cat, 0, 0.1, Personal, Green Planet, 6, 450
+2020-04-06, 1, USA West, CO, Denver, Quick Stop, 0, 0, Personal, Green Planet, 3, 225
+2020-04-07, 1, USA East, MD, Baltimore, George Services, 0, 0, Personal, Green Planet, 16, 1200
+2019-01-01, 1, USA East, NY, New York, Eastern Data, 0, 0, Hardware, Wireless Mouse, 10, 400
+2019-01-02, 1, USA West, NV, Las Vegas, Tumbleweed Gaming, 0, 0, Hardware, Wireless Mouse, 15, 600
+2019-01-03, 1, USA West, TX, Dallas, BigMart Foodstores, 0, 0, Hardware, Wireless Mouse, 3, 120
+2019-01-04, 1, USA West, AZ, Tucson, Folk Mining, 0, 0, Hardware, Wireless Mouse, 7, 280
+2019-01-05, 1, USA East, NJ, Newark, Software Specialists, 1, 0, Hardware, Wireless Mouse, 5, 200
+2019-01-06, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0, Hardware, Wireless Mouse, 16, 640
+2019-01-07, 1, USA East, PA, York, Tricounty Auto, 0, 0, Hardware, Wireless Mouse, 1, 40
+2019-04-01, 1, USA East, NJ, Wayne, Interstate Shop, 0, 0, Hardware, Wireless Mouse, 11, 440
+2019-04-02, 1, USA East, FL, Orlando, Fast Transportation, 0, 0, Hardware, Wireless Mouse, 16, 640
+2019-04-03, 0, USA West, TX, Austin, The Big Cat, 0, 0, Hardware, Wireless Mouse, 15, 600
+2019-04-04, 1, USA West, TX, Austin, The Big Cat, 0, 0, Hardware, Wireless Mouse, 14, 560
+2019-04-05, 1, USA West, WA, Seattle, Infinity Software, 1, 0, Hardware, Wireless Mouse, 19, 760
+2019-04-06, 0, USA East, NJ, Plainfield, Pharma Research, 0, 0, Hardware, Wireless Mouse, 18, 720
+2019-04-07, 0, USA West, TX, Austin, The Big Cat, 0, 0.1, Hardware, Wireless Mouse, 9, 360
+2019-07-01, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0, Hardware, Wireless Keyboard, 18, 720
+2019-07-02, 1, USA East, MA, Springfield, AMG Logistics, 0, 0, Hardware, Wireless Keyboard, 11, 440
+2019-07-03, 1, USA East, NY, New York, FISGA Corp, 0, 0, Hardware, Wireless Keyboard, 12, 480
+2019-07-04, 1, USA East, NJ, Camden, Scheggie Services, 0, 0, Hardware, Wireless Keyboard, 20, 800
+2019-07-05, 1, USA West, NV, Las Vegas, Tumbleweed Gaming, 0, 0, Hardware, Wireless Keyboard, 16, 640
+2019-07-06, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0.2, Hardware, Wireless Keyboard, 13, 520
+2019-07-07, 1, USA East, NY, New York, Old World Insurance, 0, 0, Hardware, Wireless Keyboard, 4, 160
+2019-10-01, 1, USA East, CT, Hartford, Loctite Corp., 0, 0, Hardware, 17 Inch LCD, 7, 1470
+2019-10-02, 1, USA West, TX, Dallas, Nova Tera, 0, 0, Hardware, 17 Inch LCD, 9, 1890
+2019-10-03, 1, USA East, PA, York, Tricounty Auto, 0, 0, Hardware, 17 Inch LCD, 9, 1890
+2019-10-04, 1, USA East, PA, York, Tricounty Auto, 0, 0, Hardware, 17 Inch LCD, 15, 3150
+2019-10-05, 1, USA East, NY, New York, Eastern Data, 0, 0, Hardware, 17 Inch LCD, 18, 3780
+2019-10-06, 1, USA East, MA, Cambridge, XO Resellers, 1, 0, Hardware, 17 Inch LCD, 19, 3990
+2019-10-07, 1, USA East, CT, Hartford, Loctite Corp., 0, 0, Hardware, 17 Inch LCD, 11, 2310
+2020-01-01, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Hardware, 17 Inch LCD, 16, 3360
+2020-01-02, 1, USA East, NJ, Middletown, Daycare One, 0, 0, Hardware, 17 Inch LCD, 2, 420
+2020-01-03, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Hardware, 17 Inch LCD, 11, 2310
+2020-01-04, 0, USA West, CO, Boulder, Ernst Handel, 1, 0, Hardware, 17 Inch LCD, 12, 2520
+2020-01-05, 1, USA West, CO, Denver, Quick Stop, 0, 0, Hardware, 17 Inch LCD, 19, 3990
+2020-01-06, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Hardware, 17 Inch LCD, 8, 1680
+2020-01-07, 1, USA East, NJ, Newark, Software Specialists, 1, 0.25, Hardware, 17 Inch LCD, 6, 1260
+2020-04-01, 1, USA East, NJ, New Brunswick, Rutgers Bank, 0, 0, Hardware, 19 inch LCD, 9, 2790
+2020-04-02, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Hardware, 19 inch LCD, 2, 620
+2020-04-03, 1, USA West, TX, Austin, The Big Cat, 0, 0, Hardware, 19 inch LCD, 10, 3100
+2020-04-04, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Hardware, 19 inch LCD, 18, 5580
+2020-04-05, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Hardware, 19 inch LCD, 5, 1550
+2020-04-06, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0.25, Hardware, 19 inch LCD, 15, 4650
+2020-04-07, 1, USA West, WA, Seattle, Infinity Software, 1, 0, Hardware, 19 inch LCD, 15, 4650

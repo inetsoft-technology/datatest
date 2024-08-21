@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+STATE, Sum(CUSTOMER_ID), discrete_Sum(CUSTOMER_ID), value
+CO, 4, 21, 1
+CT, 6, 21, 1
+MD, 5, 21, 1
+NJ, 3, 21, 1
+NY, 3, 21, 1

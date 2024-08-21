@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+MinuteOfHour(ORDER_DATETIME), Sum(ORDER_ID)
+1, 1169380
+15, 800760
+25, 765504
+45, 642127
+55, 974420
+Others, 4293159

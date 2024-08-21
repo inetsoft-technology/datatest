@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Region, Year(Date), Sum(Quantity Purchased), Value of previous range of Year(Date): Sum(Quantity Purchased)
+USA East, 2018-01-01 00:00:00, 6666, NULL
+USA East, 2019-01-01 00:00:00, 6542, 6666
+USA West, 2018-01-01 00:00:00, 4871, NULL
+USA West, 2019-01-01 00:00:00, 4881, 4871

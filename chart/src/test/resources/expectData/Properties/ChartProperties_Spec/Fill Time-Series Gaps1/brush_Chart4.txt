@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+Year(NDate), Quarter(NDate), range_id, Sum(customer_id)
+2019-01-01 00:00:00, 2019-07-01 00:00:00, 13-26, 29
+2019-01-01 00:00:00, 2019-07-01 00:00:00, 3-7, 11

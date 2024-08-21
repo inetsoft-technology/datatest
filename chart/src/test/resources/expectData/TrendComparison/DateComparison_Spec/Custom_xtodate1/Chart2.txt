@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 7)
+Year(Date), DataGroup(Date), Category, Sum(Quantity Purchased), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Paid)
+, 2018:2019, Games, 3830, 320, NULL, NULL
+, 2018:2019, Graphics, 1915, 165, NULL, NULL
+, 2018:2019, Hardware, 735, 57, NULL, NULL
+, 2018:2019, Office Tools, 5057, 431, NULL, NULL
+, 2018:2019, Business, 3035, 261, NULL, NULL
+, 2018:2019, Games, 3185, 272, NULL, NULL
+, 2018:2019, Hardware, 3376, 275, NULL, NULL
+, 2020:2021, Educational, 2288, 194, NULL, NULL
+, 2020:2021, Games, 1544, 121, -2286, -199
+, 2020:2021, Hardware, 3773, 327, 3038, 270
+, 2020:2021, Personal, 3973, 321, NULL, NULL
+, 2020:2021, Business, 538, 43, -2497, -218
+, 2020:2021, Educational, 2660, 222, NULL, NULL
+, 2020:2021, Graphics, 846, 74, NULL, NULL
+, 2020:2021, Personal, 2268, 203, NULL, NULL

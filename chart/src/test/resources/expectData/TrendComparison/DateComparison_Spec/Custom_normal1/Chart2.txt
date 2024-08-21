@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Year(Date), DataGroup(Date), Sum(Quantity Purchased), % Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+, 2018:2019, 11537, NULL
+, 2020:2021, 11578, 0.0036
+, 2018:2019, 11423, NULL
+, 2020:2021, 7733, -0.323

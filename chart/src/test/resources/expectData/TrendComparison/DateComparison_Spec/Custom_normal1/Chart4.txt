@@ -1,0 +1,44 @@
+The data size(row x col) is:(19 x 5)
+Quarter(Date), Category, DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+2020 1st
+2021 1st
+2021 4th, Personal, 2020-01:10, 1099, NULL
+2020 1st
+2021 1st
+2021 4th, Personal, 2021-03:11, 14, -1085
+2020 1st
+2021 1st
+2021 4th, Games, 2020-01:10, 954, NULL
+2020 1st
+2021 1st
+2021 4th, Graphics, 2021-11:12, 617, NULL
+2020 1st
+2021 1st
+2021 4th, Business, 2021-11:12, 609, NULL
+2020 1st
+2021 1st
+2021 4th, Educational, 2021-03:11, 9, NULL
+2nd
+2nd, Personal, 2020-01:10, 935, NULL
+2nd
+2nd, Personal, 2021-03:11, 923, -12
+2nd
+2nd, Educational, 2021-03:11, 1029, NULL
+2nd
+2nd, Hardware, 2020-01:10, 969, NULL
+3rd
+3rd, Educational, 2020-01:10, 950, NULL
+3rd
+3rd, Educational, 2021-03:11, 799, -151
+3rd
+3rd, Personal, 2020-01:10, 984, NULL
+3rd
+3rd, Graphics, 2021-03:11, 517, NULL
+4th
+4th, Business, 2021-03:11, 440, NULL
+4th
+4th, Graphics, 2021-03:11, 389, NULL
+4th
+4th, Hardware, 2020-01:10, 18, NULL
+4th
+4th, Educational, 2020-01:10, 17, NULL

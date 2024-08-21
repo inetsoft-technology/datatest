@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 5)
+Second(order_datetime), PthPercentile(customer_id, 1), DistinctCount(paid), % of total: PthPercentile(customer_id, 1), Value of previous Second(order_datetime): DistinctCount(paid)
+NULL, 28, 1, 0.1065, NULL
+2002-01-05 05:23:23, 26, 1, 0.0989, 1
+2002-01-06 01:55:35, 20, 1, 0.076, 1
+2002-02-04 05:27:43, 28, 1, 0.1065, 1
+2002-02-09 08:02:59, 34, 0, 0.1293, 1
+2002-02-12 09:45:17, 25, 1, 0.0951, 0
+2002-03-01 02:10:55, 23, 1, 0.0875, 1
+2002-03-19 07:22:34, 24, 1, 0.0913, 1
+2002-03-21 08:47:23, 28, 1, 0.1065, 1
+2002-04-01 01:01:01, 25, 1, 0.0951, 1
+Others, 2, 1, 0.0076, 1

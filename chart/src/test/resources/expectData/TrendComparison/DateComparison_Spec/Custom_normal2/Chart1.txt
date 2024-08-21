@@ -1,0 +1,33 @@
+The data size(row x col) is:(17 x 4)
+Month(Date), DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+2021 Jan
+2021 Jun, 2020-01:05, 1007, NULL
+2021 Jan
+2021 Jun, 2021-01:05, 627, -380
+2021 Jan
+2021 Jun, 2021-06:11, 644, 17
+2021 Feb
+2021 Jul, 2020-01:05, 894, NULL
+2021 Feb
+2021 Jul, 2021-01:05, 545, -349
+2021 Feb
+2021 Jul, 2021-06:11, 641, 96
+2021 Mar
+2021 Aug, 2020-01:05, 1078, NULL
+2021 Mar
+2021 Aug, 2021-01:05, 540, -538
+2021 Mar
+2021 Aug, 2021-06:11, 664, 124
+2021 Apr
+2021 Sep, 2020-01:05, 948, NULL
+2021 Apr
+2021 Sep, 2021-01:05, 624, -324
+2021 Apr
+2021 Sep, 2021-06:11, 625, 1
+2021 May
+2021 Oct, 2020-01:05, 1005, NULL
+2021 May
+2021 Oct, 2021-01:05, 684, -321
+2021 May
+2021 Oct, 2021-06:11, 718, 34
+Nov, 2021-06:11, 224, NULL

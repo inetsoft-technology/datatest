@@ -1,0 +1,58 @@
+The data size(row x col) is:(57 x 5)
+Region, Year(Month(Date)), Category, Count(TotalReturned), Moving Average of 5: Count(TotalReturned)
+USA East, 2017-01-01 00:00:00, Business, 33, 40.3333
+USA East, 2017-01-01 00:00:00, Educational, 39, 48
+USA East, 2017-01-01 00:00:00, Games, 60, 84.3333
+USA East, 2017-01-01 00:00:00, Graphics, 21, 29
+USA East, 2017-01-01 00:00:00, Hardware, 60, 87.6667
+USA East, 2017-01-01 00:00:00, Office Tools, 37, 43.6667
+USA East, 2017-01-01 00:00:00, Personal, 59, 70.3333
+USA East, 2018-01-01 00:00:00, Business, 44, 43
+USA East, 2018-01-01 00:00:00, Educational, 50, 50.25
+USA East, 2018-01-01 00:00:00, Games, 94, 88.75
+USA East, 2018-01-01 00:00:00, Graphics, 36, 28.25
+USA East, 2018-01-01 00:00:00, Hardware, 109, 86
+USA East, 2018-01-01 00:00:00, Office Tools, 42, 46
+USA East, 2018-01-01 00:00:00, Personal, 77, 72
+USA East, 2019-01-01 00:00:00, Business, 44, 43
+USA East, 2019-01-01 00:00:00, Educational, 55, 50.25
+USA East, 2019-01-01 00:00:00, Games, 99, 88.75
+USA East, 2019-01-01 00:00:00, Graphics, 30, 28.25
+USA East, 2019-01-01 00:00:00, Hardware, 94, 86
+USA East, 2019-01-01 00:00:00, Office Tools, 52, 46
+USA East, 2019-01-01 00:00:00, Personal, 75, 72
+USA East, 2020-01-01 00:00:00, Business, 51, 46.3333
+USA East, 2020-01-01 00:00:00, Educational, 57, 54
+USA East, 2020-01-01 00:00:00, Games, 102, 98.3333
+USA East, 2020-01-01 00:00:00, Graphics, 26, 30.6667
+USA East, 2020-01-01 00:00:00, Hardware, 81, 94.6667
+USA East, 2020-01-01 00:00:00, Office Tools, 53, 49
+USA East, 2020-01-01 00:00:00, Personal, 77, 76.3333
+USA West, 2017-01-01 00:00:00, Business, 10, 10.3333
+USA West, 2017-01-01 00:00:00, Educational, 23, 20.3333
+USA West, 2017-01-01 00:00:00, Games, 28, 35
+USA West, 2017-01-01 00:00:00, Graphics, 9, 12.6667
+USA West, 2017-01-01 00:00:00, Hardware, 40, 45
+USA West, 2017-01-01 00:00:00, Office Tools, 30, 27
+USA West, 2017-01-01 00:00:00, Personal, 28, 34
+USA West, 2018-01-01 00:00:00, Business, 9, 11.5
+USA West, 2018-01-01 00:00:00, Educational, 16, 23.5
+USA West, 2018-01-01 00:00:00, Games, 39, 36.75
+USA West, 2018-01-01 00:00:00, Graphics, 15, 14.5
+USA West, 2018-01-01 00:00:00, Hardware, 39, 50
+USA West, 2018-01-01 00:00:00, Office Tools, 23, 27.75
+USA West, 2018-01-01 00:00:00, Personal, 33, 33.5
+USA West, 2019-01-01 00:00:00, Business, 12, 11.5
+USA West, 2019-01-01 00:00:00, Educational, 22, 23.5
+USA West, 2019-01-01 00:00:00, Games, 38, 36.75
+USA West, 2019-01-01 00:00:00, Graphics, 14, 14.5
+USA West, 2019-01-01 00:00:00, Hardware, 56, 50
+USA West, 2019-01-01 00:00:00, Office Tools, 28, 27.75
+USA West, 2019-01-01 00:00:00, Personal, 41, 33.5
+USA West, 2020-01-01 00:00:00, Business, 15, 12
+USA West, 2020-01-01 00:00:00, Educational, 33, 23.6667
+USA West, 2020-01-01 00:00:00, Games, 42, 39.6667
+USA West, 2020-01-01 00:00:00, Graphics, 20, 16.3333
+USA West, 2020-01-01 00:00:00, Hardware, 65, 53.3333
+USA West, 2020-01-01 00:00:00, Office Tools, 30, 27
+USA West, 2020-01-01 00:00:00, Personal, 32, 35.3333

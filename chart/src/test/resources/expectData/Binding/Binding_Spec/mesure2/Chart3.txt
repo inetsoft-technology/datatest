@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 5)
+STATE, CITY, ZIP, Max(CUSTOMER_ID), % of ZIP: Max(CUSTOMER_ID)
+CA, Albany, 83923, 16, 1
+CA, Los Angeles, 11223, 13, 1
+CA, Los Angeles, 73646, 21, 1
+CA, San Francisco, 08854, 9, 1
+MA, Boston, 28275, 23, 1
+MA, Boston, 29183, 18, 1
+MD, Baltimore, 53747, 33, 1
+MD, Baltimore, 82938, 5, 1
+NY, New York, 03887, 3, 1
+NY, New York, 08854, 7, 1
+NY, New York, 27834, 24, 1
+NY, New York, 28122, 17, 1

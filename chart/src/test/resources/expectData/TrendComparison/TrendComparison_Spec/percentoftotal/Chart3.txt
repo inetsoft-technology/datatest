@@ -1,0 +1,149 @@
+The data size(row x col) is:(148 x 5)
+State, City, Category, Sum(TotalReturned), % of Category: Sum(TotalReturned)
+AZ, Tucson, Business, NULL, NULL
+AZ, Tucson, Educational, NULL, NULL
+AZ, Tucson, Games, NULL, NULL
+AZ, Tucson, Graphics, NULL, NULL
+AZ, Tucson, Hardware, NULL, NULL
+AZ, Tucson, Office Tools, NULL, NULL
+AZ, Tucson, Personal, NULL, NULL
+CA, Los Angeles, Business, 159000, 1
+CA, Los Angeles, Educational, 6193, 0.1806
+CA, Los Angeles, Games, 42060, 1
+CA, Los Angeles, Graphics, NULL, NULL
+CA, Los Angeles, Hardware, 671060, 0.5283
+CA, Los Angeles, Office Tools, 38688, 0.353
+CA, Los Angeles, Personal, 93324, 0.8266
+CA, San Francisco, Business, NULL, NULL
+CA, San Francisco, Educational, 28105, 0.8194
+CA, San Francisco, Games, NULL, NULL
+CA, San Francisco, Graphics, 882, 1
+CA, San Francisco, Hardware, 599080, 0.4717
+CA, San Francisco, Office Tools, 70908, 0.647
+CA, San Francisco, Personal, 19575, 0.1734
+CO, Boulder, Business, 420000, 1
+CO, Boulder, Educational, NULL, NULL
+CO, Boulder, Games, 16080, 0.7153
+CO, Boulder, Graphics, 11550, 1
+CO, Boulder, Hardware, 62000, 0.7074
+CO, Boulder, Office Tools, NULL, NULL
+CO, Boulder, Personal, 9933, 0.2448
+CO, Denver, Business, NULL, NULL
+CO, Denver, Educational, 62772, 1
+CO, Denver, Games, 6400, 0.2847
+CO, Denver, Graphics, NULL, NULL
+CO, Denver, Hardware, 25650, 0.2926
+CO, Denver, Office Tools, 5187, 1
+CO, Denver, Personal, 30646, 0.7552
+CT, Hartford, Business, NULL, NULL
+CT, Hartford, Educational, NULL, NULL
+CT, Hartford, Games, NULL, NULL
+CT, Hartford, Graphics, NULL, NULL
+CT, Hartford, Hardware, NULL, NULL
+CT, Hartford, Office Tools, 1365, 1
+CT, Hartford, Personal, 47400, 1
+FL, Orlando, Business, 456000, 1
+FL, Orlando, Educational, 9522, 1
+FL, Orlando, Games, 16800, 1
+FL, Orlando, Graphics, NULL, NULL
+FL, Orlando, Hardware, 52080, 1
+FL, Orlando, Office Tools, NULL, NULL
+FL, Orlando, Personal, 21910, 1
+IL, Chicago, Business, NULL, NULL
+IL, Chicago, Educational, NULL, NULL
+IL, Chicago, Games, NULL, NULL
+IL, Chicago, Graphics, NULL, NULL
+IL, Chicago, Hardware, NULL, NULL
+IL, Chicago, Office Tools, NULL, NULL
+IL, Chicago, Personal, NULL, NULL
+MA, Boston, Business, 3000, 0.0412
+MA, Boston, Educational, 31915, 0.4875
+MA, Boston, Games, 70200, 0.7231
+MA, Boston, Graphics, 118800, 0.9747
+MA, Boston, Hardware, 619240, 0.7152
+MA, Boston, Office Tools, 247684, 0.9398
+MA, Boston, Personal, 145376, 0.8524
+MA, Springfield, Business, 69875, 0.9588
+MA, Springfield, Educational, 33550, 0.5125
+MA, Springfield, Games, 26884, 0.2769
+MA, Springfield, Graphics, 3087, 0.0253
+MA, Springfield, Hardware, 246560, 0.2848
+MA, Springfield, Office Tools, 15872, 0.0602
+MA, Springfield, Personal, 25179, 0.1476
+MD, Baltimore, Business, 486000, 0.9954
+MD, Baltimore, Educational, NULL, NULL
+MD, Baltimore, Games, 4350, 0.1973
+MD, Baltimore, Graphics, 24750, 1
+MD, Baltimore, Hardware, 10640, 0.3455
+MD, Baltimore, Office Tools, 90972, 1
+MD, Baltimore, Personal, 9933, 0.5508
+MD, Rockville, Business, 2250, 0.0046
+MD, Rockville, Educational, 525, 1
+MD, Rockville, Games, 17696, 0.8027
+MD, Rockville, Graphics, NULL, NULL
+MD, Rockville, Hardware, 20160, 0.6545
+MD, Rockville, Office Tools, NULL, NULL
+MD, Rockville, Personal, 8100, 0.4492
+NJ, Middletown, Business, 542000, 0.9975
+NJ, Middletown, Educational, NULL, NULL
+NJ, Middletown, Games, 6902, 0.0895
+NJ, Middletown, Graphics, 99000, 0.3982
+NJ, Middletown, Hardware, 653800, 0.626
+NJ, Middletown, Office Tools, 19152, 0.2854
+NJ, Middletown, Personal, 1032, 0.0545
+NJ, Newark, Business, 1375, 0.0025
+NJ, Newark, Educational, 6600, 1
+NJ, Newark, Games, 70208, 0.9105
+NJ, Newark, Graphics, 149640, 0.6018
+NJ, Newark, Hardware, 390560, 0.374
+NJ, Newark, Office Tools, 47957, 0.7146
+NJ, Newark, Personal, 17910, 0.9455
+NV, Las Vegas, Business, NULL, NULL
+NV, Las Vegas, Educational, NULL, NULL
+NV, Las Vegas, Games, NULL, NULL
+NV, Las Vegas, Graphics, NULL, NULL
+NV, Las Vegas, Hardware, NULL, NULL
+NV, Las Vegas, Office Tools, NULL, NULL
+NV, Las Vegas, Personal, 1548, 1
+NY, New York, Business, 395500, 1
+NY, New York, Educational, 93576, 1
+NY, New York, Games, 254241, 1
+NY, New York, Graphics, 56224, 1
+NY, New York, Hardware, 96410, 1
+NY, New York, Office Tools, 240784, 1
+NY, New York, Personal, 161874, 1
+PA, York, Business, NULL, NULL
+PA, York, Educational, NULL, NULL
+PA, York, Games, 2800, 1
+PA, York, Graphics, NULL, NULL
+PA, York, Hardware, 9520, 1
+PA, York, Office Tools, NULL, NULL
+PA, York, Personal, 6192, 1
+TX, Dallas, Business, 142625, 0.7091
+TX, Dallas, Educational, 90320, 1
+TX, Dallas, Games, 117000, 0.825
+TX, Dallas, Graphics, 3920, 0.4167
+TX, Dallas, Hardware, 688200, 1
+TX, Dallas, Office Tools, 38304, 0.1313
+TX, Dallas, Personal, 14080, 1
+TX, Austin, Business, 58500, 0.2909
+TX, Austin, Educational, NULL, NULL
+TX, Austin, Games, 24810, 0.175
+TX, Austin, Graphics, 5488, 0.5833
+TX, Austin, Hardware, NULL, NULL
+TX, Austin, Office Tools, 253330, 0.8687
+TX, Austin, Personal, NULL, NULL
+WA, Olympia, Business, NULL, NULL
+WA, Olympia, Educational, 36750, 1
+WA, Olympia, Games, 2686, 1
+WA, Olympia, Graphics, NULL, NULL
+WA, Olympia, Hardware, 161040, 1
+WA, Olympia, Office Tools, 3861, 1
+WA, Olympia, Personal, NULL, NULL
+WA, Seattle, Business, 15750, 1
+WA, Seattle, Educational, NULL, NULL
+WA, Seattle, Games, NULL, NULL
+WA, Seattle, Graphics, NULL, NULL
+WA, Seattle, Hardware, NULL, NULL
+WA, Seattle, Office Tools, NULL, NULL
+WA, Seattle, Personal, NULL, NULL

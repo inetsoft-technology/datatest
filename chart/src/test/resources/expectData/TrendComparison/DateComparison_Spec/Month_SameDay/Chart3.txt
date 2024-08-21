@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Day(Date), Sum(Quantity Purchased), Change from previous month of Day(Date): Sum(Quantity Purchased)
+2021-04-03 00:00:00, 31, NULL
+2021-05-03 00:00:00, 27, -4
+2021-06-03 00:00:00, 2, -25
+2021-08-03 00:00:00, 21, NULL
+2021-09-03 00:00:00, 15, -6
+2021-10-03 00:00:00, 38, 23

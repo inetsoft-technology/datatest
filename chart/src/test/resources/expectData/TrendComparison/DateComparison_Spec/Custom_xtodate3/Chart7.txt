@@ -1,0 +1,44 @@
+The data size(row x col) is:(21 x 5)
+Week(Date), Category, DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+2018-06-10
+2020-08-30
+2021-09-19, Games, 2018, 74, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Graphics, 2018, 40, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Office Tools, 2018, 72, NULL
+2018-06-17
+2020-09-06, Games, 2018, 37, NULL
+2018-06-17
+2020-09-06, Graphics, 2018, 54, NULL
+2018-06-17
+2020-09-06, Office Tools, 2018, 46, NULL
+2018-06-24, Games, 2018, 3, NULL
+2018-06-24, Graphics, 2018, 1, NULL
+2018-06-24, Office Tools, 2018, 12, NULL
+2018-07-01, Games, 2018, 10, NULL
+2018-07-01, Graphics, 2018, 15, NULL
+2018-07-01, Office Tools, 2018, 13, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Educational, 2020, 49, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Hardware, 2020, 41, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Personal, 2020, 68, NULL
+2018-06-17
+2020-09-06, Educational, 2020, 67, NULL
+2018-06-17
+2020-09-06, Hardware, 2020, 46, NULL
+2018-06-17
+2020-09-06, Personal, 2020, 51, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Business, 2021, 46, NULL
+2018-06-10
+2020-08-30
+2021-09-19, Graphics, 2021, 49, NULL

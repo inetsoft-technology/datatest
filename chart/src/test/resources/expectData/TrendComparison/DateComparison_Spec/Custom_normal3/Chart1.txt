@@ -1,0 +1,15 @@
+The data size(row x col) is:(8 x 4)
+Day(Date), DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+11/1/21
+11/10/21, 2021-11-01:03, 39, NULL
+11/1/21
+11/10/21, 2021-11-10:13, 29, -10
+11/2/21
+11/11/21, 2021-11-01:03, 10, NULL
+11/2/21
+11/11/21, 2021-11-10:13, 22, 12
+11/3/21
+11/12/21, 2021-11-01:03, 37, NULL
+11/3/21
+11/12/21, 2021-11-10:13, 34, -3
+11/13/21, 2021-11-10:13, 36, NULL

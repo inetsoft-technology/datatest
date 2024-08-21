@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+range_cid, Sum(CUSTOMER_ID), Sum(EMPLOYEE_ID), Sum(CONTACT_ID), Sum(ORDER_ID), DistinctCount(ORDER_DATETIME), Count(ORDER_DATE), Change from previous: DistinctCount(ORDER_DATETIME), Value of first: Count(ORDER_DATE)
+10-20, 3080, 525, 3080, 2585920, 203, 209, NULL, 209
+20-30, 4959, 563, 4959, 2489172, 190, 202, -13, 209
+>=30, 3838, 262, 3838, 1457475, 114, 118, -76, 209

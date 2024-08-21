@@ -1,0 +1,32 @@
+The data size(row x col) is:(12 x 6)
+Quarter(Date), DataGroup(Date), Sum(Quantity Purchased), Sum(Reseller), Change from previous range of DataGroup(Date): Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Reseller)
+2018 1st
+2019 2nd
+2021 1st, 2018, 1420, 17, NULL, NULL
+2018 2nd
+2019 3rd
+2021 2nd, 2018, 1264, 29, NULL, NULL
+2018 3rd
+2019 4th
+2021 3rd, 2018, 1257, 19, NULL, NULL
+4th, 2018, 1243, 33, NULL, NULL
+2018 1st
+2019 2nd
+2021 1st, 2019, 1308, 37, -112, 20
+2018 2nd
+2019 3rd
+2021 2nd, 2019, 1283, 36, 19, 7
+2018 3rd
+2019 4th
+2021 3rd, 2019, 1334, 25, 77, 6
+2018 1st
+2019 2nd
+2021 1st, 2021, 834, 19, -474, -18
+2018 2nd
+2019 3rd
+2021 2nd, 2021, 851, 20, -432, -16
+2018 3rd
+2019 4th
+2021 3rd, 2021, 866, 16, -468, -9
+4th
+4th, 2021, 942, 14, NULL, NULL

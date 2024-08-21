@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 5)
+Month(Date), Sum(Paid), Sum(Quantity Purchased), Value of previous range of Month(Date): Sum(Paid), Value of previous range of Month(Date): Sum(Quantity Purchased)
+2018-10-01 00:00:00, 26, 291, NULL, NULL
+2018-11-01 00:00:00, 28, 308, NULL, NULL
+2018-12-01 00:00:00, 27, 357, NULL, NULL
+2021-10-01 00:00:00, 19, 232, 26, 291
+2021-11-01 00:00:00, 18, 224, 28, 308
+2021-12-01 00:00:00, 20, 226, 27, 357

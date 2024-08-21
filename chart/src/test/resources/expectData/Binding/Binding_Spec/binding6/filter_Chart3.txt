@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 5)
+RESELLER, PRODUCT_NAME, Last(CUSTOMER_ID, COMPANY_NAME), % of subtotal: Last(CUSTOMER_ID, COMPANY_NAME), __sum__% of subtotal: Last(CUSTOMER_ID, COMPANY_NAME)
+false, 17 Inch LCD, 4, 0.2, NULL
+false, 19 inch LCD, 4, 0.2, NULL
+false, Animal World, 4, 0.2, NULL
+false, Barbie"s Fashion, 4, 0.2, NULL
+false, Others, 4, 0.2, NULL
+false, Total, NULL, NULL, 1
+true, 17 Inch LCD, 5, 0.2, NULL
+true, 19 inch LCD, 5, 0.2, NULL
+true, Animal World, 5, 0.2, NULL
+true, Barbie"s Fashion, 5, 0.2, NULL
+true, Others, 5, 0.2, NULL
+true, Total, NULL, NULL, 1

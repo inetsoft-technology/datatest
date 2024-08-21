@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+PAID, range_cid, Variance(CUSTOMER_ID), PthPercentile(ORDER_ID, 1), Running Sum: Variance(CUSTOMER_ID), Moving Average of 5: PthPercentile(ORDER_ID, 1)
+false, 10-20, 8.4679, 12020, 8.4679, 12015.5
+false, >=30, 3.0897, 12011, 11.5576, 12015.5
+true, 20-30, 8.9143, 12024, 8.9143, 12027.5
+true, >=30, 3, 12031, 11.9143, 12027.5

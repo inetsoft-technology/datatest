@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 4)
+State, City, DistinctCount(TotalReturned), Moving Count of 5: DistinctCount(TotalReturned)
+AZ, Tucson, 0, 1
+CA, Los Angeles, 9, 3
+CA, Albany, 6, 3
+CA, San Francisco, 5, 3
+CO, Boulder, 5, 2
+CO, Denver, 5, 2
+CT, Hartford, 2, 1
+FL, Orlando, 9, 1
+IL, Chicago, 0, 1
+MA, Boston, 18, 3
+MA, Springfield, 10, 3
+MA, Cambridge, 8, 3
+MD, Baltimore, 6, 2
+MD, Rockville, 5, 2
+NJ, Newark, 13, 3
+NJ, Middletown, 7, 3
+NJ, Plainfield, 7, 3
+NV, Las Vegas, 1, 1
+NY, New York, 32, 1
+PA, York, 3, 1
+TX, Dallas, 12, 3
+TX, Austin, 7, 3
+TX, Houston, 4, 3
+WA, Olympia, 7, 2
+WA, Seattle, 1, 2

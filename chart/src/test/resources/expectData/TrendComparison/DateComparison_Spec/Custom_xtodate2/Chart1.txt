@@ -1,0 +1,8 @@
+The data size(row x col) is:(5 x 6)
+Month(Date), DataGroup(Date), Sum(Paid), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Paid), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+10月, 2018, 83, 935, NULL, NULL
+11月, 2018, 28, 308, NULL, NULL
+10月
+10月, 2021, 60, 718, -23, -217
+11月
+11月, 2021, 18, 224, -10, -84

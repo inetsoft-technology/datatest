@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 2)
+Quarter(orderdate), Sum(price)
+1997-01-01 00:00:00, 34841
+1997-04-01 00:00:00, 10598

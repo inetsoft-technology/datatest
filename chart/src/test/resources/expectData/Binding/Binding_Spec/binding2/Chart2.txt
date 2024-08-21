@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 6)
+STATE, Year(ORDER_DATE), First(CUSTOMER_ID, ADDRESS), Count(COMPANY_NAME), discrete_First(CUSTOMER_ID, ADDRESS), % of total: Count(COMPANY_NAME)
+IL, 2002-01-01 00:00:00, 10, 5, 6, 0.1042
+IL, 2004-01-01 00:00:00, 10, 7, 6, 0.1458
+IL, Others, 10, 5, 6, 0.1042
+NV, 2003-01-01 00:00:00, 32, 6, 6, 0.125
+NV, 2004-01-01 00:00:00, 32, 8, 6, 0.1667
+NV, Others, 32, 4, 6, 0.0833
+CT, 2002-01-01 00:00:00, 6, 5, 6, 0.1042
+CT, 2004-01-01 00:00:00, 6, 5, 6, 0.1042
+CT, Others, 6, 3, 6, 0.0625

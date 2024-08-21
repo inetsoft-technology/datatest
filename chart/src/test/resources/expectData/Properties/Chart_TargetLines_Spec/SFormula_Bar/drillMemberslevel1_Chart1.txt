@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 6)
+RESELLER, numberrange, STATE, CITY, Sum(formula_ws), Sum(CalcField1)
+true, <10, NY, New York, 522, 10
+true, >=20, AZ, Tucson, 3600, 40
+true, >=20, NY, New York, 5184, 24
+true, >=20, TX, Dallas, 14733, 114
+true, >=20, TX, Houston, 4356, 44
+true, 10-20, NY, New York, 2601, 34
+true, 10-20, TX, Austin, 1089, 22

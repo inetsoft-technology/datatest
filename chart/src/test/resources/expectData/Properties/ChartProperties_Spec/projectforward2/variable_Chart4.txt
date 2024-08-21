@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+DayOfWeek(orderdate), Sum(product_id)
+1, 130
+2, 147
+3, 157
+4, 212
+5, 104
+6, 142
+7, 132

@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+range_cid, Year(range_quarter), PopulationVariance(CUSTOMER_ID), Change from previous Year(range_quarter): PopulationVariance(CUSTOMER_ID)
+10-20, 2003-01-01 00:00:00, 6.767, NULL
+10-20, 2004-01-01 00:00:00, 8.9514, 2.1844
+10-20, 2005-01-01 00:00:00, 8.4711, -0.4803
+20-30, 2002-01-01 00:00:00, 8.3896, NULL
+>=30, 2002-01-01 00:00:00, 2.5664, NULL
+>=30, 2003-01-01 00:00:00, 3.3789, 0.8125
+>=30, 2004-01-01 00:00:00, 1.9628, -1.4161
+>=30, 2005-01-01 00:00:00, 4.0567, 2.0939

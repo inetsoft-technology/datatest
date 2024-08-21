@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+WeekOfMonth(Date), MonthOfWeek(Date), Sum(Quantity Purchased), Change from previous month of MonthOfWeek(Date): Sum(Quantity Purchased)
+1, 2021-05-01 00:00:00, 76, NULL
+1, 2021-06-01 00:00:00, 107, 31
+1, 2021-08-01 00:00:00, 78, NULL
+1, 2021-09-01 00:00:00, 84, 6
+1, 2021-10-01 00:00:00, 114, 30

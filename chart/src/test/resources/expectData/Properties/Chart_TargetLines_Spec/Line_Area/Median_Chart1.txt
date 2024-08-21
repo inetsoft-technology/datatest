@@ -1,0 +1,39 @@
+The data size(row x col) is:(38 x 6)
+reseller, state, Year(orderdate), Sum(customer_id), Sum(product_id), Moving Average of 5: Sum(product_id)
+NULL, NY, NULL, 2, NULL, NULL
+false, Others, NULL, 210, NULL, NULL
+false, NY, NULL, 164, NULL, NULL
+false, AK, NULL, 146, NULL, NULL
+false, PA, NULL, 84, NULL, NULL
+true, CA, NULL, 168, NULL, NULL
+true, Others, NULL, 117, NULL, NULL
+true, I, NULL, 81, NULL, NULL
+true, NY, NULL, 70, NULL, NULL
+NULL, NY, 2000-01-01 00:00:00, 2, 9, 9
+false, Others, 2000-01-01 00:00:00, 87, 156, 93
+false, Others, 1999-01-01 00:00:00, 81, 79, 66.5
+false, Others, 1998-01-01 00:00:00, 40, 65, 41.5
+false, Others, 1997-01-01 00:00:00, 2, 5, 5
+false, NY, 1998-01-01 00:00:00, 52, 18, 30.3333
+false, NY, 1999-01-01 00:00:00, 86, 54, 65
+false, NY, 2000-01-01 00:00:00, 26, 30, 93.3333
+false, AK, 1998-01-01 00:00:00, 5, 8, 23.6667
+false, AK, 1999-01-01 00:00:00, 56, 62, 47.6667
+false, AK, 2000-01-01 00:00:00, 85, 94, 82.6667
+false, PA, 1998-01-01 00:00:00, 16, 45, 26.5
+false, PA, 1999-01-01 00:00:00, 20, 27, 44.5
+false, PA, 2000-01-01 00:00:00, 48, 124, 109
+true, CA, 1998-01-01 00:00:00, 10, 3, 12.3333
+true, CA, 1999-01-01 00:00:00, 62, 39, 23
+true, CA, 2000-01-01 00:00:00, 96, 48, 84
+true, Others, 1997-01-01 00:00:00, 3, 6, 6.5
+true, Others, 1998-01-01 00:00:00, 45, 21, 12.3333
+true, Others, 2000-01-01 00:00:00, 48, 134, 84
+true, Others, 1999-01-01 00:00:00, 21, 24, 23
+true, I, 1998-01-01 00:00:00, 36, 44, 44
+true, I, 1999-01-01 00:00:00, 18, 11, 11
+true, I, 2000-01-01 00:00:00, 27, 25, 25
+true, NY, 1997-01-01 00:00:00, 2, 7, 6.5
+true, NY, 1998-01-01 00:00:00, 2, 13, 12.3333
+true, NY, 1999-01-01 00:00:00, 3, 6, 23
+true, NY, 2000-01-01 00:00:00, 63, 70, 84

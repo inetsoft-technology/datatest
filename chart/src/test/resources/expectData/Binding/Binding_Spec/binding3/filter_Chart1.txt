@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+employee_id, First(customer_id, discount), Running Sum: First(customer_id, discount)
+4, 9, 9
+1, 15, 24
+3, 20, 44
+2, 35, 79

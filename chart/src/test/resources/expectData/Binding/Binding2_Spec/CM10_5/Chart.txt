@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 5)
+D1, D2, Sum(High), Sum(Low), Sum(Close)
+AA, A, 120, 78, 90
+AA, B, 50, 25, 25
+AA, C, 62, 10, 20
+AA, D, 85, 20, 85
+BB, E, 41, 13, 21
+BB, F, 52, 19, 20
+BB, G, 96, 55, 90
+BB, H, 58, 5, 51

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+QuarterOfYear(alias), Sum(CUSTOMER_ID)
+1, 3569
+2, 3396
+3, 3351
+4, 2472

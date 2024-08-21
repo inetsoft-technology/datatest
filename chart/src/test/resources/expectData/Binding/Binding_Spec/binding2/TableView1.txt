@@ -1,0 +1,702 @@
+The data size(row x col) is:(701 x 20)
+CUSTOMER_ID, DISCOUNT, EMPLOYEE_ID, ORDER_DATE, ORDER_DATETIME, ORDER_ID, ORDER_TIME, PAID, ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID_1, CONTACT_ID, FIRST_NAME, LAST_NAME, REGION_ID, RESELLER, STATE, range_quarter, range_cid
+23, 0, 1, 2002-09-08 00:00:00, 2002-09-08 02:10:15, 12121, 2006-07-01 02:10:15, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 3rd, 20-30
+13, 0, 4, 2002-09-10 00:00:00, 2002-09-10 07:21:31, 12122, 2006-07-01 07:21:31, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2002 3rd, 10-20
+7, 0, 1, 2002-09-10 00:00:00, 2002-09-10 07:21:31, 12123, 2006-07-01 07:21:31, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2002 3rd, <10
+15, 0, 2, 2002-09-11 00:00:00, 2002-09-11 01:01:01, 12124, 2006-07-01 01:01:01, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2002 3rd, 10-20
+7, 0, 1, 2002-09-15 00:00:00, 2002-09-15 05:45:05, 12125, 2006-07-01 05:45:05, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2002 3rd, <10
+31, 0.1, 4, 2002-09-15 00:00:00, 2002-09-15 05:45:05, 12126, 2006-07-01 05:45:05, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2002 3rd, >=30
+9, 0, 3, 2002-09-15 00:00:00, 2002-09-15 05:45:05, 12127, 2006-07-01 05:45:05, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 3rd, <10
+1, 0, 1, 2002-09-17 00:00:00, 2002-09-17 10:22:13, 12128, 2006-07-01 10:22:13, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2002 3rd, <10
+24, 0, 1, 2002-09-17 00:00:00, 2002-09-17 10:22:13, 12129, 2006-07-01 10:22:13, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 3rd, 20-30
+8, 0, 4, 2002-09-17 00:00:00, 2002-09-17 10:22:13, 12130, 2006-07-01 10:22:13, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2002 3rd, <10
+35, 0, 2, 2002-09-21 00:00:00, 2002-09-21 03:51:13, 12131, 2006-07-01 03:51:13, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2002 3rd, >=30
+4, 0, 1, 2002-09-23 00:00:00, 2002-09-23 04:15:10, 12132, 2006-07-01 04:15:10, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2002 3rd, <10
+27, 0, 3, 2002-09-25 00:00:00, 2002-09-25 11:01:05, 12133, 2006-07-01 11:01:05, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 3rd, 20-30
+12, 0.15, 2, 2002-09-25 00:00:00, 2002-09-25 11:01:05, 12134, 2006-07-01 11:01:05, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 3rd, 10-20
+1, 0, 1, 2002-09-28 00:00:00, 2002-09-28 08:15:14, 12135, 2006-07-01 08:15:14, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2002 3rd, <10
+25, 0, 2, 2002-09-28 00:00:00, 2002-09-28 08:15:14, 12136, 2006-07-01 08:15:14, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 3rd, 20-30
+32, 0, 4, 2002-10-01 00:00:00, 2002-10-01 06:25:20, 12137, 2006-07-01 06:25:20, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2002 4th, >=30
+9, 0, 3, 2002-10-05 00:00:00, 2002-10-05 05:45:05, 12138, 2006-07-01 05:45:05, true, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 4th, <10
+27, 0, 3, 2002-10-08 00:00:00, 2002-10-08 10:22:13, 12139, 2006-07-01 10:22:13, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 4th, 20-30
+27, 0, 4, 2002-10-12 00:00:00, 2002-10-12 11:15:42, 12140, 2006-07-01 11:15:42, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 4th, 20-30
+9, 0, 3, 2002-10-16 00:00:00, 2002-10-16 02:55:23, 12141, 2006-07-01 02:55:23, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 4th, <10
+19, 0, 2, 2002-10-20 00:00:00, 2002-10-20 01:01:01, 12142, 2006-07-01 01:01:01, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2002 4th, 10-20
+33, 0, 1, 2002-10-21 00:00:00, 2002-10-21 04:25:15, 12143, 2006-07-01 04:25:15, true, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 4th, >=30
+3, 0, 2, 2002-10-21 00:00:00, 2002-10-21 04:25:15, 12144, 2006-07-01 04:25:15, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2002 4th, <10
+11, 0, 4, 2002-10-24 00:00:00, 2002-10-24 11:01:05, 12145, 2006-07-01 11:01:05, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2002 4th, 10-20
+12, 0, 2, 2002-10-28 00:00:00, 2002-10-28 05:55:12, 12146, 2006-07-01 05:55:12, true, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 4th, 10-20
+25, 0, 2, 2002-10-31 00:00:00, 2002-10-31 07:21:31, 12147, 2006-07-01 07:21:31, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 4th, 20-30
+19, 0, 1, 2002-11-02 00:00:00, 2002-11-02 05:45:05, 12148, 2006-07-01 05:45:05, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2002 4th, 10-20
+30, 0, 1, 2002-11-02 00:00:00, 2002-11-02 05:45:05, 12149, 2006-07-01 05:45:05, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2002 4th, >=30
+20, 0, 4, 2002-11-02 00:00:00, 2002-11-02 05:45:05, 12150, 2006-07-01 05:45:05, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 4th, 20-30
+7, 0, 2, 2002-11-06 00:00:00, 2002-11-06 01:55:35, 12151, 2006-07-01 01:55:35, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2002 4th, <10
+27, 0, 4, 2002-11-09 00:00:00, 2002-11-09 08:15:14, 12152, 2006-07-01 08:15:14, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 4th, 20-30
+27, 0, 3, 2002-11-11 00:00:00, 2002-11-11 10:27:55, 12153, 2006-07-01 10:27:55, true, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 4th, 20-30
+4, 0, 2, 2002-11-13 00:00:00, 2002-11-13 05:45:05, 12154, 2006-07-01 05:45:05, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2002 4th, <10
+19, 0.2, 2, 2002-11-16 00:00:00, 2002-11-16 11:01:05, 12155, 2006-07-01 11:01:05, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2002 4th, 10-20
+2, 0, 2, 2002-11-19 00:00:00, 2002-11-19 07:21:31, 12156, 2006-07-01 07:21:31, true, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2002 4th, <10
+13, 0, 3, 2002-11-21 00:00:00, 2002-11-21 01:25:36, 12157, 2006-07-01 01:25:36, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2002 4th, 10-20
+1, 0, 1, 2002-11-25 00:00:00, 2002-11-25 01:25:36, 12158, 2006-07-01 01:25:36, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2002 4th, <10
+24, 0, 1, 2002-11-29 00:00:00, 2002-11-29 09:57:21, 12159, 2006-07-01 09:57:21, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 4th, 20-30
+10, 0, 3, 2002-11-29 00:00:00, 2002-11-29 09:57:21, 12160, 2006-07-01 09:57:21, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2002 4th, 10-20
+2, 0, 2, 2002-12-03 00:00:00, 2002-12-03 01:01:01, 12161, 2006-07-01 01:01:01, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2002 4th, <10
+9, 0, 4, 2002-12-06 00:00:00, 2002-12-06 01:01:01, 12162, 2006-07-01 01:01:01, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 4th, <10
+17, 0, 3, 2002-12-08 00:00:00, 2002-12-08 02:10:15, 12163, 2006-07-01 02:10:15, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2002 4th, 10-20
+9, 0, 4, 2002-12-11 00:00:00, 2002-12-11 02:33:15, 12164, 2006-07-01 02:33:15, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 4th, <10
+17, 0, 4, 2002-12-14 00:00:00, 2002-12-14 11:01:05, 12165, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2002 4th, 10-20
+6, 0, 2, 2002-12-14 00:00:00, 2002-12-14 11:01:05, 12166, 2006-07-01 11:01:05, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2002 4th, <10
+14, 0, 2, 2002-12-14 00:00:00, 2002-12-14 08:15:14, 12167, 2006-07-01 08:15:14, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2002 4th, 10-20
+33, 0, 1, 2002-12-18 00:00:00, 2002-12-18 11:01:05, 12168, 2006-07-01 11:01:05, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 4th, >=30
+12, 0, 2, 2002-12-19 00:00:00, 2002-12-19 05:26:36, 12169, 2006-07-01 05:26:36, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 4th, 10-20
+14, 0, 2, 2002-12-23 00:00:00, 2002-12-23 05:55:12, 12170, 2006-07-01 05:55:12, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2002 4th, 10-20
+12, 0, 1, 2002-12-26 00:00:00, 2002-12-26 08:15:14, 12171, 2006-07-01 08:15:14, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 4th, 10-20
+25, 0, 2, 2002-12-30 00:00:00, 2002-12-30 10:27:55, 12172, 2006-07-01 10:27:55, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 4th, 20-30
+35, 0, 2, 2003-01-01 00:00:00, 2003-01-01 11:01:05, 12173, 2006-07-01 11:01:05, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 1st, >=30
+14, 0, 2, 2003-01-05 00:00:00, 2003-01-05 05:23:23, 12174, 2006-07-01 05:23:23, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 1st, 10-20
+29, 0, 3, 2003-01-06 00:00:00, 2003-01-06 02:05:10, 12175, 2006-07-01 02:05:10, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2003 1st, 20-30
+5, 0, 3, 2003-01-10 00:00:00, 2003-01-10 01:55:35, 12176, 2006-07-01 01:55:35, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 1st, <10
+21, 0, 3, 2003-01-13 00:00:00, 2003-01-13 11:25:36, 12177, 2006-07-01 11:25:36, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 1st, 20-30
+15, 0, 1, 2003-01-15 00:00:00, 2003-01-15 12:55:10, 12178, 2006-07-01 12:55:10, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 1st, 10-20
+25, 0, 1, 2003-01-15 00:00:00, 2003-01-15 03:51:13, 12179, 2006-07-01 03:51:13, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2003 1st, 20-30
+8, 0, 3, 2003-01-17 00:00:00, 2003-01-17 04:15:10, 12180, 2006-07-01 04:15:10, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 1st, <10
+26, 0, 3, 2003-01-20 00:00:00, 2003-01-20 11:01:05, 12181, 2006-07-01 11:01:05, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2003 1st, 20-30
+12, 0, 1, 2003-01-21 00:00:00, 2003-01-21 01:25:36, 12182, 2006-07-01 01:25:36, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2003 1st, 10-20
+15, 0, 1, 2003-01-23 00:00:00, 2003-01-23 08:15:14, 12183, 2006-07-01 08:15:14, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 1st, 10-20
+3, 0, 2, 2003-01-25 00:00:00, 2003-01-25 05:55:12, 12184, NULL, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 1st, <10
+23, 0, 2, 2003-01-25 00:00:00, 2003-01-25 05:55:12, 12185, 2006-07-01 05:55:12, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2003 1st, 20-30
+8, 0, 4, 2003-01-29 00:00:00, 2003-01-29 07:30:00, 12186, 2006-07-01 07:30:00, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 1st, <10
+33, 0, 1, 2003-01-29 00:00:00, 2003-01-29 07:30:00, 12187, 2006-07-01 07:30:00, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2003 1st, >=30
+28, 0, 1, 2003-02-01 00:00:00, 2003-02-01 04:25:15, 12188, 2006-07-01 04:25:15, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 1st, 20-30
+4, 0, 1, 2003-02-03 00:00:00, 2003-02-03 02:10:15, 12189, 2006-07-01 02:10:15, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2003 1st, <10
+8, 0, 4, 2003-02-05 00:00:00, 2003-02-05 07:21:31, 12190, 2006-07-01 07:21:31, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 1st, <10
+32, 0, 3, 2003-02-09 00:00:00, 2003-02-09 07:21:31, 12191, 2006-07-01 07:21:31, true, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 1st, >=30
+35, 0, 2, 2003-02-09 00:00:00, 2003-02-09 01:01:01, 12192, 2006-07-01 01:01:01, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 1st, >=30
+35, 0, 2, 2003-02-12 00:00:00, 2003-02-12 02:10:15, 12193, 2006-07-01 02:10:15, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 1st, >=30
+15, 0, 2, 2003-02-12 00:00:00, 2003-02-12 02:33:15, 12194, 2006-07-01 02:33:15, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 1st, 10-20
+18, 0, 1, 2003-02-12 00:00:00, 2003-02-12 08:15:14, 12195, 2006-07-01 08:15:14, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 1st, 10-20
+3, 0, 2, 2003-02-15 00:00:00, 2003-02-15 11:01:05, 12196, 2006-07-01 11:01:05, true, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 1st, <10
+34, 0, 2, 2003-02-16 00:00:00, 2003-02-16 11:01:05, 12197, 2006-07-01 11:01:05, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2003 1st, >=30
+24, 0, 2, 2003-02-20 00:00:00, 2003-02-20 11:01:05, 12198, 2006-07-01 11:01:05, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2003 1st, 20-30
+3, 0, 1, 2003-02-20 00:00:00, 2003-02-20 05:26:36, 12199, 2006-07-01 05:26:36, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 1st, <10
+22, 0, 3, 2003-02-23 00:00:00, 2003-02-23 05:55:12, 12200, NULL, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2003 1st, 20-30
+22, 0, 4, 2003-02-26 00:00:00, 2003-02-26 08:15:14, 12201, 2006-07-01 08:15:14, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2003 1st, 20-30
+19, 0, 1, 2003-02-27 00:00:00, 2003-02-27 10:27:55, 12202, 2006-07-01 10:27:55, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 1st, 10-20
+34, 0, 1, 2003-03-02 00:00:00, 2003-03-02 11:01:05, 12203, 2006-07-01 11:01:05, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2003 1st, >=30
+4, 0, 1, 2003-03-04 00:00:00, 2003-03-04 05:23:23, 12204, 2006-07-01 05:23:23, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2003 1st, <10
+25, 0, 1, 2003-03-06 00:00:00, 2003-03-06 02:05:10, 12205, NULL, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2003 1st, 20-30
+18, 0, 2, 2003-03-09 00:00:00, 2003-03-09 01:55:35, 12206, 2006-07-01 01:55:35, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 1st, 10-20
+32, 0, 4, 2003-03-13 00:00:00, 2003-03-13 11:25:36, 12207, 2006-07-01 11:25:36, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 1st, >=30
+2, 0.25, 2, 2003-03-16 00:00:00, 2003-03-16 12:55:10, 12208, 2006-07-01 12:55:10, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 1st, <10
+31, 0, 4, 2003-03-20 00:00:00, 2003-03-20 03:51:13, 12209, 2006-07-01 03:51:13, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 1st, >=30
+28, 0, 1, 2003-03-24 00:00:00, 2003-03-24 04:15:10, 12210, 2006-07-01 04:15:10, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 1st, 20-30
+28, 0, 2, 2003-03-27 00:00:00, 2003-03-27 11:01:05, 12211, 2006-07-01 11:01:05, true, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 1st, 20-30
+34, 0, 2, 2003-03-27 00:00:00, 2003-03-27 01:25:36, 12212, 2006-07-01 01:25:36, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2003 1st, >=30
+26, 0.15, 3, 2003-03-28 00:00:00, 2003-03-28 08:15:14, 12213, 2006-07-01 08:15:14, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2003 1st, 20-30
+3, NULL, 1, 2003-09-24 00:00:00, 2003-09-24 11:01:05, 12307, 2006-07-01 11:01:05, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 3rd, <10
+18, NULL, 2, 2003-09-24 00:00:00, 2003-09-24 11:01:05, 12308, 2006-07-01 11:01:05, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 3rd, 10-20
+1, NULL, 1, 2003-09-28 00:00:00, 2003-09-28 11:01:05, 12309, 2006-07-01 11:01:05, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2003 3rd, <10
+3, NULL, 1, 2003-09-29 00:00:00, 2003-09-29 05:26:36, 12310, 2006-07-01 05:26:36, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 3rd, <10
+28, NULL, 1, 2003-09-29 00:00:00, 2003-09-29 05:55:12, 12311, 2006-07-01 05:55:12, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 3rd, 20-30
+34, NULL, 2, 2003-09-29 00:00:00, 2003-09-29 05:55:12, 12312, 2006-07-01 05:55:12, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2003 3rd, >=30
+3, NULL, 2, 2003-09-30 00:00:00, 2003-09-30 10:27:55, 12313, 2006-07-01 10:27:55, true, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 3rd, <10
+7, NULL, 2, 2003-09-30 00:00:00, 2003-09-30 11:01:05, 12314, 2006-07-01 11:01:05, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2003 3rd, <10
+20, NULL, 3, 2003-10-03 00:00:00, 2003-10-03 05:23:23, 12315, 2006-07-01 05:23:23, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 4th, 20-30
+13, NULL, 4, 2003-10-05 00:00:00, 2003-10-05 01:55:35, 12316, 2006-07-01 01:55:35, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2003 4th, 10-20
+16, NULL, 3, 2003-10-05 00:00:00, 2003-10-05 02:05:10, 12317, 2006-07-01 02:05:10, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 4th, 10-20
+16, NULL, 3, 2003-10-09 00:00:00, 2003-10-09 11:25:36, 12318, 2006-07-01 11:25:36, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 4th, 10-20
+12, NULL, 2, 2003-10-12 00:00:00, 2003-10-12 12:55:10, 12319, 2006-07-01 12:55:10, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2003 4th, 10-20
+30, NULL, 2, 2003-10-14 00:00:00, 2003-10-14 03:51:13, 12320, 2006-07-01 03:51:13, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2003 4th, >=30
+21, NULL, 4, 2003-10-14 00:00:00, 2003-10-14 03:51:13, 12321, 2006-07-01 03:51:13, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 4th, 20-30
+31, NULL, 4, 2003-10-14 00:00:00, 2003-10-14 03:51:13, 12322, 2006-07-01 03:51:13, true, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 4th, >=30
+17, NULL, 4, 2003-10-16 00:00:00, 2003-10-16 01:25:36, 12323, 2006-07-01 01:25:36, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 4th, 10-20
+35, NULL, 2, 2003-10-18 00:00:00, 2003-10-18 08:15:14, 12324, 2006-07-01 08:15:14, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 4th, >=30
+19, NULL, 2, 2003-10-19 00:00:00, 2003-10-19 05:55:12, 12325, 2006-07-01 05:55:12, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 4th, 10-20
+12, NULL, 2, 2003-10-21 00:00:00, 2003-10-21 05:55:12, 12326, 2006-07-01 05:55:12, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2003 4th, 10-20
+19, NULL, 2, 2003-10-22 00:00:00, 2003-10-22 07:30:00, 12327, 2006-07-01 07:30:00, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 4th, 10-20
+13, NULL, 3, 2003-10-24 00:00:00, 2003-10-24 07:30:00, 12328, 2006-07-01 07:30:00, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2003 4th, 10-20
+30, NULL, 1, 2003-10-24 00:00:00, 2003-10-24 07:30:00, 12329, 2006-07-01 07:30:00, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2003 4th, >=30
+33, NULL, 2, 2003-10-27 00:00:00, 2003-10-27 02:10:15, 12330, 2006-07-01 02:10:15, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2003 4th, >=30
+1, NULL, 2, 2003-10-30 00:00:00, 2003-10-30 07:21:31, 12331, 2006-07-01 07:21:31, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2003 4th, <10
+14, NULL, 1, 2003-11-01 00:00:00, 2003-11-01 07:21:31, 12332, 2006-07-01 07:21:31, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 4th, 10-20
+24, NULL, 1, 2003-11-02 00:00:00, 2003-11-02 01:01:01, 12333, 2006-07-01 01:01:01, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2003 4th, 20-30
+35, 0.15, 1, 2003-11-05 00:00:00, 2003-11-05 05:45:05, 12334, 2006-07-01 05:45:05, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 4th, >=30
+16, 0, 4, 2003-11-08 00:00:00, 2003-11-08 05:45:05, 12335, 2006-07-01 05:45:05, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 4th, 10-20
+8, 0, 3, 2003-11-12 00:00:00, 2003-11-12 01:01:01, 12336, 2006-07-01 01:01:01, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 4th, <10
+6, 0, 2, 2003-11-14 00:00:00, 2003-11-14 02:10:15, 12337, 2006-07-01 02:10:15, true, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2003 4th, <10
+11, 0, 4, 2003-11-17 00:00:00, 2003-11-17 02:33:15, 12338, 2006-07-01 02:33:15, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2003 4th, 10-20
+16, 0.05, 4, 2003-11-19 00:00:00, 2003-11-19 08:15:14, 12339, 2006-07-01 08:15:14, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 4th, 10-20
+17, 0, 4, 2003-11-21 00:00:00, 2003-11-21 11:01:05, 12340, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 4th, 10-20
+7, 0, 1, 2003-11-24 00:00:00, 2003-11-24 11:01:05, 12341, 2006-07-01 11:01:05, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2003 4th, <10
+28, 0, 2, 2003-11-26 00:00:00, 2003-11-26 11:01:05, 12342, 2006-07-01 11:01:05, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 4th, 20-30
+22, 0, 3, 2003-11-27 00:00:00, 2003-11-27 05:26:36, 12343, 2006-07-01 05:26:36, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2003 4th, 20-30
+14, 0, 2, 2003-11-28 00:00:00, 2003-11-28 05:55:12, 12344, 2006-07-01 05:55:12, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 4th, 10-20
+14, 0, 2, 2003-11-29 00:00:00, 2003-11-29 08:15:14, 12345, 2006-07-01 08:15:14, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 4th, 10-20
+23, 0, 2, 2003-12-02 00:00:00, 2003-12-02 10:27:55, 12346, 2006-07-01 10:27:55, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2003 4th, 20-30
+6, 0, 2, 2003-12-02 00:00:00, 2003-12-02 10:27:55, 12347, 2006-07-01 10:27:55, true, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2003 4th, <10
+3, 0, 2, 2003-12-02 00:00:00, 2003-12-02 10:27:55, 12348, 2006-07-01 10:27:55, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 4th, <10
+17, 0, 4, 2003-12-04 00:00:00, 2003-12-04 02:05:10, 12349, 2006-07-01 02:05:10, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 4th, 10-20
+15, 0, 1, 2003-12-08 00:00:00, 2003-12-08 01:55:35, 12350, 2006-07-01 01:55:35, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 4th, 10-20
+35, 0.2, 1, 2003-12-09 00:00:00, 2003-12-09 11:25:36, 12351, 2006-07-01 11:25:36, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 4th, >=30
+28, 0, 2, 2003-12-11 00:00:00, 2003-12-11 12:55:10, 12352, 2006-07-01 12:55:10, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 4th, 20-30
+16, 0, 4, 2003-12-12 00:00:00, 2003-12-12 03:51:13, 12353, 2006-07-01 03:51:13, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 4th, 10-20
+9, 0, 4, 2003-12-16 00:00:00, 2003-12-16 04:15:10, 12354, 2006-07-01 04:15:10, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2003 4th, <10
+2, 0, 2, 2003-12-20 00:00:00, 2003-12-20 11:01:05, 12355, 2006-07-01 11:01:05, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 4th, <10
+23, 0, 1, 2003-12-23 00:00:00, 2003-12-23 01:25:36, 12356, 2006-07-01 01:25:36, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2003 4th, 20-30
+18, 0, 2, 2003-12-23 00:00:00, 2003-12-23 08:15:14, 12357, 2006-07-01 08:15:14, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 4th, 10-20
+13, 0, 4, 2003-12-27 00:00:00, 2003-12-27 05:55:12, 12358, 2006-07-01 05:55:12, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2003 4th, 10-20
+5, 0, 3, 2003-12-31 00:00:00, 2003-12-31 05:55:12, 12359, 2006-07-01 05:55:12, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 4th, <10
+15, 0, 2, 2004-01-02 00:00:00, 2004-01-02 07:30:00, 12360, 2006-07-01 07:30:00, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2004 1st, 10-20
+21, 0.25, 3, 2004-01-05 00:00:00, 2004-01-05 07:30:00, 12361, 2006-07-01 07:30:00, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 1st, 20-30
+13, 0, 4, 2004-01-06 00:00:00, 2004-01-06 04:25:15, 12362, 2006-07-01 04:25:15, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 1st, 10-20
+15, 0, 2, 2004-01-08 00:00:00, 2004-01-08 02:10:15, 12363, 2006-07-01 02:10:15, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2004 1st, 10-20
+18, 0, 1, 2004-01-12 00:00:00, 2004-01-12 07:21:31, 12364, 2006-07-01 07:21:31, true, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2004 1st, 10-20
+32, 0, 3, 2004-01-14 00:00:00, 2004-01-14 07:21:31, 12365, 2006-07-01 07:21:31, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 1st, >=30
+31, 0, 3, 2004-01-16 00:00:00, 2004-01-16 01:01:01, 12366, 2006-07-01 01:01:01, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 1st, >=30
+7, 0.05, 1, 2004-01-20 00:00:00, 2004-01-20 05:45:05, 12367, 2006-07-01 05:45:05, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 1st, <10
+5, 0, 4, 2004-01-20 00:00:00, 2004-01-20 05:45:05, 12368, 2006-07-01 05:45:05, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2004 1st, <10
+20, 0.25, 3, 2004-01-20 00:00:00, 2004-01-20 05:45:05, 12369, 2006-07-01 05:45:05, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2004 1st, 20-30
+21, 0, 3, 2004-01-24 00:00:00, 2004-01-24 10:22:13, 12370, 2006-07-01 10:22:13, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 1st, 20-30
+21, 0.1, 4, 2004-01-25 00:00:00, 2004-01-25 10:22:13, 12371, 2006-07-01 10:22:13, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 1st, 20-30
+19, 0, 1, 2004-01-29 00:00:00, 2004-01-29 10:22:13, 12372, 2006-07-01 10:22:13, true, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 1st, 10-20
+27, 0, 3, 2004-01-29 00:00:00, 2004-01-29 10:22:13, 12373, 2006-07-01 10:22:13, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2004 1st, 20-30
+23, 0, 1, 2004-01-30 00:00:00, 2004-01-30 04:15:10, 12374, 2006-07-01 04:15:10, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 1st, 20-30
+29, 0, 3, 2004-01-30 00:00:00, 2004-01-30 04:15:10, 12375, 2006-07-01 04:15:10, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 1st, 20-30
+22, 0.2, 3, 2004-02-01 00:00:00, 2004-02-01 01:01:01, 12376, 2006-07-01 01:01:01, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 1st, 20-30
+31, 0, 3, 2004-02-04 00:00:00, 2004-02-04 02:10:15, 12377, 2006-07-01 02:10:15, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 1st, >=30
+22, 0, 4, 2004-02-04 00:00:00, 2004-02-04 02:10:15, 12378, 2006-07-01 02:10:15, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 1st, 20-30
+28, 0, 1, 2004-02-04 00:00:00, 2004-02-04 02:10:15, 12379, 2006-07-01 02:10:15, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2004 1st, 20-30
+6, 0, 2, 2004-02-04 00:00:00, 2004-02-04 02:10:15, 12380, 2006-07-01 02:10:15, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2004 1st, <10
+7, 0, 1, 2004-02-04 00:00:00, 2004-02-04 02:10:15, 12381, 2006-07-01 02:10:15, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 1st, <10
+29, 0, 4, 2004-02-06 00:00:00, 2004-02-06 11:01:05, 12382, 2006-07-01 11:01:05, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 1st, 20-30
+9, 0, 3, 2004-02-06 00:00:00, 2004-02-06 11:01:05, 12383, 2006-07-01 11:01:05, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2004 1st, <10
+21, 0, 4, 2004-02-06 00:00:00, 2004-02-06 11:01:05, 12384, 2006-07-01 11:01:05, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 1st, 20-30
+2, 0, 1, 2004-02-06 00:00:00, 2004-02-06 11:01:05, 12385, 2006-07-01 11:01:05, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2004 1st, <10
+17, 0.1, 4, 2004-02-07 00:00:00, 2004-02-07 11:01:05, 12386, 2006-07-01 11:01:05, true, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 1st, 10-20
+14, 0, 2, 2004-02-11 00:00:00, 2004-02-11 11:01:05, 12387, 2006-07-01 11:01:05, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 1st, 10-20
+6, 0, 1, 2004-02-13 00:00:00, 2004-02-13 05:23:23, 12388, 2006-07-01 05:23:23, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2004 1st, <10
+26, 0, 4, 2004-02-15 00:00:00, 2004-02-15 02:05:10, 12389, 2006-07-01 02:05:10, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2004 1st, 20-30
+19, 0, 1, 2004-02-17 00:00:00, 2004-02-17 01:55:35, 12390, 2006-07-01 01:55:35, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 1st, 10-20
+18, 0, 2, 2004-02-21 00:00:00, 2004-02-21 11:25:36, 12391, 2006-07-01 11:25:36, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2004 1st, 10-20
+3, 0, 1, 2004-02-25 00:00:00, 2004-02-25 12:55:10, 12392, 2006-07-01 12:55:10, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2004 1st, <10
+16, 0.1, 4, 2004-02-26 00:00:00, 2004-02-26 03:51:13, 12393, 2006-07-01 03:51:13, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 1st, 10-20
+11, 0, 3, 2004-02-29 00:00:00, 2004-02-29 04:15:10, 12394, 2006-07-01 04:15:10, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2004 1st, 10-20
+23, 0, 2, 2004-02-29 00:00:00, 2004-02-29 04:15:10, 12395, 2006-07-01 04:15:10, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 1st, 20-30
+4, 0, 2, 2004-03-02 00:00:00, 2004-03-02 01:25:36, 12396, 2006-07-01 01:25:36, true, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2004 1st, <10
+17, 0, 4, 2004-03-06 00:00:00, 2004-03-06 08:15:14, 12397, 2006-07-01 08:15:14, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 1st, 10-20
+24, 0, 1, 2004-03-08 00:00:00, 2004-03-08 05:55:12, 12398, 2006-07-01 05:55:12, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2004 1st, 20-30
+29, 0, 3, 2004-03-08 00:00:00, 2004-03-08 05:55:12, 12399, 2006-07-01 05:55:12, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 1st, 20-30
+30, 0, 2, 2004-03-08 00:00:00, 2004-03-08 05:55:12, 12400, 2006-07-01 05:55:12, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2004 1st, >=30
+26, 0, 3, 2004-03-12 00:00:00, 2004-03-12 07:30:00, 12401, 2006-07-01 07:30:00, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2004 1st, 20-30
+2, 0, 1, 2004-03-16 00:00:00, 2004-03-16 04:25:15, 12402, 2006-07-01 04:25:15, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2004 1st, <10
+19, 0, 2, 2004-03-20 00:00:00, 2004-03-20 02:10:15, 12403, 2006-07-01 02:10:15, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 1st, 10-20
+25, 0, 2, 2004-03-22 00:00:00, 2004-03-22 07:21:31, 12404, 2006-07-01 07:21:31, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2004 1st, 20-30
+16, 0, 4, 2004-03-22 00:00:00, 2004-03-22 07:21:31, 12405, 2006-07-01 07:21:31, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 1st, 10-20
+8, 0, 3, 2004-03-22 00:00:00, 2004-03-22 07:21:31, 12406, 2006-07-01 07:21:31, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2004 1st, <10
+1, 0, 2, 2004-03-24 00:00:00, 2004-03-24 05:45:05, 12407, 2006-07-01 05:45:05, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2004 1st, <10
+25, 0, 1, 2004-03-24 00:00:00, 2004-03-24 05:45:05, 12408, 2006-07-01 05:45:05, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2004 1st, 20-30
+6, 0, 1, 2004-03-24 00:00:00, 2004-03-24 05:45:05, 12409, 2006-07-01 05:45:05, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2004 1st, <10
+29, 0, 4, 2004-03-24 00:00:00, 2004-03-24 05:45:05, 12410, 2006-07-01 05:45:05, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 1st, 20-30
+12, 0, 1, 2004-03-25 00:00:00, 2004-03-25 08:15:14, 12411, 2006-07-01 08:15:14, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2004 1st, 10-20
+17, 0, 3, 2004-03-28 00:00:00, 2004-03-28 11:01:05, 12412, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 1st, 10-20
+35, 0, 2, 2004-04-01 00:00:00, 2004-04-01 11:01:05, 12413, 2006-07-01 11:01:05, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2004 2nd, >=30
+32, 0.15, 3, 2004-04-05 00:00:00, 2004-04-05 05:26:36, 12414, 2006-07-01 05:26:36, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 2nd, >=30
+10, 0, 3, 2004-04-05 00:00:00, 2004-04-05 11:01:05, 12415, 2006-07-01 11:01:05, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 2nd, 10-20
+19, 0.25, 2, 2004-04-09 00:00:00, 2004-04-09 05:55:12, 12416, 2006-07-01 05:55:12, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 2nd, 10-20
+10, 0, 3, 2004-04-09 00:00:00, 2004-04-09 05:55:12, 12417, 2006-07-01 05:55:12, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 2nd, 10-20
+9, 0, 4, 2004-04-10 00:00:00, 2004-04-10 10:27:55, 12418, 2006-07-01 10:27:55, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2004 2nd, <10
+17, 0, 4, 2004-04-12 00:00:00, 2004-04-12 11:01:05, 12419, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 2nd, 10-20
+3, 0, 1, 2004-04-16 00:00:00, 2004-04-16 05:23:23, 12420, 2006-07-01 05:23:23, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2004 2nd, <10
+1, 0, 1, 2004-04-18 00:00:00, 2004-04-18 02:05:10, 12421, 2006-07-01 02:05:10, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2004 2nd, <10
+23, 0, 2, 2004-04-19 00:00:00, 2004-04-19 01:55:35, 12422, 2006-07-01 01:55:35, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 2nd, 20-30
+4, 0, 2, 2004-04-22 00:00:00, 2004-04-22 11:25:36, 12423, 2006-07-01 11:25:36, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2004 2nd, <10
+14, 0, 1, 2004-04-26 00:00:00, 2004-04-26 12:55:10, 12424, 2006-07-01 12:55:10, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 2nd, 10-20
+25, 0.1, 2, 2004-04-26 00:00:00, 2004-04-26 12:55:10, 12425, 2006-07-01 12:55:10, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2004 2nd, 20-30
+21, 0, 4, 2004-04-29 00:00:00, 2004-04-29 04:15:10, 12426, 2006-07-01 04:15:10, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 2nd, 20-30
+13, 0, 4, 2004-05-01 00:00:00, 2004-05-01 11:01:05, 12427, 2006-07-01 11:01:05, true, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 2nd, 10-20
+32, 0, 4, 2004-05-04 00:00:00, 2004-05-04 01:25:36, 12428, 2006-07-01 01:25:36, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 2nd, >=30
+16, 0, 4, 2004-05-06 00:00:00, 2004-05-06 08:15:14, 12429, 2006-07-01 08:15:14, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 2nd, 10-20
+23, 0, 2, 2004-05-08 00:00:00, 2004-05-08 05:55:12, 12430, 2006-07-01 05:55:12, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 2nd, 20-30
+33, 0, 2, 2004-05-08 00:00:00, 2004-05-08 05:55:12, 12431, 2006-07-01 05:55:12, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 2nd, >=30
+33, 0, 2, 2004-05-08 00:00:00, 2004-05-08 05:55:12, 12432, 2006-07-01 05:55:12, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 2nd, >=30
+17, 0, 3, 2004-05-10 00:00:00, 2004-05-10 07:30:00, 12433, 2006-07-01 07:30:00, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 2nd, 10-20
+19, 0, 1, 2004-05-14 00:00:00, 2004-05-14 04:25:15, 12434, 2006-07-01 04:25:15, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 2nd, 10-20
+2, 0, 2, 2004-05-18 00:00:00, 2004-05-18 02:10:15, 12435, 2006-07-01 02:10:15, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2004 2nd, <10
+34, 0, 2, 2004-05-22 00:00:00, 2004-05-22 07:21:31, 12436, 2006-07-01 07:21:31, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 2nd, >=30
+33, 0, 1, 2004-05-26 00:00:00, 2004-05-26 07:21:31, 12437, 2006-07-01 07:21:31, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 2nd, >=30
+25, 0, 1, 2004-05-28 00:00:00, 2004-05-28 04:43:11, 12438, 2006-07-01 04:43:11, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2004 2nd, 20-30
+27, 0, 3, 2004-05-29 00:00:00, 2004-05-29 10:47:26, 12439, 2006-07-01 10:47:26, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2004 2nd, 20-30
+30, 0, 1, 2004-05-30 00:00:00, 2004-05-30 11:59:59, 12440, 2006-07-01 11:59:59, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2004 2nd, >=30
+7, 0, 1, 2004-05-30 00:00:00, 2004-05-30 11:59:59, 12441, 2006-07-01 11:59:59, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 2nd, <10
+11, 0, 4, 2004-06-02 00:00:00, 2004-06-02 11:59:59, 12442, 2006-07-01 11:59:59, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2004 2nd, 10-20
+19, 0.25, 2, 2004-06-06 00:00:00, 2004-06-06 05:27:43, 12443, 2006-07-01 05:27:43, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 2nd, 10-20
+4, 0, 2, 2004-06-09 00:00:00, 2004-06-09 06:01:01, 12444, 2006-07-01 06:01:01, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2004 2nd, <10
+6, 0, 1, 2004-06-09 00:00:00, 2004-06-10 06:01:01, 12445, 2006-07-01 06:01:01, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2004 2nd, <10
+18, 0, 2, 2004-06-10 00:00:00, 2004-06-10 06:01:01, 12446, 2006-07-01 06:01:01, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2004 2nd, 10-20
+10, 0, 3, 2004-06-14 00:00:00, 2004-06-14 06:01:01, 12447, 2006-07-01 06:01:01, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 2nd, 10-20
+15, 0, 2, 2004-06-18 00:00:00, 2004-06-18 07:15:23, 12448, 2006-07-01 07:15:23, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2004 2nd, 10-20
+17, 0, 4, 2004-06-18 00:00:00, 2004-06-18 08:02:59, 12449, 2006-07-01 08:02:59, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 2nd, 10-20
+20, 0, 4, 2004-06-21 00:00:00, 2004-06-21 09:45:17, 12450, 2006-07-01 09:45:17, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2004 2nd, 20-30
+31, 0, 4, 2004-06-25 00:00:00, 2004-06-25 10:12:45, 12451, 2006-07-01 10:12:45, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 2nd, >=30
+31, 0, 4, 2004-06-25 00:00:00, 2004-06-25 11:25:25, 12452, 2006-07-01 11:25:25, true, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 2nd, >=30
+7, 0.25, 1, 2004-06-28 00:00:00, 2004-06-28 11:30:30, 12453, 2006-07-01 11:30:30, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 2nd, <10
+7, 0, 2, 2004-06-28 00:00:00, 2004-06-28 11:35:25, 12454, 2006-07-01 11:35:25, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 2nd, <10
+1, 0.1, 2, 2004-07-02 00:00:00, 2004-07-02 11:35:25, 12455, 2006-07-01 11:35:25, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2004 3rd, <10
+34, 0, 2, 2004-07-03 00:00:00, 2004-07-03 12:55:25, 12456, 2006-07-01 12:55:25, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 3rd, >=30
+10, 0, 3, 2004-07-07 00:00:00, 2004-07-07 01:05:15, 12457, 2006-07-01 01:05:15, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 3rd, 10-20
+22, 0, 4, 2004-07-11 00:00:00, 2004-07-11 02:10:55, 12458, 2006-07-01 02:10:55, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 3rd, 20-30
+22, 0.15, 3, 2004-07-13 00:00:00, 2004-07-13 02:10:55, 12459, 2006-07-01 02:10:55, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 3rd, 20-30
+4, 0, 1, 2004-07-13 00:00:00, 2004-07-13 02:10:55, 12460, 2006-07-01 02:10:55, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2004 3rd, <10
+11, 0, 3, 2004-07-16 00:00:00, 2004-07-16 03:55:15, 12461, 2006-07-01 03:55:15, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2004 3rd, 10-20
+19, 0, 2, 2004-07-19 00:00:00, 2004-07-19 04:24:30, 12462, 2006-07-01 04:24:30, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 3rd, 10-20
+19, 0, 2, 2004-07-23 00:00:00, 2004-07-23 04:24:30, 12463, 2006-07-01 04:24:30, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 3rd, 10-20
+23, 0, 1, 2004-07-26 00:00:00, 2004-07-26 05:16:18, 12464, 2006-07-01 05:16:18, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 3rd, 20-30
+14, 0, 1, 2004-07-27 00:00:00, 2004-07-27 05:19:56, 12465, 2006-07-01 05:19:56, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 3rd, 10-20
+21, 0.1, 3, 2004-07-27 00:00:00, 2004-07-27 06:47:36, 12466, 2006-07-01 06:47:36, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 3rd, 20-30
+31, 0, 3, 2004-07-29 00:00:00, 2004-07-29 07:22:34, 12467, 2006-07-01 07:22:34, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 3rd, >=30
+7, 0, 1, 2004-07-29 00:00:00, 2004-07-29 08:47:23, 12468, 2006-07-01 08:47:23, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 3rd, <10
+33, 0.1, 1, 2004-08-02 00:00:00, 2004-08-02 09:17:27, 12469, 2006-07-01 09:17:27, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 3rd, >=30
+25, 0, 1, 2004-08-02 00:00:00, 2004-08-02 09:17:27, 12470, 2006-07-01 09:17:27, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2004 3rd, 20-30
+3, 0, 1, 2004-08-03 00:00:00, 2004-08-03 09:17:27, 12471, 2006-07-01 09:17:27, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2004 3rd, <10
+23, 0.05, 2, 2004-08-06 00:00:00, 2004-08-06 10:48:36, 12472, 2006-07-01 10:48:36, true, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2004 3rd, 20-30
+7, 0.15, 2, 2004-08-08 00:00:00, 2004-08-08 11:59:01, 12473, 2006-07-01 11:59:01, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 3rd, <10
+13, 0, 4, 2004-08-10 00:00:00, 2004-08-10 11:59:59, 12474, 2006-07-01 11:59:59, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 3rd, 10-20
+13, 0, 3, 2004-08-10 00:00:00, 2004-08-10 11:59:59, 12475, 2006-07-01 11:59:59, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 3rd, 10-20
+22, 0, 4, 2004-08-14 00:00:00, 2004-08-14 01:07:10, 12476, 2006-07-01 01:07:10, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 3rd, 20-30
+33, 0, 2, 2004-08-17 00:00:00, 2004-08-17 01:07:10, 12477, 2006-07-01 01:07:10, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 3rd, >=30
+21, 0, 4, 2004-08-21 00:00:00, 2004-08-21 02:10:15, 12478, 2006-07-01 02:10:15, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 3rd, 20-30
+10, 0, 4, 2004-08-25 00:00:00, 2004-08-25 02:33:15, 12479, 2006-07-01 02:33:15, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 3rd, 10-20
+19, 0, 1, 2004-08-25 00:00:00, 2004-08-25 03:45:10, 12480, 2006-07-01 03:45:10, true, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 3rd, 10-20
+28, 0, 2, 2004-08-29 00:00:00, 2004-08-29 04:25:15, 12481, 2006-07-01 04:25:15, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2004 3rd, 20-30
+19, 0, 2, 2004-08-30 00:00:00, 2004-08-30 05:45:05, 12482, 2006-07-01 05:45:05, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 3rd, 10-20
+32, 0, 4, 2004-08-30 00:00:00, 2004-08-30 05:45:05, 12483, 2006-07-01 05:45:05, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 3rd, >=30
+16, 0, 4, 2004-08-31 00:00:00, 2004-08-31 05:45:05, 12484, 2006-07-01 05:45:05, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 3rd, 10-20
+3, 0.1, 2, 2004-08-31 00:00:00, 2004-08-31 05:45:05, 12485, 2006-07-01 05:45:05, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2004 3rd, <10
+34, 0, 1, 2004-09-04 00:00:00, 2004-09-04 06:25:20, 12486, 2006-07-01 06:25:20, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 3rd, >=30
+9, 0, 4, 2004-09-07 00:00:00, 2004-09-07 07:30:00, 12487, 2006-07-01 07:30:00, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2004 3rd, <10
+8, 0, 4, 2004-09-08 00:00:00, 2004-09-08 08:00:00, 12488, 2006-07-01 08:00:00, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2004 3rd, <10
+31, 0, 3, 2004-09-12 00:00:00, 2004-09-12 08:00:00, 12489, 2006-07-01 08:00:00, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 3rd, >=30
+22, 0, 4, 2004-09-15 00:00:00, 2004-09-15 09:01:01, 12490, 2006-07-01 09:01:01, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 3rd, 20-30
+9, 0, 4, 2004-09-16 00:00:00, 2004-09-16 11:15:42, 12491, 2006-07-01 11:15:42, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2004 3rd, <10
+14, 0, 1, 2004-09-16 00:00:00, 2004-09-16 09:15:45, 12492, 2006-07-01 09:15:45, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 3rd, 10-20
+29, 0, 4, 2004-09-16 00:00:00, 2004-09-16 10:22:13, 12493, 2006-07-01 10:22:13, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 3rd, 20-30
+32, 0, 3, 2004-09-16 00:00:00, 2004-09-16 11:25:36, 12494, 2006-07-01 11:25:36, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 3rd, >=30
+10, 0, 3, 2004-09-17 00:00:00, 2004-09-17 11:25:36, 12495, 2006-07-01 11:25:36, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 3rd, 10-20
+24, 0, 2, 2004-09-17 00:00:00, 2004-09-17 12:42:12, 12496, 2006-07-01 12:42:12, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2004 3rd, 20-30
+3, 0, 2, 2004-09-18 00:00:00, 2004-09-18 12:55:10, 12497, 2006-07-01 12:55:10, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2004 3rd, <10
+34, 0, 2, 2004-09-21 00:00:00, 2004-09-21 01:15:23, 12498, 2006-07-01 01:15:23, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 3rd, >=30
+22, 0, 4, 2004-09-24 00:00:00, 2004-09-24 01:25:36, 12499, 2006-07-01 01:25:36, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2004 3rd, 20-30
+7, 0, 2, 2004-09-24 00:00:00, 2004-09-24 01:25:36, 12500, 2006-07-01 01:25:36, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 3rd, <10
+19, 0, 1, 2004-09-24 00:00:00, 2004-09-24 01:25:36, 12501, 2006-07-01 01:25:36, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2004 3rd, 10-20
+26, 0, 4, 2004-09-25 00:00:00, 2004-09-25 03:51:13, 12502, 2006-07-01 03:51:13, true, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2004 3rd, 20-30
+29, 0, 3, 2004-09-25 00:00:00, 2004-09-25 03:51:13, 12503, 2006-07-01 03:51:13, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 3rd, 20-30
+13, 0, 3, 2004-09-28 00:00:00, 2004-09-28 05:55:12, 12504, 2006-07-01 05:55:12, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 3rd, 10-20
+8, 0, 4, 2004-10-02 00:00:00, 2004-10-02 05:55:12, 12505, 2006-07-01 05:55:12, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2004 4th, <10
+21, 0, 4, 2004-10-02 00:00:00, 2004-10-02 05:55:12, 12506, 2006-07-01 05:55:12, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2004 4th, 20-30
+14, 0, 2, 2004-10-06 00:00:00, 2004-10-06 07:21:31, 12507, 2006-07-01 07:21:31, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 4th, 10-20
+4, 0, 1, 2004-10-09 00:00:00, 2004-10-09 05:26:36, 12508, 2006-07-01 05:26:36, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2004 4th, <10
+11, 0, 3, 2004-10-09 00:00:00, 2004-10-09 08:15:14, 12509, 2006-07-01 08:15:14, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2004 4th, 10-20
+29, 0, 4, 2004-10-13 00:00:00, 2004-10-13 09:14:17, 12510, 2006-07-01 09:14:17, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 4th, 20-30
+30, 0, 2, 2004-10-15 00:00:00, 2004-10-15 10:27:55, 12511, 2006-07-01 10:27:55, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2004 4th, >=30
+15, 0, 1, 2004-10-19 00:00:00, 2004-10-19 04:43:11, 12512, 2006-07-01 04:43:11, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2004 4th, 10-20
+24, 0, 1, 2004-10-23 00:00:00, 2004-10-23 10:47:26, 12513, 2006-07-01 10:47:26, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2004 4th, 20-30
+20, 0.25, 3, 2004-10-26 00:00:00, 2004-10-26 11:59:59, 12514, 2006-07-01 11:59:59, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2004 4th, 20-30
+33, 0, 1, 2004-10-30 00:00:00, 2004-10-30 11:59:59, 12515, 2006-07-01 11:59:59, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2004 4th, >=30
+13, 0, 3, 2004-10-30 00:00:00, 2004-10-30 11:59:59, 12516, 2006-07-01 11:59:59, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 4th, 10-20
+29, 0, 4, 2004-11-02 00:00:00, 2004-11-02 05:27:43, 12517, 2006-07-01 05:27:43, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 4th, 20-30
+7, 0.25, 1, 2004-11-02 00:00:00, 2004-11-02 06:01:01, 12518, 2006-07-01 06:01:01, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2004 4th, <10
+32, 0, 4, 2004-11-03 00:00:00, 2004-11-03 06:01:01, 12519, 2006-07-01 06:01:01, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 4th, >=30
+32, 0, 3, 2004-11-05 00:00:00, 2004-11-05 06:01:01, 12520, 2006-07-01 06:01:01, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 4th, >=30
+30, 0, 2, 2004-11-09 00:00:00, 2004-11-09 06:01:01, 12521, 2006-07-01 06:01:01, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2004 4th, >=30
+16, 0, 4, 2004-11-10 00:00:00, 2004-11-10 07:15:23, 12522, 2006-07-01 07:15:23, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 4th, 10-20
+18, 0, 2, 2004-11-12 00:00:00, 2004-11-12 08:02:59, 12523, 2006-07-01 08:02:59, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2004 4th, 10-20
+30, 0.05, 2, 2004-11-14 00:00:00, 2004-11-14 09:45:17, 12524, 2006-07-01 09:45:17, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2004 4th, >=30
+14, 0, 1, 2004-11-18 00:00:00, 2004-11-18 10:12:45, 12525, 2006-07-01 10:12:45, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 4th, 10-20
+8, 0, 4, 2004-11-18 00:00:00, 2004-11-18 11:25:25, 12526, 2006-07-01 11:25:25, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2004 4th, <10
+27, 0, 3, 2004-11-22 00:00:00, 2004-11-22 11:30:30, 12527, 2006-07-01 11:30:30, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2004 4th, 20-30
+13, 0, 4, 2004-11-23 00:00:00, 2004-11-23 11:35:25, 12528, 2006-07-01 11:35:25, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2004 4th, 10-20
+5, 0, 4, 2004-11-25 00:00:00, 2004-11-25 11:35:25, 12529, 2006-07-01 11:35:25, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2004 4th, <10
+28, 0.1, 2, 2004-11-25 00:00:00, 2004-11-25 12:55:25, 12530, 2006-07-01 12:55:25, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2004 4th, 20-30
+31, 0, 4, 2004-11-28 00:00:00, 2004-11-28 01:05:15, 12531, 2006-07-01 01:05:15, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 4th, >=30
+29, 0.25, 4, 2004-12-02 00:00:00, 2004-12-02 02:10:55, 12532, 2006-07-01 02:10:55, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2004 4th, 20-30
+18, 0, 1, 2004-12-06 00:00:00, 2004-12-06 02:10:55, 12533, 2006-07-01 02:10:55, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2004 4th, 10-20
+34, 0, 1, 2004-12-06 00:00:00, 2004-12-06 03:55:15, 12534, 2006-07-01 03:55:15, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 4th, >=30
+10, 0, 4, 2004-12-06 00:00:00, 2004-12-06 02:10:55, 12535, 2006-07-01 02:10:55, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2004 4th, 10-20
+27, 0, 3, 2004-12-09 00:00:00, 2004-12-09 04:24:30, 12536, 2006-07-01 04:24:30, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2004 4th, 20-30
+16, 0, 3, 2004-12-11 00:00:00, 2004-12-11 04:24:30, 12537, 2006-07-01 04:24:30, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 4th, 10-20
+17, 0, 3, 2004-12-15 00:00:00, 2004-12-15 05:16:18, 12538, 2006-07-01 05:16:18, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2004 4th, 10-20
+8, 0, 4, 2004-12-17 00:00:00, 2004-12-17 05:19:56, 12539, 2006-07-01 05:19:56, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2004 4th, <10
+31, 0, 4, 2004-12-18 00:00:00, 2004-12-18 06:47:36, 12540, 2006-07-01 06:47:36, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2004 4th, >=30
+11, 0, 3, 2004-12-19 00:00:00, 2004-12-19 07:22:34, 12541, 2006-07-01 07:22:34, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2004 4th, 10-20
+6, 0, 1, 2004-12-22 00:00:00, 2004-12-22 08:47:23, 12542, 2006-07-01 08:47:23, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2004 4th, <10
+32, 0.1, 4, 2004-12-24 00:00:00, 2004-12-24 09:17:27, 12543, 2006-07-01 09:17:27, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2004 4th, >=30
+15, 0, 2, 2004-12-24 00:00:00, 2004-12-24 09:17:27, 12544, 2006-07-01 09:17:27, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2004 4th, 10-20
+14, 0, 1, 2004-12-27 00:00:00, 2004-12-27 09:17:27, 12545, 2006-07-01 09:17:27, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2004 4th, 10-20
+16, 0, 4, 2004-12-28 00:00:00, 2004-12-28 10:48:36, 12546, 2006-07-01 10:48:36, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2004 4th, 10-20
+12, 0.05, 1, 2004-12-28 00:00:00, 2004-12-28 11:59:01, 12547, 2006-07-01 11:59:01, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2004 4th, 10-20
+34, 0, 2, 2004-12-30 00:00:00, 2004-12-30 11:59:59, 12548, 2006-07-01 11:59:59, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2004 4th, >=30
+9, 0, 3, 2005-01-01 00:00:00, 2005-01-01 01:01:01, 12549, 2006-07-01 01:01:01, true, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2005 1st, <10
+22, 0, 3, 2005-01-04 00:00:00, 2005-01-04 01:07:10, 12550, 2006-07-01 01:07:10, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 1st, 20-30
+2, 0.25, 1, 2005-01-04 00:00:00, 2005-01-04 01:07:10, 12551, 2006-07-01 01:07:10, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2005 1st, <10
+12, 0, 1, 2005-01-08 00:00:00, 2005-01-08 02:10:15, 12552, 2006-07-01 02:10:15, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2005 1st, 10-20
+20, 0, 4, 2005-01-12 00:00:00, 2005-01-12 02:33:15, 12553, 2006-07-01 02:33:15, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 1st, 20-30
+25, 0, 2, 2005-01-12 00:00:00, 2005-01-12 03:45:10, 12554, 2006-07-01 03:45:10, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2005 1st, 20-30
+25, 0, 1, 2005-01-16 00:00:00, 2005-01-16 04:25:15, 12555, 2006-07-01 04:25:15, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2005 1st, 20-30
+2, 0, 2, 2005-01-20 00:00:00, 2005-01-20 05:45:05, 12556, 2006-07-01 05:45:05, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2005 1st, <10
+35, 0, 1, 2005-01-22 00:00:00, 2005-01-22 05:45:05, 12557, 2006-07-01 05:45:05, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 1st, >=30
+4, 0, 1, 2005-01-22 00:00:00, 2005-01-22 05:45:05, 12558, 2006-07-01 05:45:05, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2005 1st, <10
+7, 0.05, 1, 2005-01-24 00:00:00, 2005-01-24 07:30:00, 12559, 2006-07-01 07:30:00, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2005 1st, <10
+10, 0, 4, 2005-01-24 00:00:00, 2005-01-24 05:45:05, 12560, 2006-07-01 05:45:05, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2005 1st, 10-20
+25, 0.1, 2, 2005-01-24 00:00:00, 2005-01-24 06:25:20, 12561, 2006-07-01 06:25:20, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2005 1st, 20-30
+11, 0, 4, 2005-01-28 00:00:00, 2005-01-28 08:00:00, 12562, 2006-07-01 08:00:00, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 1st, 10-20
+22, 0, 4, 2005-01-30 00:00:00, 2005-01-30 08:00:00, 12563, 2006-07-01 08:00:00, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 1st, 20-30
+16, 0, 3, 2005-02-01 00:00:00, 2005-02-01 09:01:01, 12564, 2006-07-01 09:01:01, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2005 1st, 10-20
+5, 0, 4, 2005-02-02 00:00:00, 2005-02-02 09:15:45, 12565, 2006-07-01 09:15:45, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 1st, <10
+4, 0, 2, 2005-02-03 00:00:00, 2005-02-03 10:22:13, 12566, 2006-07-01 10:22:13, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2005 1st, <10
+11, 0, 4, 2005-02-06 00:00:00, 2005-02-06 11:15:42, 12567, 2006-07-01 11:15:42, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 1st, 10-20
+29, 0, 3, 2005-02-07 00:00:00, 2005-02-07 11:25:36, 12568, 2006-07-01 11:25:36, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 1st, 20-30
+20, 0, 4, 2005-02-10 00:00:00, 2005-02-10 11:25:36, 12569, 2006-07-01 11:25:36, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 1st, 20-30
+15, 0, 2, 2005-02-12 00:00:00, 2005-02-12 12:42:12, 12570, 2006-07-01 12:42:12, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2005 1st, 10-20
+2, 0, 1, 2005-02-13 00:00:00, 2005-02-13 12:55:10, 12571, 2006-07-01 12:55:10, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2005 1st, <10
+2, 0, 2, 2005-02-15 00:00:00, 2005-02-15 01:15:23, 12572, 2006-07-01 01:15:23, true, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2005 1st, <10
+27, 0, 4, 2005-02-18 00:00:00, 2005-02-18 01:25:36, 12573, 2006-07-01 01:25:36, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2005 1st, 20-30
+29, 0, 4, 2005-02-19 00:00:00, 2005-02-19 01:25:36, 12574, 2006-07-01 01:25:36, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 1st, 20-30
+33, 0.1, 1, 2005-02-22 00:00:00, 2005-02-22 02:55:23, 12575, 2006-07-01 02:55:23, true, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2005 1st, >=30
+14, 0, 2, 2005-02-26 00:00:00, 2005-02-26 03:51:13, 12576, 2006-07-01 03:51:13, true, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2005 1st, 10-20
+35, 0, 1, 2005-02-27 00:00:00, 2005-02-27 04:15:10, 12577, 2006-07-01 04:15:10, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 1st, >=30
+13, 0, 4, 2005-03-02 00:00:00, 2005-03-02 05:55:12, 12578, 2006-07-01 05:55:12, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 1st, 10-20
+35, 0, 1, 2005-03-06 00:00:00, 2005-03-06 05:55:12, 12579, 2006-07-01 05:55:12, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 1st, >=30
+22, 0, 3, 2005-03-07 00:00:00, 2005-03-07 06:21:37, 12580, 2006-07-01 06:21:37, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 1st, 20-30
+13, 0, 3, 2005-03-08 00:00:00, 2005-03-08 07:21:31, 12581, 2006-07-01 07:21:31, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 1st, 10-20
+12, 0, 2, 2005-03-09 00:00:00, 2005-03-09 05:26:36, 12582, 2006-07-01 05:26:36, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2005 1st, 10-20
+13, 0.1, 3, 2005-03-12 00:00:00, 2005-03-12 08:15:14, 12583, 2006-07-01 08:15:14, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 1st, 10-20
+4, 0, 1, 2005-03-13 00:00:00, 2005-03-13 09:14:17, 12584, 2006-07-01 09:14:17, true, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2005 1st, <10
+29, 0, 4, 2005-03-13 00:00:00, 2005-03-13 10:27:55, 12585, 2006-07-01 10:27:55, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 1st, 20-30
+35, 0, 2, 2005-03-13 00:00:00, 2005-03-13 04:43:11, 12586, 2006-07-01 04:43:11, true, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 1st, >=30
+22, 0, 3, 2005-03-13 00:00:00, 2005-03-13 10:47:26, 12587, 2006-07-01 10:47:26, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 1st, 20-30
+8, 0, 4, 2005-03-15 00:00:00, 2005-03-15 11:59:59, 12588, 2006-07-01 11:59:59, true, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2005 1st, <10
+17, 0.25, 3, 2005-03-17 00:00:00, 2005-03-17 11:59:59, 12589, 2006-07-01 11:59:59, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2005 1st, 10-20
+29, 0, 4, 2005-03-17 00:00:00, 2005-03-17 11:59:59, 12590, 2006-07-01 11:59:59, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 1st, 20-30
+9, 0, 3, 2005-03-21 00:00:00, 2005-03-21 05:27:43, 12591, 2006-07-01 05:27:43, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2005 1st, <10
+7, 0, 2, 2005-03-23 00:00:00, 2005-03-23 06:01:01, 12592, 2006-07-01 06:01:01, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2005 1st, <10
+28, 0, 1, 2005-03-23 00:00:00, 2005-03-23 06:01:01, 12593, 2006-07-01 06:01:01, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2005 1st, 20-30
+12, 0, 1, 2005-03-26 00:00:00, 2005-03-26 06:01:01, 12594, 2006-07-01 06:01:01, true, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2005 1st, 10-20
+6, 0.25, 2, 2005-03-27 00:00:00, 2005-03-27 06:01:01, 12595, 2006-07-01 06:01:01, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2005 1st, <10
+3, 0, 2, 2005-03-31 00:00:00, 2005-03-31 07:15:23, 12596, 2006-07-01 07:15:23, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 1st, <10
+35, 0, 2, 2005-04-03 00:00:00, 2005-04-03 08:02:59, 12597, 2006-07-01 08:02:59, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 2nd, >=30
+13, 0, 4, 2005-04-03 00:00:00, 2005-04-03 09:45:17, 12598, 2006-07-01 09:45:17, true, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 2nd, 10-20
+19, 0, 2, 2005-04-04 00:00:00, 2005-04-04 10:12:45, 12599, 2006-07-01 10:12:45, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2005 2nd, 10-20
+22, 0, 4, 2005-04-04 00:00:00, 2005-04-04 11:25:25, 12600, 2006-07-01 11:25:25, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 2nd, 20-30
+11, 0, 3, 2005-04-06 00:00:00, 2005-04-06 11:30:30, 12601, 2006-07-01 11:30:30, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 2nd, 10-20
+17, 0, 4, 2005-04-07 00:00:00, 2005-04-07 11:35:25, 12602, 2006-07-01 11:35:25, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2005 2nd, 10-20
+19, 0, 1, 2005-04-11 00:00:00, 2005-04-11 11:35:25, 12603, 2006-07-01 11:35:25, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2005 2nd, 10-20
+31, 0, 4, 2005-04-12 00:00:00, 2005-04-12 12:55:25, 12604, 2006-07-01 12:55:25, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2005 2nd, >=30
+30, 0, 1, 2005-04-15 00:00:00, 2005-04-15 01:05:15, 12605, 2006-07-01 01:05:15, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2005 2nd, >=30
+1, 0, 2, 2005-04-15 00:00:00, 2005-04-15 02:10:55, 12606, 2006-07-01 02:10:55, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2005 2nd, <10
+29, 0, 3, 2005-04-18 00:00:00, 2005-04-18 02:10:55, 12607, 2006-07-01 02:10:55, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 2nd, 20-30
+29, 0, 4, 2005-04-21 00:00:00, 2005-04-21 02:10:55, 12608, 2006-07-01 02:10:55, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 2nd, 20-30
+32, 0, 3, 2005-04-25 00:00:00, 2005-04-25 03:55:15, 12609, 2006-07-01 03:55:15, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2005 2nd, >=30
+26, 0, 4, 2005-04-28 00:00:00, 2005-04-28 04:24:30, 12610, 2006-07-01 04:24:30, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2005 2nd, 20-30
+20, 0.2, 4, 2005-05-01 00:00:00, 2005-05-01 04:24:30, 12611, 2006-07-01 04:24:30, true, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 2nd, 20-30
+34, 0, 1, 2005-05-03 00:00:00, 2005-05-03 05:16:18, 12612, 2006-07-01 05:16:18, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2005 2nd, >=30
+22, 0, 4, 2005-05-03 00:00:00, 2005-05-03 05:19:56, 12613, 2006-07-01 05:19:56, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 2nd, 20-30
+19, 0, 2, 2005-05-05 00:00:00, 2005-05-05 06:47:36, 12614, 2006-07-01 06:47:36, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2005 2nd, 10-20
+8, 0.15, 4, 2005-05-08 00:00:00, 2005-05-08 07:22:34, 12615, 2006-07-01 07:22:34, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2005 2nd, <10
+17, 0, 4, 2005-05-11 00:00:00, 2005-05-11 08:47:23, 12616, 2006-07-01 08:47:23, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2005 2nd, 10-20
+34, 0, 2, 2005-05-12 00:00:00, 2005-05-12 09:17:27, 12617, 2006-07-01 09:17:27, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2005 2nd, >=30
+32, 0, 4, 2005-05-12 00:00:00, 2005-05-12 09:17:27, 12618, 2006-07-01 09:17:27, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2005 2nd, >=30
+13, 0, 3, 2005-05-12 00:00:00, 2005-05-12 09:17:27, 12619, 2006-07-01 09:17:27, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 2nd, 10-20
+1, 0, 2, 2005-05-16 00:00:00, 2005-05-16 10:48:36, 12620, 2006-07-01 10:48:36, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2005 2nd, <10
+12, 0, 1, 2005-05-18 00:00:00, 2005-05-18 11:59:01, 12621, 2006-07-01 11:59:01, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2005 2nd, 10-20
+21, 0, 3, 2005-05-19 00:00:00, 2005-05-19 11:59:59, 12622, 2006-07-01 11:59:59, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2005 2nd, 20-30
+5, 0, 3, 2005-05-22 00:00:00, 2005-05-22 01:01:01, 12623, 2006-07-01 01:01:01, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 2nd, <10
+3, 0, 2, 2005-05-22 00:00:00, 2005-05-22 01:07:10, 12624, 2006-07-01 01:07:10, true, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 2nd, <10
+11, 0, 3, 2005-05-25 00:00:00, 2005-05-25 01:07:10, 12625, 2006-07-01 01:07:10, true, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 2nd, 10-20
+15, 0, 1, 2005-05-27 00:00:00, 2005-05-27 02:10:15, 12626, 2006-07-01 02:10:15, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2005 2nd, 10-20
+11, 0, 3, 2005-05-30 00:00:00, 2005-05-30 02:33:15, 12627, 2006-07-01 02:33:15, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 2nd, 10-20
+29, 0, 3, 2005-05-31 00:00:00, 2005-05-31 03:45:10, 12628, 2006-07-01 03:45:10, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 2nd, 20-30
+18, 0, 1, 2005-06-01 00:00:00, 2005-06-01 04:25:15, 12629, 2006-07-01 04:25:15, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2005 2nd, 10-20
+27, 0, 4, 2005-06-01 00:00:00, 2005-06-01 05:45:05, 12630, 2006-07-01 05:45:05, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2005 2nd, 20-30
+14, 0, 1, 2005-06-01 00:00:00, 2005-06-01 05:45:05, 12631, 2006-07-01 05:45:05, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2005 2nd, 10-20
+21, 0, 4, 2005-06-05 00:00:00, 2005-06-05 05:45:05, 12632, 2006-07-01 05:45:05, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2005 2nd, 20-30
+35, 0, 1, 2005-06-05 00:00:00, 2005-06-05 05:45:05, 12633, 2006-07-01 05:45:05, true, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 2nd, >=30
+22, 0, 4, 2005-06-06 00:00:00, 2005-06-06 06:25:20, 12634, 2006-07-01 06:25:20, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 2nd, 20-30
+11, 0, 3, 2005-06-06 00:00:00, 2005-06-06 07:30:00, 12635, 2006-07-01 07:30:00, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 2nd, 10-20
+23, 0, 1, 2005-06-09 00:00:00, 2005-06-09 08:00:00, 12636, 2006-07-01 08:00:00, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2005 2nd, 20-30
+3, 0, 2, 2005-06-13 00:00:00, 2005-06-13 08:00:00, 12637, 2006-07-01 08:00:00, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 2nd, <10
+10, 0, 4, 2005-06-14 00:00:00, 2005-06-14 09:01:01, 12638, 2006-07-01 09:01:01, true, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2005 2nd, 10-20
+22, 0, 4, 2005-06-18 00:00:00, 2005-06-18 09:15:45, 12639, 2006-07-01 09:15:45, true, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2005 2nd, 20-30
+26, 0, 3, 2005-06-18 00:00:00, 2005-06-18 10:22:13, 12640, 2006-07-01 10:22:13, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2005 2nd, 20-30
+11, 0.1, 4, 2005-06-22 00:00:00, 2005-06-22 11:15:42, 12641, 2006-07-01 11:15:42, true, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 2nd, 10-20
+18, 0, 2, 2005-06-26 00:00:00, 2005-06-26 11:25:36, 12642, 2006-07-01 11:25:36, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2005 2nd, 10-20
+8, 0, 3, 2005-06-27 00:00:00, 2005-06-27 11:25:36, 12643, 2006-07-01 11:25:36, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2005 2nd, <10
+25, 0, 2, 2005-07-01 00:00:00, 2005-07-01 12:42:12, 12644, 2006-07-01 12:42:12, true, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2005 3rd, 20-30
+35, 0, 2, 2005-07-03 00:00:00, 2005-07-03 12:55:10, 12645, 2006-07-01 12:55:10, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 3rd, >=30
+5, 0, 3, 2005-07-04 00:00:00, 2005-07-04 01:15:23, 12646, 2006-07-01 01:15:23, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 3rd, <10
+30, 0, 2, 2005-07-08 00:00:00, 2005-07-08 01:25:36, 12647, 2006-07-01 01:25:36, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2005 3rd, >=30
+5, 0, 3, 2005-07-08 00:00:00, 2005-07-08 01:25:36, 12648, 2006-07-01 01:25:36, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 3rd, <10
+20, 0, 4, 2005-07-09 00:00:00, 2005-07-09 02:55:23, 12649, 2006-07-01 02:55:23, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 3rd, 20-30
+3, 0, 2, 2005-07-11 00:00:00, 2005-07-11 03:51:13, 12650, 2006-07-01 03:51:13, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 3rd, <10
+24, 0, 1, 2005-07-15 00:00:00, 2005-07-15 04:15:10, 12651, 2006-07-01 04:15:10, true, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2005 3rd, 20-30
+31, 0, 3, 2005-07-19 00:00:00, 2005-07-19 05:55:12, 12652, 2006-07-01 05:55:12, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2005 3rd, >=30
+19, 0.25, 1, 2005-07-22 00:00:00, 2005-07-22 05:55:12, 12653, 2006-07-01 05:55:12, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2005 3rd, 10-20
+16, 0, 4, 2005-07-25 00:00:00, 2005-07-25 06:21:37, 12654, 2006-07-01 06:21:37, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2005 3rd, 10-20
+8, 0, 3, 2005-07-27 00:00:00, 2005-07-27 05:26:36, 12655, 2006-07-01 05:26:36, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2005 3rd, <10
+10, 0, 3, 2005-07-27 00:00:00, 2005-07-27 07:21:31, 12656, 2006-07-01 07:21:31, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2005 3rd, 10-20
+4, 0.15, 2, 2005-07-30 00:00:00, 2005-07-30 08:15:14, 12657, 2006-07-01 08:15:14, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2005 3rd, <10
+13, 0, 4, 2005-08-03 00:00:00, 2005-08-03 09:14:17, 12658, 2006-07-01 09:14:17, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 3rd, 10-20
+2, 0, 2, 2005-08-05 00:00:00, 2005-08-05 10:27:55, 12659, 2006-07-01 10:27:55, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2005 3rd, <10
+17, 0.25, 4, 2005-08-05 00:00:00, 2005-08-05 04:43:11, 12660, 2006-07-01 04:43:11, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2005 3rd, 10-20
+13, 0.05, 4, 2005-08-06 00:00:00, 2005-08-06 10:47:26, 12661, 2006-07-01 10:47:26, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2005 3rd, 10-20
+5, 0, 4, 2005-08-07 00:00:00, 2005-08-07 11:59:59, 12662, 2006-07-01 11:59:59, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 3rd, <10
+20, 0, 4, 2005-08-08 00:00:00, 2005-08-08 11:59:59, 12663, 2006-07-01 11:59:59, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 3rd, 20-30
+9, 0, 3, 2005-08-09 00:00:00, 2005-08-09 11:59:59, 12664, 2006-07-01 11:59:59, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2005 3rd, <10
+9, 0, 3, 2005-08-09 00:00:00, 2005-08-09 05:27:43, 12665, 2006-07-01 05:27:43, true, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2005 3rd, <10
+7, 0.1, 2, 2005-08-12 00:00:00, 2005-08-12 06:01:01, 12666, 2006-07-01 06:01:01, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2005 3rd, <10
+35, 0, 1, 2005-08-16 00:00:00, 2005-08-16 06:01:01, 12667, 2006-07-01 06:01:01, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2005 3rd, >=30
+3, 0.05, 2, 2005-08-16 00:00:00, 2005-08-16 06:01:01, 12668, 2006-07-01 06:01:01, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 3rd, <10
+1, 0, 2, 2005-08-20 00:00:00, 2005-08-20 06:01:01, 12669, 2006-07-01 06:01:01, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2005 3rd, <10
+3, 0, 2, 2005-08-24 00:00:00, 2005-08-24 07:15:23, 12670, 2006-07-01 07:15:23, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 3rd, <10
+29, 0, 4, 2005-08-25 00:00:00, 2005-08-25 08:02:59, 12671, 2006-07-01 08:02:59, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 3rd, 20-30
+18, 0, 2, 2005-08-25 00:00:00, 2005-08-25 09:45:17, 12672, 2006-07-01 09:45:17, true, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2005 3rd, 10-20
+33, 0.1, 2, 2005-08-29 00:00:00, 2005-08-29 10:12:45, 12673, 2006-07-01 10:12:45, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2005 3rd, >=30
+5, 0.05, 4, 2005-09-02 00:00:00, 2005-09-02 11:25:25, 12674, 2006-07-01 11:25:25, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 3rd, <10
+18, 0, 2, 2005-09-03 00:00:00, 2005-09-03 11:30:30, 12675, 2006-07-01 11:30:30, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2005 3rd, 10-20
+7, 0.1, 2, 2005-09-05 00:00:00, 2005-09-05 11:35:25, 12676, 2006-07-01 11:35:25, true, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2005 3rd, <10
+25, 0, 2, 2005-09-06 00:00:00, 2005-09-06 12:55:25, 12677, 2006-07-01 12:55:25, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2005 3rd, 20-30
+1, 0, 1, 2005-09-06 00:00:00, 2005-09-06 11:35:25, 12678, 2006-07-01 11:35:25, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2005 3rd, <10
+18, 0, 2, 2005-09-09 00:00:00, 2005-09-09 02:10:55, 12679, 2006-07-01 02:10:55, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2005 3rd, 10-20
+31, 0, 4, 2005-09-09 00:00:00, 2005-09-09 01:05:15, 12680, 2006-07-01 01:05:15, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2005 3rd, >=30
+30, 0, 2, 2005-09-10 00:00:00, 2005-09-10 02:10:55, 12681, 2006-07-01 02:10:55, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2005 3rd, >=30
+30, 0, 2, 2005-09-11 00:00:00, 2005-09-11 02:10:55, 12682, 2006-07-01 02:10:55, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2005 3rd, >=30
+26, 0, 4, 2005-09-11 00:00:00, 2005-09-11 03:55:15, 12683, 2006-07-01 03:55:15, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2005 3rd, 20-30
+3, 0, 1, 2005-09-14 00:00:00, 2005-09-14 04:24:30, 12684, 2006-07-01 04:24:30, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2005 3rd, <10
+26, 0, 4, 2005-09-17 00:00:00, 2005-09-17 04:24:30, 12685, 2006-07-01 04:24:30, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2005 3rd, 20-30
+5, 0, 3, 2005-09-20 00:00:00, 2005-09-20 05:16:18, 12686, 2006-07-01 05:16:18, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 3rd, <10
+28, 0, 2, 2005-09-23 00:00:00, 2005-09-23 05:19:56, 12687, 2006-07-01 05:19:56, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2005 3rd, 20-30
+7, 0, 1, 2005-09-27 00:00:00, 2005-09-27 06:47:36, 12688, 2006-07-01 06:47:36, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2005 3rd, <10
+17, 0, 3, 2005-10-01 00:00:00, 2005-10-01 07:22:34, 12689, 2006-07-01 07:22:34, true, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2005 4th, 10-20
+23, 0.2, 2, 2005-10-04 00:00:00, 2005-10-04 08:47:23, 12690, 2006-07-01 08:47:23, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2005 4th, 20-30
+30, NULL, 2, 2005-10-08 00:00:00, 2005-10-08 09:17:27, 12691, 2006-07-01 09:17:27, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2005 4th, >=30
+29, NULL, 4, 2005-10-08 00:00:00, 2005-10-08 09:17:27, 12692, 2006-07-01 09:17:27, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2005 4th, 20-30
+34, NULL, 2, 2005-10-09 00:00:00, 2005-10-09 09:17:27, 12693, 2006-07-01 09:17:27, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2005 4th, >=30
+5, NULL, 3, 2005-10-11 00:00:00, 2005-10-11 10:48:36, 12694, 2006-07-01 10:48:36, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2005 4th, <10
+20, NULL, 3, 2005-10-14 00:00:00, 2005-10-14 11:59:01, 12695, 2006-07-01 11:59:01, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2005 4th, 20-30
+27, NULL, 4, 2005-10-18 00:00:00, 2005-10-18 11:59:59, 12696, 2006-07-01 11:59:59, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2005 4th, 20-30
+15, 0.1, 2, 2005-10-20 00:00:00, 2005-10-20 01:01:01, 12697, 2006-07-01 01:01:01, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2005 4th, 10-20
+11, NULL, 4, 2005-10-21 00:00:00, 2005-10-02 11:07:10, 12698, 2006-07-01 01:07:10, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2005 4th, 10-20
+12, NULL, 1, 2005-10-24 00:00:00, 2005-10-24 01:07:10, 12699, 2006-07-01 01:07:10, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2005 4th, 10-20
+14, NULL, 1, 2005-10-25 00:00:00, 2005-10-25 02:10:15, 12700, 2006-07-01 02:10:15, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2005 4th, 10-20
+33, NULL, 2, 2002-01-05 00:00:00, 2002-01-05 05:23:23, 12001, 2006-07-01 05:23:23, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 1st, >=30
+26, NULL, 4, 2002-01-05 00:00:00, 2002-01-05 05:23:23, 12002, 2006-07-01 05:23:23, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 1st, 20-30
+20, NULL, 4, 2002-01-06 00:00:00, 2002-01-06 01:55:35, 12003, 2006-07-01 01:55:35, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 1st, 20-30
+7, NULL, 1, 2002-01-10 00:00:00, 2002-01-10 11:15:17, 12004, 2006-07-01 11:15:17, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2002 1st, <10
+8, NULL, 4, 2002-01-11 00:00:00, 2002-01-11 02:05:10, 12005, 2006-07-01 02:05:10, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2002 1st, <10
+29, NULL, 3, 2002-01-11 00:00:00, 2002-01-11 02:05:10, 12006, 2006-07-01 02:05:10, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 1st, 20-30
+10, NULL, 4, 2002-01-12 00:00:00, 2002-01-12 04:59:59, 12007, 2006-07-01 04:59:59, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2002 1st, 10-20
+19, NULL, 2, 2002-01-15 00:00:00, 2002-01-15 01:01:01, 12008, 2006-07-01 01:01:01, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2002 1st, 10-20
+22, NULL, 3, 2002-01-18 00:00:00, 2002-01-18 12:59:01, 12009, 2006-07-01 12:59:01, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2002 1st, 20-30
+6, NULL, 2, 2002-01-21 00:00:00, 2002-01-21 03:35:21, 12010, 2006-07-01 03:35:21, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2002 1st, <10
+34, NULL, 2, 2002-01-21 00:00:00, 2002-01-21 03:35:21, 12011, 2006-07-01 03:35:21, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 1st, >=30
+20, NULL, 4, 2002-01-24 00:00:00, 2002-01-24 04:43:11, 12012, 2006-07-01 04:43:11, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 1st, 20-30
+34, NULL, 1, 2002-01-28 00:00:00, 2002-01-28 10:47:26, 12013, NULL, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 1st, >=30
+26, NULL, 4, 2002-02-01 00:00:00, 2002-02-01 11:59:59, 12014, 2006-07-01 11:59:59, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 1st, 20-30
+31, NULL, 3, 2002-02-01 00:00:00, 2002-02-01 11:59:59, 12015, 2006-07-01 11:59:59, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2002 1st, >=30
+26, NULL, 3, 2002-02-01 00:00:00, 2002-02-01 11:59:59, 12016, NULL, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 1st, 20-30
+28, NULL, 1, 2002-02-04 00:00:00, 2002-02-04 05:27:43, 12017, 2006-07-01 05:27:43, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 1st, 20-30
+28, NULL, 2, 2002-02-06 00:00:00, 2002-02-06 06:01:01, 12018, 2006-07-01 06:01:01, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 1st, 20-30
+33, NULL, 2, 2002-02-06 00:00:00, 2002-02-06 06:01:01, 12019, 2006-07-01 06:01:01, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 1st, >=30
+13, NULL, 4, 2002-02-06 00:00:00, 2002-02-06 06:01:01, 12020, 2006-07-01 06:01:01, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2002 1st, 10-20
+33, NULL, 2, 2002-02-06 00:00:00, 2002-02-06 06:01:01, 12021, 2006-07-01 06:01:01, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 1st, >=30
+3, NULL, 2, 2002-02-08 00:00:00, 2002-02-08 07:15:23, 12022, 2006-07-01 07:15:23, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2002 1st, <10
+34, NULL, 2, 2002-02-09 00:00:00, 2002-02-09 08:02:59, 12023, 2006-07-01 08:02:59, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 1st, >=30
+25, NULL, 1, 2002-02-12 00:00:00, 2002-02-12 09:45:17, 12024, 2006-07-01 09:45:17, true, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 1st, 20-30
+34, NULL, 2, 2002-02-15 00:00:00, 2002-02-15 10:12:45, 12025, NULL, false, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 1st, >=30
+2, NULL, 2, 2002-02-19 00:00:00, 2002-02-19 11:25:25, 12026, 2006-07-01 11:25:25, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2002 1st, <10
+20, NULL, 3, 2002-02-21 00:00:00, 2002-02-21 11:30:30, 12027, 2006-07-01 11:30:30, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 1st, 20-30
+1, NULL, 2, 2002-02-22 00:00:00, 2002-02-22 11:35:25, 12028, 2006-07-01 11:35:25, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2002 1st, <10
+6, NULL, 2, 2002-02-22 00:00:00, 2002-02-22 11:35:25, 12029, 2006-07-01 11:35:25, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2002 1st, <10
+21, NULL, 4, 2002-02-23 00:00:00, 2002-02-23 12:55:25, 12030, 2006-07-01 12:55:25, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 1st, 20-30
+34, 0.1, 2, 2002-02-27 00:00:00, 2002-02-27 01:05:15, 12031, NULL, true, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 1st, >=30
+28, 0, 2, 2002-03-01 00:00:00, 2002-03-01 02:10:55, 12032, NULL, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 1st, 20-30
+26, 0, 4, 2002-03-01 00:00:00, 2002-03-01 02:10:55, 12033, 2006-07-01 02:10:55, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 1st, 20-30
+23, 0, 2, 2002-03-01 00:00:00, 2002-03-01 02:10:55, 12034, 2006-07-01 02:10:55, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 1st, 20-30
+9, 0, 4, 2002-03-05 00:00:00, 2002-03-05 03:55:15, 12035, 2006-07-01 03:55:15, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 1st, <10
+18, 0, 2, 2002-03-06 00:00:00, 2002-03-06 04:24:30, 12036, 2006-07-01 04:24:30, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 1st, 10-20
+29, 0, 4, 2002-03-06 00:00:00, 2002-03-06 04:24:30, 12037, NULL, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 1st, 20-30
+6, 0, 1, 2002-03-09 00:00:00, 2002-03-09 05:16:18, 12038, 2006-07-01 05:16:18, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2002 1st, <10
+9, 0.1, 3, 2002-03-12 00:00:00, 2002-03-12 05:19:56, 12039, 2006-07-01 05:19:56, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 1st, <10
+18, 0, 2, 2002-03-15 00:00:00, 2002-03-15 06:47:36, 12040, 2006-07-01 06:47:36, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 1st, 10-20
+24, 0, 1, 2002-03-19 00:00:00, 2002-03-19 07:22:34, 12041, 2006-07-01 07:22:34, true, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 1st, 20-30
+28, 0, 1, 2002-03-21 00:00:00, 2002-03-21 08:47:23, 12042, 2006-07-01 08:47:23, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 1st, 20-30
+20, 0, 4, 2002-03-25 00:00:00, 2002-03-25 09:17:27, 12043, 2006-07-01 09:17:27, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 1st, 20-30
+18, 0, 2, 2002-03-25 00:00:00, 2002-03-25 09:17:27, 12044, 2006-07-01 09:17:27, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 1st, 10-20
+14, 0, 2, 2002-03-25 00:00:00, 2002-03-25 09:17:27, 12045, NULL, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2002 1st, 10-20
+2, 0, 2, 2002-03-26 00:00:00, 2002-03-26 10:48:36, 12046, 2006-07-01 10:48:36, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2002 1st, <10
+18, 0, 1, 2002-03-30 00:00:00, 2002-03-30 11:59:01, 12047, 2006-07-01 11:59:01, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 1st, 10-20
+16, 0, 4, 2002-03-31 00:00:00, 2002-03-31 11:59:59, 12048, 2006-07-01 11:59:59, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2002 1st, 10-20
+25, 0, 2, 2002-04-01 00:00:00, 2002-04-01 01:01:01, 12049, 2006-07-01 01:01:01, true, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 2nd, 20-30
+28, 0, 1, 2002-04-02 00:00:00, 2002-04-02 01:07:10, 12050, 2006-07-01 01:07:10, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 2nd, 20-30
+1, 0, 1, 2002-04-02 00:00:00, 2002-04-02 01:07:10, 12051, 2006-07-01 01:07:10, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2002 2nd, <10
+5, 0, 4, 2002-04-05 00:00:00, 2002-04-05 02:10:15, 12052, NULL, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2002 2nd, <10
+10, 0, 4, 2002-04-09 00:00:00, 2002-04-09 02:33:15, 12053, 2006-07-01 02:33:15, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2002 2nd, 10-20
+12, 0.15, 2, 2002-04-10 00:00:00, 2002-04-10 03:45:10, 12054, NULL, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 2nd, 10-20
+12, 0, 1, 2002-04-13 00:00:00, 2002-04-13 04:25:15, 12055, 2006-07-01 04:25:15, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 2nd, 10-20
+23, 0, 2, 2002-04-15 00:00:00, 2002-04-15 05:45:05, 12056, 2006-07-01 05:45:05, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 2nd, 20-30
+25, 0, 2, 2002-04-15 00:00:00, 2002-04-15 05:45:05, 12057, 2006-07-01 05:45:05, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 2nd, 20-30
+18, 0, 1, 2002-04-15 00:00:00, 2002-04-15 05:45:05, 12058, 2006-07-01 05:45:05, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 2nd, 10-20
+10, 0, 3, 2002-04-15 00:00:00, 2002-04-15 05:45:05, 12059, 2006-07-01 05:45:05, true, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2002 2nd, 10-20
+32, 0, 4, 2002-04-17 00:00:00, 2002-04-17 06:25:20, 12060, NULL, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2002 2nd, >=30
+11, 0.2, 3, 2002-04-20 00:00:00, 2002-04-20 07:30:00, 12061, 2006-07-01 07:30:00, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2002 2nd, 10-20
+8, 0, 4, 2003-03-28 00:00:00, 2003-03-28 05:55:12, 12214, 2006-07-01 05:55:12, true, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 1st, <10
+5, 0, 4, 2003-04-01 00:00:00, 2003-04-01 05:55:12, 12215, 2006-07-01 05:55:12, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 2nd, <10
+3, 0, 1, 2003-04-01 00:00:00, 2003-04-01 07:30:00, 12216, 2006-07-01 07:30:00, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 2nd, <10
+30, 0, 2, 2003-04-02 00:00:00, 2003-04-02 07:30:00, 12217, 2006-07-01 07:30:00, true, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2003 2nd, >=30
+1, 0, 1, 2003-04-05 00:00:00, 2003-04-05 04:25:15, 12218, 2006-07-01 04:25:15, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2003 2nd, <10
+30, 0, 1, 2003-04-06 00:00:00, 2003-04-06 02:10:15, 12219, 2006-07-01 02:10:15, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2003 2nd, >=30
+22, 0, 4, 2003-04-10 00:00:00, 2003-04-10 07:21:31, 12220, 2006-07-01 07:21:31, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2003 2nd, 20-30
+15, 0, 1, 2003-04-10 00:00:00, 2003-04-10 07:21:31, 12221, 2006-07-01 07:21:31, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 2nd, 10-20
+19, 0, 1, 2003-04-10 00:00:00, 2003-04-10 01:01:01, 12222, 2006-07-01 01:01:01, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 2nd, 10-20
+2, 0, 2, 2003-04-11 00:00:00, 2003-04-11 05:45:05, 12223, 2006-07-01 05:45:05, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 2nd, <10
+21, 0, 4, 2003-04-11 00:00:00, 2003-04-11 05:45:05, 12224, 2006-07-01 05:45:05, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 2nd, 20-30
+19, 0, 2, 2003-04-15 00:00:00, 2003-04-15 01:01:01, 12225, 2006-07-01 01:01:01, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 2nd, 10-20
+35, 0, 2, 2003-04-16 00:00:00, 2003-04-16 02:10:15, 12226, 2006-07-01 02:10:15, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 2nd, >=30
+25, 0, 1, 2003-04-18 00:00:00, 2003-04-18 02:33:15, 12227, 2006-07-01 02:33:15, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2003 2nd, 20-30
+32, 0, 3, 2003-04-22 00:00:00, 2003-04-22 08:15:14, 12228, 2006-07-01 08:15:14, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 2nd, >=30
+15, 0, 1, 2003-04-24 00:00:00, 2003-04-24 11:01:05, 12229, 2006-07-01 11:01:05, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 2nd, 10-20
+17, 0, 4, 2003-04-26 00:00:00, 2003-04-26 11:01:05, 12230, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 2nd, 10-20
+10, 0, 3, 2003-04-27 00:00:00, 2003-04-27 11:01:05, 12231, NULL, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2003 2nd, 10-20
+2, 0, 2, 2003-04-30 00:00:00, 2003-04-30 05:26:36, 12232, 2006-07-01 05:26:36, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 2nd, <10
+25, 0.1, 1, 2003-05-02 00:00:00, 2003-05-02 05:55:12, 12233, 2006-07-01 05:55:12, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2003 2nd, 20-30
+20, 0, 4, 2003-05-03 00:00:00, 2003-05-03 08:15:14, 12234, 2006-07-01 08:15:14, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 2nd, 20-30
+28, 0, 1, 2003-05-07 00:00:00, 2003-05-07 10:27:55, 12235, 2006-07-01 10:27:55, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 2nd, 20-30
+31, 0, 3, 2003-05-11 00:00:00, 2003-05-11 11:01:05, 12236, 2006-07-01 11:01:05, true, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 2nd, >=30
+20, 0, 4, 2003-05-12 00:00:00, 2003-05-12 05:23:23, 12237, 2006-07-01 05:23:23, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 2nd, 20-30
+29, 0, 4, 2003-05-12 00:00:00, 2003-05-12 02:05:10, 12238, 2006-07-01 02:05:10, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2003 2nd, 20-30
+18, 0, 1, 2003-05-12 00:00:00, 2003-05-12 01:55:35, 12239, 2006-07-01 01:55:35, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 2nd, 10-20
+26, 0, 4, 2003-05-16 00:00:00, 2003-05-16 11:25:36, 12240, 2006-07-01 11:25:36, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2003 2nd, 20-30
+35, 0, 1, 2003-05-17 00:00:00, 2003-05-17 12:55:10, 12241, 2006-07-01 12:55:10, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 2nd, >=30
+32, 0, 3, 2003-05-19 00:00:00, 2003-05-19 03:51:13, 12242, 2006-07-01 03:51:13, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 2nd, >=30
+11, 0, 3, 2003-05-21 00:00:00, 2003-05-21 04:15:10, 12243, 2006-07-01 04:15:10, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2003 2nd, 10-20
+24, 0, 2, 2003-05-25 00:00:00, 2003-05-25 11:01:05, 12244, 2006-07-01 11:01:05, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2003 2nd, 20-30
+10, 0.2, 4, 2003-05-28 00:00:00, 2003-05-28 01:25:36, 12245, 2006-07-01 01:25:36, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2003 2nd, 10-20
+12, 0, 1, 2003-06-01 00:00:00, 2003-06-01 08:15:14, 12246, 2006-07-01 08:15:14, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2003 2nd, 10-20
+9, 0, 3, 2003-06-01 00:00:00, 2003-06-01 05:55:12, 12247, 2006-07-01 05:55:12, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2003 2nd, <10
+12, 0, 1, 2003-06-03 00:00:00, 2003-06-03 05:55:12, 12248, 2006-07-01 05:55:12, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2003 2nd, 10-20
+33, 0, 1, 2003-06-07 00:00:00, 2003-06-07 07:30:00, 12249, 2006-07-01 07:30:00, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2003 2nd, >=30
+15, 0, 2, 2003-06-10 00:00:00, 2003-06-10 04:25:15, 12250, 2006-07-01 04:25:15, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 2nd, 10-20
+32, 0, 3, 2003-06-10 00:00:00, 2003-06-10 07:30:00, 12251, 2006-07-01 07:30:00, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 2nd, >=30
+31, 0, 4, 2003-06-11 00:00:00, 2003-06-11 02:10:15, 12252, 2006-07-01 02:10:15, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 2nd, >=30
+24, 0, 1, 2003-06-15 00:00:00, 2003-06-15 07:21:31, 12253, 2006-07-01 07:21:31, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2003 2nd, 20-30
+21, 0, 4, 2003-06-16 00:00:00, 2003-06-16 07:21:31, 12254, 2006-07-01 07:21:31, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 2nd, 20-30
+13, 0, 3, 2003-06-16 00:00:00, 2003-06-16 01:01:01, 12255, 2006-07-01 01:01:01, false, 90 First Ave., Los Angeles, Computer Tech, 13, 13, Jean, Crowther, 2, false, CA, 2003 2nd, 10-20
+19, 0, 2, 2003-06-18 00:00:00, 2003-06-18 05:45:05, 12256, 2006-07-01 05:45:05, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 2nd, 10-20
+28, 0, 1, 2003-06-20 00:00:00, 2003-06-20 05:45:05, 12257, 2006-07-01 05:45:05, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 2nd, 20-30
+21, 0, 3, 2003-06-24 00:00:00, 2003-06-24 05:45:05, 12258, 2006-07-01 05:45:05, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 2nd, 20-30
+11, 0, 3, 2003-06-27 00:00:00, 2003-06-27 10:22:13, 12259, 2006-07-01 10:22:13, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2003 2nd, 10-20
+2, 0, 2, 2003-06-28 00:00:00, 2003-06-28 10:22:13, 12260, 2006-07-01 10:22:13, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 2nd, <10
+1, 0.25, 2, 2003-06-29 00:00:00, 2003-06-29 10:22:13, 12261, 2006-07-01 10:22:13, false, 384 Broad St., Wayne, Interstate Shop, 1, 1, John, Kelly, 1, true, NJ, 2003 2nd, <10
+31, 0, 3, 2003-07-01 00:00:00, 2003-07-01 03:51:13, 12262, 2006-07-01 03:51:13, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 3rd, >=30
+29, 0, 4, 2003-07-04 00:00:00, 2003-07-04 01:01:01, 12263, 2006-07-01 01:01:01, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2003 3rd, 20-30
+11, 0, 3, 2003-07-06 00:00:00, 2003-07-06 02:10:15, 12264, 2006-07-01 02:10:15, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2003 3rd, 10-20
+9, 0, 4, 2003-07-07 00:00:00, 2003-07-07 02:33:15, 12265, 2006-07-01 02:33:15, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2003 3rd, <10
+35, 0, 2, 2003-07-07 00:00:00, 2003-07-07 02:33:15, 12266, 2006-07-01 02:33:15, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 3rd, >=30
+5, 0, 4, 2003-07-08 00:00:00, 2003-07-08 11:01:05, 12267, 2006-07-01 11:01:05, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 3rd, <10
+20, 0, 4, 2003-07-10 00:00:00, 2003-07-10 11:01:05, 12268, 2006-07-01 11:01:05, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 3rd, 20-30
+16, 0.1, 4, 2003-07-12 00:00:00, 2003-07-12 11:01:05, 12269, 2006-07-01 11:01:05, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 3rd, 10-20
+3, 0, 2, 2003-07-13 00:00:00, 2003-07-13 05:26:36, 12270, 2006-07-01 05:26:36, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 3rd, <10
+33, 0, 1, 2003-07-14 00:00:00, 2003-07-14 05:55:12, 12271, 2006-07-01 05:55:12, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2003 3rd, >=30
+5, 0, 3, 2003-07-16 00:00:00, 2003-07-16 08:15:14, 12272, 2006-07-01 08:15:14, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 3rd, <10
+30, 0, 1, 2003-07-18 00:00:00, 2003-07-18 10:27:55, 12273, 2006-07-01 10:27:55, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2003 3rd, >=30
+32, 0, 3, 2003-07-19 00:00:00, 2003-07-19 11:01:05, 12274, 2006-07-01 11:01:05, false, 487 City St., Las Vegas, Tumbleweed Gaming, 32, 32, Gilbert, Francone, 2, true, NV, 2003 3rd, >=30
+5, 0, 4, 2003-07-21 00:00:00, 2003-07-21 05:23:23, 12275, 2006-07-01 05:23:23, false, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2003 3rd, <10
+18, 0, 1, 2003-07-23 00:00:00, 2003-07-23 02:05:10, 12276, 2006-07-01 02:05:10, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 3rd, 10-20
+17, 0, 3, 2003-07-25 00:00:00, 2003-07-25 01:55:35, 12277, 2006-07-01 01:55:35, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 3rd, 10-20
+17, 0, 4, 2003-07-29 00:00:00, 2003-07-29 11:25:36, 12278, 2006-07-01 11:25:36, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 3rd, 10-20
+31, 0, 3, 2003-07-30 00:00:00, 2003-07-30 12:55:10, 12279, 2006-07-01 12:55:10, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2003 3rd, >=30
+20, 0, 4, 2003-08-02 00:00:00, 2003-08-02 03:51:13, 12280, 2006-07-01 03:51:13, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 3rd, 20-30
+9, 0, 4, 2003-08-04 00:00:00, 2003-08-04 04:15:10, 12281, 2006-07-01 04:15:10, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2003 3rd, <10
+20, 0, 4, 2003-08-05 00:00:00, 2003-08-05 11:01:05, 12282, 2006-07-01 11:01:05, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2003 3rd, 20-30
+19, 0, 1, 2003-08-07 00:00:00, 2003-08-07 01:25:36, 12283, 2006-07-01 01:25:36, false, 300 Great Swamp Rd., Newark, Software Specialists, 19, 19, Eduardo, Freyre, 1, false, NJ, 2003 3rd, 10-20
+35, 0, 1, 2003-08-10 00:00:00, 2003-08-10 08:15:14, 12284, 2006-07-01 08:15:14, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 3rd, >=30
+4, 0, 2, 2003-08-14 00:00:00, 2003-08-14 05:55:12, 12285, 2006-07-01 05:55:12, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2003 3rd, <10
+28, 0, 2, 2003-08-15 00:00:00, 2003-08-15 05:55:12, 12286, 2006-07-01 05:55:12, true, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 3rd, 20-30
+3, 0, 1, 2003-08-19 00:00:00, 2003-08-19 07:30:00, 12287, 2006-07-01 07:30:00, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2003 3rd, <10
+8, 0, 3, 2003-08-20 00:00:00, 2003-08-20 07:30:00, 12288, 2006-07-01 07:30:00, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2003 3rd, <10
+26, 0, 3, 2003-08-24 00:00:00, 2003-08-24 04:25:15, 12289, 2006-07-01 04:25:15, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2003 3rd, 20-30
+14, 0, 1, 2003-08-25 00:00:00, 2003-08-25 02:10:15, 12290, 2006-07-01 02:10:15, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 3rd, 10-20
+11, 0, 3, 2003-08-29 00:00:00, 2003-08-29 07:21:31, 12291, 2006-07-01 07:21:31, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2003 3rd, 10-20
+16, 0, 4, 2003-08-30 00:00:00, 2003-08-30 07:21:31, 12292, 2006-07-01 07:21:31, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, 16, 16, Giovanni, Feuter, 2, true, CA, 2003 3rd, 10-20
+17, 0, 3, 2003-08-31 00:00:00, 2003-08-31 01:01:01, 12293, 2006-07-01 01:01:01, true, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 3rd, 10-20
+17, 0, 3, 2003-08-31 00:00:00, 2003-08-31 05:45:05, 12294, 2006-07-01 05:45:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 3rd, 10-20
+28, 0, 1, 2003-09-03 00:00:00, 2003-09-03 05:45:05, 12295, 2006-07-01 05:45:05, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2003 3rd, 20-30
+18, 0, 2, 2003-09-03 00:00:00, 2003-09-03 05:45:05, 12296, 2006-07-01 05:45:05, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2003 3rd, 10-20
+2, 0, 2, 2003-09-03 00:00:00, 2003-09-03 05:45:05, 12297, 2006-07-01 05:45:05, false, 123 Summer Rd., Middletown, Daycare One, 2, 2, Lisa, Smith, 1, true, NJ, 2003 3rd, <10
+14, 0, 1, 2003-09-03 00:00:00, 2003-09-03 05:45:05, 12298, 2006-07-01 05:45:05, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 3rd, 10-20
+7, 0, 2, 2003-09-04 00:00:00, 2003-09-04 10:22:13, 12299, 2006-07-01 10:22:13, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2003 3rd, <10
+14, 0, 1, 2003-09-05 00:00:00, 2003-09-05 03:51:13, 12300, 2006-07-01 03:51:13, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2003 3rd, 10-20
+24, 0, 1, 2003-09-09 00:00:00, 2003-09-09 04:15:10, 12301, 2006-07-01 04:15:10, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2003 3rd, 20-30
+17, 0, 4, 2003-09-12 00:00:00, 2003-09-12 11:01:05, 12302, 2006-07-01 11:01:05, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2003 3rd, 10-20
+21, 0, 3, 2003-09-14 00:00:00, 2003-09-14 01:01:01, 12303, 2006-07-01 01:01:01, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2003 3rd, 20-30
+9, NULL, 4, 2003-09-18 00:00:00, 2003-09-18 02:10:15, 12304, 2006-07-01 02:10:15, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2003 3rd, <10
+15, NULL, 1, 2003-09-22 00:00:00, 2003-09-22 08:15:14, 12305, 2006-07-01 08:15:14, false, 839 Via Gaty Dr., Camden, Scheggie Services, 15, 15, Paula, Camino, 1, true, NJ, 2003 3rd, 10-20
+35, NULL, 2, 2003-09-22 00:00:00, 2003-09-22 02:33:15, 12306, 2006-07-01 02:33:15, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2003 3rd, >=30
+29, 0, 3, 2002-04-21 00:00:00, 2002-04-21 08:00:00, 12062, 2006-07-01 08:00:00, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 2nd, 20-30
+21, 0, 3, 2002-04-21 00:00:00, 2002-04-21 08:00:00, 12063, 2006-07-01 08:00:00, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 2nd, 20-30
+30, 0.1, 1, 2002-04-23 00:00:00, 2002-04-23 09:01:01, 12064, NULL, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2002 2nd, >=30
+22, 0, 3, 2002-04-25 00:00:00, 2002-04-25 09:15:45, 12065, 2006-07-01 09:15:45, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2002 2nd, 20-30
+22, 0, 3, 2002-04-27 00:00:00, 2002-04-27 10:22:13, 12066, 2006-07-01 10:22:13, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, 22, 22, Nick, Pantaliano, 2, true, TX, 2002 2nd, 20-30
+30, 0, 2, 2002-04-28 00:00:00, 2002-04-28 11:15:42, 12067, 2006-07-01 11:15:42, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2002 2nd, >=30
+9, 0, 4, 2002-04-29 00:00:00, 2002-04-29 11:25:36, 12068, 2006-07-01 11:25:36, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 2nd, <10
+17, 0, 4, 2002-04-29 00:00:00, 2002-04-29 11:25:36, 12069, 2006-07-01 11:25:36, false, 21 Doger Sound Blvd., New York, FISGA Corp, 17, 17, Marie, Castro, 2, true, NY, 2002 2nd, 10-20
+11, 0, 4, 2002-05-01 00:00:00, 2002-05-01 12:42:12, 12070, 2006-07-01 12:42:12, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2002 2nd, 10-20
+35, 0, 1, 2002-05-03 00:00:00, 2002-05-03 12:55:10, 12071, 2006-07-01 12:55:10, false, 38 Commercial Ave., Plainfield, Pharma Research, 35, 35, Pat, Kline, 1, true, NJ, 2002 2nd, >=30
+24, 0, 2, 2002-05-04 00:00:00, 2002-05-04 01:15:23, 12072, 2006-07-01 01:15:23, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 2nd, 20-30
+9, 0, 3, 2002-05-08 00:00:00, 2002-05-08 01:25:36, 12073, 2006-07-01 01:25:36, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 2nd, <10
+26, 0, 3, 2002-05-08 00:00:00, 2002-05-08 01:25:36, 12074, 2006-07-01 01:25:36, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 2nd, 20-30
+29, 0, 4, 2002-05-10 00:00:00, 2002-05-10 02:55:23, 12075, 2006-07-01 02:55:23, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 2nd, 20-30
+27, 0, 4, 2002-05-14 00:00:00, 2002-05-14 03:51:13, 12076, 2006-07-01 03:51:13, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 2nd, 20-30
+5, 0, 3, 2002-05-18 00:00:00, 2002-05-18 04:15:10, 12077, 2006-07-01 04:15:10, true, 389 Jardim Rd., Baltimore, George Services, 5, 5, Steven, Devon, 2, true, MD, 2002 2nd, <10
+21, 0, 3, 2002-05-20 00:00:00, 2002-05-20 05:55:12, 12078, 2006-07-01 05:55:12, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 2nd, 20-30
+8, 0, 3, 2002-05-20 00:00:00, 2002-05-20 05:55:12, 12079, NULL, false, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2002 2nd, <10
+31, 0, 3, 2002-05-23 00:00:00, 2002-05-23 06:21:37, 12080, 2006-07-01 06:21:37, true, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2002 2nd, >=30
+23, 0, 1, 2002-05-26 00:00:00, 2002-05-26 07:21:31, 12081, 2006-07-01 07:21:31, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 2nd, 20-30
+23, 0, 2, 2002-05-29 00:00:00, 2002-05-29 05:26:36, 12082, 2006-07-01 05:26:36, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 2nd, 20-30
+14, 0, 2, 2002-05-31 00:00:00, 2002-05-31 08:15:14, 12083, 2006-07-01 08:15:14, false, 822 Technology Dr., Rockville, InterLand Services, 14, 14, Horst, Braunschwad, 1, true, MD, 2002 2nd, 10-20
+3, 0, 2, 2002-06-04 00:00:00, 2002-06-04 09:14:17, 12084, 2006-07-01 09:14:17, false, 7262 18th St., New York, Eastern Data, 3, 3, Anna, Lincoln, 1, true, NY, 2002 2nd, <10
+30, 0, 2, 2002-06-08 00:00:00, 2002-06-08 10:27:55, 12085, 2006-07-01 10:27:55, false, 283 Handley Rd., Springfield, AMG Logistics, 30, 30, Bill, Wallace, 1, true, MA, 2002 2nd, >=30
+18, 0, 2, 2002-06-11 00:00:00, 2002-06-11 09:57:21, 12086, 2006-07-01 09:57:21, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 2nd, 10-20
+8, 0, 3, 2002-06-11 00:00:00, 2002-06-11 09:57:21, 12087, 2006-07-01 09:57:21, true, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2002 2nd, <10
+4, 0, 2, 2002-06-13 00:00:00, 2002-06-13 11:01:05, 12088, 2006-07-01 11:01:05, false, 88 Rio Grand Ave., Boulder, Ernst Handel, 4, 4, Patrico, Brown, 1, false, CO, 2002 2nd, <10
+9, 0, 3, 2002-06-17 00:00:00, 2002-06-17 10:22:13, 12089, 2006-07-01 10:22:13, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 2nd, <10
+23, 0, 1, 2002-06-20 00:00:00, 2002-06-20 11:15:42, 12090, 2006-07-01 11:15:42, true, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 2nd, 20-30
+9, 0, 4, 2002-06-22 00:00:00, 2002-06-22 07:30:00, 12091, NULL, false, 4500 River Rd., San Francisco, Direct Sales, 9, 9, Luke, Baker, 2, false, CA, 2002 2nd, <10
+21, 0, 4, 2002-06-23 00:00:00, 2002-06-23 08:00:00, 12092, 2006-07-01 08:00:00, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 2nd, 20-30
+24, 0, 1, 2002-06-24 00:00:00, 2002-06-24 04:25:15, 12093, 2006-07-01 04:25:15, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 2nd, 20-30
+20, 0, 4, 2002-06-28 00:00:00, 2002-06-28 01:01:01, 12094, 2006-07-01 01:01:01, false, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 2nd, 20-30
+12, 0, 1, 2002-07-01 00:00:00, 2002-07-01 02:10:15, 12095, 2006-07-01 02:10:15, false, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 3rd, 10-20
+12, 0, 2, 2002-07-02 00:00:00, 2002-07-02 02:33:15, 12096, 2006-07-01 02:33:15, true, 77 Druguz Blvd., Orlando, Fast Transportation, 12, 12, George, Kloss, 1, true, FL, 2002 3rd, 10-20
+21, 0, 4, 2002-07-05 00:00:00, 2002-07-05 08:15:14, 12097, 2006-07-01 08:15:14, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 3rd, 20-30
+31, 0, 3, 2002-07-06 00:00:00, 2002-07-06 11:01:05, 12098, 2006-07-01 11:01:05, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2002 3rd, >=30
+29, 0.25, 4, 2002-07-06 00:00:00, 2002-07-06 11:01:05, 12099, NULL, false, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 3rd, 20-30
+20, 0, 3, 2002-07-06 00:00:00, 2002-07-06 11:01:05, 12100, 2006-07-01 11:01:05, true, 345 Sewgen Dr., Tucson, Folk Mining, 20, 20, Janine, Lebithal, 2, true, AZ, 2002 3rd, 20-30
+29, 0, 3, 2002-07-10 00:00:00, 2002-07-10 05:26:36, 12101, 2006-07-01 05:26:36, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 3rd, 20-30
+31, 0, 4, 2002-07-13 00:00:00, 2002-07-13 05:55:12, 12102, 2006-07-01 05:55:12, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, 31, 31, Amy, Gillette, 2, true, TX, 2002 3rd, >=30
+26, 0, 3, 2002-07-17 00:00:00, 2002-07-17 08:15:14, 12103, 2006-07-01 08:15:14, false, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 3rd, 20-30
+26, 0, 3, 2002-07-21 00:00:00, 2002-07-21 10:27:55, 12104, 2006-07-01 10:27:55, true, 987 First Ave., Dallas, Nova Tera, 26, 26, Chris, Gonzalez, 2, true, TX, 2002 3rd, 20-30
+25, 0, 1, 2002-07-23 00:00:00, 2002-07-23 11:01:05, 12105, 2006-07-01 11:01:05, false, 283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 25, Howard, Ledes, 1, true, NJ, 2002 3rd, 20-30
+27, 0, 4, 2002-07-26 00:00:00, 2002-07-26 05:23:23, 12106, 2006-07-01 05:23:23, false, 32 West Boyd Ave., Seattle, Infinity Software, 27, 27, Jill, Oshinsky, 2, false, WA, 2002 3rd, 20-30
+6, 0, 2, 2002-07-30 00:00:00, 2002-07-30 02:05:10, 12107, 2006-07-01 02:05:10, false, 5 Baker's Lane, Hartford, Loctite Corp., 6, 6, Aria, Duz, 1, true, CT, 2002 3rd, <10
+18, 0, 1, 2002-08-01 00:00:00, 2002-08-01 01:55:35, 12108, 2006-07-01 01:55:35, false, 8300 Cleveland St., Boston, Ubermeyer, 18, 18, Roland, Sommer, 1, true, MA, 2002 3rd, 10-20
+24, 0, 2, 2002-08-05 00:00:00, 2002-08-05 11:25:36, 12109, 2006-07-01 11:25:36, false, 1248 Broadway, New York, High Society Investments, 24, 24, Gary, Parket, 1, true, NY, 2002 3rd, 20-30
+34, 0, 1, 2002-08-06 00:00:00, 2002-08-06 12:55:10, 12110, 2006-07-01 12:55:10, true, 77 Huntington Ave., Cambridge, XO Resellers, 34, 34, Fran, Dreckle, 1, false, MA, 2002 3rd, >=30
+21, 0, 3, 2002-08-10 00:00:00, 2002-08-10 03:51:13, 12111, 2006-07-01 03:51:13, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 21, William, Alen, 2, true, CA, 2002 3rd, 20-30
+7, 0, 1, 2002-08-14 00:00:00, 2002-08-14 04:15:10, 12112, 2006-07-01 04:15:10, false, 1230 Hoes Lane, New York, Old World Insurance, 7, 7, Lino, Rodrigez, 1, true, NY, 2002 3rd, <10
+28, 0.05, 2, 2002-08-18 00:00:00, 2002-08-18 11:01:05, 12113, 2006-07-01 11:01:05, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 3rd, 20-30
+29, 0.05, 3, 2002-08-21 00:00:00, 2002-08-21 01:25:36, 12114, 2006-07-01 01:25:36, true, 17 Main St., Olympia, Northwest Outfitters, 29, 29, Adam, Curtiss, 2, true, WA, 2002 3rd, 20-30
+28, 0, 1, 2002-08-24 00:00:00, 2002-08-24 08:15:14, 12115, 2006-07-01 08:15:14, false, 389 York St., York, Tricounty Auto, 28, 28, Nicole, Bartles, 1, true, PA, 2002 3rd, 20-30
+33, 0, 1, 2002-08-28 00:00:00, 2002-08-28 05:55:12, 12116, 2006-07-01 05:55:12, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, 33, 33, Michael, Lewis, 1, true, MD, 2002 3rd, >=30
+11, 0, 4, 2002-08-28 00:00:00, 2002-08-28 05:55:12, 12117, 2006-07-01 05:55:12, false, 12 Woodpark Ave., Austin, The Big Cat, 11, 11, Michael, Kumar, 2, true, TX, 2002 3rd, 10-20
+10, 0, 4, 2002-08-31 00:00:00, 2002-08-03 05:30:00, 12118, 2006-07-01 07:30:00, false, 88 Specialty Dr., Chicago, Specialty Retail, 10, 10, Simon, Supricido, 2, false, IL, 2002 3rd, 10-20
+8, 0, 4, 2002-08-31 00:00:00, 2002-08-03 05:30:00, 12119, 2006-07-01 07:30:00, true, 71 Mulberry St., Denver, Quick Stop, 8, 8, Richard, Isantengse, 2, true, CO, 2002 3rd, <10
+23, 0, 1, 2002-09-04 00:00:00, 2002-09-04 04:25:15, 12120, 2006-07-01 04:25:15, false, 563 Uptown Dr., Boston, World Software Resellers, 23, 23, Jason, Gray, 1, false, MA, 2002 3rd, 20-30

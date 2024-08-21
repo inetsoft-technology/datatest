@@ -1,0 +1,19 @@
+The data size(row x col) is:(10 x 4)
+Month(Date), DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+03/2018
+11/2020, 2018:2018, 981, NULL
+03/2018
+11/2020, 2020:2021, 996, 15
+04/2018
+12/2020, 2018:2018, 940, NULL
+04/2018
+12/2020, 2020:2021, 923, -17
+05/2018
+01/2021, 2018:2018, 958, NULL
+05/2018
+01/2021, 2020:2021, 627, -331
+06/2018
+02/2021, 2018:2018, 757, NULL
+06/2018
+02/2021, 2020:2021, 545, -212
+03/2021, 2020:2021, 346, NULL

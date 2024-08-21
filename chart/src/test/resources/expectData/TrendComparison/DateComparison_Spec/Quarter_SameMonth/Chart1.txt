@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+Month(Date), Category, Sum(Paid)
+2021-02-01 00:00:00, Educational, 27
+2021-02-01 00:00:00, Personal, 25
+2021-05-01 00:00:00, Educational, 26
+2021-05-01 00:00:00, Personal, 29
+2021-08-01 00:00:00, Educational, 25
+2021-08-01 00:00:00, Graphics, 19
+2021-08-01 00:00:00, Personal, 9
+2021-11-01 00:00:00, Business, 8
+2021-11-01 00:00:00, Graphics, 10

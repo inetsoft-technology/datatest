@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+RESELLER, Year(ORDER_DATETIME), NthLargest(CUSTOMER_ID, 1), Sum(EMPLOYEE_ID), Sum(CONTACT_ID), Value of previous RESELLER: NthLargest(CUSTOMER_ID, 1)
+false, 2002-01-01 00:00:00, 34, 124, 830, NULL
+false, 2003-01-01 00:00:00, 34, 67, 467, NULL
+false, Others, 34, 200, 1354, NULL
+true, 2002-01-01 00:00:00, 35, 301, 2380, 34
+true, 2003-01-01 00:00:00, 35, 374, 2951, 34
+true, Others, 35, 675, 4780, 34

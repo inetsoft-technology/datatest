@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 5)
+QuarterOfYear(Date), Category, Year(Date), Sum(Quantity Purchased), Change from previous year of Year(Date): Sum(Quantity Purchased)
+1, Others, 2019-01-01 00:00:00, 1768, NULL
+1, Others, 2020-01-01 00:00:00, 926, -842
+1, Others, 2021-01-01 00:00:00, 832, -94
+1, Personal, 2020-01-01 00:00:00, 1099, NULL
+1, Personal, 2021-01-01 00:00:00, 880, -219
+1, Games, 2019-01-01 00:00:00, 987, NULL
+1, Games, 2020-01-01 00:00:00, 954, -33
+2, Others, 2019-01-01 00:00:00, 1900, NULL
+2, Others, 2020-01-01 00:00:00, 1001, -899
+2, Others, 2021-01-01 00:00:00, 1029, 28
+2, Hardware, 2019-01-01 00:00:00, 1032, NULL
+2, Hardware, 2020-01-01 00:00:00, 969, -63
+2, Personal, 2020-01-01 00:00:00, 935, NULL
+2, Personal, 2021-01-01 00:00:00, 923, -12
+3, Others, 2019-01-01 00:00:00, 1873, NULL
+3, Others, 2020-01-01 00:00:00, 984, -889
+3, Others, 2021-01-01 00:00:00, 1131, 147
+3, Hardware, 2019-01-01 00:00:00, 1018, NULL
+3, Hardware, 2020-01-01 00:00:00, 886, -132
+3, Educational, 2020-01-01 00:00:00, 950, NULL
+3, Educational, 2021-01-01 00:00:00, 799, -151
+4, Others, 2019-01-01 00:00:00, 454, NULL
+4, Others, 2020-01-01 00:00:00, 791, 337
+4, Others, 2021-01-01 00:00:00, 448, -343
+4, Hardware, 2019-01-01 00:00:00, 454, NULL
+4, Hardware, 2020-01-01 00:00:00, 472, 18
+4, Business, 2019-01-01 00:00:00, 426, NULL
+4, Business, 2021-01-01 00:00:00, 494, NULL

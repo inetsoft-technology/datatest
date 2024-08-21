@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 6)
+Region, Category, Sum(Quantity Purchased), Sum(TotalReturnedNeg), % Change from previous: Sum(Quantity Purchased), Change from previous: Sum(TotalReturnedNeg)
+USA East, Games, 7391, -510605, NULL, NULL
+USA East, Hardware, 6786, -2899340, -0.0819, -2388735
+USA East, Personal, 5257, -592872, -0.2253, 2306468
+USA East, Others, 13367, -4246558, 1.5427, -3653686
+USA West, Hardware, 5019, -2283710, 0.107, -2074674
+USA West, Games, 4534, -209036, NULL, NULL
+USA West, Personal, 3250, -194384, -0.3525, 2089326
+USA West, Others, 8406, -1550513, 1.5865, -1356129

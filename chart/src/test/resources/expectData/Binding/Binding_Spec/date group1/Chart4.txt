@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 6)
+SecondOfMinute(order_datetime), NthSmallest(customer_id, 1), Count(paid), Value of previous SecondOfMinute(order_datetime): NthSmallest(customer_id, 1), Moving Average of 5: Count(paid), % of total: Count(paid)
+NULL, 28, 1, NULL, 2.6667, 0.0333
+1, 13, 5, 28, 2.25, 0.1667
+10, 8, 2, 13, 2, 0.0667
+11, 20, 1, 8, 2, 0.0333
+15, 9, 1, 20, 1.2, 0.0333
+17, 25, 1, 9, 1.2, 0.0333
+18, 6, 1, 25, 1.8, 0.0333
+21, 6, 2, 6, 2, 0.0667
+23, 3, 4, 6, 2, 0.1333
+27, 18, 2, 3, 2, 0.0667
+30, 18, 1, 18, 1.8, 0.0333
+34, 24, 1, 18, 1.4, 0.0333
+35, 20, 1, 24, 1.2, 0.0333
+36, 2, 2, 20, 1.4, 0.0667
+43, 28, 1, 2, 1.4, 0.0333
+55, 23, 2, 28, 1.4, 0.0667
+56, 9, 1, 23, 1.25, 0.0333
+59, 10, 1, 9, 1.3333, 0.0333

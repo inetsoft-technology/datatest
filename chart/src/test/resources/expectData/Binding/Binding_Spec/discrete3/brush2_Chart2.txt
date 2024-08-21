@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+State, Sum(Quantity Purchased), Sum(TotalPurchased)
+AZ, 169, 272125
+CA, 436, 739125
+CO, 167, 318125
+CT, 48, 49750
+FL, 206, 485250
+IL, 145, 301750
+MA, 541, 957625
+MD, 406, 690875
+NJ, 964, 1875500
+NV, 109, 202625
+NY, 748, 1437875
+PA, 102, 178875
+TX, 606, 1054125
+WA, 293, 473625

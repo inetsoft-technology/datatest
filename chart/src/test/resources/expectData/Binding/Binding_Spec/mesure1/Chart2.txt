@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 5)
+STATE, CITY, ZIP, Max(CUSTOMER_ID), % of total: Max(CUSTOMER_ID)
+MA, Boston, 28275, 23, 0.0975
+MA, Boston, 29183, 18, 0.0763
+MA, Cambridge, 02938, 34, 0.1441
+MA, Springfield, 01923, 30, 0.1271
+MD, Baltimore, 53747, 33, 0.1398
+MD, Baltimore, 82938, 5, 0.0212
+MD, Rockville, 83923, 14, 0.0593
+NJ, Newark, 23445, 19, 0.0805
+NJ, New Brunswick, 08854, 25, 0.1059
+NJ, Plainfield, 08273, 35, 0.1483

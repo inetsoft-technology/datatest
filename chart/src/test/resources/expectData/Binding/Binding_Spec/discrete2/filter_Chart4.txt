@@ -1,0 +1,31 @@
+The data size(row x col) is:(30 x 5)
+last_name, Sum(contact id and customer id), Correlation(order_id, employee_id), Value of previous: Correlation(order_id, employee_id), discrete_Value of previous: Correlation(order_id, employee_id)
+Braunschwad, 476, -0.5044, NULL, NULL
+Brown, 88, -0.0009, -0.5044, -0.5044
+Camino, 390, 0.0327, -0.0009, -0.0009
+Castro, 612, -0.0144, 0.0327, 0.0327
+Crowther, 364, -0.1506, -0.0144, -0.0144
+Devon, 100, 0.2312, -0.1506, -0.1506
+Dreckle, 952, 0.0421, 0.2312, 0.2312
+Duz, 132, -0.363, 0.0421, 0.0421
+Feuter, 416, 0.1106, -0.363, -0.363
+Francone, 960, -0.0862, 0.1106, 0.1106
+Freyre, 836, -0.0764, -0.0862, -0.0862
+Gonzalez, 728, 0.076, -0.0764, -0.0764
+Gray, 736, 0.1217, 0.076, 0.076
+Isantengse, 240, 0.1006, 0.1217, 0.1217
+Kelly, 24, 0.3318, 0.1006, 0.1006
+Kline, 980, -0.0484, 0.3318, 0.3318
+Kloss, 336, -0.1128, -0.0484, -0.0484
+Kumar, 286, -0.2984, -0.1128, -0.1128
+Lebithal, 640, -0.2377, -0.2984, -0.2984
+Ledes, 800, -0.1887, -0.2377, -0.2377
+Lincoln, 108, -0.2665, -0.1887, -0.1887
+Oshinsky, 540, -0.5683, -0.2665, -0.2665
+Pantaliano, 616, 0.5144, -0.5683, -0.5683
+Parket, 672, -0.0743, 0.5144, 0.5144
+Rodrigez, 238, 0.1885, -0.0743, -0.0743
+Smith, 52, -0.5103, 0.1885, 0.1885
+Sommer, 648, 0.2079, -0.5103, -0.5103
+Supricido, 260, -0.4286, 0.2079, 0.2079
+Wallace, 840, 0.2596, -0.4286, -0.4286

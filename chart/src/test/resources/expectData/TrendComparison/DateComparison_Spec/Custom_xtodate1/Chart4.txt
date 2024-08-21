@@ -1,0 +1,11 @@
+The data size(row x col) is:(8 x 4)
+Quarter(Date), DataGroup(Date), Sum(Total), % Change from previous range of DataGroup(Date): Sum(Total)
+4th, 2018:2019, 324663, NULL
+1st, 2018:2019, 899020, NULL
+2nd, 2018:2019, 365431, NULL
+3rd, 2018:2019, 2780489, NULL
+4th, 2018:2019, 1358434, NULL
+1st
+1st, 2020:2021, 209228, -0.7673
+2nd
+2nd, 2020:2021, 396983, 0.0863

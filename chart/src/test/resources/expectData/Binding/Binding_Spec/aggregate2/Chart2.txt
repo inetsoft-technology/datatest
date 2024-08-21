@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 8)
+Year(order_date), CalcField1, WeightedAverage(contact id and customer id, contact_id), Average(order_id), DistinctCount(customer_id), Moving Average of 5: WeightedAverage(contact id and customer id, contact_id), % Change from previous Year(order_date): Average(order_id), Running Sum: DistinctCount(customer_id)
+2002-01-01 00:00:00, false, 46.1012, 12094.4783, 8, 44.414, NULL, 8
+2002-01-01 00:00:00, true, 48.0269, 12083.5873, 27, 48.1653, NULL, 27
+2003-01-01 00:00:00, false, 43.1135, 12268.3214, 7, 43.8001, 0.0144, 15
+2003-01-01 00:00:00, true, 48.593, 12265.5912, 27, 48.0852, 0.0151, 54
+2004-01-01 00:00:00, false, 44.0274, 12455.54, 8, 43.8001, 0.0153, 23
+2004-01-01 00:00:00, true, 47.876, 12453.446, 27, 48.0852, 0.0153, 81
+2005-01-01 00:00:00, false, 41.9582, 12619.4, 8, 43.033, 0.0132, 31
+2005-01-01 00:00:00, true, 47.8447, 12625.7541, 27, 48.1046, 0.0138, 108

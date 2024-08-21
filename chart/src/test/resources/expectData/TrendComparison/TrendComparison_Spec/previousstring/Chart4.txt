@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 5)
+Region, State, City, Sum(TotalReturned), % Change from previous: Sum(TotalReturned)
+USA East, CT, Hartford, 48765, NULL
+USA East, FL, Orlando, 556312, NULL
+USA East, MA, Boston, 1236215, NULL
+USA East, MA, Springfield, 421007, -0.6594
+USA East, MA, Others, 247773, -0.4115
+USA East, MD, Baltimore, 626645, NULL
+USA East, MD, Rockville, 48731, -0.9222
+USA East, NJ, Middletown, 1321886, NULL
+USA East, NJ, Newark, 684250, -0.4824
+USA East, NJ, Others, 1740670, 1.5439
+USA East, NY, New York, 1298609, NULL
+USA East, PA, York, 18512, NULL
+USA West, AZ, Tucson, NULL, NULL
+USA West, CA, Los Angeles, 1010325, NULL
+USA West, CA, San Francisco, 718550, -0.2888
+USA West, CA, Others, 76762, -0.8932
+USA West, CO, Boulder, 519563, NULL
+USA West, CO, Denver, 130655, -0.7485
+USA West, IL, Chicago, NULL, NULL
+USA West, NV, Las Vegas, 1548, NULL
+USA West, TX, Dallas, 1094449, NULL
+USA West, TX, Austin, 342128, -0.6874
+USA West, TX, Others, 123576, -0.6388
+USA West, WA, Olympia, 204337, NULL
+USA West, WA, Seattle, 15750, -0.9229

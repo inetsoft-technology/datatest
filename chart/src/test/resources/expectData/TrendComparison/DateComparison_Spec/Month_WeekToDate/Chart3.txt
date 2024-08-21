@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 5)
+WeekOfMonth(Date), MonthOfWeek(Date), Category, Sum(Quantity Purchased), Change from previous month of MonthOfWeek(Date): Sum(Quantity Purchased)
+1, 2021-07-01 00:00:00, Educational, 25, NULL
+1, 2021-07-01 00:00:00, Personal, 33, NULL
+1, 2021-08-01 00:00:00, Educational, 27, 2
+1, 2021-08-01 00:00:00, Personal, 38, 5
+1, 2021-09-01 00:00:00, Educational, 32, 5
+1, 2021-09-01 00:00:00, Graphics, 28, NULL
+1, 2021-10-01 00:00:00, Business, 42, NULL
+1, 2021-10-01 00:00:00, Graphics, 43, 15
+1, 2021-11-01 00:00:00, Business, 30, -12
+1, 2021-11-01 00:00:00, Graphics, 20, -23

@@ -1,0 +1,11 @@
+The data size(row x col) is:(6 x 6)
+DataGroup(Date), Quarter(Date), Sum(Quantity Purchased), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Paid)
+2020, 2nd, 2905, 234, NULL, NULL
+2020, 3rd
+3rd, 2820, 248, NULL, NULL
+2020, 4th
+4th, 1263, 108, NULL, NULL
+2021, 3rd
+3rd, 1930, 159, -890, -89
+2021, 4th
+4th, 942, 78, -321, -30

@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Month(orderdate), Sum(customer_id), Sum(product_id), Compound Growth of year: Sum(customer_id)
+1999-03-01 00:00:00, 115, 96, 115
+2000-09-01 00:00:00, 101, 128, 101
+2000-08-01 00:00:00, 68, 86, 7037

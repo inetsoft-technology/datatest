@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 12)
+Date, Region, Quantity Purchased, State, City, Company, Reseller, Paid, Discount, Category, Name, Total
+2018-10-01, USA East, 1, NJ, New Brunswick, Rutgers Bank, 0, 1, 0, Games, Fast Go Game, 200
+2018-10-01, USA East, 1, NY, New York, FISGA Corp, 0, 1, 0, Office Tools, Info Folder, 399
+2018-10-01, USA West, 7, AZ, Tucson, Folk Mining, 0, 1, 0, Office Tools, WebCalendar, 1736

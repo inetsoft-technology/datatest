@@ -1,0 +1,14 @@
+The data size(row x col) is:(7 x 4)
+Quarter(Date), DataGroup(Date), Sum(Quantity Purchased), Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+2020 2nd
+2021 1st, 2020, 3268, NULL
+2020 2nd
+2021 1st, 2021, 2397, -871
+2020 3rd
+2021 2nd, 2020, 2221, NULL
+2020 3rd
+2021 2nd, 2021, 2848, 627
+2020 4th
+2021 3rd, 2020, 2738, NULL
+2020 4th
+2021 3rd, 2021, 2766, 28

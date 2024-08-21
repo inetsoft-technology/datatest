@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 4)
+Category, First(Quantity Purchased, Category), Sum(TotalPurchased), discrete_First(Quantity Purchased, Category)
+Business, 2, 9037250, 2
+Educational, 2, 792470, 2
+Games, 12, 1064530, 2
+Graphics, 31, 1018812, 2
+Hardware, 21, 6744390, 2
+Office Tools, 17, 1489839, 2
+Personal, 11, 1524418, 2

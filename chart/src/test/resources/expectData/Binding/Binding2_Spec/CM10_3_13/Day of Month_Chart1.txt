@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+DayOfMonth(ORDER_DATETIME), Sum(ORDER_ID)
+1, 368645
+2, 358636
+6, 468515
+12, 358665
+25, 358833
+Others, 6732056

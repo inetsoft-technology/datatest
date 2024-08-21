@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 4)
+State, City, Sum(2020-04-26 00:00:00), Change from previous: Sum(2020-04-26 00:00:00)
+AZ, Tucson, 0.0713, NULL
+CA, Albany, NULL, NULL
+CA, Los Angeles, 0.0296, 0.0296
+CA, San Francisco, NULL, -0.0296
+CT, Hartford, 0.1985, NULL
+NJ, Camden, NULL, NULL
+NJ, Middletown, 0.149, 0.149
+NJ, New Brunswick, NULL, -0.149
+NJ, Newark, NULL, 0
+NJ, Plainfield, NULL, 0
+NJ, Wayne, 0.0438, 0.0438

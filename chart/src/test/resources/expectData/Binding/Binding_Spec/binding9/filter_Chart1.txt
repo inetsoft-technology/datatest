@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+ORDERS.ORDERS:EMPLOYEE_ID, ORDERS.CUSTOMERS:STATE, ORDERS.CUSTOMERS:RESELLER, Max(ORDERS.CUSTOMERS:CUSTOMER_ID)
+2, FL, true, 12
+2, MD, true, 14
+2, MA, true, 18
+2, NJ, true, 35
+3, MD, true, 5
+3, TX, true, 26
+3, NV, true, 32
+4, MD, true, 5
+4, TX, true, 26
+4, NV, true, 32

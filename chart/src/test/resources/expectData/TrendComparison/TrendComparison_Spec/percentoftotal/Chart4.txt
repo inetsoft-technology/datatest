@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 6)
+Region, State, Category, Sum(TotalPurchased), Sum(TotalReturned), % of State: Sum(TotalPurchased)
+USA East, NJ, Business, 1875500, 1463250, 0.4246
+USA East, NJ, Educational, 126055, 15765, 0.0285
+USA East, NJ, Games, 117702, 86350, 0.0266
+USA East, NJ, Graphics, 254007, 269860, 0.0575
+USA East, NJ, Hardware, 1610280, 1706130, 0.3646
+USA East, NJ, Office Tools, 252983, 103019, 0.0573
+USA East, NJ, Personal, 180642, 102432, 0.0409
+USA East, NY, Business, 1437875, 395500, 0.4313
+USA East, NY, Educational, 136660, 93576, 0.041
+USA East, NY, Games, 257727, 254241, 0.0773
+USA East, NY, Graphics, 162487, 56224, 0.0487
+USA East, NY, Hardware, 858650, 96410, 0.2575
+USA East, NY, Office Tools, 260423, 240784, 0.0781
+USA East, NY, Personal, 220336, 161874, 0.0661
+USA West, TX, Business, 1054125, 201125, 0.3501
+USA West, TX, Educational, 106465, 90320, 0.0354
+USA West, TX, Games, 145758, 141810, 0.0484
+USA West, TX, Graphics, 120866, 91254, 0.0401
+USA West, TX, Hardware, 1073780, 721680, 0.3566
+USA West, TX, Office Tools, 281266, 291634, 0.0934
+USA West, TX, Personal, 229016, 22330, 0.0761
+USA West, CA, Business, 739125, 162000, 0.4221
+USA West, CA, Educational, 66231, 34298, 0.0378
+USA West, CA, Games, 92760, 42060, 0.053
+USA West, CA, Graphics, 74444, 12432, 0.0425
+USA West, CA, Hardware, 495360, 1313340, 0.2829
+USA West, CA, Office Tools, 139349, 111580, 0.0796
+USA West, CA, Personal, 143939, 129927, 0.0822

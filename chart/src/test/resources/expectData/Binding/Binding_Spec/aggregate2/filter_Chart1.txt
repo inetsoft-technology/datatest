@@ -1,0 +1,23 @@
+The data size(row x col) is:(22 x 7)
+first_name, DistinctCount(order_date), Product(region_id), DistinctCount(CalcField1), Moving Average of 5: DistinctCount(order_date), Value of previous: Product(region_id), Running Sum: DistinctCount(CalcField1)
+Anna, 18, 1, 1, 17.6667, NULL, 1
+Chris, 13, 16384, 1, 16.75, 1, 2
+Eduardo, 22, 1, 1, 16.2, 16384, 3
+Fran, 14, 1, 1, 15.4, 1, 4
+Gary, 14, 1, 1, 15.4, 1, 5
+George, 14, 1, 1, 14.2, 1, 6
+Gilbert, 13, 8192, 1, 14.6, 1, 7
+Horst, 16, 1, 1, 13.6, 8192, 8
+Jason, 16, 1, 1, 13.2, 1, 9
+Jill, 9, 512, 1, 13.6, 1, 10
+John, 12, 1, 1, 13, 512, 11
+Lino, 15, 1, 1, 15, 1, 12
+Lisa, 13, 1, 1, 16, 1, 13
+Michael, 26, 8192, 1, 17.4, 1, 14
+Nick, 14, 16384, 1, 17.2, 8192, 15
+Nicole, 19, 1, 1, 17.2, 16384, 16
+Pat, 14, 1, 1, 15.4, 1, 17
+Paula, 13, 1, 1, 15.2, 1, 18
+Roland, 17, 1, 1, 13.2, 1, 19
+Simon, 13, 8192, 1, 13, 1, 20
+Steven, 9, 512, 1, 13, 8192, 21

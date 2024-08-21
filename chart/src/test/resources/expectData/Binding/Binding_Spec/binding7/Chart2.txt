@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 7)
+Hour(order_time), First(contact id and customer id, address), Sum(employee_id), Moving Average of 5: First(contact id and customer id, address), Value of previous Hour(order_time): Sum(employee_id), discrete_Value of previous Hour(order_time): Sum(employee_id), __sum__Moving Average of 5: First(contact id and customer id, address)
+NULL, 58, 47, 34, NULL, NULL, NULL
+01:00:00, 22, 173, 31, 47, 47, NULL
+02:00:00, 22, 166, 29.2, 173, 173, NULL
+03:00:00, 22, 79, 22, 166, 166, NULL
+04:00:00, 22, 100, 22, 79, 79, NULL
+05:00:00, 22, 275, 27.2, 100, 100, NULL
+07:00:00, 22, 139, 28.5, 275, 275, NULL
+09:00:00, 48, 89, 30.6667, 139, 139, NULL
+Total, NULL, NULL, NULL, NULL, 139, 224.5667

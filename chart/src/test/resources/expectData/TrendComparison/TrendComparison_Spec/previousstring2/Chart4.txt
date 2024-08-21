@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 4)
+State, City, Sum(Quantity Purchased), Change from previous: Sum(Quantity Purchased)
+AZ, Tucson, 1107, NULL
+CA, Albany, 794, NULL
+CA, Los Angeles, 2432, NULL
+CA, San Francisco, 1420, NULL
+CO, Boulder, 664, NULL
+CO, Denver, 1175, NULL
+CT, Hartford, 676, NULL
+FL, Orlando, 1102, NULL
+IL, Chicago, 1456, NULL
+MA, Boston, 2809, NULL
+MA, Cambridge, 1085, NULL
+MA, Springfield, 1249, NULL
+MD, Baltimore, 2234, NULL
+MD, Rockville, 1127, NULL
+NJ, Camden, 1026, NULL
+NJ, Middletown, 1239, NULL
+NJ, New Brunswick, 1153, NULL
+NJ, Newark, 1424, NULL
+NJ, Plainfield, 1063, NULL
+NJ, Wayne, 1231, NULL
+NV, Las Vegas, 793, NULL
+NY, New York, 5153, NULL
+PA, York, 1376, NULL
+TX, Austin, 1563, NULL
+TX, Dallas, 2488, NULL
+TX, Houston, 1270, NULL
+WA, Olympia, 1599, NULL
+WA, Seattle, 699, NULL

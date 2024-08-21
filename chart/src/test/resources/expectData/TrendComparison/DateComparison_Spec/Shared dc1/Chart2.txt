@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 7)
+DayOfMonth(Date), Quarter(Date), MonthOfQuarter(Date), Sum(Quantity Purchased), Sum(Paid), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Paid)
+1-1, 2021-01-01 00:00:00, 1, 18, 2, NULL, NULL
+1-1, 2021-04-01 00:00:00, 1, 7, 1, -11, -1
+1-1, 2021-07-01 00:00:00, 1, 15, 1, 8, 0
+1-1, 2021-10-01 00:00:00, 1, 22, 2, 7, 1
+1-2, 2021-01-01 00:00:00, 1, 27, 2, NULL, NULL
+1-2, 2021-04-01 00:00:00, 1, 13, 2, -14, 0
+1-2, 2021-07-01 00:00:00, 1, 19, 1, 6, -1
+1-2, 2021-10-01 00:00:00, 1, 22, 2, 3, 1

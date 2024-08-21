@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 5)
+RESELLER, CalcField1, numrange, Sum(formula), __sum__% of subtotal: Sum(formula)
+false, CA, <10, 53730, NULL
+false, CA, 10-20, 600615, NULL
+false, IL, <10, 79509, NULL
+false, NJ, <10, 668694, NULL
+true, CA, <10, 46566, NULL
+true, CA, 10-20, 520533, NULL
+true, FL, 10-20, 35820, NULL
+true, NJ, <10, 2417586, NULL
+true, NY, <10, 1247946, NULL
+true, NY, 10-20, 1398618, NULL
+true, NY, 20-30, 609912, NULL
+true, PA, <10, 742170, NULL
+true, PA, 10-20, 16368, NULL
+true, TX, <10, 313905, NULL
+true, TX, 10-20, 31875, NULL
+true, Total, 10-20, NULL, NULL

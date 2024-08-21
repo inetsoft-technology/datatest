@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 3)
+STATE, Sum(nav_double), % of total: Sum(nav_double)
+NULL, 0, -0
+AZ, -79, 0.0073
+CA, -502, 0.0465
+CO, -323, 0.0299
+CT, 39, -0.0036
+FL, -3000, 0.2781
+IL, 49, -0.0045
+MA, 135, -0.0125
+MD, -329, 0.0305
+NJ, -5565, 0.5159
+NV, 0, -0
+NY, -623, 0.0577
+PA, 0, -0
+TX, -590, 0.0547
+WA, 0, -0

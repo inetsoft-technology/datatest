@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+ORDER_DATE.Year, REGION_ID.STATE, rid&cid
+2002, MA, 635
+2002, TX, 485
+2002, WA, 420
+2003, MA, 500
+2003, TX, 471
+2003, NJ, 794
+2004, MA, 604
+2004, TX, 581
+2004, NJ, 481

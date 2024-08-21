@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+ORDERS.CUSTOMERS:STATE, Median(true)
+IL, NULL
+CT, 24
+CO, 40
+FL, 60
+WA, 116
+NY, 239
+TX, 433

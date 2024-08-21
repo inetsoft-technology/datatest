@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 4)
+Region, Day(Date), Sum(Paid), % Change from previous Day(Date): Sum(Paid)
+USA East, 2021-09-20 00:00:00, 2, NULL
+USA East, 2021-09-27 00:00:00, 1, -0.5
+USA East, 2021-10-04 00:00:00, 1, 0
+USA East, 2021-10-11 00:00:00, 2, 1
+USA East, 2021-10-18 00:00:00, 2, 0
+USA East, 2021-11-01 00:00:00, 2, 0
+USA West, 2021-09-27 00:00:00, 1, NULL
+USA West, 2021-10-04 00:00:00, 1, 0
+USA West, 2021-11-08 00:00:00, 2, 1

@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 8)
+state, reseller, customer_id, M, company_name, address, city, zip
+NJ, 0, 1, 4, Interstate Shop, 384 Broad St., Wayne, 18322
+NJ, 0, 2, 5, Daycare One, 123 Summer Rd., Middletown, 09882
+NJ, 0, 15, 18, Scheggie Services, 839 Via Gaty Dr., Camden, 12334
+NJ, 1, 19, 22, Software Specialists, 300 Great Swamp Rd., Newark, 23445
+NJ, 0, 25, 28, Rutgers Bank, 283 Davidson Dr., New Brunswick, 08854
+NJ, 0, 35, 38, Pharma Research, 38 Commercial Ave., Plainfield, 08273

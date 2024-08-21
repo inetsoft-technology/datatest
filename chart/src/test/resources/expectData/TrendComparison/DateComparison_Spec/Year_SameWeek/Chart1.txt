@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+Week(Date), Region, Sum(Quantity Purchased), Change from previous year of Week(Date): Sum(Quantity Purchased)
+2018-11-04 00:00:00, USA East, 98, NULL
+2018-11-04 00:00:00, USA West, 87, NULL
+2019-11-03 00:00:00, USA East, 100, 2
+2019-11-03 00:00:00, USA West, 130, 43
+2020-11-01 00:00:00, USA East, 101, 1
+2020-11-01 00:00:00, USA West, 101, -29
+2021-11-07 00:00:00, USA East, 43, -58
+2021-11-07 00:00:00, USA West, 36, -65

@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 3)
+ORDER_DATE.Year, ORDER_DATE.Quarter, COMPANY_NAME
+2002, Qtr3, 42
+2002, Qtr4, 36
+2002, Qtr2, 46
+2003, Qtr1, 42
+2003, Qtr4, 45
+2003, Qtr2, 47
+2004, Qtr3, 50
+2004, Qtr4, 44
+2004, Qtr2, 42
+2005, Qtr3, 45
+2005, Qtr4, 12
+2005, Qtr2, 47

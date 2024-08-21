@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 4)
+State, City, Sum(TotalReturned), Change from first: Sum(TotalReturned)
+AZ, Tucson, NULL, 0
+CA, Los Angeles, 1010325, 0
+CA, San Francisco, 718550, -291775
+CA, Others, 76762, -933563
+CO, Boulder, 519563, 0
+CO, Denver, 130655, -388908
+CT, Hartford, 48765, 0
+FL, Orlando, 556312, 0
+IL, Chicago, NULL, 0
+MA, Boston, 1236215, 0
+MA, Springfield, 421007, -815208
+MA, Others, 247773, -988442
+MD, Baltimore, 626645, 0
+MD, Rockville, 48731, -577914
+NJ, Middletown, 1321886, 0
+NJ, Newark, 684250, -637636
+NJ, Others, 1740670, 418784
+NV, Las Vegas, 1548, 0
+NY, New York, 1298609, 0
+PA, York, 18512, 0
+TX, Dallas, 1094449, 0
+TX, Austin, 342128, -752321
+TX, Others, 123576, -970873
+WA, Olympia, 204337, 0
+WA, Seattle, 15750, -188587

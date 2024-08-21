@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+Quarter(Date), Category, Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased)
+2021-04-01 00:00:00, Educational, 411, 21
+2021-04-01 00:00:00, Personal, 440, -4
+2021-07-01 00:00:00, Educational, 401, -10
+2021-07-01 00:00:00, Personal, 465, 25
+2021-10-01 00:00:00, Business, 494, NULL
+2021-10-01 00:00:00, Graphics, 448, NULL

@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+Week(P_Date), Region, State, Sum(Measure)
+2020-03-15 00:00:00, USA East, NY, 59155
+2020-03-15 00:00:00, USA West, CO, 10526
+2020-03-15 00:00:00, USA West, IL, 19895
+2020-03-15 00:00:00, USA West, WA, 10842
+2022-02-20 00:00:00, USA East, NJ, 26458
+2022-02-20 00:00:00, USA West, CA, 43025

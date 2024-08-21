@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 5)
+STATE, Sum(CUSTOMER_ID), % Change from previous: Sum(CUSTOMER_ID), discrete_% Change from previous: Sum(CUSTOMER_ID), value
+AZ, 440, NULL, NULL, 1
+CA, 1223, 1.7795, 1.7795, 1
+CO, 220, -0.8201, -0.8201, 1
+CT, 78, -0.6455, -0.6455, 1
+FL, 240, 2.0769, 2.0769, 1
+IL, 170, -0.2917, -0.2917, 1
+MA, 2062, 11.1294, 11.1294, 1
+MD, 978, -0.5257, -0.5257, 1
+NJ, 2096, 1.1431, 1.1431, 1
+NV, 576, -0.7252, -0.7252, 1
+NY, 997, 0.7309, 0.7309, 1
+PA, 616, -0.3821, -0.3821, 1
+TX, 1876, 2.0455, 2.0455, 1
+WA, 1190, -0.3657, -0.3657, 1

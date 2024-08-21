@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 7)
+Region, Week(Date), CalcField_state, Sum(Discount), Average(Total), Sum(Quantity Purchased), discrete_Sum(Discount)
+USA East, 2020-11-29 00:00:00, NY, 0, 2029, 79, 1.7
+USA East, 2020-12-06 00:00:00, MA, 1.6, 3029.5, 100, 1.7
+USA East, 2020-12-06 00:00:00, NY, 0, 1571.6667, 29, 1.7
+USA East, 2020-12-13 00:00:00, MA, 0, 1353.3846, 115, 1.7
+USA East, 2020-12-13 00:00:00, MD, 0, 2604.5, 22, 1.7
+USA East, 2020-12-20 00:00:00, NJ, 0.1, 21000, 7, 1.7
+USA East, 2020-12-27 00:00:00, FL, 0, 1873.5714, 54, 1.7
+USA East, 2020-12-27 00:00:00, MD, 0, 419.5, 19, 1.7
+USA West, 2020-12-13 00:00:00, AZ, 0, 4617.8333, 24, 1.7
+USA West, 2020-12-13 00:00:00, WA, 0, 656.25, 26, 1.7
+USA West, 2020-12-20 00:00:00, TX, 0, 1355, 72, 1.7
+USA West, 2020-12-20 00:00:00, WA, 0, 375, 5, 1.7

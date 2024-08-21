@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 4)
+Region, Day(Date), Sum(Quantity Purchased), Change from previous range of Day(Date): Sum(Quantity Purchased)
+USA East, 2021-10-22 00:00:00, 9, NULL
+USA East, 2021-10-23 00:00:00, 20, NULL
+USA East, 2021-10-24 00:00:00, 26, NULL
+USA East, 2021-10-26 00:00:00, 11, NULL
+USA East, 2021-10-27 00:00:00, 4, NULL
+USA East, 2021-11-21 00:00:00, 13, NULL
+USA East, 2021-11-22 00:00:00, 7, -2
+USA East, 2021-11-24 00:00:00, 9, -17
+USA East, 2021-11-25 00:00:00, 23, NULL
+USA East, 2021-11-26 00:00:00, 19, 8
+USA East, 2021-11-27 00:00:00, 2, -2
+USA West, 2021-10-21 00:00:00, 29, NULL
+USA West, 2021-10-22 00:00:00, 8, NULL
+USA West, 2021-10-26 00:00:00, 2, NULL
+USA West, 2021-10-27 00:00:00, 3, NULL
+USA West, 2021-11-21 00:00:00, 16, -13
+USA West, 2021-11-22 00:00:00, 17, 9
+USA West, 2021-11-23 00:00:00, 15, NULL
+USA West, 2021-11-24 00:00:00, 9, NULL
+USA West, 2021-11-27 00:00:00, 10, 7

@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 6)
+Month(order_date), reseller, Average(employee_id), First(customer_id, state), % of total: Average(employee_id), Change from previous Month(order_date): First(customer_id, state)
+2003-03-01, true, 3.5, 26, 0.0769, NULL
+2003-04-01, true, 3.2, 21, 0.0703, -5
+2003-05-01, true, 3.5, 20, 0.0769, -1
+2003-10-01, false, 3.5, 13, 0.0769, NULL
+2003-10-01, true, 3.3333, 20, 0.0732, NULL
+2003-12-01, false, 4, 9, 0.0878, NULL
+2003-12-01, true, 3.6667, 16, 0.0805, NULL
+2004-06-01, true, 4, 17, 0.0878, NULL
+2004-08-01, true, 3.3333, 16, 0.0732, NULL
+2004-09-01, false, 3.5, 9, 0.0769, NULL
+2004-09-01, true, 3.25, 7, 0.0714, -9
+2004-12-01, true, 3.25, 16, 0.0714, NULL
+2005-04-01, true, 3.5, 32, 0.0769, NULL

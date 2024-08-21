@@ -1,0 +1,11 @@
+The data size(row x col) is:(4 x 4)
+Week(Date), DataGroup(Date), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid)
+2018-11-11
+2020-11-08
+2021-11-07, 2018, 8, NULL
+2018-11-11
+2020-11-08
+2021-11-07, 2020, 9, 1
+2018-11-11
+2020-11-08
+2021-11-07, 2021, 5, -4

@@ -1,0 +1,61 @@
+The data size(row x col) is:(60 x 5)
+ORDERS.CUSTOMERS:EMPLOYEE_ID, ORDERS.CUSTOMERS:STATE, ORDERS.CUSTOMERS:CITY, Sum(ORDERS.CUSTOMERS:CUSTOMER_ID), Running Sum: Sum(ORDERS.CUSTOMERS:CUSTOMER_ID)
+2, CO, Boulder, 32, 32
+Others, CO, Boulder, 28, 28
+Others, CO, Denver, 64, 92
+2, CT, Hartford, 48, 48
+Others, CT, Hartford, 30, 30
+4, IL, Chicago, 80, 80
+4, MD, Baltimore, 45, 45
+Others, MD, Baltimore, 45, 45
+2, Others, Newark, 285, 285
+2, Others, Boston, 500, 785
+2, Others, York, 280, 1065
+2, Others, Camden, 135, 1200
+2, Others, Rockville, 140, 1340
+2, Others, Cambridge, 442, 1782
+2, Others, Middletown, 28, 1810
+2, Others, Plainfield, 420, 2230
+2, Others, Springfield, 360, 2590
+2, Others, Orlando, 96, 2686
+2, Others, New York, 231, 2917
+2, Others, Wayne, 8, 2925
+2, Others, New Brunswick, 275, 3200
+2, Others, Baltimore, 264, 3464
+4, Others, Denver, 96, 351
+4, Others, Tucson, 320, 671
+4, Others, Olympia, 493, 1164
+4, Others, Austin, 99, 1263
+4, Others, San Francisco, 108, 1371
+4, Others, Las Vegas, 256, 1627
+4, Others, New York, 255, 255
+4, Others, Los Angeles, 408, 2035
+4, Others, Seattle, 189, 2224
+4, Others, Dallas, 575, 2799
+4, Others, Albany, 208, 3007
+4, Others, Houston, 264, 3271
+Others, Others, Los Angeles, 327, 4517
+Others, Others, Rockville, 154, 1165
+Others, Others, Wayne, 8, 2600
+Others, Others, Dallas, 575, 5281
+Others, Others, Boston, 346, 555
+Others, Others, Newark, 209, 209
+Others, Others, San Francisco, 108, 3870
+Others, Others, Seattle, 189, 4706
+Others, Others, Houston, 220, 5565
+Others, Others, Chicago, 90, 5655
+Others, Others, Tucson, 120, 3300
+Others, Others, Austin, 143, 3762
+Others, Others, York, 336, 891
+Others, Others, New York, 511, 2592
+Others, Others, New Brunswick, 250, 2850
+Others, Others, Orlando, 144, 2081
+Others, Others, Baltimore, 330, 3180
+Others, Others, Albany, 64, 5345
+Others, Others, Camden, 120, 1011
+Others, Others, Middletown, 8, 1377
+Others, Others, Las Vegas, 320, 4190
+Others, Others, Plainfield, 350, 1727
+Others, Others, Olympia, 319, 3619
+Others, Others, Cambridge, 204, 1369
+Others, Others, Springfield, 210, 1937

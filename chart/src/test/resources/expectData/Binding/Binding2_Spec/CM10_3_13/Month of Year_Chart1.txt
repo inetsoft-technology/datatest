@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+MonthOfYear(ORDER_DATETIME), Sum(ORDER_ID)
+2, 823027
+3, 801203
+4, 823584
+8, 744424
+9, 879886
+Others, 4573226

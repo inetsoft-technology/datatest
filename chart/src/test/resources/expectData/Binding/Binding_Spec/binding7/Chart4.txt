@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 6)
+state, city, DistinctCount(address), Sum(contact id and customer id), Value of next: DistinctCount(address), Running Sum: Sum(contact id and customer id)
+CA, Albany, 1, 544, NULL, 544
+CA, Los Angeles, 2, 1470, NULL, 2014
+CA, San Francisco, 1, 432, NULL, 2446
+MA, Boston, 2, 1692, 1, 1692
+MA, Cambridge, 1, 1292, NULL, 2984
+MA, Springfield, 1, 1140, NULL, 4124
+TX, Austin, 1, 484, NULL, 484
+TX, Dallas, 2, 2300, 1, 2784
+TX, Houston, 1, 968, NULL, 3752
+NJ, Camden, 1, 510, NULL, 510
+NJ, Middletown, 1, 72, 1, 582
+NJ, New Brunswick, 1, 1050, 1, 1632
+NJ, Newark, 1, 988, NULL, 2620
+NJ, Plainfield, 1, 1540, NULL, 4160
+NJ, Wayne, 1, 32, NULL, 4192
+WA, Olympia, 1, 1624, NULL, 1624
+WA, Seattle, 1, 756, NULL, 2380

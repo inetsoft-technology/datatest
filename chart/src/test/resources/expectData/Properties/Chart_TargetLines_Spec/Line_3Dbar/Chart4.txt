@@ -1,0 +1,23 @@
+The data size(row x col) is:(22 x 6)
+state, city, Year(orderdate), Sum(customer_id), Sum(product_id), Running Sum: Sum(product_id)
+NY, Boomtown, 1999-01-01 00:00:00, 60, 34, 34
+NY, Littletown, 1997-01-01 00:00:00, 2, 7, 7
+NY, Littletown, 1998-01-01 00:00:00, 2, 13, 13
+NY, Littletown, 1999-01-01 00:00:00, 3, 6, 40
+NY, Littletown, 2000-01-01 00:00:00, 5, 47, 47
+NY, Long Island, 2000-01-01 00:00:00, 60, 32, 79
+NY, New York, 1998-01-01 00:00:00, 52, 18, 31
+NY, New York, 1999-01-01 00:00:00, 26, 20, 60
+NY, New York, 2000-01-01 00:00:00, 26, 30, 109
+CA, Los Angles, 1998-01-01 00:00:00, 10, 3, 3
+CA, Los Angles, 1999-01-01 00:00:00, 20, 11, 11
+CA, Los Angles, 2000-01-01 00:00:00, 40, 14, 14
+CA, San Francisco, 1998-01-01 00:00:00, 8, 19, 22
+CA, San Francisco, 2000-01-01 00:00:00, 24, 51, 65
+CA, San Jose, 1999-01-01 00:00:00, 42, 28, 39
+CA, San Jose, 2000-01-01 00:00:00, 56, 34, 99
+AK, Little Rock, 1999-01-01 00:00:00, 36, 37, 37
+AK, Little Rock, 2000-01-01 00:00:00, 60, 45, 45
+AK, Sevilla, 1998-01-01 00:00:00, 5, 8, 8
+AK, Sevilla, 1999-01-01 00:00:00, 20, 25, 62
+AK, Sevilla, 2000-01-01 00:00:00, 25, 49, 94

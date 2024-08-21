@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Week(Date), Category, Sum(Quantity Purchased)
+2021-09-05 00:00:00, Educational, 39
+2021-09-05 00:00:00, Graphics, 45
+2021-10-03 00:00:00, Business, 57
+2021-10-03 00:00:00, Graphics, 57
+2021-11-07 00:00:00, Business, 46
+2021-11-07 00:00:00, Graphics, 33

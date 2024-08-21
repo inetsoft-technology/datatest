@@ -1,0 +1,44 @@
+The data size(row x col) is:(43 x 12)
+Date, Paid, Region, State, City, Company, Reseller, Discount, Category, Name, Quantity Purchased, Total
+2019-05-01, 1, USA East, NJ, Newark, Software Specialists, 1, 0, Games, Web Bridge, 13, 1365
+2019-05-02, 1, USA East, NJ, Newark, Software Specialists, 1, 0, Games, Web Bridge, 18, 1890
+2019-05-03, 0, USA East, MA, Boston, World Software Resellers, 1, 0.05, Games, Web Bridge, 12, 1260
+2019-05-04, 1, USA West, CA, Los Angeles, Computer Tech, 1, 0, Games, Web Bridge, 18, 1890
+2019-05-05, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Games, Web Bridge, 2, 210
+2019-05-06, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Games, Web Bridge, 3, 315
+2019-05-07, 1, USA East, PA, York, Tricounty Auto, 0, 0, Games, Web Bridge, 2, 210
+2019-11-01, 0, USA West, AZ, Tucson, Folk Mining, 0, 0.2, Games, Combat Hero, 16, 464
+2019-11-02, 1, USA West, TX, Houston, Big Ed's BBQ, 0, 0, Games, Combat Hero, 9, 261
+2019-11-03, 1, USA West, CO, Denver, Quick Stop, 0, 0.15, Games, Combat Hero, 9, 261
+2019-11-04, 1, USA West, NV, Las Vegas, Tumbleweed Gaming, 0, 0, Games, Combat Hero, 9, 261
+2019-11-05, 0, USA West, TX, Austin, The Big Cat, 0, 0, Games, Combat Hero, 5, 145
+2019-11-06, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0, Games, Combat Hero, 20, 580
+2019-11-07, 0, USA East, NJ, Plainfield, Pharma Research, 0, 0, Games, Combat Hero, 14, 406
+2019-05-01, 1, USA East, MA, Cambridge, XO Resellers, 1, 0, Business, InsideView, 5, 625
+2019-05-02, 1, USA West, CA, Los Angeles, West Coast Customs, 0, 0.1, Business, InsideView, 10, 1250
+2019-05-03, 1, USA East, MD, Baltimore, FMG Consulting, 0, 0.1, Business, InsideView, 12, 1500
+2019-05-04, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Business, InsideView, 6, 750
+2019-05-05, 1, USA West, NV, Las Vegas, Tumbleweed Gaming, 0, 0, Business, InsideView, 14, 1750
+2019-05-06, 1, USA West, CA, Albany, Whittaker & Co, Inc, 0, 0, Business, InsideView, 6, 750
+2019-05-07, 1, USA East, MD, Rockville, InterLand Services, 0, 0, Business, InsideView, 11, 1375
+2019-11-01, 1, USA West, TX, Austin, The Big Cat, 0, 0, Business, MeToo AppServer, 18, 54000
+2019-11-02, 1, USA East, NJ, Newark, Software Specialists, 1, 0, Business, MeToo AppServer, 13, 39000
+2019-11-03, 1, USA East, MA, Springfield, AMG Logistics, 0, 0, Business, MeToo AppServer, 9, 27000
+2019-11-04, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0, Business, MeToo AppServer, 10, 30000
+2019-11-05, 1, USA West, NV, Las Vegas, Tumbleweed Gaming, 0, 0, Business, MeToo AppServer, 2, 6000
+2019-11-06, 1, USA West, TX, Austin, The Big Cat, 0, 0, Business, MeToo AppServer, 19, 57000
+2019-11-07, 1, USA East, MA, Boston, Ubermeyer, 0, 0, Business, MeToo AppServer, 19, 57000
+2019-05-01, 1, USA West, IL, Chicago, Specialty Retail, 1, 0, Hardware, Wireless Keyboard, 5, 200
+2019-05-02, 1, USA East, MA, Boston, Ubermeyer, 0, 0, Hardware, Wireless Keyboard, 18, 720
+2019-05-03, 1, USA West, WA, Olympia, Northwest Outfitters, 0, 0, Hardware, Wireless Keyboard, 15, 600
+2019-05-04, 1, USA West, CA, San Francisco, Direct Sales, 1, 0, Hardware, Wireless Keyboard, 1, 40
+2019-05-05, 1, USA West, TX, Austin, The Big Cat, 0, 0, Hardware, Wireless Keyboard, 13, 520
+2019-05-06, 1, USA East, NJ, Plainfield, Pharma Research, 0, 0, Hardware, Wireless Keyboard, 8, 320
+2019-05-07, 1, USA West, CO, Denver, Quick Stop, 0, 0, Hardware, Wireless Keyboard, 14, 560
+2019-11-01, 1, USA East, MA, Boston, World Software Resellers, 1, 0, Hardware, 17 Inch LCD, 2, 420
+2019-11-02, 1, USA West, CA, San Francisco, Direct Sales, 1, 0, Hardware, 17 Inch LCD, 7, 1470
+2019-11-03, 1, USA East, NJ, Wayne, Interstate Shop, 0, 0, Hardware, 17 Inch LCD, 2, 420
+2019-11-04, 1, USA East, NJ, Plainfield, Pharma Research, 0, 0, Hardware, 17 Inch LCD, 11, 2310
+2019-11-05, 1, USA East, NJ, Wayne, Interstate Shop, 0, 0, Hardware, 17 Inch LCD, 18, 3780
+2019-11-06, 0, USA West, CA, San Francisco, Direct Sales, 1, 0, Hardware, 17 Inch LCD, 14, 2940
+2019-11-07, 1, USA West, CA, San Francisco, Direct Sales, 1, 0, Hardware, 17 Inch LCD, 1, 210

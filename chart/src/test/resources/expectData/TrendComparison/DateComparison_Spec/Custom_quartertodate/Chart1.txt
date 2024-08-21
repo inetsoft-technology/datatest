@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+Quarter(Date), Sum(Quantity Purchased), Value of previous range of Quarter(Date): Sum(Quantity Purchased)
+2018-01-01 00:00:00, 1420, NULL
+2018-04-01 00:00:00, 1264, NULL
+2018-07-01 00:00:00, 1257, NULL
+2018-10-01 00:00:00, 1243, NULL
+2021-01-01 00:00:00, 834, 1420
+2021-04-01 00:00:00, 851, 1264
+2021-07-01 00:00:00, 866, 1257
+2021-10-01 00:00:00, 829, 1243

@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 4)
+RESELLER, STATE, Covariance(CUSTOMER_ID, CONTACT_ID), NthLargest(EMPLOYEE_ID, 1)
+true, AZ, 0, 4
+true, CA, 6.1473, 4
+true, CO, 0, 4
+true, CT, 0, 2
+true, FL, 0, 2
+true, MA, 35.5133, 2
+true, MD, 129.6066, 4
+true, NJ, 177.5088, 2
+true, NV, 0, 4
+true, NY, 61.8693, 4
+true, PA, 0, 2
+true, TX, 56.2222, 4
+true, WA, 0, 4
+false, CA, 3.9822, 4
+false, CO, 0, 2
+false, IL, 0, 4
+false, MA, 30.2279, 2
+false, NJ, 0, 2
+false, WA, 0, 4

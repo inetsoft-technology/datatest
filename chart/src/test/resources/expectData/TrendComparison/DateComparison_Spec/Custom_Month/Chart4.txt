@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Month(Date), Sum(Quantity Purchased), Value of previous range of Month(Date): Sum(Quantity Purchased)
+2021-05-01 00:00:00, 684, NULL
+2021-09-01 00:00:00, 625, NULL
+2021-11-01 00:00:00, 674, 625

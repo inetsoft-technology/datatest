@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 6)
+Year(order_date), paid, reseller, Last(order_id, address), discrete_Last(order_id, address), value
+2002-01-01, false, false, 12157, 12103, 1
+2002-01-01, false, true, 12103, 12103, 1
+2002-01-01, true, false, 12059, 12104, 1
+2002-01-01, true, true, 12104, 12104, 1
+2003-01-01, false, false, 12358, 12289, 1
+2003-01-01, false, true, 12289, 12289, 1
+2003-01-01, true, true, 12322, 12322, 1
+2004-01-01, false, false, 12528, 12401, 1
+2004-01-01, false, true, 12401, 12401, 1
+2004-01-01, true, false, 12427, 12502, 1
+2004-01-01, true, true, 12502, 12502, 1
+2005-01-01, false, false, 12661, 12685, 1
+2005-01-01, false, true, 12685, 12685, 1
+2005-01-01, true, false, 12598, 12575, 1
+2005-01-01, true, true, 12575, 12575, 1

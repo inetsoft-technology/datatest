@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 7)
+MonthOfQuarter(Date), Year(Date), QuarterOfYear(Date), Sum(Paid), Sum(Quantity Purchased), Change from previous year of Year(Date): Sum(Paid), Change from previous year of Year(Date): Sum(Quantity Purchased)
+1-2, 2018-01-01 00:00:00, 1, 69, 990, NULL, NULL
+1-2, 2019-01-01 00:00:00, 1, 76, 843, 7, -147
+1-2, 2020-01-01 00:00:00, 1, 76, 894, 0, 51
+2-2, 2018-01-01 00:00:00, 2, 84, 958, NULL, NULL
+2-2, 2019-01-01 00:00:00, 2, 87, 965, 3, 7
+2-2, 2020-01-01 00:00:00, 2, 81, 1005, -6, 40
+3-2, 2018-01-01 00:00:00, 3, 80, 945, NULL, NULL
+3-2, 2019-01-01 00:00:00, 3, 83, 959, 3, 14
+3-2, 2020-01-01 00:00:00, 3, 85, 992, 2, 33
+4-2, 2018-01-01 00:00:00, 4, 28, 308, NULL, NULL
+4-2, 2019-01-01 00:00:00, 4, 22, 316, -6, 8
+4-2, 2020-01-01 00:00:00, 4, 25, 308, 3, -8

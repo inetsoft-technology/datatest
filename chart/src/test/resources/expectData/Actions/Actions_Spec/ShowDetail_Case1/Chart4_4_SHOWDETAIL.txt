@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 10)
+DataGroup(state), ColorGroup(state), reseller, customer_id, M, company_name, address, city, state, zip
+C_state, C_state, 1, 4, 7, Ernst Handel, 88 Rio Grand Ave., Boulder, CO, 38923
+C_state, C_state, 0, 6, 9, Loctite Corp., 5 Baker's Lane, Hartford, CT, 39283
+C_state, C_state, 0, 8, 11, Quick Stop, 71 Mulberry St., Denver, CO, 98839
+C_state, C_state, 1, 9, 12, Direct Sales, 4500 River Rd., San Francisco, CA, 08854
+C_state, C_state, 1, 13, 16, Computer Tech, 90 First Ave., Los Angeles, CA, 11223
+C_state, C_state, 0, 16, 19, Whittaker & Co, Inc, 44 Islander Lane, Albany, CA, 83923
+C_state, C_state, 0, 21, 24, West Coast Customs, 460 Newcomb Dr., Los Angeles, CA, 73646

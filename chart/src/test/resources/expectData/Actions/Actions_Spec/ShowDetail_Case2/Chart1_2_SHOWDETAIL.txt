@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 12)
+Date, Region, Quantity Purchased, State, City, Company, Reseller, Paid, Discount, Category, Name, Total
+2018-09-10, USA West, 3, CA, San Francisco, Direct Sales, 1, 1, 0, Games, Fast Go Game, 600
+2018-09-15, USA East, 14, MA, Cambridge, XO Resellers, 1, 0, 0, Games, Fast Go Game, 2800
+2018-09-15, USA East, 15, MD, Baltimore, George Services, 0, 0, 0, Office Tools, Info Folder, 5985
+2018-09-10, USA West, 20, TX, Dallas, BigMart Foodstores, 0, 1, 0, Office Tools, WebCalendar, 4960

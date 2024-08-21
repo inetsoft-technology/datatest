@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+Week(Date), Category, Sum(Quantity Purchased), Change from previous year of Week(Date): Sum(Quantity Purchased)
+2019-11-03 00:00:00, Business, 40, NULL
+2019-11-03 00:00:00, Games, 43, 17
+2019-11-03 00:00:00, Hardware, 45, 11
+2020-11-01 00:00:00, Educational, 26, NULL
+2020-11-01 00:00:00, Hardware, 64, 19
+2020-11-01 00:00:00, Personal, 34, NULL
+2021-11-07 00:00:00, Business, 46, NULL
+2021-11-07 00:00:00, Graphics, 33, NULL

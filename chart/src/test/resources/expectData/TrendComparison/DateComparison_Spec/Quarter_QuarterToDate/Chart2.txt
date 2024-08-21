@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 5)
+MonthOfQuarter(Date), Quarter(Date), Sum(Quantity Purchased), Sum(Paid), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased)
+1, 2020-10-01 00:00:00, 917, 80, NULL
+1, 2021-01-01 00:00:00, 592, 55, -325
+1, 2021-04-01 00:00:00, 624, 49, 32
+1, 2021-07-01 00:00:00, 622, 54, -2

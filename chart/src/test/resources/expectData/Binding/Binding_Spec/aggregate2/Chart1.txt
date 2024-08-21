@@ -1,0 +1,35 @@
+The data size(row x col) is:(34 x 7)
+first_name, DistinctCount(order_date), Product(region_id), DistinctCount(CalcField1), Moving Average of 5: DistinctCount(order_date), Value of previous: Product(region_id), Running Sum: DistinctCount(CalcField1)
+Amy, 21, 4194304, 1, 19.6667, NULL, 1
+Anna, 25, 1, 1, 19.5, 4194304, 2
+Aria, 13, 1, 1, 19, 1, 3
+Bill, 19, 1, 1, 20, 1, 4
+Chris, 17, 262144, 1, 18.8, 1, 5
+Eduardo, 26, 1, 1, 19.2, 262144, 6
+Fran, 19, 1, 1, 19.4, 1, 7
+Gary, 15, 1, 1, 19.6, 1, 8
+George, 20, 1, 1, 17.8, 1, 9
+Gilbert, 18, 262144, 1, 18.2, 1, 10
+Giovanni, 17, 131072, 1, 19.4, 262144, 11
+Horst, 21, 1, 1, 19.8, 131072, 12
+Howard, 21, 1, 1, 19.8, 1, 13
+Janine, 22, 4194304, 1, 20.4, 1, 14
+Jason, 18, 1, 1, 19, 4194304, 15
+Jean, 20, 2097152, 1, 18, 1, 16
+Jill, 14, 16384, 1, 17.8, 2097152, 17
+John, 16, 1, 1, 17.8, 16384, 18
+Lino, 21, 1, 1, 18.4, 1, 19
+Lisa, 18, 1, 1, 20.2, 1, 20
+Luke, 23, 16777216, 1, 24.4, 1, 21
+Marie, 23, 16777216, 1, 24.6, 16777216, 22
+Michael, 37, 4194304, 1, 25.4, 16777216, 23
+Nick, 22, 4194304, 1, 25.2, 4194304, 24
+Nicole, 22, 1, 1, 23.6, 4194304, 25
+Pat, 22, 1, 1, 19.6, 1, 26
+Patrico, 15, 1, 1, 19.2, 1, 27
+Paula, 17, 1, 1, 19.6, 1, 28
+Richard, 20, 1048576, 1, 18.6, 1, 29
+Roland, 24, 1, 1, 19.2, 1048576, 30
+Simon, 17, 131072, 1, 20.2, 1, 31
+Steven, 18, 262144, 1, 20.25, 131072, 32
+William, 22, 4194304, 1, 19, 262144, 33

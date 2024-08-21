@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+HourOfDay(order_time), Sum(contact_id), WeightedAverage(customer_id, contact_id), Sum(employee_id), Change from previous HourOfDay(order_time): WeightedAverage(customer_id, contact_id), Moving Average of 3: Sum(employee_id)
+5, 669, 20.9552, 117, NULL, 88.6667
+7, 537, 23.3203, 77, 2.3651, NULL
+1, 438, 22.1826, 82, -1.1376, NULL
+2, 426, 21.9484, 72, -0.2343, 90.3333

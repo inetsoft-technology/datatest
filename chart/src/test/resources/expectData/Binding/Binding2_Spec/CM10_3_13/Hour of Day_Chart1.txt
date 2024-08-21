@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+HourOfDay(ORDER_DATETIME), Sum(ORDER_ID)
+1, 863549
+2, 838922
+5, 1504292
+7, 678629
+11, 1494667
+Others, 3265291

@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 4)
+Category, MonthOfYear(Month(Date)_1), Sum(TotalReturned), Moving Average of 9: Sum(TotalReturned)
+Hardware, NULL, NULL, NULL
+Hardware, 1, 62980, NULL
+Hardware, 2, 48000, NULL
+Hardware, 3, 856550, NULL
+Hardware, 4, 1948960, 581372.5
+Hardware, 5, 141040, 536604.4444
+Hardware, 6, 298080, 530068.8889
+Hardware, 7, 12870, 548421.1111
+Hardware, 8, 1282500, 468391.1111
+Hardware, 9, 178460, NULL
+Hardware, 10, 4160, NULL
+Hardware, 11, 213170, NULL
+Hardware, 12, 136280, NULL
+Business, NULL, NULL, NULL
+Business, 1, 6000, NULL
+Business, 2, 142625, NULL
+Business, 3, 22375, NULL
+Business, 4, 542000, 311343.75
+Business, 6, 801875, 294750
+Business, 7, 286500, 384013.8889
+Business, 8, 15750, 392416.6667
+Business, 9, 673625, NULL
+Business, 10, 162000, NULL
+Business, 11, 809375, NULL
+Business, 12, 218250, NULL

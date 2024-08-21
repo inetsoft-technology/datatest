@@ -1,0 +1,32 @@
+The data size(row x col) is:(31 x 4)
+REGION_ID.REGION_ID, REGION_ID.STATE, REGION_ID.CITY, EMPLOYEE_ID
+1, NJ, Camden, 17
+1, NJ, Middletown, 18
+1, NJ, New Brunswick, 21
+1, NJ, Newark, 26
+1, NJ, Plainfield, 22
+1, NJ, Wayne, 16
+1, MD, Baltimore, 18
+1, MD, Rockville, 21
+1, CO, Boulder, 15
+1, CT, Hartford, 13
+1, FL, Orlando, 20
+1, MA, Boston, 42
+1, MA, Cambridge, 19
+1, MA, Springfield, 19
+1, NY, New York, 62
+1, PA, York, 22
+2, MD, Baltimore, 18
+2, AZ, Tucson, 22
+2, CA, Albany, 17
+2, CA, Los Angeles, 43
+2, CA, San Francisco, 24
+2, CO, Denver, 20
+2, IL, Chicago, 17
+2, NV, Las Vegas, 18
+2, NY, New York, 24
+2, TX, Austin, 22
+2, TX, Dallas, 40
+2, TX, Houston, 22
+2, WA, Olympia, 28
+2, WA, Seattle, 14

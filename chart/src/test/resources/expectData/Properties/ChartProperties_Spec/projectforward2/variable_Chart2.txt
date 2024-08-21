@@ -1,0 +1,214 @@
+The data size(row x col) is:(213 x 6)
+reseller, DayOfWeek(orderdate), state, product_name, Sum(customer_id), Sum(product_id)
+false, 1, AK, NULL, 12, NULL
+false, 1, FL, NULL, 34, NULL
+false, 1, NJ, NULL, 7, NULL
+false, 1, NY, NULL, 13, NULL
+false, 1, PA, NULL, 12, NULL
+false, 2, AK, NULL, 5, NULL
+false, 2, CA, NULL, 8, NULL
+false, 2, FL, NULL, 16, NULL
+false, 2, NJ, NULL, 9, NULL
+false, 2, NY, NULL, 27, NULL
+false, 2, PA, NULL, 12, NULL
+false, 3, AK, NULL, 27, NULL
+false, 3, CA, NULL, 8, NULL
+false, 3, NJ, NULL, 4, NULL
+false, 3, NY, NULL, 13, NULL
+false, 3, OH, NULL, 11, NULL
+false, 3, PA, NULL, 8, NULL
+false, 4, AK, NULL, 29, NULL
+false, 4, FL, NULL, 16, NULL
+false, 4, NJ, NULL, 14, NULL
+false, 4, NY, NULL, 53, NULL
+false, 4, OH, NULL, 11, NULL
+false, 4, PA, NULL, 16, NULL
+false, 5, AK, NULL, 10, NULL
+false, 5, NJ, NULL, 7, NULL
+false, 5, NY, NULL, 46, NULL
+false, 5, OH, NULL, 11, NULL
+false, 6, AK, NULL, 17, NULL
+false, 6, NJ, NULL, 13, NULL
+false, 6, NY, NULL, 1, NULL
+false, 6, OH, NULL, 11, NULL
+false, 6, PA, NULL, 8, NULL
+false, 7, AK, NULL, 29, NULL
+false, 7, CA, NULL, 8, NULL
+false, 7, NY, NULL, 13, NULL
+false, 7, PA, NULL, 8, NULL
+true, 1, CA, NULL, 38, NULL
+true, 1, I, NULL, 9, NULL
+true, 1, IL, NULL, 12, NULL
+true, 1, NY, NULL, 31, NULL
+true, 2, CA, NULL, 20, NULL
+true, 2, IL, NULL, 6, NULL
+true, 2, NY, NULL, 16, NULL
+true, 2, TX, NULL, 3, NULL
+true, 3, CA, NULL, 10, NULL
+true, 3, IL, NULL, 6, NULL
+true, 3, NY, NULL, 15, NULL
+true, 3, PA, NULL, 19, NULL
+true, 3, TX, NULL, 6, NULL
+true, 4, I, NULL, 18, NULL
+true, 4, NY, NULL, 2, NULL
+true, 5, CA, NULL, 28, NULL
+true, 5, I, NULL, 27, NULL
+true, 5, IL, NULL, 12, NULL
+true, 5, NY, NULL, 2, NULL
+true, 5, TX, NULL, 3, NULL
+true, 6, CA, NULL, 24, NULL
+true, 6, IL, NULL, 12, NULL
+true, 6, NY, NULL, 1, NULL
+true, 6, TX, NULL, 6, NULL
+true, 7, CA, NULL, 38, NULL
+true, 7, I, NULL, 18, NULL
+true, 7, NY, NULL, 3, NULL
+true, 7, TX, NULL, 20, NULL
+false, 1, NULL, House Hunter, 16, 5
+false, 1, NULL, Sync Me, 22, 14
+false, 1, NULL, True Action, 19, 18
+false, 2, NULL, InsideView, 13, 2
+false, 2, NULL, House Hunter, 13, 5
+false, 2, NULL, Green Planet, 20, 8
+false, 3, NULL, House Hunter, 12, 5
+false, 3, NULL, Math for Me, 19, 38
+false, 3, NULL, MeToo AppServer, 13, 12
+false, 4, NULL, WebCalendar, 16, 8
+false, 4, NULL, Barbie's Fashion, 20, 20
+false, 4, NULL, Easy Chess, 40, 39
+false, 5, NULL, WebCalendar, 13, 8
+false, 5, NULL, Xconnect Server, 20, 1
+false, 5, NULL, Animal World, 13, 17
+false, 6, NULL, InsideView, 9, 4
+false, 6, NULL, Sync Me, 12, 7
+false, 6, NULL, Learn ABC, 11, 18
+false, 7, NULL, InsideView, 17, 4
+false, 7, NULL, Info Folder, 13, 3
+false, 7, NULL, Learn ABC, 12, 18
+true, 1, NULL, Info Folder, 31, 9
+true, 1, NULL, Barbie's Fashion, 14, 20
+true, 1, NULL, Math for Me, 15, 19
+true, 2, NULL, Sync Me, 15, 7
+true, 2, NULL, Fast Mail, 10, 6
+true, 2, NULL, True Action, 10, 9
+true, 3, NULL, WebCalendar, 19, 8
+true, 3, NULL, Info Folder, 21, 6
+true, 3, NULL, Green Planet, 13, 8
+true, 4, NULL, Barbie's Fashion, 10, 40
+true, 4, NULL, Math for Me, 9, 19
+true, 4, NULL, Green Planet, 1, 4
+true, 5, NULL, InsideView, 24, 6
+true, 5, NULL, House Hunter, 15, 10
+true, 5, NULL, Fast Mail, 17, 12
+true, 6, NULL, InsideView, 10, 2
+true, 6, NULL, WebCalendar, 23, 24
+true, 6, NULL, Fast Mail, 6, 6
+true, 7, NULL, InsideView, 18, 4
+true, 7, NULL, Fast Mail, 14, 6
+true, 7, NULL, Web Bridge, 23, 30
+false, 1, NULL, House Hunter, 16, 5
+false, 1, NULL, Sync Me, 22, 14
+false, 1, NULL, True Action, 19, 18
+false, 1, AK, NULL, 12, NULL
+false, 1, FL, NULL, 34, NULL
+false, 1, NJ, NULL, 7, NULL
+false, 1, NY, NULL, 13, NULL
+false, 1, PA, NULL, 12, NULL
+false, 2, NULL, House Hunter, 13, 5
+false, 2, NULL, InsideView, 13, 2
+false, 2, NULL, Green Planet, 20, 8
+false, 2, AK, NULL, 5, NULL
+false, 2, CA, NULL, 8, NULL
+false, 2, FL, NULL, 16, NULL
+false, 2, NJ, NULL, 9, NULL
+false, 2, NY, NULL, 27, NULL
+false, 2, PA, NULL, 12, NULL
+false, 3, NULL, House Hunter, 12, 5
+false, 3, NULL, Math for Me, 19, 38
+false, 3, NULL, MeToo AppServer, 13, 12
+false, 3, AK, NULL, 27, NULL
+false, 3, CA, NULL, 8, NULL
+false, 3, NJ, NULL, 4, NULL
+false, 3, NY, NULL, 13, NULL
+false, 3, OH, NULL, 11, NULL
+false, 3, PA, NULL, 8, NULL
+false, 4, NULL, Easy Chess, 40, 39
+false, 4, NULL, WebCalendar, 16, 8
+false, 4, NULL, Barbie's Fashion, 20, 20
+false, 4, AK, NULL, 29, NULL
+false, 4, FL, NULL, 16, NULL
+false, 4, NJ, NULL, 14, NULL
+false, 4, NY, NULL, 53, NULL
+false, 4, OH, NULL, 11, NULL
+false, 4, PA, NULL, 16, NULL
+false, 5, NULL, WebCalendar, 13, 8
+false, 5, NULL, Xconnect Server, 20, 1
+false, 5, NULL, Animal World, 13, 17
+false, 5, AK, NULL, 10, NULL
+false, 5, NJ, NULL, 7, NULL
+false, 5, NY, NULL, 46, NULL
+false, 5, OH, NULL, 11, NULL
+false, 6, NULL, InsideView, 9, 4
+false, 6, NULL, Sync Me, 12, 7
+false, 6, NULL, Learn ABC, 11, 18
+false, 6, AK, NULL, 17, NULL
+false, 6, NJ, NULL, 13, NULL
+false, 6, NY, NULL, 1, NULL
+false, 6, OH, NULL, 11, NULL
+false, 6, PA, NULL, 8, NULL
+false, 7, NULL, InsideView, 17, 4
+false, 7, NULL, Learn ABC, 12, 18
+false, 7, NULL, Info Folder, 13, 3
+false, 7, AK, NULL, 29, NULL
+false, 7, CA, NULL, 8, NULL
+false, 7, NY, NULL, 13, NULL
+false, 7, PA, NULL, 8, NULL
+true, 1, NULL, Info Folder, 31, 9
+true, 1, NULL, Barbie's Fashion, 14, 20
+true, 1, NULL, Math for Me, 15, 19
+true, 1, CA, NULL, 38, NULL
+true, 1, I, NULL, 9, NULL
+true, 1, IL, NULL, 12, NULL
+true, 1, NY, NULL, 31, NULL
+true, 2, NULL, Fast Mail, 10, 6
+true, 2, NULL, Sync Me, 15, 7
+true, 2, NULL, True Action, 10, 9
+true, 2, CA, NULL, 20, NULL
+true, 2, IL, NULL, 6, NULL
+true, 2, NY, NULL, 16, NULL
+true, 2, TX, NULL, 3, NULL
+true, 3, NULL, Info Folder, 21, 6
+true, 3, NULL, WebCalendar, 19, 8
+true, 3, NULL, Green Planet, 13, 8
+true, 3, CA, NULL, 10, NULL
+true, 3, IL, NULL, 6, NULL
+true, 3, NY, NULL, 15, NULL
+true, 3, PA, NULL, 19, NULL
+true, 3, TX, NULL, 6, NULL
+true, 4, NULL, Barbie's Fashion, 10, 40
+true, 4, NULL, Math for Me, 9, 19
+true, 4, NULL, Green Planet, 1, 4
+true, 4, I, NULL, 18, NULL
+true, 4, NY, NULL, 2, NULL
+true, 5, NULL, InsideView, 24, 6
+true, 5, NULL, Fast Mail, 17, 12
+true, 5, NULL, House Hunter, 15, 10
+true, 5, CA, NULL, 28, NULL
+true, 5, I, NULL, 27, NULL
+true, 5, IL, NULL, 12, NULL
+true, 5, NY, NULL, 2, NULL
+true, 5, TX, NULL, 3, NULL
+true, 6, NULL, InsideView, 10, 2
+true, 6, NULL, Fast Mail, 6, 6
+true, 6, NULL, WebCalendar, 23, 24
+true, 6, CA, NULL, 24, NULL
+true, 6, IL, NULL, 12, NULL
+true, 6, NY, NULL, 1, NULL
+true, 6, TX, NULL, 6, NULL
+true, 7, NULL, InsideView, 18, 4
+true, 7, NULL, Fast Mail, 14, 6
+true, 7, NULL, Web Bridge, 23, 30
+true, 7, CA, NULL, 38, NULL
+true, 7, I, NULL, 18, NULL
+true, 7, NY, NULL, 3, NULL
+true, 7, TX, NULL, 20, NULL

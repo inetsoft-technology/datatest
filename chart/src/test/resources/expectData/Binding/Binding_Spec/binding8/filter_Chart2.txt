@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Customer.Country.Country, Customer.Gender.Gender, Internet Extended Amount
+Australia, Female, 3318036.5103
+France, Female, 817527.546
+United Kingdom, Female, 1067632.6617

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+QuarterOfYear(ORDER_DATETIME), Sum(ORDER_ID)
+1, 2349241
+2, 2245822
+3, 2354060
+4, 1696227

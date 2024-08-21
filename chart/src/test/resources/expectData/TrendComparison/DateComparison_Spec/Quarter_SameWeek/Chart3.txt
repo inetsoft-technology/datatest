@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 6)
+WeekOfMonth(Date), Category, QuarterOfWeek(Date), MonthOfQuarterOfWeek(Date), Sum(Paid), Change from previous quarter of QuarterOfWeek(Date): Sum(Paid)
+1-5, Educational, 2020-10-01 00:00:00, 1, 4, NULL
+1-5, Educational, 2021-01-01 00:00:00, 1, 7, 3
+1-5, Educational, 2021-07-01 00:00:00, 1, 7, NULL
+1-5, Hardware, 2020-10-01 00:00:00, 1, 7, NULL
+1-5, Personal, 2020-10-01 00:00:00, 1, 5, NULL
+1-5, Personal, 2021-01-01 00:00:00, 1, 7, 2
+1-5, Personal, 2021-07-01 00:00:00, 1, 6, NULL
+2-5, Educational, 2020-10-01 00:00:00, 2, 6, NULL
+2-5, Educational, 2021-01-01 00:00:00, 2, 6, 0
+2-5, Educational, 2021-07-01 00:00:00, 2, 6, NULL
+2-5, Graphics, 2021-07-01 00:00:00, 2, 5, NULL
+2-5, Hardware, 2020-10-01 00:00:00, 2, 7, NULL
+2-5, Personal, 2020-10-01 00:00:00, 2, 6, NULL
+2-5, Personal, 2021-01-01 00:00:00, 2, 7, 1
+3-5, Educational, 2020-10-01 00:00:00, 3, 7, NULL
+3-5, Educational, 2021-04-01 00:00:00, 3, 6, NULL
+3-5, Personal, 2020-10-01 00:00:00, 3, 7, NULL
+3-5, Personal, 2021-04-01 00:00:00, 3, 7, NULL

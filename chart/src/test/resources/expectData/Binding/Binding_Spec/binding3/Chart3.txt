@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 5)
+CalcField3, Count(order_datetime), CalcField2, NthMostFrequent(CalcField1, 1), Change from previous: NthMostFrequent(CalcField1, 1)
+false, 626, 626, 1, NULL
+true, 74, 74, 3, 2

@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 4)
+RESELLER, STATE, Average(CUSTOMER_ID), % of subtotal: Average(CUSTOMER_ID)
+NULL, NULL, NULL, NULL
+false, MA, 28.5, 0.3826
+false, WA, 27, 0.3624
+false, NJ, 19, 0.255
+true, NV, 32, 0.3596
+true, WA, 29, 0.3258
+true, PA, 28, 0.3146

@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 5)
+MonthOfQuarter(Date), Category, Quarter(Date), Sum(Quantity Purchased), Sum(Paid)
+1, Educational, 2021-04-01 00:00:00, 313, 23
+1, Educational, 2021-07-01 00:00:00, 290, 28
+1, Personal, 2021-04-01 00:00:00, 311, 26
+1, Personal, 2021-07-01 00:00:00, 351, 28
+2, Educational, 2021-04-01 00:00:00, 98, 7
+2, Educational, 2021-07-01 00:00:00, 111, 8
+2, Personal, 2021-04-01 00:00:00, 129, 10
+2, Personal, 2021-07-01 00:00:00, 114, 9

@@ -1,0 +1,11 @@
+The data size(row x col) is:(7 x 4)
+DataGroup(Date), Month(Date), Sum(Paid), % Change from previous range of DataGroup(Date): Sum(Paid)
+2018, 10月, 26, NULL
+2018, 11月, 28, NULL
+2018, 12月, 27, NULL
+2021, 10月
+10月, 19, -0.2692
+2021, 11月
+11月, 18, -0.3571
+2021, 12月
+12月, 20, -0.2593

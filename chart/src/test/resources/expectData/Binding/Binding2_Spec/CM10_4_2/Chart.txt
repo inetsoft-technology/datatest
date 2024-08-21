@@ -1,0 +1,66 @@
+The data size(row x col) is:(65 x 15)
+D3, D4, D1, D2, D5, D6, Sum(M2), Sum(M1), Sum(M7), Sum(M8), Sum(M9), Sum(M3), Sum(M4), Sum(M5), Sum(M6)
+AK, Base Period, FALSE, AA, NJ, USA, 243, 12, 6, 25, 16, 0.69, 9, 15, 3
+AK, Base Period, FALSE, BB, NY, United Kingdom, 14, 6, 25, 15, 14, 0.5, 317, 25, 4
+AK, Comparison Period, FALSE, AA, NJ, Unknown, 243, 12, 6, 25, 15, 0.69, 9, 15, 13
+AK, Comparison Period, FALSE, BB, NY, Italy, 14, 6, 25, 15, 14, 0.5, 317, 15, 4
+AK, Base Period, TRUE, AA, IL, Switzerland, 13, 35, 6, 4, 13, 0, 34, 25, 15
+AK, Base Period, TRUE, BB, CA, Unknown, 12, 85, 15, 42875, 12, 0, 115, 2, 1
+AK, Comparison Period, TRUE, AA, IL, Canada, 13, 35, 6, 125, 13, 0, 9, 25, 5
+AK, Comparison Period, TRUE, BB, CA, USA, 12, 85, 3, 42, 12, 0, 185, 45, 5
+AZ, Base Period, FALSE, AA, TX, Canada, 243, 9, 25, 25, 17, 1.25, 9, 1, 25
+AZ, Base Period, FALSE, BB, NY, USA, 15, 21, 2, 175, 15, 0.15, 235, 15, 15
+AZ, Comparison Period, FALSE, AA, TX, Switzerland, 243, 9, 25, 25, 17, 1.25, 9, 25, 2
+AZ, Comparison Period, FALSE, BB, NY, Unknown, 15, 21, 2, 1, 15, 0.15, 235, 15, 2
+AZ, Base Period, TRUE, AA, AZ, United Kingdom, 14, 9, 2, 75, 14, 0.5, 317, 15, 15
+AZ, Base Period, TRUE, BB, NC, Canada, 13, 235, 5, 1, 13, 0, 9, 5, 25
+AZ, Comparison Period, TRUE, AA, AZ, Italy, 14, 9, 2, 75, 14, 0.5, 317, 75, 125
+AZ, Comparison Period, TRUE, BB, NC, Switzerland, 13, 235, 2, 25, 13, 0, 9, 45, 15
+CC, Base Period, FALSE, AA, NC, Unknown, 243, 9, 135, 135, 17, 1.25, 9, 15, 2
+CC, Base Period, FALSE, BB, NY, Italy, 15, 35, 2, 25, 15, 0.15, 9, 75, 15
+CC, Comparison Period, FALSE, AA, NC, USA, 243, 9, 135, 135, 18, 1.25, 34, 15, 35
+CC, Comparison Period, FALSE, BB, NY, United Kingdom, 15, 35, 2, 175, 15, 0.15, 9, 75, 15
+CC, Base Period, TRUE, AA, NY, Canada, 14, 85, 3, 75, 14, 0.5, 317, 75, 125
+CC, Base Period, TRUE, BB, IL, Unknown, 13, 9, 2, 25, 13, 0, 9, 45, 15
+CC, Base Period, TRUE, BB, IL, USA, 13, 9, 8, 15, 13, 0, 9, 25, 75
+CC, Comparison Period, TRUE, AA, NY, Switzerland, 14, 85, 3, 2, 14, 0.5, 317, 1, 4
+CO, Base Period, FALSE, AA, TX, Unknown, 243, 9, 75, 75, 16, 0.69, 34, 15, 1
+CO, Base Period, FALSE, BB, NY, Italy, 15, 235, 1, 25, 15, 0.15, 317, 75, 75
+CO, Base Period, FALSE, BB, NY, United Kingdom, 15, 235, 1, 3, 14, 0.5, 317, 75, 75
+CO, Comparison Period, FALSE, AA, TX, USA, 243, 9, 75, 75, 16, 0.69, 34, 15, 175
+CO, Base Period, TRUE, AA, OR, Switzerland, 14, 22, 3, 15, 14, 0.5, 14, 5, 25
+CO, Base Period, TRUE, BB, TX, Unknown, 12, 75, 2, 15, 11, 0, 185, 45, 25
+CO, Comparison Period, TRUE, AA, OR, Canada, 14, 22, 3, 4, 13, 0.5, 14, 75, 1
+CO, Comparison Period, TRUE, BB, TX, USA, 12, 75, 85, 75, 13, 0, 235, 1, 25
+ER, Base Period, FALSE, AA, IL, United Kingdom, 243, 9, 15, 15, 18, 1.25, 34, 75, 35
+ER, Base Period, FALSE, BB, NY, Switzerland, 243, 25, 314, 25, 15, 0.15, 9, 25, 13
+ER, Comparison Period, FALSE, AA, IL, Italy, 243, 9, 15, 15, 18, 1.25, 34, 75, 15
+ER, Comparison Period, FALSE, BB, NY, Canada, 15, 25, 314, 25, 15, 0.15, 9, 1, 15
+ER, Base Period, TRUE, AA, NY, Unknown, 14, 3, 1, 2, 14, 0.5, 317, 1, 4
+ER, Base Period, TRUE, BB, IL, Italy, 13, 21, 2, 125, 13, 0, 9, 25, 5
+ER, Comparison Period, TRUE, AA, NY, USA, 14, 3, 1, 15, 14, 0.5, 317, 25, 4
+ER, Comparison Period, TRUE, BB, IL, United Kingdom, 13, 21, 8, 15, 13, 0, 9, 25, 75
+NJ, Base Period, FALSE, AA, CA, Italy, 243, 22, 11, 25, 16, 0.69, 9, 75, 25
+NJ, Base Period, FALSE, BB, NY, Canada, 14, 75, 8, 15, 14, 0.5, 317, 15, 4
+NJ, Comparison Period, FALSE, AA, CA, United Kingdom, 243, 22, 11, 25, 16, 0.69, 9, 75, 3
+NJ, Comparison Period, FALSE, BB, NY, Switzerland, 14, 75, 8, 13, 14, 0.5, 317, 25, 15
+NJ, Base Period, TRUE, AA, IL, USA, 13, 25, 1, 4, 13, 0, 34, 15, 75
+NJ, Base Period, TRUE, BB, CA, United Kingdom, 12, 3, 3, 118, 12, 0, 185, 45, 5
+NJ, Comparison Period, TRUE, AA, IL, Unknown, 13, 25, 1, 4, 13, 0, 34, 25, 15
+NJ, Comparison Period, TRUE, BB, CA, Italy, 12, 3, 125, 118, 11, 0, 185, 15, 45
+NY, Base Period, FALSE, AA, CA, Canada, 243, 5, 8, 525, 16, 0.69, 34, 5, 25
+NY, Base Period, FALSE, BB, NY, Unknown, 15, 5, 25, 13, 14, 0.5, 317, 15, 15
+NY, Comparison Period, FALSE, AA, CA, Switzerland, 243, 5, 8, 25, 16, 0.69, 34, 5, 1
+NY, Comparison Period, FALSE, BB, NY, USA, 15, 5, 25, 3, 14, 0.5, 317, 15, 75
+NY, Base Period, TRUE, AA, OR, Italy, 14, 12, 2, 4, 13, 0, 14, 75, 1
+NY, Base Period, TRUE, BB, TX, Canada, 12, 6, 125, 875, 11, 0, 185, 15, 45
+NY, Comparison Period, TRUE, AA, OR, United Kingdom, 13, 12, 2, 4, 13, 0, 34, 15, 75
+NY, Comparison Period, TRUE, BB, TX, Switzerland, 12, 6, 2, 15, 11, 0, 185, 45, 25
+TX, Base Period, FALSE, AA, TX, United Kingdom, 243, 9, 25, 25, 16, 0.69, 14, 75, 175
+TX, Base Period, FALSE, BB, NY, Switzerland, 15, 9, 15, 1, 15, 0.15, 317, 5, 2
+TX, Comparison Period, FALSE, AA, TX, Italy, 243, 9, 25, 25, 17, 0.69, 14, 75, 25
+TX, Comparison Period, FALSE, BB, NY, Canada, 15, 9, 15, 25, 15, 0.15, 317, 5, 75
+TX, Base Period, TRUE, AA, AZ, USA, 14, 5, 25, 75, 14, 0.5, 317, 15, 15
+TX, Base Period, TRUE, BB, TX, United Kingdom, 12, 5, 85, 75, 13, 0, 235, 1, 25
+TX, Comparison Period, TRUE, AA, AZ, Unknown, 14, 5, 25, 15, 14, 0.5, 14, 5, 25
+TX, Comparison Period, TRUE, BB, TX, Italy, 12, 5, 5, 1, 13, 0, 9, 5, 25

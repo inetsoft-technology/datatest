@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 5)
+Quarter(orderdate), state, reseller, Sum(customer_id), Sum(product_id)
+1997-01-01 00:00:00, NY, NULL, 161, NULL
+1997-01-01 00:00:00, CA, NULL, 116, NULL
+1997-04-01 00:00:00, NY, NULL, 75, NULL
+1997-04-01 00:00:00, CA, NULL, 66, NULL
+1997-01-01 00:00:00, NULL, false, NULL, 510
+1997-01-01 00:00:00, NULL, true, NULL, 251
+1997-04-01 00:00:00, NULL, false, NULL, 127
+1997-04-01 00:00:00, NULL, true, NULL, 136
