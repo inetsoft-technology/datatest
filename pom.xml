@@ -355,6 +355,7 @@
         <module>vpm</module>
         <module>chart</module>
         <module>css</module>
+        <module>vsscript</module>
     </modules>
 
     <profiles>
