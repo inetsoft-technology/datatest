@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+STATE, CUSTOMER_ID, COMPANY_NAME
+CA, 9, 1
+CA, 13, 1
+CA, 16, 1
+CA, 21, 1
+NJ, 15, 1
+NJ, 19, 1
+NJ, 25, 1
+NJ, 35, 1

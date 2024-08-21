@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+Year(ORDER_DATE), Month(ORDER_DATE), CUSTOMER_ID
+2020, 2020 Aug, 209
+2020, 2020 Dec, 196
+2021, 2021 Jan, 206
+2021, 2021 Feb, 167
