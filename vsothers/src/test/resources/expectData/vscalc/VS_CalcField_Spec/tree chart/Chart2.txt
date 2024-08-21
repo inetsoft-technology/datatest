@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 5)
+REGION_ID, STATE, Calc_state, Average(CUSTOMER_ID), Calc_average_id
+1, CT, CT, 6, 6
+1, FL, FL, 12, 12
+1, MA, MA, 25.775, 25.775
+1, MD, MD, 22.7692, 22.7692
+1, NJ, NJ, 23.7674, 23.7674
+1, NY, NY, 15.1148, 15.1148
+1, PA, PA, 28, 28
+2, AZ, AZ, 20, 20
+2, CA, CA, 14.5595, 14.5595
+2, CO, CO, 8, 8
+2, IL, IL, 10, 10
+2, NV, NV, 32, 32
+2, TX, TX, 22.3333, 22.3333
+2, WA, WA, 28.3333, 28.3333

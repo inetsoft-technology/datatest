@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+DataGroup(D_String), First(Quantity Purchased, Company), A_Number
+b&e, 9, 9
+Games, 2, 2
+Graphics, 2, 2
+Hardware, 14, 14
+Office Tools, 9, 9
+Personal, 36, 36

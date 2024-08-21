@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 5)
+D_String, NULL, 2017, 2019, 2020
+Office Tools, A_String, Office Tools, Office Tools, Office Tools
+Office Tools, A_Number, 15, 17, 7
+Office Tools, A_ChangeType, 29, 8, 23
+Office Tools, A_Date, 2017-10-01 00:00:00, 2019-08-01 00:00:00, 2020-09-01 00:00:00
+Hardware, A_String, Hardware, Hardware, Hardware
+Hardware, A_Number, 5, 12, 52
+Hardware, A_ChangeType, 45, 16, 27
+Hardware, A_Date, 2017-10-01 00:00:00, 2019-08-01 00:00:00, 2020-09-01 00:00:00
+Games, A_String, Games, Games, Games
+Games, A_Number, 4, 23, 2
+Games, A_ChangeType, 42, 13, 26
+Games, A_Date, 2017-10-01 00:00:00, 2019-08-01 00:00:00, 2020-09-01 00:00:00
+Others, A_String, Educational, Business, Educational
+Others, A_Number, 13, 7, 16
+Others, A_ChangeType, 52, 20, 41
+Others, A_Date, 2017-10-01 00:00:00, 2019-08-01 00:00:00, 2020-09-01 00:00:00

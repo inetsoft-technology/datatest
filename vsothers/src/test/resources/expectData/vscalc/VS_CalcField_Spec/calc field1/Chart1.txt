@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Year(D_Date), Sum(D_Number), First(Quantity Purchased, Company), A_Number
+2018-01-01 00:00:00, 13830, 13, 13
+2019-01-01 00:00:00, 13933, 35, 35
+2020-01-01 00:00:00, 14840, 15, 15
+Others, 11407, 9, 9

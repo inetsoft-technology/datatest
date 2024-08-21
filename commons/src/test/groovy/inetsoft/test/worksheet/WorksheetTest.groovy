@@ -56,10 +56,10 @@ class WorksheetTest {
     * @return
     */
    static initHome(String suiteName, def properties) {
-      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
+      System.err.print("=========ws.sree.home=====" + System.getProperty("ws.sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      ConfigurationContext.getContext().setHome(System.getProperty("ws.sree.home"))
 
       if(properties != null) {
          properties.each{key, value ->

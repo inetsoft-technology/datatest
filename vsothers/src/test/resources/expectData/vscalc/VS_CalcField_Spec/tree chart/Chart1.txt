@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 6)
+Calc_state, Calc_city, NthMostFrequent(CUSTOMER_ID, 1), Calc_NthMostFrequent, Count(Calc_city), Calc_count_city
+AZ, Tucson, 20, 20, 22, 22
+CA, Albany, 16, 16, 17, 17
+CA, Los Angeles, 21, 21, 43, 43
+CA, San Francisco, 9, 9, 24, 24
+CO, Denver, 8, 8, 20, 20
+CT, Hartford, 6, 6, 13, 13
+FL, Orlando, 12, 12, 20, 20
+IL, Chicago, 10, 10, 17, 17
+MA, Boston, 18, 18, 42, 42
+MA, Cambridge, 34, 34, 19, 19
+MA, Springfield, 30, 30, 19, 19
+MD, Baltimore, 33, 33, 18, 18
+MD, Rockville, 14, 14, 21, 21
+NJ, Camden, 15, 15, 17, 17
+NJ, New Brunswick, 25, 25, 21, 21
+NJ, Newark, 19, 19, 26, 26
+NJ, Plainfield, 35, 35, 22, 22
+NV, Las Vegas, 32, 32, 18, 18
+NY, New York, 17, 17, 61, 61
+PA, York, 28, 28, 22, 22
+TX, Austin, 11, 11, 22, 22
+TX, Dallas, 31, 31, 40, 40
+TX, Houston, 22, 22, 22, 22
+WA, Olympia, 29, 29, 28, 28
+WA, Seattle, 27, 27, 14, 14

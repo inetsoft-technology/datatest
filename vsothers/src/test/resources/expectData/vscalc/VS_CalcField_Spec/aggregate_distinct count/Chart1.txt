@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 5)
+Year(Order:Date), DistinctCount(Customer:State), CalcField1, DistinctCount(Order:Discount), CalcField2
+2017-01-01 00:00:00, 14, 14, 6, 6
+2018-01-01 00:00:00, 14, 14, 5, 5
+2019-01-01 00:00:00, 14, 14, 6, 6
+2020-01-01 00:00:00, 14, 14, 6, 6
