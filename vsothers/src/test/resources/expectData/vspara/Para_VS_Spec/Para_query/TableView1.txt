@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 4)
+COMPANY, CUSTOMER_ID, STATE, ORDERDATE
+Direct Sales, 9, NJ, 2001-01-27 00:00:00
+Whittaker & Co, Inc, 16, FL, 2001-02-14 00:00:00
+Whittaker & Co, Inc, 16, FL, 2001-04-04 00:00:00
+Direct Sales, 9, NJ, 2001-05-17 00:00:00
+Whittaker & Co, Inc, 16, FL, 2002-01-07 00:00:00
+Direct Sales, 9, NJ, 2002-03-08 00:00:00
+Direct Sales, 9, NJ, 2002-05-08 00:00:00
+Direct Sales, 9, NJ, 2002-06-11 00:00:00
+Direct Sales, 9, NJ, 2003-02-18 00:00:00
+Direct Sales, 9, NJ, 2003-03-28 00:00:00
+Direct Sales, 9, NJ, 2003-07-10 00:00:00

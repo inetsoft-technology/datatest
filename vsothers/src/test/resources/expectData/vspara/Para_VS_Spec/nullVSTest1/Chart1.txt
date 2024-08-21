@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+Customer_null, Sum(Project total  Cost)
+NULL, 7950
+CD Industrials, 96150
+null, 12000

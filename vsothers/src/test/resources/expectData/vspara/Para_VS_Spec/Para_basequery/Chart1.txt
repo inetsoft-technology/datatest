@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+REGION_ID, STATE, Sum(CUSTOMER_ID)
+1, CT, 78
+2, CA, 1223
+2, CO, 220

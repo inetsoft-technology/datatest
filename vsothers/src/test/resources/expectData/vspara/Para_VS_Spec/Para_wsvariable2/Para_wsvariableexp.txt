@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 8)
+Char, Float, Boolean, Byte, Date, Time, Long, Short
+C, 34.5678, false, 120, 2021-01-01, 16:56:00, 3789345, 10245
+D, 60.3456, true, 56, 2021-01-02, 09:00:00, 567890234, 88

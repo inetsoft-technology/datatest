@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 5)
+Integer, Date, String, Double, Boolean
+1, 04/15/1970, A, 0.3, TRUE
+4, 04/18/2000, A, 0.6, FALSE
+7, 04/21/2000, A, 67.084, TRUE
+10, 04/24/1989, A, 93.85, FALSE
+13, 04/27/2000, A, 0.616, TRUE
+16, 04/30/2009, A, 147.382, FALSE
+19, 05/03/2000, A, 174.148, TRUE

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+Customer_null, isYes_null, Project Start Date_null, Project ID_null
+null, false, 2015-05-19, 231004
+NULL, true, 2015-05-15, 231000

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+Quarter(PRODUCE_DATE), Sum(CATEGORY_ID), Sum(PRODUCT_ID), Sum(PRICE)
+2001-01-01 00:00:00, 43, 112, 3402
+2006-01-01 00:00:00, 39, 172, 7750

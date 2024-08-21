@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+Boolean, Char, Float, Short
+false, C, 34.5678, 10245
+false, B, 28.999, 9087

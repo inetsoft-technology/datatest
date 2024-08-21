@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 2)
+product_exist, product_id
+true, 11
+true, 13
+true, 14
+true, 15
+true, 16
+true, 21
+true, 22
+true, 23

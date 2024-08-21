@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 5)
+Company, 2020, 2021, 2022, 2023
+Daycare One, 82726, 123180, 202168, 105472
+Direct Sales, 189840, 152264, 169335, 116497
+Nova Tera, 191414, 101705, 69631, 113595

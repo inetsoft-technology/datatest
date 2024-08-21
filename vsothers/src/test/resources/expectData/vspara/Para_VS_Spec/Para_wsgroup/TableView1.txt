@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 3)
+State, Region, Discount
+startN, USA East, 425%
+startN, USA West, 25%
+oneOf, USA East, 110%
+oneOf, USA West, 30%
+likeA, USA West, 70%
+CA, USA West, 95%
+FL, USA East, 35%
+IL, USA West, 20%
+PA, USA East, 15%
+TX, USA West, 90%
+WA, USA West, 55%

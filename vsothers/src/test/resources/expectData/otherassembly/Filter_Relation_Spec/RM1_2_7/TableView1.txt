@@ -1,0 +1,260 @@
+The data size(row x col) is:(259 x 4)
+Year(Order Date), Employee, Company, Total
+2017-01-01 00:00:00, Eric, AMG Logistics, 81215
+2017-01-01 00:00:00, Sue, AMG Logistics, 24139
+2017-01-01 00:00:00, Robert, Big Ed's BBQ, 9587
+2017-01-01 00:00:00, Annie, BigMart Foodstores, 58846
+2017-01-01 00:00:00, Robert, BigMart Foodstores, 45414
+2017-01-01 00:00:00, Annie, Computer Tech, 69041
+2017-01-01 00:00:00, Eric, Daycare One, 82726
+2017-01-01 00:00:00, Annie, Direct Sales, 32441
+2017-01-01 00:00:00, Robert, Direct Sales, 157399
+2017-01-01 00:00:00, Eric, Eastern Data, 192320
+2017-01-01 00:00:00, Eric, Ernst Handel, 1650
+2017-01-01 00:00:00, Sue, Ernst Handel, 69113
+2017-01-01 00:00:00, Eric, Fast Transportation, 68249
+2017-01-01 00:00:00, Sue, Fast Transportation, 14801
+2017-01-01 00:00:00, Annie, FISGA Corp, 88173
+2017-01-01 00:00:00, Eric, FMG Consulting, 109578
+2017-01-01 00:00:00, Sue, FMG Consulting, 15126
+2017-01-01 00:00:00, Annie, Folk Mining, 141660
+2017-01-01 00:00:00, Robert, Folk Mining, 49096
+2017-01-01 00:00:00, Annie, George Services, 20783
+2017-01-01 00:00:00, Robert, George Services, 16649
+2017-01-01 00:00:00, Eric, High Society Investments, 50457
+2017-01-01 00:00:00, Sue, High Society Investments, 97245
+2017-01-01 00:00:00, Annie, Infinity Software, 55526
+2017-01-01 00:00:00, Robert, Infinity Software, 97328
+2017-01-01 00:00:00, Eric, InterLand Services, 60632
+2017-01-01 00:00:00, Eric, Interstate Shop, 21913
+2017-01-01 00:00:00, Sue, Interstate Shop, 68809
+2017-01-01 00:00:00, Eric, Loctite Corp., 54826
+2017-01-01 00:00:00, Sue, Loctite Corp., 3844
+2017-01-01 00:00:00, Annie, Northwest Outfitters, 25977
+2017-01-01 00:00:00, Robert, Northwest Outfitters, 116601
+2017-01-01 00:00:00, Annie, Nova Tera, 147030
+2017-01-01 00:00:00, Robert, Nova Tera, 44384
+2017-01-01 00:00:00, Sue, Old World Insurance, 161235
+2017-01-01 00:00:00, Eric, Pharma Research, 48901
+2017-01-01 00:00:00, Sue, Pharma Research, 53724
+2017-01-01 00:00:00, Annie, Quick Stop, 74457
+2017-01-01 00:00:00, Robert, Quick Stop, 100185
+2017-01-01 00:00:00, Eric, Rutgers Bank, 91280
+2017-01-01 00:00:00, Sue, Rutgers Bank, 66749
+2017-01-01 00:00:00, Eric, Scheggie Services, 25911
+2017-01-01 00:00:00, Eric, Software Specialists, 55588
+2017-01-01 00:00:00, Annie, Specialty Retail, 31523
+2017-01-01 00:00:00, Robert, Specialty Retail, 117494
+2017-01-01 00:00:00, Annie, The Big Cat, 145000
+2017-01-01 00:00:00, Robert, The Big Cat, 3591
+2017-01-01 00:00:00, Eric, Tricounty Auto, 82267
+2017-01-01 00:00:00, Sue, Tricounty Auto, 50834
+2017-01-01 00:00:00, Annie, Tumbleweed Gaming, 18354
+2017-01-01 00:00:00, Eric, Ubermeyer, 123104
+2017-01-01 00:00:00, Sue, Ubermeyer, 67727
+2017-01-01 00:00:00, Annie, West Coast Customs, 34772
+2017-01-01 00:00:00, Robert, West Coast Customs, 12601
+2017-01-01 00:00:00, Annie, Whittaker & Co, Inc, 12761
+2017-01-01 00:00:00, Eric, World Software Resellers, 44407
+2017-01-01 00:00:00, Sue, World Software Resellers, 119870
+2017-01-01 00:00:00, Eric, XO Resellers, 124801
+2017-01-01 00:00:00, Sue, XO Resellers, 68109
+2018-01-01 00:00:00, Eric, AMG Logistics, 67216
+2018-01-01 00:00:00, Sue, AMG Logistics, 42724
+2018-01-01 00:00:00, Annie, Big Ed's BBQ, 84324
+2018-01-01 00:00:00, Robert, Big Ed's BBQ, 21334
+2018-01-01 00:00:00, Annie, BigMart Foodstores, 48910
+2018-01-01 00:00:00, Robert, BigMart Foodstores, 40517
+2018-01-01 00:00:00, Annie, Computer Tech, 30429
+2018-01-01 00:00:00, Robert, Computer Tech, 89338
+2018-01-01 00:00:00, Eric, Daycare One, 123180
+2018-01-01 00:00:00, Annie, Direct Sales, 142121
+2018-01-01 00:00:00, Robert, Direct Sales, 10143
+2018-01-01 00:00:00, Eric, Eastern Data, 167325
+2018-01-01 00:00:00, Sue, Eastern Data, 88134
+2018-01-01 00:00:00, Eric, Ernst Handel, 7919
+2018-01-01 00:00:00, Sue, Ernst Handel, 103156
+2018-01-01 00:00:00, Eric, Fast Transportation, 124965
+2018-01-01 00:00:00, Sue, Fast Transportation, 23826
+2018-01-01 00:00:00, Annie, FISGA Corp, 78521
+2018-01-01 00:00:00, Robert, FISGA Corp, 165440
+2018-01-01 00:00:00, Sue, FMG Consulting, 84416
+2018-01-01 00:00:00, Annie, Folk Mining, 44817
+2018-01-01 00:00:00, Robert, Folk Mining, 11320
+2018-01-01 00:00:00, Annie, George Services, 144437
+2018-01-01 00:00:00, Robert, George Services, 32337
+2018-01-01 00:00:00, Eric, High Society Investments, 30155
+2018-01-01 00:00:00, Sue, High Society Investments, 239804
+2018-01-01 00:00:00, Annie, Infinity Software, 80034
+2018-01-01 00:00:00, Robert, Infinity Software, 5240
+2018-01-01 00:00:00, Eric, InterLand Services, 99186
+2018-01-01 00:00:00, Sue, InterLand Services, 63573
+2018-01-01 00:00:00, Eric, Interstate Shop, 19736
+2018-01-01 00:00:00, Sue, Interstate Shop, 171286
+2018-01-01 00:00:00, Eric, Loctite Corp., 19226
+2018-01-01 00:00:00, Annie, Northwest Outfitters, 58837
+2018-01-01 00:00:00, Robert, Northwest Outfitters, 48480
+2018-01-01 00:00:00, Annie, Nova Tera, 8032
+2018-01-01 00:00:00, Robert, Nova Tera, 93673
+2018-01-01 00:00:00, Eric, Old World Insurance, 60840
+2018-01-01 00:00:00, Eric, Pharma Research, 173887
+2018-01-01 00:00:00, Sue, Pharma Research, 37794
+2018-01-01 00:00:00, Annie, Quick Stop, 126039
+2018-01-01 00:00:00, Robert, Quick Stop, 33728
+2018-01-01 00:00:00, Eric, Rutgers Bank, 57605
+2018-01-01 00:00:00, Sue, Rutgers Bank, 140452
+2018-01-01 00:00:00, Eric, Scheggie Services, 64019
+2018-01-01 00:00:00, Sue, Scheggie Services, 109073
+2018-01-01 00:00:00, Eric, Software Specialists, 107645
+2018-01-01 00:00:00, Sue, Software Specialists, 157718
+2018-01-01 00:00:00, Annie, Specialty Retail, 3991
+2018-01-01 00:00:00, Robert, Specialty Retail, 72141
+2018-01-01 00:00:00, Robert, The Big Cat, 75726
+2018-01-01 00:00:00, Eric, Tricounty Auto, 41287
+2018-01-01 00:00:00, Sue, Tricounty Auto, 131339
+2018-01-01 00:00:00, Annie, Tumbleweed Gaming, 8438
+2018-01-01 00:00:00, Robert, Tumbleweed Gaming, 123010
+2018-01-01 00:00:00, Eric, Ubermeyer, 17624
+2018-01-01 00:00:00, Sue, Ubermeyer, 20280
+2018-01-01 00:00:00, Annie, West Coast Customs, 34778
+2018-01-01 00:00:00, Robert, West Coast Customs, 103477
+2018-01-01 00:00:00, Annie, Whittaker & Co, Inc, 53514
+2018-01-01 00:00:00, Robert, Whittaker & Co, Inc, 10866
+2018-01-01 00:00:00, Eric, World Software Resellers, 12705
+2018-01-01 00:00:00, Eric, XO Resellers, 153759
+2018-01-01 00:00:00, Sue, XO Resellers, 3380
+2019-01-01 00:00:00, Eric, AMG Logistics, 104072
+2019-01-01 00:00:00, Sue, AMG Logistics, 47264
+2019-01-01 00:00:00, Annie, Big Ed's BBQ, 198368
+2019-01-01 00:00:00, Robert, Big Ed's BBQ, 74746
+2019-01-01 00:00:00, Annie, BigMart Foodstores, 86924
+2019-01-01 00:00:00, Robert, BigMart Foodstores, 96446
+2019-01-01 00:00:00, Annie, Computer Tech, 60327
+2019-01-01 00:00:00, Robert, Computer Tech, 63325
+2019-01-01 00:00:00, Eric, Daycare One, 127383
+2019-01-01 00:00:00, Sue, Daycare One, 74785
+2019-01-01 00:00:00, Annie, Direct Sales, 124228
+2019-01-01 00:00:00, Robert, Direct Sales, 45107
+2019-01-01 00:00:00, Eric, Eastern Data, 72026
+2019-01-01 00:00:00, Sue, Eastern Data, 58771
+2019-01-01 00:00:00, Eric, Ernst Handel, 28700
+2019-01-01 00:00:00, Sue, Ernst Handel, 19651
+2019-01-01 00:00:00, Sue, Fast Transportation, 63038
+2019-01-01 00:00:00, Annie, FISGA Corp, 53701
+2019-01-01 00:00:00, Robert, FISGA Corp, 107940
+2019-01-01 00:00:00, Eric, FMG Consulting, 77218
+2019-01-01 00:00:00, Sue, FMG Consulting, 97156
+2019-01-01 00:00:00, Annie, Folk Mining, 61146
+2019-01-01 00:00:00, Robert, Folk Mining, 2560
+2019-01-01 00:00:00, Annie, George Services, 1197
+2019-01-01 00:00:00, Robert, George Services, 8745
+2019-01-01 00:00:00, Eric, High Society Investments, 49512
+2019-01-01 00:00:00, Sue, High Society Investments, 22649
+2019-01-01 00:00:00, Robert, Infinity Software, 7349
+2019-01-01 00:00:00, Eric, InterLand Services, 89405
+2019-01-01 00:00:00, Sue, InterLand Services, 106200
+2019-01-01 00:00:00, Eric, Interstate Shop, 63955
+2019-01-01 00:00:00, Sue, Interstate Shop, 50167
+2019-01-01 00:00:00, Eric, Loctite Corp., 20801
+2019-01-01 00:00:00, Sue, Loctite Corp., 24162
+2019-01-01 00:00:00, Annie, Northwest Outfitters, 40889
+2019-01-01 00:00:00, Robert, Northwest Outfitters, 20509
+2019-01-01 00:00:00, Annie, Nova Tera, 28390
+2019-01-01 00:00:00, Robert, Nova Tera, 41241
+2019-01-01 00:00:00, Eric, Old World Insurance, 26941
+2019-01-01 00:00:00, Sue, Old World Insurance, 157587
+2019-01-01 00:00:00, Eric, Pharma Research, 47335
+2019-01-01 00:00:00, Sue, Pharma Research, 50873
+2019-01-01 00:00:00, Annie, Quick Stop, 15418
+2019-01-01 00:00:00, Robert, Quick Stop, 22695
+2019-01-01 00:00:00, Eric, Rutgers Bank, 52756
+2019-01-01 00:00:00, Sue, Rutgers Bank, 82429
+2019-01-01 00:00:00, Eric, Scheggie Services, 103812
+2019-01-01 00:00:00, Sue, Scheggie Services, 21946
+2019-01-01 00:00:00, Eric, Software Specialists, 112577
+2019-01-01 00:00:00, Sue, Software Specialists, 194193
+2019-01-01 00:00:00, Annie, Specialty Retail, 63362
+2019-01-01 00:00:00, Robert, Specialty Retail, 149475
+2019-01-01 00:00:00, Annie, The Big Cat, 32241
+2019-01-01 00:00:00, Robert, The Big Cat, 180098
+2019-01-01 00:00:00, Eric, Tricounty Auto, 44728
+2019-01-01 00:00:00, Sue, Tricounty Auto, 7702
+2019-01-01 00:00:00, Annie, Tumbleweed Gaming, 64142
+2019-01-01 00:00:00, Robert, Tumbleweed Gaming, 83015
+2019-01-01 00:00:00, Eric, Ubermeyer, 124573
+2019-01-01 00:00:00, Sue, Ubermeyer, 4082
+2019-01-01 00:00:00, Annie, West Coast Customs, 135975
+2019-01-01 00:00:00, Robert, West Coast Customs, 14437
+2019-01-01 00:00:00, Annie, Whittaker & Co, Inc, 63010
+2019-01-01 00:00:00, Eric, World Software Resellers, 76645
+2019-01-01 00:00:00, Sue, World Software Resellers, 173202
+2019-01-01 00:00:00, Eric, XO Resellers, 22759
+2019-01-01 00:00:00, Sue, XO Resellers, 4434
+2020-01-01 00:00:00, Eric, AMG Logistics, 189916
+2020-01-01 00:00:00, Sue, AMG Logistics, 29352
+2020-01-01 00:00:00, Annie, Big Ed's BBQ, 171675
+2020-01-01 00:00:00, Robert, Big Ed's BBQ, 62505
+2020-01-01 00:00:00, Annie, BigMart Foodstores, 132962
+2020-01-01 00:00:00, Robert, BigMart Foodstores, 45650
+2020-01-01 00:00:00, Annie, Computer Tech, 121450
+2020-01-01 00:00:00, Robert, Computer Tech, 73046
+2020-01-01 00:00:00, Eric, Daycare One, 41947
+2020-01-01 00:00:00, Sue, Daycare One, 63525
+2020-01-01 00:00:00, Robert, Direct Sales, 116497
+2020-01-01 00:00:00, Eric, Eastern Data, 202464
+2020-01-01 00:00:00, Sue, Eastern Data, 34830
+2020-01-01 00:00:00, Eric, Ernst Handel, 68021
+2020-01-01 00:00:00, Sue, Ernst Handel, 20019
+2020-01-01 00:00:00, Eric, Fast Transportation, 2591
+2020-01-01 00:00:00, Sue, Fast Transportation, 93171
+2020-01-01 00:00:00, Annie, FISGA Corp, 30979
+2020-01-01 00:00:00, Robert, FISGA Corp, 72344
+2020-01-01 00:00:00, Eric, FMG Consulting, 4193
+2020-01-01 00:00:00, Sue, FMG Consulting, 55285
+2020-01-01 00:00:00, Annie, Folk Mining, 90593
+2020-01-01 00:00:00, Robert, Folk Mining, 66906
+2020-01-01 00:00:00, Annie, George Services, 198381
+2020-01-01 00:00:00, Robert, George Services, 56595
+2020-01-01 00:00:00, Sue, High Society Investments, 4635
+2020-01-01 00:00:00, Annie, Infinity Software, 19827
+2020-01-01 00:00:00, Robert, Infinity Software, 14116
+2020-01-01 00:00:00, Eric, InterLand Services, 4400
+2020-01-01 00:00:00, Sue, InterLand Services, 60216
+2020-01-01 00:00:00, Eric, Interstate Shop, 99911
+2020-01-01 00:00:00, Sue, Interstate Shop, 4008
+2020-01-01 00:00:00, Eric, Loctite Corp., 2510
+2020-01-01 00:00:00, Sue, Loctite Corp., 36948
+2020-01-01 00:00:00, Annie, Northwest Outfitters, 276853
+2020-01-01 00:00:00, Robert, Northwest Outfitters, 58997
+2020-01-01 00:00:00, Annie, Nova Tera, 55808
+2020-01-01 00:00:00, Robert, Nova Tera, 57787
+2020-01-01 00:00:00, Eric, Old World Insurance, 73137
+2020-01-01 00:00:00, Sue, Old World Insurance, 80821
+2020-01-01 00:00:00, Eric, Pharma Research, 46998
+2020-01-01 00:00:00, Sue, Pharma Research, 48363
+2020-01-01 00:00:00, Annie, Quick Stop, 100726
+2020-01-01 00:00:00, Robert, Quick Stop, 52321
+2020-01-01 00:00:00, Eric, Rutgers Bank, 76948
+2020-01-01 00:00:00, Sue, Rutgers Bank, 6481
+2020-01-01 00:00:00, Eric, Scheggie Services, 80554
+2020-01-01 00:00:00, Sue, Scheggie Services, 25131
+2020-01-01 00:00:00, Eric, Software Specialists, 4435
+2020-01-01 00:00:00, Sue, Software Specialists, 155465
+2020-01-01 00:00:00, Annie, Specialty Retail, 106823
+2020-01-01 00:00:00, Robert, Specialty Retail, 14692
+2020-01-01 00:00:00, Annie, The Big Cat, 113884
+2020-01-01 00:00:00, Robert, The Big Cat, 266854
+2020-01-01 00:00:00, Eric, Tricounty Auto, 57560
+2020-01-01 00:00:00, Sue, Tricounty Auto, 10819
+2020-01-01 00:00:00, Annie, Tumbleweed Gaming, 36721
+2020-01-01 00:00:00, Robert, Tumbleweed Gaming, 63940
+2020-01-01 00:00:00, Eric, Ubermeyer, 191398
+2020-01-01 00:00:00, Sue, Ubermeyer, 123746
+2020-01-01 00:00:00, Annie, West Coast Customs, 7786
+2020-01-01 00:00:00, Robert, West Coast Customs, 5636
+2020-01-01 00:00:00, Annie, Whittaker & Co, Inc, 15631
+2020-01-01 00:00:00, Robert, Whittaker & Co, Inc, 46512
+2020-01-01 00:00:00, Eric, World Software Resellers, 24236
+2020-01-01 00:00:00, Sue, World Software Resellers, 1645
+2020-01-01 00:00:00, Eric, XO Resellers, 24801
+2020-01-01 00:00:00, Sue, XO Resellers, 22333
