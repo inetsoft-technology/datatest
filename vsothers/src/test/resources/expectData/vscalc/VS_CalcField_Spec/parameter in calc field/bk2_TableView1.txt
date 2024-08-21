@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+customer_id, city, state, CalcField2, reseller, CalcField1
+20, Tucson, AZ, 30, 0, Tucson   state
+13, Los Angeles, CA, 23, 1, Los Angeles   state
+16, Albany, CA, 26, 0, Albany   state
+21, Los Angeles, CA, 31, 0, Los Angeles   state

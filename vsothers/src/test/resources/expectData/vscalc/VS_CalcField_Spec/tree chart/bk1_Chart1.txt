@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+Calc_state, Calc_city, NthMostFrequent(CUSTOMER_ID, 1), Calc_NthMostFrequent, Count(Calc_city), Calc_count_city
+CA, Albany, 16, 16, 17, 17
+CA, Los Angeles, 21, 21, 43, 43
+CA, San Francisco, 9, 9, 24, 24
+CO, Denver, 8, 8, 20, 20
+MA, Boston, 18, 18, 42, 42
+MD, Rockville, 14, 14, 21, 21

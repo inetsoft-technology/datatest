@@ -1,0 +1,37 @@
+The data size(row x col) is:(36 x 6)
+customer_id, city, state, CalcField2, reseller, CalcField1
+20, Tucson, AZ, 40, 0, Tucson   city
+9, San Francisco, CA, 29, 1, San Francisco   city
+13, Los Angeles, CA, 33, 1, Los Angeles   city
+16, Albany, CA, 36, 0, Albany   city
+21, Los Angeles, CA, 41, 0, Los Angeles   city
+4, Boulder, CO, 24, 1, Boulder   city
+8, Denver, CO, 28, 0, Denver   city
+6, Hartford, CT, 26, 0, Hartford   city
+12, Orlando, FL, 32, 0, Orlando   city
+10, Chicago, IL, 30, 1, Chicago   city
+18, Boston, MA, 38, 0, Boston   city
+23, Boston, MA, 43, 1, Boston   city
+30, Springfield, MA, 50, 0, Springfield   city
+34, Cambridge, MA, 54, 1, Cambridge   city
+5, Baltimore, MD, 25, 0, Baltimore   city
+14, Rockville, MD, 34, 0, Rockville   city
+33, Baltimore, MD, 53, 0, Baltimore   city
+1, Wayne, NJ, 21, 0, Wayne   city
+2, Middletown, NJ, 22, 0, Middletown   city
+15, Camden, NJ, 35, 0, Camden   city
+19, Newark, NJ, 39, 1, Newark   city
+25, New Brunswick, NJ, 45, 0, New Brunswick   city
+35, Plainfield, NJ, 55, 0, Plainfield   city
+32, Las Vegas, NV, 52, 0, Las Vegas   city
+3, New York, NY, 23, 0, New York   city
+7, New York, NY, 27, 0, New York   city
+17, New York, NY, 37, 0, New York   city
+24, New York, NY, 44, 0, New York   city
+28, York, PA, 48, 0, York   city
+11, Austin, TX, 31, 0, Austin   city
+22, Houston, TX, 42, 0, Houston   city
+26, Dallas, TX, 46, 0, Dallas   city
+31, Dallas, TX, 51, 0, Dallas   city
+27, Seattle, WA, 47, 1, Seattle   city
+29, Olympia, WA, 49, 0, Olympia   city

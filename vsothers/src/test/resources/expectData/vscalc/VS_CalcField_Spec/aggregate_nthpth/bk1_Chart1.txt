@@ -1,0 +1,24 @@
+The data size(row x col) is:(23 x 7)
+Calc_string, Year(Calc_date), PthPercentile(price, 1), Calc_pth, NthMostFrequent(customer_id, 1), Calc_frequest, NthSmallest(Calc_double, 2)
+true_CA, 1998-01-01 00:00:00, 399, 399, 10, NULL, NULL
+true_CA, 1999-01-01 00:00:00, 105, 105, 14, NULL, NULL
+true_CA, 2000-01-01 00:00:00, 39, 39, 10, NULL, NULL
+false_AK, 1998-01-01 00:00:00, 248, 248, 5, NULL, NULL
+false_AK, 1999-01-01 00:00:00, 59, 59, 5, NULL, NULL
+false_AK, 2000-01-01 00:00:00, 39, 39, 5, NULL, NULL
+true_I, 1998-01-01 00:00:00, 79, 79, 9, NULL, NULL
+true_I, 1999-01-01 00:00:00, 75, 75, 9, NULL, NULL
+true_I, 2000-01-01 00:00:00, 105, 105, 9, NULL, NULL
+true_PA, 1998-01-01 00:00:00, 248, 248, 19, NULL, NULL
+false_FL, 1998-01-01 00:00:00, 129, 129, 16, NULL, NULL
+false_FL, 1999-01-01 00:00:00, 75, 75, 16, NULL, NULL
+Others, 1997-01-01 00:00:00, 39, 39, 1, NULL, NULL
+Others, 1998-01-01 00:00:00, 39, 39, 4, NULL, NULL
+Others, 1999-01-01 00:00:00, 35, 35, 4, NULL, NULL
+Others, 2000-01-01 00:00:00, 29, 29, 4, NULL, NULL
+true_PA, NULL, 248, 248, 19, 19, NULL
+false_FL, NULL, 75, 75, 16, 16, 8.0556
+true_I, NULL, 75, 75, 9, 9, 8.7778
+false_AK, NULL, 39, 39, 5, 5, 6.25
+true_CA, NULL, 39, 39, 10, 10, 3.9
+Others, NULL, 29, 29, 4, 4, 2.6923

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 5)
+Calc_string, Calc_frequest, Calc_fre2, Calc_pth, Calc_small
+false_FL, 16, false_FL, 75, 129
+true_I, 9, true_I, 75, 79

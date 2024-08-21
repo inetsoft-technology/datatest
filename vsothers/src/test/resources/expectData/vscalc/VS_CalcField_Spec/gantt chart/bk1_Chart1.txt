@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Project steps, Calc_start, Calc_end, Calc_actual
+Data entry, 2009-05-26, 2009-06-04, 2009-05-31
+determination, 2009-05-08, 2009-05-17, 2009-05-11
+Field implementation, 2009-05-16, 2009-05-30, 2009-05-27
+Interview, 2009-05-13, 2009-05-20, 2009-05-14

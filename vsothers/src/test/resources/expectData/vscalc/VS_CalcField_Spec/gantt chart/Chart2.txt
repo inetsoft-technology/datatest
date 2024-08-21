@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+Calc_project, start, Calc_end, actual end
+Data analysis_shenzhen, 2009-05-30, 2009-06-06, 2009-06-04
+Data entry_wuhan, 2009-05-26, 2009-06-04, 2009-05-31
+determination_beijing, 2009-05-08, 2009-05-17, 2009-05-11
+Field implementation_weinan, 2009-05-16, 2009-05-30, 2009-05-27
+Interview_shanghai, 2009-05-13, 2009-05-20, 2009-05-14
+Questionnaire confirmation_tianjin, 2009-05-15, 2009-05-20, 2009-05-18
+Questionnaire design_xian, 2009-05-12, 2009-05-19, 2009-05-15
+Report submission_tianshui, 2009-06-02, 2009-06-12, 2009-06-08

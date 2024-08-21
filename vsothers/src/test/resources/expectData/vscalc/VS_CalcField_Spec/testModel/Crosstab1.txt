@@ -1,0 +1,89 @@
+The data size(row x col) is:(88 x 4)
+customers:state, customers:city, NULL, % of subtotal by row: CalcField/TopFormula/Correlation
+AK, Little Rock, % of subtotal by row: CalcField, 344%
+AK, Little Rock, TopFormula, 22
+AK, Little Rock, Correlation, 0
+AK, Sevilla, % of subtotal by row: CalcField, 66%
+AK, Sevilla, TopFormula, 15
+AK, Sevilla, Correlation, 0
+AK, Total, % of subtotal by row: CalcField, 59%
+AK, Total, TopFormula, 15
+AK, Total, Correlation, 0.7743
+CA, Los Angles, % of subtotal by row: CalcField, 100%
+CA, Los Angles, TopFormula, 20
+CA, Los Angles, Correlation, 0
+CA, San Francisco, % of subtotal by row: CalcField, 26%
+CA, San Francisco, TopFormula, 18
+CA, San Francisco, Correlation, 0
+CA, San Jose, % of subtotal by row: CalcField, 208%
+CA, San Jose, TopFormula, 24
+CA, San Jose, Correlation, 0
+CA, Total, % of subtotal by row: CalcField, 91%
+CA, Total, TopFormula, 20
+CA, Total, Correlation, 0.4594
+FL, Ankertown, % of subtotal by row: CalcField, 105%
+FL, Ankertown, TopFormula, 28
+FL, Ankertown, Correlation, 0
+FL, Orlando, % of subtotal by row: CalcField, 81%
+FL, Orlando, TopFormula, 26
+FL, Orlando, Correlation, 0
+FL, Total, % of subtotal by row: CalcField, 176%
+FL, Total, TopFormula, 28
+FL, Total, Correlation, 0.145
+IL, Chicago, % of subtotal by row: CalcField, 100%
+IL, Chicago, TopFormula, 16
+IL, Chicago, Correlation, 0
+IL, Total, % of subtotal by row: CalcField, 58%
+IL, Total, TopFormula, 16
+IL, Total, Correlation, 0
+NJ, Middletown, % of subtotal by row: CalcField, 135%
+NJ, Middletown, TopFormula, 19
+NJ, Middletown, Correlation, 0
+NJ, Piscataway, % of subtotal by row: CalcField, 109%
+NJ, Piscataway, TopFormula, 17
+NJ, Piscataway, Correlation, 0
+NJ, Pitterson, % of subtotal by row: CalcField, 29%
+NJ, Pitterson, TopFormula, 12
+NJ, Pitterson, Correlation, 0
+NJ, Total, % of subtotal by row: CalcField, 63%
+NJ, Total, TopFormula, 19
+NJ, Total, Correlation, 0.2943
+NY, Boomtown, % of subtotal by row: CalcField, 155%
+NY, Boomtown, TopFormula, 30
+NY, Boomtown, Correlation, 0
+NY, Littletown, % of subtotal by row: CalcField, 9%
+NY, Littletown, TopFormula, 11
+NY, Littletown, Correlation, 0
+NY, Long Island, % of subtotal by row: CalcField, 105%
+NY, Long Island, TopFormula, 25
+NY, Long Island, Correlation, 0
+NY, New York, % of subtotal by row: CalcField, 80%
+NY, New York, TopFormula, 23
+NY, New York, Correlation, 0
+NY, Total, % of subtotal by row: CalcField, 160%
+NY, Total, TopFormula, 30
+NY, Total, Correlation, -0.3333
+OH, Cleveland, % of subtotal by row: CalcField, 100%
+OH, Cleveland, TopFormula, 21
+OH, Cleveland, Correlation, 0
+OH, Total, % of subtotal by row: CalcField, 10%
+OH, Total, TopFormula, 21
+OH, Total, Correlation, 0
+PA, Akergen, % of subtotal by row: CalcField, 29%
+PA, Akergen, TopFormula, 14
+PA, Akergen, Correlation, 0
+PA, George Park, % of subtotal by row: CalcField, 242%
+PA, George Park, TopFormula, 29
+PA, George Park, Correlation, 0
+PA, Total, % of subtotal by row: CalcField, 67%
+PA, Total, TopFormula, 14
+PA, Total, Correlation, 0.2869
+TX, Aachen, % of subtotal by row: CalcField, 29%
+TX, Aachen, TopFormula, 13
+TX, Aachen, Correlation, 0
+TX, Austin, % of subtotal by row: CalcField, 187%
+TX, Austin, TopFormula, 27
+TX, Austin, Correlation, 0
+TX, Total, % of subtotal by row: CalcField, 89%
+TX, Total, TopFormula, 13
+TX, Total, Correlation, -0.1482

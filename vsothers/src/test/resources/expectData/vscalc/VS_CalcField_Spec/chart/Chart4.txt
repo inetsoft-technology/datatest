@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 4)
+Category, Sum(Quantity Purchased), CalcField1, TotalPurchased
+Business, 4940, 4940, 95250
+Educational, 6354, 6354, 7407
+Games, 11925, 11925, 9123
+Graphics, 3891, 3891, 20094
+Hardware, 11805, 11805, 63190
+Office Tools, 6588, 6588, 13227
+Personal, 8507, 8507, 17363

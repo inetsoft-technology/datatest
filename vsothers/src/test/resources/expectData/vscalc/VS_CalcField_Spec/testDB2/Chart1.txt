@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 3)
+concat state, WeightedAverage(TopFormula, calc_cid), Average(TopFormula)
+AZa, 24, 24
+CAa, 16.8441, 16.2742
+COa, 10.7586, 10.2857
+CTa, 10, 10
+FLa, 16, 16
+ILa, 14, 14
+MAa, 22, 22
+MDa, 15.5455, 13.8462
+NJa, 19.6031, 14.4026
+NYa, 16.2118, 12.9718
+TXa, 15, 15

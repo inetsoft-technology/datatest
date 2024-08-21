@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+DataGroup(test), Calc_max
+a, 10:48:36
+b, 07:22:34
+c, 09:17:27
+empty and null, 09:45:17

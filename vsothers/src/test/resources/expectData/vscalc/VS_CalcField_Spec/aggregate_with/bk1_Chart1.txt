@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+company, First(customer_id, CalcField1)
+Quick Stop, 8
+Familia Computer Services, 6
+George Services, 5

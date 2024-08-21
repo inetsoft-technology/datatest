@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 1)
+c_state
+NJ
+AZ
+NY
+CO
+IL
+CT
+CA
+MA
+MD
+FL
+TX

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 5)
+Year(Calc_date), Calc_first, Calc_corrwith, Covariance(Calc_double, quantity), Calc_last
+2002, 2002-06-21, -0.0415, 22.016, George Services
+2003, 2003-03-25, 0.2649, 0.5, Eastern Data
