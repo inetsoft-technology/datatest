@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+PRODUCT_NAME, agg_calc, Sum(CATEGORY_ID), Sum(REORDER_LEVEL)
+Fancy Menus, 10, 5, 50
+Fast Mail, 6, 6, 50
+Mega Icons, 11, 5, 25
+Sync Me, 7, 4, 25
+True Action, 9, 1, 25
+WebCalendar, 8, 6, 25
