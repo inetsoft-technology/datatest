@@ -82,7 +82,7 @@
                         <show.license.exception>true</show.license.exception>
                         <com.athaydes.spockframework.report.outputDir>target/spock-reports</com.athaydes.spockframework.report.outputDir>
                         <disable.updateAssetDependencies>true</disable.updateAssetDependencies>
-                        <sree.home>${basedir}/target/test-resources/server/config-${test.module}</sree.home>
+                        <vpm.sree.home>${basedir}/target/test-resources/server/config-${test.module}</vpm.sree.home>
                         <plugin.dir>${plugin.dir}</plugin.dir>
                     </systemPropertyVariables>
                 </configuration>

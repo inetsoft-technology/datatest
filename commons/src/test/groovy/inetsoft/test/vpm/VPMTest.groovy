@@ -35,8 +35,8 @@ class VPMTest {
    }
 
    static initHome() {
-      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      System.err.print("=========vpm.sree.home=====" + System.getProperty("vpm.sree.home"))
+      ConfigurationContext.getContext().setHome(System.getProperty("vpm.sree.home"))
       DataSpace.getDataSpace()
       controllers.initControllers()
    }
@@ -151,7 +151,7 @@ class VPMTest {
       ClientInfo user = new ClientInfo(identityUser, Tool.getIP())
       IdentityID[] identityRoles = new IdentityID[0]
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID()
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID('Administrator', null)
          newRole.setName(role)
          identityRoles += newRole
       }
