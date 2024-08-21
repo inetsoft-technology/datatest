@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 7)
+CUSTOMER_ID, CONTACT, COMPANY, ADDRESS, STATE, ZIP, RESELLER
+2, Lisa Smith, Daycare One, 123 Summer Rd., NJ, 09882, false
+4, Patrico Brown, Ernst Handel, 88 Rio Grand Ave., PA, 38923, false
+6, Aria Duz, Familia Computer Services, 5 Baker's Lane, IL, 39283, true

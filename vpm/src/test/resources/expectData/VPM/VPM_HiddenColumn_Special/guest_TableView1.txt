@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+RESELLER, sum_cid
+false, 138
+false, 52
+false, 257
+true, 192
+true, 96
+true, 109

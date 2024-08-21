@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 5)
+SUPPLIER_ID, COMPANY, STATE, exp_1, ZIP
+1, Cyber Opportunities, WA, SeattleAAA, 98104
+2, Continental Innovations Corp., NY, New YorkAAA, 10004
+3, Global Networks Ltd., CA, San DiegoAAA, 92118
+4, Micro Production LLC, NJ, EdisonAAA, 08837

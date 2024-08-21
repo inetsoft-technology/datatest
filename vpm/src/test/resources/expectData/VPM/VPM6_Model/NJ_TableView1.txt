@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 7)
+CalcField1, ccc:CITY, ccc:CONTACT, ccc:CUSTOMER_ID, ccc:RESELLER, ccc:STATE, ccc:ZIP
+NULL, New York, Jean Crowther, 13, false, NY, 11223
+NULL, Long Island, Paula Camino, 15, true, NY, 12334
+NULL, Boomtown, Janine Lebithal, 20, false, NY, 11234

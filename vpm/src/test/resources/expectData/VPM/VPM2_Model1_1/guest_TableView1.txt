@@ -1,0 +1,182 @@
+The data size(row x col) is:(181 x 7)
+ccc:CUSTOMER_ID, ccc:CONTACT, ccc:COMPANY, ccc:CITY, ccc:STATE, ccc:ZIP, ccc:RESELLER
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false
+3, Anna Lincoln, Eastern Data, Aachen, TX, 03887, true
+4, Patrico Brown, Ernst Handel, Akergen, PA, 38923, false
+5, Steven Devon, George Services, Sevilla, AK, 82938, false
+10, Simon Supricido, Specialty Retail, Los Angles, CA, 88938, true
+11, Michael Kumar, The Big Cat, Cleveland, OH, 32343, false
+15, Paula Camino, Scheggie Services, Long Island, NY, 12334, true
+17, Marie Castro, FISGA Corp, Austin, TX, 28122, true
+18, Roland Sommer, Du Monde Technologies, Ankertown, FL, 29183, false
+20, Janine Lebithal, Folk Mining, Boomtown, NY, 11234, false

@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+RESELLER, STATE, sum_orno
+false, FL, 167
+false, NJ, 379
+false, NY, 598
+true, NJ, 497
+true, NY, 426

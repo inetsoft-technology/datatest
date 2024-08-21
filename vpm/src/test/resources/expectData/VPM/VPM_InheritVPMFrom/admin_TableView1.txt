@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 5)
+CUSTOMER_ID, CONTACT, CITY, STATE, RESELLER
+1, John Kelly, Littletown, NY, true
+2, Lisa Smith, Pitterson, NJ, false
+3, Anna Lincoln, Aachen, TX, true
+4, Patrico Brown, Akergen, PA, false
+5, Steven Devon, Sevilla, AK, false
+6, Aria Duz, Chicago, IL, true
+7, Lino Rodrigez, Piscataway, NJ, false
+8, Richard Isantengse, San Francisco, CA, false
+9, Luke Baker, Middletown, NJ, true
+10, Simon Supricido, Los Angles, CA, true
+11, Michael Kumar, Cleveland, OH, false
+12, George Kloss, Little Rock, AK, false
+13, Jean Crowther, New York, NY, false
+14, Horst Braunschwad, San Jose, CA, true
+15, Paula Camino, Long Island, NY, true
+16, Giovanni Feuter, Orlando, FL, false
+17, Marie Castro, Austin, TX, true
+18, Roland Sommer, Ankertown, FL, false
+19, Eduardo Freyre, George Park, PA, true
+20, Janine Lebithal, Boomtown, NY, false

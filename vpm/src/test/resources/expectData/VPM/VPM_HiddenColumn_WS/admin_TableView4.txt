@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 7)
+CITY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP, range_cid
+Chicago, Aria Duz, 6, true, IL, 39283, <10
+Piscataway, Lino Rodrigez, 7, false, NJ, 08854, <10
+San Francisco, Richard Isantengse, 8, false, CA, 98839, <10
+Middletown, Luke Baker, 9, true, NJ, 08854, <10
+Los Angles, Simon Supricido, 10, true, CA, 88938, >=10
+Cleveland, Michael Kumar, 11, false, OH, 32343, >=10
+Little Rock, George Kloss, 12, false, AK, 12343, >=10
+New York, Jean Crowther, 13, false, NY, 11223, >=10
+San Jose, Horst Braunschwad, 14, true, CA, 83923, >=10
+Long Island, Paula Camino, 15, true, NY, 12334, >=10
+Orlando, Giovanni Feuter, 16, false, FL, 83923, >=10
+Austin, Marie Castro, 17, true, TX, 28122, >=10
+Ankertown, Roland Sommer, 18, false, FL, 29183, >=10
+George Park, Eduardo Freyre, 19, true, PA, 23445, >=10
+Boomtown, Janine Lebithal, 20, false, NY, 11234, >=10

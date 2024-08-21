@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 3)
+STATE, CITY, SUM_CID
+AK, Little Rock, 12
+AK, Sevilla, 5
+CA, Los Angles, 10
+CA, San Francisco, 8
+CA, San Jose, 14
+FL, Ankertown, 18
+FL, Orlando, 16
+IL, Chicago, 6
+NJ, Middletown, 9
+NJ, Piscataway, 7
+NJ, Pitterson, 2
+NY, Boomtown, 20
+NY, Littletown, 1
+NY, Long Island, 15
+NY, New York, 13
+OH, Cleveland, 11
+PA, Akergen, 4
+PA, George Park, 19
+TX, Aachen, 3
+TX, Austin, 17

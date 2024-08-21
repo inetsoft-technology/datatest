@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 7)
+PUBLIC.MVCUSTOMERS:ADDRESS, PUBLIC.MVCUSTOMERS:CITY, PUBLIC.MVCUSTOMERS:COMPANY, PUBLIC.MVCUSTOMERS:CONTACT, PUBLIC.MVCUSTOMERS:CUSTOMER_ID, PUBLIC.MVCUSTOMERS:RESELLER, PUBLIC.MVCUSTOMERS:STATE
+12 Woodpark Ave., Cleveland, NULL, Michael Kumar, 11, false, OH
+77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, false, AK
+90 First Ave., New York, Computer Tech, Jean Crowther, 13, false, NY
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY
+44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL
+21 Doger Sound Blvd., Austin, FISGA Corp, NULL, 17, true, TX
+8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA
+345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NULL

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+CONTACT_ID, CUSTOMER_ID, FIRST_NAME, LAST_NAME
+3, 3, Anna, Lincoln
+7, 7, Lino, Rodrigez
+17, 17, Marie, Castro
+24, 24, Gary, Parket

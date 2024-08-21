@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 6)
+PUBLIC.MVCUSTOMERS:COMPANY, PUBLIC.MVCUSTOMERS:CONTACT, PUBLIC.MVCUSTOMERS:CUSTOMER_ID, PUBLIC.MVCUSTOMERS:RESELLER, PUBLIC.MVCUSTOMERS:STATE, PUBLIC.MVCUSTOMERS:ZIP
+Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+Software Specialists, Eduardo Freyre, 19, true, NULL, 23445
+Folk Mining, Janine Lebithal, 20, false, NY, 11234
+Folk Hello, John Bonnie, 21, true, NT, 12334
+Big Cat, Baker, 22, false, NJ, 12343
+Direct, Michael, 23, true, OH, 98839
+FISGA, Lisa Petter, 24, true, NK, 83923
+The Big Cat, Aria Duz, 25, false, CA, 03887
+Whittaker, Patrico, 26, true, NJ, 11223
+The Big Cat, George Kloss, 27, true, OH, 69325
+Computer Pilo, Crowther, 28, false, NY, 96894
+InterLand Services, Roland, 29, false, NULL, 02354
+FISGA Corp, Castro, 30, false, FL, 36987
+FISGA Corp, Roland, 31, true, BU, 02458
+Whittaker, Tyuol, 32, false, BU, NULL

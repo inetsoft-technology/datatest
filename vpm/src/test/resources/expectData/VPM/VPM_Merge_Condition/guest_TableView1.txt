@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 11)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP, ORDERDATE, DISCOUNT, ORDERNO
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 2003-02-18 00:00:00, 0, 61
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 2003-07-10 00:00:00, 0, 71
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 2003-03-28 00:00:00, 0, 95
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334, 2002-10-06 00:00:00, 0, 109

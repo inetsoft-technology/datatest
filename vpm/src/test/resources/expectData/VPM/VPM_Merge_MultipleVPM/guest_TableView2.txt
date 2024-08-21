@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 6)
+CUSTOMER_ID, CONTACT, CITY, STATE, ZIP, RESELLER
+6, Aria Duz, Chicago, IL, 39283, true
+7, Lino Rodrigez, Piscataway, NJ, 08854, false
+8, Richard Isantengse, San Francisco, CA, 98839, false
+9, Luke Baker, Middletown, NJ, 08854, true
+10, Simon Supricido, Los Angles, CA, 88938, true
+11, Michael Kumar, Cleveland, OH, 32343, false
+12, George Kloss, Little Rock, AK, 12343, false
+13, Jean Crowther, New York, NY, 11223, false
+14, Horst Braunschwad, San Jose, CA, 83923, true

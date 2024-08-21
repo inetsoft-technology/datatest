@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 10)
+CalcField1, ccc:exp_address, ccc:ADDRESS, ccc:CITY, ccc:COMPANY, ccc:CONTACT, ccc:CUSTOMER_ID, ccc:RESELLER, ccc:STATE, ccc:ZIP
+384 Broad St., 384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, true, NY, 18322
+123 Summer Rd., 123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, false, NJ, 09882
+23 Tasaga Ave., 23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, true, TX, 03887
+88 Rio Grand Ave., 88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, false, PA, 38923
+389 Jardim Rd., 389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, false, AK, 82938
+5 Baker's Lane, 5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+1230 Hoes Lane, 1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, false, NJ, 08854
+71 Mulberry St., 71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, false, CA, 98839
+4500 River Rd., 4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854
+88 Specialty Dr., 88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938
+12 Woodpark Ave., 12 Woodpark Ave., 12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, false, OH, 32343
+77 Druguz Blvd., 77 Druguz Blvd., 77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, false, AK, 12343
+90 First Ave., 90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, false, NY, 11223
+822 Technology Dr., 822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
+839 Via Gaty Dr., 839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
+44 Islander Lane, 44 Islander Lane, 44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
+21 Doger Sound Blvd., 21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, true, TX, 28122
+8300 Cleveland St., 8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+300 Great Swamp Rd., 300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445
+345 Sewgen Dr., 345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234

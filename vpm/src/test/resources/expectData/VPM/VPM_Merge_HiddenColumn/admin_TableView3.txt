@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 5)
+CATEGORY_ID, INSTOCK, PRICE, PRODUCT_ID, cid_pid
+3, true, 2250, 1, 4
+3, true, 125, 2, 5
+6, false, 399, 3, 9
+4, true, 75, 4, 8
+4, false, 129, 5, 9
+6, true, 39, 6, 12
+4, true, 145, 7, 11
+6, true, 248, 8, 14
+4, false, 398, 9, 13
+5, true, 49, 10, 15
+5, true, 550, 11, 16
+3, true, 3000, 12, 15
+1, false, 35, 13, 14
+1, true, 200, 14, 15
+1, false, 105, 15, 16
+1, true, 29, 16, 17
+2, false, 59, 17, 19
+2, true, 75, 18, 20
+2, true, 235, 19, 21
+1, false, 79, 20, 21

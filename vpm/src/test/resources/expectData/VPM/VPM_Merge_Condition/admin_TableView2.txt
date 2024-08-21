@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 11)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP, DISCOUNT, ORDERDATE, ORDERNO
+5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true, IL, 39283, 0.05, 2003-07-09 00:00:00, 6
+5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true, IL, 39283, 0, 2003-04-07 00:00:00, 43
+5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true, IL, 39283, 0, 2003-11-14 00:00:00, 107
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 0, 2003-02-18 00:00:00, 61
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 0, 2003-07-10 00:00:00, 71
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854, 0, 2003-03-28 00:00:00, 95
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938, 0, 2003-08-25 00:00:00, 15
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938, 0, 2002-10-06 00:00:00, 29
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938, 0, 2002-11-26 00:00:00, 45
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938, 0.25, 2003-04-02 00:00:00, 67
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938, 0, 2002-07-07 00:00:00, 92
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923, 0, 2002-10-20 00:00:00, 31
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334, 0, 2003-03-11 00:00:00, 49
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334, 0, 2003-09-09 00:00:00, 51
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334, 0, 2003-04-21 00:00:00, 52
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334, 0, 2002-10-06 00:00:00, 109
+21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, true, TX, 28122, 0.1, 2002-10-15 00:00:00, 16
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445, 0.05, 2003-03-27 00:00:00, 25
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445, 0, 2003-05-04 00:00:00, 102
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445, 0, 2002-08-09 00:00:00, 106

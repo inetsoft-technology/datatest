@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 2)
+STATE, CUSTOMER_ID
+AK, 17
+CA, 32
+FL, 34
+IL, 6
+NJ, 18
+NY, 49
+OH, 11
+PA, 23
+TX, 20

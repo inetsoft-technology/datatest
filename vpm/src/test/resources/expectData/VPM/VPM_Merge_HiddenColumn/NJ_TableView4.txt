@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 6)
+CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE
+Los Angles, Specialty Retail, Simon Supricido, 10, true, CA
+Cleveland, The Big Cat, Michael Kumar, 11, false, OH
+Little Rock, Fast Transportation, George Kloss, 12, false, AK
+New York, Computer Tech, Jean Crowther, 13, false, NY
+San Jose, InterLand Services, Horst Braunschwad, 14, true, CA
+Long Island, Scheggie Services, Paula Camino, 15, true, NY
+Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL
+Austin, FISGA Corp, Marie Castro, 17, true, TX
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL
+George Park, Software Specialists, Eduardo Freyre, 19, true, PA
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY

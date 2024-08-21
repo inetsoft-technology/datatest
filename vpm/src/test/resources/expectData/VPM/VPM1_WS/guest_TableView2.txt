@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 4)
+CITY, STATE, RESELLER, CUSTOMER_ID
+Pitterson, NJ, false, 2
+Piscataway, NJ, false, 7
+Middletown, NJ, true, 9
+Littletown, NY, true, 1
+New York, NY, false, 13
+Long Island, NY, true, 15
+Boomtown, NY, false, 20
+Cleveland, OH, false, 11
+Akergen, PA, false, 4
+George Park, PA, true, 19
+Aachen, TX, true, 3
+Austin, TX, true, 17

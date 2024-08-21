@@ -1,0 +1,122 @@
+The data size(row x col) is:(121 x 9)
+CUSTOMER_ID, ORDERDATE, ORDERNO, ADDRESS, CITY, COMPANY, CUSTOMER_ID_1, STATE, ZIP
+11, 2001-12-15 00:00:00, 1, 12 Woodpark Ave., Cleveland, The Big Cat, 11, OH, 32343
+2, 2001-07-01 00:00:00, 2, 123 Summer Rd., Pitterson, Daycare One, 2, NJ, 09882
+2, 2002-06-21 00:00:00, 3, 123 Summer Rd., Pitterson, Daycare One, 2, NJ, 09882
+8, 2002-08-22 00:00:00, 4, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+8, 2003-03-25 00:00:00, 5, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+6, 2003-07-09 00:00:00, 6, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+5, 2002-09-01 00:00:00, 7, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+13, 2001-06-03 00:00:00, 8, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+3, 2003-12-19 00:00:00, 9, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+11, 2003-01-25 00:00:00, 10, 12 Woodpark Ave., Cleveland, The Big Cat, 11, OH, 32343
+3, 2003-11-08 00:00:00, 11, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+4, 2002-11-02 00:00:00, 12, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+9, 2002-05-08 00:00:00, 13, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+16, 2001-02-14 00:00:00, 14, 44 Islander Lane, Orlando, Whittaker & Co, Inc, 16, FL, 83923
+10, 2003-08-25 00:00:00, 15, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+17, 2002-10-15 00:00:00, 16, 21 Doger Sound Blvd., Austin, FISGA Corp, 17, TX, 28122
+3, 2003-02-18 00:00:00, 17, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+19, 2001-05-01 00:00:00, 18, 300 Great Swamp Rd., George Park, Software Specialists, 19, PA, 23445
+7, 2003-12-27 00:00:00, 19, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+8, 2002-06-04 00:00:00, 20, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+13, 2001-08-23 00:00:00, 21, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+8, 2003-04-22 00:00:00, 22, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+4, 2003-08-05 00:00:00, 23, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+4, 2002-01-11 00:00:00, 24, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+19, 2003-03-27 00:00:00, 25, 300 Great Swamp Rd., George Park, Software Specialists, 19, PA, 23445
+5, 2002-09-26 00:00:00, 26, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+13, 2002-05-20 00:00:00, 27, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+8, 2003-05-16 00:00:00, 28, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+10, 2002-10-06 00:00:00, 29, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+3, 2002-09-14 00:00:00, 30, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+14, 2002-10-20 00:00:00, 31, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+3, 2002-07-18 00:00:00, 32, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+6, 2001-05-12 00:00:00, 33, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+4, 2003-01-11 00:00:00, 34, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+17, 2001-03-12 00:00:00, 35, 21 Doger Sound Blvd., Austin, FISGA Corp, 17, TX, 28122
+6, 2001-10-12 00:00:00, 36, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+17, 2001-10-15 00:00:00, 37, 21 Doger Sound Blvd., Austin, FISGA Corp, 17, TX, 28122
+4, 2002-09-18 00:00:00, 38, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+5, 2002-10-12 00:00:00, 39, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+5, 2001-06-04 00:00:00, 40, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+9, 2001-05-17 00:00:00, 41, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+19, 2001-07-05 00:00:00, 42, 300 Great Swamp Rd., George Park, Software Specialists, 19, PA, 23445
+6, 2003-04-07 00:00:00, 43, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+18, 2003-09-26 00:00:00, 44, 8300 Cleveland St., Ankertown, Du Monde Technologies, 18, FL, 29183
+10, 2002-11-26 00:00:00, 45, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+4, 2002-04-12 00:00:00, 46, 88 Rio Grand Ave., Akergen, Ernst Handel, 4, PA, 38923
+14, 2002-04-27 00:00:00, 47, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+20, 2003-10-28 00:00:00, 48, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+15, 2003-03-11 00:00:00, 49, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+7, 2003-12-16 00:00:00, 50, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+15, 2003-09-09 00:00:00, 51, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+15, 2003-04-21 00:00:00, 52, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+10, 2001-06-02 00:00:00, 53, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+18, 2003-03-22 00:00:00, 54, 8300 Cleveland St., Ankertown, Du Monde Technologies, 18, FL, 29183
+20, 2003-07-28 00:00:00, 55, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+16, 2002-01-07 00:00:00, 56, 44 Islander Lane, Orlando, Whittaker & Co, Inc, 16, FL, 83923
+7, 2001-06-09 00:00:00, 57, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+13, 2001-02-22 00:00:00, 58, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+7, 2003-08-04 00:00:00, 59, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+20, 2003-09-23 00:00:00, 60, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+9, 2003-02-18 00:00:00, 61, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+10, 2001-06-22 00:00:00, 62, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+9, 2001-01-27 00:00:00, 63, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+20, 2002-12-04 00:00:00, 64, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+9, 2002-03-08 00:00:00, 65, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+20, 2003-08-13 00:00:00, 66, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+10, 2003-04-02 00:00:00, 67, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+1, 2001-01-13 00:00:00, 68, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+6, 2001-09-22 00:00:00, 69, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+20, 2002-04-08 00:00:00, 70, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234
+9, 2003-07-10 00:00:00, 71, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+1, 2002-06-24 00:00:00, 72, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+18, 2003-12-26 00:00:00, 73, 8300 Cleveland St., Ankertown, Du Monde Technologies, 18, FL, 29183
+14, 2002-02-06 00:00:00, 74, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+6, 2001-11-25 00:00:00, 75, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+5, 2002-07-05 00:00:00, 76, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+10, 2001-03-21 00:00:00, 77, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+15, 2002-01-09 00:00:00, 78, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+18, 2002-02-10 00:00:00, 79, 8300 Cleveland St., Ankertown, Du Monde Technologies, 18, FL, 29183
+1, 2001-10-24 00:00:00, 80, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+13, 2001-07-03 00:00:00, 81, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+3, 2002-12-02 00:00:00, 82, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+13, 2001-11-08 00:00:00, 83, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+5, 2001-04-02 00:00:00, 84, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+18, 2002-11-06 00:00:00, 85, 8300 Cleveland St., Ankertown, Du Monde Technologies, 18, FL, 29183
+2, 2001-12-15 00:00:00, 86, 123 Summer Rd., Pitterson, Daycare One, 2, NJ, 09882
+15, 2001-06-07 00:00:00, 87, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+9, 2002-06-11 00:00:00, 88, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+7, 2002-05-15 00:00:00, 89, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+14, 2001-07-02 00:00:00, 90, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+13, 2002-08-09 00:00:00, 91, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+10, 2002-07-07 00:00:00, 92, 88 Specialty Dr., Los Angles, Specialty Retail, 10, CA, 88938
+14, 2001-01-27 00:00:00, 93, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+14, 2001-11-27 00:00:00, 94, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+9, 2003-03-28 00:00:00, 95, 4500 River Rd., Middletown, Direct Sales, 9, NJ, 08854
+6, 2001-03-03 00:00:00, 96, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+16, 2001-04-04 00:00:00, 97, 44 Islander Lane, Orlando, Whittaker & Co, Inc, 16, FL, 83923
+12, 2002-01-19 00:00:00, 98, 77 Druguz Blvd., Little Rock, Fast Transportation, 12, AK, 12343
+3, 2002-10-27 00:00:00, 99, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+17, 2001-07-13 00:00:00, 100, 21 Doger Sound Blvd., Austin, FISGA Corp, 17, TX, 28122
+1, 2001-06-06 00:00:00, 101, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+19, 2003-05-04 00:00:00, 102, 300 Great Swamp Rd., George Park, Software Specialists, 19, PA, 23445
+8, 2002-07-18 00:00:00, 103, 71 Mulberry St., San Francisco, Quick Stop, 8, CA, 98839
+17, 2001-02-13 00:00:00, 104, 21 Doger Sound Blvd., Austin, FISGA Corp, 17, TX, 28122
+7, 2002-08-17 00:00:00, 105, 1230 Hoes Lane, Piscataway, Old World Insurance, 7, NJ, 08854
+19, 2002-08-09 00:00:00, 106, 300 Great Swamp Rd., George Park, Software Specialists, 19, PA, 23445
+6, 2003-11-14 00:00:00, 107, 5 Baker's Lane, Chicago, Familia Computer Services, 6, IL, 39283
+14, 2001-06-14 00:00:00, 108, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+15, 2002-10-06 00:00:00, 109, 839 Via Gaty Dr., Long Island, Scheggie Services, 15, NY, 12334
+3, 2002-06-28 00:00:00, 110, 23 Tasaga Ave., Aachen, Eastern Data, 3, TX, 03887
+13, 2002-10-26 00:00:00, 111, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+1, 2003-05-06 00:00:00, 112, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+12, 2001-01-24 00:00:00, 113, 77 Druguz Blvd., Little Rock, Fast Transportation, 12, AK, 12343
+2, 2003-03-25 00:00:00, 114, 123 Summer Rd., Pitterson, Daycare One, 2, NJ, 09882
+1, 2003-08-05 00:00:00, 115, 384 Broad St., Littletown, Interstate Shop, 1, NY, 18322
+5, 2003-07-20 00:00:00, 116, 389 Jardim Rd., Sevilla, George Services, 5, AK, 82938
+14, 2001-03-22 00:00:00, 117, 822 Technology Dr., San Jose, InterLand Services, 14, CA, 83923
+13, 2003-01-28 00:00:00, 118, 90 First Ave., New York, Computer Tech, 13, NY, 11223
+2, 2003-12-20 00:00:00, 119, 123 Summer Rd., Pitterson, Daycare One, 2, NJ, 09882
+20, 2002-10-28 00:00:00, 120, 345 Sewgen Dr., Boomtown, Folk Mining, 20, NY, 11234

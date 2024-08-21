@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 6)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER
+5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, true
+1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, false
+71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, false
+4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, true
+88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, true
+12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, false
+77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, false
+90 First Ave., New York, Computer Tech, Jean Crowther, 13, false
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true

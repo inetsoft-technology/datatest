@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 7)
+CUSTOMER_ID, COMPANY, ADDRESS, CITY, STATE, ZIP, RESELLER
+1, Interstate Shop, 384 Broad St., Littletown, NY, 18322, true
+13, Computer Tech, 90 First Ave., New York, NY, 11223, false
+15, Scheggie Services, 839 Via Gaty Dr., Long Island, NY, 12334, true
+20, Folk Mining, 345 Sewgen Dr., Boomtown, NY, 11234, false

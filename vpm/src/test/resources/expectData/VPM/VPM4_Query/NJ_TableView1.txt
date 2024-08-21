@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 7)
+CUSTOMER_ID, COMPANY, ADDRESS, CITY, STATE, ZIP, RESELLER
+1, Interstate Shop, 384 Broad St., Littletown, NY, 18322, true
+2, Daycare One, 123 Summer Rd., Pitterson, NJ, 09882, false
+3, Eastern Data, 23 Tasaga Ave., Aachen, TX, 03887, true
+4, Ernst Handel, 88 Rio Grand Ave., Akergen, PA, 38923, false
+5, George Services, 389 Jardim Rd., Sevilla, AK, 82938, false
+6, Familia Computer Services, 5 Baker's Lane, Chicago, IL, 39283, true
+7, Old World Insurance, 1230 Hoes Lane, Piscataway, NJ, 08854, false
+8, Quick Stop, 71 Mulberry St., San Francisco, CA, 98839, false
+9, Direct Sales, 4500 River Rd., Middletown, NJ, 08854, true
+10, Specialty Retail, 88 Specialty Dr., Los Angles, CA, 88938, true
+11, The Big Cat, 12 Woodpark Ave., Cleveland, OH, 32343, false
+12, Fast Transportation, 77 Druguz Blvd., Little Rock, AK, 12343, false
+13, Computer Tech, 90 First Ave., New York, NY, 11223, false
+14, InterLand Services, 822 Technology Dr., San Jose, CA, 83923, true
+15, Scheggie Services, 839 Via Gaty Dr., Long Island, NY, 12334, true
+16, Whittaker & Co, Inc, 44 Islander Lane, Orlando, FL, 83923, false
+17, FISGA Corp, 21 Doger Sound Blvd., Austin, TX, 28122, true
+18, Du Monde Technologies, 8300 Cleveland St., Ankertown, FL, 29183, false
+19, Software Specialists, 300 Great Swamp Rd., George Park, PA, 23445, true
+20, Folk Mining, 345 Sewgen Dr., Boomtown, NY, 11234, false

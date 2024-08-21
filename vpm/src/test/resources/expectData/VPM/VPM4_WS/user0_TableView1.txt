@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 11)
+CUSTOMER_ID, DISCOUNT, ORDERDATE, ORDERNO, ADDRESS, COMPANY, CONTACT, CUSTOMER_ID_1, RESELLER, STATE, ZIP
+2, 0, 2001-07-01 00:00:00, 2, 123 Summer Rd., Daycare One, Lisa Smith, 2, false, NJ, 09882
+2, 0, 2002-06-21 00:00:00, 3, 123 Summer Rd., Daycare One, Lisa Smith, 2, false, NJ, 09882
+2, 0, 2001-12-15 00:00:00, 86, 123 Summer Rd., Daycare One, Lisa Smith, 2, false, NJ, 09882
+2, 0, 2003-03-25 00:00:00, 114, 123 Summer Rd., Daycare One, Lisa Smith, 2, false, NJ, 09882
+2, 0, 2003-12-20 00:00:00, 119, 123 Summer Rd., Daycare One, Lisa Smith, 2, false, NJ, 09882
+4, 0, 2002-11-02 00:00:00, 12, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+4, 0.03, 2003-08-05 00:00:00, 23, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+4, 0.02, 2002-01-11 00:00:00, 24, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+4, 0.15, 2003-01-11 00:00:00, 34, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+4, 0, 2002-09-18 00:00:00, 38, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+4, 0, 2002-04-12 00:00:00, 46, 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, false, PA, 38923
+6, 0.05, 2003-07-09 00:00:00, 6, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2001-05-12 00:00:00, 33, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2001-10-12 00:00:00, 36, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2003-04-07 00:00:00, 43, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2001-09-22 00:00:00, 69, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2001-11-25 00:00:00, 75, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0.35, 2001-03-03 00:00:00, 96, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283
+6, 0, 2003-11-14 00:00:00, 107, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, true, IL, 39283

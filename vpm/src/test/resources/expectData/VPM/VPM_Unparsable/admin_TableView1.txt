@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 2)
+CUSTOMER_ID, COMPANY
+6, Familia Computer Services
+7, Old World Insurance
+8, Quick Stop
+9, Direct Sales
+10, Specialty Retail
+11, The Big Cat
+12, Fast Transportation
+13, Computer Tech
+14, InterLand Services
+15, Scheggie Services
+16, Whittaker & Co, Inc
+17, FISGA Corp
+18, Du Monde Technologies
+19, Software Specialists
+20, Folk Mining

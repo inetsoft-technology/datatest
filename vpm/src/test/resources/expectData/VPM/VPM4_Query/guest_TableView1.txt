@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 7)
+CUSTOMER_ID, CONTACT, COMPANY, ADDRESS, CITY, STATE, RESELLER
+6, Aria Duz, Familia Computer Services, 5 Baker's Lane, Chicago, IL, true
+12, George Kloss, Fast Transportation, 77 Druguz Blvd., Little Rock, AK, false
+17, Marie Castro, FISGA Corp, 21 Doger Sound Blvd., Austin, TX, true
+20, Janine Lebithal, Folk Mining, 345 Sewgen Dr., Boomtown, NY, false

@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 6)
+customer:CUSTOMER_ID, customer:CONTACT, customer:ADDRESS, customer:CITY, customer:STATE, customer:RESELLER
+5, Steven Devon, 389 Jardim Rd., Sevilla, AK, false
+12, George Kloss, 77 Druguz Blvd., Little Rock, AK, false
+8, Richard Isantengse, 71 Mulberry St., San Francisco, CA, false
+10, Simon Supricido, 88 Specialty Dr., Los Angles, CA, true
+14, Horst Braunschwad, 822 Technology Dr., San Jose, CA, true
+16, Giovanni Feuter, 44 Islander Lane, Orlando, FL, false
+18, Roland Sommer, 8300 Cleveland St., Ankertown, FL, false
+6, Aria Duz, 5 Baker's Lane, Chicago, IL, true
+2, Lisa Smith, 123 Summer Rd., Pitterson, NJ, false
+7, Lino Rodrigez, 1230 Hoes Lane, Piscataway, NJ, false
+9, Luke Baker, 4500 River Rd., Middletown, NJ, true
+1, John Kelly, 384 Broad St., Littletown, NY, true
+13, Jean Crowther, 90 First Ave., New York, NY, false
+15, Paula Camino, 839 Via Gaty Dr., Long Island, NY, true
+20, Janine Lebithal, 345 Sewgen Dr., Boomtown, NY, false
+11, Michael Kumar, 12 Woodpark Ave., Cleveland, OH, false
+4, Patrico Brown, 88 Rio Grand Ave., Akergen, PA, false
+19, Eduardo Freyre, 300 Great Swamp Rd., George Park, PA, true
+3, Anna Lincoln, 23 Tasaga Ave., Aachen, TX, true
+17, Marie Castro, 21 Doger Sound Blvd., Austin, TX, true

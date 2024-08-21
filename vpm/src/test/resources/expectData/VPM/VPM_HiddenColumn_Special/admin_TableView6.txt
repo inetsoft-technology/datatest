@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 4)
+RESELLER, STATE, Dimension, Measure
+false, AK, CUSTOMER_ID, 17
+false, CA, CUSTOMER_ID, 8
+false, FL, CUSTOMER_ID, 34
+false, NJ, CUSTOMER_ID, 9
+false, NY, CUSTOMER_ID, 33
+false, OH, CUSTOMER_ID, 11
+false, PA, CUSTOMER_ID, 4
+true, CA, CUSTOMER_ID, 24
+true, IL, CUSTOMER_ID, 6
+true, NJ, CUSTOMER_ID, 9
+true, NY, CUSTOMER_ID, 16
+true, PA, CUSTOMER_ID, 19
+true, TX, CUSTOMER_ID, 20

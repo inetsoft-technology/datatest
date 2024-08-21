@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 8)
+CUSTOMER_ID, ORDERDATE, ORDERNO, CITY, CONTACT, CUSTOMER_ID_1, RESELLER, STATE
+11, 2001-12-15 00:00:00, 1, Cleveland, Michael Kumar, 11, false, OH
+8, 2002-08-22 00:00:00, 4, San Francisco, Richard Isantengse, 8, false, CA
+8, 2003-03-25 00:00:00, 5, San Francisco, Richard Isantengse, 8, false, CA
+13, 2001-06-03 00:00:00, 8, New York, Jean Crowther, 13, false, NY
+11, 2003-01-25 00:00:00, 10, Cleveland, Michael Kumar, 11, false, OH
+16, 2001-02-14 00:00:00, 14, Orlando, Giovanni Feuter, 16, false, FL
+7, 2003-12-27 00:00:00, 19, Piscataway, Lino Rodrigez, 7, false, NJ
+8, 2002-06-04 00:00:00, 20, San Francisco, Richard Isantengse, 8, false, CA
+13, 2001-08-23 00:00:00, 21, New York, Jean Crowther, 13, false, NY
+8, 2003-04-22 00:00:00, 22, San Francisco, Richard Isantengse, 8, false, CA
+13, 2002-05-20 00:00:00, 27, New York, Jean Crowther, 13, false, NY
+8, 2003-05-16 00:00:00, 28, San Francisco, Richard Isantengse, 8, false, CA

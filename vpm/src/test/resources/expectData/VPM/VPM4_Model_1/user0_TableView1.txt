@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 8)
+PUBLIC.CUSTOMERS:exp_address, PUBLIC.CUSTOMERS:ADDRESS, PUBLIC.CUSTOMERS:COMPANY, PUBLIC.CUSTOMERS:CONTACT, PUBLIC.CUSTOMERS:CUSTOMER_ID, PUBLIC.CUSTOMERS:STATE, PUBLIC.CUSTOMERS:DISCOUNT, PUBLIC.CUSTOMERS:ORDERNO
+123 Summer Rd., 123 Summer Rd., Daycare One, Lisa Smith, 2, NJ, 0, 2
+123 Summer Rd., 123 Summer Rd., Daycare One, Lisa Smith, 2, NJ, 0, 3
+123 Summer Rd., 123 Summer Rd., Daycare One, Lisa Smith, 2, NJ, 0, 86
+123 Summer Rd., 123 Summer Rd., Daycare One, Lisa Smith, 2, NJ, 0, 114
+123 Summer Rd., 123 Summer Rd., Daycare One, Lisa Smith, 2, NJ, 0, 119
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0, 12
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0.03, 23
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0.02, 24
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0.15, 34
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0, 38
+88 Rio Grand Ave., 88 Rio Grand Ave., Ernst Handel, Patrico Brown, 4, PA, 0, 46
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0.05, 6
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 33
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 36
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 43
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 69
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 75
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0.35, 96
+5 Baker's Lane, 5 Baker's Lane, Familia Computer Services, Aria Duz, 6, IL, 0, 107

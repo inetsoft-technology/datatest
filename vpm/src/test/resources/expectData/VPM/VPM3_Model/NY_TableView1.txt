@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 7)
+ccc:CITY, ccc:COMPANY, ccc:CONTACT, ccc:CUSTOMER_ID, ccc:RESELLER, ccc:STATE, ccc:ZIP
+Piscataway, Old World Insurance, Lino Rodrigez, 7, false, NJ, 08854
+San Francisco, Quick Stop, Richard Isantengse, 8, false, CA, 98839
+Middletown, Direct Sales, Luke Baker, 9, true, NJ, 08854
+Los Angles, Specialty Retail, Simon Supricido, 10, true, CA, 88938
+Cleveland, The Big Cat, Michael Kumar, 11, false, OH, 32343
+New York, Computer Tech, Jean Crowther, 13, false, NY, 11223
+San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
+Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234

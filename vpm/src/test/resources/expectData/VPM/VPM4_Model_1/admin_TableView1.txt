@@ -1,0 +1,122 @@
+The data size(row x col) is:(121 x 9)
+PUBLIC.CUSTOMERS:exp_address, PUBLIC.CUSTOMERS:ADDRESS, PUBLIC.CUSTOMERS:CITY, PUBLIC.CUSTOMERS:COMPANY, PUBLIC.CUSTOMERS:CONTACT, PUBLIC.CUSTOMERS:CUSTOMER_ID, PUBLIC.CUSTOMERS:STATE, PUBLIC.CUSTOMERS:DISCOUNT, PUBLIC.CUSTOMERS:ORDERNO
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0, 68
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0, 72
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0, 80
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0.04, 101
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0.03, 112
+384 Broad St., 384 Broad St., Littletown, Interstate Shop, John Kelly, 1, NY, 0, 115
+123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, NJ, 0, 2
+123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, NJ, 0, 3
+123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, NJ, 0, 86
+123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, NJ, 0, 114
+123 Summer Rd., 123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, NJ, 0, 119
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0, 9
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0, 11
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0.08, 17
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0.3, 30
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0, 32
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0.15, 82
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0, 99
+23 Tasaga Ave., 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, TX, 0, 110
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0, 12
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0.03, 23
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0.02, 24
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0.15, 34
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0, 38
+88 Rio Grand Ave., 88 Rio Grand Ave., Akergen, Ernst Handel, Patrico Brown, 4, PA, 0, 46
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0, 7
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0, 26
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0, 39
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0.15, 40
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0.35, 76
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0, 84
+389 Jardim Rd., 389 Jardim Rd., Sevilla, George Services, Steven Devon, 5, AK, 0, 116
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0.05, 6
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 33
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 36
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 43
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 69
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 75
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0.35, 96
+5 Baker's Lane, 5 Baker's Lane, Chicago, Familia Computer Services, Aria Duz, 6, IL, 0, 107
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0.02, 19
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0, 50
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0, 57
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0, 59
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0, 89
+1230 Hoes Lane, 1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, NJ, 0, 105
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0, 4
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0.05, 5
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0, 20
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0, 22
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0, 28
+71 Mulberry St., 71 Mulberry St., San Francisco, Quick Stop, Richard Isantengse, 8, CA, 0, 103
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 13
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 41
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 61
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 63
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 65
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 71
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0.3, 88
+4500 River Rd., 4500 River Rd., Middletown, Direct Sales, Luke Baker, 9, NJ, 0, 95
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 15
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 29
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 45
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 53
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 62
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0.25, 67
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 77
+88 Specialty Dr., 88 Specialty Dr., Los Angles, Specialty Retail, Simon Supricido, 10, CA, 0, 92
+12 Woodpark Ave., 12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, OH, 0, 1
+12 Woodpark Ave., 12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, OH, 0, 10
+77 Druguz Blvd., 77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, AK, 0, 98
+77 Druguz Blvd., 77 Druguz Blvd., Little Rock, Fast Transportation, George Kloss, 12, AK, 0, 113
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 8
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 21
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 27
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 58
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0.06, 81
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 83
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 91
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0.05, 111
+90 First Ave., 90 First Ave., New York, Computer Tech, Jean Crowther, 13, NY, 0, 118
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 31
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0.4, 47
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 74
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 90
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 93
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 94
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 108
+822 Technology Dr., 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, CA, 0, 117
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 49
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 51
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 52
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 78
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 87
+839 Via Gaty Dr., 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, NY, 0, 109
+44 Islander Lane, 44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, FL, 0, 14
+44 Islander Lane, 44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, FL, 0, 56
+44 Islander Lane, 44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, FL, 0, 97
+21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, TX, 0.1, 16
+21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, TX, 0.01, 35
+21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, TX, 0, 37
+21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, TX, 0, 100
+21 Doger Sound Blvd., 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, TX, 0, 104
+8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, FL, 0, 44
+8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, FL, 0, 54
+8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, FL, 0, 73
+8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, FL, 0, 79
+8300 Cleveland St., 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, FL, 0, 85
+300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, PA, 0, 18
+300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, PA, 0.05, 25
+300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, PA, 0, 42
+300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, PA, 0, 102
+300 Great Swamp Rd., 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, PA, 0, 106
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0, 48
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0.05, 55
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0, 60
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0, 64
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0, 66
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0, 70
+345 Sewgen Dr., 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, NY, 0.2, 120

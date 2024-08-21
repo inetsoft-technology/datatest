@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 7)
+CITY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ORDERDATE, DISCOUNT
+Littletown, John Kelly, 1, true, NY, 2003-05-06 00:00:00, 0.03
+Littletown, John Kelly, 1, true, NY, 2003-08-05 00:00:00, 0
+Pitterson, Lisa Smith, 2, false, NJ, 2003-03-25 00:00:00, 0
+Pitterson, Lisa Smith, 2, false, NJ, 2003-12-20 00:00:00, 0
+Aachen, Anna Lincoln, 3, true, TX, 2003-12-19 00:00:00, 0
+Aachen, Anna Lincoln, 3, true, TX, 2003-11-08 00:00:00, 0
+Aachen, Anna Lincoln, 3, true, TX, 2003-02-18 00:00:00, 0.08
+Akergen, Patrico Brown, 4, false, PA, 2003-08-05 00:00:00, 0.03
+Akergen, Patrico Brown, 4, false, PA, 2003-01-11 00:00:00, 0.15
+Sevilla, Steven Devon, 5, false, AK, 2003-07-20 00:00:00, 0

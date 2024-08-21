@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 3)
+INSTOCK, PRICE, cid_pid
+true, 2250, NULL
+true, 125, NULL
+false, 399, NULL
+true, 75, NULL
+false, 129, NULL
+true, 39, NULL
+true, 145, NULL
+true, 248, NULL
+false, 398, NULL
+true, 49, NULL
+true, 550, NULL
+true, 3000, NULL
+false, 35, NULL
+true, 200, NULL
+false, 105, NULL
+true, 29, NULL
+false, 59, NULL
+true, 75, NULL
+true, 235, NULL
+false, 79, NULL

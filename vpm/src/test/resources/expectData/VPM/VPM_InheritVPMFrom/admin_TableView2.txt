@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 5)
+CUSTOMER_ID, CONTACT, CITY, STATE, RESELLER
+1, John Kelly, Littletown, NY, true
+2, Lisa Smith, Pitterson, NJ, false
+3, Anna Lincoln, Aachen, TX, true
+4, Patrico Brown, Akergen, PA, false
+5, Steven Devon, Sevilla, AK, false

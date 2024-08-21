@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 13)
+PRODUCT_ID, PRODUCT_NAME, DESCRIPTION, PRICE, SUPPLIER_ID, CATEGORY_ID, NUMBER_INSTOCK, REORDER_LEVEL, PRODUCT_EXIST, PRODUCER, PRODUCE_DATETIME, PRODUCE_TIME, PRODUCE_DATE
+6, Fast Mail, Lightweight email agent, 39, 3, 6, 78, 50, true, Global Networks Ltd., 2000-12-12 11:59:59, 2006-07-01 11:59:59, 2000-12-12 00:00:00
+10, Fancy Menus, Collection of menus, 49, 4, 5, 113, 50, false, Micro Production LLC, 2006-01-01 12:12:12, 2006-07-01 12:12:12, 2006-01-01 00:00:00
+13, Easy Chess, Chess game, 35, 7, 1, 72, 50, true, Enigma Productions, 2000-12-12 11:59:59, 2006-07-01 11:59:59, 2000-12-12 00:00:00
+21, Wireless Mouse, Wireless optical USB mouse, 40, 9, 7, 42, 25, true, Lockbox Servers, 2001-01-01 01:13:13, 2006-07-01 01:13:13, 2001-01-01 00:00:00
+22, Wireless Keyboard, Wireless USB keyboard, 40, 9, 7, 45, 25, true, Lockbox Servers, 2001-01-01 01:13:13, 2006-07-01 01:13:13, 2001-01-01 00:00:00

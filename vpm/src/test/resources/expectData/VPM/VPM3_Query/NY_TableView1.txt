@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 4)
+STATE, CITY, COMPANY, count_add
+CA, Los Angles, Specialty Retail, 1
+CA, San Francisco, Quick Stop, 1
+CA, San Jose, InterLand Services, 1
+NJ, Middletown, Direct Sales, 1
+NJ, Piscataway, Old World Insurance, 1
+NY, Boomtown, Folk Mining, 1
+NY, Long Island, Scheggie Services, 1
+NY, New York, Computer Tech, 1
+OH, Cleveland, The Big Cat, 1

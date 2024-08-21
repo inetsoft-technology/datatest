@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 1)
+STATE
+NY
+NJ
+TX
+PA
+AK
+IL
+NJ
+CA
+NJ
+CA
+OH
+AK
+NY
+CA
+NY
+FL
+TX
+FL
+PA
+NY
