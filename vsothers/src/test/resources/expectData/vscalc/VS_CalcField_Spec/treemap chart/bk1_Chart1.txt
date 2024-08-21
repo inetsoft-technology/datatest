@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+Year(Calc_Date), STATE, CITY, Sum(CUSTOMER_ID)
+2017-01-01 00:00:00, CA, Albany, 16
+2017-01-01 00:00:00, CT, Hartford, 12
+2017-01-01 00:00:00, IL, Chicago, 20
+2017-01-01 00:00:00, MA, Boston, 90
+2017-01-01 00:00:00, TX, Austin, 11

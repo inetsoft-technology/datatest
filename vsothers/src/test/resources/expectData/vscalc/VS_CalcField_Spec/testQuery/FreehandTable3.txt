@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 2)
+CalcField, Sum(customer_id)
+2001 Jan, 36
+2001 Apr, 114
+2001 Jul, 174
+2001 Oct, 43
+2002 Jan, 93
+2002 Apr, 79
+2002 Jul, 78
+2002 Oct, 161
+2003 Jan, 83
+2003 Apr, 122
+2003 Jul, 68
+2003 Oct, 115
+2004 Jan, 46

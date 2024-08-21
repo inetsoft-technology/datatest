@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+Year(Month(Date)), DataGroup(Category), Sum(Quantity Purchased), CalcField1
+2017-01-01 00:00:00, hardware&game, 4838, 4838
+2017-01-01 00:00:00, Others, 3357, 3357
+2017-01-01 00:00:00, Personal, 1737, 1737
+2017-01-01 00:00:00, Office Tools, 1475, 1475
+2018-01-01 00:00:00, hardware&game, 6045, 6045
+2018-01-01 00:00:00, Others, 4007, 4007
+2018-01-01 00:00:00, Personal, 2071, 2071
+2018-01-01 00:00:00, Office Tools, 1707, 1707
+2019-01-01 00:00:00, hardware&game, 6275, 6275
+2019-01-01 00:00:00, Others, 3772, 3772
+2019-01-01 00:00:00, Personal, 2247, 2247
+2019-01-01 00:00:00, Office Tools, 1639, 1639
+2020-01-01 00:00:00, hardware&game, 6572, 6572
+2020-01-01 00:00:00, Others, 4049, 4049
+2020-01-01 00:00:00, Personal, 2452, 2452
+2020-01-01 00:00:00, Office Tools, 1767, 1767

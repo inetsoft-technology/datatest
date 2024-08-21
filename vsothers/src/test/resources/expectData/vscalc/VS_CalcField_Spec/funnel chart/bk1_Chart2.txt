@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 4)
+CalcField3, Product:Category, Sum(Product:Price), CalcField2
+TX_Dallas, Educational, 134, 134
+WA_Olympia, Games, 419, 419
+WA_Olympia, Hardware, 40, 40
+WA_Olympia, Personal, 398, 398
+CO_Denver, Educational, 294, 294
+CO_Denver, Games, 200, 200
+CO_Denver, Hardware, 350, 350
+CO_Denver, Office Tools, 399, 399
+CO_Denver, Personal, 398, 398
+NJ_Camden, Business, 3000, 3000
+AZ_Tucson, Business, 3000, 3000
+AZ_Tucson, Games, 105, 105
+NY_New York, Business, 2250, 2250
+NY_New York, Educational, 59, 59
+NY_New York, Games, 29, 29
+NY_New York, Graphics, 49, 49
+NY_New York, Hardware, 310, 310
+NY_New York, Office Tools, 438, 438
+NY_New York, Personal, 527, 527
+MD_Baltimore, Business, 3000, 3000
+MD_Baltimore, Educational, 59, 59
+MD_Baltimore, Games, 79, 79
+MD_Baltimore, Hardware, 3200, 3200
+MD_Baltimore, Office Tools, 39, 39
+MD_Baltimore, Personal, 129, 129

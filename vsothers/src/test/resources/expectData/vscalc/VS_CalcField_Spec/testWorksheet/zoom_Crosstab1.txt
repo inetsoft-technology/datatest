@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 4)
+Year(c_edate), Month(c_edate), NULL, c_mode/Sum(calc_quarter)/Sum(calc plus field)
+2003, 2003 Feb, c_mode, 32
+2003, 2003 Feb, Sum(calc_quarter), 6
+2003, 2003 Feb, Sum(calc plus field), 29
+2004, 2004 Feb, c_mode, 18
+2004, 2004 Feb, Sum(calc_quarter), 12
+2004, 2004 Feb, Sum(calc plus field), 56
+2006, 2006 Feb, c_mode, 39
+2006, 2006 Feb, Sum(calc_quarter), 18
+2006, 2006 Feb, Sum(calc plus field), 96

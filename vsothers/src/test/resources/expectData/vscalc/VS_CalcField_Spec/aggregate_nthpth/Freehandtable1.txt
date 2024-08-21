@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 5)
+Calc_string, Calc_frequest, Calc_fre2, Calc_pth, Calc_small
+false_AK, 5, false_AK, 39, 59
+false_CA, 8, false_CA, 29, 59
+false_FL, 16, false_FL, 75, 129
+false_NJ, 7, false_NJ, 35, 49
+false_NY, 13, false_NY, 35, 59
+false_OH, 11, false_OH, 35, 75
+false_PA, 4, false_PA, 35, 39
+true_CA, 10, true_CA, 39, 75
+true_I, 9, true_I, 75, 79
+true_IL, 6, true_IL, 39, 75
+true_NY, 1, true_NY, 39, 75
+true_PA, 19, true_PA, 248, NULL
+true_TX, 3, true_TX, 29, 39

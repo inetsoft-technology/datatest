@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+Last Name, NULL, calc_date_max/calc_date_count/calc_date_min
+Duke, calc_date_max, 2020-10-01 00:00:00
+Duke, calc_date_count, 208
+Duke, calc_date_min, 2019-02-01 00:00:00
+Heggenbart, calc_date_max, 2020-10-01 00:00:00
+Heggenbart, calc_date_count, 242
+Heggenbart, calc_date_min, 2019-02-01 00:00:00
+Marston, calc_date_max, 2020-10-01 00:00:00
+Marston, calc_date_count, 218
+Marston, calc_date_min, 2019-02-01 00:00:00

@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 9)
+parent_id, child_id, value, label_string, label_timeinstant, label_date, label_time, label_boolean, label_number
+NULL, 1, 12, Northeast, 2018-12-01 19:02:04, 2017-12-01, 19:02:04, true, 11
+NULL, 2, 3, Midwest, 2017-12-01 07:02:04, 2017-12-11, 09:02:04, false, 12
+NULL, 3, 22, South, 2017-12-15 09:02:04, 2017-11-01, 09:32:04, true, 2
+NULL, 4, 21, West, 2018-12-01 09:02:04, 2018-12-01, 09:02:44, true, 1
+1, 5, 34, New England, 2017-10-01 09:02:04, 2019-12-01, 11:02:04, false, 34
+1, 6, 467, Mid-Atlantic, 2019-12-01 09:02:04, 2018-12-01, 02:02:04, false, 21
+2, 7, 11, East North Central, 2018-02-01 09:02:04, 2019-12-16, 09:05:04, true, 22
+2, 8, 2, West North Central, 2017-12-23 09:02:04, 2017-10-01, 09:08:04, true, 3
+3, 9, 34, South Atlantic, 2017-12-01 09:32:04, 2017-12-28, 09:02:24, false, 15
+3, 10, 9, East South Central, 2017-12-01 09:02:34, 2018-02-01, 10:02:04, true, 67
+3, 11, 43, West South Central, 2019-12-21 09:02:04, 2018-02-21, 13:02:04, false, 14
+4, 12, 11, Mountain, 2018-11-01 09:02:04, 2018-12-11, 12:02:04, true, 29
+4, 13, 0, Pacific, 2017-11-01 09:02:04, 2017-10-01, 09:56:34, false, 43

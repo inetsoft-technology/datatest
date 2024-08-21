@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 5)
+Year(Calc_date), Customer:Region, Sum(Calc_double2), Sum(Calc_double), discrete_Sum(Calc_double2)
+2019-01-01 00:00:00, USA West, 215, 3404, 882
+2020-01-01 00:00:00, USA West, 567, 7500, 882
+2021-01-01 00:00:00, USA West, 100, 1387, 882

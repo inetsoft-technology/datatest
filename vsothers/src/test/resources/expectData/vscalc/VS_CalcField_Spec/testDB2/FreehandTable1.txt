@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 2)
+c_state, c_id
+AZa, 44
+CAa, 29.6881
+COa, 17.5172
+CTa, 16
+FLa, 28
+ILa, 24
+MAa, 40
+MDa, 27.0909
+NJa, 35.2063
+NYa, 28.4236
+TXa, 26

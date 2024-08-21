@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 3)
+Calc_string, Sum(Calc_double), Sum(Total@Calc_double)
+1_MA, 105, NULL
+1_MD, 52, NULL
+2_IL, 20, NULL
+2_NV, 64, NULL
+2_TX, 180, NULL
+2_WA, 112, NULL
+NULL, NULL, 533

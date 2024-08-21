@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Customer:Region, Year(Calc_date), Sum(Product:Price), Average(Calc_double)
+USA West, 2019-01-01 00:00:00, 3404, 189.1111
+USA West, 2020-01-01 00:00:00, 7500, 156.25
+USA West, 2021-01-01 00:00:00, 1387, 154.1111

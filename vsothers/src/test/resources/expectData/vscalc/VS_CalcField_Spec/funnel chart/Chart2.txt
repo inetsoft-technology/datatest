@@ -1,0 +1,79 @@
+The data size(row x col) is:(78 x 4)
+CalcField3, Product:Category, Sum(Product:Price), CalcField2
+TX_Houston, Business, 27625, 27625
+TX_Houston, Educational, 1107, 1107
+TX_Houston, Games, 2011, 2011
+TX_Houston, Graphics, 4095, 4095
+TX_Houston, Hardware, 20370, 20370
+TX_Houston, Office Tools, 2501, 2501
+TX_Houston, Personal, 2342, 2342
+CA_San Francisco, Business, 29000, 29000
+CA_San Francisco, Educational, 1770, 1770
+CA_San Francisco, Games, 3071, 3071
+CA_San Francisco, Graphics, 2494, 2494
+CA_San Francisco, Hardware, 17470, 17470
+CA_San Francisco, Office Tools, 3829, 3829
+CA_San Francisco, Personal, 4116, 4116
+NJ_Newark, Business, 28250, 28250
+NJ_Newark, Educational, 1796, 1796
+NJ_Newark, Games, 2629, 2629
+NJ_Newark, Graphics, 3741, 3741
+NJ_Newark, Hardware, 23760, 23760
+NJ_Newark, Office Tools, 3756, 3756
+NJ_Newark, Personal, 4084, 4084
+MA_Springfield, Business, 38250, 38250
+MA_Springfield, Educational, 1637, 1637
+MA_Springfield, Games, 2553, 2553
+MA_Springfield, Graphics, 942, 942
+MA_Springfield, Hardware, 19920, 19920
+MA_Springfield, Office Tools, 1965, 1965
+MA_Springfield, Personal, 3557, 3557
+TX_Austin, Business, 33750, 33750
+TX_Austin, Educational, 1342, 1342
+TX_Austin, Games, 2044, 2044
+TX_Austin, Graphics, 1492, 1492
+TX_Austin, Hardware, 27350, 27350
+TX_Austin, Office Tools, 5235, 5235
+TX_Austin, Personal, 4170, 4170
+CA_Los Angeles, Business, 37625, 37625
+CA_Los Angeles, Educational, 3657, 3657
+CA_Los Angeles, Games, 4537, 4537
+CA_Los Angeles, Graphics, 3387, 3387
+CA_Los Angeles, Hardware, 22920, 22920
+CA_Los Angeles, Office Tools, 8197, 8197
+CA_Los Angeles, Personal, 5604, 5604
+TX_Dallas, Business, 45875, 45875
+TX_Dallas, Educational, 4386, 4386
+TX_Dallas, Games, 3110, 3110
+TX_Dallas, Graphics, 3839, 3839
+TX_Dallas, Hardware, 28460, 28460
+TX_Dallas, Office Tools, 5103, 5103
+TX_Dallas, Personal, 5658, 5658
+MD_Baltimore, Business, 50250, 50250
+MD_Baltimore, Educational, 3589, 3589
+MD_Baltimore, Games, 3433, 3433
+MD_Baltimore, Graphics, 2995, 2995
+MD_Baltimore, Hardware, 21590, 21590
+MD_Baltimore, Office Tools, 8092, 8092
+MD_Baltimore, Personal, 6730, 6730
+MA_Boston, Business, 45250, 45250
+MA_Boston, Educational, 3605, 3605
+MA_Boston, Games, 4837, 4837
+MA_Boston, Graphics, 5685, 5685
+MA_Boston, Hardware, 27970, 27970
+MA_Boston, Office Tools, 6641, 6641
+MA_Boston, Personal, 10142, 10142
+NY_New York, Business, 107500, 107500
+NY_New York, Educational, 8860, 8860
+NY_New York, Games, 9266, 9266
+NY_New York, Graphics, 15879, 15879
+NY_New York, Hardware, 62850, 62850
+NY_New York, Office Tools, 14556, 14556
+NY_New York, Personal, 14566, 14566
+Others, Business, 353625, 353625
+Others, Educational, 26940, 26940
+Others, Games, 32941, 32941
+Others, Graphics, 44571, 44571
+Others, Hardware, 205570, 205570
+Others, Office Tools, 48151, 48151
+Others, Personal, 52153, 52153
