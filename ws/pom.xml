@@ -51,7 +51,6 @@
                     </additionalClasspathElements>
                     <argLine>-Xmx1g -Dfile.encoding=UTF-8
                         -XX:ReservedCodeCacheSize=100m -XX:+UseCodeCacheFlushing
-                        -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
                         --add-opens=java.base/jdk.internal.access=ALL-UNNAMED
                         --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED
                         --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
