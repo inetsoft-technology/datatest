@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+paid, 08, 01, 10
+NULL, 34, NULL, NULL
+false, NULL, 20, 2

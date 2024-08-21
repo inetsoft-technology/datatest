@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 9)
+Year(Order:Date), NULL, Business, Educational, Games, Graphics, Hardware, Office Tools, Personal
+2017, CalcField1, 14, 14, 13, 13, 13, 12, 13
+2017, CalcField2, 4, 4, 4, 4, 5, 6, 4
+2018, CalcField1, 13, 14, 14, 14, 14, 13, 14
+2018, CalcField2, 4, 3, 5, 4, 5, 3, 5
+2019, CalcField1, 14, 14, 14, 11, 14, 13, 13
+2019, CalcField2, 5, 4, 6, 3, 6, 5, 6
+2020, CalcField1, 14, 14, 14, 13, 14, 12, 13
+2020, CalcField2, 6, 6, 6, 6, 6, 5, 6

@@ -1,0 +1,42 @@
+The data size(row x col) is:(41 x 3)
+DataGroup(CalcField3), ColorGroup(Last Name), Sum(Quantity Purchased)
+AZ_Tucson, Duke, 753
+AZ_Tucson, M, 354
+CA_citygroup, Duke, 2634
+CA_citygroup, M, 2187
+CO_Boulder, Heggenbart, 321
+CO_Boulder, M, 343
+CO_Denver, Duke, 637
+CO_Denver, M, 538
+CT_Hartford, Heggenbart, 487
+CT_Hartford, M, 189
+FL_Orlando, Heggenbart, 712
+FL_Orlando, M, 1004
+IL_Chicago, Duke, 639
+IL_Chicago, M, 817
+MA_citygroup, Heggenbart, 5444
+MA_citygroup, M, 2753
+MD_Baltimore, Duke, 686
+MD_Baltimore, Heggenbart, 443
+MD_Baltimore, M, 1105
+MD_Rockville, Heggenbart, 529
+MD_Rockville, M, 598
+NJ_citygroup, Heggenbart, 4795
+NJ_citygroup, M, 4018
+NV_Las Vegas, Duke, 273
+NV_Las Vegas, M, 520
+NY_New York, Duke, 872
+NY_New York, Heggenbart, 3004
+NY_New York, M, 4786
+PA_York, Heggenbart, 639
+PA_York, M, 737
+TX_Austin, Duke, 936
+TX_Austin, M, 1388
+TX_Dallas, Duke, 2123
+TX_Dallas, M, 2149
+TX_Houston, Duke, 926
+TX_Houston, M, 461
+WA_Olympia, Duke, 1505
+WA_Olympia, M, 1006
+WA_Seattle, Duke, 363
+WA_Seattle, M, 336

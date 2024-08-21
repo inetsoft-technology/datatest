@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+DataGroup(CalcField3), ColorGroup(Last Name), Sum(Quantity Purchased)
+MA_citygroup, Heggenbart, 874
+MA_citygroup, M, 493
+NJ_citygroup, Heggenbart, 1586
+NJ_citygroup, M, 1728

@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 3)
+month, fromFormula, quarter
+2010 Mar, 2010, 2
+2001 May, 2001, 3
+2001 Mar, 2001, 2
+2000 May, 2000, 3
+1990 May, 1990, 3
+1990 Mar, 1990, 2
+1979 Mar, 1979, 2
+1976 May, 1976, 3
+1971 May, 1971, 3
+1971 Mar, 1971, 2
+NULL, NULL, 1

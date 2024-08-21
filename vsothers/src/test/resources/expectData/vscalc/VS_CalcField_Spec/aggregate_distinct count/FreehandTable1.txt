@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+2017, 14
+NULL, 6
+2018, 14
+NULL, 5
+2019, 14
+NULL, 6
+2020, 14
+NULL, 6

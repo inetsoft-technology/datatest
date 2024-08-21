@@ -1,0 +1,47 @@
+The data size(row x col) is:(46 x 4)
+Year(c_edate), Month(c_edate), NULL, c_mode/Sum(calc_quarter)/Sum(calc plus field)
+2002, 2002 Jul, c_mode, 36
+2002, 2002 Jul, Sum(calc_quarter), 36
+2002, 2002 Jul, Sum(calc plus field), 434
+2002, 2002 Oct, c_mode, 28
+2002, 2002 Oct, Sum(calc_quarter), 56
+2002, 2002 Oct, Sum(calc plus field), 342
+2002, 2002 Jun, c_mode, 21
+2002, 2002 Jun, Sum(calc_quarter), 28
+2002, 2002 Jun, Sum(calc plus field), 322
+2003, 2003 Jan, c_mode, 36
+2003, 2003 Jan, Sum(calc_quarter), 72
+2003, 2003 Jan, Sum(calc plus field), 323
+2003, 2003 Aug, c_mode, 31
+2003, 2003 Aug, Sum(calc_quarter), 24
+2003, 2003 Aug, Sum(calc plus field), 294
+2003, 2003 Apr, c_mode, 30
+2003, 2003 Apr, Sum(calc_quarter), 104
+2003, 2003 Apr, Sum(calc plus field), 307
+2004, 2004 Oct, c_mode, 38
+2004, 2004 Oct, Sum(calc_quarter), 60
+2004, 2004 Oct, Sum(calc plus field), 404
+2004, 2004 May, c_mode, 35
+2004, 2004 May, Sum(calc_quarter), 112
+2004, 2004 May, Sum(calc plus field), 325
+2004, 2004 Dec, c_mode, 26
+2004, 2004 Dec, Sum(calc_quarter), 84
+2004, 2004 Dec, Sum(calc plus field), 322
+2005, 2005 Apr, c_mode, 41
+2005, 2005 Apr, Sum(calc_quarter), 120
+2005, 2005 Apr, Sum(calc plus field), 440
+2005, 2005 May, c_mode, 28
+2005, 2005 May, Sum(calc_quarter), 136
+2005, 2005 May, Sum(calc plus field), 466
+2005, 2005 Jun, c_mode, 26
+2005, 2005 Jun, Sum(calc_quarter), 30
+2005, 2005 Jun, Sum(calc plus field), 261
+2006, 2006 Mar, c_mode, 15
+2006, 2006 Mar, Sum(calc_quarter), 96
+2006, 2006 Mar, Sum(calc plus field), 333
+2006, 2006 Feb, c_mode, 14
+2006, 2006 Feb, Sum(calc_quarter), 90
+2006, 2006 Feb, Sum(calc plus field), 350
+2006, 2006 Jan, c_mode, 11
+2006, 2006 Jan, Sum(calc_quarter), 96
+2006, 2006 Jan, Sum(calc plus field), 313

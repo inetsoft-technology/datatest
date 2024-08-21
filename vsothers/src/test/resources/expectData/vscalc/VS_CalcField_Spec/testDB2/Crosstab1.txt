@@ -1,0 +1,24 @@
+The data size(row x col) is:(23 x 3)
+concat state, NULL, Weighted Average(TopFormula, calc_cid)/Average(calc_cid)
+AZa, Weighted Average(TopFormula, calc_cid), 24
+AZa, Average(calc_cid), 44
+CAa, Weighted Average(TopFormula, calc_cid), 16.8441
+CAa, Average(calc_cid), 28.5484
+COa, Weighted Average(TopFormula, calc_cid), 10.7586
+COa, Average(calc_cid), 16.5714
+CTa, Weighted Average(TopFormula, calc_cid), 10
+CTa, Average(calc_cid), 16
+FLa, Weighted Average(TopFormula, calc_cid), 16
+FLa, Average(calc_cid), 28
+ILa, Weighted Average(TopFormula, calc_cid), 14
+ILa, Average(calc_cid), 24
+MAa, Weighted Average(TopFormula, calc_cid), 22
+MAa, Average(calc_cid), 40
+MDa, Weighted Average(TopFormula, calc_cid), 15.5455
+MDa, Average(calc_cid), 23.6923
+NJa, Weighted Average(TopFormula, calc_cid), 19.6031
+NJa, Average(calc_cid), 24.8052
+NYa, Weighted Average(TopFormula, calc_cid), 16.2118
+NYa, Average(calc_cid), 21.9437
+TXa, Weighted Average(TopFormula, calc_cid), 15
+TXa, Average(calc_cid), 26

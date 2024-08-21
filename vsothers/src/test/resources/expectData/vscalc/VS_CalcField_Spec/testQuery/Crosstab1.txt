@@ -1,0 +1,68 @@
+The data size(row x col) is:(67 x 7)
+cstate, city, quarter, % of total by row: CalcField, TopFormula, Grand Total, Grand Total
+AKa, Little Rock, 1, 147%, 88, 147%, 88
+AKa, Sevilla, 2, 207%, 60, 207%, 60
+AKa, Sevilla, 3, 188%, 120, 188%, 120
+AKa, Sevilla, 4, 130%, 30, 130%, 30
+CAa, Los Angles, 1, 129%, 40, 129%, 40
+CAa, Los Angles, 2, 101%, 120, 101%, 120
+CAa, Los Angles, 3, 89%, 80, 89%, 80
+CAa, Los Angles, 4, 62%, 80, 62%, 80
+CAa, San Francisco, 1, 10%, 36, 10%, 36
+CAa, San Francisco, 2, 49%, 108, 49%, 108
+CAa, San Francisco, 3, 112%, 72, 112%, 72
+CAa, San Jose, 1, 113%, 144, 113%, 144
+CAa, San Jose, 2, 92%, 96, 92%, 96
+CAa, San Jose, 3, 107%, 48, 107%, 48
+CAa, San Jose, 4, 75%, 96, 75%, 96
+FLa, Ankertown, 1, 62%, 112, 62%, 112
+FLa, Ankertown, 3, 41%, 56, 41%, 56
+FLa, Ankertown, 4, 73%, 112, 73%, 112
+FLa, Orlando, 1, 37%, 104, 37%, 104
+FLa, Orlando, 2, 101%, 52, 101%, 52
+ILa, Chicago, 1, 267%, 32, 267%, 32
+ILa, Chicago, 2, 106%, 64, 106%, 64
+ILa, Chicago, 3, 104%, 64, 104%, 64
+ILa, Chicago, 4, 202%, 96, 202%, 96
+NJa, Middletown, 1, 132%, 152, 132%, 152
+NJa, Middletown, 2, 88%, 114, 88%, 114
+NJa, Middletown, 3, 132%, 38, 132%, 38
+NJa, Piscataway, 2, 174%, 68, 174%, 68
+NJa, Piscataway, 3, 196%, 68, 196%, 68
+NJa, Piscataway, 4, 82%, 68, 82%, 68
+NJa, Pitterson, 1, 952%, 24, 952%, 24
+NJa, Pitterson, 2, 25%, 24, 25%, 24
+NJa, Pitterson, 3, 17%, 24, 17%, 24
+NJa, Pitterson, 4, 856%, 48, 856%, 48
+NYa, Boomtown, 2, 58%, 60, 58%, 60
+NYa, Boomtown, 3, 50%, 180, 50%, 180
+NYa, Boomtown, 4, 65%, 180, 65%, 180
+NYa, Littletown, 1, 1,135%, 22, 1,135%, 22
+NYa, Littletown, 2, 1,586%, 66, 1,586%, 66
+NYa, Littletown, 3, 1,920%, 22, 1,920%, 22
+NYa, Littletown, 4, 1,336%, 22, 1,336%, 22
+NYa, Long Island, 1, 71%, 100, 71%, 100
+NYa, Long Island, 2, 77%, 100, 77%, 100
+NYa, Long Island, 3, 57%, 50, 57%, 50
+NYa, Long Island, 4, 121%, 50, 121%, 50
+NYa, New York, 1, 113%, 92, 113%, 92
+NYa, New York, 2, 22%, 92, 22%, 92
+NYa, New York, 3, 83%, 138, 83%, 138
+NYa, New York, 4, 125%, 92, 125%, 92
+OHa, Cleveland, 1, 15%, 42, 15%, 42
+OHa, Cleveland, 4, 2%, 42, 2%, 42
+PAa, Akergen, 1, 121%, 56, 121%, 56
+PAa, Akergen, 2, 192%, 28, 192%, 28
+PAa, Akergen, 3, 127%, 56, 127%, 56
+PAa, Akergen, 4, 50%, 28, 50%, 28
+PAa, George Park, 1, 22%, 58, 22%, 58
+PAa, George Park, 2, 53%, 116, 53%, 116
+PAa, George Park, 3, 65%, 116, 65%, 116
+TXa, Aachen, 1, 95%, 26, 95%, 26
+TXa, Aachen, 2, 612%, 26, 612%, 26
+TXa, Aachen, 3, 173%, 52, 173%, 52
+TXa, Aachen, 4, 280%, 104, 280%, 104
+TXa, Austin, 1, 68%, 108, 68%, 108
+TXa, Austin, 3, 98%, 54, 98%, 54
+TXa, Austin, 4, 26%, 108, 26%, 108
+Grand Total, NULL, NULL, 100%, 4824, 100%, 4824

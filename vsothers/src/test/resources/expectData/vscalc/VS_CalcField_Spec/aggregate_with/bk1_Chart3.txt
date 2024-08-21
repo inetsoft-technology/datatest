@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 7)
+Year(orderdate), Covariance(customer_id, Calc_double), Correlation(Calc_double, customer_id), WeightedAverage(customer_id, quantity), Calc_weight, Sum(Calc_double), Change from previous Year(orderdate): Sum(Calc_double)
+2002-01-01 00:00:00, -0.1778, -0.0415, 7.0329, 7.0329, 25.6, NULL
+2003-01-01 00:00:00, 0.1406, 0.2649, 6.9167, 6.9167, 3.75, -21.85
