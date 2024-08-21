@@ -1,8 +1,8 @@
 The table size(row x col) is:(21 x 8)
 ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
-1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, false, NJ, 08854
-123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, false, NJ, 09882
 12 Woodpark Ave., Cleveland, The Big Cat, Michael Kumar, 11, false, OH, 32343
+123 Summer Rd., Pitterson, Daycare One, Lisa Smith, 2, false, NJ, 09882
+1230 Hoes Lane, Piscataway, Old World Insurance, Lino Rodrigez, 7, false, NJ, 08854
 21 Doger Sound Blvd., Austin, FISGA Corp, Marie Castro, 17, true, TX, 28122
 23 Tasaga Ave., Aachen, Eastern Data, Anna Lincoln, 3, true, TX, 03887
 300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445

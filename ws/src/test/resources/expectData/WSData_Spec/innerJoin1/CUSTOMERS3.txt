@@ -19,12 +19,12 @@ Las Vegas, 32, true, NV
 Los Angeles, 13, false, CA
 Los Angeles, 21, true, CA
 Middletown, 2, true, NJ
-Newark, 19, false, NJ
 New Brunswick, 25, true, NJ
 New York, 3, true, NY
 New York, 7, true, NY
 New York, 17, true, NY
 New York, 24, true, NY
+Newark, 19, false, NJ
 Olympia, 29, true, WA
 Orlando, 12, true, FL
 Plainfield, 35, true, NJ

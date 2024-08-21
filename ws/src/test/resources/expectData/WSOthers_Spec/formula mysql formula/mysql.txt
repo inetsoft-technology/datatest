@@ -14,10 +14,10 @@ Houston, 22, TX, X-Houston, 11, 0, 24, 14
 Las Vegas, 32, NV, V-Las Vegas, 32, 0, 34, 4
 Los Angeles, 13, CA, selegnA soL-AC, 50, 1, 14, 7
 Los Angeles, 21, CA, A-Los Angeles, 13, 0, 23, 15
-Newark, 19, NJ, kraweN-JN, 94, 1, NULL, 1
 New Brunswick, 25, NJ, J-New Brunswick, 15, 0, 27, 11
 New York, 17, NY, kroY weN-YN, 41, 1, 18, 3
 New York, 24, NY, Y-New York, 17, 0, 26, 12
+Newark, 19, NJ, kraweN-JN, 94, 1, NULL, 1
 Olympia, 29, WA, A-Olympia, 27, 0, 31, 7
 Orlando, 12, FL, odnalrO-LF, 12, 1, 13, 8
 Plainfield, 35, NJ, J-Plainfield, 15, 0, 0, 1

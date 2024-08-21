@@ -4,12 +4,12 @@ Las Vegas, Tumbleweed Gaming, 32, NV, NV, NJ, 35, Las Vegas_Tumbleweed Gaming
 Los Angeles, Computer Tech, 13, CA, CA, CA, 16, Los Angeles_Computer Tech
 Los Angeles, West Coast Customs, 21, CA, CA, NY, 24, Los Angeles_West Coast Customs
 Middletown, Daycare One, 2, NJ, NULL, MD, 5, Middletown_Daycare One
-Newark, Software Specialists, 19, NJ, NJ, TX, 22, Newark_Software Specialists
 New Brunswick, Rutgers Bank, 25, NJ, NJ, PA, 28, New Brunswick_Rutgers Bank
 New York, Eastern Data, 3, NY, NY, CT, 6, New York_Eastern Data
 New York, FISGA Corp, 17, NY, NY, AZ, 20, New York_FISGA Corp
 New York, High Society Investments, 24, NY, NY, WA, 27, New York_High Society Investments
 New York, Old World Insurance, 7, NY, NY, IL, 10, New York_Old World Insurance
+Newark, Software Specialists, 19, NJ, NJ, TX, 22, Newark_Software Specialists
 Olympia, Northwest Outfitters, 29, WA, WA, NV, 32, Olympia_Northwest Outfitters
 Orlando, Fast Transportation, 12, FL, FL, NJ, 15, Orlando_Fast Transportation
 Plainfield, Pharma Research, 35, NJ, NJ, NULL, Plainfield_Pharma Research

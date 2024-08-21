@@ -19,12 +19,12 @@ Las Vegas, 3200
 Los Angeles, 1300
 Los Angeles, 2100
 Middletown, 200
-Newark, 1900
 New Brunswick, 2500
 New York, 300
 New York, 700
 New York, 1700
 New York, 2400
+Newark, 1900
 Olympia, 2900
 Orlando, 1200
 Plainfield, 3500

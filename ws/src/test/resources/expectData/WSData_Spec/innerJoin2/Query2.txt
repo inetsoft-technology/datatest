@@ -87,8 +87,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 10, 10, Simon, 10-20, Camden, 15, true, NJ, 10-20, Camden
 10, 10, Simon, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 10, 10, Simon, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-10, 10, Simon, 10-20, Newark, 19, false, NJ, 10-20, Newark
 10, 10, Simon, 10-20, New York, 17, true, NY, 10-20, New York
+10, 10, Simon, 10-20, Newark, 19, false, NJ, 10-20, Newark
 10, 10, Simon, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 10, 10, Simon, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 11, 11, Michael, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -97,8 +97,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 11, 11, Michael, 10-20, Camden, 15, true, NJ, 10-20, Camden
 11, 11, Michael, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 11, 11, Michael, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-11, 11, Michael, 10-20, Newark, 19, false, NJ, 10-20, Newark
 11, 11, Michael, 10-20, New York, 17, true, NY, 10-20, New York
+11, 11, Michael, 10-20, Newark, 19, false, NJ, 10-20, Newark
 11, 11, Michael, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 11, 11, Michael, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 12, 12, George, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -107,8 +107,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 12, 12, George, 10-20, Camden, 15, true, NJ, 10-20, Camden
 12, 12, George, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 12, 12, George, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-12, 12, George, 10-20, Newark, 19, false, NJ, 10-20, Newark
 12, 12, George, 10-20, New York, 17, true, NY, 10-20, New York
+12, 12, George, 10-20, Newark, 19, false, NJ, 10-20, Newark
 12, 12, George, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 12, 12, George, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 13, 13, Jean, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -117,8 +117,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 13, 13, Jean, 10-20, Camden, 15, true, NJ, 10-20, Camden
 13, 13, Jean, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 13, 13, Jean, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-13, 13, Jean, 10-20, Newark, 19, false, NJ, 10-20, Newark
 13, 13, Jean, 10-20, New York, 17, true, NY, 10-20, New York
+13, 13, Jean, 10-20, Newark, 19, false, NJ, 10-20, Newark
 13, 13, Jean, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 13, 13, Jean, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 14, 14, Horst, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -127,8 +127,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 14, 14, Horst, 10-20, Camden, 15, true, NJ, 10-20, Camden
 14, 14, Horst, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 14, 14, Horst, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-14, 14, Horst, 10-20, Newark, 19, false, NJ, 10-20, Newark
 14, 14, Horst, 10-20, New York, 17, true, NY, 10-20, New York
+14, 14, Horst, 10-20, Newark, 19, false, NJ, 10-20, Newark
 14, 14, Horst, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 14, 14, Horst, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 15, 15, Paula, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -137,8 +137,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 15, 15, Paula, 10-20, Camden, 15, true, NJ, 10-20, Camden
 15, 15, Paula, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 15, 15, Paula, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-15, 15, Paula, 10-20, Newark, 19, false, NJ, 10-20, Newark
 15, 15, Paula, 10-20, New York, 17, true, NY, 10-20, New York
+15, 15, Paula, 10-20, Newark, 19, false, NJ, 10-20, Newark
 15, 15, Paula, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 15, 15, Paula, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 16, 16, Giovanni, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -147,8 +147,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 16, 16, Giovanni, 10-20, Camden, 15, true, NJ, 10-20, Camden
 16, 16, Giovanni, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 16, 16, Giovanni, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-16, 16, Giovanni, 10-20, Newark, 19, false, NJ, 10-20, Newark
 16, 16, Giovanni, 10-20, New York, 17, true, NY, 10-20, New York
+16, 16, Giovanni, 10-20, Newark, 19, false, NJ, 10-20, Newark
 16, 16, Giovanni, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 16, 16, Giovanni, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 17, 17, Marie, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -157,8 +157,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 17, 17, Marie, 10-20, Camden, 15, true, NJ, 10-20, Camden
 17, 17, Marie, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 17, 17, Marie, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-17, 17, Marie, 10-20, Newark, 19, false, NJ, 10-20, Newark
 17, 17, Marie, 10-20, New York, 17, true, NY, 10-20, New York
+17, 17, Marie, 10-20, Newark, 19, false, NJ, 10-20, Newark
 17, 17, Marie, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 17, 17, Marie, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 18, 18, Roland, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -167,8 +167,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 18, 18, Roland, 10-20, Camden, 15, true, NJ, 10-20, Camden
 18, 18, Roland, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 18, 18, Roland, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-18, 18, Roland, 10-20, Newark, 19, false, NJ, 10-20, Newark
 18, 18, Roland, 10-20, New York, 17, true, NY, 10-20, New York
+18, 18, Roland, 10-20, Newark, 19, false, NJ, 10-20, Newark
 18, 18, Roland, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 18, 18, Roland, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 19, 19, Eduardo, 10-20, Albany, 16, true, CA, 10-20, Albany
@@ -177,8 +177,8 @@ CONTACT_ID, CUSTOMER_ID, FIRST_NAME, range_contact_id, CITY, CUSTOMER_ID_1, RESE
 19, 19, Eduardo, 10-20, Camden, 15, true, NJ, 10-20, Camden
 19, 19, Eduardo, 10-20, Chicago, 10, false, IL, 10-20, Chicago
 19, 19, Eduardo, 10-20, Los Angeles, 13, false, CA, 10-20, Los Angeles
-19, 19, Eduardo, 10-20, Newark, 19, false, NJ, 10-20, Newark
 19, 19, Eduardo, 10-20, New York, 17, true, NY, 10-20, New York
+19, 19, Eduardo, 10-20, Newark, 19, false, NJ, 10-20, Newark
 19, 19, Eduardo, 10-20, Orlando, 12, true, FL, 10-20, Orlando
 19, 19, Eduardo, 10-20, Rockville, 14, true, MD, 10-20, Rockville
 30, 30, Bill, >=30, Baltimore, 33, true, MD, >=30, Baltimore

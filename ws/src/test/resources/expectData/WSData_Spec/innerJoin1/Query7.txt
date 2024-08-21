@@ -19,12 +19,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 9, false, CA, Los Angeles, 13, false, CA
 9, false, CA, Los Angeles, 21, true, CA
 9, false, CA, Middletown, 2, true, NJ
-9, false, CA, Newark, 19, false, NJ
 9, false, CA, New Brunswick, 25, true, NJ
 9, false, CA, New York, 3, true, NY
 9, false, CA, New York, 7, true, NY
 9, false, CA, New York, 17, true, NY
 9, false, CA, New York, 24, true, NY
+9, false, CA, Newark, 19, false, NJ
 9, false, CA, Olympia, 29, true, WA
 9, false, CA, Orlando, 12, true, FL
 9, false, CA, Plainfield, 35, true, NJ
@@ -53,12 +53,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 13, false, CA, Los Angeles, 13, false, CA
 13, false, CA, Los Angeles, 21, true, CA
 13, false, CA, Middletown, 2, true, NJ
-13, false, CA, Newark, 19, false, NJ
 13, false, CA, New Brunswick, 25, true, NJ
 13, false, CA, New York, 3, true, NY
 13, false, CA, New York, 7, true, NY
 13, false, CA, New York, 17, true, NY
 13, false, CA, New York, 24, true, NY
+13, false, CA, Newark, 19, false, NJ
 13, false, CA, Olympia, 29, true, WA
 13, false, CA, Orlando, 12, true, FL
 13, false, CA, Plainfield, 35, true, NJ
@@ -87,12 +87,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 16, true, CA, Los Angeles, 13, false, CA
 16, true, CA, Los Angeles, 21, true, CA
 16, true, CA, Middletown, 2, true, NJ
-16, true, CA, Newark, 19, false, NJ
 16, true, CA, New Brunswick, 25, true, NJ
 16, true, CA, New York, 3, true, NY
 16, true, CA, New York, 7, true, NY
 16, true, CA, New York, 17, true, NY
 16, true, CA, New York, 24, true, NY
+16, true, CA, Newark, 19, false, NJ
 16, true, CA, Olympia, 29, true, WA
 16, true, CA, Orlando, 12, true, FL
 16, true, CA, Plainfield, 35, true, NJ
@@ -114,12 +114,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 18, true, MA, Houston, 22, true, TX
 18, true, MA, Las Vegas, 32, true, NV
 18, true, MA, Middletown, 2, true, NJ
-18, true, MA, Newark, 19, false, NJ
 18, true, MA, New Brunswick, 25, true, NJ
 18, true, MA, New York, 3, true, NY
 18, true, MA, New York, 7, true, NY
 18, true, MA, New York, 17, true, NY
 18, true, MA, New York, 24, true, NY
+18, true, MA, Newark, 19, false, NJ
 18, true, MA, Olympia, 29, true, WA
 18, true, MA, Plainfield, 35, true, NJ
 18, true, MA, Rockville, 14, true, MD
@@ -146,12 +146,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 20, true, AZ, Los Angeles, 13, false, CA
 20, true, AZ, Los Angeles, 21, true, CA
 20, true, AZ, Middletown, 2, true, NJ
-20, true, AZ, Newark, 19, false, NJ
 20, true, AZ, New Brunswick, 25, true, NJ
 20, true, AZ, New York, 3, true, NY
 20, true, AZ, New York, 7, true, NY
 20, true, AZ, New York, 17, true, NY
 20, true, AZ, New York, 24, true, NY
+20, true, AZ, Newark, 19, false, NJ
 20, true, AZ, Olympia, 29, true, WA
 20, true, AZ, Orlando, 12, true, FL
 20, true, AZ, Plainfield, 35, true, NJ
@@ -181,12 +181,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 21, true, CA, Los Angeles, 13, false, CA
 21, true, CA, Los Angeles, 21, true, CA
 21, true, CA, Middletown, 2, true, NJ
-21, true, CA, Newark, 19, false, NJ
 21, true, CA, New Brunswick, 25, true, NJ
 21, true, CA, New York, 3, true, NY
 21, true, CA, New York, 7, true, NY
 21, true, CA, New York, 17, true, NY
 21, true, CA, New York, 24, true, NY
+21, true, CA, Newark, 19, false, NJ
 21, true, CA, Olympia, 29, true, WA
 21, true, CA, Orlando, 12, true, FL
 21, true, CA, Plainfield, 35, true, NJ
@@ -208,12 +208,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 23, false, MA, Houston, 22, true, TX
 23, false, MA, Las Vegas, 32, true, NV
 23, false, MA, Middletown, 2, true, NJ
-23, false, MA, Newark, 19, false, NJ
 23, false, MA, New Brunswick, 25, true, NJ
 23, false, MA, New York, 3, true, NY
 23, false, MA, New York, 7, true, NY
 23, false, MA, New York, 17, true, NY
 23, false, MA, New York, 24, true, NY
+23, false, MA, Newark, 19, false, NJ
 23, false, MA, Olympia, 29, true, WA
 23, false, MA, Plainfield, 35, true, NJ
 23, false, MA, Rockville, 14, true, MD
@@ -244,12 +244,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 30, true, MA, Houston, 22, true, TX
 30, true, MA, Las Vegas, 32, true, NV
 30, true, MA, Middletown, 2, true, NJ
-30, true, MA, Newark, 19, false, NJ
 30, true, MA, New Brunswick, 25, true, NJ
 30, true, MA, New York, 3, true, NY
 30, true, MA, New York, 7, true, NY
 30, true, MA, New York, 17, true, NY
 30, true, MA, New York, 24, true, NY
+30, true, MA, Newark, 19, false, NJ
 30, true, MA, Olympia, 29, true, WA
 30, true, MA, Plainfield, 35, true, NJ
 30, true, MA, Rockville, 14, true, MD
@@ -269,12 +269,12 @@ CUSTOMER_ID, RESELLER, f_state, CITY, CUSTOMER_ID_1, RESELLER_1, f_state_1
 34, false, MA, Houston, 22, true, TX
 34, false, MA, Las Vegas, 32, true, NV
 34, false, MA, Middletown, 2, true, NJ
-34, false, MA, Newark, 19, false, NJ
 34, false, MA, New Brunswick, 25, true, NJ
 34, false, MA, New York, 3, true, NY
 34, false, MA, New York, 7, true, NY
 34, false, MA, New York, 17, true, NY
 34, false, MA, New York, 24, true, NY
+34, false, MA, Newark, 19, false, NJ
 34, false, MA, Olympia, 29, true, WA
 34, false, MA, Plainfield, 35, true, NJ
 34, false, MA, Rockville, 14, true, MD

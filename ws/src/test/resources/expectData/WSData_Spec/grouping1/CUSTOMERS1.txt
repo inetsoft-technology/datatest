@@ -17,8 +17,8 @@ Houston, 0
 Las Vegas, 0
 Los Angeles, 0.5521
 Middletown, 0
-Newark, 0
 New Brunswick, 0
+Newark, 0
 Olympia, 0
 Orlando, 0
 Plainfield, 0

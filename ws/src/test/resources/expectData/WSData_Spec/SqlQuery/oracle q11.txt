@@ -9,10 +9,10 @@ Camden, 15, NJ
 Las Vegas, 32, NV
 Los Angeles, 13, CA
 Los Angeles, 21, CA
-Newark, 19, NJ
 New Brunswick, 25, NJ
 New York, 17, NY
 New York, 24, NY
+Newark, 19, NJ
 Olympia, 29, WA
 Plainfield, 35, NJ
 Rockville, 14, MD

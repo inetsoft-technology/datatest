@@ -23,8 +23,8 @@ Lino, 小于10
 Lisa, 小于10
 Luke, 小于10
 Marie, >=15
-Michael, >=15
 Michael, 10-15
+Michael, >=15
 Nick, >=15
 Nicole, >=15
 Pat, >=15

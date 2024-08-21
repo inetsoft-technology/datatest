@@ -1,35 +1,35 @@
 The table size(row x col) is:(34 x 5)
 state, ll, concat, rank, cume_dist
 AZ, Others, azTUCSON, 1, 1
-CA, <10, caLOS ANGELES, 3, 0.75
 CA, 10-20, caALBANY, 2, 0.5
 CA, 10-20, caLOS ANGELES, 1, 0.25
+CA, <10, caLOS ANGELES, 3, 0.75
 CA, Others, caSAN FRANCISCO, 4, 1
 CO, <10, coDENVER, 1, 0.5
 CO, Others, coBOULDER, 2, 1
 CT, Others, ctHARTFORD, 1, 1
 FL, Others, flORLANDO, 1, 1
 IL, Others, ilCHICAGO, 1, 1
+MA, 10-20, maBOSTON, 3, 0.75
 MA, >=20, maCAMBRIDGE, 1, 0.25
 MA, >=20, maSPRINGFIELD, 2, 0.5
-MA, 10-20, maBOSTON, 3, 0.75
 MA, Others, maBOSTON, 4, 1
-MD, <10, mdROCKVILLE, 2, 0.6667
 MD, 10-20, mdBALTIMORE, 1, 0.3333
+MD, <10, mdROCKVILLE, 2, 0.6667
 MD, Others, mdBALTIMORE, 3, 1
+NJ, 10-20, njNEW BRUNSWICK, 2, 0.3333
+NJ, 10-20, njNEWARK, 3, 0.5
 NJ, <10, njCAMDEN, 4, 0.6667
 NJ, <10, njMIDDLETOWN, 5, 0.8333
 NJ, >=20, njPLAINFIELD, 1, 0.1667
-NJ, 10-20, njNEWARK, 3, 0.5
-NJ, 10-20, njNEW BRUNSWICK, 2, 0.3333
 NJ, Others, njWAYNE, 6, 1
 NV, Others, nvLAS VEGAS, 1, 1
-NY, <10, nyNEW YORK, 5, 1.25
 NY, 10-20, nyNEW YORK, 1, 0.25
+NY, <10, nyNEW YORK, 5, 1.25
 NY, Others, nyNEW YORK, 4, 1
 PA, Others, paYORK, 1, 1
-TX, >=20, txDALLAS, 3, 0.75
 TX, 10-20, txHOUSTON, 3, 0.75
+TX, >=20, txDALLAS, 3, 0.75
 TX, Others, txAUSTIN, 4, 1
 WA, >=20, waOLYMPIA, 1, 0.5
 WA, Others, waSEATTLE, 2, 1

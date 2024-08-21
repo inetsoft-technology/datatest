@@ -16,8 +16,8 @@ MDBaltimore, 38
 MDRockville, 14
 NJCamden, 15
 NJMiddletown, 2
-NJNewark, 19
 NJNew Brunswick, 25
+NJNewark, 19
 NJPlainfield, 35
 NJWayne, 1
 NVLas Vegas, 32

@@ -1,5 +1,10 @@
 The table size(row x col) is:(36 x 2)
 num_range1, FIRST_NAME
+10-15, George
+10-15, Horst
+10-15, Jean
+10-15, Michael
+10-15, Simon
 >=15, Adam
 >=15, Amy
 >=15, Bill
@@ -21,11 +26,6 @@ num_range1, FIRST_NAME
 >=15, Paula
 >=15, Roland
 >=15, William
-10-15, George
-10-15, Horst
-10-15, Jean
-10-15, Michael
-10-15, Simon
 小于10, Anna
 小于10, Aria
 小于10, John

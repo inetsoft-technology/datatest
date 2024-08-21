@@ -19,12 +19,12 @@ Las Vegas, 32, 2, true, NV, 93847, 32, 1, Las Vegas, 1, NULL, nvLAS VEGAS, as, >
 Los Angeles, 13, 2, false, CA, 11223, 21, 3, Los Angeles, 0.75, 9, caLOS ANGELES, os, 10-20
 Los Angeles, 21, 2, true, CA, 73646, 21, 1, Los Angeles, 0.25, 16, caLOS ANGELES, os, >=20
 Middletown, 2, 1, true, NJ, 09882, 35, 5, Plainfield, 0.8333, 1, njMIDDLETOWN, id, <10
-Newark, 19, 1, false, NJ, 23445, 35, 3, Plainfield, 0.5, 15, njNEWARK, ew, 10-20
 New Brunswick, 25, 1, true, NJ, 08854, 35, 2, Plainfield, 0.3333, 19, njNEW BRUNSWICK, ew, >=20
 New York, 3, 1, true, NY, 03887, 24, 4, New York, 1, NULL, nyNEW YORK, ew, <10
 New York, 7, 1, true, NY, 08854, 24, 3, New York, 0.75, 3, nyNEW YORK, ew, <10
 New York, 17, 2, true, NY, 28122, 24, 2, New York, 0.5, 7, nyNEW YORK, ew, 10-20
 New York, 24, 1, true, NY, 27834, 24, 1, New York, 0.25, 17, nyNEW YORK, ew, >=20
+Newark, 19, 1, false, NJ, 23445, 35, 3, Plainfield, 0.5, 15, njNEWARK, ew, 10-20
 Olympia, 29, 2, true, WA, 93717, 29, 1, Olympia, 0.5, 27, waOLYMPIA, ly, >=20
 Orlando, 12, 1, true, FL, 12343, 12, 1, Orlando, 1, NULL, flORLANDO, rl, 10-20
 Plainfield, 35, 1, true, NJ, 08273, 35, 1, Plainfield, 0.1667, 25, njPLAINFIELD, la, >=20

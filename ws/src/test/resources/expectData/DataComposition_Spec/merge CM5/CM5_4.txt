@@ -19,8 +19,8 @@ MD, Baltimore, George Services, 60.2
 MD, Rockville, InterLand Services, 29
 NJ, Camden, Scheggie Services, 25.2
 NJ, Middletown, Daycare One, 30.75
-NJ, Newark, Software Specialists, 36.65
 NJ, New Brunswick, Rutgers Bank, 31.5
+NJ, Newark, Software Specialists, 36.65
 NJ, Plainfield, Pharma Research, 30.35
 NJ, Wayne, Interstate Shop, 19.7
 NV, Las Vegas, Tumbleweed Gaming, 62.85

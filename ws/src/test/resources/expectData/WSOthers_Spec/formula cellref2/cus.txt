@@ -19,8 +19,8 @@ MD, Baltimore, 33
 MD, Rockville, 14
 NJ, Camden, 15
 NJ, Middletown, 2
-NJ, Newark, 19
 NJ, New Brunswick, 25
+NJ, Newark, 19
 NJ, Plainfield, 35
 NJ, Wayne, 1
 NV, Las Vegas, 32

@@ -19,12 +19,12 @@ Las Vegas, 132
 Los Angeles, 113
 Los Angeles, 121
 Middletown, 102
-Newark, 119
 New Brunswick, 125
 New York, 103
 New York, 107
 New York, 117
 New York, 124
+Newark, 119
 Olympia, 129
 Orlando, 112
 Plainfield, 135
