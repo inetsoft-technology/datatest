@@ -30,12 +30,12 @@ Latin America & Caribbean (excluding high income), 2021, 72.95, 2021-01-01
 Low & middle income, 2014, 54.99, 2014-01-01
 Low & middle income, 2017, 62.98, 2017-01-01
 Low & middle income, 2021, 71.38, 2021-01-01
-Lower middle income, 2014, 43.7, 2014-01-01
-Lower middle income, 2017, 58.27, 2017-01-01
-Lower middle income, 2021, 62.38, 2021-01-01
 Low income, 2014, 18.74, 2014-01-01
 Low income, 2017, 31.53, 2017-01-01
 Low income, 2021, 38.99, 2021-01-01
+Lower middle income, 2014, 43.7, 2014-01-01
+Lower middle income, 2017, 58.27, 2017-01-01
+Lower middle income, 2021, 62.38, 2021-01-01
 Middle income, 2014, 57.26, 2014-01-01
 Middle income, 2017, 64.86, 2017-01-01
 Middle income, 2021, 72.37, 2021-01-01

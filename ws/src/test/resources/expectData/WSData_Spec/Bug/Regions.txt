@@ -28,8 +28,8 @@ Latin America & Caribbean (excluding high income), 51.56, 54.49, 72.95
 Latin America & the Caribbean (IDA & IBRD countries), NULL, NULL, NULL
 Least developed countries: UN classification, NULL, NULL, NULL
 Low & middle income, 54.99, 62.98, 71.38
-Lower middle income, 43.7, 58.27, 62.38
 Low income, 18.74, 31.53, 38.99
+Lower middle income, 43.7, 58.27, 62.38
 Middle East & North Africa, NULL, 47.51, 52.84
 Middle East & North Africa (excluding high income), NULL, 43.42, 48.09
 Middle East & North Africa (IDA & IBRD countries), NULL, NULL, NULL

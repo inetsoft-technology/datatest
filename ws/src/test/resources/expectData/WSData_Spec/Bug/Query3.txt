@@ -10,8 +10,8 @@ High income, 92.79, 93.67, 96.36
 Latin America & Caribbean, 52.02, 55.24, 73.55
 Latin America & Caribbean (excluding high income), 51.56, 54.49, 72.95
 Low & middle income, 54.99, 62.98, 71.38
-Lower middle income, 43.7, 58.27, 62.38
 Low income, 18.74, 31.53, 38.99
+Lower middle income, 43.7, 58.27, 62.38
 Middle income, 57.26, 64.86, 72.37
 North America, 94.16, 93.81, 95.45
 OECD members, 93.76, 94.46, 97.19
