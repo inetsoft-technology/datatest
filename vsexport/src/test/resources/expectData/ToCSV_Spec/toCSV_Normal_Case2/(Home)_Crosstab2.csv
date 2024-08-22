@@ -1,0 +1,5 @@
+'city',,'Sum(orderno)/Sum(customer_id)'
+'Aachen','Sum(orderno)','16.0'
+'Aachen','Sum(customer_id)','3.0'
+'Chicago','Sum(orderno)','41.0'
+'Chicago','Sum(customer_id)','6.0'
