@@ -1,0 +1,571 @@
+The table size(row x col) is:(570 x 9)
+Category, Model Name, Freight Cost, Internet Order Count, Class, End Date, CATEGORY_1, COLOR_1, Discount Amount
+Accessories, All-Purpose Bike Stand, 989.775, 249, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, All-Purpose Bike Stand, 989.775, 249, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, All-Purpose Bike Stand, 989.775, 249, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Bike Wash, 460.2288, 908, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Bike Wash, 460.2288, 908, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Bike Wash, 460.2288, 908, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Cable Lock, 405.6307, NULL, Not Applicable, 06 30, 2003, Accessories, Blue, 1314.2907
+Accessories, Cable Lock, 405.6307, NULL, Not Applicable, 06 30, 2003, Accessories, gBlockSliver, 1710.5319
+Accessories, Cable Lock, 405.6307, NULL, Not Applicable, 06 30, 2003, Accessories , gInvliad, 2569.6919
+Accessories, Fender Set - Mountain, 1165.4895, 2121, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Fender Set - Mountain, 1165.4895, 2121, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Fender Set - Mountain, 1165.4895, 2121, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Hitch Rack - 4-Bike, 5927.4039, 328, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Hitch Rack - 4-Bike, 5927.4039, 328, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Hitch Rack - 4-Bike, 5927.4039, 328, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, HL Mountain Tire, 1221.5, 1396, High, Active, Accessories, Blue, 1314.2907
+Accessories, HL Mountain Tire, 1221.5, 1396, High, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, HL Mountain Tire, 1221.5, 1396, High, Active, Accessories , gInvliad, 2569.6919
+Accessories, HL Road Tire, 699.27, 858, High, Active, Accessories, Blue, 1314.2907
+Accessories, HL Road Tire, 699.27, 858, High, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, HL Road Tire, 699.27, 858, High, Active, Accessories , gInvliad, 2569.6919
+Accessories, Hydration Pack, 2645.7039, 733, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Hydration Pack, 2645.7039, 733, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Hydration Pack, 2645.7039, 733, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, LL Mountain Tire, 538.5776, 862, Low, Active, Accessories, Blue, 1314.2907
+Accessories, LL Mountain Tire, 538.5776, 862, Low, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, LL Mountain Tire, 538.5776, 862, Low, Active, Accessories , gInvliad, 2569.6919
+Accessories, LL Road Tire, 560.9412, 1044, Low, Active, Accessories, Blue, 1314.2907
+Accessories, LL Road Tire, 560.9412, 1044, Low, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, LL Road Tire, 560.9412, 1044, Low, Active, Accessories , gInvliad, 2569.6919
+Accessories, Minipump, 337.8741, NULL, Not Applicable, 06 30, 2003, Accessories, Blue, 1314.2907
+Accessories, Minipump, 337.8741, NULL, Not Applicable, 06 30, 2003, Accessories, gBlockSliver, 1710.5319
+Accessories, Minipump, 337.8741, NULL, Not Applicable, 06 30, 2003, Accessories , gInvliad, 2569.6919
+Accessories, ML Mountain Tire, 870.5178, 1161, Medium, Active, Accessories, Blue, 1314.2907
+Accessories, ML Mountain Tire, 870.5178, 1161, Medium, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, ML Mountain Tire, 870.5178, 1161, Medium, Active, Accessories , gInvliad, 2569.6919
+Accessories, ML Road Tire, 578.5648, 926, Medium, Active, Accessories, Blue, 1314.2907
+Accessories, ML Road Tire, 578.5648, 926, Medium, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, ML Road Tire, 578.5648, 926, Medium, Active, Accessories , gInvliad, 2569.6919
+Accessories, Mountain Bottle Cage, 505.845, 2025, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Mountain Bottle Cage, 505.845, 2025, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Mountain Bottle Cage, 505.845, 2025, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Mountain Tire Tube, 386.256, 3095, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Mountain Tire Tube, 386.256, 3095, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Mountain Tire Tube, 386.256, 3095, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Patch kit, 205.9785, 3191, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Patch kit, 205.9785, 3191, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Patch kit, 205.9785, 3191, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Road Bottle Cage, 384.8576, 1712, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Road Bottle Cage, 384.8576, 1712, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Road Bottle Cage, 384.8576, 1712, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Road Tire Tube, 237.1248, 2376, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Road Tire Tube, 237.1248, 2376, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Road Tire Tube, 237.1248, 2376, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 284.6321, NULL, Not Applicable, 06 30, 2002, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 284.6321, NULL, Not Applicable, 06 30, 2002, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 284.6321, NULL, Not Applicable, 06 30, 2002, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 302.4547, NULL, Not Applicable, 06 30, 2002, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 302.4547, NULL, Not Applicable, 06 30, 2002, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 302.4547, NULL, Not Applicable, 06 30, 2002, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 333.2913, NULL, Not Applicable, 06 30, 2002, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 333.2913, NULL, Not Applicable, 06 30, 2002, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 333.2913, NULL, Not Applicable, 06 30, 2002, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 725.7869, NULL, Not Applicable, 06 30, 2003, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 725.7869, NULL, Not Applicable, 06 30, 2003, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 725.7869, NULL, Not Applicable, 06 30, 2003, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 796.6736, NULL, Not Applicable, 06 30, 2003, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 796.6736, NULL, Not Applicable, 06 30, 2003, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 796.6736, NULL, Not Applicable, 06 30, 2003, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 844.8854, NULL, Not Applicable, 06 30, 2003, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 844.8854, NULL, Not Applicable, 06 30, 2003, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 844.8854, NULL, Not Applicable, 06 30, 2003, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 2922.7272, 2085, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 2922.7272, 2085, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 2922.7272, 2085, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 2934.0149, 2230, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 2934.0149, 2230, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 2934.0149, 2230, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Sport-100, 2957.1073, 2125, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Sport-100, 2957.1073, 2125, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Sport-100, 2957.1073, 2125, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Touring Tire, 677.688, 935, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Touring Tire, 677.688, 935, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Touring Tire, 677.688, 935, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Touring Tire Tube, 185.7024, 1488, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Touring Tire Tube, 185.7024, 1488, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Touring Tire Tube, 185.7024, 1488, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Accessories, Water Bottle, 716.5761, 4244, Not Applicable, Active, Accessories, Blue, 1314.2907
+Accessories, Water Bottle, 716.5761, 4244, Not Applicable, Active, Accessories, gBlockSliver, 1710.5319
+Accessories, Water Bottle, 716.5761, 4244, Not Applicable, Active, Accessories , gInvliad, 2569.6919
+Bikes, Mountain-100, 117880.7966, 185, High, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Mountain-100, 117880.7966, 185, High, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-100, 117880.7966, 185, High, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Mountain-100, 129871.2354, 211, High, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Mountain-100, 129871.2354, 211, High, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-100, 129871.2354, 211, High, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Mountain-200, 114615.9146, 521, High, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Mountain-200, 114615.9146, 521, High, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-200, 114615.9146, 521, High, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Mountain-200, 122684.6052, 554, High, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Mountain-200, 122684.6052, 554, High, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-200, 122684.6052, 554, High, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Mountain-200, 149544.5253, 1215, High, Active, Bikes, Blue, 51553.9114
+Bikes, Mountain-200, 149544.5253, 1215, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-200, 149544.5253, 1215, High, Active, Bikes, Red, 35541.9457
+Bikes, Mountain-200, 170309.5158, 1262, High, Active, Bikes, Blue, 51553.9114
+Bikes, Mountain-200, 170309.5158, 1262, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-200, 170309.5158, 1262, High, Active, Bikes, Red, 35541.9457
+Bikes, Mountain-300, 47681.2609, NULL, Medium, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Mountain-300, 47681.2609, NULL, Medium, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-300, 47681.2609, NULL, Medium, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Mountain-400-W, 25257.1186, 543, Medium, Active, Bikes, Blue, 51553.9114
+Bikes, Mountain-400-W, 25257.1186, 543, Medium, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-400-W, 25257.1186, 543, Medium, Active, Bikes, Red, 35541.9457
+Bikes, Mountain-500, 15462.646, 252, Low, Active, Bikes, Blue, 51553.9114
+Bikes, Mountain-500, 15462.646, 252, Low, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-500, 15462.646, 252, Low, Active, Bikes, Red, 35541.9457
+Bikes, Mountain-500, 17828.8567, 227, Low, Active, Bikes, Blue, 51553.9114
+Bikes, Mountain-500, 17828.8567, 227, Low, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Mountain-500, 17828.8567, 227, Low, Active, Bikes, Red, 35541.9457
+Bikes, Road-150, 197842.6427, 1551, High, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Road-150, 197842.6427, 1551, High, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-150, 197842.6427, 1551, High, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Road-250, 19070.3565, 134, High, Active, Bikes, Blue, 51553.9114
+Bikes, Road-250, 19070.3565, 134, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-250, 19070.3565, 134, High, Active, Bikes, Red, 35541.9457
+Bikes, Road-250, 104407.5953, 572, High, Active, Bikes, Blue, 51553.9114
+Bikes, Road-250, 104407.5953, 572, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-250, 104407.5953, 572, High, Active, Bikes, Red, 35541.9457
+Bikes, Road-250, 105175.9454, 586, High, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Road-250, 105175.9454, 586, High, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-250, 105175.9454, 586, High, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Road-250, 117064.1768, 611, High, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Road-250, 117064.1768, 611, High, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-250, 117064.1768, 611, High, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Road-350-W, 131153.8733, 929, Medium, Active, Bikes, Blue, 51553.9114
+Bikes, Road-350-W, 131153.8733, 929, Medium, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-350-W, 131153.8733, 929, Medium, Active, Bikes, Red, 35541.9457
+Bikes, Road-450, 46860.1901, NULL, Medium, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Road-450, 46860.1901, NULL, Medium, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-450, 46860.1901, NULL, Medium, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Road-550-W, 54889.8111, 357, Medium, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Road-550-W, 54889.8111, 357, Medium, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-550-W, 54889.8111, 357, Medium, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Road-550-W, 74685.4218, 1033, Medium, Active, Bikes, Blue, 51553.9114
+Bikes, Road-550-W, 74685.4218, 1033, Medium, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-550-W, 74685.4218, 1033, Medium, Active, Bikes, Red, 35541.9457
+Bikes, Road-650, 26008.4528, 139, Low, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Road-650, 26008.4528, 139, Low, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-650, 26008.4528, 139, Low, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Road-650, 33802.3134, 120, Low, 06 30, 2002, Bikes, Blue, 51553.9114
+Bikes, Road-650, 33802.3134, 120, Low, 06 30, 2002, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-650, 33802.3134, 120, Low, 06 30, 2002, Bikes, Red, 35541.9457
+Bikes, Road-650, 62994.5545, 290, Low, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Road-650, 62994.5545, 290, Low, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-650, 62994.5545, 290, Low, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Road-650, 79382.8263, 303, Low, 06 30, 2003, Bikes, Blue, 51553.9114
+Bikes, Road-650, 79382.8263, 303, Low, 06 30, 2003, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-650, 79382.8263, 303, Low, 06 30, 2003, Bikes, Red, 35541.9457
+Bikes, Road-750, 43632.2283, 1443, Low, Active, Bikes, Blue, 51553.9114
+Bikes, Road-750, 43632.2283, 1443, Low, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Road-750, 43632.2283, 1443, Low, Active, Bikes, Red, 35541.9457
+Bikes, Touring-1000, 114821.3506, 621, High, Active, Bikes, Blue, 51553.9114
+Bikes, Touring-1000, 114821.3506, 621, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Touring-1000, 114821.3506, 621, High, Active, Bikes, Red, 35541.9457
+Bikes, Touring-1000, 128073.8105, 634, High, Active, Bikes, Blue, 51553.9114
+Bikes, Touring-1000, 128073.8105, 634, High, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Touring-1000, 128073.8105, 634, High, Active, Bikes, Red, 35541.9457
+Bikes, Touring-2000, 53327.8391, 372, Medium, Active, Bikes, Blue, 51553.9114
+Bikes, Touring-2000, 53327.8391, 372, Medium, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Touring-2000, 53327.8391, 372, Medium, Active, Bikes, Red, 35541.9457
+Bikes, Touring-3000, 27956.3251, 277, Low, Active, Bikes, Blue, 51553.9114
+Bikes, Touring-3000, 27956.3251, 277, Low, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Touring-3000, 27956.3251, 277, Low, Active, Bikes, Red, 35541.9457
+Bikes, Touring-3000, 33228.1672, 263, Low, Active, Bikes, Blue, 51553.9114
+Bikes, Touring-3000, 33228.1672, 263, Low, Active, Bikes, gBlockSliver, 88106.6003
+Bikes, Touring-3000, 33228.1672, 263, Low, Active, Bikes, Red, 35541.9457
+Clothing, Classic Vest, 6487.2095, 562, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Classic Vest, 6487.2095, 562, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Classic Vest, 6487.2095, 562, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Classic Vest, 6487.2095, 562, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Cycling Cap, 127.029, NULL, Not Applicable, 06 30, 2002, Clothing, Blue, 4055.6837
+Clothing, Cycling Cap, 127.029, NULL, Not Applicable, 06 30, 2002, Clothing, gBlockSliver, 11491.3027
+Clothing, Cycling Cap, 127.029, NULL, Not Applicable, 06 30, 2002, Clothing, gInvliad, 2551.3208
+Clothing, Cycling Cap, 127.029, NULL, Not Applicable, 06 30, 2002, Clothing, White, 284.2987
+Clothing, Cycling Cap, 292.4737, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Cycling Cap, 292.4737, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Cycling Cap, 292.4737, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Cycling Cap, 292.4737, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Cycling Cap, 861.3593, 2190, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Cycling Cap, 861.3593, 2190, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Cycling Cap, 861.3593, 2190, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Cycling Cap, 861.3593, 2190, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Full-Finger Gloves, 3221.2082, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Full-Finger Gloves, 3221.2082, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Full-Finger Gloves, 3221.2082, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Full-Finger Gloves, 3221.2082, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Half-Finger Gloves, 660.4876, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Half-Finger Gloves, 660.4876, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Half-Finger Gloves, 660.4876, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Half-Finger Gloves, 660.4876, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Half-Finger Gloves, 2188.3037, 1430, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Half-Finger Gloves, 2188.3037, 1430, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Half-Finger Gloves, 2188.3037, 1430, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Half-Finger Gloves, 2188.3037, 1430, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Long-Sleeve Logo Jersey, 1366.8198, NULL, Not Applicable, 06 30, 2002, Clothing, Blue, 4055.6837
+Clothing, Long-Sleeve Logo Jersey, 1366.8198, NULL, Not Applicable, 06 30, 2002, Clothing, gBlockSliver, 11491.3027
+Clothing, Long-Sleeve Logo Jersey, 1366.8198, NULL, Not Applicable, 06 30, 2002, Clothing, gInvliad, 2551.3208
+Clothing, Long-Sleeve Logo Jersey, 1366.8198, NULL, Not Applicable, 06 30, 2002, Clothing, White, 284.2987
+Clothing, Long-Sleeve Logo Jersey, 3331.973, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Long-Sleeve Logo Jersey, 3331.973, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Long-Sleeve Logo Jersey, 3331.973, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Long-Sleeve Logo Jersey, 3331.973, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Long-Sleeve Logo Jersey, 6077.8325, 1736, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Long-Sleeve Logo Jersey, 6077.8325, 1736, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Long-Sleeve Logo Jersey, 6077.8325, 1736, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Long-Sleeve Logo Jersey, 6077.8325, 1736, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Men's Bib-Shorts, 4168.5112, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Men's Bib-Shorts, 4168.5112, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Men's Bib-Shorts, 4168.5112, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Men's Bib-Shorts, 4168.5112, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Men's Sports Shorts, 2047.4795, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Men's Sports Shorts, 2047.4795, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Men's Sports Shorts, 2047.4795, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Men's Sports Shorts, 2047.4795, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Clothing, Mountain Bike Socks, 164.3345, NULL, Not Applicable, 06 30, 2002, Clothing, Blue, 4055.6837
+Clothing, Mountain Bike Socks, 164.3345, NULL, Not Applicable, 06 30, 2002, Clothing, gBlockSliver, 11491.3027
+Clothing, Mountain Bike Socks, 164.3345, NULL, Not Applicable, 06 30, 2002, Clothing, gInvliad, 2551.3208
+Clothing, Mountain Bike Socks, 164.3345, NULL, Not Applicable, 06 30, 2002, Clothing, White, 284.2987
+Clothing, Racing Socks, 579.3336, 568, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Racing Socks, 579.3336, 568, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Racing Socks, 579.3336, 568, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Racing Socks, 579.3336, 568, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Short-Sleeve Classic Jersey, 8030.0648, 1596, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Short-Sleeve Classic Jersey, 8030.0648, 1596, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Short-Sleeve Classic Jersey, 8030.0648, 1596, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Short-Sleeve Classic Jersey, 8030.0648, 1596, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Women's Mountain Shorts, 8290.6696, 1019, Not Applicable, Active, Clothing, Blue, 4055.6837
+Clothing, Women's Mountain Shorts, 8290.6696, 1019, Not Applicable, Active, Clothing, gBlockSliver, 11491.3027
+Clothing, Women's Mountain Shorts, 8290.6696, 1019, Not Applicable, Active, Clothing, gInvliad, 2551.3208
+Clothing, Women's Mountain Shorts, 8290.6696, 1019, Not Applicable, Active, Clothing, White, 284.2987
+Clothing, Women's Tights, 5045.8473, NULL, Not Applicable, 06 30, 2003, Clothing, Blue, 4055.6837
+Clothing, Women's Tights, 5045.8473, NULL, Not Applicable, 06 30, 2003, Clothing, gBlockSliver, 11491.3027
+Clothing, Women's Tights, 5045.8473, NULL, Not Applicable, 06 30, 2003, Clothing, gInvliad, 2551.3208
+Clothing, Women's Tights, 5045.8473, NULL, Not Applicable, 06 30, 2003, Clothing, White, 284.2987
+Components, Chain, 234.4427, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Chain, 234.4427, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Chain, 234.4427, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Chain, 234.4427, NULL, Not Applicable, Active, Components, gYellow, 1545.1703
+Components, Front Brakes, 1257.4827, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Front Brakes, 1257.4827, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Front Brakes, 1257.4827, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Front Brakes, 1257.4827, NULL, Not Applicable, Active, Components, gYellow, 1545.1703
+Components, Front Derailleur, 1112.1128, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Front Derailleur, 1112.1128, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Front Derailleur, 1112.1128, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Front Derailleur, 1112.1128, NULL, Not Applicable, Active, Components, gYellow, 1545.1703
+Components, HL Bottom Bracket, 989.5426, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Bottom Bracket, 989.5426, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Bottom Bracket, 989.5426, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Bottom Bracket, 989.5426, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Crankset, 3715.5711, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Crankset, 3715.5711, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Crankset, 3715.5711, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Crankset, 3715.5711, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Fork, 1525.8675, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Fork, 1525.8675, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Fork, 1525.8675, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Fork, 1525.8675, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Headset, 477.0958, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Headset, 477.0958, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Headset, 477.0958, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Headset, 477.0958, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 8463.5976, NULL, High, 06 30, 2002, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 8463.5976, NULL, High, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 8463.5976, NULL, High, 06 30, 2002, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 8463.5976, NULL, High, 06 30, 2002, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 9538.4149, NULL, High, 06 30, 2002, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 9538.4149, NULL, High, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 9538.4149, NULL, High, 06 30, 2002, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 9538.4149, NULL, High, 06 30, 2002, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 14373.2408, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 14373.2408, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 14373.2408, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 14373.2408, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 15243.732, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 15243.732, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 15243.732, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 15243.732, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 17546.2283, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 17546.2283, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 17546.2283, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 17546.2283, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Frame, 18961.515, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Mountain Frame, 18961.515, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Frame, 18961.515, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Mountain Frame, 18961.515, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Mountain Front Wheel, 999.7172, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Mountain Front Wheel, 999.7172, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Front Wheel, 999.7172, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Mountain Front Wheel, 999.7172, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Handlebars, 426.4097, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Mountain Handlebars, 426.4097, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Handlebars, 426.4097, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Mountain Handlebars, 426.4097, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Handlebars, 432.9752, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Mountain Handlebars, 432.9752, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Handlebars, 432.9752, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Mountain Handlebars, 432.9752, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Mountain Pedal, 950.4642, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Mountain Pedal, 950.4642, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Pedal, 950.4642, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Mountain Pedal, 950.4642, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Mountain Rear Wheel, 4150.3359, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Mountain Rear Wheel, 4150.3359, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Rear Wheel, 4150.3359, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Mountain Rear Wheel, 4150.3359, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Mountain Seat/Saddle 2, 409.8024, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Mountain Seat/Saddle 2, 409.8024, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Mountain Seat/Saddle 2, 409.8024, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Mountain Seat/Saddle 2, 409.8024, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Road Frame, 1080.2583, NULL, High, 06 30, 2002, Components, Blue, 1388.1064
+Components, HL Road Frame, 1080.2583, NULL, High, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, HL Road Frame, 1080.2583, NULL, High, 06 30, 2002, Components, gInvliad, 316.1342
+Components, HL Road Frame, 1080.2583, NULL, High, 06 30, 2002, Components, gYellow, 1545.1703
+Components, HL Road Frame, 5739.0164, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Road Frame, 5739.0164, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Road Frame, 5739.0164, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Road Frame, 5739.0164, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Road Frame, 5883.465, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Road Frame, 5883.465, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Road Frame, 5883.465, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Road Frame, 5883.465, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Road Frame, 10263.855, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Road Frame, 10263.855, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Road Frame, 10263.855, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Road Frame, 10263.855, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Road Frame, 10638.6523, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Road Frame, 10638.6523, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Road Frame, 10638.6523, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Road Frame, 10638.6523, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Road Front Wheel, 2807.1603, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Road Front Wheel, 2807.1603, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Road Front Wheel, 2807.1603, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Road Front Wheel, 2807.1603, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Road Handlebars, 534.652, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Road Handlebars, 534.652, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Road Handlebars, 534.652, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Road Handlebars, 534.652, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Road Handlebars, 550.2398, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Road Handlebars, 550.2398, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Road Handlebars, 550.2398, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Road Handlebars, 550.2398, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Road Pedal, 821.2466, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Road Pedal, 821.2466, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Road Pedal, 821.2466, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Road Pedal, 821.2466, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Road Rear Wheel, 492.7428, NULL, High, 06 30, 2003, Components, Blue, 1388.1064
+Components, HL Road Rear Wheel, 492.7428, NULL, High, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, HL Road Rear Wheel, 492.7428, NULL, High, 06 30, 2003, Components, gInvliad, 316.1342
+Components, HL Road Rear Wheel, 492.7428, NULL, High, 06 30, 2003, Components, gYellow, 1545.1703
+Components, HL Road Seat/Saddle 2, 105.8064, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Road Seat/Saddle 2, 105.8064, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Road Seat/Saddle 2, 105.8064, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Road Seat/Saddle 2, 105.8064, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Touring Frame, 16451.1428, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Touring Frame, 16451.1428, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Touring Frame, 16451.1428, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Touring Frame, 16451.1428, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Touring Frame, 17235.3217, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Touring Frame, 17235.3217, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Touring Frame, 17235.3217, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Touring Frame, 17235.3217, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Touring Handlebars, 302.184, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Touring Handlebars, 302.184, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Touring Handlebars, 302.184, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Touring Handlebars, 302.184, NULL, High, Active, Components, gYellow, 1545.1703
+Components, HL Touring Seat/Saddle, 336.3696, NULL, High, Active, Components, Blue, 1388.1064
+Components, HL Touring Seat/Saddle, 336.3696, NULL, High, Active, Components, gBlockSliver, 1832.3279
+Components, HL Touring Seat/Saddle, 336.3696, NULL, High, Active, Components, gInvliad, 316.1342
+Components, HL Touring Seat/Saddle, 336.3696, NULL, High, Active, Components, gYellow, 1545.1703
+Components, LL Bottom Bracket, 306.1282, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Bottom Bracket, 306.1282, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Bottom Bracket, 306.1282, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Bottom Bracket, 306.1282, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Crankset, 1121.3862, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Crankset, 1121.3862, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Crankset, 1121.3862, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Crankset, 1121.3862, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Fork, 422.427, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Fork, 422.427, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Fork, 422.427, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Fork, 422.427, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Headset, 48.735, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Headset, 48.735, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Headset, 48.735, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Headset, 48.735, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Mountain Frame, 5457.0055, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Mountain Frame, 5457.0055, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Frame, 5457.0055, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Mountain Frame, 5457.0055, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Mountain Frame, 7589.6409, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Mountain Frame, 7589.6409, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Frame, 7589.6409, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Mountain Frame, 7589.6409, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Mountain Front Wheel, 561.5754, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Mountain Front Wheel, 561.5754, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Front Wheel, 561.5754, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Mountain Front Wheel, 561.5754, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Mountain Handlebars, 255.094, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Mountain Handlebars, 255.094, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Handlebars, 255.094, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Mountain Handlebars, 255.094, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Mountain Handlebars, 295.1145, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Mountain Handlebars, 295.1145, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Handlebars, 295.1145, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Mountain Handlebars, 295.1145, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Mountain Pedal, 272.706, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Mountain Pedal, 272.706, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Pedal, 272.706, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Mountain Pedal, 272.706, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Mountain Rear Wheel, 450.135, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Mountain Rear Wheel, 450.135, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Rear Wheel, 450.135, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Mountain Rear Wheel, 450.135, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Mountain Seat/Saddle 2, 140.9239, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Mountain Seat/Saddle 2, 140.9239, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Mountain Seat/Saddle 2, 140.9239, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Mountain Seat/Saddle 2, 140.9239, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Road Frame, 2326.0109, NULL, Low, 06 30, 2002, Components, Blue, 1388.1064
+Components, LL Road Frame, 2326.0109, NULL, Low, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, LL Road Frame, 2326.0109, NULL, Low, 06 30, 2002, Components, gInvliad, 316.1342
+Components, LL Road Frame, 2326.0109, NULL, Low, 06 30, 2002, Components, gYellow, 1545.1703
+Components, LL Road Frame, 4727.2241, NULL, Low, 06 30, 2002, Components, Blue, 1388.1064
+Components, LL Road Frame, 4727.2241, NULL, Low, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, LL Road Frame, 4727.2241, NULL, Low, 06 30, 2002, Components, gInvliad, 316.1342
+Components, LL Road Frame, 4727.2241, NULL, Low, 06 30, 2002, Components, gYellow, 1545.1703
+Components, LL Road Frame, 5292.3072, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Road Frame, 5292.3072, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Road Frame, 5292.3072, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Road Frame, 5292.3072, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Road Frame, 6062.7057, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Road Frame, 6062.7057, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Road Frame, 6062.7057, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Road Frame, 6062.7057, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Road Frame, 12237.0867, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Road Frame, 12237.0867, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Road Frame, 12237.0867, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Road Frame, 12237.0867, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Road Handlebars, 67.4179, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Road Handlebars, 67.4179, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Road Handlebars, 67.4179, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Road Handlebars, 67.4179, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Road Handlebars, 68.1462, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Road Handlebars, 68.1462, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Road Handlebars, 68.1462, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Road Handlebars, 68.1462, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Road Pedal, 527.1886, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Road Pedal, 527.1886, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Road Pedal, 527.1886, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Road Pedal, 527.1886, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Road Rear Wheel, 1462.2242, NULL, Low, 06 30, 2003, Components, Blue, 1388.1064
+Components, LL Road Rear Wheel, 1462.2242, NULL, Low, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, LL Road Rear Wheel, 1462.2242, NULL, Low, 06 30, 2003, Components, gInvliad, 316.1342
+Components, LL Road Rear Wheel, 1462.2242, NULL, Low, 06 30, 2003, Components, gYellow, 1545.1703
+Components, LL Road Seat/Saddle 1, 4.068, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Road Seat/Saddle 1, 4.068, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Road Seat/Saddle 1, 4.068, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Road Seat/Saddle 1, 4.068, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Touring Frame, 2855.7423, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Touring Frame, 2855.7423, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Touring Frame, 2855.7423, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Touring Frame, 2855.7423, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Touring Frame, 4516.0064, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Touring Frame, 4516.0064, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Touring Frame, 4516.0064, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Touring Frame, 4516.0064, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Touring Handlebars, 38.7164, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Touring Handlebars, 38.7164, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Touring Handlebars, 38.7164, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Touring Handlebars, 38.7164, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, LL Touring Seat/Saddle, 37.0188, NULL, Low, Active, Components, Blue, 1388.1064
+Components, LL Touring Seat/Saddle, 37.0188, NULL, Low, Active, Components, gBlockSliver, 1832.3279
+Components, LL Touring Seat/Saddle, 37.0188, NULL, Low, Active, Components, gInvliad, 316.1342
+Components, LL Touring Seat/Saddle, 37.0188, NULL, Low, Active, Components, gYellow, 1545.1703
+Components, ML Crankset, 261.6206, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Crankset, 261.6206, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Crankset, 261.6206, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Crankset, 261.6206, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Headset, 997.7296, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Headset, 997.7296, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Headset, 997.7296, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Headset, 997.7296, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Frame, 8594.6322, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Mountain Frame, 8594.6322, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Frame, 8594.6322, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Mountain Frame, 8594.6322, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Frame-W, 2688.9396, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Mountain Frame-W, 2688.9396, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Frame-W, 2688.9396, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Mountain Frame-W, 2688.9396, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Frame-W, 9384.9035, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Mountain Frame-W, 9384.9035, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Frame-W, 9384.9035, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Mountain Frame-W, 9384.9035, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Mountain Front Wheel, 834.0122, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Mountain Front Wheel, 834.0122, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Front Wheel, 834.0122, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Mountain Front Wheel, 834.0122, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Handlebars, 644.0282, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Mountain Handlebars, 644.0282, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Handlebars, 644.0282, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Mountain Handlebars, 644.0282, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Handlebars, 649.817, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Mountain Handlebars, 649.817, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Handlebars, 649.817, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Mountain Handlebars, 649.817, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Mountain Pedal, 321.3207, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Mountain Pedal, 321.3207, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Pedal, 321.3207, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Mountain Pedal, 321.3207, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Mountain Rear Wheel, 2979.8439, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Mountain Rear Wheel, 2979.8439, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Rear Wheel, 2979.8439, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Mountain Rear Wheel, 2979.8439, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Mountain Seat/Saddle 2, 312.4293, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Mountain Seat/Saddle 2, 312.4293, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Mountain Seat/Saddle 2, 312.4293, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Mountain Seat/Saddle 2, 312.4293, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Road Frame, 3033.6389, NULL, Medium, 06 30, 2002, Components, Blue, 1388.1064
+Components, ML Road Frame, 3033.6389, NULL, Medium, 06 30, 2002, Components, gBlockSliver, 1832.3279
+Components, ML Road Frame, 3033.6389, NULL, Medium, 06 30, 2002, Components, gInvliad, 316.1342
+Components, ML Road Frame, 3033.6389, NULL, Medium, 06 30, 2002, Components, gYellow, 1545.1703
+Components, ML Road Frame-W, 13491.3192, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Road Frame-W, 13491.3192, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Road Frame-W, 13491.3192, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Road Frame-W, 13491.3192, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Road Frame-W, 15470.8404, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Road Frame-W, 15470.8404, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Road Frame-W, 15470.8404, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Road Frame-W, 15470.8404, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Road Front Wheel, 1974.6643, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Road Front Wheel, 1974.6643, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Road Front Wheel, 1974.6643, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Road Front Wheel, 1974.6643, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Road Pedal, 615.6298, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Road Pedal, 615.6298, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Road Pedal, 615.6298, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Road Pedal, 615.6298, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, ML Road Rear Wheel, 264.3702, NULL, Medium, 06 30, 2003, Components, Blue, 1388.1064
+Components, ML Road Rear Wheel, 264.3702, NULL, Medium, 06 30, 2003, Components, gBlockSliver, 1832.3279
+Components, ML Road Rear Wheel, 264.3702, NULL, Medium, 06 30, 2003, Components, gInvliad, 316.1342
+Components, ML Road Rear Wheel, 264.3702, NULL, Medium, 06 30, 2003, Components, gYellow, 1545.1703
+Components, ML Touring Seat/Saddle, 49.3164, NULL, Medium, Active, Components, Blue, 1388.1064
+Components, ML Touring Seat/Saddle, 49.3164, NULL, Medium, Active, Components, gBlockSliver, 1832.3279
+Components, ML Touring Seat/Saddle, 49.3164, NULL, Medium, Active, Components, gInvliad, 316.1342
+Components, ML Touring Seat/Saddle, 49.3164, NULL, Medium, Active, Components, gYellow, 1545.1703
+Components, Rear Brakes, 392.985, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Rear Brakes, 392.985, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Rear Brakes, 392.985, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Rear Brakes, 392.985, NULL, Not Applicable, Active, Components, gYellow, 1545.1703
+Components, Rear Derailleur, 643.1307, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Rear Derailleur, 643.1307, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Rear Derailleur, 643.1307, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Rear Derailleur, 643.1307, NULL, Not Applicable, Active, Components, gYellow, 1545.1703
+Components, Touring Pedal, 178.585, NULL, Not Applicable, Active, Components, Blue, 1388.1064
+Components, Touring Pedal, 178.585, NULL, Not Applicable, Active, Components, gBlockSliver, 1832.3279
+Components, Touring Pedal, 178.585, NULL, Not Applicable, Active, Components, gInvliad, 316.1342
+Components, Touring Pedal, 178.585, NULL, Not Applicable, Active, Components, gYellow, 1545.1703

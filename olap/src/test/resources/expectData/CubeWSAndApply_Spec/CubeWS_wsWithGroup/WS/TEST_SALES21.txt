@@ -1,0 +1,21 @@
+The table size(row x col) is:(20 x 3)
+COLOR, CATEGORY, Discount Amount
+Blue, Accessories, 1314.2907
+Blue, Bikes, 51553.9114
+Blue, Clothing, 4055.6837
+Blue, Components, 1388.1064
+gBlockSliver, Accessories, 1710.5319
+gBlockSliver, Bikes, 88106.6003
+gBlockSliver, Bikes-2, 9936.2404
+gBlockSliver, Clothing, 11491.3027
+gBlockSliver, Components, 1832.3279
+gInvliad, Accessories , 2569.6919
+gInvliad, Clothing, 2551.3208
+gInvliad, Components, 316.1342
+gYellow, Bikes-2, 2200.9554
+gYellow, Clothing-2, 258.8994
+gYellow, Components, 1545.1703
+Red, Bikes, 35541.9457
+Red-2, Accessories-2, 1090.5148
+Red-2, Components-2, 133.9996
+White, Clothing, 284.2987

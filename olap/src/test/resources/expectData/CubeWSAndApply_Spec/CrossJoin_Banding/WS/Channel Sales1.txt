@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 2)
+Category, Discount Amount
+Accessories, 6688.0293
+Bikes, 494640.6532
+Clothing, 20964.5053
+Components, 5214.7384

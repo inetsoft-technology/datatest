@@ -1,0 +1,16 @@
+The table size(row x col) is:(15 x 6)
+COLOR_1, CATEGORY_1, High, Low, Medium, Not Applicable
+Blue, Accessories, 2254, 1906, 2087, 29845
+Blue, Bikes, 8657, 3314, 3234, NULL
+Blue, Clothing, NULL, NULL, NULL, 9101
+Blue, Components, NULL, NULL, NULL, NULL
+gBlockSliver, Accessories, 2254, 1906, 2087, 29845
+gBlockSliver, Bikes, 8657, 3314, 3234, NULL
+gBlockSliver, Clothing, NULL, NULL, NULL, 9101
+gBlockSliver, Components, NULL, NULL, NULL, NULL
+gInvliad, Accessories , 2254, 1906, 2087, 29845
+gInvliad, Clothing, NULL, NULL, NULL, 9101
+gInvliad, Components, NULL, NULL, NULL, NULL
+gYellow, Components, NULL, NULL, NULL, NULL
+Red, Bikes, 8657, 3314, 3234, NULL
+White, Clothing, NULL, NULL, NULL, 9101

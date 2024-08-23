@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 4)
+Category, Discount Amount, City, Internet Tax Amount
+Accessories, 6688.0293, Ballard, 3624.7197
+Accessories, 6688.0293, Barstow, 286.2616
+Accessories, 6688.0293, Camarillo, 102.9144
+Bikes, 494640.6532, Ballard, 3624.7197
+Bikes, 494640.6532, Barstow, 286.2616
+Bikes, 494640.6532, Camarillo, 102.9144
+Clothing, 20964.5053, Ballard, 3624.7197
+Clothing, 20964.5053, Barstow, 286.2616
+Clothing, 20964.5053, Camarillo, 102.9144
+Components, 5214.7384, Ballard, 3624.7197
+Components, 5214.7384, Barstow, 286.2616
+Components, 5214.7384, Camarillo, 102.9144

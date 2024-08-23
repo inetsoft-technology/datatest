@@ -1,0 +1,11 @@
+The table size(row x col) is:(10 x 2)
+ccc, Reseller Sales Amount
+Black, 29397712.1013
+Blue, 7323754.6868
+Multi, 542559.5121
+NA, 664187.2181
+Red, 13873560.2828
+Silver, 14663950.8659
+Silver/Black, 147483.9098
+White, 24638.8081
+Yellow, 13812749.5974

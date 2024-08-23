@@ -1,0 +1,125 @@
+The table size(row x col) is:(124 x 5)
+Category, Color, Model Name, Freight Cost, Internet Order Count
+startA, Black, Sport-100, 4021.8555, NULL
+startA, Blue, Sport-100, 4135.284, NULL
+startA, NA, All-Purpose Bike Stand, 989.775, 249
+startA, NA, Bike Wash, 460.2288, 908
+startA, NA, Cable Lock, 405.6307, NULL
+startA, NA, Fender Set - Mountain, 1165.4895, 2121
+startA, NA, Hitch Rack - 4-Bike, 5927.4039, 328
+startA, NA, HL Mountain Tire, 1221.5, 1396
+startA, NA, HL Road Tire, 699.27, 858
+startA, NA, LL Mountain Tire, 538.5776, 862
+startA, NA, LL Road Tire, 560.9412, 1044
+startA, NA, Minipump, 337.8741, NULL
+startA, NA, ML Mountain Tire, 870.5178, 1161
+startA, NA, ML Road Tire, 578.5648, 926
+startA, NA, Mountain Bottle Cage, 505.845, 2025
+startA, NA, Mountain Tire Tube, 386.256, 3095
+startA, NA, Patch kit, 205.9785, 3191
+startA, NA, Road Bottle Cage, 384.8576, 1712
+startA, NA, Road Tire Tube, 237.1248, 2376
+startA, NA, Touring Tire, 677.688, 935
+startA, NA, Touring Tire Tube, 185.7024, 1488
+startA, NA, Water Bottle, 716.5761, 4244
+startA, Red, Sport-100, 3944.4339, NULL
+startA, Silver, Hydration Pack, 2645.7039, 733
+startB, Black, Mountain-100, 129871.2354, 211
+startB, Black, Mountain-200, 292994.121, 554
+startB, Black, Mountain-300, 47681.2609, NULL
+startB, Black, Mountain-500, 15462.646, 252
+startB, Black, Road-250, 209583.5407, 572
+startB, Black, Road-650, 89003.0073, 139
+startB, Black, Road-750, 43632.2283, 1443
+startB, Blue, Touring-1000, 128073.8105, 634
+startB, Blue, Touring-2000, 53327.8391, 372
+startB, Blue, Touring-3000, 27956.3251, 277
+startB, Red, Road-150, 197842.6427, 1551
+startB, Red, Road-250, 136134.5333, 134
+startB, Red, Road-450, 46860.1901, NULL
+startB, Red, Road-650, 113185.1397, 120
+startB, Silver, Mountain-100, 117880.7966, 185
+startB, Silver, Mountain-200, 264160.4399, 521
+startB, Silver, Mountain-400-W, 25257.1186, 543
+startB, Silver, Mountain-500, 17828.8567, 227
+startB, Yellow, Road-350-W, 131153.8733, 929
+startB, Yellow, Road-550-W, 129575.2329, 357
+startB, Yellow, Touring-1000, 114821.3506, 621
+startB, Yellow, Touring-3000, 33228.1672, 263
+startC, Black, Full-Finger Gloves, 3221.2082, NULL
+startC, Black, Half-Finger Gloves, 2848.7913, 1430
+startC, Black, HL Crankset, 3715.5711, NULL
+startC, Black, HL Mountain Frame, 38080.5704, NULL
+startC, Black, HL Mountain Front Wheel, 999.7172, NULL
+startC, Black, HL Mountain Rear Wheel, 4150.3359, NULL
+startC, Black, HL Road Frame, 11622.4814, NULL
+startC, Black, HL Road Front Wheel, 2807.1603, NULL
+startC, Black, HL Road Rear Wheel, 492.7428, NULL
+startC, Black, LL Crankset, 1121.3862, NULL
+startC, Black, LL Mountain Frame, 5457.0055, NULL
+startC, Black, LL Mountain Front Wheel, 561.5754, NULL
+startC, Black, LL Mountain Rear Wheel, 450.135, NULL
+startC, Black, LL Road Frame, 13681.0238, NULL
+startC, Black, LL Road Rear Wheel, 1462.2242, NULL
+startC, Black, Men's Sports Shorts, 2047.4795, NULL
+startC, Black, ML Crankset, 261.6206, NULL
+startC, Black, ML Mountain Frame, 8594.6322, NULL
+startC, Black, ML Mountain Frame-W, 2688.9396, NULL
+startC, Black, ML Mountain Front Wheel, 834.0122, NULL
+startC, Black, ML Mountain Rear Wheel, 2979.8439, NULL
+startC, Black, ML Road Front Wheel, 1974.6643, NULL
+startC, Black, ML Road Rear Wheel, 264.3702, NULL
+startC, Black, Women's Mountain Shorts, 8290.6696, 1019
+startC, Black, Women's Tights, 5045.8473, NULL
+startC, Blue, Classic Vest, 6487.2095, 562
+startC, Blue, HL Touring Frame, 17235.3217, NULL
+startC, Blue, LL Touring Frame, 2855.7423, NULL
+startC, Multi, Cycling Cap, 1280.862, NULL
+startC, Multi, Long-Sleeve Logo Jersey, 10776.6253, NULL
+startC, Multi, Men's Bib-Shorts, 4168.5112, NULL
+startC, NA, HL Bottom Bracket, 989.5426, NULL
+startC, NA, HL Fork, 1525.8675, NULL
+startC, NA, HL Headset, 477.0958, NULL
+startC, NA, HL Mountain Handlebars, 859.3849, NULL
+startC, NA, HL Mountain Seat/Saddle 2, 409.8024, NULL
+startC, NA, HL Road Handlebars, 1084.8918, NULL
+startC, NA, HL Road Seat/Saddle 2, 105.8064, NULL
+startC, NA, HL Touring Handlebars, 302.184, NULL
+startC, NA, HL Touring Seat/Saddle, 336.3696, NULL
+startC, NA, LL Bottom Bracket, 306.1282, NULL
+startC, NA, LL Fork, 422.427, NULL
+startC, NA, LL Headset, 48.735, NULL
+startC, NA, LL Mountain Handlebars, 550.2085, NULL
+startC, NA, LL Mountain Seat/Saddle 2, 140.9239, NULL
+startC, NA, LL Road Handlebars, 135.5641, NULL
+startC, NA, LL Road Seat/Saddle 1, 4.068, NULL
+startC, NA, LL Touring Handlebars, 38.7164, NULL
+startC, NA, LL Touring Seat/Saddle, 37.0188, NULL
+startC, NA, ML Headset, 997.7296, NULL
+startC, NA, ML Mountain Handlebars, 1293.8452, NULL
+startC, NA, ML Mountain Seat/Saddle 2, 312.4293, NULL
+startC, NA, ML Touring Seat/Saddle, 49.3164, NULL
+startC, Red, HL Road Frame, 21982.7656, NULL
+startC, Red, LL Road Frame, 16964.3108, NULL
+startC, Red, ML Road Frame, 3033.6389, NULL
+startC, Silver, Chain, 234.4427, NULL
+startC, Silver, Front Brakes, 1257.4827, NULL
+startC, Silver, Front Derailleur, 1112.1128, NULL
+startC, Silver, HL Mountain Frame, 46046.1582, NULL
+startC, Silver, LL Mountain Frame, 7589.6409, NULL
+startC, Silver, ML Mountain Frame-W, 9384.9035, NULL
+startC, Silver, Rear Brakes, 392.985, NULL
+startC, Silver, Rear Derailleur, 643.1307, NULL
+startC, Silver/Black, HL Mountain Pedal, 950.4642, NULL
+startC, Silver/Black, HL Road Pedal, 821.2466, NULL
+startC, Silver/Black, LL Mountain Pedal, 272.706, NULL
+startC, Silver/Black, LL Road Pedal, 527.1886, NULL
+startC, Silver/Black, ML Mountain Pedal, 321.3207, NULL
+startC, Silver/Black, ML Road Pedal, 615.6298, NULL
+startC, Silver/Black, Touring Pedal, 178.585, NULL
+startC, White, Mountain Bike Socks, 164.3345, NULL
+startC, White, Racing Socks, 579.3336, 568
+startC, Yellow, HL Touring Frame, 16451.1428, NULL
+startC, Yellow, LL Touring Frame, 4516.0064, NULL
+startC, Yellow, ML Road Frame-W, 28962.1596, NULL
+startC, Yellow, Short-Sleeve Classic Jersey, 8030.0648, 1596

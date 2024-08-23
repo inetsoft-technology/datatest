@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 4)
+CATEGORY, COLOR, Reseller Sales Amount, Discount Amount
+Accessories, Black, 87915.3689, 1207.1866
+Accessories, Blue, 91052.8681, 1314.2907
+Bikes, Blue, 6205258.3522, 51553.9114
+Clothing, Black, 751810.8972, 11491.3027
+Clothing, Blue, 223801.3707, 4055.6837
+Components, Black, 4087998.0118, 1079.4744
+Components, Blue, 803642.0958, 1388.1064

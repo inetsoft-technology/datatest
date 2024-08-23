@@ -1,0 +1,19 @@
+The table size(row x col) is:(18 x 7)
+Employee, Department Name, Hire Year, Marital Status, Vacation Hours, fdate, fnum
+Amy E. Alberts, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+David R. Campbell, Sales, 2002, Single, 26 - 49, 2001-07-01, 2002
+Garrett R. Vargas, Sales, 2003, Married, 0 - 25, 2002-05-18, 2003
+Jae B. Pak, Sales, 2001, Married, 0 - 25, 2002-07-01, 2001
+Jillian Carson, Sales, 2001, Married, 0 - 25, 2002-11-01, 2001
+José Edvaldo. Saraiva, Sales, 2001, Married, 0 - 25, 2003-04-15, 2001
+Linda C. Mitchell, Sales, 2001, Married, 0 - 25, 2003-07-01, 2001
+Lynn N. Tsoflias, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Michael G. Blythe, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Pamela O. Ansman-Wolfe, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Rachel B. Valdez, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Ranjit R. Varkey Chudukatil, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Shu K. Ito, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Stephen Y. Jiang, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Syed E. Abbas, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Tete A. Mensa-Annan, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001
+Tsvi Michael. Reiter, Sales, 2001, Married, 0 - 25, 2001-02-04, 2001

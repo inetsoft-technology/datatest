@@ -1,0 +1,252 @@
+The table size(row x col) is:(251 x 11)
+rename, Class, Color, Category, Model Name, Reseller Gross Profit, Reseller Order Count, Reseller Freight Cost, f_class, f_Freight Cost, range_reseller
+BB-7421, Low, NA, Components, LL Bottom Bracket, 3183.6672, 150, 306.1282, Low, 306.1282, <200
+BB-9108, High, NA, Components, HL Bottom Bracket, 10291.1532, 218, 989.5426, High, 989.5426, 200-400
+BK-M18B-40, Low, Black, Bikes, Mountain-500, 6882.9462, 102, 1895.368, Low, 1895.368, <200
+BK-M18B-42, Low, Black, Bikes, Mountain-500, 9971.4477, 146, 2745.8535, Low, 2745.8535, <200
+BK-M18B-44, Low, Black, Bikes, Mountain-500, 8588.9756, 135, 2365.1601, Low, 2365.1601, <200
+BK-M18B-48, Low, Black, Bikes, Mountain-500, 11559.8199, 176, 3183.2462, Low, 3183.2462, <200
+BK-M18B-52, Low, Black, Bikes, Mountain-500, 6794.7033, 105, 1871.0686, Low, 1871.0686, <200
+BK-M18S-40, Low, Silver, Bikes, Mountain-500, -5163.3675, 176, 2991.6262, Low, 2991.6262, <200
+BK-M18S-42, Low, Silver, Bikes, Mountain-500, -10433.391, 176, 2898.4028, Low, 2898.4028, <200
+BK-M18S-44, Low, Silver, Bikes, Mountain-500, -4932.7002, 156, 2511.9495, Low, 2511.9495, <200
+BK-M18S-48, Low, Silver, Bikes, Mountain-500, -10796.9145, 178, 2866.1984, Low, 2866.1984, <200
+BK-M18S-52, Low, Silver, Bikes, Mountain-500, -9763.9341, 188, 3354.3502, Low, 3354.3502, <200
+BK-M38S-38, Medium, Silver, Bikes, Mountain-400-W, 11610.6212, 105, 3197.2339, Medium, 3197.2339, <200
+BK-M38S-40, Medium, Silver, Bikes, Mountain-400-W, 19937.4631, 173, 5630.2319, Medium, 5630.2319, <200
+BK-M38S-42, Medium, Silver, Bikes, Mountain-400-W, 10730.3936, 102, 2954.8446, Medium, 2954.8446, <200
+BK-M38S-46, Medium, Silver, Bikes, Mountain-400-W, 10756.3281, 101, 3028.9543, Medium, 3028.9543, <200
+BK-M47B-38, Medium, Black, Bikes, Mountain-300, 33147.2734, 220, 11061.9331, Medium, 11061.9331, 200-400
+BK-M47B-40, Medium, Black, Bikes, Mountain-300, 37263.0047, 223, 12541.2282, Medium, 12541.2282, 200-400
+BK-M47B-44, Medium, Black, Bikes, Mountain-300, 37020.2742, 228, 12101.2951, Medium, 12101.2951, 200-400
+BK-M47B-48, Medium, Black, Bikes, Mountain-300, 36229.7041, 223, 11976.8045, Medium, 11976.8045, 200-400
+BK-M68B-38, High, Black, Bikes, Mountain-200, 282344.6631, 670, 77643.1725, High, 77643.1725, >=400
+BK-M68B-42, High, Black, Bikes, Mountain-200, 242041.1465, 563, 66158.82, High, 66158.82, >=400
+BK-M68B-46, High, Black, Bikes, Mountain-200, 181466.7663, 439, 48405.0959, High, 48405.0959, >=400
+BK-M68S-38, High, Silver, Bikes, Mountain-200, 218267.976, 498, 58855.3903, High, 58855.3903, >=400
+BK-M68S-42, High, Silver, Bikes, Mountain-200, 202477.1376, 480, 54526.1167, High, 54526.1167, >=400
+BK-M68S-46, High, Silver, Bikes, Mountain-200, 200466.7804, 474, 53328.9304, High, 53328.9304, >=400
+BK-M82B-38, High, Black, Bikes, Mountain-100, -26871.0104, 185, 29365.5724, High, 29365.5724, <200
+BK-M82B-42, High, Black, Bikes, Mountain-100, -15129.419, 183, 27571.2084, High, 27571.2084, <200
+BK-M82B-44, High, Black, Bikes, Mountain-100, -9669.3609, 182, 29083.8283, High, 29083.8283, <200
+BK-M82B-48, High, Black, Bikes, Mountain-100, -19133.1687, 186, 26047.5435, High, 26047.5435, <200
+BK-M82S-38, High, Silver, Bikes, Mountain-100, -22028.8886, 183, 27366.7356, High, 27366.7356, <200
+BK-M82S-42, High, Silver, Bikes, Mountain-100, -9901.8039, 179, 26092.3854, High, 26092.3854, <200
+BK-M82S-44, High, Silver, Bikes, Mountain-100, -4898.3783, 184, 26265.2748, High, 26265.2748, <200
+BK-M82S-48, High, Silver, Bikes, Mountain-100, 456.9476, 168, 22431.4378, High, 22431.4378, <200
+BK-R19B-44, Low, Black, Bikes, Road-750, -5818.0576, 106, 2397.5589, Low, 2397.5589, <200
+BK-R19B-48, Low, Black, Bikes, Road-750, -27816.0298, 322, 9553.9572, Low, 9553.9572, 200-400
+BK-R19B-52, Low, Black, Bikes, Road-750, -19923.6527, 310, 7680.7787, Low, 7680.7787, 200-400
+BK-R19B-58, Low, Black, Bikes, Road-750, -10967.8248, 203, 4519.7221, Low, 4519.7221, 200-400
+BK-R50B-44, Low, Black, Bikes, Road-650, -10204.3112, 378, 11541.9653, Low, 11541.9653, 200-400
+BK-R50B-48, Low, Black, Bikes, Road-650, -5679.5098, 232, 6620.7434, Low, 6620.7434, 200-400
+BK-R50B-52, Low, Black, Bikes, Road-650, -34113.7768, 611, 24329.3402, Low, 24329.3402, >=400
+BK-R50B-58, Low, Black, Bikes, Road-650, -21271.2613, 561, 20206.333, Low, 20206.333, >=400
+BK-R50B-60, Low, Black, Bikes, Road-650, -10181.8309, 384, 11618.505, Low, 11618.505, 200-400
+BK-R50B-62, Low, Black, Bikes, Road-650, -5727.9854, 228, 6580.0559, Low, 6580.0559, 200-400
+BK-R50R-44, Low, Red, Bikes, Road-650, -122093.3523, 612, 22079.3414, Low, 22079.3414, >=400
+BK-R50R-48, Low, Red, Bikes, Road-650, -23013.9136, 559, 20270.4384, Low, 20270.4384, >=400
+BK-R50R-52, Low, Red, Bikes, Road-650, -10296.6282, 379, 11938.6456, Low, 11938.6456, 200-400
+BK-R50R-58, Low, Red, Bikes, Road-650, -5554.098, 208, 6191.6367, Low, 6191.6367, 200-400
+BK-R50R-60, Low, Red, Bikes, Road-650, -33138.0292, 623, 24256.3943, Low, 24256.3943, >=400
+BK-R50R-62, Low, Red, Bikes, Road-650, -22320.051, 558, 20420.2189, Low, 20420.2189, >=400
+BK-R64Y-38, Medium, Yellow, Bikes, Road-550-W, -33906.7799, 455, 23350.5477, Medium, 23350.5477, >=400
+BK-R64Y-40, Medium, Yellow, Bikes, Road-550-W, -27214.1655, 421, 19532.1331, Medium, 19532.1331, >=400
+BK-R64Y-42, Medium, Yellow, Bikes, Road-550-W, -20513.6657, 342, 14936.3395, Medium, 14936.3395, 200-400
+BK-R64Y-44, Medium, Yellow, Bikes, Road-550-W, -13925.6216, 208, 10137.237, Medium, 10137.237, 200-400
+BK-R64Y-48, Medium, Yellow, Bikes, Road-550-W, -37330.0851, 462, 23753.3784, Medium, 23753.3784, >=400
+BK-R68R-44, Medium, Red, Bikes, Road-450, -3430.3478, 171, 7566.9735, Medium, 7566.9735, <200
+BK-R68R-48, Medium, Red, Bikes, Road-450, -1546.6308, 77, 3411.6989, Medium, 3411.6989, <200
+BK-R68R-52, Medium, Red, Bikes, Road-450, -7039.153, 267, 15527.6013, Medium, 15527.6013, 200-400
+BK-R68R-58, Medium, Red, Bikes, Road-450, -6921.9347, 226, 12699.4639, Medium, 12699.4639, 200-400
+BK-R68R-60, Medium, Red, Bikes, Road-450, -3470.005, 164, 7654.4525, Medium, 7654.4525, <200
+BK-R79Y-40, Medium, Yellow, Bikes, Road-350-W, -93815.1675, 327, 30968.8752, Medium, 30968.8752, 200-400
+BK-R79Y-42, Medium, Yellow, Bikes, Road-350-W, -47165.8757, 220, 18008.3486, Medium, 18008.3486, 200-400
+BK-R79Y-44, Medium, Yellow, Bikes, Road-350-W, -19813.12, 116, 8164.7551, Medium, 8164.7551, <200
+BK-R79Y-48, Medium, Yellow, Bikes, Road-350-W, -124435.0228, 334, 34506.3552, Medium, 34506.3552, 200-400
+BK-R89B-44, High, Black, Bikes, Road-250, -68123.9717, 434, 47212.0086, High, 47212.0086, >=400
+BK-R89B-48, High, Black, Bikes, Road-250, -58621.7087, 414, 41411.249, High, 41411.249, >=400
+BK-R89B-52, High, Black, Bikes, Road-250, -43297.5458, 348, 31951.1694, High, 31951.1694, 200-400
+BK-R89B-58, High, Black, Bikes, Road-250, -30443.5372, 216, 22109.2675, High, 22109.2675, 200-400
+BK-R89R-44, High, Red, Bikes, Road-250, -44328.5074, 220, 27407.0072, High, 27407.0072, 200-400
+BK-R89R-48, High, Red, Bikes, Road-250, -34995.6393, 214, 23691.4851, High, 23691.4851, 200-400
+BK-R89R-52, High, Red, Bikes, Road-250, -26704.8584, 181, 18545.0316, High, 18545.0316, <200
+BK-R89R-58, High, Red, Bikes, Road-250, -30443.5372, 220, 22109.2668, High, 22109.2668, 200-400
+BK-R93R-44, High, Red, Bikes, Road-150, -3795.8232, 77, 8373.1544, High, 8373.1544, <200
+BK-R93R-48, High, Red, Bikes, Road-150, -3795.8232, 72, 8373.1541, High, 8373.1541, <200
+BK-R93R-52, High, Red, Bikes, Road-150, -3795.8232, 76, 8373.1541, High, 8373.1541, <200
+BK-R93R-56, High, Red, Bikes, Road-150, -8978.5818, 180, 19805.7299, High, 19805.7299, <200
+BK-R93R-62, High, Red, Bikes, Road-150, -6423.7008, 134, 14169.9534, High, 14169.9534, <200
+BK-T18U-44, Low, Blue, Bikes, Touring-3000, -16264.823, 104, 2350.5138, Low, 2350.5138, <200
+BK-T18U-50, Low, Blue, Bikes, Touring-3000, -52977.0213, 258, 7823.7217, Low, 7823.7217, 200-400
+BK-T18U-54, Low, Blue, Bikes, Touring-3000, -41925.7995, 226, 6231.1507, Low, 6231.1507, 200-400
+BK-T18U-58, Low, Blue, Bikes, Touring-3000, -27481.813, 182, 4215.8095, Low, 4215.8095, <200
+BK-T18U-62, Low, Blue, Bikes, Touring-3000, -12359.9128, 93, 2194.3418, Low, 2194.3418, <200
+BK-T18Y-44, Low, Yellow, Bikes, Touring-3000, -51141.0415, 259, 7858.0851, Low, 7858.0851, 200-400
+BK-T18Y-50, Low, Yellow, Bikes, Touring-3000, -41377.2767, 221, 6198.7193, Low, 6198.7193, 200-400
+BK-T18Y-54, Low, Yellow, Bikes, Touring-3000, -25707.967, 179, 4029.4331, Low, 4029.4331, <200
+BK-T18Y-58, Low, Yellow, Bikes, Touring-3000, -17507.2946, 112, 2400.2052, Low, 2400.2052, <200
+BK-T18Y-62, Low, Yellow, Bikes, Touring-3000, -51956.9585, 269, 7860.7601, Low, 7860.7601, 200-400
+BK-T44U-46, Medium, Blue, Bikes, Touring-2000, -11994.4747, 186, 8025.6812, Medium, 8025.6812, <200
+BK-T44U-50, Medium, Blue, Bikes, Touring-2000, -5668.0128, 92, 3936.1165, Medium, 3936.1165, <200
+BK-T44U-54, Medium, Blue, Bikes, Touring-2000, -30853.8253, 292, 16634.8889, Medium, 16634.8889, 200-400
+BK-T44U-60, Medium, Blue, Bikes, Touring-2000, -20735.5753, 265, 13433.0289, Medium, 13433.0289, 200-400
+BK-T79U-46, High, Blue, Bikes, Touring-1000, -57625.5844, 265, 29124.3366, High, 29124.3366, 200-400
+BK-T79U-50, High, Blue, Bikes, Touring-1000, -25696.4541, 186, 17844.769, High, 17844.769, <200
+BK-T79U-54, High, Blue, Bikes, Touring-1000, -13028.4627, 117, 9047.5493, High, 9047.5493, <200
+BK-T79U-60, High, Blue, Bikes, Touring-1000, -71141.3523, 292, 34269.6144, High, 34269.6144, 200-400
+BK-T79Y-46, High, Yellow, Bikes, Touring-1000, -218141.4413, 268, 25407.8274, High, 25407.8274, 200-400
+BK-T79Y-50, High, Yellow, Bikes, Touring-1000, -121257.6087, 191, 15529.8357, High, 15529.8357, <200
+BK-T79Y-54, High, Yellow, Bikes, Touring-1000, -63708.0693, 113, 7261.8802, High, 7261.8802, <200
+BK-T79Y-60, High, Yellow, Bikes, Touring-1000, -259044.2133, 293, 29609.0895, High, 29609.0895, 200-400
+CA-1098, Not Applicable, Multi, Clothing, Cycling Cap, -5731.4583, 1192, 788.55, Not Applicable, 788.55, >=400
+CH-0234, Not Applicable, Silver, Components, Chain, 2422.0818, 250, 234.4427, Not Applicable, 234.4427, 200-400
+CL-9009, Not Applicable, NA, Accessories, Bike Wash, 4019.7462, 419, 279.7184, Not Applicable, 279.7184, >=400
+CS-4759, Low, Black, Components, LL Crankset, 11662.3464, 176, 1121.3862, Low, 1121.3862, <200
+CS-6583, Medium, Black, Components, ML Crankset, 2720.8432, 28, 261.6206, Medium, 261.6206, <200
+CS-9183, High, Black, Components, HL Crankset, 38395.6194, 219, 3715.5711, High, 3715.5711, 200-400
+FB-9873, Not Applicable, Silver, Components, Front Brakes, 12990.657, 266, 1257.4827, Not Applicable, 1257.4827, 200-400
+FD-2342, Not Applicable, Silver, Components, Front Derailleur, 11458.907, 257, 1112.1128, Not Applicable, 1112.1128, 200-400
+FK-1639, Low, NA, Components, LL Fork, 4393.237, 83, 422.427, Low, 422.427, <200
+FK-9939, High, NA, Components, HL Fork, 15793.8512, 117, 1525.8675, High, 1525.8675, <200
+FR-M21B-40, Low, Black, Components, LL Mountain Frame, 104.712, 6, 29.9751, Low, 29.9751, <200
+FR-M21B-42, Low, Black, Components, LL Mountain Frame, 5536.647, 162, 1584.9218, Low, 1584.9218, <200
+FR-M21B-44, Low, Black, Components, LL Mountain Frame, 8093.798, 227, 2339.6166, Low, 2339.6166, 200-400
+FR-M21B-48, Low, Black, Components, LL Mountain Frame, 5052.354, 164, 1446.2889, Low, 1446.2889, <200
+FR-M21B-52, Low, Black, Components, LL Mountain Frame, 196.335, 9, 56.2031, Low, 56.2031, <200
+FR-M21S-40, Low, Silver, Components, LL Mountain Frame, 6023.8166, 164, 1748.361, Low, 1748.361, <200
+FR-M21S-42, Low, Silver, Components, LL Mountain Frame, 8318.5128, 224, 2514.2395, Low, 2514.2395, 200-400
+FR-M21S-44, Low, Silver, Components, LL Mountain Frame, 5133.2302, 159, 1469.4432, Low, 1469.4432, <200
+FR-M21S-48, Low, Silver, Components, LL Mountain Frame, 608.7928, 16, 174.2736, Low, 174.2736, <200
+FR-M21S-52, Low, Silver, Components, LL Mountain Frame, 5880.385, 159, 1683.3236, Low, 1683.3236, <200
+FR-M63B-38, Medium, Black, Components, ML Mountain Frame-W, 12046.4638, 226, 2688.9396, Medium, 2688.9396, 200-400
+FR-M63B-40, Medium, Black, Components, ML Mountain Frame, 1593.6956, 33, 355.7352, Medium, 355.7352, <200
+FR-M63B-44, Medium, Black, Components, ML Mountain Frame, 14507.3173, 198, 3238.2366, Medium, 3238.2366, <200
+FR-M63B-48, Medium, Black, Components, ML Mountain Frame, 22011.526, 255, 5000.6604, Medium, 5000.6604, 200-400
+FR-M63S-38, Medium, Silver, Components, ML Mountain Frame-W, 133.5481, 5, 38.2297, Medium, 38.2297, <200
+FR-M63S-40, Medium, Silver, Components, ML Mountain Frame-W, 16587.6348, 253, 4895.6649, Medium, 4895.6649, 200-400
+FR-M63S-42, Medium, Silver, Components, ML Mountain Frame-W, 11962.0941, 230, 3424.2726, Medium, 3424.2726, 200-400
+FR-M63S-46, Medium, Silver, Components, ML Mountain Frame-W, 3586.7204, 87, 1026.7363, Medium, 1026.7363, <200
+FR-M94B-38, High, Black, Components, HL Mountain Frame, 53201.3202, 289, 12544.7034, High, 12544.7034, 200-400
+FR-M94B-42, High, Black, Components, HL Mountain Frame, 94331.2044, 481, 22539.755, High, 22539.755, >=400
+FR-M94B-44, High, Black, Components, HL Mountain Frame, 1881.3424, 13, 344.148, High, 344.148, <200
+FR-M94B-48, High, Black, Components, HL Mountain Frame, 14497.4032, 76, 2651.964, High, 2651.964, <200
+FR-M94S-38, High, Silver, Components, HL Mountain Frame, 96854.1014, 491, 23269.5171, High, 23269.5171, >=400
+FR-M94S-42, High, Silver, Components, HL Mountain Frame, 27361.9378, 167, 6746.85, High, 6746.85, <200
+FR-M94S-46, High, Silver, Components, HL Mountain Frame, 52983.5679, 288, 12488.9136, High, 12488.9136, 200-400
+FR-M94S-52, High, Silver, Components, HL Mountain Frame, 19356.797, 94, 3540.8775, High, 3540.8775, <200
+FR-R38B-44, Low, Black, Components, LL Road Frame, 1651.1879, 110, 1129.1177, Low, 1129.1177, <200
+FR-R38B-52, Low, Black, Components, LL Road Frame, 8385.4761, 600, 7489.8892, Low, 7489.8892, >=400
+FR-R38B-58, Low, Black, Components, LL Road Frame, 5751.8442, 392, 4440.8992, Low, 4440.8992, 200-400
+FR-R38B-60, Low, Black, Components, LL Road Frame, 786.7938, 52, 621.1177, Low, 621.1177, <200
+FR-R38R-44, Low, Red, Components, LL Road Frame, 10938.3472, 374, 4867.3183, Low, 4867.3183, 200-400
+FR-R38R-48, Low, Red, Components, LL Road Frame, 7569.3609, 286, 3290.6568, Low, 3290.6568, 200-400
+FR-R38R-52, Low, Red, Components, LL Road Frame, 1428.4332, 48, 502.6113, Low, 502.6113, <200
+FR-R38R-60, Low, Red, Components, LL Road Frame, 11152.629, 374, 4885.8617, Low, 4885.8617, 200-400
+FR-R38R-62, Low, Red, Components, LL Road Frame, 7808.5234, 286, 3417.8627, Low, 3417.8627, 200-400
+FR-R72R-48, Medium, Red, Components, ML Road Frame, 1189.65, 130, 2230.6168, Medium, 2230.6168, <200
+FR-R72R-52, Medium, Red, Components, ML Road Frame, 428.274, 44, 803.0221, Medium, 803.0221, <200
+FR-R72Y-38, Medium, Yellow, Components, ML Road Frame-W, 10455.7392, 356, 7583.2758, Medium, 7583.2758, 200-400
+FR-R72Y-40, Medium, Yellow, Components, ML Road Frame-W, 2924.894, 88, 1704.189, Medium, 1704.189, <200
+FR-R72Y-44, Medium, Yellow, Components, ML Road Frame-W, 15616.1169, 489, 12142.5196, Medium, 12142.5196, >=400
+FR-R72Y-48, Medium, Yellow, Components, ML Road Frame-W, 10394.8719, 350, 7532.1752, Medium, 7532.1752, 200-400
+FR-R92B-44, High, Black, Components, HL Road Frame, 12332.7198, 201, 9375.6767, High, 9375.6767, 200-400
+FR-R92B-48, High, Black, Components, HL Road Frame, 2217.161, 47, 2246.8047, High, 2246.8047, <200
+FR-R92R-44, High, Red, Components, HL Road Frame, 12878.8101, 219, 9879.5694, High, 9879.5694, 200-400
+FR-R92R-48, High, Red, Components, HL Road Frame, 2217.161, 44, 2246.8047, High, 2246.8047, <200
+FR-R92R-62, High, Red, Components, HL Road Frame, 12743.1832, 218, 9856.3915, High, 9856.3915, 200-400
+FR-T67U-44, Low, Blue, Components, LL Touring Frame, 5.0025, 14, 125.0325, Low, 125.0325, <200
+FR-T67U-50, Low, Blue, Components, LL Touring Frame, 63.2316, 126, 1580.4108, Low, 1580.4108, <200
+FR-T67U-54, Low, Blue, Components, LL Touring Frame, 42.2211, 99, 1055.2743, Low, 1055.2743, <200
+FR-T67U-58, Low, Blue, Components, LL Touring Frame, 0.8004, 2, 20.0052, Low, 20.0052, <200
+FR-T67U-62, Low, Blue, Components, LL Touring Frame, 3.0015, 9, 75.0195, Low, 75.0195, <200
+FR-T67Y-44, Low, Yellow, Components, LL Touring Frame, -57.0674, 117, 1467.4848, Low, 1467.4848, <200
+FR-T67Y-50, Low, Yellow, Components, LL Touring Frame, 45.6228, 110, 1140.2964, Low, 1140.2964, <200
+FR-T67Y-58, Low, Yellow, Components, LL Touring Frame, 7.2036, 20, 180.0468, Low, 180.0468, <200
+FR-T67Y-62, Low, Yellow, Components, LL Touring Frame, -421.3261, 130, 1728.1784, Low, 1728.1784, <200
+FR-T98U-46, High, Blue, Components, HL Touring Frame, 68.6622, 58, 1716.688, High, 1716.688, <200
+FR-T98U-50, High, Blue, Components, HL Touring Frame, 74.6852, 58, 1867.2746, High, 1867.2746, <200
+FR-T98U-54, High, Blue, Components, HL Touring Frame, -1811.9821, 169, 8108.3317, High, 8108.3317, <200
+FR-T98U-60, High, Blue, Components, HL Touring Frame, -1525.9602, 140, 5543.0274, High, 5543.0274, <200
+FR-T98Y-46, High, Yellow, Components, HL Touring Frame, 52.4001, 41, 1310.104, High, 1310.104, <200
+FR-T98Y-50, High, Yellow, Components, HL Touring Frame, 49.9909, 39, 1249.8694, High, 1249.8694, <200
+FR-T98Y-54, High, Yellow, Components, HL Touring Frame, -1673.3421, 161, 8081.7099, High, 8081.7099, <200
+FR-T98Y-60, High, Yellow, Components, HL Touring Frame, -496.5517, 135, 5809.4595, High, 5809.4595, <200
+FW-M423, Low, Black, Components, LL Mountain Front Wheel, 5821.8614, 232, 561.5754, Low, 561.5754, 200-400
+FW-M762, Medium, Black, Components, ML Mountain Front Wheel, 8673.7014, 114, 834.0122, Medium, 834.0122, <200
+FW-M928, High, Black, Components, HL Mountain Front Wheel, 10397.037, 104, 999.7172, High, 999.7172, <200
+FW-R762, Medium, Black, Components, ML Road Front Wheel, 20536.493, 194, 1974.6643, Medium, 1974.6643, <200
+FW-R820, High, Black, Components, HL Road Front Wheel, 29194.4898, 206, 2807.1603, High, 2807.1603, 200-400
+GL-F110-L, Not Applicable, Black, Clothing, Full-Finger Gloves, 16889.6205, 361, 1740.5613, Not Applicable, 1740.5613, 200-400
+GL-F110-M, Not Applicable, Black, Clothing, Full-Finger Gloves, 13558.9679, 355, 1199.7037, Not Applicable, 1199.7037, 200-400
+GL-F110-S, Not Applicable, Black, Clothing, Full-Finger Gloves, 3511.6883, 236, 280.9432, Not Applicable, 280.9432, 200-400
+GL-H102-L, Not Applicable, Black, Clothing, Half-Finger Gloves, 4268.3112, 230, 301.5823, Not Applicable, 301.5823, 200-400
+GL-H102-M, Not Applicable, Black, Clothing, Half-Finger Gloves, 14580.6493, 587, 1058.1294, Not Applicable, 1058.1294, >=400
+GL-H102-S, Not Applicable, Black, Clothing, Half-Finger Gloves, 8680.385, 395, 613.4906, Not Applicable, 613.4906, 200-400
+HB-M243, Low, NA, Components, LL Mountain Handlebars, 5657.2777, 301, 550.2085, Low, 550.2085, 200-400
+HB-M763, Medium, NA, Components, ML Mountain Handlebars, 13386.6586, 507, 1293.8452, Medium, 1293.8452, >=400
+HB-M918, High, NA, Components, HL Mountain Handlebars, 8937.594, 216, 859.3849, High, 859.3849, 200-400
+HB-R504, Low, NA, Components, LL Road Handlebars, 1409.8479, 98, 135.5641, Low, 135.5641, <200
+HB-R956, High, NA, Components, HL Road Handlebars, 11282.8595, 270, 1084.8918, High, 1084.8918, 200-400
+HB-T721, Low, NA, Components, LL Touring Handlebars, 402.64, 30, 38.7164, Low, 38.7164, <200
+HB-T928, High, NA, Components, HL Touring Handlebars, 3142.678, 109, 302.184, High, 302.184, <200
+HL-U509, Not Applicable, Black, Accessories, Sport-100, 29060.9363, 922, 2197.8975, Not Applicable, 2197.8975, >=400
+HL-U509-B, Not Applicable, Blue, Accessories, Sport-100, 29942.8891, 965, 2276.334, Not Applicable, 2276.334, >=400
+HL-U509-R, Not Applicable, Red, Accessories, Sport-100, 26343.0758, 853, 1993.6299, Not Applicable, 1993.6299, >=400
+HS-0296, Low, NA, Components, LL Headset, 506.844, 46, 48.735, Low, 48.735, <200
+HS-2451, Medium, NA, Components, ML Headset, 9979.4372, 110, 997.7296, Medium, 997.7296, <200
+HS-3479, High, NA, Components, HL Headset, 4961.7645, 110, 477.0958, High, 477.0958, <200
+HY-1023-70, Not Applicable, Silver, Accessories, Hydration Pack, 23810.2921, 341, 1637.9755, Not Applicable, 1637.9755, 200-400
+LJ-0192-L, Not Applicable, Multi, Clothing, Long-Sleeve Logo Jersey, -31396.6241, 1183, 4403.9929, Not Applicable, 4403.9929, >=400
+LJ-0192-M, Not Applicable, Multi, Clothing, Long-Sleeve Logo Jersey, -15181.6381, 776, 2328.8447, Not Applicable, 2328.8447, >=400
+LJ-0192-X, Not Applicable, Multi, Clothing, Long-Sleeve Logo Jersey, -10274.2509, 663, 1874.1349, Not Applicable, 1874.1349, >=400
+LO-C100, Not Applicable, NA, Accessories, Cable Lock, 5025.845, 259, 405.6307, Not Applicable, 405.6307, 200-400
+PD-M282, Low, Silver/Black, Components, LL Mountain Pedal, 2836.0636, 195, 272.706, Low, 272.706, <200
+PD-M340, Medium, Silver/Black, Components, ML Mountain Pedal, 3341.67, 158, 321.3207, Medium, 321.3207, <200
+PD-M562, High, Silver/Black, Components, HL Mountain Pedal, 9790.0398, 255, 950.4642, High, 950.4642, 200-400
+PD-R347, Low, Silver/Black, Components, LL Road Pedal, 5482.6352, 309, 527.1886, Low, 527.1886, 200-400
+PD-R563, Medium, Silver/Black, Components, ML Road Pedal, 6402.446, 265, 615.6298, Medium, 615.6298, 200-400
+PD-R853, High, Silver/Black, Components, HL Road Pedal, 8540.8544, 264, 821.2466, High, 821.2466, 200-400
+PD-T852, Not Applicable, Silver/Black, Components, Touring Pedal, 1857.2568, 71, 178.585, Not Applicable, 178.585, <200
+PK-7098, Not Applicable, NA, Accessories, Patch kit, 347.9266, 163, 23.1342, Not Applicable, 23.1342, <200
+PU-0452, Not Applicable, NA, Accessories, Minipump, 4196.8203, 267, 337.8741, Not Applicable, 337.8741, 200-400
+RA-H123, Not Applicable, NA, Accessories, Hitch Rack - 4-Bike, 70366.716, 468, 4943.4039, Not Applicable, 4943.4039, >=400
+RB-9231, Not Applicable, Silver, Components, Rear Brakes, 4087.044, 113, 392.985, Not Applicable, 392.985, <200
+RD-2308, Not Applicable, Silver, Components, Rear Derailleur, 6688.5734, 145, 643.1307, Not Applicable, 643.1307, <200
+RW-M423, Low, Black, Components, LL Mountain Rear Wheel, 4681.3644, 148, 450.135, Low, 450.135, <200
+RW-M762, Medium, Black, Components, ML Mountain Rear Wheel, 30432.073, 264, 2979.8439, Medium, 2979.8439, 200-400
+RW-M928, High, Black, Components, HL Mountain Rear Wheel, 42522.3087, 258, 4150.3359, High, 4150.3359, 200-400
+RW-R623, Low, Black, Components, LL Road Rear Wheel, 15207.0466, 303, 1462.2242, Low, 1462.2242, 200-400
+RW-R762, Medium, Black, Components, ML Road Rear Wheel, 2749.4464, 31, 264.3702, Medium, 264.3702, <200
+RW-R820, High, Black, Components, HL Road Rear Wheel, 5124.5288, 45, 492.7428, High, 492.7428, <200
+SB-M891-L, Not Applicable, Multi, Clothing, Men's Bib-Shorts, 10680.6723, 178, 854.4595, Not Applicable, 854.4595, <200
+SB-M891-M, Not Applicable, Multi, Clothing, Men's Bib-Shorts, 25964.9458, 349, 2139.5362, Not Applicable, 2139.5362, 200-400
+SB-M891-S, Not Applicable, Multi, Clothing, Men's Bib-Shorts, 14610.9706, 229, 1174.5155, Not Applicable, 1174.5155, 200-400
+SE-M236, Low, NA, Components, LL Mountain Seat/Saddle 2, 1458.626, 153, 140.9239, Low, 140.9239, <200
+SE-M798, Medium, NA, Components, ML Mountain Seat/Saddle 2, 3217.2083, 138, 312.4293, Medium, 312.4293, <200
+SE-M940, High, NA, Components, HL Mountain Seat/Saddle 2, 4261.9242, 222, 409.8024, High, 409.8024, 200-400
+SE-R581, Low, NA, Components, LL Road Seat/Saddle 1, 42.307, 6, 4.068, Low, 4.068, <200
+SE-R995, High, NA, Components, HL Road Seat/Saddle 2, 1100.3812, 60, 105.8064, High, 105.8064, <200
+SE-T312, Low, NA, Components, LL Touring Seat/Saddle, 384.9937, 43, 37.0188, Low, 37.0188, <200
+SE-T762, Medium, NA, Components, ML Touring Seat/Saddle, 512.8872, 41, 49.3164, Medium, 49.3164, <200
+SE-T924, High, NA, Components, HL Touring Seat/Saddle, 3498.2268, 177, 336.3696, High, 336.3696, <200
+SH-M897-L, Not Applicable, Black, Clothing, Men's Sports Shorts, 5005.4045, 131, 400.4364, Not Applicable, 400.4364, <200
+SH-M897-M, Not Applicable, Black, Clothing, Men's Sports Shorts, 13990.0202, 282, 1137.9143, Not Applicable, 1137.9143, 200-400
+SH-M897-S, Not Applicable, Black, Clothing, Men's Sports Shorts, 6334.072, 160, 509.1288, Not Applicable, 509.1288, <200
+SH-W890-L, Not Applicable, Black, Clothing, Women's Mountain Shorts, 35953.7269, 344, 2784.1972, Not Applicable, 2784.1972, 200-400
+SH-W890-M, Not Applicable, Black, Clothing, Women's Mountain Shorts, 12448.5299, 329, 826.2408, Not Applicable, 826.2408, 200-400
+SH-W890-S, Not Applicable, Black, Clothing, Women's Mountain Shorts, 37567.6781, 344, 2897.1854, Not Applicable, 2897.1854, 200-400
+SJ-0194-L, Not Applicable, Yellow, Clothing, Short-Sleeve Classic Jersey, -24569.4129, 431, 1957.0208, Not Applicable, 1957.0208, >=400
+SJ-0194-S, Not Applicable, Yellow, Clothing, Short-Sleeve Classic Jersey, -14709.3595, 311, 1242.1608, Not Applicable, 1242.1608, 200-400
+SJ-0194-X, Not Applicable, Yellow, Clothing, Short-Sleeve Classic Jersey, -36568.636, 495, 2676.6024, Not Applicable, 2676.6024, >=400
+SO-B909-L, Not Applicable, White, Clothing, Mountain Bike Socks, 207.333, 44, 12.825, Not Applicable, 12.825, <200
+SO-B909-M, Not Applicable, White, Clothing, Mountain Bike Socks, 2300.6843, 188, 151.5095, Not Applicable, 151.5095, <200
+SO-R809-L, Not Applicable, White, Clothing, Racing Socks, 3950.1434, 334, 283.9388, Not Applicable, 283.9388, 200-400
+SO-R809-M, Not Applicable, White, Clothing, Racing Socks, 2508.6167, 295, 167.7084, Not Applicable, 167.7084, 200-400
+TG-W091-L, Not Applicable, Black, Clothing, Women's Tights, 28223.1239, 437, 2338.8714, Not Applicable, 2338.8714, >=400
+TG-W091-M, Not Applicable, Black, Clothing, Women's Tights, 5539.8764, 114, 443.1935, Not Applicable, 443.1935, <200
+TG-W091-S, Not Applicable, Black, Clothing, Women's Tights, 26951.8349, 418, 2263.7824, Not Applicable, 2263.7824, >=400
+VE-C304-L, Not Applicable, Blue, Clothing, Classic Vest, 172.212, 6, 11.43, Not Applicable, 11.43, <200
+VE-C304-M, Not Applicable, Blue, Clothing, Classic Vest, 28097.436, 356, 1940.3526, Not Applicable, 1940.3526, 200-400
+VE-C304-S, Not Applicable, Blue, Clothing, Classic Vest, 48857.8987, 514, 3643.2519, Not Applicable, 3643.2519, >=400
+WB-H098, Not Applicable, NA, Accessories, Water Bottle, 2678.3463, 444, 186.9249, Not Applicable, 186.9249, >=400
