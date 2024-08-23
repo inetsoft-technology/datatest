@@ -36,8 +36,8 @@
         <groovy.version>4.0.18</groovy.version>
         <spring.version>6.1.9</spring.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
-        <!--<root.dir>/inetsoft/styleBI/test/datatest</root.dir>-->
-        <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>
+        <root.dir>/inetsoft/styleBI/test/datatest</root.dir>
+        <!-- <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir> -->
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
 
@@ -364,5 +364,6 @@
         <module>vsexport</module>
         <module>olap</module>
         <module>tabular</module>
+        <module>mv</module>
     </modules>
 </project>
