@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Month(PRODUCE_DATETIME), DayOfMonth(PRODUCE_DATETIME), HourOfDay(PRODUCE_DATETIME), Aggregate
+2000 Dec, 12, 11, 0
+2001 Jan, 1, NULL, 0
+2006 Jan, 1, NULL, 0

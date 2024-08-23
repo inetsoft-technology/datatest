@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+CalcField2, NULL, 2020, 2021, 2022, 2023
+Eric, Sum(Total), 1319825, 1348279, 1245198, 1196020
+Eric, Moving Sum of 3 by column: Sum(Total), 0, 3913302, 3789497, 0
+Sue, Sum(Total), 881325, 1416955, 1260291, 876793
+Sue, Moving Sum of 3 by column: Sum(Total), 0, 3558571, 3554039, 0
+Annie, Sum(Total), 956344, 947222, 1029318, 1480099
+Annie, Moving Sum of 3 by column: Sum(Total), 0, 2932884, 3456639, 0

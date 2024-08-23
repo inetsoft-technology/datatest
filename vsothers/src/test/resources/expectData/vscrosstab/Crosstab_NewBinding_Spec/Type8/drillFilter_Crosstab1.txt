@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 6)
+Boolean, DataGroup(Name), 2000, 2000, 2001, 2001
+NULL, NULL, 4th, 4th, 1st, 1st
+NULL, NULL, Dec, Dec, Jan, Jan
+NULL, NULL, 12, 12, NULL, NULL
+NULL, NULL, CA_ID, Change from previous by row: CA_ID, CA_ID, Change from previous by row: CA_ID
+true, AA_Group, NULL, NULL, 3, NULL
+true, Green Planet, NULL, 0, 4, 1
+true, Fast Mail, 6, 6, NULL, -4

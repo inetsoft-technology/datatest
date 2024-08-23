@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+Category, NULL, Sum(Quantity Purchased)/Average(TotalPurchased)
+Business, Sum(Quantity Purchased), 4,940
+Business, Average(TotalPurchased), $25,103
+Educational, Sum(Quantity Purchased), 6,354
+Educational, Average(TotalPurchased), $1,683
+Games, Sum(Quantity Purchased), 11,925
+Games, Average(TotalPurchased), $1,640
+Graphics, Sum(Quantity Purchased), 3,891
+Graphics, Average(TotalPurchased), $3,351
+Hardware, Sum(Quantity Purchased), 11,805
+Hardware, Average(TotalPurchased), $10,173
+Office Tools, Sum(Quantity Purchased), 6,588
+Office Tools, Average(TotalPurchased), $3,371
+Personal, Sum(Quantity Purchased), 8,507
+Personal, Average(TotalPurchased), $3,013

@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 6)
+Year(Order:Date), Month(Order:Date), Sum(Order:Paid), Value of previous quarter of Month(Order:Date): Sum(Order:Paid), Grand Total, Grand Total
+2022, 2022 Sep, 12, 13, 12, 12
+2022, 2022 Oct, 14, 12, 14, 14
+2022, 2022 Dec, 11, 12, 11, 11
+2022, 2022 Apr, 20, 11, 20, 20
+2022, 2022 Jun, 13, 9, 13, 13
+2022, 2022 Jan, 11, NULL, 11, 11
+2022, 2022 Feb, 15, NULL, 15, 15
+2022, 2022 Mar, 9, NULL, 9, 9
+2022, Others, 66, 66, 66, 66
+2023, 2023 May, 13, 13, 13, 13
+2023, 2023 Aug, 12, 13, 12, 12
+2023, 2023 Sep, 10, 13, 10, 10
+2023, 2023 Nov, 13, 12, 13, 13
+2023, 2023 Dec, 11, 10, 11, 11
+2023, 2023 Jan, 15, NULL, 15, 15
+2023, 2023 Feb, 13, NULL, 13, 13
+2023, 2023 Mar, 15, NULL, 15, 15
+2023, Others, 56, 56, 56, 56

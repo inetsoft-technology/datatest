@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+RESELLER, STATE, Count, Sum
+1, CA, 41, 445
+0, CA, 39, 734
+0, MA, 43, 1002
+0, MD, 55, 978
+0, NY, 84, 997
+0, TX, 82, 1876

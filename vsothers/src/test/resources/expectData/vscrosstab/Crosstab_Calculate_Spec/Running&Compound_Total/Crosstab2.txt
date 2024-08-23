@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 15)
+NULL, USA East, USA East, USA East, USA East, USA East, USA East, USA West, USA West, USA West, USA West, USA West, USA West, USA West, Grand Total
+NULL, 2023 1st, 2023 1st, 2023 2nd, 2023 2nd, 2023 2nd, Total, 2023 1st, 2023 1st, 2023 1st, 2023 2nd, 2023 2nd, 2023 2nd, Total, NULL
+NULL, FL, Total, CT, FL, Total, NULL, AZ, CA, Total, AZ, CA, Total, NULL, NULL
+Sum(Product:SKU), 199, 199, 58, 60, 118, 317, 18, 100, 118, 08, 432, 440, 558, 875
+Compound Growth by column: Sum(Product:SKU), 19,900%, 19,900%, 5,800%, 359,800%, 11,800%, 31,700%, 1,800%, 191,800%, 11,800%, 800%, 389,600%, 44,000%, 55,800%, 87,500%
+Compound Growth Customer:Region: Sum(Product:SKU), 19,900%, 19,900%, 1,179,900%, 71,979,900%, 2,379,900%, 31,700%, 1,800%, 191,800%, 11,800%, 1,727,000%, 747,834,200%, 5,247,800%, 55,800%, 87,500%
+Grand Total, 199, 199, 58, 60, 118, 317, 18, 100, 118, 08, 432, 440, 558, 875
+Grand Total, 19,900%, 19,900%, 5,800%, 359,800%, 11,800%, 31,700%, 1,800%, 191,800%, 11,800%, 800%, 389,600%, 44,000%, 55,800%, 87,500%
+Grand Total, 19,900%, 19,900%, 1,179,900%, 71,979,900%, 2,379,900%, 31,700%, 1,800%, 191,800%, 11,800%, 1,727,000%, 747,834,200%, 5,247,800%, 55,800%, 87,500%

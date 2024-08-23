@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+NULL, NULL, Others
+long, 9, 10
+short, 5, 4
+order, CC, BB

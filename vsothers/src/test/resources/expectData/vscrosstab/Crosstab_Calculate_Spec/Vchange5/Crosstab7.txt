@@ -1,0 +1,62 @@
+The data size(row x col) is:(61 x 5)
+reseller, state, city, NULL, Average(customer_id)/Change from previous state: Average(customer_id)
+0, AZ, Tucson, Average(customer_id), 20
+0, AZ, Tucson, Change from previous state: Average(customer_id), NULL
+0, CA, Albany, Average(customer_id), 16
+0, CA, Albany, Change from previous state: Average(customer_id), NULL
+0, CA, Los Angeles, Average(customer_id), 21
+0, CA, Los Angeles, Change from previous state: Average(customer_id), NULL
+0, CO, Denver, Average(customer_id), 8
+0, CO, Denver, Change from previous state: Average(customer_id), NULL
+0, CT, Hartford, Average(customer_id), 6
+0, CT, Hartford, Change from previous state: Average(customer_id), NULL
+0, FL, Orlando, Average(customer_id), 12
+0, FL, Orlando, Change from previous state: Average(customer_id), NULL
+0, MA, Boston, Average(customer_id), 18
+0, MA, Boston, Change from previous state: Average(customer_id), NULL
+0, MA, Springfield, Average(customer_id), 30
+0, MA, Springfield, Change from previous state: Average(customer_id), NULL
+0, MD, Baltimore, Average(customer_id), 19
+0, MD, Baltimore, Change from previous state: Average(customer_id), NULL
+0, MD, Rockville, Average(customer_id), 14
+0, MD, Rockville, Change from previous state: Average(customer_id), NULL
+0, NJ, Camden, Average(customer_id), 15
+0, NJ, Camden, Change from previous state: Average(customer_id), NULL
+0, NJ, Middletown, Average(customer_id), 2
+0, NJ, Middletown, Change from previous state: Average(customer_id), NULL
+0, NJ, New Brunswick, Average(customer_id), 25
+0, NJ, New Brunswick, Change from previous state: Average(customer_id), NULL
+0, NJ, Plainfield, Average(customer_id), 35
+0, NJ, Plainfield, Change from previous state: Average(customer_id), NULL
+0, NJ, Wayne, Average(customer_id), 1
+0, NJ, Wayne, Change from previous state: Average(customer_id), NULL
+0, NV, Las Vegas, Average(customer_id), 32
+0, NV, Las Vegas, Change from previous state: Average(customer_id), NULL
+0, NY, New York, Average(customer_id), 12.75
+0, NY, New York, Change from previous state: Average(customer_id), NULL
+0, PA, York, Average(customer_id), 28
+0, PA, York, Change from previous state: Average(customer_id), NULL
+0, TX, Austin, Average(customer_id), 11
+0, TX, Austin, Change from previous state: Average(customer_id), NULL
+0, TX, Dallas, Average(customer_id), 28.5
+0, TX, Dallas, Change from previous state: Average(customer_id), NULL
+0, TX, Houston, Average(customer_id), 22
+0, TX, Houston, Change from previous state: Average(customer_id), NULL
+0, WA, Olympia, Average(customer_id), 29
+0, WA, Olympia, Change from previous state: Average(customer_id), NULL
+1, CA, Los Angeles, Average(customer_id), 13
+1, CA, Los Angeles, Change from previous state: Average(customer_id), NULL
+1, CA, San Francisco, Average(customer_id), 9
+1, CA, San Francisco, Change from previous state: Average(customer_id), NULL
+1, CO, Boulder, Average(customer_id), 4
+1, CO, Boulder, Change from previous state: Average(customer_id), NULL
+1, IL, Chicago, Average(customer_id), 10
+1, IL, Chicago, Change from previous state: Average(customer_id), NULL
+1, MA, Boston, Average(customer_id), 23
+1, MA, Boston, Change from previous state: Average(customer_id), NULL
+1, MA, Cambridge, Average(customer_id), 34
+1, MA, Cambridge, Change from previous state: Average(customer_id), NULL
+1, NJ, Newark, Average(customer_id), 19
+1, NJ, Newark, Change from previous state: Average(customer_id), NULL
+1, WA, Seattle, Average(customer_id), 27
+1, WA, Seattle, Change from previous state: Average(customer_id), NULL

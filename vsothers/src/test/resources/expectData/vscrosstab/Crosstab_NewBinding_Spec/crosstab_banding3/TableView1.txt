@@ -1,0 +1,37 @@
+The data size(row x col) is:(36 x 7)
+customer_id, company_name, address, city, state, zip, reseller
+1, Interstate Shop, 384 Broad St., Wayne, NJ, 18322, 0
+2, Daycare One, 123 Summer Rd., Middletown, NJ, 09882, 0
+3, Eastern Data, 7262 18th St., New York, NY, 03887, 0
+4, Ernst Handel, 88 Rio Grand Ave., Boulder, CO, 38923, 1
+5, George Services, 389 Jardim Rd., Baltimore, MD, 82938, 0
+6, Loctite Corp., 5 Baker's Lane, Hartford, CT, 39283, 0
+7, Old World Insurance, 1230 Hoes Lane, New York, NY, 08854, 0
+8, Quick Stop, 71 Mulberry St., Denver, CO, 98839, 0
+9, Direct Sales, 4500 River Rd., San Francisco, CA, 08854, 1
+10, Specialty Retail, 88 Specialty Dr., Chicago, IL, 88938, 1
+11, The Big Cat, 12 Woodpark Ave., Austin, TX, 32343, 0
+12, Fast Transportation, 77 Druguz Blvd., Orlando, FL, 12343, 0
+13, Computer Tech, 90 First Ave., Los Angeles, CA, 11223, 1
+14, InterLand Services, 822 Technology Dr., Rockville, MD, 83923, 0
+15, Scheggie Services, 839 Via Gaty Dr., Camden, NJ, 12334, 0
+16, Whittaker & Co, Inc, 44 Islander Lane, Albany, CA, 83923, 0
+17, FISGA Corp, 21 Doger Sound Blvd., New York, NY, 28122, 0
+18, Ubermeyer, 8300 Cleveland St., Boston, MA, 29183, 0
+19, Software Specialists, 300 Great Swamp Rd., Newark, NJ, 23445, 1
+20, Folk Mining, 345 Sewgen Dr., Tucson, AZ, 11234, 0
+21, West Coast Customs, 460 Newcomb Dr., Los Angeles, CA, 73646, 0
+22, Big Ed's BBQ, 23 Tasaga Ave., Houston, TX, 23421, 0
+23, World Software Resellers, 563 Uptown Dr., Boston, MA, 28275, 1
+24, High Society Investments, 1248 Broadway, New York, NY, 27834, 0
+25, Rutgers Bank, 283 Davidson Dr., New Brunswick, NJ, 08854, 0
+26, Nova Tera, 987 First Ave., Dallas, TX, 23123, 0
+27, Infinity Software, 32 West Boyd Ave., Seattle, WA, 93847, 1
+28, Tricounty Auto, 389 York St., York, PA, 48873, 0
+29, Northwest Outfitters, 17 Main St., Olympia, WA, 93717, 0
+30, AMG Logistics, 283 Handley Rd., Springfield, MA, 01923, 0
+31, BigMart Foodstores, 8874 Shiphouse Rd., Dallas, TX, 48374, 0
+32, Tumbleweed Gaming, 487 City St., Las Vegas, NV, 93847, 0
+33, FMG Consulting, 9381 Mayor Brown Hwy., Baltimore, MD, 53747, 0
+34, XO Resellers, 77 Huntington Ave., Cambridge, MA, 02938, 1
+35, Pharma Research, 38 Commercial Ave., Plainfield, NJ, 08273, 0

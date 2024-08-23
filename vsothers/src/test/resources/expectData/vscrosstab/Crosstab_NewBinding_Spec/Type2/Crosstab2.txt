@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 10)
+range_id, Quarter, false, false, false, false, false, false, true, true
+NULL, NULL, FL, FL, AK, AK, Others, Others, CA, CA
+NULL, NULL, Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1), Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1), Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1), Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1)
+13-26, 1st, 1999 1st, NULL, NULL, NULL, NULL, NULL, 2000 1st, NULL
+13-26, 2nd, NULL, 1999 1st, NULL, NULL, NULL, NULL, 1999 2nd, 2000 1st
+13-26, 3rd, 1999 3rd, NULL, NULL, NULL, NULL, NULL, 2000 3rd, 1999 2nd
+3-7, 1st, NULL, NULL, 2000 1st, NULL, NULL, NULL, NULL, NULL
+3-7, 2nd, NULL, NULL, 2000 2nd, 2000 1st, NULL, NULL, NULL, NULL
+3-7, 3rd, NULL, NULL, 2000 3rd, 2000 2nd, NULL, NULL, NULL, NULL
+7-13, 1st, NULL, NULL, 2000 1st, NULL, 2000 1st, NULL, NULL, NULL
+7-13, 2nd, NULL, NULL, 2000 2nd, 2000 1st, NULL, 2000 1st, 2000 2nd, NULL
+7-13, 3rd, NULL, NULL, 2000 3rd, 2000 2nd, 2000 3rd, NULL, 2000 3rd, 2000 2nd
+7-13, 4th, NULL, NULL, 1999 4th, 2000 3rd, 2000 4th, 2000 3rd, 1999 4th, 2000 3rd

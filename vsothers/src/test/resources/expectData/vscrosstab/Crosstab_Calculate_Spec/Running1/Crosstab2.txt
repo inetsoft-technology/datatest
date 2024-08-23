@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 9)
+Month(ORDER_DATE), 4, 4, 3, 3, 2, 2, 1, 1
+NULL, Running Sum of quarter by row: PopulationVariance(CUSTOMER_ID), Variance (Pop)(CUSTOMER_ID), Running Sum of quarter by row: PopulationVariance(CUSTOMER_ID), Variance (Pop)(CUSTOMER_ID), Running Sum of quarter by row: PopulationVariance(CUSTOMER_ID), Variance (Pop)(CUSTOMER_ID), Running Sum of quarter by row: PopulationVariance(CUSTOMER_ID), Variance (Pop)(CUSTOMER_ID)
+2020 Jun, 103.1, 103.1, 60.6, 60.6, 82.6, 82.6, 94.8, 94.8
+2020 Jul, 66.2, 66.2, 78, 78, 9, 9, 0, 0
+2020 Aug, 102.2, 36, 78.2, 0.2, 102.8, 93.8, 0.2, 0.2
+2020 Sep, 125.3, 23.1, 92, 13.8, 102.8, 0, 42.4, 42.2

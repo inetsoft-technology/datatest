@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 8)
+Quarter(Date), State, USA East, USA East, USA West, USA West, Grand Total, Grand Total
+NULL, NULL, Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased), Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased), Sum(Quantity Purchased), Change from previous quarter of Quarter(Date): Sum(Quantity Purchased)
+2020 2nd, AZ, NULL, 0, 14, -11, 14, -11
+2020 2nd, CT, 14, NULL, NULL, NULL, 14, NULL
+2020 2nd, PA, 30, NULL, NULL, NULL, 30, NULL
+2020 2nd, Total, 44, 26, 14, -23, 58, 3
+2020 3rd, CT, 24, 10, NULL, 0, 24, 10
+2020 3rd, NV, NULL, NULL, 33, NULL, 33, NULL
+2020 3rd, AZ, NULL, 0, 42, 28, 42, 28
+2020 3rd, Total, 24, -20, 75, 61, 99, 41
+Grand Total, NULL, 68, NULL, 89, NULL, 157, NULL

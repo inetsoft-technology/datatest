@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+Customer:Region, Year(Order:Date), NULL, Sum(Product:Price)/Change from previous by row: Sum(Product:Price)
+USA East, 2020, Sum(Product:Price), $215,468.00
+USA East, 2020, Change from previous by row: Sum(Product:Price), NULL
+USA East, 2021, Sum(Product:Price), $298,199.00
+USA East, 2021, Change from previous by row: Sum(Product:Price), $82,731.00
+USA East, 2022, Sum(Product:Price), $248,097.00
+USA East, 2022, Change from previous by row: Sum(Product:Price), -$50,102.00
+USA East, 2023, Sum(Product:Price), $241,903.00
+USA East, 2023, Change from previous by row: Sum(Product:Price), -$6,194.00
+USA West, 2020, Sum(Product:Price), $167,818.00
+USA West, 2020, Change from previous by row: Sum(Product:Price), NULL
+USA West, 2021, Sum(Product:Price), $147,956.00
+USA West, 2021, Change from previous by row: Sum(Product:Price), -$19,862.00
+USA West, 2022, Sum(Product:Price), $173,662.00
+USA West, 2022, Change from previous by row: Sum(Product:Price), $25,706.00
+USA West, 2023, Sum(Product:Price), $221,516.00
+USA West, 2023, Change from previous by row: Sum(Product:Price), $47,854.00

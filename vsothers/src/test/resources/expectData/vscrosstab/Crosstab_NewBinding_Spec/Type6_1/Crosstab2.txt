@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 8)
+reseller, state, NULL, High Society Investments, Loctite Corp., Ernst Handel, Others, Grand Total
+true, TX, Sum(Orders:EMPLOYEE_ID), NULL, NULL, NULL, 293, 293
+true, TX, Sum(Customers:CUSTOMER_ID), NULL, NULL, NULL, 1876, 1876
+true, NY, Sum(Orders:EMPLOYEE_ID), 20, NULL, NULL, 159, 179
+true, NY, Sum(Customers:CUSTOMER_ID), 360, NULL, NULL, 637, 997
+true, Others, Sum(Orders:EMPLOYEE_ID), NULL, 21, NULL, 857, 878
+true, Others, Sum(Customers:CUSTOMER_ID), NULL, 78, NULL, 7160, 7238
+false, CA, Sum(Orders:EMPLOYEE_ID), NULL, NULL, NULL, 159, 159
+false, CA, Sum(Customers:CUSTOMER_ID), NULL, NULL, NULL, 489, 489
+false, MA, Sum(Orders:EMPLOYEE_ID), NULL, NULL, NULL, 60, 60
+false, MA, Sum(Customers:CUSTOMER_ID), NULL, NULL, NULL, 1060, 1060
+false, Others, Sum(Orders:EMPLOYEE_ID), NULL, NULL, 23, 149, 172
+false, Others, Sum(Customers:CUSTOMER_ID), NULL, NULL, 60, 1042, 1102
+Grand Total, NULL, Sum(Orders:EMPLOYEE_ID), 20, 21, 23, 1677, 1741
+Grand Total, NULL, Sum(Customers:CUSTOMER_ID), 360, 78, 60, 12264, 12762

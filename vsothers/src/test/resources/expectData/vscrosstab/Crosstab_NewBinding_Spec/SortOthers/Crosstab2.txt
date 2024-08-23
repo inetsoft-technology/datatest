@@ -1,0 +1,36 @@
+The data size(row x col) is:(35 x 6)
+Hour, Minute, NULL, Others, 2002 4th, 2004 1st
+10, 10:27, CalcField1, 30, 27, NULL
+10, 10:27, Average(e_id), 2.1538, 2.5, NULL
+10, 10:22, CalcField1, 29, 27, 27
+10, 10:22, Average(e_id), 2.5, 3, 2.75
+10, 10:12, CalcField1, 33, NULL, NULL
+10, 10:12, Average(e_id), 2.25, NULL, NULL
+10, Others, CalcField1, 27, NULL, NULL
+10, Others, Average(e_id), 2.6667, NULL, NULL
+NULL, NULL, CalcField1, 34, NULL, NULL
+NULL, NULL, Average(e_id), 2.6111, NULL, NULL
+07, 07:30, CalcField1, 33, NULL, 26
+07, 07:30, Average(e_id), 2.4444, NULL, 2.6667
+07, 07:21, CalcField1, 34, 25, 32
+07, 07:21, Average(e_id), 2.4444, 2, 2.6
+07, 07:15, CalcField1, 16, NULL, NULL
+07, 07:15, Average(e_id), 2.4, NULL, NULL
+07, Others, CalcField1, 31, NULL, NULL
+07, Others, Average(e_id), 2.8, NULL, NULL
+09, 09:57, CalcField1, 18, 24, NULL
+09, 09:57, Average(e_id), 2.5, 2, NULL
+09, 09:45, CalcField1, 30, NULL, NULL
+09, 09:45, Average(e_id), 2.6, NULL, NULL
+09, 09:17, CalcField1, 34, NULL, NULL
+09, 09:17, Average(e_id), 2.3571, NULL, NULL
+09, Others, CalcField1, 29, NULL, NULL
+09, Others, Average(e_id), 3.0909, NULL, NULL
+01, 01:55, CalcField1, 23, 7, 19
+01, 01:55, Average(e_id), 2.3333, 2, 1
+01, 01:15, CalcField1, 34, NULL, NULL
+01, 01:15, Average(e_id), 2.25, NULL, NULL
+01, 01:07, CalcField1, 33, NULL, NULL
+01, 01:07, Average(e_id), 2.2, NULL, NULL
+01, Others, CalcField1, 35, 19, 31
+01, Others, Average(e_id), 2.6486, 2.4, 2.6667

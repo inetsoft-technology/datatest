@@ -1,0 +1,51 @@
+The data size(row x col) is:(50 x 8)
+RESELLER, StateName, CITY, NULL, 0, 0, 0, 0
+NULL, NULL, NULL, NULL, 10-20, <10, 20-30, 30-40
+1, CA, Los Angeles, CalcField1, 1, NULL, NULL, NULL
+1, CA, Los Angeles, Average(C_ID), 13, NULL, NULL, NULL
+1, CA, Los Angeles, Sum(expid), 26, NULL, NULL, NULL
+1, IL, Chicago, CalcField1, 1, NULL, NULL, NULL
+1, IL, Chicago, Average(C_ID), 10, NULL, NULL, NULL
+1, IL, Chicago, Sum(expid), 20, NULL, NULL, NULL
+1, MA, Cambridge, CalcField1, NULL, NULL, NULL, 1
+1, MA, Cambridge, Average(C_ID), NULL, NULL, NULL, 34
+1, MA, Cambridge, Sum(expid), NULL, NULL, NULL, 272
+1, NJ, Newark, CalcField1, 1, NULL, NULL, NULL
+1, NJ, Newark, Average(C_ID), 19, NULL, NULL, NULL
+1, NJ, Newark, Sum(expid), 38, NULL, NULL, NULL
+0, CO, Denver, CalcField1, NULL, 1, NULL, NULL
+0, CO, Denver, Average(C_ID), NULL, 8, NULL, NULL
+0, CO, Denver, Sum(expid), NULL, 16, NULL, NULL
+0, AZ, Tucson, CalcField1, NULL, NULL, 1, NULL
+0, AZ, Tucson, Average(C_ID), NULL, NULL, 20, NULL
+0, AZ, Tucson, Sum(expid), NULL, NULL, 120, NULL
+0, CT, Hartford, CalcField1, NULL, 1, NULL, NULL
+0, CT, Hartford, Average(C_ID), NULL, 6, NULL, NULL
+0, CT, Hartford, Sum(expid), NULL, 24, NULL, NULL
+0, MD, Baltimore, CalcField1, NULL, NULL, NULL, 2
+0, MD, Baltimore, Average(C_ID), NULL, NULL, NULL, 49.5
+0, MD, Baltimore, Sum(expid), NULL, NULL, NULL, 198
+0, NJ, Middletown, CalcField1, NULL, 1, NULL, NULL
+0, NJ, Middletown, Average(C_ID), NULL, 2, NULL, NULL
+0, NJ, Middletown, Sum(expid), NULL, 4, NULL, NULL
+0, NJ, New Brunswick, CalcField1, NULL, NULL, 1, NULL
+0, NJ, New Brunswick, Average(C_ID), NULL, NULL, 25, NULL
+0, NJ, New Brunswick, Sum(expid), NULL, NULL, 50, NULL
+0, NJ, Wayne, CalcField1, NULL, 1, NULL, NULL
+0, NJ, Wayne, Average(C_ID), NULL, 1, NULL, NULL
+0, NJ, Wayne, Sum(expid), NULL, 2, NULL, NULL
+0, NY, New York, CalcField1, NULL, 2, NULL, NULL
+0, NY, New York, Average(C_ID), NULL, 5, NULL, NULL
+0, NY, New York, Sum(expid), NULL, 20, NULL, NULL
+0, PA, York, CalcField1, NULL, NULL, 1, NULL
+0, PA, York, Average(C_ID), NULL, NULL, 28, NULL
+0, PA, York, Sum(expid), NULL, NULL, 112, NULL
+0, TX, Dallas, CalcField1, NULL, NULL, 2, 1
+0, TX, Dallas, Average(C_ID), NULL, NULL, 39, 31
+0, TX, Dallas, Sum(expid), NULL, NULL, 156, 62
+0, TX, Houston, CalcField1, NULL, NULL, 1, NULL
+0, TX, Houston, Average(C_ID), NULL, NULL, 22, NULL
+0, TX, Houston, Sum(expid), NULL, NULL, 44, NULL
+0, WA, Olympia, CalcField1, NULL, NULL, 1, NULL
+0, WA, Olympia, Average(C_ID), NULL, NULL, 29, NULL
+0, WA, Olympia, Sum(expid), NULL, NULL, 58, NULL

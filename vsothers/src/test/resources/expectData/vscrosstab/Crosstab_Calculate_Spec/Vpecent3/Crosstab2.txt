@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 7)
+Customer:Region, NULL, 0, 0, 1, 1, Grand Total
+NULL, NULL, 2020, 2021, 2020, 2021, NULL
+USA East, Sum(Product:Price), $106,655.00, $144,848.00, $19,953.00, $22,141.00, $293,597.00
+USA East, % of total by column: Sum(Product:Price), 36%, 49%, 7%, 8%, 100%
+USA East, % of total by column: Sum(Product:Price), 36%, 49%, 7%, 8%, 100%
+USA West, Sum(Product:Price), $73,187.00, $56,680.00, $46,281.00, $26,062.00, $202,210.00
+USA West, % of total by column: Sum(Product:Price), 36%, 28%, 23%, 13%, 100%
+USA West, % of total by column: Sum(Product:Price), 36%, 28%, 23%, 13%, 100%
+Grand Total, Sum(Product:Price), $179,842.00, $201,528.00, $66,234.00, $48,203.00, $495,807.00
+Grand Total, % of total by column: Sum(Product:Price), 36%, 41%, 13%, 10%, 100%
+Grand Total, % of total by column: Sum(Product:Price), 36%, 41%, 13%, 10%, 100%

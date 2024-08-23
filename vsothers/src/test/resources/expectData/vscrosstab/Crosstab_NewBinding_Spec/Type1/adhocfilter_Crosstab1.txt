@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 4)
+Year, QuarterOfYear, Distinct Count, ChangePreviousYear
+01/01/2023, 4th, 27, NULL
+01/01/2023, 1st, 28, NULL
+01/01/2023, Others, 35, NULL
+01/01/2023, Total, 35, 35
+01/01/2022, 1st, 25, -3
+01/01/2022, 4th, 25, -2
+01/01/2022, Others, 36, 1
+01/01/2022, Total, 37, 37
+01/01/2021, 2nd, 22, NULL
+01/01/2021, 1st, 25, 0
+01/01/2021, Others, 31, -5
+01/01/2021, Total, 35, 35
+01/01/2020, 1st, 11, -14
+01/01/2020, 3rd, 22, NULL
+01/01/2020, Others, 35, 4
+01/01/2020, Total, 37, 37
+Grand Total, NULL, 38, 38

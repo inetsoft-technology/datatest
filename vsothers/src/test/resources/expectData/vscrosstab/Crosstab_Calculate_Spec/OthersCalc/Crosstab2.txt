@@ -1,0 +1,62 @@
+The data size(row x col) is:(61 x 6)
+QuarterOfYear(Order:Date), Customer:State, NULL, 0, 1, Grand Total
+1st, WA, Average(Product:Price), $234.70, $355.29, $296.28
+1st, WA, % of subtotal by column: Average(Product:Price), 79%, 120%, 100%
+1st, WA, % Change from first by row: Average(Product:Price), 0%, 0%, 29,628%
+1st, WA, Running Average Customer:State: Average(Product:Total), $3,065, $4,141, $3,615
+1st, MA, Average(Product:Price), $330.59, $334.74, $332.52
+1st, MA, % of subtotal by column: Average(Product:Price), 99%, 101%, 100%
+1st, MA, % Change from first by row: Average(Product:Price), 41%, -6%, 33,252%
+1st, MA, Running Average Customer:State: Average(Product:Total), $3,234, $3,638, $3,423
+1st, FL, Average(Product:Price), $345.17, NULL, $345.17
+1st, FL, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+1st, FL, % Change from first by row: Average(Product:Price), 47%, -100%, 34,517%
+1st, FL, Running Average Customer:State: Average(Product:Total), $3,782, NULL, $3,782
+1st, Others, Average(Product:Price), $465.65, $442.90, $462.14
+1st, Others, % of subtotal by column: Average(Product:Price), 101%, 96%, 100%
+1st, Others, % Change from first by row: Average(Product:Price), 98%, 25%, 46,214%
+1st, Others, Running Average Customer:State: Average(Product:Total), $4,647, $4,335, $4,599
+1st, Total, Average(Product:Price), $439.88, $403.03, $432.45
+1st, Total, % of subtotal by column: Average(Product:Price), 102%, 93%, 100%
+1st, Total, % Change from first by row: Average(Product:Price), 43,988%, 40,303%, 43,245%
+1st, Total, Running Average Customer:State: Average(Product:Total), $4,435, $4,140, $4,375
+2nd, NV, Average(Product:Price), $202.35, NULL, $202.35
+2nd, NV, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+2nd, NV, % Change from first by row: Average(Product:Price), 0%, NULL, 20,235%
+2nd, NV, Running Average Customer:State: Average(Product:Total), $2,575, NULL, $2,575
+2nd, CT, Average(Product:Price), $238.66, NULL, $238.66
+2nd, CT, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+2nd, CT, % Change from first by row: Average(Product:Price), 18%, NULL, 23,866%
+2nd, CT, Running Average Customer:State: Average(Product:Total), $2,116, NULL, $2,116
+2nd, FL, Average(Product:Price), $302.29, NULL, $302.29
+2nd, FL, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+2nd, FL, % Change from first by row: Average(Product:Price), 49%, NULL, 30,229%
+2nd, FL, Running Average Customer:State: Average(Product:Total), $3,792, NULL, $3,792
+2nd, Others, Average(Product:Price), $469.58, $439.41, $462.25
+2nd, Others, % of subtotal by column: Average(Product:Price), 102%, 95%, 100%
+2nd, Others, % Change from first by row: Average(Product:Price), 132%, NULL, 46,225%
+2nd, Others, Running Average Customer:State: Average(Product:Total), $4,685, $4,540, $4,650
+2nd, Total, Average(Product:Price), $451.91, $439.41, $449.06
+2nd, Total, % of subtotal by column: Average(Product:Price), 101%, 98%, 100%
+2nd, Total, % Change from first by row: Average(Product:Price), 45,191%, 43,941%, 44,906%
+2nd, Total, Running Average Customer:State: Average(Product:Total), $4,531, $4,540, $4,533
+3rd, FL, Average(Product:Price), $141.29, NULL, $141.29
+3rd, FL, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+3rd, FL, % Change from first by row: Average(Product:Price), 0%, NULL, 14,129%
+3rd, FL, Running Average Customer:State: Average(Product:Total), $1,394, NULL, $1,394
+3rd, CT, Average(Product:Price), $159.75, NULL, $159.75
+3rd, CT, % of subtotal by column: Average(Product:Price), 100%, NULL, 100%
+3rd, CT, % Change from first by row: Average(Product:Price), 13%, NULL, 15,975%
+3rd, CT, Running Average Customer:State: Average(Product:Total), $1,806, NULL, $1,806
+3rd, CO, Average(Product:Price), $283.09, $212.25, $268.93
+3rd, CO, % of subtotal by column: Average(Product:Price), 105%, 79%, 100%
+3rd, CO, % Change from first by row: Average(Product:Price), 100%, NULL, 26,893%
+3rd, CO, Running Average Customer:State: Average(Product:Total), $3,747, $1,624, $3,322
+3rd, Others, Average(Product:Price), $470.56, $402.96, $456.92
+3rd, Others, % of subtotal by column: Average(Product:Price), 103%, 88%, 100%
+3rd, Others, % Change from first by row: Average(Product:Price), 233%, NULL, 45,692%
+3rd, Others, Running Average Customer:State: Average(Product:Total), $5,213, $4,544, $5,078
+3rd, Total, Average(Product:Price), $451.24, $394.97, $440.22
+3rd, Total, % of subtotal by column: Average(Product:Price), 103%, 90%, 100%
+3rd, Total, % Change from first by row: Average(Product:Price), 45,124%, 39,497%, 44,022%
+3rd, Total, Running Average Customer:State: Average(Product:Total), $5,019, $4,422, $4,902

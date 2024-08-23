@@ -1,0 +1,103 @@
+The data size(row x col) is:(102 x 8)
+Year, QuarterOfYear(Order Date), MonthOfYear(Order Date), NULL, higher, insane, low, medium
+NULL, NULL, NULL, NULL, The Big Cat, Software Specialists, Northwest Outfitters, Computer Tech
+2020, 1st, Mar, Sum(Order Number), NULL, NULL, NULL, NULL
+2020, 1st, Mar, Max(Total), NULL, NULL, NULL, NULL
+2020, 2nd, Apr, Sum(Order Number), NULL, NULL, NULL, 12020
+2020, 2nd, Apr, Max(Total), NULL, NULL, NULL, 21119
+2020, 2nd, May, Sum(Order Number), NULL, NULL, 12037, NULL
+2020, 2nd, May, Max(Total), NULL, NULL, 5818, NULL
+2020, 2nd, Jun, Sum(Order Number), NULL, NULL, NULL, NULL
+2020, 2nd, Jun, Max(Total), NULL, NULL, NULL, NULL
+2020, 3rd, Jul, Sum(Order Number), NULL, NULL, NULL, NULL
+2020, 3rd, Jul, Max(Total), NULL, NULL, NULL, NULL
+2020, 3rd, Aug, Sum(Order Number), NULL, NULL, NULL, NULL
+2020, 3rd, Aug, Max(Total), NULL, NULL, NULL, NULL
+2020, 3rd, Sep, Sum(Order Number), NULL, NULL, 12099, NULL
+2020, 3rd, Sep, Max(Total), NULL, NULL, 5001, NULL
+2020, 4th, Oct, Sum(Order Number), NULL, NULL, NULL, NULL
+2020, 4th, Oct, Max(Total), NULL, NULL, NULL, NULL
+2020, 4th, Nov, Sum(Order Number), 12117, NULL, NULL, 12122
+2020, 4th, Nov, Max(Total), 57976, NULL, NULL, 47922
+2020, 4th, Dec, Sum(Order Number), 12145, NULL, NULL, NULL
+2020, 4th, Dec, Max(Total), 51549, NULL, NULL, NULL
+2020, Total, NULL, Sum(Order Number), 24262, NULL, 24136, 24142
+2020, Total, NULL, Max(Total), 57976, NULL, 5818, 47922
+2021, 1st, Jan, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 1st, Jan, Max(Total), NULL, NULL, NULL, NULL
+2021, 1st, Feb, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 1st, Feb, Max(Total), NULL, NULL, NULL, NULL
+2021, 1st, Mar, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 1st, Mar, Max(Total), NULL, NULL, NULL, NULL
+2021, 2nd, Apr, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 2nd, Apr, Max(Total), NULL, NULL, NULL, NULL
+2021, 2nd, May, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 2nd, May, Max(Total), NULL, NULL, NULL, NULL
+2021, 2nd, Jun, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 2nd, Jun, Max(Total), NULL, NULL, NULL, NULL
+2021, 3rd, Jul, Sum(Order Number), NULL, NULL, 12238, NULL
+2021, 3rd, Jul, Max(Total), NULL, NULL, 8406, NULL
+2021, 3rd, Aug, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 3rd, Aug, Max(Total), NULL, NULL, NULL, NULL
+2021, 3rd, Sep, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 3rd, Sep, Max(Total), NULL, NULL, NULL, NULL
+2021, 4th, Oct, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 4th, Oct, Max(Total), NULL, NULL, NULL, NULL
+2021, 4th, Nov, Sum(Order Number), NULL, NULL, NULL, NULL
+2021, 4th, Nov, Max(Total), NULL, NULL, NULL, NULL
+2021, 4th, Dec, Sum(Order Number), NULL, NULL, NULL, 12316
+2021, 4th, Dec, Max(Total), NULL, NULL, NULL, 30429
+2021, Total, NULL, Sum(Order Number), NULL, NULL, 12238, 12316
+2021, Total, NULL, Max(Total), NULL, NULL, 8406, 30429
+2022, 1st, Jan, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 1st, Jan, Max(Total), NULL, NULL, NULL, NULL
+2022, 1st, Feb, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 1st, Feb, Max(Total), NULL, NULL, NULL, NULL
+2022, 1st, Mar, Sum(Order Number), NULL, NULL, NULL, 12358
+2022, 1st, Mar, Max(Total), NULL, NULL, NULL, 15212
+2022, 2nd, Apr, Sum(Order Number), NULL, NULL, 24757, NULL
+2022, 2nd, Apr, Max(Total), NULL, NULL, 4995, NULL
+2022, 2nd, May, Sum(Order Number), 12394, NULL, 12399, NULL
+2022, 2nd, May, Max(Total), 71434, NULL, 8466, NULL
+2022, 2nd, Jun, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 2nd, Jun, Max(Total), NULL, NULL, NULL, NULL
+2022, 3rd, Jul, Sum(Order Number), NULL, 12434, NULL, 12427
+2022, 3rd, Jul, Max(Total), NULL, 107037, NULL, 41027
+2022, 3rd, Aug, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 3rd, Aug, Max(Total), NULL, NULL, NULL, NULL
+2022, 3rd, Sep, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 3rd, Sep, Max(Total), NULL, NULL, NULL, NULL
+2022, 4th, Oct, Sum(Order Number), NULL, NULL, NULL, 12475
+2022, 4th, Oct, Max(Total), NULL, NULL, NULL, 12088
+2022, 4th, Nov, Sum(Order Number), NULL, NULL, NULL, NULL
+2022, 4th, Nov, Max(Total), NULL, NULL, NULL, NULL
+2022, 4th, Dec, Sum(Order Number), 12509, NULL, 25013, NULL
+2022, 4th, Dec, Max(Total), 97434, NULL, 7048, NULL
+2022, Total, NULL, Sum(Order Number), 24903, 12434, 62169, 37260
+2022, Total, NULL, Max(Total), 97434, 107037, 8466, 41027
+2023, 1st, Jan, Sum(Order Number), NULL, NULL, 12517, 12528
+2023, 1st, Jan, Max(Total), NULL, NULL, 6649, 24765
+2023, 1st, Feb, Sum(Order Number), NULL, NULL, 12532, NULL
+2023, 1st, Feb, Max(Total), NULL, NULL, 4525, NULL
+2023, 1st, Mar, Sum(Order Number), NULL, NULL, NULL, NULL
+2023, 1st, Mar, Max(Total), NULL, NULL, NULL, NULL
+2023, 2nd, Apr, Sum(Order Number), NULL, NULL, NULL, NULL
+2023, 2nd, Apr, Max(Total), NULL, NULL, NULL, NULL
+2023, 2nd, May, Sum(Order Number), NULL, NULL, 12585, 25161
+2023, 2nd, May, Max(Total), NULL, NULL, 4146, 42607
+2023, 2nd, Jun, Sum(Order Number), 12601, NULL, NULL, NULL
+2023, 2nd, Jun, Max(Total), 70477, NULL, NULL, NULL
+2023, 3rd, Jul, Sum(Order Number), NULL, NULL, NULL, 12619
+2023, 3rd, Jul, Max(Total), NULL, NULL, NULL, 41605
+2023, 3rd, Aug, Sum(Order Number), 25262, NULL, 12628, NULL
+2023, 3rd, Aug, Max(Total), 82712, NULL, 5605, NULL
+2023, 3rd, Sep, Sum(Order Number), NULL, 12653, NULL, NULL
+2023, 3rd, Sep, Max(Total), NULL, 108683, NULL, NULL
+2023, 4th, Oct, Sum(Order Number), NULL, NULL, NULL, 25319
+2023, 4th, Oct, Max(Total), NULL, NULL, NULL, 26866
+2023, 4th, Nov, Sum(Order Number), NULL, NULL, NULL, NULL
+2023, 4th, Nov, Max(Total), NULL, NULL, NULL, NULL
+2023, 4th, Dec, Sum(Order Number), NULL, NULL, 12692, NULL
+2023, 4th, Dec, Max(Total), NULL, NULL, 2625, NULL
+2023, Total, NULL, Sum(Order Number), 37863, 12653, 62954, 75627
+2023, Total, NULL, Max(Total), 82712, 108683, 6649, 42607

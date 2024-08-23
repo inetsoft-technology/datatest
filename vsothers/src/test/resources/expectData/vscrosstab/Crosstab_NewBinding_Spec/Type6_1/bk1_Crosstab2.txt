@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 7)
+Year(Orders:ORDER_DATE), NULL, 1248 Broadway, 5 Baker's Lane, 88 Rio Grand Ave., Others, Grand Total
+2004, Sum(Orders:EMPLOYEE_ID), 4, 6, 8, 460, 478
+2004, Sum(Customers:CUSTOMER_ID), 72, 30, 20, 3383, 3505
+2003, Sum(Orders:EMPLOYEE_ID), 7, 4, 4, 426, 441
+2003, Sum(Customers:CUSTOMER_ID), 120, 12, 12, 3274, 3418
+Others, Sum(Orders:EMPLOYEE_ID), 9, 11, 11, 791, 822
+Others, Sum(Customers:CUSTOMER_ID), 168, 36, 28, 5607, 5839
+Grand Total, Sum(Orders:EMPLOYEE_ID), 20, 21, 23, 1677, 1741
+Grand Total, Sum(Customers:CUSTOMER_ID), 360, 78, 60, 12264, 12762

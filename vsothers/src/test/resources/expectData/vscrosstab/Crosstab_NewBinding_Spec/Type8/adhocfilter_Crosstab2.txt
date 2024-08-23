@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Boolean, Name, Unified Interworks Resources, Lockbox Servers
+false, 19 inch LCD, NULL, 7
+false, Animal World, 2, NULL
+false, Barbie"s Fashion, 1, NULL
+true, 17 Inch LCD, NULL, 7

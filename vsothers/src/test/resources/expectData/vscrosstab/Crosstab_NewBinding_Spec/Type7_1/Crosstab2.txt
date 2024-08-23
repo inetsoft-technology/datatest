@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 4)
+Year(detail_c2), DataGroup(detail_c), Sum(PRICE), Sum(PRODUCT_ID)
+2001, AA_group, 239, 39
+2001, Easy Chess_test, 35, 13
+2001, Fast Go Game_test, 200, 14
+2001, Fast Mail_test, 39, 6
+2001, Green Planet_test, 75, 4
+2001, House Hunter_test, 129, 5
+2001, Info Folder_test, 399, 3
+2001, InsideView_test, 125, 2
+2001, Web Bridge_test, 105, 15
+2001, WebCalendar_test, 248, 8
+2001, Wireless Keyboard_test, 40, 22
+2001, Wireless Mouse_test, 40, 21
+2001, Xconnect Server_test, 2250, 1
+2006, 19 inch LCD_test, 310, 24
+2006, Animal World_test, 59, 17
+2006, Barbie"s Fashion_test, 79, 20
+2006, Fancy Menus_test, 49, 10
+2006, Learn ABC_test, 75, 18
+2006, Math for Me_test, 235, 19
+2006, Mega Icons_test, 550, 11
+2006, MeToo AppServer_test, 3000, 12
+2006, NetStorage_test, 2850, 25
+2006, Sync Me_test, 145, 7
+2006, True Action_test, 398, 9

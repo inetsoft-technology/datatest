@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+range_cid, Calc_Nth
+30-40, 35
+10-20, 34
+Others, 29

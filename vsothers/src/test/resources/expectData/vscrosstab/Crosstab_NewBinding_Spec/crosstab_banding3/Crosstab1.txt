@@ -1,0 +1,58 @@
+The data size(row x col) is:(57 x 6)
+Region, state, Company, NULL, 0, 1
+USA East, CT, Loctite Corp., Sum(Total), $162,317, NULL
+USA East, CT, Loctite Corp., Sum(Quantity Purchased), 676, NULL
+USA East, FL, Fast Transportation, Sum(Total), $390,641, NULL
+USA East, FL, Fast Transportation, Sum(Quantity Purchased), 1,102, NULL
+USA East, MA, Ubermeyer, Sum(Total), $672,534, NULL
+USA East, MA, Ubermeyer, Sum(Quantity Purchased), 1,617, NULL
+USA East, MA, AMG Logistics, Sum(Total), $585,898, NULL
+USA East, MA, AMG Logistics, Sum(Quantity Purchased), 1,249, NULL
+USA East, MA, Others, Sum(Total), NULL, $877,086
+USA East, MA, Others, Sum(Quantity Purchased), NULL, 2,277
+USA East, MD, InterLand Services, Sum(Total), $483,612, NULL
+USA East, MD, InterLand Services, Sum(Quantity Purchased), 1,127, NULL
+USA East, MD, George Services, Sum(Total), $479,124, NULL
+USA East, MD, George Services, Sum(Quantity Purchased), 1,143, NULL
+USA East, MD, Others, Sum(Total), $442,972, NULL
+USA East, MD, Others, Sum(Quantity Purchased), 1,091, NULL
+USA East, NJ, Software Specialists, Sum(Total), NULL, $787,621
+USA East, NJ, Software Specialists, Sum(Quantity Purchased), NULL, 1,424
+USA East, NJ, Rutgers Bank, Sum(Total), $574,700, NULL
+USA East, NJ, Rutgers Bank, Sum(Quantity Purchased), 1,153, NULL
+USA East, NJ, Others, Sum(Total), $1,951,652, NULL
+USA East, NJ, Others, Sum(Quantity Purchased), 4,559, NULL
+USA East, NY, Eastern Data, Sum(Total), $815,870, NULL
+USA East, NY, Eastern Data, Sum(Quantity Purchased), 1,705, NULL
+USA East, NY, FISGA Corp, Sum(Total), $597,098, NULL
+USA East, NY, FISGA Corp, Sum(Quantity Purchased), 1,155, NULL
+USA East, NY, Others, Sum(Total), $1,055,018, NULL
+USA East, NY, Others, Sum(Quantity Purchased), 2,293, NULL
+USA East, PA, Tricounty Auto, Sum(Total), $426,536, NULL
+USA East, PA, Tricounty Auto, Sum(Quantity Purchased), 1,376, NULL
+USA West, AZ, Folk Mining, Sum(Total), $468,098, NULL
+USA West, AZ, Folk Mining, Sum(Quantity Purchased), 1,107, NULL
+USA West, CA, Direct Sales, Sum(Total), NULL, $627,936
+USA West, CA, Direct Sales, Sum(Quantity Purchased), NULL, 1,420
+USA West, CA, Computer Tech, Sum(Total), NULL, $506,956
+USA West, CA, Computer Tech, Sum(Quantity Purchased), NULL, 1,301
+USA West, CA, Others, Sum(Total), $551,756, NULL
+USA West, CA, Others, Sum(Quantity Purchased), 1,925, NULL
+USA West, CO, Quick Stop, Sum(Total), $525,569, NULL
+USA West, CO, Quick Stop, Sum(Quantity Purchased), 1,175, NULL
+USA West, CO, Ernst Handel, Sum(Total), NULL, $318,229
+USA West, CO, Ernst Handel, Sum(Quantity Purchased), NULL, 664
+USA West, IL, Specialty Retail, Sum(Total), NULL, $559,501
+USA West, IL, Specialty Retail, Sum(Quantity Purchased), NULL, 1,456
+USA West, NV, Tumbleweed Gaming, Sum(Total), $397,620, NULL
+USA West, NV, Tumbleweed Gaming, Sum(Quantity Purchased), 793, NULL
+USA West, TX, The Big Cat, Sum(Total), $817,394, NULL
+USA West, TX, The Big Cat, Sum(Quantity Purchased), 1,563, NULL
+USA West, TX, Big Ed's BBQ, Sum(Total), $622,539, NULL
+USA West, TX, Big Ed's BBQ, Sum(Quantity Purchased), 1,270, NULL
+USA West, TX, Others, Sum(Total), $1,032,014, NULL
+USA West, TX, Others, Sum(Quantity Purchased), 2,488, NULL
+USA West, WA, Northwest Outfitters, Sum(Total), $647,143, NULL
+USA West, WA, Northwest Outfitters, Sum(Quantity Purchased), 1,599, NULL
+USA West, WA, Infinity Software, Sum(Total), NULL, $279,420
+USA West, WA, Infinity Software, Sum(Quantity Purchased), NULL, 699

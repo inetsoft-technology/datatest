@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 8)
+Year(Order Date), Employee, Company, Distinct Count(Total), Value of previous by row: DistinctCount(Total), Value of previous Year(Order Date): DistinctCount(Total), Value of previous Employee: DistinctCount(Total), Value of previous Company: DistinctCount(Total)
+2021, Sue, Eastern Data, 5, NULL, NULL, NULL, NULL
+2021, Sue, AMG Logistics, 4, 5, NULL, NULL, 5
+2021, Eric, Daycare One, 7, NULL, NULL, NULL, NULL
+2021, Eric, Eastern Data, 4, 7, NULL, 5, 7
+2023, Sue, Old World Insurance, 3, NULL, NULL, NULL, NULL
+2023, Sue, Daycare One, 2, 3, NULL, NULL, 3
+2023, Eric, AMG Logistics, 6, NULL, NULL, NULL, NULL
+2023, Eric, Eastern Data, 6, 6, 4, NULL, 6

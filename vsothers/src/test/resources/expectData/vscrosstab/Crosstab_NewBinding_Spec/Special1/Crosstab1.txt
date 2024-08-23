@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+state, Count(orderdate)
+AK, 3
+CA, 2
+FL, 1
+IL, 2
+NJ, 1
+NY, 1
+TX, 1

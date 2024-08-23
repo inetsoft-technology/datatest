@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+Quarter(ORDER_DATE), 1, 1, 2, 2, 3, 3, 4, 4
+NULL, Running Sum of year by column: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum of year by column: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum of year by column: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum of year by column: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID)
+2020 2nd, 113.7, 113.7, 217, 103.3, 297.9, 80.9, 435.4, 137.5
+2020 3rd, 53.4, 53.4, 155.9, 102.5, 241, 85.1, 307.4, 66.4

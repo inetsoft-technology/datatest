@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 6)
+ORDERS.CUSTOMERS:RESELLER, Hour(CalcField1), NULL, 2003, 2004, Grand Total
+false, 05, CalcField2, 0.6392, -0.2592, -0.039
+false, 05, Average(ORDERS.ORDERS:CUSTOMER_ID), 14.5714, 16.25, 15.4667
+false, 05, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), 14.5714, 16.25, 15.4667
+false, 06, CalcField2, NULL, -0.8322, -0.8322
+false, 06, Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 16, 16
+false, 06, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 16.25, 16
+false, 07, CalcField2, 1.0000, 1.0000, 0.5149
+false, 07, Average(ORDERS.ORDERS:CUSTOMER_ID), 16, 21.5, 18.75
+false, 07, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), 16, 21.5, 18.75
+true, 04, CalcField2, NULL, NULL, NULL
+true, 04, Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 20, 20
+true, 04, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 20, 20
+true, 05, CalcField2, -0.0974, 0.4535, 0.1578
+true, 05, Average(ORDERS.ORDERS:CUSTOMER_ID), 15.5172, 18.4545, 16.7843
+true, 05, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), 15.5172, 20, 16.7843
+true, 06, CalcField2, NULL, 0.3260, 0.326
+true, 06, Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 20.8571, 20.8571
+true, 06, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), NULL, 20.8571, 20.8571
+true, 07, CalcField2, -0.2650, 0.1972, 0.068
+true, 07, Average(ORDERS.ORDERS:CUSTOMER_ID), 17.8235, 20.5, 19.0323
+true, 07, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), 17.8235, 20.8571, 19.0323
+Grand Total, NULL, CalcField2, -0.0651, 0.1623, 0.0542
+Grand Total, NULL, Average(ORDERS.ORDERS:CUSTOMER_ID), 16.1273, 18.9655, 17.5841
+Grand Total, NULL, Running Max by row: Average(ORDERS.ORDERS:CUSTOMER_ID), 16.1273, 18.9655, 17.5841

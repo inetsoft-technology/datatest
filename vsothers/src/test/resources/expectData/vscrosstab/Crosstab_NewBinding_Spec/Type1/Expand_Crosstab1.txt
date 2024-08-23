@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 6)
+Year, QuarterOfYear, MonthOfYear(Quarter(range_month)), DayOfMonth(Quarter(range_month)), Distinct Count, Change from previous: DistinctCount(CUSTOMER_ID)
+01/01/2023, 4th, Oct, 1, 27, NULL
+01/01/2023, 1st, Jan, 1, 28, NULL
+01/01/2023, Total, NULL, NULL, 32, 32
+01/01/2022, 1st, Jan, 1, 25, NULL
+01/01/2022, 4th, Oct, 1, 25, NULL
+01/01/2022, Total, NULL, NULL, 33, 33
+01/01/2021, 2nd, Apr, 1, 22, NULL
+01/01/2021, 1st, Jan, 1, 25, NULL
+01/01/2021, Total, NULL, NULL, 33, 33
+01/01/2020, 1st, Jan, 1, 11, NULL
+01/01/2020, 3rd, Jul, 1, 22, NULL
+01/01/2020, Total, NULL, NULL, 28, 28
+Grand Total, NULL, NULL, NULL, 35, 35

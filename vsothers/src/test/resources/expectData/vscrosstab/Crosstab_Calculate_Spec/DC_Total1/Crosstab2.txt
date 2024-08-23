@@ -1,0 +1,24 @@
+The data size(row x col) is:(23 x 7)
+QuarterOfWeek(Date), WeekOfMonth(Date), State, NULL, Educational, Graphics, Grand Total
+2021 3rd, 2021-08-01, NY, Sum(Paid), 2, NULL, 2
+2021 3rd, 2021-08-01, NY, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), 0, 0, 2
+2021 3rd, 2021-08-01, TX, Sum(Paid), 2, NULL, 2
+2021 3rd, 2021-08-01, TX, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, NULL, 2
+2021 3rd, 2021-08-01, Total, Sum(Paid), 4, NULL, 4
+2021 3rd, 2021-08-01, Total, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), 4, NULL, 4
+2021 3rd, 2021-08-08, TX, Sum(Paid), 1, NULL, 1
+2021 3rd, 2021-08-08, TX, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, NULL, 1
+2021 3rd, 2021-08-08, Total, Sum(Paid), 1, NULL, 1
+2021 3rd, 2021-08-08, Total, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), 1, NULL, 1
+2021 3rd, Total, NULL, Sum(Paid), 5, NULL, 5
+2021 3rd, Total, NULL, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), 5, NULL, 5
+2021 4th, 2021-11-07, CO, Sum(Paid), NULL, 1, 1
+2021 4th, 2021-11-07, CO, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, NULL, 1
+2021 4th, 2021-11-07, NJ, Sum(Paid), NULL, 1, 1
+2021 4th, 2021-11-07, NJ, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, NULL, 1
+2021 4th, 2021-11-07, Total, Sum(Paid), NULL, 2, 2
+2021 4th, 2021-11-07, Total, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, 2, 2
+2021 4th, Total, NULL, Sum(Paid), NULL, 2, 2
+2021 4th, Total, NULL, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), NULL, 2, 2
+Grand Total, NULL, NULL, Sum(Paid), 5, 2, 7
+Grand Total, NULL, NULL, Change from previous quarter of QuarterOfWeek(Date): Sum(Paid), 5, 2, 7

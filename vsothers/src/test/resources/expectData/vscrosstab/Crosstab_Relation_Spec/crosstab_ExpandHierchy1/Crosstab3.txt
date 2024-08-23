@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 7)
+Customer:Region, NULL, 2020 2nd, 2023 3rd, 2022 2nd, 2021 2nd, 2021 3rd
+USA East, Sum(Product:Total), $944,164, $609,613, $849,405, $843,429, $771,758
+USA East, Sum(Product:Price), $86,952.00, $53,873.00, $80,209.00, $88,412.00, $70,068.00
+USA West, Sum(Product:Total), $550,178, $736,520, $480,821, $436,261, $461,215
+USA West, Sum(Product:Price), $53,424.00, $66,478.00, $47,972.00, $44,091.00, $42,418.00

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+Category, NULL, Sum(Quantity Purchased)/Average(TotalPurchased)
+Hardware, Sum(Quantity Purchased), 11,805
+Hardware, Average(TotalPurchased), $10,173

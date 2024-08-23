@@ -1,0 +1,211 @@
+The data size(row x col) is:(210 x 9)
+Year(order_date), QuarterOfYear(order_date), DataGroup(state), company_name, Compound Growth Year(order_date): Max(calc_fecid), Compound Growth QuarterOfYear(order_date): Max(calc_fecid), Compound Growth DataGroup(state): Max(calc_fecid), Compound Growth by row: Max(calc_fecid), Compound Growth company_name: Max(calc_fecid)
+2002, 1st, MA, XO Resellers, 36%, 36%, 36%, 36%, 36%
+2002, 1st, MA, World Software Resellers, 70%, 70%, 70%, 70%, 25%
+2002, 1st, MA, Ubermeyer, 104%, 104%, 104%, 104%, 20%
+2002, 1st, MA, Total, 36%, 36%, 36%, 36%, 36%
+2002, 1st, MD, FMG Consulting, 175%, 175%, 35%, 35%, 35%
+2002, 1st, MD, InterLand Services, 219%, 219%, 57%, 57%, 16%
+2002, 1st, MD, Total, 35%, 35%, 35%, 35%, 35%
+2002, 1st, TX, BigMart Foodstores, 328%, 328%, 34%, 34%, 34%
+2002, 1st, TX, Nova Tera, 457%, 457%, 74%, 74%, 30%
+2002, 1st, TX, Big Ed"s BBQ, 596%, 596%, 118%, 118%, 25%
+2002, 1st, TX, Total, 34%, 34%, 34%, 34%, 34%
+2002, 1st, Total, NULL, 36%, 36%, 36%, 36%, 36%
+2002, 2nd, NJ&NV, Pharma Research, 846%, 36%, 36%, 36%, 36%
+2002, 2nd, NJ&NV, Tumbleweed Gaming, 1,187%, 85%, 85%, 85%, 36%
+2002, 2nd, NJ&NV, Rutgers Bank, 1,534%, 135%, 135%, 135%, 27%
+2002, 2nd, NJ&NV, Others, 1,567%, 140%, 140%, 140%, 2%
+2002, 2nd, NJ&NV, Total, 36%, 36%, 36%, 36%, 36%
+2002, 2nd, TX, BigMart Foodstores, 2,133%, 221%, 34%, 34%, 34%
+2002, 2nd, TX, Nova Tera, 2,781%, 314%, 73%, 73%, 29%
+2002, 2nd, TX, Big Ed"s BBQ, 3,501%, 418%, 116%, 116%, 25%
+2002, 2nd, TX, Others, 4,042%, 495%, 148%, 148%, 15%
+2002, 2nd, TX, Total, 34%, 34%, 34%, 34%, 34%
+2002, 2nd, WA, Northwest Outfitters, 5,408%, 692%, 33%, 33%, 33%
+2002, 2nd, WA, Infinity Software, 7,116%, 937%, 74%, 74%, 31%
+2002, 2nd, WA, Total, 33%, 33%, 33%, 33%, 33%
+2002, 2nd, Total, NULL, 36%, 36%, 36%, 36%, 36%
+2002, 3rd, NJ&NV, Pharma Research, 9,786%, 37%, 37%, 37%, 37%
+2002, 3rd, NJ&NV, Rutgers Bank, 12,455%, 74%, 74%, 74%, 27%
+2002, 3rd, NJ&NV, Scheggie Services, 14,589%, 104%, 104%, 104%, 17%
+2002, 3rd, NJ&NV, Others, 14,883%, 108%, 108%, 108%, 2%
+2002, 3rd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2002, 3rd, MA, XO Resellers, 20,127%, 180%, 35%, 35%, 35%
+2002, 3rd, MA, World Software Resellers, 24,981%, 248%, 67%, 67%, 24%
+2002, 3rd, MA, Ubermeyer, 29,747%, 314%, 99%, 99%, 19%
+2002, 3rd, MA, Total, 35%, 35%, 35%, 35%, 35%
+2002, 3rd, TX, BigMart Foodstores, 40,193%, 458%, 35%, 35%, 35%
+2002, 3rd, TX, Nova Tera, 51,878%, 620%, 74%, 74%, 29%
+2002, 3rd, TX, The Big Cat, 59,675%, 728%, 100%, 100%, 15%
+2002, 3rd, TX, Total, 35%, 35%, 35%, 35%, 35%
+2002, 3rd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2002, 4th, NJ&NV, Tumbleweed Gaming, 81,194%, 36%, 36%, 36%, 36%
+2002, 4th, NJ&NV, Rutgers Bank, 103,144%, 73%, 73%, 73%, 27%
+2002, 4th, NJ&NV, Software Specialists, 124,825%, 109%, 109%, 109%, 21%
+2002, 4th, NJ&NV, Others, 129,822%, 117%, 117%, 117%, 4%
+2002, 4th, NJ&NV, Total, 36%, 36%, 36%, 36%, 36%
+2002, 4th, MD, FMG Consulting, 173,995%, 191%, 34%, 34%, 34%
+2002, 4th, MD, InterLand Services, 201,851%, 238%, 55%, 55%, 16%
+2002, 4th, MD, Total, 34%, 34%, 34%, 34%, 34%
+2002, 4th, MA, AMG Logistics, 264,455%, 343%, 31%, 31%, 31%
+2002, 4th, MA, Total, 31%, 31%, 31%, 31%, 31%
+2002, 4th, Total, NULL, 36%, 36%, 36%, 36%, 36%
+2003, 1st, NJ&NV, Pharma Research, 37%, 37%, 37%, 37%, 37%
+2003, 1st, NJ&NV, Tumbleweed Gaming, 86%, 86%, 86%, 86%, 36%
+2003, 1st, NJ&NV, Rutgers Bank, 135%, 135%, 135%, 135%, 26%
+2003, 1st, NJ&NV, Others, 182%, 182%, 182%, 182%, 20%
+2003, 1st, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2003, 1st, MA, XO Resellers, 283%, 283%, 36%, 36%, 36%
+2003, 1st, MA, World Software Resellers, 379%, 379%, 70%, 70%, 25%
+2003, 1st, MA, Ubermeyer, 475%, 475%, 104%, 104%, 20%
+2003, 1st, MA, Total, 36%, 36%, 36%, 36%, 36%
+2003, 1st, TX, BigMart Foodstores, 676%, 676%, 35%, 35%, 35%
+2003, 1st, TX, Nova Tera, 901%, 901%, 74%, 74%, 29%
+2003, 1st, TX, Big Ed"s BBQ, 1,161%, 1,161%, 119%, 119%, 26%
+2003, 1st, TX, Total, 35%, 35%, 35%, 35%, 35%
+2003, 1st, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2003, 2nd, NJ&NV, Pharma Research, 1,628%, 37%, 37%, 37%, 37%
+2003, 2nd, NJ&NV, Tumbleweed Gaming, 2,232%, 85%, 85%, 85%, 35%
+2003, 2nd, NJ&NV, Rutgers Bank, 2,839%, 133%, 133%, 133%, 26%
+2003, 2nd, NJ&NV, Others, 3,456%, 182%, 182%, 182%, 21%
+2003, 2nd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2003, 2nd, TX, BigMart Foodstores, 4,700%, 281%, 35%, 35%, 35%
+2003, 2nd, TX, Nova Tera, 6,141%, 395%, 76%, 76%, 30%
+2003, 2nd, TX, Big Ed"s BBQ, 7,763%, 524%, 121%, 121%, 26%
+2003, 2nd, TX, Others, 8,864%, 611%, 152%, 152%, 14%
+2003, 2nd, TX, Total, 35%, 35%, 35%, 35%, 35%
+2003, 2nd, MD, FMG Consulting, 11,912%, 853%, 34%, 34%, 34%
+2003, 2nd, MD, George Services, 12,993%, 938%, 46%, 46%, 9%
+2003, 2nd, MD, Total, 34%, 34%, 34%, 34%, 34%
+2003, 2nd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2003, 3rd, NJ&NV, Pharma Research, 17,837%, 37%, 37%, 37%, 37%
+2003, 3rd, NJ&NV, Tumbleweed Gaming, 24,115%, 85%, 85%, 85%, 35%
+2003, 3rd, NJ&NV, Software Specialists, 28,958%, 122%, 122%, 122%, 20%
+2003, 3rd, NJ&NV, Others, 33,607%, 157%, 157%, 157%, 16%
+2003, 3rd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2003, 3rd, MA, XO Resellers, 45,742%, 250%, 36%, 36%, 36%
+2003, 3rd, MA, AMG Logistics, 59,953%, 359%, 78%, 78%, 31%
+2003, 3rd, MA, Ubermeyer, 71,963%, 450%, 114%, 114%, 20%
+2003, 3rd, MA, Total, 36%, 36%, 36%, 36%, 36%
+2003, 3rd, MD, FMG Consulting, 96,465%, 638%, 34%, 34%, 34%
+2003, 3rd, MD, InterLand Services, 110,950%, 748%, 54%, 54%, 15%
+2003, 3rd, MD, George Services, 120,944%, 825%, 68%, 68%, 9%
+2003, 3rd, MD, Total, 34%, 34%, 34%, 34%, 34%
+2003, 3rd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2003, 4th, NJ&NV, Pharma Research, 165,730%, 37%, 37%, 37%, 37%
+2003, 4th, NJ&NV, Software Specialists, 200,555%, 66%, 66%, 66%, 21%
+2003, 4th, NJ&NV, Scheggie Services, 232,660%, 92%, 92%, 92%, 16%
+2003, 4th, NJ&NV, Others, 241,970%, 100%, 100%, 100%, 4%
+2003, 4th, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2003, 4th, MD, FMG Consulting, 326,694%, 170%, 35%, 35%, 35%
+2003, 4th, MD, InterLand Services, 378,982%, 213%, 57%, 57%, 16%
+2003, 4th, MD, George Services, 409,308%, 238%, 69%, 69%, 8%
+2003, 4th, MD, Total, 35%, 35%, 35%, 35%, 35%
+2003, 4th, TX, BigMart Foodstores, 552,601%, 357%, 35%, 35%, 35%
+2003, 4th, TX, Big Ed"s BBQ, 690,776%, 471%, 69%, 69%, 25%
+2003, 4th, TX, The Big Cat, 794,408%, 556%, 94%, 94%, 15%
+2003, 4th, TX, Total, 35%, 35%, 35%, 35%, 35%
+2003, 4th, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2004, 1st, NJ&NV, Tumbleweed Gaming, 35%, 35%, 35%, 35%, 35%
+2004, 1st, NJ&NV, Rutgers Bank, 71%, 71%, 71%, 71%, 27%
+2004, 1st, NJ&NV, Software Specialists, 107%, 107%, 107%, 107%, 21%
+2004, 1st, NJ&NV, Others, 143%, 143%, 143%, 143%, 17%
+2004, 1st, NJ&NV, Total, 35%, 35%, 35%, 35%, 35%
+2004, 1st, TX, BigMart Foodstores, 225%, 225%, 34%, 34%, 34%
+2004, 1st, TX, Nova Tera, 323%, 323%, 74%, 74%, 30%
+2004, 1st, TX, Big Ed"s BBQ, 433%, 433%, 119%, 119%, 26%
+2004, 1st, TX, Others, 507%, 507%, 150%, 150%, 14%
+2004, 1st, TX, Total, 34%, 34%, 34%, 34%, 34%
+2004, 1st, WA, Northwest Outfitters, 708%, 708%, 33%, 33%, 33%
+2004, 1st, WA, Infinity Software, 950%, 950%, 73%, 73%, 30%
+2004, 1st, WA, Total, 33%, 33%, 33%, 33%, 33%
+2004, 1st, Total, NULL, 35%, 35%, 35%, 35%, 35%
+2004, 2nd, NJ&NV, Pharma Research, 1,339%, 37%, 37%, 37%, 37%
+2004, 2nd, NJ&NV, Tumbleweed Gaming, 1,857%, 86%, 86%, 86%, 36%
+2004, 2nd, NJ&NV, Rutgers Bank, 2,385%, 137%, 137%, 137%, 27%
+2004, 2nd, NJ&NV, Others, 2,907%, 186%, 186%, 186%, 21%
+2004, 2nd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2004, 2nd, MA, XO Resellers, 3,989%, 289%, 36%, 36%, 36%
+2004, 2nd, MA, AMG Logistics, 5,257%, 410%, 78%, 78%, 31%
+2004, 2nd, MA, World Software Resellers, 6,596%, 538%, 123%, 123%, 25%
+2004, 2nd, MA, Others, 7,935%, 665%, 167%, 167%, 20%
+2004, 2nd, MA, Total, 36%, 36%, 36%, 36%, 36%
+2004, 2nd, MD, FMG Consulting, 10,747%, 933%, 35%, 35%, 35%
+2004, 2nd, MD, InterLand Services, 12,374%, 1,088%, 55%, 55%, 15%
+2004, 2nd, MD, Total, 35%, 35%, 35%, 35%, 35%
+2004, 2nd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2004, 3rd, MA, XO Resellers, 16,865%, 36%, 36%, 36%, 36%
+2004, 3rd, MA, World Software Resellers, 21,106%, 70%, 70%, 70%, 25%
+2004, 3rd, MA, Total, 36%, 36%, 36%, 36%, 36%
+2004, 3rd, NJ&NV, Tumbleweed Gaming, 28,740%, 131%, 36%, 36%, 36%
+2004, 3rd, NJ&NV, Rutgers Bank, 36,239%, 191%, 71%, 71%, 26%
+2004, 3rd, NJ&NV, Software Specialists, 43,870%, 252%, 107%, 107%, 21%
+2004, 3rd, NJ&NV, Others, 45,189%, 263%, 114%, 114%, 3%
+2004, 3rd, NJ&NV, Total, 36%, 36%, 36%, 36%, 36%
+2004, 3rd, MD, FMG Consulting, 61,040%, 390%, 35%, 35%, 35%
+2004, 3rd, MD, InterLand Services, 70,211%, 464%, 55%, 55%, 15%
+2004, 3rd, MD, Total, 35%, 35%, 35%, 35%, 35%
+2004, 3rd, Total, NULL, 36%, 36%, 36%, 36%, 36%
+2004, 4th, MA, XO Resellers, 95,523%, 36%, 36%, 36%, 36%
+2004, 4th, MA, AMG Logistics, 126,122%, 80%, 80%, 80%, 32%
+2004, 4th, MA, Ubermeyer, 151,366%, 115%, 115%, 115%, 20%
+2004, 4th, MA, Total, 36%, 36%, 36%, 36%, 36%
+2004, 4th, NJ&NV, Tumbleweed Gaming, 205,894%, 193%, 36%, 36%, 36%
+2004, 4th, NJ&NV, Scheggie Services, 240,913%, 243%, 59%, 59%, 17%
+2004, 4th, NJ&NV, Total, 36%, 36%, 36%, 36%, 36%
+2004, 4th, TX, BigMart Foodstores, 325,267%, 363%, 35%, 35%, 35%
+2004, 4th, TX, The Big Cat, 370,819%, 428%, 54%, 54%, 14%
+2004, 4th, TX, Total, 35%, 35%, 35%, 35%, 35%
+2004, 4th, Total, NULL, 36%, 36%, 36%, 36%, 36%
+2005, 1st, NJ&NV, Pharma Research, 37%, 37%, 37%, 37%, 37%
+2005, 1st, NJ&NV, Rutgers Bank, 74%, 74%, 74%, 74%, 27%
+2005, 1st, NJ&NV, Scheggie Services, 104%, 104%, 104%, 104%, 17%
+2005, 1st, NJ&NV, Others, 112%, 112%, 112%, 112%, 4%
+2005, 1st, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2005, 1st, MD, FMG Consulting, 184%, 184%, 34%, 34%, 34%
+2005, 1st, MD, InterLand Services, 229%, 229%, 55%, 55%, 16%
+2005, 1st, MD, George Services, 259%, 259%, 69%, 69%, 9%
+2005, 1st, MD, Total, 34%, 34%, 34%, 34%, 34%
+2005, 1st, WA, Northwest Outfitters, 377%, 377%, 33%, 33%, 33%
+2005, 1st, WA, Infinity Software, 525%, 525%, 74%, 74%, 31%
+2005, 1st, WA, Total, 33%, 33%, 33%, 33%, 33%
+2005, 1st, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2005, 2nd, NJ&NV, Pharma Research, 756%, 37%, 37%, 37%, 37%
+2005, 2nd, NJ&NV, Tumbleweed Gaming, 1,064%, 86%, 86%, 86%, 36%
+2005, 2nd, NJ&NV, Software Specialists, 1,309%, 125%, 125%, 125%, 21%
+2005, 2nd, NJ&NV, Others, 1,534%, 162%, 162%, 162%, 16%
+2005, 2nd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2005, 2nd, MA, XO Resellers, 2,123%, 256%, 36%, 36%, 36%
+2005, 2nd, MA, AMG Logistics, 2,812%, 366%, 78%, 78%, 31%
+2005, 2nd, MA, World Software Resellers, 3,511%, 478%, 121%, 121%, 24%
+2005, 2nd, MA, Others, 4,233%, 593%, 165%, 165%, 20%
+2005, 2nd, MA, Total, 36%, 36%, 36%, 36%, 36%
+2005, 2nd, TX, BigMart Foodstores, 5,749%, 836%, 35%, 35%, 35%
+2005, 2nd, TX, Nova Tera, 7,504%, 1,117%, 76%, 76%, 30%
+2005, 2nd, TX, Big Ed"s BBQ, 9,481%, 1,433%, 121%, 121%, 26%
+2005, 2nd, TX, Others, 10,918%, 1,663%, 154%, 154%, 15%
+2005, 2nd, TX, Total, 35%, 35%, 35%, 35%, 35%
+2005, 2nd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2005, 3rd, NJ&NV, Pharma Research, 14,995%, 37%, 37%, 37%, 37%
+2005, 3rd, NJ&NV, Rutgers Bank, 19,071%, 74%, 74%, 74%, 27%
+2005, 3rd, NJ&NV, Software Specialists, 22,905%, 109%, 109%, 109%, 20%
+2005, 3rd, NJ&NV, Others, 23,825%, 117%, 117%, 117%, 4%
+2005, 3rd, NJ&NV, Total, 37%, 37%, 37%, 37%, 37%
+2005, 3rd, MD, FMG Consulting, 32,199%, 193%, 35%, 35%, 35%
+2005, 3rd, MD, George Services, 35,106%, 220%, 47%, 47%, 9%
+2005, 3rd, MD, Total, 35%, 35%, 35%, 35%, 35%
+2005, 3rd, TX, BigMart Foodstores, 47,428%, 331%, 35%, 35%, 35%
+2005, 3rd, TX, Nova Tera, 61,686%, 461%, 76%, 76%, 30%
+2005, 3rd, TX, Total, 35%, 35%, 35%, 35%, 35%
+2005, 3rd, Total, NULL, 37%, 37%, 37%, 37%, 37%
+2005, 4th, MA, XO Resellers, 83,930%, 36%, 36%, 36%, 36%
+2005, 4th, MA, AMG Logistics, 110,819%, 80%, 80%, 80%, 32%
+2005, 4th, MA, World Software Resellers, 138,549%, 124%, 124%, 124%, 25%
+2005, 4th, MA, Total, 36%, 36%, 36%, 36%, 36%
+2005, 4th, WA, Northwest Outfitters, 184,303%, 198%, 33%, 33%, 33%
+2005, 4th, WA, Infinity Software, 241,468%, 291%, 74%, 74%, 31%
+2005, 4th, WA, Total, 33%, 33%, 33%, 33%, 33%
+2005, 4th, AZ, Folk Mining, 297,029%, 381%, 23%, 23%, 23%
+2005, 4th, AZ, Total, 23%, 23%, 23%, 23%, 23%
+2005, 4th, Total, NULL, 36%, 36%, 36%, 36%, 36%

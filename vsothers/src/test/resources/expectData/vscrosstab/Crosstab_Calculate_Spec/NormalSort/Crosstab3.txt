@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 6)
+Customer:Reseller, Customer:State, USA East, USA East, USA West, USA West
+NULL, NULL, Sum(Order:Paid), % of total by row: Sum(Order:Paid), Sum(Order:Paid), % of total by row: Sum(Order:Paid)
+1, CA, NULL, NULL, 20, 13%
+1, MA, 18, 10%, NULL, NULL
+1, NJ, 13, 7%, NULL, NULL
+1, IL, NULL, NULL, 9, 6%
+1, CO, NULL, NULL, 7, 5%
+1, Others, NULL, NULL, 7, 5%
+1, Total, 31, 17%, 43, 29%
+0, NJ, 43, 24%, NULL, NULL
+0, TX, NULL, NULL, 43, 29%
+0, NY, 42, 23%, NULL, NULL
+0, MD, 26, 14%, NULL, NULL
+0, CA, NULL, NULL, 21, 14%
+0, Others, 38, 21%, 42, 28%
+0, Total, 149, 83%, 106, 71%

@@ -1,0 +1,32 @@
+The data size(row x col) is:(31 x 4)
+STATE, NAME, NULL, CID/EID
+MD, FMG Consulting, Nth(CID）, 66
+MD, FMG Consulting, Nth(EID), 4
+MD, InterLand Services, Nth(CID）, 14
+MD, InterLand Services, Nth(EID), 2
+MD, Others, Nth(CID）, 5
+MD, Others, Nth(EID), 4
+NJ, Pharma Research, Nth(CID）, 35
+NJ, Pharma Research, Nth(EID), 2
+NJ, Rutgers Bank, Nth(CID）, 25
+NJ, Rutgers Bank, Nth(EID), 2
+NJ, Others, Nth(CID）, 19
+NJ, Others, Nth(EID), 2
+MA, XO Resellers, Nth(CID）, 34
+MA, XO Resellers, Nth(EID), 2
+MA, AMG Logistics, Nth(CID）, 30
+MA, AMG Logistics, Nth(EID), 2
+MA, Others, Nth(CID）, 23
+MA, Others, Nth(EID), 2
+NY, FISGA Corp, Nth(CID）, 34
+NY, FISGA Corp, Nth(EID), 6
+NY, High Society Investments, Nth(CID）, 24
+NY, High Society Investments, Nth(EID), 2
+NY, Others, Nth(CID）, 14
+NY, Others, Nth(EID), 3
+TX, BigMart Foodstores, Nth(CID）, 62
+TX, BigMart Foodstores, Nth(EID), 8
+TX, Nova Tera, Nth(CID）, 52
+TX, Nova Tera, Nth(EID), 7
+TX, Others, Nth(CID）, 22
+TX, Others, Nth(EID), 4

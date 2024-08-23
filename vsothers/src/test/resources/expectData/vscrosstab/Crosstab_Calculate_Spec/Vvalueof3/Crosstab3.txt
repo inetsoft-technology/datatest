@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 7)
+Year(Order Date), Eric, Eric, Eric, Sue, Sue, Sue
+NULL, Sum(Total), Value of previous Employee: Sum(Total), Value of previous Year(Order Date): Sum(Total), Sum(Total), Value of previous Employee: Sum(Total), Value of previous Year(Order Date): Sum(Total)
+2020, 357911, NULL, NULL, 254487, 357911, NULL
+2021, 426480, NULL, 357911, 234014, 426480, 254487
+2022, 359122, NULL, 426480, 358058, 359122, 234014
+2023, 575485, NULL, 359122, 228547, 575485, 358058

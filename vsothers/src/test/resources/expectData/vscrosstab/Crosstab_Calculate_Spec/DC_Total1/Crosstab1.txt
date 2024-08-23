@@ -1,0 +1,28 @@
+The data size(row x col) is:(27 x 6)
+State, Category, NULL, 2020, 2021, Grand Total
+CT, Educational, Sum(Quantity Purchased), 42, 15, 57
+CT, Educational, Change from previous year of Year(Date): Sum(Quantity Purchased), 42, -27, 57
+CT, Games, Sum(Quantity Purchased), 13, NULL, 13
+CT, Games, Change from previous year of Year(Date): Sum(Quantity Purchased), -77, -13, 13
+CT, Graphics, Sum(Quantity Purchased), NULL, 1, 1
+CT, Graphics, Change from previous year of Year(Date): Sum(Quantity Purchased), 0, 1, 1
+CT, Total, Sum(Quantity Purchased), 55, 16, 71
+CT, Total, Change from previous year of Year(Date): Sum(Quantity Purchased), 55, 16, 71
+NV, Educational, Sum(Quantity Purchased), 39, 47, 86
+NV, Educational, Change from previous year of Year(Date): Sum(Quantity Purchased), 39, 8, 86
+NV, Games, Sum(Quantity Purchased), 29, NULL, 29
+NV, Games, Change from previous year of Year(Date): Sum(Quantity Purchased), -3, -29, 29
+NV, Graphics, Sum(Quantity Purchased), NULL, 34, 34
+NV, Graphics, Change from previous year of Year(Date): Sum(Quantity Purchased), 0, 34, 34
+NV, Total, Sum(Quantity Purchased), 68, 81, 149
+NV, Total, Change from previous year of Year(Date): Sum(Quantity Purchased), 68, 81, 149
+FL, Educational, Sum(Quantity Purchased), 41, 22, 63
+FL, Educational, Change from previous year of Year(Date): Sum(Quantity Purchased), 41, -19, 63
+FL, Games, Sum(Quantity Purchased), 34, NULL, 34
+FL, Games, Change from previous year of Year(Date): Sum(Quantity Purchased), -117, -34, 34
+FL, Graphics, Sum(Quantity Purchased), NULL, 34, 34
+FL, Graphics, Change from previous year of Year(Date): Sum(Quantity Purchased), 0, 34, 34
+FL, Total, Sum(Quantity Purchased), 75, 56, 131
+FL, Total, Change from previous year of Year(Date): Sum(Quantity Purchased), 75, 56, 131
+Grand Total, NULL, Sum(Quantity Purchased), 198, 153, 351
+Grand Total, NULL, Change from previous year of Year(Date): Sum(Quantity Purchased), 198, 153, 351

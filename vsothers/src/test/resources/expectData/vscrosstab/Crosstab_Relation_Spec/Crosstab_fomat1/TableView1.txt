@@ -1,0 +1,49 @@
+The data size(row x col) is:(48 x 11)
+ID, Business Unit, Risk Name, Inherent Risk Rating, Control Effectiveness, Residual Risk Rating, Prior Residual Risk Rating, Risk Owner, NULL, NULL, NULL
+1000020, Finance, Inadequate insurance coverage, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000024, People & Culture, Staff bullying or misconduct, Moderate, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000027, People & Culture, Poor recruitment and selection process, Moderate, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000029, People & Culture, Breach of employment legislation / regulations, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000033, People & Culture, Unauthorized access to sensitive and employee data, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000036, Finance, Continuous disclosure, Moderate, Effective, Moderate, Moderate, protecht.consulting, FFD740, FFD740, FFD740
+1000045, Treasury Sydney, Erroneous financial position reporting, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000048, Information Technology, Unauthorized access to sensitive and employee data, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000054, Information Technology, Internet, telecommunications and other public utility outage, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000057, Information Technology, Data compromise, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000060, Information Technology, IT change management failure, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000063, Information Technology, Unavailability of IT systems, services or data, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000066, Information Technology, Failure of third party service providers, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000070, Operations, Errors in the unit pricing process, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000072, Operations, Fraudulent payments, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000074, Finance, Inaccurate information used for decision making, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000076, Operations, Model risk, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000078, Operations, Payment errors, Moderate, Effective, High, High, protecht.consulting, FFD740, FF6B58, FF6B58
+1000080, Operations, Failure to manage Corporate Actions on behalf of customers, High, Effective, Low, Low, protecht.consulting, FF6B58, aed581, aed581
+1000082, Operations, Transaction processing errors (excl. payments), High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000084, Call Centre, Inappropriate customer service, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000086, Call Centre, Inappropriate or misleading advice incl. mis-selling, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000088, Call Centre, Unavailability of CRM systems, Moderate, Effective, Moderate, Moderate, protecht.consulting, FFD740, FFD740, FFD740
+1000090, Product, Product flaws, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000092, Call Centre, Unauthorised access to customer data, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000094, Marketing, Misleading marketing material, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000096, Marketing, Unauthorised disclosure to media, High, Effective, Low, Low, protecht.consulting, FF6B58, FFD740, FFD740
+1000098, Marketing, Negative social media exposure, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000100, Branch 1, External fraud, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000102, Branch 1, Armed hold-up, physical threat or injury, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000104, Project A, Poor selection and prioritisation of key projects, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000106, Project A, Failure to effectively manage IT change, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000108, Project A, Project delivery and implementation, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000110, Corporate Office & Strategy, Competitor positioning, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000112, Corporate Office & Strategy, Natural disasters and terrorist events, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000114, Corporate Office & Strategy, Key personnel risk, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000116, Corporate Office & Strategy, Corporate culture, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000118, Corporate Office & Strategy, Deteriorating investor sentiment, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000120, Corporate Office & Strategy, Regulatory change, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000122, Corporate Office & Strategy, Brand damage, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000124, People & Culture, Deteriorating staff morale and behaviours, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000126, Corporate Office & Strategy, Poor execution of mergers, acquisitions or divestitures., High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000128, Corporate Office & Strategy, Failure of internal governance processes, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000308, Treasury Sydney, Wholesale counterparty credit default, High, Effective, Moderate, Moderate, protecht.consulting, FF6B58, FFD740, FFD740
+1000900, Environment, Spills - Chemical discharge, Moderate, Partially Effective, Moderate, Moderate, Andy Zheng, FFD740, FFD740, FFD740
+1000909, Environment Health and Safety, Slips, Trips or Fall of a Person, High, Partially Effective, Moderate, Moderate, Gary Lynam, FF6B58, FFD740, FFD740
+1001088, Environment Health and Safety, Chemicals and Other Substances, High, Effective, Low, Low, Gary Lynam, FF6B58, aed581, aed581

@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 10)
+DISCOUNT, NULL, 0, 0, 0, 0, 1, 1, 1, 1
+NULL, NULL, 2020, 2021, 2022, 2023, 2020, 2021, 2022, 2023
+0, Moving Min of 3 by column: Sum(CUSTOMER_ID), 286, 147, 147, 147, 2253, 2253, 2555, 2555
+0, Sum(CUSTOMER_ID), 322, 286, 147, 344, 2253, 2964, 2699, 2555
+0.05, Moving Min of 3 by column: Sum(CUSTOMER_ID), 29, 23, 5, 5, 28, 23, 23, 23
+0.05, Sum(CUSTOMER_ID), 29, NULL, 23, 5, 28, NULL, 23, 65
+0.1, Moving Min of 3 by column: Sum(CUSTOMER_ID), 34, 17, 17, 17, 41, 41, 41, 120
+0.1, Sum(CUSTOMER_ID), 34, NULL, 17, 51, 70, 41, 120, 153
+0.15, Moving Min of 3 by column: Sum(CUSTOMER_ID), NULL, NULL, NULL, NULL, 24, 24, 12, 12
+0.15, Sum(CUSTOMER_ID), NULL, NULL, NULL, NULL, 24, 26, 96, 12
+0.2, Moving Min of 3 by column: Sum(CUSTOMER_ID), NULL, NULL, 20, 20, 11, 11, 23, 23
+0.2, Sum(CUSTOMER_ID), NULL, NULL, NULL, 20, 11, 29, 57, 23
+0.25, Moving Min of 3 by column: Sum(CUSTOMER_ID), NULL, 21, 21, 21, 3, 3, 3, 65
+0.25, Sum(CUSTOMER_ID), NULL, NULL, 21, 29, 29, 3, 65, 88

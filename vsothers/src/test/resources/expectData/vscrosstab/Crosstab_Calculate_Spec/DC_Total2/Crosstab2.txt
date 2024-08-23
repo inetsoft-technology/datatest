@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 10)
+Year(Date), QuarterOfYear(Date), NULL, USA East, USA East, USA East, USA West, USA West, USA West, Grand Total
+NULL, NULL, NULL, NJ, NY, Total, TX, CA, Total, NULL
+01/01/2019, 1st, Sum(Total), 154915, 106755, 261670, 185905, 109480, 295385, 557055
+01/01/2019, 1st, Change from previous year of Year(Date): Sum(Total), 58539, 58751, 117290, 142849, 87482, 230331, 347621
+01/01/2019, 2nd, Sum(Total), 102428, 31875, 134303, 29635, 35340, 64975, 199278
+01/01/2019, 2nd, Change from previous year of Year(Date): Sum(Total), -13633, -95044, -108677, -36181, -38462, -74643, -183320
+01/01/2019, 3rd, Sum(Total), 678221, 366412, 1044633, 294245, 306217, 600462, 1645095
+01/01/2019, 3rd, Change from previous year of Year(Date): Sum(Total), 553146, 289716, 842862, 191942, 231631, 423573, 1266435
+01/01/2019, 4th, Sum(Total), NULL, 39000, 39000, 2093, NULL, 2093, 41093
+01/01/2019, 4th, Change from previous year of Year(Date): Sum(Total), -1936, 38601, 36665, 2093, 0, 2093, 38758
+01/01/2020, 1st, Sum(Total), 58374, 55560, 113934, 47844, 36625, 84469, 198403
+01/01/2020, 1st, Change from previous year of Year(Date): Sum(Total), -96541, -51195, -147736, -138061, -72855, -210916, -358652
+01/01/2020, 2nd, Sum(Total), 89585, 53747, 143332, 60898, 47571, 108469, 251801
+01/01/2020, 2nd, Change from previous year of Year(Date): Sum(Total), -12843, 21872, 9029, 31263, 12231, 43494, 52523
+01/01/2020, 3rd, Sum(Total), 289207, 194705, 483912, 248774, 49976, 298750, 782662
+01/01/2020, 3rd, Change from previous year of Year(Date): Sum(Total), -389014, -171707, -560721, -45471, -256241, -301712, -862433
+01/01/2020, 4th, Sum(Total), 46245, 354, 46599, 649, 258, 907, 47506
+01/01/2020, 4th, Change from previous year of Year(Date): Sum(Total), 46245, -38646, 7599, -1444, 258, -1186, 6413
+Grand Total, NULL, Sum(Total), 1418975, 848408, 2267383, 870043, 585467, 1455510, 3722893
+Grand Total, NULL, Change from previous year of Year(Date): Sum(Total), NULL, NULL, NULL, NULL, NULL, NULL, NULL

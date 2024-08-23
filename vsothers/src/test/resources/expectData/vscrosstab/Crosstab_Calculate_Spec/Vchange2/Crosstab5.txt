@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 7)
+NULL, USA East, USA East, USA East, USA West, USA West, USA West
+NULL, 2020, 2023, Others, 2021, 2020, Others
+Sum(Product:Price), $215,468.00, $241,903.00, $546,296.00, $147,956.00, $167,818.00, $395,178.00
+Change from previous Customer:Region: Sum(Product:Price), NULL, NULL, NULL, NULL, -$47,650.00, -$151,118.00

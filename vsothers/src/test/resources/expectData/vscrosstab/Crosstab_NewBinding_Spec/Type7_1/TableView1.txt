@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 8)
+PRODUCE_DATE, PRODUCT_EXIST, PRODUCT_ID, PRODUCT_NAME, REORDER_LEVEL, PRICE, detail_c, detail_c2
+2001-01-01 00:00:00, true, 1, Xconnect Server, 10, 2250, Xconnect Server_test, 2001-05-01
+2001-01-01 00:00:00, true, 2, InsideView, 50, 125, InsideView_test, 2001-05-01
+2001-01-01 00:00:00, true, 3, Info Folder, 50, 399, Info Folder_test, 2001-05-01
+2001-01-01 00:00:00, true, 4, Green Planet, 25, 75, Green Planet_test, 2001-05-01
+2001-01-01 00:00:00, false, 5, House Hunter, 50, 129, House Hunter_test, 2001-05-01
+2000-12-12 00:00:00, true, 6, Fast Mail, 50, 39, Fast Mail_test, 2001-04-12
+2006-01-01 00:00:00, false, 7, Sync Me, 25, 145, Sync Me_test, 2006-05-01
+2000-12-12 00:00:00, true, 8, WebCalendar, 25, 248, WebCalendar_test, 2001-04-12
+2006-01-01 00:00:00, false, 9, True Action, 25, 398, True Action_test, 2006-05-01
+2006-01-01 00:00:00, false, 10, Fancy Menus, 50, 49, Fancy Menus_test, 2006-05-01
+2006-01-01 00:00:00, true, 11, Mega Icons, 25, 550, Mega Icons_test, 2006-05-01
+2006-01-01 00:00:00, false, 12, MeToo AppServer, 10, 3000, MeToo AppServer_test, 2006-05-01
+2000-12-12 00:00:00, true, 13, Easy Chess, 50, 35, Easy Chess_test, 2001-04-12
+2000-12-12 00:00:00, true, 14, Fast Go Game, 25, 200, Fast Go Game_test, 2001-04-12
+2001-01-01 00:00:00, true, 15, Web Bridge, 50, 105, Web Bridge_test, 2001-05-01
+2001-01-01 00:00:00, true, 16, Combat Hero, 50, 29, Combat Hero_test, 2001-05-01
+2006-01-01 00:00:00, false, 17, Animal World, 50, 59, Animal World_test, 2006-05-01
+2006-01-01 00:00:00, false, 18, Learn ABC, 50, 75, Learn ABC_test, 2006-05-01
+2006-01-01 00:00:00, false, 19, Math for Me, 25, 235, Math for Me_test, 2006-05-01
+2006-01-01 00:00:00, false, 20, Barbie"s Fashion, 50, 79, Barbie"s Fashion_test, 2006-05-01
+2001-01-01 00:00:00, true, 21, Wireless Mouse, 25, 40, Wireless Mouse_test, 2001-05-01
+2001-01-01 00:00:00, true, 22, Wireless Keyboard, 25, 40, Wireless Keyboard_test, 2001-05-01
+2001-01-01 00:00:00, true, 23, 17 Inch LCD, 10, 210, 17 Inch LCD_test, 2001-05-01
+2006-01-01 00:00:00, false, 24, 19 inch LCD, 15, 310, 19 inch LCD_test, 2006-05-01
+2006-01-01 00:00:00, false, 25, NetStorage, 5, 2850, NetStorage_test, 2006-05-01

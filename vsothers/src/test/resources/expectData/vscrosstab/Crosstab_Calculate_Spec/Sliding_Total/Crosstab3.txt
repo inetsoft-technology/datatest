@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 8)
+Region, Year(Date), 0, 0, 1, 1, Grand Total, Grand Total
+NULL, NULL, Sum(Paid), Moving NthLargest(1) of 3 by column: Sum(Paid), Sum(Paid), Moving NthLargest(1) of 3 by column: Sum(Paid), Sum(Paid), Moving NthLargest(1) of 3 by column: Sum(Paid)
+USA East, 2020, 147, 147, 29, 147, 176, 176
+USA East, 2021, 234, 234, 30, 234, 264, 264
+USA East, 2022, 182, 182, 44, 182, 226, 226
+USA East, 2023, 183, 183, 25, 183, 208, 208
+USA East, Total, 746, 746, 128, 746, 874, 874
+USA West, 2020, 82, 82, 52, 82, 134, 134
+USA West, 2021, 101, 101, 33, 101, 134, 134
+USA West, 2022, 106, 106, 55, 106, 161, 161
+USA West, 2023, 142, 142, 51, 142, 193, 193
+USA West, Total, 431, 431, 191, 431, 622, 622
+Grand Total, NULL, 1177, 1177, 319, 1177, 1496, 1496

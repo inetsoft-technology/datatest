@@ -1,0 +1,103 @@
+The data size(row x col) is:(102 x 6)
+Make, Class, Cylinder, Fuel Type,  ,  
+Dodge, Compact Cars, 8, Regular, 14.75, 22.75
+Dodge, Compact Cars, 6, Regular, 17.0, 25.0
+Dodge, Large Cars, 8, Regular, 15.0, 22.333333333333332
+Dodge, Large Cars, 6, Regular, 17.0, 24.75
+Dodge, Midsize Cars, 6, E, 13.0, 20.0
+Dodge, Midsize Cars, 6, Regular, 17.5, 27.0
+Dodge, Midsize Cars, 4, Premium, 19.0, 27.0
+Dodge, Midsize Cars, 4, Regular, 22.4, 28.2
+Dodge, S.U.V. - 4Wd, 8, E, 9.0, 12.0
+Dodge, S.U.V. - 4Wd, 8, Regular, 13.0, 18.5
+Dodge, S.U.V. - 4Wd, 6, Regular, 15.333333333333334, 21.0
+Dodge, Standard Pickup Trucks 4Wd, 8, E, 9.0, 12.0
+Dodge, Standard Pickup Trucks 4Wd, 8, Regular, 13.333333333333334, 18.333333333333332
+Dodge, Standard Pickup Trucks 4Wd, 6, Regular, 14.5, 18.5
+Chrysler, Compact Cars, 6, E, 12.0, 19.0
+Chrysler, Compact Cars, 6, Regular, 17.0, 26.5
+Chrysler, Compact Cars, 4, Regular, 20.0, 29.0
+Chrysler, Large Cars, 8, Regular, 15.0, 22.333333333333332
+Chrysler, Large Cars, 6, Regular, 17.333333333333332, 24.666666666666668
+Chrysler, Midsize Cars, 6, E, 13.0, 20.0
+Chrysler, Midsize Cars, 6, Regular, 17.5, 27.0
+Chrysler, Midsize Cars, 4, Regular, 21.0, 30.0
+Chrysler, S.U.V. - 4Wd, 8, E, 9.0, 12.0
+Chrysler, S.U.V. - 4Wd, 8, Regular, 13.0, 18.5
+Chevrolet, Compact Cars, 4, Regular, 26.0, 34.0
+Chevrolet, Large Cars, 8, Regular, 16.0, 24.0
+Chevrolet, Large Cars, 6, E, 13.5, 21.0
+Chevrolet, Large Cars, 6, Regular, 18.0, 28.333333333333332
+Chevrolet, Midsize Cars, 6, Regular, 17.5, 27.5
+Chevrolet, Midsize Cars, 4, Regular, 23.333333333333332, 32.333333333333336
+Chevrolet, S.U.V. - 4Wd, 8, E, 9.5, 14.5
+Chevrolet, S.U.V. - 4Wd, 8, Regular, 14.4, 19.0
+Chevrolet, S.U.V. - 4Wd, 6, Regular, 15.75, 22.75
+Chevrolet, Small Pickup Trucks 4Wd, 8, Regular, 14.0, 19.0
+Chevrolet, Small Pickup Trucks 4Wd, 5, Regular, 16.0, 21.333333333333332
+Chevrolet, Small Pickup Trucks 4Wd, 4, Regular, 17.0, 23.0
+Chevrolet, Standard Pickup Trucks 4Wd, 8, E, 9.666666666666666, 14.333333333333334
+Chevrolet, Standard Pickup Trucks 4Wd, 8, Regular, 14.375, 19.125
+Chevrolet, Standard Pickup Trucks 4Wd, 6, Regular, 14.0, 18.0
+Chevrolet, Subcompact Cars, 4, Regular, 24.6, 33.6
+Chevrolet, Two Seaters, 8, Premium, 15.0, 23.75
+Chevrolet, Vans, Cargo Type, 8, E, 9.5, 12.25
+Chevrolet, Vans, Cargo Type, 8, Regular, 13.375, 16.625
+Chevrolet, Vans, Cargo Type, 6, Regular, 15.0, 20.0
+Chevrolet, Vans, Passenger Type, 8, E, 9.0, 12.0
+Chevrolet, Vans, Passenger Type, 8, Regular, 12.75, 15.75
+Cadillac, Large Cars, 8, Regular, 13.5, 19.75
+Cadillac, Midsize Cars, 8, Premium, 14.333333333333334, 21.666666666666668
+Cadillac, Midsize Cars, 6, Regular, 16.875, 25.625
+Cadillac, S.U.V. - 4Wd, 8, E, 9.0, 14.0
+Cadillac, S.U.V. - 4Wd, 8, Premium, 13.0, 20.0
+Cadillac, S.U.V. - 4Wd, 8, Regular, 12.0, 19.0
+Cadillac, S.U.V. - 4Wd, 6, Regular, 14.0, 22.0
+Cadillac, Two Seaters, 8, Premium, 14.5, 23.5
+Buick, Large Cars, 8, Regular, 15.0, 22.0
+Buick, Large Cars, 6, E, 13.0, 20.0
+Buick, Large Cars, 6, Regular, 17.0, 26.0
+Buick, Midsize Cars, 8, Regular, 16.0, 24.0
+Buick, Midsize Cars, 6, Regular, 17.0, 28.0
+Buick, S.U.V. - 4Wd, 6, Regular, 16.0, 22.0
+Bmw, Compact Cars, 8, Premium, 14.0, 20.0
+Bmw, Compact Cars, 6, Premium, 17.125, 26.0
+Bmw, Midsize Cars, 10, Premium, 11.0, 17.0
+Bmw, Midsize Cars, 8, Premium, 15.0, 22.5
+Bmw, Midsize Cars, 6, Premium, 17.125, 25.875
+Bmw, Midsize Station Wagons, 6, Premium, 16.0, 23.5
+Bmw, S.U.V. - 4Wd, 8, Premium, 14.0, 19.0
+Bmw, S.U.V. - 4Wd, 6, Premium, 16.0, 22.666666666666668
+Bmw, Small Station Wagons, 6, Premium, 17.25, 26.0
+Bmw, Subcompact Cars, 10, Premium, 11.0, 17.0
+Bmw, Subcompact Cars, 8, Premium, 14.25, 21.125
+Bmw, Subcompact Cars, 6, Premium, 17.35, 26.35
+Bentley, Compact Cars, 12, Premium, 10.0, 17.0
+Bentley, Compact Cars, 8, Premium, 9.5, 14.5
+Bentley, Large Cars, 8, Premium, 9.0, 15.0
+Bentley, Midsize Cars, 12, Premium, 10.0, 17.0
+Bentley, Midsize Cars, 8, Premium, 10.0, 14.0
+Bentley, Subcompact Cars, 12, Premium, 10.0, 17.0
+Audi, Compact Cars, 6, Premium, 17.0, 26.0
+Audi, Compact Cars, 4, Premium, 22.0, 29.0
+Audi, Large Cars, 12, Premium, 13.0, 19.0
+Audi, Large Cars, 8, Premium, 16.0, 23.0
+Audi, Midsize Cars, 10, Premium, 13.5, 19.0
+Audi, Midsize Cars, 8, Premium, 16.0, 23.0
+Audi, S.U.V. - 4Wd, 8, Premium, 13.0, 18.0
+Audi, S.U.V. - 4Wd, 6, Premium, 14.0, 20.0
+Audi, Small Station Wagons, 6, Premium, 18.0, 25.0
+Audi, Small Station Wagons, 4, Premium, 21.25, 28.25
+Audi, Subcompact Cars, 8, Premium, 14.25, 21.5
+Audi, Subcompact Cars, 6, Premium, 17.0, 25.4
+Audi, Subcompact Cars, 4, Premium, 22.0, 29.25
+Audi, Two Seaters, 8, Premium, 12.5, 18.5
+Audi, Two Seaters, 6, Premium, 17.5, 24.5
+Audi, Two Seaters, 4, Premium, 21.5, 29.5
+Aston Martin, Minicompact Cars, 12, Premium, 11.5, 18.0
+Aston Martin, Two Seaters, 12, Premium, 11.5, 17.5
+Aston Martin, Two Seaters, 8, Premium, 12.5, 19.0
+Acura, Compact Cars, 4, Premium, 20.5, 29.0
+Acura, Midsize Cars, 6, Premium, 17.0, 24.333333333333332
+Acura, S.U.V. - 4Wd, 6, Premium, 15.0, 20.0
+Acura, S.U.V. - 4Wd, 4, Premium, 17.0, 22.0

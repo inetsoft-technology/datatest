@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 10)
+boolean, state1, NULL, 2002, 2004, 2004, 2004, 2005, 2005, 2005
+NULL, NULL, NULL, NULL, 2nd, 3rd, Others, 2nd, 1st, Others
+false, WA, Distinct Count(customer_id), 1, 1, 0, 1, 1, 1, 1
+false, WA, Max(discount), 0, 0, NULL, 0, 0, 0, NULL
+false, WA, Count(first_name), 7, 1, 0, 3, 1, 1, 1
+false, NJ, Distinct Count(customer_id), 1, 1, 1, 1, 1, 0, 1
+false, NJ, Max(discount), 0.2, 0.25, 0, 0, 0, NULL, 0.25
+false, NJ, Count(first_name), 4, 3, 5, 3, 3, 0, 1
+false, MA, Distinct Count(customer_id), 2, 2, 2, 2, 2, 0, 2
+false, MA, Max(discount), 0.1, 0, 0.05, 0, 0, NULL, 0.2
+false, MA, Count(first_name), 13, 3, 5, 4, 3, 0, 2
+false, IL, Distinct Count(customer_id), 1, 1, 1, 1, 1, 1, 1
+false, IL, Max(discount), 0, 0, 0, 0, 0, 0, 0
+false, IL, Count(first_name), 5, 3, 3, 1, 1, 1, 1
+false, CO, Distinct Count(customer_id), 1, 1, 1, 1, 0, 1, 1
+false, CO, Max(discount), 0, 0, 0, 0, NULL, 0, 0.15
+false, CO, Count(first_name), 3, 2, 1, 2, 0, 3, 1
+false, CA, Distinct Count(customer_id), 2, 2, 2, 2, 1, 2, 2
+false, CA, Max(discount), 0.1, 0, 0, 0, 0, 0.1, 0.05
+false, CA, Count(first_name), 14, 2, 5, 4, 2, 5, 4

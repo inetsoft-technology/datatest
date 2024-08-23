@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 6)
+RESELLER, StateName, CITY, NULL, 0, 0
+NULL, NULL, NULL, NULL, 10-20, <10
+1, CA, Los Angeles, CalcField1, 1, NULL
+1, CA, Los Angeles, Average(C_ID), 13, NULL
+1, CA, Los Angeles, Sum(expid), 26, NULL
+0, CO, Denver, CalcField1, NULL, 1
+0, CO, Denver, Average(C_ID), NULL, 8
+0, CO, Denver, Sum(expid), NULL, 16
+0, CT, Hartford, CalcField1, NULL, 1
+0, CT, Hartford, Average(C_ID), NULL, 6
+0, CT, Hartford, Sum(expid), NULL, 24

@@ -1,0 +1,35 @@
+The data size(row x col) is:(34 x 6)
+DataGroup(goalTerm), DataGroup(keyword), Value of previous DataGroup(goalTerm): Sum(Google Ranking), Moving Max of 3 by row: DistinctCount(Google Ranking), Moving Concat of 3 by row: DistinctCount(Google Ranking), Moving Median of 5 by row: Average(Google Ranking)
+analysis, analysis product, NULL, 2, 0,0, 14.50
+analysis, analysis software, NULL, 2, 0,0,2, 14.50
+analysis, analysis solutions, NULL, 89, 0,2,0, 22.25
+analysis, analysis tools, NULL, 89, 2,0,89, 22.25
+analysis, Others, NULL, 0, 0,89, 22.25
+analytics, analytics software, NULL, 4, 7,0, 77.64
+analytics, business analytics, NULL, 7, 7,0,4, 77.64
+analytics, business analytics software, NULL, 11, 0,4,0, 65.29
+analytics, salesforce analytics, NULL, 11, 4,0,11, 71.21
+analytics, Others, 15.8K, 0, 0,11, 71.21
+data, data modeler, NULL, NULL, 24, 64.78
+explore, data exploration, NULL, NULL, 1, 98.00
+KPI, key metrics, NULL, 18, 2,0, 39.13
+KPI, key performance indicators, NULL, 27, 2,0,18, 28.15
+KPI, kpi examples, NULL, 65, 0,18,27, 46.29
+KPI, kpi software, NULL, 65, 18,27,65, 64.43
+KPI, Others, NULL, 27, 27,65, 64.43
+mashup, data mashup, NULL, 8, 2,8, 3.12
+mashup, enterprise mashup, NULL, 2, 2,8, 3.12
+OLAP, olap, NULL, 43, 29,43, 29.03
+OLAP, olap cube, NULL, 29, 29,43,15, 49.14
+OLAP, olap server, NULL, 43, 43,15,1, 49.14
+olap, olap tools, NULL, NULL, 24, 23.76
+OLAP, ROLAP, NULL, 15, 15,1, 29.03
+PerfManage, business performance management, NULL, 0, 23,0, 14.25
+PerfManage, performance management, NULL, 23, 23,0,0, 14.25
+PerfManage, performance management software, NULL, 0, 0,0,0, 14.25
+PerfManage, performance management system, NULL, 0, 0,0, NULL
+query, query builder, NULL, NULL, 0, NULL
+sql, sql software, NULL, NULL, 9, 89.31
+visual, data visualization, NULL, 31, 0,31, 71.92
+visual, visualization software, NULL, 22, 0,31,22, 71.92
+visual, visualization tools, NULL, 31, 31,22, 71.92

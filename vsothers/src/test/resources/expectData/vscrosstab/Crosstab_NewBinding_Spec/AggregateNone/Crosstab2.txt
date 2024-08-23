@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 2)
+fx, long
+1.8, 18
+0, NULL
+2.1, 21
+2.1, 21
+4, 40

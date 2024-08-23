@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 7)
+NULL, Wayne, Middletown, Dallas, York, Plainfield, Others
+Sum(SKU), 1662, 1633, 3091, 1834, 1445, 41952
+Count(SKU), 113, 116, 222, 133, 105, 3245
+Average(SKU), 14.7080, 14.0776, 13.9234, 13.7895, 13.7619, 12.9282
+Change from previous DataGroup(Customer:City): Average(Product:SKU), 0.00, -0.63, -0.15, -0.13, -0.03, -0.83
+% Change from previous by column: Average(Product:SKU), 0.00%, -4.29%, -1.10%, -0.96%, -0.20%, -6.06%

@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 13)
+Employee, 2020, 2020, 2020, 2021, 2021, 2021, 2022, 2022, 2022, 2023, 2023, 2023
+NULL, Sum(Order Number), Moving Max of 3 by row: Sum(Order Number), Moving Max of 3 by column: Sum(Order Number), Sum(Order Number), Moving Max of 3 by row: Sum(Order Number), Moving Max of 3 by column: Sum(Order Number), Sum(Order Number), Moving Max of 3 by row: Sum(Order Number), Moving Max of 3 by column: Sum(Order Number), Sum(Order Number), Moving Max of 3 by row: Sum(Order Number), Moving Max of 3 by column: Sum(Order Number)
+Annie, 446647, 518648, 477497, 477497, 660524, 596485, 596485, 670633, 730929, 730929, 730929, 730929
+Eric, 518648, 518648, 660524, 660524, 660524, 670633, 670633, 670633, 670633, 631100, 730929, 670633
+Robert, 386534, 518648, 465240, 465240, 660524, 465240, 447109, 670633, 516800, 516800, 631100, 516800
+Sue, 398756, 398756, 648439, 648439, 648439, 648439, 571329, 571329, 648439, 478680, 516800, 571329

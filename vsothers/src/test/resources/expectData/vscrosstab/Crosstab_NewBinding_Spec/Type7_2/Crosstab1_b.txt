@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 3)
+Year(PRODUCE_DATE), PRODUCT_NAME, agg_calc
+2000, Easy Chess, 50
+2000, Fast Go Game, 25
+2000, Fast Mail, 50
+2000, WebCalendar, 25
+2001, 17 Inch LCD, 10
+2001, Combat Hero, 50
+2001, Green Planet, 25
+2001, House Hunter, 50
+2001, Info Folder, 50
+2001, InsideView, 50
+2001, Web Bridge, 50
+2001, Wireless Keyboard, 25
+2001, Wireless Mouse, 25
+2001, Xconnect Server, 10
+2006, 19 inch LCD, 15
+2006, Animal World, 50
+2006, Barbie"s Fashion, 50
+2006, Fancy Menus, 50
+2006, Learn ABC, 50
+2006, Math for Me, 25
+2006, Mega Icons, 25
+2006, MeToo AppServer, 10
+2006, NetStorage, 5
+2006, Sync Me, 25
+2006, True Action, 25

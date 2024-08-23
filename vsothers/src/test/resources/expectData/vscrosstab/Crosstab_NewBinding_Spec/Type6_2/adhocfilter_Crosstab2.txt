@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 25)
+Hour, Minute(order_time), Second(order_time), 2005, 2005, 2004, 2004, 2004, 2004, 2004, 2004, 2003, 2003, 2003, 2003, 2003, 2003, 2003, 2003, 2002, 2002, 2002, 2002, 2002, 2002
+NULL, NULL, NULL, CA, CA, CO, CO, IL, IL, MA, MA, CA, CA, CO, CO, IL, IL, MA, MA, CA, CA, IL, IL, MA, MA
+NULL, NULL, NULL, Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id), Sum_id2, Change from previous: Sum(customer_id)
+01, 01:01, 01:01:01, 9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL, NULL, NULL, NULL, NULL
+01, 01:05, 01:05:15, NULL, NULL, NULL, NULL, 10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+01, 01:15, 01:15:23, NULL, NULL, NULL, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+01, 01:25, 01:25:36, NULL, NULL, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 10, NULL, 57, NULL, 22, NULL, NULL, NULL, NULL, NULL
+01, 01:55, 01:55:35, NULL, NULL, NULL, NULL, NULL, NULL, 23, NULL, 13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+02, NULL, NULL, NULL, NULL, 4, NULL, 20, NULL, NULL, NULL, 18, NULL, 4, NULL, NULL, NULL, NULL, NULL, 18, NULL, 10, NULL, 46, NULL
+03, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 9, NULL, NULL, NULL, 34, NULL

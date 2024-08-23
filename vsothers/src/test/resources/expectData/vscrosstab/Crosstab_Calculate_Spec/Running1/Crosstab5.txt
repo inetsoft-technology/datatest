@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 10)
+Year(ORDER_DATE), Month(ORDER_DATE), 4, 4, 3, 3, 2, 2, 1, 1
+NULL, NULL, Running Sum by row: PopulationVariance(CUSTOMER_ID), Running Sum of year by row: Sum(CUSTOMER_ID), Running Sum by row: PopulationVariance(CUSTOMER_ID), Running Sum of year by row: Sum(CUSTOMER_ID), Running Sum by row: PopulationVariance(CUSTOMER_ID), Running Sum of year by row: Sum(CUSTOMER_ID), Running Sum by row: PopulationVariance(CUSTOMER_ID), Running Sum of year by row: Sum(CUSTOMER_ID)
+2020, Others, 23.1875, 101, 13.84, 132, 0, 12, 42.25, 37
+2020, 2020 Aug, 59.1875, 30, 14.09, 17, 93.8889, 92, 42.4722, 70
+2020, 2020 Jul, 125.4275, 123, 92.09, 161, 102.8889, 146, 42.4722, 105
+2020, 2020 Jun, 228.615, 186, 152.7775, 232, 185.5289, 233, 137.2778, 212

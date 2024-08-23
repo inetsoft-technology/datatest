@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 3)
+Second(PRODUCE_TIME), Running Sum of minute by row: Sum(CUSTOMER_ID), Sum(CUSTOMER_ID)
+NULL, 26, 26
+01:01:01, 6, 6
+01:13:13, 66, 66
+05:17:17, 66, 66
+09:09:09, 88, 88
+11:59:59, 33, 33
+12:12:12, 40, 40

@@ -1,0 +1,52 @@
+The data size(row x col) is:(51 x 5)
+reseller, state, city, NULL, Sum(customer_id)/Running Sum by row: Sum(customer_id)/Running Sum reseller: Sum(customer_id)/Running Sum state: Sum(customer_id)/Running Sum city: Sum(customer_id)
+0, AZ, Tucson, Sum(customer_id), 20
+0, AZ, Tucson, Running Sum by row: Sum(customer_id), 20
+0, AZ, Tucson, Running Sum reseller: Sum(customer_id), 20
+0, AZ, Tucson, Running Sum state: Sum(customer_id), 20
+0, AZ, Tucson, Running Sum city: Sum(customer_id), 20
+0, CA, Los Angeles, Sum(customer_id), 21
+0, CA, Los Angeles, Running Sum by row: Sum(customer_id), 21
+0, CA, Los Angeles, Running Sum reseller: Sum(customer_id), 41
+0, CA, Los Angeles, Running Sum state: Sum(customer_id), 21
+0, CA, Los Angeles, Running Sum city: Sum(customer_id), 21
+0, CA, Albany, Sum(customer_id), 16
+0, CA, Albany, Running Sum by row: Sum(customer_id), 37
+0, CA, Albany, Running Sum reseller: Sum(customer_id), 57
+0, CA, Albany, Running Sum state: Sum(customer_id), 37
+0, CA, Albany, Running Sum city: Sum(customer_id), 16
+0, CO, Denver, Sum(customer_id), 8
+0, CO, Denver, Running Sum by row: Sum(customer_id), 8
+0, CO, Denver, Running Sum reseller: Sum(customer_id), 65
+0, CO, Denver, Running Sum state: Sum(customer_id), 8
+0, CO, Denver, Running Sum city: Sum(customer_id), 8
+0, NJ, Plainfield, Sum(customer_id), 35
+0, NJ, Plainfield, Running Sum by row: Sum(customer_id), 35
+0, NJ, Plainfield, Running Sum reseller: Sum(customer_id), 100
+0, NJ, Plainfield, Running Sum state: Sum(customer_id), 35
+0, NJ, Plainfield, Running Sum city: Sum(customer_id), 35
+0, NJ, New Brunswick, Sum(customer_id), 25
+0, NJ, New Brunswick, Running Sum by row: Sum(customer_id), 60
+0, NJ, New Brunswick, Running Sum reseller: Sum(customer_id), 125
+0, NJ, New Brunswick, Running Sum state: Sum(customer_id), 60
+0, NJ, New Brunswick, Running Sum city: Sum(customer_id), 25
+1, CA, Los Angeles, Sum(customer_id), 13
+1, CA, Los Angeles, Running Sum by row: Sum(customer_id), 13
+1, CA, Los Angeles, Running Sum reseller: Sum(customer_id), 13
+1, CA, Los Angeles, Running Sum state: Sum(customer_id), 13
+1, CA, Los Angeles, Running Sum city: Sum(customer_id), 13
+1, CA, San Francisco, Sum(customer_id), 9
+1, CA, San Francisco, Running Sum by row: Sum(customer_id), 22
+1, CA, San Francisco, Running Sum reseller: Sum(customer_id), 22
+1, CA, San Francisco, Running Sum state: Sum(customer_id), 22
+1, CA, San Francisco, Running Sum city: Sum(customer_id), 9
+1, CO, Boulder, Sum(customer_id), 4
+1, CO, Boulder, Running Sum by row: Sum(customer_id), 4
+1, CO, Boulder, Running Sum reseller: Sum(customer_id), 26
+1, CO, Boulder, Running Sum state: Sum(customer_id), 4
+1, CO, Boulder, Running Sum city: Sum(customer_id), 4
+1, NJ, Newark, Sum(customer_id), 19
+1, NJ, Newark, Running Sum by row: Sum(customer_id), 19
+1, NJ, Newark, Running Sum reseller: Sum(customer_id), 45
+1, NJ, Newark, Running Sum state: Sum(customer_id), 19
+1, NJ, Newark, Running Sum city: Sum(customer_id), 19

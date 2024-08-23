@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+Category, NULL, Correlation(Quantity Purchased, TotalReturned)/Average(TotalPurchased)
+Business, Correlation(Quantity Purchased, TotalReturned), -0.0462
+Business, Average(TotalPurchased), $25,103
+Educational, Correlation(Quantity Purchased, TotalReturned), 0.2621
+Educational, Average(TotalPurchased), $1,683
+Games, Correlation(Quantity Purchased, TotalReturned), 0.0662
+Games, Average(TotalPurchased), $1,640
+Graphics, Correlation(Quantity Purchased, TotalReturned), 0.0951
+Graphics, Average(TotalPurchased), $3,351
+Hardware, Correlation(Quantity Purchased, TotalReturned), 0.0796
+Hardware, Average(TotalPurchased), $10,173
+Office Tools, Correlation(Quantity Purchased, TotalReturned), 0.1372
+Office Tools, Average(TotalPurchased), $3,371
+Personal, Correlation(Quantity Purchased, TotalReturned), 0.0319
+Personal, Average(TotalPurchased), $3,013

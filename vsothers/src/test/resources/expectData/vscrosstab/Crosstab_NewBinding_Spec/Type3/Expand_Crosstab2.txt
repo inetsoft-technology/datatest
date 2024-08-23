@@ -1,0 +1,23 @@
+The data size(row x col) is:(22 x 12)
+QuarterOfYear(Quarter(range_month)), WeekOfYear(expDate), NULL, 0, 0, 0, 0, 1, 1, 1, 1, Grand Total
+NULL, NULL, NULL, NY, NJ, AA_NamedGroup, Others, IL, CA, NJ, Others, NULL
+1st, 46, Average(expid), NULL, NULL, NULL, 59, NULL, NULL, NULL, NULL, 59
+1st, 46, Sum(CUSTOMER_ID), NULL, NULL, NULL, 59, NULL, NULL, NULL, NULL, 59
+1st, 47, Average(expid), 14, NULL, 28, 58, 20, NULL, NULL, NULL, 29.6
+1st, 47, Sum(CUSTOMER_ID), 7, NULL, 28, 29, 10, NULL, NULL, NULL, 74
+1st, 48, Average(expid), NULL, NULL, NULL, 44, NULL, NULL, 38, NULL, 41
+1st, 48, Sum(CUSTOMER_ID), NULL, NULL, NULL, 22, NULL, NULL, 19, NULL, 41
+1st, 49, Average(expid), NULL, NULL, 12, NULL, NULL, NULL, NULL, 68, 40
+1st, 49, Sum(CUSTOMER_ID), NULL, NULL, 6, NULL, NULL, NULL, NULL, 34, 40
+2nd, 1, Average(expid), NULL, 3, 26, NULL, NULL, NULL, NULL, NULL, 14.5
+2nd, 1, Sum(CUSTOMER_ID), NULL, 3, 26, NULL, NULL, NULL, NULL, NULL, 29
+2nd, 49, Average(expid), NULL, NULL, 40, NULL, NULL, NULL, NULL, NULL, 40
+2nd, 49, Sum(CUSTOMER_ID), NULL, NULL, 20, NULL, NULL, NULL, NULL, NULL, 20
+2nd, 50, Average(expid), NULL, NULL, NULL, 83, NULL, NULL, NULL, 68, 78
+2nd, 50, Sum(CUSTOMER_ID), NULL, NULL, NULL, 83, NULL, NULL, NULL, 34, 117
+2nd, 51, Average(expid), 6, NULL, NULL, 81.3333, NULL, 26, NULL, 68, 57.3333
+2nd, 51, Sum(CUSTOMER_ID), 3, NULL, NULL, 122, NULL, 13, NULL, 34, 172
+2nd, 52, Average(expid), NULL, 50, NULL, NULL, NULL, NULL, NULL, 68, 59
+2nd, 52, Sum(CUSTOMER_ID), NULL, 25, NULL, NULL, NULL, NULL, NULL, 34, 59
+Grand Total, NULL, Average(expid), 10, 18.6667, 26.6667, 70, 20, 26, 38, 68, 45.2593
+Grand Total, NULL, Sum(CUSTOMER_ID), 10, 28, 80, 315, 10, 13, 19, 136, 611

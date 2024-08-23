@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 10)
+CalcField1, NULL, 0, 0, 0, 0, 1, 1, 1, 1
+NULL, NULL, 2020, 2021, 2022, 2023, 2020, 2021, 2022, 2023
+USA East, Sum(Product:Price), $177,161.00, $261,025.00, $196,647.00, $220,531.00, $38,307.00, $37,174.00, $51,450.00, $21,372.00
+USA East, Change from next Year(calc_date): Sum(Product:Price), -$83,864.00, $64,378.00, -$23,884.00, NULL, $1,133.00, -$14,276.00, $30,078.00, NULL
+USA West, Sum(Product:Price), $109,301.00, $102,629.00, $113,450.00, $159,124.00, $58,517.00, $45,327.00, $60,212.00, $62,392.00
+USA West, Change from next Year(calc_date): Sum(Product:Price), $6,672.00, -$10,821.00, -$45,674.00, NULL, $13,190.00, -$14,885.00, -$2,180.00, NULL

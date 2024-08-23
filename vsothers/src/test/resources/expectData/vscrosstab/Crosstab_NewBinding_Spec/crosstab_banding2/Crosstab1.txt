@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+First Name, NULL, CO, NJ
+Annie, Sum(Paid), 38, NULL
+Annie, Sum(Num), 751.1K, NULL
+Eric, Sum(Paid), 31, 355
+Eric, Sum(Num), 498.9K, 4791.5K
+Robert, Sum(Paid), 49, NULL
+Robert, Sum(Num), 729.4K, NULL
+Sue, Sum(Paid), 33, 282
+Sue, Sum(Num), 419.6K, 3739.9K

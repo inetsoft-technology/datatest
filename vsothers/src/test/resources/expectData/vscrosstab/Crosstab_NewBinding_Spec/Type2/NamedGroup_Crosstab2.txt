@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 6)
+DataGroup(range_id), Quarter, false, false, false, false
+NULL, NULL, FL, FL, AK, AK
+NULL, NULL, Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1), Max(date_range1), Value of previous QuarterOfYear(NDate): Max(date_range1)
+7-13, 1st, NULL, NULL, 2000 1st, NULL
+7-13, 2nd, NULL, NULL, 2000 2nd, 2000 1st
+7-13, 3rd, NULL, NULL, 2000 3rd, 2000 2nd
+7-13, 4th, NULL, NULL, 1999 4th, 2000 3rd
+NamedGroup, 1st, 1999 1st, NULL, 2000 1st, NULL
+NamedGroup, 2nd, NULL, 1999 1st, 2000 2nd, 2000 1st
+NamedGroup, 3rd, 1999 3rd, NULL, 2000 3rd, 2000 2nd

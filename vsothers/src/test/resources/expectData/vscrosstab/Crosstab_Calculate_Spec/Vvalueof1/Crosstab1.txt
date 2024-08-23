@@ -1,0 +1,32 @@
+The data size(row x col) is:(31 x 8)
+RESELLER, STATE, CITY, Sum(CUSTOMER_ID), Value of first by row: Sum(CUSTOMER_ID), Value of first RESELLER: Sum(CUSTOMER_ID), Value of first STATE: Sum(CUSTOMER_ID), Value of first CITY: Sum(CUSTOMER_ID)
+false, CA, Los Angeles, 13, 13, 13, 13, 13
+false, CA, San Francisco, 9, 13, 9, 9, 13
+false, CO, Boulder, 4, 4, 4, 0, 4
+false, IL, Chicago, 10, 10, 10, 0, 10
+false, MA, Boston, 23, 23, 23, 0, 23
+false, MA, Cambridge, 34, 23, 34, 0, 23
+false, NJ, Newark, 19, 19, 19, 0, 19
+false, WA, Seattle, 27, 27, 27, 0, 27
+true, AZ, Tucson, 20, 20, 0, 20, 20
+true, CA, Albany, 16, 16, 0, 0, 16
+true, CA, Los Angeles, 21, 16, 13, 0, 16
+true, CO, Denver, 8, 8, 0, 0, 8
+true, CT, Hartford, 6, 6, 0, 0, 6
+true, FL, Orlando, 12, 12, 0, 0, 12
+true, MA, Boston, 18, 18, 23, 0, 18
+true, MA, Springfield, 30, 18, 0, 0, 18
+true, MD, Baltimore, 38, 38, 0, 0, 38
+true, MD, Rockville, 14, 38, 0, 0, 38
+true, NJ, Camden, 15, 15, 0, 0, 15
+true, NJ, Middletown, 2, 15, 0, 0, 15
+true, NJ, New Brunswick, 25, 15, 0, 0, 15
+true, NJ, Plainfield, 35, 15, 0, 0, 15
+true, NJ, Wayne, 1, 15, 0, 0, 15
+true, NV, Las Vegas, 32, 32, 0, 0, 32
+true, NY, New York, 51, 51, 0, 0, 51
+true, PA, York, 28, 28, 0, 0, 28
+true, TX, Austin, 11, 11, 0, 0, 11
+true, TX, Dallas, 57, 11, 0, 0, 11
+true, TX, Houston, 22, 11, 0, 0, 11
+true, WA, Olympia, 29, 29, 0, 0, 29

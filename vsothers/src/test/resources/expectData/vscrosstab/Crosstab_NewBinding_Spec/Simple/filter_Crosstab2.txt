@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+Year(range), chaneFromByCid
+2020, NULL
+2021, -15
+2022, 148
+2023, -148

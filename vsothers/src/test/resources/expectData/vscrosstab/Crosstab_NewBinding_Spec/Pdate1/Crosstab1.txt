@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 2)
+Month(P_ORDER_DATE_Period), Sum(CUSTOMER_ID)
+2003 Feb, 302
+2005 Oct, 237
