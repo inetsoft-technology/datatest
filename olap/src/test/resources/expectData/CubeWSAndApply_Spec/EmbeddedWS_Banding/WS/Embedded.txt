@@ -1,0 +1,24 @@
+The table size(row x col) is:(23 x 6)
+Category, Color, Reseller Sales Amount, Discount Amount, range_sales amount, f_category
+Accessories, Black, 87915.3689, 1207.1866, <90000, Accessories
+Accessories, Blue, 91052.8681, 1314.2907, 90000-1000000, Accessories
+Accessories, NA, 247066.247, 2569.6919, 90000-1000000, Accessories
+Accessories, Red, 79744.6953, 1093.5148, <90000, Accessories
+Accessories, Silver, 65518.7485, 503.3453, <90000, Accessories
+Bikes, Black, 24469987.8234, 99361.2404, >=1000000, Bikes
+Bikes, Blue, 6205258.3522, 51553.9114, >=1000000, Bikes
+Bikes, Red, 12114587.8898, 35541.9457, >=1000000, Bikes
+Bikes, Silver, 11931999.4272, 88106.6003, >=1000000, Bikes
+Bikes, Yellow, 11580548.0644, 220076.9554, >=1000000, Bikes
+Clothing, Black, 751810.8972, 11491.3027, 90000-1000000, Clothing
+Clothing, Blue, 223801.3707, 4055.6837, 90000-1000000, Clothing
+Clothing, Multi, 542559.5121, 2551.3208, 90000-1000000, Clothing
+Clothing, White, 24638.8081, 284.2987, <90000, Clothing
+Clothing, Yellow, 235030.251, 2581.8994, 90000-1000000, Clothing
+Components, Black, 4087998.0118, 1079.4744, >=1000000, Components
+Components, Blue, 803642.0958, 1388.1064, 90000-1000000, Components
+Components, NA, 417120.9711, 316.1342, 90000-1000000, Components
+Components, Red, 1679227.6977, 132.9996, >=1000000, Components
+Components, Silver, 2666432.6902, 705.8793, >=1000000, Components
+Components, Silver/Black, 147483.9098, 46.9742, 90000-1000000, Components
+Components, Yellow, 1997171.282, 1545.1703, >=1000000, Components

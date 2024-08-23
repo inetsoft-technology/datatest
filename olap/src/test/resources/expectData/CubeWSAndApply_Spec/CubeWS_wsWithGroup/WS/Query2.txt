@@ -1,0 +1,571 @@
+The table size(row x col) is:(570 x 9)
+Class, COLOR_1, Model Name, CATEGORY_1, End Date, Category, Freight Cost, Internet Order Count, Discount Amount
+High, Blue, HL Bottom Bracket, Components, Active, Components, 989.5426, NULL, 1388.1064
+High, Blue, HL Crankset, Components, Active, Components, 3715.5711, NULL, 1388.1064
+High, Blue, HL Fork, Components, 06 30, 2003, Components, 1525.8675, NULL, 1388.1064
+High, Blue, HL Headset, Components, 06 30, 2003, Components, 477.0958, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, 06 30, 2002, Components, 8463.5976, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, 06 30, 2002, Components, 9538.4149, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, 06 30, 2003, Components, 14373.2408, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, 06 30, 2003, Components, 17546.2283, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, Active, Components, 15243.732, NULL, 1388.1064
+High, Blue, HL Mountain Frame, Components, Active, Components, 18961.515, NULL, 1388.1064
+High, Blue, HL Mountain Front Wheel, Components, 06 30, 2003, Components, 999.7172, NULL, 1388.1064
+High, Blue, HL Mountain Handlebars, Components, 06 30, 2003, Components, 426.4097, NULL, 1388.1064
+High, Blue, HL Mountain Handlebars, Components, Active, Components, 432.9752, NULL, 1388.1064
+High, Blue, HL Mountain Pedal, Components, Active, Components, 950.4642, NULL, 1388.1064
+High, Blue, HL Mountain Rear Wheel, Components, 06 30, 2003, Components, 4150.3359, NULL, 1388.1064
+High, Blue, HL Mountain Seat/Saddle 2, Components, Active, Components, 409.8024, NULL, 1388.1064
+High, Blue, HL Mountain Tire, Accessories, Active, Accessories, 1221.5, 1396, 1314.2907
+High, Blue, HL Road Frame, Components, 06 30, 2002, Components, 1080.2583, NULL, 1388.1064
+High, Blue, HL Road Frame, Components, 06 30, 2003, Components, 5739.0164, NULL, 1388.1064
+High, Blue, HL Road Frame, Components, 06 30, 2003, Components, 10638.6523, NULL, 1388.1064
+High, Blue, HL Road Frame, Components, Active, Components, 5883.465, NULL, 1388.1064
+High, Blue, HL Road Frame, Components, Active, Components, 10263.855, NULL, 1388.1064
+High, Blue, HL Road Front Wheel, Components, 06 30, 2003, Components, 2807.1603, NULL, 1388.1064
+High, Blue, HL Road Handlebars, Components, 06 30, 2003, Components, 534.652, NULL, 1388.1064
+High, Blue, HL Road Handlebars, Components, Active, Components, 550.2398, NULL, 1388.1064
+High, Blue, HL Road Pedal, Components, Active, Components, 821.2466, NULL, 1388.1064
+High, Blue, HL Road Rear Wheel, Components, 06 30, 2003, Components, 492.7428, NULL, 1388.1064
+High, Blue, HL Road Seat/Saddle 2, Components, Active, Components, 105.8064, NULL, 1388.1064
+High, Blue, HL Road Tire, Accessories, Active, Accessories, 699.27, 858, 1314.2907
+High, Blue, HL Touring Frame, Components, Active, Components, 16451.1428, NULL, 1388.1064
+High, Blue, HL Touring Frame, Components, Active, Components, 17235.3217, NULL, 1388.1064
+High, Blue, HL Touring Handlebars, Components, Active, Components, 302.184, NULL, 1388.1064
+High, Blue, HL Touring Seat/Saddle, Components, Active, Components, 336.3696, NULL, 1388.1064
+High, Blue, Mountain-100, Bikes, 06 30, 2002, Bikes, 117880.7966, 185, 51553.9114
+High, Blue, Mountain-100, Bikes, 06 30, 2002, Bikes, 129871.2354, 211, 51553.9114
+High, Blue, Mountain-200, Bikes, 06 30, 2003, Bikes, 114615.9146, 521, 51553.9114
+High, Blue, Mountain-200, Bikes, 06 30, 2003, Bikes, 122684.6052, 554, 51553.9114
+High, Blue, Mountain-200, Bikes, Active, Bikes, 149544.5253, 1215, 51553.9114
+High, Blue, Mountain-200, Bikes, Active, Bikes, 170309.5158, 1262, 51553.9114
+High, Blue, Road-150, Bikes, 06 30, 2002, Bikes, 197842.6427, 1551, 51553.9114
+High, Blue, Road-250, Bikes, 06 30, 2003, Bikes, 105175.9454, 586, 51553.9114
+High, Blue, Road-250, Bikes, 06 30, 2003, Bikes, 117064.1768, 611, 51553.9114
+High, Blue, Road-250, Bikes, Active, Bikes, 19070.3565, 134, 51553.9114
+High, Blue, Road-250, Bikes, Active, Bikes, 104407.5953, 572, 51553.9114
+High, Blue, Touring-1000, Bikes, Active, Bikes, 114821.3506, 621, 51553.9114
+High, Blue, Touring-1000, Bikes, Active, Bikes, 128073.8105, 634, 51553.9114
+High, gBlockSliver, HL Bottom Bracket, Components, Active, Components, 989.5426, NULL, 1832.3279
+High, gBlockSliver, HL Crankset, Components, Active, Components, 3715.5711, NULL, 1832.3279
+High, gBlockSliver, HL Fork, Components, 06 30, 2003, Components, 1525.8675, NULL, 1832.3279
+High, gBlockSliver, HL Headset, Components, 06 30, 2003, Components, 477.0958, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, 06 30, 2002, Components, 8463.5976, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, 06 30, 2002, Components, 9538.4149, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, 06 30, 2003, Components, 14373.2408, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, 06 30, 2003, Components, 17546.2283, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, Active, Components, 15243.732, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Frame, Components, Active, Components, 18961.515, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Front Wheel, Components, 06 30, 2003, Components, 999.7172, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Handlebars, Components, 06 30, 2003, Components, 426.4097, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Handlebars, Components, Active, Components, 432.9752, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Pedal, Components, Active, Components, 950.4642, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Rear Wheel, Components, 06 30, 2003, Components, 4150.3359, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Seat/Saddle 2, Components, Active, Components, 409.8024, NULL, 1832.3279
+High, gBlockSliver, HL Mountain Tire, Accessories, Active, Accessories, 1221.5, 1396, 1710.5319
+High, gBlockSliver, HL Road Frame, Components, 06 30, 2002, Components, 1080.2583, NULL, 1832.3279
+High, gBlockSliver, HL Road Frame, Components, 06 30, 2003, Components, 5739.0164, NULL, 1832.3279
+High, gBlockSliver, HL Road Frame, Components, 06 30, 2003, Components, 10638.6523, NULL, 1832.3279
+High, gBlockSliver, HL Road Frame, Components, Active, Components, 5883.465, NULL, 1832.3279
+High, gBlockSliver, HL Road Frame, Components, Active, Components, 10263.855, NULL, 1832.3279
+High, gBlockSliver, HL Road Front Wheel, Components, 06 30, 2003, Components, 2807.1603, NULL, 1832.3279
+High, gBlockSliver, HL Road Handlebars, Components, 06 30, 2003, Components, 534.652, NULL, 1832.3279
+High, gBlockSliver, HL Road Handlebars, Components, Active, Components, 550.2398, NULL, 1832.3279
+High, gBlockSliver, HL Road Pedal, Components, Active, Components, 821.2466, NULL, 1832.3279
+High, gBlockSliver, HL Road Rear Wheel, Components, 06 30, 2003, Components, 492.7428, NULL, 1832.3279
+High, gBlockSliver, HL Road Seat/Saddle 2, Components, Active, Components, 105.8064, NULL, 1832.3279
+High, gBlockSliver, HL Road Tire, Accessories, Active, Accessories, 699.27, 858, 1710.5319
+High, gBlockSliver, HL Touring Frame, Components, Active, Components, 16451.1428, NULL, 1832.3279
+High, gBlockSliver, HL Touring Frame, Components, Active, Components, 17235.3217, NULL, 1832.3279
+High, gBlockSliver, HL Touring Handlebars, Components, Active, Components, 302.184, NULL, 1832.3279
+High, gBlockSliver, HL Touring Seat/Saddle, Components, Active, Components, 336.3696, NULL, 1832.3279
+High, gBlockSliver, Mountain-100, Bikes, 06 30, 2002, Bikes, 117880.7966, 185, 88106.6003
+High, gBlockSliver, Mountain-100, Bikes, 06 30, 2002, Bikes, 129871.2354, 211, 88106.6003
+High, gBlockSliver, Mountain-200, Bikes, 06 30, 2003, Bikes, 114615.9146, 521, 88106.6003
+High, gBlockSliver, Mountain-200, Bikes, 06 30, 2003, Bikes, 122684.6052, 554, 88106.6003
+High, gBlockSliver, Mountain-200, Bikes, Active, Bikes, 149544.5253, 1215, 88106.6003
+High, gBlockSliver, Mountain-200, Bikes, Active, Bikes, 170309.5158, 1262, 88106.6003
+High, gBlockSliver, Road-150, Bikes, 06 30, 2002, Bikes, 197842.6427, 1551, 88106.6003
+High, gBlockSliver, Road-250, Bikes, 06 30, 2003, Bikes, 105175.9454, 586, 88106.6003
+High, gBlockSliver, Road-250, Bikes, 06 30, 2003, Bikes, 117064.1768, 611, 88106.6003
+High, gBlockSliver, Road-250, Bikes, Active, Bikes, 19070.3565, 134, 88106.6003
+High, gBlockSliver, Road-250, Bikes, Active, Bikes, 104407.5953, 572, 88106.6003
+High, gBlockSliver, Touring-1000, Bikes, Active, Bikes, 114821.3506, 621, 88106.6003
+High, gBlockSliver, Touring-1000, Bikes, Active, Bikes, 128073.8105, 634, 88106.6003
+High, gInvliad, HL Bottom Bracket, Components, Active, Components, 989.5426, NULL, 316.1342
+High, gInvliad, HL Crankset, Components, Active, Components, 3715.5711, NULL, 316.1342
+High, gInvliad, HL Fork, Components, 06 30, 2003, Components, 1525.8675, NULL, 316.1342
+High, gInvliad, HL Headset, Components, 06 30, 2003, Components, 477.0958, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, 06 30, 2002, Components, 8463.5976, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, 06 30, 2002, Components, 9538.4149, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, 06 30, 2003, Components, 14373.2408, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, 06 30, 2003, Components, 17546.2283, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, Active, Components, 15243.732, NULL, 316.1342
+High, gInvliad, HL Mountain Frame, Components, Active, Components, 18961.515, NULL, 316.1342
+High, gInvliad, HL Mountain Front Wheel, Components, 06 30, 2003, Components, 999.7172, NULL, 316.1342
+High, gInvliad, HL Mountain Handlebars, Components, 06 30, 2003, Components, 426.4097, NULL, 316.1342
+High, gInvliad, HL Mountain Handlebars, Components, Active, Components, 432.9752, NULL, 316.1342
+High, gInvliad, HL Mountain Pedal, Components, Active, Components, 950.4642, NULL, 316.1342
+High, gInvliad, HL Mountain Rear Wheel, Components, 06 30, 2003, Components, 4150.3359, NULL, 316.1342
+High, gInvliad, HL Mountain Seat/Saddle 2, Components, Active, Components, 409.8024, NULL, 316.1342
+High, gInvliad, HL Mountain Tire, Accessories , Active, Accessories, 1221.5, 1396, 2569.6919
+High, gInvliad, HL Road Frame, Components, 06 30, 2002, Components, 1080.2583, NULL, 316.1342
+High, gInvliad, HL Road Frame, Components, 06 30, 2003, Components, 5739.0164, NULL, 316.1342
+High, gInvliad, HL Road Frame, Components, 06 30, 2003, Components, 10638.6523, NULL, 316.1342
+High, gInvliad, HL Road Frame, Components, Active, Components, 5883.465, NULL, 316.1342
+High, gInvliad, HL Road Frame, Components, Active, Components, 10263.855, NULL, 316.1342
+High, gInvliad, HL Road Front Wheel, Components, 06 30, 2003, Components, 2807.1603, NULL, 316.1342
+High, gInvliad, HL Road Handlebars, Components, 06 30, 2003, Components, 534.652, NULL, 316.1342
+High, gInvliad, HL Road Handlebars, Components, Active, Components, 550.2398, NULL, 316.1342
+High, gInvliad, HL Road Pedal, Components, Active, Components, 821.2466, NULL, 316.1342
+High, gInvliad, HL Road Rear Wheel, Components, 06 30, 2003, Components, 492.7428, NULL, 316.1342
+High, gInvliad, HL Road Seat/Saddle 2, Components, Active, Components, 105.8064, NULL, 316.1342
+High, gInvliad, HL Road Tire, Accessories , Active, Accessories, 699.27, 858, 2569.6919
+High, gInvliad, HL Touring Frame, Components, Active, Components, 16451.1428, NULL, 316.1342
+High, gInvliad, HL Touring Frame, Components, Active, Components, 17235.3217, NULL, 316.1342
+High, gInvliad, HL Touring Handlebars, Components, Active, Components, 302.184, NULL, 316.1342
+High, gInvliad, HL Touring Seat/Saddle, Components, Active, Components, 336.3696, NULL, 316.1342
+High, gYellow, HL Bottom Bracket, Components, Active, Components, 989.5426, NULL, 1545.1703
+High, gYellow, HL Crankset, Components, Active, Components, 3715.5711, NULL, 1545.1703
+High, gYellow, HL Fork, Components, 06 30, 2003, Components, 1525.8675, NULL, 1545.1703
+High, gYellow, HL Headset, Components, 06 30, 2003, Components, 477.0958, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, 06 30, 2002, Components, 8463.5976, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, 06 30, 2002, Components, 9538.4149, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, 06 30, 2003, Components, 14373.2408, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, 06 30, 2003, Components, 17546.2283, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, Active, Components, 15243.732, NULL, 1545.1703
+High, gYellow, HL Mountain Frame, Components, Active, Components, 18961.515, NULL, 1545.1703
+High, gYellow, HL Mountain Front Wheel, Components, 06 30, 2003, Components, 999.7172, NULL, 1545.1703
+High, gYellow, HL Mountain Handlebars, Components, 06 30, 2003, Components, 426.4097, NULL, 1545.1703
+High, gYellow, HL Mountain Handlebars, Components, Active, Components, 432.9752, NULL, 1545.1703
+High, gYellow, HL Mountain Pedal, Components, Active, Components, 950.4642, NULL, 1545.1703
+High, gYellow, HL Mountain Rear Wheel, Components, 06 30, 2003, Components, 4150.3359, NULL, 1545.1703
+High, gYellow, HL Mountain Seat/Saddle 2, Components, Active, Components, 409.8024, NULL, 1545.1703
+High, gYellow, HL Road Frame, Components, 06 30, 2002, Components, 1080.2583, NULL, 1545.1703
+High, gYellow, HL Road Frame, Components, 06 30, 2003, Components, 5739.0164, NULL, 1545.1703
+High, gYellow, HL Road Frame, Components, 06 30, 2003, Components, 10638.6523, NULL, 1545.1703
+High, gYellow, HL Road Frame, Components, Active, Components, 5883.465, NULL, 1545.1703
+High, gYellow, HL Road Frame, Components, Active, Components, 10263.855, NULL, 1545.1703
+High, gYellow, HL Road Front Wheel, Components, 06 30, 2003, Components, 2807.1603, NULL, 1545.1703
+High, gYellow, HL Road Handlebars, Components, 06 30, 2003, Components, 534.652, NULL, 1545.1703
+High, gYellow, HL Road Handlebars, Components, Active, Components, 550.2398, NULL, 1545.1703
+High, gYellow, HL Road Pedal, Components, Active, Components, 821.2466, NULL, 1545.1703
+High, gYellow, HL Road Rear Wheel, Components, 06 30, 2003, Components, 492.7428, NULL, 1545.1703
+High, gYellow, HL Road Seat/Saddle 2, Components, Active, Components, 105.8064, NULL, 1545.1703
+High, gYellow, HL Touring Frame, Components, Active, Components, 16451.1428, NULL, 1545.1703
+High, gYellow, HL Touring Frame, Components, Active, Components, 17235.3217, NULL, 1545.1703
+High, gYellow, HL Touring Handlebars, Components, Active, Components, 302.184, NULL, 1545.1703
+High, gYellow, HL Touring Seat/Saddle, Components, Active, Components, 336.3696, NULL, 1545.1703
+High, Red, Mountain-100, Bikes, 06 30, 2002, Bikes, 117880.7966, 185, 35541.9457
+High, Red, Mountain-100, Bikes, 06 30, 2002, Bikes, 129871.2354, 211, 35541.9457
+High, Red, Mountain-200, Bikes, 06 30, 2003, Bikes, 114615.9146, 521, 35541.9457
+High, Red, Mountain-200, Bikes, 06 30, 2003, Bikes, 122684.6052, 554, 35541.9457
+High, Red, Mountain-200, Bikes, Active, Bikes, 149544.5253, 1215, 35541.9457
+High, Red, Mountain-200, Bikes, Active, Bikes, 170309.5158, 1262, 35541.9457
+High, Red, Road-150, Bikes, 06 30, 2002, Bikes, 197842.6427, 1551, 35541.9457
+High, Red, Road-250, Bikes, 06 30, 2003, Bikes, 105175.9454, 586, 35541.9457
+High, Red, Road-250, Bikes, 06 30, 2003, Bikes, 117064.1768, 611, 35541.9457
+High, Red, Road-250, Bikes, Active, Bikes, 19070.3565, 134, 35541.9457
+High, Red, Road-250, Bikes, Active, Bikes, 104407.5953, 572, 35541.9457
+High, Red, Touring-1000, Bikes, Active, Bikes, 114821.3506, 621, 35541.9457
+High, Red, Touring-1000, Bikes, Active, Bikes, 128073.8105, 634, 35541.9457
+Low, Blue, LL Bottom Bracket, Components, Active, Components, 306.1282, NULL, 1388.1064
+Low, Blue, LL Crankset, Components, Active, Components, 1121.3862, NULL, 1388.1064
+Low, Blue, LL Fork, Components, 06 30, 2003, Components, 422.427, NULL, 1388.1064
+Low, Blue, LL Headset, Components, 06 30, 2003, Components, 48.735, NULL, 1388.1064
+Low, Blue, LL Mountain Frame, Components, Active, Components, 5457.0055, NULL, 1388.1064
+Low, Blue, LL Mountain Frame, Components, Active, Components, 7589.6409, NULL, 1388.1064
+Low, Blue, LL Mountain Front Wheel, Components, 06 30, 2003, Components, 561.5754, NULL, 1388.1064
+Low, Blue, LL Mountain Handlebars, Components, 06 30, 2003, Components, 255.094, NULL, 1388.1064
+Low, Blue, LL Mountain Handlebars, Components, Active, Components, 295.1145, NULL, 1388.1064
+Low, Blue, LL Mountain Pedal, Components, Active, Components, 272.706, NULL, 1388.1064
+Low, Blue, LL Mountain Rear Wheel, Components, 06 30, 2003, Components, 450.135, NULL, 1388.1064
+Low, Blue, LL Mountain Seat/Saddle 2, Components, Active, Components, 140.9239, NULL, 1388.1064
+Low, Blue, LL Mountain Tire, Accessories, Active, Accessories, 538.5776, 862, 1314.2907
+Low, Blue, LL Road Frame, Components, 06 30, 2002, Components, 2326.0109, NULL, 1388.1064
+Low, Blue, LL Road Frame, Components, 06 30, 2002, Components, 4727.2241, NULL, 1388.1064
+Low, Blue, LL Road Frame, Components, 06 30, 2003, Components, 6062.7057, NULL, 1388.1064
+Low, Blue, LL Road Frame, Components, 06 30, 2003, Components, 12237.0867, NULL, 1388.1064
+Low, Blue, LL Road Frame, Components, Active, Components, 5292.3072, NULL, 1388.1064
+Low, Blue, LL Road Handlebars, Components, 06 30, 2003, Components, 67.4179, NULL, 1388.1064
+Low, Blue, LL Road Handlebars, Components, Active, Components, 68.1462, NULL, 1388.1064
+Low, Blue, LL Road Pedal, Components, Active, Components, 527.1886, NULL, 1388.1064
+Low, Blue, LL Road Rear Wheel, Components, 06 30, 2003, Components, 1462.2242, NULL, 1388.1064
+Low, Blue, LL Road Seat/Saddle 1, Components, Active, Components, 4.068, NULL, 1388.1064
+Low, Blue, LL Road Tire, Accessories, Active, Accessories, 560.9412, 1044, 1314.2907
+Low, Blue, LL Touring Frame, Components, Active, Components, 2855.7423, NULL, 1388.1064
+Low, Blue, LL Touring Frame, Components, Active, Components, 4516.0064, NULL, 1388.1064
+Low, Blue, LL Touring Handlebars, Components, Active, Components, 38.7164, NULL, 1388.1064
+Low, Blue, LL Touring Seat/Saddle, Components, Active, Components, 37.0188, NULL, 1388.1064
+Low, Blue, Mountain-500, Bikes, Active, Bikes, 15462.646, 252, 51553.9114
+Low, Blue, Mountain-500, Bikes, Active, Bikes, 17828.8567, 227, 51553.9114
+Low, Blue, Road-650, Bikes, 06 30, 2002, Bikes, 26008.4528, 139, 51553.9114
+Low, Blue, Road-650, Bikes, 06 30, 2002, Bikes, 33802.3134, 120, 51553.9114
+Low, Blue, Road-650, Bikes, 06 30, 2003, Bikes, 62994.5545, 290, 51553.9114
+Low, Blue, Road-650, Bikes, 06 30, 2003, Bikes, 79382.8263, 303, 51553.9114
+Low, Blue, Road-750, Bikes, Active, Bikes, 43632.2283, 1443, 51553.9114
+Low, Blue, Touring-3000, Bikes, Active, Bikes, 27956.3251, 277, 51553.9114
+Low, Blue, Touring-3000, Bikes, Active, Bikes, 33228.1672, 263, 51553.9114
+Low, gBlockSliver, LL Bottom Bracket, Components, Active, Components, 306.1282, NULL, 1832.3279
+Low, gBlockSliver, LL Crankset, Components, Active, Components, 1121.3862, NULL, 1832.3279
+Low, gBlockSliver, LL Fork, Components, 06 30, 2003, Components, 422.427, NULL, 1832.3279
+Low, gBlockSliver, LL Headset, Components, 06 30, 2003, Components, 48.735, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Frame, Components, Active, Components, 5457.0055, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Frame, Components, Active, Components, 7589.6409, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Front Wheel, Components, 06 30, 2003, Components, 561.5754, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Handlebars, Components, 06 30, 2003, Components, 255.094, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Handlebars, Components, Active, Components, 295.1145, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Pedal, Components, Active, Components, 272.706, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Rear Wheel, Components, 06 30, 2003, Components, 450.135, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Seat/Saddle 2, Components, Active, Components, 140.9239, NULL, 1832.3279
+Low, gBlockSliver, LL Mountain Tire, Accessories, Active, Accessories, 538.5776, 862, 1710.5319
+Low, gBlockSliver, LL Road Frame, Components, 06 30, 2002, Components, 2326.0109, NULL, 1832.3279
+Low, gBlockSliver, LL Road Frame, Components, 06 30, 2002, Components, 4727.2241, NULL, 1832.3279
+Low, gBlockSliver, LL Road Frame, Components, 06 30, 2003, Components, 6062.7057, NULL, 1832.3279
+Low, gBlockSliver, LL Road Frame, Components, 06 30, 2003, Components, 12237.0867, NULL, 1832.3279
+Low, gBlockSliver, LL Road Frame, Components, Active, Components, 5292.3072, NULL, 1832.3279
+Low, gBlockSliver, LL Road Handlebars, Components, 06 30, 2003, Components, 67.4179, NULL, 1832.3279
+Low, gBlockSliver, LL Road Handlebars, Components, Active, Components, 68.1462, NULL, 1832.3279
+Low, gBlockSliver, LL Road Pedal, Components, Active, Components, 527.1886, NULL, 1832.3279
+Low, gBlockSliver, LL Road Rear Wheel, Components, 06 30, 2003, Components, 1462.2242, NULL, 1832.3279
+Low, gBlockSliver, LL Road Seat/Saddle 1, Components, Active, Components, 4.068, NULL, 1832.3279
+Low, gBlockSliver, LL Road Tire, Accessories, Active, Accessories, 560.9412, 1044, 1710.5319
+Low, gBlockSliver, LL Touring Frame, Components, Active, Components, 2855.7423, NULL, 1832.3279
+Low, gBlockSliver, LL Touring Frame, Components, Active, Components, 4516.0064, NULL, 1832.3279
+Low, gBlockSliver, LL Touring Handlebars, Components, Active, Components, 38.7164, NULL, 1832.3279
+Low, gBlockSliver, LL Touring Seat/Saddle, Components, Active, Components, 37.0188, NULL, 1832.3279
+Low, gBlockSliver, Mountain-500, Bikes, Active, Bikes, 15462.646, 252, 88106.6003
+Low, gBlockSliver, Mountain-500, Bikes, Active, Bikes, 17828.8567, 227, 88106.6003
+Low, gBlockSliver, Road-650, Bikes, 06 30, 2002, Bikes, 26008.4528, 139, 88106.6003
+Low, gBlockSliver, Road-650, Bikes, 06 30, 2002, Bikes, 33802.3134, 120, 88106.6003
+Low, gBlockSliver, Road-650, Bikes, 06 30, 2003, Bikes, 62994.5545, 290, 88106.6003
+Low, gBlockSliver, Road-650, Bikes, 06 30, 2003, Bikes, 79382.8263, 303, 88106.6003
+Low, gBlockSliver, Road-750, Bikes, Active, Bikes, 43632.2283, 1443, 88106.6003
+Low, gBlockSliver, Touring-3000, Bikes, Active, Bikes, 27956.3251, 277, 88106.6003
+Low, gBlockSliver, Touring-3000, Bikes, Active, Bikes, 33228.1672, 263, 88106.6003
+Low, gInvliad, LL Bottom Bracket, Components, Active, Components, 306.1282, NULL, 316.1342
+Low, gInvliad, LL Crankset, Components, Active, Components, 1121.3862, NULL, 316.1342
+Low, gInvliad, LL Fork, Components, 06 30, 2003, Components, 422.427, NULL, 316.1342
+Low, gInvliad, LL Headset, Components, 06 30, 2003, Components, 48.735, NULL, 316.1342
+Low, gInvliad, LL Mountain Frame, Components, Active, Components, 5457.0055, NULL, 316.1342
+Low, gInvliad, LL Mountain Frame, Components, Active, Components, 7589.6409, NULL, 316.1342
+Low, gInvliad, LL Mountain Front Wheel, Components, 06 30, 2003, Components, 561.5754, NULL, 316.1342
+Low, gInvliad, LL Mountain Handlebars, Components, 06 30, 2003, Components, 255.094, NULL, 316.1342
+Low, gInvliad, LL Mountain Handlebars, Components, Active, Components, 295.1145, NULL, 316.1342
+Low, gInvliad, LL Mountain Pedal, Components, Active, Components, 272.706, NULL, 316.1342
+Low, gInvliad, LL Mountain Rear Wheel, Components, 06 30, 2003, Components, 450.135, NULL, 316.1342
+Low, gInvliad, LL Mountain Seat/Saddle 2, Components, Active, Components, 140.9239, NULL, 316.1342
+Low, gInvliad, LL Mountain Tire, Accessories , Active, Accessories, 538.5776, 862, 2569.6919
+Low, gInvliad, LL Road Frame, Components, 06 30, 2002, Components, 2326.0109, NULL, 316.1342
+Low, gInvliad, LL Road Frame, Components, 06 30, 2002, Components, 4727.2241, NULL, 316.1342
+Low, gInvliad, LL Road Frame, Components, 06 30, 2003, Components, 6062.7057, NULL, 316.1342
+Low, gInvliad, LL Road Frame, Components, 06 30, 2003, Components, 12237.0867, NULL, 316.1342
+Low, gInvliad, LL Road Frame, Components, Active, Components, 5292.3072, NULL, 316.1342
+Low, gInvliad, LL Road Handlebars, Components, 06 30, 2003, Components, 67.4179, NULL, 316.1342
+Low, gInvliad, LL Road Handlebars, Components, Active, Components, 68.1462, NULL, 316.1342
+Low, gInvliad, LL Road Pedal, Components, Active, Components, 527.1886, NULL, 316.1342
+Low, gInvliad, LL Road Rear Wheel, Components, 06 30, 2003, Components, 1462.2242, NULL, 316.1342
+Low, gInvliad, LL Road Seat/Saddle 1, Components, Active, Components, 4.068, NULL, 316.1342
+Low, gInvliad, LL Road Tire, Accessories , Active, Accessories, 560.9412, 1044, 2569.6919
+Low, gInvliad, LL Touring Frame, Components, Active, Components, 2855.7423, NULL, 316.1342
+Low, gInvliad, LL Touring Frame, Components, Active, Components, 4516.0064, NULL, 316.1342
+Low, gInvliad, LL Touring Handlebars, Components, Active, Components, 38.7164, NULL, 316.1342
+Low, gInvliad, LL Touring Seat/Saddle, Components, Active, Components, 37.0188, NULL, 316.1342
+Low, gYellow, LL Bottom Bracket, Components, Active, Components, 306.1282, NULL, 1545.1703
+Low, gYellow, LL Crankset, Components, Active, Components, 1121.3862, NULL, 1545.1703
+Low, gYellow, LL Fork, Components, 06 30, 2003, Components, 422.427, NULL, 1545.1703
+Low, gYellow, LL Headset, Components, 06 30, 2003, Components, 48.735, NULL, 1545.1703
+Low, gYellow, LL Mountain Frame, Components, Active, Components, 5457.0055, NULL, 1545.1703
+Low, gYellow, LL Mountain Frame, Components, Active, Components, 7589.6409, NULL, 1545.1703
+Low, gYellow, LL Mountain Front Wheel, Components, 06 30, 2003, Components, 561.5754, NULL, 1545.1703
+Low, gYellow, LL Mountain Handlebars, Components, 06 30, 2003, Components, 255.094, NULL, 1545.1703
+Low, gYellow, LL Mountain Handlebars, Components, Active, Components, 295.1145, NULL, 1545.1703
+Low, gYellow, LL Mountain Pedal, Components, Active, Components, 272.706, NULL, 1545.1703
+Low, gYellow, LL Mountain Rear Wheel, Components, 06 30, 2003, Components, 450.135, NULL, 1545.1703
+Low, gYellow, LL Mountain Seat/Saddle 2, Components, Active, Components, 140.9239, NULL, 1545.1703
+Low, gYellow, LL Road Frame, Components, 06 30, 2002, Components, 2326.0109, NULL, 1545.1703
+Low, gYellow, LL Road Frame, Components, 06 30, 2002, Components, 4727.2241, NULL, 1545.1703
+Low, gYellow, LL Road Frame, Components, 06 30, 2003, Components, 6062.7057, NULL, 1545.1703
+Low, gYellow, LL Road Frame, Components, 06 30, 2003, Components, 12237.0867, NULL, 1545.1703
+Low, gYellow, LL Road Frame, Components, Active, Components, 5292.3072, NULL, 1545.1703
+Low, gYellow, LL Road Handlebars, Components, 06 30, 2003, Components, 67.4179, NULL, 1545.1703
+Low, gYellow, LL Road Handlebars, Components, Active, Components, 68.1462, NULL, 1545.1703
+Low, gYellow, LL Road Pedal, Components, Active, Components, 527.1886, NULL, 1545.1703
+Low, gYellow, LL Road Rear Wheel, Components, 06 30, 2003, Components, 1462.2242, NULL, 1545.1703
+Low, gYellow, LL Road Seat/Saddle 1, Components, Active, Components, 4.068, NULL, 1545.1703
+Low, gYellow, LL Touring Frame, Components, Active, Components, 2855.7423, NULL, 1545.1703
+Low, gYellow, LL Touring Frame, Components, Active, Components, 4516.0064, NULL, 1545.1703
+Low, gYellow, LL Touring Handlebars, Components, Active, Components, 38.7164, NULL, 1545.1703
+Low, gYellow, LL Touring Seat/Saddle, Components, Active, Components, 37.0188, NULL, 1545.1703
+Low, Red, Mountain-500, Bikes, Active, Bikes, 15462.646, 252, 35541.9457
+Low, Red, Mountain-500, Bikes, Active, Bikes, 17828.8567, 227, 35541.9457
+Low, Red, Road-650, Bikes, 06 30, 2002, Bikes, 26008.4528, 139, 35541.9457
+Low, Red, Road-650, Bikes, 06 30, 2002, Bikes, 33802.3134, 120, 35541.9457
+Low, Red, Road-650, Bikes, 06 30, 2003, Bikes, 62994.5545, 290, 35541.9457
+Low, Red, Road-650, Bikes, 06 30, 2003, Bikes, 79382.8263, 303, 35541.9457
+Low, Red, Road-750, Bikes, Active, Bikes, 43632.2283, 1443, 35541.9457
+Low, Red, Touring-3000, Bikes, Active, Bikes, 27956.3251, 277, 35541.9457
+Low, Red, Touring-3000, Bikes, Active, Bikes, 33228.1672, 263, 35541.9457
+Medium, Blue, ML Crankset, Components, Active, Components, 261.6206, NULL, 1388.1064
+Medium, Blue, ML Headset, Components, 06 30, 2003, Components, 997.7296, NULL, 1388.1064
+Medium, Blue, ML Mountain Frame, Components, 06 30, 2003, Components, 8594.6322, NULL, 1388.1064
+Medium, Blue, ML Mountain Frame-W, Components, 06 30, 2003, Components, 2688.9396, NULL, 1388.1064
+Medium, Blue, ML Mountain Frame-W, Components, Active, Components, 9384.9035, NULL, 1388.1064
+Medium, Blue, ML Mountain Front Wheel, Components, 06 30, 2003, Components, 834.0122, NULL, 1388.1064
+Medium, Blue, ML Mountain Handlebars, Components, 06 30, 2003, Components, 644.0282, NULL, 1388.1064
+Medium, Blue, ML Mountain Handlebars, Components, Active, Components, 649.817, NULL, 1388.1064
+Medium, Blue, ML Mountain Pedal, Components, Active, Components, 321.3207, NULL, 1388.1064
+Medium, Blue, ML Mountain Rear Wheel, Components, 06 30, 2003, Components, 2979.8439, NULL, 1388.1064
+Medium, Blue, ML Mountain Seat/Saddle 2, Components, Active, Components, 312.4293, NULL, 1388.1064
+Medium, Blue, ML Mountain Tire, Accessories, Active, Accessories, 870.5178, 1161, 1314.2907
+Medium, Blue, ML Road Frame, Components, 06 30, 2002, Components, 3033.6389, NULL, 1388.1064
+Medium, Blue, ML Road Frame-W, Components, 06 30, 2003, Components, 15470.8404, NULL, 1388.1064
+Medium, Blue, ML Road Frame-W, Components, Active, Components, 13491.3192, NULL, 1388.1064
+Medium, Blue, ML Road Front Wheel, Components, 06 30, 2003, Components, 1974.6643, NULL, 1388.1064
+Medium, Blue, ML Road Pedal, Components, Active, Components, 615.6298, NULL, 1388.1064
+Medium, Blue, ML Road Rear Wheel, Components, 06 30, 2003, Components, 264.3702, NULL, 1388.1064
+Medium, Blue, ML Road Tire, Accessories, Active, Accessories, 578.5648, 926, 1314.2907
+Medium, Blue, ML Touring Seat/Saddle, Components, Active, Components, 49.3164, NULL, 1388.1064
+Medium, Blue, Mountain-300, Bikes, 06 30, 2003, Bikes, 47681.2609, NULL, 51553.9114
+Medium, Blue, Mountain-400-W, Bikes, Active, Bikes, 25257.1186, 543, 51553.9114
+Medium, Blue, Road-350-W, Bikes, Active, Bikes, 131153.8733, 929, 51553.9114
+Medium, Blue, Road-450, Bikes, 06 30, 2002, Bikes, 46860.1901, NULL, 51553.9114
+Medium, Blue, Road-550-W, Bikes, 06 30, 2003, Bikes, 54889.8111, 357, 51553.9114
+Medium, Blue, Road-550-W, Bikes, Active, Bikes, 74685.4218, 1033, 51553.9114
+Medium, Blue, Touring-2000, Bikes, Active, Bikes, 53327.8391, 372, 51553.9114
+Medium, gBlockSliver, ML Crankset, Components, Active, Components, 261.6206, NULL, 1832.3279
+Medium, gBlockSliver, ML Headset, Components, 06 30, 2003, Components, 997.7296, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Frame, Components, 06 30, 2003, Components, 8594.6322, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Frame-W, Components, 06 30, 2003, Components, 2688.9396, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Frame-W, Components, Active, Components, 9384.9035, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Front Wheel, Components, 06 30, 2003, Components, 834.0122, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Handlebars, Components, 06 30, 2003, Components, 644.0282, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Handlebars, Components, Active, Components, 649.817, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Pedal, Components, Active, Components, 321.3207, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Rear Wheel, Components, 06 30, 2003, Components, 2979.8439, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Seat/Saddle 2, Components, Active, Components, 312.4293, NULL, 1832.3279
+Medium, gBlockSliver, ML Mountain Tire, Accessories, Active, Accessories, 870.5178, 1161, 1710.5319
+Medium, gBlockSliver, ML Road Frame, Components, 06 30, 2002, Components, 3033.6389, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Frame-W, Components, 06 30, 2003, Components, 15470.8404, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Frame-W, Components, Active, Components, 13491.3192, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Front Wheel, Components, 06 30, 2003, Components, 1974.6643, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Pedal, Components, Active, Components, 615.6298, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Rear Wheel, Components, 06 30, 2003, Components, 264.3702, NULL, 1832.3279
+Medium, gBlockSliver, ML Road Tire, Accessories, Active, Accessories, 578.5648, 926, 1710.5319
+Medium, gBlockSliver, ML Touring Seat/Saddle, Components, Active, Components, 49.3164, NULL, 1832.3279
+Medium, gBlockSliver, Mountain-300, Bikes, 06 30, 2003, Bikes, 47681.2609, NULL, 88106.6003
+Medium, gBlockSliver, Mountain-400-W, Bikes, Active, Bikes, 25257.1186, 543, 88106.6003
+Medium, gBlockSliver, Road-350-W, Bikes, Active, Bikes, 131153.8733, 929, 88106.6003
+Medium, gBlockSliver, Road-450, Bikes, 06 30, 2002, Bikes, 46860.1901, NULL, 88106.6003
+Medium, gBlockSliver, Road-550-W, Bikes, 06 30, 2003, Bikes, 54889.8111, 357, 88106.6003
+Medium, gBlockSliver, Road-550-W, Bikes, Active, Bikes, 74685.4218, 1033, 88106.6003
+Medium, gBlockSliver, Touring-2000, Bikes, Active, Bikes, 53327.8391, 372, 88106.6003
+Medium, gInvliad, ML Crankset, Components, Active, Components, 261.6206, NULL, 316.1342
+Medium, gInvliad, ML Headset, Components, 06 30, 2003, Components, 997.7296, NULL, 316.1342
+Medium, gInvliad, ML Mountain Frame, Components, 06 30, 2003, Components, 8594.6322, NULL, 316.1342
+Medium, gInvliad, ML Mountain Frame-W, Components, 06 30, 2003, Components, 2688.9396, NULL, 316.1342
+Medium, gInvliad, ML Mountain Frame-W, Components, Active, Components, 9384.9035, NULL, 316.1342
+Medium, gInvliad, ML Mountain Front Wheel, Components, 06 30, 2003, Components, 834.0122, NULL, 316.1342
+Medium, gInvliad, ML Mountain Handlebars, Components, 06 30, 2003, Components, 644.0282, NULL, 316.1342
+Medium, gInvliad, ML Mountain Handlebars, Components, Active, Components, 649.817, NULL, 316.1342
+Medium, gInvliad, ML Mountain Pedal, Components, Active, Components, 321.3207, NULL, 316.1342
+Medium, gInvliad, ML Mountain Rear Wheel, Components, 06 30, 2003, Components, 2979.8439, NULL, 316.1342
+Medium, gInvliad, ML Mountain Seat/Saddle 2, Components, Active, Components, 312.4293, NULL, 316.1342
+Medium, gInvliad, ML Mountain Tire, Accessories , Active, Accessories, 870.5178, 1161, 2569.6919
+Medium, gInvliad, ML Road Frame, Components, 06 30, 2002, Components, 3033.6389, NULL, 316.1342
+Medium, gInvliad, ML Road Frame-W, Components, 06 30, 2003, Components, 15470.8404, NULL, 316.1342
+Medium, gInvliad, ML Road Frame-W, Components, Active, Components, 13491.3192, NULL, 316.1342
+Medium, gInvliad, ML Road Front Wheel, Components, 06 30, 2003, Components, 1974.6643, NULL, 316.1342
+Medium, gInvliad, ML Road Pedal, Components, Active, Components, 615.6298, NULL, 316.1342
+Medium, gInvliad, ML Road Rear Wheel, Components, 06 30, 2003, Components, 264.3702, NULL, 316.1342
+Medium, gInvliad, ML Road Tire, Accessories , Active, Accessories, 578.5648, 926, 2569.6919
+Medium, gInvliad, ML Touring Seat/Saddle, Components, Active, Components, 49.3164, NULL, 316.1342
+Medium, gYellow, ML Crankset, Components, Active, Components, 261.6206, NULL, 1545.1703
+Medium, gYellow, ML Headset, Components, 06 30, 2003, Components, 997.7296, NULL, 1545.1703
+Medium, gYellow, ML Mountain Frame, Components, 06 30, 2003, Components, 8594.6322, NULL, 1545.1703
+Medium, gYellow, ML Mountain Frame-W, Components, 06 30, 2003, Components, 2688.9396, NULL, 1545.1703
+Medium, gYellow, ML Mountain Frame-W, Components, Active, Components, 9384.9035, NULL, 1545.1703
+Medium, gYellow, ML Mountain Front Wheel, Components, 06 30, 2003, Components, 834.0122, NULL, 1545.1703
+Medium, gYellow, ML Mountain Handlebars, Components, 06 30, 2003, Components, 644.0282, NULL, 1545.1703
+Medium, gYellow, ML Mountain Handlebars, Components, Active, Components, 649.817, NULL, 1545.1703
+Medium, gYellow, ML Mountain Pedal, Components, Active, Components, 321.3207, NULL, 1545.1703
+Medium, gYellow, ML Mountain Rear Wheel, Components, 06 30, 2003, Components, 2979.8439, NULL, 1545.1703
+Medium, gYellow, ML Mountain Seat/Saddle 2, Components, Active, Components, 312.4293, NULL, 1545.1703
+Medium, gYellow, ML Road Frame, Components, 06 30, 2002, Components, 3033.6389, NULL, 1545.1703
+Medium, gYellow, ML Road Frame-W, Components, 06 30, 2003, Components, 15470.8404, NULL, 1545.1703
+Medium, gYellow, ML Road Frame-W, Components, Active, Components, 13491.3192, NULL, 1545.1703
+Medium, gYellow, ML Road Front Wheel, Components, 06 30, 2003, Components, 1974.6643, NULL, 1545.1703
+Medium, gYellow, ML Road Pedal, Components, Active, Components, 615.6298, NULL, 1545.1703
+Medium, gYellow, ML Road Rear Wheel, Components, 06 30, 2003, Components, 264.3702, NULL, 1545.1703
+Medium, gYellow, ML Touring Seat/Saddle, Components, Active, Components, 49.3164, NULL, 1545.1703
+Medium, Red, Mountain-300, Bikes, 06 30, 2003, Bikes, 47681.2609, NULL, 35541.9457
+Medium, Red, Mountain-400-W, Bikes, Active, Bikes, 25257.1186, 543, 35541.9457
+Medium, Red, Road-350-W, Bikes, Active, Bikes, 131153.8733, 929, 35541.9457
+Medium, Red, Road-450, Bikes, 06 30, 2002, Bikes, 46860.1901, NULL, 35541.9457
+Medium, Red, Road-550-W, Bikes, 06 30, 2003, Bikes, 54889.8111, 357, 35541.9457
+Medium, Red, Road-550-W, Bikes, Active, Bikes, 74685.4218, 1033, 35541.9457
+Medium, Red, Touring-2000, Bikes, Active, Bikes, 53327.8391, 372, 35541.9457
+Not Applicable, Blue, All-Purpose Bike Stand, Accessories, Active, Accessories, 989.775, 249, 1314.2907
+Not Applicable, Blue, Bike Wash, Accessories, Active, Accessories, 460.2288, 908, 1314.2907
+Not Applicable, Blue, Cable Lock, Accessories, 06 30, 2003, Accessories, 405.6307, NULL, 1314.2907
+Not Applicable, Blue, Chain, Components, Active, Components, 234.4427, NULL, 1388.1064
+Not Applicable, Blue, Classic Vest, Clothing, Active, Clothing, 6487.2095, 562, 4055.6837
+Not Applicable, Blue, Cycling Cap, Clothing, 06 30, 2002, Clothing, 127.029, NULL, 4055.6837
+Not Applicable, Blue, Cycling Cap, Clothing, 06 30, 2003, Clothing, 292.4737, NULL, 4055.6837
+Not Applicable, Blue, Cycling Cap, Clothing, Active, Clothing, 861.3593, 2190, 4055.6837
+Not Applicable, Blue, Fender Set - Mountain, Accessories, Active, Accessories, 1165.4895, 2121, 1314.2907
+Not Applicable, Blue, Front Brakes, Components, Active, Components, 1257.4827, NULL, 1388.1064
+Not Applicable, Blue, Front Derailleur, Components, Active, Components, 1112.1128, NULL, 1388.1064
+Not Applicable, Blue, Full-Finger Gloves, Clothing, 06 30, 2003, Clothing, 3221.2082, NULL, 4055.6837
+Not Applicable, Blue, Half-Finger Gloves, Clothing, 06 30, 2003, Clothing, 660.4876, NULL, 4055.6837
+Not Applicable, Blue, Half-Finger Gloves, Clothing, Active, Clothing, 2188.3037, 1430, 4055.6837
+Not Applicable, Blue, Hitch Rack - 4-Bike, Accessories, Active, Accessories, 5927.4039, 328, 1314.2907
+Not Applicable, Blue, Hydration Pack, Accessories, Active, Accessories, 2645.7039, 733, 1314.2907
+Not Applicable, Blue, Long-Sleeve Logo Jersey, Clothing, 06 30, 2002, Clothing, 1366.8198, NULL, 4055.6837
+Not Applicable, Blue, Long-Sleeve Logo Jersey, Clothing, 06 30, 2003, Clothing, 3331.973, NULL, 4055.6837
+Not Applicable, Blue, Long-Sleeve Logo Jersey, Clothing, Active, Clothing, 6077.8325, 1736, 4055.6837
+Not Applicable, Blue, Men's Bib-Shorts, Clothing, 06 30, 2003, Clothing, 4168.5112, NULL, 4055.6837
+Not Applicable, Blue, Men's Sports Shorts, Clothing, 06 30, 2003, Clothing, 2047.4795, NULL, 4055.6837
+Not Applicable, Blue, Minipump, Accessories, 06 30, 2003, Accessories, 337.8741, NULL, 1314.2907
+Not Applicable, Blue, Mountain Bike Socks, Clothing, 06 30, 2002, Clothing, 164.3345, NULL, 4055.6837
+Not Applicable, Blue, Mountain Bottle Cage, Accessories, Active, Accessories, 505.845, 2025, 1314.2907
+Not Applicable, Blue, Mountain Tire Tube, Accessories, Active, Accessories, 386.256, 3095, 1314.2907
+Not Applicable, Blue, Patch kit, Accessories, Active, Accessories, 205.9785, 3191, 1314.2907
+Not Applicable, Blue, Racing Socks, Clothing, Active, Clothing, 579.3336, 568, 4055.6837
+Not Applicable, Blue, Rear Brakes, Components, Active, Components, 392.985, NULL, 1388.1064
+Not Applicable, Blue, Rear Derailleur, Components, Active, Components, 643.1307, NULL, 1388.1064
+Not Applicable, Blue, Road Bottle Cage, Accessories, Active, Accessories, 384.8576, 1712, 1314.2907
+Not Applicable, Blue, Road Tire Tube, Accessories, Active, Accessories, 237.1248, 2376, 1314.2907
+Not Applicable, Blue, Short-Sleeve Classic Jersey, Clothing, Active, Clothing, 8030.0648, 1596, 4055.6837
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2002, Accessories, 284.6321, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2002, Accessories, 302.4547, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2002, Accessories, 333.2913, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2003, Accessories, 725.7869, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2003, Accessories, 796.6736, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, 06 30, 2003, Accessories, 844.8854, NULL, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, Active, Accessories, 2922.7272, 2085, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, Active, Accessories, 2934.0149, 2230, 1314.2907
+Not Applicable, Blue, Sport-100, Accessories, Active, Accessories, 2957.1073, 2125, 1314.2907
+Not Applicable, Blue, Touring Pedal, Components, Active, Components, 178.585, NULL, 1388.1064
+Not Applicable, Blue, Touring Tire, Accessories, Active, Accessories, 677.688, 935, 1314.2907
+Not Applicable, Blue, Touring Tire Tube, Accessories, Active, Accessories, 185.7024, 1488, 1314.2907
+Not Applicable, Blue, Water Bottle, Accessories, Active, Accessories, 716.5761, 4244, 1314.2907
+Not Applicable, Blue, Women's Mountain Shorts, Clothing, Active, Clothing, 8290.6696, 1019, 4055.6837
+Not Applicable, Blue, Women's Tights, Clothing, 06 30, 2003, Clothing, 5045.8473, NULL, 4055.6837
+Not Applicable, gBlockSliver, All-Purpose Bike Stand, Accessories, Active, Accessories, 989.775, 249, 1710.5319
+Not Applicable, gBlockSliver, Bike Wash, Accessories, Active, Accessories, 460.2288, 908, 1710.5319
+Not Applicable, gBlockSliver, Cable Lock, Accessories, 06 30, 2003, Accessories, 405.6307, NULL, 1710.5319
+Not Applicable, gBlockSliver, Chain, Components, Active, Components, 234.4427, NULL, 1832.3279
+Not Applicable, gBlockSliver, Classic Vest, Clothing, Active, Clothing, 6487.2095, 562, 11491.3027
+Not Applicable, gBlockSliver, Cycling Cap, Clothing, 06 30, 2002, Clothing, 127.029, NULL, 11491.3027
+Not Applicable, gBlockSliver, Cycling Cap, Clothing, 06 30, 2003, Clothing, 292.4737, NULL, 11491.3027
+Not Applicable, gBlockSliver, Cycling Cap, Clothing, Active, Clothing, 861.3593, 2190, 11491.3027
+Not Applicable, gBlockSliver, Fender Set - Mountain, Accessories, Active, Accessories, 1165.4895, 2121, 1710.5319
+Not Applicable, gBlockSliver, Front Brakes, Components, Active, Components, 1257.4827, NULL, 1832.3279
+Not Applicable, gBlockSliver, Front Derailleur, Components, Active, Components, 1112.1128, NULL, 1832.3279
+Not Applicable, gBlockSliver, Full-Finger Gloves, Clothing, 06 30, 2003, Clothing, 3221.2082, NULL, 11491.3027
+Not Applicable, gBlockSliver, Half-Finger Gloves, Clothing, 06 30, 2003, Clothing, 660.4876, NULL, 11491.3027
+Not Applicable, gBlockSliver, Half-Finger Gloves, Clothing, Active, Clothing, 2188.3037, 1430, 11491.3027
+Not Applicable, gBlockSliver, Hitch Rack - 4-Bike, Accessories, Active, Accessories, 5927.4039, 328, 1710.5319
+Not Applicable, gBlockSliver, Hydration Pack, Accessories, Active, Accessories, 2645.7039, 733, 1710.5319
+Not Applicable, gBlockSliver, Long-Sleeve Logo Jersey, Clothing, 06 30, 2002, Clothing, 1366.8198, NULL, 11491.3027
+Not Applicable, gBlockSliver, Long-Sleeve Logo Jersey, Clothing, 06 30, 2003, Clothing, 3331.973, NULL, 11491.3027
+Not Applicable, gBlockSliver, Long-Sleeve Logo Jersey, Clothing, Active, Clothing, 6077.8325, 1736, 11491.3027
+Not Applicable, gBlockSliver, Men's Bib-Shorts, Clothing, 06 30, 2003, Clothing, 4168.5112, NULL, 11491.3027
+Not Applicable, gBlockSliver, Men's Sports Shorts, Clothing, 06 30, 2003, Clothing, 2047.4795, NULL, 11491.3027
+Not Applicable, gBlockSliver, Minipump, Accessories, 06 30, 2003, Accessories, 337.8741, NULL, 1710.5319
+Not Applicable, gBlockSliver, Mountain Bike Socks, Clothing, 06 30, 2002, Clothing, 164.3345, NULL, 11491.3027
+Not Applicable, gBlockSliver, Mountain Bottle Cage, Accessories, Active, Accessories, 505.845, 2025, 1710.5319
+Not Applicable, gBlockSliver, Mountain Tire Tube, Accessories, Active, Accessories, 386.256, 3095, 1710.5319
+Not Applicable, gBlockSliver, Patch kit, Accessories, Active, Accessories, 205.9785, 3191, 1710.5319
+Not Applicable, gBlockSliver, Racing Socks, Clothing, Active, Clothing, 579.3336, 568, 11491.3027
+Not Applicable, gBlockSliver, Rear Brakes, Components, Active, Components, 392.985, NULL, 1832.3279
+Not Applicable, gBlockSliver, Rear Derailleur, Components, Active, Components, 643.1307, NULL, 1832.3279
+Not Applicable, gBlockSliver, Road Bottle Cage, Accessories, Active, Accessories, 384.8576, 1712, 1710.5319
+Not Applicable, gBlockSliver, Road Tire Tube, Accessories, Active, Accessories, 237.1248, 2376, 1710.5319
+Not Applicable, gBlockSliver, Short-Sleeve Classic Jersey, Clothing, Active, Clothing, 8030.0648, 1596, 11491.3027
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2002, Accessories, 284.6321, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2002, Accessories, 302.4547, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2002, Accessories, 333.2913, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2003, Accessories, 725.7869, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2003, Accessories, 796.6736, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, 06 30, 2003, Accessories, 844.8854, NULL, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, Active, Accessories, 2922.7272, 2085, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, Active, Accessories, 2934.0149, 2230, 1710.5319
+Not Applicable, gBlockSliver, Sport-100, Accessories, Active, Accessories, 2957.1073, 2125, 1710.5319
+Not Applicable, gBlockSliver, Touring Pedal, Components, Active, Components, 178.585, NULL, 1832.3279
+Not Applicable, gBlockSliver, Touring Tire, Accessories, Active, Accessories, 677.688, 935, 1710.5319
+Not Applicable, gBlockSliver, Touring Tire Tube, Accessories, Active, Accessories, 185.7024, 1488, 1710.5319
+Not Applicable, gBlockSliver, Water Bottle, Accessories, Active, Accessories, 716.5761, 4244, 1710.5319
+Not Applicable, gBlockSliver, Women's Mountain Shorts, Clothing, Active, Clothing, 8290.6696, 1019, 11491.3027
+Not Applicable, gBlockSliver, Women's Tights, Clothing, 06 30, 2003, Clothing, 5045.8473, NULL, 11491.3027
+Not Applicable, gInvliad, All-Purpose Bike Stand, Accessories , Active, Accessories, 989.775, 249, 2569.6919
+Not Applicable, gInvliad, Bike Wash, Accessories , Active, Accessories, 460.2288, 908, 2569.6919
+Not Applicable, gInvliad, Cable Lock, Accessories , 06 30, 2003, Accessories, 405.6307, NULL, 2569.6919
+Not Applicable, gInvliad, Chain, Components, Active, Components, 234.4427, NULL, 316.1342
+Not Applicable, gInvliad, Classic Vest, Clothing, Active, Clothing, 6487.2095, 562, 2551.3208
+Not Applicable, gInvliad, Cycling Cap, Clothing, 06 30, 2002, Clothing, 127.029, NULL, 2551.3208
+Not Applicable, gInvliad, Cycling Cap, Clothing, 06 30, 2003, Clothing, 292.4737, NULL, 2551.3208
+Not Applicable, gInvliad, Cycling Cap, Clothing, Active, Clothing, 861.3593, 2190, 2551.3208
+Not Applicable, gInvliad, Fender Set - Mountain, Accessories , Active, Accessories, 1165.4895, 2121, 2569.6919
+Not Applicable, gInvliad, Front Brakes, Components, Active, Components, 1257.4827, NULL, 316.1342
+Not Applicable, gInvliad, Front Derailleur, Components, Active, Components, 1112.1128, NULL, 316.1342
+Not Applicable, gInvliad, Full-Finger Gloves, Clothing, 06 30, 2003, Clothing, 3221.2082, NULL, 2551.3208
+Not Applicable, gInvliad, Half-Finger Gloves, Clothing, 06 30, 2003, Clothing, 660.4876, NULL, 2551.3208
+Not Applicable, gInvliad, Half-Finger Gloves, Clothing, Active, Clothing, 2188.3037, 1430, 2551.3208
+Not Applicable, gInvliad, Hitch Rack - 4-Bike, Accessories , Active, Accessories, 5927.4039, 328, 2569.6919
+Not Applicable, gInvliad, Hydration Pack, Accessories , Active, Accessories, 2645.7039, 733, 2569.6919
+Not Applicable, gInvliad, Long-Sleeve Logo Jersey, Clothing, 06 30, 2002, Clothing, 1366.8198, NULL, 2551.3208
+Not Applicable, gInvliad, Long-Sleeve Logo Jersey, Clothing, 06 30, 2003, Clothing, 3331.973, NULL, 2551.3208
+Not Applicable, gInvliad, Long-Sleeve Logo Jersey, Clothing, Active, Clothing, 6077.8325, 1736, 2551.3208
+Not Applicable, gInvliad, Men's Bib-Shorts, Clothing, 06 30, 2003, Clothing, 4168.5112, NULL, 2551.3208
+Not Applicable, gInvliad, Men's Sports Shorts, Clothing, 06 30, 2003, Clothing, 2047.4795, NULL, 2551.3208
+Not Applicable, gInvliad, Minipump, Accessories , 06 30, 2003, Accessories, 337.8741, NULL, 2569.6919
+Not Applicable, gInvliad, Mountain Bike Socks, Clothing, 06 30, 2002, Clothing, 164.3345, NULL, 2551.3208
+Not Applicable, gInvliad, Mountain Bottle Cage, Accessories , Active, Accessories, 505.845, 2025, 2569.6919
+Not Applicable, gInvliad, Mountain Tire Tube, Accessories , Active, Accessories, 386.256, 3095, 2569.6919
+Not Applicable, gInvliad, Patch kit, Accessories , Active, Accessories, 205.9785, 3191, 2569.6919
+Not Applicable, gInvliad, Racing Socks, Clothing, Active, Clothing, 579.3336, 568, 2551.3208
+Not Applicable, gInvliad, Rear Brakes, Components, Active, Components, 392.985, NULL, 316.1342
+Not Applicable, gInvliad, Rear Derailleur, Components, Active, Components, 643.1307, NULL, 316.1342
+Not Applicable, gInvliad, Road Bottle Cage, Accessories , Active, Accessories, 384.8576, 1712, 2569.6919
+Not Applicable, gInvliad, Road Tire Tube, Accessories , Active, Accessories, 237.1248, 2376, 2569.6919
+Not Applicable, gInvliad, Short-Sleeve Classic Jersey, Clothing, Active, Clothing, 8030.0648, 1596, 2551.3208
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2002, Accessories, 284.6321, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2002, Accessories, 302.4547, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2002, Accessories, 333.2913, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2003, Accessories, 725.7869, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2003, Accessories, 796.6736, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , 06 30, 2003, Accessories, 844.8854, NULL, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , Active, Accessories, 2922.7272, 2085, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , Active, Accessories, 2934.0149, 2230, 2569.6919
+Not Applicable, gInvliad, Sport-100, Accessories , Active, Accessories, 2957.1073, 2125, 2569.6919
+Not Applicable, gInvliad, Touring Pedal, Components, Active, Components, 178.585, NULL, 316.1342
+Not Applicable, gInvliad, Touring Tire, Accessories , Active, Accessories, 677.688, 935, 2569.6919
+Not Applicable, gInvliad, Touring Tire Tube, Accessories , Active, Accessories, 185.7024, 1488, 2569.6919
+Not Applicable, gInvliad, Water Bottle, Accessories , Active, Accessories, 716.5761, 4244, 2569.6919
+Not Applicable, gInvliad, Women's Mountain Shorts, Clothing, Active, Clothing, 8290.6696, 1019, 2551.3208
+Not Applicable, gInvliad, Women's Tights, Clothing, 06 30, 2003, Clothing, 5045.8473, NULL, 2551.3208
+Not Applicable, gYellow, Chain, Components, Active, Components, 234.4427, NULL, 1545.1703
+Not Applicable, gYellow, Front Brakes, Components, Active, Components, 1257.4827, NULL, 1545.1703
+Not Applicable, gYellow, Front Derailleur, Components, Active, Components, 1112.1128, NULL, 1545.1703
+Not Applicable, gYellow, Rear Brakes, Components, Active, Components, 392.985, NULL, 1545.1703
+Not Applicable, gYellow, Rear Derailleur, Components, Active, Components, 643.1307, NULL, 1545.1703
+Not Applicable, gYellow, Touring Pedal, Components, Active, Components, 178.585, NULL, 1545.1703
+Not Applicable, White, Classic Vest, Clothing, Active, Clothing, 6487.2095, 562, 284.2987
+Not Applicable, White, Cycling Cap, Clothing, 06 30, 2002, Clothing, 127.029, NULL, 284.2987
+Not Applicable, White, Cycling Cap, Clothing, 06 30, 2003, Clothing, 292.4737, NULL, 284.2987
+Not Applicable, White, Cycling Cap, Clothing, Active, Clothing, 861.3593, 2190, 284.2987
+Not Applicable, White, Full-Finger Gloves, Clothing, 06 30, 2003, Clothing, 3221.2082, NULL, 284.2987
+Not Applicable, White, Half-Finger Gloves, Clothing, 06 30, 2003, Clothing, 660.4876, NULL, 284.2987
+Not Applicable, White, Half-Finger Gloves, Clothing, Active, Clothing, 2188.3037, 1430, 284.2987
+Not Applicable, White, Long-Sleeve Logo Jersey, Clothing, 06 30, 2002, Clothing, 1366.8198, NULL, 284.2987
+Not Applicable, White, Long-Sleeve Logo Jersey, Clothing, 06 30, 2003, Clothing, 3331.973, NULL, 284.2987
+Not Applicable, White, Long-Sleeve Logo Jersey, Clothing, Active, Clothing, 6077.8325, 1736, 284.2987
+Not Applicable, White, Men's Bib-Shorts, Clothing, 06 30, 2003, Clothing, 4168.5112, NULL, 284.2987
+Not Applicable, White, Men's Sports Shorts, Clothing, 06 30, 2003, Clothing, 2047.4795, NULL, 284.2987
+Not Applicable, White, Mountain Bike Socks, Clothing, 06 30, 2002, Clothing, 164.3345, NULL, 284.2987
+Not Applicable, White, Racing Socks, Clothing, Active, Clothing, 579.3336, 568, 284.2987
+Not Applicable, White, Short-Sleeve Classic Jersey, Clothing, Active, Clothing, 8030.0648, 1596, 284.2987
+Not Applicable, White, Women's Mountain Shorts, Clothing, Active, Clothing, 8290.6696, 1019, 284.2987
+Not Applicable, White, Women's Tights, Clothing, 06 30, 2003, Clothing, 5045.8473, NULL, 284.2987

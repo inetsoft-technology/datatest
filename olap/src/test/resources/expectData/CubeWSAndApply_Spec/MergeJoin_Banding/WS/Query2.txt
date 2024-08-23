@@ -1,0 +1,24 @@
+The table size(row x col) is:(23 x 8)
+Category, Color, Reseller Sales Amount, Discount Amount, CATEGORY_1, COLOR_1, Reseller Sales Amount_1, Discount Amount_1
+Accessories, Black, 87915.3689, 1207.1866, Accessories, Black, 87915.3689, 1207.1866
+Accessories, Blue, 91052.8681, 1314.2907, Accessories, Blue, 91052.8681, 1314.2907
+Accessories, NA, 247066.247, 2569.6919, Accessories , NA , 247066.247, 2569.6919
+Accessories, Red, 79744.6953, 1093.5148, Bikes-2, Black-2, 244699.8234, 9936.2404
+Accessories, Silver, 65518.7485, 503.3453, Bikes, Blue, 6205258.3522, 51553.9114
+Bikes, Black, 24469987.8234, 99361.2404, Bikes, Red, 12114587.8898, 35541.9457
+Bikes, Blue, 6205258.3522, 51553.9114, Bikes, Silver, 11931999.4272, 88106.6003
+Bikes, Red, 12114587.8898, 35541.9457, Bikes-2, Yellow-2, 11580.0644, 2200.9554
+Bikes, Silver, 11931999.4272, 88106.6003, Clothing, Blue, 223801.3707, 4055.6837
+Bikes, Yellow, 11580548.0644, 220076.9554, Clothing, Multi, 542559.5121, 2551.3208
+Clothing, Black, 751810.8972, 11491.3027, Clothing, White, 24638.8081, 284.2987
+Clothing, Blue, 223801.3707, 4055.6837, Clothing-2, Yellow-2, 23500.251, 258.8994
+Clothing, Multi, 542559.5121, 2551.3208, Components, Black, 4087998.0118, 1079.4744
+Clothing, White, 24638.8081, 284.2987, Components, Blue, 803642.0958, 1388.1064
+Clothing, Yellow, 235030.251, 2581.8994, Components, NA, 417120.9711, 316.1342
+Components, Black, 4087998.0118, 1079.4744, Components-2, Red-2, 16792.6977, 133.9996
+Components, Blue, 803642.0958, 1388.1064, Components, Silver, 2666432.6902, 705.8793
+Components, NA, 417120.9711, 316.1342, Components, Silver/Black , 147483.9098, 46.9742
+Components, Red, 1679227.6977, 132.9996, Components, Yellow, 1997171.282, 1545.1703
+Components, Silver, 2666432.6902, 705.8793, Clothing, Black, 751810.8972, 11491.3027
+Components, Silver/Black, 147483.9098, 46.9742, Accessories-2, Red-2, 7974.6953, 1090.5148
+Components, Yellow, 1997171.282, 1545.1703, Accessories, Silver, 65518.7485, 503.3453

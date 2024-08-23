@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+City, Internet Tax Amount
+Ballard, 3624.7197
+Barstow, 286.2616
+Camarillo, 102.9144

@@ -1,0 +1,13 @@
+The table size(row x col) is:(12 x 5)
+Color, Category, Class, Freight Cost, Internet Order Count
+Black, Accessories, Not Applicable, 4021.8555, 2085
+Black, Bikes, High, 632448.8971, 3185
+Black, Bikes, Low, 148097.8816, 2124
+Black, Clothing, Not Applicable, 21453.9959, 2449
+Red, Accessories, Not Applicable, 3944.4339, 2230
+Red, Bikes, High, 333977.176, 2296
+Red, Bikes, Low, 113185.1397, 423
+Silver, Accessories, Not Applicable, 2645.7039, 733
+Silver, Bikes, High, 382041.2365, 1921
+Silver, Bikes, Low, 17828.8567, 227
+Silver, Bikes, Medium, 25257.1186, 543

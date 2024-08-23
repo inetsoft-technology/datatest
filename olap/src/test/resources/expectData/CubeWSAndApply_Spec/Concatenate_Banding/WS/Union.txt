@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 5)
+Category, Color, Reseller Sales Amount, Discount Amount, f_Category
+Accessories, Black, 87915.3689, 1207.1866, Accessories
+Accessories, Blue, 91052.8681, 1314.2907, Accessories
+Accessories, NA, 247066.247, 2569.6919, Accessories
+Accessories, Red, 79744.6953, 1093.5148, Accessories
+Accessories, Silver, 65518.7485, 503.3453, Accessories
+Bikes, Black, 24469987.8234, 99361.2404, Bikes
+Bikes, Blue, 6205258.3522, 51553.9114, Bikes
+Bikes, Red, 12114587.8898, 35541.9457, Bikes
+Bikes, Silver, 11931999.4272, 88106.6003, Bikes
+Bikes, Yellow, 11580548.0644, 220076.9554, Bikes
