@@ -1,13 +1,13 @@
 # DataTest Summary
-Used for performing auto tests on various modules
+Used for performing auto tests on various modules, all modules didn't install to local repository.
 
 **Set 'root.dir' to your path on pom.xml**
 ## Compile and run test case on local
-### Clean all project, then install commons to your local maven repository
+### Clean all project, then package commons to your local maven repository
 
 ```powershell
 .\mvnw.cmd clean
-.\mvnw.cmd install -pl commons
+.\mvnw.cmd package -pl commons
 ```
 ### Execute different project auto case
 #### 1. The project only have one test model

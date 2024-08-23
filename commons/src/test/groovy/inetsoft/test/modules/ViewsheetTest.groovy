@@ -16,9 +16,6 @@ import inetsoft.sree.security.SRPrincipal
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.ExportUtil
-import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.ChartVSAssembly
 import inetsoft.uql.viewsheet.CurrentSelectionVSAssembly
@@ -30,12 +27,16 @@ import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.graph.ChartAggregateRef
 import inetsoft.util.ConfigurationContext
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.CompareUtil
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
+
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.TUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.CompareUtil
 
 import java.awt.image.BufferedImage
 
