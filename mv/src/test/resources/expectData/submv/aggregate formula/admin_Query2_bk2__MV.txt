@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 1)
+[CUSTOMER_ID]
+[12.5]
+[15.5]
+[17]
+[18]
+[21]
+[23]
+

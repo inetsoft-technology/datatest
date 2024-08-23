@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[ORDERS.CUSTOMERS:RESELLER][ORDERS.CUSTOMERS:STATE][Max(ORDERS.CUSTOMERS:CUSTOMER_ID)]
+[false][CA][13]
+[false][CO][4]
+[false][IL][10]
+[false][MA][34]
+[false][NJ][19]
+[false][WA][27]
+

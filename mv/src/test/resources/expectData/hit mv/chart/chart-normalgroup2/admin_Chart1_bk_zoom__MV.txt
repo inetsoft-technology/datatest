@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[company][Median(quantity)]
+[Computer Tech][35]
+[Daycare One][13]
+[Eastern Data][2]
+

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[CUSTOMER_ID][PAID]
+[261873][true]
+[21102296.7778][false]
+

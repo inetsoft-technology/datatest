@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 3)
+[company][[NULL]][CalcField/Average(quantity)]
+[[NULL]][Average(quantity)][2]
+[[NULL]][Average(quantity)][6]
+[[NULL]][Average(quantity)][8]
+[[NULL]][Average(quantity)][11]
+[[NULL]][Average(quantity)][17]
+[[NULL]][Average(quantity)][18]
+[[NULL]][Average(quantity)][45]
+[Computer Tech][CalcField][135]
+[Daycare One][CalcField][126]
+[Eastern Data][CalcField][102]
+[Familia Computer Services][CalcField][108]
+[George Services][CalcField][123]
+[Quick Stop][CalcField][230]
+[The Big Cat][CalcField][145]
+

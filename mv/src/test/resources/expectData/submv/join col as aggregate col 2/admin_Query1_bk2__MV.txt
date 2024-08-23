@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[CATEGORY_ID][CATEGORY_NAME]
+[2][Educational]
+[14][Hardware]
+

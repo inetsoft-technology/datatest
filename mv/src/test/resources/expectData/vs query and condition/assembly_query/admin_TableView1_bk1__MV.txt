@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 5)
+[PAID][ORDER_DATE][dis][COMPANY_NAME][CITY]
+[false][2002-04-10 00:00:00][0.15][Fast Transportation][Orlando]
+[false][2002-09-25 00:00:00][0.15][Fast Transportation][Orlando]
+[false][2003-03-28 00:00:00][0.15][Nova Tera][Dallas]
+[false][2003-11-05 00:00:00][0.15][Pharma Research][Plainfield]
+[false][2004-04-05 00:00:00][0.15][Tumbleweed Gaming][Las Vegas]
+[false][2004-07-13 00:00:00][0.15][Big Ed"s BBQ][Houston]
+[false][2004-08-08 00:00:00][0.15][Old World Insurance][New York]
+[false][2005-05-08 00:00:00][0.15][Quick Stop][Denver]
+[false][2005-07-30 00:00:00][0.15][Ernst Handel][Boulder]
+

@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 7)
+[PAID][for][Quarter(ORDER_DATE)][2002][2003][2004][2005]
+[false][0.3][2002-04-01 00:00:00][12][[NULL]][[NULL]][[NULL]]
+[false][0.3][2002-07-01 00:00:00][12][[NULL]][[NULL]][[NULL]]
+[false][0.3][2003-01-01 00:00:00][[NULL]][26][[NULL]][[NULL]]
+[false][0.3][2003-10-01 00:00:00][[NULL]][35][[NULL]][[NULL]]
+[false][0.3][2004-04-01 00:00:00][[NULL]][[NULL]][32][[NULL]]
+[false][0.3][2004-07-01 00:00:00][[NULL]][[NULL]][29][[NULL]]
+[false][0.3][2005-04-01 00:00:00][[NULL]][[NULL]][[NULL]][8]
+[false][0.3][2005-07-01 00:00:00][[NULL]][[NULL]][[NULL]][4]
+

@@ -1,0 +1,3 @@
+The min value is: [dasdsa]
+The max value is: [vvs342t4]
+Selected: [[f3rfsdfsd]] -> [[vvs342t4]]

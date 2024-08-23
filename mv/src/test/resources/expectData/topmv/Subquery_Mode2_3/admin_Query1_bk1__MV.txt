@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[company][customer_id]
+[Fast Transportation][12]
+[George Services][5]
+

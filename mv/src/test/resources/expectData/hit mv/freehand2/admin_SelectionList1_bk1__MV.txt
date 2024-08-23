@@ -1,0 +1,6 @@
+[0%]   SelectState:[8]
+[5%]   SelectState:[9]
+[10%]   SelectState:[9]
+[15%]   SelectState:[9]
+[20%]   SelectState:[8]
+[25%]   SelectState:[8]

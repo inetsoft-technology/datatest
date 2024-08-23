@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[ORDER_ID][CUSTOMER_ID]
+[ggg][10844]
+[Others][1944]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 6)
+[price][product_name][product_id][product_exist][producer][produce_date]
+[29][Combat Hero][16][1][Enigma Productions][2001-01-01 00:00:00]
+[79][Barbie"s Fashion][20][0][Unified Interworks Resources][2006-01-01 00:00:00]
+[145][Sync Me][7][0][Global Networks Ltd.][2006-01-01 00:00:00]
+

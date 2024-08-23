@@ -1,0 +1,6 @@
+[1230 Hoes Lane]   SelectState:[8]
+[1248 Broadway]   SelectState:[8]
+[12 Woodpark Ave.]   SelectState:[8]
+[23 Tasaga Ave.]   SelectState:[8]
+[44 Islander Lane]   SelectState:[8]
+[5 Baker's Lane]   SelectState:[8]

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[CalcField][Sum(quantity)]
+[Computer Techaaa][35]
+[Daycare Oneaaa][26]
+[Eastern Dataaaa][2]
+

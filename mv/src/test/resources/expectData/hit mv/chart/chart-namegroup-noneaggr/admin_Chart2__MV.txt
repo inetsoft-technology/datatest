@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 2)
+[DataGroup(company)][quantity]
+[A][2]
+[A][13]
+[A][13]
+[A][35]
+[Familia Computer Services][8]
+[George Services][23]
+[Quick Stop][14]
+[Quick Stop][116]
+[The Big Cat][45]
+

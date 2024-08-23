@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 3)
+[company][reseller][state]
+[Computer Tech][false][NY]
+[Daycare One][false][NJ]
+[Direct Sales][true][NJ]
+[Eastern Data][true][TX]
+[Fast Transportation][false][AK]
+[George Services][false][AK]
+[InterLand Services][true][CA]
+[Interstate Shop][true][NY]
+[Old World Insurance][false][NJ]
+[Quick Stop][false][CA]
+[Scheggie Services][true][NY]
+[Software Specialists][true][PA]
+[Specialty Retail][true][CA]
+[Whittaker & Co, Inc][false][FL]
+

@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[4500 River Rd.][Middletown][Direct Sales][Luke Baker][9][true][NJ][08854]
+

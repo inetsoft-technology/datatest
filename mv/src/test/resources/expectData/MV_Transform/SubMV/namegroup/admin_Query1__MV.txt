@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 3)
+[customer_id][reseller][state]
+[g<7][false][AK]
+[g<7][false][CA]
+[g<7][false][NJ]
+[g<7][false][PA]
+[g<7][true][IL]
+[g<7][true][NJ]
+[g<7][true][NY]
+[g<7][true][TX]
+

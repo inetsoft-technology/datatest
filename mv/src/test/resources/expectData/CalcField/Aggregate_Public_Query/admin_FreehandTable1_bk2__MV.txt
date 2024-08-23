@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[company][[NULL]][CalcField/Average(quantity)]
+[[NULL]][Average(quantity)][2]
+[[NULL]][Average(quantity)][6]
+[[NULL]][Average(quantity)][17]
+[Computer Tech][CalcField][135]
+[Daycare One][CalcField][126]
+[Eastern Data][CalcField][102]
+

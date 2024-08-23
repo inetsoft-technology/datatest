@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[city][company][reseller][state]
+[Cleveland][[NULL]][false][OH]
+[Piscataway][Old World Insurance][false][NJ]
+[Pitterson][Daycare One][false][NJ]
+

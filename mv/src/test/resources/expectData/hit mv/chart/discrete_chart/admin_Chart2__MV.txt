@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[Year(Month(Date))][First(Quantity Purchased, Company)][discrete_First(Quantity Purchased, Company)]
+[2017-01-01 00:00:00][9][9]
+[2018-01-01 00:00:00][13][9]
+[2019-01-01 00:00:00][35][9]
+[2020-01-01 00:00:00][15][9]
+

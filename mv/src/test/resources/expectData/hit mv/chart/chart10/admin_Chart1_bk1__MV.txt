@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(DISCOUNT)][Correlation(CUSTOMER_ID, EMPLOYEE_ID)]
+[[NULL]][0.4992]
+[0.1][-0.5703]
+[0.2][[NULL]]
+[0.25][[NULL]]
+[A][-0.1543]
+

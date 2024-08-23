@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 8)
+[Quarter(Month(Processed_Date))][[NULL]][N][N][N][Y][Y][Y]
+[[NULL]][[NULL]][FAF.20][FDF.30][FPF.40][FAF.20][FDF.30][FPF.40]
+[2019-01-01 00:00:00][Sum(Billing_SrcPhysician_ID)][[NULL]][[NULL]][8014][[NULL]][[NULL]][16061]
+[2019-01-01 00:00:00][Sum(Event_Amount)][[NULL]][[NULL]][419][[NULL]][[NULL]][7217]
+[2019-04-01 00:00:00][Sum(Billing_SrcPhysician_ID)][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][8044]
+[2019-04-01 00:00:00][Sum(Event_Amount)][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][6837]
+[2019-07-01 00:00:00][Sum(Billing_SrcPhysician_ID)][[NULL]][8038][[NULL]][[NULL]][8038][[NULL]]
+[2019-07-01 00:00:00][Sum(Event_Amount)][[NULL]][4573][[NULL]][[NULL]][2737][[NULL]]
+[2019-10-01 00:00:00][Sum(Billing_SrcPhysician_ID)][8053][16078][[NULL]][8053][16078][[NULL]]
+[2019-10-01 00:00:00][Sum(Event_Amount)][2895][4604][[NULL]][4810][1693][[NULL]]
+

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[CUSTOMERS:RESELLER][Sum(CUSTOMERS:CUSTOMER_ID)]
+[false][181]
+[true][230]
+

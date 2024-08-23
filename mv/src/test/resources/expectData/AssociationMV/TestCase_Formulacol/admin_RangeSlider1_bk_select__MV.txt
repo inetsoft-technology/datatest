@@ -1,0 +1,3 @@
+The min value is: [AZ11234]
+The max value is: [WA93847]
+Selected: [[NJ08273]] -> [[NJ23445]]

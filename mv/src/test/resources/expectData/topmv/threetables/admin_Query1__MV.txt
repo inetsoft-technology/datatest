@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 5)
+[DISCOUNT][QUANTITY][PRODUCT_NAME][PRICE][Year(RETURN_DATE)]
+[[NULL]][2][MeToo AppServer][3000][2005-01-01 00:00:00]
+[0][4][Learn ABC][75][2002-01-01 00:00:00]
+[0][7][Fast Mail][39][2002-01-01 00:00:00]
+[0][7][House Hunter][129][2003-01-01 00:00:00]
+[0][13][Learn ABC][75][2004-01-01 00:00:00]
+[0][14][Info Folder][399][2005-01-01 00:00:00]
+[0][17][MeToo AppServer][3000][2004-01-01 00:00:00]
+[0][17][NetStorage][2850][2005-01-01 00:00:00]
+[0][18][Xconnect Server][2250][2004-01-01 00:00:00]
+[0][20][Animal World][59][2003-01-01 00:00:00]
+[0][20][InsideView][125][2004-01-01 00:00:00]
+

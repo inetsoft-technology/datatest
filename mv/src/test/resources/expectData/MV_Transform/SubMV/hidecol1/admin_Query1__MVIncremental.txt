@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 4)
+[city][company][reseller][state]
+[Ankertown][Du Monde Technologies][false][FL]
+[Austin][FISGA Corp][true][TX]
+[Boomtown][Folk Mining][false][[NULL]]
+[George Park][Software Specialists][true][PA]
+[Long Island][Scheggie Services][true][NY]
+[Orlando][Whittaker & Co, Inc][false][FL]
+

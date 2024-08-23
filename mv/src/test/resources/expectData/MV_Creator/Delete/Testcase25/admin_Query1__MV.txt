@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[[NULL]][Akergen][Ernst Handel][Patrico Brown][4][false][PA][38923]
+[123 Summer Rd.][Pitterson][Daycare One][Lisa Smith][2][false][NJ][09882]
+[1230 Hoes Lane][Piscataway][Old World Insurance][Lino Rodrigez][7][false][NJ][08854]
+[389 Jardim Rd.][Sevilla][George Services][Steven Devon][5][false][AK][82938]
+

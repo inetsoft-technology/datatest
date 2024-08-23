@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 2)
+[Worker Type][Sum(Worker Pay)]
+[Drywall Installers][3760000]
+[Foreman][7260000]
+[General Workers][11349000]
+[Lawyers][2700000]
+[Painters][2528000]
+[Pipefitter][4725000]
+[Planners][4736000]
+[Rigger][2494000]
+[Sheet Metal Worker][4085000]
+[Surveyors][1650000]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[ORDER_ID][CUSTOMER_ID][EMPLOYEE_ID]
+[197098][20][4]
+[198388][3][2]
+[211276][29][4]
+

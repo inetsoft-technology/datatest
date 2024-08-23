@@ -1,0 +1,3 @@
+The min value is: [59]
+The max value is: [63]
+Selected: [[59]] -> [[62]]

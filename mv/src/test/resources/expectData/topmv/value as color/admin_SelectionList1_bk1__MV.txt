@@ -1,0 +1,5 @@
+[0000CD]   SelectState:[8]
+[008B50]   SelectState:[9]
+[97FFFF]   SelectState:[9]
+[FF69B4]   SelectState:[9]
+[FFC1C1]   SelectState:[8]

@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[company][customer_id]
+[Computer Tech][13]
+[Folk Mining][20]
+[Interstate Shop][1]
+[Scheggie Services][15]
+

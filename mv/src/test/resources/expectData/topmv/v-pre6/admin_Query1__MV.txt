@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 1)
+[DISCOUNT]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+[[NULL]]
+

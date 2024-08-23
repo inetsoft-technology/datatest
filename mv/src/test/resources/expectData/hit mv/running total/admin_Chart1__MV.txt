@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 4)
+[Year(public.products:produce_date)][public.products:producer][Max(public.products:price)][Average(public.products:number_instock)]
+[2000-01-01 00:00:00][Continental Innovations Corp.][248][18]
+[2000-01-01 00:00:00][Enigma Productions][200][57]
+[2000-01-01 00:00:00][Global Networks Ltd.][39][78]
+[2001-01-01 00:00:00][Advanced Integrity][129][68]
+[2001-01-01 00:00:00][American Computer Vision][2250][31]
+[2001-01-01 00:00:00][Cyber Opportunities][399][55]
+[2001-01-01 00:00:00][Enigma Productions][105][56]
+[2001-01-01 00:00:00][Lockbox Servers][210][29]
+[2006-01-01 00:00:00][Continental Innovations Corp.][3000][8]
+[2006-01-01 00:00:00][Enigma Productions][398][33]
+[2006-01-01 00:00:00][Global Networks Ltd.][145][30]
+[2006-01-01 00:00:00][Lockbox Servers][2850][13]
+[2006-01-01 00:00:00][Micro Production LLC][550][73]
+[2006-01-01 00:00:00][Unified Interworks Resources][235][80]
+

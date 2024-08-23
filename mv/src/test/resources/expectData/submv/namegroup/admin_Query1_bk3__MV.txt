@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 5)
+[ORDER_ID][QUANTITY][EMPLOYEE_ID][DISCOUNT][PAID]
+[12075][23][1][0][true]
+[12308][275][1][0][false]
+[12350][75][4][0][true]
+[12357][230][2][0][false]
+[12366][282][4][0][false]
+[12368][281][3][0][false]
+[12401][64][3][0][true]
+[12474][29][2][0][true]
+[12547][14][1][0.1][false]
+

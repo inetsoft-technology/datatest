@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 5)
+[city][company][customer_id][reseller][state]
+[New York][Computer Tech][13][false][NY]
+[Pitterson][Daycare One][2][false][NJ]
+

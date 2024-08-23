@@ -1,0 +1,3 @@
+The min value is: [$32K]
+The max value is: [$60K]
+Selected: [[32250]] -> [[59500]]

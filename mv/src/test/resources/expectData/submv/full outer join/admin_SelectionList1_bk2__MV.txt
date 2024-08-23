@@ -1,0 +1,3 @@
+[Graphics]   SelectState:[9]
+[Office Tools]   SelectState:[9]
+[Personal]   SelectState:[9]

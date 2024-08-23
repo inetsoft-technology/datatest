@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[Category][Max(Month(Date))][Calc_Max_Date]
+[Business][2020-12-01 00:00:00][2020-12-01 00:00:00]
+[Graphics][2020-12-01 00:00:00][2020-12-01 00:00:00]
+[Office Tools][2020-12-01 00:00:00][2020-12-01 00:00:00]
+

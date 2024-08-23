@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 3)
+[CITY][CUSTOMER_ID][STATE]
+[York][28][PA]
+

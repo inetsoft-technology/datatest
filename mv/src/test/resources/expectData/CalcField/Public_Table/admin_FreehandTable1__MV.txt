@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 4)
+[[NULL]][2001-01-01 00:00:00][2002-01-01 00:00:00][2003-01-01 00:00:00]
+[Computer Tech][26][[NULL]][[NULL]]
+[Daycare One][4][4][[NULL]]
+[Eastern Data][[NULL]][[NULL]][3]
+[Familia Computer Services][[NULL]][[NULL]][6]
+[George Services][[NULL]][10][[NULL]]
+[Quick Stop][[NULL]][40][16]
+[The Big Cat][11][[NULL]][[NULL]]
+

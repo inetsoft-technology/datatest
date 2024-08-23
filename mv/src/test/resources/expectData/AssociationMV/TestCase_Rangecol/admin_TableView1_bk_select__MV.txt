@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 5)
+[CUSTOMER_ID][EMPLOYEE_ID][PAID][rangecol1][drangecol]
+[2][2][false][>=0.2][2003-01-01 00:00:00]
+[19][2][false][>=0.2][2002-10-01 00:00:00]
+[26][3][false][0.15-0.2][2003-01-01 00:00:00]
+

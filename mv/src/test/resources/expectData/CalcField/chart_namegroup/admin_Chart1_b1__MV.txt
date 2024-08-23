@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[DataGroup(Customer:State)][ColorGroup(Customer:City)][agg]
+[C][Albany][2025.3636]
+[TX][Austin][5740.2211]
+

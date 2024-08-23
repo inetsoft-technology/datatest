@@ -1,0 +1,3 @@
+The min value is: [35]
+The max value is: [132]
+Selected: [[35]] -> [[83]]

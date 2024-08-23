@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[company][Median(quantity)]
+[Computer Tech][35]
+[Others][13]
+[Quick Stop][116]
+[The Big Cat][45]
+

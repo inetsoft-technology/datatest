@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 5)
+[Year(Month(Date))][[NULL]][Marston][Heggenbart][Miller]
+[2018-01-01 00:00:00][Change from previous Year(Month(Date)): Sum(Quantity Purchased)][[NULL]][[NULL]][[NULL]]
+[2018-01-01 00:00:00][Sum(Quantity Purchased)][2715][2736][1914]
+[2019-01-01 00:00:00][Change from previous Year(Month(Date)): Sum(Quantity Purchased)][901][553][-113]
+[2019-01-01 00:00:00][Sum(Quantity Purchased)][3616][3289][1801]
+[2020-01-01 00:00:00][Change from previous Year(Month(Date)): Sum(Quantity Purchased)][-1556][-3289][-1801]
+[2020-01-01 00:00:00][Sum(Quantity Purchased)][2060][[NULL]][[NULL]]
+

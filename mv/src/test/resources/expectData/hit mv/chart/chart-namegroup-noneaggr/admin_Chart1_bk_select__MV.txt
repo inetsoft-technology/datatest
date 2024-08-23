@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[DataGroup(company)][quantity]
+[A][35]
+[Familia Computer Services][8]
+[George Services][23]
+

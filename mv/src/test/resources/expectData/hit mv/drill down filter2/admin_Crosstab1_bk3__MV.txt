@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 7)
+[reseller][state][city][2001-01-01 00:00:00][2001-01-01 00:00:00][2001-01-01 00:00:00][Grand Total]
+[[NULL]][[NULL]][[NULL]][1][4][6][[NULL]]
+[false][AK][Little Rock][108][[NULL]][[NULL]][108]
+[false][AK][Sevilla][[NULL]][60][60][120]
+[Grand Total][[NULL]][[NULL]][108][60][60][228]
+

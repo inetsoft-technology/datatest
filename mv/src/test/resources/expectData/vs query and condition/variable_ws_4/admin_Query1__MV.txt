@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 8)
+[Long][Short][String][Float][Byte][Double][Character][Integer]
+[12005][14][Fast Go Game][0.2][2][200][E][25]
+

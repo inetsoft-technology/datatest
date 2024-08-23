@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 4)
+[product_name][instock][reseller][state]
+[Combat Hero][true][false][FL]
+[Green Planet][true][false][PA]
+[InsideView][true][false][NJ]
+[Learn ABC][true][false][FL]
+[Mega Icons][true][false][OH]
+[MeToo AppServer][true][false][AK]
+[Sync Me][true][false][NJ]
+[WebCalendar][true][false][CA]
+

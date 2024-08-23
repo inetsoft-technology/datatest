@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[DISCOUNT][false][true]
+[0][9213][1011]
+[0.01][26][[NULL]]
+[0.05][116][57]
+

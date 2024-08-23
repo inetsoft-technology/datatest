@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 3)
+[ORDER_ID][DISCOUNT][PAID]
+[12030][0][false]
+[12031][1][true]
+[12032][1][false]
+[12033][1][false]
+[12034][1][false]
+[12035][1][false]
+[12036][1][false]
+[12037][1][false]
+[12038][1][false]
+[12039][1][false]
+

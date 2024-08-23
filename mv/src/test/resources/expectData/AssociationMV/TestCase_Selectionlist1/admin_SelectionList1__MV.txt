@@ -1,0 +1,7 @@
+[-32768]   SelectState:[8]
+[45]   SelectState:[8]
+[565]   SelectState:[8]
+[3434]   SelectState:[8]
+[5752]   SelectState:[8]
+[5756]   SelectState:[8]
+[32767]   SelectState:[8]

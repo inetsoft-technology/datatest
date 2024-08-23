@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 8)
+[Long][Short][String][Float][Byte][Double][Character][Integer]
+[12010][3][Info Folder][0.11][2][399][b][58]
+[12010][23][17 Inch LCD][0.11][7][210][b][57]
+

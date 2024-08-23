@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[cid][STATE][1]
+[<20][CA][28]
+[<20][FL][50]
+[<20][MA][45]
+[<20][Others][18]
+[>=30][MA][40]
+[>=30][MD][49]
+

@@ -1,0 +1,5 @@
+[<0.1]   SelectState:[8]
+[>=0.2]   SelectState:[8]
+[0.1-0.15]   SelectState:[8]
+[0.15-0.2]   SelectState:[8]
+[Others]   SelectState:[8]

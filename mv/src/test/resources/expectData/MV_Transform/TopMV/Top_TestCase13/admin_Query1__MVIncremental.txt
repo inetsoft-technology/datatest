@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[orderno][MonthOfYear(orderdate)]
+[5][3]
+[10][1]
+[14][2]
+[14][2]
+

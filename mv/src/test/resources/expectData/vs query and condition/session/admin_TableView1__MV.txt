@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[Name][Role][Group]
+[admin][Administrator][G0]
+[user2][Everyone][G2]
+

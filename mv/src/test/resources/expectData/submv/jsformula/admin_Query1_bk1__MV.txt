@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[ORDER_ID][EMPLOYEE_ID][DISCOUNT][SQLFormula]
+[12334][1][0.15][12335]
+[12615][4][0.15][12619]
+[37086][3][0.15][37095]
+[49318][2][0.15][49324]
+

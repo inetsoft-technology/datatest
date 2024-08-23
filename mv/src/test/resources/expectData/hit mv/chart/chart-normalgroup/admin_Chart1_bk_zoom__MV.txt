@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[city][DistinctCount(customer_id)]
+[Albany][1]
+[Austin][1]
+[Boulder][1]
+[Others][32]
+

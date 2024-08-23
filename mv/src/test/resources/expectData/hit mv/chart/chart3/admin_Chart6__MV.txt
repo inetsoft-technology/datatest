@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 2)
+[DayOfWeek(ORDER_DATETIME)][PopulationVariance(CUSTOMER_ID)]
+[1][124.2732]
+[2][230.5794]
+[3][125.0648]
+[4][311.4253]
+[5][130.6681]
+[6][223.3304]
+[7][186.0919]
+

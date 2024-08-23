@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 5)
+[DISCOUNT][QUANTITY][PRODUCT_NAME][PRICE][Year(RETURN_DATE)]
+[0][20][InsideView][125][2004-01-01 00:00:00]
+

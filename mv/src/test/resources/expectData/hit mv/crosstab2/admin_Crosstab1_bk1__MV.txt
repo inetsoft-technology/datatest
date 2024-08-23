@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[REASON][[NULL]][DISCOUNT/Correlation(QUANTITY, DISCOUNT)][Grand Total]
+[Not functioning properly][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+[Not functioning properly][DISCOUNT][0][0]
+[Grand Total][DISCOUNT][0][0]
+[Grand Total][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+

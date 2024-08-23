@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 3)
+[DISCOUNT][PAID][Sum(ORDER_ID)]
+[1][false][12050]
+

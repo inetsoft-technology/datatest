@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[21 Doger Sound Blvd.][Austin][FISGA Corp][[NULL]][17][true][TX][28122]
+[23 Tasaga Ave.][Aachen][Eastern Data][Anna Lincoln][3][true][TX][03887]
+[300 Great Swamp Rd.][George Park][Software Specialists][Eduardo Freyre][19][true][PA][23445]
+[384 Broad St.][Littletown][Interstate Shop][John Kelly][1][true][NY][18322]
+[4500 River Rd.][Middletown][Direct Sales][Luke Baker][9][true][NJ][08854]
+[5 Baker's Lane][Chicago][Familia Computer Services][Aria Duz][6][true][IL][39283]
+[822 Technology Dr.][San Jose][InterLand Services][Horst Braunschwad][14][true][CA][83923]
+[839 Via Gaty Dr.][Long Island][Scheggie Services][Paula Camino][15][true][NY][12334]
+[88 Specialty Dr.][Los Angles][Specialty Retail][Simon Supricido][10][true][CA][88938]
+

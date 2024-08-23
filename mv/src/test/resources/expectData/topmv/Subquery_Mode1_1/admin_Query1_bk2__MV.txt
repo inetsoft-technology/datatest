@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[12 Woodpark Ave.][Cleveland][The Big Cat][Michael Kumar][11][false][OH][32343]
+[123 Summer Rd.][Pitterson][Daycare One][Lisa Smith][2][false][NJ][09882]
+

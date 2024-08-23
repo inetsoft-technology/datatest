@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[country][state][CalcField1]
+[China][XA][17]
+[USA][NJ][1]
+[USA][NY][2]
+

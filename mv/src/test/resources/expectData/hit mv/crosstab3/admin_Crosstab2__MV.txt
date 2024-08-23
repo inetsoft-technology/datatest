@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 3)
+[Year(ORDER_DATE)][[NULL]][DistinctCount(REASON)/Count(REASON)]
+[2002-01-01 00:00:00][Count(REASON)][55]
+[2002-01-01 00:00:00][DistinctCount(REASON)][8]
+[2003-01-01 00:00:00][Count(REASON)][42]
+[2003-01-01 00:00:00][DistinctCount(REASON)][8]
+[2004-01-01 00:00:00][Count(REASON)][62]
+[2004-01-01 00:00:00][DistinctCount(REASON)][8]
+[2005-01-01 00:00:00][Count(REASON)][31]
+[2005-01-01 00:00:00][DistinctCount(REASON)][8]
+

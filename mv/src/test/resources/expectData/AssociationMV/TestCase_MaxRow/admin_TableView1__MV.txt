@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 5)
+[ADDRESS][CITY][COMPANY_NAME][CUSTOMER_ID][STATE]
+[123 Summer Rd.][Middletown][Daycare One][2][NJ]
+[384 Broad St.][Wayne][Interstate Shop][1][NJ]
+[389 Jardim Rd.][Baltimore][George Services][5][MD]
+[5 Baker's Lane][Hartford][Loctite Corp.][6][CT]
+[7262 18th St.][New York][Eastern Data][3][NY]
+[88 Rio Grand Ave.][Boulder][Ernst Handel][4][CO]
+

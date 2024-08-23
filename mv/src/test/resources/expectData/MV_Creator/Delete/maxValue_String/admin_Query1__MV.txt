@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 1)
+[string]
+[a]
+[efefe]
+[fd]
+[fdsscv]
+[ff]
+[sfaf]
+[z]
+

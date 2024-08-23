@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 4)
+[Worker Type][Average(Accident)][Average(Worker Pay)][Sum(Lost Days)]
+[General Workers][3][39000][1]
+[Rigger][3][43000][6]
+

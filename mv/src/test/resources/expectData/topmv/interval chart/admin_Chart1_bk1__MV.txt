@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 5)
+[STATE][Sum(CUSTOMER_ID)][Sum(EMPLOYEE_ID)][Sum(REGION_ID)][Sum(DISCOUNT)]
+[AZ][[NULL]][60][[NULL]][0.7]
+[CA][[NULL]][184][[NULL]][0.85]
+[CA][839][[NULL]][102][[NULL]]
+[CT][[NULL]][14][[NULL]][0.25]
+[MA][[NULL]][94][[NULL]][0.3]
+[MA][1481][[NULL]][57][[NULL]]
+[MD][[NULL]][101][[NULL]][0.35]
+[MD][775][[NULL]][48][[NULL]]
+[Others][374][[NULL]][41][[NULL]]
+

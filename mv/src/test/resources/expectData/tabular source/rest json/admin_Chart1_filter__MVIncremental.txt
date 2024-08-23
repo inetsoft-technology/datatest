@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[boole][state][Sum(doub)][Sum(id)]
+[false][XA][617283.945][23]
+[true][NJ][123456.789][1]
+[true][NY][123456.789][2]
+

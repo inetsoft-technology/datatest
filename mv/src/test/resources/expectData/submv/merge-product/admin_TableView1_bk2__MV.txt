@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[CUSTOMER_ID][STATE]
+[11][TX]
+[16][CA]
+[165][MD]
+

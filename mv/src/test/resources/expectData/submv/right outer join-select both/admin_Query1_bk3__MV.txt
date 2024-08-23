@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 10)
+[CATEGORY_ID][CATEGORY_NAME][ADDRESS][CITY][COMPANY_NAME][CUSTOMER_ID][REGION_ID][RESELLER][STATE][ZIP]
+[[NULL]][[NULL]][5 Baker's Lane][Hartford][Loctite Corp.][6][1][true][CT][39283]
+

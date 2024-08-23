@@ -1,0 +1,3 @@
+The min value is: [Familia Computer Services]
+The max value is: [Familia Computer Services]
+Selected: [[Familia Computer Services]] -> [[Familia Computer Services]]

@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 4)
+[produce_date][producer][product_exist][product_name]
+[2001-01-01 00:00:00][American Computer Vision][1][Xconnect Server]
+

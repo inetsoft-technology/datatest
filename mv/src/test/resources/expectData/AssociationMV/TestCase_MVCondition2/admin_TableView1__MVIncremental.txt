@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 3)
+[STATE][CUSTOMER_ID][RESELLER]
+[CA][9][false]
+[CO][4][false]
+[CO][8][true]
+[CT][6][true]
+[IL][10][false]
+[MD][5][true]
+[NJ][1][true]
+[NJ][2][true]
+[NY][3][true]
+[NY][7][true]
+[TX][11][true]
+

@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 5)
+[DataGroup(field14)][[NULL]][1996-01-01 00:00:00][1997-01-01 00:00:00][1998-01-01 00:00:00]
+[[NULL]][Correlation(Freight, EmployeeID)][0.0576][-0.0721][0.0438]
+[[NULL]][Count(EmployeeID)][96][324][234]
+[BB][Correlation(Freight, EmployeeID)][0.2664][0.0293][0.0994]
+[BB][Count(EmployeeID)][12][42][41]
+[France][Correlation(Freight, EmployeeID)][-0.5426][-0.1215][-0.0769]
+[France][Count(EmployeeID)][9][27][22]
+[Spain][Correlation(Freight, EmployeeID)][0.7394][-0.3478][-0.1298]
+[Spain][Count(EmployeeID)][5][5][13]
+

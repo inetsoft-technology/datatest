@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[city][customer_id][reseller][state]
+[Austin][17][true][TX]
+[George Park][19][true][PA]
+[Long Island][15][true][NY]
+[San Jose][14][true][CA]
+

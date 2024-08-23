@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 3)
+[reseller][state][zip]
+[false][[NULL]][11234]
+[false][AK][12343]
+[false][FL][29183]
+[false][FL][83923]
+[false][NY][11223]
+[false][OH][32343]
+[true][CA][83923]
+[true][NY][12334]
+[true][PA][23445]
+[true][TX][28122]
+

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[Year(ORDER_DATETIME)][QuarterOfYear(ORDER_DATETIME)][Sum(CUSTOMER_ID)]
+[2003-01-01 00:00:00][1][26]
+[2003-01-01 00:00:00][4][35]
+

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 4)
+[customer_id][QuarterOfYear(orderdate)][orderno][MonthOfYear(orderdate)]
+[[NULL]][[NULL]][463][5]
+[[NULL]][[NULL]][506][4]
+[[NULL]][[NULL]][732][3]
+[269][2][407][2]
+[328][1][755][1]
+

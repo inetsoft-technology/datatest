@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[DISCOUNT][WeightedAverage(CUSTOMER_ID, EMPLOYEE_ID)]
+[0][18.2635]
+[0.01][26]
+[0.05][16.0385]
+[0.1][19.377]
+

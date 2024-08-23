@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 4)
+[address][city][reseller][state]
+[21 Doger Sound Blvd.][Austin][true][TX]
+[23 Tasaga Ave.][Aachen][true][TX]
+[300 Great Swamp Rd.][George Park][true][PA]
+[384 Broad St.][Littletown][true][NY]
+[4500 River Rd.][Middletown][true][NJ]
+[5 Baker's Lane][Chicago][true][IL]
+[822 Technology Dr.][San Jose][true][CA]
+[839 Via Gaty Dr.][Long Island][true][NY]
+[88 Specialty Dr.][Los Angles][true][CA]
+

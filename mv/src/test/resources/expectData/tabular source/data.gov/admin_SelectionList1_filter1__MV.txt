@@ -1,0 +1,5 @@
+[<-10]   SelectState:[5]
+[>=10]   SelectState:[8]
+[0-10]   SelectState:[9]
+[-10-0]   SelectState:[9]
+[Others]   SelectState:[9]

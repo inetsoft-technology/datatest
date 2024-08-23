@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[Year(ORDER_DATE)][Correlation(EMPLOYEE_ID, CUSTOMER_ID)][PthPercentile(ORDER_ID, 1)]
+[2002-01-01 00:00:00][-0.0079][12003]
+[2003-01-01 00:00:00][-0.0646][12175]
+[2004-01-01 00:00:00][0.1544][12362]
+[2005-01-01 00:00:00][0.0518][12551]
+

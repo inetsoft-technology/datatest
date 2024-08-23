@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[QuarterOfYear(ORDER_DATETIME)][DistinctCount(CUSTOMER_ID)]
+[1][44]
+[2][41]
+[3][44]
+[4][38]
+

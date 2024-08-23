@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 2)
+[STATE][First(CUSTOMER_ID, ADDRESS)]
+[AK][5]
+[CA][8]
+[FL][16]
+[IL][6]
+[NJ][2]
+[NY][20]
+[OH][11]
+[PA][19]
+[TX][17]
+

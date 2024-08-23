@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[EMPLOYEE_ID][DISCOUNT][PAID]
+[1][[NULL]][true]
+[4][[NULL]][true]
+[6][[NULL]][true]
+[20][[NULL]][false]
+[60][[NULL]][false]
+[76][[NULL]][false]
+

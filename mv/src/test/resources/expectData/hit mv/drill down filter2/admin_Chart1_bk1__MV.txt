@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[state][zip][Sum(customer_id)]
+[AK][82938][360]
+[CA][[NULL]][480]
+[CA][88938][1120]
+

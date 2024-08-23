@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[Year(orderdate)][state][Value of previous Year(orderdate): Sum(customer_id)]
+[2001-01-01 00:00:00][AK][[NULL]]
+[2001-01-01 00:00:00][CA][[NULL]]
+

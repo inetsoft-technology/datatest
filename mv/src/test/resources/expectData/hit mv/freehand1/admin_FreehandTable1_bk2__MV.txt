@@ -1,0 +1,18 @@
+The table size(row x col) is: (16 x 4)
+[Year(ORDER_DATE)][[NULL]][DISCOUNT/Variance(QUANTITY)/Count(PAID)][Grand Total]
+[[NULL]][Count(PAID)][11][11]
+[[NULL]][Count(PAID)][14][14]
+[[NULL]][Count(PAID)][17][17]
+[[NULL]][Count(PAID)][20][20]
+[[NULL]][Count(PAID)][62][62]
+[[NULL]][Variance(QUANTITY)][44.3352][44.3352]
+[[NULL]][Variance(QUANTITY)][58.375][58.375]
+[[NULL]][Variance(QUANTITY)][67][67]
+[[NULL]][Variance(QUANTITY)][124.8178][124.8178]
+[[NULL]][Variance(QUANTITY)][250.9763][250.9763]
+[2002-01-01 00:00:00][DISCOUNT][0][0]
+[2003-01-01 00:00:00][DISCOUNT][0][0]
+[2004-01-01 00:00:00][DISCOUNT][0][0]
+[2005-01-01 00:00:00][DISCOUNT][[NULL]][[NULL]]
+[Grand Total][DISCOUNT][[NULL]][[NULL]]
+

@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 3)
+[aaa][STATE][REGION_ID]
+[Fast Transportation][FL][1]
+[FMG Consulting][MD][1]
+[Folk Mining][AZ][2]
+[George Services][MD][1]
+[High Society Investments][NY][1]
+[Infinity Software][WA][2]
+[InterLand Services][MD][1]
+[Interstate Shop][NJ][1]
+[Loctite Corp.][CT][1]
+[Northwest Outfitters][WA][2]
+[Nova Tera][TX][2]
+

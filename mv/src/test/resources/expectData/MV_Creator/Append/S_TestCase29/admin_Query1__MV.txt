@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 4)
+[customer_id][discount][orderdate][orderno]
+[11][0][2001-12-15 00:00:00][1]
+

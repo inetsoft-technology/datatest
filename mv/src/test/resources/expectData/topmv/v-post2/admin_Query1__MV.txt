@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 3)
+[PAID][DISCOUNT][EMPLOYEE_ID]
+[false][0.01][4]
+[false][0.05][17]
+[false][0.15][22]
+[false][0.2][15]
+[false][0.25][34]
+[true][[NULL]][11]
+[true][0.05][9]
+[true][0.1][13]
+[true][0.2][4]
+[true][0.25][4]
+

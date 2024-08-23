@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 18)
+[ORDER_ID][QUANTITY][REASON][ORDER_ID_1][CUSTOMER_ID][EMPLOYEE_ID][ORDER_DATE][DISCOUNT][PAID][PRODUCT_ID][ORDER_ID_2][PRODUCT_ID_1][QUANTITY_1][REASON_1][PRODUCT_ID_1_1][PRODUCT_NAME][DESCRIPTION][PRICE]
+[12507][2][Could not pay][12507][14][2][2004-10-06 00:00:00][0][false][2][12507][2][2][Could not pay][2][InsideView][Database browser][125]
+[12507][8][Defective][12507][14][2][2004-10-06 00:00:00][0][false][23][12507][2][2][Could not pay][2][InsideView][Database browser][125]
+[12554][13][Did not want][12554][25][2][2005-01-12 00:00:00][0][false][2][12554][2][13][Did not want][2][InsideView][Database browser][125]
+

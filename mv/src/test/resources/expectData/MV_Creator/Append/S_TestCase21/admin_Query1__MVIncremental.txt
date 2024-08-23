@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 5)
+[city][contact][customer_id][reseller][state]
+[Aachen][Anna Lincoln][3][true][TX]
+[Akergen][Patrico Brown][4][false][PA]
+[Austin][[NULL]][17][true][TX]
+[Chicago][Aria Duz][6][true][IL]
+[George Park][Eduardo Freyre][19][true][PA]
+[Los Angles][Simon Supricido][10][true][CA]
+[San Francisco][Richard Isantengse][8][false][CA]
+[San Jose][Horst Braunschwad][14][true][CA]
+

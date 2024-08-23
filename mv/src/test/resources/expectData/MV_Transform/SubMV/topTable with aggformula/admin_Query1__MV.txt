@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 3)
+[reseller][state][fornum]
+[false][[NULL]][20.02]
+[false][AK][12.02]
+[false][FL][34.04]
+[false][NY][13.02]
+[false][OH][11.02]
+[true][CA][14.02]
+[true][NY][15.02]
+[true][PA][19.02]
+[true][TX][17.02]
+

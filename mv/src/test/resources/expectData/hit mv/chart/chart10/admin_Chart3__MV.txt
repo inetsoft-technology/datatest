@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 2)
+[DataGroup(DISCOUNT)][Variance(CUSTOMER_ID)]
+[[NULL]][115.1948]
+[0.1][109.2391]
+[0.15][131.5278]
+[0.2][70]
+[0.25][85.0292]
+[A][96.6987]
+

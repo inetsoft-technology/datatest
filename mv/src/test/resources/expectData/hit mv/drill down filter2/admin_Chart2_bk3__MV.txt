@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 3)
+[reseller][state][Sum(customer_id)]
+[false][AK][228]
+

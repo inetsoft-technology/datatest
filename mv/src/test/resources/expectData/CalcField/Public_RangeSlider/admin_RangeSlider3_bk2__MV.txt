@@ -1,0 +1,3 @@
+The min value is: [Computer Tech]
+The max value is: [Eastern Data]
+Selected: [[Computer Tech]] -> [[Eastern Data]]

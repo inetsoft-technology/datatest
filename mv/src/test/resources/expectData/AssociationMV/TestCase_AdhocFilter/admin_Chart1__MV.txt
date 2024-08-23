@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[Category][Sum(Quantity Purchased)]
+[Games][11925]
+[Hardware][11805]
+[Others][21773]
+[Personal][8507]
+

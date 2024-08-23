@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 6)
+[PAID][REASON][2002][2003][2004][2005]
+[false][Could not pay][64][48][110][21]
+[false][Defective][35][7][88][21]
+[false][Did not want][88][66][145][90]
+[false][Found a better price][132][33][191][33]
+[false][Insufficient support][61][50][103][57]
+[false][Not functioning properly][64][93][80][44]
+[false][Shipped Broken][104][87][106][47]
+[false][Wrong specifications][86][84][121][55]
+[true][Did not want][[NULL]][2][[NULL]][[NULL]]
+[true][Insufficient support][[NULL]][10][[NULL]][[NULL]]
+[true][Shipped Broken][[NULL]][39][[NULL]][[NULL]]
+

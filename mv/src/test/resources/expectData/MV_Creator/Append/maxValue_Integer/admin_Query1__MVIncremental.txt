@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 1)
+[INTEGER]
+[-32768]
+[45]
+[565]
+[3434]
+[3434]
+

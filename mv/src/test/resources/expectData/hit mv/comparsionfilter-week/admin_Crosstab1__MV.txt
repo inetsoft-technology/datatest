@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 7)
+[[NULL]][0][0.05][0.1][0.15][0.2][0.25]
+[Median(Product:Quantity Purchased)][11][9][10][9][10][10]
+

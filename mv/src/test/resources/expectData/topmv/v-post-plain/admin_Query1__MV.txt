@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 4)
+[PAID][DISCOUNT][CUSTOMER_ID][EMPLOYEE_ID]
+[false][0.01][26][4]
+[false][0.05][116][17]
+[false][0.15][158][22]
+[false][0.2][120][15]
+[false][0.25][206][34]
+[true][[NULL]][88][11]
+[true][0.05][57][9]
+[true][0.1][102][13]
+[true][0.2][20][4]
+[true][0.25][29][4]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 7)
+[CATEGORY_ID][DESCRIPTION][INSTOCK][PRICE][PRODUCT_ID][PRODUCT_NAME][SUPPLIER_ID]
+[3][Database browser][true][125][2][InsideView][5]
+[3][XML connectivity tool][true][2250][1][Xconnect Server][5]
+[4][Java game toolkit][false][398][9][True Action][7]
+

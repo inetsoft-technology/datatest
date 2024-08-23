@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 4)
+[Worker Type][Average(Accident)][Average(Worker Pay)][Sum(Lost Days)]
+[Drywall Installers][1.8404][40000][225]
+[Foreman][1.5702][60000][267]
+[General Workers][1.8041][39000][635]
+[Lawyers][0][90000][0]
+[Painters][1.2][32000][152]
+[Pipefitter][1.9111][35000][303]
+[Planners][1.8594][74000][157]
+[Rigger][3][43000][348]
+[Sheet Metal Worker][1.6632][43000][206]
+[Surveyors][1.6364][50000][77]
+

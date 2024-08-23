@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[DataGroup(company)][CalcField]
+[A][31.5]
+[Familia Computer Services][16]
+

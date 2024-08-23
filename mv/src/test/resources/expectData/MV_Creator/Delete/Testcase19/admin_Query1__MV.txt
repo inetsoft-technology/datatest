@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 6)
+[product_id][product_name][instock][customer_id][reseller][state]
+[6][[NULL]][true][6][true][IL]
+[13][Easy Chess][false][13][false][NY]
+

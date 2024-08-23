@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[Year(orderdate)][Quarter(orderdate)][orderno]
+[[NULL]][[NULL]][113]
+[2002-01-01 00:00:00][2002-10-01 00:00:00][842]
+

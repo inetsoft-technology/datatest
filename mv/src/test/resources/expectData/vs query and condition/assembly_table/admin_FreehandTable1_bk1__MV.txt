@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 3)
+[[NULL]][false][true]
+[George Kloss][12][[NULL]]
+[Giovanni Feuter][16][[NULL]]
+[Horst Braunschwad][[NULL]][14]
+[Richard Isantengse][8][[NULL]]
+[Roland Sommer][18][[NULL]]
+[Simon Supricido][[NULL]][10]
+[Steven Devon][5][[NULL]]
+

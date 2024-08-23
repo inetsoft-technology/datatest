@@ -1,0 +1,6 @@
+[0]   SelectState:[9]
+[5]   SelectState:[8]
+[32]   SelectState:[9]
+[42]   SelectState:[8]
+[134]   SelectState:[8]
+[255]   SelectState:[9]

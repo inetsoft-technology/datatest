@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[Category][Max(Month(Date))][Calc_Max_Date]
+[Games][2018-12-01 00:00:00][2018-12-01 00:00:00]
+[Hardware][2018-12-01 00:00:00][2018-12-01 00:00:00]
+[Personal][2018-12-01 00:00:00][2018-12-01 00:00:00]
+

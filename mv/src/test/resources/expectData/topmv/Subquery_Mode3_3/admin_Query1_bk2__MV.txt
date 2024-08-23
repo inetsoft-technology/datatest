@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[product_id][product_name][supplier_id]
+[1][Xconnect Server][5]
+[2][InsideView][5]
+[3][Info Folder][1]
+

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 3)
+[state][city][color]
+[AK][Sevilla][FFC1C1]
+[NJ][Pitterson][0000CD]
+[NY][Littletown][97FFFF]
+[PA][Akergen][FF69B4]
+[TX][Aachen][008B50]
+

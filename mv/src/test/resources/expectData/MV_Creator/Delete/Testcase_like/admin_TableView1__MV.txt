@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 1)
+[company]
+[Eastern Data]
+[Ernst Handel]
+[Fast Transportation]
+[FISGA Corp]
+[Folk Mining]
+[Interstate Shop]
+[The Big Cat]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[state][color][Sum(customer_id)]
+[NY][97FFFF][12]
+[PA][FF69B4][84]
+[TX][008B50][33]
+

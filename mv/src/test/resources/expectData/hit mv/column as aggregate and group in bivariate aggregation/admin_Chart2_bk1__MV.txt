@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 4)
+[f_state][CITY][Count(f_state_1)][WeightedAverage(CUSTOMER_ID, CUSTOMER_ID_1)]
+[MA][Austin][4][26.25]
+[MA][Boston][8][26.25]
+[MA][Cambridge][4][26.25]
+[MA][Springfield][4][26.25]
+[PA][Austin][1][28]
+[PA][York][1][28]
+

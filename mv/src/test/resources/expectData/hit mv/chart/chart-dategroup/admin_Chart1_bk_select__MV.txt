@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[Year(Year(ORDER_DATE))][Sum(CUSTOMER_ID)]
+[2003-01-01 00:00:00][1263]
+[2004-01-01 00:00:00][1226]
+[2005-01-01 00:00:00][959]
+

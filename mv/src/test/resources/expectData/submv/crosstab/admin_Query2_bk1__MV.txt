@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 5)
+[DISCOUNT][2002][2003][2004][2005]
+[0.15][1][1][1][1]
+

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 3)
+[Year(Date of Birth)][Average(Numeric Results)][DistinctCount(Class Listing)]
+[2012-01-01 00:00:00][56][1]
+[2013-01-01 00:00:00][22][3]
+[2014-01-01 00:00:00][42][7]
+[2015-01-01 00:00:00][12][2]
+[2017-01-01 00:00:00][5][1]
+

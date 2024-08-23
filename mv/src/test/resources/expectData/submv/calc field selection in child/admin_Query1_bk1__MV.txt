@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 5)
+[quantity][customer_id][discount][orderdate][reseller]
+[8][6][0.05][2003-07-09 00:00:00][1]
+

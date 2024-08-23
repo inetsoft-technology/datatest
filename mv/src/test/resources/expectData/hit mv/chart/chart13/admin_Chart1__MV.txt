@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 5)
+[PAID][DISCOUNT][DistinctCount(CUSTOMER_ID)][DistinctCount(EMPLOYEE_ID)][Sum(ORDER_ID)]
+[false][[NULL]][31][4][794927]
+[false][0][35][4][6226796]
+[false][0.01][1][1][12101]
+[false][0.05][7][3][99778]
+[false][0.1][14][4][236048]
+[false][0.15][8][4][111353]
+[false][0.2][6][4][73878]
+[false][0.25][9][4][186690]
+[true][[NULL]][4][3][49351]
+[true][0][30][4][741817]
+[true][0.05][3][3][37260]
+[true][0.1][5][3][62309]
+[true][0.2][1][1][12611]
+[true][0.25][1][1][12532]
+

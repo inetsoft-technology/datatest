@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 6)
+[public.products:product_exist][Year(public.products:produce_date)][[NULL]][1970-01-01 09:00:00][1970-01-01 12:00:00][1970-01-01 17:00:00]
+[0][2006-01-01 00:00:00][Running Sum by column: Sum(public.products:number_instock)][191][334][489]
+[0][2006-01-01 00:00:00][Running Sum by row: Sum(public.products:price)][3474][194][134]
+[1][2006-01-01 00:00:00][Running Sum by column: Sum(public.products:number_instock)][[NULL]][34][[NULL]]
+[1][2006-01-01 00:00:00][Running Sum by row: Sum(public.products:price)][[NULL]][550][[NULL]]
+

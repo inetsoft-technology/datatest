@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 4)
+[PRODUCT_ID][CATEGORY_ID][NUMBER_INSTOCK][PRICE_1]
+[23][7][0][80]
+

@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 2)
+[Customer:State][CalcField1]
+[AZ][1107]
+[CA][4646]
+[CO][1839]
+[CT][676]
+[FL][1102]
+[IL][1456]
+[MA][5143]
+[MD][3361]
+[NJ][7136]
+[NV][793]
+[NY][5153]
+[PA][1376]
+[TX][5321]
+[WA][2298]
+

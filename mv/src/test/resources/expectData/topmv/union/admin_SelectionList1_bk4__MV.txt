@@ -1,0 +1,7 @@
+[Business]   SelectState:[9]
+[Educational]   SelectState:[9]
+[Games]   SelectState:[9]
+[Graphics]   SelectState:[4]
+[Hardware]   SelectState:[4]
+[Office Tools]   SelectState:[4]
+[Personal]   SelectState:[8]

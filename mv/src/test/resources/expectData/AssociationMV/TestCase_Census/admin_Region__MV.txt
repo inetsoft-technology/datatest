@@ -1,0 +1,4 @@
+[Midwest]   SelectState:[10]   Measure:[64.39M]
+[Northeast]   SelectState:[10]   Measure:[66.75M]
+[South]   SelectState:[10]   Measure:[86.51M]
+[West]   SelectState:[10]   Measure:[63.20M]

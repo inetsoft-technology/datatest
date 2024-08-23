@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[1230 Hoes Lane][Piscataway][Old World Insurance][Lino Rodrigez][7][false][NJ][08854]
+[300 Great Swamp Rd.][George Park][Software Specialists][Eduardo Freyre][19][true][PA][23445]
+[44 Islander Lane][Orlando][Whittaker & Co, Inc][Giovanni Feuter][16][false][FL][83923]
+[4500 River Rd.][Middletown][Direct Sales][Luke Baker][9][true][NJ][08854]
+[71 Mulberry St.][San Francisco][Quick Stop][Richard Isantengse][8][false][CA][[NULL]]
+[77 Druguz Blvd.][Little Rock][Fast Transportation][George Kloss][12][false][AK][12343]
+[822 Technology Dr.][San Jose][InterLand Services][Horst Braunschwad][14][true][CA][83923]
+[839 Via Gaty Dr.][Long Island][Scheggie Services][Paula Camino][15][true][NY][12334]
+[88 Specialty Dr.][Los Angles][Specialty Retail][Simon Supricido][10][true][CA][88938]
+[90 First Ave.][New York][Computer Tech][Jean Crowther][13][false][NY][11223]
+

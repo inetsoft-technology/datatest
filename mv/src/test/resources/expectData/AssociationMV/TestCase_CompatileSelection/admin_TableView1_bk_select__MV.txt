@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[aaa][CITY][CUSTOMER_ID]
+[AMG Logistics][MA][1]
+[CA][Albany][16]
+[CA][Los Angeles][13]
+[CA][Los Angeles][21]
+[CA][San Francisco][9]
+[Computer Tech][CA][2]
+

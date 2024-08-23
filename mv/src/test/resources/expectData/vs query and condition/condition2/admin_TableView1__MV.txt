@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 7)
+[CATEGORY_ID][DESCRIPTION][INSTOCK][PRICE][PRODUCT_ID][PRODUCT_NAME][SUPPLIER_ID]
+[3][Database browser][true][125][2][InsideView][5]
+[4][House hunting assistant][false][129][5][House Hunter][8]
+[4][Java game toolkit][false][398][9][True Action][7]
+

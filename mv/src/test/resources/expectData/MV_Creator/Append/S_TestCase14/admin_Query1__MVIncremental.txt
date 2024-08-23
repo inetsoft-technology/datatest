@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 4)
+[customer_id][reseller][state][zip]
+[2][false][NJ][09882]
+[4][false][PA][38923]
+[5][false][AK][82938]
+[7][false][NJ][08854]
+[8][false][CA][[NULL]]
+[11][false][OH][32343]
+[12][false][AK][12343]
+[13][false][NY][11223]
+[18][false][FL][29183]
+

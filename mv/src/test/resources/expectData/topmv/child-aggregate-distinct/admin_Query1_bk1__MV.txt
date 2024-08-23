@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[EMPLOYEE_ID][DISCOUNT]
+[4][0.15]
+[4][0.15]
+[6][0.15]
+[8][0.15]
+

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(CalcField)][Sum(quantity)]
+[A][63]
+[Familia Computer Servicesaaa][8]
+[George Servicesaaa][23]
+[Quick Stopaaa][130]
+[The Big Cataaa][45]
+

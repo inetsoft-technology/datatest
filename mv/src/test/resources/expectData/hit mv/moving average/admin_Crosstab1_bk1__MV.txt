@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 7)
+[ORDERS.CUSTOMERS:RESELLER][QuarterOfYear(ORDERS.ORDERS:ORDER_DATE)][[NULL]][2002-01-01 00:00:00][2003-01-01 00:00:00][2004-01-01 00:00:00][2005-01-01 00:00:00]
+[false][1][Moving Average of 5 by column: DistinctCount(ORDERS.CUSTOMERS:CUSTOMER_ID)][4][4][4][5]
+[false][1][Moving Sum of 5 by row: First(ORDERS.ORDERS:CUSTOMER_ID, ORDERS.CUSTOMERS:ADDRESS)][63][57][57][65]
+[false][2][Moving Average of 5 by column: DistinctCount(ORDERS.CUSTOMERS:CUSTOMER_ID)][5][5][5][6]
+[false][2][Moving Sum of 5 by row: First(ORDERS.ORDERS:CUSTOMER_ID, ORDERS.CUSTOMERS:ADDRESS)][82][76][84][92]
+[false][3][Moving Average of 5 by column: DistinctCount(ORDERS.CUSTOMERS:CUSTOMER_ID)][6][5][5][5]
+[false][3][Moving Sum of 5 by row: First(ORDERS.ORDERS:CUSTOMER_ID, ORDERS.CUSTOMERS:ADDRESS)][82][76][84][92]
+[false][4][Moving Average of 5 by column: DistinctCount(ORDERS.CUSTOMERS:CUSTOMER_ID)][5][4][4][4]
+[false][4][Moving Sum of 5 by row: First(ORDERS.ORDERS:CUSTOMER_ID, ORDERS.CUSTOMERS:ADDRESS)][73][57][65][65]
+

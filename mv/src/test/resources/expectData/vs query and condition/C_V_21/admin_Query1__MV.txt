@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 8)
+[Long][Short][String][Float][Byte][Double][Character][Integer]
+[12001][6][Fast Mail][0.5][17][39][b][3]
+[12001][12][MeToo AppServer][0.01][2][3000][b][5]
+[12001][17][Animal World][0.03][2][59][b][6]
+[12001][20][Barbie"s Fashion][0.04][12][79][b][7]
+[12001][25][NetStorage][0.2][6][2850][b][4]
+

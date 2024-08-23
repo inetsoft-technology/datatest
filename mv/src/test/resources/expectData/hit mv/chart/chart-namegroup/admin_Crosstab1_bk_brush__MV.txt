@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 5)
+[Year(ORDER_DATE)][[NULL]][0][0.01][0.05]
+[2002-01-01 00:00:00][[NULL]][-0.0061][[NULL]][1]
+[2003-01-01 00:00:00][0.0711][[NULL]][[NULL]][[NULL]]
+

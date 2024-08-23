@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 4)
+[CATEGORY_ID][CATEGORY_NAME][REGION_ID][REGION]
+[1][Games][1][USA East]
+[2][Educational][2][USA West]
+[3][Business][[NULL]][[NULL]]
+[4][Personal][[NULL]][[NULL]]
+[5][Graphics][[NULL]][[NULL]]
+[6][Office Tools][[NULL]][[NULL]]
+[7][Hardware][[NULL]][[NULL]]
+

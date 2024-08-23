@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[reseller][state][Sum(customer_id)]
+[false][AK][360]
+[false][CA][480]
+[true][CA][1120]
+

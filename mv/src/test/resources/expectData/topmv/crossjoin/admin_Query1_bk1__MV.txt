@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 4)
+[id1][name][id2][region]
+[5][Graphics][1][USA East]
+[5][Graphics][2][USA West]
+

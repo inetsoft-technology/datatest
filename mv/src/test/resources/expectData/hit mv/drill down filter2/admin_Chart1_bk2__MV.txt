@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[state][Sum(customer_id)]
+[AK][288]
+[CA][240]
+[FL][376]
+[NJ][144]
+

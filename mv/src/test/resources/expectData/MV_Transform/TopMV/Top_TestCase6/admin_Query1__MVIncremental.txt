@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[Year(orderdate)][QuarterOfYear(orderdate)]
+[[NULL]][[NULL]]
+[2001-01-01 00:00:00][30]
+[2002-01-01 00:00:00][12]
+[2003-01-01 00:00:00][21]
+

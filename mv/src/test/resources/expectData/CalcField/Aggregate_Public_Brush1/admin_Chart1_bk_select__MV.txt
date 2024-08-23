@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[company][CalcField]
+[Computer Tech][70]
+[Daycare One][26]
+[Eastern Data][4]
+[Familia Computer Services][16]
+

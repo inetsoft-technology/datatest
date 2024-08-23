@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 7)
+[reseller][state][1][2][3][4][Grand Total]
+[false][AK][108][[NULL]][120][60][288]
+[false][CA][[NULL]][80][160][[NULL]][240]
+[false][FL][268][[NULL]][[NULL]][108][376]
+[false][NJ][[NULL]][81][63][[NULL]][144]
+[Grand Total][[NULL]][376][161][343][168][1048]
+

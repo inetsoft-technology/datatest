@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(DISCOUNT)][DistinctCount(CUSTOMER_ID)]
+[[NULL]][4]
+[0.1][5]
+[0.2][1]
+[0.25][1]
+[A][30]
+

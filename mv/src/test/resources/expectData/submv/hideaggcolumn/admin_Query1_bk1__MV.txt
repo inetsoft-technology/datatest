@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 3)
+[CUSTOMER_ID][DISCOUNT][exp2]
+[26][[NULL]][24042]
+

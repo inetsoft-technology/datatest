@@ -1,0 +1,16 @@
+The table size(row x col) is: (14 x 2)
+[HourOfDay(ORDER_TIME)][PopulationStandardDeviation(CUSTOMER_ID)]
+[[NULL]][0]
+[1][10.093]
+[2][11.2916]
+[3][6.5]
+[4][10.7443]
+[5][10.5877]
+[6][9.5]
+[7][10.208]
+[8][0]
+[9][8.5172]
+[10][9.4634]
+[11][9.8959]
+[12][4.5]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 8)
+[Long][Short][String][Float][Byte][Double][Character][Integer]
+[12004][6][Fast Mail][0.15][18][39][e][21]
+[12004][10][Fancy Menus][0.15][14][49][e][17]
+[12005][14][Fast Go Game][0.2][2][200][E][25]
+

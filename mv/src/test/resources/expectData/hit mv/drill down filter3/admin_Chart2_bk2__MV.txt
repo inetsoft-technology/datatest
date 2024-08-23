@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 5)
+[state][QuarterOfYear(orderdate)][Sum(customer_id)][Sum(discount)][Sum(product_id)]
+[CA][1][420][0][420]
+[CA][2][280][0][280]
+[CA][3][140][0][140]
+[CA][4][140][0][140]
+[FL][1][160][0][160]
+[FL][2][160][0][160]
+[Others][1][108][0][108]
+[Others][2][120][1.8][120]
+[PA][2][152][0][152]
+[PA][3][152][0][152]
+

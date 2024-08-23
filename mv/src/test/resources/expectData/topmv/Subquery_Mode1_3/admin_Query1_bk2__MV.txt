@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[23 Tasaga Ave.][Aachen][Eastern Data][Anna Lincoln][3][true][TX][03887]
+[384 Broad St.][Littletown][Interstate Shop][John Kelly][1][true][NY][18322]
+

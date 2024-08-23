@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 8)
+[ADDRESS][CITY][COMPANY_NAME][CUSTOMER_ID][REGION_ID][RESELLER][STATE][ZIP]
+[44 Islander Lane][Albany][Whittaker & Co, Inc][16][2][0][CA][83923]
+[4500 River Rd.][San Francisco][Direct Sales][9][2][1][CA][08854]
+[460 Newcomb Dr.][Los Angeles][West Coast Customs][21][2][0][CA][73646]
+[90 First Ave.][Los Angeles][Computer Tech][13][2][1][CA][11223]
+

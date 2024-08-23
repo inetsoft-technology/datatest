@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 11)
+[address][city][company][contact][customer_id][reseller][state][zip][forjs][forsql][range1]
+[123 Summer Rd.][Pitterson][Daycare One][Lisa Smith][2][false][NJ][09882][NJfalse][2.36][<3]
+[1230 Hoes Lane][Piscataway][Old World Insurance][Lino Rodrigez][7][false][NJ][08854][NJfalse][7.36][3-8]
+[21 Doger Sound Blvd.][Austin][FISGA Corp][[NULL]][17][true][TX][28122][TXtrue][17.36][13-18]
+[300 Great Swamp Rd.][George Park][Software Specialists][Eduardo Freyre][19][true][PA][23445][PAtrue][19.36][>18]
+[384 Broad St.][Littletown][Interstate Shop][John Kelly][1][true][NY][18322][NYtrue][1.36][<3]
+[4500 River Rd.][Middletown][Direct Sales][Luke Baker][9][true][NJ][08854][NJtrue][9.36][8-13]
+[822 Technology Dr.][San Jose][InterLand Services][Horst Braunschwad][14][true][CA][83923][CAtrue][14.36][13-18]
+[839 Via Gaty Dr.][Long Island][Scheggie Services][Paula Camino][15][true][NY][12334][NYtrue][15.36][13-18]
+[839 Via Gaty Dr.][Long Island][Scheggie Services][Paula Camino][15][true][NY][12334][NYtrue][15.36][13-18]
+[90 First Ave.][New York][Computer Tech][Jean Crowther][13][false][NY][11223][NYfalse][13.36][8-13]
+

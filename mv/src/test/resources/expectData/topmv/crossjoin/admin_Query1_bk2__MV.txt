@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 4)
+[id1][name][id2][region]
+[1][Games][1][USA East]
+[1][Games][2][USA West]
+[2][Educational][1][USA East]
+[2][Educational][2][USA West]
+[3][Business][1][USA East]
+[3][Business][2][USA West]
+
