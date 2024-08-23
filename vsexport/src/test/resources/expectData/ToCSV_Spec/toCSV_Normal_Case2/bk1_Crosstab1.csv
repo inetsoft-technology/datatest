@@ -1,4 +1,0 @@
-'Month(P_orderdate_Period)','state','Sum(customer_id)'
-'1999 Feb','TX','3'
-'1999 May','NY','20'
-'1999 May','OH','11'
