@@ -1,6 +1,6 @@
 package inetsoft.test.vsexport.cases.printLayout
 
-import inetsoft.test.viewsheet.VSExportTest
+import inetsoft.test.modules.VSExportTest
 import spock.lang.Specification
 
 class HeaderFooter_Spec extends Specification{

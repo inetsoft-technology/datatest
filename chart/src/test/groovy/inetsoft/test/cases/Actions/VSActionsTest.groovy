@@ -2,12 +2,12 @@ package inetsoft.test.cases.Actions
 
 import inetsoft.report.internal.table.FormatTableLens2
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.ExportUtil
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.TUtil
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace

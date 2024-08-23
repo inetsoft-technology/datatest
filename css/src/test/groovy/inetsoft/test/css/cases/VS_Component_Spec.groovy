@@ -1,6 +1,6 @@
 package inetsoft.test.css.cases
 
-import inetsoft.test.css.CSSTest
+import inetsoft.test.modules.CSSTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Retry

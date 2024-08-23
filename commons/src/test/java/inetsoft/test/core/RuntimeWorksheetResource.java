@@ -1,4 +1,4 @@
-package inetsoft.test;
+package inetsoft.test.core;
 
 import inetsoft.report.composition.RuntimeWorksheet;
 import inetsoft.web.composer.model.ws.ImportCSVDialogModel;

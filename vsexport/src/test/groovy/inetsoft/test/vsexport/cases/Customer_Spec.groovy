@@ -1,6 +1,6 @@
 package inetsoft.test.vsexport.cases
 
-import inetsoft.test.viewsheet.VSExportTest
+import inetsoft.test.modules.VSExportTest
 import spock.lang.Specification
 
 class Customer_Spec extends Specification {

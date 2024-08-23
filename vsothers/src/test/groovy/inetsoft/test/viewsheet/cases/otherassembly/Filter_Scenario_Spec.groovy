@@ -1,6 +1,6 @@
 package inetsoft.test.viewsheet.cases.otherassembly
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Ignore
 import spock.lang.Specification
 

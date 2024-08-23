@@ -1,10 +1,9 @@
-package inetsoft.test.global
+package inetsoft.test.modules
 
-import inetsoft.analytic.AnalyticAssistant
+
 import inetsoft.graph.data.DataSetFilter
 import inetsoft.graph.geo.GeoDataSet
 import inetsoft.graph.geo.MappedDataSet
-import inetsoft.report.ReportSheet
 import inetsoft.report.TableLens
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
@@ -18,13 +17,13 @@ import inetsoft.report.filter.SortFilter
 import inetsoft.sree.SreeEnv
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.ExportUtil
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.RuntimeWorksheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.RuntimeWorksheetResource
+import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.asset.TableAssembly
 import inetsoft.uql.asset.Worksheet

@@ -1,4 +1,4 @@
-package inetsoft.test;
+package inetsoft.test.core;
 
 import inetsoft.analytic.composition.ViewsheetEngine;
 import inetsoft.analytic.composition.ViewsheetService;

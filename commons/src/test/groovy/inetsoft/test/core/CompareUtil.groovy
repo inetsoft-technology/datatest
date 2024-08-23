@@ -1,4 +1,4 @@
-package inetsoft.test
+package inetsoft.test.core
 
 import com.github.romankh3.image.comparison.ImageComparison
 import com.github.romankh3.image.comparison.ImageComparisonUtil

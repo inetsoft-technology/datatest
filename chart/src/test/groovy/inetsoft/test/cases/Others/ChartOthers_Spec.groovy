@@ -1,6 +1,6 @@
 package inetsoft.test.cases.Others
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 import spock.lang.Ignore
 

@@ -1,7 +1,7 @@
 package inetsoft.test.vsscript.cases
 
 import groovy.json.JsonOutput
-import inetsoft.test.vsscript.VSScriptTest
+import inetsoft.test.modules.VSScriptTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification

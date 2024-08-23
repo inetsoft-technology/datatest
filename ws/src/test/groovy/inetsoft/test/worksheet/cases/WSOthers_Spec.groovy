@@ -1,6 +1,6 @@
 package inetsoft.test.worksheet.cases
 
-import inetsoft.test.worksheet.WorksheetTest
+import inetsoft.test.modules.WorksheetTest
 import spock.lang.Ignore
 import spock.lang.Specification
 

@@ -1,6 +1,6 @@
 package inetsoft.test.viewsheet.cases.vscalc
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 

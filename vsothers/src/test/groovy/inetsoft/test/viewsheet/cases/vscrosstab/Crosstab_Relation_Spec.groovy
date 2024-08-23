@@ -1,6 +1,6 @@
 package inetsoft.test.viewsheet.cases.vscrosstab
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 
 class Crosstab_Relation_Spec extends Specification {

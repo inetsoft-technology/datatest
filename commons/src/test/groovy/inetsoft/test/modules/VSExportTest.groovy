@@ -1,4 +1,4 @@
-package inetsoft.test.viewsheet
+package inetsoft.test.modules
 
 import inetsoft.report.io.csv.CSVConfig
 import inetsoft.sree.security.SRPrincipal
@@ -8,11 +8,11 @@ import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
 
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.TUtil
 
 import java.nio.file.Files
 import java.nio.file.Paths

@@ -1,4 +1,4 @@
-package inetsoft.test
+package inetsoft.test.core
 
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent
@@ -79,5 +79,5 @@ class ActionEventsUtil {
    }*/
 
    SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
-   ControllersResource controllersResource = new ControllersResource()
+    ControllersResource controllersResource = new ControllersResource()
 }

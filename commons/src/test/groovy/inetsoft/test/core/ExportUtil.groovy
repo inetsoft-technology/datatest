@@ -1,12 +1,9 @@
-package inetsoft.test
+package inetsoft.test.core
 
 import inetsoft.graph.data.DataSet
-import inetsoft.report.ReportSheet
-import inetsoft.report.StylePage
 import inetsoft.report.TableLens
 import inetsoft.report.composition.execution.AssetTableLens
 import inetsoft.report.filter.DCMergeDatesCell
-import inetsoft.report.internal.ReportGenerator
 import inetsoft.uql.viewsheet.CompositeSelectionValue
 import inetsoft.uql.viewsheet.SelectionList
 import inetsoft.uql.viewsheet.SelectionValue
