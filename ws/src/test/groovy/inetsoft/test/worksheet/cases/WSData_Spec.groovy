@@ -1,7 +1,7 @@
 package inetsoft.test.worksheet.cases
 
 import inetsoft.test.worksheet.WorksheetTest
-import inetsoft.test
+import inetsoft.test.TUtil
 import spock.lang.Specification
 import inetsoft.sree.security.SRPrincipal
 import spock.lang.Ignore
