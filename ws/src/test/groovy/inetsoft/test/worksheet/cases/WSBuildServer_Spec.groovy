@@ -1,7 +1,7 @@
 package inetsoft.test.worksheet.cases
 
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.worksheet.WorksheetTest
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.modules.WorksheetTest
 import spock.lang.Specification
 import spock.lang.Ignore
 import spock.lang.IgnoreRest

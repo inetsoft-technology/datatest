@@ -1,6 +1,6 @@
 package inetsoft.test.vsexport.cases.Format
 
-import inetsoft.test.viewsheet.VSExportTest
+import inetsoft.test.modules.VSExportTest
 import spock.lang.Specification
 
 class Format_DataView_Spec extends Specification{

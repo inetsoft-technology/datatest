@@ -1,4 +1,4 @@
-package inetsoft.test.worksheet
+package inetsoft.test.modules
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
@@ -15,13 +15,13 @@ import inetsoft.report.composition.graph.VGraphPair
 import inetsoft.report.filter.SortFilter
 import inetsoft.sree.SreeEnv
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.ExportUtil
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.RuntimeWorksheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.RuntimeWorksheetResource
+import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.AggregateInfo
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.asset.TableAssembly

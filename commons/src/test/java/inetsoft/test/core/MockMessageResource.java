@@ -11,7 +11,7 @@
  * thereof may not be provided or otherwise made available to any other
  * person.
  */
-package inetsoft.test;
+package inetsoft.test.core;
 
 import inetsoft.web.messaging.MessageAttributes;
 import inetsoft.web.messaging.MessageContextHolder;

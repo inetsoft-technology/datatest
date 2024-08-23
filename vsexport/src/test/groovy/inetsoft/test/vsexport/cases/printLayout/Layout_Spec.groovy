@@ -1,6 +1,6 @@
 package inetsoft.test.vsexport.cases.printLayout
 
-import inetsoft.test.viewsheet.VSExportTest
+import inetsoft.test.modules.VSExportTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 

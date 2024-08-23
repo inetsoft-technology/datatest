@@ -1,6 +1,6 @@
 package inetsoft.test.olap.cases
 
-import inetsoft.test.global.GlobalTest
+import inetsoft.test.modules.GlobalTest
 import spock.lang.Specification
 
 class DBCube_Component_Spec extends Specification {

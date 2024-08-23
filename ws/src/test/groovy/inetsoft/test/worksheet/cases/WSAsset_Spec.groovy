@@ -1,7 +1,7 @@
 package inetsoft.test.worksheet.cases
 
 import inetsoft.report.composition.execution.AssetQuerySandbox
-import inetsoft.test.worksheet.WorksheetTest
+import inetsoft.test.modules.WorksheetTest
 import spock.lang.Specification
 import inetsoft.sree.security.SRPrincipal
 import spock.lang.Ignore

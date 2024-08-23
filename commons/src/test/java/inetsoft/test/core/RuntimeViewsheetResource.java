@@ -1,4 +1,4 @@
-package inetsoft.test;
+package inetsoft.test.core;
 
 import inetsoft.report.composition.ChangedAssemblyList;
 import inetsoft.report.composition.RuntimeViewsheet;

@@ -1,4 +1,4 @@
-package inetsoft.test
+package inetsoft.test.core
 
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.pdmodel.PDPage

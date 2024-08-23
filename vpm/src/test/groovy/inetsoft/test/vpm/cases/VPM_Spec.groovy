@@ -1,7 +1,7 @@
 package inetsoft.test.vpm.cases
 
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.vpm.VPMTest
+import inetsoft.test.modules.VPMTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification

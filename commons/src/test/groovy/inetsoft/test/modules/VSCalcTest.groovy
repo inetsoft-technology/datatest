@@ -1,26 +1,31 @@
-package inetsoft.test.viewsheet
+package inetsoft.test.modules
 
+import inetsoft.report.composition.RuntimeViewsheet
+import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.TUtil
+import inetsoft.uql.asset.Assembly
+import inetsoft.uql.viewsheet.CrosstabVSAssembly
+import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
+import inetsoft.uql.viewsheet.TableVSAssembly
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
-import org.springframework.mock.web.MockMultipartFile
-import org.springframework.web.multipart.MultipartFile
 
-class VSFormImportTest {
-   VSFormImportTest(String asset_id, String caseName) {
+class VSCalcTest {
+   VSCalcTest(String asset_id, String caseName) {
       this.asset_id = asset_id
       this.caseName = caseName
    }
 
    static initHome(String suiteName) {
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
@@ -31,34 +36,69 @@ class VSFormImportTest {
     * @param params
     * @return
     */
-   def initVS() {
+   def initVS(Map<String, String[]> params, Boolean isViewer) {
       DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       ControllersResource controllers = new ControllersResource()
       controllers.initControllers()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(null, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
 
    /**
-    * import excel to current vs
-    * @param file file name with suffix, eg: vs.xlsx
+    * convert table as freehand, then export as PNG
+    * @param params
     * @return
     */
-   def importXLSToVS(String file) {
-      initVS()
-      File  excelFile= new File(this.class.getResource('/excelFiles').getPath() + '/' + file)
-      FileInputStream fileInputStream = new FileInputStream(excelFile)
-      MultipartFile multipartFile = new MockMultipartFile(excelFile.getName(), excelFile.getName(), 'text/plain', fileInputStream)
-      viewsheetResource.processImportXLS(principal, multipartFile)
+   def checkConvert(Map<String, String[]> params) {
+      initVS(params, false)
+      RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      sandbox.shrink()
+      Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
+      String assemblyName
 
-      File pngFile = createExportFileByCase(null, null,'_Import.png')
+      try {
+         assemblies.each {
+            assemblyName = it.getName()
+            if ((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
+                    || it instanceof CrosstabVSAssembly)
+                    && it.getVSAssemblyInfo().isVisible(true)) {
+               viewsheetResource.convertToFreehand(principal, assemblyName)
+            }
+         }
+      }catch(Exception e) {
+         e.printStackTrace()
+      }
+
+      File pngFile = createExportFileByCase(null, null,'_CALC.png')
       OutputStream out = new FileOutputStream(pngFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, false,
-              false, true, false, false,
+      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+              false, false, false, false,
               ['Home'] as String[], false, false, null, new ExportResponse(out), principal)
    }
+
+   /**
+    * export vs as PNG
+    * @param bks
+    * @param params
+    * @param match
+    * @param expandSelection
+    * @return
+    */
+   def exportAsPNG(Map<String, String[]> params, String[] bks) {
+      initVS(params, true)
+      if(bks == null) {
+         bks = ['(Home)'] as String[]
+      }
+      File outFile = createExportFileByCase(null, null,'.png')
+      OutputStream out = new FileOutputStream(outFile)
+      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+              false, false, false, false,
+              bks, false, false, null, new ExportResponse(out), principal)
+   }
+
 
    /**
     * create export file by case name

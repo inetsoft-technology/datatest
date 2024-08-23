@@ -1,6 +1,6 @@
 package inetsoft.test.tabular.cases
 
-import inetsoft.test.global.GlobalTest
+import inetsoft.test.modules.GlobalTest
 import spock.lang.Issue
 import spock.lang.Specification
 

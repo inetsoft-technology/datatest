@@ -1,6 +1,6 @@
 package inetsoft.test.vsscript.cases
 
-import inetsoft.test.vsscript.VSScriptTest
+import inetsoft.test.modules.VSScriptTest
 import spock.lang.Specification
 
 class Bugs_Spec extends Specification{

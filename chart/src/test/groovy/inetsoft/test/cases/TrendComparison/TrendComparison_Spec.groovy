@@ -1,6 +1,6 @@
 package inetsoft.test.cases.TrendComparison
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 
 class TrendComparison_Spec extends Specification{

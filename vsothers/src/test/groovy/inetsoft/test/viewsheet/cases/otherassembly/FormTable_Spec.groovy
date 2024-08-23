@@ -1,6 +1,6 @@
 package inetsoft.test.viewsheet.cases.otherassembly
 
-import inetsoft.test.viewsheet.VSFormImportTest
+import inetsoft.test.modules.VSFormImportTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 

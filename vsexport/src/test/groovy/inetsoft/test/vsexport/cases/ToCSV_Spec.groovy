@@ -1,7 +1,7 @@
 package inetsoft.test.vsexport.cases
 
 import inetsoft.report.io.csv.CSVConfig
-import inetsoft.test.viewsheet.VSExportTest
+import inetsoft.test.modules.VSExportTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 

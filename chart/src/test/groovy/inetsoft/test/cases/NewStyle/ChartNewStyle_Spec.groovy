@@ -1,6 +1,6 @@
 package inetsoft.test.cases.NewStyle
 
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 
 /*

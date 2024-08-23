@@ -1,18 +1,15 @@
-package inetsoft.test.vpm
+package inetsoft.test.modules
 
 import inetsoft.report.TableLens
 import inetsoft.sree.ClientInfo
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.IdentityID
-import inetsoft.sree.security.Organization
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
-import inetsoft.report.composition.execution.AssetTableLens
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.ExportUtil
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.ExportUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.util.ConfigurationContext
@@ -21,13 +18,9 @@ import inetsoft.util.ThreadContext
 import inetsoft.util.Tool
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.ControllersResource
-import inetsoft.test.CompareUtil
-
-import java.text.SimpleDateFormat
-import java.text.NumberFormat
-import java.text.DecimalFormat
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.CompareUtil
 
 class VPMTest {
    VPMTest(String asset_id) {

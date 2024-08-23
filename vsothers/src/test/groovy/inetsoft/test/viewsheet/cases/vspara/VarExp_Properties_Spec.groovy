@@ -1,7 +1,7 @@
 package inetsoft.test.viewsheet.cases.vspara
 
-import inetsoft.test.viewsheet.VSExportTest
-import inetsoft.test.viewsheet.ViewsheetTest
+import inetsoft.test.modules.VSExportTest
+import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 
 class VarExp_Properties_Spec extends Specification{

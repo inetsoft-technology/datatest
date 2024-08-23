@@ -1,4 +1,4 @@
-package inetsoft.test.viewsheet
+package inetsoft.test.modules
 
 import inetsoft.graph.data.AbstractDataSet
 import inetsoft.graph.data.DataSet
@@ -12,15 +12,13 @@ import inetsoft.report.composition.graph.BrushDataSet
 import inetsoft.report.composition.graph.IntervalDataSet
 import inetsoft.report.composition.graph.VGraphPair
 import inetsoft.report.composition.graph.VSDataSet
-import inetsoft.sree.security.FSUser
-import inetsoft.sree.security.IdentityID
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.ExportUtil
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.ChartVSAssembly
 import inetsoft.uql.viewsheet.CurrentSelectionVSAssembly
@@ -32,13 +30,11 @@ import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.graph.ChartAggregateRef
 import inetsoft.util.ConfigurationContext
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.ControllersResource
-import inetsoft.test.CompareUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.CompareUtil
 import inetsoft.util.DataSpace
-import inetsoft.util.HashedPassword
 import inetsoft.util.ThreadContext
-import inetsoft.util.Tool
 import inetsoft.web.viewsheet.service.ExportResponse
 
 import java.awt.image.BufferedImage

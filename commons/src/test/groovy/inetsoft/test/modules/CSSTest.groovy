@@ -1,15 +1,15 @@
-package inetsoft.test.css
+package inetsoft.test.modules
 
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.portal.PortalThemesManager
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.ActionEventsUtil
-import inetsoft.test.CompareUtil
-import inetsoft.test.ControllersResource
-import inetsoft.test.RuntimeViewsheetResource
-import inetsoft.test.TUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.TUtil
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace

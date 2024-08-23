@@ -1,7 +1,7 @@
 package inetsoft.test.worksheet.cases
 
-import inetsoft.test.TUtil
-import inetsoft.test.worksheet.WorksheetTest
+import inetsoft.test.core.TUtil
+import inetsoft.test.modules.WorksheetTest
 import spock.lang.IgnoreIf
 import spock.lang.IgnoreRest
 import spock.lang.Specification
