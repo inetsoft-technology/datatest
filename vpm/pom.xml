@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>vpm</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -27,12 +27,10 @@
             <version>2.5.1-groovy-4.0</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+         <dependency>
             <groupId>com.inetsoft.test</groupId>
             <artifactId>commons</artifactId>
             <version>${project.version}</version>
-            <scope>system</scope>
-            <systemPath>${root.dir}/commons/target/commons-1.0.0-SNAPSHOT-tests.jar</systemPath>
         </dependency>
     </dependencies>
 
