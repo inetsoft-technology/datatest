@@ -592,7 +592,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Data|SubMV', 'Data_O|SubMV'])
+         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Data|TopMV', 'Data|TopMV'])
          mvtest.compareData(false)
       }
    }
