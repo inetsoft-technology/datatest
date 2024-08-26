@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>chart</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -28,10 +28,13 @@
             <version>2.5.1-groovy-4.0</version>
             <scope>test</scope>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>com.inetsoft.test</groupId>
             <artifactId>commons</artifactId>
             <version>${project.version}</version>
+            <type>test-jar</type>
+            <scope>system</scope>
+            <systemPath>${root.dir}/commons/target/commons-1.0.0-SNAPSHOT-tests.jar</systemPath>
         </dependency>
     </dependencies>
 
