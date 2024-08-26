@@ -190,9 +190,9 @@ class Delete_Spec extends Specification {
    }
 
    //Add by agile
-   def 'like'() {
+   def 'Testcase_like'() {
       given:
-      String asset_id = '1^128^__NULL__^MV_Creator/Delete/like'
+      String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase_like'
       materializedViews = new MaterializedViewResource(asset_id)
       materializedViews.createMV(false)
 

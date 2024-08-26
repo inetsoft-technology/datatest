@@ -502,9 +502,9 @@ class Append_Spec extends Specification {
    }
 
    //add by agile
-   def 'S_like'() {
+   def 'S_TestCase_like'() {
       given:
-      String asset_id = '1^128^__NULL__^MV_Creator/Append/S_like'
+      String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase_like'
       mvtest = new MVTest(asset_id)
       materializedViews = new MaterializedViewResource(asset_id)
       materializedViews.createMV(false)
