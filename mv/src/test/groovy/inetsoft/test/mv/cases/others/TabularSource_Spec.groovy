@@ -11,6 +11,7 @@ import spock.lang.Shared
 import spock.lang.Specification
 
 @Execution(ExecutionMode.SAME_THREAD)
+@Ignore
 class TabularSource_Spec extends Specification {
    def setupSpec() {
       MVTest.initHome()

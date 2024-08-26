@@ -19,6 +19,7 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <test.module>mv</test.module>
+        <case.module>topmv</case.module>
     </properties>
 
     <dependencies>
@@ -77,8 +78,8 @@
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
-                        <!-- <include>**/*_Spec</include> -->
-                        <include>**/TopMV_Subquery_Spec</include>
+                        <include>${case.module}/*_Spec</include>
+                        <!-- <include>**/TopMV_Subquery_Spec</include> -->
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
@@ -139,4 +140,37 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>incrementalmv</id>
+            <properties>
+                <case.module>incrementalmv</case.module>
+            </properties>
+        </profile>
+        <profile>
+            <id>submv</id>
+            <properties>
+                <case.module>submv</case.module>
+            </properties>
+        </profile>
+        <profile>
+            <id>topmv</id>
+            <properties>
+                <case.module>topmv</case.module>
+            </properties>
+        </profile>
+        <profile>
+            <id>vpm</id>
+            <properties>
+                <case.module>vpm</case.module>
+            </properties>
+        </profile>
+        <profile>
+            <id>others</id>
+            <properties>
+                <case.module>others</case.module>
+            </properties>
+        </profile>
+    </profiles>
 </project>
