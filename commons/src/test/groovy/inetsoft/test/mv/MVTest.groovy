@@ -45,8 +45,6 @@ class MVTest {
 
    def static initHome() {
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-      //install plugins
-      SRPrincipal admin = createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       ControllersResource controllers = new ControllersResource()
       controllers.initControllers()
    }
@@ -106,8 +104,7 @@ class MVTest {
     * @param exportSelection
     * @return
     */
-   def executeVS(Map<String, String[]> params, String[] bks, boolean
-           incremental, boolean exportSelection) {
+   def executeVS(Map<String, String[]> params, String[] bks, boolean incremental, boolean exportSelection) {
       executeVS(params, bks, incremental, exportSelection, null)
    }
 
@@ -120,8 +117,7 @@ class MVTest {
     * @param principal
     * @return
     */
-   def executeVS(Map<String, String[]> params, String[] bks, boolean
-           incremental, boolean exportSelection, Principal principal) {
+   def executeVS(Map<String, String[]> params, String[] bks, boolean incremental, boolean exportSelection, SRPrincipal principal) {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
@@ -130,8 +126,7 @@ class MVTest {
       }
    }
 
-   def executeTest(Map<String, String[]> params, String bk, boolean incremental, boolean exportSelection,
-                   Principal principal) {
+   def executeTest(Map<String, String[]> params, String bk, boolean incremental, boolean exportSelection, SRPrincipal principal) {
       if(principal == null) {
          principal = createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       }
@@ -142,7 +137,7 @@ class MVTest {
             , controllers)
       viewsheetResource.initRuntimeVS(principal)
 
-      RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet()
+      RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       if(bk != null) {
          rvs.gotoBookmark(bk, principal.getUser().getUserIdentity())
          rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
@@ -295,8 +290,7 @@ class MVTest {
 
       printWriter.println("The min value is: [" + values[0].getLabel() + "]")
       printWriter.println("The max value is: [" + values[values.length - 1].getLabel() + "]")
-      printWriter.println("Selected: [" + format(assembly.getSelectedMin()) + "] -> [" + format
-            (assembly.getSelectedMax()) + "]")
+      printWriter.println("Selected: [" + format(assembly.getSelectedMin()) + "] -> [" + format(assembly.getSelectedMax()) + "]")
       printWriter.flush()
    }
 
@@ -389,8 +383,7 @@ class MVTest {
       }
    }
 
-   String getExportFilePath(String assemblyName, Principal principal, String
-         bookmark, boolean incremental) {
+   String getExportFilePath(String assemblyName, SRPrincipal principal, String bookmark, boolean incremental) {
       String path = getExportFolderPath()
       path += File.separator + principal.getIdentityID().getName() + "_" + assemblyName +
               (bookmark == '(Home)'? '':  '_'+ bookmark) + (incremental ? MV_INCREMENTAL : MV_EXT) + ".txt"

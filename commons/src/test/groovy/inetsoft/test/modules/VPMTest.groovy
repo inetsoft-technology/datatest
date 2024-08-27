@@ -28,8 +28,8 @@ class VPMTest {
    }
 
    static initHome() {
-      System.err.print("=========vpm.sree.home=====" + System.getProperty("vpm.sree.home"))
-      ConfigurationContext.getContext().setHome(System.getProperty("vpm.sree.home"))
+      System.err.print("=========vpm.sree.home=====" + System.getProperty("sree.home"))
+      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
       DataSpace.getDataSpace()
       controllers.initControllers()
    }
