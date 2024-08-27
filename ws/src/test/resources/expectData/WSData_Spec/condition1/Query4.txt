@@ -1,4 +1,4 @@
-The table size(row x col) is:(27 x 2)
+The table size(row x col) is:(20 x 2)
 Hour(order_time), Minute(order_time)
 01, 01:01
 01, 01:05
@@ -19,10 +19,3 @@ Hour(order_time), Minute(order_time)
 04, 04:25
 04, 04:43
 04, 04:59
-05, 05:16
-05, 05:19
-05, 05:23
-05, 05:26
-05, 05:27
-05, 05:45
-05, 05:55
