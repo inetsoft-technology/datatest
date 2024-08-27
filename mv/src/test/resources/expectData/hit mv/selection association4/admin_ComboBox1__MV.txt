@@ -1,0 +1,8 @@
+The value is: [3]
+[ActualRevenue]
+[PlannedRevenue]
+[Ratio]
+The label is: [3]
+[Actual Revenue]
+[Planned Revenue]
+[Planned vs. Actual]

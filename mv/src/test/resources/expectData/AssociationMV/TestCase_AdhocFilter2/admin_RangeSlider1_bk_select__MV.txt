@@ -1,0 +1,3 @@
+The min value is: [400]
+The max value is: [6600]
+Selected: [[1300]] -> [[6600]]

@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[instock][product_name][reseller][state]
+[false][Barbie's Fashion][true][NY]
+[false][Easy Chess][true][NY]
+[false][Info Folder][true][IL]
+[false][Web Bridge][true][NY]
+

@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 19)
+NULL, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, Grand Total
+NULL, 2002, 2002, 2002, 2003, 2003, 2003, Total, 2002, 2002, 2002, 2002, 2002, 2003, 2003, 2003, 2003, Total, NULL
+NULL, 02:10:15, 02:10:55, Total, 01:55:35, 02:10:15, Total, NULL, 01:55:35, 02:05:10, 02:10:15, 02:10:55, Total, 01:55:35, 02:05:10, 02:10:15, Total, NULL, NULL
+Average(customer_id), 23, 23, 23, 13, 6.5, 8.6667, 14.4, 15, 14.3333, 14.5, 26, 15.8889, 14.6, 21.8, 24.375, 20.9444, 19.2593, 18.5
+Value of previous by column: Average(customer_id), NULL, 23, NULL, NULL, 13, NULL, NULL, NULL, 15, 14.3333, 14.5, NULL, NULL, 14.6, 21.8, NULL, NULL, NULL
+Value of first reseller: Average(customer_id), 23, 23, 23, 13, 6.5, 8.6667, 14.4, 0, 0, 23, 23, 23, 13, 0, 6.5, 8.6667, 14.4, 18.5
+Value of last Year(order_date): Average(customer_id), 6.5, 0, 8.6667, 13, 6.5, 8.6667, 14.4, 14.6, 21.8, 24.375, 0, 20.9444, 14.6, 21.8, 24.375, 20.9444, 19.2593, 18.5
+Value of next Second(ftime): Average(customer_id), 23, NULL, NULL, 6.5, NULL, NULL, NULL, 14.3333, 14.5, 26, NULL, NULL, 21.8, 24.375, NULL, NULL, NULL, NULL
+Grand Total, 23, 23, 23, 13, 6.5, 8.6667, 14.4, 15, 14.3333, 14.5, 26, 15.8889, 14.6, 21.8, 24.375, 20.9444, 19.2593, 18.5
+Grand Total, NULL, 23, NULL, NULL, 13, NULL, NULL, NULL, 15, 14.3333, 14.5, NULL, NULL, 14.6, 21.8, NULL, NULL, NULL
+Grand Total, 23, 23, 23, 13, 6.5, 8.6667, 14.4, 0, 0, 23, 23, 23, 13, 0, 6.5, 8.6667, 14.4, 18.5
+Grand Total, 6.5, 0, 8.6667, 13, 6.5, 8.6667, 14.4, 14.6, 21.8, 24.375, 0, 20.9444, 14.6, 21.8, 24.375, 20.9444, 19.2593, 18.5
+Grand Total, 23, NULL, NULL, 6.5, NULL, NULL, NULL, 14.3333, 14.5, 26, NULL, NULL, 21.8, 24.375, NULL, NULL, NULL, NULL

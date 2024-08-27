@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 4)
+[child_id][parent_id][label_string][label_date]
+[1][[NULL]][Northeast][2017-12-01 00:00:00]
+[2][[NULL]][Midwest][2017-12-11 00:00:00]
+

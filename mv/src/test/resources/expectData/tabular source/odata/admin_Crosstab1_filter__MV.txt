@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 5)
+[Year(ReleaseDate)][[NULL]][[NULL]][false][true]
+[2003-01-01 00:00:00][CalcField1][[NULL]][[NULL]][4]
+[2003-01-01 00:00:00][Count(Details)][[NULL]][[NULL]][1]
+[2004-01-01 00:00:00][CalcField1][[NULL]][[NULL]][[NULL]]
+[2004-01-01 00:00:00][Count(Details)][[NULL]][[NULL]][[NULL]]
+[2005-01-01 00:00:00][CalcField1][[NULL]][[NULL]][3]
+[2005-01-01 00:00:00][Count(Details)][[NULL]][[NULL]][1]
+[2006-01-01 00:00:00][CalcField1][7][6][5]
+[2006-01-01 00:00:00][Count(Details)][0][0][0]
+

@@ -1,0 +1,44 @@
+The data size(row x col) is:(43 x 5)
+Month(P_Date_Period), Region, State, NULL, CalcField1/% of total by row: Sum(Paid)
+2020 Jun, USA East, FL, CalcField1, 55
+2020 Jun, USA East, FL, % of total by row: Sum(Paid), 5%
+2020 Jun, USA East, MA, CalcField1, 221
+2020 Jun, USA East, MA, % of total by row: Sum(Paid), 12%
+2020 Jun, USA East, MD, CalcField1, 122
+2020 Jun, USA East, MD, % of total by row: Sum(Paid), 5%
+2020 Jun, USA East, NJ, CalcField1, 250
+2020 Jun, USA East, NJ, % of total by row: Sum(Paid), 9%
+2020 Jun, USA East, PA, CalcField1, 3
+2020 Jun, USA East, PA, % of total by row: Sum(Paid), 1%
+2020 Jun, USA West, CA, CalcField1, 73
+2020 Jun, USA West, CA, % of total by row: Sum(Paid), 4%
+2020 Jun, USA West, IL, CalcField1, 159
+2020 Jun, USA West, IL, % of total by row: Sum(Paid), 3%
+2020 Jun, USA West, NV, CalcField1, 6
+2020 Jun, USA West, NV, % of total by row: Sum(Paid), 1%
+2020 Jun, USA West, TX, CalcField1, 9
+2020 Jun, USA West, TX, % of total by row: Sum(Paid), 1%
+2020 Jun, USA West, WA, CalcField1, 89
+2020 Jun, USA West, WA, % of total by row: Sum(Paid), 4%
+2020 Nov, USA East, FL, CalcField1, 125
+2020 Nov, USA East, FL, % of total by row: Sum(Paid), 5%
+2020 Nov, USA East, MA, CalcField1, 128
+2020 Nov, USA East, MA, % of total by row: Sum(Paid), 8%
+2020 Nov, USA East, MD, CalcField1, 12
+2020 Nov, USA East, MD, % of total by row: Sum(Paid), 1%
+2020 Nov, USA East, NJ, CalcField1, 207
+2020 Nov, USA East, NJ, % of total by row: Sum(Paid), 12%
+2020 Nov, USA East, NY, CalcField1, 165
+2020 Nov, USA East, NY, % of total by row: Sum(Paid), 7%
+2020 Nov, USA West, CA, CalcField1, 155
+2020 Nov, USA West, CA, % of total by row: Sum(Paid), 7%
+2020 Nov, USA West, CO, CalcField1, 220
+2020 Nov, USA West, CO, % of total by row: Sum(Paid), 5%
+2020 Nov, USA West, IL, CalcField1, 46
+2020 Nov, USA West, IL, % of total by row: Sum(Paid), 2%
+2020 Nov, USA West, TX, CalcField1, 181
+2020 Nov, USA West, TX, % of total by row: Sum(Paid), 8%
+2020 Nov, USA West, WA, CalcField1, 29
+2020 Nov, USA West, WA, % of total by row: Sum(Paid), 1%
+Grand Total, NULL, NULL, CalcField1, 2255
+Grand Total, NULL, NULL, % of total by row: Sum(Paid), 100%

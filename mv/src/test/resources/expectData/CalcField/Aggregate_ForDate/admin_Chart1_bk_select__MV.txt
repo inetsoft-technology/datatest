@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[Year(Order:Date)][CalcField3][CalcField4]
+[2018-01-01 00:00:00][10][4]
+[2019-01-01 00:00:00][10][6]
+[2020-01-01 00:00:00][10][6]
+

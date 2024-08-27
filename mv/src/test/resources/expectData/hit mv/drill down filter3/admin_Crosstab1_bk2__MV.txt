@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[QuarterOfYear(orderdate)][DataGroup(state)][Sum(customer_id)]
+[1][AA][528]
+[1][FL][160]
+[2][AA][552]
+[2][FL][160]
+[3][AA][292]
+[4][AA][140]
+

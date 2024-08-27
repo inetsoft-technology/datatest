@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 3)
+[Year(orderdate)][reseller][Average(customer_id)]
+[[NULL]][false][8]
+[[NULL]][true][10]
+[2001-01-01 00:00:00][false][16]
+[2001-01-01 00:00:00][true][12]
+[2002-01-01 00:00:00][false][11]
+[2002-01-01 00:00:00][true][11]
+[2003-01-01 00:00:00][false][12]
+[2003-01-01 00:00:00][true][10]
+

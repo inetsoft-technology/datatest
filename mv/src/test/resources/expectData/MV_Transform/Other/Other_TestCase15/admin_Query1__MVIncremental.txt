@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 6)
+[reseller][CA][FL][NY][OH][PA]
+[false][8][34][13][11][4]
+[true][24][[NULL]][16][[NULL]][19]
+

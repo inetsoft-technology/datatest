@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 2)
+City, Internet Tax Amount
+Ballard, 3624.7197
+Chicago, 225.6648
+Dresden, 4607.2005
+Haney, 9242.1506
+Newport Beach, 9261.3785
+Oakland, 10071.8605

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[Year(ORDERS:ORDERDATE)][Count(CUSTOMERS:COMPANY)][Sum(ORDERDETAILS:QUANTITY)][CalcField]
+[2001-01-01 00:00:00][25][277][11.08]
+[2002-01-01 00:00:00][18][135][7.5]
+[2003-01-01 00:00:00][16][201][12.5625]
+

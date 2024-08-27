@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+Customer:Region, Year(Order:Date), NULL, Average(Product:Price)/Change from previous Year(Order:Date): Average(Product:Price)
+USA East, 2020, Average(Product:Price), $441.53
+USA East, 2020, Change from previous Year(Order:Date): Average(Product:Price), NULL
+USA East, 2021, Average(Product:Price), $439.17
+USA East, 2021, Change from previous Year(Order:Date): Average(Product:Price), -$2.36
+USA East, 2022, Average(Product:Price), $430.72
+USA East, 2022, Change from previous Year(Order:Date): Average(Product:Price), -$8.45
+USA East, 2023, Average(Product:Price), $443.86
+USA East, 2023, Change from previous Year(Order:Date): Average(Product:Price), $13.13
+USA West, 2020, Average(Product:Price), $472.73
+USA West, 2020, Change from previous Year(Order:Date): Average(Product:Price), NULL
+USA West, 2021, Average(Product:Price), $410.99
+USA West, 2021, Change from previous Year(Order:Date): Average(Product:Price), -$61.74
+USA West, 2022, Average(Product:Price), $415.46
+USA West, 2022, Change from previous Year(Order:Date): Average(Product:Price), $4.47
+USA West, 2023, Average(Product:Price), $431.81
+USA West, 2023, Change from previous Year(Order:Date): Average(Product:Price), $16.35

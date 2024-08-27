@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 4)
+[id][firstName][boole][doub]
+[3][road][false][123456.789]
+[3][road][false][123456.789]
+[3][road][false][123456.789]
+[6][milk][false][123456.789]
+[8][road_&@][false][123456.789]
+[9][road_&@=][false][123456.789]
+[10][downey][false][123456.789]
+

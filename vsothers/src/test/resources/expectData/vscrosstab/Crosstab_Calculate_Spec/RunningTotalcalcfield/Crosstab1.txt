@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+Region, NULL, 2020, 2021, 2022, 2023
+USA East, CalcField1, 6,942, 8,993, 8,689, 8,177
+USA East, Running Sum by row: CalcField1, 6,942, 8,993, 8,689, 8,177
+USA West, CalcField1, 4,465, 4,837, 5,244, 6,663
+USA West, Running Sum by row: CalcField1, 11,407, 13,830, 13,933, 14,840

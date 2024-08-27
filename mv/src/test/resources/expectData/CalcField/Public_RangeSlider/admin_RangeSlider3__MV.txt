@@ -1,0 +1,3 @@
+The min value is: [Computer Tech]
+The max value is: [The Big Cat]
+Selected: [[Computer Tech]] -> [[The Big Cat]]

@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 2)
+[CalcField1][WeightedAverage(quantity, CalcField)]
+[Computer Tech][35]
+[Daycare One][13]
+[Eastern Data][2]
+[Familia Computer Services][8]
+[George Services][23]
+[Quick Stop][80.7636]
+[The Big Cat][45]
+

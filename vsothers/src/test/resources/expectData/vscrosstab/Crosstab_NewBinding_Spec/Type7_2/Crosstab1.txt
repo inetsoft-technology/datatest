@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 25)
+Year(Year_PRODUCE_DATE_), AA_Group, Animal World, Barbie"s Fashion, Combat Hero, Easy Chess, Fancy Menus, Fast Go Game, Fast Mail, Green Planet, House Hunter, Info Folder, InsideView, Learn ABC, Math for Me, Mega Icons, MeToo AppServer, NetStorage, Sync Me, True Action, Web Bridge, WebCalendar, Wireless Keyboard, Wireless Mouse, Xconnect Server
+2000, NULL, NULL, NULL, NULL, 50, NULL, 25, 50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 25, NULL, NULL, NULL
+2001, 10, NULL, NULL, 50, NULL, NULL, NULL, NULL, 25, 50, 50, 50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 50, NULL, 25, 25, 10
+2006, 15, 50, 50, NULL, NULL, 50, NULL, NULL, NULL, NULL, NULL, NULL, 50, 25, 25, 10, 5, 25, 25, NULL, NULL, NULL, NULL, NULL

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 4)
+[customer_id][reseller][state][numrange]
+[4][false][PA][<5]
+[12][false][AK][9-14]
+[19][true][PA][>18]
+[24][true][CA][9-14]
+[34][false][FL][14-18]
+

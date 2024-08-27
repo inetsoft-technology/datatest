@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 5)
+[DataGroup(f_cid)][LAST_NAME][Sum(CONTACT_ID)][Mode(CUSTOMER_ID)][First(CUSTOMER_ID_1, CONTACT_ID)]
+[1][Alen][42][21][1]
+[10][Pantaliano][66][22][10]
+[11][Gray][46][23][11]
+[13&14][Ledes][40][25][13]
+

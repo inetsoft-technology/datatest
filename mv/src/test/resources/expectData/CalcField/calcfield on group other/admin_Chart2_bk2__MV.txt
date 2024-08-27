@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[Year(Month(Date))][DataGroup(Category)][Sum(Quantity Purchased)][CalcField1]
+[2020-01-01 00:00:00][Business][307][307]
+[2020-01-01 00:00:00][Educational][446][446]
+[2020-01-01 00:00:00][Office Tools][445][445]
+[2020-01-01 00:00:00][Others][233][233]
+

@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 6)
+Year, NULL, business intelligence platform, business analytics, data visualization, Others
+2,021_aa, Change from last by column: Max(Volume), 182900, 31400, 9000, 0
+2,021_aa, Change from first Keyword: Min(Volume), 0, -101900, -116900, -134990
+2,021_aa, Change from next by row: Median(Volume), 27500, -4500, -4900, 0
+2,021_aa, Value of last by row: Average(Volume), 95375, 42133.3333, 18766.6667, 756.6071
+2,021_aa, Value of first by column: Average(Volume), 153000, 153000, 153000, 153000
+2,021_aa, Value of next by column: Mode(Volume), 40500, 27100, 10, NULL
+2,020_aa, Change from last by column: Max(Volume), 116900, 31400, 9000, 0
+2,020_aa, Change from first Keyword: Min(Volume), 0, -50000, -68300, -90500
+2,020_aa, Change from next by row: Median(Volume), 32000, 4500, 9000, 40
+2,020_aa, Value of last by row: Average(Volume), 95375, 42133.3333, 18766.6667, 756.6071
+2,020_aa, Value of first by column: Average(Volume), 120875, 120875, 120875, 120875
+2,020_aa, Value of next by column: Mode(Volume), 40500, 27100, 10, NULL
+Others_aa, Change from last by column: Max(Volume), 87800, 27300, 4900, 0
+Others_aa, Change from first Keyword: Min(Volume), 0, -57400, -78400, -90500
+Others_aa, Change from next by row: Median(Volume), NULL, NULL, NULL, NULL
+Others_aa, Value of last by row: Average(Volume), 95375, 42133.3333, 18766.6667, 756.6071
+Others_aa, Value of first by column: Average(Volume), 95375, 95375, 95375, 95375
+Others_aa, Value of next by column: Mode(Volume), 40500, 18100, 10, NULL

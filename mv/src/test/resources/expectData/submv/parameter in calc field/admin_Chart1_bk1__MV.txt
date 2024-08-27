@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 2)
+[state][Count(CalcField1)]
+[AZ][1]
+[CA][4]
+[CO][2]
+[CT][1]
+[FL][1]
+[IL][1]
+[MA][4]
+[MD][3]
+[NJ][6]
+[NV][1]
+[NY][4]
+[PA][1]
+[TX][4]
+[WA][2]
+

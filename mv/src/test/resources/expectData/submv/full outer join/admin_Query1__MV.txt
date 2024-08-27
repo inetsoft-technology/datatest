@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 10)
+[category_id][category_name][address][city][company][contact][customer_id][reseller][state][zip]
+[[NULL]][[NULL]][123 Summer Rd.][Pitterson][Daycare One][Lisa Smith][2][false][NJ][09882]
+[[NULL]][[NULL]][23 Tasaga Ave.][Aachen][Eastern Data][Anna Lincoln][3][true][TX][03887]
+[[NULL]][[NULL]][384 Broad St.][Littletown][Interstate Shop][John Kelly][1][true][NY][18322]
+[4][Personal][88 Rio Grand Ave.][Akergen][Ernst Handel][Patrico Brown][4][false][PA][38923]
+[5][Graphics][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]]
+[6][Office Tools][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]][[NULL]]
+

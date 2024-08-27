@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 2)
+[CUSTOMER_ID][STATE]
+[6][CT]
+[10][IL]
+[12][FL]
+[20][AZ]
+[28][PA]
+[32][CO]
+[32][NV]
+[783][WA]
+[2310][MD]
+[8568][NY]
+[39312][CA]
+[195052][TX]
+[422280][MA]
+[498750][NJ]
+

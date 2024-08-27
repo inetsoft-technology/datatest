@@ -1,0 +1,3 @@
+The min value is: [AMG Logistics]
+The max value is: [XO Resellers]
+Selected: [[AMG Logistics]] -> [[XO Resellers]]

@@ -1,0 +1,6 @@
+The value is: [2]
+[35]
+[64]
+The label is: [2]
+[Could not pay]
+[Defective]

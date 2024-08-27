@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 7)
+[category_id][description][instock][price][product_id][product_name][supplier_id]
+[1][Action game][true][29][16][Combat Hero][7]
+[1][Bridge game][false][105][15][Web Bridge][7]
+[1][Chess game][false][35][13][Easy Chess][7]
+[1][Chinese Go game][true][200][14][Fast Go Game][7]
+[1][Girl's game][false][79][20][Barbie's Fashion][6]
+[2][Educational software][false][59][17][Animal World][6]
+[2][Learn ABC][true][75][18][Learn ABC][6]
+[2][Math tutor][true][235][19][Math for Me][6]
+[3][Application server][true][3000][12][MeToo AppServer][2]
+[3][Database browser][true][125][2][InsideView][5]
+[3][XML connectivity tool][true][2250][1][Xconnect Server][5]
+

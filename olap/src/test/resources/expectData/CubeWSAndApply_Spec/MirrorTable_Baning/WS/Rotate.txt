@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 5)
+Category, Accessories, Bikes, Clothing, Components
+Color, Black, Black, Black, Black
+Discount Amount, 1207.1866, 99361.2404, 11491.3027, 1079.4744
+Reseller Sales Amount, 87915.3689, 24469987.8234, 751810.8972, 4087998.0118

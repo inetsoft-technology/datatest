@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(DISCOUNT)][StandardDeviation(CUSTOMER_ID)]
+[[NULL]][12.9099]
+[0.1][12.482]
+[0.2][0]
+[0.25][0]
+[A][10.4672]
+

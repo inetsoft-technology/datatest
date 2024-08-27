@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(DISCOUNT)][Covariance(CUSTOMER_ID, EMPLOYEE_ID)]
+[[NULL]][7.25]
+[0.1][-7.64]
+[0.2][0]
+[0.25][0]
+[A][-1.6077]
+

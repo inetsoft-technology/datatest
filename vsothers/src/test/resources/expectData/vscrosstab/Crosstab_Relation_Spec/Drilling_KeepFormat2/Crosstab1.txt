@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 8)
+st, cp, NULL, 4th, 1st, 1st, 1st, 1st
+NULL, NULL, NULL, NULL, 01, 02, 03, Total
+TXaa, American Computer Vision, %, NULL, NULL, NULL, NULL, 2,925,000%
+TXaa, American Computer Vision, Weighted Average(Product:Price, Order:Num), $1,266.79, $2,250.00, $125.00, NULL, $1,179.25
+TXaa, Continental Innovations Corp., %, -98%, -100%, 4%, NULL, 248,000%
+TXaa, Continental Innovations Corp., Weighted Average(Product:Price, Order:Num), $710.04, NULL, $2,309.16, NULL, $2,309.16
+TXaa, Others, %, -30%, NULL, -92%, NULL, 199,500%
+TXaa, Others, Weighted Average(Product:Price, Order:Num), $244.57, $399.00, $366.67, $129.88, $254.09
+TXaa, TOTAL, % Change from previous cp: First(Product:Total, ct), 4,500,000%, 2,925,000%, 21,000%, 24,000%, 2,925,000%
+TXaa, TOTAL, average, $375.64, $1,324.50, $724.81, $129.88, $514.36
+NYaa, American Computer Vision, %, NULL, NULL, NULL, NULL, 50,000%
+NYaa, American Computer Vision, Weighted Average(Product:Price, Order:Num), $1,465.66, $125.00, $1,722.77, $1,171.67, $1,333.63
+NYaa, Continental Innovations Corp., %, -95%, -50%, -92%, -93%, 24,800%
+NYaa, Continental Innovations Corp., Weighted Average(Product:Price, Order:Num), $862.14, $793.36, $1,905.98, $248.00, $1,248.10
+NYaa, Others, %, -68%, -3%, -71%, 34%, 24,000%
+NYaa, Others, Weighted Average(Product:Price, Order:Num), $302.91, $180.70, $263.90, $172.29, $214.25
+NYaa, TOTAL, % Change from previous cp: First(Product:Total, ct), 2,700,000%, 50,000%, 3,600,000%, 4,500,000%, 50,000%
+NYaa, TOTAL, average, $462.07, $280.22, $642.31, $294.49, $442.55

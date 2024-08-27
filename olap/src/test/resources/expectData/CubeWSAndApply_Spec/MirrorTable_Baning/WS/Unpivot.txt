@@ -1,0 +1,68 @@
+The table size(row x col) is:(67 x 3)
+Category, Dimension, Measure
+Accessories, Color, Black
+Accessories, Color, Blue
+Accessories, Color, NA
+Accessories, Color, Red
+Accessories, Color, Silver
+Accessories, Discount Amount, 1093.5148000000002
+Accessories, Discount Amount, 1207.1866000000002
+Accessories, Discount Amount, 1314.2907
+Accessories, Discount Amount, 2569.6918999999994
+Accessories, Discount Amount, 503.34530000000007
+Accessories, Reseller Sales Amount, 247066.247
+Accessories, Reseller Sales Amount, 65518.7485
+Accessories, Reseller Sales Amount, 79744.6953
+Accessories, Reseller Sales Amount, 87915.3689
+Accessories, Reseller Sales Amount, 91052.8681
+Bikes, Color, Black
+Bikes, Color, Blue
+Bikes, Color, Red
+Bikes, Color, Silver
+Bikes, Color, Yellow
+Bikes, Discount Amount, 220076.95539999998
+Bikes, Discount Amount, 35541.9457
+Bikes, Discount Amount, 51553.91139999999
+Bikes, Discount Amount, 88106.60029999999
+Bikes, Discount Amount, 99361.24040000001
+Bikes, Reseller Sales Amount, 1.15805480644E7
+Bikes, Reseller Sales Amount, 1.19319994272E7
+Bikes, Reseller Sales Amount, 1.21145878898E7
+Bikes, Reseller Sales Amount, 2.44699878234E7
+Bikes, Reseller Sales Amount, 6205258.3522
+Clothing, Color, Black
+Clothing, Color, Blue
+Clothing, Color, Multi
+Clothing, Color, White
+Clothing, Color, Yellow
+Clothing, Discount Amount, 11491.302699999998
+Clothing, Discount Amount, 2551.3208
+Clothing, Discount Amount, 2581.8994
+Clothing, Discount Amount, 284.29869999999994
+Clothing, Discount Amount, 4055.6836999999987
+Clothing, Reseller Sales Amount, 223801.3707
+Clothing, Reseller Sales Amount, 235030.251
+Clothing, Reseller Sales Amount, 24638.8081
+Clothing, Reseller Sales Amount, 542559.5121
+Clothing, Reseller Sales Amount, 751810.8972
+Components, Color, Black
+Components, Color, Blue
+Components, Color, NA
+Components, Color, Red
+Components, Color, Silver
+Components, Color, Silver/Black
+Components, Color, Yellow
+Components, Discount Amount, 1079.4744
+Components, Discount Amount, 132.99960000000002
+Components, Discount Amount, 1388.1064000000001
+Components, Discount Amount, 1545.1703
+Components, Discount Amount, 316.1342
+Components, Discount Amount, 46.974199999999996
+Components, Discount Amount, 705.8793000000001
+Components, Reseller Sales Amount, 147483.9098
+Components, Reseller Sales Amount, 1679227.6977
+Components, Reseller Sales Amount, 1997171.282
+Components, Reseller Sales Amount, 2666432.6902
+Components, Reseller Sales Amount, 4087998.0118
+Components, Reseller Sales Amount, 417120.9711
+Components, Reseller Sales Amount, 803642.0958

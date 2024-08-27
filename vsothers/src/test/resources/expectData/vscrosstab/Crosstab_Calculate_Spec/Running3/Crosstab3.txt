@@ -1,0 +1,38 @@
+The data size(row x col) is:(37 x 5)
+state, city, NULL, 0, 1
+AZ, Tucson, Sum(customer_id), 20, 0
+AZ, Tucson, Running Sum by row: Sum(customer_id), 20, 0
+AZ, Tucson, Running Sum reseller: Sum(customer_id), 20, 0
+CA, Albany, Sum(customer_id), 16, 0
+CA, Albany, Running Sum by row: Sum(customer_id), 16, 0
+CA, Albany, Running Sum reseller: Sum(customer_id), 16, 0
+CA, Los Angeles, Sum(customer_id), 21, 13
+CA, Los Angeles, Running Sum by row: Sum(customer_id), 37, 13
+CA, Los Angeles, Running Sum reseller: Sum(customer_id), 21, 13
+CA, San Francisco, Sum(customer_id), 0, 9
+CA, San Francisco, Running Sum by row: Sum(customer_id), 37, 22
+CA, San Francisco, Running Sum reseller: Sum(customer_id), 0, 9
+CO, Boulder, Sum(customer_id), 0, 4
+CO, Boulder, Running Sum by row: Sum(customer_id), 0, 4
+CO, Boulder, Running Sum reseller: Sum(customer_id), 0, 4
+CO, Denver, Sum(customer_id), 8, 0
+CO, Denver, Running Sum by row: Sum(customer_id), 8, 4
+CO, Denver, Running Sum reseller: Sum(customer_id), 8, 0
+NJ, Camden, Sum(customer_id), 15, 0
+NJ, Camden, Running Sum by row: Sum(customer_id), 15, 0
+NJ, Camden, Running Sum reseller: Sum(customer_id), 15, 0
+NJ, Middletown, Sum(customer_id), 2, 0
+NJ, Middletown, Running Sum by row: Sum(customer_id), 17, 0
+NJ, Middletown, Running Sum reseller: Sum(customer_id), 2, 0
+NJ, New Brunswick, Sum(customer_id), 25, 0
+NJ, New Brunswick, Running Sum by row: Sum(customer_id), 42, 0
+NJ, New Brunswick, Running Sum reseller: Sum(customer_id), 25, 0
+NJ, Newark, Sum(customer_id), 0, 19
+NJ, Newark, Running Sum by row: Sum(customer_id), 42, 19
+NJ, Newark, Running Sum reseller: Sum(customer_id), 0, 19
+NJ, Plainfield, Sum(customer_id), 35, 0
+NJ, Plainfield, Running Sum by row: Sum(customer_id), 77, 19
+NJ, Plainfield, Running Sum reseller: Sum(customer_id), 35, 0
+NJ, Wayne, Sum(customer_id), 1, 0
+NJ, Wayne, Running Sum by row: Sum(customer_id), 78, 19
+NJ, Wayne, Running Sum reseller: Sum(customer_id), 1, 0

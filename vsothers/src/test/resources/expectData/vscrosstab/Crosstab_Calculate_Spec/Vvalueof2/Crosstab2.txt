@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 8)
+NULL, false, false, false, false, true, true, true
+NULL, AZ, CA, CA, CO, CA, CA, CO
+NULL, Tucson, Albany, Los Angeles, Denver, Los Angeles, San Francisco, Boulder
+CalcField1, 0.9091, 1, 0.9545, 0.8, 0.9048, 0.875, 0.8667
+Value of next by column: Average(Order:Paid), NULL, 0.9545, NULL, NULL, 0.875, NULL, NULL
+Value of next CalcField2: CalcField1, NULL, NULL, 0.9048, NULL, NULL, NULL, NULL
+Value of next Customer:State: Sum(Order:Paid), NULL, NULL, NULL, NULL, NULL, NULL, NULL
+Value of next Customer:City: CalcField1, NULL, 0.9545, NULL, NULL, 0.875, NULL, NULL

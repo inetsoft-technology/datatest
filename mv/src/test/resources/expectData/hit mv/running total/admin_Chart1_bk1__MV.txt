@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[Year(public.products:produce_date)][public.products:producer][Max(public.products:price)][Average(public.products:number_instock)]
+[2006-01-01 00:00:00][Global Networks Ltd.][145][30]
+[2006-01-01 00:00:00][Lockbox Servers][2850][13]
+[2006-01-01 00:00:00][Micro Production LLC][550][73]
+[2006-01-01 00:00:00][Unified Interworks Resources][235][80]
+

@@ -1,0 +1,24 @@
+The data size(row x col) is:(23 x 5)
+reseller, Month(ndatetime), Compound Growth by row: Correlation(order_id, employee_id), Compound Growth of year by row: CorrelationCalc, Compound Growth of quarter by row: CorrelationCalc
+false, 2023 Jun, 100%, 100%, 100%
+false, 2025 Aug, 300%, 100%, 100%
+false, 2025 Sep, 700%, 300%, 300%
+false, 2025 Dec, 1,500%, 700%, 100%
+false, 2024 Jan, 3,092%, 99%, 99%
+false, 2024 Feb, 6,226%, 295%, 295%
+false, 2025 Apr, 12,367%, 97%, 97%
+false, 2026 Mar, 23,826%, 92%, 92%
+false, 2026 Aug, 44,546%, 258%, 87%
+false, 2026 May, 76,717%, 516%, 72%
+false, Others, 76,910%, 0%, 0%
+true, 2025 Jun, 63%, 63%, 63%
+true, 2023 Jun, 144%, 50%, 50%
+true, 2024 Nov, 249%, 43%, 43%
+true, 2026 Apr, 395%, 42%, 42%
+true, 2023 Feb, 601%, 42%, 42%
+true, 2023 Apr, 878%, 97%, 39%
+true, 2024 Jan, 1,260%, 39%, 39%
+true, 2026 May, 1,739%, 35%, 35%
+true, 2025 Nov, 2,337%, 32%, 32%
+true, 2024 Apr, 3,047%, 29%, 29%
+true, Others, 3,309%, 8%, 8%

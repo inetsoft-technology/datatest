@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 2)
+[DISCOUNT][EMPLOYEE_ID]
+[[NULL]][11]
+[0.01][4]
+[0.05][26]
+[0.1][13]
+[0.15][22]
+[0.2][19]
+[0.25][38]
+

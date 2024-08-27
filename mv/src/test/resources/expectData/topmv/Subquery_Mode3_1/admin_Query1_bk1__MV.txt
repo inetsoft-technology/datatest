@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 7)
+[category_id][description][instock][price][product_id][product_name][supplier_id]
+[4][House hunting assistant][false][129][5][House Hunter][8]
+[4][Java game toolkit][false][398][9][True Action][7]
+[4][Palm power sync][true][145][7][Sync Me][3]
+[4][Personal health monitor][true][75][4][Green Planet][8]
+

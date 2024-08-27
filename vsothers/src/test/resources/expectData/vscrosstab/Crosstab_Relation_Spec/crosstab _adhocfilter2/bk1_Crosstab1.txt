@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+reseller, Year(orderdate), NULL, Sum(price)/Count(product_name)
+false, 1998, Sum(price), 5.7K
+false, 1998, Count(product_name), 14
+false, Total, Sum(price), 5698
+false, Total, Count(product_name), 14
+true, 1998, Sum(price), 2.6K
+true, 1998, Count(product_name), 11
+true, 1999, Sum(price), 4.7K
+true, 1999, Count(product_name), 14
+true, Total, Sum(price), 7337
+true, Total, Count(product_name), 25

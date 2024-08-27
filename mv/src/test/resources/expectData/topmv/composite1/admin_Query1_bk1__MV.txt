@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 8)
+[PRODUCT_ID][PRODUCT_NAME][DESCRIPTION][PRICE][PRODUCT_ID_1][QUANTITY][DISCOUNT][Year(ORDER_DATE)]
+[2][InsideView][Database browser][125][2][2][0][2003-01-01 00:00:00]
+[2][InsideView][Database browser][125][2][9][0.1][2002-01-01 00:00:00]
+[2][InsideView][Database browser][125][2][30][0.05][2005-01-01 00:00:00]
+[2][InsideView][Database browser][125][2][78][0.25][2004-01-01 00:00:00]
+

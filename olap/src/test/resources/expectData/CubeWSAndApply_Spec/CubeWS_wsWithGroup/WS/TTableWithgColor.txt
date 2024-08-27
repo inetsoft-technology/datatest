@@ -1,0 +1,159 @@
+The table size(row x col) is:(158 x 7)
+Category, Color, Model Name, Freight Cost, Internet Order Count, Class, End Date
+Accessories, Black, Sport-100, 302.4547, NULL, Not Applicable, 06 30, 2002
+Accessories, Black, Sport-100, 796.6736, NULL, Not Applicable, 06 30, 2003
+Accessories, Black, Sport-100, 2922.7272, 2085, Not Applicable, Active
+Accessories, Blue, Sport-100, 333.2913, NULL, Not Applicable, 06 30, 2002
+Accessories, Blue, Sport-100, 844.8854, NULL, Not Applicable, 06 30, 2003
+Accessories, Blue, Sport-100, 2957.1073, 2125, Not Applicable, Active
+Accessories, NA, All-Purpose Bike Stand, 989.775, 249, Not Applicable, Active
+Accessories, NA, Bike Wash, 460.2288, 908, Not Applicable, Active
+Accessories, NA, Cable Lock, 405.6307, NULL, Not Applicable, 06 30, 2003
+Accessories, NA, Fender Set - Mountain, 1165.4895, 2121, Not Applicable, Active
+Accessories, NA, Hitch Rack - 4-Bike, 5927.4039, 328, Not Applicable, Active
+Accessories, NA, HL Mountain Tire, 1221.5, 1396, High, Active
+Accessories, NA, HL Road Tire, 699.27, 858, High, Active
+Accessories, NA, LL Mountain Tire, 538.5776, 862, Low, Active
+Accessories, NA, LL Road Tire, 560.9412, 1044, Low, Active
+Accessories, NA, Minipump, 337.8741, NULL, Not Applicable, 06 30, 2003
+Accessories, NA, ML Mountain Tire, 870.5178, 1161, Medium, Active
+Accessories, NA, ML Road Tire, 578.5648, 926, Medium, Active
+Accessories, NA, Mountain Bottle Cage, 505.845, 2025, Not Applicable, Active
+Accessories, NA, Mountain Tire Tube, 386.256, 3095, Not Applicable, Active
+Accessories, NA, Patch kit, 205.9785, 3191, Not Applicable, Active
+Accessories, NA, Road Bottle Cage, 384.8576, 1712, Not Applicable, Active
+Accessories, NA, Road Tire Tube, 237.1248, 2376, Not Applicable, Active
+Accessories, NA, Touring Tire, 677.688, 935, Not Applicable, Active
+Accessories, NA, Touring Tire Tube, 185.7024, 1488, Not Applicable, Active
+Accessories, NA, Water Bottle, 716.5761, 4244, Not Applicable, Active
+Accessories, Red, Sport-100, 284.6321, NULL, Not Applicable, 06 30, 2002
+Accessories, Red, Sport-100, 725.7869, NULL, Not Applicable, 06 30, 2003
+Accessories, Red, Sport-100, 2934.0149, 2230, Not Applicable, Active
+Accessories, Silver, Hydration Pack, 2645.7039, 733, Not Applicable, Active
+Bikes, Black, Mountain-100, 129871.2354, 211, High, 06 30, 2002
+Bikes, Black, Mountain-200, 122684.6052, 554, High, 06 30, 2003
+Bikes, Black, Mountain-200, 170309.5158, 1262, High, Active
+Bikes, Black, Mountain-300, 47681.2609, NULL, Medium, 06 30, 2003
+Bikes, Black, Mountain-500, 15462.646, 252, Low, Active
+Bikes, Black, Road-250, 104407.5953, 572, High, Active
+Bikes, Black, Road-250, 105175.9454, 586, High, 06 30, 2003
+Bikes, Black, Road-650, 26008.4528, 139, Low, 06 30, 2002
+Bikes, Black, Road-650, 62994.5545, 290, Low, 06 30, 2003
+Bikes, Black, Road-750, 43632.2283, 1443, Low, Active
+Bikes, Blue, Touring-1000, 128073.8105, 634, High, Active
+Bikes, Blue, Touring-2000, 53327.8391, 372, Medium, Active
+Bikes, Blue, Touring-3000, 27956.3251, 277, Low, Active
+Bikes, Red, Road-150, 197842.6427, 1551, High, 06 30, 2002
+Bikes, Red, Road-250, 19070.3565, 134, High, Active
+Bikes, Red, Road-250, 117064.1768, 611, High, 06 30, 2003
+Bikes, Red, Road-450, 46860.1901, NULL, Medium, 06 30, 2002
+Bikes, Red, Road-650, 33802.3134, 120, Low, 06 30, 2002
+Bikes, Red, Road-650, 79382.8263, 303, Low, 06 30, 2003
+Bikes, Silver, Mountain-100, 117880.7966, 185, High, 06 30, 2002
+Bikes, Silver, Mountain-200, 114615.9146, 521, High, 06 30, 2003
+Bikes, Silver, Mountain-200, 149544.5253, 1215, High, Active
+Bikes, Silver, Mountain-400-W, 25257.1186, 543, Medium, Active
+Bikes, Silver, Mountain-500, 17828.8567, 227, Low, Active
+Bikes, Yellow, Road-350-W, 131153.8733, 929, Medium, Active
+Bikes, Yellow, Road-550-W, 54889.8111, 357, Medium, 06 30, 2003
+Bikes, Yellow, Road-550-W, 74685.4218, 1033, Medium, Active
+Bikes, Yellow, Touring-1000, 114821.3506, 621, High, Active
+Bikes, Yellow, Touring-3000, 33228.1672, 263, Low, Active
+Clothing, Black, Full-Finger Gloves, 3221.2082, NULL, Not Applicable, 06 30, 2003
+Clothing, Black, Half-Finger Gloves, 660.4876, NULL, Not Applicable, 06 30, 2003
+Clothing, Black, Half-Finger Gloves, 2188.3037, 1430, Not Applicable, Active
+Clothing, Black, Men's Sports Shorts, 2047.4795, NULL, Not Applicable, 06 30, 2003
+Clothing, Black, Women's Mountain Shorts, 8290.6696, 1019, Not Applicable, Active
+Clothing, Black, Women's Tights, 5045.8473, NULL, Not Applicable, 06 30, 2003
+Clothing, Blue, Classic Vest, 6487.2095, 562, Not Applicable, Active
+Clothing, Multi, Cycling Cap, 127.029, NULL, Not Applicable, 06 30, 2002
+Clothing, Multi, Cycling Cap, 292.4737, NULL, Not Applicable, 06 30, 2003
+Clothing, Multi, Cycling Cap, 861.3593, 2190, Not Applicable, Active
+Clothing, Multi, Long-Sleeve Logo Jersey, 1366.8198, NULL, Not Applicable, 06 30, 2002
+Clothing, Multi, Long-Sleeve Logo Jersey, 3331.973, NULL, Not Applicable, 06 30, 2003
+Clothing, Multi, Long-Sleeve Logo Jersey, 6077.8325, 1736, Not Applicable, Active
+Clothing, Multi, Men's Bib-Shorts, 4168.5112, NULL, Not Applicable, 06 30, 2003
+Clothing, White, Mountain Bike Socks, 164.3345, NULL, Not Applicable, 06 30, 2002
+Clothing, White, Racing Socks, 579.3336, 568, Not Applicable, Active
+Clothing, Yellow, Short-Sleeve Classic Jersey, 8030.0648, 1596, Not Applicable, Active
+Components, Black, HL Crankset, 3715.5711, NULL, High, Active
+Components, Black, HL Mountain Frame, 8463.5976, NULL, High, 06 30, 2002
+Components, Black, HL Mountain Frame, 14373.2408, NULL, High, 06 30, 2003
+Components, Black, HL Mountain Frame, 15243.732, NULL, High, Active
+Components, Black, HL Mountain Front Wheel, 999.7172, NULL, High, 06 30, 2003
+Components, Black, HL Mountain Rear Wheel, 4150.3359, NULL, High, 06 30, 2003
+Components, Black, HL Road Frame, 5739.0164, NULL, High, 06 30, 2003
+Components, Black, HL Road Frame, 5883.465, NULL, High, Active
+Components, Black, HL Road Front Wheel, 2807.1603, NULL, High, 06 30, 2003
+Components, Black, HL Road Rear Wheel, 492.7428, NULL, High, 06 30, 2003
+Components, Black, LL Crankset, 1121.3862, NULL, Low, Active
+Components, Black, LL Mountain Frame, 5457.0055, NULL, Low, Active
+Components, Black, LL Mountain Front Wheel, 561.5754, NULL, Low, 06 30, 2003
+Components, Black, LL Mountain Rear Wheel, 450.135, NULL, Low, 06 30, 2003
+Components, Black, LL Road Frame, 2326.0109, NULL, Low, 06 30, 2002
+Components, Black, LL Road Frame, 5292.3072, NULL, Low, Active
+Components, Black, LL Road Frame, 6062.7057, NULL, Low, 06 30, 2003
+Components, Black, LL Road Rear Wheel, 1462.2242, NULL, Low, 06 30, 2003
+Components, Black, ML Crankset, 261.6206, NULL, Medium, Active
+Components, Black, ML Mountain Frame, 8594.6322, NULL, Medium, 06 30, 2003
+Components, Black, ML Mountain Frame-W, 2688.9396, NULL, Medium, 06 30, 2003
+Components, Black, ML Mountain Front Wheel, 834.0122, NULL, Medium, 06 30, 2003
+Components, Black, ML Mountain Rear Wheel, 2979.8439, NULL, Medium, 06 30, 2003
+Components, Black, ML Road Front Wheel, 1974.6643, NULL, Medium, 06 30, 2003
+Components, Black, ML Road Rear Wheel, 264.3702, NULL, Medium, 06 30, 2003
+Components, Blue, HL Touring Frame, 17235.3217, NULL, High, Active
+Components, Blue, LL Touring Frame, 2855.7423, NULL, Low, Active
+Components, NA, HL Bottom Bracket, 989.5426, NULL, High, Active
+Components, NA, HL Fork, 1525.8675, NULL, High, 06 30, 2003
+Components, NA, HL Headset, 477.0958, NULL, High, 06 30, 2003
+Components, NA, HL Mountain Handlebars, 426.4097, NULL, High, 06 30, 2003
+Components, NA, HL Mountain Handlebars, 432.9752, NULL, High, Active
+Components, NA, HL Mountain Seat/Saddle 2, 409.8024, NULL, High, Active
+Components, NA, HL Road Handlebars, 534.652, NULL, High, 06 30, 2003
+Components, NA, HL Road Handlebars, 550.2398, NULL, High, Active
+Components, NA, HL Road Seat/Saddle 2, 105.8064, NULL, High, Active
+Components, NA, HL Touring Handlebars, 302.184, NULL, High, Active
+Components, NA, HL Touring Seat/Saddle, 336.3696, NULL, High, Active
+Components, NA, LL Bottom Bracket, 306.1282, NULL, Low, Active
+Components, NA, LL Fork, 422.427, NULL, Low, 06 30, 2003
+Components, NA, LL Headset, 48.735, NULL, Low, 06 30, 2003
+Components, NA, LL Mountain Handlebars, 255.094, NULL, Low, 06 30, 2003
+Components, NA, LL Mountain Handlebars, 295.1145, NULL, Low, Active
+Components, NA, LL Mountain Seat/Saddle 2, 140.9239, NULL, Low, Active
+Components, NA, LL Road Handlebars, 67.4179, NULL, Low, 06 30, 2003
+Components, NA, LL Road Handlebars, 68.1462, NULL, Low, Active
+Components, NA, LL Road Seat/Saddle 1, 4.068, NULL, Low, Active
+Components, NA, LL Touring Handlebars, 38.7164, NULL, Low, Active
+Components, NA, LL Touring Seat/Saddle, 37.0188, NULL, Low, Active
+Components, NA, ML Headset, 997.7296, NULL, Medium, 06 30, 2003
+Components, NA, ML Mountain Handlebars, 644.0282, NULL, Medium, 06 30, 2003
+Components, NA, ML Mountain Handlebars, 649.817, NULL, Medium, Active
+Components, NA, ML Mountain Seat/Saddle 2, 312.4293, NULL, Medium, Active
+Components, NA, ML Touring Seat/Saddle, 49.3164, NULL, Medium, Active
+Components, Red, HL Road Frame, 1080.2583, NULL, High, 06 30, 2002
+Components, Red, HL Road Frame, 10263.855, NULL, High, Active
+Components, Red, HL Road Frame, 10638.6523, NULL, High, 06 30, 2003
+Components, Red, LL Road Frame, 4727.2241, NULL, Low, 06 30, 2002
+Components, Red, LL Road Frame, 12237.0867, NULL, Low, 06 30, 2003
+Components, Red, ML Road Frame, 3033.6389, NULL, Medium, 06 30, 2002
+Components, Silver, Chain, 234.4427, NULL, Not Applicable, Active
+Components, Silver, Front Brakes, 1257.4827, NULL, Not Applicable, Active
+Components, Silver, Front Derailleur, 1112.1128, NULL, Not Applicable, Active
+Components, Silver, HL Mountain Frame, 9538.4149, NULL, High, 06 30, 2002
+Components, Silver, HL Mountain Frame, 17546.2283, NULL, High, 06 30, 2003
+Components, Silver, HL Mountain Frame, 18961.515, NULL, High, Active
+Components, Silver, LL Mountain Frame, 7589.6409, NULL, Low, Active
+Components, Silver, ML Mountain Frame-W, 9384.9035, NULL, Medium, Active
+Components, Silver, Rear Brakes, 392.985, NULL, Not Applicable, Active
+Components, Silver, Rear Derailleur, 643.1307, NULL, Not Applicable, Active
+Components, Silver/Black, HL Mountain Pedal, 950.4642, NULL, High, Active
+Components, Silver/Black, HL Road Pedal, 821.2466, NULL, High, Active
+Components, Silver/Black, LL Mountain Pedal, 272.706, NULL, Low, Active
+Components, Silver/Black, LL Road Pedal, 527.1886, NULL, Low, Active
+Components, Silver/Black, ML Mountain Pedal, 321.3207, NULL, Medium, Active
+Components, Silver/Black, ML Road Pedal, 615.6298, NULL, Medium, Active
+Components, Silver/Black, Touring Pedal, 178.585, NULL, Not Applicable, Active
+Components, Yellow, HL Touring Frame, 16451.1428, NULL, High, Active
+Components, Yellow, LL Touring Frame, 4516.0064, NULL, Low, Active
+Components, Yellow, ML Road Frame-W, 13491.3192, NULL, Medium, Active
+Components, Yellow, ML Road Frame-W, 15470.8404, NULL, Medium, 06 30, 2003

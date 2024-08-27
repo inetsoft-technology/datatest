@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 6)
+regioncalc, NULL, 2021, 2022, 2023, Others
+USA East, CalcField1, $298,199.00, $248,097.00, $241,903.00, $215,468.00
+USA East, Change from previous by row: CalcField1, NULL, NULL, NULL, NULL
+USA East, Change from previous by column: CalcField1, NULL, -$50,102.00, -$6,194.00, -$26,435.00
+USA East, Change from previous regioncalc: CalcField1, NULL, NULL, NULL, NULL
+USA East, Change from previous Year(date): CalcField1, NULL, -$50,102.00, -$6,194.00, -$26,435.00
+USA West, CalcField1, $147,956.00, $173,662.00, $221,516.00, $167,818.00
+USA West, Change from previous by row: CalcField1, -$150,243.00, -$74,435.00, -$20,387.00, -$47,650.00
+USA West, Change from previous by column: CalcField1, NULL, $25,706.00, $47,854.00, -$53,698.00
+USA West, Change from previous regioncalc: CalcField1, -$150,243.00, -$74,435.00, -$20,387.00, -$47,650.00
+USA West, Change from previous Year(date): CalcField1, NULL, $25,706.00, $47,854.00, -$53,698.00

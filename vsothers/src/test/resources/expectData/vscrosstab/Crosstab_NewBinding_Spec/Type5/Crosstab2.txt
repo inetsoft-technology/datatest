@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 14)
+NULL, 2022, 2022, 2022, 2022, 2022, 2022, 2020, 2020, 2020, 2020, 2020, 2020, Grand Total
+NULL, 2nd, 2nd, 2nd, 4th, 4th, 4th, 2nd, 2nd, 2nd, 4th, 4th, 4th, NULL
+NULL, Apr, May, Others, Nov, Oct, Others, Apr, May, Others, Nov, Oct, Others, NULL
+agg_calc, $117, $102, $76, $126, $86, $76, $112, $102, $100, $114, $86, $57, 1154
+Value of previous , NULL, $117.00, $102.00, NULL, $126.00, $86.00, NULL, $112.00, $102.00, NULL, $114.00, $86.00, 1154
+agg_calc1, 75, 40, 40, 75, 75, 125, 40, 40, 40, 79, 35, 35, 75
+Grand Total, 117, 102, 76, 126, 86, 76, 112, 102, 100, 114, 86, 57, 1154
+Grand Total, 117, 102, 76, 126, 86, 76, 112, 102, 100, 114, 86, 57, 1154
+Grand Total, 75, 40, 40, 75, 75, 125, 40, 40, 40, 79, 35, 35, 75

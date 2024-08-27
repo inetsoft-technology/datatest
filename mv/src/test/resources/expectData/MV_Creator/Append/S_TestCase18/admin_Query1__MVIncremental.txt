@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 4)
+[customer_id][reseller][state][city]
+[9][true][NJ][Middletown]
+[15][true][NY][Long Island]
+

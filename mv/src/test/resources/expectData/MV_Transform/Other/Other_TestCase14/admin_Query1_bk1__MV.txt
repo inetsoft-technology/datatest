@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 8)
+[address][city][company][contact][customer_id][reseller][state][zip]
+[[NULL]][Akergen][Ernst Handel][Patrico Brown][4][false][PA][38923]
+[23 Tasaga Ave.][Aachen][Eastern Data][Anna Lincoln][3][true][TX][03887]
+[5 Baker's Lane][Chicago][Familia Computer Services][Aria Duz][6][true][IL][39283]
+

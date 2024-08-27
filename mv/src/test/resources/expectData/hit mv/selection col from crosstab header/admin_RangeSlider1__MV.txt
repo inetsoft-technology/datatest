@@ -1,0 +1,3 @@
+The min value is: [25]
+The max value is: [1750]
+Selected: [[25]] -> [[1750]]

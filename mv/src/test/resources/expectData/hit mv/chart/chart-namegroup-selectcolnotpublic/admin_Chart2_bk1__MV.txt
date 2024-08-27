@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[DataGroup(DISCOUNT)][NthMostFrequent(CUSTOMER_ID, 1)]
+[0.1][17]
+[0.2][20]
+[A][5]
+

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[Year(Year_Order:Date_)][Customer:State][Sum(Sum_Order:Num_)]
+[2018-01-01 00:00:00][MA][968265]
+[2019-01-01 00:00:00][MA][1478194]
+

@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 20)
+reseller, Year(date_range1), CA, CA, CA, CA, CA, CA, AK, AK, AK, AK, AK, AK, FL, FL, FL, FL, Grand Total, Grand Total
+NULL, NULL, 7-13, 7-13, Others, Others, Total_1, Total_1, 7-13, 7-13, Others, Others, Total_1, Total_1, 13-26, 13-26, Total_1, Total_1, NULL, NULL
+NULL, NULL, Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2)
+true, 1998, $48.00, 0, $0.00, 0, 48, 48, $0.00, 0, $0.00, 0, 0, 0, $0.00, 0, 0, 0, 48, 48
+true, 1999, $75.00, 27, $64.00, 64, 139, 139, $0.00, 0, $0.00, 0, 0, 0, $0.00, 0, 0, 0, 139, 139
+true, 2000, $125.00, 50, $81.00, 17, 206, 206, $0.00, 0, $0.00, 0, 0, 0, $0.00, 0, 0, 0, 206, 206
+true, Total, 248, 248, 145, 145, 393, 393, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 393, 393
+false, 1998, $34.00, 0, $0.00, 0, 34, 34, $0.00, 0, $23.00, 0, 23, 23, $6.00, 0, 6, 6, 63, 63
+false, 1999, $0.00, -34, $0.00, 0, 0, 0, $104.00, 104, $77.00, 54, 181, 181, $57.00, 51, 57, 57, 238, 238
+false, 2000, $90.00, 90, $0.00, 0, 90, 90, $107.00, 3, $100.00, 23, 207, 207, $0.00, -57, 0, 0, 297, 297
+false, Total, 124, 124, 0, 0, 124, 124, 211, 211, 200, 200, 411, 411, 63, 63, 63, 63, 598, 598
+Grand Total, NULL, 372, 372, 145, 145, 517, 517, 211, 211, 200, 200, 411, 411, 63, 63, 63, 63, 991, 991

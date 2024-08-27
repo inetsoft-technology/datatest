@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 6)
+[PAID][REASON][2002][2003][2004][2005]
+[false][Insufficient support][61][50][103][57]
+[true][Insufficient support][[NULL]][10][[NULL]][[NULL]]
+

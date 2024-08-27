@@ -1,0 +1,3 @@
+The min value is: [,AZ]
+The max value is: [0.25,WA]
+Selected: [[__null__::AZ]] -> [[__null__::FL]]

@@ -8,8 +8,6 @@ import inetsoft.sree.security.SRPrincipal
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.ExportUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.util.ConfigurationContext
@@ -21,6 +19,8 @@ import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.ExportUtil
 
 class VPMTest {
    VPMTest(String asset_id) {

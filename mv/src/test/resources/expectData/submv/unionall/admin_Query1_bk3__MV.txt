@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 2)
+[DISCOUNT][PAID]
+[[NULL]][false]
+[[NULL]][true]
+[0][false]
+[0][false]
+[0][true]
+[0][true]
+[0.1][false]
+[0.1][true]
+[0.2][false]
+

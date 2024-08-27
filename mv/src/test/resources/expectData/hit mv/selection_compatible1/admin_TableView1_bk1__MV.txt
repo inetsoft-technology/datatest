@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[STATE][CUSTOMER_ID][COMPANY]
+[CA][16][Whittaker & Co, Inc]
+[FL][16][Whittaker & Co, Inc]
+

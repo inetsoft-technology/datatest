@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 4)
+state, Day(expDate), NULL, 2021
+NULL, NULL, NULL, 4th
+CT, 2021-11-29, Average(expid), 12
+CT, 2021-11-29, Distinct Count(C_ID), 1
+NY, 2021-11-18, Average(expid), 14
+NY, 2021-11-18, Distinct Count(C_ID), 1
+NJ, 2021-11-23, Average(expid), 38
+NJ, 2021-11-23, Distinct Count(C_ID), 1

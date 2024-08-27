@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 6)
+WeekOfYear(expDate), CITY, NULL, 0, 0, 1
+NULL, NULL, NULL, AA_NamedGroup, NY, NJ
+47, New York, Average(expid), NULL, 14, NULL
+47, New York, Sum(CUSTOMER_ID), NULL, 7, NULL
+48, Newark, Average(expid), NULL, NULL, 38
+48, Newark, Sum(CUSTOMER_ID), NULL, NULL, 19
+49, Hartford, Average(expid), 12, NULL, NULL
+49, Hartford, Sum(CUSTOMER_ID), 6, NULL, NULL

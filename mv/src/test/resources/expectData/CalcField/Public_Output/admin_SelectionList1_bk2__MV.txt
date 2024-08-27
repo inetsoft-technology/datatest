@@ -1,0 +1,7 @@
+[AK]   SelectState:[9]
+[CA]   SelectState:[9]
+[IL]   SelectState:[9]
+[NJ]   SelectState:[8]
+[NY]   SelectState:[8]
+[OH]   SelectState:[8]
+[TX]   SelectState:[8]

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[CATEGORY_ID][CATEGORY_NAME]
+[1][USA East]
+[2][USA West]
+[5][Graphics]
+

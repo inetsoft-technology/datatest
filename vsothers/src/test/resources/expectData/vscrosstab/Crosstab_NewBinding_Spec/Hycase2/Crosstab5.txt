@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 4)
+HourOfDay(PRODUCE_TIME), MinuteOfHour(PRODUCE_TIME), SecondOfMinute(PRODUCE_TIME), Aggregate
+NULL, NULL, NULL, 0
+1, 1, 1, 0
+1, 13, 13, 0
+5, NULL, NULL, 0
+9, NULL, NULL, 0
+11, NULL, NULL, 0
+12, NULL, NULL, 0

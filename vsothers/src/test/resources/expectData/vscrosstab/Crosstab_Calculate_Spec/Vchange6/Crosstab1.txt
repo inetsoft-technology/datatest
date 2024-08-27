@@ -1,0 +1,34 @@
+The data size(row x col) is:(33 x 3)
+Quarter(ORDER_DATE), NULL, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID)/Sum(CUSTOMER_ID)
+2020 1st, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 1st, Sum(CUSTOMER_ID), 214
+2020 2nd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 2nd, Sum(CUSTOMER_ID), 1050
+2020 3rd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 3rd, Sum(CUSTOMER_ID), 817
+2020 4th, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 4th, Sum(CUSTOMER_ID), 719
+2021 1st, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 401
+2021 1st, Sum(CUSTOMER_ID), 615
+2021 2nd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), -137
+2021 2nd, Sum(CUSTOMER_ID), 913
+2021 3rd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 104
+2021 3rd, Sum(CUSTOMER_ID), 921
+2021 4th, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 181
+2021 4th, Sum(CUSTOMER_ID), 900
+2022 1st, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 41
+2022 1st, Sum(CUSTOMER_ID), 656
+2022 2nd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2022 2nd, Sum(CUSTOMER_ID), 923
+2022 3rd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), -179
+2022 3rd, Sum(CUSTOMER_ID), 742
+2022 4th, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 47
+2022 4th, Sum(CUSTOMER_ID), 947
+2023 1st, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 216
+2023 1st, Sum(CUSTOMER_ID), 872
+2023 2nd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), -33
+2023 2nd, Sum(CUSTOMER_ID), 890
+2023 3rd, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), 105
+2023 3rd, Sum(CUSTOMER_ID), 847
+2023 4th, Change from previous year of Quarter(ORDER_DATE): Sum(CUSTOMER_ID), -211
+2023 4th, Sum(CUSTOMER_ID), 736

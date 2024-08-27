@@ -1,0 +1,28 @@
+The data size(row x col) is:(27 x 24)
+DataGroup(Customers:ZIP), Customers:STATE, NULL, 2002, 2002, 2002, 2002, 2002, 2002, 2002, 2003, 2003, 2003, 2003, 2003, 2003, 2003, 2004, 2004, 2004, 2004, 2004, 2004, 2004
+NULL, NULL, NULL, 2nd, 2nd, 2nd, 4th, 4th, 4th, Total, 1st, 1st, 1st, 2nd, 2nd, 2nd, Total, 3rd, 3rd, 3rd, 2nd, 2nd, 2nd, Total
+NULL, NULL, NULL, Apr, May, Jun, Oct, Nov, Dec, NULL, Feb, Jan, Mar, May, Apr, Jun, NULL, Sep, Aug, Jul, May, Apr, Jun, NULL
+g3, Others, Compound Growth by column: Sum(cid), 50%, 64%, NULL, 27%, 70%, NULL, 121%, 57%, NULL, NULL, 10%, 69%, 115%, 148%, 57%, 141%, 343%, 17%, 37%, 74%, 256%
+g3, Others, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 50%, 64%, 64%, 27%, 70%, 70%, 121%, 57%, 57%, 57%, 10%, 69%, 115%, 148%, 57%, 141%, 343%, 17%, 37%, 74%, 256%
+g3, Others, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 50%, 10%, NULL, 27%, 34%, NULL, 121%, 57%, NULL, NULL, 10%, 54%, 27%, 148%, 57%, 54%, 84%, 17%, 17%, 27%, 256%
+g3, MA, Compound Growth by column: Sum(cid), 37%, 94%, 165%, NULL, NULL, NULL, 115%, 16%, 40%, 63%, 16%, NULL, NULL, 69%, NULL, 21%, 46%, 21%, 46%, 69%, 99%
+g3, MA, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 37%, 94%, 165%, NULL, NULL, NULL, 115%, 16%, 40%, 63%, 16%, 16%, 16%, 69%, NULL, 21%, 46%, 21%, 46%, 69%, 99%
+g3, MA, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 105%, 55%, 37%, 27%, 34%, NULL, 115%, 82%, 21%, 16%, 28%, 54%, 27%, 69%, 57%, 86%, 122%, 41%, 41%, 48%, 99%
+g3, NY, Compound Growth by column: Sum(cid), 15%, 40%, 70%, NULL, 22%, 59%, 111%, 22%, NULL, NULL, 22%, 40%, 70%, 80%, 22%, NULL, NULL, 15%, 33%, 53%, 68%
+g3, NY, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 15%, 40%, 70%, NULL, 22%, 59%, 111%, 22%, 22%, 22%, 22%, 40%, 70%, 80%, 22%, 22%, 22%, 15%, 33%, 53%, 68%
+g3, NY, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 136%, 89%, 66%, 27%, 63%, 31%, 111%, 121%, 21%, 16%, 55%, 78%, 54%, 80%, 91%, 86%, 122%, 63%, 63%, 70%, 68%
+g1, MA, Compound Growth by column: Sum(cid), 54%, NULL, 96%, NULL, 27%, NULL, 108%, 31%, NULL, 111%, NULL, 54%, NULL, 146%, 61%, NULL, 111%, 58%, NULL, NULL, 149%
+g1, MA, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 54%, 54%, 96%, NULL, 27%, 27%, 108%, 31%, 31%, 111%, NULL, 54%, 54%, 146%, 61%, 61%, 111%, 58%, 58%, 58%, 149%
+g1, MA, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 54%, NULL, 27%, NULL, 27%, NULL, 108%, 31%, NULL, 61%, NULL, 54%, NULL, 146%, 61%, NULL, 31%, 58%, NULL, NULL, 149%
+g1, NJ, Compound Growth by column: Sum(cid), 45%, 91%, NULL, 23%, 25%, 55%, 125%, 63%, 151%, 212%, 54%, 143%, 147%, 255%, NULL, 23%, NULL, 24%, 91%, NULL, 101%
+g1, NJ, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 45%, 91%, 91%, 23%, 25%, 55%, 125%, 63%, 151%, 212%, 54%, 143%, 147%, 255%, NULL, 23%, 23%, 24%, 91%, 91%, 101%
+g1, NJ, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 123%, 31%, 27%, 23%, 29%, 24%, 125%, 113%, 54%, 100%, 54%, 143%, 2%, 255%, 61%, 23%, 31%, 96%, 54%, NULL, 101%
+g1, Others, Compound Growth by column: Sum(cid), 8%, 17%, 39%, 19%, 26%, 47%, 76%, 5%, 8%, NULL, NULL, 3%, 11%, 19%, 25%, 40%, 49%, 6%, 18%, 33%, 73%
+g1, Others, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 8%, 17%, 39%, 19%, 26%, 47%, 76%, 5%, 8%, 8%, NULL, 3%, 11%, 19%, 25%, 40%, 49%, 6%, 18%, 33%, 73%
+g1, Others, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 141%, 42%, 51%, 46%, 37%, 44%, 76%, 124%, 58%, 100%, 54%, 149%, 10%, 19%, 102%, 37%, 39%, 108%, 71%, 13%, 73%
+93847, NV, Compound Growth by column: Sum(cid), 29%, NULL, NULL, 29%, NULL, NULL, 58%, 29%, NULL, 66%, 29%, 66%, 114%, 144%, 29%, 66%, NULL, 29%, 66%, NULL, 115%
+93847, NV, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), 29%, 29%, 29%, 29%, 29%, 29%, 58%, 29%, 29%, 66%, 29%, 66%, 114%, 144%, 29%, 66%, 66%, 29%, 66%, 66%, 115%
+93847, NV, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 29%, NULL, NULL, 29%, NULL, NULL, 58%, 29%, NULL, 29%, 29%, 29%, 29%, 144%, 29%, 29%, NULL, 29%, 29%, NULL, 115%
+93847, WA, Compound Growth by column: Sum(cid), NULL, 24%, NULL, 49%, 121%, NULL, 121%, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24%, NULL, NULL, 24%
+93847, WA, Compound Growth QuarterOfYear(Orders:ORDER_DATE): Sum(cid), NULL, 24%, 24%, 49%, 121%, 121%, 121%, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 24%, 24%, 24%, 24%
+93847, WA, Compound Growth DataGroup(Customers:ZIP): Sum(cid), 29%, 24%, NULL, 91%, 49%, NULL, 121%, 29%, NULL, 29%, 29%, 29%, 29%, NULL, 29%, 29%, NULL, 60%, 29%, NULL, 24%

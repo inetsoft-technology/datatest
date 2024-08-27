@@ -1,0 +1,7 @@
+[00:00:00]   SelectState:[9]
+[07:25:12]   SelectState:[8]
+[10:10:10]   SelectState:[9]
+[11:12:13]   SelectState:[8]
+[12:11:21]   SelectState:[8]
+[17:12:02]   SelectState:[8]
+[23:59:59]   SelectState:[9]

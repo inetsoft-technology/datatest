@@ -1,0 +1,1080 @@
+The data size(row x col) is:(1079 x 3)
+Day(ORDER_DATE), NULL, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID)/Sum(CUSTOMER_ID)
+2020-03-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-13, Sum(CUSTOMER_ID), 59
+2020-03-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-14, Sum(CUSTOMER_ID), 20
+2020-03-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-18, Sum(CUSTOMER_ID), 7
+2020-03-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-19, Sum(CUSTOMER_ID), 37
+2020-03-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -49
+2020-03-20, Sum(CUSTOMER_ID), 10
+2020-03-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-23, Sum(CUSTOMER_ID), 19
+2020-03-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -15
+2020-03-26, Sum(CUSTOMER_ID), 22
+2020-03-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-03-29, Sum(CUSTOMER_ID), 40
+2020-04-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-01, Sum(CUSTOMER_ID), 20
+2020-04-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -6
+2020-04-05, Sum(CUSTOMER_ID), 34
+2020-04-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-09, Sum(CUSTOMER_ID), 83
+2020-04-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -6
+2020-04-12, Sum(CUSTOMER_ID), 28
+2020-04-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-14, Sum(CUSTOMER_ID), 107
+2020-04-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -80
+2020-04-16, Sum(CUSTOMER_ID), 3
+2020-04-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-17, Sum(CUSTOMER_ID), 34
+2020-04-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-20, Sum(CUSTOMER_ID), 25
+2020-04-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 31
+2020-04-23, Sum(CUSTOMER_ID), 34
+2020-04-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -23
+2020-04-27, Sum(CUSTOMER_ID), 2
+2020-04-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-04-29, Sum(CUSTOMER_ID), 20
+2020-04-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -27
+2020-04-30, Sum(CUSTOMER_ID), 7
+2020-05-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-01, Sum(CUSTOMER_ID), 21
+2020-05-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-05, Sum(CUSTOMER_ID), 34
+2020-05-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 70
+2020-05-07, Sum(CUSTOMER_ID), 77
+2020-05-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-11, Sum(CUSTOMER_ID), 9
+2020-05-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 13
+2020-05-12, Sum(CUSTOMER_ID), 47
+2020-05-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-15, Sum(CUSTOMER_ID), 6
+2020-05-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 0
+2020-05-18, Sum(CUSTOMER_ID), 9
+2020-05-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-21, Sum(CUSTOMER_ID), 18
+2020-05-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 15
+2020-05-25, Sum(CUSTOMER_ID), 24
+2020-05-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-27, Sum(CUSTOMER_ID), 28
+2020-05-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-05-31, Sum(CUSTOMER_ID), 52
+2020-06-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -22
+2020-06-01, Sum(CUSTOMER_ID), 2
+2020-06-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-05, Sum(CUSTOMER_ID), 18
+2020-06-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-06, Sum(CUSTOMER_ID), 16
+2020-06-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -27
+2020-06-07, Sum(CUSTOMER_ID), 25
+2020-06-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 27
+2020-06-08, Sum(CUSTOMER_ID), 29
+2020-06-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-11, Sum(CUSTOMER_ID), 5
+2020-06-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -19
+2020-06-15, Sum(CUSTOMER_ID), 10
+2020-06-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-16, Sum(CUSTOMER_ID), 12
+2020-06-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-19, Sum(CUSTOMER_ID), 12
+2020-06-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-21, Sum(CUSTOMER_ID), 76
+2020-06-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 20
+2020-06-23, Sum(CUSTOMER_ID), 32
+2020-06-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2020-06-26, Sum(CUSTOMER_ID), 11
+2020-06-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-27, Sum(CUSTOMER_ID), 50
+2020-06-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-06-29, Sum(CUSTOMER_ID), 30
+2020-07-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-01, Sum(CUSTOMER_ID), 22
+2020-07-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2020-07-03, Sum(CUSTOMER_ID), 22
+2020-07-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -20
+2020-07-04, Sum(CUSTOMER_ID), 30
+2020-07-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-05, Sum(CUSTOMER_ID), 26
+2020-07-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-07, Sum(CUSTOMER_ID), 11
+2020-07-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-09, Sum(CUSTOMER_ID), 35
+2020-07-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 2
+2020-07-10, Sum(CUSTOMER_ID), 24
+2020-07-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 24
+2020-07-14, Sum(CUSTOMER_ID), 35
+2020-07-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -6
+2020-07-16, Sum(CUSTOMER_ID), 29
+2020-07-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-20, Sum(CUSTOMER_ID), 27
+2020-07-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-24, Sum(CUSTOMER_ID), 5
+2020-07-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-26, Sum(CUSTOMER_ID), 29
+2020-07-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-07-29, Sum(CUSTOMER_ID), 31
+2020-08-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-01, Sum(CUSTOMER_ID), 23
+2020-08-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-04, Sum(CUSTOMER_ID), 23
+2020-08-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-06, Sum(CUSTOMER_ID), 14
+2020-08-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-10, Sum(CUSTOMER_ID), 3
+2020-08-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-14, Sum(CUSTOMER_ID), 30
+2020-08-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 23
+2020-08-17, Sum(CUSTOMER_ID), 26
+2020-08-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-19, Sum(CUSTOMER_ID), 4
+2020-08-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-23, Sum(CUSTOMER_ID), 9
+2020-08-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 19
+2020-08-26, Sum(CUSTOMER_ID), 23
+2020-08-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-28, Sum(CUSTOMER_ID), 9
+2020-08-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-08-29, Sum(CUSTOMER_ID), 21
+2020-08-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 15
+2020-08-30, Sum(CUSTOMER_ID), 24
+2020-09-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-03, Sum(CUSTOMER_ID), 20
+2020-09-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2020-09-06, Sum(CUSTOMER_ID), 12
+2020-09-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-07, Sum(CUSTOMER_ID), 12
+2020-09-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 1
+2020-09-10, Sum(CUSTOMER_ID), 21
+2020-09-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-11, Sum(CUSTOMER_ID), 80
+2020-09-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-15, Sum(CUSTOMER_ID), 29
+2020-09-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -49
+2020-09-18, Sum(CUSTOMER_ID), 31
+2020-09-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2020-09-22, Sum(CUSTOMER_ID), 26
+2020-09-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-26, Sum(CUSTOMER_ID), 26
+2020-09-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-09-28, Sum(CUSTOMER_ID), 25
+2020-10-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-01, Sum(CUSTOMER_ID), 27
+2020-10-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -19
+2020-10-05, Sum(CUSTOMER_ID), 6
+2020-10-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-07, Sum(CUSTOMER_ID), 18
+2020-10-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-11, Sum(CUSTOMER_ID), 24
+2020-10-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 28
+2020-10-12, Sum(CUSTOMER_ID), 34
+2020-10-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-16, Sum(CUSTOMER_ID), 21
+2020-10-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-20, Sum(CUSTOMER_ID), 7
+2020-10-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-24, Sum(CUSTOMER_ID), 28
+2020-10-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 22
+2020-10-27, Sum(CUSTOMER_ID), 29
+2020-10-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-10-30, Sum(CUSTOMER_ID), 28
+2020-11-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-02, Sum(CUSTOMER_ID), 44
+2020-11-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-05, Sum(CUSTOMER_ID), 18
+2020-11-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -21
+2020-11-09, Sum(CUSTOMER_ID), 23
+2020-11-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-13, Sum(CUSTOMER_ID), 23
+2020-11-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-15, Sum(CUSTOMER_ID), 20
+2020-11-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -8
+2020-11-16, Sum(CUSTOMER_ID), 15
+2020-11-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 24
+2020-11-20, Sum(CUSTOMER_ID), 47
+2020-11-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 13
+2020-11-22, Sum(CUSTOMER_ID), 33
+2020-11-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-26, Sum(CUSTOMER_ID), 35
+2020-11-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-28, Sum(CUSTOMER_ID), 4
+2020-11-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-11-30, Sum(CUSTOMER_ID), 39
+2020-12-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -9
+2020-12-03, Sum(CUSTOMER_ID), 26
+2020-12-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-12-06, Sum(CUSTOMER_ID), 32
+2020-12-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -17
+2020-12-10, Sum(CUSTOMER_ID), 9
+2020-12-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2020-12-13, Sum(CUSTOMER_ID), 27
+2020-12-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 18
+2020-12-17, Sum(CUSTOMER_ID), 27
+2020-12-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-12-21, Sum(CUSTOMER_ID), 9
+2020-12-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-12-25, Sum(CUSTOMER_ID), 19
+2020-12-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-12-26, Sum(CUSTOMER_ID), 36
+2020-12-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020-12-29, Sum(CUSTOMER_ID), 11
+2021-01-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-03, Sum(CUSTOMER_ID), 12
+2021-01-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-06, Sum(CUSTOMER_ID), 25
+2021-01-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-08, Sum(CUSTOMER_ID), 69
+2021-01-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-12, Sum(CUSTOMER_ID), 7
+2021-01-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -42
+2021-01-15, Sum(CUSTOMER_ID), 27
+2021-01-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-17, Sum(CUSTOMER_ID), 27
+2021-01-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2021-01-19, Sum(CUSTOMER_ID), 4
+2021-01-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -8
+2021-01-22, Sum(CUSTOMER_ID), 19
+2021-01-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-25, Sum(CUSTOMER_ID), 2
+2021-01-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-27, Sum(CUSTOMER_ID), 13
+2021-01-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-01-31, Sum(CUSTOMER_ID), 1
+2021-02-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-04, Sum(CUSTOMER_ID), 34
+2021-02-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-08, Sum(CUSTOMER_ID), 2
+2021-02-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -25
+2021-02-11, Sum(CUSTOMER_ID), 9
+2021-02-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-13, Sum(CUSTOMER_ID), 17
+2021-02-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-16, Sum(CUSTOMER_ID), 9
+2021-02-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-19, Sum(CUSTOMER_ID), 37
+2021-02-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 24
+2021-02-23, Sum(CUSTOMER_ID), 33
+2021-02-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-24, Sum(CUSTOMER_ID), 12
+2021-02-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-02-28, Sum(CUSTOMER_ID), 14
+2021-03-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 0
+2021-03-03, Sum(CUSTOMER_ID), 12
+2021-03-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2021-03-07, Sum(CUSTOMER_ID), 25
+2021-03-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-09, Sum(CUSTOMER_ID), 35
+2021-03-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-13, Sum(CUSTOMER_ID), 14
+2021-03-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 4
+2021-03-14, Sum(CUSTOMER_ID), 29
+2021-03-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-18, Sum(CUSTOMER_ID), 5
+2021-03-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -8
+2021-03-21, Sum(CUSTOMER_ID), 21
+2021-03-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-23, Sum(CUSTOMER_ID), 40
+2021-03-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2021-03-25, Sum(CUSTOMER_ID), 8
+2021-03-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 5
+2021-03-28, Sum(CUSTOMER_ID), 26
+2021-03-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-29, Sum(CUSTOMER_ID), 12
+2021-03-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-03-31, Sum(CUSTOMER_ID), 15
+2021-04-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-02, Sum(CUSTOMER_ID), 26
+2021-04-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-06, Sum(CUSTOMER_ID), 41
+2021-04-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 2
+2021-04-09, Sum(CUSTOMER_ID), 28
+2021-04-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-11, Sum(CUSTOMER_ID), 4
+2021-04-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -33
+2021-04-13, Sum(CUSTOMER_ID), 8
+2021-04-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-17, Sum(CUSTOMER_ID), 67
+2021-04-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 60
+2021-04-20, Sum(CUSTOMER_ID), 68
+2021-04-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-23, Sum(CUSTOMER_ID), 3
+2021-04-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -33
+2021-04-24, Sum(CUSTOMER_ID), 34
+2021-04-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-04-28, Sum(CUSTOMER_ID), 27
+2021-05-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2021-05-01, Sum(CUSTOMER_ID), 22
+2021-05-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-05-04, Sum(CUSTOMER_ID), 22
+2021-05-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -8
+2021-05-05, Sum(CUSTOMER_ID), 19
+2021-05-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 12
+2021-05-08, Sum(CUSTOMER_ID), 34
+2021-05-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-05-10, Sum(CUSTOMER_ID), 4
+2021-05-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 6
+2021-05-12, Sum(CUSTOMER_ID), 25
+2021-05-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -16
+2021-05-15, Sum(CUSTOMER_ID), 18
+2021-05-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 7
+2021-05-19, Sum(CUSTOMER_ID), 32
+2021-05-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -16
+2021-05-22, Sum(CUSTOMER_ID), 2
+2021-05-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2021-05-26, Sum(CUSTOMER_ID), 31
+2021-05-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-05-30, Sum(CUSTOMER_ID), 28
+2021-06-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 31
+2021-06-02, Sum(CUSTOMER_ID), 62
+2021-06-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-03, Sum(CUSTOMER_ID), 34
+2021-06-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-07, Sum(CUSTOMER_ID), 8
+2021-06-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-08, Sum(CUSTOMER_ID), 30
+2021-06-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-11, Sum(CUSTOMER_ID), 1
+2021-06-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-12, Sum(CUSTOMER_ID), 30
+2021-06-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-16, Sum(CUSTOMER_ID), 56
+2021-06-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-17, Sum(CUSTOMER_ID), 23
+2021-06-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-21, Sum(CUSTOMER_ID), 19
+2021-06-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-22, Sum(CUSTOMER_ID), 35
+2021-06-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 2
+2021-06-24, Sum(CUSTOMER_ID), 25
+2021-06-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 13
+2021-06-28, Sum(CUSTOMER_ID), 32
+2021-06-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-06-30, Sum(CUSTOMER_ID), 15
+2021-07-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-02, Sum(CUSTOMER_ID), 17
+2021-07-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-03, Sum(CUSTOMER_ID), 10
+2021-07-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-06, Sum(CUSTOMER_ID), 2
+2021-07-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-08, Sum(CUSTOMER_ID), 25
+2021-07-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2021-07-09, Sum(CUSTOMER_ID), 20
+2021-07-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 26
+2021-07-13, Sum(CUSTOMER_ID), 28
+2021-07-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-17, Sum(CUSTOMER_ID), 31
+2021-07-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-18, Sum(CUSTOMER_ID), 67
+2021-07-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-22, Sum(CUSTOMER_ID), 26
+2021-07-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-23, Sum(CUSTOMER_ID), 35
+2021-07-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -35
+2021-07-25, Sum(CUSTOMER_ID), 32
+2021-07-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-27, Sum(CUSTOMER_ID), 11
+2021-07-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-07-31, Sum(CUSTOMER_ID), 24
+2021-08-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2021-08-03, Sum(CUSTOMER_ID), 10
+2021-08-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2021-08-07, Sum(CUSTOMER_ID), 21
+2021-08-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-09, Sum(CUSTOMER_ID), 12
+2021-08-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-13, Sum(CUSTOMER_ID), 33
+2021-08-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 35
+2021-08-16, Sum(CUSTOMER_ID), 47
+2021-08-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-17, Sum(CUSTOMER_ID), 31
+2021-08-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-21, Sum(CUSTOMER_ID), 24
+2021-08-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-22, Sum(CUSTOMER_ID), 34
+2021-08-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2021-08-24, Sum(CUSTOMER_ID), 19
+2021-08-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-26, Sum(CUSTOMER_ID), 28
+2021-08-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-08-30, Sum(CUSTOMER_ID), 21
+2021-09-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -17
+2021-09-02, Sum(CUSTOMER_ID), 11
+2021-09-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-03, Sum(CUSTOMER_ID), 2
+2021-09-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-04, Sum(CUSTOMER_ID), 1
+2021-09-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2021-09-06, Sum(CUSTOMER_ID), 31
+2021-09-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 18
+2021-09-09, Sum(CUSTOMER_ID), 29
+2021-09-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2021-09-11, Sum(CUSTOMER_ID), 11
+2021-09-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-12, Sum(CUSTOMER_ID), 44
+2021-09-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -26
+2021-09-13, Sum(CUSTOMER_ID), 5
+2021-09-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-15, Sum(CUSTOMER_ID), 20
+2021-09-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-17, Sum(CUSTOMER_ID), 16
+2021-09-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -8
+2021-09-18, Sum(CUSTOMER_ID), 3
+2021-09-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -11
+2021-09-19, Sum(CUSTOMER_ID), 33
+2021-09-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-21, Sum(CUSTOMER_ID), 5
+2021-09-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-09-23, Sum(CUSTOMER_ID), 30
+2021-09-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 16
+2021-09-24, Sum(CUSTOMER_ID), 32
+2021-09-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -28
+2021-09-26, Sum(CUSTOMER_ID), 5
+2021-09-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 13
+2021-09-28, Sum(CUSTOMER_ID), 18
+2021-09-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -13
+2021-09-30, Sum(CUSTOMER_ID), 17
+2021-10-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-04, Sum(CUSTOMER_ID), 17
+2021-10-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 13
+2021-10-05, Sum(CUSTOMER_ID), 31
+2021-10-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-08, Sum(CUSTOMER_ID), 20
+2021-10-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-10, Sum(CUSTOMER_ID), 9
+2021-10-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2021-10-11, Sum(CUSTOMER_ID), 20
+2021-10-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-13, Sum(CUSTOMER_ID), 19
+2021-10-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-16, Sum(CUSTOMER_ID), 35
+2021-10-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -15
+2021-10-20, Sum(CUSTOMER_ID), 4
+2021-10-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-21, Sum(CUSTOMER_ID), 28
+2021-10-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-25, Sum(CUSTOMER_ID), 3
+2021-10-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-26, Sum(CUSTOMER_ID), 8
+2021-10-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-29, Sum(CUSTOMER_ID), 26
+2021-10-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-10-30, Sum(CUSTOMER_ID), 14
+2021-11-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-03, Sum(CUSTOMER_ID), 11
+2021-11-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-04, Sum(CUSTOMER_ID), 16
+2021-11-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 8
+2021-11-05, Sum(CUSTOMER_ID), 34
+2021-11-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-08, Sum(CUSTOMER_ID), 62
+2021-11-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-09, Sum(CUSTOMER_ID), 7
+2021-11-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2021-11-10, Sum(CUSTOMER_ID), 14
+2021-11-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-14, Sum(CUSTOMER_ID), 24
+2021-11-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2021-11-17, Sum(CUSTOMER_ID), 17
+2021-11-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-19, Sum(CUSTOMER_ID), 21
+2021-11-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-23, Sum(CUSTOMER_ID), 9
+2021-11-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-27, Sum(CUSTOMER_ID), 50
+2021-11-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-11-29, Sum(CUSTOMER_ID), 21
+2021-12-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-03, Sum(CUSTOMER_ID), 1
+2021-12-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 15
+2021-12-04, Sum(CUSTOMER_ID), 65
+2021-12-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-05, Sum(CUSTOMER_ID), 10
+2021-12-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-08, Sum(CUSTOMER_ID), 20
+2021-12-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 28
+2021-12-10, Sum(CUSTOMER_ID), 29
+2021-12-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-14, Sum(CUSTOMER_ID), 16
+2021-12-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -17
+2021-12-17, Sum(CUSTOMER_ID), 12
+2021-12-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-19, Sum(CUSTOMER_ID), 82
+2021-12-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 1
+2021-12-21, Sum(CUSTOMER_ID), 17
+2021-12-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-23, Sum(CUSTOMER_ID), 35
+2021-12-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 7
+2021-12-24, Sum(CUSTOMER_ID), 19
+2021-12-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -70
+2021-12-26, Sum(CUSTOMER_ID), 12
+2021-12-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-27, Sum(CUSTOMER_ID), 19
+2021-12-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2021-12-29, Sum(CUSTOMER_ID), 43
+2022-01-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 21
+2022-01-02, Sum(CUSTOMER_ID), 33
+2022-01-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -42
+2022-01-05, Sum(CUSTOMER_ID), 1
+2022-01-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-01-07, Sum(CUSTOMER_ID), 14
+2022-01-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-01-08, Sum(CUSTOMER_ID), 24
+2022-01-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-01-11, Sum(CUSTOMER_ID), 35
+2022-01-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 2
+2022-01-14, Sum(CUSTOMER_ID), 16
+2022-01-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -27
+2022-01-18, Sum(CUSTOMER_ID), 8
+2022-01-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-01-20, Sum(CUSTOMER_ID), 6
+2022-01-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-01-23, Sum(CUSTOMER_ID), 11
+2022-01-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 8
+2022-01-25, Sum(CUSTOMER_ID), 16
+2022-01-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2022-01-27, Sum(CUSTOMER_ID), 17
+2022-01-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -4
+2022-01-30, Sum(CUSTOMER_ID), 7
+2022-02-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 12
+2022-02-01, Sum(CUSTOMER_ID), 28
+2022-02-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-02, Sum(CUSTOMER_ID), 22
+2022-02-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2022-02-03, Sum(CUSTOMER_ID), 14
+2022-02-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-04, Sum(CUSTOMER_ID), 14
+2022-02-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-07, Sum(CUSTOMER_ID), 32
+2022-02-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2022-02-09, Sum(CUSTOMER_ID), 17
+2022-02-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-13, Sum(CUSTOMER_ID), 15
+2022-02-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2022-02-14, Sum(CUSTOMER_ID), 35
+2022-02-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2022-02-16, Sum(CUSTOMER_ID), 28
+2022-02-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-17, Sum(CUSTOMER_ID), 16
+2022-02-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -26
+2022-02-21, Sum(CUSTOMER_ID), 9
+2022-02-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-02-25, Sum(CUSTOMER_ID), 2
+2022-02-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 32
+2022-02-28, Sum(CUSTOMER_ID), 41
+2022-03-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2022-03-04, Sum(CUSTOMER_ID), 13
+2022-03-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-08, Sum(CUSTOMER_ID), 5
+2022-03-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-10, Sum(CUSTOMER_ID), 15
+2022-03-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-13, Sum(CUSTOMER_ID), 21
+2022-03-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-14, Sum(CUSTOMER_ID), 13
+2022-03-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-16, Sum(CUSTOMER_ID), 15
+2022-03-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2022-03-20, Sum(CUSTOMER_ID), 18
+2022-03-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-22, Sum(CUSTOMER_ID), 32
+2022-03-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-24, Sum(CUSTOMER_ID), 31
+2022-03-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-03-28, Sum(CUSTOMER_ID), 32
+2022-04-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-01, Sum(CUSTOMER_ID), 21
+2022-04-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-02, Sum(CUSTOMER_ID), 21
+2022-04-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-06, Sum(CUSTOMER_ID), 46
+2022-04-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-07, Sum(CUSTOMER_ID), 52
+2022-04-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 1
+2022-04-09, Sum(CUSTOMER_ID), 22
+2022-04-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-12, Sum(CUSTOMER_ID), 94
+2022-04-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 9
+2022-04-14, Sum(CUSTOMER_ID), 61
+2022-04-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-15, Sum(CUSTOMER_ID), 17
+2022-04-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -80
+2022-04-19, Sum(CUSTOMER_ID), 14
+2022-04-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -55
+2022-04-21, Sum(CUSTOMER_ID), 6
+2022-04-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-23, Sum(CUSTOMER_ID), 26
+2022-04-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-25, Sum(CUSTOMER_ID), 19
+2022-04-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-04-29, Sum(CUSTOMER_ID), 18
+2022-05-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-03, Sum(CUSTOMER_ID), 3
+2022-05-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-04, Sum(CUSTOMER_ID), 16
+2022-05-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-07, Sum(CUSTOMER_ID), 34
+2022-05-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-09, Sum(CUSTOMER_ID), 4
+2022-05-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-13, Sum(CUSTOMER_ID), 17
+2022-05-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-15, Sum(CUSTOMER_ID), 83
+2022-05-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-19, Sum(CUSTOMER_ID), 26
+2022-05-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-23, Sum(CUSTOMER_ID), 2
+2022-05-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-27, Sum(CUSTOMER_ID), 19
+2022-05-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-29, Sum(CUSTOMER_ID), 49
+2022-05-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-05-31, Sum(CUSTOMER_ID), 61
+2022-06-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-01, Sum(CUSTOMER_ID), 12
+2022-06-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-04, Sum(CUSTOMER_ID), 17
+2022-06-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 23
+2022-06-08, Sum(CUSTOMER_ID), 35
+2022-06-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-12, Sum(CUSTOMER_ID), 42
+2022-06-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-16, Sum(CUSTOMER_ID), 29
+2022-06-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-17, Sum(CUSTOMER_ID), 9
+2022-06-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -25
+2022-06-19, Sum(CUSTOMER_ID), 17
+2022-06-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -26
+2022-06-23, Sum(CUSTOMER_ID), 3
+2022-06-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-25, Sum(CUSTOMER_ID), 1
+2022-06-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 6
+2022-06-26, Sum(CUSTOMER_ID), 23
+2022-06-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-06-29, Sum(CUSTOMER_ID), 4
+2022-07-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 16
+2022-07-03, Sum(CUSTOMER_ID), 39
+2022-07-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 17
+2022-07-06, Sum(CUSTOMER_ID), 21
+2022-07-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-08, Sum(CUSTOMER_ID), 13
+2022-07-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-11, Sum(CUSTOMER_ID), 32
+2022-07-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2022-07-13, Sum(CUSTOMER_ID), 16
+2022-07-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 76
+2022-07-15, Sum(CUSTOMER_ID), 89
+2022-07-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-17, Sum(CUSTOMER_ID), 17
+2022-07-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-21, Sum(CUSTOMER_ID), 19
+2022-07-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-25, Sum(CUSTOMER_ID), 2
+2022-07-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-07-29, Sum(CUSTOMER_ID), 34
+2022-08-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-02, Sum(CUSTOMER_ID), 33
+2022-08-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-04, Sum(CUSTOMER_ID), 25
+2022-08-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -7
+2022-08-05, Sum(CUSTOMER_ID), 27
+2022-08-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-06, Sum(CUSTOMER_ID), 37
+2022-08-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -22
+2022-08-09, Sum(CUSTOMER_ID), 11
+2022-08-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -18
+2022-08-13, Sum(CUSTOMER_ID), 19
+2022-08-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2022-08-16, Sum(CUSTOMER_ID), 10
+2022-08-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-17, Sum(CUSTOMER_ID), 18
+2022-08-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-21, Sum(CUSTOMER_ID), 10
+2022-08-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-08-25, Sum(CUSTOMER_ID), 32
+2022-08-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2022-08-28, Sum(CUSTOMER_ID), 20
+2022-09-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 30
+2022-09-01, Sum(CUSTOMER_ID), 62
+2022-09-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -6
+2022-09-04, Sum(CUSTOMER_ID), 14
+2022-09-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -61
+2022-09-08, Sum(CUSTOMER_ID), 1
+2022-09-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-09, Sum(CUSTOMER_ID), 34
+2022-09-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-13, Sum(CUSTOMER_ID), 10
+2022-09-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-17, Sum(CUSTOMER_ID), 22
+2022-09-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-19, Sum(CUSTOMER_ID), 26
+2022-09-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-22, Sum(CUSTOMER_ID), 11
+2022-09-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-09-25, Sum(CUSTOMER_ID), 19
+2022-09-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 8
+2022-09-29, Sum(CUSTOMER_ID), 19
+2022-10-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 4
+2022-10-02, Sum(CUSTOMER_ID), 23
+2022-10-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-10-03, Sum(CUSTOMER_ID), 35
+2022-10-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-10-05, Sum(CUSTOMER_ID), 38
+2022-10-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 35
+2022-10-09, Sum(CUSTOMER_ID), 58
+2022-10-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -32
+2022-10-10, Sum(CUSTOMER_ID), 3
+2022-10-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-10-13, Sum(CUSTOMER_ID), 23
+2022-10-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-10-15, Sum(CUSTOMER_ID), 7
+2022-10-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 23
+2022-10-17, Sum(CUSTOMER_ID), 26
+2022-10-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-10-21, Sum(CUSTOMER_ID), 22
+2022-10-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 7
+2022-10-24, Sum(CUSTOMER_ID), 33
+2022-10-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2022-10-28, Sum(CUSTOMER_ID), 21
+2022-11-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-01, Sum(CUSTOMER_ID), 29
+2022-11-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 7
+2022-11-04, Sum(CUSTOMER_ID), 28
+2022-11-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-05, Sum(CUSTOMER_ID), 51
+2022-11-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-06, Sum(CUSTOMER_ID), 19
+2022-11-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-10, Sum(CUSTOMER_ID), 34
+2022-11-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -10
+2022-11-13, Sum(CUSTOMER_ID), 9
+2022-11-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-14, Sum(CUSTOMER_ID), 8
+2022-11-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-18, Sum(CUSTOMER_ID), 31
+2022-11-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 14
+2022-11-21, Sum(CUSTOMER_ID), 22
+2022-11-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-22, Sum(CUSTOMER_ID), 84
+2022-11-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-23, Sum(CUSTOMER_ID), 34
+2022-11-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-24, Sum(CUSTOMER_ID), 3
+2022-11-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-11-27, Sum(CUSTOMER_ID), 34
+2022-11-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 14
+2022-11-30, Sum(CUSTOMER_ID), 48
+2022-12-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 52
+2022-12-01, Sum(CUSTOMER_ID), 55
+2022-12-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -21
+2022-12-04, Sum(CUSTOMER_ID), 13
+2022-12-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -26
+2022-12-08, Sum(CUSTOMER_ID), 29
+2022-12-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-12-12, Sum(CUSTOMER_ID), 14
+2022-12-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -14
+2022-12-15, Sum(CUSTOMER_ID), 15
+2022-12-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 15
+2022-12-19, Sum(CUSTOMER_ID), 29
+2022-12-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-12-21, Sum(CUSTOMER_ID), 30
+2022-12-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-12-25, Sum(CUSTOMER_ID), 15
+2022-12-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2022-12-29, Sum(CUSTOMER_ID), 24
+2023-01-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 5
+2023-01-01, Sum(CUSTOMER_ID), 20
+2023-01-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 22
+2023-01-05, Sum(CUSTOMER_ID), 46
+2023-01-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-09, Sum(CUSTOMER_ID), 36
+2023-01-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-10, Sum(CUSTOMER_ID), 32
+2023-01-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -14
+2023-01-12, Sum(CUSTOMER_ID), 32
+2023-01-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -6
+2023-01-16, Sum(CUSTOMER_ID), 30
+2023-01-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -16
+2023-01-17, Sum(CUSTOMER_ID), 16
+2023-01-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -14
+2023-01-19, Sum(CUSTOMER_ID), 18
+2023-01-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-21, Sum(CUSTOMER_ID), 30
+2023-01-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-25, Sum(CUSTOMER_ID), 22
+2023-01-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-29, Sum(CUSTOMER_ID), 27
+2023-01-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-01-30, Sum(CUSTOMER_ID), 13
+2023-02-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 11
+2023-02-01, Sum(CUSTOMER_ID), 33
+2023-02-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-04, Sum(CUSTOMER_ID), 31
+2023-02-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -4
+2023-02-08, Sum(CUSTOMER_ID), 29
+2023-02-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-12, Sum(CUSTOMER_ID), 62
+2023-02-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -2
+2023-02-15, Sum(CUSTOMER_ID), 27
+2023-02-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-17, Sum(CUSTOMER_ID), 16
+2023-02-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-21, Sum(CUSTOMER_ID), 17
+2023-02-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-23, Sum(CUSTOMER_ID), 8
+2023-02-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 15
+2023-02-24, Sum(CUSTOMER_ID), 31
+2023-02-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-02-25, Sum(CUSTOMER_ID), 11
+2023-02-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -11
+2023-02-28, Sum(CUSTOMER_ID), 6
+2023-03-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-01, Sum(CUSTOMER_ID), 47
+2023-03-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2023-03-04, Sum(CUSTOMER_ID), 14
+2023-03-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-05, Sum(CUSTOMER_ID), 28
+2023-03-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 28
+2023-03-07, Sum(CUSTOMER_ID), 34
+2023-03-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-09, Sum(CUSTOMER_ID), 9
+2023-03-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -4
+2023-03-12, Sum(CUSTOMER_ID), 24
+2023-03-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2023-03-16, Sum(CUSTOMER_ID), 12
+2023-03-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-20, Sum(CUSTOMER_ID), 45
+2023-03-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-24, Sum(CUSTOMER_ID), 25
+2023-03-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-28, Sum(CUSTOMER_ID), 2
+2023-03-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-03-30, Sum(CUSTOMER_ID), 39
+2023-04-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-01, Sum(CUSTOMER_ID), 42
+2023-04-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-05, Sum(CUSTOMER_ID), 11
+2023-04-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-07, Sum(CUSTOMER_ID), 22
+2023-04-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-09, Sum(CUSTOMER_ID), 16
+2023-04-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-10, Sum(CUSTOMER_ID), 5
+2023-04-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-11, Sum(CUSTOMER_ID), 4
+2023-04-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -11
+2023-04-14, Sum(CUSTOMER_ID), 11
+2023-04-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-15, Sum(CUSTOMER_ID), 29
+2023-04-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 16
+2023-04-18, Sum(CUSTOMER_ID), 20
+2023-04-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-20, Sum(CUSTOMER_ID), 15
+2023-04-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -9
+2023-04-21, Sum(CUSTOMER_ID), 2
+2023-04-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-23, Sum(CUSTOMER_ID), 2
+2023-04-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-04-26, Sum(CUSTOMER_ID), 27
+2023-04-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 14
+2023-04-27, Sum(CUSTOMER_ID), 29
+2023-04-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 31
+2023-04-30, Sum(CUSTOMER_ID), 33
+2023-05-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -15
+2023-05-04, Sum(CUSTOMER_ID), 14
+2023-05-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-05, Sum(CUSTOMER_ID), 35
+2023-05-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-08, Sum(CUSTOMER_ID), 13
+2023-05-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 0
+2023-05-12, Sum(CUSTOMER_ID), 35
+2023-05-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-13, Sum(CUSTOMER_ID), 22
+2023-05-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-14, Sum(CUSTOMER_ID), 13
+2023-05-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2023-05-15, Sum(CUSTOMER_ID), 12
+2023-05-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-18, Sum(CUSTOMER_ID), 13
+2023-05-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 55
+2023-05-19, Sum(CUSTOMER_ID), 90
+2023-05-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2023-05-21, Sum(CUSTOMER_ID), 8
+2023-05-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-23, Sum(CUSTOMER_ID), 46
+2023-05-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-27, Sum(CUSTOMER_ID), 9
+2023-05-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-05-29, Sum(CUSTOMER_ID), 35
+2023-06-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-01, Sum(CUSTOMER_ID), 12
+2023-06-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-02, Sum(CUSTOMER_ID), 6
+2023-06-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-06, Sum(CUSTOMER_ID), 3
+2023-06-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 42
+2023-06-09, Sum(CUSTOMER_ID), 48
+2023-06-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-10, Sum(CUSTOMER_ID), 41
+2023-06-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-12, Sum(CUSTOMER_ID), 11
+2023-06-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 14
+2023-06-13, Sum(CUSTOMER_ID), 17
+2023-06-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -22
+2023-06-17, Sum(CUSTOMER_ID), 19
+2023-06-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-18, Sum(CUSTOMER_ID), 31
+2023-06-21, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-21, Sum(CUSTOMER_ID), 31
+2023-06-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2023-06-24, Sum(CUSTOMER_ID), 29
+2023-06-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-06-27, Sum(CUSTOMER_ID), 29
+2023-07-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 3
+2023-07-01, Sum(CUSTOMER_ID), 32
+2023-07-04, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2023-07-04, Sum(CUSTOMER_ID), 26
+2023-07-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-07-07, Sum(CUSTOMER_ID), 20
+2023-07-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-07-09, Sum(CUSTOMER_ID), 56
+2023-07-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -7
+2023-07-11, Sum(CUSTOMER_ID), 19
+2023-07-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2023-07-14, Sum(CUSTOMER_ID), 8
+2023-07-17, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-07-17, Sum(CUSTOMER_ID), 17
+2023-07-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 60
+2023-07-18, Sum(CUSTOMER_ID), 79
+2023-07-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-07-22, Sum(CUSTOMER_ID), 1
+2023-07-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2023-07-24, Sum(CUSTOMER_ID), 12
+2023-07-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -58
+2023-07-25, Sum(CUSTOMER_ID), 21
+2023-07-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-07-28, Sum(CUSTOMER_ID), 8
+2023-07-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -1
+2023-07-31, Sum(CUSTOMER_ID), 11
+2023-08-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-02, Sum(CUSTOMER_ID), 15
+2023-08-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-05, Sum(CUSTOMER_ID), 11
+2023-08-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-06, Sum(CUSTOMER_ID), 29
+2023-08-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 48
+2023-08-07, Sum(CUSTOMER_ID), 59
+2023-08-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-11, Sum(CUSTOMER_ID), 56
+2023-08-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 22
+2023-08-12, Sum(CUSTOMER_ID), 33
+2023-08-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-15, Sum(CUSTOMER_ID), 23
+2023-08-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -30
+2023-08-19, Sum(CUSTOMER_ID), 3
+2023-08-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-20, Sum(CUSTOMER_ID), 10
+2023-08-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-24, Sum(CUSTOMER_ID), 48
+2023-08-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-08-28, Sum(CUSTOMER_ID), 11
+2023-09-01, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-01, Sum(CUSTOMER_ID), 18
+2023-09-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-02, Sum(CUSTOMER_ID), 8
+2023-09-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-06, Sum(CUSTOMER_ID), 25
+2023-09-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 17
+2023-09-08, Sum(CUSTOMER_ID), 35
+2023-09-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2023-09-09, Sum(CUSTOMER_ID), 5
+2023-09-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 10
+2023-09-13, Sum(CUSTOMER_ID), 35
+2023-09-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-14, Sum(CUSTOMER_ID), 20
+2023-09-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -2
+2023-09-16, Sum(CUSTOMER_ID), 3
+2023-09-20, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -11
+2023-09-20, Sum(CUSTOMER_ID), 24
+2023-09-24, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-24, Sum(CUSTOMER_ID), 31
+2023-09-27, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2023-09-27, Sum(CUSTOMER_ID), 19
+2023-09-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-09-30, Sum(CUSTOMER_ID), 16
+2023-10-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-02, Sum(CUSTOMER_ID), 18
+2023-10-05, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-05, Sum(CUSTOMER_ID), 4
+2023-10-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -5
+2023-10-09, Sum(CUSTOMER_ID), 13
+2023-10-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-11, Sum(CUSTOMER_ID), 19
+2023-10-12, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 9
+2023-10-12, Sum(CUSTOMER_ID), 13
+2023-10-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-13, Sum(CUSTOMER_ID), 5
+2023-10-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-14, Sum(CUSTOMER_ID), 20
+2023-10-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-15, Sum(CUSTOMER_ID), 18
+2023-10-18, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2023-10-18, Sum(CUSTOMER_ID), 7
+2023-10-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 20
+2023-10-22, Sum(CUSTOMER_ID), 38
+2023-10-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-26, Sum(CUSTOMER_ID), 1
+2023-10-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-30, Sum(CUSTOMER_ID), 3
+2023-10-31, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-10-31, Sum(CUSTOMER_ID), 47
+2023-11-03, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-03, Sum(CUSTOMER_ID), 33
+2023-11-07, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -42
+2023-11-07, Sum(CUSTOMER_ID), 5
+2023-11-08, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-08, Sum(CUSTOMER_ID), 18
+2023-11-10, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -26
+2023-11-10, Sum(CUSTOMER_ID), 7
+2023-11-11, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-11, Sum(CUSTOMER_ID), 26
+2023-11-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 44
+2023-11-14, Sum(CUSTOMER_ID), 49
+2023-11-15, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 12
+2023-11-15, Sum(CUSTOMER_ID), 30
+2023-11-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-16, Sum(CUSTOMER_ID), 56
+2023-11-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-19, Sum(CUSTOMER_ID), 3
+2023-11-22, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -4
+2023-11-22, Sum(CUSTOMER_ID), 26
+2023-11-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-25, Sum(CUSTOMER_ID), 5
+2023-11-28, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-11-28, Sum(CUSTOMER_ID), 28
+2023-12-02, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 2
+2023-12-02, Sum(CUSTOMER_ID), 7
+2023-12-06, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-12-06, Sum(CUSTOMER_ID), 17
+2023-12-09, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 16
+2023-12-09, Sum(CUSTOMER_ID), 23
+2023-12-13, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 42
+2023-12-13, Sum(CUSTOMER_ID), 59
+2023-12-14, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-12-14, Sum(CUSTOMER_ID), 34
+2023-12-16, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -18
+2023-12-16, Sum(CUSTOMER_ID), 5
+2023-12-19, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-12-19, Sum(CUSTOMER_ID), 20
+2023-12-23, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), 22
+2023-12-23, Sum(CUSTOMER_ID), 27
+2023-12-25, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-12-25, Sum(CUSTOMER_ID), 15
+2023-12-26, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -9
+2023-12-26, Sum(CUSTOMER_ID), 11
+2023-12-29, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2023-12-29, Sum(CUSTOMER_ID), 12
+2023-12-30, Change from previous week of Day(ORDER_DATE): Sum(CUSTOMER_ID), -13
+2023-12-30, Sum(CUSTOMER_ID), 14

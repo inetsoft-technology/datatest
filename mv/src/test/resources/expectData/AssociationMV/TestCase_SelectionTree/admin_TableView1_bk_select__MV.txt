@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[RESELLER][STATE][ZIP]
+[false][CA][08854]
+[false][CA][11223]
+[true][CO][98839]
+[true][CT][39283]
+

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DISCOUNT][ORDER_ID]
+[0][564]
+[0.01][1]
+[0.05][11]
+[0.1][24]
+[0.15][9]
+

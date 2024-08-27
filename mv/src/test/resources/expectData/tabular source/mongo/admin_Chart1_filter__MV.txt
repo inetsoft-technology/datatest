@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[Year(OrderDate)][range_order_id][First(OrderID, Country)][Sum(ShipVia)]
+[1996-01-01 00:00:00][<10500][10261][318]
+[1997-01-01 00:00:00][<10500][10421][200]
+[1997-01-01 00:00:00][10500-11000][10587][508]
+

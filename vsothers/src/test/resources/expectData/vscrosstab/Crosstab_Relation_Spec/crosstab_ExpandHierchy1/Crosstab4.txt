@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+Quarter(Order:Date), NULL, USA East, USA West
+2020 2nd, Sum(Product:Total), $944,164, $550,178
+2020 2nd, Sum(Product:Price), $86,952.00, $53,424.00
+2023 3rd, Sum(Product:Total), $609,613, $736,520
+2023 3rd, Sum(Product:Price), $53,873.00, $66,478.00
+2022 2nd, Sum(Product:Total), $849,405, $480,821
+2022 2nd, Sum(Product:Price), $80,209.00, $47,972.00
+2021 2nd, Sum(Product:Total), $843,429, $436,261
+2021 2nd, Sum(Product:Price), $88,412.00, $44,091.00
+2021 3rd, Sum(Product:Total), $771,758, $461,215
+2021 3rd, Sum(Product:Price), $70,068.00, $42,418.00

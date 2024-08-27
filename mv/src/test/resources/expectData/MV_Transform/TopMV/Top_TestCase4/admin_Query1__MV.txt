@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 3)
+[description][instock][product_name]
+[Application server][true][MeToo AppServer]
+[Chinese Go game][true][Fast Go Game]
+[Collection of menus][true][Fancy Menus]
+[Database browser][true][InsideView]
+[Learn ABC][true][Learn ABC]
+[Lightweight email agent][true][[NULL]]
+[Math tutor][true][Math for Me]
+

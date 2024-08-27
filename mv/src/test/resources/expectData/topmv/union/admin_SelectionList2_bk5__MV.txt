@@ -1,0 +1,2 @@
+[USA East]   SelectState:[9]
+[USA West]   SelectState:[5]

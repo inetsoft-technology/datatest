@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 37)
+NULL, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 02, 02, 02, 02, 02, 02, Grand Total
+NULL, 0.25, 0.25, 0.2, 0.2, 0.15, 0.15, 0.1, 0.1, 0.1, 0.05, 0.05, 0, 0, 0, NULL, NULL, Total, 0.25, 0.25, 0.15, 0.15, 0.1, 0.1, 0, 0, 0, NULL, NULL, Total, 0, 0, 0, NULL, NULL, Total, NULL
+NULL, false, Total, false, Total, false, Total, true, false, Total, false, Total, true, false, Total, false, Total, NULL, false, Total, false, Total, false, Total, true, false, Total, false, Total, NULL, true, false, Total, false, Total, NULL, NULL
+Sum(alias1), 37, 37, 19, 19, 19, 19, 17, 16, 33, 40, 40, 132, 920, 1052, 140, 140, 1340, 38, 38, 32, 32, 34, 34, 82, 851, 933, 175, 175, 1212, 18, 671, 689, 144, 144, 833, 3385
+% of subtotal by column: Sum(alias1), 100%, 3%, 100%, 1%, 100%, 1%, 52%, 48%, 2%, 100%, 3%, 13%, 87%, 79%, 100%, 10%, 40%, 100%, 3%, 100%, 3%, 100%, 3%, 9%, 91%, 77%, 100%, 14%, 36%, 3%, 97%, 83%, 100%, 17%, 25%, 100%

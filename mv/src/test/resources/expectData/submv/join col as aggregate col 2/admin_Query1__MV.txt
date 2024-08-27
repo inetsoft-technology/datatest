@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 2)
+[CATEGORY_ID][CATEGORY_NAME]
+[6][Educational]
+[6][Games]
+[9][Business]
+[10][Graphics]
+[12][Personal]
+[18][Office Tools]
+[35][Hardware]
+

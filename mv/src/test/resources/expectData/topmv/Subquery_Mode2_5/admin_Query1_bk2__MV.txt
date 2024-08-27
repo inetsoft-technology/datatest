@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[company][customer_id]
+[Eastern Data][3]
+[Ernst Handel][4]
+[Interstate Shop][1]
+

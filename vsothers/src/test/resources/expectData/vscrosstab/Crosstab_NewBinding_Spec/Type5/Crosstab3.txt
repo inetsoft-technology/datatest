@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 12)
+NULL, 21, 21, 21, 24, 24, 24, 24, 24, 39, 39, 39
+NULL, 22, 27, 18, 13, 17, 8, 8, 8, 26, 21, 23
+NULL, Sat, Sat, Mon, Tue, Sat, Mon, Tue, Wed, Sat, Tue, Thu
+agg_calc, 8, 8, 10, 4, 6, 2, 6, 5, 4, 9, 10
+agg_calc1, 49, 79, 40, 59, 105, 310, 235, 75, 235, 35, 49

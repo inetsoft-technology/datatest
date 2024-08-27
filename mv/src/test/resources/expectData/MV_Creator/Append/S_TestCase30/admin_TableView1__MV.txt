@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[customer_id][reseller][state]
+[17][true][TX]
+[18][false][FL]
+[19][true][PA]
+[20][false][[NULL]]
+

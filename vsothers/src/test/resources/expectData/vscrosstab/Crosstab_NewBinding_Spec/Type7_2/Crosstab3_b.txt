@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 5)
+Year(PRODUCE_DATE), PRODUCT_NAME, false, true, Grand Total
+2000, WebCalendar, NULL, 25, 25
+2000, Total, NULL, 25, 25
+2001, 17 Inch LCD, NULL, 10, 10
+2001, Green Planet, NULL, 25, 25
+2001, House Hunter, 50, NULL, 50
+2001, Info Folder, NULL, 50, 50
+2001, InsideView, NULL, 50, 50
+2001, Xconnect Server, NULL, 10, 10
+2001, Total, 50, 10, 50
+2006, 19 inch LCD, 15, NULL, 15
+2006, Animal World, 50, NULL, 50
+2006, Barbie"s Fashion, 50, NULL, 50
+2006, Fancy Menus, 50, NULL, 50
+2006, Learn ABC, 50, NULL, 50
+2006, Mega Icons, NULL, 25, 25
+2006, Sync Me, 25, NULL, 25
+2006, True Action, 25, NULL, 25
+2006, Total, 50, 25, 50
+Grand Total, NULL, 50, 25, 50

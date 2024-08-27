@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 4)
+[id1][name][id2][region]
+[1][Games][1][USA East]
+[1][Games][2][USA West]
+[2][Educational][1][USA East]
+[2][Educational][2][USA West]
+[3][Business][1][USA East]
+[3][Business][2][USA West]
+[4][Personal][1][USA East]
+[4][Personal][2][USA West]
+[5][Graphics][1][USA East]
+[5][Graphics][2][USA West]
+[6][Office Tools][1][USA East]
+[6][Office Tools][2][USA West]
+[7][Hardware][1][USA East]
+[7][Hardware][2][USA West]
+

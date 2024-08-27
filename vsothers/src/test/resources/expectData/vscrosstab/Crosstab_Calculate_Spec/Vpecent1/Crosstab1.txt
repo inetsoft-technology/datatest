@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+NULL, 0, 0, 0, 0, 1, 1, 1, Grand Total
+NULL, CA, AZ, Others, subTotal, CA, CO, subTotal, NULL
+Sum(customer_id), 37, 20, 14, 71, 22, 4, 26, 97
+% of subtotal by column: Sum(customer_id), 52%, 28%, 20%, 73%, 85%, 15%, 27%, 100%

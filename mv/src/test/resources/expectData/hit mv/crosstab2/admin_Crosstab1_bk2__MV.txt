@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 4)
+[REASON][[NULL]][DISCOUNT/Correlation(QUANTITY, DISCOUNT)][Grand Total]
+[Did not want][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+[Did not want][DISCOUNT][0][0]
+[Insufficient support][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+[Insufficient support][DISCOUNT][0][0]
+[Shipped Broken][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+[Shipped Broken][DISCOUNT][0][0]
+[Grand Total][DISCOUNT][0][0]
+[Grand Total][Correlation(QUANTITY, DISCOUNT)][[NULL]][[NULL]]
+

@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 2)
+[ORDERS.CUSTOMERS:STATE][Sum(ORDERS.CUSTOMERS:CUSTOMER_ID)]
+[AZ][3520]
+[CA][10677]
+[CO][2640]
+[CT][546]
+[FL][2160]
+[IL][1530]
+[MA][10116]
+[MD][4224]
+[NJ][12643]
+[NY][8965]
+[TX][8470]
+

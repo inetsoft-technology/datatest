@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 2)
+[CUSTOMER_ID][DISCOUNT]
+[[NULL]][0.2]
+[[NULL]][0.25]
+[-0.7206][0.05]
+[-0.5703][0.1]
+[-0.1372][0]
+[0.4992][[NULL]]
+

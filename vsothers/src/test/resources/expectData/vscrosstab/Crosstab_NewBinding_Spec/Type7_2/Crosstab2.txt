@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 3)
+PRODUCT_NAME, Sum(2000-01-01 00:00:00.0), Sum(2000-01-01 00:00:00.0.1)
+17 Inch LCD, NULL, NULL
+19 inch LCD, NULL, NULL
+Animal World, NULL, NULL
+Barbie"s Fashion, NULL, NULL
+Combat Hero, NULL, NULL
+Easy Chess, 35, 50
+Fancy Menus, NULL, NULL
+Fast Go Game, 200, 25
+Fast Mail, 39, 50
+Green Planet, NULL, NULL
+House Hunter, NULL, NULL
+Info Folder, NULL, NULL
+InsideView, NULL, NULL
+Learn ABC, NULL, NULL
+Math for Me, NULL, NULL
+Mega Icons, NULL, NULL
+MeToo AppServer, NULL, NULL
+NetStorage, NULL, NULL
+Sync Me, NULL, NULL
+True Action, NULL, NULL
+Web Bridge, NULL, NULL
+WebCalendar, 248, 25
+Wireless Keyboard, NULL, NULL
+Wireless Mouse, NULL, NULL
+Xconnect Server, NULL, NULL

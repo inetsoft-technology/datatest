@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[Year(CalcField2)][Average(CalcField)]
+[2001-01-01 00:00:00][113]
+[2002-01-01 00:00:00][150.6667]
+[2003-01-01 00:00:00][108]
+

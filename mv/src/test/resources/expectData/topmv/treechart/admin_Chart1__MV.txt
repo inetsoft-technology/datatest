@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 3)
+[Year(start)][city][Project steps]
+[2009-01-01 00:00:00][beijing][determination]
+[2009-01-01 00:00:00][shanghai][Interview]
+[2009-01-01 00:00:00][shenzhen][Data analysis]
+[2009-01-01 00:00:00][tianjin][Questionnaire confirmation]
+[2009-01-01 00:00:00][tianshui][Report submission]
+[2009-01-01 00:00:00][weinan][Field implementation]
+[2009-01-01 00:00:00][wuhan][Data entry]
+[2009-01-01 00:00:00][xian][Questionnaire design]
+

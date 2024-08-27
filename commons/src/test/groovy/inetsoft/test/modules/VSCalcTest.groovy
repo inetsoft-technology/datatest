@@ -3,11 +3,6 @@ package inetsoft.test.modules
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.CrosstabVSAssembly
 import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
@@ -17,6 +12,12 @@ import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
+
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.TUtil
 
 class VSCalcTest {
    VSCalcTest(String asset_id, String caseName) {

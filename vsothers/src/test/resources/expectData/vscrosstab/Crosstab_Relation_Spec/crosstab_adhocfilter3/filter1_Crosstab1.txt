@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Category, NULL, Correlation(Quantity Purchased, TotalReturned)/Average(TotalPurchased)
+Games, Correlation(Quantity Purchased, TotalReturned), 0.0662
+Games, Average(TotalPurchased), $1,640
+Hardware, Correlation(Quantity Purchased, TotalReturned), 0.0796
+Hardware, Average(TotalPurchased), $10,173
+Personal, Correlation(Quantity Purchased, TotalReturned), 0.0319
+Personal, Average(TotalPurchased), $3,013

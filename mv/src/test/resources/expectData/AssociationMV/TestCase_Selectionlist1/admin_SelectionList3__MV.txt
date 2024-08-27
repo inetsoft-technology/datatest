@@ -1,0 +1,7 @@
+[1900-01-01]   SelectState:[8]
+[2011-04-06]   SelectState:[8]
+[2011-08-03]   SelectState:[8]
+[2011-08-18]   SelectState:[8]
+[2011-08-19]   SelectState:[8]
+[2011-08-23]   SelectState:[8]
+[2038-01-19]   SelectState:[8]

@@ -1,0 +1,750 @@
+The data size(row x col) is:(749 x 4)
+Day(Order Date), Employee, NULL, Sum(Total)/Value of previous week of Day(Order Date): Sum(Total)
+05/01/2020, Annie, Sum(Total), 25389
+05/01/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/05/2020, Eric, Sum(Total), 9407
+05/05/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/07/2020, Annie, Sum(Total), 94937
+05/07/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/07/2020, Eric, Sum(Total), 69976
+05/07/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/11/2020, Annie, Sum(Total), 5085
+05/11/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/12/2020, Annie, Sum(Total), 5818
+05/12/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/12/2020, Eric, Sum(Total), 3072
+05/12/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), 9407
+05/15/2020, Sue, Sum(Total), 3844
+05/15/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/18/2020, Robert, Sum(Total), 60757
+05/18/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/21/2020, Eric, Sum(Total), 26384
+05/21/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/25/2020, Sue, Sum(Total), 59845
+05/25/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/27/2020, Sue, Sum(Total), 36610
+05/27/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/31/2020, Annie, Sum(Total), 49370
+05/31/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/31/2020, Eric, Sum(Total), 100635
+05/31/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/01/2020, Eric, Sum(Total), 6222
+06/01/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/05/2020, Sue, Sum(Total), 962
+06/05/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/06/2020, Annie, Sum(Total), 12761
+06/06/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/07/2020, Eric, Sum(Total), 53944
+06/07/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), 100635
+06/08/2020, Sue, Sum(Total), 5967
+06/08/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/11/2020, Annie, Sum(Total), 20783
+06/11/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/15/2020, Annie, Sum(Total), 5679
+06/15/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/16/2020, Eric, Sum(Total), 4064
+06/16/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/19/2020, Sue, Sum(Total), 6652
+06/19/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/21/2020, Eric, Sum(Total), 34031
+06/21/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/21/2020, Robert, Sum(Total), 117494
+06/21/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/21/2020, Sue, Sum(Total), 50673
+06/21/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/23/2020, Annie, Sum(Total), 354
+06/23/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/26/2020, Robert, Sum(Total), 3591
+06/26/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/27/2020, Robert, Sum(Total), 31364
+06/27/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/29/2020, Sue, Sum(Total), 24139
+06/29/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/01/2020, Robert, Sum(Total), 3761
+07/01/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/03/2020, Robert, Sum(Total), 1132
+07/03/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), 3591
+07/04/2020, Eric, Sum(Total), 27098
+07/04/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/05/2020, Annie, Sum(Total), 109229
+07/05/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/07/2020, Annie, Sum(Total), 35475
+07/07/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/09/2020, Sue, Sum(Total), 53724
+07/09/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/10/2020, Eric, Sum(Total), 6413
+07/10/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/14/2020, Robert, Sum(Total), 34292
+07/14/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/16/2020, Annie, Sum(Total), 15158
+07/16/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/20/2020, Annie, Sum(Total), 5308
+07/20/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/24/2020, Robert, Sum(Total), 16649
+07/24/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/26/2020, Robert, Sum(Total), 3057
+07/26/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/29/2020, Robert, Sum(Total), 147
+07/29/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/01/2020, Sue, Sum(Total), 76389
+08/01/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/04/2020, Eric, Sum(Total), 23005
+08/04/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/06/2020, Eric, Sum(Total), 13802
+08/06/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/10/2020, Eric, Sum(Total), 94524
+08/10/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/14/2020, Eric, Sum(Total), 54117
+08/14/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/17/2020, Eric, Sum(Total), 39843
+08/17/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), 94524
+08/17/2020, Robert, Sum(Total), 97245
+08/17/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/19/2020, Eric, Sum(Total), 1650
+08/19/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/23/2020, Robert, Sum(Total), 5755
+08/23/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/26/2020, Sue, Sum(Total), 15980
+08/26/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/28/2020, Annie, Sum(Total), 6300
+08/28/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/29/2020, Annie, Sum(Total), 447
+08/29/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/30/2020, Sue, Sum(Total), 525
+08/30/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/03/2020, Annie, Sum(Total), 74155
+09/03/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/06/2020, Sue, Sum(Total), 8149
+09/06/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), 525
+09/07/2020, Eric, Sum(Total), 1000
+09/07/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/10/2020, Annie, Sum(Total), 8936
+09/10/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), 74155
+09/11/2020, Annie, Sum(Total), 5001
+09/11/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/11/2020, Robert, Sum(Total), 40545
+09/11/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/15/2020, Robert, Sum(Total), 54470
+09/15/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/18/2020, Annie, Sum(Total), 50541
+09/18/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), 5001
+09/22/2020, Robert, Sum(Total), 7863
+09/22/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), 54470
+09/26/2020, Robert, Sum(Total), 35783
+09/26/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/28/2020, Sue, Sum(Total), 5657
+09/28/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/01/2020, Annie, Sum(Total), 48093
+10/01/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/05/2020, Eric, Sum(Total), 6198
+10/05/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/07/2020, Sue, Sum(Total), 16092
+10/07/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/11/2020, Eric, Sum(Total), 44044
+10/11/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/12/2020, Sue, Sum(Total), 61429
+10/12/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/16/2020, Robert, Sum(Total), 9104
+10/16/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/20/2020, Sue, Sum(Total), 43346
+10/20/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/24/2020, Eric, Sum(Total), 16254
+10/24/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/27/2020, Robert, Sum(Total), 23305
+10/27/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/30/2020, Sue, Sum(Total), 2967
+10/30/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/02/2020, Annie, Sum(Total), 57976
+11/02/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/02/2020, Sue, Sum(Total), 2598
+11/02/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/05/2020, Annie, Sum(Total), 31072
+11/05/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/09/2020, Sue, Sum(Total), 5973
+11/09/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), 2598
+11/13/2020, Sue, Sum(Total), 21528
+11/13/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/15/2020, Annie, Sum(Total), 47922
+11/15/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/15/2020, Sue, Sum(Total), 58444
+11/15/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/16/2020, Eric, Sum(Total), 25911
+11/16/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/20/2020, Annie, Sum(Total), 8305
+11/20/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/20/2020, Robert, Sum(Total), 30491
+11/20/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/20/2020, Sue, Sum(Total), 290
+11/20/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), 21528
+11/22/2020, Annie, Sum(Total), 38808
+11/22/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), 47922
+11/22/2020, Sue, Sum(Total), 58952
+11/22/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), 58444
+11/26/2020, Eric, Sum(Total), 48901
+11/26/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/28/2020, Sue, Sum(Total), 69113
+11/28/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/30/2020, Eric, Sum(Total), 63185
+11/30/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/30/2020, Robert, Sum(Total), 6376
+11/30/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/03/2020, Eric, Sum(Total), 4971
+12/03/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), 48901
+12/03/2020, Sue, Sum(Total), 41152
+12/03/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/06/2020, Annie, Sum(Total), 18000
+12/06/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/10/2020, Robert, Sum(Total), 7522
+12/10/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/13/2020, Robert, Sum(Total), 90952
+12/13/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/17/2020, Annie, Sum(Total), 2125
+12/17/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/21/2020, Robert, Sum(Total), 18960
+12/21/2020, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/25/2020, Eric, Sum(Total), 22157
+12/25/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/26/2020, Eric, Sum(Total), 51396
+12/26/2020, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/26/2020, Sue, Sum(Total), 12528
+12/26/2020, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/29/2020, Annie, Sum(Total), 51549
+12/29/2020, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/03/2021, Eric, Sum(Total), 6837
+01/03/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/06/2021, Eric, Sum(Total), 4350
+01/06/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/08/2021, Annie, Sum(Total), 15236
+01/08/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/08/2021, Sue, Sum(Total), 43970
+01/08/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/12/2021, Eric, Sum(Total), 19085
+01/12/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/15/2021, Annie, Sum(Total), 80034
+01/15/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), 15236
+01/17/2021, Robert, Sum(Total), 5240
+01/17/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/19/2021, Eric, Sum(Total), 840
+01/19/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 19085
+01/22/2021, Eric, Sum(Total), 1614
+01/22/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/25/2021, Eric, Sum(Total), 15571
+01/25/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/27/2021, Robert, Sum(Total), 203
+01/27/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/31/2021, Sue, Sum(Total), 34632
+01/31/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/04/2021, Robert, Sum(Total), 59939
+02/04/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/04/2021, Sue, Sum(Total), 95449
+02/04/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/08/2021, Eric, Sum(Total), 8739
+02/08/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/11/2021, Annie, Sum(Total), 34331
+02/11/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/13/2021, Robert, Sum(Total), 76652
+02/13/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/16/2021, Annie, Sum(Total), 3090
+02/16/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/19/2021, Annie, Sum(Total), 3680
+02/19/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/19/2021, Eric, Sum(Total), 106667
+02/19/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/23/2021, Sue, Sum(Total), 37201
+02/23/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/24/2021, Eric, Sum(Total), 49271
+02/24/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/28/2021, Eric, Sum(Total), 549
+02/28/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/03/2021, Sue, Sum(Total), 1050
+03/03/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/07/2021, Eric, Sum(Total), 53255
+03/07/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 549
+03/09/2021, Eric, Sum(Total), 395
+03/09/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/13/2021, Eric, Sum(Total), 11196
+03/13/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/14/2021, Robert, Sum(Total), 48480
+03/14/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/18/2021, Robert, Sum(Total), 9126
+03/18/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/21/2021, Robert, Sum(Total), 11227
+03/21/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), 48480
+03/23/2021, Sue, Sum(Total), 63928
+03/23/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/25/2021, Robert, Sum(Total), 385
+03/25/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), 9126
+03/28/2021, Robert, Sum(Total), 6233
+03/28/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), 11227
+03/29/2021, Sue, Sum(Total), 6030
+03/29/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/31/2021, Sue, Sum(Total), 59685
+03/31/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/02/2021, Eric, Sum(Total), 92380
+04/02/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/06/2021, Annie, Sum(Total), 8649
+04/06/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/06/2021, Sue, Sum(Total), 8370
+04/06/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/09/2021, Sue, Sum(Total), 10429
+04/09/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/11/2021, Sue, Sum(Total), 62773
+04/11/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/13/2021, Annie, Sum(Total), 41250
+04/13/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), 8649
+04/17/2021, Eric, Sum(Total), 19991
+04/17/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/17/2021, Robert, Sum(Total), 30375
+04/17/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/20/2021, Eric, Sum(Total), 55747
+04/20/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/20/2021, Sue, Sum(Total), 18000
+04/20/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/23/2021, Eric, Sum(Total), 8774
+04/23/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/24/2021, Eric, Sum(Total), 40837
+04/24/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 19991
+04/28/2021, Eric, Sum(Total), 8599
+04/28/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/28/2021, Sue, Sum(Total), 9911
+04/28/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/01/2021, Robert, Sum(Total), 21334
+05/01/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/04/2021, Annie, Sum(Total), 10915
+05/04/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/05/2021, Sue, Sum(Total), 45920
+05/05/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), 9911
+05/08/2021, Sue, Sum(Total), 3380
+05/08/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/10/2021, Sue, Sum(Total), 40383
+05/10/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/12/2021, Sue, Sum(Total), 3760
+05/12/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), 45920
+05/15/2021, Eric, Sum(Total), 6352
+05/15/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/19/2021, Annie, Sum(Total), 8438
+05/19/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/22/2021, Eric, Sum(Total), 32674
+05/22/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 6352
+05/26/2021, Annie, Sum(Total), 36060
+05/26/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), 8438
+05/30/2021, Sue, Sum(Total), 27900
+05/30/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/02/2021, Eric, Sum(Total), 36350
+06/02/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/03/2021, Annie, Sum(Total), 76140
+06/03/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/03/2021, Robert, Sum(Total), 18541
+06/03/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/07/2021, Annie, Sum(Total), 58155
+06/07/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/07/2021, Sue, Sum(Total), 53327
+06/07/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/08/2021, Eric, Sum(Total), 56614
+06/08/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/11/2021, Sue, Sum(Total), 69022
+06/11/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/12/2021, Sue, Sum(Total), 16934
+06/12/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/16/2021, Annie, Sum(Total), 73409
+06/16/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/16/2021, Sue, Sum(Total), 62753
+06/16/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/17/2021, Annie, Sum(Total), 7736
+06/17/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/17/2021, Eric, Sum(Total), 6449
+06/17/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/21/2021, Eric, Sum(Total), 5463
+06/21/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/22/2021, Eric, Sum(Total), 52945
+06/22/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/24/2021, Sue, Sum(Total), 32344
+06/24/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/28/2021, Robert, Sum(Total), 258
+06/28/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/30/2021, Sue, Sum(Total), 49
+06/30/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/02/2021, Annie, Sum(Total), 9282
+07/02/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/03/2021, Robert, Sum(Total), 12202
+07/03/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/06/2021, Eric, Sum(Total), 1596
+07/06/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/08/2021, Sue, Sum(Total), 56687
+07/08/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/09/2021, Annie, Sum(Total), 35
+07/09/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), 9282
+07/13/2021, Sue, Sum(Total), 6200
+07/13/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/17/2021, Robert, Sum(Total), 31504
+07/17/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/18/2021, Annie, Sum(Total), 20904
+07/18/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/18/2021, Sue, Sum(Total), 375
+07/18/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/22/2021, Annie, Sum(Total), 8032
+07/22/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/23/2021, Sue, Sum(Total), 33082
+07/23/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/25/2021, Robert, Sum(Total), 46071
+07/25/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/27/2021, Robert, Sum(Total), 12040
+07/27/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/31/2021, Eric, Sum(Total), 21556
+07/31/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/03/2021, Annie, Sum(Total), 3991
+08/03/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/07/2021, Robert, Sum(Total), 10143
+08/07/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/07/2021, Sue, Sum(Total), 744
+08/07/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/09/2021, Sue, Sum(Total), 16002
+08/09/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/13/2021, Sue, Sum(Total), 10594
+08/13/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/16/2021, Eric, Sum(Total), 11365
+08/16/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/16/2021, Robert, Sum(Total), 25633
+08/16/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/17/2021, Annie, Sum(Total), 10390
+08/17/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/21/2021, Sue, Sum(Total), 78805
+08/21/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/22/2021, Annie, Sum(Total), 3500
+08/22/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/22/2021, Robert, Sum(Total), 3300
+08/22/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/24/2021, Eric, Sum(Total), 48700
+08/24/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/26/2021, Sue, Sum(Total), 59268
+08/26/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+08/30/2021, Robert, Sum(Total), 60332
+08/30/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/02/2021, Robert, Sum(Total), 37410
+09/02/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/03/2021, Eric, Sum(Total), 46355
+09/03/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/04/2021, Eric, Sum(Total), 19736
+09/04/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/06/2021, Robert, Sum(Total), 2288
+09/06/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), 60332
+09/09/2021, Annie, Sum(Total), 50431
+09/09/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/11/2021, Robert, Sum(Total), 16874
+09/11/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/12/2021, Annie, Sum(Total), 37752
+09/12/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/12/2021, Eric, Sum(Total), 92183
+09/12/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/13/2021, Annie, Sum(Total), 25709
+09/13/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/15/2021, Annie, Sum(Total), 3224
+09/15/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/17/2021, Annie, Sum(Total), 44486
+09/17/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/18/2021, Eric, Sum(Total), 57574
+09/18/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/19/2021, Sue, Sum(Total), 28251
+09/19/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/21/2021, Robert, Sum(Total), 23211
+09/21/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/23/2021, Sue, Sum(Total), 22390
+09/23/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/24/2021, Robert, Sum(Total), 20673
+09/24/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/26/2021, Annie, Sum(Total), 60573
+09/26/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/28/2021, Sue, Sum(Total), 1905
+09/28/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+09/30/2021, Robert, Sum(Total), 39615
+09/30/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/04/2021, Annie, Sum(Total), 52460
+10/04/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/05/2021, Robert, Sum(Total), 6725
+10/05/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/08/2021, Annie, Sum(Total), 11934
+10/08/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/10/2021, Annie, Sum(Total), 4565
+10/10/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/11/2021, Annie, Sum(Total), 1890
+10/11/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), 52460
+10/13/2021, Sue, Sum(Total), 8757
+10/13/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/16/2021, Sue, Sum(Total), 4712
+10/16/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/20/2021, Eric, Sum(Total), 7079
+10/20/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/21/2021, Eric, Sum(Total), 27437
+10/21/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/25/2021, Sue, Sum(Total), 2580
+10/25/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/26/2021, Robert, Sum(Total), 33343
+10/26/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/29/2021, Robert, Sum(Total), 68899
+10/29/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+10/30/2021, Sue, Sum(Total), 47028
+10/30/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/03/2021, Robert, Sum(Total), 9402
+11/03/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/04/2021, Annie, Sum(Total), 9028
+11/04/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/05/2021, Robert, Sum(Total), 49173
+11/05/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), 68899
+11/08/2021, Eric, Sum(Total), 16598
+11/08/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/08/2021, Sue, Sum(Total), 16186
+11/08/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/09/2021, Eric, Sum(Total), 18258
+11/09/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/10/2021, Sue, Sum(Total), 7184
+11/10/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/14/2021, Sue, Sum(Total), 65550
+11/14/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/17/2021, Annie, Sum(Total), 10543
+11/17/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/19/2021, Robert, Sum(Total), 31918
+11/19/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/23/2021, Annie, Sum(Total), 62383
+11/23/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/27/2021, Eric, Sum(Total), 4727
+11/27/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/27/2021, Sue, Sum(Total), 32550
+11/27/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/29/2021, Eric, Sum(Total), 6470
+11/29/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+11/29/2021, Sue, Sum(Total), 2000
+11/29/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/03/2021, Sue, Sum(Total), 67632
+12/03/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/04/2021, Eric, Sum(Total), 90422
+12/04/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 4727
+12/04/2021, Sue, Sum(Total), 41033
+12/04/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), 32550
+12/05/2021, Eric, Sum(Total), 44799
+12/05/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/08/2021, Robert, Sum(Total), 11320
+12/08/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/10/2021, Annie, Sum(Total), 30429
+12/10/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/10/2021, Robert, Sum(Total), 4521
+12/10/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/14/2021, Robert, Sum(Total), 6345
+12/14/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/17/2021, Eric, Sum(Total), 3504
+12/17/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/19/2021, Annie, Sum(Total), 26002
+12/19/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/19/2021, Eric, Sum(Total), 10602
+12/19/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/21/2021, Annie, Sum(Total), 2556
+12/21/2021, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/23/2021, Eric, Sum(Total), 553
+12/23/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/24/2021, Eric, Sum(Total), 3868
+12/24/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 3504
+12/26/2021, Eric, Sum(Total), 65353
+12/26/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), 10602
+12/27/2021, Eric, Sum(Total), 48000
+12/27/2021, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/29/2021, Robert, Sum(Total), 85835
+12/29/2021, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+12/29/2021, Sue, Sum(Total), 240
+12/29/2021, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/02/2022, Eric, Sum(Total), 30212
+01/02/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), 65353
+01/05/2022, Eric, Sum(Total), 3568
+01/05/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/07/2022, Sue, Sum(Total), 2320
+01/07/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/08/2022, Sue, Sum(Total), 496
+01/08/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/11/2022, Sue, Sum(Total), 50815
+01/11/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/14/2022, Annie, Sum(Total), 1160
+01/14/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/18/2022, Robert, Sum(Total), 8412
+01/18/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/20/2022, Eric, Sum(Total), 79
+01/20/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/23/2022, Annie, Sum(Total), 31245
+01/23/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/25/2022, Annie, Sum(Total), 13281
+01/25/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/27/2022, Annie, Sum(Total), 25510
+01/27/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+01/30/2022, Sue, Sum(Total), 6951
+01/30/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/01/2022, Eric, Sum(Total), 10623
+02/01/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/02/2022, Robert, Sum(Total), 70400
+02/02/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/03/2022, Eric, Sum(Total), 13916
+02/03/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/04/2022, Eric, Sum(Total), 35390
+02/04/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/07/2022, Eric, Sum(Total), 129126
+02/07/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/09/2022, Annie, Sum(Total), 10845
+02/09/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/13/2022, Sue, Sum(Total), 6150
+02/13/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/14/2022, Sue, Sum(Total), 58
+02/14/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/16/2022, Eric, Sum(Total), 1583
+02/16/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/17/2022, Annie, Sum(Total), 12698
+02/17/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/21/2022, Annie, Sum(Total), 43025
+02/21/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/25/2022, Eric, Sum(Total), 26458
+02/25/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/28/2022, Eric, Sum(Total), 7518
+02/28/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+02/28/2022, Sue, Sum(Total), 11302
+02/28/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/04/2022, Annie, Sum(Total), 15212
+03/04/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/08/2022, Robert, Sum(Total), 8745
+03/08/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/10/2022, Eric, Sum(Total), 20754
+03/10/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/13/2022, Robert, Sum(Total), 8952
+03/13/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/14/2022, Annie, Sum(Total), 2624
+03/14/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/16/2022, Eric, Sum(Total), 16953
+03/16/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/20/2022, Sue, Sum(Total), 4082
+03/20/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/22/2022, Robert, Sum(Total), 70908
+03/22/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/24/2022, Robert, Sum(Total), 7181
+03/24/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/28/2022, Annie, Sum(Total), 1197
+03/28/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/28/2022, Robert, Sum(Total), 2560
+03/28/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+03/28/2022, Sue, Sum(Total), 17790
+03/28/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/01/2022, Robert, Sum(Total), 4235
+04/01/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/02/2022, Annie, Sum(Total), 27347
+04/02/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/06/2022, Robert, Sum(Total), 2619
+04/06/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/06/2022, Sue, Sum(Total), 75021
+04/06/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/07/2022, Robert, Sum(Total), 4995
+04/07/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/07/2022, Sue, Sum(Total), 67347
+04/07/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/09/2022, Robert, Sum(Total), 4276
+04/09/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/12/2022, Annie, Sum(Total), 51000
+04/12/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/12/2022, Eric, Sum(Total), 5852
+04/12/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/12/2022, Robert, Sum(Total), 46877
+04/12/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/12/2022, Sue, Sum(Total), 66992
+04/12/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/14/2022, Annie, Sum(Total), 12871
+04/14/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/14/2022, Robert, Sum(Total), 45107
+04/14/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), 4995
+04/14/2022, Sue, Sum(Total), 60218
+04/14/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), 67347
+04/15/2022, Annie, Sum(Total), 10202
+04/15/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/19/2022, Eric, Sum(Total), 32338
+04/19/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), 5852
+04/21/2022, Sue, Sum(Total), 5970
+04/21/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), 60218
+04/23/2022, Annie, Sum(Total), 25790
+04/23/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/25/2022, Sue, Sum(Total), 1440
+04/25/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+04/29/2022, Eric, Sum(Total), 64105
+04/29/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/03/2022, Sue, Sum(Total), 1783
+05/03/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/04/2022, Annie, Sum(Total), 8704
+05/04/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/07/2022, Eric, Sum(Total), 4244
+05/07/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/07/2022, Robert, Sum(Total), 71434
+05/07/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/09/2022, Eric, Sum(Total), 16797
+05/09/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/13/2022, Annie, Sum(Total), 705
+05/13/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/15/2022, Eric, Sum(Total), 48287
+05/15/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/15/2022, Robert, Sum(Total), 8466
+05/15/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/15/2022, Sue, Sum(Total), 11835
+05/15/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/19/2022, Robert, Sum(Total), 41241
+05/19/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/23/2022, Sue, Sum(Total), 14567
+05/23/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/27/2022, Eric, Sum(Total), 7562
+05/27/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/29/2022, Annie, Sum(Total), 240
+05/29/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/29/2022, Eric, Sum(Total), 46016
+05/29/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/29/2022, Robert, Sum(Total), 14283
+05/29/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/31/2022, Annie, Sum(Total), 13411
+05/31/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/31/2022, Eric, Sum(Total), 18835
+05/31/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+05/31/2022, Sue, Sum(Total), 28667
+05/31/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/01/2022, Sue, Sum(Total), 63038
+06/01/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/04/2022, Robert, Sum(Total), 23645
+06/04/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/08/2022, Eric, Sum(Total), 47335
+06/08/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/12/2022, Robert, Sum(Total), 41095
+06/12/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/16/2022, Eric, Sum(Total), 69350
+06/16/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/16/2022, Robert, Sum(Total), 31281
+06/16/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/17/2022, Annie, Sum(Total), 7246
+06/17/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/19/2022, Annie, Sum(Total), 3939
+06/19/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/23/2022, Sue, Sum(Total), 14148
+06/23/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/25/2022, Sue, Sum(Total), 50167
+06/25/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/26/2022, Eric, Sum(Total), 5797
+06/26/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+06/29/2022, Eric, Sum(Total), 1506
+06/29/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/03/2022, Eric, Sum(Total), 6740
+07/03/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), 5797
+07/03/2022, Sue, Sum(Total), 47238
+07/03/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/06/2022, Annie, Sum(Total), 1692
+07/06/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/08/2022, Annie, Sum(Total), 41027
+07/08/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/11/2022, Annie, Sum(Total), 53109
+07/11/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/13/2022, Annie, Sum(Total), 14334
+07/13/2022, Annie, Value of previous week of Day(Order Date): Sum(Total), 1692
+07/15/2022, Eric, Sum(Total), 11985
+07/15/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/17/2022, Robert, Sum(Total), 84295
+07/17/2022, Robert, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/21/2022, Sue, Sum(Total), 107037
+07/21/2022, Sue, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/25/2022, Eric, Sum(Total), 100925
+07/25/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL
+07/29/2022, Eric, Sum(Total), 4162
+07/29/2022, Eric, Value of previous week of Day(Order Date): Sum(Total), NULL

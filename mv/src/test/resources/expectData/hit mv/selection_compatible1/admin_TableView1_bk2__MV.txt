@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[STATE][CUSTOMER_ID][COMPANY]
+[MA][23][World Software Resellers]
+[NJ][2][Daycare One]
+[TX][3][Eastern Data]
+[TX][22][Big Ed's BBQ]
+

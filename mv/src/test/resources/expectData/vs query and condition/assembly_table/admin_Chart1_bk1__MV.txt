@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[STATE][Sum(CUSTOMER_ID)][Sum(Total@CUSTOMER_ID)]
+[[NULL]][[NULL]][83]
+[AK][17][[NULL]]
+[CA][32][[NULL]]
+[FL][34][[NULL]]
+

@@ -1,0 +1,16 @@
+The table size(row x col) is: (14 x 2)
+[EMPLOYEE_ID][PAID]
+[4][false]
+[4][true]
+[9][true]
+[11][true]
+[13][true]
+[15][false]
+[17][false]
+[22][false]
+[34][false]
+[48][false]
+[153][true]
+[156][false]
+[1255][false]
+

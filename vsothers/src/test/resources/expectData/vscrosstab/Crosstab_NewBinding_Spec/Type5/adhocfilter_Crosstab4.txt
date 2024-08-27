@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 9)
+Customer:Company, MeToo AppServer, NetStorage, Xconnect Server, Mega Icons, Info Folder, 19 inch LCD, True Action, WebCalendar
+Software Specialists, NULL, NULL, NULL, NULL, $0.00, $232.50, $0.00, $62.00
+Daycare One, $0.00, NULL, $0.00, NULL, $99.75, $77.50, $99.50, $0.00
+Old World Insurance, NULL, $0.00, NULL, $192.50, NULL, $0.00, $59.70, $74.40
+Fast Transportation, NULL, $142.50, $0.00, $110.00, $59.85, $0.00, $0.00, $37.20
+Folk Mining, $0.00, $0.00, NULL, $137.50, NULL, $0.00, $0.00, $111.60
+FISGA Corp, NULL, $0.00, $0.00, $137.50, $99.75, $31.00, $99.50, $0.00
+Interstate Shop, $0.00, $0.00, $225.00, $137.50, $0.00, $108.50, $139.30, $24.80
+FMG Consulting, $0.00, NULL, $225.00, $0.00, $0.00, $0.00, $39.80, $24.80
+West Coast Customs, $0.00, NULL, $0.00, $0.00, $99.75, $77.50, $0.00, $0.00
+Direct Sales, NULL, $0.00, $225.00, $55.00, $39.90, $0.00, $0.00, $0.00

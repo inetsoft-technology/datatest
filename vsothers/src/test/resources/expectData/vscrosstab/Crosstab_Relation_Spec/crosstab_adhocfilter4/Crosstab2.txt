@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+Year(Date), Value of previous Year(Date): Sum(Discount)
+2018, NULL
+2020, 14.95
+2021, 14.5

@@ -1,0 +1,18 @@
+The table size(row x col) is: (16 x 5)
+[city][company][customer_id][reseller][state]
+[Aachen][Eastern Data][3][true][TX]
+[Akergen][Ernst Handel][4][false][PA]
+[Ankertown][Du Monde Technologies][18][false][FL]
+[Boomtown][Folk Mining][20][false][[NULL]]
+[Chicago][Familia Computer Services][6][true][IL]
+[Cleveland][[NULL]][11][false][OH]
+[Little Rock][Fast Transportation][12][false][AK]
+[Littletown][Interstate Shop][1][true][NY]
+[Middletown][Direct Sales][9][true][NJ]
+[New York][Computer Tech][13][false][NY]
+[Orlando][Whittaker & Co, Inc][16][false][FL]
+[Piscataway][Old World Insurance][7][false][NJ]
+[Pitterson][Daycare One][2][false][NJ]
+[San Francisco][Quick Stop][8][false][CA]
+[Sevilla][George Services][5][false][AK]
+

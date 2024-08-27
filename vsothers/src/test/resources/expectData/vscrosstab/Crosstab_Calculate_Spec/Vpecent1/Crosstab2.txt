@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+state, city, NULL, Max(customer_id)/% of total by row: Max(customer_id)
+AZ, Tucson, Max(customer_id), 20
+AZ, Tucson, % of total by row: Max(customer_id), 95%
+CA, Albany, Max(customer_id), 16
+CA, Albany, % of total by row: Max(customer_id), 76%
+CA, Los Angeles, Max(customer_id), 21
+CA, Los Angeles, % of total by row: Max(customer_id), 100%
+CA, San Francisco, Max(customer_id), 9
+CA, San Francisco, % of total by row: Max(customer_id), 43%
+CO, Boulder, Max(customer_id), 4
+CO, Boulder, % of total by row: Max(customer_id), 19%
+CO, Denver, Max(customer_id), 8
+CO, Denver, % of total by row: Max(customer_id), 38%
+CT, Hartford, Max(customer_id), 6
+CT, Hartford, % of total by row: Max(customer_id), 29%
+Grand Total, NULL, Max(customer_id), 21
+Grand Total, NULL, % of total by row: Max(customer_id), 100%

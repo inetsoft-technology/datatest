@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 14)
+reseller, Year(date_range1), AK, AK, AK, AK, AK, AK, FL, FL, FL, FL, Grand Total, Grand Total
+NULL, NULL, 7-13, 7-13, Others, Others, Total_1, Total_1, 13-26, 13-26, Total_1, Total_1, NULL, NULL
+NULL, NULL, Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2), Sum(date_range2), Change from previous by row: Sum(date_range2)
+false, 1998, $0.00, 0, $23.00, 0, 23, 23, $6.00, 0, 6, 6, 29, 29
+false, 1999, $104.00, 104, $77.00, 54, 181, 181, $57.00, 51, 57, 57, 238, 238
+false, 2000, $107.00, 3, $100.00, 23, 207, 207, $0.00, -57, 0, 0, 207, 207
+false, Total, 211, 211, 200, 200, 411, 411, 63, 63, 63, 63, 474, 474
+Grand Total, NULL, 211, 211, 200, 200, 411, 411, 63, 63, 63, 63, 474, 474

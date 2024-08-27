@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[[NULL]][false][true]
+[2002-01-01 00:00:00][[NULL]][[NULL]]
+[2003-01-01 00:00:00][[NULL]][[NULL]]
+[2004-01-01 00:00:00][[NULL]][0]
+[2005-01-01 00:00:00][[NULL]][[NULL]]
+

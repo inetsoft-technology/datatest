@@ -1,0 +1,27 @@
+The data size(row x col) is:(26 x 5)
+Year, QuarterOfYear(PRODUCE_DATE), PRODUCT_NAME, Average(PRICE), Value of previous by row: Average(PRODUCT_ID)
+2000, 4th, Easy Chess, 35, NULL
+2000, 4th, Fast Go Game, 200, 13
+2000, 4th, Fast Mail, 39, 14
+2000, 4th, WebCalendar, 248, 6
+2001, 1st, 17 Inch LCD_test, 210, NULL
+2001, 1st, Combat Hero, 29, 23
+2001, 1st, Green Planet_test, 75, 16
+2001, 1st, House Hunter, 129, 4
+2001, 1st, Info Folder_test, 399, 5
+2001, 1st, InsideView_test, 125, 3
+2001, 1st, Web Bridge, 105, 2
+2001, 1st, Wireless Keyboard, 40, 15
+2001, 1st, Wireless Mouse, 40, 22
+2001, 1st, Xconnect Server_test, 2250, 21
+2006, 1st, Animal World_test, 59, NULL
+2006, 1st, 19 inch LCD_test, 310, 17
+2006, 1st, Barbie"s Fashion, 79, 24
+2006, 1st, Fancy Menus, 49, 20
+2006, 1st, Learn ABC, 75, 10
+2006, 1st, Math for Me, 235, 18
+2006, 1st, Mega Icons, 550, 19
+2006, 1st, MeToo AppServer, 3000, 11
+2006, 1st, NetStorage, 2850, 12
+2006, 1st, Sync Me, 145, 25
+2006, 1st, True Action, 398, 7

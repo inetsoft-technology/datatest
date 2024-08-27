@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[discount][Quarter(orderdate)][orderdate]
+[0.02][2003-10-01 00:00:00][Others]
+[0.13][2003-07-01 00:00:00][Others]
+[0.28][2003-04-01 00:00:00][Others]
+[0.33][2003-01-01 00:00:00][Others]
+

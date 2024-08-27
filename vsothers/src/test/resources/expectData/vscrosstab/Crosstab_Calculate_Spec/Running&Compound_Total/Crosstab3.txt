@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 8)
+Calc_Region, Customer:State, 2023 1st, 2023 1st, 2023 2nd, 2023 2nd, Grand Total, Grand Total
+NULL, NULL, Sum(Calc_paid), Running Sum by column: Sum(Calc_paid), Sum(Calc_paid), Running Sum by column: Sum(Calc_paid), Sum(Calc_paid), Running Sum by column: Sum(Calc_paid)
+USA East, CT, NULL, NULL, 1.5, 1.5, 1.5, 1.5
+USA East, FL, 6.5, 6.5, 1.5, 8, 8, 8
+USA East, Total, 6.5, 6.5, 3, 9.5, 9.5, 9.5
+USA West, AZ, 0.5, 0.5, 0.5, 1, 1, 1
+USA West, CA, 1, 1, 16, 17, 17, 17
+USA West, Total, 1.5, 1.5, 16.5, 18, 18, 18
+Grand Total, NULL, 8, 8, 19.5, 27.5, 27.5, 27.5

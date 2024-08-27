@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 8)
+Boolean, Name, Advanced Integrity, Continental Innovations Corp., Global Networks Ltd., Micro Production LLC, Cyber Opportunities, Lockbox Servers
+false, 19 inch LCD, NULL, NULL, NULL, NULL, NULL, 7
+false, NetStorage, NULL, NULL, NULL, NULL, NULL, 7
+false, Fancy Menus, NULL, NULL, NULL, 5, NULL, NULL
+false, House Hunter, 4, NULL, NULL, NULL, NULL, NULL
+false, Sync Me, NULL, NULL, 4, NULL, NULL, NULL
+false, MeToo AppServer, NULL, 3, NULL, NULL, NULL, NULL
+true, 17 Inch LCD, NULL, NULL, NULL, NULL, NULL, 7
+true, Wireless Keyboard, NULL, NULL, NULL, NULL, NULL, 7
+true, Wireless Mouse, NULL, NULL, NULL, NULL, NULL, 7
+true, Fast Mail, NULL, NULL, 6, NULL, NULL, NULL
+true, Info Folder, NULL, NULL, NULL, NULL, 6, NULL
+true, WebCalendar, NULL, 6, NULL, NULL, NULL, NULL

@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 4)
+STATE, NAME, NULL, CID/EID
+MD, NULL, Nth(CID）, 66
+MD, NULL, Nth(EID), 4
+NJ, NULL, Nth(CID）, 35
+NJ, NULL, Nth(EID), 2
+MA, XO Resellers, Nth(CID）, 34
+MA, XO Resellers, Nth(EID), 2
+MA, AMG Logistics, Nth(CID）, 30
+MA, AMG Logistics, Nth(EID), 2
+MA, Others, Nth(CID）, 23
+MA, Others, Nth(EID), 2
+NY, NULL, Nth(CID）, 34
+NY, NULL, Nth(EID), 6
+TX, NULL, Nth(CID）, 62
+TX, NULL, Nth(EID), 8

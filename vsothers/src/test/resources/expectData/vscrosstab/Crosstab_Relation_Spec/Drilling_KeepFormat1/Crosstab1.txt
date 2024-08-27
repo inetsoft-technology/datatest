@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 6)
+reseller, Year(orderdate), state, NULL, Sum(customer_id)/Sum(discount), Grand Total
+false, 1999, NY, Sum(customer_id), 86, 86
+false, 1999, NY, DISCOUNT, 0.02, 0.02
+false, 1999, AK, Sum(customer_id), 56, 56
+false, 1999, AK, DISCOUNT, 0, 0
+false, 1999, Total, Sum(customer_id), 142, 142
+false, 1999, Total, Sum(discount), 0.02, 0.02
+true, 2000, CA, Sum(customer_id), 96, 96
+true, 2000, CA, DISCOUNT, 0.25, 0.25
+true, 2000, NY, Sum(customer_id), 65, 65
+true, 2000, NY, DISCOUNT, 0.1, 0.1
+true, 2000, Total, Sum(customer_id), 161, 161
+true, 2000, Total, Sum(discount), 0.35, 0.35
+Grand Total, NULL, NULL, Sum(customer_id), 303, 303
+Grand Total, NULL, NULL, Sum(discount), 0.37, 0.37

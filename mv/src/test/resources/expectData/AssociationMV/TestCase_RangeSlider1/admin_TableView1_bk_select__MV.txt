@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 6)
+[INTEGER][FLOAT][DOUBLE][BYTE][SHORT][LONG]
+[45][-2.1549][-15.6664][32][3][65631121]
+

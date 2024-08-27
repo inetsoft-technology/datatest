@@ -1,0 +1,3 @@
+The min value is: [5]
+The max value is: [50]
+Selected: [[5]] -> [[28]]

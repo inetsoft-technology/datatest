@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 2)
+[DISCOUNT][ORDER_ID]
+[0][12074]
+

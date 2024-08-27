@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 2)
+[address][345 Sewgen Dr_]
+[city][Boomtown]
+

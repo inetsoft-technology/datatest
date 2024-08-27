@@ -1,0 +1,28 @@
+The data size(row x col) is:(27 x 8)
+Boolean, DataGroup(Name), 2000, 2000, 2001, 2001, 2006, 2006
+NULL, NULL, 4th, 4th, 1st, 1st, 1st, 1st
+NULL, NULL, Dec, Dec, Jan, Jan, Jan, Jan
+NULL, NULL, 12, 12, 1, 1, 1, 1
+NULL, NULL, CA_ID, Change from previous by row: CA_ID, CA_ID, Change from previous by row: CA_ID, CA_ID, Change from previous by row: CA_ID
+true, Info Folder, NULL, NULL, 6, NULL, NULL, NULL
+true, AA_Group, NULL, 0, 3, -3, NULL, 0
+true, Green Planet, NULL, 0, 4, 1, NULL, 0
+true, Fast Mail, 6, 6, NULL, -4, NULL, 0
+true, WebCalendar, 6, 0, NULL, 0, NULL, 0
+true, Mega Icons, NULL, -6, NULL, 0, 5, 5
+true, Easy Chess, 1, 1, NULL, 0, NULL, -5
+true, Fast Go Game, 1, 0, NULL, 0, NULL, 0
+true, Web Bridge, NULL, -1, 1, 1, NULL, 0
+true, Combat Hero, NULL, 0, 1, 0, NULL, 0
+true, Wireless Mouse, NULL, 0, 7, 6, NULL, 0
+true, Wireless Keyboard, NULL, 0, 7, 0, NULL, 0
+true, 17 Inch LCD, NULL, 0, 7, 0, NULL, 0
+false, House Hunter, NULL, NULL, 4, NULL, NULL, NULL
+false, NameGroup2, NULL, 0, NULL, -4, 5.5, 5.5
+false, True Action, NULL, 0, NULL, 0, 1, -4.5
+false, Fancy Menus, NULL, 0, NULL, 0, 5, 4
+false, MeToo AppServer, NULL, 0, NULL, 0, 3, -2
+false, NameGroup1, NULL, 0, NULL, 0, 4.5, 1.5
+false, Learn ABC, NULL, 0, NULL, 0, 2, -2.5
+false, Math for Me, NULL, 0, NULL, 0, 2, 0
+false, Barbie"s Fashion, NULL, 0, NULL, 0, 1, -1

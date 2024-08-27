@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[CUSTOMER_ID][RESELLER][fxjs]
+[1][true][NJ18322]
+[2][true][NJ09882]
+[15][true][NJ12334]
+[19][false][NJ23445]
+[25][true][NJ08854]
+[35][true][NJ08273]
+

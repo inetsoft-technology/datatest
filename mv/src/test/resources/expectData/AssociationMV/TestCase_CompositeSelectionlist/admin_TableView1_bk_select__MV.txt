@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 3)
+[RESELLER][STATE][ZIP]
+[false][CA][08854]
+[false][CA][11223]
+[false][CO][38923]
+[false][IL][88938]
+[false][MA][02938]
+[false][MA][28275]
+[false][NJ][23445]
+[false][WA][93847]
+

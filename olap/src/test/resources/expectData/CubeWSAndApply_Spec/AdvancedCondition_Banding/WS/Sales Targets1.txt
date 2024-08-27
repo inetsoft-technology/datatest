@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 4)
+Category, Reseller Sales Amount, f_subcategory, f_count
+Bikes, 7528478.985, Touring Bikes, 2977
+Bikes, 12865650.6868, Mountain Bikes, 3749
+Bikes, 14112472.8967, Road Bikes, 6073

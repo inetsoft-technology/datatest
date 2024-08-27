@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 5)
+[discount][Year(orderdate)][company][reseller][CalcField1]
+[0][2001-01-01 00:00:00][Daycare One][2][113]
+[0][2002-01-01 00:00:00][Daycare One][2][113]
+[0][2002-01-01 00:00:00][George Services][2][123]
+[0][2002-01-01 00:00:00][Quick Stop][5][216]
+[0][2003-01-01 00:00:00][Eastern Data][1][102]
+[0.05][2003-01-01 00:00:00][Familia Computer Services][1][107.6]
+[0.05][2003-01-01 00:00:00][Quick Stop][2][113.3]
+

@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[CATEGORY_ID][CATEGORY_NAME][REGION_ID][REGION]
+[1][Games][1][USA East]
+[2][Educational][2][USA West]
+[3][Business][[NULL]][[NULL]]
+

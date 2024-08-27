@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 4)
+[city][customer_id][reseller][state]
+[Akergen][4][false][PA]
+[Ankertown][18][false][FL]
+[Boomtown][20][false][NY]
+[Cleveland][11][false][OH]
+[Little Rock][12][false][AK]
+[New York][13][false][NY]
+[Orlando][16][false][FL]
+[Piscataway][7][false][NJ]
+[Pitterson][2][false][NJ]
+[San Francisco][8][false][CA]
+[Sevilla][5][false][AK]
+

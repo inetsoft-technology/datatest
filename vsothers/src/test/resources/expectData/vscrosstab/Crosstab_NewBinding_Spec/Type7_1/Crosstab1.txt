@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 6)
+NULL, 2000, 2001, 2001, 2006, 2006
+NULL, true, false, true, false, true
+Sum(PRICE), 522, 129, 3273, 7200, 550
+Sum(PRODUCT_ID), 41, 5, 107, 161, 11

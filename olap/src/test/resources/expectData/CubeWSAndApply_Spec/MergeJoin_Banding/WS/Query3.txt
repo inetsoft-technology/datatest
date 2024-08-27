@@ -1,0 +1,24 @@
+The table size(row x col) is:(23 x 6)
+Category, Color, Reseller Sales Amount, Discount Amount, City, Internet Tax Amount
+Accessories, Black, 87915.3689, 1207.1866, Ballard, 3624.7197
+Accessories, Blue, 91052.8681, 1314.2907, Chicago, 225.6648
+Accessories, NA, 247066.247, 2569.6919, Dresden, 4607.2005
+Accessories, Red, 79744.6953, 1093.5148, Haney, 9242.1506
+Accessories, Silver, 65518.7485, 503.3453, Newport Beach, 9261.3785
+Bikes, Black, 24469987.8234, 99361.2404, Oakland, 10071.8605
+Bikes, Blue, 6205258.3522, 51553.9114, NULL, NULL
+Bikes, Red, 12114587.8898, 35541.9457, NULL, NULL
+Bikes, Silver, 11931999.4272, 88106.6003, NULL, NULL
+Bikes, Yellow, 11580548.0644, 220076.9554, NULL, NULL
+Clothing, Black, 751810.8972, 11491.3027, NULL, NULL
+Clothing, Blue, 223801.3707, 4055.6837, NULL, NULL
+Clothing, Multi, 542559.5121, 2551.3208, NULL, NULL
+Clothing, White, 24638.8081, 284.2987, NULL, NULL
+Clothing, Yellow, 235030.251, 2581.8994, NULL, NULL
+Components, Black, 4087998.0118, 1079.4744, NULL, NULL
+Components, Blue, 803642.0958, 1388.1064, NULL, NULL
+Components, NA, 417120.9711, 316.1342, NULL, NULL
+Components, Red, 1679227.6977, 132.9996, NULL, NULL
+Components, Silver, 2666432.6902, 705.8793, NULL, NULL
+Components, Silver/Black, 147483.9098, 46.9742, NULL, NULL
+Components, Yellow, 1997171.282, 1545.1703, NULL, NULL

@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+Minute(PRODUCE_TIME), Running Sum of hour by row: Sum(CUSTOMER_ID), Sum(CUSTOMER_ID)
+NULL, 17, 17
+01:01, 3, 3
+01:02, 10, 7
+01:03, 15, 5
+01:13, 81, 66
+05:17, 66, 66
+09:09, 88, 88
+11:59, 33, 33
+12:12, 40, 40

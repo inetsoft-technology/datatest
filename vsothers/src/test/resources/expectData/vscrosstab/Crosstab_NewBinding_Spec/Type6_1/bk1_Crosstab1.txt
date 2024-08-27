@@ -1,0 +1,72 @@
+The data size(row x col) is:(71 x 6)
+Customers:ADDRESS, NULL, 2005, 2002, 2003, 2004
+12 Woodpark Ave., Sum(Orders:EMPLOYEE_ID), 28, 15, 16, 16
+12 Woodpark Ave., Sum(Customers:CUSTOMER_ID), 88, 44, 55, 55
+123 Summer Rd., Sum(Orders:EMPLOYEE_ID), 8, 8, 12, 4
+123 Summer Rd., Sum(Customers:CUSTOMER_ID), 10, 8, 12, 6
+1230 Hoes Lane, Sum(Orders:EMPLOYEE_ID), 8, 6, 5, 12
+1230 Hoes Lane, Sum(Customers:CUSTOMER_ID), 35, 35, 21, 63
+1248 Broadway, Sum(Orders:EMPLOYEE_ID), 1, 8, 7, 4
+1248 Broadway, Sum(Customers:CUSTOMER_ID), 24, 144, 120, 72
+17 Main St., Sum(Orders:EMPLOYEE_ID), 33, 24, 11, 33
+17 Main St., Sum(Customers:CUSTOMER_ID), 261, 203, 87, 261
+21 Doger Sound Blvd., Sum(Orders:EMPLOYEE_ID), 18, 11, 33, 25
+21 Doger Sound Blvd., Sum(Customers:CUSTOMER_ID), 85, 51, 153, 119
+23 Tasaga Ave., Sum(Orders:EMPLOYEE_ID), 29, 9, 14, 26
+23 Tasaga Ave., Sum(Customers:CUSTOMER_ID), 176, 66, 88, 154
+283 Davidson Dr., Sum(Orders:EMPLOYEE_ID), 9, 12, 4, 7
+283 Davidson Dr., Sum(Customers:CUSTOMER_ID), 125, 175, 100, 125
+283 Handley Rd., Sum(Orders:EMPLOYEE_ID), 9, 6, 7, 9
+283 Handley Rd., Sum(Customers:CUSTOMER_ID), 150, 120, 150, 150
+300 Great Swamp Rd., Sum(Orders:EMPLOYEE_ID), 6, 7, 11, 17
+300 Great Swamp Rd., Sum(Customers:CUSTOMER_ID), 76, 76, 133, 209
+32 West Boyd Ave., Sum(Orders:EMPLOYEE_ID), 12, 25, NULL, 12
+32 West Boyd Ave., Sum(Customers:CUSTOMER_ID), 81, 189, NULL, 108
+345 Sewgen Dr., Sum(Orders:EMPLOYEE_ID), 23, 26, 23, 10
+345 Sewgen Dr., Sum(Customers:CUSTOMER_ID), 120, 140, 120, 60
+38 Commercial Ave., Sum(Orders:EMPLOYEE_ID), 11, 3, 18, 2
+38 Commercial Ave., Sum(Customers:CUSTOMER_ID), 280, 70, 385, 35
+384 Broad St., Sum(Orders:EMPLOYEE_ID), 7, 6, 6, 5
+384 Broad St., Sum(Customers:CUSTOMER_ID), 4, 5, 4, 3
+389 Jardim Rd., Sum(Orders:EMPLOYEE_ID), 27, 7, 21, 8
+389 Jardim Rd., Sum(Customers:CUSTOMER_ID), 40, 10, 30, 10
+389 York St., Sum(Orders:EMPLOYEE_ID), 3, 10, 14, 5
+389 York St., Sum(Customers:CUSTOMER_ID), 56, 196, 280, 84
+44 Islander Lane, Sum(Orders:EMPLOYEE_ID), 7, 4, 26, 27
+44 Islander Lane, Sum(Customers:CUSTOMER_ID), 32, 16, 112, 112
+4500 River Rd., Sum(Orders:EMPLOYEE_ID), 12, 38, 19, 15
+4500 River Rd., Sum(Customers:CUSTOMER_ID), 36, 99, 45, 36
+460 Newcomb Dr., Sum(Orders:EMPLOYEE_ID), 7, 21, 21, 29
+460 Newcomb Dr., Sum(Customers:CUSTOMER_ID), 42, 126, 126, 168
+487 City St., Sum(Orders:EMPLOYEE_ID), 7, 8, 19, 28
+487 City St., Sum(Customers:CUSTOMER_ID), 64, 64, 192, 256
+5 Baker's Lane, Sum(Orders:EMPLOYEE_ID), 2, 9, 4, 6
+5 Baker's Lane, Sum(Customers:CUSTOMER_ID), 6, 30, 12, 30
+563 Uptown Dr., Sum(Orders:EMPLOYEE_ID), 3, 10, 5, 10
+563 Uptown Dr., Sum(Customers:CUSTOMER_ID), 46, 161, 69, 138
+71 Mulberry St., Sum(Orders:EMPLOYEE_ID), 14, 18, 21, 19
+71 Mulberry St., Sum(Customers:CUSTOMER_ID), 32, 40, 48, 40
+7262 18th St., Sum(Orders:EMPLOYEE_ID), 13, 6, 15, 7
+7262 18th St., Sum(Customers:CUSTOMER_ID), 21, 9, 30, 15
+77 Druguz Blvd., Sum(Orders:EMPLOYEE_ID), 6, 13, 7, 2
+77 Druguz Blvd., Sum(Customers:CUSTOMER_ID), 60, 96, 60, 24
+77 Huntington Ave., Sum(Orders:EMPLOYEE_ID), 5, 10, 7, 10
+77 Huntington Ave., Sum(Customers:CUSTOMER_ID), 102, 204, 136, 204
+822 Technology Dr., Sum(Orders:EMPLOYEE_ID), 4, 8, 10, 9
+822 Technology Dr., Sum(Customers:CUSTOMER_ID), 42, 56, 98, 98
+8300 Cleveland St., Sum(Orders:EMPLOYEE_ID), 9, 11, 11, 8
+8300 Cleveland St., Sum(Customers:CUSTOMER_ID), 90, 126, 126, 90
+839 Via Gaty Dr., Sum(Orders:EMPLOYEE_ID), 5, 2, 10, 9
+839 Via Gaty Dr., Sum(Customers:CUSTOMER_ID), 45, 15, 120, 75
+88 Rio Grand Ave., Sum(Orders:EMPLOYEE_ID), 6, 5, 4, 8
+88 Rio Grand Ave., Sum(Customers:CUSTOMER_ID), 16, 12, 12, 20
+88 Specialty Dr., Sum(Orders:EMPLOYEE_ID), 11, 18, 7, 23
+88 Specialty Dr., Sum(Customers:CUSTOMER_ID), 30, 50, 20, 70
+8874 Shiphouse Rd., Sum(Orders:EMPLOYEE_ID), 11, 17, 21, 28
+8874 Shiphouse Rd., Sum(Customers:CUSTOMER_ID), 93, 155, 186, 248
+90 First Ave., Sum(Orders:EMPLOYEE_ID), 25, 11, 14, 25
+90 First Ave., Sum(Customers:CUSTOMER_ID), 91, 39, 52, 91
+9381 Mayor Brown Hwy., Sum(Orders:EMPLOYEE_ID), 3, 9, 5, 9
+9381 Mayor Brown Hwy., Sum(Customers:CUSTOMER_ID), 66, 198, 132, 198
+987 First Ave., Sum(Orders:EMPLOYEE_ID), 15, 24, 13, 11
+987 First Ave., Sum(Customers:CUSTOMER_ID), 104, 182, 104, 78

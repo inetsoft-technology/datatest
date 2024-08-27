@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 2)
+[DataGroup(DISCOUNT)][WeightedAverage(CUSTOMER_ID, EMPLOYEE_ID)]
+[[NULL]][19.6168]
+[0.1][19.377]
+[0.15][17.1364]
+[0.2][17.7895]
+[0.25][17.4474]
+[A][18.2448]
+

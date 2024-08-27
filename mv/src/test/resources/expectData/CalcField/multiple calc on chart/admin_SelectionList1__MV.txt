@@ -1,0 +1,7 @@
+[Business]   SelectState:[8]   Measure:[360]
+[Educational]   SelectState:[8]   Measure:[471]
+[Games]   SelectState:[8]   Measure:[649]
+[Graphics]   SelectState:[8]   Measure:[304]
+[Hardware]   SelectState:[8]   Measure:[663]
+[Office Tools]   SelectState:[8]   Measure:[442]
+[Personal]   SelectState:[8]   Measure:[506]

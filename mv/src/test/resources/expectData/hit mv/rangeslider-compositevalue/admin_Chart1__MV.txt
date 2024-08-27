@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[Year(ORDER_DATE)][WeightedAverage(CUSTOMER_ID, EMPLOYEE_ID)]
+[2002-01-01 00:00:00][18.6713]
+[2003-01-01 00:00:00][17.966]
+[2004-01-01 00:00:00][19.2113]
+[2005-01-01 00:00:00][17.5214]
+

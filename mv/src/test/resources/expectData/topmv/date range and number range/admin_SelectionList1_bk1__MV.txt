@@ -1,0 +1,4 @@
+[<10]   SelectState:[8]
+[>=30]   SelectState:[9]
+[10-20]   SelectState:[9]
+[20-30]   SelectState:[9]

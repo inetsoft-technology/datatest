@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 5)
+[ADDRESS][CITY][COMPANY_NAME][CUSTOMER_ID][STATE]
+[5 Baker's Lane][Hartford][Loctite Corp.][6][CT]
+[88 Rio Grand Ave.][Boulder][Ernst Handel][4][CO]
+

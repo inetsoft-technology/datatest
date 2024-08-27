@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 18)
+[ORDER_ID][QUANTITY][REASON][ORDER_ID_1][CUSTOMER_ID][EMPLOYEE_ID][ORDER_DATE][DISCOUNT][PAID][PRODUCT_ID][ORDER_ID_2][PRODUCT_ID_1][QUANTITY_1][REASON_1][PRODUCT_ID_1_1][PRODUCT_NAME][DESCRIPTION][PRICE]
+[12383][3][Defective][12383][9][3][2004-02-06 00:00:00][0][false][3][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12383][8][Defective][12383][9][3][2004-02-06 00:00:00][0][false][22][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12383][8][Did not want][12383][9][3][2004-02-06 00:00:00][0][false][19][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12383][9][Could not pay][12383][9][3][2004-02-06 00:00:00][0][false][18][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12383][11][Did not want][12383][9][3][2004-02-06 00:00:00][0][false][25][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12383][17][Did not want][12383][9][3][2004-02-06 00:00:00][0][false][23][12383][3][3][Defective][3][Info Folder][Document management tool][399]
+[12507][2][Could not pay][12507][14][2][2004-10-06 00:00:00][0][false][2][12507][2][2][Could not pay][2][InsideView][Database browser][125]
+[12507][8][Defective][12507][14][2][2004-10-06 00:00:00][0][false][23][12507][2][2][Could not pay][2][InsideView][Database browser][125]
+[12554][13][Did not want][12554][25][2][2005-01-12 00:00:00][0][false][2][12554][2][13][Did not want][2][InsideView][Database browser][125]
+

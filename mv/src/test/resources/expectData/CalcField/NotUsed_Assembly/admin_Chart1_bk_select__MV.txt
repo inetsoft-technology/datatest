@@ -1,0 +1,11 @@
+The table size(row x col) is: (9 x 2)
+[CUSTOMERS:STATE][Sum(CUSTOMERS:CUSTOMER_ID)]
+[AK][35]
+[CA][128]
+[IL][48]
+[NJ][124]
+[NY][6]
+[OH][22]
+[PA][24]
+[TX][24]
+

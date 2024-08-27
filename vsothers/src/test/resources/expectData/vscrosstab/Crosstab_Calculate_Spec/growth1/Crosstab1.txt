@@ -1,0 +1,38 @@
+The data size(row x col) is:(37 x 6)
+ndate, NULL, Others, containsP, startAorC, startN
+between2023~2024, Compound Growth by row: Average(eid), 26%, 3%, 9%, 18%
+between2023~2024, Compound Growth by column: Sum(eid), 26%, 3%, 12%, 32%
+between2023~2024, Compound Growth state: Sum(eid), 26%, 3%, 9%, 18%
+between2023~2024, Compound Growth ndate: Sum(eid), 26%, 3%, 9%, 18%
+lessthan2022, Compound Growth by row: Average(eid), 42%, 4%, 14%, 24%
+lessthan2022, Compound Growth by column: Sum(eid), 13%, 1%, 5%, 10%
+lessthan2022, Compound Growth state: Sum(eid), 13%, 1%, 4%, 5%
+lessthan2022, Compound Growth ndate: Sum(eid), 13%, 1%, 4%, 5%
+Others, Compound Growth by row: Average(eid), 42%, 4%, 14%, 24%
+Others, Compound Growth by column: Sum(eid), 9%, 0%, 4%, 11%
+Others, Compound Growth state: Sum(eid), 9%, 0%, 3%, 7%
+Others, Compound Growth ndate: Sum(eid), 9%, 0%, 3%, 7%
+2025-06-01, Compound Growth by row: Average(eid), 43%, 4%, 14%, 24%
+2025-06-01, Compound Growth by column: Sum(eid), 1%, 0%, 0%, 0%
+2025-06-01, Compound Growth state: Sum(eid), 1%, 0%, 0%, 0%
+2025-06-01, Compound Growth ndate: Sum(eid), 1%, 0%, 0%, 0%
+2025-09-11, Compound Growth by row: Average(eid), 43%, 4%, 14%, 24%
+2025-09-11, Compound Growth by column: Sum(eid), 0%, 0%, 0%, 0%
+2025-09-11, Compound Growth state: Sum(eid), 0%, 0%, 0%, 0%
+2025-09-11, Compound Growth ndate: Sum(eid), 0%, 0%, 0%, 0%
+2025-05-03, Compound Growth by row: Average(eid), 44%, 4%, 14%, 24%
+2025-05-03, Compound Growth by column: Sum(eid), 0%, 0%, 0%, 0%
+2025-05-03, Compound Growth state: Sum(eid), 0%, 0%, 0%, 0%
+2025-05-03, Compound Growth ndate: Sum(eid), 0%, 0%, 0%, 0%
+2025-06-18, Compound Growth by row: Average(eid), 45%, 4%, 14%, 24%
+2025-06-18, Compound Growth by column: Sum(eid), 0%, 0%, 0%, 0%
+2025-06-18, Compound Growth state: Sum(eid), 0%, 0%, 0%, 0%
+2025-06-18, Compound Growth ndate: Sum(eid), 0%, 0%, 0%, 0%
+2025-09-09, Compound Growth by row: Average(eid), 45%, 4%, 14%, 24%
+2025-09-09, Compound Growth by column: Sum(eid), 0%, 0%, 0%, 0%
+2025-09-09, Compound Growth state: Sum(eid), 0%, 0%, 0%, 0%
+2025-09-09, Compound Growth ndate: Sum(eid), 0%, 0%, 0%, 0%
+Grand Total, Compound Growth by row: Average(eid), 1%, 1%, 1%, 1%
+Grand Total, Compound Growth by column: Sum(eid), 50%, 4%, 17%, 29%
+Grand Total, Compound Growth state: Sum(eid), 50%, 4%, 17%, 29%
+Grand Total, Compound Growth ndate: Sum(eid), 50%, 4%, 17%, 29%

@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 3)
+[Worker Type][Sum(Planned Cost)][PlannedRevenue]
+[Drywall Installers][307400000][307400]
+[Foreman][380000000][380000]
+[General Workers][873800000][873800]
+[Lawyers][101600000][101600]
+[Painters][257300000][257300]
+[Pipefitter][484250000][484250]
+[Planners][254600000][254600]
+[Rigger][164800000][164800]
+[Sheet Metal Worker][282200000][282200]
+[Surveyors][64750000][64750]
+

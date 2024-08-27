@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 11)
+NULL, 2023, 2023, 2023, 2023, 2023, 2022, 2022, 2022, 2022, 2022
+NULL, 4th, 4th, 4th, 2nd, 2nd, 4th, 4th, 4th, 1st, 1st
+NULL, Oct, Nov, Dec, Apr, Jun, Oct, Nov, Dec, Jan, Feb
+agg_calc, $115, $95, $59, $98, $79, $86, $126, $76, $43, $77
+Value of previous , NULL, $115.00, $95.00, NULL, $98.00, NULL, $86.00, $126.00, NULL, $43.00
+agg_calc1, 75, 125, 75, 75, 75, 75, 75, 125, 145, 75

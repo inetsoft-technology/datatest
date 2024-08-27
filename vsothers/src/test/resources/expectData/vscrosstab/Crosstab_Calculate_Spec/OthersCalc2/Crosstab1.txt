@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 6)
+Year, NULL, business intelligence platform, business analytics, data visualization, Others
+2,021_aa, Max(Volume), 201000, 49500, 27100, 18100
+2,021_aa, Min(Volume), 135000, 33100, 18100, 10
+2,021_aa, Median(Volume), 150000, 40500, 22200, 210
+2,021_aa, Mode(Volume), 135000, 40500, 27100, 10
+2,020_aa, Max(Volume), 135000, 49500, 27100, 18100
+2,020_aa, Min(Volume), 90500, 40500, 22200, 0
+2,020_aa, Median(Volume), 122500, 45000, 27100, 210
+2,020_aa, Mode(Volume), 135000, 40500, 27100, 10
+Others_aa, Max(Volume), 110000, 49500, 27100, 22200
+Others_aa, Min(Volume), 90500, 33100, 12100, 0
+Others_aa, Median(Volume), 90500, 40500, 18100, 170
+Others_aa, Mode(Volume), 90500, 40500, 18100, 10

@@ -1,0 +1,15 @@
+The table size(row x col) is: (13 x 2)
+[customer_id][state]
+[6][IL]
+[11][OH]
+[17][AK]
+[18][NJ]
+[20][[NULL]]
+[20][TX]
+[23][PA]
+[29][NY]
+[32][CA]
+[32][CA]
+[34][FL]
+[34][FL]
+

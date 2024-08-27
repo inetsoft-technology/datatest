@@ -1,0 +1,3 @@
+The min value is: [7.6]
+The max value is: [7.6]
+Selected: [[7.6]] -> [[7.6]]

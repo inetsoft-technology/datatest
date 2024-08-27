@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 6)
+[CHARACTER][DOUBLE][INTEGER][SHORT][STRING][for1]
+[fdfdsfdsfs][-0][32767][127][z][32767.0003]
+[vvs342t4][2.1217][5752][85][ff][5752.0003]
+

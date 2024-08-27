@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[Year(orderdate)][Count(customer_id)]
+[[NULL]][34]
+[2001-01-01 00:00:00][377]
+[2002-01-01 00:00:00][423]
+[2003-01-01 00:00:00][357]
+

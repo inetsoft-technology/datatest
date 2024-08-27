@@ -1,0 +1,6 @@
+The value is: [2]
+[10]
+[20]
+The label is: [2]
+[10]
+[20]

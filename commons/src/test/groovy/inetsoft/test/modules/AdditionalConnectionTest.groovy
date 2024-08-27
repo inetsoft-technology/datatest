@@ -8,13 +8,6 @@ import inetsoft.report.composition.execution.AssetQuerySandbox
 import inetsoft.report.filter.SortFilter
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.ExportUtil
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.RuntimeWorksheetResource
-import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.AggregateInfo
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.asset.TableAssembly
@@ -26,6 +19,13 @@ import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent
 import inetsoft.web.viewsheet.service.ExportResponse
+
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.RuntimeWorksheetResource
 
 class AdditionalConnectionTest {
    AdditionalConnectionTest(String caseName) {

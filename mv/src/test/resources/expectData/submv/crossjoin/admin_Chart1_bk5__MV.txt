@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 3)
+[CATEGORY_ID][REORDER_LEVEL][Sum(QUANTITY)]
+[3][10][674.902]
+[3][50][674.902]
+[4][25][674.902]
+[4][50][674.902]
+[6][25][674.902]
+

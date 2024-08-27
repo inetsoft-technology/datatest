@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 3)
+[Customer:Region][[NULL]][CalcField2/CalcField4/CalcField5]
+[USA East][CalcField2][2020-09-27 00:00:00]
+[USA East][CalcField4][6]
+[USA East][CalcField5][1450]
+[USA West][CalcField2][2020-09-30 00:00:00]
+[USA West][CalcField4][6]
+[USA West][CalcField5][1240]
+

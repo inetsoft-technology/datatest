@@ -31,18 +31,11 @@
             <groupId>com.inetsoft.test</groupId>
             <artifactId>commons</artifactId>
             <version>${project.version}</version>
+            <type>test-jar</type>
             <scope>system</scope>
             <systemPath>${root.dir}/commons/target/commons-1.0.0-SNAPSHOT-tests.jar</systemPath>
         </dependency>
-       <!--  <dependency>
-            <groupId>com.inetsoft.stylebi.connectors</groupId>
-            <artifactId>inetsoft-datagov</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-            <scope>system</scope>
-            <systemPath>${plugin.dir}/inetsoft-datagov-${project.version}.zip</systemPath>
-        </dependency> -->
-       <!--  <dependency>
+        <dependency>
           <groupId>com.inetsoft.stylebi.connectors</groupId>
           <artifactId>inetsoft-datagov</artifactId>
           <version>${project.version}</version>
@@ -76,69 +69,11 @@
           <version>${project.version}</version>
           <type>zip</type>
           <scope>provided</scope>
-        </dependency> -->
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.7.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-tabular-plugins</id>
-                        <phase>generate-test-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.inetsoft.stylebi.connectors</groupId>
-                                    <artifactId>inetsoft-datagov</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${plugin.dir}</outputDirectory>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>com.inetsoft.stylebi.connectors</groupId>
-                                    <artifactId>inetsoft-mongodb</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${plugin.dir}</outputDirectory>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>com.inetsoft.stylebi.connectors</groupId>
-                                    <artifactId>inetsoft-odata</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${plugin.dir}</outputDirectory>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>com.inetsoft.stylebi.connectors</groupId>
-                                    <artifactId>inetsoft-rest</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${plugin.dir}</outputDirectory>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>com.inetsoft.stylebi.connectors</groupId>
-                                    <artifactId>inetsoft-serverfile</artifactId>
-                                    <version>${project.version}</version>
-                                    <type>zip</type>
-                                    <outputDirectory>${plugin.dir}</outputDirectory>
-                                    <overWrite>true</overWrite>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -205,12 +140,11 @@
                     <backupFile>src/test/resources/config/tabularStorage.zip</backupFile>
                     <configDirectory>target/test-resources/server/config-${test.module}</configDirectory>
                     <properties>
-                        <license.key>${inetsoft.license.key}</license.key>
                         <log.level.org.apache.ignite>WARN</log.level.org.apache.ignite>
                         <security.enabled>true</security.enabled>
+                        <license.key>${inetsoft.license.key}</license.key>
                         <security.login.orgLocation>domain</security.login.orgLocation>
                         <adm.home>${basedir}/target/test-resources/server/config-${test.module}</adm.home>
-                        <inetsoft.org.default_org.max.cell.size>10000</inetsoft.org.default_org.max.cell.size>
                     </properties>
                 </configuration>
             </plugin>

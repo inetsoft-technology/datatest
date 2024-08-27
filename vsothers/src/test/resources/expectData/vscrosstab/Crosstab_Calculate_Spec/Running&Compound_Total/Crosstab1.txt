@@ -1,0 +1,70 @@
+The data size(row x col) is:(69 x 6)
+Customer:Region, Customer:State, Month(Order:Date), NULL, Count(Order:Paid)/Running Average of quarter by row: Count(Order:Paid)/Running Sum Customer:Region: Count(Order:Paid)/Running Sum Month(Order:Date): Count(Order:Paid), Grand Total
+USA East, CT, 2023 Jun, Count(Order:Paid), 3, 3
+USA East, CT, 2023 Jun, Running Average of quarter by row: Count(Order:Paid), 3, 3
+USA East, CT, 2023 Jun, Running Sum Customer:Region: Count(Order:Paid), 3, 3
+USA East, CT, 2023 Jun, Running Sum Month(Order:Date): Count(Order:Paid), 3, 3
+USA East, CT, Total, Count(Order:Paid), 3, 3
+USA East, CT, Total, Running Average of quarter by row: Count(Order:Paid), 3, 3
+USA East, CT, Total, Running Sum Customer:Region: Count(Order:Paid), 3, 3
+USA East, CT, Total, Running Sum Month(Order:Date): Count(Order:Paid), 3, 3.00
+USA East, FL, 2023 Mar, Count(Order:Paid), 13, 13
+USA East, FL, 2023 Mar, Running Average of quarter by row: Count(Order:Paid), 13, 13
+USA East, FL, 2023 Mar, Running Sum Customer:Region: Count(Order:Paid), 16, 16
+USA East, FL, 2023 Mar, Running Sum Month(Order:Date): Count(Order:Paid), 13, 13
+USA East, FL, 2023 May, Count(Order:Paid), 3, 3
+USA East, FL, 2023 May, Running Average of quarter by row: Count(Order:Paid), 3, 3
+USA East, FL, 2023 May, Running Sum Customer:Region: Count(Order:Paid), 19, 19
+USA East, FL, 2023 May, Running Sum Month(Order:Date): Count(Order:Paid), 3, 3
+USA East, FL, 2023 Jun, Count(Order:Paid), 2, 2
+USA East, FL, 2023 Jun, Running Average of quarter by row: Count(Order:Paid), 2.5, 2.5
+USA East, FL, 2023 Jun, Running Sum Customer:Region: Count(Order:Paid), 21, 21
+USA East, FL, 2023 Jun, Running Sum Month(Order:Date): Count(Order:Paid), 2, 2
+USA East, FL, Total, Count(Order:Paid), 18, 18
+USA East, FL, Total, Running Average of quarter by row: Count(Order:Paid), 18, 18
+USA East, FL, Total, Running Sum Customer:Region: Count(Order:Paid), 21, 21
+USA East, FL, Total, Running Sum Month(Order:Date): Count(Order:Paid), 18, 18.00
+USA East, Total, NULL, Count(Order:Paid), 21, 21
+USA East, Total, NULL, Running Average of quarter by row: Count(Order:Paid), 21, 21
+USA East, Total, NULL, Running Sum Customer:Region: Count(Order:Paid), 21, 21
+USA East, Total, NULL, Running Sum Month(Order:Date): Count(Order:Paid), 21, 21
+USA West, AZ, 2023 Mar, Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Mar, Running Average of quarter by row: Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Mar, Running Sum Customer:Region: Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Mar, Running Sum Month(Order:Date): Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Apr, Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Apr, Running Average of quarter by row: Count(Order:Paid), 1, 1
+USA West, AZ, 2023 Apr, Running Sum Customer:Region: Count(Order:Paid), 2, 2
+USA West, AZ, 2023 Apr, Running Sum Month(Order:Date): Count(Order:Paid), 1, 1
+USA West, AZ, Total, Count(Order:Paid), 2, 2
+USA West, AZ, Total, Running Average of quarter by row: Count(Order:Paid), 2, 2
+USA West, AZ, Total, Running Sum Customer:Region: Count(Order:Paid), 2, 2
+USA West, AZ, Total, Running Sum Month(Order:Date): Count(Order:Paid), 2, 2.00
+USA West, CA, 2023 Mar, Count(Order:Paid), 9, 9
+USA West, CA, 2023 Mar, Running Average of quarter by row: Count(Order:Paid), 9, 9
+USA West, CA, 2023 Mar, Running Sum Customer:Region: Count(Order:Paid), 11, 11
+USA West, CA, 2023 Mar, Running Sum Month(Order:Date): Count(Order:Paid), 9, 9
+USA West, CA, 2023 Apr, Count(Order:Paid), 4, 4
+USA West, CA, 2023 Apr, Running Average of quarter by row: Count(Order:Paid), 4, 4
+USA West, CA, 2023 Apr, Running Sum Customer:Region: Count(Order:Paid), 15, 15
+USA West, CA, 2023 Apr, Running Sum Month(Order:Date): Count(Order:Paid), 4, 4
+USA West, CA, 2023 May, Count(Order:Paid), 28, 28
+USA West, CA, 2023 May, Running Average of quarter by row: Count(Order:Paid), 16, 16
+USA West, CA, 2023 May, Running Sum Customer:Region: Count(Order:Paid), 43, 43
+USA West, CA, 2023 May, Running Sum Month(Order:Date): Count(Order:Paid), 28, 28
+USA West, CA, 2023 Jun, Count(Order:Paid), 1, 1
+USA West, CA, 2023 Jun, Running Average of quarter by row: Count(Order:Paid), 11, 11
+USA West, CA, 2023 Jun, Running Sum Customer:Region: Count(Order:Paid), 44, 44
+USA West, CA, 2023 Jun, Running Sum Month(Order:Date): Count(Order:Paid), 1, 1
+USA West, CA, Total, Count(Order:Paid), 42, 42
+USA West, CA, Total, Running Average of quarter by row: Count(Order:Paid), 42, 42
+USA West, CA, Total, Running Sum Customer:Region: Count(Order:Paid), 44, 44
+USA West, CA, Total, Running Sum Month(Order:Date): Count(Order:Paid), 42, 42.00
+USA West, Total, NULL, Count(Order:Paid), 44, 44
+USA West, Total, NULL, Running Average of quarter by row: Count(Order:Paid), 44, 44
+USA West, Total, NULL, Running Sum Customer:Region: Count(Order:Paid), 44, 44
+USA West, Total, NULL, Running Sum Month(Order:Date): Count(Order:Paid), 44, 44
+Grand Total, NULL, NULL, Count(Order:Paid), 65, 65
+Grand Total, NULL, NULL, Running Average of quarter by row: Count(Order:Paid), 65, 65
+Grand Total, NULL, NULL, Running Sum Customer:Region: Count(Order:Paid), 65, 65
+Grand Total, NULL, NULL, Running Sum Month(Order:Date): Count(Order:Paid), 65, 65

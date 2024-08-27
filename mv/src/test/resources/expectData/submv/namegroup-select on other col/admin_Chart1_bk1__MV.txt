@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[DISCOUNT][Sum(CUSTOMER_ID)]
+[g1][2299]
+[g2][29]
+[Others][409]
+

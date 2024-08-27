@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[category_id][product_id]
+[3][3]
+[6][3]
+

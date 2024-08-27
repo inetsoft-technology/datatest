@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 6)
+[ORDER_ID][PAID][DISCOUNT][PRODUCT_NAME][PRICE][CATEGORY_ID]
+[12101][false][0.01][InsideView][125][3]
+[12229][false][[NULL]][[NULL]][[NULL]][[NULL]]
+[12313][false][0.2][[NULL]][[NULL]][[NULL]]
+[12337][true][[NULL]][[NULL]][[NULL]][[NULL]]
+[12354][false][0][[NULL]][[NULL]][[NULL]]
+[12363][true][0][[NULL]][[NULL]][[NULL]]
+[12372][false][0.15][[NULL]][[NULL]][[NULL]]
+[12420][true][0.05][[NULL]][[NULL]][[NULL]]
+[12423][false][0.1][[NULL]][[NULL]][[NULL]]
+[12446][false][0.25][[NULL]][[NULL]][[NULL]]
+[12461][true][0.1][[NULL]][[NULL]][[NULL]]
+[12472][false][0.05][[NULL]][[NULL]][[NULL]]
+[12532][true][0.25][[NULL]][[NULL]][[NULL]]
+[12611][true][0.2][[NULL]][[NULL]][[NULL]]
+

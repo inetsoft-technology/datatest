@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[DISCOUNT][ORDER_DATE]
+[[NULL]][69]
+[0][564]
+

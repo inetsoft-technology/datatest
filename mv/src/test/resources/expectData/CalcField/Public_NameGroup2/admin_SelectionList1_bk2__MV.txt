@@ -1,0 +1,7 @@
+[Computer Techaaa]   SelectState:[9]
+[Daycare Oneaaa]   SelectState:[9]
+[Eastern Dataaaa]   SelectState:[9]
+[Familia Computer Servicesaaa]   SelectState:[8]
+[George Servicesaaa]   SelectState:[8]
+[Quick Stopaaa]   SelectState:[8]
+[The Big Cataaa]   SelectState:[8]

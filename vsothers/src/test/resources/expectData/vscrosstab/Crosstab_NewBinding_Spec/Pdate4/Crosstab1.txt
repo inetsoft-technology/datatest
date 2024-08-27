@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+Month(P_Date_Period), Region, NULL, CalcField1/% of total by row: Sum(Paid)
+2020 Jun, USA East, CalcField1, 651
+2020 Jun, USA East, % of total by row: Sum(Paid), 31%
+2020 Jun, USA West, CalcField1, 336
+2020 Jun, USA West, % of total by row: Sum(Paid), 13%
+2020 Nov, USA East, CalcField1, 637
+2020 Nov, USA East, % of total by row: Sum(Paid), 33%
+2020 Nov, USA West, CalcField1, 631
+2020 Nov, USA West, % of total by row: Sum(Paid), 23%
+Grand Total, NULL, CalcField1, 2255
+Grand Total, NULL, % of total by row: Sum(Paid), 100%

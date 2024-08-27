@@ -1,0 +1,6 @@
+The value is: [2]
+[false]
+[true]
+The label is: [2]
+[false]
+[true]

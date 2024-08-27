@@ -1,0 +1,21 @@
+The data size(row x col) is:(20 x 12)
+Reseller, Category, NULL, USA East, USA East, USA East, USA East, USA West, USA West, USA West, USA West, Grand Total
+NULL, NULL, NULL, Others, 2021, 2023, Total, Others, 2023, 2022, Total, NULL
+0, Business, Count(Paid), 96, 64, 60, 220, 50, 43, 31, 124, 344
+0, Business, Moving Average of 3 by row: Count(Paid), 100, 70, 62.5, 232.5, 55.5, 45, 31.5, 132, 364.5
+0, Educational, Count(Paid), 104, 76, 65, 245, 61, 47, 32, 140, 385
+0, Educational, Moving Average of 3 by row: Count(Paid), 119.6667, 87.3333, 76.3333, 283.3333, 73, 55, 38.3333, 166.3333, 449.6667
+0, Games, Count(Paid), 159, 122, 104, 385, 108, 75, 52, 235, 620
+0, Games, Moving Average of 3 by row: Count(Paid), 131.5, 99, 84.5, 315, 84.5, 61, 42, 187.5, 502.5
+0, Total, Count(Paid), 359, 262, 229, 850, 219, 165, 115, 499, 1349
+0, Total, Moving Average of 3 by row: Count(Paid), 359, 262, 229, 850, 219, 165, 115, 499, 1349
+1, Business, Count(Paid), 16, 9, 6, 31, 27, 16, 19, 62, 93
+1, Business, Moving Average of 3 by row: Count(Paid), 21, 8, 7.5, 36.5, 25, 17, 17, 59, 95.5
+1, Educational, Count(Paid), 26, 7, 9, 42, 23, 18, 15, 56, 98
+1, Educational, Moving Average of 3 by row: Count(Paid), 29.3333, 10, 8.3333, 47.6667, 31.3333, 21, 20.6667, 73, 120.6667
+1, Games, Count(Paid), 46, 14, 10, 70, 44, 29, 28, 101, 171
+1, Games, Moving Average of 3 by row: Count(Paid), 36, 10.5, 9.5, 56, 33.5, 23.5, 21.5, 78.5, 134.5
+1, Total, Count(Paid), 88, 30, 25, 143, 94, 63, 62, 219, 362
+1, Total, Moving Average of 3 by row: Count(Paid), 88, 30, 25, 143, 94, 63, 62, 219, 362
+Grand Total, NULL, Count(Paid), 447, 292, 254, 993, 313, 228, 177, 718, 1711
+Grand Total, NULL, Moving Average of 3 by row: Count(Paid), 447, 292, 254, 993, 313, 228, 177, 718, 1711

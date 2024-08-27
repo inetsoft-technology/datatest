@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 5)
+[city][company][reseller][state][zip]
+[Aachen][Eastern Data][true][TX][03887]
+[Austin][FISGA Corp][true][TX][28122]
+[Chicago][Familia Computer Services][true][IL][39283]
+[George Park][Software Specialists][true][PA][23445]
+[Littletown][Interstate Shop][true][NY][18322]
+[Long Island][Scheggie Services][true][NY][12334]
+[Los Angles][Specialty Retail][true][CA][88938]
+[Middletown][Direct Sales][true][NJ][08854]
+[San Jose][InterLand Services][true][CA][83923]
+

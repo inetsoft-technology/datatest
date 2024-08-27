@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 4)
+[integer][string1][Sum(double)][Sum(string)]
+[[NULL]][b][0.2][4]
+[[NULL]][c][0.55][5]
+[10][a][[NULL]][1]
+[20][a][0.1][2]
+[30][b][0.01][3]
+

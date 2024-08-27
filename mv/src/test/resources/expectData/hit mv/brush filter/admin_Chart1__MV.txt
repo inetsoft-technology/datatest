@@ -1,0 +1,18 @@
+The table size(row x col) is: (16 x 3)
+[Customer:State][Sum(Product:Total)][Sum(Total@Product:Total)]
+[[NULL]][[NULL]][17656854]
+[AZ][468098][[NULL]]
+[CA][1686648][[NULL]]
+[CO][843798][[NULL]]
+[CT][162317][[NULL]]
+[FL][390641][[NULL]]
+[IL][559501][[NULL]]
+[MA][2135518][[NULL]]
+[MD][1405708][[NULL]]
+[NJ][3313973][[NULL]]
+[NV][397620][[NULL]]
+[NY][2467986][[NULL]]
+[PA][426536][[NULL]]
+[TX][2471947][[NULL]]
+[WA][926563][[NULL]]
+

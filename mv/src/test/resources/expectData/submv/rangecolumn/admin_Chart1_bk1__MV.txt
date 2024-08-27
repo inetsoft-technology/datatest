@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[S1][PAID][Average(QUANTITY)]
+[>0.1][false][47.5556]
+[0-0.1][false][65.7255]
+[0-0.1][true][60.4286]
+[Others][false][55.2]
+

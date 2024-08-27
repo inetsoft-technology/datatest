@@ -1,0 +1,298 @@
+The data size(row x col) is:(297 x 5)
+DataGroup(company_name), Day(CalcField1), true, true, true
+NULL, NULL, Compound Growth by row: Sum(CalcField2), Compound Growth of month by row: Sum(CalcField2), Compound Growth of week by row: Sum(CalcField2)
+agroup1, 2002-02-18, 25%, 25%, 25%
+agroup1, 2002-05-23, 64%, 31%, 31%
+agroup1, 2002-05-25, 105%, 64%, 64%
+agroup1, 2002-05-27, 156%, 105%, 25%
+agroup1, 2002-05-28, 238%, 170%, 65%
+agroup1, 2002-07-08, 346%, 32%, 32%
+agroup1, 2002-12-02, 484%, 31%, 31%
+agroup1, 2003-11-14, 671%, 32%, 32%
+agroup1, 2003-11-24, 910%, 73%, 31%
+agroup1, 2003-12-27, 1,162%, 25%, 25%
+agroup1, 2004-03-01, 1,478%, 25%, 25%
+agroup1, 2004-03-04, 1,888%, 58%, 58%
+agroup1, Total, 340%, 340%, 340%
+BigMart Foodstores, 2002-03-01, 34%, 34%, 34%
+BigMart Foodstores, 2002-06-23, 80%, 34%, 34%
+BigMart Foodstores, 2002-08-06, 141%, 34%, 34%
+BigMart Foodstores, 2002-08-13, 225%, 81%, 35%
+BigMart Foodstores, 2002-10-15, 339%, 35%, 35%
+BigMart Foodstores, 2003-11-14, 492%, 35%, 35%
+BigMart Foodstores, 2004-02-16, 693%, 34%, 34%
+BigMart Foodstores, 2004-03-04, 963%, 34%, 34%
+BigMart Foodstores, Total, 275%, 275%, 275%
+Computer Tech, 2002-03-06, NULL, NULL, NULL
+Computer Tech, 2002-10-10, NULL, NULL, NULL
+Computer Tech, 2002-12-21, NULL, NULL, NULL
+Computer Tech, 2003-11-24, NULL, NULL, NULL
+Computer Tech, 2004-01-27, NULL, NULL, NULL
+Computer Tech, 2004-02-06, NULL, NULL, NULL
+Computer Tech, Total, NULL, NULL, NULL
+Daycare One, 2002-03-19, 4%, 4%, 4%
+Daycare One, 2002-04-26, 8%, 4%, 4%
+Daycare One, 2002-12-19, 12%, 4%, 4%
+Daycare One, 2003-01-03, 17%, 4%, 4%
+Daycare One, 2004-01-20, 22%, 4%, 4%
+Daycare One, 2004-03-06, 25%, 3%, 3%
+Daycare One, Total, 23%, 23%, 23%
+Direct Sales, 2002-04-05, NULL, NULL, NULL
+Direct Sales, 2002-04-12, NULL, NULL, NULL
+Direct Sales, 2002-05-29, NULL, NULL, NULL
+Direct Sales, 2002-06-08, NULL, NULL, NULL
+Direct Sales, 2002-07-17, NULL, NULL, NULL
+Direct Sales, 2002-07-22, NULL, NULL, NULL
+Direct Sales, 2002-10-15, NULL, NULL, NULL
+Direct Sales, 2002-11-05, NULL, NULL, NULL
+Direct Sales, 2002-11-16, NULL, NULL, NULL
+Direct Sales, 2003-01-06, NULL, NULL, NULL
+Direct Sales, 2003-01-11, NULL, NULL, NULL
+Direct Sales, 2004-01-16, NULL, NULL, NULL
+Direct Sales, 2004-03-06, NULL, NULL, NULL
+Direct Sales, Total, NULL, NULL, NULL
+Eastern Data, 2002-03-08, 5%, 5%, 5%
+Eastern Data, 2002-07-04, 10%, 5%, 5%
+Eastern Data, 2002-11-21, 16%, 5%, 5%
+Eastern Data, 2003-02-25, 22%, 5%, 5%
+Eastern Data, 2004-01-02, 28%, 5%, 5%
+Eastern Data, 2004-03-25, 33%, 4%, 4%
+Eastern Data, Total, 29%, 29%, 29%
+Ernst Handel, 2002-07-13, NULL, NULL, NULL
+Ernst Handel, 2002-10-23, NULL, NULL, NULL
+Ernst Handel, 2002-12-13, NULL, NULL, NULL
+Ernst Handel, Total, NULL, NULL, NULL
+Fast Transportation, 2002-05-10, 14%, 14%, 14%
+Fast Transportation, 2002-05-13, 29%, 29%, 13%
+Fast Transportation, 2002-08-01, 46%, 13%, 13%
+Fast Transportation, 2002-08-02, 66%, 29%, 29%
+Fast Transportation, 2002-10-25, 89%, 14%, 14%
+Fast Transportation, 2002-11-28, 116%, 14%, 14%
+Fast Transportation, 2003-01-19, 146%, 14%, 14%
+Fast Transportation, 2003-01-26, 178%, 29%, 13%
+Fast Transportation, 2003-02-21, 214%, 13%, 13%
+Fast Transportation, 2003-11-21, 258%, 14%, 14%
+Fast Transportation, Total, 136%, 136%, 136%
+FISGA Corp, 2002-05-29, 21%, 21%, 21%
+FISGA Corp, 2003-01-08, 45%, 20%, 20%
+FISGA Corp, 2003-01-14, 76%, 45%, 21%
+FISGA Corp, 2003-11-16, 113%, 21%, 21%
+FISGA Corp, 2003-12-21, 157%, 21%, 21%
+FISGA Corp, 2004-01-04, 211%, 21%, 21%
+FISGA Corp, 2004-03-07, 277%, 21%, 21%
+FISGA Corp, Total, 146%, 146%, 146%
+FMG Consulting, 2002-02-05, 35%, 35%, 35%
+FMG Consulting, 2002-03-06, 130%, 70%, 70%
+FMG Consulting, 2002-09-28, 208%, 34%, 34%
+FMG Consulting, 2002-11-21, 312%, 34%, 34%
+FMG Consulting, 2003-01-18, 452%, 34%, 34%
+FMG Consulting, 2003-02-28, 640%, 34%, 34%
+FMG Consulting, 2003-11-27, 899%, 35%, 35%
+FMG Consulting, Total, 276%, 276%, 276%
+Folk Mining, 2002-02-06, 24%, 24%, 24%
+Folk Mining, 2002-02-24, 54%, 54%, 24%
+Folk Mining, 2002-03-21, 89%, 23%, 23%
+Folk Mining, 2002-04-25, 135%, 24%, 24%
+Folk Mining, 2002-07-28, 191%, 24%, 24%
+Folk Mining, 2002-08-06, 258%, 23%, 23%
+Folk Mining, 2002-12-02, 344%, 24%, 24%
+Folk Mining, 2004-02-20, 446%, 23%, 23%
+Folk Mining, Total, 189%, 189%, 189%
+George Services, 2002-05-05, 9%, 9%, 9%
+George Services, 2002-06-18, 18%, 8%, 8%
+George Services, 2003-02-10, 27%, 8%, 8%
+George Services, 2004-01-31, 37%, 8%, 8%
+George Services, 2004-02-20, 50%, 9%, 9%
+George Services, Total, 42%, 42%, 42%
+High Society Investments, 2002-04-19, 25%, 25%, 25%
+High Society Investments, 2002-06-04, 58%, 26%, 26%
+High Society Investments, 2002-07-24, 97%, 25%, 25%
+High Society Investments, 2002-09-05, 148%, 26%, 26%
+High Society Investments, 2002-10-17, 210%, 25%, 25%
+High Society Investments, 2002-12-29, 288%, 25%, 25%
+High Society Investments, 2003-12-02, 384%, 25%, 25%
+High Society Investments, Total, 177%, 177%, 177%
+Infinity Software, 2002-06-14, NULL, NULL, NULL
+Infinity Software, 2002-08-26, NULL, NULL, NULL
+Infinity Software, 2002-10-25, NULL, NULL, NULL
+Infinity Software, 2002-11-08, NULL, NULL, NULL
+Infinity Software, 2002-11-12, NULL, NULL, NULL
+Infinity Software, 2002-12-09, NULL, NULL, NULL
+Infinity Software, 2002-12-11, NULL, NULL, NULL
+Infinity Software, 2004-02-29, NULL, NULL, NULL
+Infinity Software, Total, NULL, NULL, NULL
+InterLand Services, 2002-04-25, 16%, 16%, 16%
+InterLand Services, 2002-06-30, 35%, 16%, 16%
+InterLand Services, 2003-01-14, 56%, 16%, 16%
+InterLand Services, 2003-01-23, 81%, 35%, 16%
+InterLand Services, 2003-02-05, 110%, 16%, 16%
+InterLand Services, 2003-12-01, 142%, 15%, 15%
+InterLand Services, 2003-12-28, 180%, 33%, 16%
+InterLand Services, 2003-12-29, 225%, 55%, 35%
+InterLand Services, 2004-03-11, 277%, 16%, 16%
+InterLand Services, Total, 143%, 143%, 143%
+Interstate Shop, 2002-03-22, 3%, 3%, 3%
+Interstate Shop, 2002-05-02, 5%, 2%, 2%
+Interstate Shop, 2002-10-17, 7%, 2%, 2%
+Interstate Shop, 2002-10-28, 9%, 4%, 2%
+Interstate Shop, 2002-12-25, 11%, 2%, 2%
+Interstate Shop, 2003-11-30, 15%, 3%, 3%
+Interstate Shop, Total, 14%, 14%, 14%
+Loctite Corp., 2002-02-21, 8%, 8%, 8%
+Loctite Corp., 2002-03-22, 17%, 8%, 8%
+Loctite Corp., 2002-04-09, 25%, 7%, 7%
+Loctite Corp., 2002-08-30, 35%, 8%, 8%
+Loctite Corp., 2003-01-14, 46%, 8%, 8%
+Loctite Corp., 2003-12-14, 57%, 8%, 8%
+Loctite Corp., 2004-01-02, 70%, 8%, 8%
+Loctite Corp., 2004-03-04, 83%, 8%, 8%
+Loctite Corp., 2004-03-13, 96%, 16%, 7%
+Loctite Corp., Total, 70%, 70%, 70%
+Northwest Outfitters, 2002-02-11, 32%, 32%, 32%
+Northwest Outfitters, 2002-04-06, 76%, 33%, 33%
+Northwest Outfitters, 2002-05-21, 132%, 32%, 32%
+Northwest Outfitters, 2002-06-10, 208%, 33%, 33%
+Northwest Outfitters, 2002-08-06, 310%, 33%, 33%
+Northwest Outfitters, 2002-08-10, 441%, 76%, 76%
+Northwest Outfitters, 2002-09-21, 614%, 32%, 32%
+Northwest Outfitters, 2003-02-06, 843%, 32%, 32%
+Northwest Outfitters, 2004-02-29, 1,145%, 32%, 32%
+Northwest Outfitters, 2004-03-06, 1,555%, 33%, 76%
+Northwest Outfitters, Total, 324%, 324%, 324%
+Nova Tera, 2002-02-05, 30%, 30%, 30%
+Nova Tera, 2002-03-01, 107%, 59%, 59%
+Nova Tera, 2002-04-01, 169%, 30%, 30%
+Nova Tera, 2002-06-08, 247%, 29%, 29%
+Nova Tera, 2002-08-17, 347%, 29%, 29%
+Nova Tera, 2002-08-21, 477%, 66%, 29%
+Nova Tera, 2003-02-20, 644%, 29%, 29%
+Nova Tera, 2004-03-15, 867%, 30%, 30%
+Nova Tera, Total, 265%, 265%, 265%
+Old World Insurance, 2002-02-10, 8%, 8%, 8%
+Old World Insurance, 2002-09-14, 17%, 8%, 8%
+Old World Insurance, 2002-10-10, 26%, 8%, 8%
+Old World Insurance, 2002-10-15, 36%, 17%, 8%
+Old World Insurance, 2002-12-06, 48%, 9%, 9%
+Old World Insurance, 2003-12-24, 60%, 8%, 8%
+Old World Insurance, 2004-02-20, 73%, 8%, 8%
+Old World Insurance, 2004-03-04, 87%, 8%, 8%
+Old World Insurance, Total, 65%, 65%, 65%
+Pharma Research, 2002-06-03, 36%, 36%, 36%
+Pharma Research, 2002-10-21, 86%, 37%, 37%
+Pharma Research, 2003-02-01, 155%, 37%, 37%
+Pharma Research, 2003-11-18, 250%, 37%, 37%
+Pharma Research, 2003-12-05, 376%, 36%, 36%
+Pharma Research, 2004-01-09, 547%, 36%, 36%
+Pharma Research, Total, 219%, 219%, 219%
+Quick Stop, 2002-02-11, 12%, 12%, 12%
+Quick Stop, 2002-06-20, 24%, 11%, 11%
+Quick Stop, 2002-07-11, 38%, 11%, 11%
+Quick Stop, 2002-09-03, 55%, 12%, 12%
+Quick Stop, 2002-10-17, 73%, 12%, 12%
+Quick Stop, 2003-02-17, 92%, 11%, 11%
+Quick Stop, 2003-02-28, 115%, 24%, 12%
+Quick Stop, 2003-12-12, 139%, 11%, 11%
+Quick Stop, Total, 92%, 92%, 92%
+Rutgers Bank, 2002-03-12, 26%, 26%, 26%
+Rutgers Bank, 2002-05-01, 60%, 27%, 27%
+Rutgers Bank, 2002-05-15, 103%, 61%, 27%
+Rutgers Bank, 2002-08-23, 156%, 26%, 26%
+Rutgers Bank, 2002-10-28, 225%, 27%, 27%
+Rutgers Bank, 2002-11-30, 313%, 27%, 27%
+Rutgers Bank, 2003-01-30, 425%, 27%, 27%
+Rutgers Bank, 2003-02-15, 561%, 26%, 26%
+Rutgers Bank, Total, 213%, 213%, 213%
+Scheggie Services, 2002-10-11, 17%, 17%, 17%
+Scheggie Services, 2003-02-15, 36%, 16%, 16%
+Scheggie Services, 2003-02-23, 57%, 35%, 16%
+Scheggie Services, 2004-01-08, 83%, 16%, 16%
+Scheggie Services, 2004-02-02, 114%, 17%, 17%
+Scheggie Services, 2004-02-08, 150%, 37%, 17%
+Scheggie Services, Total, 99%, 99%, 99%
+Software Specialists, 2002-02-15, NULL, NULL, NULL
+Software Specialists, 2002-11-20, NULL, NULL, NULL
+Software Specialists, 2002-12-02, NULL, NULL, NULL
+Software Specialists, 2002-12-16, NULL, NULL, NULL
+Software Specialists, 2003-11-19, NULL, NULL, NULL
+Software Specialists, 2003-11-22, NULL, NULL, NULL
+Software Specialists, 2004-02-29, NULL, NULL, NULL
+Software Specialists, 2004-03-17, NULL, NULL, NULL
+Software Specialists, Total, NULL, NULL, NULL
+Specialty Retail, 2002-02-12, NULL, NULL, NULL
+Specialty Retail, 2002-05-09, NULL, NULL, NULL
+Specialty Retail, 2002-05-15, NULL, NULL, NULL
+Specialty Retail, 2002-09-03, NULL, NULL, NULL
+Specialty Retail, 2002-12-29, NULL, NULL, NULL
+Specialty Retail, Total, NULL, NULL, NULL
+The Big Cat, 2002-05-20, 14%, 14%, 14%
+The Big Cat, 2002-06-01, 31%, 15%, 15%
+The Big Cat, 2002-09-28, 51%, 15%, 15%
+The Big Cat, 2002-11-24, 73%, 15%, 15%
+The Big Cat, 2003-12-17, 99%, 15%, 15%
+The Big Cat, 2004-03-29, 127%, 14%, 14%
+The Big Cat, Total, 88%, 88%, 88%
+Tricounty Auto, 2002-03-04, 29%, 29%, 29%
+Tricounty Auto, 2002-03-06, 68%, 68%, 68%
+Tricounty Auto, 2002-04-01, 118%, 30%, 30%
+Tricounty Auto, 2002-04-21, 181%, 68%, 29%
+Tricounty Auto, 2002-05-02, 263%, 29%, 29%
+Tricounty Auto, 2002-09-18, 372%, 30%, 30%
+Tricounty Auto, 2002-09-24, 508%, 68%, 29%
+Tricounty Auto, 2003-12-26, 691%, 30%, 30%
+Tricounty Auto, 2004-01-11, 928%, 30%, 30%
+Tricounty Auto, 2004-03-04, 1,226%, 29%, 29%
+Tricounty Auto, Total, 295%, 295%, 295%
+Tumbleweed Gaming, 2002-05-17, 36%, 36%, 36%
+Tumbleweed Gaming, 2002-11-01, 85%, 36%, 36%
+Tumbleweed Gaming, 2004-02-14, 150%, 35%, 35%
+Tumbleweed Gaming, Total, 107%, 107%, 107%
+Ubermeyer, 2002-04-06, 20%, 20%, 20%
+Ubermeyer, 2002-04-15, 44%, 44%, 20%
+Ubermeyer, 2002-04-25, 73%, 73%, 20%
+Ubermeyer, 2002-04-30, 106%, 106%, 19%
+Ubermeyer, 2002-05-15, 145%, 19%, 19%
+Ubermeyer, 2002-07-11, 194%, 20%, 20%
+Ubermeyer, 2002-09-01, 249%, 19%, 19%
+Ubermeyer, 2004-01-23, 319%, 20%, 20%
+Ubermeyer, 2004-02-12, 399%, 19%, 19%
+Ubermeyer, 2004-03-21, 499%, 20%, 20%
+Ubermeyer, Total, 196%, 196%, 196%
+West Coast Customs, 2002-03-23, 25%, 25%, 25%
+West Coast Customs, 2002-05-21, 55%, 24%, 24%
+West Coast Customs, 2002-06-20, 92%, 24%, 24%
+West Coast Customs, 2002-07-23, 140%, 25%, 25%
+West Coast Customs, 2002-08-05, 200%, 25%, 25%
+West Coast Customs, 2002-09-10, 272%, 24%, 24%
+West Coast Customs, 2003-02-13, 362%, 24%, 24%
+West Coast Customs, 2003-11-14, 477%, 25%, 25%
+West Coast Customs, 2004-02-05, 616%, 24%, 24%
+West Coast Customs, 2004-02-24, 788%, 54%, 24%
+West Coast Customs, 2004-02-25, 1,009%, 92%, 55%
+West Coast Customs, 2004-03-06, 1,287%, 25%, 25%
+West Coast Customs, Total, 294%, 294%, 294%
+Whittaker & Co, Inc, 2002-04-30, 20%, 20%, 20%
+Whittaker & Co, Inc, 2003-12-08, 44%, 20%, 20%
+Whittaker & Co, Inc, 2003-12-19, 73%, 44%, 20%
+Whittaker & Co, Inc, 2004-01-12, 107%, 20%, 20%
+Whittaker & Co, Inc, 2004-03-26, 149%, 20%, 20%
+Whittaker & Co, Inc, Total, 100%, 100%, 100%
+World Software Resellers, 2002-04-01, NULL, NULL, NULL
+World Software Resellers, 2002-05-15, NULL, NULL, NULL
+World Software Resellers, 2002-06-26, NULL, NULL, NULL
+World Software Resellers, 2002-06-29, NULL, NULL, NULL
+World Software Resellers, 2002-07-20, NULL, NULL, NULL
+World Software Resellers, 2002-10-04, NULL, NULL, NULL
+World Software Resellers, 2002-10-08, NULL, NULL, NULL
+World Software Resellers, 2003-02-25, NULL, NULL, NULL
+World Software Resellers, 2004-01-02, NULL, NULL, NULL
+World Software Resellers, 2004-01-23, NULL, NULL, NULL
+World Software Resellers, 2004-02-29, NULL, NULL, NULL
+World Software Resellers, 2004-03-29, NULL, NULL, NULL
+World Software Resellers, Total, NULL, NULL, NULL
+XO Resellers, 2002-02-21, NULL, NULL, NULL
+XO Resellers, 2002-02-28, NULL, NULL, NULL
+XO Resellers, 2002-03-09, NULL, NULL, NULL
+XO Resellers, 2002-03-15, NULL, NULL, NULL
+XO Resellers, 2002-03-27, NULL, NULL, NULL
+XO Resellers, 2002-09-06, NULL, NULL, NULL
+XO Resellers, Total, NULL, NULL, NULL

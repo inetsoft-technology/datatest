@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 6)
+[customer_id][reseller][state][product_id][instock][product_name]
+[4][false][PA][4][true][Green Planet]
+[6][true][IL][6][true][[NULL]]
+[8][false][CA][8][true][WebCalendar]
+[9][false][NJ][9][false][True Action]
+[9][true][NJ][9][false][True Action]
+[11][false][OH][11][true][Mega Icons]
+[13][false][NY][13][false][Easy Chess]
+[16][true][NY][16][true][Combat Hero]
+[17][false][AK][17][false][Animal World]
+[19][true][PA][19][true][Math for Me]
+

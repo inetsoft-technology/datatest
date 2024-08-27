@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 6)
+[INTEGER][FLOAT][DOUBLE][BYTE][SHORT][LONG]
+[565][12][0][5][56][1545652125]
+[5752][0][2.1217][42][85][6565]
+

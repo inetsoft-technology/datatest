@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 4)
+Category, Color, Reseller Sales Amount, Discount Amount
+Accessories, Blue, 91052.8681, 1314.2907
+Bikes, Red, 12114587.8898, 35541.9457
+Clothing, Multi, 542559.5121, 2551.3208
+Components, Black, 4087998.0118, 1079.4744
+Components, NA, 417120.9711, 316.1342
+Components, Yellow, 1997171.282, 1545.1703

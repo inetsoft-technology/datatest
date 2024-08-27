@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+Employee, Year, Sum, % Change from previous month of Month(Order Date): Sum(Order Number)
+Annie, 2021 Oct, 49121, -20%
+Annie, 2021 Nov, 12292, -75%
+Robert, 2021 Nov, 36878, 200%
+Robert, 2021 Oct, 12279, -67%
+Eric, 2021 Nov, 24593, 100%
+Eric, 2021 Oct, 12285, -75%

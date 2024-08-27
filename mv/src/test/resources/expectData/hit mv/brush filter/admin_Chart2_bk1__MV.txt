@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[Customer:State][Customer:City][Sum(Product:Total)]
+[MA][Boston][1125244]
+[MA][Cambridge][424376]
+[MA][Springfield][585898]
+

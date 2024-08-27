@@ -1,0 +1,17 @@
+The table size(row x col) is: (15 x 3)
+[reseller][state][Sum(customer_id)]
+[false][[NULL]][1400]
+[false][AK][576]
+[false][CA][480]
+[false][FL][1020]
+[false][NJ][468]
+[false][NY][1170]
+[false][OH][242]
+[false][PA][240]
+[true][CA][2240]
+[true][IL][336]
+[true][NJ][720]
+[true][NY][798]
+[true][PA][760]
+[true][TX][1138]
+

@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 4)
+Quarter(Order:Date), MonthOfYear(Order:Date), Sum(Order:Paid), Change from previous year of Quarter(Order:Date): Sum(Order:Paid)
+2022 1st, Jan, 11, NULL
+2022 1st, Feb, 15, NULL
+2022 1st, Mar, 9, NULL
+2022 2nd, Apr, 20, NULL
+2022 2nd, May, 18, NULL
+2022 2nd, Jun, 13, NULL
+2022 3rd, Jul, 12, NULL
+2022 3rd, Aug, 14, NULL
+2022 3rd, Sep, 12, NULL
+2022 4th, Oct, 14, NULL
+2022 4th, Nov, 22, NULL
+2022 4th, Dec, 11, NULL
+2023 1st, Feb, 13, -2
+2023 1st, Jan, 15, 4
+2023 1st, Mar, 15, 6
+2023 2nd, Apr, 14, -6
+2023 2nd, May, 13, -5
+2023 2nd, Jun, 13, 0
+2023 3rd, Aug, 12, -2
+2023 3rd, Sep, 10, -2
+2023 3rd, Jul, 13, 1
+2023 4th, Nov, 13, -9
+2023 4th, Dec, 11, 0
+2023 4th, Oct, 16, 2

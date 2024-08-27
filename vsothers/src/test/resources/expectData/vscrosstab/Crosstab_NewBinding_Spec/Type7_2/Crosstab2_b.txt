@@ -1,0 +1,28 @@
+The data size(row x col) is:(27 x 7)
+PRODUCT_NAME, 2000, 2000, 2001, 2001, 2006, 2006
+NULL, Sum(PRICE), agg_calc, Sum(PRICE), agg_calc, Sum(PRICE), agg_calc
+17 Inch LCD, NULL, NULL, 210, 10, NULL, NULL
+19 inch LCD, NULL, NULL, NULL, NULL, 310, 15
+Animal World, NULL, NULL, NULL, NULL, 59, 50
+Barbie"s Fashion, NULL, NULL, NULL, NULL, 79, 50
+Combat Hero, NULL, NULL, 29, 50, NULL, NULL
+Easy Chess, 35, 50, NULL, NULL, NULL, NULL
+Fancy Menus, NULL, NULL, NULL, NULL, 49, 50
+Fast Go Game, 200, 25, NULL, NULL, NULL, NULL
+Fast Mail, 39, 50, NULL, NULL, NULL, NULL
+Green Planet, NULL, NULL, 75, 25, NULL, NULL
+House Hunter, NULL, NULL, 129, 50, NULL, NULL
+Info Folder, NULL, NULL, 399, 50, NULL, NULL
+InsideView, NULL, NULL, 125, 50, NULL, NULL
+Learn ABC, NULL, NULL, NULL, NULL, 75, 50
+Math for Me, NULL, NULL, NULL, NULL, 235, 25
+Mega Icons, NULL, NULL, NULL, NULL, 550, 25
+MeToo AppServer, NULL, NULL, NULL, NULL, 3000, 10
+NetStorage, NULL, NULL, NULL, NULL, 2850, 5
+Sync Me, NULL, NULL, NULL, NULL, 145, 25
+True Action, NULL, NULL, NULL, NULL, 398, 25
+Web Bridge, NULL, NULL, 105, 50, NULL, NULL
+WebCalendar, 248, 25, NULL, NULL, NULL, NULL
+Wireless Keyboard, NULL, NULL, 40, 25, NULL, NULL
+Wireless Mouse, NULL, NULL, 40, 25, NULL, NULL
+Xconnect Server, NULL, NULL, 2250, 10, NULL, NULL

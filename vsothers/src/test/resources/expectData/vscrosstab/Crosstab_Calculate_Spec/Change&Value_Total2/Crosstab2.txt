@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 14)
+Calc_state, NULL, 2002, 2002, 2002, 2003, 2003, 2003, 2004, 2004, 2004, 2005, 2005, Grand Total
+NULL, NULL, 01, 02, Total, 01, 02, Total, 01, 02, Total, 02, Total, NULL
+MA, Sum(fecid), 19, 49, $68.00, 39, 50, $89.00, 25, 19, $44.00, 84, $84.00, 285
+MA, Change from previous by row: Sum(fecid), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+MA, Value of last Year(Calc_datetime): Sum(fecid), 0, 84, 84, 0, 84, 84, 0, 84, 84, 84, 84, 285
+TX, Sum(fecid), NULL, 30, $30.00, NULL, 49, $49.00, NULL, 141, $141.00, NULL, NULL, 220
+TX, Change from previous by row: Sum(fecid), -19, -19, -38, -39, -1, -40, -25, 122, 97, -84, -84, -65.00
+TX, Value of last Year(Calc_datetime): Sum(fecid), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 220
+WA, Sum(fecid), NULL, 32, $32.00, NULL, 65, $65.00, NULL, 33, $33.00, 65, $65.00, 195
+WA, Change from previous by row: Sum(fecid), 0, 2, 2, 0, 16, 16, 0, -108, -108, 65, 65, -25.00
+WA, Value of last Year(Calc_datetime): Sum(fecid), 0, 65, 65, 0, 65, 65, 0, 65, 65, 65, 65, 195
+Others, Sum(fecid), 33, 53, $86.00, 61, 190, $251.00, 20, 133, $153.00, 47, $47.00, 537
+Others, Change from previous by row: Sum(fecid), 33, 21, 54, 61, 125, 186, 20, 100, 120, -18, -18, 342.00
+Others, Value of last Year(Calc_datetime): Sum(fecid), 0, 47, 47, 0, 47, 47, 0, 47, 47, 47, 47, 537
+Grand Total, Sum(fecid), 52, 164, 216, 100, 354, 454, 45, 326, 371, 196, 196, 1237
+Grand Total, Change from previous by row: Sum(fecid), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+Grand Total, Value of last Year(Calc_datetime): Sum(fecid), 0, 196, 196, 0, 196, 196, 0, 196, 196, 196, 196, 1237

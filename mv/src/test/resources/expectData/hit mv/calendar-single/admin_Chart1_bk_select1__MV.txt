@@ -1,0 +1,10 @@
+The table size(row x col) is: (8 x 2)
+[DISCOUNT][Average(CUSTOMER_ID)]
+[[NULL]][20]
+[0][17]
+[0.05][7]
+[0.1][18]
+[0.15][6]
+[0.2][21]
+[0.25][12]
+

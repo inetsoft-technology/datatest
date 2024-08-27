@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 2)
+[reseller][state]
+[false][AK]
+[false][Bridge game]
+[false][CA]
+[false][Chess game]
+[false][Document management tool]
+[false][Educational software]
+[false][Girl's game]
+[false][House hunting assistant]
+[false][Java game toolkit]
+[false][NJ]
+[false][PA]
+

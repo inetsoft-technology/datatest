@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[Worker Type][Sum(Worker Pay)]
+[General Workers][39000]
+[Rigger][43000]
+

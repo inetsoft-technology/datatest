@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[child_id][parent_id][label_string][label_date]
+[5][1][New England][2019-12-01 00:00:00]
+[7][2][East North Central][2019-12-16 00:00:00]
+[8][2][West North Central][2017-10-01 00:00:00]
+

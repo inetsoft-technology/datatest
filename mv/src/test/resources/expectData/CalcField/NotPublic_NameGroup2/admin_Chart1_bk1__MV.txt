@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[DataGroup(CalcField1)][Average(CalcField)]
+[A][109.3333]
+[Familia Computer Services][108]
+[George Services][123]
+

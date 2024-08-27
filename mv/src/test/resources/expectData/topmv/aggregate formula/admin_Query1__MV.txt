@@ -1,0 +1,16 @@
+The table size(row x col) is: (14 x 2)
+[CUSTOMER_ID][PAID]
+[1][true]
+[1][true]
+[3][true]
+[4][true]
+[5][true]
+[6][false]
+[7][false]
+[8][false]
+[9][false]
+[14][false]
+[30][true]
+[31][false]
+[35][false]
+

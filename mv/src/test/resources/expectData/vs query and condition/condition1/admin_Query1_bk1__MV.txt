@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 9)
+[ORDERS.CUSTOMERS:ADDRESS][ORDERS.CUSTOMERS:CITY][ORDERS.CUSTOMERS:COMPANY_NAME][ORDERS.CUSTOMERS:CUSTOMER_ID][ORDERS.CUSTOMERS:for][ORDERS.CUSTOMERS:REGION_ID][ORDERS.CUSTOMERS:RESELLER][ORDERS.CUSTOMERS:STATE][ORDERS.CUSTOMERS:ZIP]
+[1230 Hoes Lane][New York][Old World Insurance][7][NY New York 1230 Hoes Lane][1][true][NY][08854]
+[23 Tasaga Ave.][Houston][Big Ed"s BBQ][22][TX Houston 23 Tasaga Ave.][2][true][TX][23421]
+[38 Commercial Ave.][Plainfield][Pharma Research][35][NJ Plainfield 38 Commercial Ave.][1][true][NJ][08273]
+[487 City St.][Las Vegas][Tumbleweed Gaming][32][NV Las Vegas 487 City St.][2][true][NV][93847]
+[71 Mulberry St.][Denver][Quick Stop][8][CO Denver 71 Mulberry St.][2][true][CO][98839]
+[77 Druguz Blvd.][Orlando][Fast Transportation][12][FL Orlando 77 Druguz Blvd.][1][true][FL][12343]
+[77 Druguz Blvd.][Orlando][Fast Transportation][12][FL Orlando 77 Druguz Blvd.][1][true][FL][12343]
+[88 Rio Grand Ave.][Boulder][Ernst Handel][4][CO Boulder 88 Rio Grand Ave.][1][false][CO][38923]
+[987 First Ave.][Dallas][Nova Tera][26][TX Dallas 987 First Ave.][2][true][TX][23123]
+

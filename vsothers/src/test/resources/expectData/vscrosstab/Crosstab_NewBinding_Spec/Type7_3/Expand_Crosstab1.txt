@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 6)
+Quarter, MonthOfYear(PRODUCE_DATE), DayOfMonth(PRODUCE_DATE), PRODUCT_NAME, NULL, PRICE/PID
+1st, Jan, 1, MeToo AppServer, PRICE, 3000
+1st, Jan, 1, MeToo AppServer, Sum(PRODUCT_ID), 12
+1st, Jan, 1, NetStorage, PRICE, 2850
+1st, Jan, 1, NetStorage, Sum(PRODUCT_ID), 25
+1st, Jan, 1, Xconnect Server_test, PRICE, 2250
+1st, Jan, 1, Xconnect Server_test, Sum(PRODUCT_ID), 1
+4th, NULL, NULL, WebCalendar, PRICE, 248
+4th, NULL, NULL, WebCalendar, Sum(PRODUCT_ID), 8
+4th, NULL, NULL, Fast Go Game, PRICE, 200
+4th, NULL, NULL, Fast Go Game, Sum(PRODUCT_ID), 14
+4th, NULL, NULL, Fast Mail, PRICE, 39
+4th, NULL, NULL, Fast Mail, Sum(PRODUCT_ID), 6

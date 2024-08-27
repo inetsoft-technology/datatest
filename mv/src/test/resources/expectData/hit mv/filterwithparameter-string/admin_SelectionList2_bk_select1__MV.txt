@@ -1,0 +1,7 @@
+[MD]   SelectState:[8]
+[NJ]   SelectState:[8]
+[NV]   SelectState:[8]
+[NY]   SelectState:[8]
+[PA]   SelectState:[9]
+[TX]   SelectState:[8]
+[WA]   SelectState:[8]

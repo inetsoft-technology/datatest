@@ -1,0 +1,18 @@
+The table size(row x col) is: (16 x 5)
+[DataGroup(f_cid)][LAST_NAME][Sum(CONTACT_ID)][Mode(CUSTOMER_ID)][First(CUSTOMER_ID_1, CONTACT_ID)]
+[[NULL]][Dreckle][34][34][[NULL]]
+[[NULL]][Francone][32][32][[NULL]]
+[[NULL]][Kline][35][35][[NULL]]
+[[NULL]][Lewis][33][33][[NULL]]
+[1][Alen][42][21][1]
+[10][Pantaliano][66][22][10]
+[11][Gray][46][23][11]
+[12][Parket][48][24][12]
+[13&14][Gonzalez][26][26][14]
+[13&14][Ledes][40][25][13]
+[15][Oshinsky][27][27][15]
+[16][Bartles][28][28][16]
+[17][Curtiss][29][29][17]
+[18][Wallace][30][30][18]
+[19][Gillette][31][31][19]
+

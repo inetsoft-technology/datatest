@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 5)
+[CUSTOMER_ID][EMPLOYEE_ID][ORDER_DATE][DISCOUNT][Year(ORDER_DATE)]
+[8][4][2005-05-08 00:00:00][0.15][2005-01-01 00:00:00]
+

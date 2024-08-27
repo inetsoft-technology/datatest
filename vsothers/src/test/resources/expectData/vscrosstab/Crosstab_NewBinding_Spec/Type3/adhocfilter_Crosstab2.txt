@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 5)
+QuarterOfYear(Quarter(range_month)), WeekOfYear(expDate), NULL, 0, 1
+NULL, NULL, NULL, AA_NamedGroup, CA
+1st, 47, Average(expid), 28, NULL
+1st, 47, Sum(CUSTOMER_ID), 28, NULL
+1st, 49, Average(expid), 12, NULL
+1st, 49, Sum(CUSTOMER_ID), 6, NULL
+2nd, 1, Average(expid), 26, NULL
+2nd, 1, Sum(CUSTOMER_ID), 26, NULL
+2nd, 49, Average(expid), 40, NULL
+2nd, 49, Sum(CUSTOMER_ID), 20, NULL
+2nd, 51, Average(expid), NULL, 26
+2nd, 51, Sum(CUSTOMER_ID), NULL, 13

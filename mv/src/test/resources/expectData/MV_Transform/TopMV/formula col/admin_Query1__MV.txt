@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 11)
+[address][city][company][contact][customer_id][reseller][state][zip][forjs][forsql][range1]
+[21 Doger Sound Blvd.][Austin][FISGA Corp][[NULL]][17][true][TX][28122][TXtrue][17.36][13-18]
+[300 Great Swamp Rd.][George Park][Software Specialists][Eduardo Freyre][19][true][PA][23445][PAtrue][19.36][>18]
+[822 Technology Dr.][San Jose][InterLand Services][Horst Braunschwad][14][true][CA][83923][CAtrue][14.36][13-18]
+[839 Via Gaty Dr.][Long Island][Scheggie Services][Paula Camino][15][true][NY][12334][NYtrue][15.36][13-18]
+

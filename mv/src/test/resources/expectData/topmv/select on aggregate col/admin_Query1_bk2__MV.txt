@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[EMPLOYEE_ID][DISCOUNT]
+[4][0.01]
+[19][0.2]
+[22][0.15]
+

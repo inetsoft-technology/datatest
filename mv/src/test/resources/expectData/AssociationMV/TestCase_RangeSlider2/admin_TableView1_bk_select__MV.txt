@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[STRING][CHARACTER][BOOLEAN]
+[efefe][f3rfsdfsd][true]
+[fd][fwf23f][true]
+[fdsscv][fe43r4][true]
+

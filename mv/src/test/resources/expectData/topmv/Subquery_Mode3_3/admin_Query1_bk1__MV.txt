@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 3)
+[product_id][product_name][supplier_id]
+[11][Mega Icons][4]
+

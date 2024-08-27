@@ -1,0 +1,56 @@
+The data size(row x col) is:(55 x 6)
+Month(Order Date), NULL, Annie, Eric, Robert, Sue
+2020 May, Sum(Total), 180599, 209474, 60757, 100299
+2020 May, Value of previous quarter of Month(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2020 Jun, Sum(Total), 39577, 98261, 152449, 88393
+2020 Jun, Value of previous quarter of Month(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2020 Jul, Sum(Total), 165170, 33511, 59038, 53724
+2020 Jul, Value of previous quarter of Month(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2020 Aug, Sum(Total), 6747, 226941, 103000, 92894
+2020 Aug, Value of previous quarter of Month(Order Date): Sum(Total), 180599, 209474, 60757, 100299
+2020 Sep, Sum(Total), 138633, 1000, 138661, 13806
+2020 Sep, Value of previous quarter of Month(Order Date): Sum(Total), 39577, 98261, 152449, 88393
+2020 Oct, Sum(Total), 48093, 66496, 32409, 123834
+2020 Oct, Value of previous quarter of Month(Order Date): Sum(Total), 165170, 33511, 59038, 53724
+2020 Nov, Sum(Total), 184083, 137997, 36867, 216898
+2020 Nov, Value of previous quarter of Month(Order Date): Sum(Total), 6747, 226941, 103000, 92894
+2020 Dec, Sum(Total), 71674, 78524, 117434, 53680
+2020 Dec, Value of previous quarter of Month(Order Date): Sum(Total), 138633, 1000, 138661, 13806
+2021 Jan, Sum(Total), 95270, 48297, 5443, 78602
+2021 Jan, Value of previous quarter of Month(Order Date): Sum(Total), 48093, 66496, 32409, 123834
+2021 Feb, Sum(Total), 41101, 165226, 136591, 132650
+2021 Feb, Value of previous quarter of Month(Order Date): Sum(Total), 184083, 137997, 36867, 216898
+2021 Mar, Sum(Total), NULL, 64846, 75451, 130693
+2021 Mar, Value of previous quarter of Month(Order Date): Sum(Total), 71674, 78524, 117434, 53680
+2021 Apr, Sum(Total), 49899, 226328, 30375, 109483
+2021 Apr, Value of previous quarter of Month(Order Date): Sum(Total), 95270, 48297, 5443, 78602
+2021 May, Sum(Total), 55413, 39026, 21334, 121343
+2021 May, Value of previous quarter of Month(Order Date): Sum(Total), 41101, 165226, 136591, 132650
+2021 Jun, Sum(Total), 215440, 157821, 18799, 234429
+2021 Jun, Value of previous quarter of Month(Order Date): Sum(Total), NULL, 64846, 75451, 130693
+2021 Jul, Sum(Total), 38253, 23152, 101817, 96344
+2021 Jul, Value of previous quarter of Month(Order Date): Sum(Total), 49899, 226328, 30375, 109483
+2021 Aug, Sum(Total), 17881, 60065, 99408, 165413
+2021 Aug, Value of previous quarter of Month(Order Date): Sum(Total), 55413, 39026, 21334, 121343
+2021 Sep, Sum(Total), 222175, 215848, 140071, 52546
+2021 Sep, Value of previous quarter of Month(Order Date): Sum(Total), 215440, 157821, 18799, 234429
+2021 Oct, Sum(Total), 70849, 34516, 108967, 63077
+2021 Oct, Value of previous quarter of Month(Order Date): Sum(Total), 38253, 23152, 101817, 96344
+2021 Nov, Sum(Total), 81954, 46053, 90493, 123470
+2021 Nov, Value of previous quarter of Month(Order Date): Sum(Total), 17881, 60065, 99408, 165413
+2021 Dec, Sum(Total), 58987, 267101, 108021, 108905
+2021 Dec, Value of previous quarter of Month(Order Date): Sum(Total), 222175, 215848, 140071, 52546
+2022 Jan, Sum(Total), 71196, 33859, 8412, 60582
+2022 Jan, Value of previous quarter of Month(Order Date): Sum(Total), 70849, 34516, 108967, 63077
+2022 Feb, Sum(Total), 66568, 224614, 70400, 17510
+2022 Feb, Value of previous quarter of Month(Order Date): Sum(Total), 81954, 46053, 90493, 123470
+2022 Mar, Sum(Total), 19033, 37707, 98346, 21872
+2022 Mar, Value of previous quarter of Month(Order Date): Sum(Total), 58987, 267101, 108021, 108905
+2022 Apr, Sum(Total), 127210, 102295, 108109, 276988
+2022 Apr, Value of previous quarter of Month(Order Date): Sum(Total), 71196, 33859, 8412, 60582
+2022 May, Sum(Total), 23060, 141741, 135424, 56852
+2022 May, Value of previous quarter of Month(Order Date): Sum(Total), 66568, 224614, 70400, 17510
+2022 Jun, Sum(Total), 11185, 123988, 96021, 127353
+2022 Jun, Value of previous quarter of Month(Order Date): Sum(Total), 19033, 37707, 98346, 21872
+2022 Jul, Sum(Total), 110162, 123812, 84295, 154275
+2022 Jul, Value of previous quarter of Month(Order Date): Sum(Total), 127210, 102295, 108109, 276988

@@ -1,0 +1,8 @@
+[CA]   SelectState:[8]
+[CO]   SelectState:[8]
+[CT]   SelectState:[8]
+[IL]   SelectState:[8]
+[MD]   SelectState:[8]
+[NJ]   SelectState:[8]
+[NY]   SelectState:[8]
+[TX]   SelectState:[8]

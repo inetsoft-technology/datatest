@@ -1,0 +1,92 @@
+The data size(row x col) is:(91 x 5)
+Year(Order Date), Employee, Company, NULL, Count(Total)/Value of previous by row: Count(Total)/Value of previous Year(Order Date): Count(Total)/Value of previous Employee: Count(Total)/Value of previous Company: Count(Total)
+2021, Eric, AMG Logistics, Count(Total), 2
+2021, Eric, AMG Logistics, Value of previous by row: Count(Total), NULL
+2021, Eric, AMG Logistics, Value of previous Year(Order Date): Count(Total), NULL
+2021, Eric, AMG Logistics, Value of previous Employee: Count(Total), NULL
+2021, Eric, AMG Logistics, Value of previous Company: Count(Total), NULL
+2021, Eric, Daycare One, Count(Total), 7
+2021, Eric, Daycare One, Value of previous by row: Count(Total), 2
+2021, Eric, Daycare One, Value of previous Year(Order Date): Count(Total), NULL
+2021, Eric, Daycare One, Value of previous Employee: Count(Total), NULL
+2021, Eric, Daycare One, Value of previous Company: Count(Total), 2
+2021, Eric, Eastern Data, Count(Total), 4
+2021, Eric, Eastern Data, Value of previous by row: Count(Total), 7
+2021, Eric, Eastern Data, Value of previous Year(Order Date): Count(Total), NULL
+2021, Eric, Eastern Data, Value of previous Employee: Count(Total), NULL
+2021, Eric, Eastern Data, Value of previous Company: Count(Total), 7
+2021, Eric, Ernst Handel, Count(Total), 2
+2021, Eric, Ernst Handel, Value of previous by row: Count(Total), 4
+2021, Eric, Ernst Handel, Value of previous Year(Order Date): Count(Total), NULL
+2021, Eric, Ernst Handel, Value of previous Employee: Count(Total), NULL
+2021, Eric, Ernst Handel, Value of previous Company: Count(Total), 4
+2021, Eric, Old World Insurance, Count(Total), 3
+2021, Eric, Old World Insurance, Value of previous by row: Count(Total), 2
+2021, Eric, Old World Insurance, Value of previous Year(Order Date): Count(Total), NULL
+2021, Eric, Old World Insurance, Value of previous Employee: Count(Total), NULL
+2021, Eric, Old World Insurance, Value of previous Company: Count(Total), 2
+2021, Sue, AMG Logistics, Count(Total), 4
+2021, Sue, AMG Logistics, Value of previous by row: Count(Total), NULL
+2021, Sue, AMG Logistics, Value of previous Year(Order Date): Count(Total), NULL
+2021, Sue, AMG Logistics, Value of previous Employee: Count(Total), 2
+2021, Sue, AMG Logistics, Value of previous Company: Count(Total), NULL
+2021, Sue, Eastern Data, Count(Total), 5
+2021, Sue, Eastern Data, Value of previous by row: Count(Total), 4
+2021, Sue, Eastern Data, Value of previous Year(Order Date): Count(Total), NULL
+2021, Sue, Eastern Data, Value of previous Employee: Count(Total), 4
+2021, Sue, Eastern Data, Value of previous Company: Count(Total), 4
+2021, Sue, Ernst Handel, Count(Total), 2
+2021, Sue, Ernst Handel, Value of previous by row: Count(Total), 5
+2021, Sue, Ernst Handel, Value of previous Year(Order Date): Count(Total), NULL
+2021, Sue, Ernst Handel, Value of previous Employee: Count(Total), 2
+2021, Sue, Ernst Handel, Value of previous Company: Count(Total), 5
+2023, Eric, AMG Logistics, Count(Total), 6
+2023, Eric, AMG Logistics, Value of previous by row: Count(Total), NULL
+2023, Eric, AMG Logistics, Value of previous Year(Order Date): Count(Total), 2
+2023, Eric, AMG Logistics, Value of previous Employee: Count(Total), NULL
+2023, Eric, AMG Logistics, Value of previous Company: Count(Total), NULL
+2023, Eric, Daycare One, Count(Total), 3
+2023, Eric, Daycare One, Value of previous by row: Count(Total), 6
+2023, Eric, Daycare One, Value of previous Year(Order Date): Count(Total), 7
+2023, Eric, Daycare One, Value of previous Employee: Count(Total), NULL
+2023, Eric, Daycare One, Value of previous Company: Count(Total), 6
+2023, Eric, Eastern Data, Count(Total), 6
+2023, Eric, Eastern Data, Value of previous by row: Count(Total), 3
+2023, Eric, Eastern Data, Value of previous Year(Order Date): Count(Total), 4
+2023, Eric, Eastern Data, Value of previous Employee: Count(Total), NULL
+2023, Eric, Eastern Data, Value of previous Company: Count(Total), 3
+2023, Eric, Ernst Handel, Count(Total), 2
+2023, Eric, Ernst Handel, Value of previous by row: Count(Total), 6
+2023, Eric, Ernst Handel, Value of previous Year(Order Date): Count(Total), 2
+2023, Eric, Ernst Handel, Value of previous Employee: Count(Total), NULL
+2023, Eric, Ernst Handel, Value of previous Company: Count(Total), 6
+2023, Eric, Old World Insurance, Count(Total), 3
+2023, Eric, Old World Insurance, Value of previous by row: Count(Total), 2
+2023, Eric, Old World Insurance, Value of previous Year(Order Date): Count(Total), 3
+2023, Eric, Old World Insurance, Value of previous Employee: Count(Total), NULL
+2023, Eric, Old World Insurance, Value of previous Company: Count(Total), 2
+2023, Sue, AMG Logistics, Count(Total), 1
+2023, Sue, AMG Logistics, Value of previous by row: Count(Total), NULL
+2023, Sue, AMG Logistics, Value of previous Year(Order Date): Count(Total), 4
+2023, Sue, AMG Logistics, Value of previous Employee: Count(Total), 6
+2023, Sue, AMG Logistics, Value of previous Company: Count(Total), NULL
+2023, Sue, Daycare One, Count(Total), 2
+2023, Sue, Daycare One, Value of previous by row: Count(Total), 1
+2023, Sue, Daycare One, Value of previous Year(Order Date): Count(Total), NULL
+2023, Sue, Daycare One, Value of previous Employee: Count(Total), 3
+2023, Sue, Daycare One, Value of previous Company: Count(Total), 1
+2023, Sue, Eastern Data, Count(Total), 1
+2023, Sue, Eastern Data, Value of previous by row: Count(Total), 2
+2023, Sue, Eastern Data, Value of previous Year(Order Date): Count(Total), 5
+2023, Sue, Eastern Data, Value of previous Employee: Count(Total), 6
+2023, Sue, Eastern Data, Value of previous Company: Count(Total), 2
+2023, Sue, Ernst Handel, Count(Total), 2
+2023, Sue, Ernst Handel, Value of previous by row: Count(Total), 1
+2023, Sue, Ernst Handel, Value of previous Year(Order Date): Count(Total), 2
+2023, Sue, Ernst Handel, Value of previous Employee: Count(Total), 2
+2023, Sue, Ernst Handel, Value of previous Company: Count(Total), 1
+2023, Sue, Old World Insurance, Count(Total), 3
+2023, Sue, Old World Insurance, Value of previous by row: Count(Total), 2
+2023, Sue, Old World Insurance, Value of previous Year(Order Date): Count(Total), NULL
+2023, Sue, Old World Insurance, Value of previous Employee: Count(Total), 3
+2023, Sue, Old World Insurance, Value of previous Company: Count(Total), 2

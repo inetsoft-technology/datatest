@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 31)
+NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1
+NULL, AZ, CA, CA, CO, CT, FL, MA, MA, MD, MD, NJ, NJ, NJ, NJ, NJ, NV, NY, PA, TX, TX, TX, WA, CA, CA, CO, IL, MA, MA, NJ, WA
+NULL, Tucson, Albany, Los Angeles, Denver, Hartford, Orlando, Boston, Springfield, Baltimore, Rockville, Camden, Middletown, New Brunswick, Plainfield, Wayne, Las Vegas, New York, York, Austin, Dallas, Houston, Olympia, Los Angeles, San Francisco, Boulder, Chicago, Boston, Cambridge, Newark, Seattle
+Sum(customer_id), 20, 16, 21, 8, 6, 12, 18, 30, 38, 14, 15, 2, 25, 35, 1, 32, 51, 28, 11, 57, 22, 29, 13, 9, 4, 10, 23, 34, 19, 27
+Change from next reseller: Sum(customer_id), NULL, NULL, 8, NULL, NULL, NULL, -5, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL

@@ -1,0 +1,92 @@
+The data size(row x col) is:(91 x 6)
+reseller, Year(order_date), Second(ftime), NULL, Sum(customer_id)/Change from first by row: Sum(customer_id)/Change from previous reseller: Sum(customer_id)/Change from next Year(order_date): Sum(customer_id)/% Change from last Second(ftime): Sum(customer_id), Grand Total
+true, 2002, 01:55:35, Sum(customer_id), 45, 45
+true, 2002, 01:55:35, Change from first by row: Sum(customer_id), 0, 0
+true, 2002, 01:55:35, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2002, 01:55:35, Change from next Year(order_date): Sum(customer_id), -28, -28
+true, 2002, 01:55:35, % Change from last Second(ftime): Sum(customer_id), 73%, 73%
+true, 2002, 02:05:10, Sum(customer_id), 43, 43
+true, 2002, 02:05:10, Change from first by row: Sum(customer_id), -2, -2
+true, 2002, 02:05:10, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2002, 02:05:10, Change from next Year(order_date): Sum(customer_id), -66, -66
+true, 2002, 02:05:10, % Change from last Second(ftime): Sum(customer_id), 65%, 65%
+true, 2002, 02:10:15, Sum(customer_id), 29, 29
+true, 2002, 02:10:15, Change from first by row: Sum(customer_id), -16, -16
+true, 2002, 02:10:15, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2002, 02:10:15, Change from next Year(order_date): Sum(customer_id), -166, -166
+true, 2002, 02:10:15, % Change from last Second(ftime): Sum(customer_id), 12%, 12%
+true, 2002, 02:10:55, Sum(customer_id), 26, 26
+true, 2002, 02:10:55, Change from first by row: Sum(customer_id), -19, -19
+true, 2002, 02:10:55, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2002, 02:10:55, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, 2002, 02:10:55, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+true, 2002, Total, Sum(customer_id), 143, 143
+true, 2002, Total, Change from first by row: Sum(customer_id), 0, 0
+true, 2002, Total, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2002, Total, Change from next Year(order_date): Sum(customer_id), -234, -234
+true, 2002, Total, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+true, 2003, 01:55:35, Sum(customer_id), 73, 73
+true, 2003, 01:55:35, Change from first by row: Sum(customer_id), 0, 0
+true, 2003, 01:55:35, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2003, 01:55:35, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, 2003, 01:55:35, % Change from last Second(ftime): Sum(customer_id), -63%, -63%
+true, 2003, 02:05:10, Sum(customer_id), 109, 109
+true, 2003, 02:05:10, Change from first by row: Sum(customer_id), 36, 36
+true, 2003, 02:05:10, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2003, 02:05:10, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, 2003, 02:05:10, % Change from last Second(ftime): Sum(customer_id), -44%, -44%
+true, 2003, 02:10:15, Sum(customer_id), 195, 195
+true, 2003, 02:10:15, Change from first by row: Sum(customer_id), 122, 122
+true, 2003, 02:10:15, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2003, 02:10:15, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, 2003, 02:10:15, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+true, 2003, Total, Sum(customer_id), 377, 377
+true, 2003, Total, Change from first by row: Sum(customer_id), 0, 0
+true, 2003, Total, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, 2003, Total, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, 2003, Total, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+true, Total, NULL, Sum(customer_id), 520, 520
+true, Total, NULL, Change from first by row: Sum(customer_id), 0, 0
+true, Total, NULL, Change from previous reseller: Sum(customer_id), NULL, NULL
+true, Total, NULL, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+true, Total, NULL, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2002, 02:10:15, Sum(customer_id), 23, 23
+false, 2002, 02:10:15, Change from first by row: Sum(customer_id), 0, 0
+false, 2002, 02:10:15, Change from previous reseller: Sum(customer_id), -6, -6
+false, 2002, 02:10:15, Change from next Year(order_date): Sum(customer_id), 10, 10
+false, 2002, 02:10:15, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2002, 02:10:55, Sum(customer_id), 23, 23
+false, 2002, 02:10:55, Change from first by row: Sum(customer_id), 0, 0
+false, 2002, 02:10:55, Change from previous reseller: Sum(customer_id), -3, -3
+false, 2002, 02:10:55, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+false, 2002, 02:10:55, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2002, Total, Sum(customer_id), 46, 46
+false, 2002, Total, Change from first by row: Sum(customer_id), 0, 0
+false, 2002, Total, Change from previous reseller: Sum(customer_id), -97, -97
+false, 2002, Total, Change from next Year(order_date): Sum(customer_id), 20, 20
+false, 2002, Total, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2003, 01:55:35, Sum(customer_id), 13, 13
+false, 2003, 01:55:35, Change from first by row: Sum(customer_id), 0, 0
+false, 2003, 01:55:35, Change from previous reseller: Sum(customer_id), -60, -60
+false, 2003, 01:55:35, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+false, 2003, 01:55:35, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2003, 02:10:15, Sum(customer_id), 13, 13
+false, 2003, 02:10:15, Change from first by row: Sum(customer_id), 0, 0
+false, 2003, 02:10:15, Change from previous reseller: Sum(customer_id), -182, -182
+false, 2003, 02:10:15, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+false, 2003, 02:10:15, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, 2003, Total, Sum(customer_id), 26, 26
+false, 2003, Total, Change from first by row: Sum(customer_id), 0, 0
+false, 2003, Total, Change from previous reseller: Sum(customer_id), -351, -351
+false, 2003, Total, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+false, 2003, Total, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+false, Total, NULL, Sum(customer_id), 72, 72
+false, Total, NULL, Change from first by row: Sum(customer_id), 0, 0
+false, Total, NULL, Change from previous reseller: Sum(customer_id), -448, -448
+false, Total, NULL, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+false, Total, NULL, % Change from last Second(ftime): Sum(customer_id), 0%, 0%
+Grand Total, NULL, NULL, Sum(customer_id), 592, 592
+Grand Total, NULL, NULL, Change from first by row: Sum(customer_id), 0, 0
+Grand Total, NULL, NULL, Change from previous reseller: Sum(customer_id), NULL, NULL
+Grand Total, NULL, NULL, Change from next Year(order_date): Sum(customer_id), NULL, NULL
+Grand Total, NULL, NULL, % Change from last Second(ftime): Sum(customer_id), 0%, 0%

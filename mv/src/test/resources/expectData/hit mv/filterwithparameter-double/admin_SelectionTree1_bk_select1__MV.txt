@@ -1,0 +1,7 @@
+[true]   SelectState:[9]
+[true][0]   SelectState:[8]
+[true][0.05]   SelectState:[9]
+[true][0.1]   SelectState:[8]
+[0]   SelectState:[8]
+[0.05]   SelectState:[9]
+[0.1]   SelectState:[8]

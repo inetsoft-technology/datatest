@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Year(Date), NULL, Value of previous Year(Date): Sum(Paid)/Value of previous Year(Date): Sum(Discount)
+2018, Value of previous Year(Date): Sum(Paid), NULL
+2018, Value of previous Year(Date): Sum(Discount), NULL
+2020, Value of previous Year(Date): Sum(Paid), 973
+2020, Value of previous Year(Date): Sum(Discount), 14.95
+2021, Value of previous Year(Date): Sum(Paid), 963
+2021, Value of previous Year(Date): Sum(Discount), 14.5

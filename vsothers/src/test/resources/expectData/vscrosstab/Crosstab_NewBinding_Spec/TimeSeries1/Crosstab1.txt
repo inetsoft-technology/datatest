@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+Year(PRODUCE_DATE), Sum(PRICE)
+2000, 522
+2001, 3402
+2002, 0
+2003, 0
+2004, 0
+2005, 0
+2006, 7750

@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 2)
+[DISCOUNT][ORDER_ID]
+[[NULL]][12001]
+[[NULL]][12002]
+[[NULL]][12003]
+[[NULL]][12004]
+[[NULL]][12005]
+[[NULL]][12006]
+[[NULL]][12007]
+[[NULL]][12008]
+[[NULL]][12009]
+

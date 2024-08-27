@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 2)
+[DISCOUNT][PAID]
+[0.05][false]
+[0.05][true]
+

@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[RESELLER][REGION_ID][Sum(QUANTITY)][Sum(ORDER_ID)]
+[false][1][353][444127]
+[false][2][595][644357]
+[true][1][2004][2346002]
+[true][2][1640][1895547]
+

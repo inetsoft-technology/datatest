@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 4)
+RESELLER, STATE, Count, Sum
+1, CO, 15, 60
+1, IL, 17, 170
+1, MA, 37, 1060
+1, NJ, 26, 494
+1, WA, 14, 378
+0, CO, 20, 160
+0, AZ, 22, 440
+0, CT, 13, 78
+0, FL, 20, 240
+0, NV, 18, 576
+2, CA, 2, 44

@@ -1,0 +1,24 @@
+The table size(row x col) is:(23 x 4)
+Category, Color, Reseller Sales Amount, Discount Amount
+Accessories, Black, 87915.3689, 1207.1866
+Accessories, Blue, 91052.8681, 1314.2907
+Accessories, NA, 247066.247, 2569.6919
+Accessories, Red, 79744.6953, 1093.5148
+Accessories, Silver, 65518.7485, 503.3453
+Bikes, Black, 24469987.8234, 99361.2404
+Bikes, Blue, 6205258.3522, 51553.9114
+Bikes, Red, 12114587.8898, 35541.9457
+Bikes, Silver, 11931999.4272, 88106.6003
+Bikes, Yellow, 11580548.0644, 220076.9554
+Clothing, Black, 751810.8972, 11491.3027
+Clothing, Blue, 223801.3707, 4055.6837
+Clothing, Multi, 542559.5121, 2551.3208
+Clothing, White, 24638.8081, 284.2987
+Clothing, Yellow, 235030.251, 2581.8994
+Components, Black, 4087998.0118, 1079.4744
+Components, Blue, 803642.0958, 1388.1064
+Components, NA, 417120.9711, 316.1342
+Components, Red, 1679227.6977, 132.9996
+Components, Silver, 2666432.6902, 705.8793
+Components, Silver/Black, 147483.9098, 46.9742
+Components, Yellow, 1997171.282, 1545.1703

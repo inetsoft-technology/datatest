@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+Quarter(ORDER_DATE), 1, 1, 2, 2, 3, 3, 4, 4
+NULL, Running Sum by row: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum by row: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum by row: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID), Running Sum by row: Variance(CUSTOMER_ID), Variance(CUSTOMER_ID)
+2020 2nd, 113.7, 113.7, 103.3, 103.3, 80.9, 80.9, 137.5, 137.5
+2020 3rd, 167.1, 53.4, 205.8, 102.5, 166, 85.1, 203.9, 66.4

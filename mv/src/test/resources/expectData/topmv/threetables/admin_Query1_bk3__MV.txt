@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 5)
+[DISCOUNT][QUANTITY][PRODUCT_NAME][PRICE][Year(RETURN_DATE)]
+[0][7][Fast Mail][39][2002-01-01 00:00:00]
+[0][7][House Hunter][129][2003-01-01 00:00:00]
+

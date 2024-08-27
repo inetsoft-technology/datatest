@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+NULL, USA East, USA East, USA East, USA East, USA West, USA West, USA West, USA West
+NULL, 2023, 2022, 2021, 2020, 2023, 2022, 2021, 2020
+Sum(Product:Price), $241,903.00, $248,097.00, $298,199.00, $215,468.00, $221,516.00, $173,662.00, $147,956.00, $167,818.00
+Change from previous Year(Order:Date): Sum(Product:Price), NULL, $6,194.00, $50,102.00, -$82,731.00, NULL, -$47,854.00, -$25,706.00, $19,862.00

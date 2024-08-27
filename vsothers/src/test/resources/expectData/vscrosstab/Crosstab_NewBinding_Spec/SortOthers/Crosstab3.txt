@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 7)
+first_name, Others, NV, NamedGroup, AZ, IL, CT
+Pat, 770, NULL, NULL, NULL, NULL, NULL
+Others, 8620, 576, 460, 440, 170, 78
+Michael, 836, NULL, NULL, NULL, NULL, NULL
+Adam, 812, NULL, NULL, NULL, NULL, NULL

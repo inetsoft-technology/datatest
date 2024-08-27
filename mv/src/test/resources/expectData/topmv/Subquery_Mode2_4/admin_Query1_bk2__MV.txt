@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[company][customer_id]
+[Daycare One][2]
+[Eastern Data][3]
+[Familia Computer Services][6]
+

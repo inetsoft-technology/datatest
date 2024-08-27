@@ -1,7 +1,5 @@
 package inetsoft.test.modules
 
-import groovy.json.JsonOutput
-import groovy.json.JsonSlurper
 import inetsoft.graph.data.DataSetFilter
 import inetsoft.graph.geo.GeoDataSet
 import inetsoft.graph.geo.MappedDataSet
@@ -15,13 +13,6 @@ import inetsoft.report.composition.graph.VGraphPair
 import inetsoft.report.filter.SortFilter
 import inetsoft.sree.SreeEnv
 import inetsoft.sree.security.SRPrincipal
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.ExportUtil
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.RuntimeWorksheetResource
-import inetsoft.test.core.TUtil
 import inetsoft.uql.asset.AggregateInfo
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.asset.TableAssembly
@@ -33,6 +24,17 @@ import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.composer.model.ws.ImportCSVDialogModel
+
+import inetsoft.test.core.ActionEventsUtil
+import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.RuntimeViewsheetResource
+import inetsoft.test.core.RuntimeWorksheetResource
+import inetsoft.test.core.TUtil
+
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
 import org.springframework.mock.web.MockMultipartFile
 import org.springframework.web.multipart.MultipartFile
 

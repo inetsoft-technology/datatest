@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 3)
+[Year(day)][range_number][Min(Calculated Total Impact Energy (kt))]
+[2014-01-01 00:00:00][0-10][0.2]
+[2014-01-01 00:00:00][-10-0][0.32]
+[2014-01-01 00:00:00][Others][0.092]
+

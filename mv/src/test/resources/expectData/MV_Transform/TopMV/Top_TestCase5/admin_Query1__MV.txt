@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[description][instock][product_name]
+[Bridge game][false][Web Bridge]
+[Chess game][false][Easy Chess]
+[Educational software][false][Animal World]
+[Girl's game][false][Barbie's Fashion]
+

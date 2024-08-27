@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 2)
+[CalcField1][Average(CalcField)]
+[Daycare One][113]
+[George Services][123]
+[Quick Stop][165]
+

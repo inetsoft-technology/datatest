@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 3)
+[Customer:State][Sum(Product:Total)][Sum(Total@Product:Total)]
+[[NULL]][[NULL]][17656854]
+[CA][1686648][[NULL]]
+[MA][2135518][[NULL]]
+[MD][1405708][[NULL]]
+[TX][2471947][[NULL]]
+

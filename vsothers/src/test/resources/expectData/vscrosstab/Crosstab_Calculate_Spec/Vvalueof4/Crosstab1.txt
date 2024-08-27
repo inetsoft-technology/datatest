@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 6)
+Quarter(Order Date), NULL, Annie, Eric, Robert, Sue
+2020 2nd, Sum(Total), 220176, 307735, 213206, 188692
+2020 2nd, Value of previous year of Quarter(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2020 3rd, Sum(Total), 310550, 261452, 300699, 160424
+2020 3rd, Value of previous year of Quarter(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2020 4th, Sum(Total), 303850, 283017, 186710, 394412
+2020 4th, Value of previous year of Quarter(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2021 1st, Sum(Total), 136371, 278369, 217485, 341945
+2021 1st, Value of previous year of Quarter(Order Date): Sum(Total), NULL, NULL, NULL, NULL
+2021 2nd, Sum(Total), 320752, 423175, 70508, 465255
+2021 2nd, Value of previous year of Quarter(Order Date): Sum(Total), 220176, 307735, 213206, 188692
+2021 3rd, Sum(Total), 278309, 299065, 341296, 314303
+2021 3rd, Value of previous year of Quarter(Order Date): Sum(Total), 310550, 261452, 300699, 160424
+2021 4th, Sum(Total), 211790, 347670, 307481, 295452
+2021 4th, Value of previous year of Quarter(Order Date): Sum(Total), 303850, 283017, 186710, 394412
+2022 1st, Sum(Total), 156797, 296180, 177158, 99964
+2022 1st, Value of previous year of Quarter(Order Date): Sum(Total), 136371, 278369, 217485, 341945
+2022 2nd, Sum(Total), 161455, 368024, 339554, 461193
+2022 2nd, Value of previous year of Quarter(Order Date): Sum(Total), 320752, 423175, 70508, 465255
+2022 3rd, Sum(Total), 110162, 123812, 84295, 154275
+2022 3rd, Value of previous year of Quarter(Order Date): Sum(Total), 278309, 299065, 341296, 314303

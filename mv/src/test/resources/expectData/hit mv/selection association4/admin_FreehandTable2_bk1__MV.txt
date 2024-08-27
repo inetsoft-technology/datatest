@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 5)
+[[NULL]][[NULL]][Location][[NULL]][Year]
+[[NULL]][[NULL]][CA][[NULL]][2014-01-01 00:00:00]
+[General Workers][Incorrectly Done][1][[NULL]][1]
+[Rigger][Incorrectly Done][1][[NULL]][1]
+

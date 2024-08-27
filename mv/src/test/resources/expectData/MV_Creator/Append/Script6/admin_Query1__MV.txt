@@ -1,0 +1,15 @@
+The table size(row x col) is: (13 x 4)
+[city][customer_id][reseller][state]
+[bbb][20][false][[NULL]]
+[ccc][6][true][IL]
+[ccc][11][false][OH]
+[Others][8][false][CA]
+[Others][9][false][NJ]
+[Others][9][true][NJ]
+[Others][13][false][NY]
+[Others][16][false][FL]
+[Others][16][true][NY]
+[Others][17][false][AK]
+[Others][19][true][PA]
+[Others][24][true][CA]
+

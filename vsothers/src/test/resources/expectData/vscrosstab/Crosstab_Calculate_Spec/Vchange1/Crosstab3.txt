@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 4)
+Customer:Region, Year(Order:Date), NULL, Sum(Product:Price)/Change from previous Customer:Region: Sum(Product:Price)
+USA East, 2020, Sum(Product:Price), $215,468.00
+USA East, 2020, Change from previous Customer:Region: Sum(Product:Price), NULL
+USA East, 2021, Sum(Product:Price), $298,199.00
+USA East, 2021, Change from previous Customer:Region: Sum(Product:Price), NULL
+USA East, 2022, Sum(Product:Price), $248,097.00
+USA East, 2022, Change from previous Customer:Region: Sum(Product:Price), NULL
+USA East, 2023, Sum(Product:Price), $241,903.00
+USA East, 2023, Change from previous Customer:Region: Sum(Product:Price), NULL
+USA East, Total, Sum(Product:Price), $1,003,667.00
+USA East, Total, Change from previous Customer:Region: Sum(Product:Price), $1,003,667.00
+USA West, 2020, Sum(Product:Price), $167,818.00
+USA West, 2020, Change from previous Customer:Region: Sum(Product:Price), -$47,650.00
+USA West, 2021, Sum(Product:Price), $147,956.00
+USA West, 2021, Change from previous Customer:Region: Sum(Product:Price), -$150,243.00
+USA West, 2022, Sum(Product:Price), $173,662.00
+USA West, 2022, Change from previous Customer:Region: Sum(Product:Price), -$74,435.00
+USA West, 2023, Sum(Product:Price), $221,516.00
+USA West, 2023, Change from previous Customer:Region: Sum(Product:Price), -$20,387.00
+USA West, Total, Sum(Product:Price), $710,952.00
+USA West, Total, Change from previous Customer:Region: Sum(Product:Price), $710,952.00

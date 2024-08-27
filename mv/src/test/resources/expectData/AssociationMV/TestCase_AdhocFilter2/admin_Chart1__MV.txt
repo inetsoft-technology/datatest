@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[Year(Order:Date)][NthLargest(Product:Price, 1)][CalcField1][discrete_NthLargest(Product:Price, 1)]
+[2017-01-01 00:00:00][3000][8844][3000]
+[2018-01-01 00:00:00][3000][11001][3000]
+[2019-01-01 00:00:00][3000][10476][3000]
+[2020-01-01 00:00:00][3000][11086][3000]
+

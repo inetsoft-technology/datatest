@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 10)
+Customer:State, NULL, 0, 0, 0, 0, 1, 1, 1, 1
+NULL, NULL, 2022, 2023, 2021, 2020, 2023, 2020, 2021, 2022
+NULL, NULL, USA West, USA West, USA West, USA West, USA West, USA West, USA West, USA West
+AZ, Max(Order:Discount), 25%, 25%, 0%, 0%, NULL, NULL, NULL, NULL
+AZ, Value of last by column: Max(Order:Discount), 25%, 25%, 0%, 0%, 0%, 0%, 0%, 0%
+AZ, Value of last Customer:Reseller: Max(Order:Discount), 0%, 0%, 0%, 0%, 0%, 0%, 0%, 0%
+AZ, Value of last Year(Order:Date): Max(Order:Discount), 0%, 0%, 0%, 0%, 0%, 0%, 0%, 0%
+AZ, Value of last Customer:Region: Max(Order:Discount), 25%, 25%, 0%, 0%, 0%, 0%, 0%, 0%
+CA, Max(Order:Discount), 25%, 0%, 10%, 0%, 10%, 10%, 0%, 0%
+CA, Value of last by column: Max(Order:Discount), 25%, 0%, 10%, 0%, 10%, 10%, 0%, 0%
+CA, Value of last Customer:Reseller: Max(Order:Discount), 0%, 10%, 0%, 10%, 10%, 10%, 0%, 0%
+CA, Value of last Year(Order:Date): Max(Order:Discount), 0%, 0%, 0%, 0%, 0%, 0%, 0%, 0%
+CA, Value of last Customer:Region: Max(Order:Discount), 25%, 0%, 10%, 0%, 10%, 10%, 0%, 0%
+CO, Max(Order:Discount), 0%, 15%, 0%, 0%, 15%, 0%, 0%, 0%
+CO, Value of last by column: Max(Order:Discount), 0%, 15%, 0%, 0%, 15%, 0%, 0%, 0%
+CO, Value of last Customer:Reseller: Max(Order:Discount), 0%, 15%, 0%, 0%, 15%, 0%, 0%, 0%
+CO, Value of last Year(Order:Date): Max(Order:Discount), 0%, 0%, 0%, 0%, 0%, 0%, 0%, 0%
+CO, Value of last Customer:Region: Max(Order:Discount), 0%, 15%, 0%, 0%, 15%, 0%, 0%, 0%

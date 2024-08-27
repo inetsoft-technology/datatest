@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 4)
+Customer:Region, Year(Order:Date), NULL, Sum(Product:Price)/% of subtotal by row: Sum(Product:Price)
+USA East, 2020, Sum(Product:Price), $126,608.00
+USA East, 2020, % of subtotal by row: Sum(Product:Price), 43%
+USA East, 2021, Sum(Product:Price), $166,989.00
+USA East, 2021, % of subtotal by row: Sum(Product:Price), 57%
+USA East, subTotal, Sum(Product:Price), $293,597.00
+USA East, subTotal, % of subtotal by row: Sum(Product:Price), 59%
+USA West, 2020, Sum(Product:Price), $119,468.00
+USA West, 2020, % of subtotal by row: Sum(Product:Price), 59%
+USA West, 2021, Sum(Product:Price), $82,742.00
+USA West, 2021, % of subtotal by row: Sum(Product:Price), 41%
+USA West, subTotal, Sum(Product:Price), $202,210.00
+USA West, subTotal, % of subtotal by row: Sum(Product:Price), 41%
+Grand Total, NULL, Sum(Product:Price), $495,807.00
+Grand Total, NULL, % of subtotal by row: Sum(Product:Price), 100%

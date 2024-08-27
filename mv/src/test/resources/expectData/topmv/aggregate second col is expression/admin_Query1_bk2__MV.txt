@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 3)
+[CUSTOMER_ID][DISCOUNT][PAID]
+[[NULL]][0.01][false]
+[0.9928][0.05][false]
+[0.9932][0][false]
+[0.9953][0][true]
+[0.9983][0.05][true]
+

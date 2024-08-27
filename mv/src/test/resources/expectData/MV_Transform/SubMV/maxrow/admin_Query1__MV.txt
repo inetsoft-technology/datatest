@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[city][company][reseller][state]
+[Ankertown][Du Monde Technologies][false][FL]
+[Middletown][Direct Sales][true][NJ]
+[New York][Computer Tech][false][NY]
+[Pitterson][Daycare One][false][NJ]
+

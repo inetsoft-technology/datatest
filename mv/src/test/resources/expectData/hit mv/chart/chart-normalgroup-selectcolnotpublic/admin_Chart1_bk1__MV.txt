@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[DISCOUNT][Correlation(CUSTOMER_ID, EMPLOYEE_ID)]
+[[NULL]][0.984]
+[0][0.8925]
+[0.1][0.596]
+[Others][-0.3232]
+

@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 4)
+[Last Name][NthLargest(Quantity Purchased, 1)][Sum(TotalPurchased)][discrete_NthLargest(Quantity Purchased, 1)]
+[Duke][90][5055546][90]
+[Heggenbart][76][6741603][90]
+[Marston][72][5820383][90]
+[Miller][61][4054177][90]
+

@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 2)
+[Year(Order:Date)][Sum(Product:Quantity Purchased)]
+[2017-01-01 00:00:00][8844]
+[2018-01-01 00:00:00][11001]
+[2019-01-01 00:00:00][10476]
+[2020-01-01 00:00:00][11086]
+

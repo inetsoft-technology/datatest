@@ -1,0 +1,94 @@
+The data size(row x col) is:(93 x 3)
+Month(ORDER_DATE), NULL, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID)/Sum(CUSTOMER_ID)
+2020 Mar, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 Mar, Sum(CUSTOMER_ID), 214
+2020 Apr, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 Apr, Sum(CUSTOMER_ID), 397
+2020 May, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), NULL
+2020 May, Sum(CUSTOMER_ID), 325
+2020 Jun, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 114
+2020 Jun, Sum(CUSTOMER_ID), 328
+2020 Jul, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -71
+2020 Jul, Sum(CUSTOMER_ID), 326
+2020 Aug, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -116
+2020 Aug, Sum(CUSTOMER_ID), 209
+2020 Sep, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -46
+2020 Sep, Sum(CUSTOMER_ID), 282
+2020 Oct, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -104
+2020 Oct, Sum(CUSTOMER_ID), 222
+2020 Nov, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 92
+2020 Nov, Sum(CUSTOMER_ID), 301
+2020 Dec, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -86
+2020 Dec, Sum(CUSTOMER_ID), 196
+2021 Jan, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -16
+2021 Jan, Sum(CUSTOMER_ID), 206
+2021 Feb, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -134
+2021 Feb, Sum(CUSTOMER_ID), 167
+2021 Mar, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 46
+2021 Mar, Sum(CUSTOMER_ID), 242
+2021 Apr, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 100
+2021 Apr, Sum(CUSTOMER_ID), 306
+2021 May, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 70
+2021 May, Sum(CUSTOMER_ID), 237
+2021 Jun, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 128
+2021 Jun, Sum(CUSTOMER_ID), 370
+2021 Jul, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 22
+2021 Jul, Sum(CUSTOMER_ID), 328
+2021 Aug, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 43
+2021 Aug, Sum(CUSTOMER_ID), 280
+2021 Sep, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -57
+2021 Sep, Sum(CUSTOMER_ID), 313
+2021 Oct, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -94
+2021 Oct, Sum(CUSTOMER_ID), 234
+2021 Nov, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 6
+2021 Nov, Sum(CUSTOMER_ID), 286
+2021 Dec, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 67
+2021 Dec, Sum(CUSTOMER_ID), 380
+2022 Jan, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -46
+2022 Jan, Sum(CUSTOMER_ID), 188
+2022 Feb, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -13
+2022 Feb, Sum(CUSTOMER_ID), 273
+2022 Mar, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -185
+2022 Mar, Sum(CUSTOMER_ID), 195
+2022 Apr, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 229
+2022 Apr, Sum(CUSTOMER_ID), 417
+2022 May, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 41
+2022 May, Sum(CUSTOMER_ID), 314
+2022 Jun, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -3
+2022 Jun, Sum(CUSTOMER_ID), 192
+2022 Jul, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -135
+2022 Jul, Sum(CUSTOMER_ID), 282
+2022 Aug, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -72
+2022 Aug, Sum(CUSTOMER_ID), 242
+2022 Sep, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 26
+2022 Sep, Sum(CUSTOMER_ID), 218
+2022 Oct, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 7
+2022 Oct, Sum(CUSTOMER_ID), 289
+2022 Nov, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 192
+2022 Nov, Sum(CUSTOMER_ID), 434
+2022 Dec, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 6
+2022 Dec, Sum(CUSTOMER_ID), 224
+2023 Jan, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 33
+2023 Jan, Sum(CUSTOMER_ID), 322
+2023 Feb, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -163
+2023 Feb, Sum(CUSTOMER_ID), 271
+2023 Mar, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 55
+2023 Mar, Sum(CUSTOMER_ID), 279
+2023 Apr, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -54
+2023 Apr, Sum(CUSTOMER_ID), 268
+2023 May, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 74
+2023 May, Sum(CUSTOMER_ID), 345
+2023 Jun, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -2
+2023 Jun, Sum(CUSTOMER_ID), 277
+2023 Jul, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 42
+2023 Jul, Sum(CUSTOMER_ID), 310
+2023 Aug, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -47
+2023 Aug, Sum(CUSTOMER_ID), 298
+2023 Sep, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -38
+2023 Sep, Sum(CUSTOMER_ID), 239
+2023 Oct, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -104
+2023 Oct, Sum(CUSTOMER_ID), 206
+2023 Nov, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), -12
+2023 Nov, Sum(CUSTOMER_ID), 286
+2023 Dec, Change from previous quarter of Month(ORDER_DATE): Sum(CUSTOMER_ID), 5
+2023 Dec, Sum(CUSTOMER_ID), 244

@@ -1,0 +1,8 @@
+The table size(row x col) is: (6 x 2)
+[DataGroup(DISCOUNT)][Min(CUSTOMER_ID)]
+[[NULL]][3]
+[0.1][7]
+[0.2][20]
+[0.25][29]
+[A][2]
+

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[state][city][DistinctCount(customer_id)]
+[IL][Chicago][1]
+[MA][Boston][2]
+

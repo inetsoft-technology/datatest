@@ -1,0 +1,8 @@
+[Could not pay]   SelectState:[8]
+[Defective]   SelectState:[8]
+[Did not want]   SelectState:[8]
+[Found a better price]   SelectState:[8]
+[Insufficient support]   SelectState:[9]
+[Not functioning properly]   SelectState:[8]
+[Shipped Broken]   SelectState:[8]
+[Wrong specifications]   SelectState:[8]

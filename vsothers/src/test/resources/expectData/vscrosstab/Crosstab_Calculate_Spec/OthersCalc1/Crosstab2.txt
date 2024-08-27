@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 7)
+Year(Order:Date), QuarterOfYear(Order:Date), Sum(Order:Paid), Count(Order:Paid), Average(Order:Paid), % of subtotal by row: Average(Order:Paid), % of total by row: Average(Order:Paid)
+20, 1st, 64, 64, 1.00, 115%, 113%
+20, 2nd, 279, 314, 0.89, 102%, 100%
+20, Others, 391, 465, 0.84, 97%, 95%
+20, Total, 734, 843, 0.87, 98%, 98%
+21, 3rd, 241, 263, 0.92, 101%, 103%
+21, 4th, 262, 286, 0.92, 101%, 103%
+21, Others, 436, 490, 0.89, 98%, 100%
+21, Total, 939, 1039, 0.90, 102%, 102%
+22, 4th, 277, 288, 0.96, 104%, 108%
+22, 2nd, 274, 295, 0.93, 100%, 105%
+22, Others, 371, 411, 0.90, 97%, 102%
+22, Total, 922, 994, 0.93, 105%, 105%
+23, 1st, 226, 237, 0.95, 113%, 108%
+23, 2nd, 234, 275, 0.85, 101%, 96%
+23, Others, 434, 546, 0.79, 94%, 90%
+23, Total, 894, 1058, 0.84, 95%, 95%

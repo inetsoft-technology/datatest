@@ -1,0 +1,13 @@
+The table size(row x col) is: (11 x 7)
+[customer_id][company][city][customer_id_1][discount][orderdate][orderno]
+[17][FISGA Corp][Austin][17][0][2001-02-13 00:00:00][104]
+[17][FISGA Corp][Austin][17][0][2001-07-13 00:00:00][100]
+[17][FISGA Corp][Austin][17][0][2001-10-15 00:00:00][37]
+[17][FISGA Corp][Austin][17][0.01][2001-03-12 00:00:00][35]
+[17][FISGA Corp][Austin][17][0.1][2002-10-15 00:00:00][16]
+[18][Du Monde Technologies][Ankertown][18][0][2002-02-10 00:00:00][79]
+[18][Du Monde Technologies][Ankertown][18][0][2002-11-06 00:00:00][85]
+[18][Du Monde Technologies][Ankertown][18][0][2003-03-22 00:00:00][54]
+[18][Du Monde Technologies][Ankertown][18][0][2003-09-26 00:00:00][44]
+[18][Du Monde Technologies][Ankertown][18][0][2003-12-26 00:00:00][73]
+

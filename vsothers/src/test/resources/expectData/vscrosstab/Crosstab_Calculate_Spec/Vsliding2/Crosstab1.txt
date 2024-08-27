@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 5)
+state, 0, 0, 1, 1
+NULL, Moving Sum of 4 by row: Sum(customer_id), Sum(customer_id), Moving Sum of 4 by row: Sum(customer_id), Sum(customer_id)
+MA, 0, 48, 0, 57
+NJ, 0, 78, 0, 19
+TX, 192, 90, 125, 0
+CA, 249, 37, 46, 22
+WA, 230, 29, 22, 27
+MD, 149, 52, 49, 0
+NY, 141, 51, 27, 0
+NV, 151, 32, 0, 0
+PA, 111, 28, 4, 0
+AZ, 80, 20, 4, 0
+CO, 60, 8, 10, 4
+FL, 34, 12, 14, 0
+IL, 0, 0, 0, 10
+CT, 0, 6, 0, 0

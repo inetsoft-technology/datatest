@@ -1,0 +1,8 @@
+[0]   SelectState:[10]
+[0.01]   SelectState:[10]
+[0.05]   SelectState:[10]
+[0.1]   SelectState:[10]
+[0.15]   SelectState:[10]
+[0.2]   SelectState:[10]
+[0.25]   SelectState:[10]
+[[NULL]]   SelectState:[10]

@@ -1,0 +1,4 @@
+The table size(row x col) is: (2 x 5)
+[state][Sum(customer_id)][Sum(product_id)][Sum(price)][discrete_Sum(customer_id)]
+[CA][200][160][4847][200]
+

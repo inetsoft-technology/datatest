@@ -1,0 +1,126 @@
+The data size(row x col) is:(125 x 4)
+Hour(alias2), Minute(alias2), NULL, Average/Distinct Count
+NULL, NULL, Average(alias1), 21.3333
+NULL, NULL, Distinct Count(alias3), 4
+01, 01:01, Average(alias1), 18.0833
+01, 01:01, Distinct Count(alias3), 3
+01, 01:07, Average(alias1), 14.5
+01, 01:07, Distinct Count(alias3), 2
+01, 01:55, Average(alias1), 15.7273
+01, 01:55, Distinct Count(alias3), 1
+02, 02:05, Average(alias1), 17.9
+02, 02:05, Distinct Count(alias3), 1
+02, 02:10, Average(alias1), 18.08
+02, 02:10, Distinct Count(alias3), 1
+02, 02:33, Average(alias1), 16.8333
+02, 02:33, Distinct Count(alias3), 1
+03, 03:45, Average(alias1), 24.3333
+03, 03:45, Distinct Count(alias3), 1
+04, 04:25, Average(alias1), 18
+04, 04:25, Distinct Count(alias3), 1
+04, 04:59, Average(alias1), 10
+04, 04:59, Distinct Count(alias3), 0
+05, 05:27, Average(alias1), 18.8
+05, 05:27, Distinct Count(alias3), 2
+05, 05:45, Average(alias1), 17.1395
+05, 05:45, Distinct Count(alias3), 5
+06, 06:01, Average(alias1), 17.25
+06, 06:01, Distinct Count(alias3), 4
+06, 06:25, Average(alias1), 28.25
+06, 06:25, Distinct Count(alias3), 2
+07, 07:15, Average(alias1), 8
+07, 07:15, Distinct Count(alias3), 1
+07, 07:30, Average(alias1), 16.5238
+07, 07:30, Distinct Count(alias3), 4
+08, 08:00, Average(alias1), 18.7778
+08, 08:00, Distinct Count(alias3), 1
+08, 08:02, Average(alias1), 26.6
+08, 08:02, Distinct Count(alias3), 1
+09, 09:01, Average(alias1), 16
+09, 09:01, Distinct Count(alias3), 1
+09, 09:15, Average(alias1), 15.75
+09, 09:15, Distinct Count(alias3), 1
+09, 09:45, Average(alias1), 21.2
+09, 09:45, Distinct Count(alias3), 2
+10, 10:12, Average(alias1), 24.25
+10, 10:12, Distinct Count(alias3), 2
+10, 10:22, Average(alias1), 15.2353
+10, 10:22, Distinct Count(alias3), 3
+11, 11:15, Average(alias1), 18.5
+11, 11:15, Distinct Count(alias3), 2
+11, 11:25, Average(alias1), 18.3636
+11, 11:25, Distinct Count(alias3), 3
+11, 11:30, Average(alias1), 16.6
+11, 11:30, Distinct Count(alias3), 2
+11, 11:35, Average(alias1), 7.7
+11, 11:35, Distinct Count(alias3), 2
+12, 12:42, Average(alias1), 18.75
+12, 12:42, Distinct Count(alias3), 1
+12, 12:55, Average(alias1), 21.7368
+12, 12:55, Distinct Count(alias3), 3
+12, 12:59, Average(alias1), 22
+12, 12:59, Distinct Count(alias3), 0
+13, 13:01, Average(alias1), 17.6667
+13, 13:01, Distinct Count(alias3), 1
+13, 13:05, Average(alias1), 25.5
+13, 13:05, Distinct Count(alias3), 1
+13, 13:15, Average(alias1), 16.25
+13, 13:15, Distinct Count(alias3), 1
+13, 13:25, Average(alias1), 18.4
+13, 13:25, Distinct Count(alias3), 3
+14, 14:10, Average(alias1), 20.7857
+14, 14:10, Distinct Count(alias3), 3
+14, 14:55, Average(alias1), 22.75
+14, 14:55, Distinct Count(alias3), 2
+15, 15:35, Average(alias1), 20
+15, 15:35, Distinct Count(alias3), 0
+15, 15:51, Average(alias1), 23.4444
+15, 15:51, Distinct Count(alias3), 2
+15, 15:55, Average(alias1), 22.4
+15, 15:55, Distinct Count(alias3), 1
+16, 16:15, Average(alias1), 16.9375
+16, 16:15, Distinct Count(alias3), 1
+16, 16:24, Average(alias1), 19.3333
+16, 16:24, Distinct Count(alias3), 2
+16, 16:43, Average(alias1), 22.4
+16, 16:43, Distinct Count(alias3), 2
+17, 17:16, Average(alias1), 17
+17, 17:16, Distinct Count(alias3), 1
+17, 17:19, Average(alias1), 16.2
+17, 17:19, Distinct Count(alias3), 2
+17, 17:23, Average(alias1), 15.8
+17, 17:23, Distinct Count(alias3), 1
+17, 17:26, Average(alias1), 12.75
+17, 17:26, Distinct Count(alias3), 2
+17, 17:55, Average(alias1), 19.8649
+17, 17:55, Distinct Count(alias3), 3
+18, 18:21, Average(alias1), 23
+18, 18:21, Distinct Count(alias3), 1
+18, 18:47, Average(alias1), 19.2
+18, 18:47, Distinct Count(alias3), 2
+19, 19:21, Average(alias1), 17.48
+19, 19:21, Distinct Count(alias3), 1
+19, 19:22, Average(alias1), 18.2
+19, 19:22, Distinct Count(alias3), 2
+20, 20:15, Average(alias1), 18.069
+20, 20:15, Distinct Count(alias3), 4
+20, 20:47, Average(alias1), 16.2
+20, 20:47, Distinct Count(alias3), 2
+21, 21:14, Average(alias1), 12.25
+21, 21:14, Distinct Count(alias3), 1
+21, 21:17, Average(alias1), 23.7143
+21, 21:17, Distinct Count(alias3), 2
+21, 21:57, Average(alias1), 15
+21, 21:57, Distinct Count(alias3), 1
+22, 22:27, Average(alias1), 19.3333
+22, 22:27, Distinct Count(alias3), 1
+22, 22:47, Average(alias1), 21.5
+22, 22:47, Distinct Count(alias3), 2
+22, 22:48, Average(alias1), 9.4
+22, 22:48, Distinct Count(alias3), 2
+23, 23:01, Average(alias1), 18.3542
+23, 23:01, Distinct Count(alias3), 5
+23, 23:15, Average(alias1), 7
+23, 23:15, Distinct Count(alias3), 0
+23, 23:59, Average(alias1), 18.08
+23, 23:59, Distinct Count(alias3), 4

@@ -1,0 +1,7 @@
+[0]   SelectState:[9]   Measure:[30339.9]
+[0.05]   SelectState:[9]   Measure:[689]
+[0.1]   SelectState:[9]   Measure:[1359]
+[0.15]   SelectState:[9]   Measure:[490]
+[0.2]   SelectState:[8]   Measure:[299]
+[0.25]   SelectState:[8]   Measure:[1071]
+[[NULL]]   SelectState:[9]   Measure:[3409.2]

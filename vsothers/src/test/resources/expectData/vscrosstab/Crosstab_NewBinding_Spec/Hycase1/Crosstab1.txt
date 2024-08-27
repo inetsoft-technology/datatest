@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+Customer:Region, Customer:State, Customer:City, Sum(Order:Discount)
+USA East, CT, Hartford, 25%
+USA East, FL, NULL, 35%
+USA East, MA, NULL, 50%
+USA East, MD, NULL, 35%
+USA East, NJ, NULL, 255%
+USA East, NY, NULL, 170%
+USA East, PA, NULL, 15%
+USA West, NULL, NULL, 385%

@@ -1,0 +1,5 @@
+The table size(row x col) is: (3 x 3)
+[orderno][product_id][quantity]
+[2][7][6]
+[3][9][7]
+

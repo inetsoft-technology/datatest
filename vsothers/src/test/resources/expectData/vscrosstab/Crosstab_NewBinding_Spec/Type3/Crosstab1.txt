@@ -1,0 +1,35 @@
+The data size(row x col) is:(34 x 4)
+state, Month(expDate), NULL, 2021
+NULL, NULL, NULL, 4th
+CT, 2021 Nov, Average(expid), 12
+CT, 2021 Nov, Distinct Count(C_ID), 1
+CT, 2021 Dec, Average(expid), 12
+CT, 2021 Dec, Distinct Count(C_ID), 1
+NY, 2021 Nov, Average(expid), 14
+NY, 2021 Nov, Distinct Count(C_ID), 1
+NY, 2021 Dec, Average(expid), 6
+NY, 2021 Dec, Distinct Count(C_ID), 1
+NJ, 2021 Nov, Average(expid), 38
+NJ, 2021 Nov, Distinct Count(C_ID), 1
+NJ, 2021 Dec, Average(expid), 18.6667
+NJ, 2021 Dec, Distinct Count(C_ID), 3
+IL, 2021 Nov, Average(expid), 20
+IL, 2021 Nov, Distinct Count(C_ID), 1
+TX, 2021 Nov, Average(expid), 48
+TX, 2021 Nov, Distinct Count(C_ID), 2
+WA, 2021 Nov, Average(expid), 58
+WA, 2021 Nov, Distinct Count(C_ID), 1
+PA, 2021 Dec, Average(expid), 56
+PA, 2021 Dec, Distinct Count(C_ID), 1
+MA, 2021 Nov, Average(expid), 68
+MA, 2021 Nov, Distinct Count(C_ID), 1
+MA, 2021 Dec, Average(expid), 68
+MA, 2021 Dec, Distinct Count(C_ID), 1
+MD, 2021 Nov, Average(expid), 66
+MD, 2021 Nov, Distinct Count(C_ID), 1
+A_NamedGroup, 2021 Nov, Average(expid), 40
+A_NamedGroup, 2021 Nov, Distinct Count(C_ID), 1
+A_NamedGroup, 2021 Dec, Average(expid), 35.3333
+A_NamedGroup, 2021 Dec, Distinct Count(C_ID), 2
+CO, 2021 Nov, Average(expid), 16
+CO, 2021 Nov, Distinct Count(C_ID), 1

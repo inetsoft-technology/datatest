@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 5)
+[field14][[NULL]][1996-01-01 00:00:00][1997-01-01 00:00:00][1998-01-01 00:00:00]
+[[NULL]][Correlation(Freight, EmployeeID)][0.0576][-0.0721][0.0438]
+[[NULL]][Count(EmployeeID)][96][324][234]
+[Belgium][Correlation(Freight, EmployeeID)][[NULL]][0.4039][0.3198]
+[Belgium][Count(EmployeeID)][2][3][7]
+

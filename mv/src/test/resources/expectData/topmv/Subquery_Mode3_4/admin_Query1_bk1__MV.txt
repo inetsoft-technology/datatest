@@ -1,0 +1,7 @@
+The table size(row x col) is: (5 x 3)
+[product_id][product_name][supplier_id]
+[4][Green Planet][8]
+[5][House Hunter][8]
+[7][Sync Me][3]
+[9][True Action][7]
+

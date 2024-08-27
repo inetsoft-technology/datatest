@@ -1,0 +1,14 @@
+The table size(row x col) is: (12 x 3)
+[product_id][product_name][supplier_id]
+[1][Xconnect Server][5]
+[2][InsideView][5]
+[12][MeToo AppServer][2]
+[13][Easy Chess][7]
+[14][Fast Go Game][7]
+[15][Web Bridge][7]
+[16][Combat Hero][7]
+[17][Animal World][6]
+[18][Learn ABC][6]
+[19][Math for Me][6]
+[20][Barbie's Fashion][6]
+

@@ -1,0 +1,9 @@
+The table size(row x col) is: (7 x 2)
+[CUSTOMER_ID][PAID]
+[3][true]
+[5][true]
+[5][true]
+[7][true]
+[20][true]
+[29][true]
+
