@@ -152,7 +152,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test get extended partition2' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M3_C4', [user0], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M3_C4', [user0] as String[], null)
 
       expect:
       globalTest.compareImage()
