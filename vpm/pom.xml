@@ -77,13 +77,13 @@
                     </argLine>
                     <includes>
                         <!--<include>**/*_Case.groovy</include>-->
-                        <include>**/*_Spec</include>
+                        <include>${test.module}/*Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
                         <com.athaydes.spockframework.report.outputDir>target/spock-reports</com.athaydes.spockframework.report.outputDir>
                         <disable.updateAssetDependencies>true</disable.updateAssetDependencies>
-                        <vpm.sree.home>${basedir}/target/test-resources/server/config-${test.module}</vpm.sree.home>
+                        <sree.home>${basedir}/target/test-resources/server/config-${test.module}</sree.home>
                         <plugin.dir>${plugin.dir}</plugin.dir>
                     </systemPropertyVariables>
                 </configuration>
@@ -103,7 +103,7 @@
                 </executions>
                 <configuration>
                     <configFile>../docker/src/test/config/${inetsoft.storage.type}/inetsoft.yaml</configFile>
-                    <backupFile>src/test/resources/config/vpmStorage.zip</backupFile>
+                    <backupFile>src/test/resources/config/${test.module}-storage.zip</backupFile>
                     <configDirectory>target/test-resources/server/config-${test.module}</configDirectory>
                     <properties>
                         <license.key>${inetsoft.license.key}</license.key>
@@ -138,4 +138,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>vpm</id>
+            <properties><test.module>vpm</test.module></properties>
+        </profile>
+        <profile>
+            <id>additionalDB</id>
+            <properties><test.module>additionalDB</test.module></properties>
+        </profile>
+    </profiles>
 </project>
