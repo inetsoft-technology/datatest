@@ -1,28 +1,31 @@
-The data size(row x col) is:(27 x 7)
+The data size(row x col) is:(30 x 7)
 DataGroup_goalTerm_, DataGroup_keyword_, Average(Value of previous DataGroup_goalTerm_: Sum_Google Ranking_), Sum(Moving Median of 5 by row: Average_Google Ranking_), Change from first by row: Sum(Moving Median of 5 by row: Average_Google Ranking_), % Change from first by row: Sum(Moving Median of 5 by row: Average_Google Ranking_), Moving Concat of 3 by row: Moving Concat of 3 by row: DistinctCount_Google Ranking_
-analytics, analytics software, _1, 77.6429, 0, 0%, 7,0,7,0,4
-analytics, business analytics, _1, 77.6429, 0, 0%, 7,0,7,0,4,0,4,0
-analytics, business analytics software, _1, 65.2857, -12.357, -16%, 7,0,4,0,4,0,4,0,11
-analytics, salesforce analytics, _1, 71.2143, -6.429, -8%, 0,4,0,4,0,11,0,11
-analytics, Others, 15,807_1, 71.2143, -6.429, -8%, 4,0,11,0,11
-analytics, Total, 15807, 363, $363.00, 363, 0,11
-analysis, analysis product, _1, 14.5, 0, 0%, 0,0,0,0,2
-analysis, analysis software, _1, 14.5, 0, 0%, 0,0,0,0,2,0,2,0
-analysis, analysis solutions, _1, 22.2472, 7.747, 53%, 0,0,2,0,2,0,2,0,89
-analysis, analysis tools, _1, 22.2472, 7.747, 53%, 0,2,0,2,0,89,0,89
-analysis, Others, _1, 22.2472, 7.747, 53%, 2,0,89,0,89
-analysis, Total, NULL, 95.7415, $95.74, 95.7, 0,89
-data, data modeler, _1, 64.7778, 0, 0%, 24
-data, Total, NULL, 64.7778, $64.78, 64.8, 24
-explore, data exploration, _1, 98, 0, 0%, 1
-explore, Total, NULL, 98, $98.00, 98, 1
-KPI, key metrics, _1, 39.1286, 0, 0%, 2,0,2,0,18
-KPI, key performance indicators, _1, 28.1546, -10.974, -28%, 2,0,2,0,18,0,18,27
-KPI, kpi examples, _1, 46.2943, 7.166, 18%, 2,0,18,0,18,27,18,27,65
-KPI, kpi software, _1, 64.434, 25.305, 65%, 0,18,27,18,27,65,27,65
-KPI, Others, _1, 64.434, 25.305, 65%, 18,27,65,27,65
-KPI, Total, NULL, 242.4454, $242.45, 242.4, 27,65
-mashup, data mashup, _1, 3.1204, 0, 0%, 2,8,2,8
-mashup, enterprise mashup, _1, 3.1204, 0, 0%, 2,8,2,8
-mashup, Total, NULL, 6.2408, $6.24, 6.2, 2,8
-Grand Total, NULL, 15.8K, 870.2055, 870.2055, 87,021%, 2,8
+dashboard, dashboard management, _1, 3.34, 0, 0%, 8,2,8,2,7
+dashboard, flash dashboard, _1, 3.46, 0.12, 4%, 8,2,8,2,7,2,7,9
+dashboard, management dashboards, _1, 3.58, 0.24, 7%, 8,2,7,2,7,9,7,9,98
+dashboard, mobile BI dashboards, _1, 3.46, 0.12, 4%, 2,7,9,7,9,98,9,98
+dashboard, Others, 228,520_1, 3.58, 0.24, 7%, 7,9,98,9,98
+dashboard, Total, 228520, 17.42, $17.42, 17.4, 9,98
+a_groupNull, analytic business intelligence, _1, NULL, 0, NULL, 0,0,0,0,0
+a_groupNull, business intelligence, _1, NULL, 0, NULL, 0,0,0,0,0,0,0,0
+a_groupNull, business intelligence industry, _1, 22.3055, 22.306, NULL, 0,0,0,0,0,0,0,0,99
+a_groupNull, business intelligence market, _1, 22.3055, 22.306, NULL, 0,0,0,0,0,99,0,99
+a_groupNull, Others, 16,744_1, 22.3055, 22.306, NULL, 0,0,99,0,99
+a_groupNull, Total, 16744, 66.9165, $66.92, 66.9, 0,99
+a_group, a_null, _1, 49.5833, 0, 0%, 0,2,0,2,3
+a_group, analysis solutions, _1, 84.6667, 35.083, 71%, 0,2,0,2,3,2,3,4
+a_group, analytic tools, _1, 57.6948, 8.111, 16%, 0,2,3,2,3,4,3,4,90
+a_group, business analytics software, _1, 57.6948, 8.111, 16%, 2,3,4,3,4,90,4,90
+a_group, Others, _1, 84.6667, 35.083, 71%, 3,4,90,4,90
+a_group, Total, NULL, 334.3063, $334.31, 334.3, 4,90
+data, data modeler, _1, 64.7778, 0, 0%, 24
+data, Total, NULL, 64.7778, $64.78, 64.8, 24
+explore, data exploration, _1, 98, 0, 0%, 1
+explore, Total, NULL, 98, $98.00, 98, 1
+KPI, key metrics, _1, 39.1286, 0, 0%, 2,0,2,0,18
+KPI, key performance indicators, _1, 28.1546, -10.974, -28%, 2,0,2,0,18,0,18,27
+KPI, kpi examples, _1, 46.2943, 7.166, 18%, 2,0,18,0,18,27,18,27,65
+KPI, kpi software, _1, 64.434, 25.305, 65%, 0,18,27,18,27,65,27,65
+KPI, Others, _1, 64.434, 25.305, 65%, 18,27,65,27,65
+KPI, Total, NULL, 242.4454, $242.45, 242.4, 27,65
+Grand Total, NULL, 122.6K, 823.866, 823.866, 82,387%, 27,65
