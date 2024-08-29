@@ -1,0 +1,7 @@
+condition table: db table, physical view
+condition type: normal,trigger|normal and trigger
+column table: db table, alias table
+column type: normal,trigger|normal and trigger
+lookup type: normal,trigger
+
+if [column type] <> "normal" then [lookup type] = "trigger";

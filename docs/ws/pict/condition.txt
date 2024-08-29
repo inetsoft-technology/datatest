@@ -1,0 +1,16 @@
+table type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,merge join|rotate|unpivot
+column type1:number,string,boolean,date|time|timeinstant
+column type2:normal,formula|range,group,aggregate
+operation type:=|<|<=|>|>=,one of,between,null,starting with|contains|like,null,top|bottom,in range
+value type:value,variable,expression,field,subquery,session data
+
+
+if [column type1] in {"string", "boolean", "time"} then [column type2] not in {"range"};
+if [column type1] = "boolean" then [operation type] in {"=","null"};
+if [column type1] <> "string" then [value type] <> "session data";
+if [operation type] not in {"=", "one of"} then [value type] <> "session data";
+if [operation type] in {"starting with", "contains", "like", "in range"} then [value type] not in {"subquery", "field"};
+if [operation type] in {"between"} then [value type] not in {"subquery"};
+if [operation type] in {"top", "bottom"} then [value type] in {"value", "variable"};
+if [column type1] not in {"date","timeinstant"} then [operation type] <> "in range";
+if [column type1] in {"date","time","timeinstant"} then [operation type] not in {"starting with","contains","like"};

@@ -1,0 +1,2 @@
+source type:physical table|query|model,ws,component binding|cube|calc field
+chart style:Bar|3D Bar|Point,Pie|3D Pie|Donut,Line|Step Line|Jump Line,Area|Step Area,Radar|Filled Radar,Stock|Candle,Box Plot,Waterfall|Pareto,Map,Treemap|Sunburst|Circle Packing|Icicle,Marimekko,Gantt,Funnel,Tree|Network|Circular Network

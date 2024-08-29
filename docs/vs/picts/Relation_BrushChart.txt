@@ -1,0 +1,11 @@
+chart type2: faced, non-faced, multiStyle
+chart type: bar, line, area, point, pie, donut,radar|filled rader, stock|candle, boxplot, treemap, sunburst, cricle, lcicle, marimekko, waterfall, pareto, map
+source type: lm|query|uploadfile|table|pysicaltable
+namegroup: yes|no
+aggregate: calcfield|normal
+colLevel: string|date or time|calcString|calcdate
+
+
+if [chart type2] = "multiStyle" then [chart type] in {"bar", "line", "area", "point"};
+if [chart type2] = "non-faced" then [chart type] in {"stock", "boxplot", "treemap", "sunburst","cricle", "lcicle", "marimekko", "map"};
+if [chart type2] = "faced" then [chart type] in {"bar", "line", "area", "point","pie", "donut", "radar", "waterfall", "pareto"};

@@ -1,0 +1,8 @@
+column type:date,time,timeinstant
+ranking:none,top|bottom
+group others:disable, yes, no
+level:Year|Month|Day,Quarter|Week,Hour|Minute|Second, Quarter of Year|Week of Year|Day of Week,Month of Year|Day of Month,Hour of Day|Minute of Hour|Second of Minute, None
+
+if [ranking] = "none" then [group others] = "disable" else [group others] in {"yes", "no"};
+if [column type] = "date" then [level] in {"Year", "Quarter", "Month", "Week", "Day", "Quarter of Year", "Month of Year", "Week of Year", "Day of Month", "Day of Week", "None"};
+if [column type] = "time" then [level] in {"Hour", "Minute", "Second", "Hour of Day", "Minute of Hour", "Second of Minute", "None"};

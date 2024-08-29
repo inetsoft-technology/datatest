@@ -1,0 +1,4 @@
+table1 type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+table2 type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+concatenate type:minus|intersect|union|union all
+

@@ -1,0 +1,10 @@
+sourceType: ws, query, model, element
+colType: normal col, calcfield, ws formula col
+checkcolType: string|boolen|num, date|datetime, time
+
+DataView: table|freehand, chart|crosstab, Text
+
+filters: List_Tree, List_Tree_Slider, any
+
+if [colType] = "ws formula col" then [sourceType] = "ws";
+if [sourceType] = "element" then [DataView] <> "Text";

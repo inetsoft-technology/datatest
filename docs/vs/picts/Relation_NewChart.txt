@@ -1,0 +1,11 @@
+chart type2: faced, non-faced, multiStyle
+chart type: step line|step area|jump, step stack line|step stack area, funnel, Gantt, Tree, Network|Circular
+source type: lm|query|uploadfile|table|pysicaltable
+namegroup: yes,no
+aggregate: calcfield|normal
+colLevel: string|date or time|calcString|calcdate
+
+if [chart type2] = "multiStyle" then [chart type] in {"step line", "step area", "jump", "step stack line", "step stack area"};
+if [chart type2] = "non-faced" then [chart type] in {"Tree", "Network", "Circular", "Gantt", "funnel"};
+if [chart type2] = "faced" then [chart type] in {"Tree", "Network", "Circular", "Gantt", "funnel"};
+if [chart type] = "Gantt" then [namegroup]="no";

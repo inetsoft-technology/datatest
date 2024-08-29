@@ -1,0 +1,2 @@
+col type: string, number, datetime|time|date
+filters: list_tree, rangeslider_tree, tree_tree, custom

@@ -1,0 +1,9 @@
+table1 type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+table2 type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+join type:inner|left outer|right outer|full outer
+join condition:=|>|<|>=|<=|<>
+column type1:number,string,boolean,date|time|timeinstant
+column type2:normal,formula|range,group,aggregate
+
+if [column type1] in {"string", "boolean", "time"} then [column type2] <> "range";
+if [join type] <> "inner" then [join condition] = "=";

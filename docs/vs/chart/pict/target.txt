@@ -1,0 +1,22 @@
+#targetline pict case
+chartStyle:Bar|Point|3DBar,Auto|Line|Area|Step Line|StepArea,BoxPlot|Waterfall|Stock|Candle|JumpLine|Pareto
+chartType:single,separate
+Multiple:true,false
+face:true,false
+Stack:true,false
+fieldType:timeinstant|date,time,number
+fieldOptions:Year|Quarter,Month|Week|Day,Hour|Minute|Second,Percent,Change|Valueof,Running,Sliding
+targetType:Line|Band,Statistics
+
+IF [chartStyle] in {"Stock","Candle"} THEN [fieldType] <>"number";
+IF [chartStyle] = "Waterfall" THEN [fieldType] not in {"timeinstant","date","time"};
+IF [chartStyle] = "BoxPlot" THEN [fieldType] = "number";
+IF [chartStyle] in {"BoxPlot","Waterfall","Pareto","JumpLine","Stock","Candle"} THEN [Stack] <> "true";
+IF [chartStyle] in {"BoxPlot","Stock","Candle"} THEN [Multiple] <> "true";
+IF [chartStyle] in {"Stock","Candle","BoxPlot","Waterfall"} THEN [chartType] <> "single";
+
+
+IF [fieldType] in {"timeinstant","date","time"} or [chartStyle] in {"BoxPlot","Stock","Candle"} THEN [targetType] <> "Statistics";
+IF [fieldType] = "time" THEN [fieldOptions] not in {"Year","Quarter","Month","Week","Day","Percent","Change","Valueof","Running","Sliding"};
+IF [fieldType] in {"timeinstant","date"} THEN [fieldOptions] not in {"Percent","Change","Valueof","Running","Sliding"};
+IF[fieldType] = "number" THEN [fieldOptions] not in {"Year","Quarter","Month","Week","Day","Hour","Minute","Second"};

@@ -1,0 +1,9 @@
+data type:number,string,boolean,date|time|timeinstant
+sort:none,ascending|descending,by value(asc)|by value(desc),manual
+ranking:none,top|bottom
+group others:disable, yes, no
+summarize: hide,show
+row total: hide,show
+col total: hide,show
+
+if [ranking] = "none" then [group others] = "disable" else [group others] in {"yes", "no"};

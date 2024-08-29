@@ -1,0 +1,7 @@
+type: binding, formulsscript, convert
+Binding: ws|query, lm, bindingCrosstab|bindingFreehand|bindingTable
+col: normalcol, formulacol, calcfield
+
+if [Binding] = "ws" then [col] = "formulacol";
+if [Binding] = "lm" then [col] in {"normalcol", "calcfield"};
+if [Binding] in {"bindingCrosstab", "bindingFreehand", "bindingTable"} then [col] = "normalcol";

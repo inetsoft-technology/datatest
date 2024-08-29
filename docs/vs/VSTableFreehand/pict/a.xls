@@ -1,0 +1,11 @@
+sourcetype	colFrom	colNum
+element	orginal column	col with visible
+query	r-formulaColumn	partly col
+ws	wsruntimeCol	partly col
+dataModel	orginal column	partly col
+ws	groupAggTableColumn	col with visible
+dataModel	r-formulaColumn	col with visible
+ws	wsruntimeCol	col with visible
+query	orginal column	col with visible
+ws	groupAggTableColumn	partly col
+element	orginal column	partly col

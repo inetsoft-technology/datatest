@@ -1,0 +1,10 @@
+table type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+column type1:number,string,boolean,date|time|timeinstant
+column type2:normal,formula|range
+aggregate type:Sum|Average,Max|Min,Count|Distinct Count,First|Last,Std Deviation|Variance|Std Deviation (Pop)|Variance (Pop)|Median|Mode|Product|Concat,Correlation|Covariance|Weighted Average,NthLargest|NthSmallest|NthMostFrequent|PthPercentile
+percentage type:none, grand total|subtotal
+
+if [column type1] in {"string", "boolean", "time"} then [column type2] <> "range";
+if [column type1] = "boolean" then [aggregate type] in {"Count","Distinct Count","First","Last"};
+if [column type1] in {"date", "timeinstant", "time"} then [aggregate type] in {"Max","Min","Count","Distinct Count","First","Last","Concat","NthLargest","NthSmallest","NthMostFrequent","PthPercentile"};
+if [aggregate type] not in {"Sum", "Average", "Max", "Min", "Count", "Distinct Count", "Std Deviation", "Variance", "Std Deviation (Pop)", "Variance (Pop)", "Median"} then [percentage type] in {"none"};

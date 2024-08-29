@@ -77,7 +77,7 @@
                     </argLine>
                     <includes>
                         <!--<include>**/*_Case.groovy</include>-->
-                        <include>${test.module}/*Spec</include>
+                        <include>${test.module}/**/*Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>

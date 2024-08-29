@@ -1,0 +1,12 @@
+#sourcetype:中embedded作为特殊source单独验证,pict不处理
+#colFrom:列的来源
+#groupAggTableColumn: ws中group,aggregate column. 建议date为主
+#structure:crosstab的结构
+
+sourcetype:ws,query|dataModel|physicaltable,elementbinding
+colFrom:  orginal column, calcfield, groupAggTableColumn,range col,formula,vs runtime col
+
+structure: structure3|structure5,structure7
+
+if [sourcetype] = "ws" then [colFrom] in {"range col", "groupAggTableColumn", "formula", "Rotate"} else [colFrom] not in {"range col", "groupAggTableColumn", "formula"} ;
+if [sourcetype] = "elementbinding" then [colFrom]="orginal column";

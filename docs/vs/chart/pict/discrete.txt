@@ -1,0 +1,6 @@
+discrete position:data field, other field
+in front group:no, one, multiple
+aggregate method:First|Last|Correlation|Covariance|Weighted Average, NthLargest|NthSmallest|NthMostFrequent|PthPercentile, others
+trend and comparison:no, has
+
+if [discrete position] = "other field" then [in front group] = "no";

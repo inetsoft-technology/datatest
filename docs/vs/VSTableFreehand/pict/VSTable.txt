@@ -1,0 +1,6 @@
+sourcetype:ws,query,dataModel,element
+colFrom: r-formulaColumn, orginal column, wsruntimeCol, groupAggTableColumn
+colNum: partly col, col with visible
+
+if [sourcetype] in {"localws", "ws"} then [colFrom] in {"wsruntimeCol", "groupAggTableColumn"} else [colFrom] not in {"wsruntimeCol", "groupAggTableColumn"} ;
+if [sourcetype] = "element" then [colFrom]="orginal column";

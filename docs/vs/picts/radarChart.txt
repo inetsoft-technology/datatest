@@ -1,0 +1,6 @@
+chart type2: facet, non-facet
+chart type:radar(one mea)
+source type: lm|query
+namegroup: yes|no
+aggregate: calcfield|normal
+colLevel:calcString|calcdate

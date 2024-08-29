@@ -1,0 +1,3 @@
+NGType:  defined, from ws
+NGColType: String, datetime|boolean|double
+colBase: normal col|calcfield col, range col|formula col|group col

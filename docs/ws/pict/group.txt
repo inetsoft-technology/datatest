@@ -1,0 +1,6 @@
+table type:db table|model table|query|database query,cross join|mirror|inner join|concatenate,embedded table|upload file|merge join|rotate|unpivot
+column type1:number,string,boolean,date|time|timeinstant
+column type2:normal,formula|range
+group type:none, grouping
+
+if [column type1] in {"string", "boolean", "time"} then [column type2] <> "range";

@@ -1,0 +1,7 @@
+column type:number,string,boolean,date|time|timeinstant
+aggregate type:Sum|Average,Max|Min,Count|Distinct Count,First|Last,Std Deviation|Variance|Std Deviation (Pop)|Variance (Pop)|Median|Mode|Product|Concat,Correlation|Covariance|Weighted Average,NthLargest|NthSmallest|NthMostFrequent|PthPercentile
+trend type:none, change from,value of,percent of,moving avarage,running total, custom
+
+if [column type] = "boolean" then [aggregate type] in {"Count","Distinct Count","First","Last"};
+if [column type] in {"string", "date", "timeinstant", "time"} then [aggregate type] in {"Max","Min","Count","Distinct Count","First","Last","Concat","NthLargest","NthSmallest","NthMostFrequent","PthPercentile"};
+if [column type] <> "number" and [aggregate type] not in {"Count","Distinct Count"} then [trend type] = "none";

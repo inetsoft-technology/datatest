@@ -1,0 +1,4 @@
+FilterType:List, Tree, Slider, Calendar
+SpecialPoint: calcfield|groupcol|formulaCol, normalcol, null
+DataView:Chart|Table|Crosstab|Freehand
+output:Text|Gauge
