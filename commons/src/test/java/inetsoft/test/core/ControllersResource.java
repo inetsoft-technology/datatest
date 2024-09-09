@@ -12,8 +12,10 @@ import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XFactory;
 import inetsoft.uql.asset.AssetRepository;
+import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.plugins.PluginsService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
+import inetsoft.web.admin.content.repository.DatabaseDatasourcesService;
 import inetsoft.web.admin.content.repository.RepletRegistryManager;
 import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
@@ -29,6 +31,8 @@ import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.WorksheetController;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
+import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
+import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
 import inetsoft.web.viewsheet.controller.AssemblyImageService;
 import inetsoft.web.viewsheet.controller.ImportXLSController;
@@ -52,6 +56,7 @@ import java.rmi.RemoteException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
+import org.mockito.Mockito;
 
 public class ControllersResource extends MockMessageResource {
 
@@ -238,9 +243,13 @@ public class ControllersResource extends MockMessageResource {
       vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, placeholderService, viewsheetService);
       vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, placeholderService, viewsheetService);
 
-      pluginsService = new PluginsService(new UploadService(new MavenClientService()), securityEngine);
-
       fileApiService = new FileApiService(deployService, contentRepositoryTreeService);
+
+      DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
+      DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
+      DataModelFolderManagerService dataModelFolderManagerService = Mockito.mock(DataModelFolderManagerService.class);
+      databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService,databaseModelBrowserService,
+              dataModelFolderManagerService);
    }
 
    @Override
@@ -275,10 +284,9 @@ public class ControllersResource extends MockMessageResource {
    public VSChartShowDetailsController getVSChartShowDetailsController() { return vschartShowDetailsController; }
 
    public VSChartBrushController getVSChartBrushController() { return vschartBrushController; }
+      public FileApiService getFileApiService() { return fileApiService; }
 
-   public PluginsService getPluginsService() { return  pluginsService; }
-
-   public FileApiService getFileApiService() { return fileApiService; }
+   public DatabaseDatasourcesController getDatabaseDatasourcesController() { return databaseDatasourcesController; }
 
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
@@ -320,4 +328,6 @@ public class ControllersResource extends MockMessageResource {
    private PluginsService pluginsService;
 
    private FileApiService fileApiService;
+
+   private DatabaseDatasourcesController databaseDatasourcesController;
 }

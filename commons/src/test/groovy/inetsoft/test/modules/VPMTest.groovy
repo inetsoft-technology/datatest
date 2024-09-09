@@ -28,7 +28,7 @@ class VPMTest {
    }
 
    static initHome() {
-      System.err.print("=========vpm.sree.home=====" + System.getProperty("sree.home"))
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
       DataSpace.getDataSpace()
       controllers.initControllers()
@@ -62,6 +62,14 @@ class VPMTest {
       }catch(Exception e) {
          e.printStackTrace()
       }
+   }
+
+   /**
+    * refresh medatadata
+    * @param datasource: 'Examples/Orders'
+    */
+   def refreshMetadata(String datasource) {
+      controllers.getDatabaseDatasourcesController().refreshMetadata(datasource)
    }
 
    def exportData(def data, String filename) {
