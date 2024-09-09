@@ -1,1 +1,6 @@
-The data size(row x col) is:(0 x 0)
+The data size(row x col) is:(5 x 3)
+SHORT, TBOOLEAN, TTIME
+1024, true, 02:23:12
+1369, NULL, 22:10:34
+12369, true, 04:23:45
+246, false, 16:14:45

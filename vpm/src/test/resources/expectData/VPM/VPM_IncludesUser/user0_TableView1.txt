@@ -1,1 +1,4 @@
-The data size(row x col) is:(0 x 0)
+The data size(row x col) is:(3 x 2)
+SHORT, TTIME
+1024, 02:23:12
+12369, 04:23:45

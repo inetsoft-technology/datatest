@@ -1,1 +1,9 @@
-The data size(row x col) is:(0 x 0)
+The data size(row x col) is:(8 x 2)
+CUSTOMER_ID, STATE
+5, AK
+8, CA
+10, CA
+12, AK
+14, CA
+16, FL
+18, FL

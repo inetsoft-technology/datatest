@@ -1,1 +1,22 @@
-The data size(row x col) is:(0 x 0)
+The data size(row x col) is:(21 x 3)
+CUSTOMER_ID, STATE, ZIP
+1, NY, 18322
+2, NJ, 09882
+3, TX, 03887
+4, PA, 38923
+5, AK, 82938
+6, IL, 39283
+7, NJ, 08854
+8, CA, 98839
+9, NJ, 08854
+10, CA, 88938
+11, OH, 32343
+12, AK, 12343
+13, NY, 11223
+14, CA, 83923
+15, NY, 12334
+16, FL, 83923
+17, TX, 28122
+18, FL, 29183
+19, PA, 23445
+20, NY, 11234
