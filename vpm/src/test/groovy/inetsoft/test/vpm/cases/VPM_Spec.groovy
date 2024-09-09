@@ -422,6 +422,7 @@ class VPM_Spec extends Specification {
    def 'VPM_HiddenColumn_WS'() {
       vpmtest = new VPMTest('1^128^__NULL__^VPM/VPM_HiddenColumn_WS')
       vpmtest.executeVS(admin, null)
+      vpmtest.refreshMetadata('Complex VPM/Hidden_WS')
       vpmtest.executeVS(guest, null)
 
       expect:
