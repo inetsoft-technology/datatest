@@ -124,7 +124,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['C_ORDERS1_ORDERS2|TopMV', 'Query1_O|SubMV'])
+         mvtest.getMVDefInfo().containsAll(['C_ORDERS1_ORDERS2|TopMV', 'ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }

@@ -134,7 +134,7 @@ class SubMV_Others_Spec extends Specification{
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
+         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2_O|TopMV', 'Query2_O|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
       }
    }

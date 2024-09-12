@@ -528,7 +528,7 @@ class CalcField_Spec extends Specification {
       mvtest.executeVS(null, null, false, true)
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['OrdersAndReturns|TopMV'])
+         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -560,7 +560,7 @@ class CalcField_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['OrdersAndReturns|TopMV'])
+         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -590,7 +590,7 @@ class CalcField_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|TopMV', 'OrdersAndReturns|TopMV'])
+         mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
       }
    }
