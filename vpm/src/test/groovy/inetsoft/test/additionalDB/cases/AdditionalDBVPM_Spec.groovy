@@ -56,7 +56,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test multi conditions for same or diffderent partition' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C3', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C3', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -67,7 +67,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test vpm conditions for partition and table' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C4', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C4', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -78,7 +78,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test condition type is unary' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M2_C1', [user0], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M2_C1', [user0] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -122,7 +122,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test get base partition2' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C2', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C2', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -136,7 +136,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test get extended partition1' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C3', [user0], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C3', [user0] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -164,7 +164,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test condition defined and binding on different table' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M4_C1', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M4_C1', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
