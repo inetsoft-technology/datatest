@@ -33,7 +33,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test one and multi vpm apply' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M1_C1', [admin] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M1_C1', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -44,7 +44,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test define vpm condition by script' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M1_C2', [admin, user1] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M1_C2', [admin, user1] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -53,36 +53,36 @@ class AdditionalDBVPM_Spec extends Specification {
     *test multi conditions for same partition
     *test multi conditions for diffrent partition
     */
-   /*def 'test multi conditions for same or diffderent partition' () {
+   def 'test multi conditions for same or diffderent partition' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M1_C3', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M1_C3', [admin], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
    /*
     *test vpm conditions for partition and table
     */
-   /*def 'test vpm conditions for partition and table' () {
+   def 'test vpm conditions for partition and table' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M1_C4', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M1_C4', [admin], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
    /*
     *test add join relationship; condition type is unary such as [field] is null
     */
-   /*def 'test condition type is unary' () {
+   def 'test condition type is unary' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M2_C1', [user0], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M2_C1', [user0], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
    /*
     *test add join relationship;
     *condition type is binary such as [field] op [field]
@@ -93,7 +93,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test condition type' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M2_C2', [admin] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M2_C2', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -105,42 +105,42 @@ class AdditionalDBVPM_Spec extends Specification {
     *test binding auto alias-alias table from base partition
     *test binding auto alias-prefix alias table from base partition
     */
-   /*def 'test get base partition1' () {
+   def 'test get base partition1' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M3_C1', [admin] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M3_C1', [admin] as String[], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
    /*
     *condition use manual alias-one level table from base partition
     *test condition use manual alias-two level  table from base partition
     *test condition use auto alias-alias table from base partition
     *test condition use auto alias-prefix alias table from base partition
     */
-   /*def 'test get base partition2' () {
+   def 'test get base partition2' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M3_C2', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M3_C2', [admin], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
    /*
     *test condition defined on normal table from base partition,binding normal table from extended partition
     *test condition defined on normal table from base partition,binding manual alias-two level table from extended partition
     *test condition defined on normal table from base partition,binding auto alias-alias table from extended partition
     *test condition defined on normal table from base partition,binding auto alias-prefix alias table from extended partition
     */
-   /*def 'test get extended partition1' () {
+   def 'test get extended partition1' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M3_C3', [user0], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M3_C3', [user0], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
 
    /*
     *test condition defined on manual alias-one level table from base partition,binding normal table from extended partition
@@ -152,7 +152,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test get extended partition2' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M3_C4', [user0] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^1^128^__NULL__^additionalConnectionTestVPM/TestcaseVS-VPM_M3_C4', [user0] as String[], null)
 
       expect:
       globalTest.compareImage()
@@ -161,12 +161,12 @@ class AdditionalDBVPM_Spec extends Specification {
    /*
     *Test vpm applied,when condition  table has two alias tables
     */
-   /*def 'test condition defined and binding on different table' () {
+   def 'test condition defined and binding on different table' () {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('additionalConnectionTestVPM/Testcase-VPM_M4_C1', [admin], null)
+      globalTest.executeTest('1^128^__NULL__^additionalConnectionTestVPM/Testcase-VPM_M4_C1', [admin], null)
 
       expect:
       globalTest.compareImage()
-   }*/
+   }
 }
