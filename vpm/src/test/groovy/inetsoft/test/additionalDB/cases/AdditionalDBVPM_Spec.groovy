@@ -95,7 +95,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test condition type' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
-      additionalConnectionTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M2_C2', [admin], null)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M2_C2', [admin], null)
 
       expect:
       additionalConnectionTest.compareImage()
@@ -154,7 +154,7 @@ class AdditionalDBVPM_Spec extends Specification {
    def 'test get extended partition2' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
-      additionalConnectionTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M3_C4', [user0], null)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M3_C4', [user0], null)
 
       expect:
       additionalConnectionTest.compareImage()
