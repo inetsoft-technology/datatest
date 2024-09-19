@@ -26,6 +26,7 @@ import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
+import inetsoft.test.core.TUtil
 
 class AdditionalConnectionTest {
    AdditionalConnectionTest(String caseName) {
