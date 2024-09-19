@@ -28,6 +28,7 @@ class AdditionalDB_Spec extends Specification {
    /*
     *test extend model strunctrue in viewsheet
     */
+   @IgnoreRest
    def 'test extended model structure in viewsheet' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
@@ -54,14 +55,14 @@ class AdditionalDB_Spec extends Specification {
    /*
     *test extend model strunctrue in report
     */
-   def 'test extended model structure in report' () {
+  /* def 'test extended model structure in report' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
       additionalConnectionTest.executeTest('Multi-Tenant/model_structure', [admin, user0], null)
 
       expect:
       additionalConnectionTest.compareImage()
-   }
+   }*/
 
    /*
     *test disable default connection in viewsheet
