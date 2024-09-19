@@ -2,6 +2,7 @@ package inetsoft.test.additionalDB.cases
 
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.test.core.TUtil
+import inetsoft.test.modules.AdditionalConnectionTest
 import inetsoft.test.modules.GlobalTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
@@ -12,6 +13,7 @@ import spock.lang.Subject
 
 class AdditionalDBVPM_Spec extends Specification {
    static GlobalTest globalTest
+   static AdditionalConnectionTest additionalConnectionTest
    static String caseName
    @Shared SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])
@@ -23,7 +25,7 @@ class AdditionalDBVPM_Spec extends Specification {
            ['group0'] as String[])
 
    def setupSpec() {
-      GlobalTest.initHome(this.class.getName())
+      AdditionalConnectionTest.initHome(this.class.getName())
    }
 
    /*
@@ -32,22 +34,22 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test one and multi vpm apply' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C1', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C1', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
     /*
     *test vpm applied,define vpm condition by script
     */
    def 'test define vpm condition by script' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C2', [admin, user1] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C2', [admin, user1] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test multi conditions for same partition
@@ -55,33 +57,33 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test multi conditions for same or diffderent partition' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C3', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C3', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test vpm conditions for partition and table
     */
    def 'test vpm conditions for partition and table' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C4', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M1_C4', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test add join relationship; condition type is unary such as [field] is null
     */
    def 'test condition type is unary' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M2_C1', [user0] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M2_C1', [user0] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test add join relationship;
@@ -92,11 +94,11 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test condition type' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M2_C2', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M2_C2', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test binding normal table from base partition
@@ -107,11 +109,11 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test get base partition1' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C1', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C1', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *condition use manual alias-one level table from base partition
@@ -121,11 +123,11 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test get base partition2' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C2', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C2', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
    /*
     *test condition defined on normal table from base partition,binding normal table from extended partition
@@ -135,11 +137,11 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test get extended partition1' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C3', [user0] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M3_C3', [user0] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
 
    /*
@@ -151,11 +153,11 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test get extended partition2' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M3_C4', [user0] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^1^128^__NULL__^MultiTenantVPM/TestcaseVS-VPM_M3_C4', [user0] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
 
    /*
@@ -163,10 +165,10 @@ class AdditionalDBVPM_Spec extends Specification {
     */
    def 'test condition defined and binding on different table' () {
       caseName = specificationContext.currentIteration.name
-      globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M4_C1', [admin] as String[], null)
+      additionalConnectionTest = new AdditionalConnectionTest(caseName)
+      additionalConnectionTest.executeTest('1^128^__NULL__^MultiTenantVPM/Testcase-VPM_M4_C1', [admin] as String[], null)
 
       expect:
-      globalTest.compareImage()
+      additionalConnectionTest.compareImage()
    }
 }
