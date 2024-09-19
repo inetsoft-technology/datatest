@@ -1,0 +1,32 @@
+The table size(row x col) is:(31 x 8)
+CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ORDERNO, ZIP
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 44, 29183
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 54, 29183
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 73, 29183
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 79, 29183
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 85, 29183
+Austin, FISGA Corp, NULL, 17, true, TX, 16, 28122
+Austin, FISGA Corp, NULL, 17, true, TX, 35, 28122
+Austin, FISGA Corp, NULL, 17, true, TX, 37, 28122
+Austin, FISGA Corp, NULL, 17, true, TX, 100, 28122
+Austin, FISGA Corp, NULL, 17, true, TX, 104, 28122
+Austin, FISGA Corp, NULL, 17, true, TX, 123, 28122
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 48, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 55, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 60, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 64, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 66, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 70, 11234
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 120, 11234
+Boomtown, Whittaker, Patrico, 26, true, NJ, 122, 11223
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 18, 23445
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 25, 23445
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 42, 23445
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 102, 23445
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 106, 23445
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 124, 23445
+Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 14, 83923
+Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 56, 83923
+Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 97, 83923
+Pitte, The Big Cat, Aria Duz, 25, false, CA, 125, 03887
+Sevilla, Computer Pilo, Crowther, 28, false, NY, 129, 96894

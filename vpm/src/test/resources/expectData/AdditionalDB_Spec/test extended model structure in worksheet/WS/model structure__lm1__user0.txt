@@ -1,0 +1,19 @@
+The table size(row x col) is:(18 x 7)
+CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
+Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+Austin, FISGA Corp, NULL, 17, true, TX, 28122
+Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234
+Boomtown, Whittaker, Patrico, 26, true, NJ, 11223
+George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 23445
+Jose, Folk Hello, John Bonnie, 21, true, NT, 12334
+lando, FISGA Corp, Roland, 31, true, BU, 02458
+lando, InterLand Services, Roland, 29, false, NULL, 02354
+Little Rock, FISGA, Lisa Petter, 24, true, NK, 83923
+New York, Direct, Michael, 23, true, OH, 98839
+Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
+Park, The Big Cat, George Kloss, 27, true, OH, 69325
+Park, Whittaker, Tyuol, 32, false, BU, NULL
+Pitte, The Big Cat, Aria Duz, 25, false, CA, 03887
+Pitterson, FISGA Corp, Castro, 30, false, FL, 36987
+San, Big Cat, Baker, 22, false, NJ, 12343
+Sevilla, Computer Pilo, Crowther, 28, false, NY, 96894

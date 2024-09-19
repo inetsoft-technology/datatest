@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 8)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
+NULL, Park, The Big Cat, George Kloss, 27, true, OH, 69325
+100  Ave, New York, Direct, Michael, 23, true, OH, 98839
+1237 Hoes, Boomtown, Whittaker, Patrico, 26, true, NJ, 11223
+1237 Hoes, Park, Whittaker, Tyuol, 32, false, BU, NULL
+1839 Via Gaty Dr, Little Rock, FISGA, Lisa Petter, 24, true, NK, 83923
+21 Doger Sound Blvd., Austin, FISGA Corp, NULL, 17, true, TX, 28122
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, NULL, 23445
+345 Sewgen, Pitterson, FISGA Corp, Castro, 30, false, FL, 36987
+345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234
+44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
+4590 River Rd., San, Big Cat, Baker, 22, false, NJ, 12343
+45 Doger Sound Blvd., Jose, Folk Hello, John Bonnie, 21, true, NT, 12334
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
+8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
+90 First Ave., lando, FISGA Corp, Roland, 31, true, BU, 02458
+90 First Ave., New York, Computer Tech, Jean Crowther, 13, false, NY, 11223
+90 First Ave., Pitte, The Big Cat, Aria Duz, 25, false, CA, 03887
+90 First Ave., Sevilla, Computer Pilo, Crowther, 28, false, NY, 96894
+91 PIO, lando, InterLand Services, Roland, 29, false, NULL, 02354

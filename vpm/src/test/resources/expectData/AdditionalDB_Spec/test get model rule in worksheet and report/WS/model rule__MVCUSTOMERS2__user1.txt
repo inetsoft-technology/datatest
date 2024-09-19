@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 8)
+ADDRESS, CITY, COMPANY, CONTACT, CUSTOMER_ID, RESELLER, STATE, ZIP
+21 Doger Sound Blvd., Austin, FISGA Corp, NULL, 17, true, TX, 28122
+300 Great Swamp Rd., George Park, Software Specialists, Eduardo Freyre, 19, true, PA, 23445
+345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NULL, 11234
+44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
+822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
+8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
+839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
+90 First Ave., New York, Computer Tech, Jean Crowther, 13, false, NY, 11223

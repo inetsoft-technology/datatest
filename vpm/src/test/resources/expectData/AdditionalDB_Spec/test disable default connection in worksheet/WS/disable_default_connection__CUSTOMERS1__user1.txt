@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 8)
+ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, RESELLER, STATE, ZIP
+1248 Broadway, New York, High Society Investments, 24, 1, true, NY, 27834
+23 Tasaga Ave., Houston, Big Ed"s BBQ, 22, 2, true, TX, 23421
+283 Davidson Dr., New Brunswick, Rutgers Bank, 25, 1, true, NJ, 08854
+345 Sewgen Dr., Tucson, Folk Mining, 20, 2, true, AZ, 11234
+460 Newcomb Dr., Los Angeles, West Coast Customs, 21, 2, true, CA, 73646
+563 Uptown Dr., Boston, World Software Resellers, 23, 1, false, MA, 28275
