@@ -68,7 +68,7 @@ class AdditionalConnectionTest {
             executeWS(asset_id, it, params)
          }
          else {
-            new Exception("====Input right asset_id========").printStackTrace()
+            new Exception("====Input right asset_id========" + asset_id).printStackTrace()
          }
       }
    }
@@ -155,15 +155,15 @@ class AdditionalConnectionTest {
       if (asset_id.startsWith('1^128^')) {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^128^__NULL__^'))
-         fileName = 'VS' + File.separator + objName + '__' + principal.getName() + '.png'
+         fileName = 'VS' + File.separator + objName + '__' + principal.getIdentityID().getName() + '.png'
       }
       else if (asset_id.startsWith'1^2^') {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^2^__NULL__^'))
-         fileName = 'WS' + File.separator + objName + '__' + tableName + '__' + principal.getName() + '.txt'
+         fileName = 'WS' + File.separator + objName + '__' + tableName + '__' + principal.getIdentityID().getName() + '.txt'
       }
       else {
-         new Exception("====Input right asset_id========").printStackTrace()
+         new Exception("====Input right asset_id when export file======" + asset_id).printStackTrace()
       }
 
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
