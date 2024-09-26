@@ -29,9 +29,9 @@ class Rest_Web_Service_Spec extends Specification{
    }
 
    /*
-    check Rest_Web_Service used in vs and report
+    check Rest_Web_Service used in vs
     */
-   def 'Rest_Web_Service used in vs and report'() {
+   def 'Rest_Web_Service used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()

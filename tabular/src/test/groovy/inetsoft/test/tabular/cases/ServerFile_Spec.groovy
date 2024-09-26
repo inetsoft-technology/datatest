@@ -20,16 +20,16 @@ class ServerFile_Spec extends Specification{
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()
       paras1.put('int', ['120'] as String[])
-      globalTest.executeTest('1^2^__NULL__^ServerFile/ServerFile DataBase Query', paras1)
+      globalTest.executeTest('1^2^__NULL__^ServerFile/ServerFile DataBase Query',paras1)
       globalTest.executeTest('1^2^__NULL__^ServerFile/ServerFile Query', null)
       expect:
       globalTest.compareData()
    }
 
    /*
-    check ServerFile used in vs and report
+    check ServerFile used in vs
     */
-   def 'ServerFile used in vs and report'() {
+   def 'ServerFile used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras = new HashMap<String, Object>()

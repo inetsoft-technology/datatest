@@ -68,9 +68,9 @@ class OData_Spec extends Specification{
    }
 
    /*
-    check OData used in vs and report
+    check OData used in vs
     */
-   def 'OData used in vs and report'() {
+   def 'OData used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()

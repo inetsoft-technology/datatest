@@ -31,9 +31,9 @@ class Mongo_Spec extends Specification{
    }
 
    /*
-    check mongoDB used in vs and report
+    check mongoDB used in vs
     */
-   def 'mongoDB used in vs and report'() {
+   def 'mongoDB used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()

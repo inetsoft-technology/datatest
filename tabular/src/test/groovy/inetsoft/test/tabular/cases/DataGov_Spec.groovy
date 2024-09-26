@@ -28,9 +28,9 @@ class DataGov_Spec extends Specification{
    }
 
    /*
-    check DataGov used in vs and report
+    check DataGov used in vs
     */
-   def 'DataGov used in vs and report'() {
+   def 'DataGov used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras = new HashMap<String, String[]>()
