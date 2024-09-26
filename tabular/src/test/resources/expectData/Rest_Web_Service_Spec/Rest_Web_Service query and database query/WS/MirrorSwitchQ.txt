@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 4)
+state, zip, Fomula_int, formula_string
+NJ, 8816, 11, USA in earth!!!
+NY, 11223, 12, USA in earth!!!
+XA, 569600, 132, China in earth!!!

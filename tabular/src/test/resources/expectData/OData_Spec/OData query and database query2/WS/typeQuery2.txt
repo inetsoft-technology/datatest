@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 2)
+ID, Name
+0, Notebooks
+1, Organizers
+2, Monitors

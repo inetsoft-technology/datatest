@@ -1,0 +1,10 @@
+The table size(row x col) is:(9 x 7)
+_id, int, float, string, bool, date, state
+562897e0e44e83922e782fce, 12, 12.3, test1, true, 2015-10-22 16:01:36, CC
+562897e0e44e83922e782fcf, 13, 0.3, test2, true, 2015-10-22 16:01:36, NJ
+562897e0e44e83922e782fd0, 14, 12.8, test3, false, 2015-10-22 16:01:36, NJ
+562897e0e44e83922e782fd1, 15, 0.8, test4, false, 2015-10-22 16:01:36, NJ
+562897e0e44e83922e782fd2, 16, 0.8, NULL, false, 2015-07-29 00:00:00, NJ
+562897e0e44e83922e782fd3, 16, 0.8, BsonRegularExpression{pattern='foobar', options='i'}, false, 2015-07-29 00:00:00, NJ
+562897e0e44e83922e782fd4, 16, 0.8, Code{code='function () { /* ... */ }'}, false, 2015-07-29 00:00:00, NJ
+562897e0e44e83922e782fd5, 16, 0.8, [a, b, c], false, 2015-07-29 00:00:00, NJ

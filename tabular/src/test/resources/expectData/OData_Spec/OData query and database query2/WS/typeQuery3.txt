@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 3)
+ID, Name, Description
+0, Notebook Basic 15, Notebook Basic, 1.7GHz - 15 XGA - 1024MB DDR2 SDRAM - 40GB
+1, Notebook Professional 17, Notebook Professional, 2.8GHz - 15 XGA - 8GB DDR3 RAM - 500GB
+2, 1UMTS PDA, Ultrafast 3G UMTS/HSDPA Pocket PC, supports GSM network
+3, Comfort Easy, 32 GB Digital Assitant with high-resolution color screen
+4, Ergo Screen, 19 Optimum Resolution 1024 x 768 @ 85Hz, resolution 1280 x 960
+5, Flat Basic, Optimum Hi-Resolution max. 1600 x 1200 @ 85Hz, Dot Pitch: 0.24mm

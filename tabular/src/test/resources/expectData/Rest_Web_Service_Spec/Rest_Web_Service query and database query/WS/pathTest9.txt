@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 4)
+category, author, title, price
+reference, Nigel Rees, Sayings of the Century, 8.95

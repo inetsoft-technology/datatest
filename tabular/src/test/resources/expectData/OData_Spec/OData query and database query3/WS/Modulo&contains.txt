@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 7)
+ID, Name, Description, ReleaseDate, DiscontinuedDate, Rating, Price
+0, Bread, Whole grain bread, 1992-01-01T00:00:00Z, NULL, 4, 2.5

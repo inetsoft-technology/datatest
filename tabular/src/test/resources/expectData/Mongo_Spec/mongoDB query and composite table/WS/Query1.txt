@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 4)
+int, QuarterOfYear(date), formula_int, formula_String
+54, 4th, 70, query_AllDataType1.string 123
+64, 3rd, 80, query_AllDataType1.string 123

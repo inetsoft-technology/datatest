@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 3)
+aaa, bool_col, float_col
+2, true, 2.3
+3, false, 2.3
+4, false, 2.3

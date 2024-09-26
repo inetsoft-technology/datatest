@@ -1,0 +1,41 @@
+The table size(row x col) is:(40 x 3)
+ID, Dimension, Measure
+3, Categories.ID, 1
+3, Categories.Name, Beverages
+3, Name, Havina Cola
+3, Price, 19.90
+3, Supplier.Address.City, Sammamish
+3, Supplier.Address.Country, USA
+3, Supplier.Address.State, WA
+3, Supplier.Address.Street, NE 228th
+3, Supplier.Address.ZipCode, 98074
+3, Supplier.Concurrency, 0
+3, Supplier.ID, 0
+3, Supplier.Location, GEOGRAPHY'SRID=4326;Point(-122.03547668457 47.6316604614258)'
+3, Supplier.Name, Exotic Liquids
+6, Categories.ID, 1
+6, Categories.Name, Beverages
+6, Name, Pink Lemonade
+6, Price, 18.80
+6, Supplier.Address.City, Sammamish
+6, Supplier.Address.Country, USA
+6, Supplier.Address.State, WA
+6, Supplier.Address.Street, NE 228th
+6, Supplier.Address.ZipCode, 98074
+6, Supplier.Concurrency, 0
+6, Supplier.ID, 0
+6, Supplier.Location, GEOGRAPHY'SRID=4326;Point(-122.03547668457 47.6316604614258)'
+6, Supplier.Name, Exotic Liquids
+10, Categories.ID, 1
+10, Categories.Name, Beverages
+10, Name, Coffee
+10, Price, 6.99
+10, Supplier.Address.City, NULL
+10, Supplier.Address.Country, NULL
+10, Supplier.Address.State, NULL
+10, Supplier.Address.Street, NULL
+10, Supplier.Address.ZipCode, NULL
+10, Supplier.Concurrency, NULL
+10, Supplier.ID, NULL
+10, Supplier.Location, NULL
+10, Supplier.Name, NULL

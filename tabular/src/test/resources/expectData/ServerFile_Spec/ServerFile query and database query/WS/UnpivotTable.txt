@@ -1,0 +1,137 @@
+The table size(row x col) is:(136 x 3)
+Dimension, Measure, State
+Discount, 0.00, AZ
+Discount, 0.00, FL
+Discount, 0.00, IL
+Discount, 0.00, NV
+Discount, 0.00, PA
+Discount, 0.00, WA
+Discount, 0.0147, MA
+Discount, 0.0329, NY
+Discount, 0.0357, NJ
+Discount, 0.0455, CA
+Discount, 0.0476, MD
+Discount, 0.0571, TX
+Discount, 0.0667, CO
+Discount, 0.9333, CO
+Discount, 0.9429, TX
+Discount, 0.9524, MD
+Discount, 0.9545, CA
+Discount, 0.9643, NJ
+Discount, 0.9671, NY
+Discount, 0.9853, MA
+Discount, 1.00, AZ
+Discount, 1.00, CT
+Discount, 1.00, FL
+Discount, 1.00, IL
+Discount, 1.00, NV
+Discount, 1.00, PA
+Discount, 1.00, WA
+numRange, 10, AZ
+numRange, 10, CA
+numRange, 10, CO
+numRange, 10, FL
+numRange, 10, IL
+numRange, 10, MA
+numRange, 10, MD
+numRange, 10, NJ
+numRange, 10, NV
+numRange, 10, NY
+numRange, 10, PA
+numRange, 10, TX
+numRange, 10, WA
+numRange, 5, AZ
+numRange, 5, CA
+numRange, 5, CO
+numRange, 5, CT
+numRange, 5, FL
+numRange, 5, IL
+numRange, 5, MA
+numRange, 5, MD
+numRange, 5, NJ
+numRange, 5, NV
+numRange, 5, NY
+numRange, 5, PA
+numRange, 5, TX
+numRange, 5, WA
+Quantity Purchased, 0.0504, NV
+Quantity Purchased, 0.0542, AZ
+Quantity Purchased, 0.0581, PA
+Quantity Purchased, 0.0646, CA
+Quantity Purchased, 0.0726, FL
+Quantity Purchased, 0.0761, CO
+Quantity Purchased, 0.0893, MD
+Quantity Purchased, 0.0957, WA
+Quantity Purchased, 0.0972, MA
+Quantity Purchased, 0.0981, NJ
+Quantity Purchased, 0.1015, TX
+Quantity Purchased, 0.1164, NY
+Quantity Purchased, 0.1374, IL
+Quantity Purchased, 0.8626, IL
+Quantity Purchased, 0.8836, NY
+Quantity Purchased, 0.8985, TX
+Quantity Purchased, 0.9019, NJ
+Quantity Purchased, 0.9028, MA
+Quantity Purchased, 0.9043, WA
+Quantity Purchased, 0.9107, MD
+Quantity Purchased, 0.9239, CO
+Quantity Purchased, 0.9274, FL
+Quantity Purchased, 0.9354, CA
+Quantity Purchased, 0.9419, PA
+Quantity Purchased, 0.9458, AZ
+Quantity Purchased, 0.9496, NV
+Quantity Purchased, 1.00, CT
+Reseller, 0.00, AZ
+Reseller, 0.00, AZ
+Reseller, 0.00, CT
+Reseller, 0.00, FL
+Reseller, 0.00, FL
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, NV
+Reseller, 0.00, NV
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, PA
+Reseller, 0.00, PA
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.0011, WA
+Reseller, 0.0034, CO
+Reseller, 0.0068, NJ
+Reseller, 0.008, CA
+Reseller, 0.0114, IL
+Reseller, 0.0148, MA
+Reseller, 0.0705, WA
+Reseller, 0.0807, CO
+Reseller, 0.1318, IL
+Reseller, 0.1557, NJ
+Reseller, 0.2364, MA
+Reseller, 0.2795, CA
+Year(DateRange_Year), NULL, AZ
+Year(DateRange_Year), NULL, AZ
+Year(DateRange_Year), NULL, CA
+Year(DateRange_Year), NULL, CA
+Year(DateRange_Year), NULL, CO
+Year(DateRange_Year), NULL, CO
+Year(DateRange_Year), NULL, CT
+Year(DateRange_Year), NULL, FL
+Year(DateRange_Year), NULL, FL
+Year(DateRange_Year), NULL, IL
+Year(DateRange_Year), NULL, IL
+Year(DateRange_Year), NULL, MA
+Year(DateRange_Year), NULL, MA
+Year(DateRange_Year), NULL, MD
+Year(DateRange_Year), NULL, MD
+Year(DateRange_Year), NULL, NJ
+Year(DateRange_Year), NULL, NJ
+Year(DateRange_Year), NULL, NV
+Year(DateRange_Year), NULL, NV
+Year(DateRange_Year), NULL, NY
+Year(DateRange_Year), NULL, NY
+Year(DateRange_Year), NULL, PA
+Year(DateRange_Year), NULL, PA
+Year(DateRange_Year), NULL, TX
+Year(DateRange_Year), NULL, TX
+Year(DateRange_Year), NULL, WA
+Year(DateRange_Year), NULL, WA

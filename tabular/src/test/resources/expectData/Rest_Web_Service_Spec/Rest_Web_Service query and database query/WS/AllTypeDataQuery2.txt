@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 11)
+id, firstName, lastName, street, city, state, zip, country, boole, money, doub
+1, Larry, Liang, 40 Oakcrest Dr, East Brunswick, NJ, 08816, USA, true, 0.5, 123456.789
+2, Tom, Lee, 12 Broad St, New York, NY, 11223, USA, true, 1.001, 123456.789
+3, road, wei, 13 aaa St, xi an, XA, 71200, China, false, 1.001, 123456.789
+4, sara, peng, 14 bbbb At, xi an, XA, 71200, China, true, 1.001, 123456.789
+5, bonnie, shi, 15 bbbb At, xi an, XA, 71200, China, true, 1.001, 123456.789
+6, milk, yan, 16 bbbb At, xi an, XA, 71200, China, false, 1.001, 123456.789
+7, road, wei, 18$-_.+!*'(), xi an, XA, 71200, China, true, 1.001, 123456.789
+8, road_&@, wei, 10:10:10, xi an, XA, 71200, China, false, 1.001, 123456.789
+9, road_&@=, wei, 2008-12-20, xi an, XA, 71200, China, false, 1.001, 123456.789
+10, downey, xu, 2008-12-20, xi an, XA, 71200, China, false, 1.001, 123456.789

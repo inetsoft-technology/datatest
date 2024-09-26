@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 4)
+Day(@timestamp), machine.os, Dimension, Measure
+2015-05-18 00:00:00, NULL, bytes, 8382
+2015-05-18 00:00:00, NULL, xss, 0.1429
+2015-05-18 00:00:00, osx, bytes, 21268
+2015-05-18 00:00:00, osx, xss, 0.2857
+2015-05-18 00:00:00, win xp, bytes, 25734
+2015-05-18 00:00:00, win xp, xss, 0.4286
+2015-05-19 00:00:00, win 8, bytes, 14834
+2015-05-19 00:00:00, win 8, xss, 0.5
+2015-05-19 00:00:00, win xp, bytes, 17402
+2015-05-19 00:00:00, win xp, xss, 0.5

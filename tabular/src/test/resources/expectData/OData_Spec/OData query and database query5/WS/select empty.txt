@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 8)
+UserName, FirstName, LastName, MiddleName, Gender, Age, FavoriteFeature, HomeAddress
+russellwhyte, Russell, Whyte, NULL, Male, NULL, Feature1, NULL
+ryantheriault, Ryan, Theriault, NULL, Male, NULL, Feature1, NULL
+scottketchum, Scott, Ketchum, NULL, Male, NULL, Feature1, NULL
+vincentcalabrese, Vincent, Calabrese, NULL, Male, NULL, Feature1, NULL
+willieashmore, Willie, Ashmore, NULL, Male, NULL, Feature1, NULL

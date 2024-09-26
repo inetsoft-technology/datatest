@@ -1,0 +1,18 @@
+The table size(row x col) is:(17 x 6)
+UserName, FirstName, LastName, Emails, AddressInfo, Gender
+elainestewart, Elaine, Stewart, ["Elaine@example.com","Elaine@contoso.com"], [], Female
+genevievereeves, Genevieve, Reeves, ["Genevieve@example.com","Genevieve@contoso.com"], [], Female
+georginabarlow, Georgina, Barlow, ["Georgina@example.com","Georgina@contoso.com"], [], Female
+javieralfred, Javier, Alfred, ["Javier@example.com","Javier@contoso.com"], [{"Address":"89 Jefferson Way Suite 2",{"CountryRegion":"United States","Name":"Portland","Region":"WA"}}], Male
+jonirosales, Joni, Rosales, ["Joni@example.com","Joni@contoso.com"], [], Female
+keithpinckney, Keith, Pinckney, ["Keith@example.com","Keith@contoso.com"], [], Male
+laurelosborn, Laurel, Osborn, ["Laurel@example.com","Laurel@contoso.com"], [], Female
+marshallgaray, Marshall, Garay, ["Marshall@example.com","Marshall@contoso.com"], [], Male
+ronaldmundy, Ronald, Mundy, ["Ronald@example.com","Ronald@contoso.com"], [], Male
+russellwhyte, Russell, Whyte, ["Russell@example.com","Russell@contoso.com"], [{"Address":"187 Suffolk Ln.",{"CountryRegion":"United States","Name":"Boise","Region":"ID"}}], Male
+ryantheriault, Ryan, Theriault, ["Ryan@example.com","Ryan@contoso.com"], [], Male
+salliesampson, Sallie, Sampson, ["Sallie@example.com","Sallie@contoso.com"], [{"Address":"87 Polk St. Suite 5",{"CountryRegion":"United States","Name":"San Francisco","Region":"CA"}},{"Address":"89 Chiaroscuro Rd.",{"CountryRegion":"United States","Name":"Portland","Region":"OR"}}], Female
+sandyosborn, Sandy, Osborn, ["Sandy@example.com","Sandy@contoso.com"], [], Female
+ursulabright, Ursula, Bright, ["Ursula@example.com","Ursula@contoso.com"], [], Female
+vincentcalabrese, Vincent, Calabrese, ["Vincent@example.com","Vincent@contoso.com"], [{"Address":"55 Grizzly Peak Rd.",{"CountryRegion":"United States","Name":"Butte","Region":"MT"}}], Male
+willieashmore, Willie, Ashmore, ["Willie@example.com","Willie@contoso.com"], [], Male

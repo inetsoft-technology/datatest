@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 6)
+UserName, FirstName, LastName, Emails, AddressInfo, Gender
+angelhuffman, Angel, Huffman, ["Angel@example.com"], [], Female
+elainestewart, Elaine, Stewart, ["Elaine@example.com","Elaine@contoso.com"], [], Female
+genevievereeves, Genevieve, Reeves, ["Genevieve@example.com","Genevieve@contoso.com"], [], Female
+georginabarlow, Georgina, Barlow, ["Georgina@example.com","Georgina@contoso.com"], [], Female
+jonirosales, Joni, Rosales, ["Joni@example.com","Joni@contoso.com"], [], Female
+kristakemp, Krista, Kemp, ["Krista@example.com"], [], Female
+laurelosborn, Laurel, Osborn, ["Laurel@example.com","Laurel@contoso.com"], [], Female
+salliesampson, Sallie, Sampson, ["Sallie@example.com","Sallie@contoso.com"], [{"Address":"87 Polk St. Suite 5",{"CountryRegion":"United States","Name":"San Francisco","Region":"CA"}},{"Address":"89 Chiaroscuro Rd.",{"CountryRegion":"United States","Name":"Portland","Region":"OR"}}], Female
+sandyosborn, Sandy, Osborn, ["Sandy@example.com","Sandy@contoso.com"], [], Female
+ursulabright, Ursula, Bright, ["Ursula@example.com","Ursula@contoso.com"], [], Female

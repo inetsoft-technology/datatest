@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 9)
+max_score, total.relation, index, hits._type, hits._id, hits._source.name, hits._source.country, hits._source.state, range_age
+1, eq, index1, company, 1, google, USA, IL, >=30
+1, eq, index2, company, 1, baidu, China, IL, >=30

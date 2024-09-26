@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 18)
+sid, id, position, created_at, created_meta, updated_at, updated_meta, meta, Date/Time - Peak Brightness (UT), Latitude (Deg), Longitude (Deg), Altitude (km), Velocity (km/s), Velocity Components (km/s): vx, Velocity Components (km/s): vy, Velocity Components (km/s): vz, Total Radiated Energy (J), Calculated Total Impact Energy (kt)
+row-2w2x~9wcp-qu2e, 00000000-0000-0000-94B1-813FF61916E7, 0, 1428434514, null, 1428434514, null, { }, 2013-09-24 15:31:00, 10.3S, 164.7W, 40.7, NULL, NULL, NULL, NULL, 160000000000, 0.46
+row-3csf.fnvt~65mx, 00000000-0000-0000-4749-8225E1B272AE, 0, 1428434514, null, 1428434514, null, { }, 2013-04-21 06:23:00, 28.1S, 64.6W, 40.7, NULL, 5, 14, 1, 1070000000000, 2.5
+row-68hz.6vji~aktu, 00000000-0000-0000-F7EA-510061EDA642, 0, 1428434514, null, 1428434514, null, { }, 2015-01-07 01:05:00, 45.7N, 26.9E, 45.5, NULL, -35.4, 1.8, -4.4, 136000000000, 0.4
+row-76ew_purc.6snp, 00000000-0000-0000-F082-489FF215E984, 0, 1428434514, null, 1428434514, null, { }, 2013-11-21 01:50:00, 44.7N, 35.3E, 59.3, NULL, -5, -11, -2.7, 75000000000, 0.23
+row-cju2~q8f7_b6y7, 00000000-0000-0000-EDE6-9C70FBC127E5, 0, 1428434514, null, 1428434514, null, { }, 2014-05-16 12:42:00, 44.2S, 176.2W, 44, NULL, 14.4, 4.6, 6.5, 309000000000, 0.82
+row-hkjc.mu75-57ii, 00000000-0000-0000-2E12-E9116A85F077, 0, 1428434514, null, 1428434514, null, { }, 2015-02-25 10:53:00, 12.4N, 122.4W, 42, NULL, NULL, NULL, NULL, 58000000000, 0.19
+row-m39q.jgfc-kyu2, 00000000-0000-0000-52B5-EFE3E28FCA93, 0, 1428571821, null, 1428571821, null, { }, 2015-03-18 00:04:00, 5.4S, 159.3E, 50, NULL, NULL, NULL, NULL, 121000000000, 0.36

@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 11)
+account_number, balance, firstname, lastname, age, gender, address, employer, email, city, state
+126, 3607, Effie, Gates, 39, F, 620 National Drive, Digitalus, effiegates@digitalus.com, Blodgett, MD
+157, 39868, Claudia, Terry, 20, F, 132 Gunnison Court, Lumbrex, claudiaterry@lumbrex.com, Castleton, MD
+266, 2777, Monique, Conner, 35, F, 489 Metrotech Courtr, Flotonic, moniqueconner@flotonic.com, Retsof, MD
+323, 42230, Chelsea, Gamble, 34, F, 356 Dare Court, Isosphere, chelseagamble@isosphere.com, Dundee, MD
+326, 9692, Pearl, Reese, 30, F, 451 Colonial Court, Accruex, pearlreese@accruex.com, Westmoreland, MD
+454, 31687, Alicia, Rollins, 22, F, 483 Verona Place, Boilcat, aliciarollins@boilcat.com, Lutsen, MD
+644, 44021, Etta, Miller, 21, F, 376 Lawton Street, Bluegrain, ettamiller@bluegrain.com, Baker, MD
+675, 36102, Fisher, Shepard, 27, F, 859 Varick Street, Qot, fishershepard@qot.com, Diaperville, MD
+939, 31228, Hodges, Massey, 37, F, 431 Dahl Court, Kegular, hodgesmassey@kegular.com, Katonah, MD
+977, 6744, Rodgers, Mccray, 21, F, 612 Duryea Place, Papricut, rodgersmccray@papricut.com, Marenisco, MD

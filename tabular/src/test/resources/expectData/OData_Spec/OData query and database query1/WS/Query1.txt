@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 5)
+ID, Name, ReleaseDate, Rating, Price
+2, Vint soda, 2000-10-01 08:00:00, 3, 20.9
+3, Havina Cola, 2005-10-01 08:00:00, 3, 19.9
+4, Fruit Punch, 2003-01-05 08:00:00, 3, 22.99
+5, Cranberry Juice, 2006-08-04 08:00:00, 3, 22.8
+6, Pink Lemonade, 2006-11-05 08:00:00, 3, 18.8
+7, DVD Player, 2006-11-15 08:00:00, 5, 35.88
+8, LCD HDTV, 2008-05-08 08:00:00, 3, 1088.8

@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 7)
+store_book_category, store_book_author, store_book_price, store_bicycle_color, store_book_title, store_bicycle_price, store_book_isbn
+aaa, Nigel Rees, 48.95, red, Sayings of the Century, 19.95, NULL
+bbbb, dsa fvg, 1.95, red, Sayings, 19.95, NULL
+fiction, Evelyn Waugh, 12.99, red, Sword of Honour, 19.95, 0-553-21311-3
+reference, Nigel Rees, 8.95, red, Sayings of the Century, 19.95, NULL

@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 4)
+Day(@timestamp), machine.os, bytes, xss
+2015-05-18, NULL, 8382, 0.1429
+2015-05-18, osx, 21268, 0.2857
+2015-05-18, win xp, 25734, 0.4286
+2015-05-19, win 8, 14834, 0.5
+2015-05-19, win xp, 17402, 0.5

@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 4)
+Name, IcaoCode, Location.Address, Location.Loc
+Beijing Capital International Airport, ZBAA, Airport Road, Chaoyang District, Beijing, 100621, GEOGRAPHY'SRID=4326;Point(116.584444444444 40.08)'
+Los Angeles International Airport, KLAX, 1 World Way, Los Angeles, CA, 90045, GEOGRAPHY'SRID=4326;Point(-118.408055555556 33.9425)'
+San Francisco International Airport, KSFO, South McDonnell Road, San Francisco, CA 94128, GEOGRAPHY'SRID=4326;Point(-122.374722222222 37.6188888888889)'
+Shanghai Hongqiao International Airport, ZSSS, Hongqiao Road 2550, Changning District, GEOGRAPHY'SRID=4326;Point(121.336111111111 31.1977777777778)'

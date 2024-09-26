@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 4)
+ID, Year(ReleaseDate), QuarterOfYear(ReleaseDate), Price
+0, 2000, 4th, 1
+0, 2003, 1st, 1
+0, 2005, 4th, 1
+0, 2006, 3rd, 0.2943
+0, 2008, 2nd, 1
+0.0625, 2006, 4th, 0.7057

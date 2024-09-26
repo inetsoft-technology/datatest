@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 8)
+TripId, ShareId, Description, Name, Budget, StartsAt, EndsAt, Tags
+2004, f94e9116-8bdd-4dac-ab61-08438d0d9a71, Trip from Shanghai to Beijing, Trip in Beijing, 11000, 2014-02-01T00:00:00Z, 2014-02-04T00:00:00Z, ["Travel","Beijing"]

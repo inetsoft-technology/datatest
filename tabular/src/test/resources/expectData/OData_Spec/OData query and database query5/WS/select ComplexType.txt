@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 5)
+Location.Address, Location.Loc, Location.City.Name, Location.City.CountryRegion, Location.City.Region
+1 World Way, Los Angeles, CA, 90045, GEOGRAPHY'SRID=4326;Point(-118.408055555556 33.9425)', Los Angeles, United States, California
+Airport Road, Chaoyang District, Beijing, 100621, GEOGRAPHY'SRID=4326;Point(116.584444444444 40.08)', Beijing, China, Beijing
+Hongqiao Road 2550, Changning District, GEOGRAPHY'SRID=4326;Point(121.336111111111 31.1977777777778)', Shanghai, China, Shanghai
+Jamaica, New York, NY 11430, GEOGRAPHY'SRID=4326;Point(-73.7788888888889 40.6397222222222)', New York City, United States, New York
+South McDonnell Road, San Francisco, CA 94128, GEOGRAPHY'SRID=4326;Point(-122.374722222222 37.6188888888889)', San Francisco, United States, California

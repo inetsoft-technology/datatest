@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 5)
+category, author, title, price, isbn
+fiction, Evelyn Waugh, Sword of Honour, 12.99, 0-553-21311-3

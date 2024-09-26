@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 3)
+company, state, revenue
+AT&T, NJ, 123000
+IBM, NY, 21099
+Inetsoft, NJ, 21099

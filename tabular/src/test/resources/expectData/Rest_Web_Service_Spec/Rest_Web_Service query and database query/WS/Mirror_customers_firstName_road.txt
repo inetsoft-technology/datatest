@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 11)
+id, firstName, lastName, street, city, state, zip, country, boole, money, doub
+3, road, wei, 13 aaa St, xi an, XA, 71200, China, false, 1.001, 123456.789
+7, road, wei, 18$-_.+!*'(), xi an, XA, 71200, China, true, 1.001, 123456.789

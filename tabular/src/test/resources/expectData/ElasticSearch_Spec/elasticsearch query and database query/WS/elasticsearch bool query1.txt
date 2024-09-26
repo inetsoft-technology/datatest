@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 15)
+_index, _type, _id, _score, _source.account_number, _source.balance, _source.firstname, _source.lastname, _source.age, _source.gender, _source.address, _source.employer, _source.email, _source.city, _source.state
+bank, account, 644, 1, 644, 44021, Etta, Miller, 21, F, 376 Lawton Street, Bluegrain, ettamiller@bluegrain.com, Baker, MD
+bank, account, 977, 1, 977, 6744, Rodgers, Mccray, 21, F, 612 Duryea Place, Papricut, rodgersmccray@papricut.com, Marenisco, MD

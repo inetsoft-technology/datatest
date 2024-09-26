@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 10)
+UserName, FirstName, LastName, MiddleName, Gender, Age, FavoriteFeature, HomeAddress, Budget, BossOffice
+elainestewart, Elaine, Stewart, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+genevievereeves, Genevieve, Reeves, NULL, Female, NULL, Feature1, NULL, 0, NULL
+georginabarlow, Georgina, Barlow, NULL, Female, NULL, Feature1, NULL, NULL, NULL

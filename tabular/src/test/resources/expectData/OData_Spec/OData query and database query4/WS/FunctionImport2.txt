@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 8)
+Name, IcaoCode, IataCode, Location.Address, Location.Loc, Location.City.Name, Location.City.CountryRegion, Location.City.Region
+Los Angeles International Airport, KLAX, LAX, 1 World Way, Los Angeles, CA, 90045, GEOGRAPHY'SRID=4326;Point(-118.408055555556 33.9425)', Los Angeles, United States, California

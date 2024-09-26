@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 8)
+UserName, FirstName, LastName, MiddleName, Gender, Age, FavoriteFeature, HomeAddress
+angelhuffman, Angel, Huffman, NULL, Female, NULL, Feature1, NULL

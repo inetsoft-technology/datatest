@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 7)
+hits._id, hits._source.balance, hits._source.firstname, hits._source.age, hits._source.gender, hits._source.state, range_age
+1, 39225, Amber, 32, M, IL, >=30
+13, 32838, Nanette, 28, F, VA, <30
+18, 4180, Dale, 33, M, MD, >=30
+20, 16418, Elinor, 36, M, WA, >=30
+25, 40540, Virginia, 39, F, PA, >=30
+32, 48086, Dillard, 34, F, IN, >=30
+37, 18612, Mcgee, 39, M, OK, >=30
+44, 34487, Aurelia, 37, M, DE, >=30
+49, 29104, Fulton, 23, F, RI, <30
+6, 5686, Hattie, 36, M, TN, >=30

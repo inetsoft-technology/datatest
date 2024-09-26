@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 16)
+_index, _type, _id, _score, _source.account_number, _source.balance, _source.firstname, _source.lastname, _source.age, _source.gender, _source.address, _source.employer, _source.email, _source.city, _source.state, sort
+bank, account, 291, NULL, 291, 19955, Lynn, Pollard, 40, F, 685 Pierrepont Street, Slambda, lynnpollard@slambda.com, Mappsville, ID, [40]
+bank, account, 40, NULL, 40, 33882, Pace, Molina, 40, M, 263 Ovington Court, Cytrak, pacemolina@cytrak.com, Silkworth, OR, [40]
+bank, account, 474, NULL, 474, 35896, Obrien, Walton, 40, F, 192 Ide Court, Suremax, obrienwalton@suremax.com, Crucible, UT, [40]
+bank, account, 479, NULL, 479, 31865, Cameron, Ross, 40, M, 904 Bouck Court, Telpod, cameronross@telpod.com, Nord, MO, [40]
+bank, account, 549, NULL, 549, 1932, Jacqueline, Maxwell, 40, M, 444 Schenck Place, Fuelworks, jacquelinemaxwell@fuelworks.com, Oretta, OR, [40]
+bank, account, 664, NULL, 664, 16163, Hart, Mccormick, 40, M, 144 Guider Avenue, Dyno, hartmccormick@dyno.com, Carbonville, ID, [40]
+bank, account, 878, NULL, 878, 49159, Battle, Blackburn, 40, F, 234 Hendrix Street, Zilphur, battleblackburn@zilphur.com, Wanamie, PA, [40]
+bank, account, 885, NULL, 885, 31661, Valdez, Roberson, 40, F, 227 Scholes Street, Delphide, valdezroberson@delphide.com, Chilton, MT, [40]
+bank, account, 948, NULL, 948, 37074, Sargent, Powers, 40, M, 532 Fiske Place, Accuprint, sargentpowers@accuprint.com, Umapine, AK, [40]
+bank, account, 998, NULL, 998, 16869, Letha, Baker, 40, F, 206 Llama Court, Dognosis, lethabaker@dognosis.com, Dunlo, WV, [40]

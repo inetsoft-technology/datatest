@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 4)
+created_at, formula_string, formula_double, Quarter(Date/Time - Peak Brightness (UT))
+1428434514, row-2w2x~9wcp-qu2e in Earth!, 140.7, 2013 3rd
+1428434514, row-3csf.fnvt~65mx in Earth!, 140.7, 2013 2nd
+1428434514, row-68hz.6vji~aktu in Earth!, 145.5, 2015 1st
+1428434514, row-76ew_purc.6snp in Earth!, 159.3, 2013 4th
+1428434514, row-cju2~q8f7_b6y7 in Earth!, 144, 2014 2nd
+1428434514, row-hkjc.mu75-57ii in Earth!, 142, 2015 1st
+1428571821, row-m39q.jgfc-kyu2 in Earth!, 150, 2015 1st

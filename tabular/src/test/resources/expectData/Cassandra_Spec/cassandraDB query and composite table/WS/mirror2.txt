@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 4)
+customer_id, QuarterOfYear(orderdate), reseller, f_state
+0.3, 3rd, true, 3
+0.6, 1st, false, 1
+0.8, 3rd, false, 2
+0.9, 2nd, false, 1
+1, 2nd, true, 3

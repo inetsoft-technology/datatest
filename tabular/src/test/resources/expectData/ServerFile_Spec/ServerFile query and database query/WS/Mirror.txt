@@ -1,0 +1,8 @@
+The table size(row x col) is:(7 x 4)
+String, Integer, Formula_string_SQL, Formula_integer_Script
+NULL, NULL, null in Earth!, 100
+BEIJING, 20, BEIJING in Earth!, 120
+NANJING, 21, NANJING in Earth!, 121
+Russia, 50, Russia in Earth!, 150
+TOKYO, 35, TOKYO in Earth!, 135
+XIANN, 18, XIANN in Earth!, 118

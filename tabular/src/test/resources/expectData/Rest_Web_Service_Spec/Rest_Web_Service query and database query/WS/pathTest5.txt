@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 5)
+category, author, title, price, isbn
+aaa, Nigel Rees, Sayings of the Century, 48.95, NULL
+fiction, Evelyn Waugh, Sword of Honour, 12.99, 0-553-21311-3

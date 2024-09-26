@@ -1,0 +1,5002 @@
+The table size(row x col) is:(5001 x 3)
+Request ID, Dimension, Measure
+2894, Category, Service Request
+2894, col17, NULL
+2894, col18, NULL
+2894, col19, NULL
+2894, col20, NULL
+2894, col21, NULL
+2894, col22, NULL
+2894, col23, NULL
+2894, col24, NULL
+2894, col25, NULL
+2894, col26, NULL
+2894, col27, NULL
+2894, col28, NULL
+2894, col29, NULL
+2894, col30, NULL
+2894, col31, NULL
+2894, col32, NULL
+2894, col33, NULL
+2894, col34, NULL
+2894, Completed Time, Jan 13, 2021 05:44 PM
+2894, Created By, James Chen
+2894, Created Time, 2021-01-04 10:05:00
+2894, DueBy Time, Not Assigned
+2894, Group, DCO Team
+2894, KPI Required, Not Assigned
+2894, Overdue Status, false
+2894, Requester, James Chen
+2894, Request Status, Closed
+2894, Resolved Time, 2021-01-13 14:46:00
+2894, Responded Date, Not Assigned
+2894, Severity, Not Assigned
+2894, Subcategory, Not Assigned
+2894, Subject, Landbase Access
+2894, Technician, Jonas Zhang
+2895, Category, CM
+2895, col17, NULL
+2895, col18, NULL
+2895, col19, NULL
+2895, col20, NULL
+2895, col21, NULL
+2895, col22, NULL
+2895, col23, NULL
+2895, col24, NULL
+2895, col25, NULL
+2895, col26, NULL
+2895, col27, NULL
+2895, col28, NULL
+2895, col29, NULL
+2895, col30, NULL
+2895, col31, NULL
+2895, col32, NULL
+2895, col33, NULL
+2895, col34, NULL
+2895, Completed Time, Jan 18, 2021 03:03 PM
+2895, Created By, Kelvin Lei
+2895, Created Time, 2021-01-04 11:06:00
+2895, DueBy Time, Not Assigned
+2895, Group, Application Support Group
+2895, KPI Required, Not Assigned
+2895, Overdue Status, false
+2895, Requester, Kelvin Lei
+2895, Request Status, Closed
+2895, Resolved Time, 2021-01-18 15:03:00
+2895, Responded Date, Not Assigned
+2895, Severity, Not Assigned
+2895, Subcategory, Initiative
+2895, Subject, [Change Initiative] Change for update rule for SMS function using
+2895, Technician, Kelvin Lei
+2896, Category, CM
+2896, col17, NULL
+2896, col18, NULL
+2896, col19, NULL
+2896, col20, NULL
+2896, col21, NULL
+2896, col22, NULL
+2896, col23, NULL
+2896, col24, NULL
+2896, col25, NULL
+2896, col26, NULL
+2896, col27, NULL
+2896, col28, NULL
+2896, col29, NULL
+2896, col30, NULL
+2896, col31, NULL
+2896, col32, NULL
+2896, col33, NULL
+2896, col34, NULL
+2896, Completed Time, Jan 18, 2021 03:06 PM
+2896, Created By, Kelvin Lei
+2896, Created Time, 2021-01-04 11:07:00
+2896, DueBy Time, Not Assigned
+2896, Group, Application Support Group
+2896, KPI Required, Not Assigned
+2896, Overdue Status, false
+2896, Requester, Kelvin Lei
+2896, Request Status, Closed
+2896, Resolved Time, 2021-01-18 15:06:00
+2896, Responded Date, Not Assigned
+2896, Severity, Not Assigned
+2896, Subcategory, Request
+2896, Subject, [Change Request] Change for update rule for SMS function using
+2896, Technician, Kelvin Lei
+2897, Category, CM
+2897, col17, NULL
+2897, col18, NULL
+2897, col19, NULL
+2897, col20, NULL
+2897, col21, NULL
+2897, col22, NULL
+2897, col23, NULL
+2897, col24, NULL
+2897, col25, NULL
+2897, col26, NULL
+2897, col27, NULL
+2897, col28, NULL
+2897, col29, NULL
+2897, col30, NULL
+2897, col31, NULL
+2897, col32, NULL
+2897, col33, NULL
+2897, col34, NULL
+2897, Completed Time, Jan 18, 2021 03:06 PM
+2897, Created By, Kelvin Lei
+2897, Created Time, 2021-01-04 14:49:00
+2897, DueBy Time, Not Assigned
+2897, Group, Application Support Group
+2897, KPI Required, Not Assigned
+2897, Overdue Status, false
+2897, Requester, Kelvin Lei
+2897, Request Status, Closed
+2897, Resolved Time, 2021-01-18 15:06:00
+2897, Responded Date, Not Assigned
+2897, Severity, Not Assigned
+2897, Subcategory, Deployment
+2897, Subject, [PIA.MO.Production6] Change for update rule for SMS function using in Production6
+2897, Technician, Kelvin Lei
+2898, Category, CM
+2898, col17, NULL
+2898, col18, NULL
+2898, col19, NULL
+2898, col20, NULL
+2898, col21, NULL
+2898, col22, NULL
+2898, col23, NULL
+2898, col24, NULL
+2898, col25, NULL
+2898, col26, NULL
+2898, col27, NULL
+2898, col28, NULL
+2898, col29, NULL
+2898, col30, NULL
+2898, col31, NULL
+2898, col32, NULL
+2898, col33, NULL
+2898, col34, NULL
+2898, Completed Time, Jan 18, 2021 03:02 PM
+2898, Created By, Kelvin Lei
+2898, Created Time, 2021-01-04 16:48:00
+2898, DueBy Time, Not Assigned
+2898, Group, Application Support Group
+2898, KPI Required, Not Assigned
+2898, Overdue Status, false
+2898, Requester, Kelvin Lei
+2898, Request Status, Closed
+2898, Resolved Time, 2021-01-18 15:02:00
+2898, Responded Date, Not Assigned
+2898, Severity, Not Assigned
+2898, Subcategory, Initiative
+2898, Subject, [Change Initiative] Change for fixing LB-005, LB-036 & LB-049 reports display issue
+2898, Technician, Kelvin Lei
+2899, Category, CM
+2899, col17, NULL
+2899, col18, NULL
+2899, col19, NULL
+2899, col20, NULL
+2899, col21, NULL
+2899, col22, NULL
+2899, col23, NULL
+2899, col24, NULL
+2899, col25, NULL
+2899, col26, NULL
+2899, col27, NULL
+2899, col28, NULL
+2899, col29, NULL
+2899, col30, NULL
+2899, col31, NULL
+2899, col32, NULL
+2899, col33, NULL
+2899, col34, NULL
+2899, Completed Time, Jan 18, 2021 03:07 PM
+2899, Created By, Kelvin Lei
+2899, Created Time, 2021-01-04 16:56:00
+2899, DueBy Time, Not Assigned
+2899, Group, Application Support Group
+2899, KPI Required, Not Assigned
+2899, Overdue Status, false
+2899, Requester, Kelvin Lei
+2899, Request Status, Closed
+2899, Resolved Time, 2021-01-18 15:07:00
+2899, Responded Date, Not Assigned
+2899, Severity, Not Assigned
+2899, Subcategory, Request
+2899, Subject, [Change Request] Change for fixing LB-005, LB-036 & LB-049 reports display issue
+2899, Technician, Kelvin Lei
+2900, Category, CM
+2900, col17, NULL
+2900, col18, NULL
+2900, col19, NULL
+2900, col20, NULL
+2900, col21, NULL
+2900, col22, NULL
+2900, col23, NULL
+2900, col24, NULL
+2900, col25, NULL
+2900, col26, NULL
+2900, col27, NULL
+2900, col28, NULL
+2900, col29, NULL
+2900, col30, NULL
+2900, col31, NULL
+2900, col32, NULL
+2900, col33, NULL
+2900, col34, NULL
+2900, Completed Time, Jan 18, 2021 03:07 PM
+2900, Created By, Kelvin Lei
+2900, Created Time, 2021-01-04 16:58:00
+2900, DueBy Time, Not Assigned
+2900, Group, Application Support Group
+2900, KPI Required, Not Assigned
+2900, Overdue Status, false
+2900, Requester, Kelvin Lei
+2900, Request Status, Closed
+2900, Resolved Time, 2021-01-18 15:07:00
+2900, Responded Date, Not Assigned
+2900, Severity, Not Assigned
+2900, Subcategory, Deployment
+2900, Subject, [PIA.MO.Sandbox6] Change for fixing LB-005, LB-036 & LB-049 reports display issue
+2900, Technician, Kelvin Lei
+2901, Category, Service Request
+2901, col17, NULL
+2901, col18, NULL
+2901, col19, NULL
+2901, col20, NULL
+2901, col21, NULL
+2901, col22, NULL
+2901, col23, NULL
+2901, col24, NULL
+2901, col25, NULL
+2901, col26, NULL
+2901, col27, NULL
+2901, col28, NULL
+2901, col29, NULL
+2901, col30, NULL
+2901, col31, NULL
+2901, col32, NULL
+2901, col33, NULL
+2901, col34, NULL
+2901, Completed Time, Not Assigned
+2901, Created By, Victor Tang
+2901, Created Time, 2021-01-05 12:54:00
+2901, DueBy Time, Not Assigned
+2901, Group, Office Automation
+2901, KPI Required, Not Assigned
+2901, Overdue Status, false
+2901, Requester, Victor Tang
+2901, Request Status, Resolved
+2901, Resolved Time, 2021-01-06 11:34:00
+2901, Responded Date, Not Assigned
+2901, Severity, Not Assigned
+2901, Subcategory, Not Assigned
+2901, Subject, PHIDC Account Request Form for adding new DCO Team Member (Rain Leong) for Sandbox 10
+2901, Technician, Fong Fan
+2902, Category, Service Request
+2902, col17, NULL
+2902, col18, NULL
+2902, col19, NULL
+2902, col20, NULL
+2902, col21, NULL
+2902, col22, NULL
+2902, col23, NULL
+2902, col24, NULL
+2902, col25, NULL
+2902, col26, NULL
+2902, col27, NULL
+2902, col28, NULL
+2902, col29, NULL
+2902, col30, NULL
+2902, col31, NULL
+2902, col32, NULL
+2902, col33, NULL
+2902, col34, NULL
+2902, Completed Time, Not Assigned
+2902, Created By, Victor Tang
+2902, Created Time, 2021-01-05 12:57:00
+2902, DueBy Time, Not Assigned
+2902, Group, Office Automation
+2902, KPI Required, Not Assigned
+2902, Overdue Status, false
+2902, Requester, Victor Tang
+2902, Request Status, Resolved
+2902, Resolved Time, 2021-01-06 11:34:00
+2902, Responded Date, Not Assigned
+2902, Severity, Not Assigned
+2902, Subcategory, Not Assigned
+2902, Subject, PHIDC Account Request Form for adding new DCO Team Member (Rain Leong) for Production 10
+2902, Technician, Fong Fan
+2903, Category, Service Request
+2903, col17, NULL
+2903, col18, NULL
+2903, col19, NULL
+2903, col20, NULL
+2903, col21, NULL
+2903, col22, NULL
+2903, col23, NULL
+2903, col24, NULL
+2903, col25, NULL
+2903, col26, NULL
+2903, col27, NULL
+2903, col28, NULL
+2903, col29, NULL
+2903, col30, NULL
+2903, col31, NULL
+2903, col32, NULL
+2903, col33, NULL
+2903, col34, NULL
+2903, Completed Time, Not Assigned
+2903, Created By, Victor Tang
+2903, Created Time, 2021-01-05 13:08:00
+2903, DueBy Time, Not Assigned
+2903, Group, Application Support Group
+2903, KPI Required, Not Assigned
+2903, Overdue Status, false
+2903, Requester, Victor Tang
+2903, Request Status, Resolved
+2903, Resolved Time, 2021-01-08 22:05:00
+2903, Responded Date, Jan 7, 2021 08:45 PM
+2903, Severity, Not Assigned
+2903, Subcategory, Not Assigned
+2903, Subject, Business Application Account & Access Request (Rain Leong)
+2903, Technician, Kary Lei
+2904, Category, Incident
+2904, col17, NULL
+2904, col18, NULL
+2904, col19, NULL
+2904, col20, NULL
+2904, col21, NULL
+2904, col22, NULL
+2904, col23, NULL
+2904, col24, NULL
+2904, col25, NULL
+2904, col26, NULL
+2904, col27, NULL
+2904, col28, NULL
+2904, col29, NULL
+2904, col30, NULL
+2904, col31, NULL
+2904, col32, NULL
+2904, col33, NULL
+2904, col34, NULL
+2904, Completed Time, Not Assigned
+2904, Created By, Cream He
+2904, Created Time, 2021-01-05 17:20:00
+2904, DueBy Time, Jan 6, 2021 05:20 PM
+2904, Group, Application Support Group
+2904, KPI Required, Yes
+2904, Overdue Status, true
+2904, Requester, Li Heng Yu
+2904, Request Status, Open
+2904, Resolved Time, NULL
+2904, Responded Date, Jan 5, 2021 05:57 PM
+2904, Severity, Urgent
+2904, Subcategory, Not Assigned
+2904, Subject, [PIA.CN.Sandbox9] [Issues of Magic Stone] on 5-Jan-2021
+2904, Technician, Kary Lei
+2905, Category, Service Request
+2905, col17, NULL
+2905, col18, NULL
+2905, col19, NULL
+2905, col20, NULL
+2905, col21, NULL
+2905, col22, NULL
+2905, col23, NULL
+2905, col24, NULL
+2905, col25, NULL
+2905, col26, NULL
+2905, col27, NULL
+2905, col28, NULL
+2905, col29, NULL
+2905, col30, NULL
+2905, col31, NULL
+2905, col32, NULL
+2905, col33, NULL
+2905, col34, NULL
+2905, Completed Time, Jan 25, 2021 02:56 PM
+2905, Created By, Carol Tam
+2905, Created Time, 2021-01-05 18:07:00
+2905, DueBy Time, Not Assigned
+2905, Group, Application Support Group
+2905, KPI Required, Yes
+2905, Overdue Status, false
+2905, Requester, Victor Tang
+2905, Request Status, Closed
+2905, Resolved Time, 2021-01-25 14:52:00
+2905, Responded Date, Jan 5, 2021 11:09 PM
+2905, Severity, Not Assigned
+2905, Subcategory, Not Assigned
+2905, Subject, [PIA.MO.Production6][ Rundown-MOIDC- Add VM for Network Vulnerability Assessment and remove after Penetration test]on05-Jan-2021
+2905, Technician, Kary Lei
+2906, Category, Service Request
+2906, col17, NULL
+2906, col18, NULL
+2906, col19, NULL
+2906, col20, NULL
+2906, col21, NULL
+2906, col22, NULL
+2906, col23, NULL
+2906, col24, NULL
+2906, col25, NULL
+2906, col26, NULL
+2906, col27, NULL
+2906, col28, NULL
+2906, col29, NULL
+2906, col30, NULL
+2906, col31, NULL
+2906, col32, NULL
+2906, col33, NULL
+2906, col34, NULL
+2906, Completed Time, Jan 8, 2021 09:56 PM
+2906, Created By, Carol Tam
+2906, Created Time, 2021-01-05 18:14:00
+2906, DueBy Time, Not Assigned
+2906, Group, Application Support Group
+2906, KPI Required, Yes
+2906, Overdue Status, false
+2906, Requester, Paul Wong
+2906, Request Status, Closed
+2906, Resolved Time, 2021-01-08 21:55:00
+2906, Responded Date, Jan 5, 2021 11:10 PM
+2906, Severity, Not Assigned
+2906, Subcategory, Not Assigned
+2906, Subject, [PIA.MO.Production10][Change for enable CDN preheat for Production10]on05-Jan-2021
+2906, Technician, Kary Lei
+2907, Category, Service Request
+2907, col17, NULL
+2907, col18, NULL
+2907, col19, NULL
+2907, col20, NULL
+2907, col21, NULL
+2907, col22, NULL
+2907, col23, NULL
+2907, col24, NULL
+2907, col25, NULL
+2907, col26, NULL
+2907, col27, NULL
+2907, col28, NULL
+2907, col29, NULL
+2907, col30, NULL
+2907, col31, NULL
+2907, col32, NULL
+2907, col33, NULL
+2907, col34, NULL
+2907, Completed Time, Jan 25, 2021 02:53 PM
+2907, Created By, Carol Tam
+2907, Created Time, 2021-01-05 18:19:00
+2907, DueBy Time, Not Assigned
+2907, Group, Application Support Group
+2907, KPI Required, Yes
+2907, Overdue Status, false
+2907, Requester, Victor Tang
+2907, Request Status, Closed
+2907, Resolved Time, 2021-01-25 14:52:00
+2907, Responded Date, Jan 5, 2021 11:10 PM
+2907, Severity, Not Assigned
+2907, Subcategory, Not Assigned
+2907, Subject, [PIA.MO.Production6][Change Request - Production 6 - Add vLAN access for audit VM ]on05-Jan-2021
+2907, Technician, Kary Lei
+2908, Category, Service Request
+2908, col17, NULL
+2908, col18, NULL
+2908, col19, NULL
+2908, col20, NULL
+2908, col21, NULL
+2908, col22, NULL
+2908, col23, NULL
+2908, col24, NULL
+2908, col25, NULL
+2908, col26, NULL
+2908, col27, NULL
+2908, col28, NULL
+2908, col29, NULL
+2908, col30, NULL
+2908, col31, NULL
+2908, col32, NULL
+2908, col33, NULL
+2908, col34, NULL
+2908, Completed Time, Not Assigned
+2908, Created By, Carol Tam
+2908, Created Time, 2021-01-05 18:24:00
+2908, DueBy Time, Jan 15, 2021 06:24 PM
+2908, Group, Application Support Group
+2908, KPI Required, Yes
+2908, Overdue Status, true
+2908, Requester, Rain Leong
+2908, Request Status, Resolved
+2908, Resolved Time, 2021-01-18 16:10:00
+2908, Responded Date, Jan 5, 2021 11:10 PM
+2908, Severity, Not Assigned
+2908, Subcategory, Not Assigned
+2908, Subject, [PIA.MO.Production6][ MOIDC - Prd6 bug fix windows VSS for taking snapshot backup ]on05-Jan-2021
+2908, Technician, Kary Lei
+2909, Category, Incident
+2909, col17, NULL
+2909, col18, NULL
+2909, col19, NULL
+2909, col20, NULL
+2909, col21, NULL
+2909, col22, NULL
+2909, col23, NULL
+2909, col24, NULL
+2909, col25, NULL
+2909, col26, NULL
+2909, col27, NULL
+2909, col28, NULL
+2909, col29, NULL
+2909, col30, NULL
+2909, col31, NULL
+2909, col32, NULL
+2909, col33, NULL
+2909, col34, NULL
+2909, Completed Time, Jun 3, 2021 09:49 AM
+2909, Created By, Cream He
+2909, Created Time, 2021-01-05 18:34:00
+2909, DueBy Time, Jan 6, 2021 06:30 PM
+2909, Group, Application Support Group
+2909, KPI Required, Yes
+2909, Overdue Status, true
+2909, Requester, Li Heng Yu
+2909, Request Status, Closed
+2909, Resolved Time, 2021-03-05 10:05:00
+2909, Responded Date, Jan 5, 2021 07:46 PM
+2909, Severity, Urgent
+2909, Subcategory, Not Assigned
+2909, Subject, [PIA.CN.Sandbox9] [Games are log out suddenly and no response] on 5-Jan-2021
+2909, Technician, Kary Lei
+2910, Category, Incident
+2910, col17, NULL
+2910, col18, NULL
+2910, col19, NULL
+2910, col20, NULL
+2910, col21, NULL
+2910, col22, NULL
+2910, col23, NULL
+2910, col24, NULL
+2910, col25, NULL
+2910, col26, NULL
+2910, col27, NULL
+2910, col28, NULL
+2910, col29, NULL
+2910, col30, NULL
+2910, col31, NULL
+2910, col32, NULL
+2910, col33, NULL
+2910, col34, NULL
+2910, Completed Time, Jun 3, 2021 09:49 AM
+2910, Created By, Cream He
+2910, Created Time, 2021-01-05 18:37:00
+2910, DueBy Time, Jan 6, 2021 06:30 PM
+2910, Group, Application Support Group
+2910, KPI Required, Yes
+2910, Overdue Status, true
+2910, Requester, Li Heng Yu
+2910, Request Status, Closed
+2910, Resolved Time, 2021-03-05 10:05:00
+2910, Responded Date, Jan 5, 2021 07:46 PM
+2910, Severity, Urgent
+2910, Subcategory, Not Assigned
+2910, Subject, [PIA.CN.Sandbox9] [Issue of Lucky Panda] on 5-Jan-2021
+2910, Technician, Kary Lei
+2911, Category, Incident
+2911, col17, NULL
+2911, col18, NULL
+2911, col19, NULL
+2911, col20, NULL
+2911, col21, NULL
+2911, col22, NULL
+2911, col23, NULL
+2911, col24, NULL
+2911, col25, NULL
+2911, col26, NULL
+2911, col27, NULL
+2911, col28, NULL
+2911, col29, NULL
+2911, col30, NULL
+2911, col31, NULL
+2911, col32, NULL
+2911, col33, NULL
+2911, col34, NULL
+2911, Completed Time, Not Assigned
+2911, Created By, Cream He
+2911, Created Time, 2021-01-05 18:43:00
+2911, DueBy Time, Jan 6, 2021 06:30 PM
+2911, Group, Application Support Group
+2911, KPI Required, Yes
+2911, Overdue Status, true
+2911, Requester, Li Heng Yu
+2911, Request Status, Resolved
+2911, Resolved Time, 2021-06-07 15:25:00
+2911, Responded Date, Jan 5, 2021 07:47 PM
+2911, Severity, Urgent
+2911, Subcategory, Not Assigned
+2911, Subject, [PIA.CN.Sandbox9] [Issue of FaFaFa] on 5-Jan-2021
+2911, Technician, Kary Lei
+2912, Category, Service Request
+2912, col17, NULL
+2912, col18, NULL
+2912, col19, NULL
+2912, col20, NULL
+2912, col21, NULL
+2912, col22, NULL
+2912, col23, NULL
+2912, col24, NULL
+2912, col25, NULL
+2912, col26, NULL
+2912, col27, NULL
+2912, col28, NULL
+2912, col29, NULL
+2912, col30, NULL
+2912, col31, NULL
+2912, col32, NULL
+2912, col33, NULL
+2912, col34, NULL
+2912, Completed Time, Not Assigned
+2912, Created By, Cream He
+2912, Created Time, 2021-01-06 11:36:00
+2912, DueBy Time, Not Assigned
+2912, Group, Office Automation
+2912, KPI Required, Yes
+2912, Overdue Status, false
+2912, Requester, Cream He
+2912, Request Status, Resolved
+2912, Resolved Time, 2021-01-06 12:09:00
+2912, Responded Date, Not Assigned
+2912, Severity, Not Assigned
+2912, Subcategory, Not Assigned
+2912, Subject, Service Request - [PIA.PH.Sandbox10][Reset Sandbox10 Platform Gaming Operation password for Cream He] on 6-Jan-2021
+2912, Technician, Fong Fan
+2913, Category, Service Request
+2913, col17, NULL
+2913, col18, NULL
+2913, col19, NULL
+2913, col20, NULL
+2913, col21, NULL
+2913, col22, NULL
+2913, col23, NULL
+2913, col24, NULL
+2913, col25, NULL
+2913, col26, NULL
+2913, col27, NULL
+2913, col28, NULL
+2913, col29, NULL
+2913, col30, NULL
+2913, col31, NULL
+2913, col32, NULL
+2913, col33, NULL
+2913, col34, NULL
+2913, Completed Time, Not Assigned
+2913, Created By, Cream He
+2913, Created Time, 2021-01-06 12:31:00
+2913, DueBy Time, Not Assigned
+2913, Group, Service Desk
+2913, KPI Required, Yes
+2913, Overdue Status, false
+2913, Requester, Frank Ow
+2913, Request Status, Resolved
+2913, Resolved Time, 2021-01-08 08:54:00
+2913, Responded Date, Not Assigned
+2913, Severity, Not Assigned
+2913, Subcategory, Not Assigned
+2913, Subject, [Service Request] -[Request to set Property Configuration on Property #51010 Valuta Oro on KGI Outlet] on 6-Jan-2021
+2913, Technician, Cream He
+2914, Category, CM
+2914, col17, NULL
+2914, col18, NULL
+2914, col19, NULL
+2914, col20, NULL
+2914, col21, NULL
+2914, col22, NULL
+2914, col23, NULL
+2914, col24, NULL
+2914, col25, NULL
+2914, col26, NULL
+2914, col27, NULL
+2914, col28, NULL
+2914, col29, NULL
+2914, col30, NULL
+2914, col31, NULL
+2914, col32, NULL
+2914, col33, NULL
+2914, col34, NULL
+2914, Completed Time, Feb 1, 2021 10:25 PM
+2914, Created By, Kary Lei
+2914, Created Time, 2021-01-06 15:49:00
+2914, DueBy Time, Not Assigned
+2914, Group, Application Support Group
+2914, KPI Required, Not Assigned
+2914, Overdue Status, false
+2914, Requester, Kary Lei
+2914, Request Status, Closed
+2914, Resolved Time, 2021-02-01 22:25:00
+2914, Responded Date, Not Assigned
+2914, Severity, Not Assigned
+2914, Subcategory, Initiative
+2914, Subject, [Change Initiative] Change for Network Vulnerability Assessment for Production6
+2914, Technician, Kary Lei
+2915, Category, CM
+2915, col17, NULL
+2915, col18, NULL
+2915, col19, NULL
+2915, col20, NULL
+2915, col21, NULL
+2915, col22, NULL
+2915, col23, NULL
+2915, col24, NULL
+2915, col25, NULL
+2915, col26, NULL
+2915, col27, NULL
+2915, col28, NULL
+2915, col29, NULL
+2915, col30, NULL
+2915, col31, NULL
+2915, col32, NULL
+2915, col33, NULL
+2915, col34, NULL
+2915, Completed Time, Feb 1, 2021 10:24 PM
+2915, Created By, Kary Lei
+2915, Created Time, 2021-01-06 15:52:00
+2915, DueBy Time, Not Assigned
+2915, Group, Application Support Group
+2915, KPI Required, Not Assigned
+2915, Overdue Status, false
+2915, Requester, Kary Lei
+2915, Request Status, Closed
+2915, Resolved Time, 2021-02-01 22:24:00
+2915, Responded Date, Not Assigned
+2915, Severity, Not Assigned
+2915, Subcategory, Request
+2915, Subject, [Change Request] Change for Network Vulnerability Assessment for Production6
+2915, Technician, Kary Lei
+2916, Category, Service Request
+2916, col17, NULL
+2916, col18, NULL
+2916, col19, NULL
+2916, col20, NULL
+2916, col21, NULL
+2916, col22, NULL
+2916, col23, NULL
+2916, col24, NULL
+2916, col25, NULL
+2916, col26, NULL
+2916, col27, NULL
+2916, col28, NULL
+2916, col29, NULL
+2916, col30, NULL
+2916, col31, NULL
+2916, col32, NULL
+2916, col33, NULL
+2916, col34, NULL
+2916, Completed Time, Not Assigned
+2916, Created By, Antonio Rocha
+2916, Created Time, 2021-01-06 19:28:00
+2916, DueBy Time, Not Assigned
+2916, Group, Office Automation
+2916, KPI Required, Not Assigned
+2916, Overdue Status, false
+2916, Requester, Antonio Rocha
+2916, Request Status, Resolved
+2916, Resolved Time, 2021-01-08 12:08:00
+2916, Responded Date, Not Assigned
+2916, Severity, Not Assigned
+2916, Subcategory, Not Assigned
+2916, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Judy Liu in Sandbox6
+2916, Technician, Fong Fan
+2917, Category, Service Request
+2917, col17, NULL
+2917, col18, NULL
+2917, col19, NULL
+2917, col20, NULL
+2917, col21, NULL
+2917, col22, NULL
+2917, col23, NULL
+2917, col24, NULL
+2917, col25, NULL
+2917, col26, NULL
+2917, col27, NULL
+2917, col28, NULL
+2917, col29, NULL
+2917, col30, NULL
+2917, col31, NULL
+2917, col32, NULL
+2917, col33, NULL
+2917, col34, NULL
+2917, Completed Time, Not Assigned
+2917, Created By, Antonio Rocha
+2917, Created Time, 2021-01-06 19:34:00
+2917, DueBy Time, Not Assigned
+2917, Group, Office Automation
+2917, KPI Required, Not Assigned
+2917, Overdue Status, false
+2917, Requester, Antonio Rocha
+2917, Request Status, Resolved
+2917, Resolved Time, 2021-01-08 12:08:00
+2917, Responded Date, Not Assigned
+2917, Severity, Not Assigned
+2917, Subcategory, Not Assigned
+2917, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Carol Tam in Sandbox6
+2917, Technician, Fong Fan
+2918, Category, Service Request
+2918, col17, NULL
+2918, col18, NULL
+2918, col19, NULL
+2918, col20, NULL
+2918, col21, NULL
+2918, col22, NULL
+2918, col23, NULL
+2918, col24, NULL
+2918, col25, NULL
+2918, col26, NULL
+2918, col27, NULL
+2918, col28, NULL
+2918, col29, NULL
+2918, col30, NULL
+2918, col31, NULL
+2918, col32, NULL
+2918, col33, NULL
+2918, col34, NULL
+2918, Completed Time, Not Assigned
+2918, Created By, Antonio Rocha
+2918, Created Time, 2021-01-06 19:36:00
+2918, DueBy Time, Not Assigned
+2918, Group, Not Assigned
+2918, KPI Required, Not Assigned
+2918, Overdue Status, false
+2918, Requester, Antonio Rocha
+2918, Request Status, Resolved
+2918, Resolved Time, 2021-01-13 18:17:00
+2918, Responded Date, Not Assigned
+2918, Severity, Not Assigned
+2918, Subcategory, Not Assigned
+2918, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Judy in Sandbox8
+2918, Technician, Paul Wong
+2919, Category, Service Request
+2919, col17, NULL
+2919, col18, NULL
+2919, col19, NULL
+2919, col20, NULL
+2919, col21, NULL
+2919, col22, NULL
+2919, col23, NULL
+2919, col24, NULL
+2919, col25, NULL
+2919, col26, NULL
+2919, col27, NULL
+2919, col28, NULL
+2919, col29, NULL
+2919, col30, NULL
+2919, col31, NULL
+2919, col32, NULL
+2919, col33, NULL
+2919, col34, NULL
+2919, Completed Time, Not Assigned
+2919, Created By, Antonio Rocha
+2919, Created Time, 2021-01-06 19:39:00
+2919, DueBy Time, Not Assigned
+2919, Group, Not Assigned
+2919, KPI Required, Not Assigned
+2919, Overdue Status, false
+2919, Requester, Antonio Rocha
+2919, Request Status, Resolved
+2919, Resolved Time, 2021-01-13 18:17:00
+2919, Responded Date, Not Assigned
+2919, Severity, Not Assigned
+2919, Subcategory, Not Assigned
+2919, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Carol in Sandbox8
+2919, Technician, Paul Wong
+2920, Category, Service Request
+2920, col17, NULL
+2920, col18, NULL
+2920, col19, NULL
+2920, col20, NULL
+2920, col21, NULL
+2920, col22, NULL
+2920, col23, NULL
+2920, col24, NULL
+2920, col25, NULL
+2920, col26, NULL
+2920, col27, NULL
+2920, col28, NULL
+2920, col29, NULL
+2920, col30, NULL
+2920, col31, NULL
+2920, col32, NULL
+2920, col33, NULL
+2920, col34, NULL
+2920, Completed Time, Not Assigned
+2920, Created By, Antonio Rocha
+2920, Created Time, 2021-01-06 19:52:00
+2920, DueBy Time, Not Assigned
+2920, Group, Office Automation
+2920, KPI Required, Not Assigned
+2920, Overdue Status, false
+2920, Requester, Antonio Rocha
+2920, Request Status, Resolved
+2920, Resolved Time, 2021-01-08 11:57:00
+2920, Responded Date, Not Assigned
+2920, Severity, Not Assigned
+2920, Subcategory, Not Assigned
+2920, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Judy in Sandbox10
+2920, Technician, Fong Fan
+2921, Category, CM
+2921, col17, NULL
+2921, col18, NULL
+2921, col19, NULL
+2921, col20, NULL
+2921, col21, NULL
+2921, col22, NULL
+2921, col23, NULL
+2921, col24, NULL
+2921, col25, NULL
+2921, col26, NULL
+2921, col27, NULL
+2921, col28, NULL
+2921, col29, NULL
+2921, col30, NULL
+2921, col31, NULL
+2921, col32, NULL
+2921, col33, NULL
+2921, col34, NULL
+2921, Completed Time, Feb 24, 2021 10:34 PM
+2921, Created By, Kary Lei
+2921, Created Time, 2021-01-06 20:40:00
+2921, DueBy Time, Not Assigned
+2921, Group, Application Support Group
+2921, KPI Required, Not Assigned
+2921, Overdue Status, false
+2921, Requester, Kary Lei
+2921, Request Status, Closed
+2921, Resolved Time, 2021-01-11 16:22:00
+2921, Responded Date, Not Assigned
+2921, Severity, Not Assigned
+2921, Subcategory, Initiative
+2921, Subject, [Change Initiative] Change for enable CDN preheat tools for Production10
+2921, Technician, Kary Lei
+2922, Category, CM
+2922, col17, NULL
+2922, col18, NULL
+2922, col19, NULL
+2922, col20, NULL
+2922, col21, NULL
+2922, col22, NULL
+2922, col23, NULL
+2922, col24, NULL
+2922, col25, NULL
+2922, col26, NULL
+2922, col27, NULL
+2922, col28, NULL
+2922, col29, NULL
+2922, col30, NULL
+2922, col31, NULL
+2922, col32, NULL
+2922, col33, NULL
+2922, col34, NULL
+2922, Completed Time, Feb 1, 2021 10:32 PM
+2922, Created By, Kary Lei
+2922, Created Time, 2021-01-06 20:41:00
+2922, DueBy Time, Not Assigned
+2922, Group, Application Support Group
+2922, KPI Required, Not Assigned
+2922, Overdue Status, false
+2922, Requester, Kary Lei
+2922, Request Status, Closed
+2922, Resolved Time, 2021-01-11 16:23:00
+2922, Responded Date, Not Assigned
+2922, Severity, Not Assigned
+2922, Subcategory, Request
+2922, Subject, [Change Request] Change for enable CDN preheat tools for Production10
+2922, Technician, Kary Lei
+2923, Category, Service Request
+2923, col17, NULL
+2923, col18, NULL
+2923, col19, NULL
+2923, col20, NULL
+2923, col21, NULL
+2923, col22, NULL
+2923, col23, NULL
+2923, col24, NULL
+2923, col25, NULL
+2923, col26, NULL
+2923, col27, NULL
+2923, col28, NULL
+2923, col29, NULL
+2923, col30, NULL
+2923, col31, NULL
+2923, col32, NULL
+2923, col33, NULL
+2923, col34, NULL
+2923, Completed Time, Not Assigned
+2923, Created By, Antonio Rocha
+2923, Created Time, 2021-01-07 09:47:00
+2923, DueBy Time, Not Assigned
+2923, Group, Office Automation
+2923, KPI Required, Not Assigned
+2923, Overdue Status, false
+2923, Requester, Antonio Rocha
+2923, Request Status, Resolved
+2923, Resolved Time, 2021-01-08 11:55:00
+2923, Responded Date, Not Assigned
+2923, Severity, Not Assigned
+2923, Subcategory, Not Assigned
+2923, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Carol in Sandbox10
+2923, Technician, Fong Fan
+2924, Category, Service Request
+2924, col17, NULL
+2924, col18, NULL
+2924, col19, NULL
+2924, col20, NULL
+2924, col21, NULL
+2924, col22, NULL
+2924, col23, NULL
+2924, col24, NULL
+2924, col25, NULL
+2924, col26, NULL
+2924, col27, NULL
+2924, col28, NULL
+2924, col29, NULL
+2924, col30, NULL
+2924, col31, NULL
+2924, col32, NULL
+2924, col33, NULL
+2924, col34, NULL
+2924, Completed Time, Not Assigned
+2924, Created By, Antonio Rocha
+2924, Created Time, 2021-01-07 09:49:00
+2924, DueBy Time, Not Assigned
+2924, Group, Office Automation
+2924, KPI Required, Not Assigned
+2924, Overdue Status, false
+2924, Requester, Antonio Rocha
+2924, Request Status, Resolved
+2924, Resolved Time, 2021-01-08 12:07:00
+2924, Responded Date, Not Assigned
+2924, Severity, Not Assigned
+2924, Subcategory, Not Assigned
+2924, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Judy in Production6
+2924, Technician, Fong Fan
+2925, Category, Service Request
+2925, col17, NULL
+2925, col18, NULL
+2925, col19, NULL
+2925, col20, NULL
+2925, col21, NULL
+2925, col22, NULL
+2925, col23, NULL
+2925, col24, NULL
+2925, col25, NULL
+2925, col26, NULL
+2925, col27, NULL
+2925, col28, NULL
+2925, col29, NULL
+2925, col30, NULL
+2925, col31, NULL
+2925, col32, NULL
+2925, col33, NULL
+2925, col34, NULL
+2925, Completed Time, Not Assigned
+2925, Created By, Antonio Rocha
+2925, Created Time, 2021-01-07 09:50:00
+2925, DueBy Time, Not Assigned
+2925, Group, Office Automation
+2925, KPI Required, Not Assigned
+2925, Overdue Status, false
+2925, Requester, Antonio Rocha
+2925, Request Status, Resolved
+2925, Resolved Time, 2021-01-08 12:07:00
+2925, Responded Date, Not Assigned
+2925, Severity, Not Assigned
+2925, Subcategory, Not Assigned
+2925, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Carol in Production6
+2925, Technician, Fong Fan
+2926, Category, Service Request
+2926, col17, NULL
+2926, col18, NULL
+2926, col19, NULL
+2926, col20, NULL
+2926, col21, NULL
+2926, col22, NULL
+2926, col23, NULL
+2926, col24, NULL
+2926, col25, NULL
+2926, col26, NULL
+2926, col27, NULL
+2926, col28, NULL
+2926, col29, NULL
+2926, col30, NULL
+2926, col31, NULL
+2926, col32, NULL
+2926, col33, NULL
+2926, col34, NULL
+2926, Completed Time, Not Assigned
+2926, Created By, Antonio Rocha
+2926, Created Time, 2021-01-07 09:52:00
+2926, DueBy Time, Not Assigned
+2926, Group, Office Automation
+2926, KPI Required, Not Assigned
+2926, Overdue Status, false
+2926, Requester, Antonio Rocha
+2926, Request Status, Resolved
+2926, Resolved Time, 2021-01-08 11:53:00
+2926, Responded Date, Not Assigned
+2926, Severity, Not Assigned
+2926, Subcategory, Not Assigned
+2926, Subject, MOIDC Account Request Form - Creation of Gamesourcecloud account for Carol in Production10
+2926, Technician, Fong Fan
+2927, Category, Incident
+2927, col17, NULL
+2927, col18, NULL
+2927, col19, NULL
+2927, col20, NULL
+2927, col21, NULL
+2927, col22, NULL
+2927, col23, NULL
+2927, col24, NULL
+2927, col25, NULL
+2927, col26, NULL
+2927, col27, NULL
+2927, col28, NULL
+2927, col29, NULL
+2927, col30, NULL
+2927, col31, NULL
+2927, col32, NULL
+2927, col33, NULL
+2927, col34, NULL
+2927, Completed Time, Jan 7, 2021 02:58 PM
+2927, Created By, Cream He
+2927, Created Time, 2021-01-07 09:59:00
+2927, DueBy Time, Jan 8, 2021 12:19 PM
+2927, Group, Application Support Group
+2927, KPI Required, Yes
+2927, Overdue Status, false
+2927, Requester, Frank Ow
+2927, Request Status, Closed
+2927, Resolved Time, 2021-01-07 12:39:00
+2927, Responded Date, Jan 7, 2021 10:05 AM
+2927, Severity, Urgent
+2927, Subcategory, Not Assigned
+2927, Subject, [PIA.PH.Production10] [Error message when try to login with member Id and Pin on Parton Login page] on 7-Jan-2021
+2927, Technician, Antonio Rocha
+2928, Category, CM
+2928, col17, NULL
+2928, col18, NULL
+2928, col19, NULL
+2928, col20, NULL
+2928, col21, NULL
+2928, col22, NULL
+2928, col23, NULL
+2928, col24, NULL
+2928, col25, NULL
+2928, col26, NULL
+2928, col27, NULL
+2928, col28, NULL
+2928, col29, NULL
+2928, col30, NULL
+2928, col31, NULL
+2928, col32, NULL
+2928, col33, NULL
+2928, col34, NULL
+2928, Completed Time, Jan 18, 2021 04:20 PM
+2928, Created By, Antonio Rocha
+2928, Created Time, 2021-01-07 13:17:00
+2928, DueBy Time, Not Assigned
+2928, Group, Application Support Group
+2928, KPI Required, Not Assigned
+2928, Overdue Status, false
+2928, Requester, Antonio Rocha
+2928, Request Status, Closed
+2928, Resolved Time, 2021-01-11 16:21:00
+2928, Responded Date, Not Assigned
+2928, Severity, Not Assigned
+2928, Subcategory, Deployment
+2928, Subject, [Deployment Request] Change for Enable CDN preheat tools for Production10
+2928, Technician, Antonio Rocha
+2929, Category, Service Request
+2929, col17, NULL
+2929, col18, NULL
+2929, col19, NULL
+2929, col20, NULL
+2929, col21, NULL
+2929, col22, NULL
+2929, col23, NULL
+2929, col24, NULL
+2929, col25, NULL
+2929, col26, NULL
+2929, col27, NULL
+2929, col28, NULL
+2929, col29, NULL
+2929, col30, NULL
+2929, col31, NULL
+2929, col32, NULL
+2929, col33, NULL
+2929, col34, NULL
+2929, Completed Time, Not Assigned
+2929, Created By, Janice Huang
+2929, Created Time, 2021-01-07 15:11:00
+2929, DueBy Time, Not Assigned
+2929, Group, Application Support Group
+2929, KPI Required, Yes
+2929, Overdue Status, false
+2929, Requester, Lucy Cheung
+2929, Request Status, Resolved
+2929, Resolved Time, 2021-01-13 18:54:00
+2929, Responded Date, Jan 7, 2021 08:52 PM
+2929, Severity, Not Assigned
+2929, Subcategory, Not Assigned
+2929, Subject, [PIA.VN.Sandbox8][Hoiana rating api config update] on 07-Jan-2021
+2929, Technician, Kary Lei
+2930, Category, UAT
+2930, col17, NULL
+2930, col18, NULL
+2930, col19, NULL
+2930, col20, NULL
+2930, col21, NULL
+2930, col22, NULL
+2930, col23, NULL
+2930, col24, NULL
+2930, col25, NULL
+2930, col26, NULL
+2930, col27, NULL
+2930, col28, NULL
+2930, col29, NULL
+2930, col30, NULL
+2930, col31, NULL
+2930, col32, NULL
+2930, col33, NULL
+2930, col34, NULL
+2930, Completed Time, Apr 14, 2021 10:13 AM
+2930, Created By, Janice Huang
+2930, Created Time, 2021-01-07 15:30:00
+2930, DueBy Time, Not Assigned
+2930, Group, Service Desk
+2930, KPI Required, Not Assigned
+2930, Overdue Status, false
+2930, Requester, Oliver Un
+2930, Request Status, Closed
+2930, Resolved Time, 2021-04-14 10:13:00
+2930, Responded Date, Not Assigned
+2930, Severity, Not Assigned
+2930, Subcategory, Request
+2930, Subject, UAT Request - [PIA.PH.Sandbox10][Setup internal property with lite lobby and deploy live baccarat] on 07-Jan-2021
+2930, Technician, Janice Huang
+2931, Category, Service Request
+2931, col17, NULL
+2931, col18, NULL
+2931, col19, NULL
+2931, col20, NULL
+2931, col21, NULL
+2931, col22, NULL
+2931, col23, NULL
+2931, col24, NULL
+2931, col25, NULL
+2931, col26, NULL
+2931, col27, NULL
+2931, col28, NULL
+2931, col29, NULL
+2931, col30, NULL
+2931, col31, NULL
+2931, col32, NULL
+2931, col33, NULL
+2931, col34, NULL
+2931, Completed Time, Not Assigned
+2931, Created By, Antonio Rocha
+2931, Created Time, 2021-01-07 18:52:00
+2931, DueBy Time, Jan 12, 2021 06:30 PM
+2931, Group, Application Support Group
+2931, KPI Required, Not Assigned
+2931, Overdue Status, false
+2931, Requester, Antonio Rocha
+2931, Request Status, Resolved
+2931, Resolved Time, 2021-01-11 15:19:00
+2931, Responded Date, Not Assigned
+2931, Severity, Not Assigned
+2931, Subcategory, Not Assigned
+2931, Subject, [Service Request] [Sandbox6 - Access Grant for GameSourceCloud Sandbox6 for Judy] on 7-January-2021
+2931, Technician, Not Assigned
+2932, Category, Service Request
+2932, col17, NULL
+2932, col18, NULL
+2932, col19, NULL
+2932, col20, NULL
+2932, col21, NULL
+2932, col22, NULL
+2932, col23, NULL
+2932, col24, NULL
+2932, col25, NULL
+2932, col26, NULL
+2932, col27, NULL
+2932, col28, NULL
+2932, col29, NULL
+2932, col30, NULL
+2932, col31, NULL
+2932, col32, NULL
+2932, col33, NULL
+2932, col34, NULL
+2932, Completed Time, Not Assigned
+2932, Created By, Antonio Rocha
+2932, Created Time, 2021-01-07 18:53:00
+2932, DueBy Time, Jan 12, 2021 06:30 PM
+2932, Group, Application Support Group
+2932, KPI Required, Not Assigned
+2932, Overdue Status, false
+2932, Requester, Antonio Rocha
+2932, Request Status, Resolved
+2932, Resolved Time, 2021-01-11 15:06:00
+2932, Responded Date, Not Assigned
+2932, Severity, Not Assigned
+2932, Subcategory, Not Assigned
+2932, Subject, [Service Request] [Sandbox6 - Access Grant for GameSourceCloud Sandbox6 for Carol Tam] on 7-January-2021
+2932, Technician, Not Assigned
+2934, Category, Service Request
+2934, col17, NULL
+2934, col18, NULL
+2934, col19, NULL
+2934, col20, NULL
+2934, col21, NULL
+2934, col22, NULL
+2934, col23, NULL
+2934, col24, NULL
+2934, col25, NULL
+2934, col26, NULL
+2934, col27, NULL
+2934, col28, NULL
+2934, col29, NULL
+2934, col30, NULL
+2934, col31, NULL
+2934, col32, NULL
+2934, col33, NULL
+2934, col34, NULL
+2934, Completed Time, Not Assigned
+2934, Created By, Antonio Rocha
+2934, Created Time, 2021-01-07 18:56:00
+2934, DueBy Time, Jan 14, 2021 06:30 PM
+2934, Group, Application Support Group
+2934, KPI Required, Not Assigned
+2934, Overdue Status, true
+2934, Requester, Antonio Rocha
+2934, Request Status, Resolved
+2934, Resolved Time, 2021-03-19 11:05:00
+2934, Responded Date, Jan 18, 2021 11:11 AM
+2934, Severity, Not Assigned
+2934, Subcategory, Not Assigned
+2934, Subject, [Service Request] [Sandbox8 - Access Grant for GameSourceCloud Sandbox8 for Carol Tam] on 7-January-2021
+2934, Technician, Kary Lei
+2935, Category, Service Request
+2935, col17, NULL
+2935, col18, NULL
+2935, col19, NULL
+2935, col20, NULL
+2935, col21, NULL
+2935, col22, NULL
+2935, col23, NULL
+2935, col24, NULL
+2935, col25, NULL
+2935, col26, NULL
+2935, col27, NULL
+2935, col28, NULL
+2935, col29, NULL
+2935, col30, NULL
+2935, col31, NULL
+2935, col32, NULL
+2935, col33, NULL
+2935, col34, NULL
+2935, Completed Time, Not Assigned
+2935, Created By, Antonio Rocha
+2935, Created Time, 2021-01-07 19:02:00
+2935, DueBy Time, Jan 13, 2021 06:20 PM
+2935, Group, Application Support Group
+2935, KPI Required, Not Assigned
+2935, Overdue Status, false
+2935, Requester, Antonio Rocha
+2935, Request Status, Resolved
+2935, Resolved Time, 2021-01-11 15:01:00
+2935, Responded Date, Not Assigned
+2935, Severity, Not Assigned
+2935, Subcategory, Not Assigned
+2935, Subject, [Service Request] [Sandbox10 - Access Grant for GameSourceCloud Sandbox10 for Judy] on 7-January-2021
+2935, Technician, Not Assigned
+2936, Category, Service Request
+2936, col17, NULL
+2936, col18, NULL
+2936, col19, NULL
+2936, col20, NULL
+2936, col21, NULL
+2936, col22, NULL
+2936, col23, NULL
+2936, col24, NULL
+2936, col25, NULL
+2936, col26, NULL
+2936, col27, NULL
+2936, col28, NULL
+2936, col29, NULL
+2936, col30, NULL
+2936, col31, NULL
+2936, col32, NULL
+2936, col33, NULL
+2936, col34, NULL
+2936, Completed Time, Not Assigned
+2936, Created By, Antonio Rocha
+2936, Created Time, 2021-01-07 19:03:00
+2936, DueBy Time, Jan 13, 2021 06:20 PM
+2936, Group, Application Support Group
+2936, KPI Required, Not Assigned
+2936, Overdue Status, false
+2936, Requester, Antonio Rocha
+2936, Request Status, Resolved
+2936, Resolved Time, 2021-01-11 15:02:00
+2936, Responded Date, Not Assigned
+2936, Severity, Not Assigned
+2936, Subcategory, Not Assigned
+2936, Subject, [Service Request] [Sandbox10 - Access Grant for GameSourceCloud Sandbox10 for Carol Tam] on 7-January-2021
+2936, Technician, Not Assigned
+2937, Category, Service Request
+2937, col17, NULL
+2937, col18, NULL
+2937, col19, NULL
+2937, col20, NULL
+2937, col21, NULL
+2937, col22, NULL
+2937, col23, NULL
+2937, col24, NULL
+2937, col25, NULL
+2937, col26, NULL
+2937, col27, NULL
+2937, col28, NULL
+2937, col29, NULL
+2937, col30, NULL
+2937, col31, NULL
+2937, col32, NULL
+2937, col33, NULL
+2937, col34, NULL
+2937, Completed Time, Not Assigned
+2937, Created By, Antonio Rocha
+2937, Created Time, 2021-01-07 19:06:00
+2937, DueBy Time, Jan 13, 2021 06:19 PM
+2937, Group, Application Support Group
+2937, KPI Required, Not Assigned
+2937, Overdue Status, false
+2937, Requester, Antonio Rocha
+2937, Request Status, Resolved
+2937, Resolved Time, 2021-01-11 15:32:00
+2937, Responded Date, Not Assigned
+2937, Severity, Not Assigned
+2937, Subcategory, Not Assigned
+2937, Subject, [Service Request] [Production6 - Access Grant for GameSourceCloud Production6 for Judy] on 7-January-2021
+2937, Technician, Not Assigned
+2938, Category, Service Request
+2938, col17, NULL
+2938, col18, NULL
+2938, col19, NULL
+2938, col20, NULL
+2938, col21, NULL
+2938, col22, NULL
+2938, col23, NULL
+2938, col24, NULL
+2938, col25, NULL
+2938, col26, NULL
+2938, col27, NULL
+2938, col28, NULL
+2938, col29, NULL
+2938, col30, NULL
+2938, col31, NULL
+2938, col32, NULL
+2938, col33, NULL
+2938, col34, NULL
+2938, Completed Time, Not Assigned
+2938, Created By, Antonio Rocha
+2938, Created Time, 2021-01-07 19:08:00
+2938, DueBy Time, Jan 13, 2021 06:19 PM
+2938, Group, Application Support Group
+2938, KPI Required, Not Assigned
+2938, Overdue Status, false
+2938, Requester, Antonio Rocha
+2938, Request Status, Resolved
+2938, Resolved Time, 2021-01-11 15:32:00
+2938, Responded Date, Not Assigned
+2938, Severity, Not Assigned
+2938, Subcategory, Not Assigned
+2938, Subject, [Service Request] [Production6 - Access Grant for GameSourceCloud Production6 for Carol Tam] on 7-January-2021
+2938, Technician, Not Assigned
+2939, Category, Service Request
+2939, col17, NULL
+2939, col18, NULL
+2939, col19, NULL
+2939, col20, NULL
+2939, col21, NULL
+2939, col22, NULL
+2939, col23, NULL
+2939, col24, NULL
+2939, col25, NULL
+2939, col26, NULL
+2939, col27, NULL
+2939, col28, NULL
+2939, col29, NULL
+2939, col30, NULL
+2939, col31, NULL
+2939, col32, NULL
+2939, col33, NULL
+2939, col34, NULL
+2939, Completed Time, Not Assigned
+2939, Created By, Antonio Rocha
+2939, Created Time, 2021-01-07 19:09:00
+2939, DueBy Time, Jan 13, 2021 06:18 PM
+2939, Group, Application Support Group
+2939, KPI Required, Not Assigned
+2939, Overdue Status, false
+2939, Requester, Antonio Rocha
+2939, Request Status, Resolved
+2939, Resolved Time, 2021-01-11 15:24:00
+2939, Responded Date, Not Assigned
+2939, Severity, Not Assigned
+2939, Subcategory, Not Assigned
+2939, Subject, [Service Request] [Production10 - Access Grant for GameSourceCloud Production10 for Carol Tam] on 7-January-2021
+2939, Technician, Not Assigned
+2940, Category, Service Request
+2940, col17, NULL
+2940, col18, NULL
+2940, col19, NULL
+2940, col20, NULL
+2940, col21, NULL
+2940, col22, NULL
+2940, col23, NULL
+2940, col24, NULL
+2940, col25, NULL
+2940, col26, NULL
+2940, col27, NULL
+2940, col28, NULL
+2940, col29, NULL
+2940, col30, NULL
+2940, col31, NULL
+2940, col32, NULL
+2940, col33, NULL
+2940, col34, NULL
+2940, Completed Time, Not Assigned
+2940, Created By, Carol Tam
+2940, Created Time, 2021-01-07 20:53:00
+2940, DueBy Time, Jan 19, 2021 06:30 PM
+2940, Group, Application Support Group
+2940, KPI Required, Yes
+2940, Overdue Status, false
+2940, Requester, Kary Lei
+2940, Request Status, Resolved
+2940, Resolved Time, 2021-01-18 10:45:00
+2940, Responded Date, Jan 7, 2021 09:32 PM
+2940, Severity, Not Assigned
+2940, Subcategory, Not Assigned
+2940, Subject, [PIA.PH.Sandbox10][setup internal property with lite lobby and deploy live baccarat for Sandbox10] On 7-Jan-2021
+2940, Technician, Kary Lei
+2941, Category, CM
+2941, col17, NULL
+2941, col18, NULL
+2941, col19, NULL
+2941, col20, NULL
+2941, col21, NULL
+2941, col22, NULL
+2941, col23, NULL
+2941, col24, NULL
+2941, col25, NULL
+2941, col26, NULL
+2941, col27, NULL
+2941, col28, NULL
+2941, col29, NULL
+2941, col30, NULL
+2941, col31, NULL
+2941, col32, NULL
+2941, col33, NULL
+2941, col34, NULL
+2941, Completed Time, Jan 27, 2021 06:52 PM
+2941, Created By, Kary Lei
+2941, Created Time, 2021-01-07 20:56:00
+2941, DueBy Time, Not Assigned
+2941, Group, Application Support Group
+2941, KPI Required, Not Assigned
+2941, Overdue Status, false
+2941, Requester, Kary Lei
+2941, Request Status, Closed
+2941, Resolved Time, 2021-01-27 18:52:00
+2941, Responded Date, Not Assigned
+2941, Severity, Not Assigned
+2941, Subcategory, Deployment
+2941, Subject, [Deployment Request] Change for adding audit VM to ESXi Server for Production6
+2941, Technician, Kary Lei
+2942, Category, CM
+2942, col17, NULL
+2942, col18, NULL
+2942, col19, NULL
+2942, col20, NULL
+2942, col21, NULL
+2942, col22, NULL
+2942, col23, NULL
+2942, col24, NULL
+2942, col25, NULL
+2942, col26, NULL
+2942, col27, NULL
+2942, col28, NULL
+2942, col29, NULL
+2942, col30, NULL
+2942, col31, NULL
+2942, col32, NULL
+2942, col33, NULL
+2942, col34, NULL
+2942, Completed Time, Apr 8, 2021 02:45 PM
+2942, Created By, Kary Lei
+2942, Created Time, 2021-01-07 21:23:00
+2942, DueBy Time, Not Assigned
+2942, Group, Application Support Group
+2942, KPI Required, Not Assigned
+2942, Overdue Status, false
+2942, Requester, Kary Lei
+2942, Request Status, Closed
+2942, Resolved Time, 2021-04-08 14:45:00
+2942, Responded Date, Not Assigned
+2942, Severity, Not Assigned
+2942, Subcategory, Initiative
+2942, Subject, [Change Initiative] Change for setup internal property with lite lobby and deploy live baccarat for Sandbox10
+2942, Technician, Kary Lei
+2943, Category, CM
+2943, col17, NULL
+2943, col18, NULL
+2943, col19, NULL
+2943, col20, NULL
+2943, col21, NULL
+2943, col22, NULL
+2943, col23, NULL
+2943, col24, NULL
+2943, col25, NULL
+2943, col26, NULL
+2943, col27, NULL
+2943, col28, NULL
+2943, col29, NULL
+2943, col30, NULL
+2943, col31, NULL
+2943, col32, NULL
+2943, col33, NULL
+2943, col34, NULL
+2943, Completed Time, Apr 8, 2021 02:46 PM
+2943, Created By, Kary Lei
+2943, Created Time, 2021-01-07 21:24:00
+2943, DueBy Time, Not Assigned
+2943, Group, Application Support Group
+2943, KPI Required, Not Assigned
+2943, Overdue Status, false
+2943, Requester, Kary Lei
+2943, Request Status, Closed
+2943, Resolved Time, 2021-04-08 14:46:00
+2943, Responded Date, Not Assigned
+2943, Severity, Not Assigned
+2943, Subcategory, Request
+2943, Subject, [Change Request] Change for setup internal property with lite lobby and deploy live baccarat for Sandbox10
+2943, Technician, Kary Lei
+2944, Category, Service Request
+2944, col17, NULL
+2944, col18, NULL
+2944, col19, NULL
+2944, col20, NULL
+2944, col21, NULL
+2944, col22, NULL
+2944, col23, NULL
+2944, col24, NULL
+2944, col25, NULL
+2944, col26, NULL
+2944, col27, NULL
+2944, col28, NULL
+2944, col29, NULL
+2944, col30, NULL
+2944, col31, NULL
+2944, col32, NULL
+2944, col33, NULL
+2944, col34, NULL
+2944, Completed Time, Not Assigned
+2944, Created By, Janice Huang
+2944, Created Time, 2021-01-08 09:02:00
+2944, DueBy Time, Not Assigned
+2944, Group, Office Automation
+2944, KPI Required, Yes
+2944, Overdue Status, false
+2944, Requester, Janice Huang
+2944, Request Status, Resolved
+2944, Resolved Time, 2021-01-11 16:14:00
+2944, Responded Date, Not Assigned
+2944, Severity, Not Assigned
+2944, Subcategory, Not Assigned
+2944, Subject, Service Request - [PIA.PH.Sandbox10][Reset Sandbox10 Platform Gaming Operation password for Janice Huang] on 8-Jan-2021
+2944, Technician, Fong Fan
+2945, Category, Incident
+2945, col17, NULL
+2945, col18, NULL
+2945, col19, NULL
+2945, col20, NULL
+2945, col21, NULL
+2945, col22, NULL
+2945, col23, NULL
+2945, col24, NULL
+2945, col25, NULL
+2945, col26, NULL
+2945, col27, NULL
+2945, col28, NULL
+2945, col29, NULL
+2945, col30, NULL
+2945, col31, NULL
+2945, col32, NULL
+2945, col33, NULL
+2945, col34, NULL
+2945, Completed Time, Feb 26, 2021 06:05 PM
+2945, Created By, Judy Liu
+2945, Created Time, 2021-01-08 10:56:00
+2945, DueBy Time, Mar 1, 2021 04:49 PM
+2945, Group, Application Support Group
+2945, KPI Required, Yes
+2945, Overdue Status, false
+2945, Requester, Antonio Rocha
+2945, Request Status, Closed
+2945, Resolved Time, 2021-01-08 12:12:00
+2945, Responded Date, Jan 8, 2021 11:03 AM
+2945, Severity, Urgent
+2945, Subcategory, Not Assigned
+2945, Subject, [PIA.MO.Production6] [checking the Audit Portal SV Agent in Production6] on 08-Jan-2021
+2945, Technician, Kelvin Lei
+2946, Category, CM
+2946, col17, NULL
+2946, col18, NULL
+2946, col19, NULL
+2946, col20, NULL
+2946, col21, NULL
+2946, col22, NULL
+2946, col23, NULL
+2946, col24, NULL
+2946, col25, NULL
+2946, col26, NULL
+2946, col27, NULL
+2946, col28, NULL
+2946, col29, NULL
+2946, col30, NULL
+2946, col31, NULL
+2946, col32, NULL
+2946, col33, NULL
+2946, col34, NULL
+2946, Completed Time, Feb 1, 2021 10:27 PM
+2946, Created By, Kary Lei
+2946, Created Time, 2021-01-08 22:09:00
+2946, DueBy Time, Not Assigned
+2946, Group, Application Support Group
+2946, KPI Required, Not Assigned
+2946, Overdue Status, false
+2946, Requester, Kary Lei
+2946, Request Status, Closed
+2946, Resolved Time, 2021-01-18 09:53:00
+2946, Responded Date, Not Assigned
+2946, Severity, Not Assigned
+2946, Subcategory, Deployment
+2946, Subject, [Deployment Request] Change for allow audit VM to access 3 vLAN for Production6 Penetration test
+2946, Technician, Not Assigned
+2947, Category, Incident
+2947, col17, NULL
+2947, col18, NULL
+2947, col19, NULL
+2947, col20, NULL
+2947, col21, NULL
+2947, col22, NULL
+2947, col23, NULL
+2947, col24, NULL
+2947, col25, NULL
+2947, col26, NULL
+2947, col27, NULL
+2947, col28, NULL
+2947, col29, NULL
+2947, col30, NULL
+2947, col31, NULL
+2947, col32, NULL
+2947, col33, NULL
+2947, col34, NULL
+2947, Completed Time, Feb 26, 2021 06:05 PM
+2947, Created By, Antonio Rocha
+2947, Created Time, 2021-01-11 00:02:00
+2947, DueBy Time, Mar 1, 2021 03:13 PM
+2947, Group, DBA Team
+2947, KPI Required, Yes
+2947, Overdue Status, false
+2947, Requester, Carol Tam
+2947, Request Status, Closed
+2947, Resolved Time, 2021-01-11 11:52:00
+2947, Responded Date, Jan 11, 2021 09:40 AM
+2947, Severity, Urgent
+2947, Subcategory, System Alert logging
+2947, Subject, [PIA.MO.Production6][ETL Delay][Sev.2][anubis_ldm][production6] ETL delay alert found. Please contact ETL support team.
+2947, Technician, James Chen
+2948, Category, Incident
+2948, col17, NULL
+2948, col18, NULL
+2948, col19, NULL
+2948, col20, NULL
+2948, col21, NULL
+2948, col22, NULL
+2948, col23, NULL
+2948, col24, NULL
+2948, col25, NULL
+2948, col26, NULL
+2948, col27, NULL
+2948, col28, NULL
+2948, col29, NULL
+2948, col30, NULL
+2948, col31, NULL
+2948, col32, NULL
+2948, col33, NULL
+2948, col34, NULL
+2948, Completed Time, Feb 26, 2021 06:06 PM
+2948, Created By, Janice Huang
+2948, Created Time, 2021-01-11 10:21:00
+2948, DueBy Time, Mar 1, 2021 04:29 PM
+2948, Group, Application Support Group
+2948, KPI Required, Yes
+2948, Overdue Status, false
+2948, Requester, Paul Wong
+2948, Request Status, Closed
+2948, Resolved Time, 2021-01-11 11:58:00
+2948, Responded Date, Jan 11, 2021 10:27 AM
+2948, Severity, Urgent
+2948, Subcategory, Not Assigned
+2948, Subject, [PIA.MO.Sandbox6][All portals can't access] on 11-Jan-2021
+2948, Technician, Kary Lei
+2949, Category, Incident
+2949, col17, NULL
+2949, col18, NULL
+2949, col19, NULL
+2949, col20, NULL
+2949, col21, NULL
+2949, col22, NULL
+2949, col23, NULL
+2949, col24, NULL
+2949, col25, NULL
+2949, col26, NULL
+2949, col27, NULL
+2949, col28, NULL
+2949, col29, NULL
+2949, col30, NULL
+2949, col31, NULL
+2949, col32, NULL
+2949, col33, NULL
+2949, col34, NULL
+2949, Completed Time, Feb 26, 2021 06:09 PM
+2949, Created By, Janice Huang
+2949, Created Time, 2021-01-11 10:53:00
+2949, DueBy Time, Mar 1, 2021 05:17 PM
+2949, Group, Application Support Group
+2949, KPI Required, Yes
+2949, Overdue Status, false
+2949, Requester, Janice Huang
+2949, Request Status, Closed
+2949, Resolved Time, 2021-01-11 11:45:00
+2949, Responded Date, Jan 11, 2021 11:14 AM
+2949, Severity, Urgent
+2949, Subcategory, Not Assigned
+2949, Subject, [PIA.MO.Sandbox6][Can't login the lobby to play games] on 01-Jan-2021
+2949, Technician, Kelvin Lei
+2950, Category, Service Request
+2950, col17, NULL
+2950, col18, NULL
+2950, col19, NULL
+2950, col20, NULL
+2950, col21, NULL
+2950, col22, NULL
+2950, col23, NULL
+2950, col24, NULL
+2950, col25, NULL
+2950, col26, NULL
+2950, col27, NULL
+2950, col28, NULL
+2950, col29, NULL
+2950, col30, NULL
+2950, col31, NULL
+2950, col32, NULL
+2950, col33, NULL
+2950, col34, NULL
+2950, Completed Time, Not Assigned
+2950, Created By, Frank Ow
+2950, Created Time, 2021-01-12 10:01:00
+2950, DueBy Time, May 12, 2021 03:30 PM
+2950, Group, Application Support Group
+2950, KPI Required, Yes
+2950, Overdue Status, false
+2950, Requester, Frank Ow
+2950, Request Status, Resolved
+2950, Resolved Time, 2021-01-18 11:45:00
+2950, Responded Date, Not Assigned
+2950, Severity, Not Assigned
+2950, Subcategory, Add New Property
+2950, Subject, Deployment on Production10 KGI on Pocket Aces Game Depot and SHL Angeles City Property #51030, #51020
+2950, Technician, Kelvin Lei
+2951, Category, CM
+2951, col17, NULL
+2951, col18, NULL
+2951, col19, NULL
+2951, col20, NULL
+2951, col21, NULL
+2951, col22, NULL
+2951, col23, NULL
+2951, col24, NULL
+2951, col25, NULL
+2951, col26, NULL
+2951, col27, NULL
+2951, col28, NULL
+2951, col29, NULL
+2951, col30, NULL
+2951, col31, NULL
+2951, col32, NULL
+2951, col33, NULL
+2951, col34, NULL
+2951, Completed Time, Feb 2, 2021 10:32 AM
+2951, Created By, Kelvin Lei
+2951, Created Time, 2021-01-12 11:01:00
+2951, DueBy Time, Not Assigned
+2951, Group, Application Support Group
+2951, KPI Required, Not Assigned
+2951, Overdue Status, false
+2951, Requester, Kelvin Lei
+2951, Request Status, Closed
+2951, Resolved Time, 2021-02-02 10:32:00
+2951, Responded Date, Not Assigned
+2951, Severity, Not Assigned
+2951, Subcategory, Request
+2951, Subject, [Urgent Change Request] Change for fixing issues in Sandbox9
+2951, Technician, Kelvin Lei
+2952, Category, CM
+2952, col17, NULL
+2952, col18, NULL
+2952, col19, NULL
+2952, col20, NULL
+2952, col21, NULL
+2952, col22, NULL
+2952, col23, NULL
+2952, col24, NULL
+2952, col25, NULL
+2952, col26, NULL
+2952, col27, NULL
+2952, col28, NULL
+2952, col29, NULL
+2952, col30, NULL
+2952, col31, NULL
+2952, col32, NULL
+2952, col33, NULL
+2952, col34, NULL
+2952, Completed Time, Feb 1, 2021 10:29 PM
+2952, Created By, Kary Lei
+2952, Created Time, 2021-01-12 11:04:00
+2952, DueBy Time, Not Assigned
+2952, Group, Application Support Group
+2952, KPI Required, Not Assigned
+2952, Overdue Status, false
+2952, Requester, Kary Lei
+2952, Request Status, Closed
+2952, Resolved Time, 2021-02-01 22:28:00
+2952, Responded Date, Not Assigned
+2952, Severity, Not Assigned
+2952, Subcategory, Request
+2952, Subject, [Change Request] Urgent Change for Hoiana Rating API bug fixing (Sandbox8)
+2952, Technician, Kary Lei
+2953, Category, CM
+2953, col17, NULL
+2953, col18, NULL
+2953, col19, NULL
+2953, col20, NULL
+2953, col21, NULL
+2953, col22, NULL
+2953, col23, NULL
+2953, col24, NULL
+2953, col25, NULL
+2953, col26, NULL
+2953, col27, NULL
+2953, col28, NULL
+2953, col29, NULL
+2953, col30, NULL
+2953, col31, NULL
+2953, col32, NULL
+2953, col33, NULL
+2953, col34, NULL
+2953, Completed Time, Jan 18, 2021 05:02 PM
+2953, Created By, Kelvin Lei
+2953, Created Time, 2021-01-12 11:04:00
+2953, DueBy Time, Not Assigned
+2953, Group, Application Support Group
+2953, KPI Required, Not Assigned
+2953, Overdue Status, false
+2953, Requester, Kelvin Lei
+2953, Request Status, Closed
+2953, Resolved Time, 2021-01-18 17:02:00
+2953, Responded Date, Not Assigned
+2953, Severity, Not Assigned
+2953, Subcategory, Deployment
+2953, Subject, [PIA.CN.Sandbox9] Change for issues fixing in Sandbox9
+2953, Technician, Kelvin Lei
+2954, Category, CM
+2954, col17, NULL
+2954, col18, NULL
+2954, col19, NULL
+2954, col20, NULL
+2954, col21, NULL
+2954, col22, NULL
+2954, col23, NULL
+2954, col24, NULL
+2954, col25, NULL
+2954, col26, NULL
+2954, col27, NULL
+2954, col28, NULL
+2954, col29, NULL
+2954, col30, NULL
+2954, col31, NULL
+2954, col32, NULL
+2954, col33, NULL
+2954, col34, NULL
+2954, Completed Time, Jan 12, 2021 06:37 PM
+2954, Created By, Kary Lei
+2954, Created Time, 2021-01-12 11:08:00
+2954, DueBy Time, Not Assigned
+2954, Group, Application Support Group
+2954, KPI Required, Not Assigned
+2954, Overdue Status, false
+2954, Requester, Kary Lei
+2954, Request Status, Closed
+2954, Resolved Time, 2021-01-12 18:37:00
+2954, Responded Date, Not Assigned
+2954, Severity, Not Assigned
+2954, Subcategory, Deployment
+2954, Subject, [Deployment Request] Urgent Change for Hoiana Rating API bug fixing (Sandbox8)
+2954, Technician, Not Assigned
+2955, Category, Service Request
+2955, col17, NULL
+2955, col18, NULL
+2955, col19, NULL
+2955, col20, NULL
+2955, col21, NULL
+2955, col22, NULL
+2955, col23, NULL
+2955, col24, NULL
+2955, col25, NULL
+2955, col26, NULL
+2955, col27, NULL
+2955, col28, NULL
+2955, col29, NULL
+2955, col30, NULL
+2955, col31, NULL
+2955, col32, NULL
+2955, col33, NULL
+2955, col34, NULL
+2955, Completed Time, Not Assigned
+2955, Created By, Cream He
+2955, Created Time, 2021-01-12 15:44:00
+2955, DueBy Time, Not Assigned
+2955, Group, DBA Team
+2955, KPI Required, Yes
+2955, Overdue Status, false
+2955, Requester, Eric Tang (MGM)
+2955, Request Status, Resolved
+2955, Resolved Time, 2021-01-12 16:18:00
+2955, Responded Date, Not Assigned
+2955, Severity, Not Assigned
+2955, Subcategory, Not Assigned
+2955, Subject, Service Request - [PIA.MO.Production6][ApexSQL Audit scheduled report: BeforeChangeReport - Weekly] on 12-Jan-2021
+2955, Technician, James Chen
+2956, Category, Service Request
+2956, col17, NULL
+2956, col18, NULL
+2956, col19, NULL
+2956, col20, NULL
+2956, col21, NULL
+2956, col22, NULL
+2956, col23, NULL
+2956, col24, NULL
+2956, col25, NULL
+2956, col26, NULL
+2956, col27, NULL
+2956, col28, NULL
+2956, col29, NULL
+2956, col30, NULL
+2956, col31, NULL
+2956, col32, NULL
+2956, col33, NULL
+2956, col34, NULL
+2956, Completed Time, Not Assigned
+2956, Created By, Cream He
+2956, Created Time, 2021-01-12 17:08:00
+2956, DueBy Time, Jan 22, 2021 05:08 PM
+2956, Group, DCO Team
+2956, KPI Required, Yes
+2956, Overdue Status, false
+2956, Requester, Selva Kamachi
+2956, Request Status, Resolved
+2956, Resolved Time, 2021-01-15 11:11:00
+2956, Responded Date, Not Assigned
+2956, Severity, Not Assigned
+2956, Subcategory, Not Assigned
+2956, Subject, [Service Request] - [PIA.PH.Sandbox10][Whitelist the portal access for Subic Project] on 12-Jan-2021
+2956, Technician, Paul Wong
+2957, Category, Service Request
+2957, col17, NULL
+2957, col18, NULL
+2957, col19, NULL
+2957, col20, NULL
+2957, col21, NULL
+2957, col22, NULL
+2957, col23, NULL
+2957, col24, NULL
+2957, col25, NULL
+2957, col26, NULL
+2957, col27, NULL
+2957, col28, NULL
+2957, col29, NULL
+2957, col30, NULL
+2957, col31, NULL
+2957, col32, NULL
+2957, col33, NULL
+2957, col34, NULL
+2957, Completed Time, Not Assigned
+2957, Created By, Judy Liu
+2957, Created Time, 2021-01-12 17:10:00
+2957, DueBy Time, Jan 22, 2021 05:10 PM
+2957, Group, DCO Team
+2957, KPI Required, Yes
+2957, Overdue Status, false
+2957, Requester, Selva Kamachi
+2957, Request Status, Resolved
+2957, Resolved Time, 2021-01-15 11:04:00
+2957, Responded Date, Not Assigned
+2957, Severity, Not Assigned
+2957, Subcategory, Not Assigned
+2957, Subject, [PIA.PH.Production10] [Whitelist the portal access for Subic Project] on 12-Jan-2021
+2957, Technician, Paul Wong
+2958, Category, Service Request
+2958, col17, NULL
+2958, col18, NULL
+2958, col19, NULL
+2958, col20, NULL
+2958, col21, NULL
+2958, col22, NULL
+2958, col23, NULL
+2958, col24, NULL
+2958, col25, NULL
+2958, col26, NULL
+2958, col27, NULL
+2958, col28, NULL
+2958, col29, NULL
+2958, col30, NULL
+2958, col31, NULL
+2958, col32, NULL
+2958, col33, NULL
+2958, col34, NULL
+2958, Completed Time, Not Assigned
+2958, Created By, Antonio Rocha
+2958, Created Time, 2021-01-13 00:44:00
+2958, DueBy Time, Jan 18, 2021 12:44 PM
+2958, Group, Application Support Group
+2958, KPI Required, Not Assigned
+2958, Overdue Status, false
+2958, Requester, Antonio Rocha
+2958, Request Status, Resolved
+2958, Resolved Time, 2021-01-14 14:38:00
+2958, Responded Date, Not Assigned
+2958, Severity, Not Assigned
+2958, Subcategory, Not Assigned
+2958, Subject, [Service Request] [Sandbox10 - Access Grant for GameSourceCloud Sandbox10 for ph_uat_testers accounts] on 13-Jan-2021
+2958, Technician, Kary Lei
+2959, Category, CM
+2959, col17, NULL
+2959, col18, NULL
+2959, col19, NULL
+2959, col20, NULL
+2959, col21, NULL
+2959, col22, NULL
+2959, col23, NULL
+2959, col24, NULL
+2959, col25, NULL
+2959, col26, NULL
+2959, col27, NULL
+2959, col28, NULL
+2959, col29, NULL
+2959, col30, NULL
+2959, col31, NULL
+2959, col32, NULL
+2959, col33, NULL
+2959, col34, NULL
+2959, Completed Time, Feb 1, 2021 11:12 PM
+2959, Created By, Kary Lei
+2959, Created Time, 2021-01-13 09:59:00
+2959, DueBy Time, Not Assigned
+2959, Group, Application Support Group
+2959, KPI Required, Not Assigned
+2959, Overdue Status, false
+2959, Requester, Kary Lei
+2959, Request Status, Closed
+2959, Resolved Time, 2021-02-01 23:12:00
+2959, Responded Date, Not Assigned
+2959, Severity, Not Assigned
+2959, Subcategory, Deployment
+2959, Subject, [Deployment Request] Change for setup internal property with lite lobby and deploy live baccarat for Sandbox10
+2959, Technician, Kary Lei
+2960, Category, CM
+2960, col17, NULL
+2960, col18, NULL
+2960, col19, NULL
+2960, col20, NULL
+2960, col21, NULL
+2960, col22, NULL
+2960, col23, NULL
+2960, col24, NULL
+2960, col25, NULL
+2960, col26, NULL
+2960, col27, NULL
+2960, col28, NULL
+2960, col29, NULL
+2960, col30, NULL
+2960, col31, NULL
+2960, col32, NULL
+2960, col33, NULL
+2960, col34, NULL
+2960, Completed Time, Feb 2, 2021 09:18 AM
+2960, Created By, Kelvin Lei
+2960, Created Time, 2021-01-13 12:14:00
+2960, DueBy Time, Not Assigned
+2960, Group, Application Support Group
+2960, KPI Required, Not Assigned
+2960, Overdue Status, false
+2960, Requester, Kelvin Lei
+2960, Request Status, Closed
+2960, Resolved Time, 2021-02-02 09:18:00
+2960, Responded Date, Not Assigned
+2960, Severity, Not Assigned
+2960, Subcategory, Request
+2960, Subject, [Change Request] Change for setup 51020 & 51030 casino and properties in Production10
+2960, Technician, Kelvin Lei
+2961, Category, Service Request
+2961, col17, NULL
+2961, col18, NULL
+2961, col19, NULL
+2961, col20, NULL
+2961, col21, NULL
+2961, col22, NULL
+2961, col23, NULL
+2961, col24, NULL
+2961, col25, NULL
+2961, col26, NULL
+2961, col27, NULL
+2961, col28, NULL
+2961, col29, NULL
+2961, col30, NULL
+2961, col31, NULL
+2961, col32, NULL
+2961, col33, NULL
+2961, col34, NULL
+2961, Completed Time, Not Assigned
+2961, Created By, Kelvin Lei
+2961, Created Time, 2021-01-13 16:14:00
+2961, DueBy Time, Jan 25, 2021 04:14 PM
+2961, Group, Application Support Group
+2961, KPI Required, Yes
+2961, Overdue Status, true
+2961, Requester, Quanming Zheng
+2961, Request Status, Resolved
+2961, Resolved Time, 2021-01-25 18:31:00
+2961, Responded Date, Not Assigned
+2961, Severity, Not Assigned
+2961, Subcategory, Not Assigned
+2961, Subject, [Service Request][PIA.MO.Production6][Rundown approve(EFK change)]on 13-Jan-2021
+2961, Technician, Not Assigned
+2962, Category, Service Request
+2962, col17, NULL
+2962, col18, NULL
+2962, col19, NULL
+2962, col20, NULL
+2962, col21, NULL
+2962, col22, NULL
+2962, col23, NULL
+2962, col24, NULL
+2962, col25, NULL
+2962, col26, NULL
+2962, col27, NULL
+2962, col28, NULL
+2962, col29, NULL
+2962, col30, NULL
+2962, col31, NULL
+2962, col32, NULL
+2962, col33, NULL
+2962, col34, NULL
+2962, Completed Time, Not Assigned
+2962, Created By, Carol Tam
+2962, Created Time, 2021-01-13 18:10:00
+2962, DueBy Time, Jan 25, 2021 06:10 PM
+2962, Group, Application Support Group
+2962, KPI Required, Yes
+2962, Overdue Status, true
+2962, Requester, Paul Wong
+2962, Request Status, Resolved
+2962, Resolved Time, 2021-01-25 18:32:00
+2962, Responded Date, Not Assigned
+2962, Severity, Not Assigned
+2962, Subcategory, Not Assigned
+2962, Subject, Service Request - [PIA.PH.Production10] [Create Tempoaray Remote Access to PHIDC] on 13-Jan-2021
+2962, Technician, Not Assigned
+2963, Category, Service Request
+2963, col17, NULL
+2963, col18, NULL
+2963, col19, NULL
+2963, col20, NULL
+2963, col21, NULL
+2963, col22, NULL
+2963, col23, NULL
+2963, col24, NULL
+2963, col25, NULL
+2963, col26, NULL
+2963, col27, NULL
+2963, col28, NULL
+2963, col29, NULL
+2963, col30, NULL
+2963, col31, NULL
+2963, col32, NULL
+2963, col33, NULL
+2963, col34, NULL
+2963, Completed Time, Not Assigned
+2963, Created By, Antonio Rocha
+2963, Created Time, 2021-01-13 23:16:00
+2963, DueBy Time, Jan 14, 2021 06:30 PM
+2963, Group, Office Automation
+2963, KPI Required, Not Assigned
+2963, Overdue Status, false
+2963, Requester, Antonio Rocha
+2963, Request Status, Resolved
+2963, Resolved Time, 2021-01-14 14:45:00
+2963, Responded Date, Not Assigned
+2963, Severity, Not Assigned
+2963, Subcategory, Not Assigned
+2963, Subject, MOIDC Account Request Form - AD Group Creation for Live Baccarat and New Property
+2963, Technician, Fong Fan
+2964, Category, Incident
+2964, col17, NULL
+2964, col18, NULL
+2964, col19, NULL
+2964, col20, NULL
+2964, col21, NULL
+2964, col22, NULL
+2964, col23, NULL
+2964, col24, NULL
+2964, col25, NULL
+2964, col26, NULL
+2964, col27, NULL
+2964, col28, NULL
+2964, col29, NULL
+2964, col30, NULL
+2964, col31, NULL
+2964, col32, NULL
+2964, col33, NULL
+2964, col34, NULL
+2964, Completed Time, Feb 26, 2021 06:09 PM
+2964, Created By, Carol Tam
+2964, Created Time, 2021-01-14 08:12:00
+2964, DueBy Time, Jan 14, 2021 06:30 PM
+2964, Group, DBA Team
+2964, KPI Required, Yes
+2964, Overdue Status, true
+2964, Requester, Carol Tam
+2964, Request Status, Closed
+2964, Resolved Time, 2021-01-14 18:45:00
+2964, Responded Date, Jan 14, 2021 09:24 AM
+2964, Severity, Urgent
+2964, Subcategory, Incident logging
+2964, Subject, [PIA.MO.Sandbox6][ETL delay alert found ]on 14-Jan-2021
+2964, Technician, James Chen
+2965, Category, Service Request
+2965, col17, NULL
+2965, col18, NULL
+2965, col19, NULL
+2965, col20, NULL
+2965, col21, NULL
+2965, col22, NULL
+2965, col23, NULL
+2965, col24, NULL
+2965, col25, NULL
+2965, col26, NULL
+2965, col27, NULL
+2965, col28, NULL
+2965, col29, NULL
+2965, col30, NULL
+2965, col31, NULL
+2965, col32, NULL
+2965, col33, NULL
+2965, col34, NULL
+2965, Completed Time, Not Assigned
+2965, Created By, Kelvin Lei
+2965, Created Time, 2021-01-14 10:11:00
+2965, DueBy Time, Not Assigned
+2965, Group, Office Automation
+2965, KPI Required, Not Assigned
+2965, Overdue Status, false
+2965, Requester, Kelvin Lei
+2965, Request Status, Resolved
+2965, Resolved Time, 2021-01-14 10:19:00
+2965, Responded Date, Not Assigned
+2965, Severity, Not Assigned
+2965, Subcategory, Not Assigned
+2965, Subject, MOIDC Account Request Form
+2965, Technician, Fong Fan
+2966, Category, Service Request
+2966, col17, NULL
+2966, col18, NULL
+2966, col19, NULL
+2966, col20, NULL
+2966, col21, NULL
+2966, col22, NULL
+2966, col23, NULL
+2966, col24, NULL
+2966, col25, NULL
+2966, col26, NULL
+2966, col27, NULL
+2966, col28, NULL
+2966, col29, NULL
+2966, col30, NULL
+2966, col31, NULL
+2966, col32, NULL
+2966, col33, NULL
+2966, col34, NULL
+2966, Completed Time, Not Assigned
+2966, Created By, Kelvin Lei
+2966, Created Time, 2021-01-14 10:16:00
+2966, DueBy Time, Jan 15, 2021 10:16 AM
+2966, Group, Office Automation
+2966, KPI Required, Not Assigned
+2966, Overdue Status, false
+2966, Requester, Kelvin Lei
+2966, Request Status, Resolved
+2966, Resolved Time, 2021-01-14 14:48:00
+2966, Responded Date, Not Assigned
+2966, Severity, Not Assigned
+2966, Subcategory, Not Assigned
+2966, Subject, PHIDC Account Request Form for creating new account for Kelvin Lei
+2966, Technician, Fong Fan
+2967, Category, Service Request
+2967, col17, NULL
+2967, col18, NULL
+2967, col19, NULL
+2967, col20, NULL
+2967, col21, NULL
+2967, col22, NULL
+2967, col23, NULL
+2967, col24, NULL
+2967, col25, NULL
+2967, col26, NULL
+2967, col27, NULL
+2967, col28, NULL
+2967, col29, NULL
+2967, col30, NULL
+2967, col31, NULL
+2967, col32, NULL
+2967, col33, NULL
+2967, col34, NULL
+2967, Completed Time, Not Assigned
+2967, Created By, Kelvin Lei
+2967, Created Time, 2021-01-14 10:24:00
+2967, DueBy Time, Jan 15, 2021 11:19 AM
+2967, Group, Office Automation
+2967, KPI Required, Not Assigned
+2967, Overdue Status, false
+2967, Requester, Kelvin Lei
+2967, Request Status, Resolved
+2967, Resolved Time, 2021-01-14 14:48:00
+2967, Responded Date, Not Assigned
+2967, Severity, Not Assigned
+2967, Subcategory, Not Assigned
+2967, Subject, PHIDC Account Request Form for creating new account for Antonio Rocha
+2967, Technician, Fong Fan
+2968, Category, Service Request
+2968, col17, NULL
+2968, col18, NULL
+2968, col19, NULL
+2968, col20, NULL
+2968, col21, NULL
+2968, col22, NULL
+2968, col23, NULL
+2968, col24, NULL
+2968, col25, NULL
+2968, col26, NULL
+2968, col27, NULL
+2968, col28, NULL
+2968, col29, NULL
+2968, col30, NULL
+2968, col31, NULL
+2968, col32, NULL
+2968, col33, NULL
+2968, col34, NULL
+2968, Completed Time, Not Assigned
+2968, Created By, Kelvin Lei
+2968, Created Time, 2021-01-14 10:27:00
+2968, DueBy Time, Jan 15, 2021 11:19 AM
+2968, Group, Office Automation
+2968, KPI Required, Not Assigned
+2968, Overdue Status, false
+2968, Requester, kelvin.lei
+2968, Request Status, Resolved
+2968, Resolved Time, 2021-01-14 14:48:00
+2968, Responded Date, Not Assigned
+2968, Severity, Not Assigned
+2968, Subcategory, Not Assigned
+2968, Subject, PHIDC Account Request Form for creating new account for Kary Lei
+2968, Technician, Fong Fan
+2969, Category, Service Request
+2969, col17, NULL
+2969, col18, NULL
+2969, col19, NULL
+2969, col20, NULL
+2969, col21, NULL
+2969, col22, NULL
+2969, col23, NULL
+2969, col24, NULL
+2969, col25, NULL
+2969, col26, NULL
+2969, col27, NULL
+2969, col28, NULL
+2969, col29, NULL
+2969, col30, NULL
+2969, col31, NULL
+2969, col32, NULL
+2969, col33, NULL
+2969, col34, NULL
+2969, Completed Time, Not Assigned
+2969, Created By, Kelvin Lei
+2969, Created Time, 2021-01-14 10:28:00
+2969, DueBy Time, Jan 15, 2021 11:19 AM
+2969, Group, Office Automation
+2969, KPI Required, Not Assigned
+2969, Overdue Status, false
+2969, Requester, Kelvin Lei
+2969, Request Status, Resolved
+2969, Resolved Time, 2021-01-14 14:49:00
+2969, Responded Date, Not Assigned
+2969, Severity, Not Assigned
+2969, Subcategory, Not Assigned
+2969, Subject, PHIDC Account Request Form for creating new account for Janice Huang
+2969, Technician, Fong Fan
+2970, Category, Service Request
+2970, col17, NULL
+2970, col18, NULL
+2970, col19, NULL
+2970, col20, NULL
+2970, col21, NULL
+2970, col22, NULL
+2970, col23, NULL
+2970, col24, NULL
+2970, col25, NULL
+2970, col26, NULL
+2970, col27, NULL
+2970, col28, NULL
+2970, col29, NULL
+2970, col30, NULL
+2970, col31, NULL
+2970, col32, NULL
+2970, col33, NULL
+2970, col34, NULL
+2970, Completed Time, Not Assigned
+2970, Created By, Kelvin Lei
+2970, Created Time, 2021-01-14 10:30:00
+2970, DueBy Time, Jan 15, 2021 11:19 AM
+2970, Group, Office Automation
+2970, KPI Required, Not Assigned
+2970, Overdue Status, false
+2970, Requester, Kelvin Lei
+2970, Request Status, Resolved
+2970, Resolved Time, 2021-01-14 14:49:00
+2970, Responded Date, Not Assigned
+2970, Severity, Not Assigned
+2970, Subcategory, Not Assigned
+2970, Subject, PHIDC Account Request Form for creating new account for Carol Tam
+2970, Technician, Fong Fan
+2971, Category, Service Request
+2971, col17, NULL
+2971, col18, NULL
+2971, col19, NULL
+2971, col20, NULL
+2971, col21, NULL
+2971, col22, NULL
+2971, col23, NULL
+2971, col24, NULL
+2971, col25, NULL
+2971, col26, NULL
+2971, col27, NULL
+2971, col28, NULL
+2971, col29, NULL
+2971, col30, NULL
+2971, col31, NULL
+2971, col32, NULL
+2971, col33, NULL
+2971, col34, NULL
+2971, Completed Time, Not Assigned
+2971, Created By, Kelvin Lei
+2971, Created Time, 2021-01-14 10:31:00
+2971, DueBy Time, Jan 15, 2021 11:20 AM
+2971, Group, Office Automation
+2971, KPI Required, Not Assigned
+2971, Overdue Status, false
+2971, Requester, Kelvin Lei
+2971, Request Status, Resolved
+2971, Resolved Time, 2021-01-14 14:49:00
+2971, Responded Date, Not Assigned
+2971, Severity, Not Assigned
+2971, Subcategory, Not Assigned
+2971, Subject, PHIDC Account Request Form for creating new account for Cream He
+2971, Technician, Fong Fan
+2972, Category, Service Request
+2972, col17, NULL
+2972, col18, NULL
+2972, col19, NULL
+2972, col20, NULL
+2972, col21, NULL
+2972, col22, NULL
+2972, col23, NULL
+2972, col24, NULL
+2972, col25, NULL
+2972, col26, NULL
+2972, col27, NULL
+2972, col28, NULL
+2972, col29, NULL
+2972, col30, NULL
+2972, col31, NULL
+2972, col32, NULL
+2972, col33, NULL
+2972, col34, NULL
+2972, Completed Time, Not Assigned
+2972, Created By, Kelvin Lei
+2972, Created Time, 2021-01-14 10:33:00
+2972, DueBy Time, Jan 15, 2021 11:20 AM
+2972, Group, Office Automation
+2972, KPI Required, Not Assigned
+2972, Overdue Status, false
+2972, Requester, Kelvin Lei
+2972, Request Status, Resolved
+2972, Resolved Time, 2021-01-14 14:49:00
+2972, Responded Date, Not Assigned
+2972, Severity, Not Assigned
+2972, Subcategory, Not Assigned
+2972, Subject, PHIDC Account Request Form for creating new account for Judy Liu
+2972, Technician, Fong Fan
+2973, Category, CM
+2973, col17, NULL
+2973, col18, NULL
+2973, col19, NULL
+2973, col20, NULL
+2973, col21, NULL
+2973, col22, NULL
+2973, col23, NULL
+2973, col24, NULL
+2973, col25, NULL
+2973, col26, NULL
+2973, col27, NULL
+2973, col28, NULL
+2973, col29, NULL
+2973, col30, NULL
+2973, col31, NULL
+2973, col32, NULL
+2973, col33, NULL
+2973, col34, NULL
+2973, Completed Time, Feb 24, 2021 10:53 PM
+2973, Created By, Antonio Rocha
+2973, Created Time, 2021-01-14 15:06:00
+2973, DueBy Time, Not Assigned
+2973, Group, Application Support Group
+2973, KPI Required, Not Assigned
+2973, Overdue Status, false
+2973, Requester, Antonio Rocha
+2973, Request Status, Closed
+2973, Resolved Time, 2021-02-24 22:53:00
+2973, Responded Date, Not Assigned
+2973, Severity, Not Assigned
+2973, Subcategory, Initiative
+2973, Subject, [Change Initiative] Change for Philippines VPN Outage Backup Plan in SND10 and PRD10
+2973, Technician, Antonio Rocha
+2974, Category, CM
+2974, col17, NULL
+2974, col18, NULL
+2974, col19, NULL
+2974, col20, NULL
+2974, col21, NULL
+2974, col22, NULL
+2974, col23, NULL
+2974, col24, NULL
+2974, col25, NULL
+2974, col26, NULL
+2974, col27, NULL
+2974, col28, NULL
+2974, col29, NULL
+2974, col30, NULL
+2974, col31, NULL
+2974, col32, NULL
+2974, col33, NULL
+2974, col34, NULL
+2974, Completed Time, Feb 1, 2021 10:29 PM
+2974, Created By, Antonio Rocha
+2974, Created Time, 2021-01-14 15:11:00
+2974, DueBy Time, Not Assigned
+2974, Group, Application Support Group
+2974, KPI Required, Not Assigned
+2974, Overdue Status, false
+2974, Requester, Antonio Rocha
+2974, Request Status, Closed
+2974, Resolved Time, 2021-02-01 22:29:00
+2974, Responded Date, Not Assigned
+2974, Severity, Not Assigned
+2974, Subcategory, Request
+2974, Subject, [Change Request] Change for Philippines VPN Outage Backup Plan in SND10 and PRD10
+2974, Technician, Antonio Rocha
+2976, Category, CM
+2976, col17, NULL
+2976, col18, NULL
+2976, col19, NULL
+2976, col20, NULL
+2976, col21, NULL
+2976, col22, NULL
+2976, col23, NULL
+2976, col24, NULL
+2976, col25, NULL
+2976, col26, NULL
+2976, col27, NULL
+2976, col28, NULL
+2976, col29, NULL
+2976, col30, NULL
+2976, col31, NULL
+2976, col32, NULL
+2976, col33, NULL
+2976, col34, NULL
+2976, Completed Time, Feb 2, 2021 09:23 AM
+2976, Created By, Antonio Rocha
+2976, Created Time, 2021-01-14 15:27:00
+2976, DueBy Time, Not Assigned
+2976, Group, Application Support Group
+2976, KPI Required, Not Assigned
+2976, Overdue Status, false
+2976, Requester, Antonio Rocha
+2976, Request Status, Closed
+2976, Resolved Time, 2021-02-02 09:23:00
+2976, Responded Date, Not Assigned
+2976, Severity, Not Assigned
+2976, Subcategory, Deployment
+2976, Subject, [Deployment Request]Change for Philippines VPN Outage Backup Plan in PRD10
+2976, Technician, Antonio Rocha
+2977, Category, CM
+2977, col17, NULL
+2977, col18, NULL
+2977, col19, NULL
+2977, col20, NULL
+2977, col21, NULL
+2977, col22, NULL
+2977, col23, NULL
+2977, col24, NULL
+2977, col25, NULL
+2977, col26, NULL
+2977, col27, NULL
+2977, col28, NULL
+2977, col29, NULL
+2977, col30, NULL
+2977, col31, NULL
+2977, col32, NULL
+2977, col33, NULL
+2977, col34, NULL
+2977, Completed Time, Jan 22, 2021 12:22 PM
+2977, Created By, Kary Lei
+2977, Created Time, 2021-01-14 15:56:00
+2977, DueBy Time, Not Assigned
+2977, Group, Application Support Group
+2977, KPI Required, Not Assigned
+2977, Overdue Status, false
+2977, Requester, Kary Lei
+2977, Request Status, Closed
+2977, Resolved Time, 2021-01-22 12:22:00
+2977, Responded Date, Not Assigned
+2977, Severity, Not Assigned
+2977, Subcategory, Deployment
+2977, Subject, [Deployment Request] Change for allow audit VM to access 3 vLAN for Production6 Penetration test
+2977, Technician, Kary Lei
+2978, Category, Service Request
+2978, col17, NULL
+2978, col18, NULL
+2978, col19, NULL
+2978, col20, NULL
+2978, col21, NULL
+2978, col22, NULL
+2978, col23, NULL
+2978, col24, NULL
+2978, col25, NULL
+2978, col26, NULL
+2978, col27, NULL
+2978, col28, NULL
+2978, col29, NULL
+2978, col30, NULL
+2978, col31, NULL
+2978, col32, NULL
+2978, col33, NULL
+2978, col34, NULL
+2978, Completed Time, Not Assigned
+2978, Created By, Janice Huang
+2978, Created Time, 2021-01-14 15:57:00
+2978, DueBy Time, Feb 8, 2021 03:57 PM
+2978, Group, Application Support Group
+2978, KPI Required, Yes
+2978, Overdue Status, false
+2978, Requester, Victor Tang
+2978, Request Status, Resolved
+2978, Resolved Time, 2021-02-08 09:13:00
+2978, Responded Date, Not Assigned
+2978, Severity, Not Assigned
+2978, Subcategory, Not Assigned
+2978, Subject, Service Request - [PIA.PH.Sandbox10][Change power source for Management Firewall] on 14-Jan-2021
+2978, Technician, Kelvin Lei
+2979, Category, Service Request
+2979, col17, NULL
+2979, col18, NULL
+2979, col19, NULL
+2979, col20, NULL
+2979, col21, NULL
+2979, col22, NULL
+2979, col23, NULL
+2979, col24, NULL
+2979, col25, NULL
+2979, col26, NULL
+2979, col27, NULL
+2979, col28, NULL
+2979, col29, NULL
+2979, col30, NULL
+2979, col31, NULL
+2979, col32, NULL
+2979, col33, NULL
+2979, col34, NULL
+2979, Completed Time, Not Assigned
+2979, Created By, Janice Huang
+2979, Created Time, 2021-01-14 15:58:00
+2979, DueBy Time, Feb 8, 2021 03:58 PM
+2979, Group, Application Support Group
+2979, KPI Required, Yes
+2979, Overdue Status, false
+2979, Requester, Victor Tang
+2979, Request Status, Resolved
+2979, Resolved Time, 2021-02-08 09:15:00
+2979, Responded Date, Not Assigned
+2979, Severity, Not Assigned
+2979, Subcategory, Not Assigned
+2979, Subject, Service Request - [PIA.PH.Production10][PHIDC- Change power source for Management Firewall] on 14-Jan-2021
+2979, Technician, Kelvin Lei
+2980, Category, CM
+2980, col17, NULL
+2980, col18, NULL
+2980, col19, NULL
+2980, col20, NULL
+2980, col21, NULL
+2980, col22, NULL
+2980, col23, NULL
+2980, col24, NULL
+2980, col25, NULL
+2980, col26, NULL
+2980, col27, NULL
+2980, col28, NULL
+2980, col29, NULL
+2980, col30, NULL
+2980, col31, NULL
+2980, col32, NULL
+2980, col33, NULL
+2980, col34, NULL
+2980, Completed Time, Feb 24, 2021 10:56 PM
+2980, Created By, Antonio Rocha
+2980, Created Time, 2021-01-14 16:40:00
+2980, DueBy Time, Not Assigned
+2980, Group, Application Support Group
+2980, KPI Required, Not Assigned
+2980, Overdue Status, false
+2980, Requester, Antonio Rocha
+2980, Request Status, Closed
+2980, Resolved Time, 2021-02-24 22:56:00
+2980, Responded Date, Not Assigned
+2980, Severity, Not Assigned
+2980, Subcategory, Initiative
+2980, Subject, [Change Initiative] Change for Windows VSS Bug Fix and Disk Space Expansion in Production6
+2980, Technician, Antonio Rocha
+2981, Category, Service Request
+2981, col17, NULL
+2981, col18, NULL
+2981, col19, NULL
+2981, col20, NULL
+2981, col21, NULL
+2981, col22, NULL
+2981, col23, NULL
+2981, col24, NULL
+2981, col25, NULL
+2981, col26, NULL
+2981, col27, NULL
+2981, col28, NULL
+2981, col29, NULL
+2981, col30, NULL
+2981, col31, NULL
+2981, col32, NULL
+2981, col33, NULL
+2981, col34, NULL
+2981, Completed Time, Not Assigned
+2981, Created By, Janice Huang
+2981, Created Time, 2021-01-14 16:55:00
+2981, DueBy Time, Not Assigned
+2981, Group, Office Automation
+2981, KPI Required, Yes
+2981, Overdue Status, false
+2981, Requester, Janice Huang
+2981, Request Status, Resolved
+2981, Resolved Time, 2021-01-14 17:16:00
+2981, Responded Date, Not Assigned
+2981, Severity, Not Assigned
+2981, Subcategory, Not Assigned
+2981, Subject, Service Request - [PIA.PH.Sandbox10 - Reset password of ph_uat_tester accounts of Sandbox10 Portals for internal testing] on 14-Jan-2021
+2981, Technician, Fong Fan
+2982, Category, CM
+2982, col17, NULL
+2982, col18, NULL
+2982, col19, NULL
+2982, col20, NULL
+2982, col21, NULL
+2982, col22, NULL
+2982, col23, NULL
+2982, col24, NULL
+2982, col25, NULL
+2982, col26, NULL
+2982, col27, NULL
+2982, col28, NULL
+2982, col29, NULL
+2982, col30, NULL
+2982, col31, NULL
+2982, col32, NULL
+2982, col33, NULL
+2982, col34, NULL
+2982, Completed Time, Feb 1, 2021 10:30 PM
+2982, Created By, Antonio Rocha
+2982, Created Time, 2021-01-14 17:08:00
+2982, DueBy Time, Not Assigned
+2982, Group, Application Support Group
+2982, KPI Required, Not Assigned
+2982, Overdue Status, false
+2982, Requester, Antonio Rocha
+2982, Request Status, Closed
+2982, Resolved Time, 2021-02-01 22:30:00
+2982, Responded Date, Not Assigned
+2982, Severity, Not Assigned
+2982, Subcategory, Request
+2982, Subject, [Change Request] Change for Windows VSS Bug Fix and Disk Space Expansion in Production6
+2982, Technician, Antonio Rocha
+2983, Category, CM
+2983, col17, NULL
+2983, col18, NULL
+2983, col19, NULL
+2983, col20, NULL
+2983, col21, NULL
+2983, col22, NULL
+2983, col23, NULL
+2983, col24, NULL
+2983, col25, NULL
+2983, col26, NULL
+2983, col27, NULL
+2983, col28, NULL
+2983, col29, NULL
+2983, col30, NULL
+2983, col31, NULL
+2983, col32, NULL
+2983, col33, NULL
+2983, col34, NULL
+2983, Completed Time, Not Assigned
+2983, Created By, Antonio Rocha
+2983, Created Time, 2021-01-14 17:14:00
+2983, DueBy Time, Not Assigned
+2983, Group, Application Support Group
+2983, KPI Required, Not Assigned
+2983, Overdue Status, false
+2983, Requester, Antonio Rocha
+2983, Request Status, Resolved
+2983, Resolved Time, 2021-01-18 12:30:00
+2983, Responded Date, Not Assigned
+2983, Severity, Not Assigned
+2983, Subcategory, Deployment
+2983, Subject, [Deployment Request] Change for Windows VSS Bug Fix and Disk Space Expansion in Production6
+2983, Technician, Not Assigned
+2984, Category, CM
+2984, col17, NULL
+2984, col18, NULL
+2984, col19, NULL
+2984, col20, NULL
+2984, col21, NULL
+2984, col22, NULL
+2984, col23, NULL
+2984, col24, NULL
+2984, col25, NULL
+2984, col26, NULL
+2984, col27, NULL
+2984, col28, NULL
+2984, col29, NULL
+2984, col30, NULL
+2984, col31, NULL
+2984, col32, NULL
+2984, col33, NULL
+2984, col34, NULL
+2984, Completed Time, Jan 18, 2021 11:48 AM
+2984, Created By, Kelvin Lei
+2984, Created Time, 2021-01-14 17:16:00
+2984, DueBy Time, Not Assigned
+2984, Group, Application Support Group
+2984, KPI Required, Not Assigned
+2984, Overdue Status, false
+2984, Requester, Kelvin Lei
+2984, Request Status, Closed
+2984, Resolved Time, 2021-01-18 11:48:00
+2984, Responded Date, Not Assigned
+2984, Severity, Not Assigned
+2984, Subcategory, Initiative
+2984, Subject, [Change Initiative] Change for setup 51020 & 51030 casino and properties in Production10
+2984, Technician, Kelvin Lei
+2985, Category, CM
+2985, col17, NULL
+2985, col18, NULL
+2985, col19, NULL
+2985, col20, NULL
+2985, col21, NULL
+2985, col22, NULL
+2985, col23, NULL
+2985, col24, NULL
+2985, col25, NULL
+2985, col26, NULL
+2985, col27, NULL
+2985, col28, NULL
+2985, col29, NULL
+2985, col30, NULL
+2985, col31, NULL
+2985, col32, NULL
+2985, col33, NULL
+2985, col34, NULL
+2985, Completed Time, Jan 18, 2021 11:46 AM
+2985, Created By, Kelvin Lei
+2985, Created Time, 2021-01-14 17:19:00
+2985, DueBy Time, Not Assigned
+2985, Group, Application Support Group
+2985, KPI Required, Not Assigned
+2985, Overdue Status, false
+2985, Requester, Kelvin Lei
+2985, Request Status, Closed
+2985, Resolved Time, 2021-01-18 11:46:00
+2985, Responded Date, Not Assigned
+2985, Severity, Not Assigned
+2985, Subcategory, Deployment
+2985, Subject, [PIA.PH.Production10] Change for setup 51020 & 51030 casino and properties in Production10
+2985, Technician, Kelvin Lei
+2986, Category, Incident
+2986, col17, NULL
+2986, col18, NULL
+2986, col19, NULL
+2986, col20, NULL
+2986, col21, NULL
+2986, col22, NULL
+2986, col23, NULL
+2986, col24, NULL
+2986, col25, NULL
+2986, col26, NULL
+2986, col27, NULL
+2986, col28, NULL
+2986, col29, NULL
+2986, col30, NULL
+2986, col31, NULL
+2986, col32, NULL
+2986, col33, NULL
+2986, col34, NULL
+2986, Completed Time, Feb 26, 2021 06:19 PM
+2986, Created By, Carol Tam
+2986, Created Time, 2021-01-15 09:08:00
+2986, DueBy Time, Mar 1, 2021 04:03 PM
+2986, Group, DBA Team
+2986, KPI Required, Yes
+2986, Overdue Status, false
+2986, Requester, Carol Tam
+2986, Request Status, Closed
+2986, Resolved Time, 2021-01-15 11:23:00
+2986, Responded Date, Jan 15, 2021 09:27 AM
+2986, Severity, Urgent
+2986, Subcategory, System Alert logging
+2986, Subject, [PIA.PH.Sandbox6][ETL delay alert found] On 15-Jan-2021
+2986, Technician, James Chen
+2987, Category, Service Request
+2987, col17, NULL
+2987, col18, NULL
+2987, col19, NULL
+2987, col20, NULL
+2987, col21, NULL
+2987, col22, NULL
+2987, col23, NULL
+2987, col24, NULL
+2987, col25, NULL
+2987, col26, NULL
+2987, col27, NULL
+2987, col28, NULL
+2987, col29, NULL
+2987, col30, NULL
+2987, col31, NULL
+2987, col32, NULL
+2987, col33, NULL
+2987, col34, NULL
+2987, Completed Time, Jan 21, 2021 09:59 AM
+2987, Created By, Carol Tam
+2987, Created Time, 2021-01-15 12:25:00
+2987, DueBy Time, Jan 27, 2021 12:25 PM
+2987, Group, Application Support Group
+2987, KPI Required, Yes
+2987, Overdue Status, false
+2987, Requester, Jonas Zhang
+2987, Request Status, Closed
+2987, Resolved Time, 2021-01-21 09:59:00
+2987, Responded Date, Jan 18, 2021 10:41 AM
+2987, Severity, Not Assigned
+2987, Subcategory, Not Assigned
+2987, Subject, [PIA.PH.Sandbox10][PHIDC - Game Endpoint Setup for Subic] On 15-Jan-2021
+2987, Technician, Kary Lei
+2989, Category, CM
+2989, col17, NULL
+2989, col18, NULL
+2989, col19, NULL
+2989, col20, NULL
+2989, col21, NULL
+2989, col22, NULL
+2989, col23, NULL
+2989, col24, NULL
+2989, col25, NULL
+2989, col26, NULL
+2989, col27, NULL
+2989, col28, NULL
+2989, col29, NULL
+2989, col30, NULL
+2989, col31, NULL
+2989, col32, NULL
+2989, col33, NULL
+2989, col34, NULL
+2989, Completed Time, Feb 1, 2021 10:31 PM
+2989, Created By, Antonio Rocha
+2989, Created Time, 2021-01-15 17:45:00
+2989, DueBy Time, Not Assigned
+2989, Group, Application Support Group
+2989, KPI Required, Not Assigned
+2989, Overdue Status, false
+2989, Requester, Kelvin Lei
+2989, Request Status, Closed
+2989, Resolved Time, 2021-02-01 22:31:00
+2989, Responded Date, Not Assigned
+2989, Severity, Not Assigned
+2989, Subcategory, Request
+2989, Subject, [Change Request] Change for fixing the ETDC data stored due to Live Baccarat Transactions in Sandbox10
+2989, Technician, Kelvin Lei
+2990, Category, Service Request
+2990, col17, NULL
+2990, col18, NULL
+2990, col19, NULL
+2990, col20, NULL
+2990, col21, NULL
+2990, col22, NULL
+2990, col23, NULL
+2990, col24, NULL
+2990, col25, NULL
+2990, col26, NULL
+2990, col27, NULL
+2990, col28, NULL
+2990, col29, NULL
+2990, col30, NULL
+2990, col31, NULL
+2990, col32, NULL
+2990, col33, NULL
+2990, col34, NULL
+2990, Completed Time, Not Assigned
+2990, Created By, Janice Huang
+2990, Created Time, 2021-01-15 17:46:00
+2990, DueBy Time, Not Assigned
+2990, Group, Application Support Group
+2990, KPI Required, Yes
+2990, Overdue Status, false
+2990, Requester, Antonio Rocha
+2990, Request Status, Resolved
+2990, Resolved Time, 2021-01-18 11:31:00
+2990, Responded Date, Not Assigned
+2990, Severity, Not Assigned
+2990, Subcategory, Not Assigned
+2990, Subject, Service Request - [PIA.PH.Sandbox10][ Issue found on Sandbox10 causing storage full] on 15-Jan-2021
+2990, Technician, Kelvin Lei
+2991, Category, CM
+2991, col17, NULL
+2991, col18, NULL
+2991, col19, NULL
+2991, col20, NULL
+2991, col21, NULL
+2991, col22, NULL
+2991, col23, NULL
+2991, col24, NULL
+2991, col25, NULL
+2991, col26, NULL
+2991, col27, NULL
+2991, col28, NULL
+2991, col29, NULL
+2991, col30, NULL
+2991, col31, NULL
+2991, col32, NULL
+2991, col33, NULL
+2991, col34, NULL
+2991, Completed Time, Jan 18, 2021 11:36 AM
+2991, Created By, Antonio Rocha
+2991, Created Time, 2021-01-15 17:48:00
+2991, DueBy Time, Not Assigned
+2991, Group, Application Support Group
+2991, KPI Required, Not Assigned
+2991, Overdue Status, false
+2991, Requester, Kelvin Lei
+2991, Request Status, Closed
+2991, Resolved Time, 2021-01-18 11:36:00
+2991, Responded Date, Not Assigned
+2991, Severity, Not Assigned
+2991, Subcategory, Deployment
+2991, Subject, [Deployment Request] Change for fixing the ETDC data stored due to Live Baccarat Transactions in Sandbox10
+2991, Technician, Kelvin Lei
+2992, Category, CM
+2992, col17, NULL
+2992, col18, NULL
+2992, col19, NULL
+2992, col20, NULL
+2992, col21, NULL
+2992, col22, NULL
+2992, col23, NULL
+2992, col24, NULL
+2992, col25, NULL
+2992, col26, NULL
+2992, col27, NULL
+2992, col28, NULL
+2992, col29, NULL
+2992, col30, NULL
+2992, col31, NULL
+2992, col32, NULL
+2992, col33, NULL
+2992, col34, NULL
+2992, Completed Time, Not Assigned
+2992, Created By, Antonio Rocha
+2992, Created Time, 2021-01-15 18:45:00
+2992, DueBy Time, Not Assigned
+2992, Group, Application Support Group
+2992, KPI Required, Not Assigned
+2992, Overdue Status, false
+2992, Requester, Kelvin Lei
+2992, Request Status, Resolved
+2992, Resolved Time, 2021-02-01 22:34:00
+2992, Responded Date, Not Assigned
+2992, Severity, Not Assigned
+2992, Subcategory, Request
+2992, Subject, [Change Request] Urgent change for disabling F5 Internet in Production10
+2992, Technician, Kelvin Lei
+2993, Category, CM
+2993, col17, NULL
+2993, col18, NULL
+2993, col19, NULL
+2993, col20, NULL
+2993, col21, NULL
+2993, col22, NULL
+2993, col23, NULL
+2993, col24, NULL
+2993, col25, NULL
+2993, col26, NULL
+2993, col27, NULL
+2993, col28, NULL
+2993, col29, NULL
+2993, col30, NULL
+2993, col31, NULL
+2993, col32, NULL
+2993, col33, NULL
+2993, col34, NULL
+2993, Completed Time, Jan 18, 2021 11:40 AM
+2993, Created By, Antonio Rocha
+2993, Created Time, 2021-01-15 18:47:00
+2993, DueBy Time, Not Assigned
+2993, Group, Application Support Group
+2993, KPI Required, Not Assigned
+2993, Overdue Status, false
+2993, Requester, Kelvin Lei
+2993, Request Status, Closed
+2993, Resolved Time, 2021-01-18 11:40:00
+2993, Responded Date, Not Assigned
+2993, Severity, Not Assigned
+2993, Subcategory, Deployment
+2993, Subject, [Deployment Request] Urgent change for disabling F5 Internet in Production10
+2993, Technician, Kelvin Lei
+2994, Category, Service Request
+2994, col17, NULL
+2994, col18, NULL
+2994, col19, NULL
+2994, col20, NULL
+2994, col21, NULL
+2994, col22, NULL
+2994, col23, NULL
+2994, col24, NULL
+2994, col25, NULL
+2994, col26, NULL
+2994, col27, NULL
+2994, col28, NULL
+2994, col29, NULL
+2994, col30, NULL
+2994, col31, NULL
+2994, col32, NULL
+2994, col33, NULL
+2994, col34, NULL
+2994, Completed Time, Not Assigned
+2994, Created By, Janice Huang
+2994, Created Time, 2021-01-15 19:31:00
+2994, DueBy Time, Jan 27, 2021 06:30 PM
+2994, Group, Application Support Group
+2994, KPI Required, Yes
+2994, Overdue Status, false
+2994, Requester, Jonas Zhang
+2994, Request Status, Resolved
+2994, Resolved Time, 2021-01-18 11:49:00
+2994, Responded Date, Not Assigned
+2994, Severity, Not Assigned
+2994, Subcategory, Not Assigned
+2994, Subject, Service Request - [PIA.PH.Production10][PHIDC-Prd10 deny internet access] on 15-Jan-2021
+2994, Technician, Kelvin Lei
+2995, Category, Incident
+2995, col17, NULL
+2995, col18, NULL
+2995, col19, NULL
+2995, col20, NULL
+2995, col21, NULL
+2995, col22, NULL
+2995, col23, NULL
+2995, col24, NULL
+2995, col25, NULL
+2995, col26, NULL
+2995, col27, NULL
+2995, col28, NULL
+2995, col29, NULL
+2995, col30, NULL
+2995, col31, NULL
+2995, col32, NULL
+2995, col33, NULL
+2995, col34, NULL
+2995, Completed Time, Feb 26, 2021 06:19 PM
+2995, Created By, Cream He
+2995, Created Time, 2021-01-17 17:02:00
+2995, DueBy Time, Mar 1, 2021 05:25 PM
+2995, Group, DBA Team
+2995, KPI Required, Yes
+2995, Overdue Status, false
+2995, Requester, Cream He
+2995, Request Status, Closed
+2995, Resolved Time, 2021-01-18 09:53:00
+2995, Responded Date, Jan 18, 2021 09:36 AM
+2995, Severity, Urgent
+2995, Subcategory, System Alert logging
+2995, Subject, [PIA.PH.Production10] [ETL delay alert found] on 17-Jan-2021
+2995, Technician, James Chen
+2996, Category, Incident
+2996, col17, NULL
+2996, col18, NULL
+2996, col19, NULL
+2996, col20, NULL
+2996, col21, NULL
+2996, col22, NULL
+2996, col23, NULL
+2996, col24, NULL
+2996, col25, NULL
+2996, col26, NULL
+2996, col27, NULL
+2996, col28, NULL
+2996, col29, NULL
+2996, col30, NULL
+2996, col31, NULL
+2996, col32, NULL
+2996, col33, NULL
+2996, col34, NULL
+2996, Completed Time, Feb 26, 2021 06:19 PM
+2996, Created By, Janice Huang
+2996, Created Time, 2021-01-17 17:03:00
+2996, DueBy Time, Mar 1, 2021 05:25 PM
+2996, Group, DBA Team
+2996, KPI Required, Yes
+2996, Overdue Status, false
+2996, Requester, Janice Huang
+2996, Request Status, Closed
+2996, Resolved Time, 2021-01-18 09:53:00
+2996, Responded Date, Jan 18, 2021 09:36 AM
+2996, Severity, Urgent
+2996, Subcategory, System Alert logging
+2996, Subject, [PIA.PH.Sandbox10] [ETL delay alert found] on 17-Jan-2021
+2996, Technician, James Chen
+2997, Category, Incident
+2997, col17, NULL
+2997, col18, NULL
+2997, col19, NULL
+2997, col20, NULL
+2997, col21, NULL
+2997, col22, NULL
+2997, col23, NULL
+2997, col24, NULL
+2997, col25, NULL
+2997, col26, NULL
+2997, col27, NULL
+2997, col28, NULL
+2997, col29, NULL
+2997, col30, NULL
+2997, col31, NULL
+2997, col32, NULL
+2997, col33, NULL
+2997, col34, NULL
+2997, Completed Time, Feb 26, 2021 06:19 PM
+2997, Created By, Cream He
+2997, Created Time, 2021-01-18 09:55:00
+2997, DueBy Time, Mar 1, 2021 04:20 PM
+2997, Group, Application Support Group
+2997, KPI Required, Yes
+2997, Overdue Status, false
+2997, Requester, Cream He
+2997, Request Status, Closed
+2997, Resolved Time, 2021-01-18 11:55:00
+2997, Responded Date, Jan 18, 2021 10:13 AM
+2997, Severity, Urgent
+2997, Subcategory, Not Assigned
+2997, Subject, [PIA.PH.Production10][Can't login Player Profile Management Portal and show system error of property 50020 and 50030] on 18-Jan-2021
+2997, Technician, Kelvin Lei
+2998, Category, CM
+2998, col17, NULL
+2998, col18, NULL
+2998, col19, NULL
+2998, col20, NULL
+2998, col21, NULL
+2998, col22, NULL
+2998, col23, NULL
+2998, col24, NULL
+2998, col25, NULL
+2998, col26, NULL
+2998, col27, NULL
+2998, col28, NULL
+2998, col29, NULL
+2998, col30, NULL
+2998, col31, NULL
+2998, col32, NULL
+2998, col33, NULL
+2998, col34, NULL
+2998, Completed Time, Feb 24, 2021 10:18 PM
+2998, Created By, Kary Lei
+2998, Created Time, 2021-01-18 10:53:00
+2998, DueBy Time, Not Assigned
+2998, Group, Application Support Group
+2998, KPI Required, Not Assigned
+2998, Overdue Status, false
+2998, Requester, Kary Lei
+2998, Request Status, Closed
+2998, Resolved Time, 2021-02-24 22:17:00
+2998, Responded Date, Not Assigned
+2998, Severity, Not Assigned
+2998, Subcategory, Initiative
+2998, Subject, [Change Initiative] Change for setup Live Baccarat endpoints for Subic Bay access
+2998, Technician, Kary Lei
+2999, Category, CM
+2999, col17, NULL
+2999, col18, NULL
+2999, col19, NULL
+2999, col20, NULL
+2999, col21, NULL
+2999, col22, NULL
+2999, col23, NULL
+2999, col24, NULL
+2999, col25, NULL
+2999, col26, NULL
+2999, col27, NULL
+2999, col28, NULL
+2999, col29, NULL
+2999, col30, NULL
+2999, col31, NULL
+2999, col32, NULL
+2999, col33, NULL
+2999, col34, NULL
+2999, Completed Time, Feb 24, 2021 10:17 PM
+2999, Created By, Kary Lei
+2999, Created Time, 2021-01-18 10:54:00
+2999, DueBy Time, Not Assigned
+2999, Group, Application Support Group
+2999, KPI Required, Not Assigned
+2999, Overdue Status, false
+2999, Requester, Kary Lei
+2999, Request Status, Closed
+2999, Resolved Time, 2021-02-24 22:17:00
+2999, Responded Date, Not Assigned
+2999, Severity, Not Assigned
+2999, Subcategory, Request
+2999, Subject, [Change Request] Change for setup Live Baccarat endpoints for Subic Bay access
+2999, Technician, Kary Lei
+3000, Category, Incident
+3000, col17, NULL
+3000, col18, NULL
+3000, col19, NULL
+3000, col20, NULL
+3000, col21, NULL
+3000, col22, NULL
+3000, col23, NULL
+3000, col24, NULL
+3000, col25, NULL
+3000, col26, NULL
+3000, col27, NULL
+3000, col28, NULL
+3000, col29, NULL
+3000, col30, NULL
+3000, col31, NULL
+3000, col32, NULL
+3000, col33, NULL
+3000, col34, NULL
+3000, Completed Time, Feb 26, 2021 06:19 PM
+3000, Created By, Cream He
+3000, Created Time, 2021-01-18 12:02:00
+3000, DueBy Time, Mar 1, 2021 05:47 PM
+3000, Group, DBA Team
+3000, KPI Required, Yes
+3000, Overdue Status, false
+3000, Requester, Cream He
+3000, Request Status, Closed
+3000, Resolved Time, 2021-01-18 12:34:00
+3000, Responded Date, Jan 18, 2021 12:06 PM
+3000, Severity, Urgent
+3000, Subcategory, System Alert logging
+3000, Subject, [PIA.MO.Production6] [ETL delay alert found] on 18-Jan-2021
+3000, Technician, James Chen
+3001, Category, Service Request
+3001, col17, NULL
+3001, col18, NULL
+3001, col19, NULL
+3001, col20, NULL
+3001, col21, NULL
+3001, col22, NULL
+3001, col23, NULL
+3001, col24, NULL
+3001, col25, NULL
+3001, col26, NULL
+3001, col27, NULL
+3001, col28, NULL
+3001, col29, NULL
+3001, col30, NULL
+3001, col31, NULL
+3001, col32, NULL
+3001, col33, NULL
+3001, col34, NULL
+3001, Completed Time, Jun 7, 2021 04:23 PM
+3001, Created By, James Chen
+3001, Created Time, 2021-01-18 15:07:00
+3001, DueBy Time, Jan 28, 2021 03:07 PM
+3001, Group, DCO Team
+3001, KPI Required, Not Assigned
+3001, Overdue Status, false
+3001, Requester, James Chen
+3001, Request Status, Closed
+3001, Resolved Time, 2021-01-25 10:21:00
+3001, Responded Date, Not Assigned
+3001, Severity, Not Assigned
+3001, Subcategory, Not Assigned
+3001, Subject, Landbase Access
+3001, Technician, Jonas Zhang
+3002, Category, CM
+3002, col17, NULL
+3002, col18, NULL
+3002, col19, NULL
+3002, col20, NULL
+3002, col21, NULL
+3002, col22, NULL
+3002, col23, NULL
+3002, col24, NULL
+3002, col25, NULL
+3002, col26, NULL
+3002, col27, NULL
+3002, col28, NULL
+3002, col29, NULL
+3002, col30, NULL
+3002, col31, NULL
+3002, col32, NULL
+3002, col33, NULL
+3002, col34, NULL
+3002, Completed Time, Jan 19, 2021 01:41 PM
+3002, Created By, Kary Lei
+3002, Created Time, 2021-01-18 16:17:00
+3002, DueBy Time, Not Assigned
+3002, Group, Application Support Group
+3002, KPI Required, Not Assigned
+3002, Overdue Status, false
+3002, Requester, Kary Lei
+3002, Request Status, Closed
+3002, Resolved Time, 2021-01-19 13:40:00
+3002, Responded Date, Not Assigned
+3002, Severity, Not Assigned
+3002, Subcategory, Deployment
+3002, Subject, [Deployment Request] Change for setup Live Baccarat endpoints for Subic Bay access
+3002, Technician, Kary Lei
+3004, Category, Incident
+3004, col17, NULL
+3004, col18, NULL
+3004, col19, NULL
+3004, col20, NULL
+3004, col21, NULL
+3004, col22, NULL
+3004, col23, NULL
+3004, col24, NULL
+3004, col25, NULL
+3004, col26, NULL
+3004, col27, NULL
+3004, col28, NULL
+3004, col29, NULL
+3004, col30, NULL
+3004, col31, NULL
+3004, col32, NULL
+3004, col33, NULL
+3004, col34, NULL
+3004, Completed Time, Feb 26, 2021 06:20 PM
+3004, Created By, Judy Liu
+3004, Created Time, 2021-01-19 23:43:00
+3004, DueBy Time, Mar 1, 2021 03:22 PM
+3004, Group, Application Support Group
+3004, KPI Required, Yes
+3004, Overdue Status, false
+3004, Requester, Judy Liu
+3004, Request Status, Closed
+3004, Resolved Time, 2021-01-20 11:57:00
+3004, Responded Date, Jan 20, 2021 09:36 AM
+3004, Severity, Urgent
+3004, Subcategory, Not Assigned
+3004, Subject, [PIA.PH.Sandbox10][Can't access the game of Live Baccarat] on 19-Jan-2021
+3004, Technician, Kelvin Lei
+3006, Category, Incident
+3006, col17, NULL
+3006, col18, NULL
+3006, col19, NULL
+3006, col20, NULL
+3006, col21, NULL
+3006, col22, NULL
+3006, col23, NULL
+3006, col24, NULL
+3006, col25, NULL
+3006, col26, NULL
+3006, col27, NULL
+3006, col28, NULL
+3006, col29, NULL
+3006, col30, NULL
+3006, col31, NULL
+3006, col32, NULL
+3006, col33, NULL
+3006, col34, NULL
+3006, Completed Time, Feb 26, 2021 06:20 PM
+3006, Created By, Judy Liu
+3006, Created Time, 2021-01-20 16:17:00
+3006, DueBy Time, Mar 1, 2021 04:08 PM
+3006, Group, Application Support Group
+3006, KPI Required, Yes
+3006, Overdue Status, false
+3006, Requester, Selva Kamachi
+3006, Request Status, Closed
+3006, Resolved Time, 2021-01-20 20:34:00
+3006, Responded Date, Jan 20, 2021 04:22 PM
+3006, Severity, Urgent
+3006, Subcategory, Not Assigned
+3006, Subject, [PIA.PH.Sandbox10][Can't access game of play for fun in Sandbox10] on 20-Jan-2021
+3006, Technician, Kelvin Lei
+3007, Category, Service Request
+3007, col17, NULL
+3007, col18, NULL
+3007, col19, NULL
+3007, col20, NULL
+3007, col21, NULL
+3007, col22, NULL
+3007, col23, NULL
+3007, col24, NULL
+3007, col25, NULL
+3007, col26, NULL
+3007, col27, NULL
+3007, col28, NULL
+3007, col29, NULL
+3007, col30, NULL
+3007, col31, NULL
+3007, col32, NULL
+3007, col33, NULL
+3007, col34, NULL
+3007, Completed Time, Not Assigned
+3007, Created By, Judy Liu
+3007, Created Time, 2021-01-20 16:54:00
+3007, DueBy Time, Not Assigned
+3007, Group, Office Automation
+3007, KPI Required, Yes
+3007, Overdue Status, false
+3007, Requester, Keith Chau
+3007, Request Status, Resolved
+3007, Resolved Time, 2021-01-20 17:52:00
+3007, Responded Date, Not Assigned
+3007, Severity, Not Assigned
+3007, Subcategory, Not Assigned
+3007, Subject, Service Request - [ Reset PRD10 Password request] on 20-Jan-2021
+3007, Technician, Lincoln Leong
+3008, Category, CM
+3008, col17, NULL
+3008, col18, NULL
+3008, col19, NULL
+3008, col20, NULL
+3008, col21, NULL
+3008, col22, NULL
+3008, col23, NULL
+3008, col24, NULL
+3008, col25, NULL
+3008, col26, NULL
+3008, col27, NULL
+3008, col28, NULL
+3008, col29, NULL
+3008, col30, NULL
+3008, col31, NULL
+3008, col32, NULL
+3008, col33, NULL
+3008, col34, NULL
+3008, Completed Time, Not Assigned
+3008, Created By, Antonio Rocha
+3008, Created Time, 2021-01-20 17:03:00
+3008, DueBy Time, Not Assigned
+3008, Group, Application Support Group
+3008, KPI Required, Not Assigned
+3008, Overdue Status, false
+3008, Requester, Antonio Rocha
+3008, Request Status, Resolved
+3008, Resolved Time, 2021-02-26 15:52:00
+3008, Responded Date, Not Assigned
+3008, Severity, Not Assigned
+3008, Subcategory, Initiative
+3008, Subject, [Change Initiative] Change for deploying House Game Engine and 4 House Games in Sandbox6
+3008, Technician, Not Assigned
+3009, Category, CM
+3009, col17, NULL
+3009, col18, NULL
+3009, col19, NULL
+3009, col20, NULL
+3009, col21, NULL
+3009, col22, NULL
+3009, col23, NULL
+3009, col24, NULL
+3009, col25, NULL
+3009, col26, NULL
+3009, col27, NULL
+3009, col28, NULL
+3009, col29, NULL
+3009, col30, NULL
+3009, col31, NULL
+3009, col32, NULL
+3009, col33, NULL
+3009, col34, NULL
+3009, Completed Time, Not Assigned
+3009, Created By, Antonio Rocha
+3009, Created Time, 2021-01-20 17:07:00
+3009, DueBy Time, Not Assigned
+3009, Group, Application Support Group
+3009, KPI Required, Not Assigned
+3009, Overdue Status, false
+3009, Requester, Antonio Rocha
+3009, Request Status, Resolved
+3009, Resolved Time, 2021-02-26 15:52:00
+3009, Responded Date, Not Assigned
+3009, Severity, Not Assigned
+3009, Subcategory, Request
+3009, Subject, [Change Request] Change for deploying House Game Engine and 4 House Games in Sandbox6
+3009, Technician, Not Assigned
+3010, Category, CM
+3010, col17, NULL
+3010, col18, NULL
+3010, col19, NULL
+3010, col20, NULL
+3010, col21, NULL
+3010, col22, NULL
+3010, col23, NULL
+3010, col24, NULL
+3010, col25, NULL
+3010, col26, NULL
+3010, col27, NULL
+3010, col28, NULL
+3010, col29, NULL
+3010, col30, NULL
+3010, col31, NULL
+3010, col32, NULL
+3010, col33, NULL
+3010, col34, NULL
+3010, Completed Time, Jan 28, 2021 02:54 PM
+3010, Created By, Antonio Rocha
+3010, Created Time, 2021-01-20 22:19:00
+3010, DueBy Time, Not Assigned
+3010, Group, Application Support Group
+3010, KPI Required, Not Assigned
+3010, Overdue Status, false
+3010, Requester, Antonio Rocha
+3010, Request Status, Closed
+3010, Resolved Time, 2021-01-28 14:53:00
+3010, Responded Date, Not Assigned
+3010, Severity, Not Assigned
+3010, Subcategory, Deployment
+3010, Subject, [Deployment Request] Change for deploying House Game Engine and 4 House Games in Sandbox6
+3010, Technician, Antonio Rocha
+3011, Category, Service Request
+3011, col17, NULL
+3011, col18, NULL
+3011, col19, NULL
+3011, col20, NULL
+3011, col21, NULL
+3011, col22, NULL
+3011, col23, NULL
+3011, col24, NULL
+3011, col25, NULL
+3011, col26, NULL
+3011, col27, NULL
+3011, col28, NULL
+3011, col29, NULL
+3011, col30, NULL
+3011, col31, NULL
+3011, col32, NULL
+3011, col33, NULL
+3011, col34, NULL
+3011, Completed Time, Not Assigned
+3011, Created By, Kelvin Lei
+3011, Created Time, 2021-01-21 12:14:00
+3011, DueBy Time, Jan 26, 2021 12:48 PM
+3011, Group, Application Support Group
+3011, KPI Required, Not Assigned
+3011, Overdue Status, false
+3011, Requester, Kelvin Lei
+3011, Request Status, Resolved
+3011, Resolved Time, 2021-01-25 14:51:00
+3011, Responded Date, Not Assigned
+3011, Severity, Not Assigned
+3011, Subcategory, Not Assigned
+3011, Subject, Add Compliance[int.] role & permission for Production6 environment using
+3011, Technician, Kelvin Lei
+3012, Category, CM
+3012, col17, NULL
+3012, col18, NULL
+3012, col19, NULL
+3012, col20, NULL
+3012, col21, NULL
+3012, col22, NULL
+3012, col23, NULL
+3012, col24, NULL
+3012, col25, NULL
+3012, col26, NULL
+3012, col27, NULL
+3012, col28, NULL
+3012, col29, NULL
+3012, col30, NULL
+3012, col31, NULL
+3012, col32, NULL
+3012, col33, NULL
+3012, col34, NULL
+3012, Completed Time, Feb 1, 2021 10:51 PM
+3012, Created By, Kary Lei
+3012, Created Time, 2021-01-21 13:18:00
+3012, DueBy Time, Not Assigned
+3012, Group, Application Support Group
+3012, KPI Required, Not Assigned
+3012, Overdue Status, false
+3012, Requester, Kary Lei
+3012, Request Status, Closed
+3012, Resolved Time, 2021-02-01 22:51:00
+3012, Responded Date, Not Assigned
+3012, Severity, Not Assigned
+3012, Subcategory, Request
+3012, Subject, [Change Request] Urgent Change for updating roles and permissions in Signature Verifier (Production6)
+3012, Technician, Kary Lei
+3013, Category, CM
+3013, col17, NULL
+3013, col18, NULL
+3013, col19, NULL
+3013, col20, NULL
+3013, col21, NULL
+3013, col22, NULL
+3013, col23, NULL
+3013, col24, NULL
+3013, col25, NULL
+3013, col26, NULL
+3013, col27, NULL
+3013, col28, NULL
+3013, col29, NULL
+3013, col30, NULL
+3013, col31, NULL
+3013, col32, NULL
+3013, col33, NULL
+3013, col34, NULL
+3013, Completed Time, Jan 21, 2021 06:55 PM
+3013, Created By, Kary Lei
+3013, Created Time, 2021-01-21 13:26:00
+3013, DueBy Time, Not Assigned
+3013, Group, Application Support Group
+3013, KPI Required, Not Assigned
+3013, Overdue Status, false
+3013, Requester, Kary Lei
+3013, Request Status, Closed
+3013, Resolved Time, 2021-01-21 18:55:00
+3013, Responded Date, Not Assigned
+3013, Severity, Not Assigned
+3013, Subcategory, Deployment
+3013, Subject, [Deployment Request] Urgent Change for updating roles and permissions in Signature Verifier (Production6)
+3013, Technician, Kary Lei
+3014, Category, Incident
+3014, col17, NULL
+3014, col18, NULL
+3014, col19, NULL
+3014, col20, NULL
+3014, col21, NULL
+3014, col22, NULL
+3014, col23, NULL
+3014, col24, NULL
+3014, col25, NULL
+3014, col26, NULL
+3014, col27, NULL
+3014, col28, NULL
+3014, col29, NULL
+3014, col30, NULL
+3014, col31, NULL
+3014, col32, NULL
+3014, col33, NULL
+3014, col34, NULL
+3014, Completed Time, Feb 26, 2021 06:20 PM
+3014, Created By, Carol Tam
+3014, Created Time, 2021-01-21 17:06:00
+3014, DueBy Time, Mar 1, 2021 04:57 PM
+3014, Group, DBA Team
+3014, KPI Required, Yes
+3014, Overdue Status, false
+3014, Requester, Carol Tam
+3014, Request Status, Closed
+3014, Resolved Time, 2021-01-21 18:41:00
+3014, Responded Date, Jan 21, 2021 05:33 PM
+3014, Severity, Urgent
+3014, Subcategory, System Alert logging
+3014, Subject, [PIA.PH.production10] [ETL delay alert found ]on 21-Jan-2021
+3014, Technician, James Chen
+3015, Category, Service Request
+3015, col17, NULL
+3015, col18, NULL
+3015, col19, NULL
+3015, col20, NULL
+3015, col21, NULL
+3015, col22, NULL
+3015, col23, NULL
+3015, col24, NULL
+3015, col25, NULL
+3015, col26, NULL
+3015, col27, NULL
+3015, col28, NULL
+3015, col29, NULL
+3015, col30, NULL
+3015, col31, NULL
+3015, col32, NULL
+3015, col33, NULL
+3015, col34, NULL
+3015, Completed Time, Not Assigned
+3015, Created By, Carol Tam
+3015, Created Time, 2021-01-21 17:12:00
+3015, DueBy Time, Not Assigned
+3015, Group, Office Automation
+3015, KPI Required, Yes
+3015, Overdue Status, false
+3015, Requester, Xiaopan Yun
+3015, Request Status, Resolved
+3015, Resolved Time, 2021-01-22 12:20:00
+3015, Responded Date, Not Assigned
+3015, Severity, Not Assigned
+3015, Subcategory, Not Assigned
+3015, Subject, Service Request - [Reset PRD6 Password request ] on 21-Jan-2021
+3015, Technician, Fong Fan
+3016, Category, CM
+3016, col17, NULL
+3016, col18, NULL
+3016, col19, NULL
+3016, col20, NULL
+3016, col21, NULL
+3016, col22, NULL
+3016, col23, NULL
+3016, col24, NULL
+3016, col25, NULL
+3016, col26, NULL
+3016, col27, NULL
+3016, col28, NULL
+3016, col29, NULL
+3016, col30, NULL
+3016, col31, NULL
+3016, col32, NULL
+3016, col33, NULL
+3016, col34, NULL
+3016, Completed Time, Feb 1, 2021 10:52 PM
+3016, Created By, Antonio Rocha
+3016, Created Time, 2021-01-21 18:28:00
+3016, DueBy Time, Not Assigned
+3016, Group, Application Support Group
+3016, KPI Required, Not Assigned
+3016, Overdue Status, false
+3016, Requester, Antonio Rocha
+3016, Request Status, Closed
+3016, Resolved Time, 2021-01-22 12:35:00
+3016, Responded Date, Not Assigned
+3016, Severity, Not Assigned
+3016, Subcategory, Request
+3016, Subject, [Change Request] Urgent change for fixing the SV issue in Sandbox6 and Production6
+3016, Technician, Antonio Rocha
+3017, Category, CM
+3017, col17, NULL
+3017, col18, NULL
+3017, col19, NULL
+3017, col20, NULL
+3017, col21, NULL
+3017, col22, NULL
+3017, col23, NULL
+3017, col24, NULL
+3017, col25, NULL
+3017, col26, NULL
+3017, col27, NULL
+3017, col28, NULL
+3017, col29, NULL
+3017, col30, NULL
+3017, col31, NULL
+3017, col32, NULL
+3017, col33, NULL
+3017, col34, NULL
+3017, Completed Time, Jan 28, 2021 03:23 PM
+3017, Created By, Antonio Rocha
+3017, Created Time, 2021-01-21 18:30:00
+3017, DueBy Time, Not Assigned
+3017, Group, Application Support Group
+3017, KPI Required, Not Assigned
+3017, Overdue Status, false
+3017, Requester, Antonio Rocha
+3017, Request Status, Closed
+3017, Resolved Time, 2021-01-22 12:35:00
+3017, Responded Date, Not Assigned
+3017, Severity, Not Assigned
+3017, Subcategory, Deployment
+3017, Subject, [Deployment Request] Urgent change for fixing the SV issue in Sandbox6
+3017, Technician, Antonio Rocha
+3018, Category, CM
+3018, col17, NULL
+3018, col18, NULL
+3018, col19, NULL
+3018, col20, NULL
+3018, col21, NULL
+3018, col22, NULL
+3018, col23, NULL
+3018, col24, NULL
+3018, col25, NULL
+3018, col26, NULL
+3018, col27, NULL
+3018, col28, NULL
+3018, col29, NULL
+3018, col30, NULL
+3018, col31, NULL
+3018, col32, NULL
+3018, col33, NULL
+3018, col34, NULL
+3018, Completed Time, Jan 28, 2021 03:24 PM
+3018, Created By, Antonio Rocha
+3018, Created Time, 2021-01-21 18:31:00
+3018, DueBy Time, Not Assigned
+3018, Group, Application Support Group
+3018, KPI Required, Not Assigned
+3018, Overdue Status, false
+3018, Requester, Antonio Rocha
+3018, Request Status, Closed
+3018, Resolved Time, 2021-01-22 12:36:00
+3018, Responded Date, Not Assigned
+3018, Severity, Not Assigned
+3018, Subcategory, Deployment
+3018, Subject, [Deployment Request] Urgent change for fixing the SV issue in Production6
+3018, Technician, Antonio Rocha
+3019, Category, Service Request
+3019, col17, NULL
+3019, col18, NULL
+3019, col19, NULL
+3019, col20, NULL
+3019, col21, NULL
+3019, col22, NULL
+3019, col23, NULL
+3019, col24, NULL
+3019, col25, NULL
+3019, col26, NULL
+3019, col27, NULL
+3019, col28, NULL
+3019, col29, NULL
+3019, col30, NULL
+3019, col31, NULL
+3019, col32, NULL
+3019, col33, NULL
+3019, col34, NULL
+3019, Completed Time, Not Assigned
+3019, Created By, Judy Liu
+3019, Created Time, 2021-01-21 19:21:00
+3019, DueBy Time, Not Assigned
+3019, Group, Application Support Group
+3019, KPI Required, Yes
+3019, Overdue Status, false
+3019, Requester, Antonio Rocha
+3019, Request Status, Resolved
+3019, Resolved Time, 2021-01-22 12:35:00
+3019, Responded Date, Not Assigned
+3019, Severity, Not Assigned
+3019, Subcategory, Not Assigned
+3019, Subject, [PIA.MO.Production6] [Urgent Change for Sandbox6 and Production6 SV Issue] on 21-Jan-2021
+3019, Technician, Not Assigned
+3020, Category, Service Request
+3020, col17, NULL
+3020, col18, NULL
+3020, col19, NULL
+3020, col20, NULL
+3020, col21, NULL
+3020, col22, NULL
+3020, col23, NULL
+3020, col24, NULL
+3020, col25, NULL
+3020, col26, NULL
+3020, col27, NULL
+3020, col28, NULL
+3020, col29, NULL
+3020, col30, NULL
+3020, col31, NULL
+3020, col32, NULL
+3020, col33, NULL
+3020, col34, NULL
+3020, Completed Time, Not Assigned
+3020, Created By, Judy Liu
+3020, Created Time, 2021-01-21 19:26:00
+3020, DueBy Time, Not Assigned
+3020, Group, Application Support Group
+3020, KPI Required, Yes
+3020, Overdue Status, false
+3020, Requester, Antonio Rocha
+3020, Request Status, Resolved
+3020, Resolved Time, 2021-01-22 12:36:00
+3020, Responded Date, Not Assigned
+3020, Severity, Not Assigned
+3020, Subcategory, Not Assigned
+3020, Subject, [PIA.MO.Sandbox6] [Change for Sandbox6 and Production6 SV Issue] on 21-Jan-2021
+3020, Technician, Not Assigned
+3021, Category, Service Request
+3021, col17, NULL
+3021, col18, NULL
+3021, col19, NULL
+3021, col20, NULL
+3021, col21, NULL
+3021, col22, NULL
+3021, col23, NULL
+3021, col24, NULL
+3021, col25, NULL
+3021, col26, NULL
+3021, col27, NULL
+3021, col28, NULL
+3021, col29, NULL
+3021, col30, NULL
+3021, col31, NULL
+3021, col32, NULL
+3021, col33, NULL
+3021, col34, NULL
+3021, Completed Time, Not Assigned
+3021, Created By, Carol Tam
+3021, Created Time, 2021-01-22 08:10:00
+3021, DueBy Time, Not Assigned
+3021, Group, Application Support Group
+3021, KPI Required, Yes
+3021, Overdue Status, false
+3021, Requester, Antonio Rocha
+3021, Request Status, Resolved
+3021, Resolved Time, 2021-01-22 16:52:00
+3021, Responded Date, Not Assigned
+3021, Severity, Not Assigned
+3021, Subcategory, Not Assigned
+3021, Subject, [PIA.PH.Sandbox6][Temporary Grant Access for 118520 MGM Staff] On 22-Jan-2021
+3021, Technician, Not Assigned
+3022, Category, Incident
+3022, col17, NULL
+3022, col18, NULL
+3022, col19, NULL
+3022, col20, NULL
+3022, col21, NULL
+3022, col22, NULL
+3022, col23, NULL
+3022, col24, NULL
+3022, col25, NULL
+3022, col26, NULL
+3022, col27, NULL
+3022, col28, NULL
+3022, col29, NULL
+3022, col30, NULL
+3022, col31, NULL
+3022, col32, NULL
+3022, col33, NULL
+3022, col34, NULL
+3022, Completed Time, Feb 26, 2021 06:22 PM
+3022, Created By, Carol Tam
+3022, Created Time, 2021-01-22 12:27:00
+3022, DueBy Time, Jan 25, 2021 12:27 PM
+3022, Group, Application Support Group
+3022, KPI Required, Yes
+3022, Overdue Status, true
+3022, Requester, Li Heng Yu
+3022, Request Status, Closed
+3022, Resolved Time, 2021-02-08 16:57:00
+3022, Responded Date, Jan 22, 2021 06:11 PM
+3022, Severity, Urgent
+3022, Subcategory, Not Assigned
+3022, Subject, [PIA.PH.Sandbox9][Jackpot Engine issue ] On 22-Jan-2021
+3022, Technician, Kelvin Lei
+3023, Category, Service Request
+3023, col17, NULL
+3023, col18, NULL
+3023, col19, NULL
+3023, col20, NULL
+3023, col21, NULL
+3023, col22, NULL
+3023, col23, NULL
+3023, col24, NULL
+3023, col25, NULL
+3023, col26, NULL
+3023, col27, NULL
+3023, col28, NULL
+3023, col29, NULL
+3023, col30, NULL
+3023, col31, NULL
+3023, col32, NULL
+3023, col33, NULL
+3023, col34, NULL
+3023, Completed Time, Not Assigned
+3023, Created By, Janice Huang
+3023, Created Time, 2021-01-22 14:56:00
+3023, DueBy Time, Not Assigned
+3023, Group, Office Automation
+3023, KPI Required, Yes
+3023, Overdue Status, false
+3023, Requester, Liang Wang
+3023, Request Status, Resolved
+3023, Resolved Time, 2021-01-22 17:50:00
+3023, Responded Date, Not Assigned
+3023, Severity, Not Assigned
+3023, Subcategory, Not Assigned
+3023, Subject, Service Request - [PIA.MO.Sandbox6][Request for reset password for sandbox6] on 22-Jan-2021
+3023, Technician, Fong Fan
+3024, Category, CM
+3024, col17, NULL
+3024, col18, NULL
+3024, col19, NULL
+3024, col20, NULL
+3024, col21, NULL
+3024, col22, NULL
+3024, col23, NULL
+3024, col24, NULL
+3024, col25, NULL
+3024, col26, NULL
+3024, col27, NULL
+3024, col28, NULL
+3024, col29, NULL
+3024, col30, NULL
+3024, col31, NULL
+3024, col32, NULL
+3024, col33, NULL
+3024, col34, NULL
+3024, Completed Time, Feb 1, 2021 10:26 PM
+3024, Created By, Kary Lei
+3024, Created Time, 2021-01-22 15:31:00
+3024, DueBy Time, Not Assigned
+3024, Group, Application Support Group
+3024, KPI Required, Not Assigned
+3024, Overdue Status, false
+3024, Requester, Kary Lei
+3024, Request Status, Closed
+3024, Resolved Time, 2021-02-01 22:26:00
+3024, Responded Date, Not Assigned
+3024, Severity, Not Assigned
+3024, Subcategory, Deployment
+3024, Subject, [Deployment Request] Change for remove audit VM for Network Vulnerability Assessment
+3024, Technician, Kary Lei
+3025, Category, CM
+3025, col17, NULL
+3025, col18, NULL
+3025, col19, NULL
+3025, col20, NULL
+3025, col21, NULL
+3025, col22, NULL
+3025, col23, NULL
+3025, col24, NULL
+3025, col25, NULL
+3025, col26, NULL
+3025, col27, NULL
+3025, col28, NULL
+3025, col29, NULL
+3025, col30, NULL
+3025, col31, NULL
+3025, col32, NULL
+3025, col33, NULL
+3025, col34, NULL
+3025, Completed Time, Mar 31, 2021 10:44 AM
+3025, Created By, Kelvin Lei
+3025, Created Time, 2021-01-22 17:32:00
+3025, DueBy Time, Not Assigned
+3025, Group, Application Support Group
+3025, KPI Required, Not Assigned
+3025, Overdue Status, false
+3025, Requester, Kelvin Lei
+3025, Request Status, Closed
+3025, Resolved Time, 2021-03-31 10:44:00
+3025, Responded Date, Not Assigned
+3025, Severity, Not Assigned
+3025, Subcategory, Request
+3025, Subject, [Change Request] Change for Betting credit fund services using in Sandbox10 & Production10
+3025, Technician, Kelvin Lei
+3026, Category, Service Request
+3026, col17, NULL
+3026, col18, NULL
+3026, col19, NULL
+3026, col20, NULL
+3026, col21, NULL
+3026, col22, NULL
+3026, col23, NULL
+3026, col24, NULL
+3026, col25, NULL
+3026, col26, NULL
+3026, col27, NULL
+3026, col28, NULL
+3026, col29, NULL
+3026, col30, NULL
+3026, col31, NULL
+3026, col32, NULL
+3026, col33, NULL
+3026, col34, NULL
+3026, Completed Time, Not Assigned
+3026, Created By, Kary Lei
+3026, Created Time, 2021-01-22 17:44:00
+3026, DueBy Time, Not Assigned
+3026, Group, Office Automation
+3026, KPI Required, Not Assigned
+3026, Overdue Status, false
+3026, Requester, Kary Lei
+3026, Request Status, Resolved
+3026, Resolved Time, 2021-01-28 17:12:00
+3026, Responded Date, Not Assigned
+3026, Severity, Not Assigned
+3026, Subcategory, Not Assigned
+3026, Subject, MOIDC Account Request Form for disable Portal Admin Account and Cynthia Wong Account
+3026, Technician, Fong Fan
+3027, Category, Service Request
+3027, col17, NULL
+3027, col18, NULL
+3027, col19, NULL
+3027, col20, NULL
+3027, col21, NULL
+3027, col22, NULL
+3027, col23, NULL
+3027, col24, NULL
+3027, col25, NULL
+3027, col26, NULL
+3027, col27, NULL
+3027, col28, NULL
+3027, col29, NULL
+3027, col30, NULL
+3027, col31, NULL
+3027, col32, NULL
+3027, col33, NULL
+3027, col34, NULL
+3027, Completed Time, Not Assigned
+3027, Created By, Kary Lei
+3027, Created Time, 2021-01-22 17:51:00
+3027, DueBy Time, Not Assigned
+3027, Group, Office Automation
+3027, KPI Required, Not Assigned
+3027, Overdue Status, false
+3027, Requester, Kary Lei
+3027, Request Status, Resolved
+3027, Resolved Time, 2021-01-28 17:12:00
+3027, Responded Date, Not Assigned
+3027, Severity, Not Assigned
+3027, Subcategory, Not Assigned
+3027, Subject, MOIDC Account Request Form for disable Portal Admin Account, Alan Wong Account and Cynthia Wong Account
+3027, Technician, Fong Fan
+3028, Category, CM
+3028, col17, NULL
+3028, col18, NULL
+3028, col19, NULL
+3028, col20, NULL
+3028, col21, NULL
+3028, col22, NULL
+3028, col23, NULL
+3028, col24, NULL
+3028, col25, NULL
+3028, col26, NULL
+3028, col27, NULL
+3028, col28, NULL
+3028, col29, NULL
+3028, col30, NULL
+3028, col31, NULL
+3028, col32, NULL
+3028, col33, NULL
+3028, col34, NULL
+3028, Completed Time, Mar 31, 2021 10:45 AM
+3028, Created By, Kelvin Lei
+3028, Created Time, 2021-01-22 17:56:00
+3028, DueBy Time, Not Assigned
+3028, Group, Application Support Group
+3028, KPI Required, Not Assigned
+3028, Overdue Status, false
+3028, Requester, Kelvin Lei
+3028, Request Status, Closed
+3028, Resolved Time, 2021-03-31 10:45:00
+3028, Responded Date, Not Assigned
+3028, Severity, Not Assigned
+3028, Subcategory, Initiative
+3028, Subject, [Change Initiative] Change for Betting credit fund services using in Sandbox10 & Production10
+3028, Technician, Kelvin Lei
+3030, Category, Incident
+3030, col17, NULL
+3030, col18, NULL
+3030, col19, NULL
+3030, col20, NULL
+3030, col21, NULL
+3030, col22, NULL
+3030, col23, NULL
+3030, col24, NULL
+3030, col25, NULL
+3030, col26, NULL
+3030, col27, NULL
+3030, col28, NULL
+3030, col29, NULL
+3030, col30, NULL
+3030, col31, NULL
+3030, col32, NULL
+3030, col33, NULL
+3030, col34, NULL
+3030, Completed Time, Feb 26, 2021 06:22 PM
+3030, Created By, Judy Liu
+3030, Created Time, 2021-01-25 10:53:00
+3030, DueBy Time, Feb 26, 2021 06:53 PM
+3030, Group, Application Support Group
+3030, KPI Required, Yes
+3030, Overdue Status, false
+3030, Requester, Paul Wong
+3030, Request Status, Closed
+3030, Resolved Time, 2021-01-25 12:22:00
+3030, Responded Date, Jan 25, 2021 10:56 AM
+3030, Severity, Critical
+3030, Subcategory, Not Assigned
+3030, Subject, [PIA.MO.Production6][Production 6 Switch Game failed] on 25-Jan-2021
+3030, Technician, Antonio Rocha
+3034, Category, Service Request
+3034, col17, NULL
+3034, col18, NULL
+3034, col19, NULL
+3034, col20, NULL
+3034, col21, NULL
+3034, col22, NULL
+3034, col23, NULL
+3034, col24, NULL
+3034, col25, NULL
+3034, col26, NULL
+3034, col27, NULL
+3034, col28, NULL
+3034, col29, NULL
+3034, col30, NULL
+3034, col31, NULL
+3034, col32, NULL
+3034, col33, NULL
+3034, col34, NULL
+3034, Completed Time, Not Assigned
+3034, Created By, Kary Lei
+3034, Created Time, 2021-01-25 19:05:00
+3034, DueBy Time, Not Assigned
+3034, Group, Application Support Group
+3034, KPI Required, Not Assigned
+3034, Overdue Status, false
+3034, Requester, Kary Lei
+3034, Request Status, Resolved
+3034, Resolved Time, 2021-01-26 15:30:00
+3034, Responded Date, Not Assigned
+3034, Severity, Not Assigned
+3034, Subcategory, Not Assigned
+3034, Subject, SSO Access Request Form for assigning Cream He to access the Inspection and Audit Portal
+3034, Technician, Not Assigned
+3035, Category, Service Request
+3035, col17, NULL
+3035, col18, NULL
+3035, col19, NULL
+3035, col20, NULL
+3035, col21, NULL
+3035, col22, NULL
+3035, col23, NULL
+3035, col24, NULL
+3035, col25, NULL
+3035, col26, NULL
+3035, col27, NULL
+3035, col28, NULL
+3035, col29, NULL
+3035, col30, NULL
+3035, col31, NULL
+3035, col32, NULL
+3035, col33, NULL
+3035, col34, NULL
+3035, Completed Time, Not Assigned
+3035, Created By, Kary Lei
+3035, Created Time, 2021-01-25 19:07:00
+3035, DueBy Time, Not Assigned
+3035, Group, Application Support Group
+3035, KPI Required, Not Assigned
+3035, Overdue Status, false
+3035, Requester, Kary Lei
+3035, Request Status, Resolved
+3035, Resolved Time, 2021-01-26 15:31:00
+3035, Responded Date, Not Assigned
+3035, Severity, Not Assigned
+3035, Subcategory, Not Assigned
+3035, Subject, SSO Access Request Form for assigning Janice Huang to access the Inspection and Audit Portal
+3035, Technician, Not Assigned
+3036, Category, Service Request
+3036, col17, NULL
+3036, col18, NULL
+3036, col19, NULL
+3036, col20, NULL
+3036, col21, NULL
+3036, col22, NULL
+3036, col23, NULL
+3036, col24, NULL
+3036, col25, NULL
+3036, col26, NULL
+3036, col27, NULL
+3036, col28, NULL
+3036, col29, NULL
+3036, col30, NULL
+3036, col31, NULL
+3036, col32, NULL
+3036, col33, NULL
+3036, col34, NULL
+3036, Completed Time, Not Assigned
+3036, Created By, Kary Lei
+3036, Created Time, 2021-01-25 19:08:00
+3036, DueBy Time, Not Assigned
+3036, Group, Not Assigned
+3036, KPI Required, Not Assigned
+3036, Overdue Status, false
+3036, Requester, Kary Lei
+3036, Request Status, Resolved
+3036, Resolved Time, 2021-01-26 15:42:00
+3036, Responded Date, Not Assigned
+3036, Severity, Not Assigned
+3036, Subcategory, Not Assigned
+3036, Subject, SSO Access Request Form for assigning Judy Liu to access the Inspection and Audit Portal
+3036, Technician, Not Assigned
+3037, Category, Service Request
+3037, col17, NULL
+3037, col18, NULL
+3037, col19, NULL
+3037, col20, NULL
+3037, col21, NULL
+3037, col22, NULL
+3037, col23, NULL
+3037, col24, NULL
+3037, col25, NULL
+3037, col26, NULL
+3037, col27, NULL
+3037, col28, NULL
+3037, col29, NULL
+3037, col30, NULL
+3037, col31, NULL
+3037, col32, NULL
+3037, col33, NULL
+3037, col34, NULL
+3037, Completed Time, Not Assigned
+3037, Created By, Kary Lei
+3037, Created Time, 2021-01-25 19:09:00
+3037, DueBy Time, Not Assigned
+3037, Group, Application Support Group
+3037, KPI Required, Not Assigned
+3037, Overdue Status, false
+3037, Requester, Kary Lei
+3037, Request Status, Resolved
+3037, Resolved Time, 2021-01-26 15:45:00
+3037, Responded Date, Not Assigned
+3037, Severity, Not Assigned
+3037, Subcategory, Not Assigned
+3037, Subject, SSO Access Request Form for assigning Carol Tam to access the Inspection and Audit Portal
+3037, Technician, Not Assigned
+3038, Category, Service Request
+3038, col17, NULL
+3038, col18, NULL
+3038, col19, NULL
+3038, col20, NULL
+3038, col21, NULL
+3038, col22, NULL
+3038, col23, NULL
+3038, col24, NULL
+3038, col25, NULL
+3038, col26, NULL
+3038, col27, NULL
+3038, col28, NULL
+3038, col29, NULL
+3038, col30, NULL
+3038, col31, NULL
+3038, col32, NULL
+3038, col33, NULL
+3038, col34, NULL
+3038, Completed Time, Not Assigned
+3038, Created By, Kary Lei
+3038, Created Time, 2021-01-25 19:11:00
+3038, DueBy Time, Not Assigned
+3038, Group, Not Assigned
+3038, KPI Required, Not Assigned
+3038, Overdue Status, false
+3038, Requester, Kary Lei
+3038, Request Status, Resolved
+3038, Resolved Time, 2021-01-26 15:47:00
+3038, Responded Date, Not Assigned
+3038, Severity, Not Assigned
+3038, Subcategory, Not Assigned
+3038, Subject, SSO Access Request Form for assigning Kelvin Lei to access the Inspection and Audit Portal
+3038, Technician, Not Assigned
+3039, Category, Service Request
+3039, col17, NULL
+3039, col18, NULL
+3039, col19, NULL
+3039, col20, NULL
+3039, col21, NULL
+3039, col22, NULL
+3039, col23, NULL
+3039, col24, NULL
+3039, col25, NULL
+3039, col26, NULL
+3039, col27, NULL
+3039, col28, NULL
+3039, col29, NULL
+3039, col30, NULL
+3039, col31, NULL
+3039, col32, NULL
+3039, col33, NULL
+3039, col34, NULL
+3039, Completed Time, Feb 4, 2021 10:23 PM
+3039, Created By, Kary Lei
+3039, Created Time, 2021-01-25 19:13:00
+3039, DueBy Time, Feb 2, 2021 04:43 PM
+3039, Group, Application Support Group
+3039, KPI Required, Not Assigned
+3039, Overdue Status, true
+3039, Requester, Kary Lei
+3039, Request Status, Closed
+3039, Resolved Time, 2021-02-04 22:23:00
+3039, Responded Date, Not Assigned
+3039, Severity, Not Assigned
+3039, Subcategory, Not Assigned
+3039, Subject, SSO Access Request Form for assigning Antonio Rocha to access the Inspection and Audit Portal
+3039, Technician, Kary Lei
+3040, Category, Service Request
+3040, col17, NULL
+3040, col18, NULL
+3040, col19, NULL
+3040, col20, NULL
+3040, col21, NULL
+3040, col22, NULL
+3040, col23, NULL
+3040, col24, NULL
+3040, col25, NULL
+3040, col26, NULL
+3040, col27, NULL
+3040, col28, NULL
+3040, col29, NULL
+3040, col30, NULL
+3040, col31, NULL
+3040, col32, NULL
+3040, col33, NULL
+3040, col34, NULL
+3040, Completed Time, Not Assigned
+3040, Created By, Kary Lei
+3040, Created Time, 2021-01-25 19:14:00
+3040, DueBy Time, Not Assigned
+3040, Group, Application Support Group
+3040, KPI Required, Not Assigned
+3040, Overdue Status, false
+3040, Requester, Kary Lei
+3040, Request Status, Resolved
+3040, Resolved Time, 2021-01-26 15:49:00
+3040, Responded Date, Not Assigned
+3040, Severity, Not Assigned
+3040, Subcategory, Not Assigned
+3040, Subject, SSO Access Request Form for assigning Kary Lei to access the Inspection and Audit Portal
+3040, Technician, Not Assigned
+3042, Category, Service Request
+3042, col17, NULL
+3042, col18, NULL
+3042, col19, NULL
+3042, col20, NULL
+3042, col21, NULL
+3042, col22, NULL
+3042, col23, NULL
+3042, col24, NULL
+3042, col25, NULL
+3042, col26, NULL
+3042, col27, NULL
+3042, col28, NULL
+3042, col29, NULL
+3042, col30, NULL
+3042, col31, NULL
+3042, col32, NULL
+3042, col33, NULL
+3042, col34, NULL
+3042, Completed Time, Not Assigned
+3042, Created By, Judy Liu
+3042, Created Time, 2021-01-26 10:03:00
+3042, DueBy Time, Not Assigned
+3042, Group, Office Automation
+3042, KPI Required, Yes
+3042, Overdue Status, false
+3042, Requester, Liang Wang
+3042, Request Status, Resolved
+3042, Resolved Time, 2021-01-27 14:41:00
+3042, Responded Date, Not Assigned
+3042, Severity, Not Assigned
+3042, Subcategory, Not Assigned
+3042, Subject, Service Request - [PIA.MO.Sandbox6] [request for reset password for sandbox6 VM] on 26-Jan-2021
+3042, Technician, Fong Fan
+3045, Group, Service Desk
+3045, Subject, UAT Request - [PIA.PH.Sandbox6][Deploy House Game Engine and 4 House Games in Sandbox6 Internal Property 10007 and 10008] on 26-Jan-2021
+3107, Category, Service Request
+3107, col17, NULL
+3107, col18, NULL
+3107, col19, NULL
+3107, col20, NULL
+3107, col21, NULL
+3107, col22, NULL
+3107, col23, NULL
+3107, col24, NULL
+3107, col25, NULL
+3107, col26, NULL
+3107, col27, NULL
+3107, col28, NULL
+3107, col29, NULL
+3107, col30, NULL
+3107, col31, NULL
+3107, col32, NULL
+3107, col33, NULL
+3107, col34, NULL
+3107, Completed Time, Feb 8, 2021 02:45 PM
+3107, Created By, Kary Lei
+3107, Created Time, 2021-02-08 09:28:00
+3107, DueBy Time, Not Assigned
+3107, Group, Application Support Group
+3107, KPI Required, Not Assigned
+3107, Overdue Status, false
+3107, Requester, Kary Lei
+3107, Request Status, Closed
+3107, Resolved Time, 2021-02-08 14:45:00
+3107, Responded Date, Not Assigned
+3107, Severity, Not Assigned
+3107, Subcategory, Not Assigned
+3107, Subject, Business Application Account & Access Request Form for assigning roles to the accounts for new Demo property (50040)
+3107, Technician, Kelvin Lei
+3181, Category, CM
+3181, col17, NULL
+3181, col18, NULL
+3181, col19, NULL
+3181, col20, NULL
+3181, col21, NULL
+3181, col22, NULL
+3181, col23, NULL
+3181, col24, NULL
+3181, col25, NULL
+3181, col26, NULL
+3181, col27, NULL
+3181, col28, NULL
+3181, col29, NULL
+3181, col30, NULL
+3181, col31, NULL
+3181, col32, NULL
+3181, col33, NULL
+3181, col34, NULL
+3181, Completed Time, Jul 1, 2021 03:09 PM
+3181, Created By, Kary Lei
+3181, Created Time, 2021-03-02 10:59:00
+3181, DueBy Time, Not Assigned
+3181, Group, Application Support Group
+3181, KPI Required, Not Assigned
+3181, Overdue Status, false
+3181, Requester, Kary Lei
+3181, Request Status, Closed
+3181, Resolved Time, 2021-07-01 15:09:00
+3181, Responded Date, Not Assigned
+3181, Severity, Not Assigned
+3181, Subcategory, Initiative
+3181, Subject, [Change Initiative] Change for incident #3166 fixing data in Sandbox10 datamart
+3181, Technician, Kary Lei
+3341, Category, Service Request
+3341, col17, NULL
+3341, col18, NULL
+3341, col19, NULL
+3341, col20, NULL
+3341, col21, NULL
+3341, col22, NULL
+3341, col23, NULL
+3341, col24, NULL
+3341, col25, NULL
+3341, col26, NULL
+3341, col27, NULL
+3341, col28, NULL
+3341, col29, NULL
+3341, col30, NULL
+3341, col31, NULL
+3341, col32, NULL
+3341, col33, NULL
+3341, col34, NULL
+3341, Completed Time, Not Assigned
+3341, Created By, Cream He
+3341, Created Time, 2021-04-15 12:17:00
+3341, DueBy Time, Not Assigned
+3341, Group, Application Support Group
+3341, KPI Required, Not Assigned
+3341, Overdue Status, false
+3341, Requester, Cream He
+3341, Request Status, Resolved
+3341, Resolved Time, 2021-04-16 18:06:00
+3341, Responded Date, Not Assigned
+3341, Severity, Not Assigned
+3341, Subcategory, Not Assigned
+3341, Subject, Business Application Account & Access Request Form for updating test accounts role & permission for Kiosk Management Poral of Sandbox6 10023
+3341, Technician, Kary Lei
+3422, Category, Service Request
+3422, col17, NULL
+3422, col18, NULL
+3422, col19, NULL
+3422, col20, NULL
+3422, col21, NULL
+3422, col22, NULL
+3422, col23, NULL
+3422, col24, NULL
+3422, col25, NULL
+3422, col26, NULL
+3422, col27, NULL
+3422, col28, NULL
+3422, col29, NULL
+3422, col30, NULL
+3422, col31, NULL
+3422, col32, NULL
+3422, col33, NULL
+3422, col34, NULL
+3422, Completed Time, Not Assigned
+3422, Created By, Kary Lei
+3422, Created Time, 2021-05-07 10:30:00
+3422, DueBy Time, Not Assigned
+3422, Group, Office Automation
+3422, KPI Required, Not Assigned
+3422, Overdue Status, false
+3422, Requester, Kary Lei
+3422, Request Status, Resolved
+3422, Resolved Time, 2021-05-11 15:21:00
+3422, Responded Date, Not Assigned
+3422, Severity, Not Assigned
+3422, Subcategory, Not Assigned
+3422, Subject, MOIDC Account Request Form for granting 50010 casinoid group access for KGI Sandbox
+3422, Technician, Fong Fan
+3423, Category, Service Request
+3423, col17, NULL
+3423, col18, NULL
+3423, col19, NULL
+3423, col20, NULL
+3423, col21, NULL
+3423, col22, NULL
+3423, col23, NULL
+3423, col24, NULL
+3423, col25, NULL
+3423, col26, NULL
+3423, col27, NULL
+3423, col28, NULL
+3423, col29, NULL
+3423, col30, NULL
+3423, col31, NULL
+3423, col32, NULL
+3423, col33, NULL
+3423, col34, NULL
+3423, Completed Time, Not Assigned
+3423, Created By, Kary Lei
+3423, Created Time, 2021-05-07 10:32:00
+3423, DueBy Time, Not Assigned
+3423, Group, Not Assigned
+3423, KPI Required, Not Assigned
+3423, Overdue Status, false
+3423, Requester, Kary Lei
+3423, Request Status, Resolved
+3423, Resolved Time, 2021-05-10 15:16:00
+3423, Responded Date, Not Assigned
+3423, Severity, Not Assigned
+3423, Subcategory, Not Assigned
+3423, Subject, Business Application Account & Access Request Form for granting Platform Game Recall to Kary Lei and Kelvin Lei
+3423, Technician, Kelvin Lei
+3424, Category, Service Request
+3424, col17, NULL
+3424, col18, NULL
+3424, col19, NULL
+3424, col20, NULL
+3424, col21, NULL
+3424, col22, NULL
+3424, col23, NULL
+3424, col24, NULL
+3424, col25, NULL
+3424, col26, NULL
+3424, col27, NULL
+3424, col28, NULL
+3424, col29, NULL
+3424, col30, NULL
+3424, col31, NULL
+3424, col32, NULL
+3424, col33, NULL
+3424, col34, NULL
+3424, Completed Time, Not Assigned
+3424, Created By, Janice Huang
+3424, Created Time, 2021-05-07 10:50:00
+3424, DueBy Time, Not Assigned
+3424, Group, Application Support Group
+3424, KPI Required, Not Assigned
+3424, Overdue Status, false
+3424, Requester, Janice Huang
+3424, Request Status, Resolved
+3424, Resolved Time, 2021-05-10 14:33:00
+3424, Responded Date, Not Assigned
+3424, Severity, Not Assigned
+3424, Subcategory, Not Assigned
+3424, Subject, Business Application Account & Access Request Form for granting Audit Portal, SV Portal and Platform Game Recall Portal to Janice Huang and Cream He
+3424, Technician, Kary Lei
+3425, Category, Service Request
+3425, col17, NULL
+3425, col18, NULL
+3425, col19, NULL
+3425, col20, NULL
+3425, col21, NULL
+3425, col22, NULL
+3425, col23, NULL
+3425, col24, NULL
+3425, col25, NULL
+3425, col26, NULL
+3425, col27, NULL
+3425, col28, NULL
+3425, col29, NULL
+3425, col30, NULL
+3425, col31, NULL
+3425, col32, NULL
+3425, col33, NULL
+3425, col34, NULL
+3425, Completed Time, Not Assigned
+3425, Created By, Kary Lei
+3425, Created Time, 2021-05-07 12:41:00
+3425, DueBy Time, Not Assigned
+3425, Group, Office Automation
+3425, KPI Required, Not Assigned
+3425, Overdue Status, false
+3425, Requester, Kary Lei
+3425, Request Status, Resolved
+3425, Resolved Time, 2021-05-11 15:18:00
+3425, Responded Date, Not Assigned
+3425, Severity, Not Assigned
+3425, Subcategory, Not Assigned
+3425, Subject, MOIDC Account Request Form for granting 50001 casinoid group access for internal property
+3425, Technician, Fong Fan
+3426, Category, Service Request
+3426, col17, NULL
+3426, col18, NULL
+3426, col19, NULL
+3426, col20, NULL
+3426, col21, NULL
+3426, col22, NULL
+3426, col23, NULL
+3426, col24, NULL
+3426, col25, NULL
+3426, col26, NULL
+3426, col27, NULL
+3426, col28, NULL
+3426, col29, NULL
+3426, col30, NULL
+3426, col31, NULL
+3426, col32, NULL
+3426, col33, NULL
+3426, col34, NULL
+3426, Completed Time, Not Assigned
+3426, Created By, Kary Lei
+3426, Created Time, 2021-05-07 12:44:00
+3426, DueBy Time, Not Assigned
+3426, Group, Office Automation
+3426, KPI Required, Not Assigned
+3426, Overdue Status, false
+3426, Requester, Kary Lei
+3426, Request Status, Resolved
+3426, Resolved Time, 2021-05-11 10:14:00
+3426, Responded Date, Not Assigned
+3426, Severity, Not Assigned
+3426, Subcategory, Not Assigned
+3426, Subject, MOIDC Account Request Form for disable Carol Tam account
+3426, Technician, Fong Fan

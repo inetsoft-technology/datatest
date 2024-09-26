@@ -1,0 +1,9 @@
+The table size(row x col) is:(8 x 5)
+ID, Name, Year(ReleaseDate), Price, Quarter(f_edate)
+2, Vint soda, 2000, 0.1189, 2001 1st
+3, Havina Cola, 2005, 0.1132, 2006 1st
+4, Fruit Punch, 2003, 0.1308, 2003 2nd
+5, Cranberry Juice, 2006, 0.1297, 2006 4th
+6, Pink Lemonade, 2006, 0.107, 2007 1st
+7, DVD Player, 2006, 0.2042, 2007 1st
+8, LCD HDTV, 2008, 6.1961, 2008 3rd

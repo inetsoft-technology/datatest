@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 10)
+BestFriend.UserName, BestFriend.FirstName, BestFriend.LastName, BestFriend.MiddleName, BestFriend.Gender, BestFriend.Age, BestFriend.FavoriteFeature, BestFriend.HomeAddress.Address, BestFriend.HomeAddress.City, BestFriend.Cost
+angelhuffman, Angel, Huffman, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+clydeguess, Clyde, Guess, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+elainestewart, Elaine, Stewart, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+georginabarlow, Georgina, Barlow, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+javieralfred, Javier, Alfred, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+jonirosales, Joni, Rosales, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+keithpinckney, Keith, Pinckney, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+keithpinckney, Keith, Pinckney, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+kristakemp, Krista, Kemp, NULL, Female, NULL, Feature1, NULL, NULL, 0
+laurelosborn, Laurel, Osborn, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+russellwhyte, Russell, Whyte, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+ryantheriault, Ryan, Theriault, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+salliesampson, Sallie, Sampson, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+sandyosborn, Sandy, Osborn, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+scottketchum, Scott, Ketchum, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+scottketchum, Scott, Ketchum, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+ursulabright, Ursula, Bright, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+ursulabright, Ursula, Bright, NULL, Female, NULL, Feature1, NULL, NULL, NULL
+vincentcalabrese, Vincent, Calabrese, NULL, Male, NULL, Feature1, NULL, NULL, NULL
+vincentcalabrese, Vincent, Calabrese, NULL, Male, NULL, Feature1, NULL, NULL, NULL

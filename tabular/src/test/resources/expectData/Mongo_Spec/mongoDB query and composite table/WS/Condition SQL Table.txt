@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 6)
+_id, company, state, web, revenue, phone
+562897e0e44e83922e782fcc, Inetsoft, NJ, www.inetsoft.com, 21099, 212-388-8211

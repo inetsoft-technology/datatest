@@ -1,0 +1,14 @@
+The table size(row x col) is:(13 x 13)
+max_score, total.value, total.relation, hits._index, hits._type, hits._id, hits._score, hits._source.isVip, hits._source.birthday, hits._source.objcol.id, hits._source.objcol.language, hits._source.objcol.price, hits._source.arraycol
+1, 4, eq, test, info, 1001, 1, true, 1970-04-05, 011A, C, 500, 12
+1, 4, eq, test, info, 1001, 1, true, 1970-04-05, 011A, C, 500, 23
+1, 4, eq, test, info, 1001, 1, true, 1970-04-05, 011A, C, 500, 24
+1, 4, eq, test, info, 1006, 1, true, 1980-02-05, 011B, Java, 200, 11
+1, 4, eq, test, info, 1006, 1, true, 1980-02-05, 011B, Java, 200, 23
+1, 4, eq, test, info, 1006, 1, true, 1980-02-05, 011B, Java, 200, 24
+1, 4, eq, test, info, 1013, 1, false, 1970-04-05, 011C, C, 540, 12
+1, 4, eq, test, info, 1013, 1, false, 1970-04-05, 011C, C, 540, 22
+1, 4, eq, test, info, 1013, 1, false, 1970-04-05, 011C, C, 540, 24
+1, 4, eq, test, info, 1015, 1, false, 1970-04-05, 011C, C, 540, 12
+1, 4, eq, test, info, 1015, 1, false, 1970-04-05, 011C, C, 540, 22
+1, 4, eq, test, info, 1015, 1, false, 1970-04-05, 011C, C, 540, 24

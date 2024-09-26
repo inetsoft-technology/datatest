@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 6)
+_id, int, float, string, bool, date
+562897e0e44e83922e782fd2, 16, 0.8, NULL, false, 2015-07-29 00:00:00
+562897e0e44e83922e782fd3, 16, 0.8, BsonRegularExpression{pattern='foobar', options='i'}, false, 2015-07-29 00:00:00
+562897e0e44e83922e782fd4, 16, 0.8, Code{code='function () { /* ... */ }'}, false, 2015-07-29 00:00:00
+562897e0e44e83922e782fd5, 16, 0.8, [a, b, c], false, 2015-07-29 00:00:00

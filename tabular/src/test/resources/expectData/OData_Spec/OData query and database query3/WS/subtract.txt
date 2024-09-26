@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 7)
+ID, Name, Description, ReleaseDate, DiscontinuedDate, Rating, Price
+0, Bread, Whole grain bread, 1992-01-01T00:00:00Z, NULL, 4, 2.5
+1, Milk, Low fat milk, 1995-10-01T00:00:00Z, NULL, 3, 3.5
+9, Lemonade, Classic, refreshing lemonade (Single bottle), 1970-01-01T00:00:00Z, NULL, 7, 1.01

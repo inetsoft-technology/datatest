@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 4)
+String, Integer, Formula_string_SQL, Formula_integer_Script
+NANJING, 21, NANJING in Earth!, 121
+Russia, 50, Russia in Earth!, 150
+TOKYO, 35, TOKYO in Earth!, 135

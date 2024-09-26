@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 10)
+customer_id, paid, reseller, state, f_state, id, ctiy, type, time, Day(orderdate)
+4, 163.5, true, CA, CA_test, 1, Middletown, A, 13:00:00, 2015-04-03 00:00:00
+6, 93.5, false, NJ, NJ_test, 2, New York2, B, 21:21:00, 2015-03-03 00:00:00
+8, 103.5, false, NY, NY_test, 3, Boulder, A, 02:11:00, 2014-08-03 00:00:00
+9, 73.5, false, WA, WA_test, 4, Baltimore, C, 04:22:00, 2015-05-03 00:00:00

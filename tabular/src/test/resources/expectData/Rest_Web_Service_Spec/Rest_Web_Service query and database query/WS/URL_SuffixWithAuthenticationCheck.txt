@@ -1,0 +1,3 @@
+The table size(row x col) is:(2 x 11)
+id, firstName, lastName, street, city, state, zip, country, boole, money, doub
+2, Tom, Lee, 12 Broad St, New York, NY, 11223, USA, true, 1.001, 123456.789

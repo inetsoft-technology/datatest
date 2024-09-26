@@ -1,0 +1,4 @@
+The table size(row x col) is:(3 x 7)
+ID, Price, Name, Description, ReleaseDate, DiscontinuedDate, Rating
+9, 1.01, Lemonade, Classic, refreshing lemonade (Single bottle), 1970-01-01T00:00:00Z, NULL, 7
+10, 6.99, Coffee, Bulk size can of instant coffee, 1982-12-31T00:00:00Z, NULL, 1

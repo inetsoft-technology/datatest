@@ -1,0 +1,6 @@
+The table size(row x col) is:(5 x 3)
+name, kind, url
+Airlines, EntitySet, Airlines
+Airports, EntitySet, Airports
+Me, Singleton, Me
+People, EntitySet, People

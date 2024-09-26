@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 7)
+ID, Name, Description, ReleaseDate, DiscontinuedDate, Rating, Price
+1, Milk, Low fat milk, 1995-10-01 08:00:00, NULL, 3, 3.5
+2, Vint soda, Americana Variety - Mix of 6 flavors, 2000-10-01 08:00:00, NULL, 3, 20.9
+3, Havina Cola, The Original Key Lime Cola, 2005-10-01 08:00:00, 2006-10-01 08:00:00, 3, 19.9

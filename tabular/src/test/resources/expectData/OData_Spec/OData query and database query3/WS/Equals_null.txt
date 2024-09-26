@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 7)
+ID, Name, Description, ReleaseDate, DiscontinuedDate, Rating, Price
+0, Bread, Whole grain bread, 1992-01-01 08:00:00, NULL, 4, 2.5
+1, Milk, Low fat milk, 1995-10-01 08:00:00, NULL, 3, 3.5
+2, Vint soda, Americana Variety - Mix of 6 flavors, 2000-10-01 08:00:00, NULL, 3, 20.9
+4, Fruit Punch, Mango flavor, 8.3 Ounce Cans (Pack of 24), 2003-01-05 08:00:00, NULL, 3, 22.99
+5, Cranberry Juice, 16-Ounce Plastic Bottles (Pack of 12), 2006-08-04 08:00:00, NULL, 3, 22.8
+6, Pink Lemonade, 36 Ounce Cans (Pack of 3), 2006-11-05 08:00:00, NULL, 3, 18.8
+7, DVD Player, 1080P Upconversion DVD Player, 2006-11-15 08:00:00, NULL, 5, 35.88
+8, LCD HDTV, 42 inch 1080p LCD with Built-in Blu-ray Disc Player, 2008-05-08 08:00:00, NULL, 3, 1088.8
+9, Lemonade, Classic, refreshing lemonade (Single bottle), 1970-01-01 08:00:00, NULL, 7, 1.01
+10, Coffee, Bulk size can of instant coffee, 1982-12-31 08:00:00, NULL, 1, 6.99

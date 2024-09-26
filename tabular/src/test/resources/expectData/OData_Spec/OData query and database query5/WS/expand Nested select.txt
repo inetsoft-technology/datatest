@@ -1,0 +1,22 @@
+The table size(row x col) is:(21 x 2)
+BestFriend.UserName, BestFriend.Age
+angelhuffman, NULL
+clydeguess, NULL
+elainestewart, NULL
+georginabarlow, NULL
+javieralfred, NULL
+jonirosales, NULL
+keithpinckney, NULL
+keithpinckney, NULL
+kristakemp, NULL
+laurelosborn, NULL
+russellwhyte, NULL
+ryantheriault, NULL
+salliesampson, NULL
+sandyosborn, NULL
+scottketchum, NULL
+scottketchum, NULL
+ursulabright, NULL
+ursulabright, NULL
+vincentcalabrese, NULL
+vincentcalabrese, NULL

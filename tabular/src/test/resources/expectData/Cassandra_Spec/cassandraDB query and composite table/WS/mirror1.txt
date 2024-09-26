@@ -1,0 +1,7 @@
+The table size(row x col) is:(6 x 3)
+paid, f_state, Quarter(f_edate)
+1, NULL, 2015 3rd
+1.2721, NULL, 2015 2nd
+1.4082, NULL, 2014 4th
+1.6803, NULL, 2015 4th
+1.9524, NULL, 2014 3rd

@@ -1,0 +1,12 @@
+The table size(row x col) is:(11 x 6)
+customer_id, orderdate, paid, reseller, state, f_state
+1, 2015-08-03 20:13:23, 123.5, true, NJ, NJ_test
+2, 2015-07-03 20:13:23, 143.5, true, NJ, NJ_test
+3, 2015-08-03 20:13:23, 133.5, true, NY, NY_test
+4, 2015-04-03 20:13:23, 163.5, true, CA, CA_test
+5, 2014-06-03 20:13:23, 213.5, true, NY, NY_test
+6, 2015-03-03 20:13:23, 93.5, false, NJ, NJ_test
+7, 2015-08-03 20:13:23, 153.5, false, CA, CA_test
+8, 2014-08-03 20:13:23, 103.5, false, NY, NY_test
+9, 2015-05-03 20:13:23, 73.5, false, WA, WA_test
+10, 2014-05-03 20:13:23, 143.5, true, CO, CO_test

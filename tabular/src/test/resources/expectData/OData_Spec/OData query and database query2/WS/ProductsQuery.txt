@@ -1,0 +1,5 @@
+The table size(row x col) is:(4 x 7)
+ID, Name, Price, Supplier.ID, Supplier.Name, Supplier.Location, Supplier.Concurrency
+0, Bread, 2.5, 1, Tokyo Traders, GEOGRAPHY'SRID=4326;Point(-122.107711791992 47.6472206115723)', 0
+1, Milk, 3.5, 0, Exotic Liquids, GEOGRAPHY'SRID=4326;Point(-122.03547668457 47.6316604614258)', 0
+2, Vint soda, 20.9, 0, Exotic Liquids, GEOGRAPHY'SRID=4326;Point(-122.03547668457 47.6316604614258)', 0
