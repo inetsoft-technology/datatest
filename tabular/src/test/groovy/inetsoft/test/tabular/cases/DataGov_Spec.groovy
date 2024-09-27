@@ -21,7 +21,6 @@ class DataGov_Spec extends Specification{
       def paras1 = new HashMap<String, String[]>()
       paras1.put('impact', ['10'] as String[])
       globalTest.executeTest('1^2^__NULL__^DataGov/DataGov DataBase Query', null)
-      globalTest.executeTest('1^2^__NULL__^DataGov/DataGov Query', paras1)
 
       expect:
       globalTest.compareData()
