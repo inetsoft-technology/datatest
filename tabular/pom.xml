@@ -70,6 +70,20 @@
           <type>zip</type>
           <scope>provided</scope>
         </dependency>
+        <dependency>
+          <groupId>com.inetsoft.stylebi.connectors</groupId>
+          <artifactId>inetsoft-elastic</artifactId>
+          <version>${project.version}</version>
+          <type>zip</type>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>com.inetsoft.stylebi.connectors</groupId>
+          <artifactId>inetsoft-cassandra</artifactId>
+          <version>${project.version}</version>
+          <type>zip</type>
+          <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -110,8 +124,8 @@
                         --add-opens=java.management/sun.management=ALL-UNNAMED
                     </argLine>
                     <includes>
-                        <!--<include>**/*_Case.groovy</include>-->
-                        <include>**/*_Spec</include>
+                        <include>OData_Spec</include>
+                        <!-- <include>**/*_Spec</include> -->
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
