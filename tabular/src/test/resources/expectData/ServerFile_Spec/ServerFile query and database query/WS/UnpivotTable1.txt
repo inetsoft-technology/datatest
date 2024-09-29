@@ -759,17 +759,17 @@ BUALUANG SECURITIES PUBLIC CO.,LTD., PRODUCT #, SWAA259P9
 BUALUANG SECURITIES PUBLIC CO.,LTD., PRODUCT NAME, ARCSIGHT ESM
 BUALUANG SECURITIES PUBLIC CO.,LTD., Subscription Start Date, 2021-03-26
 BUALUANG SECURITIES PUBLIC CO.,LTD., TOTAL ROYALTY COST, 215
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), # of instance, 1
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), customer type, RESELLER
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), End Date, 2021-12-16
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), LICENSE MODEL, PERPETUAL
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), maintenance royalty, 215
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), new license royalty, 0
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), ORDER #, A-S100087239
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), PRODUCT #, SWAA254P9
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), PRODUCT NAME, ArcSight ESM
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), Subscription Start Date, 2020-12-16
-Bundesanstalt f®πr den Digitalfunk der Beh?rden und Organisationen mit Sicherheitsaufgaben (BDBOS), TOTAL ROYALTY COST, 215
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), # of instance, 1
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), customer type, RESELLER
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), End Date, 2021-12-16
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), LICENSE MODEL, PERPETUAL
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), maintenance royalty, 215
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), new license royalty, 0
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), ORDER #, A-S100087239
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), PRODUCT #, SWAA254P9
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), PRODUCT NAME, ArcSight ESM
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), Subscription Start Date, 2020-12-16
+Bundesanstalt f√ºr den Digitalfunk der Beh√∂rden und Organisationen mit Sicherheitsaufgaben (BDBOS), TOTAL ROYALTY COST, 215
 CAMARA DE COMERCIO DE BOGOTA, # of instance, 1
 CAMARA DE COMERCIO DE BOGOTA, customer type, RESELLER
 CAMARA DE COMERCIO DE BOGOTA, End Date, 2022-01-24
@@ -781,17 +781,17 @@ CAMARA DE COMERCIO DE BOGOTA, PRODUCT #, SWAA254P9
 CAMARA DE COMERCIO DE BOGOTA, PRODUCT NAME, ArcSight ESM
 CAMARA DE COMERCIO DE BOGOTA, Subscription Start Date, 2021-01-24
 CAMARA DE COMERCIO DE BOGOTA, TOTAL ROYALTY COST, 215
-C?mara Interbanc®¢ria de Pagamentos - CIP, # of instance, 1
-C?mara Interbanc®¢ria de Pagamentos - CIP, customer type, DIRECT
-C?mara Interbanc®¢ria de Pagamentos - CIP, End Date, 2022-02-01
-C?mara Interbanc®¢ria de Pagamentos - CIP, LICENSE MODEL, PERPETUAL
-C?mara Interbanc®¢ria de Pagamentos - CIP, maintenance royalty, 215
-C?mara Interbanc®¢ria de Pagamentos - CIP, new license royalty, 0
-C?mara Interbanc®¢ria de Pagamentos - CIP, ORDER #, A-S100005126
-C?mara Interbanc®¢ria de Pagamentos - CIP, PRODUCT #, M4E21AAE
-C?mara Interbanc®¢ria de Pagamentos - CIP, PRODUCT NAME, ARCSIGHT ESM
-C?mara Interbanc®¢ria de Pagamentos - CIP, Subscription Start Date, 2021-02-01
-C?mara Interbanc®¢ria de Pagamentos - CIP, TOTAL ROYALTY COST, 215
+C√¢mara Interbanc√°ria de Pagamentos - CIP, # of instance, 1
+C√¢mara Interbanc√°ria de Pagamentos - CIP, customer type, DIRECT
+C√¢mara Interbanc√°ria de Pagamentos - CIP, End Date, 2022-02-01
+C√¢mara Interbanc√°ria de Pagamentos - CIP, LICENSE MODEL, PERPETUAL
+C√¢mara Interbanc√°ria de Pagamentos - CIP, maintenance royalty, 215
+C√¢mara Interbanc√°ria de Pagamentos - CIP, new license royalty, 0
+C√¢mara Interbanc√°ria de Pagamentos - CIP, ORDER #, A-S100005126
+C√¢mara Interbanc√°ria de Pagamentos - CIP, PRODUCT #, M4E21AAE
+C√¢mara Interbanc√°ria de Pagamentos - CIP, PRODUCT NAME, ARCSIGHT ESM
+C√¢mara Interbanc√°ria de Pagamentos - CIP, Subscription Start Date, 2021-02-01
+C√¢mara Interbanc√°ria de Pagamentos - CIP, TOTAL ROYALTY COST, 215
 CARAHSOFT FOR US GOVERNMENT, # of instance, 1
 CARAHSOFT FOR US GOVERNMENT, customer type, RESELLER
 CARAHSOFT FOR US GOVERNMENT, End Date, 2021-12-29
@@ -1045,17 +1045,17 @@ Compagnie de Telephone Bell du Canada ou Bell Canada, La, PRODUCT #, SWAA259P9
 Compagnie de Telephone Bell du Canada ou Bell Canada, La, PRODUCT NAME, ArcSight ESM
 Compagnie de Telephone Bell du Canada ou Bell Canada, La, Subscription Start Date, 2020-11-01
 Compagnie de Telephone Bell du Canada ou Bell Canada, La, TOTAL ROYALTY COST, 215
-Companhia de Saneamento do Paran®¢ Sanepar, # of instance, 1
-Companhia de Saneamento do Paran®¢ Sanepar, customer type, RESELLER
-Companhia de Saneamento do Paran®¢ Sanepar, End Date, 2026-01-21
-Companhia de Saneamento do Paran®¢ Sanepar, LICENSE MODEL, PERPETUAL
-Companhia de Saneamento do Paran®¢ Sanepar, maintenance royalty, 215
-Companhia de Saneamento do Paran®¢ Sanepar, new license royalty, 900
-Companhia de Saneamento do Paran®¢ Sanepar, ORDER #, A-S100128496
-Companhia de Saneamento do Paran®¢ Sanepar, PRODUCT #, SWAA253P9
-Companhia de Saneamento do Paran®¢ Sanepar, PRODUCT NAME, ArcSight ESM
-Companhia de Saneamento do Paran®¢ Sanepar, Subscription Start Date, 2021-01-21
-Companhia de Saneamento do Paran®¢ Sanepar, TOTAL ROYALTY COST, 1115
+Companhia de Saneamento do Paran√° Sanepar, # of instance, 1
+Companhia de Saneamento do Paran√° Sanepar, customer type, RESELLER
+Companhia de Saneamento do Paran√° Sanepar, End Date, 2026-01-21
+Companhia de Saneamento do Paran√° Sanepar, LICENSE MODEL, PERPETUAL
+Companhia de Saneamento do Paran√° Sanepar, maintenance royalty, 215
+Companhia de Saneamento do Paran√° Sanepar, new license royalty, 900
+Companhia de Saneamento do Paran√° Sanepar, ORDER #, A-S100128496
+Companhia de Saneamento do Paran√° Sanepar, PRODUCT #, SWAA253P9
+Companhia de Saneamento do Paran√° Sanepar, PRODUCT NAME, ArcSight ESM
+Companhia de Saneamento do Paran√° Sanepar, Subscription Start Date, 2021-01-21
+Companhia de Saneamento do Paran√° Sanepar, TOTAL ROYALTY COST, 1115
 COMUNE DI MILANO, # of instance, 1
 COMUNE DI MILANO, customer type, RESELLER
 COMUNE DI MILANO, End Date, 2022-01-15
@@ -1078,17 +1078,17 @@ CONG TY TNHH MTV PHAT TRIEN CONG, PRODUCT #, SWAA253P9
 CONG TY TNHH MTV PHAT TRIEN CONG, PRODUCT NAME, ArcSight ESM
 CONG TY TNHH MTV PHAT TRIEN CONG, Subscription Start Date, 2021-01-01
 CONG TY TNHH MTV PHAT TRIEN CONG, TOTAL ROYALTY COST, 215
-Co?peratieve Rabobank U.A., # of instance, 1
-Co?peratieve Rabobank U.A., customer type, RESELLER
-Co?peratieve Rabobank U.A., End Date, 2021-10-31
-Co?peratieve Rabobank U.A., LICENSE MODEL, PERPETUAL
-Co?peratieve Rabobank U.A., maintenance royalty, 215
-Co?peratieve Rabobank U.A., new license royalty, 0
-Co?peratieve Rabobank U.A., ORDER #, 0040467064-A
-Co?peratieve Rabobank U.A., PRODUCT #, M4E20AAE
-Co?peratieve Rabobank U.A., PRODUCT NAME, ArcSight ESM
-Co?peratieve Rabobank U.A., Subscription Start Date, 2020-11-01
-Co?peratieve Rabobank U.A., TOTAL ROYALTY COST, 215
+Co√∂peratieve Rabobank U.A., # of instance, 1
+Co√∂peratieve Rabobank U.A., customer type, RESELLER
+Co√∂peratieve Rabobank U.A., End Date, 2021-10-31
+Co√∂peratieve Rabobank U.A., LICENSE MODEL, PERPETUAL
+Co√∂peratieve Rabobank U.A., maintenance royalty, 215
+Co√∂peratieve Rabobank U.A., new license royalty, 0
+Co√∂peratieve Rabobank U.A., ORDER #, 0040467064-A
+Co√∂peratieve Rabobank U.A., PRODUCT #, M4E20AAE
+Co√∂peratieve Rabobank U.A., PRODUCT NAME, ArcSight ESM
+Co√∂peratieve Rabobank U.A., Subscription Start Date, 2020-11-01
+Co√∂peratieve Rabobank U.A., TOTAL ROYALTY COST, 215
 CORPORATE SOLUTIONS CENTER, # of instance, 1
 CORPORATE SOLUTIONS CENTER, customer type, RESELLER
 CORPORATE SOLUTIONS CENTER, End Date, 2022-01-01
@@ -1254,17 +1254,17 @@ Digicentre Company Limited, PRODUCT #, TJ770AAE
 Digicentre Company Limited, PRODUCT NAME, ArcSight ESM
 Digicentre Company Limited, Subscription Start Date, 2021-01-01
 Digicentre Company Limited, TOTAL ROYALTY COST, 215
-Direction G®¶n®¶rale de l?Armement (DGA), # of instance, 1
-Direction G®¶n®¶rale de l?Armement (DGA), customer type, RESELLER
-Direction G®¶n®¶rale de l?Armement (DGA), End Date, 2022-04-30
-Direction G®¶n®¶rale de l?Armement (DGA), LICENSE MODEL, PERPETUAL
-Direction G®¶n®¶rale de l?Armement (DGA), maintenance royalty, 215
-Direction G®¶n®¶rale de l?Armement (DGA), new license royalty, 0
-Direction G®¶n®¶rale de l?Armement (DGA), ORDER #, A-S100102428
-Direction G®¶n®¶rale de l?Armement (DGA), PRODUCT #, SWAA255P9
-Direction G®¶n®¶rale de l?Armement (DGA), PRODUCT NAME, ARCSIGHT ESM
-Direction G®¶n®¶rale de l?Armement (DGA), Subscription Start Date, 2021-04-30
-Direction G®¶n®¶rale de l?Armement (DGA), TOTAL ROYALTY COST, 215
+Direction G√©n√©rale de l?Armement (DGA), # of instance, 1
+Direction G√©n√©rale de l?Armement (DGA), customer type, RESELLER
+Direction G√©n√©rale de l?Armement (DGA), End Date, 2022-04-30
+Direction G√©n√©rale de l?Armement (DGA), LICENSE MODEL, PERPETUAL
+Direction G√©n√©rale de l?Armement (DGA), maintenance royalty, 215
+Direction G√©n√©rale de l?Armement (DGA), new license royalty, 0
+Direction G√©n√©rale de l?Armement (DGA), ORDER #, A-S100102428
+Direction G√©n√©rale de l?Armement (DGA), PRODUCT #, SWAA255P9
+Direction G√©n√©rale de l?Armement (DGA), PRODUCT NAME, ARCSIGHT ESM
+Direction G√©n√©rale de l?Armement (DGA), Subscription Start Date, 2021-04-30
+Direction G√©n√©rale de l?Armement (DGA), TOTAL ROYALTY COST, 215
 DNB BANK POLSKA S. A., # of instance, 1
 DNB BANK POLSKA S. A., customer type, RESELLER
 DNB BANK POLSKA S. A., End Date, 2022-02-01
@@ -1672,17 +1672,17 @@ Forsvarets Koncernfaelles, PRODUCT #, M4E19AAE
 Forsvarets Koncernfaelles, PRODUCT NAME, ArcSight ESM
 Forsvarets Koncernfaelles, Subscription Start Date, 2021-01-01
 Forsvarets Koncernfaelles, TOTAL ROYALTY COST, 215
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, # of instance, 1
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, customer type, RESELLER
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, End Date, 2021-12-18
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, LICENSE MODEL, PERPETUAL
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, maintenance royalty, 215
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, new license royalty, 900
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, ORDER #, A-S100125430
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, PRODUCT #, SWAA254P9
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, PRODUCT NAME, ArcSight ESM
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, Subscription Start Date, 2020-12-18
-Forsvarets Koncernf?lles Informatiktjeneste FKIT, TOTAL ROYALTY COST, 1115
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, # of instance, 1
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, customer type, RESELLER
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, End Date, 2021-12-18
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, LICENSE MODEL, PERPETUAL
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, maintenance royalty, 215
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, new license royalty, 900
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, ORDER #, A-S100125430
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, PRODUCT #, SWAA254P9
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, PRODUCT NAME, ArcSight ESM
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, Subscription Start Date, 2020-12-18
+Forsvarets Koncernf√¶lles Informatiktjeneste FKIT, TOTAL ROYALTY COST, 1115
 Frontier Communications Corporation, # of instance, 1
 Frontier Communications Corporation, customer type, RESELLER
 Frontier Communications Corporation, End Date, 2022-04-30
@@ -2019,17 +2019,17 @@ HAREL INSURANCE COMPANY LTD, PRODUCT #, TJ770AAE
 HAREL INSURANCE COMPANY LTD, PRODUCT NAME, ArcSight ESM
 HAREL INSURANCE COMPANY LTD, Subscription Start Date, 2021-01-01
 HAREL INSURANCE COMPANY LTD, TOTAL ROYALTY COST, 215
-Hessische Zentrale f®πr Datenverarbeitung, # of instance, 1
-Hessische Zentrale f®πr Datenverarbeitung, customer type, RESELLER
-Hessische Zentrale f®πr Datenverarbeitung, End Date, 2022-01-01
-Hessische Zentrale f®πr Datenverarbeitung, LICENSE MODEL, PERPETUAL
-Hessische Zentrale f®πr Datenverarbeitung, maintenance royalty, 215
-Hessische Zentrale f®πr Datenverarbeitung, new license royalty, 0
-Hessische Zentrale f®πr Datenverarbeitung, ORDER #, A-S100047395
-Hessische Zentrale f®πr Datenverarbeitung, PRODUCT #, SWAA253P9
-Hessische Zentrale f®πr Datenverarbeitung, PRODUCT NAME, ArcSight ESM
-Hessische Zentrale f®πr Datenverarbeitung, Subscription Start Date, 2020-12-12
-Hessische Zentrale f®πr Datenverarbeitung, TOTAL ROYALTY COST, 215
+Hessische Zentrale f√ºr Datenverarbeitung, # of instance, 1
+Hessische Zentrale f√ºr Datenverarbeitung, customer type, RESELLER
+Hessische Zentrale f√ºr Datenverarbeitung, End Date, 2022-01-01
+Hessische Zentrale f√ºr Datenverarbeitung, LICENSE MODEL, PERPETUAL
+Hessische Zentrale f√ºr Datenverarbeitung, maintenance royalty, 215
+Hessische Zentrale f√ºr Datenverarbeitung, new license royalty, 0
+Hessische Zentrale f√ºr Datenverarbeitung, ORDER #, A-S100047395
+Hessische Zentrale f√ºr Datenverarbeitung, PRODUCT #, SWAA253P9
+Hessische Zentrale f√ºr Datenverarbeitung, PRODUCT NAME, ArcSight ESM
+Hessische Zentrale f√ºr Datenverarbeitung, Subscription Start Date, 2020-12-12
+Hessische Zentrale f√ºr Datenverarbeitung, TOTAL ROYALTY COST, 215
 HINDUJA GLOBAL SOLUTIONS LIMITED, # of instance, 1
 HINDUJA GLOBAL SOLUTIONS LIMITED, customer type, RESELLER
 HINDUJA GLOBAL SOLUTIONS LIMITED, End Date, 2022-02-01
@@ -2162,17 +2162,17 @@ INDUSTRIAL TECHNOLOGY RESEARCH INSTITUTE, PRODUCT #, TJ770AAE
 INDUSTRIAL TECHNOLOGY RESEARCH INSTITUTE, PRODUCT NAME, ArcSight ESM
 INDUSTRIAL TECHNOLOGY RESEARCH INSTITUTE, Subscription Start Date, 2021-01-01
 INDUSTRIAL TECHNOLOGY RESEARCH INSTITUTE, TOTAL ROYALTY COST, 215
-INETUM ESPA?A, S.A., # of instance, 1
-INETUM ESPA?A, S.A., customer type, RESELLER
-INETUM ESPA?A, S.A., End Date, 2021-04-02
-INETUM ESPA?A, S.A., LICENSE MODEL, PERPETUAL
-INETUM ESPA?A, S.A., maintenance royalty, 215
-INETUM ESPA?A, S.A., new license royalty, 0
-INETUM ESPA?A, S.A., ORDER #, 0040449804-A
-INETUM ESPA?A, S.A., PRODUCT #, TG634BA
-INETUM ESPA?A, S.A., PRODUCT NAME, ArcSight ESM
-INETUM ESPA?A, S.A., Subscription Start Date, 2021-01-16
-INETUM ESPA?A, S.A., TOTAL ROYALTY COST, 215
+INETUM ESPA√ëA, S.A., # of instance, 1
+INETUM ESPA√ëA, S.A., customer type, RESELLER
+INETUM ESPA√ëA, S.A., End Date, 2021-04-02
+INETUM ESPA√ëA, S.A., LICENSE MODEL, PERPETUAL
+INETUM ESPA√ëA, S.A., maintenance royalty, 215
+INETUM ESPA√ëA, S.A., new license royalty, 0
+INETUM ESPA√ëA, S.A., ORDER #, 0040449804-A
+INETUM ESPA√ëA, S.A., PRODUCT #, TG634BA
+INETUM ESPA√ëA, S.A., PRODUCT NAME, ArcSight ESM
+INETUM ESPA√ëA, S.A., Subscription Start Date, 2021-01-16
+INETUM ESPA√ëA, S.A., TOTAL ROYALTY COST, 215
 Information Management Analysis Centre, # of instance, 1
 Information Management Analysis Centre, customer type, RESELLER
 Information Management Analysis Centre, End Date, 2022-10-12
@@ -2316,17 +2316,17 @@ ISRAEL ELECTRIC COMPANY, Subscription Start Date, 2021-01-01
 ISRAEL ELECTRIC COMPANY, TOTAL ROYALTY COST, 215
 ISRAEL ELECTRIC COMPANY, TOTAL ROYALTY COST, 215
 ISRAEL ELECTRIC COMPANY, TOTAL ROYALTY COST, 5160
-Ita®≤ Unibanco S/A, # of instance, 1
-Ita®≤ Unibanco S/A, customer type, DIRECT
-Ita®≤ Unibanco S/A, End Date, 2023-12-31
-Ita®≤ Unibanco S/A, LICENSE MODEL, PERPETUAL
-Ita®≤ Unibanco S/A, maintenance royalty, 645
-Ita®≤ Unibanco S/A, new license royalty, 0
-Ita®≤ Unibanco S/A, ORDER #, 2152929809-A
-Ita®≤ Unibanco S/A, PRODUCT #, SWAA256P9
-Ita®≤ Unibanco S/A, PRODUCT NAME, ArcSight ESM
-Ita®≤ Unibanco S/A, Subscription Start Date, 2020-12-31
-Ita®≤ Unibanco S/A, TOTAL ROYALTY COST, 645
+Ita√∫ Unibanco S/A, # of instance, 1
+Ita√∫ Unibanco S/A, customer type, DIRECT
+Ita√∫ Unibanco S/A, End Date, 2023-12-31
+Ita√∫ Unibanco S/A, LICENSE MODEL, PERPETUAL
+Ita√∫ Unibanco S/A, maintenance royalty, 645
+Ita√∫ Unibanco S/A, new license royalty, 0
+Ita√∫ Unibanco S/A, ORDER #, 2152929809-A
+Ita√∫ Unibanco S/A, PRODUCT #, SWAA256P9
+Ita√∫ Unibanco S/A, PRODUCT NAME, ArcSight ESM
+Ita√∫ Unibanco S/A, Subscription Start Date, 2020-12-31
+Ita√∫ Unibanco S/A, TOTAL ROYALTY COST, 645
 IT SERVICES & MANAGEMENT COMPANY LIMITED, # of instance, 1
 IT SERVICES & MANAGEMENT COMPANY LIMITED, customer type, RESELLER
 IT SERVICES & MANAGEMENT COMPANY LIMITED, End Date, 2021-11-17
@@ -2470,17 +2470,17 @@ K bank, PRODUCT #, SWAA259P9
 K bank, PRODUCT NAME, ARCSIGHT ESM
 K bank, Subscription Start Date, 2021-03-01
 K bank, TOTAL ROYALTY COST, 215
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., # of instance, 1
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., customer type, DIRECT
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., End Date, 2022-04-14
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., LICENSE MODEL, PERPETUAL
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., maintenance royalty, 215
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., new license royalty, 900
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., ORDER #, A-S100136134
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., PRODUCT #, SWAA257P9
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., PRODUCT NAME, ARCSIGHT ESM
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., Subscription Start Date, 2021-04-14
-KfW (Kreditanstalt f®πr Wiederaufbau) A.d.?.R., TOTAL ROYALTY COST, 1115
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., # of instance, 1
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., customer type, DIRECT
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., End Date, 2022-04-14
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., LICENSE MODEL, PERPETUAL
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., maintenance royalty, 215
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., new license royalty, 900
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., ORDER #, A-S100136134
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., PRODUCT #, SWAA257P9
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., PRODUCT NAME, ARCSIGHT ESM
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., Subscription Start Date, 2021-04-14
+KfW (Kreditanstalt f√ºr Wiederaufbau) A.d.√∂.R., TOTAL ROYALTY COST, 1115
 KUSTODIAN SENTRAL EFEK INDONESIA,PT, # of instance, 1
 KUSTODIAN SENTRAL EFEK INDONESIA,PT, customer type, RESELLER
 KUSTODIAN SENTRAL EFEK INDONESIA,PT, End Date, 2022-01-01
@@ -2712,17 +2712,17 @@ MELLANOX TECHNOLOGIES DISTRIBUTION LTD, PRODUCT #, SWAA254P9
 MELLANOX TECHNOLOGIES DISTRIBUTION LTD, PRODUCT NAME, ArcSight ESM
 MELLANOX TECHNOLOGIES DISTRIBUTION LTD, Subscription Start Date, 2021-01-28
 MELLANOX TECHNOLOGIES DISTRIBUTION LTD, TOTAL ROYALTY COST, 215
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., # of instance, 1
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., customer type, RESELLER
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., End Date, 2021-04-01
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., LICENSE MODEL, PERPETUAL
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., maintenance royalty, 215
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., new license royalty, 0
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., ORDER #, 0040376947-A
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., PRODUCT #, TG640BA
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., PRODUCT NAME, ArcSight ESM
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., Subscription Start Date, 2021-01-01
-MEO - SERVI?OS DE COMUNICA??ES E MULTIM?DIA, S.A., TOTAL ROYALTY COST, 215
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., # of instance, 1
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., customer type, RESELLER
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., End Date, 2021-04-01
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., LICENSE MODEL, PERPETUAL
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., maintenance royalty, 215
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., new license royalty, 0
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., ORDER #, 0040376947-A
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., PRODUCT #, TG640BA
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., PRODUCT NAME, ArcSight ESM
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., Subscription Start Date, 2021-01-01
+MEO - SERVI√áOS DE COMUNICA√á√ïES E MULTIM√âDIA, S.A., TOTAL ROYALTY COST, 215
 MEZHDUNARODNOE INFORMATSIONNOE AGENTSTVO ROSSIYA SEGODNYA, FGUP, # of instance, 1
 MEZHDUNARODNOE INFORMATSIONNOE AGENTSTVO ROSSIYA SEGODNYA, FGUP, customer type, RESELLER
 MEZHDUNARODNOE INFORMATSIONNOE AGENTSTVO ROSSIYA SEGODNYA, FGUP, End Date, 2022-01-01
@@ -2800,17 +2800,17 @@ MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI, PRODUCT #, P0J92CA
 MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI, PRODUCT NAME, ARCSIGHT ESM
 MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI, Subscription Start Date, 2021-04-01
 MINISTERO DELLE INFRASTRUTTURE E DEI TRASPORTI, TOTAL ROYALTY COST, 215
-Ministerstvo zem?d?lstv®™, # of instance, 1
-Ministerstvo zem?d?lstv®™, customer type, RESELLER
-Ministerstvo zem?d?lstv®™, End Date, 2022-04-02
-Ministerstvo zem?d?lstv®™, LICENSE MODEL, PERPETUAL
-Ministerstvo zem?d?lstv®™, maintenance royalty, 215
-Ministerstvo zem?d?lstv®™, new license royalty, 0
-Ministerstvo zem?d?lstv®™, ORDER #, 0040431281-A
-Ministerstvo zem?d?lstv®™, PRODUCT #, P0J91CA
-Ministerstvo zem?d?lstv®™, PRODUCT NAME, ArcSight ESM
-Ministerstvo zem?d?lstv®™, Subscription Start Date, 2021-01-01
-Ministerstvo zem?d?lstv®™, TOTAL ROYALTY COST, 215
+Ministerstvo zem?d?lstv√≠, # of instance, 1
+Ministerstvo zem?d?lstv√≠, customer type, RESELLER
+Ministerstvo zem?d?lstv√≠, End Date, 2022-04-02
+Ministerstvo zem?d?lstv√≠, LICENSE MODEL, PERPETUAL
+Ministerstvo zem?d?lstv√≠, maintenance royalty, 215
+Ministerstvo zem?d?lstv√≠, new license royalty, 0
+Ministerstvo zem?d?lstv√≠, ORDER #, 0040431281-A
+Ministerstvo zem?d?lstv√≠, PRODUCT #, P0J91CA
+Ministerstvo zem?d?lstv√≠, PRODUCT NAME, ArcSight ESM
+Ministerstvo zem?d?lstv√≠, Subscription Start Date, 2021-01-01
+Ministerstvo zem?d?lstv√≠, TOTAL ROYALTY COST, 215
 Ministry Of Defense, # of instance, 1
 Ministry Of Defense, customer type, RESELLER
 Ministry Of Defense, End Date, 2025-05-27
@@ -3196,17 +3196,17 @@ Navient Solutions, LLC, PRODUCT #, SWAA259P9
 Navient Solutions, LLC, PRODUCT NAME, ArcSight ESM
 Navient Solutions, LLC, Subscription Start Date, 2020-11-01
 Navient Solutions, LLC, TOTAL ROYALTY COST, 430
-Nestl®¶ Operational Services Worldwilde SA, # of instance, 3
-Nestl®¶ Operational Services Worldwilde SA, customer type, DIRECT
-Nestl®¶ Operational Services Worldwilde SA, End Date, 2022-02-01
-Nestl®¶ Operational Services Worldwilde SA, LICENSE MODEL, PERPETUAL
-Nestl®¶ Operational Services Worldwilde SA, maintenance royalty, 645
-Nestl®¶ Operational Services Worldwilde SA, new license royalty, 0
-Nestl®¶ Operational Services Worldwilde SA, ORDER #, 2134800007-x
-Nestl®¶ Operational Services Worldwilde SA, PRODUCT #, SWAA257P9
-Nestl®¶ Operational Services Worldwilde SA, PRODUCT NAME, ARCSIGHT ESM
-Nestl®¶ Operational Services Worldwilde SA, Subscription Start Date, 2021-02-01
-Nestl®¶ Operational Services Worldwilde SA, TOTAL ROYALTY COST, 645
+Nestl√© Operational Services Worldwilde SA, # of instance, 3
+Nestl√© Operational Services Worldwilde SA, customer type, DIRECT
+Nestl√© Operational Services Worldwilde SA, End Date, 2022-02-01
+Nestl√© Operational Services Worldwilde SA, LICENSE MODEL, PERPETUAL
+Nestl√© Operational Services Worldwilde SA, maintenance royalty, 645
+Nestl√© Operational Services Worldwilde SA, new license royalty, 0
+Nestl√© Operational Services Worldwilde SA, ORDER #, 2134800007-x
+Nestl√© Operational Services Worldwilde SA, PRODUCT #, SWAA257P9
+Nestl√© Operational Services Worldwilde SA, PRODUCT NAME, ARCSIGHT ESM
+Nestl√© Operational Services Worldwilde SA, Subscription Start Date, 2021-02-01
+Nestl√© Operational Services Worldwilde SA, TOTAL ROYALTY COST, 645
 Netfast Technology Solutions Inc., # of instance, n/a
 Netfast Technology Solutions Inc., customer type, DIRECT
 Netfast Technology Solutions Inc., End Date, 2022-04-27
@@ -3306,17 +3306,17 @@ OGK-2, PAO, PRODUCT #, M4E21AAE
 OGK-2, PAO, PRODUCT NAME, ARCSIGHT ESM
 OGK-2, PAO, Subscription Start Date, 2021-04-01
 OGK-2, PAO, TOTAL ROYALTY COST, 215
-OI S/A - Em recupera??o judicial, # of instance, 1
-OI S/A - Em recupera??o judicial, customer type, RESELLER
-OI S/A - Em recupera??o judicial, End Date, 2022-02-01
-OI S/A - Em recupera??o judicial, LICENSE MODEL, PERPETUAL
-OI S/A - Em recupera??o judicial, maintenance royalty, 215
-OI S/A - Em recupera??o judicial, new license royalty, 0
-OI S/A - Em recupera??o judicial, ORDER #, A-S100032481
-OI S/A - Em recupera??o judicial, PRODUCT #, TF773AAE
-OI S/A - Em recupera??o judicial, PRODUCT NAME, ARCSIGHT ESM
-OI S/A - Em recupera??o judicial, Subscription Start Date, 2021-02-01
-OI S/A - Em recupera??o judicial, TOTAL ROYALTY COST, 215
+OI S/A - Em recupera√ß√£o judicial, # of instance, 1
+OI S/A - Em recupera√ß√£o judicial, customer type, RESELLER
+OI S/A - Em recupera√ß√£o judicial, End Date, 2022-02-01
+OI S/A - Em recupera√ß√£o judicial, LICENSE MODEL, PERPETUAL
+OI S/A - Em recupera√ß√£o judicial, maintenance royalty, 215
+OI S/A - Em recupera√ß√£o judicial, new license royalty, 0
+OI S/A - Em recupera√ß√£o judicial, ORDER #, A-S100032481
+OI S/A - Em recupera√ß√£o judicial, PRODUCT #, TF773AAE
+OI S/A - Em recupera√ß√£o judicial, PRODUCT NAME, ARCSIGHT ESM
+OI S/A - Em recupera√ß√£o judicial, Subscription Start Date, 2021-02-01
+OI S/A - Em recupera√ß√£o judicial, TOTAL ROYALTY COST, 215
 olive networks Co.,Ltd, # of instance, 1
 olive networks Co.,Ltd, # of instance, 1
 olive networks Co.,Ltd, # of instance, 1
@@ -3647,17 +3647,17 @@ POWER SYSTEM OPERATION CORPORATION LIMITED, PRODUCT #, SWAA257P9
 POWER SYSTEM OPERATION CORPORATION LIMITED, PRODUCT NAME, ArcSight ESM
 POWER SYSTEM OPERATION CORPORATION LIMITED, Subscription Start Date, 2021-01-30
 POWER SYSTEM OPERATION CORPORATION LIMITED, TOTAL ROYALTY COST, 1115
-Prazsk®¢ energetika, a.s., # of instance, 1
-Prazsk®¢ energetika, a.s., customer type, RESELLER
-Prazsk®¢ energetika, a.s., End Date, 2021-11-01
-Prazsk®¢ energetika, a.s., LICENSE MODEL, PERPETUAL
-Prazsk®¢ energetika, a.s., maintenance royalty, 215
-Prazsk®¢ energetika, a.s., new license royalty, 0
-Prazsk®¢ energetika, a.s., ORDER #, 0040459239_F-A
-Prazsk®¢ energetika, a.s., PRODUCT #, P0J86CA
-Prazsk®¢ energetika, a.s., PRODUCT NAME, ArcSight ESM
-Prazsk®¢ energetika, a.s., Subscription Start Date, 2020-11-01
-Prazsk®¢ energetika, a.s., TOTAL ROYALTY COST, 215
+Prazsk√° energetika, a.s., # of instance, 1
+Prazsk√° energetika, a.s., customer type, RESELLER
+Prazsk√° energetika, a.s., End Date, 2021-11-01
+Prazsk√° energetika, a.s., LICENSE MODEL, PERPETUAL
+Prazsk√° energetika, a.s., maintenance royalty, 215
+Prazsk√° energetika, a.s., new license royalty, 0
+Prazsk√° energetika, a.s., ORDER #, 0040459239_F-A
+Prazsk√° energetika, a.s., PRODUCT #, P0J86CA
+Prazsk√° energetika, a.s., PRODUCT NAME, ArcSight ESM
+Prazsk√° energetika, a.s., Subscription Start Date, 2020-11-01
+Prazsk√° energetika, a.s., TOTAL ROYALTY COST, 215
 PRIME MINISTER'S OFFICE/ACCOUNTING, # of instance, 1
 PRIME MINISTER'S OFFICE/ACCOUNTING, # of instance, n/a
 PRIME MINISTER'S OFFICE/ACCOUNTING, customer type, RESELLER
@@ -3691,17 +3691,17 @@ Provincial Health Services Authority, The, PRODUCT #, SWAA254P9
 Provincial Health Services Authority, The, PRODUCT NAME, ARCSIGHT ESM
 Provincial Health Services Authority, The, Subscription Start Date, 2021-04-01
 Provincial Health Services Authority, The, TOTAL ROYALTY COST, 215
-Prv®¢ stavebn®¢ sporite??a a.s., # of instance, 1
-Prv®¢ stavebn®¢ sporite??a a.s., customer type, RESELLER
-Prv®¢ stavebn®¢ sporite??a a.s., End Date, 2024-01-01
-Prv®¢ stavebn®¢ sporite??a a.s., LICENSE MODEL, PERPETUAL
-Prv®¢ stavebn®¢ sporite??a a.s., maintenance royalty, 645
-Prv®¢ stavebn®¢ sporite??a a.s., new license royalty, 0
-Prv®¢ stavebn®¢ sporite??a a.s., ORDER #, 2135039400-A
-Prv®¢ stavebn®¢ sporite??a a.s., PRODUCT #, SWAA253P9
-Prv®¢ stavebn®¢ sporite??a a.s., PRODUCT NAME, ArcSight ESM
-Prv®¢ stavebn®¢ sporite??a a.s., Subscription Start Date, 2021-01-01
-Prv®¢ stavebn®¢ sporite??a a.s., TOTAL ROYALTY COST, 645
+Prv√° stavebn√° sporite??a a.s., # of instance, 1
+Prv√° stavebn√° sporite??a a.s., customer type, RESELLER
+Prv√° stavebn√° sporite??a a.s., End Date, 2024-01-01
+Prv√° stavebn√° sporite??a a.s., LICENSE MODEL, PERPETUAL
+Prv√° stavebn√° sporite??a a.s., maintenance royalty, 645
+Prv√° stavebn√° sporite??a a.s., new license royalty, 0
+Prv√° stavebn√° sporite??a a.s., ORDER #, 2135039400-A
+Prv√° stavebn√° sporite??a a.s., PRODUCT #, SWAA253P9
+Prv√° stavebn√° sporite??a a.s., PRODUCT NAME, ArcSight ESM
+Prv√° stavebn√° sporite??a a.s., Subscription Start Date, 2021-01-01
+Prv√° stavebn√° sporite??a a.s., TOTAL ROYALTY COST, 645
 PT Bank CIMB Niaga Tbk, # of instance, 1
 PT Bank CIMB Niaga Tbk, customer type, RESELLER
 PT Bank CIMB Niaga Tbk, End Date, 2022-01-30
@@ -3878,17 +3878,17 @@ SAHARANPUR SMART CITY LIMITED, PRODUCT #, SWAA255P9
 SAHARANPUR SMART CITY LIMITED, PRODUCT NAME, ARCSIGHT ESM
 SAHARANPUR SMART CITY LIMITED, Subscription Start Date, 2021-02-26
 SAHARANPUR SMART CITY LIMITED, TOTAL ROYALTY COST, 1115
-S?kerhetspolisen, # of instance, 1
-S?kerhetspolisen, customer type, RESELLER
-S?kerhetspolisen, End Date, 2022-04-13
-S?kerhetspolisen, LICENSE MODEL, PERPETUAL
-S?kerhetspolisen, maintenance royalty, 215
-S?kerhetspolisen, new license royalty, 900
-S?kerhetspolisen, ORDER #, A-S100136012
-S?kerhetspolisen, PRODUCT #, SWAA255P9
-S?kerhetspolisen, PRODUCT NAME, ARCSIGHT ESM
-S?kerhetspolisen, Subscription Start Date, 2021-04-13
-S?kerhetspolisen, TOTAL ROYALTY COST, 1115
+S√§kerhetspolisen, # of instance, 1
+S√§kerhetspolisen, customer type, RESELLER
+S√§kerhetspolisen, End Date, 2022-04-13
+S√§kerhetspolisen, LICENSE MODEL, PERPETUAL
+S√§kerhetspolisen, maintenance royalty, 215
+S√§kerhetspolisen, new license royalty, 900
+S√§kerhetspolisen, ORDER #, A-S100136012
+S√§kerhetspolisen, PRODUCT #, SWAA255P9
+S√§kerhetspolisen, PRODUCT NAME, ARCSIGHT ESM
+S√§kerhetspolisen, Subscription Start Date, 2021-04-13
+S√§kerhetspolisen, TOTAL ROYALTY COST, 1115
 Samsung Electro-Mechanics Co., Ltd., # of instance, 1
 Samsung Electro-Mechanics Co., Ltd., customer type, RESELLER
 Samsung Electro-Mechanics Co., Ltd., End Date, 2022-01-01
@@ -4197,17 +4197,17 @@ SK-Pharmacy, PRODUCT #, M4E19AAE
 SK-Pharmacy, PRODUCT NAME, ARCSIGHT ESM
 SK-Pharmacy, Subscription Start Date, 2021-03-01
 SK-Pharmacy, TOTAL ROYALTY COST, 215
-Slovensk®¢ informacn®¢ sluzba, # of instance, n/a
-Slovensk®¢ informacn®¢ sluzba, customer type, RESELLER
-Slovensk®¢ informacn®¢ sluzba, End Date, 2021-09-30
-Slovensk®¢ informacn®¢ sluzba, LICENSE MODEL, SUBSCRIPTION
-Slovensk®¢ informacn®¢ sluzba, maintenance royalty, 0
-Slovensk®¢ informacn®¢ sluzba, new license royalty, 1800
-Slovensk®¢ informacn®¢ sluzba, ORDER #, A-S100069040
-Slovensk®¢ informacn®¢ sluzba, PRODUCT #, SWAA423P9
-Slovensk®¢ informacn®¢ sluzba, PRODUCT NAME, ARCSIGHT RECON
-Slovensk®¢ informacn®¢ sluzba, Subscription Start Date, 2021-03-18
-Slovensk®¢ informacn®¢ sluzba, TOTAL ROYALTY COST, 1800
+Slovensk√° informacn√° sluzba, # of instance, n/a
+Slovensk√° informacn√° sluzba, customer type, RESELLER
+Slovensk√° informacn√° sluzba, End Date, 2021-09-30
+Slovensk√° informacn√° sluzba, LICENSE MODEL, SUBSCRIPTION
+Slovensk√° informacn√° sluzba, maintenance royalty, 0
+Slovensk√° informacn√° sluzba, new license royalty, 1800
+Slovensk√° informacn√° sluzba, ORDER #, A-S100069040
+Slovensk√° informacn√° sluzba, PRODUCT #, SWAA423P9
+Slovensk√° informacn√° sluzba, PRODUCT NAME, ARCSIGHT RECON
+Slovensk√° informacn√° sluzba, Subscription Start Date, 2021-03-18
+Slovensk√° informacn√° sluzba, TOTAL ROYALTY COST, 1800
 SOLAR SECURITY, # of instance, 1
 SOLAR SECURITY, customer type, MSSP
 SOLAR SECURITY, End Date, 2024-03-31
@@ -4395,17 +4395,17 @@ TATA COMMUNICATIONS LIMITED, Subscription Start Date, 2021-02-07
 TATA COMMUNICATIONS LIMITED, Subscription Start Date, 2021-02-25
 TATA COMMUNICATIONS LIMITED, TOTAL ROYALTY COST, 215
 TATA COMMUNICATIONS LIMITED, TOTAL ROYALTY COST, 215
-Tech Data f®πr Printer und PC Systeme, # of instance, 1
-Tech Data f®πr Printer und PC Systeme, customer type, RESELLER
-Tech Data f®πr Printer und PC Systeme, End Date, 2022-01-26
-Tech Data f®πr Printer und PC Systeme, LICENSE MODEL, PERPETUAL
-Tech Data f®πr Printer und PC Systeme, maintenance royalty, 215
-Tech Data f®πr Printer und PC Systeme, new license royalty, 0
-Tech Data f®πr Printer und PC Systeme, ORDER #, 2135196436-A
-Tech Data f®πr Printer und PC Systeme, PRODUCT #, SWAA256P9
-Tech Data f®πr Printer und PC Systeme, PRODUCT NAME, ArcSight ESM
-Tech Data f®πr Printer und PC Systeme, Subscription Start Date, 2021-01-26
-Tech Data f®πr Printer und PC Systeme, TOTAL ROYALTY COST, 215
+Tech Data f√ºr Printer und PC Systeme, # of instance, 1
+Tech Data f√ºr Printer und PC Systeme, customer type, RESELLER
+Tech Data f√ºr Printer und PC Systeme, End Date, 2022-01-26
+Tech Data f√ºr Printer und PC Systeme, LICENSE MODEL, PERPETUAL
+Tech Data f√ºr Printer und PC Systeme, maintenance royalty, 215
+Tech Data f√ºr Printer und PC Systeme, new license royalty, 0
+Tech Data f√ºr Printer und PC Systeme, ORDER #, 2135196436-A
+Tech Data f√ºr Printer und PC Systeme, PRODUCT #, SWAA256P9
+Tech Data f√ºr Printer und PC Systeme, PRODUCT NAME, ArcSight ESM
+Tech Data f√ºr Printer und PC Systeme, Subscription Start Date, 2021-01-26
+Tech Data f√ºr Printer und PC Systeme, TOTAL ROYALTY COST, 215
 Tech Data GmbH & Co. OHG, # of instance, 1
 Tech Data GmbH & Co. OHG, customer type, RESELLER
 Tech Data GmbH & Co. OHG, End Date, 2022-01-25
