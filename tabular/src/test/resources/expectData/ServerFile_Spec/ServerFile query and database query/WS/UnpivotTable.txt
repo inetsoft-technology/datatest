@@ -1,137 +1,492 @@
-The table size(row x col) is:(136 x 3)
+The table size(row x col) is:(491 x 3)
 Dimension, Measure, State
+Discount, NULL, AZ
+Discount, NULL, AZ
+Discount, NULL, AZ
+Discount, NULL, AZ
+Discount, NULL, CO
+Discount, NULL, CO
+Discount, NULL, CO
+Discount, NULL, CO
+Discount, NULL, CT
+Discount, NULL, CT
+Discount, NULL, CT
+Discount, NULL, FL
+Discount, NULL, FL
+Discount, NULL, FL
+Discount, NULL, IL
+Discount, NULL, IL
+Discount, NULL, IL
+Discount, NULL, IL
+Discount, NULL, IL
+Discount, NULL, IL
+Discount, NULL, MA
+Discount, NULL, MA
+Discount, NULL, MD
+Discount, NULL, MD
+Discount, NULL, MD
+Discount, NULL, MD
+Discount, NULL, NJ
+Discount, NULL, NJ
+Discount, NULL, NV
+Discount, NULL, NV
+Discount, NULL, NY
+Discount, NULL, NY
+Discount, NULL, NY
+Discount, NULL, NY
+Discount, NULL, PA
+Discount, NULL, PA
+Discount, NULL, PA
+Discount, NULL, WA
+Discount, NULL, WA
+Discount, NULL, WA
+Discount, NULL, WA
 Discount, 0.00, AZ
+Discount, 0.00, CA
+Discount, 0.00, CA
+Discount, 0.00, FL
 Discount, 0.00, FL
 Discount, 0.00, IL
+Discount, 0.00, MA
+Discount, 0.00, MA
+Discount, 0.00, MD
 Discount, 0.00, NV
+Discount, 0.00, NY
 Discount, 0.00, PA
+Discount, 0.00, TX
+Discount, 0.00, TX
 Discount, 0.00, WA
-Discount, 0.0147, MA
-Discount, 0.0329, NY
-Discount, 0.0357, NJ
-Discount, 0.0455, CA
-Discount, 0.0476, MD
-Discount, 0.0571, TX
+Discount, 0.00, WA
+Discount, 0.0159, NJ
+Discount, 0.0472, NJ
+Discount, 0.0481, NJ
+Discount, 0.0493, NY
 Discount, 0.0667, CO
+Discount, 0.0833, CA
+Discount, 0.10, MD
+Discount, 0.10, TX
+Discount, 0.1429, TX
+Discount, 0.20, MA
+Discount, 0.80, MA
+Discount, 0.8571, TX
+Discount, 0.90, MD
+Discount, 0.90, TX
+Discount, 0.9167, CA
 Discount, 0.9333, CO
-Discount, 0.9429, TX
-Discount, 0.9524, MD
-Discount, 0.9545, CA
-Discount, 0.9643, NJ
-Discount, 0.9671, NY
-Discount, 0.9853, MA
+Discount, 0.9507, NY
+Discount, 0.9519, NJ
+Discount, 0.9528, NJ
+Discount, 0.9841, NJ
 Discount, 1.00, AZ
+Discount, 1.00, AZ
+Discount, 1.00, CA
+Discount, 1.00, CA
+Discount, 1.00, CA
 Discount, 1.00, CT
 Discount, 1.00, FL
+Discount, 1.00, FL
 Discount, 1.00, IL
+Discount, 1.00, MA
+Discount, 1.00, MA
+Discount, 1.00, MD
 Discount, 1.00, NV
+Discount, 1.00, NV
+Discount, 1.00, NY
 Discount, 1.00, PA
+Discount, 1.00, PA
+Discount, 1.00, TX
+Discount, 1.00, TX
+Discount, 1.00, WA
 Discount, 1.00, WA
 numRange, 10, AZ
+numRange, 10, AZ
+numRange, 10, AZ
+numRange, 10, CA
+numRange, 10, CA
 numRange, 10, CA
 numRange, 10, CO
+numRange, 10, CO
+numRange, 10, FL
+numRange, 10, FL
 numRange, 10, FL
 numRange, 10, IL
+numRange, 10, IL
+numRange, 10, IL
+numRange, 10, IL
+numRange, 10, MA
+numRange, 10, MA
+numRange, 10, MA
 numRange, 10, MA
 numRange, 10, MD
+numRange, 10, MD
+numRange, 10, MD
+numRange, 10, MD
+numRange, 10, NJ
+numRange, 10, NJ
+numRange, 10, NJ
 numRange, 10, NJ
 numRange, 10, NV
 numRange, 10, NY
+numRange, 10, NY
+numRange, 10, NY
+numRange, 10, NY
+numRange, 10, PA
 numRange, 10, PA
 numRange, 10, TX
+numRange, 10, TX
+numRange, 10, TX
+numRange, 10, TX
+numRange, 10, WA
+numRange, 10, WA
+numRange, 10, WA
 numRange, 10, WA
 numRange, 5, AZ
+numRange, 5, AZ
+numRange, 5, AZ
+numRange, 5, AZ
+numRange, 5, CA
+numRange, 5, CA
+numRange, 5, CA
 numRange, 5, CA
 numRange, 5, CO
+numRange, 5, CO
+numRange, 5, CO
+numRange, 5, CO
+numRange, 5, CT
+numRange, 5, CT
+numRange, 5, CT
 numRange, 5, CT
 numRange, 5, FL
+numRange, 5, FL
+numRange, 5, FL
+numRange, 5, FL
+numRange, 5, IL
+numRange, 5, IL
+numRange, 5, IL
 numRange, 5, IL
 numRange, 5, MA
+numRange, 5, MA
+numRange, 5, MA
+numRange, 5, MA
+numRange, 5, MD
+numRange, 5, MD
+numRange, 5, MD
 numRange, 5, MD
 numRange, 5, NJ
+numRange, 5, NJ
+numRange, 5, NJ
+numRange, 5, NJ
+numRange, 5, NV
+numRange, 5, NV
+numRange, 5, NV
 numRange, 5, NV
 numRange, 5, NY
+numRange, 5, NY
+numRange, 5, NY
+numRange, 5, NY
+numRange, 5, PA
+numRange, 5, PA
+numRange, 5, PA
 numRange, 5, PA
 numRange, 5, TX
+numRange, 5, TX
+numRange, 5, TX
+numRange, 5, TX
 numRange, 5, WA
-Quantity Purchased, 0.0504, NV
-Quantity Purchased, 0.0542, AZ
-Quantity Purchased, 0.0581, PA
-Quantity Purchased, 0.0646, CA
-Quantity Purchased, 0.0726, FL
-Quantity Purchased, 0.0761, CO
-Quantity Purchased, 0.0893, MD
-Quantity Purchased, 0.0957, WA
-Quantity Purchased, 0.0972, MA
-Quantity Purchased, 0.0981, NJ
-Quantity Purchased, 0.1015, TX
-Quantity Purchased, 0.1164, NY
-Quantity Purchased, 0.1374, IL
-Quantity Purchased, 0.8626, IL
-Quantity Purchased, 0.8836, NY
-Quantity Purchased, 0.8985, TX
-Quantity Purchased, 0.9019, NJ
-Quantity Purchased, 0.9028, MA
-Quantity Purchased, 0.9043, WA
-Quantity Purchased, 0.9107, MD
-Quantity Purchased, 0.9239, CO
-Quantity Purchased, 0.9274, FL
-Quantity Purchased, 0.9354, CA
-Quantity Purchased, 0.9419, PA
-Quantity Purchased, 0.9458, AZ
-Quantity Purchased, 0.9496, NV
+numRange, 5, WA
+numRange, 5, WA
+numRange, 5, WA
+Quantity Purchased, 0.0375, CA
+Quantity Purchased, 0.0443, FL
+Quantity Purchased, 0.0548, AZ
+Quantity Purchased, 0.0595, WA
+Quantity Purchased, 0.0608, AZ
+Quantity Purchased, 0.0638, TX
+Quantity Purchased, 0.0659, PA
+Quantity Purchased, 0.0662, AZ
+Quantity Purchased, 0.0724, NJ
+Quantity Purchased, 0.0753, TX
+Quantity Purchased, 0.0784, MD
+Quantity Purchased, 0.079, MA
+Quantity Purchased, 0.0797, FL
+Quantity Purchased, 0.0805, CA
+Quantity Purchased, 0.0814, NY
+Quantity Purchased, 0.0827, NJ
+Quantity Purchased, 0.0848, MA
+Quantity Purchased, 0.0897, IL
+Quantity Purchased, 0.0919, MD
+Quantity Purchased, 0.092, IL
+Quantity Purchased, 0.0921, MD
+Quantity Purchased, 0.0931, MD
+Quantity Purchased, 0.0986, MA
+Quantity Purchased, 0.1015, NJ
+Quantity Purchased, 0.1039, WA
+Quantity Purchased, 0.1049, NY
+Quantity Purchased, 0.1067, PA
+Quantity Purchased, 0.1082, TX
+Quantity Purchased, 0.1127, WA
+Quantity Purchased, 0.113, WA
+Quantity Purchased, 0.1142, CA
+Quantity Purchased, 0.1181, NJ
+Quantity Purchased, 0.1215, NY
+Quantity Purchased, 0.1254, FL
+Quantity Purchased, 0.1272, MA
+Quantity Purchased, 0.1439, IL
+Quantity Purchased, 0.1463, CO
+Quantity Purchased, 0.1477, NY
+Quantity Purchased, 0.1509, CO
+Quantity Purchased, 0.1521, NV
+Quantity Purchased, 0.1713, TX
+Quantity Purchased, 0.1923, IL
+Quantity Purchased, 0.8077, IL
+Quantity Purchased, 0.8287, TX
+Quantity Purchased, 0.8479, NV
+Quantity Purchased, 0.8491, CO
+Quantity Purchased, 0.8523, NY
+Quantity Purchased, 0.8537, CO
+Quantity Purchased, 0.8561, IL
+Quantity Purchased, 0.8728, MA
+Quantity Purchased, 0.8746, FL
+Quantity Purchased, 0.8785, NY
+Quantity Purchased, 0.8819, NJ
+Quantity Purchased, 0.8858, CA
+Quantity Purchased, 0.887, WA
+Quantity Purchased, 0.8873, WA
+Quantity Purchased, 0.8918, TX
+Quantity Purchased, 0.8933, PA
+Quantity Purchased, 0.8951, NY
+Quantity Purchased, 0.8961, WA
+Quantity Purchased, 0.8985, NJ
+Quantity Purchased, 0.9014, MA
+Quantity Purchased, 0.9069, MD
+Quantity Purchased, 0.9079, MD
+Quantity Purchased, 0.908, IL
+Quantity Purchased, 0.9081, MD
+Quantity Purchased, 0.9103, IL
+Quantity Purchased, 0.9152, MA
+Quantity Purchased, 0.9173, NJ
+Quantity Purchased, 0.9186, NY
+Quantity Purchased, 0.9195, CA
+Quantity Purchased, 0.9203, FL
+Quantity Purchased, 0.921, MA
+Quantity Purchased, 0.9216, MD
+Quantity Purchased, 0.9247, TX
+Quantity Purchased, 0.9276, NJ
+Quantity Purchased, 0.9338, AZ
+Quantity Purchased, 0.9341, PA
+Quantity Purchased, 0.9362, TX
+Quantity Purchased, 0.9392, AZ
+Quantity Purchased, 0.9405, WA
+Quantity Purchased, 0.9452, AZ
+Quantity Purchased, 0.9557, FL
+Quantity Purchased, 0.9625, CA
+Quantity Purchased, 1.00, AZ
+Quantity Purchased, 1.00, CA
+Quantity Purchased, 1.00, CO
+Quantity Purchased, 1.00, CO
 Quantity Purchased, 1.00, CT
+Quantity Purchased, 1.00, CT
+Quantity Purchased, 1.00, CT
+Quantity Purchased, 1.00, CT
+Quantity Purchased, 1.00, FL
+Quantity Purchased, 1.00, NV
+Quantity Purchased, 1.00, NV
+Quantity Purchased, 1.00, NV
+Quantity Purchased, 1.00, PA
+Quantity Purchased, 1.00, PA
+Reseller, 0.00, AZ
+Reseller, 0.00, AZ
+Reseller, 0.00, AZ
+Reseller, 0.00, AZ
+Reseller, 0.00, AZ
 Reseller, 0.00, AZ
 Reseller, 0.00, AZ
 Reseller, 0.00, CT
+Reseller, 0.00, CT
+Reseller, 0.00, CT
+Reseller, 0.00, CT
+Reseller, 0.00, FL
+Reseller, 0.00, FL
+Reseller, 0.00, FL
+Reseller, 0.00, FL
+Reseller, 0.00, FL
 Reseller, 0.00, FL
 Reseller, 0.00, FL
 Reseller, 0.00, MD
 Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, MD
+Reseller, 0.00, NJ
+Reseller, 0.00, NV
+Reseller, 0.00, NV
+Reseller, 0.00, NV
 Reseller, 0.00, NV
 Reseller, 0.00, NV
 Reseller, 0.00, NY
 Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, NY
+Reseller, 0.00, PA
+Reseller, 0.00, PA
+Reseller, 0.00, PA
+Reseller, 0.00, PA
 Reseller, 0.00, PA
 Reseller, 0.00, PA
 Reseller, 0.00, TX
 Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, TX
+Reseller, 0.00, WA
+Reseller, 0.00, WA
+Reseller, 0.00, WA
+Reseller, 0.0011, CO
+Reseller, 0.0011, IL
+Reseller, 0.0011, MA
+Reseller, 0.0011, NJ
+Reseller, 0.0011, NJ
 Reseller, 0.0011, WA
-Reseller, 0.0034, CO
-Reseller, 0.0068, NJ
-Reseller, 0.008, CA
-Reseller, 0.0114, IL
-Reseller, 0.0148, MA
-Reseller, 0.0705, WA
-Reseller, 0.0807, CO
-Reseller, 0.1318, IL
-Reseller, 0.1557, NJ
-Reseller, 0.2364, MA
-Reseller, 0.2795, CA
-Year(DateRange_Year), NULL, AZ
-Year(DateRange_Year), NULL, AZ
-Year(DateRange_Year), NULL, CA
-Year(DateRange_Year), NULL, CA
-Year(DateRange_Year), NULL, CO
-Year(DateRange_Year), NULL, CO
-Year(DateRange_Year), NULL, CT
-Year(DateRange_Year), NULL, FL
-Year(DateRange_Year), NULL, FL
-Year(DateRange_Year), NULL, IL
-Year(DateRange_Year), NULL, IL
-Year(DateRange_Year), NULL, MA
-Year(DateRange_Year), NULL, MA
-Year(DateRange_Year), NULL, MD
-Year(DateRange_Year), NULL, MD
-Year(DateRange_Year), NULL, NJ
-Year(DateRange_Year), NULL, NJ
-Year(DateRange_Year), NULL, NV
-Year(DateRange_Year), NULL, NV
-Year(DateRange_Year), NULL, NY
-Year(DateRange_Year), NULL, NY
-Year(DateRange_Year), NULL, PA
-Year(DateRange_Year), NULL, PA
-Year(DateRange_Year), NULL, TX
-Year(DateRange_Year), NULL, TX
-Year(DateRange_Year), NULL, WA
-Year(DateRange_Year), NULL, WA
+Reseller, 0.0023, CA
+Reseller, 0.0023, CA
+Reseller, 0.0023, CO
+Reseller, 0.0023, IL
+Reseller, 0.0023, IL
+Reseller, 0.0034, CA
+Reseller, 0.0034, MA
+Reseller, 0.0045, CO
+Reseller, 0.0045, MA
+Reseller, 0.0045, NJ
+Reseller, 0.0045, WA
+Reseller, 0.0057, IL
+Reseller, 0.0057, MA
+Reseller, 0.0182, NJ
+Reseller, 0.0182, WA
+Reseller, 0.0193, CO
+Reseller, 0.0193, IL
+Reseller, 0.0193, WA
+Reseller, 0.0227, NJ
+Reseller, 0.025, IL
+Reseller, 0.0261, CO
+Reseller, 0.0261, MA
+Reseller, 0.0284, WA
+Reseller, 0.0307, CO
+Reseller, 0.0386, IL
+Reseller, 0.0386, MA
+Reseller, 0.0432, CA
+Reseller, 0.0489, IL
+Reseller, 0.05, NJ
+Reseller, 0.0648, NJ
+Reseller, 0.0727, CA
+Reseller, 0.0773, CA
+Reseller, 0.0784, MA
+Reseller, 0.0864, CA
+Reseller, 0.0932, MA
+Year(DateRange_Year), 2017-01-01 00:00:00, AZ
+Year(DateRange_Year), 2017-01-01 00:00:00, AZ
+Year(DateRange_Year), 2017-01-01 00:00:00, CA
+Year(DateRange_Year), 2017-01-01 00:00:00, CA
+Year(DateRange_Year), 2017-01-01 00:00:00, CO
+Year(DateRange_Year), 2017-01-01 00:00:00, CO
+Year(DateRange_Year), 2017-01-01 00:00:00, CT
+Year(DateRange_Year), 2017-01-01 00:00:00, FL
+Year(DateRange_Year), 2017-01-01 00:00:00, FL
+Year(DateRange_Year), 2017-01-01 00:00:00, IL
+Year(DateRange_Year), 2017-01-01 00:00:00, IL
+Year(DateRange_Year), 2017-01-01 00:00:00, MA
+Year(DateRange_Year), 2017-01-01 00:00:00, MA
+Year(DateRange_Year), 2017-01-01 00:00:00, MD
+Year(DateRange_Year), 2017-01-01 00:00:00, MD
+Year(DateRange_Year), 2017-01-01 00:00:00, NJ
+Year(DateRange_Year), 2017-01-01 00:00:00, NJ
+Year(DateRange_Year), 2017-01-01 00:00:00, NV
+Year(DateRange_Year), 2017-01-01 00:00:00, NY
+Year(DateRange_Year), 2017-01-01 00:00:00, NY
+Year(DateRange_Year), 2017-01-01 00:00:00, PA
+Year(DateRange_Year), 2017-01-01 00:00:00, PA
+Year(DateRange_Year), 2017-01-01 00:00:00, TX
+Year(DateRange_Year), 2017-01-01 00:00:00, TX
+Year(DateRange_Year), 2017-01-01 00:00:00, WA
+Year(DateRange_Year), 2017-01-01 00:00:00, WA
+Year(DateRange_Year), 2018-01-01 00:00:00, AZ
+Year(DateRange_Year), 2018-01-01 00:00:00, AZ
+Year(DateRange_Year), 2018-01-01 00:00:00, CA
+Year(DateRange_Year), 2018-01-01 00:00:00, CO
+Year(DateRange_Year), 2018-01-01 00:00:00, CT
+Year(DateRange_Year), 2018-01-01 00:00:00, FL
+Year(DateRange_Year), 2018-01-01 00:00:00, FL
+Year(DateRange_Year), 2018-01-01 00:00:00, IL
+Year(DateRange_Year), 2018-01-01 00:00:00, IL
+Year(DateRange_Year), 2018-01-01 00:00:00, MA
+Year(DateRange_Year), 2018-01-01 00:00:00, MA
+Year(DateRange_Year), 2018-01-01 00:00:00, MD
+Year(DateRange_Year), 2018-01-01 00:00:00, MD
+Year(DateRange_Year), 2018-01-01 00:00:00, NJ
+Year(DateRange_Year), 2018-01-01 00:00:00, NJ
+Year(DateRange_Year), 2018-01-01 00:00:00, NV
+Year(DateRange_Year), 2018-01-01 00:00:00, NY
+Year(DateRange_Year), 2018-01-01 00:00:00, NY
+Year(DateRange_Year), 2018-01-01 00:00:00, PA
+Year(DateRange_Year), 2018-01-01 00:00:00, PA
+Year(DateRange_Year), 2018-01-01 00:00:00, TX
+Year(DateRange_Year), 2018-01-01 00:00:00, TX
+Year(DateRange_Year), 2018-01-01 00:00:00, WA
+Year(DateRange_Year), 2018-01-01 00:00:00, WA
+Year(DateRange_Year), 2019-01-01 00:00:00, AZ
+Year(DateRange_Year), 2019-01-01 00:00:00, CA
+Year(DateRange_Year), 2019-01-01 00:00:00, CA
+Year(DateRange_Year), 2019-01-01 00:00:00, CO
+Year(DateRange_Year), 2019-01-01 00:00:00, CT
+Year(DateRange_Year), 2019-01-01 00:00:00, FL
+Year(DateRange_Year), 2019-01-01 00:00:00, IL
+Year(DateRange_Year), 2019-01-01 00:00:00, IL
+Year(DateRange_Year), 2019-01-01 00:00:00, MA
+Year(DateRange_Year), 2019-01-01 00:00:00, MA
+Year(DateRange_Year), 2019-01-01 00:00:00, MD
+Year(DateRange_Year), 2019-01-01 00:00:00, MD
+Year(DateRange_Year), 2019-01-01 00:00:00, NJ
+Year(DateRange_Year), 2019-01-01 00:00:00, NJ
+Year(DateRange_Year), 2019-01-01 00:00:00, NV
+Year(DateRange_Year), 2019-01-01 00:00:00, NV
+Year(DateRange_Year), 2019-01-01 00:00:00, NY
+Year(DateRange_Year), 2019-01-01 00:00:00, NY
+Year(DateRange_Year), 2019-01-01 00:00:00, PA
+Year(DateRange_Year), 2019-01-01 00:00:00, TX
+Year(DateRange_Year), 2019-01-01 00:00:00, TX
+Year(DateRange_Year), 2019-01-01 00:00:00, WA
+Year(DateRange_Year), 2019-01-01 00:00:00, WA
+Year(DateRange_Year), 2020-01-01 00:00:00, AZ
+Year(DateRange_Year), 2020-01-01 00:00:00, AZ
+Year(DateRange_Year), 2020-01-01 00:00:00, CA
+Year(DateRange_Year), 2020-01-01 00:00:00, CA
+Year(DateRange_Year), 2020-01-01 00:00:00, CO
+Year(DateRange_Year), 2020-01-01 00:00:00, CO
+Year(DateRange_Year), 2020-01-01 00:00:00, CT
+Year(DateRange_Year), 2020-01-01 00:00:00, FL
+Year(DateRange_Year), 2020-01-01 00:00:00, FL
+Year(DateRange_Year), 2020-01-01 00:00:00, IL
+Year(DateRange_Year), 2020-01-01 00:00:00, IL
+Year(DateRange_Year), 2020-01-01 00:00:00, MA
+Year(DateRange_Year), 2020-01-01 00:00:00, MA
+Year(DateRange_Year), 2020-01-01 00:00:00, MD
+Year(DateRange_Year), 2020-01-01 00:00:00, MD
+Year(DateRange_Year), 2020-01-01 00:00:00, NJ
+Year(DateRange_Year), 2020-01-01 00:00:00, NJ
+Year(DateRange_Year), 2020-01-01 00:00:00, NV
+Year(DateRange_Year), 2020-01-01 00:00:00, NY
+Year(DateRange_Year), 2020-01-01 00:00:00, NY
+Year(DateRange_Year), 2020-01-01 00:00:00, PA
+Year(DateRange_Year), 2020-01-01 00:00:00, TX
+Year(DateRange_Year), 2020-01-01 00:00:00, TX
+Year(DateRange_Year), 2020-01-01 00:00:00, WA
+Year(DateRange_Year), 2020-01-01 00:00:00, WA
