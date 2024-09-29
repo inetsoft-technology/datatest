@@ -30,10 +30,10 @@ class Cassandra_Spec extends Specification{
    }
 
    /*
-    check cassandra used in vs and report
+    check cassandra used in vs
     covered parameters and filters
     */
-   def 'cassandra used in vs and report'() {
+   def 'cassandra used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()

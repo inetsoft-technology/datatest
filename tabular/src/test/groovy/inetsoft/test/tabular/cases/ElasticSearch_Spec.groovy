@@ -26,9 +26,9 @@ class ElasticSearch_Spec extends Specification{
    }
 
    /*
-    check elasticsearch used in vs and report
+    check elasticsearch used in vs
     */
-   def 'elasticsearch used in vs and report'() {
+   def 'elasticsearch used in vs'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       def paras1 = new HashMap<String, String[]>()
