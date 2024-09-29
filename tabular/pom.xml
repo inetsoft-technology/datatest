@@ -124,8 +124,8 @@
                         --add-opens=java.management/sun.management=ALL-UNNAMED
                     </argLine>
                     <includes>
-                        <include>OData_Spec</include>
-                        <!-- <include>**/*_Spec</include> -->
+                        <!-- <include>OData_Spec</include> -->
+                        <include>**/*_Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
