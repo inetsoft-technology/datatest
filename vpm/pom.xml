@@ -35,6 +35,13 @@
             <scope>system</scope>
             <systemPath>${root.dir}/commons/target/commons-1.0.0-SNAPSHOT-tests.jar</systemPath>
         </dependency>
+        <dependency>
+          <groupId>com.inetsoft.stylebi.connectors</groupId>
+          <artifactId>inetsoft-odata</artifactId>
+          <version>${project.version}</version>
+          <type>zip</type>
+          <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
