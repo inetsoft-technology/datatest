@@ -42,6 +42,13 @@
           <type>zip</type>
           <scope>provided</scope>
         </dependency>
+        <dependency>
+          <groupId>com.inetsoft.stylebi.connectors</groupId>
+          <artifactId>inetsoft-serverfile</artifactId>
+          <version>${project.version}</version>
+          <type>zip</type>
+          <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
