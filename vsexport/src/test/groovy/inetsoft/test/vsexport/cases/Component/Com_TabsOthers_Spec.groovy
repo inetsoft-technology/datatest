@@ -4,7 +4,7 @@ import inetsoft.test.modules.VSExportTest
 import spock.lang.Ignore
 import spock.lang.Specification
 
-class Com_TabsOthers_Specs extends Specification{
+class Com_TabsOthers_Spec extends Specification{
    static VSExportTest vsExportTest
    static String caseName
 
