@@ -79,5 +79,5 @@ class ActionEventsUtil {
    }*/
 
    SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
-    ControllersResource controllersResource = new ControllersResource()
+   ControllersResource controllersResource = new ControllersResource()
 }

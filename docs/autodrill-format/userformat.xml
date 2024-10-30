@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userFormat>
+	 <NumberFormat suffix="十" multiplier="10"/>
+	 <NumberFormat suffix="百" multiplier="100"/>
+	 <NumberFormat suffix="dix" multiplier="10"/>
+  <NumberFormat suffix="dax" multiplier="1000"/>
+	 <NumberFormat suffix="AKMB" multiplier="10"/>
+	 <NumberFormat suffix="个" multiplier="1"/>
+  <NumberFormat suffix="열" multiplier="1"/>
+  <NumberFormat suffix="десять" multiplier="1"/>
+</userFormat>
