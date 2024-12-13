@@ -849,6 +849,246 @@ class Egraph_Spec extends Specification{
       vsScriptTest.compareImage(['TestCase-setProperties_setHints'] as String[])
    }
 
+   /**
+    * test AxisSpec property setting with script
+    */
+   def 'TestCase-AxisSpec' () {
+      given:
+      caseName = specificationContext.currentIteration.name
+      def TestData1 = [[HANDLER: 'Chart1',
+                        COMMAND: 'var date1 = new Date();\n'+
+                                 'var date2 = new Date();\n' +
+                                 'date1.setFullYear(2008,0,1);\n' +
+                                 'date2.setFullYear(2008,10,1);\n' +
+                                 'dataset = [["Date", "Quantity"], [date1,200], [date2,300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("Date", "Quantity");\n' +
+                                 'var tscale = new TimeScale("Date");\n' +
+                                 'var aspec = new AxisSpec();\n' +
+                                 'var tspec = new TextSpec();\n' +
+                                 'tspec.setFormat(java.text.SimpleDateFormat("yyyy-MMM"));\n' +
+                                 'aspec.setTextSpec(tspec);\n' +
+                                 'aspec.setAbbreviate(true);\n' +
+                                 'tscale.setAxisSpec(aspec);\n' +
+                                 'aspec.setAxisStyle(AxisSpec.AXIS_DOUBLE2);\n' +
+                                 'aspec.setGridColor(java.awt.Color(0xff0000));\n' +
+                                 'aspec.setGridStyle(Chart.DASH_LINE);\n' +
+                                 'aspec.setGridOnTop(true);\n' +
+                                 'aspec.setGridAsShape(false);\n' +
+                                 'graph.setScale("Date", tscale);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData2 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State","Quantity"],["NJ",20000],["NY",30000]];\n'+
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var qscale = new LinearScale("Quantity");\n' +
+                                 'var aspec = new AxisSpec();\n' +
+                                 'var textspec = new TextSpec();\n' +
+                                 'qscale.setMax(40000);\n' +
+                                 'aspec.setInPlot(true);\n' +
+                                 'aspec.setLabelGap(30);\n' +
+                                 'textspec.setColor(java.awt.Color(0xff0000));\n' +
+                                 'aspec.setTextSpec(textspec);\n' +
+                                 'aspec.setTickVisible(false);\n' +
+                                 'qscale.setAxisSpec(aspec);\n' +
+                                 'graph.setScale("Quantity", qscale);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData3 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State","Quantity"],["NJ",20000],["NY",30000]];\n'+
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var qscale = new LinearScale("Quantity");\n' +
+                                 'var cscale = new CategoricalScale("State");\n' +
+                                 'var aspec1 = new AxisSpec();\n' +
+                                 'var aspec2 = new AxisSpec();\n' +
+                                 'var tframe = new DefaultTextFrame();\n' +
+                                 'aspec1.setLineColor(java.awt.Color(0xff0000));\n' +
+                                 'aspec2.setLineColor(java.awt.Color(0x00ff00));\n' +
+                                 'aspec1.setLabelVisible(false);\n' +
+                                 'aspec1.setLineVisible(true); \n' +
+                                 'aspec2.setLineVisible(false);\n' +
+                                 'qscale.setAxisSpec(aspec1);\n' +
+                                 'cscale.setAxisSpec(aspec2);\n' +
+                                 'tframe.setText("NJ","New Jersey");\n' +
+                                 'tframe.setText("NY","New York");\n' +
+                                 'aspec2.setTextFrame(tframe);\n' +
+                                 'graph.setScale("Quantity", qscale);\n' +
+                                 'graph.setScale("State", cscale);\n' +
+                                 'graph.addElement(elem);']]
+      when:
+      vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/EGraph1', caseName)
+      vsScriptTest.printVS('grid', TestData1, ['Chart1'] as String[])
+      vsScriptTest.printVS('axisstick', TestData2, ['Chart1'] as String[])
+      vsScriptTest.printVS('axislabel', TestData3, ['Chart1'] as String[])
+      then:
+     vsScriptTest.compareImage(['TestCase-AxisSpec_grid',
+                                'TestCase-AxisSpec_axisstick',
+                                'TestCase-AxisSpec_axislabel',] as String[])
+   }
+
+   /**
+    * test LegendSpec property setting with script
+    */
+   def 'TestCase-LegendSpec' () {
+      given:
+      caseName = specificationContext.currentIteration.name
+      def TestData1 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["New Jersey",200], ["New York",300], ["Pennsylvania",120],\
+                                 ["Connecticut",450], ["New Mexico",200],["Colorado",300], ["Oregon",200],\
+                                 ["Kentucky",300], ["California",100],  ["Alaska",350], ["Alabama",200],\
+                                 ["Kansas",500],  ["Texas",200], ["North Dakota",300], ["Maryland",200],\
+                                 ["Delaware",250],  ["Washington",200], ["Vermont",75]];\n'+
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var frame = new CategoricalColorFrame();\n' +
+                                 'var spec = new LegendSpec();\n' +
+                                 'frame.setField("State");\n' +
+                                 'spec.setBackground(java.awt.Color(0xff00ff));\n' +
+                                 'spec.setBorder(Chart.LARGE_DASH);\n' +
+                                 'spec.setBorderColor(java.awt.Color(0x060f14));\n' +
+                                 'spec.setPosition(java.awt.Point(80,245));\n' +
+                                 'spec.setPreferredSize(java.awt.Dimension(190,100));\n' +
+                                 'frame.setLegendSpec(spec);\n' +
+                                 'elem.setColorFrame(frame);\n' +
+                                 'graph.setLegendLayout(Chart.IN_PLACE);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData2 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["NJ",200], ["NY",300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var frame = new CategoricalColorFrame();\n' +
+                                 'frame.setField("State");\n' +
+                                 'var spec = new LegendSpec();\n' +
+                                 'var tspec = new TextSpec();\n' +
+                                 'tspec.setColor(java.awt.Color(0xff0000));\n' +
+                                 'spec.setTitleTextSpec(tspec);\n' +
+                                 'spec.setTitle("Legend1");\n' +
+                                 'frame.setLegendSpec(spec);\n' +
+                                 'elem.setColorFrame(frame);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData3 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["NJ",200], ["NY",300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var frame = new CategoricalColorFrame();\n' +
+                                 'frame.setField("State");\n' +
+                                 'var spec = new LegendSpec();\n' +
+                                 'var tspec = new TextSpec();\n' +
+                                 'tspec.setColor(java.awt.Color(0xff0000));\n' +
+                                 'spec.setTitleTextSpec(tspec);\n' +
+                                 'spec.setTitle("Legend1");\n' +
+                                 'spec.setTitleVisible(false);\n' +
+                                 'frame.setLegendSpec(spec);\n' +
+                                 'elem.setColorFrame(frame);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData4 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["NJ",200], ["NY",300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var frame = new CategoricalColorFrame();\n' +
+                                 'frame.setField("State");\n' +
+                                 'var spec = new LegendSpec();\n' +
+                                 'var tspec = new TextSpec();\n' +
+                                 'tspec.setColor(java.awt.Color(0xff0000));\n' +
+                                 'spec.setTitleTextSpec(tspec);\n' +
+                                 'spec.setVisible(false);\n' +
+                                 'frame.setLegendSpec(spec);\n' +
+                                 'elem.setColorFrame(frame);\n' +
+                                 'graph.addElement(elem);']]
+      when:
+      vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/EGraph1', caseName)
+      vsScriptTest.printVS('mixed', TestData1, ['Chart1'] as String[])
+      vsScriptTest.printVS('title', TestData2, ['Chart1'] as String[])
+      vsScriptTest.printVS('titlevisible', TestData3, ['Chart1'] as String[])
+      vsScriptTest.printVS('visible', TestData4, ['Chart1'] as String[])
+      then:
+     vsScriptTest.compareImage(['TestCase-LegendSpec_mixed',
+                                'TestCase-LegendSpec_title',
+                                'TestCase-LegendSpec_titlevisible',
+                                'TestCase-LegendSpec_visible'] as String[])
+   }
+
+   /**
+    * test PlotSpec property setting with script
+    */
+   def 'TestCase-PlotSpec' () {
+      given:
+      caseName = specificationContext.currentIteration.name
+      def TestData1 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State","Quantity"], ["NJ",200], ["NY",300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'elem.setHint(GraphElement.HINT_ALPHA,.8);\n' +
+                                 'var sscale = new CategoricalScale("State");\n' +
+                                 'var qscale = new LinearScale("Quantity");\n' +
+                                 'var coord = new RectCoord(sscale,qscale);\n' +
+                                 'var spec = new PlotSpec();\n' +
+                                 'var logo = getImage("https://www.inetsoft.com/images/home/logo.gif");\n' +
+                                 'spec.setBackgroundImage(logo);\n' +
+                                 'spec.setAlpha(.3);\n' +
+                                 'spec.setLockAspect(true);\n' +
+                                 'coord.setPlotSpec(spec);\n' +
+                                 'graph.setCoordinate(coord);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData2 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["NJ", 200], ["NY", 300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var sscale = new CategoricalScale("State");\n' +
+                                 'var qscale = new LinearScale("Quantity");\n' +
+                                 'var coord = new RectCoord(sscale,qscale);\n' +
+                                 'var spec = new PlotSpec();\n' +
+                                 'var form = new LabelForm();\n' +
+                                 'var aspec = new AxisSpec();\n' +
+                                 'var titlespec = new TitleSpec();\n' +
+                                 'var tspec = new TextSpec(); \n' +
+                                 'form.setLabel("label1");\n' +
+                                 'form.setValues(["NY", 100]);\n' +
+                                 'tspec.setBackground(java.awt.Color(0xcccccc)); \n' +
+                                 'spec.setBackground(java.awt.Color(0x0eb70e));\n' +
+                                 'tspec.setColor(java.awt.Color(0xff0000));\n' +
+                                 'form.setTextSpec(tspec); \n' +
+                                 'tspec.setFont(java.awt.Font("Verdana",java.awt.Font.BOLD, 14)); \n' +
+                                 'titlespec.setLabel("X Title");\n' +
+                                 'titlespec.setTextSpec(tspec); \n' +
+                                 'tspec.setFormat(java.text.DecimalFormat("##,###.00"));\n' +
+                                 'tspec.setRotation(45);\n' +
+                                 'aspec.setTextSpec(tspec); \n' +
+                                 'qscale.setAxisSpec(aspec);\n' +
+                                 'coord.setPlotSpec(spec);\n' +
+                                 'graph.setCoordinate(coord);\n' +
+                                 'graph.addForm(form);\n' +
+                                 'graph.setXTitleSpec(titlespec);\n' +
+                                 'graph.addElement(elem);']]
+      def TestData3 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["Q1","Q2"], [300,200], [500,300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var elem = new PointElement("Q1", "Q2");\n' +
+                                 'elem.setHint(GraphElement.HINT_ALPHA,.8);\n' +
+                                 'var sscale = new LinearScale("Q1");\n' +
+                                 'var qscale = new LinearScale("Q2");\n' +
+                                 'var coord = new RectCoord(sscale,qscale);\n' +
+                                 'var spec = new PlotSpec();\n' +
+                                 'var logo = getImage("https://www.inetsoft.com/images/home/logo.gif");\n' +
+                                 'spec.setBackgroundImage(logo);\n' +
+                                 'spec.setYMax(150);\n' +
+                                 'spec.setYMin(100);\n' +
+                                 'spec.setXMax(400);\n' +
+                                 'spec.setXMin(100);\n' +
+                                 'coord.setPlotSpec(spec);\n' +
+                                 'graph.setCoordinate(coord);\n' +
+                                 'graph.addElement(elem);']]
+      when:
+      vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/EGraph1', caseName)
+      vsScriptTest.printVS('backgroundImage1', TestData1, ['Chart1'] as String[])
+      vsScriptTest.printVS('label', TestData2, ['Chart1'] as String[])
+      vsScriptTest.printVS('backgroundImage2', TestData3, ['Chart1'] as String[])
+      then:
+     vsScriptTest.compareImage(['TestCase-PlotSpec_backgroundImage1',
+                                'TestCase-PlotSpec_label',
+                                'TestCase-PlotSpec_backgroundImage2'] as String[])
+   }
+
    static VSScriptTest vsScriptTest
    String caseName
 }
