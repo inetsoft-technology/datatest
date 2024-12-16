@@ -572,6 +572,19 @@ class Egraph_Spec extends Specification{
                                  'var coord = new FacetCoord(outer,inner);\n' +
                                  'graph.setCoordinate(coord);\n' +
                                  'graph.addElement(elem);']]
+      def TestData6 = [[HANDLER: 'Chart1',
+                        COMMAND: 'dataset = [["State", "Quantity"], ["NJ",200], ["NY",-300]];\n' +
+                                 'graph = new EGraph();\n' +
+                                 'var qscale = new LinearScale("Quantity");\n' +
+                                 'var elem = new IntervalElement("State", "Quantity");\n' +
+                                 'var frame = new DefaultTextFrame();\n' +
+                                 'frame.setField("Quantity");\n' +
+                                 'elem.setTextFrame(frame);\n' +
+                                 'var range = new LinearRange();\n' +
+                                 'range.setAbsoluteValue(true);\n' +
+                                 'qscale.setScaleRange(range);\n' +
+                                 'graph.setScale("Quantity", qscale);\n' +
+                                 'graph.addElement(elem);']]
       when:
       vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/EGraph1', caseName)
       vsScriptTest.printVS('Scaleinit', TestData1, ['Chart1'] as String[])
@@ -579,12 +592,14 @@ class Egraph_Spec extends Specification{
       vsScriptTest.printVS('setDataFields', TestData3, ['Chart1'] as String[])
       vsScriptTest.printVS('setScaleOption', TestData4, ['Chart1'] as String[])
       vsScriptTest.printVS('setSharedRange', TestData5, ['Chart1'] as String[])
+      vsScriptTest.printVS('setAbsoluteValue', TestData6, ['Chart1'] as String[])
       then:
       vsScriptTest.compareImage(['TestCase-Scale_Scaleinit',
                                 'TestCase-Scale_setAxisSpec',
                                 'TestCase-Scale_setDataFields',
                                 'TestCase-Scale_setScaleOption',
-                                'TestCase-Scale_setSharedRange'] as String[])
+                                'TestCase-Scale_setSharedRange',
+                                'TestCase-Scale_setAbsoluteValue'] as String[])
    }
 
    /**
@@ -878,12 +893,24 @@ class Egraph_Spec extends Specification{
                                  'graph.setScale("Date", tscale);\n' +
                                  'graph.addElement(elem);']]
       def TestData2 = [[HANDLER: 'Chart1',
-                        COMMAND: 'dataset = [["State","Quantity"],["NJ",20000],["NY",30000]];\n'+
+                        COMMAND: 'dataset = [["State","Quantity"],["NJ",20000],["NY",30000]];\n' +
                                  'graph = new EGraph();\n' +
                                  'var elem = new IntervalElement("State", "Quantity");\n' +
                                  'var qscale = new LinearScale("Quantity");\n' +
                                  'var aspec = new AxisSpec();\n' +
                                  'var textspec = new TextSpec();\n' +
+                                 'var specx = new TitleSpec();\n' +
+                                 'var specx2 = new TitleSpec();\n' +
+                                 'var specy = new TitleSpec();\n' +
+                                 'var specy2 = new TitleSpec();\n' +
+                                 'specx.setLabel("X Title");\n' +
+                                 'specx2.setLabel("X2 Title");\n' +
+                                 'specy.setLabel("Y Title");\n' +
+                                 'specy2.setLabel("Y2 Title");\n' +
+                                 'graph.setXTitleSpec(specx);\n' +
+                                 'graph.setX2TitleSpec(specx2);\n' +
+                                 'graph.setYTitleSpec(specy);\n' +
+                                 'graph.setY2TitleSpec(specy2);\n' +
                                  'qscale.setMax(40000);\n' +
                                  'aspec.setInPlot(true);\n' +
                                  'aspec.setLabelGap(30);\n' +
@@ -918,12 +945,12 @@ class Egraph_Spec extends Specification{
       when:
       vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/EGraph1', caseName)
       vsScriptTest.printVS('grid', TestData1, ['Chart1'] as String[])
-      vsScriptTest.printVS('axisstick', TestData2, ['Chart1'] as String[])
-      vsScriptTest.printVS('axislabel', TestData3, ['Chart1'] as String[])
+      vsScriptTest.printVS('axislabel', TestData2, ['Chart1'] as String[])
+      vsScriptTest.printVS('axisstick', TestData3, ['Chart1'] as String[])
       then:
      vsScriptTest.compareImage(['TestCase-AxisSpec_grid',
-                                'TestCase-AxisSpec_axisstick',
-                                'TestCase-AxisSpec_axislabel',] as String[])
+                                'TestCase-AxisSpec_axislabel',
+                                'TestCase-AxisSpec_axisstick',] as String[])
    }
 
    /**
@@ -960,11 +987,17 @@ class Egraph_Spec extends Specification{
                                  'frame.setField("State");\n' +
                                  'var spec = new LegendSpec();\n' +
                                  'var tspec = new TextSpec();\n' +
+                                 'var tf = new DefaultTextFrame();\n' +
                                  'tspec.setColor(java.awt.Color(0xff0000));\n' +
                                  'spec.setTitleTextSpec(tspec);\n' +
                                  'spec.setTitle("Legend1");\n' +
+                                 'tf.setText("NJ","New Jersey");\n' +
+                                 'tf.setText("NY","New York");\n' +
+                                 'spec.setTextFrame(tf);\n' +
+                                 'spec.setTextSpec(tspec);\n' +
                                  'frame.setLegendSpec(spec);\n' +
                                  'elem.setColorFrame(frame);\n' +
+                                 'graph.setLegendPreferredSize(350);\n' +
                                  'graph.addElement(elem);']]
       def TestData3 = [[HANDLER: 'Chart1',
                         COMMAND: 'dataset = [["State", "Quantity"], ["NJ",200], ["NY",300]];\n' +
