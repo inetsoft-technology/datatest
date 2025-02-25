@@ -180,8 +180,8 @@ class AdditionalDB_Spec extends Specification {
    def 'test user has-no permission to single tabular additional db' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
-      additionalConnectionTest.executeTest('1^2^__NULL__^Multi-Tenant/tabular_ws1', [user0, user1], null)
-      additionalConnectionTest.executeTest('1^128^__NULL__^Multi-Tenant/tabular_vs1', [user0, user1], null)
+      additionalConnectionTest.executeTest('1^2^__NULL__^Multi-Tenant/tabular_ws1', [user1,user0], null)
+      additionalConnectionTest.executeTest('1^128^__NULL__^Multi-Tenant/tabular_vs1', [user1,user0], null)
 
       expect:
       verifyAll{
