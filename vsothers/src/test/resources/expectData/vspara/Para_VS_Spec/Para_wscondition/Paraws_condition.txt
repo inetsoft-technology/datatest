@@ -1,12 +1,5 @@
-The data size(row x col) is:(11 x 5)
+The data size(row x col) is:(4 x 5)
 Employee, Order Number, Company, Order Date, Total
-Annie, 12526, Quick Stop, 2023-01-25 00:00:00, 82902
-Annie, 12529, George Services, 2023-02-01 00:00:00, 80098
-Annie, 12574, Northwest Outfitters, 2023-04-27 00:00:00, 89494
-Annie, 12608, Northwest Outfitters, 2023-06-27 00:00:00, 111202
-Annie, 12638, Specialty Retail, 2023-08-20 00:00:00, 83171
-Annie, 12639, Big Ed's BBQ, 2023-08-24 00:00:00, 87402
 Annie, 12654, Whittaker & Co, Inc, 2023-09-30 00:00:00, 13897
-Eric, 12650, Eastern Data, 2023-09-16 00:00:00, 86729
 Robert, 12652, BigMart Foodstores, 2023-09-24 00:00:00, 45650
 Sue, 12653, Software Specialists, 2023-09-27 00:00:00, 108683
