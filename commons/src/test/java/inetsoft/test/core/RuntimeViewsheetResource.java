@@ -109,7 +109,7 @@ public class RuntimeViewsheetResource extends MockMessageResource {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       CommandDispatcher commandDispatcher = createCommandDispather();
       try {
-         controllersResource.getPlaceholderService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
+         controllersResource.getCoreLifecycleService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
             commandDispatcher, true, true, true, new ChangedAssemblyList(true));
       } catch (Exception e) {
          e.printStackTrace();
