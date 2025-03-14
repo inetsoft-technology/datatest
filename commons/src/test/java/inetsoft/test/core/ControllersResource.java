@@ -58,6 +58,7 @@ import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 import org.mockito.Mockito;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import spock.lang.Shared;
 
 public class ControllersResource extends MockMessageResource {
@@ -138,8 +139,11 @@ public class ControllersResource extends MockMessageResource {
       objectTreeService = new VSObjectTreeService(objectModelFactoryService);
       securityEngine = SecurityEngine.getSecurity();
 
-      coreLifecycleService =  Mockito.mock(CoreLifecycleService.class);
-      SharedFilterService sharedFilterService = Mockito.mock(SharedFilterService.class);
+      VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
+      ParameterService parameterService = new ParameterService(viewsheetService);
+      coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService);
+
+      SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
       bookmarkService = new VSBookmarkService(objectService);
@@ -168,7 +172,6 @@ public class ControllersResource extends MockMessageResource {
       });
 
       VSCompositionService vsCompositionService = Mockito.mock(VSCompositionService.class);
-      ParameterService parameterService = Mockito.mock(ParameterService.class);
       vsLifecycleService = new VSLifecycleService(
             viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
             dataRefModelFactoryService, vsCompositionService, parameterService);
@@ -231,7 +234,6 @@ public class ControllersResource extends MockMessageResource {
          objectModelFactoryService, null, assetRepository, viewsheetService, crosstabDrillHandler, vsassemblyInfoHandler);
       importXLSController = new ImportXLSController(runtimeViewsheetRef, viewsheetService, coreLifecycleService);
 
-      VSLayoutService vsLayoutService = Mockito.mock(VSLayoutService.class);
       importCSVDialogController = new ImportCSVDialogController(vsLayoutService) {
          public String getRuntimeId() {
             return ControllersResource.this.runtimeId;
