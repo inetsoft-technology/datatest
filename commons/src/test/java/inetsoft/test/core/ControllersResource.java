@@ -27,6 +27,7 @@ import inetsoft.web.binding.handler.VSAssemblyInfoHandler;
 import inetsoft.web.binding.model.*;
 import inetsoft.web.binding.service.*;
 import inetsoft.web.composer.vs.VSObjectTreeService;
+import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.WorksheetController;
@@ -57,6 +58,8 @@ import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 import org.mockito.Mockito;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
+import spock.lang.Shared;
 
 public class ControllersResource extends MockMessageResource {
 
@@ -69,7 +72,6 @@ public class ControllersResource extends MockMessageResource {
       vsLifecycleService = null;
       runtimeViewsheetManager = null;
       objectModelFactoryService = null;
-      placeholderService = null;
       viewsheetController = null;
       objectTreeService = null;
       securityEngine = null;
@@ -125,7 +127,6 @@ public class ControllersResource extends MockMessageResource {
             new VSTextInputModel.VSTextInputModelFactory(),
             new VSTextModel.VSTextModelFactory(),
             new VSThermometerModel.VSThermometerModelFactory(),
-            new VSUploadModel.VSUploadModelFactory(),
             new VSViewsheetModel.VSViewsheetModelFactory(),
             new VSAnnotationModel.VSAnnotationModelFactory(),
             new VSCalendarModel.VSCalendarModelFactory(),
@@ -134,13 +135,16 @@ public class ControllersResource extends MockMessageResource {
             new VSTabModel.VSTabModelFactory()
       );
       objectModelFactoryService = new VSObjectModelFactoryService(modelFactories);
-      placeholderService =
-            new PlaceholderService(objectModelFactoryService, getMessagingTemplate(), viewsheetService);
       assetRepository = (AssetRepository) SUtil.getRepletRepository();
       objectTreeService = new VSObjectTreeService(objectModelFactoryService);
       securityEngine = SecurityEngine.getSecurity();
 
-      objectService = new VSObjectService(placeholderService, viewsheetService, securityEngine);
+      VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
+      ParameterService parameterService = new ParameterService(viewsheetService);
+      coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService);
+      SharedFilterService sharedFilterService = new SharedFilterService
+      objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
+
       bookmarkService = new VSBookmarkService(objectService);
       List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
             new AggregateRefModel.AggregateRefModelFactory(),
@@ -166,9 +170,10 @@ public class ControllersResource extends MockMessageResource {
          }
       });
 
+      VSCompositionService vsCompositionService = Mockito.mock(VSCompositionService.class);
       vsLifecycleService = new VSLifecycleService(
-            viewsheetService, assetRepository, placeholderService, bookmarkService,
-            dataRefModelFactoryService);
+            viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
+            dataRefModelFactoryService, vsCompositionService, parameterService);
       viewsheetController = new ViewsheetController(
             runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService);
       licenseService = new LicenseService();
@@ -203,11 +208,11 @@ public class ControllersResource extends MockMessageResource {
       };
 
       baseTableLoadDataController =
-            new BaseTableLoadDataController(runtimeViewsheetRef, placeholderService, viewsheetService);
-      maxModeAssemblyService = new MaxModeAssemblyService(placeholderService);
-      selectionService = new VSSelectionService(placeholderService, viewsheetService, maxModeAssemblyService);
+            new BaseTableLoadDataController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
+      maxModeAssemblyService = new MaxModeAssemblyService(coreLifecycleService);
+      selectionService = new VSSelectionService(coreLifecycleService, viewsheetService, maxModeAssemblyService, sharedFilterService);
       imageService = new AssemblyImageService(viewsheetService);
-      vsExportService = new VSExportService(viewsheetService, placeholderService);
+      vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
 
       securityProvider = SecurityEngine.getSecurity().getSecurityProvider();
       resourcePermissionService = new ResourcePermissionService(securityProvider, SecurityEngine.getSecurity());
@@ -222,12 +227,13 @@ public class ControllersResource extends MockMessageResource {
       }
 
       deployService = new DeployService(contentRepositoryTreeService,  SecurityEngine.getSecurity());
-      vsassemblyInfoHandler = new VSAssemblyInfoHandler(placeholderService, dataRefModelFactoryService);
-      crosstabDrillHandler = new CrosstabDrillHandler(viewsheetService, placeholderService, runtimeViewsheetRef);
-      composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, placeholderService, objectTreeService,
+      vsassemblyInfoHandler = new VSAssemblyInfoHandler(coreLifecycleService, dataRefModelFactoryService, parameterService);
+      crosstabDrillHandler = new CrosstabDrillHandler(viewsheetService, coreLifecycleService, runtimeViewsheetRef);
+      composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, coreLifecycleService, objectTreeService,
          objectModelFactoryService, null, assetRepository, viewsheetService, crosstabDrillHandler, vsassemblyInfoHandler);
-      importXLSController = new ImportXLSController(runtimeViewsheetRef, viewsheetService, placeholderService);
-      importCSVDialogController = new ImportCSVDialogController(placeholderService) {
+      importXLSController = new ImportXLSController(runtimeViewsheetRef, viewsheetService, coreLifecycleService);
+
+      importCSVDialogController = new ImportCSVDialogController(vsLayoutService) {
          public String getRuntimeId() {
             return ControllersResource.this.runtimeId;
          }
@@ -240,8 +246,8 @@ public class ControllersResource extends MockMessageResource {
             return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
          }
       };
-      vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, placeholderService, viewsheetService);
-      vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, placeholderService, viewsheetService);
+      vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
+      vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
 
       fileApiService = new FileApiService(deployService, contentRepositoryTreeService);
 
@@ -259,10 +265,6 @@ public class ControllersResource extends MockMessageResource {
 
    public ViewsheetService getViewsheetService() {
       return viewsheetService;
-   }
-
-   public PlaceholderService getPlaceholderService() {
-      return placeholderService;
    }
 
    public OpenViewsheetController getOpenViewsheetController() {
@@ -284,9 +286,10 @@ public class ControllersResource extends MockMessageResource {
    public VSChartShowDetailsController getVSChartShowDetailsController() { return vschartShowDetailsController; }
 
    public VSChartBrushController getVSChartBrushController() { return vschartBrushController; }
-      public FileApiService getFileApiService() { return fileApiService; }
 
+   public FileApiService getFileApiService() { return fileApiService; }
    public DatabaseDatasourcesController getDatabaseDatasourcesController() { return databaseDatasourcesController; }
+   public CoreLifecycleService getCoreLifecycleService() { return coreLifecycleService; }
 
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
@@ -295,7 +298,6 @@ public class ControllersResource extends MockMessageResource {
    private VSLifecycleService vsLifecycleService;
    private RuntimeViewsheetManager runtimeViewsheetManager;
    private VSObjectModelFactoryService objectModelFactoryService;
-   private PlaceholderService placeholderService;
    private ViewsheetController viewsheetController;
    private WorksheetController worksheetController;
    private VSObjectTreeService objectTreeService;
@@ -330,4 +332,5 @@ public class ControllersResource extends MockMessageResource {
    private FileApiService fileApiService;
 
    private DatabaseDatasourcesController databaseDatasourcesController;
+   private CoreLifecycleService coreLifecycleService;
 }
