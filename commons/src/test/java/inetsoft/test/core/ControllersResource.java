@@ -142,7 +142,7 @@ public class ControllersResource extends MockMessageResource {
       VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
       ParameterService parameterService = new ParameterService(viewsheetService);
       coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService);
-      SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService)
+      SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
       bookmarkService = new VSBookmarkService(objectService);
