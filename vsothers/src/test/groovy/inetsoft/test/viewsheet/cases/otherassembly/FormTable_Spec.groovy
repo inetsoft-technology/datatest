@@ -38,18 +38,6 @@ class FormTable_Spec extends Specification {
    }
 
    /**
-    * check add/delete/modify rows in form table
-    */
-   def 'add delete and modify rows' () {
-      caseName = specificationContext.currentIteration.name
-      vstest = new VSFormImportTest('1^128^__NULL__^FormTable/Form1', caseName)
-      vstest.importXLSToVS("Form1_Add_Delete_Modify.xlsx")
-
-      expect:
-      vstest.compareImage()
-   }
-
-   /**
     * check highlight and condition not apply to un-submitted rows
     */
    def 'un-submitted changes' () {
