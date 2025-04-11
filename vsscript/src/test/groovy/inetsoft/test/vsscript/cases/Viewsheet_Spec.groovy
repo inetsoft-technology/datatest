@@ -61,10 +61,15 @@ class Viewsheet_Spec extends Specification {
    def 'TestCase-VS_embedded' () {
       given:
       caseName = specificationContext.currentIteration.name
+      def TestData1 = [[HANDLER: 'ONINIT', COMMAND: 'Viewsheet1.visible = false\n' +
+              'Viewsheet1.thisParameter.pId = 20']]
+      def TestData2 = [[HANDLER: 'ONREFRESH', COMMAND: 'Viewsheet1.visible = false\n' +
+              'Viewsheet1.thisParameter.pId = 20']]
 
       when:
       vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/VS_Self/VS_embedded', caseName)
-      vsScriptTest.printVS(null, null)
+      vsScriptTest.printVS('onInit', TestData1,null)
+      vsScriptTest.printVS('onRefresh', TestData2, null)
       then:
       vsScriptTest.compareImage()
    }
