@@ -9,7 +9,7 @@ import spock.lang.Stepwise
 import spock.lang.Title
 
 //@IgnoreIf({ System.getProperty("os.name").toLowerCase().contains("linux") })
-@Title("Use to test in range condition on a fixed time(2025-02-15 00;00:00), it only be execute on Windows")
+@Title("Use to test in range condition on a fixed time(2025-02-15 00;00:00) and change timezone to UTC+00:00) it only be execute on Windows")
 @IgnoreIf({ os.linux })
 @Stepwise
 class InRange_Spec extends Specification {
