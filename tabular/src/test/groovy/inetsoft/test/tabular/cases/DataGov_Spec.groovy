@@ -8,6 +8,7 @@ class DataGov_Spec extends Specification{
    static String caseName
    static GlobalTest globalTest
 
+   @IgnoreRest
    def setupSpec() {
       GlobalTest.initHome(this.class.getName())
    }
