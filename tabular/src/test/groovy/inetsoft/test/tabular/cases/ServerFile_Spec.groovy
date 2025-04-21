@@ -4,7 +4,7 @@ import inetsoft.test.modules.GlobalTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 
-@Ignore /*Bug #69459*/
+
 class ServerFile_Spec extends Specification{
    static String caseName
    static GlobalTest globalTest

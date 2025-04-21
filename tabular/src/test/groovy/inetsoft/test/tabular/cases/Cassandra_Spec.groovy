@@ -4,6 +4,7 @@ import inetsoft.test.modules.GlobalTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 
+@IgnoreRest("datasource can't link")
 class Cassandra_Spec extends Specification{
    static String caseName
    static GlobalTest globalTest
