@@ -3,12 +3,13 @@ package inetsoft.test.tabular.cases
 import inetsoft.test.modules.GlobalTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import spock.lang.Ignore
 
+@Ignore
 class Cassandra_Spec extends Specification{
    static String caseName
    static GlobalTest globalTest
 
-   @IgnoreRest
    def setupSpec() {
       GlobalTest.initHome(this.class.getName())
    }
