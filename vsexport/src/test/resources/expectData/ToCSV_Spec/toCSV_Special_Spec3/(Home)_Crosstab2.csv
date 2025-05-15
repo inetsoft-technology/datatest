@@ -1,6 +1,6 @@
-"Year(orderdate)","QuarterOfYear(orderdate)","","false","true"
-"1997","3rd",,,"4"
-"1997","4th",,"2","1"
-"1998","",,"113","93"
-"1999","",,"243","104"
-"2000","","2","246","234"
+Year(orderdate),QuarterOfYear(orderdate),,false,true
+1997,3rd,,,4
+1997,4th,,2,1
+1998,,,113,93
+1999,,,243,104
+2000,,2,246,234
