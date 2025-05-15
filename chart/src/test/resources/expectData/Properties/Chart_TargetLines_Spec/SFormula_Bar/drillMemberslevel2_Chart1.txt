@@ -1,5 +1,7 @@
 The data size(row x col) is:(10 x 7)
 RESELLER, numberrange, STATE, CITY, ZIP, Sum(formula_ws), Sum(CalcField1)
+true, 10-20, NY, New York, 28122, 2601, 34
+true, 10-20, TX, Austin, 32343, 1089, 22
 true, <10, NY, New York, 03887, 81, 3
 true, <10, NY, New York, 08854, 441, 7
 true, >=20, AZ, Tucson, 11234, 3600, 40
@@ -7,5 +9,3 @@ true, >=20, NY, New York, 27834, 5184, 24
 true, >=20, TX, Dallas, 23123, 6084, 52
 true, >=20, TX, Dallas, 48374, 8649, 62
 true, >=20, TX, Houston, 23421, 4356, 44
-true, 10-20, NY, New York, 28122, 2601, 34
-true, 10-20, TX, Austin, 32343, 1089, 22

@@ -1,4 +1,4 @@
-The data size(row x col) is:(53 x 6)
+The data size(row x col) is:(105 x 6)
 reseller, state, Year(orderdate), Sum(product_id), Sum(customer_id), Change from first: Sum(customer_id)
 NULL, NY, NULL, 9, NULL, 0
 false, AK, NULL, 164, NULL, 0
@@ -52,3 +52,55 @@ true, TX, 1997-01-01 00:00:00, NULL, 3, 3
 true, TX, 1998-01-01 00:00:00, NULL, 20, 20
 true, TX, 1999-01-01 00:00:00, NULL, 3, 3
 true, TX, 2000-01-01 00:00:00, NULL, 24, 24
+NULL, NY, NULL, 9, NULL, 0
+NULL, NY, 2000-01-01 00:00:00, NULL, 2, 0
+false, AK, NULL, 164, NULL, 0
+false, AK, 1998-01-01 00:00:00, NULL, 5, 0
+false, AK, 1999-01-01 00:00:00, NULL, 56, 0
+false, AK, 2000-01-01 00:00:00, NULL, 85, 0
+false, CA, NULL, 70, NULL, 0
+false, CA, 1998-01-01 00:00:00, NULL, 8, 3
+false, CA, 2000-01-01 00:00:00, NULL, 24, -61
+false, FL, NULL, 24, NULL, 0
+false, FL, 1998-01-01 00:00:00, NULL, 16, 11
+false, FL, 1999-01-01 00:00:00, NULL, 50, -6
+false, NJ, NULL, 158, NULL, 0
+false, NJ, 1997-01-01 00:00:00, NULL, 2, 2
+false, NJ, 1998-01-01 00:00:00, NULL, 16, 11
+false, NJ, 1999-01-01 00:00:00, NULL, 9, -47
+false, NJ, 2000-01-01 00:00:00, NULL, 41, -44
+false, NY, NULL, 102, NULL, 0
+false, NY, 1998-01-01 00:00:00, NULL, 52, 47
+false, NY, 1999-01-01 00:00:00, NULL, 86, 30
+false, NY, 2000-01-01 00:00:00, NULL, 26, -59
+false, OH, NULL, 53, NULL, 0
+false, OH, 1999-01-01 00:00:00, NULL, 22, -34
+false, OH, 2000-01-01 00:00:00, NULL, 22, -63
+false, PA, NULL, 196, NULL, 0
+false, PA, 1998-01-01 00:00:00, NULL, 16, 11
+false, PA, 1999-01-01 00:00:00, NULL, 20, -36
+false, PA, 2000-01-01 00:00:00, NULL, 48, -37
+true, CA, NULL, 90, NULL, 0
+true, CA, 1998-01-01 00:00:00, NULL, 10, 0
+true, CA, 1999-01-01 00:00:00, NULL, 62, 0
+true, CA, 2000-01-01 00:00:00, NULL, 96, 0
+true, I, NULL, 80, NULL, 0
+true, I, 1998-01-01 00:00:00, NULL, 36, 26
+true, I, 1999-01-01 00:00:00, NULL, 18, -44
+true, I, 2000-01-01 00:00:00, NULL, 27, -69
+true, IL, NULL, 38, NULL, 0
+true, IL, 1998-01-01 00:00:00, NULL, 6, -4
+true, IL, 1999-01-01 00:00:00, NULL, 18, -44
+true, IL, 2000-01-01 00:00:00, NULL, 24, -72
+true, NY, NULL, 96, NULL, 0
+true, NY, 1997-01-01 00:00:00, NULL, 2, 2
+true, NY, 1998-01-01 00:00:00, NULL, 2, -8
+true, NY, 1999-01-01 00:00:00, NULL, 3, -59
+true, NY, 2000-01-01 00:00:00, NULL, 63, -33
+true, PA, NULL, 8, NULL, 0
+true, PA, 1998-01-01 00:00:00, NULL, 19, 9
+true, TX, NULL, 139, NULL, 0
+true, TX, 1997-01-01 00:00:00, NULL, 3, 3
+true, TX, 1998-01-01 00:00:00, NULL, 20, 10
+true, TX, 1999-01-01 00:00:00, NULL, 3, -59
+true, TX, 2000-01-01 00:00:00, NULL, 24, -72

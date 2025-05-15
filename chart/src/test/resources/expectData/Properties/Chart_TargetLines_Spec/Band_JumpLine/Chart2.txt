@@ -1,11 +1,11 @@
 The data size(row x col) is:(10 x 6)
 state, city, Sum(customer_id), Moving Sum of 2: Sum(customer_id), Moving Max of 2: Sum(customer_id), Moving Average of 2: Sum(customer_id)
 AK, Little Rock, 96, NULL, 96, 96
-AK, Sevilla, 50, NULL, 50, 50
+AK, Sevilla, 50, NULL, 50, 73
 CA, Los Angles, 70, NULL, 70, 70
-CA, San Francisco, 32, 98, 98, 32
-CA, San Jose, 98, 32, 98, 65
+CA, San Francisco, 32, 168, 98, 51
+CA, San Jose, 98, NULL, 98, 65
 NY, Boomtown, 60, NULL, 60, 60
-NY, Littletown, 12, 60, 60, 12
-NY, Long Island, 60, 12, 60, 36
-NY, New York, 104, NULL, 104, 104
+NY, Littletown, 12, 120, 60, 36
+NY, Long Island, 60, 116, 104, 36
+NY, New York, 104, NULL, 104, 82

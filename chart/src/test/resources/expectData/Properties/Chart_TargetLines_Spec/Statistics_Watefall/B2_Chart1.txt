@@ -1,18 +1,19 @@
-The data size(row x col) is:(17 x 5)
-RESELLER, CalcField1, numrange, Sum(formula), __sum__% of subtotal: Sum(formula)
-false, CA, <10, 53730, NULL
-false, CA, 10-20, 600615, NULL
-false, IL, <10, 79509, NULL
-false, NJ, <10, 668694, NULL
-true, CA, <10, 46566, NULL
-true, CA, 10-20, 520533, NULL
-true, FL, 10-20, 35820, NULL
-true, NJ, <10, 2417586, NULL
-true, NY, <10, 1247946, NULL
-true, NY, 10-20, 1398618, NULL
-true, NY, 20-30, 609912, NULL
-true, PA, <10, 742170, NULL
-true, PA, 10-20, 16368, NULL
-true, TX, <10, 313905, NULL
-true, TX, 10-20, 31875, NULL
-true, Total, 10-20, NULL, NULL
+The data size(row x col) is:(18 x 6)
+RESELLER, CalcField1, numrange, Sum(formula), % of subtotal: Sum(formula), __sum__% of subtotal: Sum(formula)
+false, CA, 10-20, 600615, 0.4282, NULL
+false, CA, <10, 53730, 0.0383, NULL
+false, IL, <10, 79509, 0.0567, NULL
+false, NJ, <10, 668694, 0.4768, NULL
+false, Total, <10, NULL, NULL, 1
+true, CA, 10-20, 520533, 0.0705, NULL
+true, CA, <10, 46566, 0.0063, NULL
+true, FL, 10-20, 35820, 0.0049, NULL
+true, NJ, <10, 2417586, 0.3275, NULL
+true, NY, 10-20, 1398618, 0.1895, NULL
+true, NY, 20-30, 609912, 0.0826, NULL
+true, NY, <10, 1247946, 0.1691, NULL
+true, PA, 10-20, 16368, 0.0022, NULL
+true, PA, <10, 742170, 0.1005, NULL
+true, TX, 10-20, 31875, 0.0043, NULL
+true, TX, <10, 313905, 0.0425, NULL
+true, Total, <10, NULL, NULL, 1

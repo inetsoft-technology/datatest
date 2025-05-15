@@ -1,74 +1,74 @@
 The data size(row x col) is:(73 x 6)
 Year(Date), Region, State, City, Sum(Total), % of total: Sum(Total)
-2017-01-01 00:00:00, USA East, MA, Springfield, 105354, 0.006
 2017-01-01 00:00:00, USA East, MA, Others, 548018, 0.031
-2017-01-01 00:00:00, USA East, Others, Others, 651826, 0.0369
-2017-01-01 00:00:00, USA East, Others, Camden, 25911, 0.0015
-2017-01-01 00:00:00, USA East, Others, New York, 589430, 0.0334
-2017-01-01 00:00:00, USA East, Others, Orlando, 83050, 0.0047
-2017-01-01 00:00:00, USA East, Others, Hartford, 58670, 0.0033
-2017-01-01 00:00:00, USA East, Others, Rockville, 60632, 0.0034
-2017-01-01 00:00:00, USA East, Others, York, 133101, 0.0075
-2017-01-01 00:00:00, USA West, Others, Boulder, 70763, 0.004
-2017-01-01 00:00:00, USA West, Others, Tucson, 190756, 0.0108
-2017-01-01 00:00:00, USA West, Others, Olympia, 142578, 0.0081
-2017-01-01 00:00:00, USA West, Others, Albany, 12761, 0.0007
-2017-01-01 00:00:00, USA West, Others, Las Vegas, 18354, 0.001
-2017-01-01 00:00:00, USA West, Others, Others, 633750, 0.0359
-2017-01-01 00:00:00, USA West, Others, Chicago, 149017, 0.0084
-2017-01-01 00:00:00, USA West, TX, Houston, 9587, 0.0005
-2017-01-01 00:00:00, USA West, TX, Others, 444265, 0.0252
+2017-01-01 00:00:00, USA East, MA, Springfield, 105354, 0.006
 2018-01-01 00:00:00, USA East, NJ, Middletown, 123180, 0.007
 2018-01-01 00:00:00, USA East, NJ, Others, 1039215, 0.0589
-2018-01-01 00:00:00, USA East, Others, Others, 528269, 0.0299
-2018-01-01 00:00:00, USA East, Others, Rockville, 162759, 0.0092
+2019-01-01 00:00:00, USA East, NJ, Others, 884003, 0.0501
+2019-01-01 00:00:00, USA East, NJ, Plainfield, 98208, 0.0056
+2020-01-01 00:00:00, USA East, NJ, New Brunswick, 83429, 0.0047
+2020-01-01 00:00:00, USA East, NJ, Others, 570337, 0.0323
+2017-01-01 00:00:00, USA East, Others, Camden, 25911, 0.0015
+2017-01-01 00:00:00, USA East, Others, Hartford, 58670, 0.0033
+2017-01-01 00:00:00, USA East, Others, New York, 589430, 0.0334
+2017-01-01 00:00:00, USA East, Others, Orlando, 83050, 0.0047
+2017-01-01 00:00:00, USA East, Others, Others, 651826, 0.0369
+2017-01-01 00:00:00, USA East, Others, Rockville, 60632, 0.0034
+2017-01-01 00:00:00, USA East, Others, York, 133101, 0.0075
 2018-01-01 00:00:00, USA East, Others, Boston, 50609, 0.0029
 2018-01-01 00:00:00, USA East, Others, Hartford, 19226, 0.0011
 2018-01-01 00:00:00, USA East, Others, New York, 830219, 0.047
 2018-01-01 00:00:00, USA East, Others, Orlando, 148791, 0.0084
+2018-01-01 00:00:00, USA East, Others, Others, 528269, 0.0299
+2018-01-01 00:00:00, USA East, Others, Rockville, 162759, 0.0092
 2018-01-01 00:00:00, USA East, Others, York, 172626, 0.0098
-2018-01-01 00:00:00, USA West, CA, Albany, 64380, 0.0036
-2018-01-01 00:00:00, USA West, CA, Others, 410286, 0.0232
-2018-01-01 00:00:00, USA West, Others, Seattle, 85274, 0.0048
-2018-01-01 00:00:00, USA West, Others, Chicago, 76132, 0.0043
-2018-01-01 00:00:00, USA West, Others, Austin, 75726, 0.0043
-2018-01-01 00:00:00, USA West, Others, Las Vegas, 131448, 0.0074
-2018-01-01 00:00:00, USA West, Others, Boulder, 111075, 0.0063
-2018-01-01 00:00:00, USA West, Others, Others, 563874, 0.0319
-2018-01-01 00:00:00, USA West, Others, Tucson, 56137, 0.0032
-2019-01-01 00:00:00, USA East, NJ, Plainfield, 98208, 0.0056
-2019-01-01 00:00:00, USA East, NJ, Others, 884003, 0.0501
+2019-01-01 00:00:00, USA East, Others, Baltimore, 184316, 0.0104
+2019-01-01 00:00:00, USA East, Others, Cambridge, 27193, 0.0015
+2019-01-01 00:00:00, USA East, Others, Hartford, 44963, 0.0025
+2019-01-01 00:00:00, USA East, Others, New York, 549127, 0.0311
 2019-01-01 00:00:00, USA East, Others, Orlando, 63038, 0.0036
 2019-01-01 00:00:00, USA East, Others, Others, 725443, 0.0411
-2019-01-01 00:00:00, USA East, Others, Hartford, 44963, 0.0025
-2019-01-01 00:00:00, USA East, Others, Cambridge, 27193, 0.0015
-2019-01-01 00:00:00, USA East, Others, Baltimore, 184316, 0.0104
 2019-01-01 00:00:00, USA East, Others, York, 52430, 0.003
-2019-01-01 00:00:00, USA East, Others, New York, 549127, 0.0311
-2019-01-01 00:00:00, USA West, Others, Denver, 38113, 0.0022
-2019-01-01 00:00:00, USA West, Others, Albany, 63010, 0.0036
-2019-01-01 00:00:00, USA West, Others, Chicago, 212837, 0.0121
-2019-01-01 00:00:00, USA West, Others, Seattle, 7349, 0.0004
-2019-01-01 00:00:00, USA West, Others, Others, 553148, 0.0313
-2019-01-01 00:00:00, USA West, Others, Las Vegas, 147157, 0.0083
-2019-01-01 00:00:00, USA West, Others, Tucson, 63706, 0.0036
-2019-01-01 00:00:00, USA West, TX, Austin, 212339, 0.012
-2019-01-01 00:00:00, USA West, TX, Others, 526115, 0.0298
-2020-01-01 00:00:00, USA East, NJ, New Brunswick, 83429, 0.0047
-2020-01-01 00:00:00, USA East, NJ, Others, 570337, 0.0323
-2020-01-01 00:00:00, USA East, Others, Rockville, 64616, 0.0037
 2020-01-01 00:00:00, USA East, Others, Cambridge, 47134, 0.0027
+2020-01-01 00:00:00, USA East, Others, Hartford, 39458, 0.0022
 2020-01-01 00:00:00, USA East, Others, New York, 499210, 0.0283
 2020-01-01 00:00:00, USA East, Others, Orlando, 95762, 0.0054
-2020-01-01 00:00:00, USA East, Others, Hartford, 39458, 0.0022
 2020-01-01 00:00:00, USA East, Others, Others, 874747, 0.0495
+2020-01-01 00:00:00, USA East, Others, Rockville, 64616, 0.0037
 2020-01-01 00:00:00, USA East, Others, York, 68379, 0.0039
-2020-01-01 00:00:00, USA West, Others, Chicago, 121515, 0.0069
-2020-01-01 00:00:00, USA West, Others, Seattle, 33943, 0.0019
-2020-01-01 00:00:00, USA West, Others, Tucson, 157499, 0.0089
-2020-01-01 00:00:00, USA West, Others, Others, 813312, 0.0461
+2018-01-01 00:00:00, USA West, CA, Albany, 64380, 0.0036
+2018-01-01 00:00:00, USA West, CA, Others, 410286, 0.0232
+2017-01-01 00:00:00, USA West, Others, Albany, 12761, 0.0007
+2017-01-01 00:00:00, USA West, Others, Boulder, 70763, 0.004
+2017-01-01 00:00:00, USA West, Others, Chicago, 149017, 0.0084
+2017-01-01 00:00:00, USA West, Others, Las Vegas, 18354, 0.001
+2017-01-01 00:00:00, USA West, Others, Olympia, 142578, 0.0081
+2017-01-01 00:00:00, USA West, Others, Others, 633750, 0.0359
+2017-01-01 00:00:00, USA West, Others, Tucson, 190756, 0.0108
+2018-01-01 00:00:00, USA West, Others, Austin, 75726, 0.0043
+2018-01-01 00:00:00, USA West, Others, Boulder, 111075, 0.0063
+2018-01-01 00:00:00, USA West, Others, Chicago, 76132, 0.0043
+2018-01-01 00:00:00, USA West, Others, Las Vegas, 131448, 0.0074
+2018-01-01 00:00:00, USA West, Others, Others, 563874, 0.0319
+2018-01-01 00:00:00, USA West, Others, Seattle, 85274, 0.0048
+2018-01-01 00:00:00, USA West, Others, Tucson, 56137, 0.0032
+2019-01-01 00:00:00, USA West, Others, Albany, 63010, 0.0036
+2019-01-01 00:00:00, USA West, Others, Chicago, 212837, 0.0121
+2019-01-01 00:00:00, USA West, Others, Denver, 38113, 0.0022
+2019-01-01 00:00:00, USA West, Others, Las Vegas, 147157, 0.0083
+2019-01-01 00:00:00, USA West, Others, Others, 553148, 0.0313
+2019-01-01 00:00:00, USA West, Others, Seattle, 7349, 0.0004
+2019-01-01 00:00:00, USA West, Others, Tucson, 63706, 0.0036
 2020-01-01 00:00:00, USA West, Others, Albany, 62143, 0.0035
 2020-01-01 00:00:00, USA West, Others, Boulder, 88040, 0.005
+2020-01-01 00:00:00, USA West, Others, Chicago, 121515, 0.0069
 2020-01-01 00:00:00, USA West, Others, Las Vegas, 100661, 0.0057
+2020-01-01 00:00:00, USA West, Others, Others, 813312, 0.0461
+2020-01-01 00:00:00, USA West, Others, Seattle, 33943, 0.0019
+2020-01-01 00:00:00, USA West, Others, Tucson, 157499, 0.0089
+2017-01-01 00:00:00, USA West, TX, Houston, 9587, 0.0005
+2017-01-01 00:00:00, USA West, TX, Others, 444265, 0.0252
+2019-01-01 00:00:00, USA West, TX, Austin, 212339, 0.012
+2019-01-01 00:00:00, USA West, TX, Others, 526115, 0.0298
 2020-01-01 00:00:00, USA West, TX, Houston, 234180, 0.0133
 2020-01-01 00:00:00, USA West, TX, Others, 672945, 0.0381
