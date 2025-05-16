@@ -4,8 +4,8 @@ Quarter, P_Name, NULL, PRICE/PID
 1st, MeToo AppServer, PID, 12
 1st, NetStorage, PRICE, 2850
 1st, NetStorage, PID, 25
-1st, Xconnect Server_test, PRICE, 2250
-1st, Xconnect Server_test, PID, 1
+1st, Xconnect Server, PRICE, 2250
+1st, Xconnect Server, PID, 1
 4th, WebCalendar, PRICE, 248
 4th, WebCalendar, PID, 8
 4th, Fast Go Game, PRICE, 200

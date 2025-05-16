@@ -4,8 +4,8 @@ Quarter, MonthOfYear(PRODUCE_DATE), DayOfMonth(PRODUCE_DATE), PRODUCT_NAME, NULL
 1st, Jan, 1, MeToo AppServer, Sum(PRODUCT_ID), 12
 1st, Jan, 1, NetStorage, PRICE, 2850
 1st, Jan, 1, NetStorage, Sum(PRODUCT_ID), 25
-1st, Jan, 1, Xconnect Server_test, PRICE, 2250
-1st, Jan, 1, Xconnect Server_test, Sum(PRODUCT_ID), 1
+1st, Jan, 1, Xconnect Server, PRICE, 2250
+1st, Jan, 1, Xconnect Server, Sum(PRODUCT_ID), 1
 4th, NULL, NULL, WebCalendar, PRICE, 248
 4th, NULL, NULL, WebCalendar, Sum(PRODUCT_ID), 8
 4th, NULL, NULL, Fast Go Game, PRICE, 200
