@@ -1,123 +1,96 @@
 import csv
 import random
-from datetime import datetime, timedelta, time
-from dateutil.relativedelta import relativedelta
+from datetime import datetime, timedelta, date, time
+import calendar
 
 
-def get_boundary_dates(current_date):
-    """生成所有时间边界日期"""
+def generate_time_boundaries():
+    base_date = datetime(2025, 2, 15)
     boundaries = []
 
-    # 年相关
-    boundaries.append(('Last year', current_date - relativedelta(years=1)))
-    boundaries.append(('This year', current_date.replace(month=1, day=1)))
+    def add_boundary(name, dt):
+        boundaries.append(dt.replace(hour=0, minute=0, second=0))
+        boundaries.append(dt.replace(hour=23, minute=59, second=59))
 
-    # 季度相关
-    current_quarter = (current_date.month - 1) // 3 + 1
-    boundaries.append(('This quarter', datetime(current_date.year, 3 * (current_quarter - 1) + 1, 1)))
-    boundaries.append(('Last quarter', (current_date - relativedelta(months=3)).replace(day=1)))
+    # Year boundaries
+    add_boundary("Last year", base_date - timedelta(days=365))
+    add_boundary("This year", base_date.replace(month=1, day=1))
 
-    # 季度历史数据
-    for q in range(1, 5):
-        boundaries.append((f'{q}st quarter this year', datetime(current_date.year, 3 * (q - 1) + 1, 1)))
-        boundaries.append((f'{q}st quarter last year', datetime(current_date.year - 1, 3 * (q - 1) + 1, 1)))
+    # Quarter boundaries
+    quarters = [
+        (1, (1, 3)), (2, (4, 6)), (3, (7, 9)), (4, (10, 12))
+    ]
+    for q, months in quarters:
+        add_boundary(f"{q}st quarter this year", datetime(2025, months[0], 1))
+        add_boundary(f"{q}st quarter last year", datetime(2024, months[0], 1))
 
-    # 半年相关
-    boundaries.append(('1st half of this year', datetime(current_date.year, 1, 1)))
-    boundaries.append(('2nd half of this year', datetime(current_date.year, 7, 1)))
-    boundaries.append(('1st half of last year', datetime(current_date.year - 1, 1, 1)))
-    boundaries.append(('2nd half of last year', datetime(current_date.year - 1, 7, 1)))
+    # Half year boundaries
+    add_boundary("1st half this year", datetime(2025, 1, 1))
+    add_boundary("2nd half this year", datetime(2025, 7, 1))
+    add_boundary("1st half last year", datetime(2024, 1, 1))
+    add_boundary("2nd half last year", datetime(2024, 7, 1))
 
-    # 月相关
-    boundaries.append(('This month', current_date.replace(day=1)))
-    boundaries.append(('Last month', (current_date.replace(day=1) - timedelta(days=1)).replace(day=1)))
+    # Month boundaries
+    for month in range(1, 13):
+        add_boundary(f"This {calendar.month_name[month]}", datetime(2025, month, 1))
+        add_boundary(f"Last {calendar.month_name[month]}", datetime(2024, month, 1))
 
-    # 月份历史数据
-    for m in range(1, 13):
-        boundaries.append((f'This {datetime(1900, m, 1).strftime("%B")}', datetime(current_date.year, m, 1)))
-        boundaries.append((f'Last {datetime(1900, m, 1).strftime("%B")}', datetime(current_date.year - 1, m, 1)))
+    # Week/day boundaries
+    add_boundary("This week", base_date - timedelta(days=base_date.weekday()))
+    add_boundary("Last week", base_date - timedelta(days=base_date.weekday() + 7))
+    add_boundary("Today", base_date)
+    add_boundary("Tomorrow", base_date + timedelta(days=1))
+    add_boundary("Yesterday", base_date - timedelta(days=1))
 
-    # 时间范围
+    # Date ranges
     for months in [1, 3, 6, 12, 18, 24, 36, 48, 60, 72, 84, 96, 108, 120]:
-        boundaries.append((f'Last {months} months', current_date - relativedelta(months=months)))
-
-    # 周相关
-    boundaries.append(('This week', current_date - timedelta(days=current_date.weekday())))
-    boundaries.append(('Last week', current_date - timedelta(days=current_date.weekday() + 7)))
-    boundaries.append(('Week before last week', current_date - timedelta(days=current_date.weekday() + 14)))
-    boundaries.append(('Last 4 weeks', current_date - timedelta(weeks=4)))
-
-    # 日相关
-    boundaries.append(('Today', current_date))
-    boundaries.append(('Yesterday', current_date - timedelta(days=1)))
-    boundaries.append(('Tomorrow', current_date + timedelta(days=1)))
-
-    # 累计日期
-    boundaries.append(('Year to date', datetime(current_date.year, 1, 1)))
-    boundaries.append(('Year to date last year', datetime(current_date.year - 1, 1, 1)))
-    boundaries.append(('Quarter to date', datetime(current_date.year, 3 * (current_quarter - 1) + 1, 1)))
-    boundaries.append(('Quarter to date last year', datetime(current_date.year - 1, 3 * (current_quarter - 1) + 1, 1)))
-    boundaries.append(('Month to date', current_date.replace(day=1)))
-    boundaries.append(('Month to date last year', (current_date - relativedelta(years=1)).replace(day=1)))
+        add_boundary(f"Last {months} months", base_date - timedelta(days=30 * months))
 
     return boundaries
 
 
-def generate_order_data():
-    current_date = datetime(2025, 2, 15)
-    boundary_dates = get_boundary_dates(current_date)
+def generate_data():
+    boundaries = generate_time_boundaries()
     data = []
 
-    # 添加边界数据
-    for name, dt in boundary_dates:
-        data.append({
-            'order_datetime': dt,
-            'order_date': dt.date(),
-            'order_time': dt.time(),
-            'customer_id': random.randint(1, 35),
-            'discount': round(random.uniform(0, 0.25), 2),
-            'employee_id': random.randint(1, 4),
-            'order_id': random.randint(12682, 12700),
-            'paid': random.choice([True, False])
-        })
+    for _ in range(500):
+        if random.random() < 0.3 and boundaries:
+            order_datetime = random.choice(boundaries)
+        else:
+            start_date = datetime(2020, 1, 1)
+            end_date = datetime(2025, 2, 15)
+            random_days = random.randint(0, (end_date - start_date).days)
+            random_seconds = random.randint(0, 86399)
+            order_datetime = start_date + timedelta(days=random_days, seconds=random_seconds)
 
-    # 补充随机数据至500行
-    while len(data) < 500:
-        days_offset = random.randint(-365 * 5, 365)
-        time_offset = timedelta(
-            hours=random.randint(0, 23),
-            minutes=random.randint(0, 59),
-            seconds=random.randint(0, 59)
-        )
-
-        dt = current_date + timedelta(days=days_offset) + time_offset
-
-        data.append({
-            'order_datetime': dt,
-            'order_date': dt.date(),
-            'order_time': dt.time(),
-            'customer_id': random.randint(1, 35),
-            'discount': round(random.uniform(0, 0.25), 2),
-            'employee_id': random.randint(1, 4),
-            'order_id': random.randint(12682, 12700),
-            'paid': random.choice([True, False])
-        })
+        data.append([
+            order_datetime,
+            order_datetime.date(),
+            order_datetime.time(),
+            random.randint(1, 35),
+            round(random.uniform(0.00, 0.25), 2),
+            random.randint(1, 4),
+            random.randint(12682, 12700),
+            random.choice([True, False])
+        ])
 
     return data
 
 
-def save_to_csv(data, filename='orders.csv'):
+def save_to_csv(data, filename='orders_data.csv'):
+    headers = [
+        'order_datetime', 'order_date', 'order_time',
+        'customer_id', 'discount', 'employee_id',
+        'order_id', 'paid'
+    ]
+
     with open(filename, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=[
-            'order_datetime', 'order_date', 'order_time',
-            'customer_id', 'discount', 'employee_id',
-            'order_id', 'paid'
-        ])
-        writer.writeheader()
+        writer = csv.writer(f)
+        writer.writerow(headers)
         writer.writerows(data)
 
 
 if __name__ == '__main__':
-    order_data = generate_order_data()
-    save_to_csv(order_data)
-    print(f"已生成包含{len(order_data)}条订单数据的CSV文件")
+    data = generate_data()
+    save_to_csv(data)
+    print("订单数据已生成到orders_data.csv")
