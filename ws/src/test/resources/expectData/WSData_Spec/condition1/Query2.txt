@@ -1,9 +1,3 @@
-The table size(row x col) is:(8 x 3)
+The table size(row x col) is:(2 x 3)
 CUSTOMER_ID, RESELLER, STATE
-4, false, PA
-8, false, CA
-9, false, NJ
-11, false, OH
-17, false, AK
-33, false, NY
-34, false, FL
+999.99, true, XXXXX
