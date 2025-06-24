@@ -249,7 +249,7 @@ public class ControllersResource extends MockMessageResource {
       vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
       vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
 
-      fileApiService = new FileApiService(deployService, contentRepositoryTreeService);
+      fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
 
       DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
       DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
