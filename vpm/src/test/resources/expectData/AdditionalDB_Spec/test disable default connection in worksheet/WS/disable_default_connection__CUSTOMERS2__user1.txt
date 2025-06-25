@@ -1,7 +1,7 @@
 The table size(row x col) is:(8 x 9)
 ADDRESS, CITY, COMPANY_NAME, CUSTOMER_ID, REGION_ID, RESELLER, FIRST_NAME, STATE, ZIP
-1230 Hoes Lane, New York, Old World Insurance, 7, 1, true, Lino, NY, 08854
 123 Summer Rd., Middletown, Daycare One, 2, 1, true, Lisa, NJ, 09882
+1230 Hoes Lane, New York, Old World Insurance, 7, 1, true, Lino, NY, 08854
 384 Broad St., Wayne, Interstate Shop, 1, 1, true, John, NJ, 18322
 389 Jardim Rd., Baltimore, George Services, 5, 2, true, Steven, MD, 82938
 5 Baker"s Lane, Hartford, Loctite Corp., 6, 1, true, Aria, CT, 39283

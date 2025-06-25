@@ -10,8 +10,8 @@ NULL, Park, The Big Cat, George Kloss, 27, true, OH, 69325
 345 Sewgen, Pitterson, FISGA Corp, Castro, 30, false, FL, 36987
 345 Sewgen Dr., Boomtown, Folk Mining, Janine Lebithal, 20, false, NY, 11234
 44 Islander Lane, Orlando, Whittaker & Co, Inc, Giovanni Feuter, 16, false, FL, 83923
-4590 River Rd., San, Big Cat, Baker, 22, false, NJ, 12343
 45 Doger Sound Blvd., Jose, Folk Hello, John Bonnie, 21, true, NT, 12334
+4590 River Rd., San, Big Cat, Baker, 22, false, NJ, 12343
 822 Technology Dr., San Jose, InterLand Services, Horst Braunschwad, 14, true, CA, 83923
 8300 Cleveland St., Ankertown, Du Monde Technologies, Roland Sommer, 18, false, FL, 29183
 839 Via Gaty Dr., Long Island, Scheggie Services, Paula Camino, 15, true, NY, 12334
