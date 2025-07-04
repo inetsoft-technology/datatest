@@ -97,7 +97,7 @@ class ChartOthers_Spec extends Specification{
    def 'Bug#50273'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Others/Bug#50273', caseName)
-      vstest.exportAsPNG(null, ['(Home)', 'brush1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:

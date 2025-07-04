@@ -31,7 +31,7 @@ class ChartBrush_Spec extends Specification {
    def 'RM3_1_2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Relation/Chart/RM3_1_2', caseName)
-      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2','drillfilter', 'exclude1', 'zoom1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2','drillfilter', 'exclude1', 'zoom'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -43,7 +43,7 @@ class ChartBrush_Spec extends Specification {
    def 'RM3_1_3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Relation/Chart/RM3_1_3', caseName)
-      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2', 'exclude1', 'zoom1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2', 'exclude1', 'zoom'] as String[])
        
 
       expect:
@@ -131,7 +131,7 @@ class ChartBrush_Spec extends Specification {
    def 'RM3_1_10'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Relation/Chart/RM3_1_10', caseName)
-      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2', 'drillfilter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2', 'drillflter'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -414,7 +414,7 @@ class ChartBrush_Spec extends Specification {
    def 'RM_Radar2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Relation/Chart/RM_Radar2', caseName)
-      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'exclude1', 'zoom1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       vstest.compareImage(null)
