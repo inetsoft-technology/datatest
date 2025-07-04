@@ -15,7 +15,7 @@ class TrendComparison_Spec extends Specification{
    def 'previous1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/TrendComparison/previous1', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -28,7 +28,7 @@ class TrendComparison_Spec extends Specification{
    def 'previous2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/TrendComparison/previous2', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -55,7 +55,7 @@ class TrendComparison_Spec extends Specification{
    def 'previous4'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/TrendComparison/previous4', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1', 'bk2'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1', 'bk2'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -95,7 +95,7 @@ class TrendComparison_Spec extends Specification{
    def 'previousstring'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/TrendComparison/previousstring', caseName)
-      vstest.executeVS(null, ['Home','bk1'] as String[])
+      vstest.executeVS(null, ['(Home)','bk1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:

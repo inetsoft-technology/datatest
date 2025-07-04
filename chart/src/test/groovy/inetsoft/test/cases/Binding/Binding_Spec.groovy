@@ -14,7 +14,7 @@ class Binding_Spec extends Specification{
    def 'binding1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding1', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -27,7 +27,7 @@ class Binding_Spec extends Specification{
    def 'binding2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding2', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -39,7 +39,7 @@ class Binding_Spec extends Specification{
    def 'binding3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding3', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -52,7 +52,7 @@ class Binding_Spec extends Specification{
    def 'binding5'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding5', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -65,7 +65,7 @@ class Binding_Spec extends Specification{
    def 'binding6'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding6', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -78,7 +78,7 @@ class Binding_Spec extends Specification{
    def 'binding7'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding7', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -90,7 +90,7 @@ class Binding_Spec extends Specification{
    def 'binding8'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding8', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -102,7 +102,7 @@ class Binding_Spec extends Specification{
    def 'binding9'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding9', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -114,7 +114,7 @@ class Binding_Spec extends Specification{
    def 'binding10'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding10', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -126,7 +126,7 @@ class Binding_Spec extends Specification{
    def 'binding11'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding11', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -140,7 +140,7 @@ class Binding_Spec extends Specification{
    def 'binding12'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding12', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -153,7 +153,7 @@ class Binding_Spec extends Specification{
    def 'binding13'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding13', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -164,8 +164,8 @@ class Binding_Spec extends Specification{
    def 'binding14'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding14', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
-      vstest.exportAsPDF(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
+      vstest.exportAsPDF(null,['(Home)', 'bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -175,7 +175,7 @@ class Binding_Spec extends Specification{
    def 'binding_stock'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding_stock', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -187,7 +187,7 @@ class Binding_Spec extends Specification{
    def 'date group1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/date group1', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -199,7 +199,7 @@ class Binding_Spec extends Specification{
    def 'aggregate2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/aggregate2', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -211,7 +211,7 @@ class Binding_Spec extends Specification{
    def 'aggregate1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/aggregate1', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -223,7 +223,7 @@ class Binding_Spec extends Specification{
    def 'discrete1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/discrete1', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -235,7 +235,7 @@ class Binding_Spec extends Specification{
    def 'discrete2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/discrete2', caseName)
-      vstest.executeVS(null, ['Home', 'filter'] as String[])
+      vstest.executeVS(null, ['(Home)', 'filter'] as String[])
 
       expect:
       verifyAll {
@@ -247,7 +247,7 @@ class Binding_Spec extends Specification{
    def 'discrete3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/discrete3', caseName)
-      vstest.executeVS(null, ['Home', 'brush1', 'brush2'] as String[])
+      vstest.executeVS(null, ['(Home)', 'brush1', 'brush2'] as String[])
 
       expect:
       verifyAll {

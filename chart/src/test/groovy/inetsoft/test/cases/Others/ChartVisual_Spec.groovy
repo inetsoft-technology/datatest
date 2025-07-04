@@ -66,7 +66,7 @@ class ChartVisual_Spec extends Specification{
    def 'Aesthetic_forScale'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/Aesthetic_forScale', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
      expect:
       vstest.compareImage(null)
@@ -77,7 +77,7 @@ class ChartVisual_Spec extends Specification{
    def 'MergeLengend'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/MergeLengend', caseName)
-      vstest.exportAsPNG(null, ['Home', 'filter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'filter'] as String[])
 
      expect:
       vstest.compareImage(null)
@@ -88,7 +88,7 @@ class ChartVisual_Spec extends Specification{
    def 'MapTopN'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/MapTopN', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -98,7 +98,7 @@ class ChartVisual_Spec extends Specification{
    def 'value as color'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/value as color', caseName)
-      vstest.exportAsPNG(null, ['Home','bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)','bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -108,7 +108,7 @@ class ChartVisual_Spec extends Specification{
    def 'value as color2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/value as color2', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -118,7 +118,7 @@ class ChartVisual_Spec extends Specification{
    def 'value as color3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/value as color3', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -128,7 +128,7 @@ class ChartVisual_Spec extends Specification{
    def 'Shape_Autosize1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/Shape_Autosize1', caseName)
-      vstest.exportAsPNG(null, ['Home'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -138,7 +138,7 @@ class ChartVisual_Spec extends Specification{
    def 'Shape_Autosize2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/Shape_Autosize2', caseName)
-      vstest.exportAsPNG(null, ['Home'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       vstest.compareImage(null)

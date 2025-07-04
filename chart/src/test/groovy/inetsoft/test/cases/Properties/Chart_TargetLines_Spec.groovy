@@ -22,7 +22,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Line_Area'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Line_Area', caseName)
-      vstest.executeVS(null, ['Home', 'Average', 'Median', 'Min', 'Sum','InputMax','inplot_false'] as String[])
+      vstest.executeVS(null, ['(Home)', 'Average', 'Median', 'Min', 'Sum','InputMax','inplot_false'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -35,7 +35,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Line_Auto'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Line_Auto', caseName)
-      vstest.executeVS(null, ['Home', 'Min', 'Input','InputMin','InputMax'] as String[])
+      vstest.executeVS(null, ['(Home)', 'Min', 'Input','InputMin','InputMax'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -61,7 +61,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Line_StepArea'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Line_StepArea', caseName)
-      vstest.executeVS(null, ['Home', 'Min', 'Input'] as String[])
+      vstest.executeVS(null, ['(Home)', 'Min', 'Input'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -74,7 +74,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Line_JumpLine'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Line_JumpLine', caseName)
-      vstest.executeVS(null, ['Home', 'TargetValue', 'TargetFormula', 'FieldName'] as String[])
+      vstest.executeVS(null, ['(Home)', 'TargetValue', 'TargetFormula', 'FieldName'] as String[])
       expect:
       vstest.compareImage(null)
    }
@@ -125,7 +125,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Band_Line'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Band_Line', caseName)
-      vstest.executeVS(null, ['Home','B1','B2'] as String[])
+      vstest.executeVS(null, ['(Home)','B1','B2'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -151,7 +151,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Band_Bar'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Band_Bar', caseName)
-      vstest.executeVS(null, ['Home','B1','B2'] as String[])
+      vstest.executeVS(null, ['(Home)','B1','B2'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -190,7 +190,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Band_Area'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Band_Area', caseName)
-      vstest.executeVS(null, ['Home','B1','B2'] as String[])
+      vstest.executeVS(null, ['(Home)','B1','B2'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -204,7 +204,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Statistics_JumpLine'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Statistics_JumpLine', caseName)
-      vstest.executeVS(null, ['Home','Interval is 80'] as String[])
+      vstest.executeVS(null, ['(Home)','Interval is 80'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -218,7 +218,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Statistics_Watefall'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Statistics_Watefall', caseName)
-      vstest.executeVS(null, ['Home','B1','B2','B3','B4'] as String[])
+      vstest.executeVS(null, ['(Home)','B1','B2','B3','B4'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -260,7 +260,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'Statistics_Point'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/Statistics_Point', caseName)
-      vstest.executeVS(null, ['Home','Quantiles is 2','Quantiles is 10'] as String[])
+      vstest.executeVS(null, ['(Home)','Quantiles is 2','Quantiles is 10'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -273,7 +273,7 @@ class Chart_TargetLines_Spec extends Specification {
    def 'SFormula_Bar'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/TargetLine/SFormula_Bar', caseName)
-      vstest.executeVS(null, ['Home','drillMemberslevel1','drillMemberslevel2'] as String[])
+      vstest.executeVS(null, ['(Home)','drillMemberslevel1','drillMemberslevel2'] as String[])
 
       expect:
       vstest.compareImage(null)

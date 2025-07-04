@@ -23,7 +23,7 @@ class ChartProperties_Spec extends Specification{
    def 'projectforward1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/projectforward1', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1', 'bk2', 'bk3', 'bk4'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -36,7 +36,7 @@ class ChartProperties_Spec extends Specification{
    def 'projectforward2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/projectforward2', caseName)
-      vstest.executeVS(null, ['Home','variable'] as String[])
+      vstest.executeVS(null, ['(Home)','variable'] as String[])
 
       expect:
       verifyAll {
@@ -81,7 +81,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasures1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasures1', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush', 'drillfilter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush', 'drillfilter'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -95,7 +95,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasures2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasures2', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush', 'drillfilter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush', 'drillfilter'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -110,7 +110,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasures3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasures3', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush', 'drillfilter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush', 'drillfilter'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -123,7 +123,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasures4'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasures4', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -136,7 +136,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasure_DimLegend'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasure_DimLegend', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush1', 'brush2', 'zoom1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'brush2', 'zoom1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -149,7 +149,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasure_MeaLgend'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasure_MeaLgend', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush1', 'zoom1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush1', 'zoom1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -162,7 +162,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasure_multistyle1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasure_multistyle1', caseName)
-      vstest.exportAsPNG(null, ['Home', 'brush', 'drillfilter'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'brush', 'drillfilter'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -175,7 +175,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackmeasure_multistyle2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackmeasure_multistyle2', caseName)
-      vstest.exportAsPNG(null, ['Home'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -190,7 +190,7 @@ class ChartProperties_Spec extends Specification{
    def 'Fill Time-Series Gaps1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/Fill Time-Series Gaps1', caseName)
-      vstest.executeVS(null, ['Home','brush'] as String[])
+      vstest.executeVS(null, ['(Home)','brush'] as String[])
 
       expect:
       verifyAll {
@@ -206,7 +206,7 @@ class ChartProperties_Spec extends Specification{
    def 'Fill Time-Series Gaps2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/Fill Time-Series Gaps2', caseName)
-      vstest.executeVS(null, ['Home','filter'] as String[])
+      vstest.executeVS(null, ['(Home)','filter'] as String[])
 
       expect:
       verifyAll {
@@ -221,7 +221,7 @@ class ChartProperties_Spec extends Specification{
    def 'Fill Time-Series Gaps3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/Fill Time-Series Gaps3', caseName)
-      vstest.executeVS(null, ['Home','bk1'] as String[])
+      vstest.executeVS(null, ['(Home)','bk1'] as String[])
 
       expect:
       verifyAll {
@@ -236,8 +236,8 @@ class ChartProperties_Spec extends Specification{
    def 'axis properties'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/axis properties', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
-      vstest.exportAsPDF(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
+      vstest.exportAsPDF(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -249,7 +249,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackvalue1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackvalue1', caseName)
-      vstest.exportAsPNG(null, ['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -262,7 +262,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackvalue2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackvalue2', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -276,7 +276,7 @@ class ChartProperties_Spec extends Specification{
    def 'stackvalue3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/stackvalue3', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
       vstest.exportAsPDF(null, null)
 
       expect:
@@ -289,7 +289,7 @@ class ChartProperties_Spec extends Specification{
    def 'showlinepoint'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/showlinepoint', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
       //vstest.exportAsPDF(null, null)
 
       expect:
@@ -302,8 +302,8 @@ class ChartProperties_Spec extends Specification{
    def 'showlinepoint2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/showlinepoint2', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
-      //vstest.exportAsPDF(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
+      //vstest.exportAsPDF(null,['(Home)', 'bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -315,8 +315,8 @@ class ChartProperties_Spec extends Specification{
    def 'sort others last1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/sort others last1', caseName)
-      vstest.exportAsPNG(null,['Home', 'bk1'] as String[])
-      vstest.exportAsPDF(null,['Home', 'bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)', 'bk1'] as String[])
+      vstest.exportAsPDF(null,['(Home)', 'bk1'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -329,8 +329,8 @@ class ChartProperties_Spec extends Specification{
    def 'sort others last2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/sort others last2', caseName)
-      vstest.exportAsPNG(null,['Home','brush','filter', 'sortothers'] as String[])
-      //vstest.exportAsPDF(null,['Home','sortothers'] as String[])
+      vstest.exportAsPNG(null,['(Home)','brush','filter', 'sortothers'] as String[])
+      //vstest.exportAsPDF(null,['(Home)','sortothers'] as String[])
 
       expect:
       vstest.compareImage(null)
@@ -342,7 +342,7 @@ class ChartProperties_Spec extends Specification{
    def 'topnpergroup'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/topnpergroup', caseName)
-      vstest.exportAsPNG(null,['Home','bk1'] as String[])
+      vstest.exportAsPNG(null,['(Home)','bk1'] as String[])
 
       expect:
       vstest.compareImage(null)

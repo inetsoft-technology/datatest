@@ -80,8 +80,8 @@ class VSActionsTest {
          File pngFile = createExportFileByCase(it.chartName, idx,'_BRUSH.png')
          OutputStream out = new FileOutputStream(pngFile)
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-                 false, false, false, false,
-                 ['Home'] as String[], false, false, null, new ExportResponse(out), principal)
+                 false, true, false, false,
+                 null, false, false, null, new ExportResponse(out), principal)
       }
    }
 

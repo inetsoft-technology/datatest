@@ -59,7 +59,7 @@ class DateComparison_Spec extends Specification{
    def 'Year_Day'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Year_Day', caseName)
-      vstest.exportAsPNG(['Home','bk1'] as String[], null, false, true)
+      vstest.exportAsPNG(['(Home)','bk1'] as String[], null, false, true)
 
       expect:
       verifyAll {
@@ -623,7 +623,7 @@ class DateComparison_Spec extends Specification{
    def 'dc_variable'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/dc_variable', caseName)
-      vstest.exportAsPNG(null, ['Home','bk1','bk2'] as String[])
+      vstest.exportAsPNG(null, ['(Home)','bk1','bk2'] as String[])
 
       expect:
       verifyAll {
@@ -635,7 +635,7 @@ class DateComparison_Spec extends Specification{
    def 'dc_variable2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/dc_variable2', caseName)
-      vstest.exportAsPNG(null, ['Home','bk1','bk2'] as String[])
+      vstest.exportAsPNG(null, ['(Home)','bk1','bk2'] as String[])
 
       expect:
       verifyAll {
