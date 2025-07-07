@@ -71,7 +71,7 @@ class CSSTest {
       OutputStream out = new FileOutputStream(outFile)
       viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
               false, false, false, false,
-              ['Home'] as String[], false, false, null, new ExportResponse(out), principal)
+              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
    }
 
    /**
