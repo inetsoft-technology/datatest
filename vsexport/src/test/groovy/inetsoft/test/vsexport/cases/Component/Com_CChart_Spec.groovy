@@ -100,8 +100,8 @@ class Com_CChart_Spec extends Specification{
    def 'CChart_CRadar2' () {
       caseName = specificationContext.currentIteration.name
       vsExportTest = new VSExportTest('1^128^__NULL__^Components/CChart/CRadar2' , caseName)
-      vsExportTest.testExportAsPNG(['(Home)', 'bk2'] as String[], null, true, false)
-      vsExportTest.testExportWithPrintLayout(['(Home)', 'bk2'] as String[], null)
+      vsExportTest.testExportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
+      vsExportTest.testExportWithPrintLayout(['(Home)', 'bk1'] as String[], null)
 
       expect:
       verifyAll{

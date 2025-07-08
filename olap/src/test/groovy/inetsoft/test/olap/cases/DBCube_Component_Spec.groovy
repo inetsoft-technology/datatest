@@ -244,7 +244,7 @@ class DBCube_Component_Spec extends Specification {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
       globalTest.executeTest('1^128^__NULL__^DBOlap/Cube_Others/ComBinding1',
-              ['(Home)', 'bk1', 'brush1'] as String[], null)
+              ['(Home)', 'bk1', 'brush'] as String[], null)
       expect:
       verifyAll {
          globalTest.compareImage()
