@@ -2,12 +2,14 @@ package inetsoft.test.modules
 
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
+import inetsoft.sree.security.IdentityID
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.CrosstabVSAssembly
 import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.uql.viewsheet.TableVSAssembly
+import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
@@ -38,7 +40,7 @@ class VSCalcTest {
     * @return
     */
    def initVS(Map<String, String[]> params, Boolean isViewer) {
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
+      DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       ControllersResource controllers = new ControllersResource()
       controllers.initControllers()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
@@ -63,6 +65,7 @@ class VSCalcTest {
       try {
          assemblies.each {
             assemblyName = it.getName()
+
             if ((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
                     || it instanceof CrosstabVSAssembly)
                     && it.getVSAssemblyInfo().isVisible(true)) {
@@ -73,11 +76,16 @@ class VSCalcTest {
          e.printStackTrace()
       }
 
+      /*on design time, didn't init ibookmark, so the ibookmark of rvs is null,
+      in order to void NPE on line 867 of RuntimeViewsheet.java, use addBookmark methord to init ibookmark.*/
+      rvs.addBookmark("(Home)", VSBookmarkInfo.ALLSHARE,
+              new IdentityID("admin", "host-org"), false)
+
       File pngFile = createExportFileByCase(null, null,'_CALC.png')
       OutputStream out = new FileOutputStream(pngFile)
       viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
               false, false, false, false,
-              ['Home'] as String[], false, false, null, new ExportResponse(out), principal)
+              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
    }
 
    /**

@@ -631,7 +631,7 @@ class Crosstab_Calculate_Spec extends Specification {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest ('1^128^__NULL__^Calculate/SortComparison/NormalSort', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, ['Home'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       verifyAll{
@@ -647,7 +647,7 @@ class Crosstab_Calculate_Spec extends Specification {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest ('1^128^__NULL__^Calculate/SortComparison/DCSort', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, ['Home'] as String[])
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       verifyAll{
