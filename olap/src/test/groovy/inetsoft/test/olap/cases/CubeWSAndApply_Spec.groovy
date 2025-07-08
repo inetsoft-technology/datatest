@@ -237,7 +237,7 @@ class CubeWSAndApply_Spec extends Specification{
    def 'CubeWS_HierarchyDrill'() {
       caseName = specificationContext.currentIteration.name
       globalTest = new GlobalTest(caseName)
-      globalTest.executeTest('1^128^__NULL__^CubeWS_Apply/CubeWS_VS/HierarchyDrill',["Expand","DrillFilter_Down1","DrillFilter_Down2","DrillFilter_Up", "Home"] as String[], null)
+      globalTest.executeTest('1^128^__NULL__^CubeWS_Apply/CubeWS_VS/HierarchyDrill',["Expand","DrillFilter_Down1","DrillFilter_Down2","DrillFilter_Up", "(Home)"] as String[], null)
 
       expect:
       verifyAll {
