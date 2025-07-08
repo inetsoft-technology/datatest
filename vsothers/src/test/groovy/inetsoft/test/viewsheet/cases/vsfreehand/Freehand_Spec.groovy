@@ -289,7 +289,7 @@ class Freehand_Spec extends Specification{
    def 'bug_topN'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreehandTable/Others/topN', caseName)
-      vsCalcTest.exportAsPNG(null, ['(Home)','bk1'] as String[])
+      vsCalcTest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       verifyAll{
