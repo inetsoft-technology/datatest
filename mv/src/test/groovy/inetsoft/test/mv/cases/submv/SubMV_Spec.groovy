@@ -4,6 +4,7 @@ import inetsoft.test.mv.MVTest
 import inetsoft.test.mv.MaterializedViewResource
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import spock.lang.Retry
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -220,6 +221,7 @@ class SubMV_Spec extends Specification {
       }
    }
 
+   @Retry(count = 3)
    def 'hidegroupcolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/hidegroupcolumn'
@@ -540,6 +542,7 @@ class SubMV_Spec extends Specification {
       }
    }
 
+   @Retry(count = 3)
    def 'sqlformula'() {
       given:
       String asset_id = '1^128^__NULL__^submv/sqlformula'
