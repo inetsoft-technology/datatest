@@ -82,6 +82,7 @@ public class MaterializedViewResource {
                   msg.append(error.toString());
                }
                System.err.println("====MV Analyze Exception====" + msg);
+               Thread.sleep(10);
                break;
             } else if (!analysisJob1.isComplete()) {
                Thread.sleep(10);
