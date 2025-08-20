@@ -282,6 +282,14 @@
             <scope>system</scope>
             <systemPath>${plugin.dir}/jdbc-sqlserver-13.7-SNAPSHOT.zip</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.inetsoft</groupId>
+            <artifactId>jdbc-clickhouse</artifactId>
+            <version>0.7.1</version>
+            <type>zip</type>
+            <scope>system</scope>
+            <systemPath>${plugin.dir}/jdbc-clickhouse-0.7.1.zip</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
