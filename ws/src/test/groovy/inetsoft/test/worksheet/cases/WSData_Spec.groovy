@@ -252,8 +252,8 @@ class WSData_Spec extends Specification {
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
-      wstest.executeWS('1^2^__NULL__^DB/clickhouse', paras, null)
-      wstest.exportVSComponentData('1^128^__NULL__^DB/clickhouse')
+      wstest.executeWS('1^2^__NULL__^DB/clickhouse', null, null)
+      wstest.exportVSComponentData('1^128^__NULL__^vsCheck/clickhouse',null)
 
       expect:
       wstest.compareData(null)
