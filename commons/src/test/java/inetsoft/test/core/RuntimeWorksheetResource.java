@@ -13,6 +13,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.web.multipart.MultipartFile;
+import inetsoft.web.viewsheet.service.CommandDispatcherService;
 
 import java.security.Principal;
 import java.util.HashMap;
@@ -95,7 +96,7 @@ public class RuntimeWorksheetResource extends MockMessageResource {
          }
       });
 
-      CommandDispatcher dispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null)
+      CommandDispatcher dispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null)
       {
          @Override
          public void sendCommand(String assemblyName, ViewsheetCommand command) {
@@ -118,4 +119,5 @@ public class RuntimeWorksheetResource extends MockMessageResource {
    private final OpenWorksheetEvent openWorksheetEvent;
    private final ControllersResource controllersResource;
    private String runtimeId;
+   private CommandDispatcherService dispatcherService;
 }

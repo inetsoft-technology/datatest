@@ -16,6 +16,8 @@ package inetsoft.test.core;
 import inetsoft.web.messaging.MessageAttributes;
 import inetsoft.web.messaging.MessageContextHolder;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
+import inetsoft.web.viewsheet.service.CommandDispatcherService;
+
 
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
@@ -68,7 +70,7 @@ public abstract class MockMessageResource {
             return true;
          }
       });
-      commandDispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null);
+      commandDispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null);
       MessageContextHolder.setMessageAttributes(messageAttributes);
 
       try {
@@ -103,4 +105,6 @@ public abstract class MockMessageResource {
    private SimpMessagingTemplate messagingTemplate;
    private StompHeaderAccessor headerAccessor;
    private CommandDispatcher commandDispatcher;
+   private CommandDispatcherService dispatcherService;
+
 }
