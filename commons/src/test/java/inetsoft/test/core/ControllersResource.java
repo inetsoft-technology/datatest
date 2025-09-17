@@ -21,8 +21,6 @@ import inetsoft.web.admin.content.repository.RepletRegistryManager;
 import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
 import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
-import inetsoft.web.admin.upload.MavenClientService;
-import inetsoft.web.admin.upload.UploadService;
 import inetsoft.web.binding.drm.*;
 import inetsoft.web.binding.handler.VSAssemblyInfoHandler;
 import inetsoft.web.binding.model.*;
@@ -73,11 +71,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.mockito.MockedStatic;
-import org.mockito.Mockito;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
-import spock.lang.Shared;
+import org.mockito.*;
 
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.*;
 
 public class ControllersResource extends MockMessageResource {
 
@@ -101,6 +97,7 @@ public class ControllersResource extends MockMessageResource {
         selectionService = null;
         imageService = null;
         worksheetService = null;
+        staticConfigurationContext.close();
     }
 
     private void createControllers() {
@@ -164,7 +161,9 @@ public class ControllersResource extends MockMessageResource {
         VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
         ParameterService parameterService = new ParameterService(viewsheetService);
         vsCompositionService = new VSCompositionService();
-        coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService, new CoreLifecycleControllerServiceProxy(), vsCompositionService);
+        coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService,
+                vsLayoutService, parameterService, new CoreLifecycleControllerServiceProxy(),
+                vsCompositionService);
         sharedFilterService = new SharedFilterService(getMessagingTemplate(), viewsheetService);
         objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
@@ -288,6 +287,28 @@ public class ControllersResource extends MockMessageResource {
                 dataModelFolderManagerService, dataSourceService);
     }
 
+    public void initApplicationContext( ConfigurationContext context) {
+        coreLifecycleControllerService = new CoreLifecycleControllerService(viewsheetService,
+                assetRepository,
+                dataRefModelFactoryService,
+                vsCompositionService,
+                coreLifecycleService,
+                bookmarkService,
+                runtimeViewsheetRef);
+
+        ConfigurationContext spyContext = spy(context);
+
+        doReturn(coreLifecycleControllerService)
+                .when(spyContext)
+                .getSpringBean(CoreLifecycleControllerService.class);
+
+        if (staticConfigurationContext == null) {
+            staticConfigurationContext = mockStatic(ConfigurationContext.class);
+        }
+
+        staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
+    }
+
     @Override
     public String getRuntimeId() {
         return runtimeId;
@@ -345,6 +366,10 @@ public class ControllersResource extends MockMessageResource {
         return coreLifecycleService;
     }
 
+    public CoreLifecycleControllerService getCoreLifecycleControllerService() {
+        return coreLifecycleControllerService;
+    }
+
     private String runtimeId;
     private RuntimeViewsheetRef runtimeViewsheetRef;
     private ViewsheetService viewsheetService;
@@ -400,4 +425,6 @@ public class ControllersResource extends MockMessageResource {
     private SharedFilterService sharedFilterService;
 
     private CoreLifecycleControllerService coreLifecycleControllerService;
+
+    MockedStatic<ConfigurationContext> staticConfigurationContext;
 }

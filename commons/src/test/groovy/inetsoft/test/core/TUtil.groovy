@@ -28,7 +28,11 @@ class TUtil {
          newRole.setName(role)
          identityRoles += newRole
       }
-      return new SRPrincipal(identityUser, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      //return new SRPrincipal(identityUser, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      SRPrincipal principal = new SRPrincipal(identityUser, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      principal.setIgnoreLogin(true)
+
+      return principal
    }
 
    /**

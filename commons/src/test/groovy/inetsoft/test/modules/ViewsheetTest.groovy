@@ -38,9 +38,13 @@ import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
 
+
 import java.awt.image.BufferedImage
 
 class ViewsheetTest {
+   static ConfigurationContext context
+   static ControllersResource controllers
+
    ViewsheetTest(String asset_id, String caseName) {
       this.asset_id = asset_id
       this.caseName = caseName
@@ -51,23 +55,25 @@ class ViewsheetTest {
       //println '----suitename--------' + suiteName
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-   }
 
+      context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("sree.home"))
+   }
    /**
     * Init runtime VS
     * @param params
     * @return
     */
    def initVS(Map<String, String[]> params) {
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      ControllersResource controllers = new ControllersResource()
+      DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
+      controllers= new ControllersResource()
       controllers.initControllers()
+      controllers.initApplicationContext(context)
+
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
-
    }
 
    /**
@@ -94,7 +100,7 @@ class ViewsheetTest {
    def executeVS0(Map<String, String[]> params, String bk) {
       initVS(params)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
-      rvs.gotoBookmark(bk, principal.getUser().getUserIdentity())
+      rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
       rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
 
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
@@ -133,6 +139,8 @@ class ViewsheetTest {
          }
       }catch(Exception e) {
          e.printStackTrace()
+      }finally {
+         controllers.destroy()
       }
    }
 
@@ -247,6 +255,8 @@ class ViewsheetTest {
       viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
               expandSelection, false, false, false,
               bks, false, false, null, new ExportResponse(out), principal)
+
+      controllers.destroy()
    }
 
    /**
@@ -268,6 +278,7 @@ class ViewsheetTest {
               false, false, true, false,
               bks, false, false, null, new ExportResponse(out), principal)
       Thread.sleep(500)
+      controllers.destroy()
       tUtil.convertPDFToPNG(outFile.toString())
    }
 
