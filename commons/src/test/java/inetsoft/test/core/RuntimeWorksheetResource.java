@@ -9,6 +9,7 @@ import inetsoft.web.viewsheet.command.ViewsheetCommand;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessagingException;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.GenericMessage;
@@ -17,6 +18,7 @@ import inetsoft.web.viewsheet.service.CommandDispatcherService;
 
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.Map;
 
 public class RuntimeWorksheetResource extends MockMessageResource {
    public RuntimeWorksheetResource(OpenWorksheetEvent openWorksheetEvent,
@@ -96,6 +98,15 @@ public class RuntimeWorksheetResource extends MockMessageResource {
          }
       });
 
+      CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate) {
+         @Override
+         public void convertAndSendToUser(String user, String destination, Object payload,
+                                          Map<String, Object> headers) throws MessagingException
+         {
+            // NO-OP
+         }
+      };
+
       CommandDispatcher dispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null)
       {
          @Override
@@ -119,5 +130,4 @@ public class RuntimeWorksheetResource extends MockMessageResource {
    private final OpenWorksheetEvent openWorksheetEvent;
    private final ControllersResource controllersResource;
    private String runtimeId;
-   private CommandDispatcherService dispatcherService;
 }

@@ -19,6 +19,7 @@ import inetsoft.web.viewsheet.service.CommandDispatcher;
 import inetsoft.web.viewsheet.service.ExportResponse;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessagingException;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.GenericMessage;
@@ -26,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsServiceProxy;
 
 import java.security.Principal;
+import java.util.Map;
 
 public class RuntimeViewsheetResource extends MockMessageResource {
    public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent,
@@ -148,7 +150,7 @@ public class RuntimeViewsheetResource extends MockMessageResource {
    public FormatTableLens2 showDetailOnChart(VSChartShowDetailsEvent event, String assemblyName, SRPrincipal principal) throws Exception {
     // 获取 runtimeViewsheet
     RuntimeViewsheet runtimeViewsheet = getRuntimeViewsheet(principal);
-    
+
     // 调用 serviceProxy 的方法
     return serviceProxy.getShowDetailDatas(event, runtimeViewsheet, assemblyName, principal);
 }  **/
@@ -190,6 +192,14 @@ public class RuntimeViewsheetResource extends MockMessageResource {
          }
       });
 
+      CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate) {
+         @Override
+         public void convertAndSendToUser(String user, String destination, Object payload,
+                                          Map<String, Object> headers) throws MessagingException
+         {
+            // NO-OP
+         }
+      };
       CommandDispatcher dispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null)
       {
          @Override
@@ -215,6 +225,5 @@ public class RuntimeViewsheetResource extends MockMessageResource {
    private RuntimeViewsheet runtimeViewsheet;
    private String runtimeId;
    private CommandDispatcher commandDispatcher = createCommandDispather();
-   private CommandDispatcherService dispatcherService;
    //private final VSChartShowDetailsServiceProxy serviceProxy;
 }

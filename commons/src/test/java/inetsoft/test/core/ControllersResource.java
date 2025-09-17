@@ -12,6 +12,7 @@ import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XFactory;
 import inetsoft.uql.asset.AssetRepository;
+import inetsoft.util.ConfigurationContext;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.plugins.PluginsService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
@@ -31,6 +32,7 @@ import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.WorksheetController;
+import inetsoft.web.composer.ws.assembly.WorksheetEventServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.portal.controller.database.DataSourceService;
 import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
@@ -69,300 +71,333 @@ import java.rmi.RemoteException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
+
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import spock.lang.Shared;
 
+import static org.mockito.Mockito.doReturn;
+
 public class ControllersResource extends MockMessageResource {
 
-   public void initControllers() {
-      mockMessage(this::createControllers);
-   }
+    public void initControllers() {
+        mockMessage(this::createControllers);
+    }
 
-   public void destroy() {
-      viewsheetService = null;
-      vsLifecycleService = null;
-      runtimeViewsheetManager = null;
-      objectModelFactoryService = null;
-      viewsheetController = null;
-      objectTreeService = null;
-      securityEngine = null;
-      objectService = null;
-      bookmarkService = null;
-      dataRefModelFactoryService = null;
-      assetRepository = null;
-      openViewsheetController = null;
-      selectionService = null;
-      imageService = null;
-      worksheetService = null;
-   }
+    public void destroy() {
+        viewsheetService = null;
+        vsLifecycleService = null;
+        runtimeViewsheetManager = null;
+        objectModelFactoryService = null;
+        viewsheetController = null;
+        objectTreeService = null;
+        securityEngine = null;
+        objectService = null;
+        bookmarkService = null;
+        dataRefModelFactoryService = null;
+        assetRepository = null;
+        openViewsheetController = null;
+        selectionService = null;
+        imageService = null;
+        worksheetService = null;
+    }
 
-   private void createControllers() {
-      viewsheetService = ViewsheetEngine.getViewsheetEngine();
+    private void createControllers() {
+        viewsheetService = ViewsheetEngine.getViewsheetEngine();
 
-      worksheetService = WorksheetEngine.getWorksheetService();
-      
-      RuntimeViewsheetRefServiceProxy runtimeViewsheetRefServiceProxy = new RuntimeViewsheetRefServiceProxy();
+        worksheetService = WorksheetEngine.getWorksheetService();
 
-      runtimeViewsheetRef = new RuntimeViewsheetRef(runtimeViewsheetRefServiceProxy) {
-         @Override
-         public String getRuntimeId() {
-            return ControllersResource.this.runtimeId;
-         }
+        RuntimeViewsheetRefServiceProxy runtimeViewsheetRefServiceProxy = new RuntimeViewsheetRefServiceProxy();
 
-         @Override
-         public void setRuntimeId(String runtimeId) {
-            ControllersResource.this.runtimeId = runtimeId;
-         }
-      };
+        runtimeViewsheetRef = new RuntimeViewsheetRef(runtimeViewsheetRefServiceProxy) {
+            @Override
+            public String getRuntimeId() {
+                return ControllersResource.this.runtimeId;
+            }
 
-      runtimeViewsheetManager = new RuntimeViewsheetManager(viewsheetService, worksheetService);
-      List<VSObjectModelFactory<?, ?>> modelFactories = Arrays.asList(
-            new VSCalcTableModel.VSCalcTableModelFactory(),
-            new VSCheckBoxModel.VSCheckBoxModelFactory(),
-            new VSComboBoxModel.VSComboBoxModelFactory(),
-            new VSCylinderModel.VSCylinderModelFactory(),
-            new VSEmbeddedTableModel.VSEmbeddedTableModelFactory(),
-            new VSGaugeModel.VSGaugeModelFactory(),
-            new VSImageModel.VSImageModelFactory(),
-            new VSLineModel.VSLineModelFactory(),
-            new VSOvalModel.VSOvalModelFactory(),
-            new VSRadioButtonModel.VSRadioButtonModelFactory(),
-            new VSRangeSliderModel.VSRangeSliderModelFactory(),
-            new VSRectangleModel.VSRectangleModelFactory(),
-            new VSSelectionContainerModel.VSSelectionContainerModelFactory(),
-            new VSSelectionListModel.VSSelectionListModelFactory(),
-            new VSSelectionTreeModel.VSSelectionTreeModelFactory(),
-            new VSSliderModel.VSSliderModelFactory(),
-            new VSSlidingScaleModel.VSThermometerModelFactory(),
-            new VSSpinnerModel.VSSpinnerModelFactory(),
-            new VSSubmitModel.VSSubmitModelFactory(),
-            new VSTableModel.VSTableModelFactory(),
-            new VSCrosstabModel.VSCrosstabModelFactory(),
-            new VSTextInputModel.VSTextInputModelFactory(),
-            new VSTextModel.VSTextModelFactory(),
-            new VSThermometerModel.VSThermometerModelFactory(),
-            new VSViewsheetModel.VSViewsheetModelFactory(),
-            new VSAnnotationModel.VSAnnotationModelFactory(),
-            new VSCalendarModel.VSCalendarModelFactory(),
-            new VSChartModel.VSChartModelFactory(),
-            new VSGroupContainerModel.VSGaugeModelFactory(),
-            new VSTabModel.VSTabModelFactory()
-      );
-      objectModelFactoryService = new VSObjectModelFactoryService(modelFactories);
-      assetRepository = (AssetRepository) SUtil.getRepletRepository();
-      objectTreeService = new VSObjectTreeService(objectModelFactoryService);
-      securityEngine = SecurityEngine.getSecurity();
+            @Override
+            public void setRuntimeId(String runtimeId) {
+                ControllersResource.this.runtimeId = runtimeId;
+            }
+        };
 
-      VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
-      ParameterService parameterService = new ParameterService(viewsheetService);
-      coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService,serviceProxy1,vsCompositionService);
-      SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
-      objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
+        runtimeViewsheetManager = new RuntimeViewsheetManager(viewsheetService, worksheetService);
+        List<VSObjectModelFactory<?, ?>> modelFactories = Arrays.asList(
+                new VSCalcTableModel.VSCalcTableModelFactory(),
+                new VSCheckBoxModel.VSCheckBoxModelFactory(),
+                new VSComboBoxModel.VSComboBoxModelFactory(),
+                new VSCylinderModel.VSCylinderModelFactory(),
+                new VSEmbeddedTableModel.VSEmbeddedTableModelFactory(),
+                new VSGaugeModel.VSGaugeModelFactory(),
+                new VSImageModel.VSImageModelFactory(),
+                new VSLineModel.VSLineModelFactory(),
+                new VSOvalModel.VSOvalModelFactory(),
+                new VSRadioButtonModel.VSRadioButtonModelFactory(),
+                new VSRangeSliderModel.VSRangeSliderModelFactory(),
+                new VSRectangleModel.VSRectangleModelFactory(),
+                new VSSelectionContainerModel.VSSelectionContainerModelFactory(),
+                new VSSelectionListModel.VSSelectionListModelFactory(),
+                new VSSelectionTreeModel.VSSelectionTreeModelFactory(),
+                new VSSliderModel.VSSliderModelFactory(),
+                new VSSlidingScaleModel.VSThermometerModelFactory(),
+                new VSSpinnerModel.VSSpinnerModelFactory(),
+                new VSSubmitModel.VSSubmitModelFactory(),
+                new VSTableModel.VSTableModelFactory(),
+                new VSCrosstabModel.VSCrosstabModelFactory(),
+                new VSTextInputModel.VSTextInputModelFactory(),
+                new VSTextModel.VSTextModelFactory(),
+                new VSThermometerModel.VSThermometerModelFactory(),
+                new VSViewsheetModel.VSViewsheetModelFactory(),
+                new VSAnnotationModel.VSAnnotationModelFactory(),
+                new VSCalendarModel.VSCalendarModelFactory(),
+                new VSChartModel.VSChartModelFactory(),
+                new VSGroupContainerModel.VSGaugeModelFactory(),
+                new VSTabModel.VSTabModelFactory()
+        );
+        objectModelFactoryService = new VSObjectModelFactoryService(modelFactories);
+        assetRepository = (AssetRepository) SUtil.getRepletRepository();
+        objectTreeService = new VSObjectTreeService(objectModelFactoryService);
+        securityEngine = SecurityEngine.getSecurity();
+        securityEngine.init();
 
-      bookmarkService = new VSBookmarkService(objectService,viewsheetService,securityEngine,coreLifecycleService);
-      List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
-            new AggregateRefModel.AggregateRefModelFactory(),
-            new AliasDataRefModel.AliasDataRefModelFactory(),
-            new AttributeRefModel.AttributeRefModelFactory(),
-            new BAggregateRefModel.VSAggregateRefModelFactory(),
-            new BDimensionRefModel.VSDimensionRefModelFactory(),
-            new BaseFieldModel.BaseFieldModelFactory(),
-            new CalculateRefModel.CalculateRefModelFactory(),
-            new ColumnRefModel.ColumnRefModelFactory(),
-            new DateRangeRefModel.DateRangeRefModelFactory(),
-            new FormRefModel.FormRefModelFactory(),
-            new FormulaFieldModel.FormulaFieldModelFactory(),
-            new ExpressionRefModel.ExpressionRefModelFactory(),
-            new GroupRefModel.GroupRefModelFactory(),
-            new NumericRangeRefModel.NumericRangeRefModelFactory()
-      );
+        VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
+        ParameterService parameterService = new ParameterService(viewsheetService);
+        vsCompositionService = new VSCompositionService();
+        coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService, new CoreLifecycleControllerServiceProxy(), vsCompositionService);
+        sharedFilterService = new SharedFilterService(getMessagingTemplate(), viewsheetService);
+        objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
-      dataRefModelFactoryService = new DataRefModelFactoryService(dataRefModelFactories);
-      dataRefModelFactories.stream().forEach(f -> {
-         if(f instanceof DataRefModelWrapperFactory) {
-            ((DataRefModelWrapperFactory) f).setDataRefModelFactoryService(dataRefModelFactoryService);
-         }
-      });
+        bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine, coreLifecycleService);
+        List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
+                new AggregateRefModel.AggregateRefModelFactory(),
+                new AliasDataRefModel.AliasDataRefModelFactory(),
+                new AttributeRefModel.AttributeRefModelFactory(),
+                new BAggregateRefModel.VSAggregateRefModelFactory(),
+                new BDimensionRefModel.VSDimensionRefModelFactory(),
+                new BaseFieldModel.BaseFieldModelFactory(),
+                new CalculateRefModel.CalculateRefModelFactory(),
+                new ColumnRefModel.ColumnRefModelFactory(),
+                new DateRangeRefModel.DateRangeRefModelFactory(),
+                new FormRefModel.FormRefModelFactory(),
+                new FormulaFieldModel.FormulaFieldModelFactory(),
+                new ExpressionRefModel.ExpressionRefModelFactory(),
+                new GroupRefModel.GroupRefModelFactory(),
+                new NumericRangeRefModel.NumericRangeRefModelFactory()
+        );
 
-      VSCompositionService vsCompositionService = Mockito.mock(VSCompositionService.class);
-      vsLifecycleService = new VSLifecycleService(
-            viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
-            dataRefModelFactoryService, vsCompositionService, parameterService,serviceProxy);
-      viewsheetController = new ViewsheetController(
-            runtimeViewsheetRef, viewsheetControllerServiceProxy);
-      licenseService = new LicenseService();
-      openViewsheetController = new OpenViewsheetController(
-            runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
-            openserviceProxy, viewsheetService);
-      worksheetController = new WorksheetController() {
-         protected WorksheetService getWorksheetEngine() {
-            return worksheetService;
-         }
+        dataRefModelFactoryService = new DataRefModelFactoryService(dataRefModelFactories);
+        dataRefModelFactories.stream().forEach(f -> {
+            if (f instanceof DataRefModelWrapperFactory) {
+                ((DataRefModelWrapperFactory) f).setDataRefModelFactoryService(dataRefModelFactoryService);
+            }
+        });
 
-         public String getRuntimeId() {
-            return ControllersResource.this.runtimeId;
-         }
+        vsLifecycleService = new VSLifecycleService(
+                viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
+                dataRefModelFactoryService, vsCompositionService, parameterService, new VSLifecycleControllerServiceProxy());
+        viewsheetController = new ViewsheetController(
+                runtimeViewsheetRef, new ViewsheetControllerServiceProxy());
+        licenseService = new LicenseService();
+        openViewsheetController = new OpenViewsheetController(
+                runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
+                new OpenViewsheetServiceProxy(), viewsheetService);
+        worksheetController = new WorksheetController() {
+            protected WorksheetService getWorksheetEngine() {
+                return worksheetService;
+            }
 
-         protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
-            return runtimeViewsheetRef;
-         }
+            public String getRuntimeId() {
+                return ControllersResource.this.runtimeId;
+            }
 
-         protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
-            return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
-         }
-      };
+            protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
+                return runtimeViewsheetRef;
+            }
 
-      openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository,eventService) {
-         protected WorksheetService getWorksheetEngine() {
-            return worksheetService;
-         }
-         protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
-            return runtimeViewsheetRef;
-         }
-      };
+            protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
+                return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
+            }
+        };
 
-      baseTableLoadDataController =
-            new BaseTableLoadDataController(runtimeViewsheetRef,baseTableLoadDataService);
-      maxModeAssemblyService = new MaxModeAssemblyService(viewsheetService,coreLifeService);
-      selectionService = new VSSelectionService(coreLifecycleService, viewsheetService, maxModeAssemblyService, sharedFilterService);
-      imageService = new AssemblyImageService(viewsheetService,binaryTransferService);
-      vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
+        worksheetEventService = new WorksheetEventService(viewsheetService, Mockito.mock(WorksheetEventServiceProxy.class));
+        openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository, worksheetEventService) {
+            protected WorksheetService getWorksheetEngine() {
+                return worksheetService;
+            }
 
-      securityProvider = SecurityEngine.getSecurity().getSecurityProvider();
-      resourcePermissionService = new ResourcePermissionService(securityProvider, SecurityEngine.getSecurity());
-      repletRegistryManager = new RepletRegistryManager();
-      scheduleTaskFolderService = new ScheduleTaskFolderService(ScheduleManager.getScheduleManager(), SecurityEngine.getSecurity(),
-              securityProvider);
-      try {
-         contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
-               resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
-      } catch (RemoteException e) {
-         e.printStackTrace();
-      }
+            protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
+                return runtimeViewsheetRef;
+            }
+        };
 
-      deployService = new DeployService(contentRepositoryTreeService,  SecurityEngine.getSecurity());
-      vsassemblyInfoHandler = new VSAssemblyInfoHandler(coreLifecycleService, dataRefModelFactoryService, parameterService);
-      crosstabDrillHandler = new CrosstabDrillHandler(viewsheetService, coreLifecycleService, runtimeViewsheetRef);
-      composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef,composerVSTableServiceProxy);
-      importXLSController = new ImportXLSController(runtimeViewsheetRef,importXLSControllerServiceProxy);
+        baseTableLoadDataServiceProxy = new BaseTableLoadDataServiceProxy();
+        baseTableLoadDataController =
+                new BaseTableLoadDataController(runtimeViewsheetRef, baseTableLoadDataServiceProxy);
+        maxModeAssemblyService = new MaxModeAssemblyService(viewsheetService, coreLifecycleService);
+        selectionService = new VSSelectionService(coreLifecycleService, viewsheetService, maxModeAssemblyService, sharedFilterService);
+        binaryTransferService = new BinaryTransferService();
+        imageService = new AssemblyImageService(viewsheetService, binaryTransferService);
+        vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
 
-      importCSVDialogController = new ImportCSVDialogController(dialogService,csvTransferService) {
-         public String getRuntimeId() {
-            return ControllersResource.this.runtimeId;
-         }
+        securityProvider = securityEngine.getSecurityProvider();
+        resourcePermissionService = new ResourcePermissionService(securityProvider, securityEngine);
+        repletRegistryManager = new RepletRegistryManager();
+        scheduleTaskFolderService = new ScheduleTaskFolderService(ScheduleManager.getScheduleManager(), securityEngine,
+                securityProvider);
+        try {
+            contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
+                    resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
-         protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
-            return runtimeViewsheetRef;
-         }
+        deployService = new DeployService(contentRepositoryTreeService, securityEngine);
+        vsassemblyInfoHandler = new VSAssemblyInfoHandler(coreLifecycleService, dataRefModelFactoryService, parameterService);
+        crosstabDrillHandler = new CrosstabDrillHandler(viewsheetService, coreLifecycleService, runtimeViewsheetRef);
+        composerVSTableServiceProxy = new ComposerVSTableServiceProxy();
+        composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, composerVSTableServiceProxy);
+        importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
+        importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy);
 
-         protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
-            return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
-         }
-      };
-      vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, showdetailserviceProxy);
-      vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, vsChartBrushService);
-      fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
+        importCSVDialogServiceProxy = new ImportCSVDialogServiceProxy();
+        importCSVDialogController = new ImportCSVDialogController(importCSVDialogServiceProxy, binaryTransferService) {
+            public String getRuntimeId() {
+                return ControllersResource.this.runtimeId;
+            }
 
-      DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
-      DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
-      DataModelFolderManagerService dataModelFolderManagerService = Mockito.mock(DataModelFolderManagerService.class);
-      DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
-      databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService,databaseModelBrowserService,
-              dataModelFolderManagerService, dataSourceService);
-   }
+            protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
+                return runtimeViewsheetRef;
+            }
 
-   @Override
-   public String getRuntimeId() {
-      return runtimeId;
-   }
+            protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
+                return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
+            }
+        };
+        vsChartShowDetailsServiceProxy = new VSChartShowDetailsServiceProxy();
+        vsChartBrushServiceProxy = new VSChartBrushServiceProxy();
+        vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, vsChartShowDetailsServiceProxy);
+        vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, vsChartBrushServiceProxy);
+        fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
 
-   public ViewsheetService getViewsheetService() {
-      return viewsheetService;
-   }
+        DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
+        DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
+        DataModelFolderManagerService dataModelFolderManagerService = Mockito.mock(DataModelFolderManagerService.class);
+        DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
+        databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
+                dataModelFolderManagerService, dataSourceService);
+    }
 
-   public OpenViewsheetController getOpenViewsheetController() {
-      return openViewsheetController;
-   }
+    @Override
+    public String getRuntimeId() {
+        return runtimeId;
+    }
 
-   public OpenWorksheetController getOpenWorksheetController() { return openWorksheetController; }
+    public ViewsheetService getViewsheetService() {
+        return viewsheetService;
+    }
 
-   public WorksheetService getWorksheetService() { return  worksheetService; }
+    public OpenViewsheetController getOpenViewsheetController() {
+        return openViewsheetController;
+    }
 
-   public VSExportService getVSExportService() { return vsExportService; }
+    public OpenWorksheetController getOpenWorksheetController() {
+        return openWorksheetController;
+    }
 
-   public ComposerVSTableController getComposerVSTableController() { return composerVSTableController; }
+    public WorksheetService getWorksheetService() {
+        return worksheetService;
+    }
 
-   public ImportXLSController getImportXLSController() { return importXLSController; }
+    public VSExportService getVSExportService() {
+        return vsExportService;
+    }
 
-   public ImportCSVDialogController getImportCSVDialogController() { return importCSVDialogController; }
+    public ComposerVSTableController getComposerVSTableController() {
+        return composerVSTableController;
+    }
 
-   public VSChartShowDetailsController getVSChartShowDetailsController() { return vschartShowDetailsController; }
+    public ImportXLSController getImportXLSController() {
+        return importXLSController;
+    }
 
-   public VSChartBrushController getVSChartBrushController() { return vschartBrushController; }
+    public ImportCSVDialogController getImportCSVDialogController() {
+        return importCSVDialogController;
+    }
 
-   public FileApiService getFileApiService() { return fileApiService; }
-   public DatabaseDatasourcesController getDatabaseDatasourcesController() { return databaseDatasourcesController; }
-   public CoreLifecycleService getCoreLifecycleService() { return coreLifecycleService; }
+    public VSChartShowDetailsController getVSChartShowDetailsController() {
+        return vschartShowDetailsController;
+    }
 
-   private String runtimeId;
-   private RuntimeViewsheetRef runtimeViewsheetRef;
-   private ViewsheetService viewsheetService;
-   private WorksheetService worksheetService;
-   private VSLifecycleService vsLifecycleService;
-   private RuntimeViewsheetManager runtimeViewsheetManager;
-   private VSObjectModelFactoryService objectModelFactoryService;
-   private ViewsheetController viewsheetController;
-   private WorksheetController worksheetController;
-   private VSObjectTreeService objectTreeService;
-   private SecurityEngine securityEngine;
-   private VSObjectService objectService;
-   private VSBookmarkService bookmarkService;
-   private DataRefModelFactoryService dataRefModelFactoryService;
-   private AssetRepository assetRepository;
-   private OpenViewsheetController openViewsheetController;
-   private OpenWorksheetController openWorksheetController;
-   private BaseTableLoadDataController baseTableLoadDataController;
-   private LicenseService licenseService;
-   private VSSelectionService selectionService;
-   private AssemblyImageService imageService;
-   private VSExportService vsExportService;
-   private SecurityProvider securityProvider;
-   private ResourcePermissionService resourcePermissionService;
-   private ContentRepositoryTreeService contentRepositoryTreeService;
-   private RepletRegistryManager repletRegistryManager;
-   private DeployService deployService;
-   private ComposerVSTableController composerVSTableController;
-   private CrosstabDrillHandler  crosstabDrillHandler;
-   private ImportXLSController importXLSController;
-   private VSAssemblyInfoHandler vsassemblyInfoHandler;
-   private ImportCSVDialogController importCSVDialogController;
-   private MaxModeAssemblyService maxModeAssemblyService;
-   private VSChartShowDetailsController vschartShowDetailsController;
-   private VSChartBrushController vschartBrushController;
-   private ScheduleTaskFolderService scheduleTaskFolderService;
-   private PluginsService pluginsService;
+    public VSChartBrushController getVSChartBrushController() {
+        return vschartBrushController;
+    }
 
-   private FileApiService fileApiService;
+    public FileApiService getFileApiService() {
+        return fileApiService;
+    }
 
-   private DatabaseDatasourcesController databaseDatasourcesController;
-   private CoreLifecycleControllerServiceProxy serviceProxy1;
-   private VSLifecycleControllerServiceProxy serviceProxy;
-   private VSCompositionService vsCompositionService;
-   private CoreLifecycleService coreLifecycleService;
-   private ViewsheetControllerServiceProxy viewsheetControllerServiceProxy;
-   private OpenViewsheetServiceProxy openserviceProxy;
-   private WorksheetEventService eventService;
-   private BaseTableLoadDataServiceProxy baseTableLoadDataService;
-   private CoreLifecycleService coreLifeService;
-   private BinaryTransferService binaryTransferService;
-   private ComposerVSTableServiceProxy composerVSTableServiceProxy;
-   private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
-   private BinaryTransferService csvTransferService;
-   private ImportCSVDialogServiceProxy dialogService;
-   private VSChartShowDetailsServiceProxy showdetailserviceProxy;
-   private VSChartBrushServiceProxy vsChartBrushService;
+    public DatabaseDatasourcesController getDatabaseDatasourcesController() {
+        return databaseDatasourcesController;
+    }
 
+    public CoreLifecycleService getCoreLifecycleService() {
+        return coreLifecycleService;
+    }
 
+    private String runtimeId;
+    private RuntimeViewsheetRef runtimeViewsheetRef;
+    private ViewsheetService viewsheetService;
+    private WorksheetService worksheetService;
+    private VSLifecycleService vsLifecycleService;
+    private RuntimeViewsheetManager runtimeViewsheetManager;
+    private VSObjectModelFactoryService objectModelFactoryService;
+    private ViewsheetController viewsheetController;
+    private WorksheetController worksheetController;
+    private VSObjectTreeService objectTreeService;
+    private SecurityEngine securityEngine;
+    private VSObjectService objectService;
+    private VSBookmarkService bookmarkService;
+    private DataRefModelFactoryService dataRefModelFactoryService;
+    private AssetRepository assetRepository;
+    private OpenViewsheetController openViewsheetController;
+    private OpenWorksheetController openWorksheetController;
+    private BaseTableLoadDataController baseTableLoadDataController;
+    private LicenseService licenseService;
+    private VSSelectionService selectionService;
+    private AssemblyImageService imageService;
+    private VSExportService vsExportService;
+    private SecurityProvider securityProvider;
+    private ResourcePermissionService resourcePermissionService;
+    private ContentRepositoryTreeService contentRepositoryTreeService;
+    private RepletRegistryManager repletRegistryManager;
+    private DeployService deployService;
+    private ComposerVSTableController composerVSTableController;
+    private CrosstabDrillHandler crosstabDrillHandler;
+    private ImportXLSController importXLSController;
+    private VSAssemblyInfoHandler vsassemblyInfoHandler;
+    private ImportCSVDialogController importCSVDialogController;
+    private MaxModeAssemblyService maxModeAssemblyService;
+    private VSChartShowDetailsController vschartShowDetailsController;
+    private VSChartBrushController vschartBrushController;
+    private ScheduleTaskFolderService scheduleTaskFolderService;
+    private PluginsService pluginsService;
 
+    private FileApiService fileApiService;
+
+    private DatabaseDatasourcesController databaseDatasourcesController;
+    private VSCompositionService vsCompositionService;
+    private CoreLifecycleService coreLifecycleService;
+    private WorksheetEventService worksheetEventService;
+    private BaseTableLoadDataServiceProxy baseTableLoadDataServiceProxy;
+    private BinaryTransferService binaryTransferService;
+    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
+    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
+    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
+    private VSChartShowDetailsServiceProxy vsChartShowDetailsServiceProxy;
+    private VSChartBrushServiceProxy vsChartBrushServiceProxy;
+
+    private SharedFilterService sharedFilterService;
+
+    private CoreLifecycleControllerService coreLifecycleControllerService;
 }
