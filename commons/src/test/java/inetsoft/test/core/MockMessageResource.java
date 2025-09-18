@@ -55,7 +55,7 @@ public abstract class MockMessageResource {
       GenericMessage<String> message = new GenericMessage<>("test");
       MessageAttributes messageAttributes = new MessageAttributes(message);
 
-      if(getRuntimeId() != null) {
+      if (getRuntimeId() != null) {
          messageAttributes.setAttribute("sheetRuntimeId", getRuntimeId());
       }
 
@@ -76,8 +76,7 @@ public abstract class MockMessageResource {
       CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate) {
          @Override
          public void convertAndSendToUser(String user, String destination, Object payload,
-                                          Map<String, Object> headers) throws MessagingException
-         {
+                                          Map<String, Object> headers) throws MessagingException {
             // NO-OP
          }
       };
@@ -87,8 +86,7 @@ public abstract class MockMessageResource {
 
       try {
          return action.apply(t);
-      }
-      finally {
+      } finally {
          commandDispatcher = null;
          headerAccessor = null;
          messagingTemplate = null;
@@ -108,7 +106,7 @@ public abstract class MockMessageResource {
    }
 
    protected void mockMessage(Runnable action) {
-      mockMessage(null,"", (Function<String, Void>) ignore -> {
+      mockMessage(null, "", (Function<String, Void>) ignore -> {
          action.run();
          return null;
       });
