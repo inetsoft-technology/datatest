@@ -35,6 +35,7 @@ class VPMTest {
    }
 
    def executeVS(SRPrincipal user, Map<String, String[]> params) {
+      user.setIgnoreLogin(true)
       ThreadContext.setContextPrincipal(user)
       OpenViewsheetEvent openViewsheetEvent = actionEventsUtil.createOpenViewsheetEvent(params, asset_id)
       viewsheetResource = new RuntimeViewsheetResource(openViewsheetEvent, controllers)
