@@ -39,6 +39,8 @@ import org.springframework.mock.web.MockMultipartFile
 import org.springframework.web.multipart.MultipartFile
 
 class WorksheetTest {
+   static ConfigurationContext context
+
    WorksheetTest(String caseName) {
       this.caseName = caseName
    }
@@ -61,7 +63,9 @@ class WorksheetTest {
       System.err.print("=========ws.sree.home=====" + System.getProperty("ws.sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("ws.sree.home"))
+
+      context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("ws.sree.home"))
 
       if(properties != null) {
          properties.each{key, value ->
@@ -86,6 +90,7 @@ class WorksheetTest {
    def initWS(String asset_id, SRPrincipal principal) {
       DataSpace.getDataSpace()
       controllers.initControllers()
+      controllers.initApplicationContext(context)
       ThreadContext.setContextPrincipal(principal)
       worksheetResource = new RuntimeWorksheetResource(actionEventsUtil.openWorksheetEvent(asset_id), controllers)
       principal = principal ?: admin
@@ -147,6 +152,7 @@ class WorksheetTest {
             exportData(sortlens, fileName, true)
          }
       }
+      controllers.destroy()
    }
 
    private setLiveData(TableAssembly table) {
@@ -249,6 +255,7 @@ class WorksheetTest {
             exportData(lens, fileName, false)
          }
       }
+      controllers.destroy()
    }
 
    /**

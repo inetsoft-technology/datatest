@@ -12,6 +12,7 @@ import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XFactory;
 import inetsoft.uql.asset.AssetRepository;
+import inetsoft.util.ConfigurationContext;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.plugins.PluginsService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
@@ -72,6 +73,8 @@ import java.util.List;
 import org.mockito.*;
 import org.springframework.context.ApplicationEventPublisher;
 
+import static org.mockito.Mockito.*;
+
 public class ControllersResource extends MockMessageResource {
 
    public void initControllers() {
@@ -94,6 +97,7 @@ public class ControllersResource extends MockMessageResource {
       selectionService = null;
       imageService = null;
       worksheetService = null;
+      staticConfigurationContext.close();
    }
 
    private void createControllers() {
@@ -221,7 +225,7 @@ public class ControllersResource extends MockMessageResource {
          }
       };
 
-      worksheetEventService = new WorksheetEventService(viewsheetService, Mockito.mock(WorksheetEventServiceProxy.class));
+      worksheetEventService = new WorksheetEventService(viewsheetService, new WorksheetEventServiceProxy());
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository, worksheetEventService) {
          protected WorksheetService getWorksheetEngine() {
             return worksheetService;
@@ -287,6 +291,20 @@ public class ControllersResource extends MockMessageResource {
       DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
       databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
               dataModelFolderManagerService, dataSourceService);
+   }
+
+   public void initApplicationContext(ConfigurationContext context) {
+      ConfigurationContext spyContext = spy(context);
+
+      doReturn(worksheetEventService)
+              .when(spyContext)
+              .getSpringBean(WorksheetEventService.class);
+
+      if (staticConfigurationContext == null) {
+         staticConfigurationContext = mockStatic(ConfigurationContext.class);
+      }
+
+      staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
    }
 
    @Override
@@ -396,4 +414,6 @@ public class ControllersResource extends MockMessageResource {
    private VSChartShowDetailsServiceProxy vsChartShowDetailsServiceProxy;
    private VSChartBrushServiceProxy vsChartBrushServiceProxy;
    private SharedFilterService sharedFilterService;
+
+   MockedStatic<ConfigurationContext> staticConfigurationContext;
 }
