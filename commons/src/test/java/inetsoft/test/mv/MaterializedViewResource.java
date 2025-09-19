@@ -41,11 +41,12 @@ public class MaterializedViewResource {
       ThreadContext.setContextPrincipal(principal);
 
       MVSupportService support = MVSupportService.getInstance();
-      SecurityProvider securityProvider = SecurityEngine.getSecurity().getSecurityProvider();
-      ResourcePermissionService resourcePermissionService = new ResourcePermissionService(securityProvider, SecurityEngine.getSecurity());
+      SecurityEngine securityEngine = SecurityEngine.getSecurity();
+      SecurityProvider securityProvider = securityEngine.getSecurityProvider();
+      ResourcePermissionService resourcePermissionService = new ResourcePermissionService(securityProvider, securityEngine);
       RepletRegistryManager repletRegistryManager = new RepletRegistryManager();
       ScheduleTaskFolderService scheduleTaskFolderService = new ScheduleTaskFolderService(ScheduleManager.getScheduleManager(),
-              SecurityEngine.getSecurity(), securityProvider);
+              securityEngine, securityProvider);
       ContentRepositoryTreeService contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
             resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
       MVService service = new MVService(contentRepositoryTreeService, support);
@@ -82,6 +83,7 @@ public class MaterializedViewResource {
                   msg.append(error.toString());
                }
                System.err.println("====MV Analyze Exception====" + msg);
+               Thread.sleep(10);
                break;
             } else if (!analysisJob1.isComplete()) {
                Thread.sleep(10);

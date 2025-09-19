@@ -33,7 +33,6 @@ import inetsoft.report.composition.graph.VSDataSet
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
 
-import java.security.Principal
 import java.text.SimpleDateFormat
 import java.text.NumberFormat
 import java.text.DecimalFormat
@@ -139,7 +138,7 @@ class MVTest {
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       if(bk != null) {
-         rvs.gotoBookmark(bk, principal.getUser().getUserIdentity())
+         rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
          rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
       }
       Viewsheet vs = rvs.getViewsheet()
@@ -424,7 +423,12 @@ class MVTest {
          identityRoles += newRole
       }
 
-      return  new SRPrincipal(identityUser, identityRoles, groups, "host-org", Tool.getSecureRandom().nextLong())
+      SRPrincipal principal = new SRPrincipal(identityUser, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      principal.setIgnoreLogin(true)
+
+      return principal
+
+//      return  new SRPrincipal(identityUser, identityRoles, groups, "host-org", Tool.getSecureRandom().nextLong())
    }
 
    OpenViewsheetEvent createOpenViewsheetEvent(Map<String, String[]> parameters) {
