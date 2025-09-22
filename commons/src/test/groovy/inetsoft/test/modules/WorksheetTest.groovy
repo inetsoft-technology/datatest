@@ -89,6 +89,7 @@ class WorksheetTest {
 
    def initWS(String asset_id, SRPrincipal principal) {
       DataSpace.getDataSpace()
+      controllers = new ControllersResource()
       controllers.initControllers()
       controllers.initApplicationContext(context)
       ThreadContext.setContextPrincipal(principal)
@@ -344,7 +345,7 @@ class WorksheetTest {
    }
 
    private static String suiteName, caseName
-   private static ControllersResource controllers = new ControllersResource()
+   private static ControllersResource controllers
    private static RuntimeWorksheetResource worksheetResource
    private static AssetQuerySandbox assetQuerySandbox
    private static RuntimeViewsheetResource viewsheetResource
