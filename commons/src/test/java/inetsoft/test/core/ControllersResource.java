@@ -97,7 +97,9 @@ public class ControllersResource extends MockMessageResource {
       selectionService = null;
       imageService = null;
       worksheetService = null;
-      staticConfigurationContext.close();
+      if (staticConfigurationContext != null) {
+         staticConfigurationContext.close();
+      }
    }
 
    private void createControllers() {
