@@ -32,6 +32,7 @@ import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.WorksheetController;
 import inetsoft.web.composer.ws.assembly.WorksheetEventServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
+import inetsoft.web.composer.ws.dialog.ImportCSVDialogService;
 import inetsoft.web.portal.controller.database.DataSourceService;
 import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
@@ -280,6 +281,9 @@ public class ControllersResource extends MockMessageResource {
             return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
          }
       };
+
+      importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService);
+
       vsChartShowDetailsServiceProxy = new VSChartShowDetailsServiceProxy();
       vsChartBrushServiceProxy = new VSChartBrushServiceProxy();
       vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, vsChartShowDetailsServiceProxy);
@@ -300,6 +304,10 @@ public class ControllersResource extends MockMessageResource {
       doReturn(worksheetEventService)
               .when(spyContext)
               .getSpringBean(WorksheetEventService.class);
+
+      doReturn(importCSVDialogService)
+              .when(spyContext)
+              .getSpringBean(ImportCSVDialogService.class);
 
       if (staticConfigurationContext == null) {
          staticConfigurationContext = mockStatic(ConfigurationContext.class);
@@ -415,6 +423,7 @@ public class ControllersResource extends MockMessageResource {
    private VSChartShowDetailsServiceProxy vsChartShowDetailsServiceProxy;
    private VSChartBrushServiceProxy vsChartBrushServiceProxy;
    private SharedFilterService sharedFilterService;
+   private ImportCSVDialogService importCSVDialogService;
 
    MockedStatic<ConfigurationContext> staticConfigurationContext;
 }

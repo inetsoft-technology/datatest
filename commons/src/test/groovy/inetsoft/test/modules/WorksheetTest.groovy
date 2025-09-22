@@ -105,7 +105,11 @@ class WorksheetTest {
     * @param bk use to store diff mode
     */
    def executeWS(String asset_id, Map<String, Object> params, String bk) {
-      executeWS(asset_id, params, null, null, bk)
+      try{
+         executeWS(asset_id, params, null, null, bk)
+      } finally {
+         controllers.destroy()
+      }
    }
 
    /**
@@ -154,7 +158,6 @@ class WorksheetTest {
             exportData(sortlens, fileName, true)
          }
       }
-      controllers.destroy()
    }
 
    private setLiveData(TableAssembly table) {
@@ -211,7 +214,11 @@ class WorksheetTest {
    }
 
    def importCSVToEMTable(String asset_id, String file, def fileModel, String suffix) {
-      importCSVToEMTable(asset_id, file, fileModel, 500, suffix)
+      try {
+         importCSVToEMTable(asset_id, file, fileModel, 500, suffix)
+      }finally {
+         controllers.destroy()
+      }
    }
 
    /**
@@ -257,7 +264,6 @@ class WorksheetTest {
             exportData(lens, fileName, false)
          }
       }
-      controllers.destroy()
    }
 
    /**
