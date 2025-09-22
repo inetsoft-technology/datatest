@@ -89,9 +89,11 @@ class WorksheetTest {
 
    def initWS(String asset_id, SRPrincipal principal) {
       DataSpace.getDataSpace()
+      controllers = new ControllersResource()
       controllers.initControllers()
       controllers.initApplicationContext(context)
       ThreadContext.setContextPrincipal(principal)
+      admin.setIgnoreLogin(true)
       worksheetResource = new RuntimeWorksheetResource(actionEventsUtil.openWorksheetEvent(asset_id), controllers)
       principal = principal ?: admin
       worksheetResource.initRuntimeWS(principal)
@@ -265,7 +267,11 @@ class WorksheetTest {
     * @return
     */
    def exportVSComponentData(String asset_id, Map<String, String[]> params) {
+      controllers = new ControllersResource()
+      controllers.initControllers()
+      controllers.initApplicationContext(context)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
+      admin.setIgnoreLogin(true)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(admin)
       ThreadContext.setContextPrincipal(admin)
@@ -297,6 +303,8 @@ class WorksheetTest {
          }
       }catch(Exception e) {
          e.printStackTrace()
+      }finally {
+         controllers.destroy()
       }
    }
 
@@ -344,7 +352,7 @@ class WorksheetTest {
    }
 
    private static String suiteName, caseName
-   private static ControllersResource controllers = new ControllersResource()
+   private static ControllersResource controllers
    private static RuntimeWorksheetResource worksheetResource
    private static AssetQuerySandbox assetQuerySandbox
    private static RuntimeViewsheetResource viewsheetResource
