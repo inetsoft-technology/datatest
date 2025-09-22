@@ -107,6 +107,8 @@ class WorksheetTest {
    def executeWS(String asset_id, Map<String, Object> params, String bk) {
       try{
          executeWS(asset_id, params, null, null, bk)
+      } catch (Exception ex) {
+         ex.printStackTrace()
       } finally {
          controllers.destroy()
       }
@@ -216,7 +218,9 @@ class WorksheetTest {
    def importCSVToEMTable(String asset_id, String file, def fileModel, String suffix) {
       try {
          importCSVToEMTable(asset_id, file, fileModel, 500, suffix)
-      }finally {
+      } catch(Exception ex) {
+         ex.printStackTrace()
+      } finally {
          controllers.destroy()
       }
    }
