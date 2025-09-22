@@ -167,6 +167,7 @@ class WSData_Spec extends Specification {
    def 'condition_session' () {
       caseName =  specificationContext.currentIteration.name
       SRPrincipal paiduser = TUtil.createPrincipal('paiduser', ['Everyone', 'Administrator'] as String[], ['DTest'] as String[])
+      paiduser.setIgnoreLogin(true)
       wstest = new WorksheetTest(caseName)
       wstest.executeWS('1^2^__NULL__^Common/condition_session', null, null, paiduser, null)
       expect:
