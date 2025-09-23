@@ -66,7 +66,8 @@ class GlobalTest {
    static initHome(String suiteName, def properties) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1? null : arrs[1].replace('.', '/'))
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("sree.home"))
 
       if(properties != null) {
          properties.each{key, value ->
@@ -179,7 +180,7 @@ class GlobalTest {
       DataSpace.getDataSpace()
       controllers = new ControllersResource()
       controllers.initControllers()
-
+      controllers.initApplicationContext(context)
       ThreadContext.setContextPrincipal(admin)
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
       worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
@@ -193,21 +194,27 @@ class GlobalTest {
       params.each {
          assetQuerySandbox.getVariableTable().put(it.key, it.value)
       }
-      assemblies.each {
-         if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
-            TableAssembly tableAssembly = (TableAssembly)it
-            String tableName = tableAssembly.getName()
-            if (!tableAssembly.isVisibleTable()) {
-               return
-            }
-            setLiveData(tableAssembly)
+      try{
+         assemblies.each {
+            if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+               TableAssembly tableAssembly = (TableAssembly)it
+               String tableName = tableAssembly.getName()
+               if (!tableAssembly.isVisibleTable()) {
+                  return
+               }
+               setLiveData(tableAssembly)
 
-            TableLens lens = assetQuerySandbox.getTableLens(tableName, AssetQuerySandbox.LIVE_MODE)
-            // sort lens to void row sort issue.
-            SortFilter sortlens = new SortFilter(lens)
-            String fileName = createFileByCase(asset_id, tableName)
-            exportUtil.exportWSObject(fileName, sortlens)
+               TableLens lens = assetQuerySandbox.getTableLens(tableName, AssetQuerySandbox.LIVE_MODE)
+               // sort lens to void row sort issue.
+               SortFilter sortlens = new SortFilter(lens)
+               String fileName = createFileByCase(asset_id, tableName)
+               exportUtil.exportWSObject(fileName, sortlens)
+            }
          }
+      }catch (Exception e) {
+         e.printStackTrace()
+      }finally {
+         controllers.destroy()
       }
    }
 
@@ -247,7 +254,7 @@ class GlobalTest {
       viewsheetResource.initRuntimeVS(admin)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
-      rvs.gotoBookmark(bk, admin.getUser().getUserIdentity())
+      rvs.gotoBookmark(bk, admin.getUser().getUserIdentity(), admin)
       rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
 
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
@@ -388,6 +395,7 @@ class GlobalTest {
    }
 
    static String caseName, suiteName
+   static ConfigurationContext context
    RuntimeViewsheetResource viewsheetResource
    RuntimeWorksheetResource worksheetResource
    ControllersResource controllers = new ControllersResource()

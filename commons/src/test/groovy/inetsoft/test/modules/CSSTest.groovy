@@ -64,7 +64,7 @@ class CSSTest {
       ThreadContext.setContextPrincipal(principal)  //use to set additional db permission
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
-      rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity())
+      rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
       rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
 
       File outFile = createExportFileByCase(asset_id)
