@@ -42,7 +42,7 @@ import inetsoft.test.core.CompareUtil
 import java.awt.image.BufferedImage
 
 class ViewsheetTest {
-   static ConfigurationContext context
+   //static ConfigurationContext context
    static ControllersResource controllers
 
    ViewsheetTest(String asset_id, String caseName) {
@@ -56,8 +56,10 @@ class ViewsheetTest {
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
 
-      context = ConfigurationContext.getContext()
-      context.setHome(System.getProperty("sree.home"))
+      /*context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("sree.home"))*/
+
+      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
    /**
     * Init runtime VS
@@ -135,10 +137,8 @@ class ViewsheetTest {
                exportUtil.exportVSObject(outFile.toString(), data)
             }
          }
-      } catch (Exception e) {
-         e.printStackTrace()
-      } finally {
-         controllers.destroy()
+      } catch (Exception ex) {
+         new Exception("==========execute viewsheet failed:===========", ex).printStackTrace();
       }
    }
 
@@ -245,11 +245,13 @@ class ViewsheetTest {
       }
       File outFile = createExportFileByCase(null, null, '.png')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
-              expandSelection, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
-
-      controllers.destroy()
+      try{
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
+                 expandSelection, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }catch (Exception ex) {
+         new Exception("==========export PNG failed:===========", ex).printStackTrace();
+      }
    }
 
    /**
@@ -267,11 +269,15 @@ class ViewsheetTest {
       }
       File outFile = createExportFileByCase(null, null, '.pdf')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
-              false, false, true, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
+                 false, false, true, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }catch (Exception ex) {
+         new Exception("==========export PDF failed:===========", ex).printStackTrace();
+      }
+
       Thread.sleep(500)
-      controllers.destroy()
       tUtil.convertPDFToPNG(outFile.toString())
    }
 
