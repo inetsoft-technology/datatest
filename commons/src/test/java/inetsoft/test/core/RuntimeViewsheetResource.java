@@ -161,7 +161,8 @@ public class RuntimeViewsheetResource extends MockMessageResource {
     */
    public void brushOnChart(VSChartBrushEvent event, SRPrincipal principal) throws  Exception {
       runtimeViewsheet = getRuntimeViewsheet(principal);
-      controllersResource.getVSChartBrushController().eventHandler(event, null, principal, commandDispatcher);
+      controllersResource.getVSChartBrushService().eventHandler(runtimeId, event,
+              "http://localhost:8080/sree", principal, commandDispatcher);
    }
 
    private void closeViewsheet(String runtimeId) {

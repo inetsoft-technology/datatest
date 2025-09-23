@@ -14,7 +14,6 @@ import inetsoft.uql.XFactory;
 import inetsoft.uql.asset.AssetRepository;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
-import inetsoft.web.admin.content.plugins.PluginsService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
 import inetsoft.web.admin.content.repository.DatabaseDatasourcesService;
 import inetsoft.web.admin.content.repository.RepletRegistryManager;
@@ -22,7 +21,6 @@ import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
 import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
 import inetsoft.web.binding.drm.*;
-import inetsoft.web.binding.handler.VSAssemblyInfoHandler;
 import inetsoft.web.binding.model.*;
 import inetsoft.web.binding.service.*;
 import inetsoft.web.composer.vs.VSObjectTreeService;
@@ -30,7 +28,6 @@ import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService;
 import inetsoft.web.composer.ws.OpenWorksheetController;
-import inetsoft.web.composer.ws.WorksheetController;
 import inetsoft.web.composer.ws.assembly.WorksheetEventServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogService;
@@ -40,8 +37,6 @@ import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
 import inetsoft.web.viewsheet.controller.*;
 import inetsoft.web.viewsheet.controller.chart.*;
-import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataController;
-import inetsoft.web.viewsheet.handler.crosstab.CrosstabDrillHandler;
 import inetsoft.web.viewsheet.model.*;
 import inetsoft.web.viewsheet.model.annotation.VSAnnotationModel;
 import inetsoft.web.viewsheet.model.calendar.VSCalendarModel;
@@ -52,7 +47,6 @@ import inetsoft.web.viewsheet.model.table.VSEmbeddedTableModel;
 import inetsoft.web.viewsheet.model.table.VSTableModel;
 import inetsoft.web.viewsheet.service.*;
 import inetsoft.web.viewsheet.service.CoreLifecycleService;
-import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataServiceProxy;
 import inetsoft.web.composer.ws.assembly.WorksheetEventService;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableServiceProxy;
@@ -79,7 +73,6 @@ public class ControllersResource extends MockMessageResource {
       vsLifecycleService = null;
       runtimeViewsheetManager = null;
       objectModelFactoryService = null;
-      viewsheetController = null;
       objectTreeService = null;
       securityEngine = null;
       objectService = null;
@@ -87,9 +80,8 @@ public class ControllersResource extends MockMessageResource {
       dataRefModelFactoryService = null;
       assetRepository = null;
       openViewsheetController = null;
-      selectionService = null;
-      imageService = null;
       vsChartShowDetailsService = null;
+      vsChartBrushService = null;
       worksheetService = null;
       if (staticConfigurationContext != null) {
          staticConfigurationContext.close();
@@ -198,29 +190,10 @@ public class ControllersResource extends MockMessageResource {
       vsLifecycleService = new VSLifecycleService(
               viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
               dataRefModelFactoryService, vsCompositionService, parameterService, new VSLifecycleControllerServiceProxy());
-      viewsheetController = new ViewsheetController(
-              runtimeViewsheetRef, new ViewsheetControllerServiceProxy());
       licenseService = new LicenseService();
       openViewsheetController = new OpenViewsheetController(
               runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
               new OpenViewsheetServiceProxy(), viewsheetService);
-      worksheetController = new WorksheetController() {
-         protected WorksheetService getWorksheetEngine() {
-            return worksheetService;
-         }
-
-         public String getRuntimeId() {
-            return ControllersResource.this.runtimeId;
-         }
-
-         protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
-            return runtimeViewsheetRef;
-         }
-
-         protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
-            return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
-         }
-      };
 
       worksheetEventService = new WorksheetEventService(viewsheetService, new WorksheetEventServiceProxy());
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository, worksheetEventService) {
@@ -233,13 +206,7 @@ public class ControllersResource extends MockMessageResource {
          }
       };
 
-      baseTableLoadDataServiceProxy = new BaseTableLoadDataServiceProxy();
-      baseTableLoadDataController =
-              new BaseTableLoadDataController(runtimeViewsheetRef, baseTableLoadDataServiceProxy);
-      maxModeAssemblyService = new MaxModeAssemblyService(viewsheetService, coreLifecycleService);
-      selectionService = new VSSelectionService(coreLifecycleService, viewsheetService, maxModeAssemblyService, sharedFilterService);
       binaryTransferService = new BinaryTransferService();
-      imageService = new AssemblyImageService(viewsheetService, binaryTransferService);
       vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
 
       securityProvider = securityEngine.getSecurityProvider();
@@ -255,8 +222,6 @@ public class ControllersResource extends MockMessageResource {
       }
 
       deployService = new DeployService(contentRepositoryTreeService, securityEngine);
-      vsassemblyInfoHandler = new VSAssemblyInfoHandler(coreLifecycleService, dataRefModelFactoryService, parameterService);
-      crosstabDrillHandler = new CrosstabDrillHandler(viewsheetService, coreLifecycleService, runtimeViewsheetRef);
       composerVSTableServiceProxy = new ComposerVSTableServiceProxy();
       composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, composerVSTableServiceProxy);
       importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
@@ -279,8 +244,8 @@ public class ControllersResource extends MockMessageResource {
 
       importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService);
 
-      vsChartBrushServiceProxy = new VSChartBrushServiceProxy();
-      vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, vsChartBrushServiceProxy);
+      vsChartBrushService = new VSChartBrushService(coreLifecycleService, viewsheetService,
+              new VSChartAreasServiceProxy());
       vsChartShowDetailsService = new VSChartShowDetailsService(viewsheetService, coreLifecycleService,
               new VSChartAreasServiceProxy(), new VSDialogService());
       fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
@@ -292,7 +257,7 @@ public class ControllersResource extends MockMessageResource {
       databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
               dataModelFolderManagerService, dataSourceService);
 
-      openViewsheetService = new OpenViewsheetService(viewsheetService, new VSObjectTreeService(new VSObjectModelFactoryService(modelFactories)));
+      openViewsheetService = new OpenViewsheetService(viewsheetService, objectTreeService);
    }
 
    public void initApplicationContext(ConfigurationContext context) {
@@ -369,8 +334,8 @@ public class ControllersResource extends MockMessageResource {
       return vsChartShowDetailsService;
    }
 
-   public VSChartBrushController getVSChartBrushController() {
-      return vschartBrushController;
+   public VSChartBrushService getVSChartBrushService() {
+      return vsChartBrushService;
    }
 
    public FileApiService getFileApiService() {
@@ -392,8 +357,6 @@ public class ControllersResource extends MockMessageResource {
    private VSLifecycleService vsLifecycleService;
    private RuntimeViewsheetManager runtimeViewsheetManager;
    private VSObjectModelFactoryService objectModelFactoryService;
-   private ViewsheetController viewsheetController;
-   private WorksheetController worksheetController;
    private VSObjectTreeService objectTreeService;
    private SecurityEngine securityEngine;
    private VSObjectService objectService;
@@ -402,10 +365,7 @@ public class ControllersResource extends MockMessageResource {
    private AssetRepository assetRepository;
    private OpenViewsheetController openViewsheetController;
    private OpenWorksheetController openWorksheetController;
-   private BaseTableLoadDataController baseTableLoadDataController;
    private LicenseService licenseService;
-   private VSSelectionService selectionService;
-   private AssemblyImageService imageService;
    private VSExportService vsExportService;
    private SecurityProvider securityProvider;
    private ResourcePermissionService resourcePermissionService;
@@ -413,25 +373,19 @@ public class ControllersResource extends MockMessageResource {
    private RepletRegistryManager repletRegistryManager;
    private DeployService deployService;
    private ComposerVSTableController composerVSTableController;
-   private CrosstabDrillHandler crosstabDrillHandler;
    private ImportXLSController importXLSController;
-   private VSAssemblyInfoHandler vsassemblyInfoHandler;
    private ImportCSVDialogController importCSVDialogController;
-   private MaxModeAssemblyService maxModeAssemblyService;
-   private VSChartBrushController vschartBrushController;
    private ScheduleTaskFolderService scheduleTaskFolderService;
-   private PluginsService pluginsService;
    private FileApiService fileApiService;
    private DatabaseDatasourcesController databaseDatasourcesController;
    private VSCompositionService vsCompositionService;
    private CoreLifecycleService coreLifecycleService;
    private WorksheetEventService worksheetEventService;
-   private BaseTableLoadDataServiceProxy baseTableLoadDataServiceProxy;
    private BinaryTransferService binaryTransferService;
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
-   private VSChartBrushServiceProxy vsChartBrushServiceProxy;
+   private VSChartBrushService vsChartBrushService;
    private SharedFilterService sharedFilterService;
    private ImportCSVDialogService importCSVDialogService;
    private OpenViewsheetService openViewsheetService;

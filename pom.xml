@@ -33,10 +33,11 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.version>1.0.0-SNAPSHOT</project.version>
-        <groovy.version>4.0.18</groovy.version>
-        <spring.version>6.1.9</spring.version>
+        <groovy.version>4.0.25</groovy.version>
+        <spring.version>6.2.10</spring.version>
+        <jackson.version>2.19.2</jackson.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
-         <root.dir>/inetsoft/styleBI/test/datatest</root.dir>
+        <root.dir>/inetsoft/styleBI/test/datatest</root.dir>
 <!--        <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
@@ -60,17 +61,17 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-core</artifactId>
-            <version>3.2.1</version>
+            <version>3.4.2</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
-            <version>2.17.1</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.17.1</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.groovy</groupId>
