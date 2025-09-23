@@ -12,7 +12,6 @@ import inetsoft.web.viewsheet.controller.ImportXLSController;
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent;
 import inetsoft.web.viewsheet.event.chart.VSChartBrushEvent;
 import inetsoft.web.viewsheet.event.chart.VSChartShowDetailsEvent;
-import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsServiceProxy;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsService;
 import inetsoft.web.viewsheet.service.CommandDispatcherService;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
@@ -24,8 +23,8 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.web.multipart.MultipartFile;
-import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsServiceProxy;
 
+import java.lang.reflect.Method;
 import java.security.Principal;
 import java.util.Map;
 
@@ -144,16 +143,17 @@ public class RuntimeViewsheetResource extends MockMessageResource {
    /**
     * show detail on chart
     * @param event
+    * @param assemblyName
     * @param principal
     */
-   /**
    public FormatTableLens2 showDetailOnChart(VSChartShowDetailsEvent event, String assemblyName, SRPrincipal principal) throws Exception {
-    // 获取 runtimeViewsheet
-    RuntimeViewsheet runtimeViewsheet = getRuntimeViewsheet(principal);
-
-    // 调用 serviceProxy 的方法
-    return serviceProxy.getShowDetailDatas(event, runtimeViewsheet, assemblyName, principal);
-}  **/
+      runtimeViewsheet = getRuntimeViewsheet(principal);
+      Method method = VSChartShowDetailsService.class.getDeclaredMethod("getShowDetailDatas", VSChartShowDetailsEvent.class,
+              RuntimeViewsheet.class, String.class, Principal.class);
+      method.setAccessible(true);
+      return (FormatTableLens2) method.invoke(controllersResource.getVSChartShowDetailsService(), event,
+              runtimeViewsheet, assemblyName, principal);
+   }
 
 
    /**
@@ -225,5 +225,4 @@ public class RuntimeViewsheetResource extends MockMessageResource {
    private RuntimeViewsheet runtimeViewsheet;
    private String runtimeId;
    private CommandDispatcher commandDispatcher = createCommandDispather();
-   //private final VSChartShowDetailsServiceProxy serviceProxy;
 }

@@ -39,8 +39,7 @@ import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
 import inetsoft.web.viewsheet.controller.*;
-import inetsoft.web.viewsheet.controller.chart.VSChartBrushController;
-import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsController;
+import inetsoft.web.viewsheet.controller.chart.*;
 import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataController;
 import inetsoft.web.viewsheet.handler.crosstab.CrosstabDrillHandler;
 import inetsoft.web.viewsheet.model.*;
@@ -58,8 +57,6 @@ import inetsoft.web.composer.ws.assembly.WorksheetEventService;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogServiceProxy;
-import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsServiceProxy;
-import inetsoft.web.viewsheet.controller.chart.VSChartBrushServiceProxy;
 
 import java.rmi.RemoteException;
 import java.security.Principal;
@@ -92,6 +89,7 @@ public class ControllersResource extends MockMessageResource {
       openViewsheetController = null;
       selectionService = null;
       imageService = null;
+      vsChartShowDetailsService = null;
       worksheetService = null;
       if (staticConfigurationContext != null) {
          staticConfigurationContext.close();
@@ -281,10 +279,10 @@ public class ControllersResource extends MockMessageResource {
 
       importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService);
 
-      vsChartShowDetailsServiceProxy = new VSChartShowDetailsServiceProxy();
       vsChartBrushServiceProxy = new VSChartBrushServiceProxy();
-      vschartShowDetailsController = new VSChartShowDetailsController(runtimeViewsheetRef, vsChartShowDetailsServiceProxy);
       vschartBrushController = new VSChartBrushController(runtimeViewsheetRef, vsChartBrushServiceProxy);
+      vsChartShowDetailsService = new VSChartShowDetailsService(viewsheetService, coreLifecycleService,
+              new VSChartAreasServiceProxy(), new VSDialogService());
       fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
 
       DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
@@ -367,8 +365,8 @@ public class ControllersResource extends MockMessageResource {
       return importCSVDialogController;
    }
 
-   public VSChartShowDetailsController getVSChartShowDetailsController() {
-      return vschartShowDetailsController;
+   public VSChartShowDetailsService getVSChartShowDetailsService() {
+      return vsChartShowDetailsService;
    }
 
    public VSChartBrushController getVSChartBrushController() {
@@ -420,7 +418,6 @@ public class ControllersResource extends MockMessageResource {
    private VSAssemblyInfoHandler vsassemblyInfoHandler;
    private ImportCSVDialogController importCSVDialogController;
    private MaxModeAssemblyService maxModeAssemblyService;
-   private VSChartShowDetailsController vschartShowDetailsController;
    private VSChartBrushController vschartBrushController;
    private ScheduleTaskFolderService scheduleTaskFolderService;
    private PluginsService pluginsService;
@@ -434,11 +431,11 @@ public class ControllersResource extends MockMessageResource {
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
-   private VSChartShowDetailsServiceProxy vsChartShowDetailsServiceProxy;
    private VSChartBrushServiceProxy vsChartBrushServiceProxy;
    private SharedFilterService sharedFilterService;
    private ImportCSVDialogService importCSVDialogService;
    private OpenViewsheetService openViewsheetService;
+   private VSChartShowDetailsService vsChartShowDetailsService;
 
    MockedStatic<ConfigurationContext> staticConfigurationContext;
 }
