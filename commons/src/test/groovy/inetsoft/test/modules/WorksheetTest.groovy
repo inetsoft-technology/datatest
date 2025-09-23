@@ -279,7 +279,7 @@ class WorksheetTest {
    def exportVSComponentData(String asset_id, Map<String, String[]> params) {
       controllers = new ControllersResource()
       controllers.initControllers()
-      controllers.initApplicationContext(context)
+      //controllers.initApplicationContext(context)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       admin.setIgnoreLogin(true)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
