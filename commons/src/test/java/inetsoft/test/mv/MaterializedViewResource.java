@@ -128,7 +128,6 @@ public class MaterializedViewResource {
 
          for(int i = 0; i < count; i++) {
             this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
-            Thread.sleep(2000);
 
             //wait create mv complete or fail
             for(int j = 0; j < 1; j--) {
@@ -137,7 +136,7 @@ public class MaterializedViewResource {
                   createStatus = this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
                } catch (Exception e) {
                   if (e.getMessage().contains("The materialized view creation has not been started")) {
-                     Thread.sleep(500);
+                     Thread.sleep(1000);
                   }
                   break;
                }
