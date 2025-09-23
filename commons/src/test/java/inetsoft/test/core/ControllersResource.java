@@ -28,6 +28,7 @@ import inetsoft.web.binding.service.*;
 import inetsoft.web.composer.vs.VSObjectTreeService;
 import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
+import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService;
 import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.WorksheetController;
 import inetsoft.web.composer.ws.assembly.WorksheetEventServiceProxy;
@@ -37,10 +38,7 @@ import inetsoft.web.portal.controller.database.DataSourceService;
 import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
-import inetsoft.web.viewsheet.controller.AssemblyImageService;
-import inetsoft.web.viewsheet.controller.ImportXLSController;
-import inetsoft.web.viewsheet.controller.OpenViewsheetController;
-import inetsoft.web.viewsheet.controller.ViewsheetController;
+import inetsoft.web.viewsheet.controller.*;
 import inetsoft.web.viewsheet.controller.chart.VSChartBrushController;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsController;
 import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataController;
@@ -55,13 +53,10 @@ import inetsoft.web.viewsheet.model.table.VSEmbeddedTableModel;
 import inetsoft.web.viewsheet.model.table.VSTableModel;
 import inetsoft.web.viewsheet.service.*;
 import inetsoft.web.viewsheet.service.CoreLifecycleService;
-import inetsoft.web.viewsheet.controller.ViewsheetControllerServiceProxy;
-import inetsoft.web.viewsheet.controller.OpenViewsheetServiceProxy;
 import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataServiceProxy;
 import inetsoft.web.composer.ws.assembly.WorksheetEventService;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableServiceProxy;
-import inetsoft.web.viewsheet.controller.ImportXLSControllerServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogServiceProxy;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsServiceProxy;
 import inetsoft.web.viewsheet.controller.chart.VSChartBrushServiceProxy;
@@ -298,11 +293,14 @@ public class ControllersResource extends MockMessageResource {
       DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
       databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
               dataModelFolderManagerService, dataSourceService);
+
+      openViewsheetService = new OpenViewsheetService(viewsheetService, new VSObjectTreeService(new VSObjectModelFactoryService(modelFactories)));
    }
 
    public void initApplicationContext(ConfigurationContext context) {
       ConfigurationContext spyContext = spy(context);
 
+      //only for .WorksheetTest.groovy
       doReturn(worksheetEventService)
               .when(spyContext)
               .getSpringBean(WorksheetEventService.class);
@@ -310,6 +308,20 @@ public class ControllersResource extends MockMessageResource {
       doReturn(importCSVDialogService)
               .when(spyContext)
               .getSpringBean(ImportCSVDialogService.class);
+
+      //only for checkConvert of VSCalcTest.groovy
+      doReturn(openViewsheetController)
+              .when(spyContext)
+              .getSpringBean(OpenViewsheetController.class);
+
+      doReturn(openViewsheetService)
+              .when(spyContext)
+              .getSpringBean(OpenViewsheetService.class);
+
+      ComposerVSTableService composerVSTableService = mock(ComposerVSTableService.class);
+      doReturn(composerVSTableService)
+              .when(spyContext)
+              .getSpringBean(ComposerVSTableService.class);
 
       if (staticConfigurationContext == null) {
          staticConfigurationContext = mockStatic(ConfigurationContext.class);
@@ -426,6 +438,7 @@ public class ControllersResource extends MockMessageResource {
    private VSChartBrushServiceProxy vsChartBrushServiceProxy;
    private SharedFilterService sharedFilterService;
    private ImportCSVDialogService importCSVDialogService;
+   private OpenViewsheetService openViewsheetService;
 
    MockedStatic<ConfigurationContext> staticConfigurationContext;
 }

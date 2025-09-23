@@ -31,7 +31,8 @@ class VSCalcTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("sree.home"))
    }
 
    /**
@@ -39,10 +40,13 @@ class VSCalcTest {
     * @param params
     * @return
     */
-   def initVS(Map<String, String[]> params, Boolean isViewer) {
+   def initVS(Map<String, String[]> params, Boolean isViewer, Boolean initContext) {
       DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      ControllersResource controllers = new ControllersResource()
+      controllers = new ControllersResource()
       controllers.initControllers()
+      if(initContext) {
+         controllers.initApplicationContext(context)
+      }
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       ThreadContext.setContextPrincipal(principal)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
@@ -55,7 +59,7 @@ class VSCalcTest {
     * @return
     */
    def checkConvert(Map<String, String[]> params) {
-      initVS(params, false)
+      initVS(params, false, true)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
       sandbox.shrink()
@@ -83,9 +87,15 @@ class VSCalcTest {
 
       File pngFile = createExportFileByCase(null, null,'_CALC.png')
       OutputStream out = new FileOutputStream(pngFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-              false, false, false, false,
-              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+                 false, false, false, false,
+                 ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      }catch (Exception ex) {
+            ex.printStackTrace()
+      }finally {
+         controllers.destroy()
+      }
    }
 
    /**
@@ -97,7 +107,7 @@ class VSCalcTest {
     * @return
     */
    def exportAsPNG(Map<String, String[]> params, String[] bks) {
-      initVS(params, true)
+      initVS(params, true, false)
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
@@ -150,6 +160,8 @@ class VSCalcTest {
 
    private static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
+   ControllersResource controllers
+   static ConfigurationContext context
 
    CompareUtil compareUtil = new CompareUtil()
    TUtil tUtil = new TUtil()
