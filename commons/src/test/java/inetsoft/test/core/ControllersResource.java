@@ -21,6 +21,7 @@ import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
 import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
 import inetsoft.web.binding.drm.*;
+import inetsoft.web.binding.handler.VSAssemblyInfoHandler;
 import inetsoft.web.binding.model.*;
 import inetsoft.web.binding.service.*;
 import inetsoft.web.composer.vs.VSObjectTreeService;
@@ -37,6 +38,7 @@ import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
 import inetsoft.web.viewsheet.controller.*;
 import inetsoft.web.viewsheet.controller.chart.*;
+import inetsoft.web.viewsheet.handler.crosstab.CrosstabDrillHandler;
 import inetsoft.web.viewsheet.model.*;
 import inetsoft.web.viewsheet.model.annotation.VSAnnotationModel;
 import inetsoft.web.viewsheet.model.calendar.VSCalendarModel;
@@ -82,6 +84,7 @@ public class ControllersResource extends MockMessageResource {
       openViewsheetController = null;
       vsChartShowDetailsService = null;
       vsChartBrushService = null;
+      composerVSTableService = null;
       worksheetService = null;
       if (staticConfigurationContext != null) {
          staticConfigurationContext.close();
@@ -224,6 +227,9 @@ public class ControllersResource extends MockMessageResource {
       deployService = new DeployService(contentRepositoryTreeService, securityEngine);
       composerVSTableServiceProxy = new ComposerVSTableServiceProxy();
       composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, composerVSTableServiceProxy);
+      composerVSTableService = new ComposerVSTableService(coreLifecycleService, objectTreeService, objectModelFactoryService,
+              Mockito.mock(VSBindingService.class), assetRepository, viewsheetService, Mockito.mock(CrosstabDrillHandler.class),
+              Mockito.mock(VSAssemblyInfoHandler.class));
       importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
       importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy);
 
@@ -281,7 +287,6 @@ public class ControllersResource extends MockMessageResource {
               .when(spyContext)
               .getSpringBean(OpenViewsheetService.class);
 
-      ComposerVSTableService composerVSTableService = mock(ComposerVSTableService.class);
       doReturn(composerVSTableService)
               .when(spyContext)
               .getSpringBean(ComposerVSTableService.class);
@@ -383,6 +388,7 @@ public class ControllersResource extends MockMessageResource {
    private WorksheetEventService worksheetEventService;
    private BinaryTransferService binaryTransferService;
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
+   private ComposerVSTableService composerVSTableService;
    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
    private VSChartBrushService vsChartBrushService;
