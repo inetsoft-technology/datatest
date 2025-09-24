@@ -124,7 +124,7 @@ class GlobalTest {
       SUtil.setAdditionalDatasource(admin)
       viewsheetResource.initRuntimeVS(admin)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
-      rvs.gotoBookmark('(Home)', admin.getUser().getUserIdentity())
+      rvs.gotoBookmark('(Home)', admin.getUser().getUserIdentity(), admin)
       rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
 
       def outFile, out
