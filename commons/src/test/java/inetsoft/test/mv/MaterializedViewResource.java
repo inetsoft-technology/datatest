@@ -130,25 +130,22 @@ public class MaterializedViewResource {
             this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
 
             //wait create mv complete or fail
-            for(int j = 0; j < 1; j--) {
-               CreateMaterializedViewStatus createStatus;
+            for (int retry = 0; retry < 10; retry++) {
                try {
-                  createStatus = this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
+                  CreateMaterializedViewStatus createStatus = this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
+
+                  if (createStatus.isComplete()) {
+                     break;
+                  } else if (createStatus.isFailed()) {
+                     String msg = createStatus.getError();
+                     System.err.println("====MV Create Exception==== " + msg);
+                     break;
+                  }
                } catch (Exception e) {
                   if (e.getMessage().contains("The materialized view creation has not been started")) {
-                     Thread.sleep(1000);
-                  }
-                  break;
-               }
-               if (createStatus.isComplete()) {
-                  break;
-               } else if (createStatus.isFailed()) {
-                  String msg = createStatus.getError();
-                  System.err.println("====MV Create Exception====" + msg);
-                  break;
-               } else if (!createStatus.isComplete()) {
-                  Thread.sleep(10);
-                  if (createStatus.isComplete()) {
+                     Thread.sleep(500);
+                  } else {
+                     e.printStackTrace();
                      break;
                   }
                }
