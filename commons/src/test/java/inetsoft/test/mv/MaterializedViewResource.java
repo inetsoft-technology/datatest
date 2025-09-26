@@ -72,25 +72,21 @@ public class MaterializedViewResource {
          analysisJob = this.materializedViewApiService.analyze(analyzeRequest, this.principal);
 
          //wait the analysis job complete or fail
-         for(int i = 0; i < 1; i--) {
+         for (int retry = 0; retry < 5; retry++) {
             AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), this.principal);
-            if(analysisJob1.isComplete()) {
+            if (analysisJob1.isComplete()) {
                break;
-            } else if(analysisJob1.isFailed()) {
+            }
+            if (analysisJob1.isFailed()) {
                List<AnalysisError> errors = analysisJob1.getErrors();
                StringBuilder msg = new StringBuilder();
                for (AnalysisError error : errors) {
                   msg.append(error.toString());
                }
                System.err.println("====MV Analyze Exception====" + msg);
-               Thread.sleep(10);
                break;
-            } else if (!analysisJob1.isComplete()) {
-               Thread.sleep(10);
-               if(analysisJob1.isComplete()) {
-                  break;
-               }
             }
+            Thread.sleep(500);
          }
       }catch(Exception e){
          e.printStackTrace();
