@@ -84,7 +84,7 @@ class AdditionalConnectionTest {
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
-      rvs.gotoBookmark('(Home)', principal.getIdentityID())
+      rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
       rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
 
       File outFile = createFileByCase(caseName, asset_id, principal, null)
