@@ -37,7 +37,8 @@ class AdditionalConnectionTest {
       //System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1? null : arrs[1].replace('.', '/'))
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      context = ConfigurationContext.getContext()
+      context.setHome(System.getProperty("sree.home"))
    }
 
    /**
@@ -57,6 +58,7 @@ class AdditionalConnectionTest {
       if (principals == null) {
          principals = [admin]
       }
+   try {
       principals.each {
          SUtil.setAdditionalDatasource(it)
          ThreadContext.setContextPrincipal(it)  //use to set additional db permission
@@ -71,7 +73,10 @@ class AdditionalConnectionTest {
             new Exception("====Input right asset_id========" + asset_id).printStackTrace()
          }
       }
+   } finally {
+      controllers.destroy()
    }
+}
 
    /**
     * execute vs with user and parameter
@@ -102,6 +107,7 @@ class AdditionalConnectionTest {
     * @return
     */
    def executeWS(String asset_id, SRPrincipal principal, Map<String, Object[]> params) {
+      controllers.initApplicationContext(context)
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
       worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
       worksheetResource.initRuntimeWS(principal)
@@ -113,21 +119,25 @@ class AdditionalConnectionTest {
       params.each {
          assetQuerySandbox.getVariableTable().put(it.key, it.value)
       }
-      assemblies.each {
-         if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
-            TableAssembly tableAssembly = (TableAssembly)it
-            String tableName = tableAssembly.getName()
-            if (!tableAssembly.isVisibleTable()) {
-               return
-            }
+      try{
+         assemblies.each {
+            if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+               TableAssembly tableAssembly = (TableAssembly)it
+               String tableName = tableAssembly.getName()
+               if (!tableAssembly.isVisibleTable()) {
+                  return
+               }
+               setLiveData(tableAssembly)
 
-            setLiveData(tableAssembly)
-            TableLens lens = assetQuerySandbox.getTableLens(tableName, AssetQuerySandbox.LIVE_MODE)
-            // sort lens to void row sort issue.
-            SortFilter sortlens = new SortFilter(lens)
-            String fileName = createFileByCase(caseName, asset_id, principal, tableName)
-            exportUtil.exportWSObject(fileName, sortlens)
+               TableLens lens = assetQuerySandbox.getTableLens(tableName, AssetQuerySandbox.LIVE_MODE)
+               // sort lens to void row sort issue.
+               SortFilter sortlens = new SortFilter(lens)
+               String fileName = createFileByCase(asset_id, tableName)
+               exportUtil.exportWSObject(fileName, sortlens)
+            }
          }
+      }catch (Exception e) {
+         e.printStackTrace()
       }
    }
 
@@ -211,6 +221,7 @@ class AdditionalConnectionTest {
    }
 
    static String suiteName, caseName
+   static ConfigurationContext context
    // for vs, ws
    private RuntimeViewsheetResource viewsheetResource
    private ControllersResource controllers
