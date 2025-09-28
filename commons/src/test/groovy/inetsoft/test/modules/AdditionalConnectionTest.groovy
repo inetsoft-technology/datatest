@@ -132,8 +132,8 @@ class AdditionalConnectionTest {
                TableLens lens = assetQuerySandbox.getTableLens(tableName, AssetQuerySandbox.LIVE_MODE)
                // sort lens to void row sort issue.
                SortFilter sortlens = new SortFilter(lens)
-               String fileName = createFileByCase(asset_id, tableName)
-               exportUtil.exportWSObject(fileName, sortlens)
+               File outFile = createFileByCase(caseName, asset_id, principal, tableName)
+               exportUtil.exportWSObject(outFile.absolutePath, sortlens)
             }
          }
       }catch (Exception e) {
