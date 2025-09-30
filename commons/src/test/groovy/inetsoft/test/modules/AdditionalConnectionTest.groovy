@@ -58,7 +58,6 @@ class AdditionalConnectionTest {
       if (principals == null) {
          principals = [admin]
       }
-   try {
       principals.each {
          SUtil.setAdditionalDatasource(it)
          ThreadContext.setContextPrincipal(it)  //use to set additional db permission
@@ -73,9 +72,6 @@ class AdditionalConnectionTest {
             new Exception("====Input right asset_id========" + asset_id).printStackTrace()
          }
       }
-   } finally {
-      controllers.destroy()
-   }
 }
 
    /**
@@ -138,6 +134,8 @@ class AdditionalConnectionTest {
          }
       }catch (Exception e) {
          e.printStackTrace()
+      }finally {
+         controllers.destroy()
       }
    }
 
