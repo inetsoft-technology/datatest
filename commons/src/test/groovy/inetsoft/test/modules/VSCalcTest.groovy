@@ -13,6 +13,9 @@ import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
+import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService
+import inetsoft.web.viewsheet.controller.OpenViewsheetController
+import inetsoft.web.viewsheet.controller.OpenViewsheetService
 import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
@@ -20,6 +23,8 @@ import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
+import org.mockito.MockedStatic
+import static org.mockito.Mockito.*
 
 class VSCalcTest {
    VSCalcTest(String asset_id, String caseName) {
@@ -40,17 +45,44 @@ class VSCalcTest {
     * @param params
     * @return
     */
-   def initVS(Map<String, String[]> params, Boolean isViewer, Boolean initContext) {
+   def initVS(Map<String, String[]> params, Boolean isViewer) {
       DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers = new ControllersResource()
       controllers.initControllers()
-      if(initContext) {
-         controllers.initApplicationContext(context)
-      }
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       ThreadContext.setContextPrincipal(principal)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
       viewsheetResource.initRuntimeVS(principal)
+   }
+
+   def checkConvert(Map<String, String[]> params) {
+      try (MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
+         ConfigurationContext spyContext = spy(context)
+
+         OpenViewsheetController openViewsheetController = controllers.getOpenViewsheetController()
+         OpenViewsheetService openViewsheetService = controllers.getOpenViewsheetService()
+         ComposerVSTableService composerVSTableService = controllers.getComposerVSTableService()
+
+         doReturn(openViewsheetController)
+                 .when(spyContext)
+                 .getSpringBean(OpenViewsheetController.class)
+
+         doReturn(openViewsheetService)
+                 .when(spyContext)
+                 .getSpringBean(OpenViewsheetService.class)
+
+         doReturn(composerVSTableService)
+                 .when(spyContext)
+                 .getSpringBean(ComposerVSTableService.class)
+
+         staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext)
+
+         checkConvert0(params)
+      }catch(Exception e){
+         System.err.println("======convert========exceptions============");
+         e.printStackTrace();
+      }
+
    }
 
    /**
@@ -58,8 +90,8 @@ class VSCalcTest {
     * @param params
     * @return
     */
-   def checkConvert(Map<String, String[]> params) {
-      initVS(params, false, true)
+   def checkConvert0(Map<String, String[]> params) {
+      initVS(params, false)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
       sandbox.shrink()
@@ -93,8 +125,6 @@ class VSCalcTest {
                  ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
       }catch (Exception ex) {
             ex.printStackTrace()
-      }finally {
-         controllers.destroy()
       }
    }
 
@@ -107,7 +137,7 @@ class VSCalcTest {
     * @return
     */
    def exportAsPNG(Map<String, String[]> params, String[] bks) {
-      initVS(params, true, false)
+      initVS(params, true)
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }

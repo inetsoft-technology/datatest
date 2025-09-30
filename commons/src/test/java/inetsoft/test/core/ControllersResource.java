@@ -278,19 +278,6 @@ public class ControllersResource extends MockMessageResource {
               .when(spyContext)
               .getSpringBean(ImportCSVDialogService.class);
 
-      //only for checkConvert of VSCalcTest.groovy
-      doReturn(openViewsheetController)
-              .when(spyContext)
-              .getSpringBean(OpenViewsheetController.class);
-
-      doReturn(openViewsheetService)
-              .when(spyContext)
-              .getSpringBean(OpenViewsheetService.class);
-
-      doReturn(composerVSTableService)
-              .when(spyContext)
-              .getSpringBean(ComposerVSTableService.class);
-
       if (staticConfigurationContext == null) {
          staticConfigurationContext = mockStatic(ConfigurationContext.class);
       }
@@ -354,6 +341,14 @@ public class ControllersResource extends MockMessageResource {
    public CoreLifecycleService getCoreLifecycleService() {
       return coreLifecycleService;
    }
+
+   public OpenViewsheetService getOpenViewsheetService() { return openViewsheetService; }
+
+   public  ComposerVSTableService getComposerVSTableService() { return composerVSTableService; }
+
+   public WorksheetEventService getWorksheetEventService() { return worksheetEventService; }
+
+   public ImportCSVDialogService getImportCSVDialogService() { return importCSVDialogService; }
 
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;

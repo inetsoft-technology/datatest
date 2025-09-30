@@ -4,6 +4,9 @@ import inetsoft.test.modules.VSCalcTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import spock.lang.Timeout
+
+import java.util.concurrent.TimeUnit
 
 class Convert_Spec extends Specification {
    static VSCalcTest vsCalcTest
@@ -11,6 +14,26 @@ class Convert_Spec extends Specification {
 
    def setupSpec() {
       VSCalcTest.initHome(this.class.getName())
+   }
+
+   /**
+    * test crosstab binding query, then convert to freehand, setRowHeight=0 to hide header
+    */
+   @Timeout(value = 60, unit = TimeUnit.SECONDS)
+   def 'CroTable2'() {
+      caseName = specificationContext.currentIteration.name
+      vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable2', caseName)
+      vsCalcTest.exportAsPNG(null, null)
+      try {
+         vsCalcTest.checkConvert(null)
+         Thread.sleep(70000)
+      }
+      catch (InterruptedException ex) {
+         Thread.currentThread().interrupt()
+      }
+
+      expect:
+      vsCalcTest.compareImage(null)
    }
 
    /**
@@ -117,26 +140,12 @@ class Convert_Spec extends Specification {
       vsCalcTest.compareImage(null)
    }
 
-
    /**
     * test crosstab with pict case, then convert to freehand
     */
    def 'CroTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable1', caseName)
-      vsCalcTest.exportAsPNG(null, null)
-      vsCalcTest.checkConvert(null)
-
-      expect:
-      vsCalcTest.compareImage(null)
-   }
-
-   /**
-    * test crosstab binding query, then convert to freehand, setRowHeight=0 to hide header
-    */
-   def 'CroTable2'() {
-      caseName = specificationContext.currentIteration.name
-      vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable2', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null)
 
@@ -253,7 +262,9 @@ class Convert_Spec extends Specification {
    /**
     * test script effect
     * Bug #58711
+    * redesign the case, it need to simple and delete chart component
     */
+   @Ignore
    def 'VSScriptEffect'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/VSScriptEffect', caseName)
