@@ -38,7 +38,7 @@
         <jackson.version>2.19.2</jackson.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
         <root.dir>/inetsoft/styleBI/test-session/datatest</root.dir>
-<!--        <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
+        <!--<root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
 
@@ -122,6 +122,13 @@
             <artifactId>inetsoft-core</artifactId>
             <version>${project.version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.inetsoft.stylebi</groupId>
+            <artifactId>inetsoft-core</artifactId>
+            <version>${project.version}</version>
+            <classifier>tests</classifier>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.inetsoft.stylebi</groupId>
