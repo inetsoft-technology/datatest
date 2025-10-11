@@ -29,6 +29,7 @@ import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService;
 import inetsoft.web.composer.ws.OpenWorksheetController;
+import inetsoft.web.composer.ws.OpenWorksheetControllerServiceProxy;
 import inetsoft.web.composer.ws.assembly.WorksheetEventServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogService;
@@ -191,15 +192,15 @@ public class ControllersResource extends MockMessageResource {
       bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine, coreLifecycleService);
 
       vsLifecycleService = new VSLifecycleService(
-              viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
-              dataRefModelFactoryService, vsCompositionService, parameterService, new VSLifecycleControllerServiceProxy());
+              viewsheetService, assetRepository, coreLifecycleService, parameterService, new VSLifecycleControllerServiceProxy());
       licenseService = new LicenseService();
       openViewsheetController = new OpenViewsheetController(
               runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
               new OpenViewsheetServiceProxy(), viewsheetService);
 
       worksheetEventService = new WorksheetEventService(viewsheetService, new WorksheetEventServiceProxy());
-      openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository, worksheetEventService) {
+      openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository,
+              worksheetEventService, new OpenWorksheetControllerServiceProxy()) {
          protected WorksheetService getWorksheetEngine() {
             return worksheetService;
          }

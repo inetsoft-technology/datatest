@@ -31,7 +31,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -50,7 +50,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -69,7 +69,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -88,7 +88,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -107,7 +107,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -126,7 +126,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -146,7 +146,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -165,7 +165,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -184,7 +184,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -203,7 +203,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -222,7 +222,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -242,7 +242,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -261,7 +261,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -280,7 +280,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -299,7 +299,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -318,7 +318,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -337,7 +337,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -356,7 +356,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -375,7 +375,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -394,7 +394,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -413,7 +413,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -432,7 +432,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -451,7 +451,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -470,7 +470,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -490,7 +490,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -510,7 +510,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -529,7 +529,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -548,7 +548,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -567,7 +567,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -586,7 +586,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -605,7 +605,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -624,7 +624,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -643,7 +643,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -662,7 +662,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -681,7 +681,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -700,7 +700,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -719,7 +719,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -738,7 +738,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -757,7 +757,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -776,7 +776,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -795,7 +795,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -814,7 +814,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -833,7 +833,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -852,7 +852,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -871,7 +871,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -890,7 +890,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -909,7 +909,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -928,7 +928,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -947,7 +947,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -966,7 +966,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -985,7 +985,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1004,7 +1004,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1023,7 +1023,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1042,7 +1042,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1061,7 +1061,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1080,7 +1080,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1099,7 +1099,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1118,7 +1118,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1137,7 +1137,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1156,7 +1156,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1175,7 +1175,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1194,7 +1194,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1213,7 +1213,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1232,7 +1232,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1251,7 +1251,7 @@ class Append_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:

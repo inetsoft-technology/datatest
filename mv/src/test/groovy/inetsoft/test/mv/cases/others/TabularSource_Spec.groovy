@@ -64,7 +64,7 @@ class TabularSource_Spec extends Specification {
       materializedViews = new MaterializedViewResource(asset_id)
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], true, true)
 
       expect:

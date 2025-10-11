@@ -29,7 +29,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -48,7 +48,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -67,7 +67,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -86,7 +86,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 4)
+      materializedViews.createIncrementMV(4)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -105,7 +105,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -124,7 +124,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -143,7 +143,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -162,7 +162,7 @@ class Delete_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 2)
+      materializedViews.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -593,7 +593,7 @@ class Delete_Spec extends Specification {
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:

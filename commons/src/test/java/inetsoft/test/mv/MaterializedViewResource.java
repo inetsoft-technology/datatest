@@ -78,7 +78,7 @@ public class MaterializedViewResource {
 
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
 
-         createMV0(applyVPM, 1, expandGroup);
+         createMV0(applyVPM, expandGroup);
       }catch(Exception e){
          System.err.println("==============exceptions============");
          e.printStackTrace();
@@ -103,8 +103,7 @@ public class MaterializedViewResource {
          analysisJob = materializedViewApiController.analyze(null, analyzeRequest, principal);
 
          //wait the analysis job complete or fail
-         for (int retry = 0; retry < 80; retry++) {
-            Thread.sleep(1000);
+         for (int retry = 0; retry < 800; retry++) {
             AnalysisJob analysisJob1 = materializedViewApiController.getAnalysisJob(analysisJob.getId(),null, principal);
             if (analysisJob1.isComplete()) {
                break;
@@ -118,6 +117,7 @@ public class MaterializedViewResource {
                System.err.println("====MV Analyze Exception====" + msg);
                break;
             }
+            Thread.sleep(100);
          }
       }catch(Exception e){
          e.printStackTrace();
@@ -129,10 +129,9 @@ public class MaterializedViewResource {
    /**
     * create mv
     * @param applyVPM, apply vpm to mv
-    * @param count, times to create mv
     * @param expandGroup, create for users in group
     */
-   public void createMV0(boolean applyVPM, int count, boolean... expandGroup) {
+   public void createMV0(boolean applyVPM, boolean... expandGroup) {
       AnalysisJob analysisJob;
 
       if(expandGroup == null || expandGroup.length == 0) {
@@ -154,28 +153,28 @@ public class MaterializedViewResource {
          createRequest.setViews(this.views);
          createRequest.setNoData(false);
 
-         for(int i = 0; i < count; i++) {
-            materializedViewApiController.createMaterializedView(analysisJob.getId(), null, createRequest, this.principal);
+         materializedViewApiController.createMaterializedView(
+                 analysisJob.getId(), this.principal.getIdentityID().getOrgID(), createRequest, this.principal);
 
-            //wait create mv complete or fail
-            for (int retry = 0; retry < 10; retry++) {
-               try {
-                  CreateMaterializedViewStatus createStatus = materializedViewApiController.getCreationStatus(analysisJob.getId(), null, this.principal);
+         //wait create mv complete or fail
+         for (int retry = 0; retry < 200; retry++) {
+            try {
+               CreateMaterializedViewStatus createStatus = materializedViewApiController.getCreationStatus(
+                       analysisJob.getId(), null, this.principal);
 
-                  if (createStatus.isComplete()) {
-                     break;
-                  } else if (createStatus.isFailed()) {
-                     String msg = createStatus.getError();
-                     System.err.println("====MV Create Exception==== " + msg);
-                     break;
-                  }
-               } catch (Exception e) {
-                  if (e.getMessage().contains("The materialized view creation has not been started")) {
-                     Thread.sleep(2000);
-                  } else {
-                     e.printStackTrace();
-                     break;
-                  }
+               if (createStatus.isComplete()) {
+                  break;
+               } else if (createStatus.isFailed()) {
+                  String msg = createStatus.getError();
+                  System.err.println("====MV Create Exception==== " + msg);
+                  break;
+               }
+            } catch (Exception e) {
+               if (e.getMessage().contains("The materialized view creation has not been started")) {
+                  Thread.sleep(100);
+               } else {
+                  e.printStackTrace();
+                  break;
                }
             }
          }
@@ -184,15 +183,11 @@ public class MaterializedViewResource {
       }
    }
 
-
-
    /**
     * create incremental mv
-    * @param applyVPM, apply vpm to mv
-    * @param count, times to create mv
-    * @param expandGroup, create for users in group
+    * @param count, times to create incremental mv
     */
-   public void createIncrementMV(boolean applyVPM, int count, boolean... expandGroup) {
+   public void createIncrementMV(int count) {
       try (MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
          ConfigurationContext spyContext = spy(context);
 
@@ -202,7 +197,25 @@ public class MaterializedViewResource {
 
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
 
-         createMV0(applyVPM, count, expandGroup);
+         UpdateMaterializedViewRequest updateRequest = new UpdateMaterializedViewRequest();
+         updateRequest.setViews(this.views);
+
+         for(int i = 0; i < count; i++) {
+            UpdateMaterializedViewStatus updateStatus =
+                    materializedViewApiController.update(this.principal.getIdentityID().getOrgID(), updateRequest, this.principal);
+
+            //wait update mv complete or fail
+            for (int retry = 0; retry < 200; retry++) {
+               if (updateStatus.isComplete()) {
+                  break;
+               } else if (updateStatus.isFailed()) {
+                  String msg = updateStatus.getError();
+                  System.err.println("====MV Update Exception==== " + msg);
+                  break;
+               }
+               //Thread.sleep(100);
+            }
+         }
       }catch(Exception e){
          System.err.println("=========createIncrementMV =====exceptions============");
          e.printStackTrace();
@@ -218,6 +231,7 @@ public class MaterializedViewResource {
          deleteRequest.setViews(this.views);
          materializedViewApiController.deleteMaterializedViews(null, deleteRequest, this.principal);
       }catch(Exception e){
+         System.err.println("=========Delete MV Exceptions============");
          e.printStackTrace();
       }
    }
@@ -225,7 +239,7 @@ public class MaterializedViewResource {
    private final MaterializedViewApiService materializedViewApiService;
    private final MaterializedViewApiController materializedViewApiController;
    private  ConfigurationContext context;
-   private final Principal principal;
+   private final SRPrincipal principal;
    private final String asset_id;
    List<String> views = new ArrayList<>();
 }
