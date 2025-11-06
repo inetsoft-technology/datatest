@@ -37,8 +37,8 @@
         <spring.version>6.2.10</spring.version>
         <jackson.version>2.19.2</jackson.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
-        <root.dir>/inetsoft/styleBI/test-session/datatest</root.dir>
-        <!--<root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
+        <root.dir>/inetsoft/styleBI/test/datatest-session</root.dir>
+       <!--<root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
 
