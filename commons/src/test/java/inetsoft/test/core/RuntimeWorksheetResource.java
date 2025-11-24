@@ -1,6 +1,7 @@
 package inetsoft.test.core;
 
 import inetsoft.report.composition.RuntimeWorksheet;
+import inetsoft.report.composition.WorksheetService;
 import inetsoft.web.composer.model.ws.ImportCSVDialogModel;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent;
@@ -50,8 +51,14 @@ public class RuntimeWorksheetResource extends MockMessageResource {
 
    public RuntimeWorksheet getRuntimeWorksheet(Principal principal) {
       try{
-         return runtimeId == null ?
-            null: controllersResource.getWorksheetService().getWorksheet(runtimeId, principal);
+         if (runtimeId == null) {
+            return null;
+         }
+         WorksheetService worksheetService = controllersResource.getWorksheetService();
+         if (worksheetService == null) {
+            throw new IllegalStateException("WorksheetService is not initialized. Make sure controllers.initControllers() has been called.");
+         }
+         return worksheetService.getWorksheet(runtimeId, principal);
       }
       catch (RuntimeException e) {
          throw e;
