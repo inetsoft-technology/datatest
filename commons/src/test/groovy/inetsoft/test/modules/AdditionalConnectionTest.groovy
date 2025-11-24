@@ -54,6 +54,7 @@ class AdditionalConnectionTest {
       DataSpace.getDataSpace()
       controllers = new ControllersResource()
       controllers.initControllers()
+      controllers.initApplicationContext(context)
 
       if (principals == null) {
          principals = [admin]
@@ -103,7 +104,6 @@ class AdditionalConnectionTest {
     * @return
     */
    def executeWS(String asset_id, SRPrincipal principal, Map<String, Object[]> params) {
-      controllers.initApplicationContext(context)
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
       worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
       worksheetResource.initRuntimeWS(principal)
