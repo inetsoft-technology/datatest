@@ -56,22 +56,26 @@ class AdditionalConnectionTest {
       controllers.initControllers()
       controllers.initApplicationContext(context)
 
-      if (principals == null) {
-         principals = [admin]
-      }
-      principals.each {
-         SUtil.setAdditionalDatasource(it)
-         ThreadContext.setContextPrincipal(it)  //use to set additional db permission
+      try {
+         if (principals == null) {
+            principals = [admin]
+         }
+         principals.each {
+            SUtil.setAdditionalDatasource(it)
+            ThreadContext.setContextPrincipal(it)  //use to set additional db permission
 
-         if (asset_id.startsWith('1^128^')) {
-            executeVS(asset_id, it, params)
+            if (asset_id.startsWith('1^128^')) {
+               executeVS(asset_id, it, params)
+            }
+            else if (asset_id.startsWith'1^2^') {
+               executeWS(asset_id, it, params)
+            }
+            else {
+               new Exception("====Input right asset_id========" + asset_id).printStackTrace()
+            }
          }
-         else if (asset_id.startsWith'1^2^') {
-            executeWS(asset_id, it, params)
-         }
-         else {
-            new Exception("====Input right asset_id========" + asset_id).printStackTrace()
-         }
+      } finally {
+         controllers.destroy()
       }
 }
 
@@ -134,8 +138,6 @@ class AdditionalConnectionTest {
          }
       }catch (Exception e) {
          e.printStackTrace()
-      }finally {
-         controllers.destroy()
       }
    }
 
