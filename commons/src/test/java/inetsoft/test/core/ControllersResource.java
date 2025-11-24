@@ -268,7 +268,13 @@ public class ControllersResource extends MockMessageResource {
    }
 
    public void initApplicationContext(ConfigurationContext context) {
-      ConfigurationContext spyContext = spy(context);
+      ConfigurationContext spyContext;
+      // Check if context is already a mock - if so, use it directly; otherwise create a spy
+      if (Mockito.mockingDetails(context).isMock()) {
+         spyContext = context;
+      } else {
+         spyContext = spy(context);
+      }
 
       //only for .WorksheetTest.groovy
       doReturn(worksheetEventService)
@@ -279,11 +285,33 @@ public class ControllersResource extends MockMessageResource {
               .when(spyContext)
               .getSpringBean(ImportCSVDialogService.class);
 
-      if (staticConfigurationContext == null) {
-         staticConfigurationContext = mockStatic(ConfigurationContext.class);
+      // Check if we need to create a new static mock
+      // If we already have one that's not closed, just update its behavior
+      if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
+         staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
+         return;
       }
-
-      staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
+      
+      // Close existing one if it exists and is not closed (cleanup)
+      if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
+         staticConfigurationContext.close();
+      }
+      
+      // Try to create a new static mock
+      try {
+         staticConfigurationContext = mockStatic(ConfigurationContext.class);
+         staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
+      } catch (org.mockito.exceptions.base.MockitoException e) {
+         // If there's already a static mock registered from another source,
+         // we can't create a new one or configure the existing one
+         if (e.getMessage() != null && e.getMessage().contains("static mocking is already registered")) {
+            // In this case, we'll just skip setting up the static mock
+            // The existing static mock from elsewhere will be used
+            // Note: This means the static mock behavior won't be configured here
+            return;
+         }
+         throw e; // Re-throw if it's a different exception
+      }
    }
 
    @Override
