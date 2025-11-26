@@ -94,6 +94,7 @@ public class ControllersResource extends MockMessageResource {
    }
 
    private void createControllers() {
+      vsCompositionService = Mockito.mock(VSCompositionService.class);
       viewsheetService = ViewsheetEngine.getViewsheetEngine();
 
       worksheetService = WorksheetEngine.getWorksheetService();
@@ -153,7 +154,9 @@ public class ControllersResource extends MockMessageResource {
 
       VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
       ParameterService parameterService = new ParameterService(viewsheetService);
-      vsCompositionService = new VSCompositionService();
+      coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService, vsLayoutService, parameterService,vsCompositionService);
+      SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
+      objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
       List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
               new AggregateRefModel.AggregateRefModelFactory(),
@@ -409,6 +412,7 @@ public class ControllersResource extends MockMessageResource {
    private DatabaseDatasourcesController databaseDatasourcesController;
    private VSCompositionService vsCompositionService;
    private CoreLifecycleService coreLifecycleService;
+<<<<<<< HEAD
    private WorksheetEventService worksheetEventService;
    private BinaryTransferService binaryTransferService;
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
@@ -422,4 +426,7 @@ public class ControllersResource extends MockMessageResource {
    private VSChartShowDetailsService vsChartShowDetailsService;
 
    MockedStatic<ConfigurationContext> staticConfigurationContext;
+=======
+   private VSCompositionService vsCompositionService;
+>>>>>>> 099595487e38b82e29a82329a2b8eef926a074f2
 }
