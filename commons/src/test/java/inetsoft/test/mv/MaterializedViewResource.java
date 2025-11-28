@@ -21,7 +21,8 @@ import java.util.Objects;
 public class MaterializedViewResource {
    /**
     * constructor with ControllersResource to reuse services
-    * @param asset_id, the viewsheet asset_id
+    *
+    * @param asset_id,            the viewsheet asset_id
     * @param controllersResource, the ControllersResource to reuse services
     */
    public MaterializedViewResource(String asset_id, ControllersResource controllersResource) throws Exception {
@@ -49,8 +50,9 @@ public class MaterializedViewResource {
 
    /**
     * analysis mv
-    * @param applyVPM, apply vpm to mv
-    * @param  expandGroup, create for users in group
+    *
+    * @param applyVPM,    apply vpm to mv
+    * @param expandGroup, create for users in group
     * @return the analysis job
     */
    public AnalysisJob analysisMV(boolean applyVPM, boolean expandGroup) {
@@ -66,11 +68,11 @@ public class MaterializedViewResource {
             analysisJob = this.materializedViewApiService.analyze(req, this.principal);
 
             //wait the analysis job complete or fail
-            for(int i = 0; i < 1; i--) {
+            for (int i = 0; i < 1; i--) {
                AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), this.principal);
-               if(analysisJob1.isComplete()) {
+               if (analysisJob1.isComplete()) {
                   break;
-               } else if(analysisJob1.isFailed()) {
+               } else if (analysisJob1.isFailed()) {
                   List<AnalysisError> errors = analysisJob1.getErrors();
                   StringBuilder msg = new StringBuilder();
                   for (AnalysisError error : errors) {
@@ -91,7 +93,7 @@ public class MaterializedViewResource {
                      Thread.currentThread().interrupt();
                      throw new RuntimeException("Interrupted while waiting for analysis job", ie);
                   }
-                  if(analysisJob1.isComplete()) {
+                  if (analysisJob1.isComplete()) {
                      break;
                   }
                }
@@ -107,15 +109,16 @@ public class MaterializedViewResource {
 
    /**
     * create mv
-    * @param applyVPM, apply vpm to mv
-    * @param count, times to create mv
+    *
+    * @param applyVPM,    apply vpm to mv
+    * @param count,       times to create mv
     * @param expandGroup, create for users in group
     */
    public void createMV0(boolean applyVPM, int count, boolean... expandGroup) {
       AnalysisJob analysisJob;
-      if(expandGroup == null || expandGroup.length == 0) {
+      if (expandGroup == null || expandGroup.length == 0) {
          analysisJob = analysisMV(applyVPM, false);
-      }else {
+      } else {
          analysisJob = analysisMV(applyVPM, expandGroup[0]);
       }
 
@@ -133,16 +136,16 @@ public class MaterializedViewResource {
             createRequest.setViews(this.views);
             createRequest.setNoData(false);
 
-            for(int i = 0; i < count; i++) {
+            for (int i = 0; i < count; i++) {
                this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
 
                //wait create mv complete or fail
-               for(int j = 0; j < 1; j--) {
+               for (int j = 0; j < 1; j--) {
                   CreateMaterializedViewStatus createStatus =
                           this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
-                  if(createStatus.isComplete()){
+                  if (createStatus.isComplete()) {
                      break;
-                  } else if(createStatus.isFailed()){
+                  } else if (createStatus.isFailed()) {
                      String msg = createStatus.getError();
                      System.err.println("====MV Create Exception====" + msg);
                      break;
@@ -153,7 +156,7 @@ public class MaterializedViewResource {
                         Thread.currentThread().interrupt();
                         throw new RuntimeException("Interrupted while waiting for MV creation", ie);
                      }
-                     if(createStatus.isComplete()) {
+                     if (createStatus.isComplete()) {
                         break;
                      }
                   }
@@ -169,7 +172,8 @@ public class MaterializedViewResource {
 
    /**
     * create mv, for 1 time
-    * @param applyVPM, apply vpm to mv
+    *
+    * @param applyVPM,    apply vpm to mv
     * @param expandGroup, create for users in group
     */
    public void createMV(boolean applyVPM, boolean... expandGroup) {
@@ -184,8 +188,9 @@ public class MaterializedViewResource {
 
    /**
     * create incremental mv
-    * @param applyVPM, apply vpm to mv
-    * @param count, times to create mv
+    *
+    * @param applyVPM,    apply vpm to mv
+    * @param count,       times to create mv
     * @param expandGroup, create for users in group
     */
    public void createIncrementMV(boolean applyVPM, int count, boolean... expandGroup) {
