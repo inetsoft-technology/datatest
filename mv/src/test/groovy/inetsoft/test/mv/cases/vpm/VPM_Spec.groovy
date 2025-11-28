@@ -28,7 +28,7 @@ class VPM_Spec extends Specification {
    def 'condition'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/condition'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -45,7 +45,7 @@ class VPM_Spec extends Specification {
    def 'condition in submv'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/condition in submv'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -63,7 +63,7 @@ class VPM_Spec extends Specification {
       def user5 = MVTest.createPrincipal('user5', ['Everyone', 'role2'] as
             String[], ['group2'] as String[])
       String asset_id = '1^128^__NULL__^vpm/group-group'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, true)
 
       mvtest = new MVTest(asset_id)
@@ -86,7 +86,7 @@ class VPM_Spec extends Specification {
       def user7 = MVTest.createPrincipal('user7', ['Everyone'] as
             String[], ['group1_0'] as String[])
       String asset_id = '1^128^__NULL__^vpm/group-subgroup'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -104,7 +104,7 @@ class VPM_Spec extends Specification {
    def 'group-user'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/group-user'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -122,7 +122,7 @@ class VPM_Spec extends Specification {
    def 'hiddencolumn'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/hiddencolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -138,7 +138,7 @@ class VPM_Spec extends Specification {
    def 'hiddencolumn in submv'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/hiddencolumn in submv'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -159,7 +159,7 @@ class VPM_Spec extends Specification {
       def user5 = MVTest.createPrincipal('user5', ['Everyone', 'role2'] as
             String[], ['group2'] as String[])
       String asset_id = '1^128^__NULL__^vpm/role-group'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, true)
 
       mvtest = new MVTest(asset_id)
@@ -184,7 +184,7 @@ class VPM_Spec extends Specification {
             as String[])
 
       String asset_id = '1^128^__NULL__^vpm/role-role'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -206,7 +206,7 @@ class VPM_Spec extends Specification {
       def user7 = MVTest.createPrincipal('user7', ['Everyone'] as
             String[], ['group1_0'] as String[])
       String asset_id = '1^128^__NULL__^vpm/role-subgroup'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -226,7 +226,7 @@ class VPM_Spec extends Specification {
       def user3 = MVTest.createPrincipal('user3', ['Everyone', 'role0'] as String[], []
             as String[])
       String asset_id = '1^128^__NULL__^vpm/role-user'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -244,7 +244,7 @@ class VPM_Spec extends Specification {
    def 'user-user'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/user-user'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -262,7 +262,7 @@ class VPM_Spec extends Specification {
    def 'user-aliastable1'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/user-aliastable1'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)
@@ -279,7 +279,7 @@ class VPM_Spec extends Specification {
    def 'user-aliastable2'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/user-aliastable2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(true, false)
 
       mvtest = new MVTest(asset_id)

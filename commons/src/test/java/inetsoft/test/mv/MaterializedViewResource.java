@@ -1,16 +1,12 @@
 package inetsoft.test.mv;
 
-import inetsoft.sree.ClientInfo;
-import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.IdentityID;
-import inetsoft.sree.security.SecurityEngine;
-import inetsoft.sree.security.SecurityProvider;
 import inetsoft.sree.security.SRPrincipal;
+import inetsoft.sree.security.SecurityProvider;
+import inetsoft.test.core.ControllersResource;
+import inetsoft.test.core.MessageTestUtils;
 import inetsoft.uql.asset.AssetRepository;
-import inetsoft.uql.asset.internal.AssetUtil;
-import inetsoft.uql.XFactory;
 import inetsoft.util.Tool;
-import inetsoft.util.ThreadContext;
 import inetsoft.web.admin.content.repository.*;
 import inetsoft.web.admin.content.repository.MVService;
 import inetsoft.web.admin.content.repository.MVSupportService;
@@ -24,32 +20,30 @@ import java.util.Objects;
 
 public class MaterializedViewResource {
    /**
-    * constructor
+    * constructor with ControllersResource to reuse services
     * @param asset_id, the viewsheet asset_id
+    * @param controllersResource, the ControllersResource to reuse services
     */
-   public MaterializedViewResource(String asset_id) throws Exception {
+   public MaterializedViewResource(String asset_id, ControllersResource controllersResource) throws Exception {
       Objects.requireNonNull(asset_id, "the asset not exist, check if asset_id is right");
+      Objects.requireNonNull(controllersResource, "controllersResource cannot be null");
       this.asset_id = asset_id;
 
       IdentityID identityUser = new IdentityID("admin", "host-org");
-
       IdentityID adminRole = new IdentityID();
       adminRole.setName("Administrator");
       IdentityID[] identityRoles = {adminRole, new IdentityID("Everyone", "host-org")};
-
       this.principal = new SRPrincipal(identityUser, identityRoles, new String[0], "host-org", Tool.getSecureRandom().nextLong());
-      ThreadContext.setContextPrincipal(principal);
 
+      // Reuse services from ControllersResource
       MVSupportService support = MVSupportService.getInstance();
-      SecurityProvider securityProvider = SecurityEngine.getSecurity().getSecurityProvider();
-      ResourcePermissionService resourcePermissionService = new ResourcePermissionService(securityProvider, SecurityEngine.getSecurity());
-      RepletRegistryManager repletRegistryManager = new RepletRegistryManager();
-      ScheduleTaskFolderService scheduleTaskFolderService = new ScheduleTaskFolderService(ScheduleManager.getScheduleManager(),
-              SecurityEngine.getSecurity(), securityProvider);
-      ContentRepositoryTreeService contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
-            resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
+      SecurityProvider securityProvider = controllersResource.getSecurityProvider();
+      ResourcePermissionService resourcePermissionService = controllersResource.getResourcePermissionService();
+      RepletRegistryManager repletRegistryManager = controllersResource.getRepletRegistryManager();
+      ScheduleTaskFolderService scheduleTaskFolderService = controllersResource.getScheduleTaskFolderService();
+      ContentRepositoryTreeService contentRepositoryTreeService = controllersResource.getContentRepositoryTreeService();
       MVService service = new MVService(contentRepositoryTreeService, support);
-      AssetRepository assetRepository = AssetUtil.getAssetRepository(false);
+      AssetRepository assetRepository = controllersResource.getAssetRepository();
       this.materializedViewApiService = new MaterializedViewApiService(service, assetRepository, support);
    }
 
@@ -66,36 +60,49 @@ public class MaterializedViewResource {
       analyzeRequest.setExpandGroups(expandGroup);
       analyzeRequest.setFullData(true);
 
-      AnalysisJob analysisJob = new AnalysisJob();
-      try {
-         analysisJob = this.materializedViewApiService.analyze(analyzeRequest, this.principal);
+      return MessageTestUtils.withMockMessageContext(this.principal, null, analyzeRequest, (ctx, req) -> {
+         AnalysisJob analysisJob = new AnalysisJob();
+         try {
+            analysisJob = this.materializedViewApiService.analyze(req, this.principal);
 
-         //wait the analysis job complete or fail
-         for(int i = 0; i < 1; i--) {
-            AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), this.principal);
-            if(analysisJob1.isComplete()) {
-               break;
-            } else if(analysisJob1.isFailed()) {
-               List<AnalysisError> errors = analysisJob1.getErrors();
-               StringBuilder msg = new StringBuilder();
-               for (AnalysisError error : errors) {
-                  msg.append(error.toString());
-               }
-               System.err.println("====MV Analyze Exception====" + msg);
-               Thread.sleep(10);
-               break;
-            } else if (!analysisJob1.isComplete()) {
-               Thread.sleep(10);
+            //wait the analysis job complete or fail
+            for(int i = 0; i < 1; i--) {
+               AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), this.principal);
                if(analysisJob1.isComplete()) {
                   break;
+               } else if(analysisJob1.isFailed()) {
+                  List<AnalysisError> errors = analysisJob1.getErrors();
+                  StringBuilder msg = new StringBuilder();
+                  for (AnalysisError error : errors) {
+                     msg.append(error.toString());
+                  }
+                  System.err.println("====MV Analyze Exception====" + msg);
+                  try {
+                     Thread.sleep(10);
+                  } catch (InterruptedException ie) {
+                     Thread.currentThread().interrupt();
+                     throw new RuntimeException("Interrupted while waiting for analysis job", ie);
+                  }
+                  break;
+               } else if (!analysisJob1.isComplete()) {
+                  try {
+                     Thread.sleep(10);
+                  } catch (InterruptedException ie) {
+                     Thread.currentThread().interrupt();
+                     throw new RuntimeException("Interrupted while waiting for analysis job", ie);
+                  }
+                  if(analysisJob1.isComplete()) {
+                     break;
+                  }
                }
             }
+         } catch (RuntimeException e) {
+            throw e;
+         } catch (Exception e) {
+            throw new RuntimeException("Failed to analyze MV", e);
          }
-      }catch(Exception e){
-         e.printStackTrace();
-      }
-
-      return analysisJob;
+         return analysisJob;
+      });
    }
 
    /**
@@ -112,43 +119,52 @@ public class MaterializedViewResource {
          analysisJob = analysisMV(applyVPM, expandGroup[0]);
       }
 
-      try {
-         MaterializedViewList materializedViewList;
-         CreateMaterializedViewRequest createRequest = new CreateMaterializedViewRequest();
-         materializedViewList = this.materializedViewApiService.getAnalysisJobViews(analysisJob.getId(), this.principal);
-         List<MaterializedView> mvViews = materializedViewList.getViews();
+      MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
+         try {
+            MaterializedViewList materializedViewList;
+            CreateMaterializedViewRequest createRequest = new CreateMaterializedViewRequest();
+            materializedViewList = this.materializedViewApiService.getAnalysisJobViews(analysisJob.getId(), this.principal);
+            List<MaterializedView> mvViews = materializedViewList.getViews();
 
-         for (MaterializedView mvView : mvViews) {
-            this.views.add(mvView.getName());
-         }
+            for (MaterializedView mvView : mvViews) {
+               this.views.add(mvView.getName());
+            }
 
-         createRequest.setViews(this.views);
-         createRequest.setNoData(false);
+            createRequest.setViews(this.views);
+            createRequest.setNoData(false);
 
-         for(int i = 0; i < count; i++) {
-            this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
+            for(int i = 0; i < count; i++) {
+               this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
 
-            //wait create mv complete or fail
-            for(int j = 0; j < 1; j--) {
-               CreateMaterializedViewStatus createStatus =
-                       this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
-               if(createStatus.isComplete()){
-                  break;
-               } else if(createStatus.isFailed()){
-                  String msg = createStatus.getError();
-                  System.err.println("====MV Create Exception====" + msg);
-                  break;
-               } else if (!createStatus.isComplete()) {
-                  Thread.sleep(10);
-                  if(createStatus.isComplete()) {
+               //wait create mv complete or fail
+               for(int j = 0; j < 1; j--) {
+                  CreateMaterializedViewStatus createStatus =
+                          this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
+                  if(createStatus.isComplete()){
                      break;
+                  } else if(createStatus.isFailed()){
+                     String msg = createStatus.getError();
+                     System.err.println("====MV Create Exception====" + msg);
+                     break;
+                  } else if (!createStatus.isComplete()) {
+                     try {
+                        Thread.sleep(10);
+                     } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                        throw new RuntimeException("Interrupted while waiting for MV creation", ie);
+                     }
+                     if(createStatus.isComplete()) {
+                        break;
+                     }
                   }
                }
             }
+         } catch (RuntimeException e) {
+            throw e;
+         } catch (Exception e) {
+            throw new RuntimeException("Failed to create MV", e);
          }
-      }catch(Exception e){
-         e.printStackTrace();
-      }
+      });
    }
 
    /**
@@ -159,8 +175,10 @@ public class MaterializedViewResource {
    public void createMV(boolean applyVPM, boolean... expandGroup) {
       try {
          createMV0(applyVPM, 1, expandGroup);
-      }catch(Exception e){
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw e;
+      } catch (Exception e) {
+         throw new RuntimeException("Failed to create MV", e);
       }
    }
 
@@ -173,8 +191,10 @@ public class MaterializedViewResource {
    public void createIncrementMV(boolean applyVPM, int count, boolean... expandGroup) {
       try {
          createMV0(applyVPM, count, expandGroup);
-      }catch(Exception e){
-         e.printStackTrace();
+      } catch (RuntimeException e) {
+         throw e;
+      } catch (Exception e) {
+         throw new RuntimeException("Failed to create incremental MV", e);
       }
    }
 
@@ -182,13 +202,17 @@ public class MaterializedViewResource {
     * remove mv
     */
    public void removeMV() {
-      try {
-         DeleteMaterializedViewsRequest deleteRequest = new DeleteMaterializedViewsRequest();
-         deleteRequest.setViews(this.views);
-         this.materializedViewApiService.deleteMaterializedViews(deleteRequest, this.principal);
-      }catch(Exception e){
-         e.printStackTrace();
-      }
+      MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
+         try {
+            DeleteMaterializedViewsRequest deleteRequest = new DeleteMaterializedViewsRequest();
+            deleteRequest.setViews(this.views);
+            this.materializedViewApiService.deleteMaterializedViews(deleteRequest, this.principal);
+         } catch (RuntimeException e) {
+            throw e;
+         } catch (Exception e) {
+            throw new RuntimeException("Failed to remove MV", e);
+         }
+      });
    }
 
    private final MaterializedViewApiService materializedViewApiService;

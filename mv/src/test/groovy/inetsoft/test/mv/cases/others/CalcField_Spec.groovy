@@ -24,7 +24,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotUsed_Assembly'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -39,7 +39,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Output'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -54,7 +54,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -69,7 +69,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -84,7 +84,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -99,7 +99,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_SelectionTree'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -115,7 +115,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Calendar'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -130,7 +130,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_RangeSlider'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -145,7 +145,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Text'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -160,7 +160,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -175,7 +175,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -190,7 +190,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -205,7 +205,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_SelectionTree'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -220,7 +220,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Calendar'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -235,7 +235,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_RangeSlider'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -250,7 +250,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Brush1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -265,7 +265,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Brush2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -280,7 +280,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_NameGroup1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -295,7 +295,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_NameGroup2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -310,7 +310,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_NormalGroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -325,7 +325,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Zoom1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -340,7 +340,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Zoom2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -355,7 +355,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NameGroup1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -370,7 +370,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NameGroup2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -385,7 +385,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NormalGroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -400,7 +400,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Zoom1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -415,7 +415,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Model'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -430,7 +430,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Query'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -445,7 +445,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -460,7 +460,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Brush1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select', 'bk_zoom'] as String[], false, true)
 
@@ -475,7 +475,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_NotPublic_NameGroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_zoom', 'bk1', 'bk2'] as String[], false, true)
 
@@ -491,7 +491,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_NthLargest for calcfield'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -507,7 +507,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'b1'] as String[], false, true)
 
@@ -523,7 +523,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
       expect:
@@ -538,7 +538,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/calcfield on group other'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -554,7 +554,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/multiple calc on chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
@@ -569,7 +569,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/calcfield on date legend'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -584,7 +584,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/calcfield on crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -599,7 +599,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -614,7 +614,7 @@ class CalcField_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Expression'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 

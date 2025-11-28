@@ -317,6 +317,30 @@ public class ControllersResource {
       return coreLifecycleService;
    }
 
+   public SecurityProvider getSecurityProvider() {
+      return securityProvider;
+   }
+
+   public ResourcePermissionService getResourcePermissionService() {
+      return resourcePermissionService;
+   }
+
+   public ContentRepositoryTreeService getContentRepositoryTreeService() {
+      return contentRepositoryTreeService;
+   }
+
+   public RepletRegistryManager getRepletRegistryManager() {
+      return repletRegistryManager;
+   }
+
+   public ScheduleTaskFolderService getScheduleTaskFolderService() {
+      return scheduleTaskFolderService;
+   }
+
+   public AssetRepository getAssetRepository() {
+      return assetRepository;
+   }
+
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
    private ViewsheetService viewsheetService;

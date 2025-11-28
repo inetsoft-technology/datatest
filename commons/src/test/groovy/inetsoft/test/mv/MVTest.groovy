@@ -43,10 +43,19 @@ class MVTest {
       this.asset_id = asset_id
    }
 
+   private static ControllersResource sharedControllers
+
    def static initHome() {
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-      ControllersResource controllers = new ControllersResource()
-      controllers.initControllers()
+      sharedControllers = new ControllersResource()
+      sharedControllers.initControllers()
+   }
+
+   def static ControllersResource getControllersResource() {
+      if(sharedControllers == null) {
+         initHome()
+      }
+      return sharedControllers
    }
 
    def static initHome(def pro) {

@@ -24,7 +24,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/assembly_model'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -39,7 +39,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/assembly_query'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -54,7 +54,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/assembly_table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -69,7 +69,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/variable_ws_1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       def params = ['string startwith': ['F'] as String[], 'string contains': ['Mail'] as String[]]
       mvtest.executeVS(params, null, false, true)
@@ -85,7 +85,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/variable_ws_2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       def params = ['float startwith': ['0.1'] as String[], 'char contains': ['b'] as String[]]
       mvtest.executeVS(params, null, false, true)
@@ -101,7 +101,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/variable_ws_3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       def params = ['char startwith': ['d'] as String[], 'float contains': ['0.2'] as String[]]
       mvtest.executeVS(params, null, false, true)
@@ -117,7 +117,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/variable_ws_4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       def params = ['int startwith': ['2'] as String[], 'int contains': ['5'] as String[]]
       mvtest.executeVS(params, null, false, true)
@@ -133,7 +133,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -148,7 +148,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -163,7 +163,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -178,7 +178,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -193,7 +193,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -208,7 +208,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -223,7 +223,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -238,7 +238,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -253,7 +253,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -268,7 +268,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -283,7 +283,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -298,7 +298,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -313,7 +313,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -328,7 +328,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_14'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -343,7 +343,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_15'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -358,7 +358,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_16'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -373,7 +373,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_17'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -388,7 +388,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_18'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -403,7 +403,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_19'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -418,7 +418,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_20'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -433,7 +433,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_21'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -448,7 +448,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_22'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -463,7 +463,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_23'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -478,7 +478,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_24'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -493,7 +493,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_25'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -508,7 +508,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_26'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -524,7 +524,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_27'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -539,7 +539,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_28'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -555,7 +555,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_29'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -570,7 +570,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/variable'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -585,7 +585,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/expression'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -602,7 +602,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/field'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -617,7 +617,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/session'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -632,7 +632,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/condition1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -647,7 +647,7 @@ class VSCondtion_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/condition2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 

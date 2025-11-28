@@ -24,7 +24,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/numberic_jsrange'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -39,7 +39,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/numberic_sqlrange'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -54,7 +54,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/numberic-rangeinc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -73,7 +73,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -88,7 +88,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -103,7 +103,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false,true)
 
@@ -118,7 +118,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -133,7 +133,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -148,7 +148,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/formulacol_aggrsinc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -167,7 +167,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -182,7 +182,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -199,7 +199,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -214,7 +214,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -230,7 +230,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -245,7 +245,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -260,7 +260,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-freehand'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -275,7 +275,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/astimeseries-inc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -294,7 +294,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -309,7 +309,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -325,7 +325,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -341,7 +341,7 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/brush filter'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
