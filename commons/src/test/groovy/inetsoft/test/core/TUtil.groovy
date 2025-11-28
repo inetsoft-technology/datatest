@@ -16,15 +16,15 @@ class TUtil {
    /**
     * create a user principal
     * @param userName user name
-    * @param roles  the roles of user
-    * @param groups  the groups of user
+    * @param roles the roles of user
+    * @param groups the groups of user
     * @return
     */
    static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
       IdentityID identityUser = new IdentityID(userName, 'host-org')
       IdentityID[] identityRoles = new IdentityID[0]
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID(role, null)
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org') : new IdentityID(role, null)
          newRole.setName(role)
          identityRoles += newRole
       }
@@ -41,42 +41,45 @@ class TUtil {
    }
 
    def convertPDFToPNG(String pdf, Boolean isOnePage) {
-      PDDocument pdDocument = PDDocument.load(new File(pdf))
-      PDFRenderer pdfRenderer = new PDFRenderer(pdDocument)
-      String pdfFilename = pdf.minus('.pdf')
+      PDDocument pdDocument = null
+      try {
+         pdDocument = PDDocument.load(new File(pdf))
+         PDFRenderer pdfRenderer = new PDFRenderer(pdDocument)
+         String pdfFilename = pdf.minus('.pdf')
 
-      def pageCounter = 0
-      def pageTotals = pdDocument.getNumberOfPages()
+         def pageCounter = 0
+         def pageTotals = pdDocument.getNumberOfPages()
 
-      for(PDPage page:pdDocument.getPages()) {
-         BufferedImage bufferedImage = pdfRenderer.renderImageWithDPI(pageCounter, 72, ImageType.RGB)
+         for (PDPage page : pdDocument.getPages()) {
+            BufferedImage bufferedImage = pdfRenderer.renderImageWithDPI(pageCounter, 72, ImageType.RGB)
 
-         def suffix = (isOnePage && pageTotals == 1) ? '.png' : '-' + (pageCounter++) + '.png';
-         ImageIOUtil.writeImage(bufferedImage, pdfFilename + suffix, 300)
-         Thread.sleep(500)
+            def suffix = (isOnePage && pageTotals == 1) ? '.png' : '-' + (pageCounter++) + '.png';
+            ImageIOUtil.writeImage(bufferedImage, pdfFilename + suffix, 300)
+            Thread.sleep(500)
+         }
+      } finally {
+         if (pdDocument != null) {
+            pdDocument.close()
+         }
       }
-
-      pdDocument.close()
    }
 
    /**
     * modify system date to one date
     */
    def changeSystemDateToDay(def ndate) {
-      String wDatecmd = 'runas /savecred /user:administrator "cmd /c date ' + ndate
+      String wDatecmd = 'runas /savecred /user:administrator "cmd /c date ' + ndate + '"'
       String osName = System.getProperty("os.name")
 
       if (osName.toLowerCase().contains('windows')) {
          Runtime.getRuntime().exec(wDatecmd)
-         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time 00:00:00')
+         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time 00:00:00"')
          Thread.sleep(500)
-      }
-      else if(osName.toLowerCase().contains('linux')) {
-       /*  Runtime.getRuntime().exec('sudo date -s ' + ndate)
-         Thread.sleep(500)*/
-      }
-      else {
-         new Exception('------ modify system date failed: -----------' + date)
+      } else if (osName.toLowerCase().contains('linux')) {
+         /*  Runtime.getRuntime().exec('sudo date -s ' + ndate)
+           Thread.sleep(500)*/
+      } else {
+         new Exception('------ modify system date failed: -----------' + ndate)
       }
    }
 
@@ -93,15 +96,13 @@ class TUtil {
       String osName = System.getProperty("os.name")
 
       if (osName.toLowerCase().contains('windows')) {
-         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c date ' + dateFormat.format(new Date(ld)))
-         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time ' + timeFormat.format(new Date(ld)))
+         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c date ' + dateFormat.format(new Date(ld)) + '"')
+         Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time ' + timeFormat.format(new Date(ld)) + '"')
          Thread.sleep(500)
-      }
-      else if(osName.toLowerCase().contains('linux')) {
-        /* Runtime.getRuntime().exec('sudo date -s ' + lsimpleDateFormat.format(new Date(ld)))
-         Thread.sleep(500)*/
-      }
-      else {
+      } else if (osName.toLowerCase().contains('linux')) {
+         /* Runtime.getRuntime().exec('sudo date -s ' + lsimpleDateFormat.format(new Date(ld)))
+          Thread.sleep(500)*/
+      } else {
          new Exception('------restore date to current failed: -----------')
       }
    }
