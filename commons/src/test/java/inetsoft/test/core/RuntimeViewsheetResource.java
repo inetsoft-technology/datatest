@@ -115,7 +115,7 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          importXLSController.processGetAssemblyImage(runtimeId,
-                 "xlsx", multipartFile, principal);
+            "xlsx", multipartFile, principal);
          importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
                  principal, commandDispatcher);
 
