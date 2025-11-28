@@ -702,7 +702,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], true, true)
 
       expect:

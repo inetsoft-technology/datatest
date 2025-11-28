@@ -289,7 +289,7 @@ class AssociationMV_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true, admin)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], true, true)
 
       expect:
@@ -308,7 +308,7 @@ class AssociationMV_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true, admin)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], true, true)
 
       expect:

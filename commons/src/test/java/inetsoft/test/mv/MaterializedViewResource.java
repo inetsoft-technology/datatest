@@ -68,35 +68,21 @@ public class MaterializedViewResource {
             analysisJob = this.materializedViewApiService.analyze(req, this.principal);
 
             //wait the analysis job complete or fail
-            for (int i = 0; i < 1; i--) {
-               AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), this.principal);
+            for (int retry = 0; retry < 800; retry++) {
+               AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), principal);
                if (analysisJob1.isComplete()) {
                   break;
-               } else if (analysisJob1.isFailed()) {
+               }
+               if (analysisJob1.isFailed()) {
                   List<AnalysisError> errors = analysisJob1.getErrors();
                   StringBuilder msg = new StringBuilder();
                   for (AnalysisError error : errors) {
                      msg.append(error.toString());
                   }
                   System.err.println("====MV Analyze Exception====" + msg);
-                  try {
-                     Thread.sleep(10);
-                  } catch (InterruptedException ie) {
-                     Thread.currentThread().interrupt();
-                     throw new RuntimeException("Interrupted while waiting for analysis job", ie);
-                  }
                   break;
-               } else if (!analysisJob1.isComplete()) {
-                  try {
-                     Thread.sleep(10);
-                  } catch (InterruptedException ie) {
-                     Thread.currentThread().interrupt();
-                     throw new RuntimeException("Interrupted while waiting for analysis job", ie);
-                  }
-                  if (analysisJob1.isComplete()) {
-                     break;
-                  }
                }
+               Thread.sleep(100);
             }
          } catch (RuntimeException e) {
             throw e;
@@ -111,10 +97,9 @@ public class MaterializedViewResource {
     * create mv
     *
     * @param applyVPM,    apply vpm to mv
-    * @param count,       times to create mv
     * @param expandGroup, create for users in group
     */
-   public void createMV0(boolean applyVPM, int count, boolean... expandGroup) {
+   public void createMV0(boolean applyVPM, boolean... expandGroup) {
       AnalysisJob analysisJob;
       if (expandGroup == null || expandGroup.length == 0) {
          analysisJob = analysisMV(applyVPM, false);
@@ -136,36 +121,32 @@ public class MaterializedViewResource {
             createRequest.setViews(this.views);
             createRequest.setNoData(false);
 
-            for (int i = 0; i < count; i++) {
-               this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
+            this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
 
-               //wait create mv complete or fail
-               for (int j = 0; j < 1; j--) {
-                  CreateMaterializedViewStatus createStatus =
-                          this.materializedViewApiService.getCreationStatus(analysisJob.getId(), this.principal);
+            //wait create mv complete or fail
+            for (int retry = 0; retry < 200; retry++) {
+               try {
+                  CreateMaterializedViewStatus createStatus = this.materializedViewApiService.getCreationStatus(
+                          analysisJob.getId(), this.principal);
+
                   if (createStatus.isComplete()) {
                      break;
                   } else if (createStatus.isFailed()) {
                      String msg = createStatus.getError();
-                     System.err.println("====MV Create Exception====" + msg);
+                     System.err.println("====MV Create Exception==== " + msg);
                      break;
-                  } else if (!createStatus.isComplete()) {
-                     try {
-                        Thread.sleep(10);
-                     } catch (InterruptedException ie) {
-                        Thread.currentThread().interrupt();
-                        throw new RuntimeException("Interrupted while waiting for MV creation", ie);
-                     }
-                     if (createStatus.isComplete()) {
-                        break;
-                     }
+                  }
+               } catch (Exception e) {
+                  if (e.getMessage().contains("The materialized view creation has not been started")) {
+                     Thread.sleep(100);
+                  } else {
+                     e.printStackTrace();
+                     break;
                   }
                }
             }
-         } catch (RuntimeException e) {
-            throw e;
          } catch (Exception e) {
-            throw new RuntimeException("Failed to create MV", e);
+            e.printStackTrace();
          }
       });
    }
@@ -178,9 +159,7 @@ public class MaterializedViewResource {
     */
    public void createMV(boolean applyVPM, boolean... expandGroup) {
       try {
-         createMV0(applyVPM, 1, expandGroup);
-      } catch (RuntimeException e) {
-         throw e;
+         createMV0(applyVPM, expandGroup);
       } catch (Exception e) {
          throw new RuntimeException("Failed to create MV", e);
       }
@@ -189,18 +168,36 @@ public class MaterializedViewResource {
    /**
     * create incremental mv
     *
-    * @param applyVPM,    apply vpm to mv
-    * @param count,       times to create mv
-    * @param expandGroup, create for users in group
+    * @param count, times to create incremental mv
     */
-   public void createIncrementMV(boolean applyVPM, int count, boolean... expandGroup) {
-      try {
-         createMV0(applyVPM, count, expandGroup);
-      } catch (RuntimeException e) {
-         throw e;
-      } catch (Exception e) {
-         throw new RuntimeException("Failed to create incremental MV", e);
-      }
+   public void createIncrementMV(int count) {
+      MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
+         try {
+            UpdateMaterializedViewRequest updateRequest = new UpdateMaterializedViewRequest();
+            updateRequest.setViews(this.views);
+
+            for (int i = 0; i < count; i++) {
+               UpdateMaterializedViewStatus updateStatus =
+                       this.materializedViewApiService.update(updateRequest, this.principal);
+
+               //wait update mv complete or fail
+               for (int retry = 0; retry < 200; retry++) {
+                  if (updateStatus.isComplete()) {
+                     break;
+                  } else if (updateStatus.isFailed()) {
+                     String msg = updateStatus.getError();
+                     System.err.println("====MV Update Exception==== " + msg);
+                     break;
+                  }
+                  //Thread.sleep(100);
+               }
+            }
+         } catch (RuntimeException e) {
+            throw e;
+         } catch (Exception e) {
+            throw new RuntimeException("Failed to update MV", e);
+         }
+      });
    }
 
    /**

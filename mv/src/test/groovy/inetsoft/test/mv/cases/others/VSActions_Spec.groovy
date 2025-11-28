@@ -58,7 +58,7 @@ class VSActions_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -152,7 +152,7 @@ class VSActions_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -279,7 +279,7 @@ class VSActions_Spec extends Specification {
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(false, 1)
+      materializedViews.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
