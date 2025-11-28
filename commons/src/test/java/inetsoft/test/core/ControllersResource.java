@@ -61,10 +61,10 @@ import org.mockito.Mockito;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import spock.lang.Shared;
 
-public class ControllersResource extends MockMessageResource {
+public class ControllersResource {
 
    public void initControllers() {
-      mockMessage(this::createControllers);
+      MessageTestUtils.withMockMessageContext(this::createControllers);
    }
 
    public void destroy() {
@@ -259,7 +259,6 @@ public class ControllersResource extends MockMessageResource {
               dataModelFolderManagerService);
    }
 
-   @Override
    public String getRuntimeId() {
       return runtimeId;
    }
