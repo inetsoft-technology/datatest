@@ -126,7 +126,7 @@ public class RuntimeViewsheetResource extends MockMessageResource {
       ImportXLSController importXLSController = controllersResource.getImportXLSController();
       try {
          importXLSController.processGetAssemblyImage(runtimeId,
-            "xlsx", multipartFile);
+            "xlsx", multipartFile, principal);
          importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
             principal, commandDispatcher);
 
