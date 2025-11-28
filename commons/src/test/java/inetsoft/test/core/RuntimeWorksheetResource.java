@@ -18,47 +18,42 @@ public class RuntimeWorksheetResource {
    }
 
    public String getRuntimeId() {
-      return  runtimeId;
+      return runtimeId;
    }
 
    public void initRuntimeWS(Principal principal) {
-      runtimeId = MessageTestUtils.withMockMessageContext(principal, null, openWorksheetEvent, 
-         (ctx, event) -> openWorksheet(ctx, event));
+      runtimeId = MessageTestUtils.withMockMessageContext(principal, null, openWorksheetEvent,
+              (ctx, event) -> openWorksheet(ctx, event));
    }
-   
+
    private String openWorksheet(MessageTestUtils.MessageContext ctx, OpenWorksheetEvent openWorksheetEvent) {
       try {
          controllersResource.getOpenWorksheetController().openWorksheet(
-            openWorksheetEvent, ctx.getUser(), ctx.getCommandDispatcher());
-      }
-      catch(RuntimeException e) {
+                 openWorksheetEvent, ctx.getUser(), ctx.getCommandDispatcher());
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch(Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to open worksheet", e);
       }
       return controllersResource.getRuntimeId();
    }
 
    public RuntimeWorksheet getRuntimeWorksheet(Principal principal) {
-      try{
+      try {
          return runtimeId == null ?
-            null: controllersResource.getWorksheetService().getWorksheet(runtimeId, principal);
-      }
-      catch (RuntimeException e) {
+                 null : controllersResource.getWorksheetService().getWorksheet(runtimeId, principal);
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch(Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to get runtime worksheet", e);
       }
    }
 
    private void closeWorksheet(String runtimeId) {
-      if(runtimeId != null) {
-         try{
+      if (runtimeId != null) {
+         try {
             controllersResource.getWorksheetService().closeWorksheet(runtimeId, null);
-         }
-         catch (Exception e) {
+         } catch (Exception e) {
             e.printStackTrace();
          }
       }

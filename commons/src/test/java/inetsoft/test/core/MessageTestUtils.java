@@ -47,8 +47,8 @@ public final class MessageTestUtils {
     *
     * @param principal the principal to set in the message context
     * @param runtimeId optional runtime ID to set in message attributes
-    * @param action the action to execute
-    * @param <R> return type
+    * @param action    the action to execute
+    * @param <R>       return type
     * @return the result of the action
     */
    public static <R> R withMockMessageContext(Principal principal, String runtimeId, Supplier<R> action) {
@@ -60,31 +60,31 @@ public final class MessageTestUtils {
     *
     * @param principal the principal to set in the message context
     * @param runtimeId optional runtime ID to set in message attributes
-    * @param action the action to execute with access to message context
-    * @param <R> return type
+    * @param action    the action to execute with access to message context
+    * @param <R>       return type
     * @return the result of the action
     */
-   public static <R> R withMockMessageContext(Principal principal, String runtimeId, 
-                                               Function<MessageContext, R> action) {
+   public static <R> R withMockMessageContext(Principal principal, String runtimeId,
+                                              Function<MessageContext, R> action) {
       // Create minimal mock objects
       GenericMessage<String> message = new GenericMessage<>("test");
       MessageAttributes messageAttributes = new MessageAttributes(message);
-      
+
       if (runtimeId != null) {
          messageAttributes.setAttribute("sheetRuntimeId", runtimeId);
       }
 
       StompHeaderAccessor headerAccessor = messageAttributes.getHeaderAccessor();
       headerAccessor.setUser(principal);
-      
+
       // Use Mockito to mock SimpMessagingTemplate instead of creating real one
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
-      
+
       CommandDispatcher commandDispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null);
-      
+
       // Set thread-local context
       MessageContextHolder.setMessageAttributes(messageAttributes);
-      
+
       try {
          MessageContext ctx = new MessageContext(headerAccessor, messagingTemplate, commandDispatcher);
          return action.apply(ctx);
@@ -107,24 +107,24 @@ public final class MessageTestUtils {
    /**
     * Executes an action with a parameter within a mocked message context.
     */
-   public static <T, R> R withMockMessageContext(Principal principal, String runtimeId, T param, 
-                                                  Function<T, R> action) {
+   public static <T, R> R withMockMessageContext(Principal principal, String runtimeId, T param,
+                                                 Function<T, R> action) {
       return withMockMessageContext(principal, runtimeId, (ctx) -> action.apply(param));
    }
 
    /**
     * Executes an action with a parameter and access to message context.
     */
-   public static <T, R> R withMockMessageContext(Principal principal, String runtimeId, T param, 
-                                                  BiFunction<MessageContext, T, R> action) {
+   public static <T, R> R withMockMessageContext(Principal principal, String runtimeId, T param,
+                                                 BiFunction<MessageContext, T, R> action) {
       return withMockMessageContext(principal, runtimeId, (ctx) -> action.apply(ctx, param));
    }
 
    /**
     * Executes a void action with a parameter within a mocked message context.
     */
-   public static <T> void withMockMessageContext(Principal principal, String runtimeId, T param, 
-                                                   Consumer<T> action) {
+   public static <T> void withMockMessageContext(Principal principal, String runtimeId, T param,
+                                                 Consumer<T> action) {
       withMockMessageContext(principal, runtimeId, (ctx) -> {
          action.accept(param);
          return null;
@@ -159,7 +159,7 @@ public final class MessageTestUtils {
       StompHeaderAccessor headerAccessor = messageAttributes.getHeaderAccessor();
       headerAccessor.setUser(principal);
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
-      
+
       return new CommandDispatcher(headerAccessor, messagingTemplate, null) {
          @Override
          public void sendCommand(String assemblyName, ViewsheetCommand command) {
@@ -186,9 +186,9 @@ public final class MessageTestUtils {
       private final SimpMessagingTemplate messagingTemplate;
       private final CommandDispatcher commandDispatcher;
 
-      private MessageContext(StompHeaderAccessor headerAccessor, 
-                            SimpMessagingTemplate messagingTemplate,
-                            CommandDispatcher commandDispatcher) {
+      private MessageContext(StompHeaderAccessor headerAccessor,
+                             SimpMessagingTemplate messagingTemplate,
+                             CommandDispatcher commandDispatcher) {
          this.headerAccessor = headerAccessor;
          this.messagingTemplate = messagingTemplate;
          this.commandDispatcher = commandDispatcher;

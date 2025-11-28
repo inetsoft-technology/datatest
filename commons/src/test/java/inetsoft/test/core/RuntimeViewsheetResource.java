@@ -18,7 +18,7 @@ import java.security.Principal;
 
 public class RuntimeViewsheetResource {
    public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent,
-                                    ControllersResource controllersResource){
+                                   ControllersResource controllersResource) {
       this.openViewsheetEvent = openViewsheetEvent;
       this.controllersResource = controllersResource;
    }
@@ -28,20 +28,18 @@ public class RuntimeViewsheetResource {
    }
 
    public void initRuntimeVS(Principal principal) {
-      runtimeId = MessageTestUtils.withMockMessageContext(principal, null, openViewsheetEvent, 
-         (ctx, event) -> openViewsheet(ctx, event));
+      runtimeId = MessageTestUtils.withMockMessageContext(principal, null, openViewsheetEvent,
+              (ctx, event) -> openViewsheet(ctx, event));
    }
 
    private String openViewsheet(MessageTestUtils.MessageContext ctx, OpenViewsheetEvent openViewsheetEvent) {
       try {
          controllersResource.getOpenViewsheetController().openViewsheet(
-               openViewsheetEvent, ctx.getUser(), ctx.getCommandDispatcher(),
-               "http://localhost:8080/sree");
-      }
-      catch(RuntimeException e) {
+                 openViewsheetEvent, ctx.getUser(), ctx.getCommandDispatcher(),
+                 "http://localhost:8080/sree");
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch(Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to open viewsheet", e);
       }
       return controllersResource.getRuntimeId();
@@ -50,12 +48,10 @@ public class RuntimeViewsheetResource {
    public RuntimeViewsheet getRuntimeViewsheet(Principal principal) {
       try {
          return runtimeId == null ?
-               null : controllersResource.getViewsheetService().getViewsheet(runtimeId, principal);
-      }
-      catch(RuntimeException e ) {
+                 null : controllersResource.getViewsheetService().getViewsheet(runtimeId, principal);
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch(Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to get runtime viewsheet", e);
       }
    }
@@ -66,18 +62,17 @@ public class RuntimeViewsheetResource {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       try {
          controllersResource.getVSExportService().exportViewsheet(runtimeViewsheet, format, mactch,
-            expandSelections, current, previewPrintLayout, print, bookmarks, embedded, onlyDataComponents, csvConfig, response, principal);
-      }
-      catch (RuntimeException e) {
+                 expandSelections, current, previewPrintLayout, print, bookmarks, embedded, onlyDataComponents, csvConfig, response, principal);
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to export viewsheet", e);
       }
    }
 
    /**
     * convert a table|crosstab to freehand
+    *
     * @param principal
     * @param aname
     */
@@ -89,12 +84,10 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          controllersResource.getComposerVSTableController().convertToFreehandTable(cevent, principal,
-            "http://localhost:8080/sree", commandDispatcher);
-      }
-      catch (RuntimeException e) {
+                 "http://localhost:8080/sree", commandDispatcher);
+      } catch (RuntimeException e) {
          throw e;
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
          throw new RuntimeException("Failed to convert freehand", e);
       }
    }
@@ -104,7 +97,7 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          controllersResource.getCoreLifecycleService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
-            commandDispatcher, true, true, true, new ChangedAssemblyList(true));
+                 commandDispatcher, true, true, true, new ChangedAssemblyList(true));
       } catch (Exception e) {
          e.printStackTrace();
       }
@@ -112,6 +105,7 @@ public class RuntimeViewsheetResource {
 
    /**
     * import excel to vs
+    *
     * @param principal
     * @param multipartFile
     */
@@ -121,9 +115,9 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          importXLSController.processGetAssemblyImage(runtimeId,
-            "xlsx", multipartFile, principal);
+                 "xlsx", multipartFile, principal);
          importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
-            principal, commandDispatcher);
+                 principal, commandDispatcher);
 
       } catch (Exception e) {
          e.printStackTrace();
@@ -132,11 +126,12 @@ public class RuntimeViewsheetResource {
 
    /**
     * show detail on chart
+    *
     * @param event
     * @param principal
     */
    public FormatTableLens2 showDetailOnChart(VSChartShowDetailsEvent event, String assemblyName, SRPrincipal principal)
-         throws Exception{
+           throws Exception {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       return controllersResource.getVSChartShowDetailsController().getShowDetailDatas(event, runtimeViewsheet, assemblyName, principal);
    }
@@ -144,18 +139,17 @@ public class RuntimeViewsheetResource {
    /**
     * brush on chart
     */
-   public void brushOnChart(VSChartBrushEvent event, SRPrincipal principal) throws  Exception {
+   public void brushOnChart(VSChartBrushEvent event, SRPrincipal principal) throws Exception {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       controllersResource.getVSChartBrushController().eventHandler(event, null, principal, commandDispatcher);
    }
 
    private void closeViewsheet(String runtimeId) {
-      if(runtimeId != null) {
+      if (runtimeId != null) {
          try {
             controllersResource.getViewsheetService().closeViewsheet(runtimeId, null);
-         }
-         catch(Exception e) {
+         } catch (Exception e) {
             e.printStackTrace();
          }
       }
