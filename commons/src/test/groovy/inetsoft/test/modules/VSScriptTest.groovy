@@ -34,17 +34,13 @@ class VSScriptTest {
    static initHome(String suiteName) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.vsscript')
-      this.suiteName = arrs.size() == 1? null : arrs[1].replace('.', '/')
+      this.suiteName = arrs.size() == 1 ? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
 
    def printVS(def bks, def assemblies) {
       printVS(null, bks, null, null, assemblies)
    }
-
-   /*def printVS(String scriptName, def testData) {
-      printVS(null, null, scriptName, testData, null)
-   }*/
 
    def printVS(String scriptName, def testData, def assemblyNames) {
       printVS(null, null, scriptName, testData, assemblyNames)
@@ -69,20 +65,19 @@ class VSScriptTest {
       Viewsheet viewsheet = runtimeViewsheet.getViewsheet()
 
       //set script
+      JsonSlurper jsonSlurper = new JsonSlurper()
       testData.each {
-         def  result = JsonOutput.toJson(it)
-         JsonSlurper jsonSlurper = new JsonSlurper()
-         def handler = jsonSlurper.parseText(result).HANDLER
-         def command = jsonSlurper.parseText(result).COMMAND
+         def result = JsonOutput.toJson(it)
+         def parsedJson = jsonSlurper.parseText(result)
+         def handler = parsedJson.HANDLER
+         def command = parsedJson.COMMAND
 
-         if('ONINIT'.equals(handler)) {
+         if ('ONINIT'.equals(handler)) {
             viewsheet.getViewsheetInfo().setOnInit(command)
-         }
-         else if ('ONREFRESH'.equals(handler)) {
+         } else if ('ONREFRESH'.equals(handler)) {
             viewsheet.getViewsheetInfo().setOnLoad(command)
-         }
-         else {
-            VSAssembly vsAssembly = (VSAssembly)viewsheet.getAssembly(handler)
+         } else {
+            VSAssembly vsAssembly = (VSAssembly) viewsheet.getAssembly(handler)
             vsAssembly.getVSAssemblyInfo().setScript(command)
          }
          viewsheetResource.refreshViewsheet(principal)
@@ -92,7 +87,7 @@ class VSScriptTest {
       if (assemblyNames != null) {
          viewsheet.getAssemblies().each { it ->
             if (!(it.getName() in assemblyNames)) {
-               VSAssemblyInfo assemblyInfo = (VSAssemblyInfo)it.getInfo()
+               VSAssemblyInfo assemblyInfo = (VSAssemblyInfo) it.getInfo()
                //assemblyInfo.setVisible('hide')
                assemblyInfo.setScript("visible='hide'")
             }
@@ -101,13 +96,14 @@ class VSScriptTest {
       //for calctable, if set script, the script didn't save to home bookmark, so add it
       runtimeViewsheet.addBookmark(VSBookmark.HOME_BOOKMARK, VSBookmarkInfo.ALLSHARE, principal.getUser().getUserIdentity(), false)
 
-      scriptName = scriptName?: 'VS'
-      bks = bks?:['(Home)'] as String[]
+      scriptName = scriptName ?: 'VS'
+      bks = bks ?: ['(Home)'] as String[]
       File outFile = createFile(scriptName)
-      OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-              false, false, false, false,
-              bks, false, false,null, new ExportResponse(out), principal)
+      outFile.withOutputStream { OutputStream out ->
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+                 false, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
    }
 
    /**
@@ -121,11 +117,11 @@ class VSScriptTest {
    def createFile(String scriptName) {
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
       String fileName = resourcePath + '/exportData' + suiteName
-      File tempFile = new File(fileName + File.separator  + caseName  + '_' + scriptName + '.png')
+      File tempFile = new File(fileName + File.separator + caseName + '_' + scriptName + '.png')
 
-      if(!tempFile.getParentFile().exists()) {
+      if (!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
+      } else if (tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
