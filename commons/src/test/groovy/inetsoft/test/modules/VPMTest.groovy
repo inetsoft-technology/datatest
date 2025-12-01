@@ -49,92 +49,36 @@ class VPMTest {
       def data = null
       String assemblyName = ''
       String userName = user.getClientUserID().getName()
-      try{
+      try {
          assemblies.each {
             assemblyName = it.getName()
-            data = sandbox.getData(assemblyName,true, DataMap.NORMAL)
-            if(it instanceof TableDataVSAssembly) {
+            data = sandbox.getData(assemblyName, true, DataMap.NORMAL)
+            if (it instanceof TableDataVSAssembly) {
                data = sandbox.getVSTableLens(assemblyName, false)
             }
             exportData(data, getExportFilePath(userName, assemblyName))
 
          }
-      }catch(Exception e) {
+      } catch (Exception e) {
          e.printStackTrace()
       }
    }
 
    /**
     * refresh medatadata
-    * @param datasource: 'Examples/Orders'
+    * @param datasource : 'Examples/Orders'
     */
    def refreshMetadata(String datasource) {
       controllers.getDatabaseDatasourcesController().refreshMetadata(datasource)
    }
 
    def exportData(def data, String filename) {
-      File file = new File(filename)
-      if(!file.getParentFile().exists()) {
-         file.getParentFile().mkdirs()
-      } else if(file.exists()){
-         file.delete()
-      }
-
-      if(data == null || data == '') {
-         data = ['null']
-      }
-
-      if(data instanceof TableLens) {
-         TableLens table =  exportUtil.wrapTable(data, true)
-         StringBuffer buffer = new StringBuffer()
-         int row = 0
-         while (table.moreRows(row)) {
-            for(int col = 0; col < table.getColCount(); col++) {
-               buffer.append(table.getObject(row, col))
-               if(table.getColCount() != (col+1)) {
-                  buffer.append(', ')
-               }
-            }
-            buffer.append('\n')
-            row++
-         }
-         file.withPrintWriter { printWriter ->
-            printWriter.println("The data size(row x col) is:(" + row + " x " + table
-                    .getColCount() + ")")
-            printWriter.print(buffer.toString())
-         }
-      }
+      exportUtil.exportVSObject(filename, data, true)
    }
 
    void compareData(String[] fileNames) {
-      String resPath
-      def resArray = []
-
-      if(fileNames != null) {
-         fileNames.each {
-            resPath = getExportFolderPath() + File.separator + it + '.txt'
-            resArray.add(new CompareUtil().FileCompare(resPath))
-         }
-      }
-      else {
-         File folder = new File(getExportFolderPath())
-         folder.listFiles().each {
-            if(it.getAbsolutePath().endsWith('.txt')) {
-               resArray.add(new CompareUtil().FileCompare(it.getAbsolutePath()))
-            }
-         }
-      }
-
-      String failedInfo
-      resArray.each {
-         if (it.getAt('false') != null) {
-            failedInfo += "\n" + it.getAt('false') + "\n"
-         }
-      }
-
-      if (failedInfo != null) {
-         assert false : failedInfo
-      }
+      String suiteName = '/' + asset_id.substring(asset_id.lastIndexOf('^') + 1)
+      compareUtil.CompareFileByFeature(fileNames, suiteName, 'TXT')
    }
 
    private String getExportFolderPath() {
@@ -150,12 +94,13 @@ class VPMTest {
    static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
       IdentityID identityUser = new IdentityID(userName, 'host-org')
       ClientInfo user = new ClientInfo(identityUser, Tool.getIP())
-      IdentityID[] identityRoles = new IdentityID[0]
+      List<IdentityID> identityRolesList = new ArrayList<>()
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID('Administrator', null)
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org') : new IdentityID('Administrator', null)
          newRole.setName(role)
-         identityRoles += newRole
+         identityRolesList.add(newRole)
       }
+      IdentityID[] identityRoles = identityRolesList.toArray(new IdentityID[0])
       return new SRPrincipal(user, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
    }
 
@@ -164,4 +109,5 @@ class VPMTest {
    private static RuntimeViewsheetResource viewsheetResource
    private static ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    private static ExportUtil exportUtil = new ExportUtil()
+   private static CompareUtil compareUtil = new CompareUtil()
 }
