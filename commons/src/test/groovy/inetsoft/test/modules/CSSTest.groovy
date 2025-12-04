@@ -25,7 +25,7 @@ class CSSTest {
 
    static initHome(String suiteName) {
       def arrs = suiteName.split('.cases')
-      this.suiteName = (arrs.length == 1? null : arrs[1].replace('.', '/'))
+      this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
 
@@ -59,7 +59,7 @@ class CSSTest {
    def VSCSSTest(String asset_id, SRPrincipal principal, Map<String, String[]> params) {
       controllers.initControllers()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
       SUtil.setAdditionalDatasource(principal)
       ThreadContext.setContextPrincipal(principal)  //use to set additional db permission
       viewsheetResource.initRuntimeVS(principal)
@@ -69,9 +69,13 @@ class CSSTest {
 
       File outFile = createExportFileByCase(asset_id)
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-              false, false, false, false,
-              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+                 false, false, false, false,
+                 ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
+      }
    }
 
    /**
@@ -85,8 +89,7 @@ class CSSTest {
       if (asset_id.startsWith('1^128^')) {
          fName = asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() + '.png' : asset_id.minus('1^128^__NULL__^') + '.png'
-      }
-      else {
+      } else {
          new Exception("the asset id not right: ").printStackTrace()
       }
 
@@ -94,9 +97,9 @@ class CSSTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fName)
 
-      if(!tempFile.getParentFile().exists()) {
+      if (!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
+      } else if (tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

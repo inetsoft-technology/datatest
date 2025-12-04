@@ -255,9 +255,13 @@ class ViewsheetTest {
       }
       File outFile = createExportFileByCase(null, null, '.png')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
-              expandSelection, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
+                 expandSelection, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
+      }
    }
 
    /**
@@ -271,22 +275,27 @@ class ViewsheetTest {
    def exportAsPDF(Map<String, String[]> params, String[] bks) {
       initVS(params)
       if (bks == null) {
-         bks = ['Home'] as String[]
+         bks = ['(Home)'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.pdf')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
-              false, false, true, false,
-              bks, false, false, null, new ExportResponse(out), principal)
-      Thread.sleep(500)
-      tUtil.convertPDFToPNG(outFile.toString())
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
+                 false, false, true, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+         Thread.sleep(500)
+         tUtil.convertPDFToPNG(outFile.toString())
+      } finally {
+         out.close()
+      }
    }
 
 
    /**
     * create export file by case name
-    * @param caseName
-    * @param suffix
+    * @param assemblyName assembly name, can be null to use default vs name
+    * @param bk bookmark name, can be null or '(Home)' to use default
+    * @param suffix file suffix, e.g. '.png', '.txt', '.pdf'
     * @return
     */
    def createExportFileByCase(String assemblyName, String bk, String suffix) {
