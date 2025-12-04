@@ -36,27 +36,6 @@ class VSExportTest {
    }
 
    /**
-    * Test export viewsheet as Excel format
-    * @param bks bookmark names array, null will use default '(Home)'
-    * @param match whether to match the export
-    * @param expandSelection whether to expand selection
-    * @param onlyDataComponent whether to export only data component
-    */
-   def testExportAsExcel(String[] bks, Boolean match, Boolean expandSelection, Boolean onlyDataComponent) {
-      executeVS(null)
-      bks = normalizeBookmarks(bks)
-      File outFile = createFileByCase(caseName, '.xlsx')
-
-      outFile.withOutputStream { OutputStream out ->
-         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_EXCEL, match,
-                 expandSelection, false, false, false,
-                 bks, false, onlyDataComponent, null, new ExportResponse(out), principal)
-      }
-
-      tUtil.convertExcelAsPNG(outFile.toString())
-   }
-
-   /**
     * Test export viewsheet to HTML format
     * @param bks bookmark names array, null will use default '(Home)'
     * @param params parameters map for viewsheet execution

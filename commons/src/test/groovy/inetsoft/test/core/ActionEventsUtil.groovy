@@ -64,20 +64,6 @@ class ActionEventsUtil {
       }
    }
 
-   /**
-    * install plugins to env
-    */
-   /*def installPlugins() {
-      controllersResource.initControllers()
-      PluginsService pluginsService = controllersResource.getPluginsService()
-      String pluginDir = System.getProperty('plugin.dir')
-      println "-----install plugin-----" + pluginsService.getModel(admin).plugins().size()
-      if(pluginsService.getModel(admin).plugins().size() == 0) {
-         println '====install plugins from=======' + pluginDir
-         pluginsService.installPluginsForTester(pluginDir, admin)
-      }
-   }*/
-
    SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
    ControllersResource controllersResource = new ControllersResource()
 }

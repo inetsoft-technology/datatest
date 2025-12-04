@@ -13,15 +13,12 @@ import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XFactory;
 import inetsoft.uql.asset.AssetRepository;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
-import inetsoft.web.admin.content.plugins.PluginsService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
 import inetsoft.web.admin.content.repository.DatabaseDatasourcesService;
 import inetsoft.web.admin.content.repository.RepletRegistryManager;
 import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
 import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
-import inetsoft.web.admin.upload.MavenClientService;
-import inetsoft.web.admin.upload.UploadService;
 import inetsoft.web.binding.drm.*;
 import inetsoft.web.binding.handler.VSAssemblyInfoHandler;
 import inetsoft.web.binding.model.*;
@@ -30,18 +27,14 @@ import inetsoft.web.composer.vs.VSObjectTreeService;
 import inetsoft.web.composer.vs.controller.VSLayoutService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.ws.OpenWorksheetController;
-import inetsoft.web.composer.ws.WorksheetController;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.LicenseService;
-import inetsoft.web.viewsheet.controller.AssemblyImageService;
 import inetsoft.web.viewsheet.controller.ImportXLSController;
 import inetsoft.web.viewsheet.controller.OpenViewsheetController;
-import inetsoft.web.viewsheet.controller.ViewsheetController;
 import inetsoft.web.viewsheet.controller.chart.VSChartBrushController;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsController;
-import inetsoft.web.viewsheet.controller.table.BaseTableLoadDataController;
 import inetsoft.web.viewsheet.handler.crosstab.CrosstabDrillHandler;
 import inetsoft.web.viewsheet.model.*;
 import inetsoft.web.viewsheet.model.annotation.VSAnnotationModel;
@@ -73,7 +66,6 @@ public class ControllersResource {
       vsLifecycleService = null;
       runtimeViewsheetManager = null;
       objectModelFactoryService = null;
-      viewsheetController = null;
       objectTreeService = null;
       securityEngine = null;
       objectService = null;
@@ -81,8 +73,6 @@ public class ControllersResource {
       dataRefModelFactoryService = null;
       assetRepository = null;
       openViewsheetController = null;
-      selectionService = null;
-      imageService = null;
       worksheetService = null;
    }
 
@@ -176,29 +166,10 @@ public class ControllersResource {
       vsLifecycleService = new VSLifecycleService(
               viewsheetService, assetRepository, coreLifecycleService, bookmarkService,
               dataRefModelFactoryService, vsCompositionService, parameterService);
-      viewsheetController = new ViewsheetController(
-              runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService);
       licenseService = new LicenseService();
       openViewsheetController = new OpenViewsheetController(
               runtimeViewsheetRef, runtimeViewsheetManager, objectTreeService, viewsheetService,
               vsLifecycleService, licenseService);
-      worksheetController = new WorksheetController() {
-         protected WorksheetService getWorksheetEngine() {
-            return worksheetService;
-         }
-
-         public String getRuntimeId() {
-            return ControllersResource.this.runtimeId;
-         }
-
-         protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
-            return runtimeViewsheetRef;
-         }
-
-         protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
-            return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
-         }
-      };
 
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository) {
          protected WorksheetService getWorksheetEngine() {
@@ -210,11 +181,6 @@ public class ControllersResource {
          }
       };
 
-      baseTableLoadDataController =
-              new BaseTableLoadDataController(runtimeViewsheetRef, coreLifecycleService, viewsheetService);
-      maxModeAssemblyService = new MaxModeAssemblyService(coreLifecycleService);
-      selectionService = new VSSelectionService(coreLifecycleService, viewsheetService, maxModeAssemblyService, sharedFilterService);
-      imageService = new AssemblyImageService(viewsheetService);
       vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
 
       securityProvider = SecurityEngine.getSecurity().getSecurityProvider();
@@ -348,8 +314,6 @@ public class ControllersResource {
    private VSLifecycleService vsLifecycleService;
    private RuntimeViewsheetManager runtimeViewsheetManager;
    private VSObjectModelFactoryService objectModelFactoryService;
-   private ViewsheetController viewsheetController;
-   private WorksheetController worksheetController;
    private VSObjectTreeService objectTreeService;
    private SecurityEngine securityEngine;
    private VSObjectService objectService;
@@ -358,10 +322,7 @@ public class ControllersResource {
    private AssetRepository assetRepository;
    private OpenViewsheetController openViewsheetController;
    private OpenWorksheetController openWorksheetController;
-   private BaseTableLoadDataController baseTableLoadDataController;
    private LicenseService licenseService;
-   private VSSelectionService selectionService;
-   private AssemblyImageService imageService;
    private VSExportService vsExportService;
    private SecurityProvider securityProvider;
    private ResourcePermissionService resourcePermissionService;
@@ -373,11 +334,9 @@ public class ControllersResource {
    private ImportXLSController importXLSController;
    private VSAssemblyInfoHandler vsassemblyInfoHandler;
    private ImportCSVDialogController importCSVDialogController;
-   private MaxModeAssemblyService maxModeAssemblyService;
    private VSChartShowDetailsController vschartShowDetailsController;
    private VSChartBrushController vschartBrushController;
    private ScheduleTaskFolderService scheduleTaskFolderService;
-   private PluginsService pluginsService;
 
    private FileApiService fileApiService;
 

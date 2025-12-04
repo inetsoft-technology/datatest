@@ -6,11 +6,9 @@ import com.github.romankh3.image.comparison.model.ImageComparisonResult
 import com.github.romankh3.image.comparison.model.ImageComparisonState
 import inetsoft.report.internal.png.PNGEncoder
 
-import javax.imageio.ImageIO
 import java.awt.*
 import java.awt.image.BufferedImage
 import java.util.List
-import java.io.*
 
 class CompareUtil {
 
