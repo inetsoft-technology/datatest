@@ -142,8 +142,7 @@ class MVTest {
       controllers = new ControllersResource()
       controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params)
-              , controllers)
+      viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params), controllers)
       viewsheetResource.initRuntimeVS(principal)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
@@ -507,8 +506,7 @@ class MVTest {
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
-   private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +
-           "HH:mm:ss")
+   private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " + "HH:mm:ss")
    private final String MV_INCREMENTAL = "__MVIncremental"
    private final String MV_EXT = "__MV"
 }

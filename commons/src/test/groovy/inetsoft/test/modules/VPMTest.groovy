@@ -1,6 +1,5 @@
 package inetsoft.test.modules
 
-import inetsoft.report.TableLens
 import inetsoft.sree.ClientInfo
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.IdentityID

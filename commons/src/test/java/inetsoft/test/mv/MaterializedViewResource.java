@@ -2,7 +2,6 @@ package inetsoft.test.mv;
 
 import inetsoft.sree.security.IdentityID;
 import inetsoft.sree.security.SRPrincipal;
-import inetsoft.sree.security.SecurityProvider;
 import inetsoft.test.core.ControllersResource;
 import inetsoft.test.core.MessageTestUtils;
 import inetsoft.uql.asset.AssetRepository;
@@ -10,7 +9,6 @@ import inetsoft.util.Tool;
 import inetsoft.web.admin.content.repository.*;
 import inetsoft.web.admin.content.repository.MVService;
 import inetsoft.web.admin.content.repository.MVSupportService;
-import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
 import inetsoft.enterprise.web.api.mv.*;
 
 import java.security.Principal;
@@ -38,10 +36,6 @@ public class MaterializedViewResource {
 
       // Reuse services from ControllersResource
       MVSupportService support = MVSupportService.getInstance();
-      SecurityProvider securityProvider = controllersResource.getSecurityProvider();
-      ResourcePermissionService resourcePermissionService = controllersResource.getResourcePermissionService();
-      RepletRegistryManager repletRegistryManager = controllersResource.getRepletRegistryManager();
-      ScheduleTaskFolderService scheduleTaskFolderService = controllersResource.getScheduleTaskFolderService();
       ContentRepositoryTreeService contentRepositoryTreeService = controllersResource.getContentRepositoryTreeService();
       MVService service = new MVService(contentRepositoryTreeService, support);
       AssetRepository assetRepository = controllersResource.getAssetRepository();
