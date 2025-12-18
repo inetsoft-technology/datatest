@@ -1,4 +1,4 @@
-The table size(row x col) is:(12 x 4)
+The data size(row x col) is:(12 x 4)
 Column0, Column1, Column2, Column3
 Interger, date, timeinstant, time
 1, 2018-09-10, 2018-09-10 10:12:23.0, 20:23:12

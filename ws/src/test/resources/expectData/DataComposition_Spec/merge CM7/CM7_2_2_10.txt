@@ -1,4 +1,4 @@
-The table size(row x col) is:(89 x 3)
+The data size(row x col) is:(89 x 3)
 REGION_ID, ORDER_ID, ORDER_ID_1
 1, 12005, 12005
 1, 12008, 12008

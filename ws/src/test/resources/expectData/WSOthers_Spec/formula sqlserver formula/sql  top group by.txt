@@ -1,4 +1,4 @@
-The table size(row x col) is:(11 x 2)
+The data size(row x col) is:(11 x 2)
 customer_id, state
 6, CT
 10, IL

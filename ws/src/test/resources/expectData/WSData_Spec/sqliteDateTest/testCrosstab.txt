@@ -1,4 +1,4 @@
-The table size(row x col) is:(14 x 12)
+The data size(row x col) is:(14 x 12)
 Month(order_datetime), Week(order_datetime), Day(order_date), WeekOfYear(order_date), Hour(order_time), SecondOfMinute(order_time), Second(order_datetime), DayOfWeek(order_datetime), 2002, 2003, 2004, 2005
 2002 Feb, 2002-02-03, 2002-02-04, 6, 05, 43, 2002-02-04 05:27:43, Mon, 1, NULL, NULL, NULL
 2002 Feb, 2002-02-03, 2002-02-06, 6, 06, 1, 2002-02-06 06:01:01, Wed, 10, NULL, NULL, NULL

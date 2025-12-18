@@ -1,7 +1,7 @@
-The table size(row x col) is:(4 x 4)
+The data size(row x col) is:(4 x 4)
 Abweichung1_aaa, Bemerkung1, col2, id
 VP 4-5
-aaa, letzter Ans.16 CM Entscheid, null, 1
+aaa, letzter Ans.16 CM Entscheid, NULL, 1
 VP 4-5
-aaa, aa, null, 2
-b, aa, null, 3
+aaa, aa, NULL, 2
+b, aa, NULL, 3

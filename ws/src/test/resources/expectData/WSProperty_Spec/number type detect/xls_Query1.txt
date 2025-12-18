@@ -1,5 +1,5 @@
-The table size(row x col) is:(4 x 7)
+The data size(row x col) is:(4 x 7)
 col1, col2, col3, col4, col5, col6, empty
-123456789, 11.22, 22, 525.555, 0, 759.85, null
-123456789, 33333.1, na, 22221.2, 0, 99, null
-abc, N/A, N/A, 33.45, 132.5, null, null
+123456789, 11.22, 22, 525.555, 0, 759.85, NULL
+123456789, 33333.1, na, 22221.2, 0, 99, NULL
+abc, N/A, N/A, 33.45, 132.5, NULL, NULL
