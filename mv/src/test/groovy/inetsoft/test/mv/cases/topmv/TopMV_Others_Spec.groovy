@@ -24,7 +24,7 @@ class TopMV_Others_Spec extends Specification{
    def 'selection on crosstab2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection on crosstab2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -40,7 +40,7 @@ class TopMV_Others_Spec extends Specification{
    def 'aggregate table as subquery'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate table as subquery'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -56,7 +56,7 @@ class TopMV_Others_Spec extends Specification{
    def 'selection nested'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection nested'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -72,7 +72,7 @@ class TopMV_Others_Spec extends Specification{
    def 'selection nested1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection nested1'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -88,7 +88,7 @@ class TopMV_Others_Spec extends Specification{
    def 'selection nested2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection nested2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -104,7 +104,7 @@ class TopMV_Others_Spec extends Specification{
    def 'child has maxrow'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/child has maxrow'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -120,7 +120,7 @@ class TopMV_Others_Spec extends Specification{
    def 'base is embedded setted name group'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/base is embedded setted name group'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -136,7 +136,7 @@ class TopMV_Others_Spec extends Specification{
    def 'select on aggregate col'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/select on aggregate col'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -152,7 +152,7 @@ class TopMV_Others_Spec extends Specification{
    def 'variable col is not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/variable col is not public'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -168,7 +168,7 @@ class TopMV_Others_Spec extends Specification{
    def 'vs assembly-starting with'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/vs assembly-starting with'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -185,7 +185,7 @@ class TopMV_Others_Spec extends Specification{
    def 'v-contains'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-contains'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -202,7 +202,7 @@ class TopMV_Others_Spec extends Specification{
    def 'v-starting with'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-starting with'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -219,7 +219,7 @@ class TopMV_Others_Spec extends Specification{
    def 'vs assembly-contains'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/vs assembly-contains'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -236,7 +236,7 @@ class TopMV_Others_Spec extends Specification{
    def 'vs_donut'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/vs_donut'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -254,7 +254,7 @@ class TopMV_Others_Spec extends Specification{
    def 'chart_discrete'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/chart_discrete'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -271,7 +271,7 @@ class TopMV_Others_Spec extends Specification{
    def 'ganttchart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/ganttchart'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -288,7 +288,7 @@ class TopMV_Others_Spec extends Specification{
    def 'treechart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/treechart'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -305,7 +305,7 @@ class TopMV_Others_Spec extends Specification{
    def 'parameter prompts is false'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parameter prompts is false'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -322,7 +322,7 @@ class TopMV_Others_Spec extends Specification{
    def 'interval chart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/interval chart'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -339,7 +339,7 @@ class TopMV_Others_Spec extends Specification{
    def 'value as color'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/value as color'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -357,7 +357,7 @@ class TopMV_Others_Spec extends Specification{
    def 'date range and number range'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/date range and number range'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)

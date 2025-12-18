@@ -22,7 +22,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'child has aggregate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/child has aggregate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -38,7 +38,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'parent has aggregate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent has aggregate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -54,7 +54,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'date group'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/date group'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -70,7 +70,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'date group-none'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/date group-none'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -86,7 +86,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'aggregate col is expression'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate col is expression'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
@@ -101,7 +101,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'aggregate second col is expression'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate second col is expression'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -117,7 +117,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'two columns formula'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/two columns formula'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -133,7 +133,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'aggregate formula'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -150,7 +150,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'aggregate formula2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -166,7 +166,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'both have aggregate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/both have aggregate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -182,7 +182,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'no aggregate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/no aggregate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -198,7 +198,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-average'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-average'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -214,7 +214,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-concatenate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-concatenate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -230,7 +230,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-convariance'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-convariance'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -246,7 +246,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-correlation'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-correlation'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -262,7 +262,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-std deviation'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-std deviation'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -278,7 +278,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-std deviation pop'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-std deviation pop'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -294,7 +294,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-variance'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-variance'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -310,7 +310,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-variance pop'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-variance pop'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -326,7 +326,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'merge-weighted average'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-weighted average'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -342,7 +342,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-average'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-average'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -358,7 +358,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-concatenate'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-concatenate'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -374,7 +374,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-convariance'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-convariance'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -390,7 +390,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-correlation'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-correlation'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -406,7 +406,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-std deviation'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-std deviation'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -422,7 +422,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-std deviation pop'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-std deviation pop'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -438,7 +438,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-variance'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-variance'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -454,7 +454,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-variance pop'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-variance pop'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -470,7 +470,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'unmerge-weighted average'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-weighted average'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -487,7 +487,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    def 'datelevel_none'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/datelevel_none'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)

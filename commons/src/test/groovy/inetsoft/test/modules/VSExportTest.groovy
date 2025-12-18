@@ -25,213 +25,226 @@ class VSExportTest {
    }
 
    /**
-    * init sree home
-    * @return
+    * Initialize sree home directory
+    * @param suiteName the suite name to initialize
     */
    static initHome(String suiteName) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
-      this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
+      this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
 
    /**
-    * test export vs as excel
-    * @param bks
-    * @return
-    */
-   def testExportAsExcel(String[] bks, Boolean match, Boolean expandSelection, Boolean onlyDataComponent) {
-      executeVS(null)
-      if(bks == null) {
-         bks = ['(Home)'] as String[]
-      }
-      File outFile = createFileByCase(caseName, '.xlsx')
-      OutputStream out = new FileOutputStream(outFile)
-
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_EXCEL, match,
-              expandSelection, false, false, false,
-              bks, false, onlyDataComponent, null, new ExportResponse(out), principal)
-
-      tUtil.convertExcelAsPNG(outFile.toString())
-   }
-
-   /**
-    * Test Export VS to HTML
-    * @param bks
-    * @return
+    * Test export viewsheet to HTML format
+    * @param bks bookmark names array, null will use default '(Home)'
+    * @param params parameters map for viewsheet execution
     */
    def testExportAsHtml(String[] bks, Map<String, String[]> params) {
       executeVS(params)
-      if(bks == null) {
-         bks = ['(Home)'] as String[]
-      }
+      bks = normalizeBookmarks(bks)
       File outFile = createFileByCase(caseName, '.html')
-      OutputStream out = new FileOutputStream(outFile)
 
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
-              false, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+      outFile.withOutputStream { OutputStream out ->
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
+                 false, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
    }
 
    /**
-    * Test Export VS to PNG
-    * @param bks
-    * @param match
-    * @param expandSelection
-    * @return
+    * Test export viewsheet to PNG format
+    * @param bks bookmark names array, null will use default '(Home)'
+    * @param params parameters map for viewsheet execution
+    * @param match whether to match the export
+    * @param expandSelection whether to expand selection
     */
    def testExportAsPNG(String[] bks, Map<String, String[]> params, Boolean match, Boolean expandSelection) {
       executeVS(params)
-      if(bks == null) {
-         bks = ['(Home)'] as String[]
-      }
+      bks = normalizeBookmarks(bks)
       File outFile = createFileByCase(caseName, '.png')
-      OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
-              expandSelection, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+
+      outFile.withOutputStream { OutputStream out ->
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
+                 expandSelection, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
    }
 
    /**
-    * export VS as CSV
-    * @param bks
-    * @param params
-    * @param csvConfig
-    * @return
+    * Test export viewsheet as CSV format
+    * @param bks bookmark names array, null will use default '(Home)'
+    * @param params parameters map for viewsheet execution
+    * @param csvConfig CSV configuration object
     */
    def testExportAsCSV(String[] bks, Map<String, String[]> params, CSVConfig csvConfig) {
       executeVS(params)
-      if(bks == null) {
-         bks = ['(Home)'] as String[]
-      }
+      bks = normalizeBookmarks(bks)
       File outFile = createFileByCase(caseName, '.zip')
-      OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
-              false, false, bks, false, false, csvConfig,
-              new ExportResponse(out), principal)
+
+      outFile.withOutputStream { OutputStream out ->
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
+                 false, false, bks, false, false, csvConfig,
+                 new ExportResponse(out), principal)
+      }
+
       unzipFile(outFile)
    }
 
    /**
-    * Test Export VS to PDF with print layout
-    * @param bks
-    * @param match
-    * @param expandSelection
-    * @return
+    * Test export viewsheet to PDF with print layout
+    * @param bks bookmark names array, null will use default '(Home)'
+    * @param params parameters map for viewsheet execution
     */
    def testExportWithPrintLayout(String[] bks, Map<String, String[]> params) {
       executeVS(params)
-      if(bks == null) {
-         bks = ['Home'] as String[]
-      }
+      bks = normalizeBookmarks(bks)
       File outFile = createFileByCase(caseName, '.pdf')
-      OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
-              false, false, true, false,
-              bks, false, false, null, new ExportResponse(out), principal)
-      Thread.sleep(2000)
+
+      outFile.withOutputStream { OutputStream out ->
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
+                 false, false, true, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
+
+      Thread.sleep(PDF_EXPORT_WAIT_MS)
       tUtil.convertPDFToPNG(outFile.toString())
    }
 
    /**
-    * unzip zip file to current export file.
-    * @param outFile
-    * @return
+    * Unzip zip file to current export file directory
+    * @param outFile the zip file to unzip
+    * @throws IOException if file operations fail
     */
    def unzipFile(File outFile) {
-      String fileFolder = outFile.getParent().toString() + File.separator
-      //clear all csv file
-      new File(fileFolder).listFiles().each {
-         if (it.path.endsWith('.csv')) {
-            it.delete()
-         }
+      if (outFile == null || !outFile.exists()) {
+         throw new IllegalArgumentException("Output file is null or does not exist: ${outFile}")
       }
-      def zipFile = new ZipFile(outFile)
 
-      zipFile.entries().each { it ->
-         def path = Paths.get(fileFolder + it.name)
-         Files.copy(zipFile.getInputStream(it), path)
+      try {
+         String fileFolder = outFile.getParent().toString() + File.separator
+         // Clear all csv files
+         File folder = new File(fileFolder)
+         if (folder.exists() && folder.isDirectory()) {
+            folder.listFiles()?.each {
+               if (it.path.endsWith('.csv')) {
+                  it.delete()
+               }
+            }
+         }
+
+         new ZipFile(outFile).withCloseable { ZipFile zipFile ->
+            zipFile.entries().each { entry ->
+               if (!entry.isDirectory()) {
+                  def path = Paths.get(fileFolder + entry.name)
+                  Files.createDirectories(path.parent)
+                  Files.copy(zipFile.getInputStream(entry), path)
+               }
+            }
+         }
+      } catch (Exception e) {
+         throw new RuntimeException("Failed to unzip file: ${outFile}", e)
       }
    }
 
    /**
-    * Execute the VS
-    * @param params
-    * @return
+    * Execute the viewsheet with given parameters
+    * @param params parameters map for viewsheet execution, can be null
     */
    def executeVS(Map<String, String[]> params) {
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      controllers.initControllers()
-      ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
-      viewsheetResource.initRuntimeVS(principal)
+      try {
+         DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
+         controllers.initControllers()
+         ThreadContext.setContextPrincipal(principal)
+         viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+         viewsheetResource.initRuntimeVS(principal)
+      } catch (Exception e) {
+         throw new RuntimeException("Failed to execute viewsheet", e)
+      }
    }
 
    /**
-    * create export file by case name
-    * @param caseName
-    * @param suffix
-    * @return
+    * Create export file by case name
+    * @param caseName the case name
+    * @param suffix the file suffix (e.g., '.xlsx', '.png')
+    * @return the created file object
+    * @throws IOException if file creation fails
     */
    def createFileByCase(String caseName, String suffix) {
-      String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
-      String fileName = resourcePath + '/exportData' + suiteName
-      File tempFile = new File(fileName + File.separator  + caseName  + File.separator + caseName + suffix)
+      try {
+         String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
+         String fileName = resourcePath + '/exportData' + suiteName
+         File tempFile = new File(fileName + File.separator + caseName + File.separator + caseName + suffix)
 
-      if(!tempFile.getParentFile().exists()) {
-         tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
-         tempFile.delete()
+         if (!tempFile.getParentFile().exists()) {
+            tempFile.getParentFile().mkdirs()
+         } else if (tempFile.exists()) {
+            tempFile.delete()
+         }
+         return tempFile
+      } catch (Exception e) {
+         throw new RuntimeException("Failed to create file by case: ${caseName}${suffix}", e)
       }
-      return tempFile
    }
 
    /**
-    * compare all text file
+    * Normalize bookmark array, return default if null
+    * @param bks bookmark names array
+    * @return normalized bookmark array
+    */
+   private String[] normalizeBookmarks(String[] bks) {
+      return bks == null ? (['(Home)'] as String[]) : bks
+   }
+
+   /**
+    * Compare all CSV text files
     */
    void compareCSV() {
       compareCSV(null)
    }
 
    /**
-    * compare text file
-    * @param fileNames txt file names
+    * Compare CSV text files
+    * @param fileNames array of CSV file names to compare, null to compare all
     */
-   void compareCSV(String[] fls) {
-      compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'CSV')
+   void compareCSV(String[] fileNames) {
+      compareUtil.CompareFileByFeature(fileNames, suiteName + '/' + caseName, 'CSV')
    }
 
    /**
-    * compare all image file
+    * Compare all PNG image files
     */
    void comparePNG() {
       comparePNG(null)
    }
 
    /**
-    * compare the image files
-    * @param fls image names
+    * Compare PNG image files
+    * @param fileNames array of PNG file names to compare, null to compare all
     */
-   void comparePNG(String[] fls) {
-      compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'PNG')
+   void comparePNG(String[] fileNames) {
+      compareUtil.CompareFileByFeature(fileNames, suiteName + '/' + caseName, 'PNG')
    }
 
    /**
-    * compare HTML file
+    * Compare all HTML files
     */
    void compareHTML() {
       compareHTML(null)
    }
 
    /**
-    * compare the HTML files
-    * @param fls HTML names
+    * Compare HTML files
+    * @param fileNames array of HTML file names to compare, null to compare all
     */
-   void compareHTML(String[] fls) {
-      compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'HTML')
+   void compareHTML(String[] fileNames) {
+      compareUtil.CompareFileByFeature(fileNames, suiteName + '/' + caseName, 'HTML')
    }
 
+   private static final int PDF_EXPORT_WAIT_MS = 2000
+
    static String asset_id, suiteName, caseName
+
    RuntimeViewsheetResource viewsheetResource
    SRPrincipal principal = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])

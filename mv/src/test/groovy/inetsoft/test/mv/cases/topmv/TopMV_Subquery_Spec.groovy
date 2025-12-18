@@ -23,7 +23,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode1_1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_1'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -39,7 +39,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode1_2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -56,7 +56,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode1_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_3'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -72,7 +72,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode1_4'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_4'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -88,7 +88,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_1'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -104,7 +104,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -120,7 +120,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_3'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -136,7 +136,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_4'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_4'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -152,7 +152,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_5'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_5'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -168,7 +168,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode2_6'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_6'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -184,7 +184,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_1'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -200,7 +200,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -216,7 +216,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_3'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -233,7 +233,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_4'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_4'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -249,7 +249,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_5'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_5'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -265,7 +265,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_6'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_6'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -281,7 +281,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_7'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_7'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -298,7 +298,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_8'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_8'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -316,7 +316,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -333,7 +333,7 @@ class TopMV_Subquery_Spec extends Specification {
    def 'Subquery_Mode3_10'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_10'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
