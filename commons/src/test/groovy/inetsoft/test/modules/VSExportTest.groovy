@@ -43,12 +43,15 @@ class VSExportTest {
    def testExportAsHtml(String[] bks, Map<String, String[]> params) {
       executeVS(params)
       bks = normalizeBookmarks(bks)
+      
       File outFile = createFileByCase(caseName, '.html')
-
-      outFile.withOutputStream { OutputStream out ->
+      OutputStream out = new FileOutputStream(outFile)
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
                  false, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
       }
    }
 
@@ -62,12 +65,15 @@ class VSExportTest {
    def testExportAsPNG(String[] bks, Map<String, String[]> params, Boolean match, Boolean expandSelection) {
       executeVS(params)
       bks = normalizeBookmarks(bks)
-      File outFile = createFileByCase(caseName, '.png')
 
-      outFile.withOutputStream { OutputStream out ->
+      File outFile = createFileByCase(caseName, '.png')
+      OutputStream out = new FileOutputStream(outFile)
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
       }
    }
 
@@ -80,12 +86,15 @@ class VSExportTest {
    def testExportAsCSV(String[] bks, Map<String, String[]> params, CSVConfig csvConfig) {
       executeVS(params)
       bks = normalizeBookmarks(bks)
-      File outFile = createFileByCase(caseName, '.zip')
 
-      outFile.withOutputStream { OutputStream out ->
+      File outFile = createFileByCase(caseName, '.zip')
+      OutputStream out = new FileOutputStream(outFile)
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
                  false, false, bks, false, false, csvConfig,
                  new ExportResponse(out), principal)
+      } finally {
+         out.close()
       }
 
       unzipFile(outFile)
@@ -99,12 +108,15 @@ class VSExportTest {
    def testExportWithPrintLayout(String[] bks, Map<String, String[]> params) {
       executeVS(params)
       bks = normalizeBookmarks(bks)
-      File outFile = createFileByCase(caseName, '.pdf')
 
-      outFile.withOutputStream { OutputStream out ->
+      File outFile = createFileByCase(caseName, '.pdf')
+      OutputStream out = new FileOutputStream(outFile)
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
                  false, false, true, false,
                  bks, false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
       }
 
       Thread.sleep(PDF_EXPORT_WAIT_MS)
