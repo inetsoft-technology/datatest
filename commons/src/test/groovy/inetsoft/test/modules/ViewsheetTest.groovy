@@ -356,7 +356,7 @@ class ViewsheetTest {
       compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
    }
 
-   private static String asset_id, suiteName, caseName
+   protected static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
 
    ExportUtil exportUtil = new ExportUtil()
