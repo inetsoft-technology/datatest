@@ -23,7 +23,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -40,7 +40,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -57,7 +57,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -76,7 +76,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -93,7 +93,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -110,7 +110,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -127,7 +127,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -143,7 +143,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -158,7 +158,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -175,7 +175,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -192,7 +192,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -208,7 +208,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
@@ -226,7 +226,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -242,7 +242,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/discrete_chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -257,7 +257,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-dategroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -272,7 +272,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-namegroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -287,7 +287,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-normalgroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -302,7 +302,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
@@ -318,7 +318,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -333,7 +333,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab2_1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -348,7 +348,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -363,7 +363,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -378,7 +378,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
 
@@ -394,7 +394,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -409,7 +409,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -424,7 +424,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/date level is none'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -439,7 +439,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/name group on first aggregate'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -454,7 +454,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/change from'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -469,7 +469,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/value of'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -484,7 +484,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/moving average'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -499,7 +499,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/running total'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -514,7 +514,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/percent of'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 

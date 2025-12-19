@@ -24,7 +24,7 @@ class SubMV_Spec extends Specification {
    def 'aggbase'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -47,7 +47,7 @@ class SubMV_Spec extends Specification {
    def 'aggbase2'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase2'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -62,7 +62,7 @@ class SubMV_Spec extends Specification {
    def 'aggregate col is expression'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggregate col is expression'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -77,7 +77,7 @@ class SubMV_Spec extends Specification {
    def 'aggregate second col is expression'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggregate second col is expression'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -94,7 +94,7 @@ class SubMV_Spec extends Specification {
    def 'contact'() {
       given:
       String asset_id = '1^128^__NULL__^submv/contact'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -109,7 +109,7 @@ class SubMV_Spec extends Specification {
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/crossjoin'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -126,7 +126,7 @@ class SubMV_Spec extends Specification {
    def 'dategroup'() {
       given:
       String asset_id = '1^128^__NULL__^submv/dategroup'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -141,7 +141,7 @@ class SubMV_Spec extends Specification {
    def 'distinct'() {
       given:
       String asset_id = '1^128^__NULL__^submv/distinct'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
 
@@ -157,7 +157,7 @@ class SubMV_Spec extends Specification {
    def 'group+group'() {
       given:
       String asset_id = '1^128^__NULL__^submv/group+group'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -174,7 +174,7 @@ class SubMV_Spec extends Specification {
    def 'group+plain'() {
       given:
       String asset_id = '1^128^__NULL__^submv/group+plain'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -191,7 +191,7 @@ class SubMV_Spec extends Specification {
    def 'hideaggcolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/hideaggcolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -208,7 +208,7 @@ class SubMV_Spec extends Specification {
    def 'hidecolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/hidecolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -225,7 +225,7 @@ class SubMV_Spec extends Specification {
    def 'hidegroupcolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/hidegroupcolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -242,7 +242,7 @@ class SubMV_Spec extends Specification {
    def 'hideothercolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/hideothercolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -259,7 +259,7 @@ class SubMV_Spec extends Specification {
    def 'intersect'() {
       given:
       String asset_id = '1^128^__NULL__^submv/intersect'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -276,7 +276,7 @@ class SubMV_Spec extends Specification {
    def 'jsformula'() {
       given:
       String asset_id = '1^128^__NULL__^submv/jsformula'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -293,7 +293,7 @@ class SubMV_Spec extends Specification {
    def 'mergejoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/mergejoin'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -310,7 +310,7 @@ class SubMV_Spec extends Specification {
    def 'merge-nthlargest'() {
       given:
       String asset_id = '1^128^__NULL__^submv/merge-nthlargest'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -325,7 +325,7 @@ class SubMV_Spec extends Specification {
    def 'merge-nthmostfrequent'() {
       given:
       String asset_id = '1^128^__NULL__^submv/merge-nthmostfrequent'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -340,7 +340,7 @@ class SubMV_Spec extends Specification {
    def 'merge-nthsmallest'() {
       given:
       String asset_id = '1^128^__NULL__^submv/merge-nthsmallest'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -355,7 +355,7 @@ class SubMV_Spec extends Specification {
    def 'merge-product'() {
       given:
       String asset_id = '1^128^__NULL__^submv/merge-product'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -372,7 +372,7 @@ class SubMV_Spec extends Specification {
    def 'merge-pthpercentile'() {
       given:
       String asset_id = '1^128^__NULL__^submv/merge-pthpercentile'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -387,7 +387,7 @@ class SubMV_Spec extends Specification {
    def 'minus'() {
       given:
       String asset_id = '1^128^__NULL__^submv/minus'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -404,7 +404,7 @@ class SubMV_Spec extends Specification {
    def 'namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^submv/namegroup'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -421,7 +421,7 @@ class SubMV_Spec extends Specification {
    def 'outerjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/outerjoin'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -439,7 +439,7 @@ class SubMV_Spec extends Specification {
    def 'postcondition_expression'() {
       given:
       String asset_id = '1^128^__NULL__^submv/postcondition_expression'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -457,7 +457,7 @@ class SubMV_Spec extends Specification {
    def 'postcondition_variable'() {
       given:
       String asset_id = '1^128^__NULL__^submv/postcondition_variable'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -476,7 +476,7 @@ class SubMV_Spec extends Specification {
    def 'precondition_field'() {
       given:
       String asset_id = '1^128^__NULL__^submv/precondition_field'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -494,7 +494,7 @@ class SubMV_Spec extends Specification {
    def 'precondition-subquery'() {
       given:
       String asset_id = '1^128^__NULL__^submv/precondition-subquery'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -511,7 +511,7 @@ class SubMV_Spec extends Specification {
    def 'rangecolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/rangecolumn'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -528,7 +528,7 @@ class SubMV_Spec extends Specification {
    def 'rankingcondition'() {
       given:
       String asset_id = '1^128^__NULL__^submv/rankingcondition'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -546,7 +546,7 @@ class SubMV_Spec extends Specification {
    def 'sqlformula'() {
       given:
       String asset_id = '1^128^__NULL__^submv/sqlformula'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -563,7 +563,7 @@ class SubMV_Spec extends Specification {
    def 'top_crosstab'() {
       given:
       String asset_id = '1^128^__NULL__^submv/top_crosstab'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -580,7 +580,7 @@ class SubMV_Spec extends Specification {
    def 'twocolumnsformula'() {
       given:
       String asset_id = '1^128^__NULL__^submv/twocolumnsformula'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -597,7 +597,7 @@ class SubMV_Spec extends Specification {
    def 'union'() {
       given:
       String asset_id = '1^128^__NULL__^submv/union'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -614,7 +614,7 @@ class SubMV_Spec extends Specification {
    def 'unionall'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unionall'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -631,7 +631,7 @@ class SubMV_Spec extends Specification {
    def 'unmerge-nthlargest'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unmerge-nthlargest'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -646,7 +646,7 @@ class SubMV_Spec extends Specification {
    def 'unmerge-nthmostfrequent'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unmerge-nthmostfrequent'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
 
       mvtest = new MVTest(asset_id)
@@ -663,7 +663,7 @@ class SubMV_Spec extends Specification {
    def 'unmerge-nthsmallest'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unmerge-nthsmallest'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -678,7 +678,7 @@ class SubMV_Spec extends Specification {
    def 'unmerge-product'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unmerge-product'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
@@ -693,7 +693,7 @@ class SubMV_Spec extends Specification {
    def 'unmerge-pthpercentile'() {
       given:
       String asset_id = '1^128^__NULL__^submv/unmerge-pthpercentile'
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest = new MVTest(asset_id)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)

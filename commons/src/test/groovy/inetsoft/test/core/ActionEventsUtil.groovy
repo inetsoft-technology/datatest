@@ -14,7 +14,7 @@ class ActionEventsUtil {
       event.setEntryId(vs_id)
       event.setViewer(isViewer)
 
-      if(parameters != null) {
+      if (parameters != null) {
          event.setParameters(parameters)
       }
       return event
@@ -52,31 +52,16 @@ class ActionEventsUtil {
 
 
    /**
-   * import asset file to sree.home
-   */
-   def  importAssetsFile(String  path) {
+    * import asset file to sree.home
+    */
+   def importAssetsFile(String path) {
       controllersResource.initControllers()
-      if (System.properties['os.name'].toString().toLowerCase().contains('windows')){
+      if (System.properties['os.name'].toString().toLowerCase().contains('windows')) {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:/')), [], true, admin)
-      }
-      else {
+      } else {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:')), [], true, admin)
       }
    }
-
-   /**
-    * install plugins to env
-    */
-   /*def installPlugins() {
-      controllersResource.initControllers()
-      PluginsService pluginsService = controllersResource.getPluginsService()
-      String pluginDir = System.getProperty('plugin.dir')
-      println "-----install plugin-----" + pluginsService.getModel(admin).plugins().size()
-      if(pluginsService.getModel(admin).plugins().size() == 0) {
-         println '====install plugins from=======' + pluginDir
-         pluginsService.installPluginsForTester(pluginDir, admin)
-      }
-   }*/
 
    SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
    ControllersResource controllersResource = new ControllersResource()

@@ -61,19 +61,38 @@ class ViewsheetTest {
 
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
+
+   /**
+    * Init runtime VS
+    * @return
+    */
+   def initVS() {
+      initVS(null)
+   }
+
    /**
     * Init runtime VS
     * @param params
     * @return
     */
    def initVS(Map<String, String[]> params) {
+      initVS(params, true)
+   }
+
+   /**
+    * Init runtime VS
+    * @param params
+    * @param isViewer
+    * @return
+    */
+   def initVS(Map<String, String[]> params, Boolean isViewer) {
       DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers = new ControllersResource()
       controllers.initControllers()
 
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -245,12 +264,15 @@ class ViewsheetTest {
       }
       File outFile = createExportFileByCase(null, null, '.png')
       OutputStream out = new FileOutputStream(outFile)
-      try{
+
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      }catch (Exception ex) {
+      } catch (Exception ex) {
          new Exception("==========export PNG failed:===========", ex).printStackTrace();
+      } finally {
+         out.close()
       }
    }
 
@@ -273,8 +295,10 @@ class ViewsheetTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
                  false, false, true, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      }catch (Exception ex) {
+      } catch (Exception ex) {
          new Exception("==========export PDF failed:===========", ex).printStackTrace();
+      } finally {
+         out.close()
       }
 
       Thread.sleep(500)
@@ -346,7 +370,7 @@ class ViewsheetTest {
       compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
    }
 
-   private static String asset_id, suiteName, caseName
+   protected static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
 
    ExportUtil exportUtil = new ExportUtil()

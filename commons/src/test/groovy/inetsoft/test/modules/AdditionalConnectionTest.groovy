@@ -36,14 +36,14 @@ class AdditionalConnectionTest {
    static initHome(String suiteName) {
       //System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
-      this.suiteName = (arrs.length == 1? null : arrs[1].replace('.', '/'))
+      this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
       context = ConfigurationContext.getContext()
       context.setHome(System.getProperty("sree.home"))
    }
 
    /**
     * execute multitanet test
-    * @param asset_id: vs entry, ws entry, report path
+    * @param asset_id : vs entry, ws entry, report path
     * @param principals
     * @param params
     * @return
@@ -66,18 +66,16 @@ class AdditionalConnectionTest {
 
             if (asset_id.startsWith('1^128^')) {
                executeVS(asset_id, it, params)
-            }
-            else if (asset_id.startsWith'1^2^') {
+            } else if (asset_id.startsWith('1^2^')) {
                executeWS(asset_id, it, params)
-            }
-            else {
+            } else {
                new Exception("====Input right asset_id========" + asset_id).printStackTrace()
             }
          }
       } finally {
          controllers.destroy()
       }
-}
+   }
 
    /**
     * execute vs with user and parameter
@@ -87,7 +85,7 @@ class AdditionalConnectionTest {
     */
    def executeVS(String asset_id, SRPrincipal principal, Map<String, String[]> params) {
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
@@ -95,14 +93,18 @@ class AdditionalConnectionTest {
 
       File outFile = createFileByCase(caseName, asset_id, principal, null)
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-              false, false, false, false,
-              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
+                 false, false, false, false,
+                 ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
+      }
    }
 
    /**
     * execute ws with principal
-    * @param asset_id: ws entry, such as 1^2^__NULL__^printLayout/Sws1_1
+    * @param asset_id : ws entry, such as 1^2^__NULL__^printLayout/Sws1_1
     * @param principal
     * @param params
     * @return
@@ -119,10 +121,10 @@ class AdditionalConnectionTest {
       params.each {
          assetQuerySandbox.getVariableTable().put(it.key, it.value)
       }
-      try{
+      try {
          assemblies.each {
-            if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
-               TableAssembly tableAssembly = (TableAssembly)it
+            if (it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+               TableAssembly tableAssembly = (TableAssembly) it
                String tableName = tableAssembly.getName()
                if (!tableAssembly.isVisibleTable()) {
                   return
@@ -136,7 +138,7 @@ class AdditionalConnectionTest {
                exportUtil.exportWSObject(outFile.absolutePath, sortlens)
             }
          }
-      }catch (Exception e) {
+      } catch (Exception e) {
          e.printStackTrace()
       }
    }
@@ -155,7 +157,7 @@ class AdditionalConnectionTest {
     * @param caseName
     * @param asset_id
     * @param principal
-    * @param tableName, only for ws
+    * @param tableName , only for ws
     * @return
     */
    def createFileByCase(String caseName, String asset_id, SRPrincipal principal, String tableName) {
@@ -166,13 +168,11 @@ class AdditionalConnectionTest {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^128^__NULL__^'))
          fileName = 'VS' + File.separator + objName + '__' + principal.getIdentityID().getName() + '.png'
-      }
-      else if (asset_id.startsWith'1^2^') {
+      } else if (asset_id.startsWith('1^2^')) {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^2^__NULL__^'))
          fileName = 'WS' + File.separator + objName + '__' + tableName + '__' + principal.getIdentityID().getName() + '.txt'
-      }
-      else {
+      } else {
          new Exception("====Input right asset_id when export file======" + asset_id).printStackTrace()
       }
 
@@ -180,9 +180,9 @@ class AdditionalConnectionTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fileName)
 
-      if(!tempFile.getParentFile().exists()) {
+      if (!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
+      } else if (tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -200,7 +200,7 @@ class AdditionalConnectionTest {
     * @param fileNames txt file names
     */
    void compareData(String[] fls) {
-      ['VS','WS'].each {
+      ['VS', 'WS'].each {
          compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName + '/' + it, 'TXT')
       }
    }

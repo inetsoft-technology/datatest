@@ -62,13 +62,14 @@ import java.util.List;
 
 import org.mockito.*;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 import static org.mockito.Mockito.*;
 
-public class ControllersResource extends MockMessageResource {
+public class ControllersResource {
 
    public void initControllers() {
-      mockMessage(this::createControllers);
+      MessageTestUtils.withMockMessageContext(this::createControllers);
    }
 
    public void destroy() {
@@ -186,7 +187,7 @@ public class ControllersResource extends MockMessageResource {
       coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService,
               vsLayoutService, parameterService, vsCompositionService, dataRefModelFactoryService,
               runtimeViewsheetRef, eventPublisher);
-      sharedFilterService = new SharedFilterService(getMessagingTemplate(), viewsheetService);
+      sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
       bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine, coreLifecycleService);
@@ -231,6 +232,7 @@ public class ControllersResource extends MockMessageResource {
       composerVSTableService = new ComposerVSTableService(coreLifecycleService, objectTreeService, objectModelFactoryService,
               Mockito.mock(VSBindingService.class), assetRepository, viewsheetService, Mockito.mock(CrosstabDrillHandler.class),
               Mockito.mock(VSAssemblyInfoHandler.class));
+      importXLSControllerService = new ImportXLSControllerService(viewsheetService, coreLifecycleService);
       importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
       importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy);
 
@@ -285,18 +287,23 @@ public class ControllersResource extends MockMessageResource {
               .when(spyContext)
               .getSpringBean(ImportCSVDialogService.class);
 
+      //only for VSFormImportTest.groovy
+      doReturn(importXLSControllerService)
+              .when(spyContext)
+              .getSpringBean(ImportXLSControllerService.class);
+
       // Check if we need to create a new static mock
       // If we already have one that's not closed, just update its behavior
       if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
          return;
       }
-      
+
       // Close existing one if it exists and is not closed (cleanup)
       if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
          staticConfigurationContext.close();
       }
-      
+
       // Try to create a new static mock
       try {
          staticConfigurationContext = mockStatic(ConfigurationContext.class);
@@ -314,7 +321,6 @@ public class ControllersResource extends MockMessageResource {
       }
    }
 
-   @Override
    public String getRuntimeId() {
       return runtimeId;
    }
@@ -371,13 +377,25 @@ public class ControllersResource extends MockMessageResource {
       return coreLifecycleService;
    }
 
-   public OpenViewsheetService getOpenViewsheetService() { return openViewsheetService; }
+   public OpenViewsheetService getOpenViewsheetService() {
+      return openViewsheetService;
+   }
 
-   public  ComposerVSTableService getComposerVSTableService() { return composerVSTableService; }
+   public ComposerVSTableService getComposerVSTableService() {
+      return composerVSTableService;
+   }
 
-   public WorksheetEventService getWorksheetEventService() { return worksheetEventService; }
+   public ContentRepositoryTreeService getContentRepositoryTreeService() {
+      return contentRepositoryTreeService;
+   }
 
-   public ImportCSVDialogService getImportCSVDialogService() { return importCSVDialogService; }
+   public WorksheetEventService getWorksheetEventService() {
+      return worksheetEventService;
+   }
+
+   public ImportCSVDialogService getImportCSVDialogService() {
+      return importCSVDialogService;
+   }
 
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
@@ -413,6 +431,8 @@ public class ControllersResource extends MockMessageResource {
    private BinaryTransferService binaryTransferService;
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
    private ComposerVSTableService composerVSTableService;
+
+   private ImportXLSControllerService importXLSControllerService;
    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
    private VSChartBrushService vsChartBrushService;

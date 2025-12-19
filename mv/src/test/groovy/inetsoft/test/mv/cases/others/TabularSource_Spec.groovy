@@ -25,7 +25,7 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/data.gov'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter1', 'filter2'] as String[], false, true)
 
@@ -37,7 +37,7 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/server file'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
@@ -49,7 +49,7 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/odata'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
@@ -61,7 +61,7 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/rest json'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
       materializedViews.createIncrementMV(2)
@@ -78,7 +78,7 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/mongo'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
+      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
       materializedViews.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter', 'brush', 'group'] as String[], false, true)
 
