@@ -99,10 +99,13 @@ class VSScriptTest {
       scriptName = scriptName ?: 'VS'
       bks = bks ?: ['(Home)'] as String[]
       File outFile = createFile(scriptName)
-      outFile.withOutputStream { OutputStream out ->
+      OutputStream out = new FileOutputStream(outFile)
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                  false, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
       }
    }
 

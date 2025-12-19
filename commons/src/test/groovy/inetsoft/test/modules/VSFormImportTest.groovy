@@ -25,8 +25,12 @@ class VSFormImportTest extends ViewsheetTest {
 
       File pngFile = createExportFileByCase(null, null, '_Import.png')
       OutputStream out = new FileOutputStream(pngFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, false,
-              false, true, false, false,
-              ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, false, false, true,
+                 false, false, ['(Home)'] as String[], false,
+                 false, null, new ExportResponse(out), principal)
+      } finally {
+         out.close()
+      }
    }
 }
