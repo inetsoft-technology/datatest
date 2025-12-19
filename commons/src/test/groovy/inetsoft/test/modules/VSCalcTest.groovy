@@ -32,7 +32,7 @@ class VSCalcTest extends ViewsheetTest {
    }
 
    def checkConvert(Map<String, String[]> params) {
-      try (MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
+      try(MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
          ConfigurationContext spyContext = spy(context)
 
          OpenViewsheetController openViewsheetController = controllers.getOpenViewsheetController()
@@ -54,7 +54,8 @@ class VSCalcTest extends ViewsheetTest {
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext)
 
          checkConvert0(params)
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          System.err.println("======convert========exceptions============");
          e.printStackTrace();
       }
@@ -78,13 +79,14 @@ class VSCalcTest extends ViewsheetTest {
          assemblies.each {
             assemblyName = it.getName()
 
-            if ((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
+            if((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
                     || it instanceof CrosstabVSAssembly)
                     && it.getVSAssemblyInfo().isVisible(true)) {
                viewsheetResource.convertToFreehand(principal, assemblyName)
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
 
@@ -99,7 +101,8 @@ class VSCalcTest extends ViewsheetTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                  false, false, false, false,
                  ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
-      } catch (Exception ex) {
+      }
+      catch(Exception ex) {
          ex.printStackTrace()
       }
    }

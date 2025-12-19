@@ -37,11 +37,11 @@ import java.util.function.Supplier;
  * and Mockito for mocking instead of creating real objects.
  */
 public final class MessageTestUtils {
-
+   
    private MessageTestUtils() {
       // Utility class
    }
-
+   
    /**
     * Executes an action within a mocked message context.
     * Automatically cleans up resources after execution.
@@ -55,7 +55,7 @@ public final class MessageTestUtils {
    public static <R> R withMockMessageContext(Principal principal, String runtimeId, Supplier<R> action) {
       return withMockMessageContext(principal, runtimeId, (ctx) -> action.get());
    }
-
+   
    /**
     * Executes an action within a mocked message context with access to the context.
     *
@@ -70,32 +70,33 @@ public final class MessageTestUtils {
       // Create minimal mock objects
       GenericMessage<String> message = new GenericMessage<>("test");
       MessageAttributes messageAttributes = new MessageAttributes(message);
-
-      if (runtimeId != null) {
+      
+      if(runtimeId != null) {
          messageAttributes.setAttribute("sheetRuntimeId", runtimeId);
       }
-
+      
       StompHeaderAccessor headerAccessor = messageAttributes.getHeaderAccessor();
       headerAccessor.setUser(principal);
-
+      
       // Use Mockito to mock SimpMessagingTemplate instead of creating real one
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
-
+      
       CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate);
       CommandDispatcher commandDispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null);
-
+      
       // Set thread-local context
       MessageContextHolder.setMessageAttributes(messageAttributes);
-
+      
       try {
          MessageContext ctx = new MessageContext(headerAccessor, messagingTemplate, commandDispatcher);
          return action.apply(ctx);
-      } finally {
+      }
+      finally {
          // Cleanup
          MessageContextHolder.setMessageAttributes(null);
       }
    }
-
+   
    /**
     * Executes a void action within a mocked message context.
     */
@@ -105,7 +106,7 @@ public final class MessageTestUtils {
          return null;
       });
    }
-
+   
    /**
     * Executes an action with a parameter within a mocked message context.
     */
@@ -113,7 +114,7 @@ public final class MessageTestUtils {
                                                  Function<T, R> action) {
       return withMockMessageContext(principal, runtimeId, (ctx) -> action.apply(param));
    }
-
+   
    /**
     * Executes an action with a parameter and access to message context.
     */
@@ -121,7 +122,7 @@ public final class MessageTestUtils {
                                                  BiFunction<MessageContext, T, R> action) {
       return withMockMessageContext(principal, runtimeId, (ctx) -> action.apply(ctx, param));
    }
-
+   
    /**
     * Executes a void action with a parameter within a mocked message context.
     */
@@ -132,21 +133,21 @@ public final class MessageTestUtils {
          return null;
       });
    }
-
+   
    /**
     * Simplified version without principal and runtimeId.
     */
    public static <R> R withMockMessageContext(Supplier<R> action) {
       return withMockMessageContext(null, null, action);
    }
-
+   
    /**
     * Simplified version for void actions.
     */
    public static void withMockMessageContext(Runnable action) {
       withMockMessageContext(null, null, action);
    }
-
+   
    /**
     * Creates a no-op CommandDispatcher for testing purposes.
     * This dispatcher overrides sendCommand, flush, and detach methods to be no-ops,
@@ -162,25 +163,25 @@ public final class MessageTestUtils {
       headerAccessor.setUser(principal);
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
       CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate);
-
+      
       return new CommandDispatcher(headerAccessor, dispatcherService, null) {
          @Override
          public void sendCommand(String assemblyName, ViewsheetCommand command) {
             // NO-OP
          }
-
+         
          @Override
          public void flush() {
             // NO-OP
          }
-
+         
          @Override
          public CommandDispatcher detach() {
             return createNoOpCommandDispatcher(principal);
          }
       };
    }
-
+   
    /**
     * Message context holder that provides access to mocked components.
     */
@@ -188,7 +189,7 @@ public final class MessageTestUtils {
       private final StompHeaderAccessor headerAccessor;
       private final SimpMessagingTemplate messagingTemplate;
       private final CommandDispatcher commandDispatcher;
-
+      
       private MessageContext(StompHeaderAccessor headerAccessor,
                              SimpMessagingTemplate messagingTemplate,
                              CommandDispatcher commandDispatcher) {
@@ -196,19 +197,19 @@ public final class MessageTestUtils {
          this.messagingTemplate = messagingTemplate;
          this.commandDispatcher = commandDispatcher;
       }
-
+      
       public StompHeaderAccessor getHeaderAccessor() {
          return headerAccessor;
       }
-
+      
       public SimpMessagingTemplate getMessagingTemplate() {
          return messagingTemplate;
       }
-
+      
       public CommandDispatcher getCommandDispatcher() {
          return commandDispatcher;
       }
-
+      
       public Principal getUser() {
          return headerAccessor == null ? null : headerAccessor.getUser();
       }

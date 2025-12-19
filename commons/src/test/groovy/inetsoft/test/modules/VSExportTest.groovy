@@ -31,7 +31,7 @@ class VSExportTest {
    static initHome(String suiteName) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
-      this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
+      this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
 
@@ -52,7 +52,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
                  false, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -76,7 +77,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -100,7 +102,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
                  false, false, bks, false, false, csvConfig,
                  new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
 
@@ -126,7 +129,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
                  false, false, true, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
 
@@ -143,7 +147,7 @@ class VSExportTest {
       String fileFolder = outFile.getParent().toString() + File.separator
       //clear all csv file
       new File(fileFolder).listFiles().each {
-         if (it.path.endsWith('.csv')) {
+         if(it.path.endsWith('.csv')) {
             it.delete()
          }
       }
@@ -164,7 +168,7 @@ class VSExportTest {
       DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -177,11 +181,12 @@ class VSExportTest {
    def createFileByCase(String caseName, String suffix) {
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
       String fileName = resourcePath + '/exportData' + suiteName
-      File tempFile = new File(fileName + File.separator  + caseName  + File.separator + caseName + suffix)
+      File tempFile = new File(fileName + File.separator + caseName + File.separator + caseName + suffix)
 
       if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

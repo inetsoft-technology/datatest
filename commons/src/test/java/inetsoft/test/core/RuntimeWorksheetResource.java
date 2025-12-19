@@ -18,51 +18,56 @@ public class RuntimeWorksheetResource {
       this.openWorksheetEvent = openWorksheetEvent;
       this.controllersResource = controllersResource;
    }
-
+   
    public void initRuntimeWS(Principal principal) {
       runtimeId = MessageTestUtils.withMockMessageContext(principal, null, openWorksheetEvent,
               (ctx, event) -> openWorksheet(ctx, event));
    }
-
+   
    private String openWorksheet(MessageTestUtils.MessageContext ctx, OpenWorksheetEvent openWorksheetEvent) {
       try {
          controllersResource.getOpenWorksheetController().openWorksheet(
                  openWorksheetEvent, ctx.getUser(), ctx.getCommandDispatcher());
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to open worksheet", e);
       }
       return controllersResource.getRuntimeId();
    }
-
+   
    public RuntimeWorksheet getRuntimeWorksheet(Principal principal) {
       try {
-         if (runtimeId == null) {
+         if(runtimeId == null) {
             return null;
          }
          WorksheetService worksheetService = controllersResource.getWorksheetService();
-         if (worksheetService == null) {
+         if(worksheetService == null) {
             throw new IllegalStateException("WorksheetService is not initialized. Make sure controllers.initControllers() has been called.");
          }
          return worksheetService.getWorksheet(runtimeId, principal);
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to get runtime worksheet", e);
       }
    }
-
+   
    private void closeWorksheet(String runtimeId) {
-      if (runtimeId != null) {
+      if(runtimeId != null) {
          try {
             controllersResource.getWorksheetService().closeWorksheet(runtimeId, null);
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             e.printStackTrace();
          }
       }
    }
-
+   
    public HashMap<String, Object> processCSVUpload(ImportCSVDialogModel importCSVDialogModel, MultipartFile multipartFile, Principal principal) throws Exception {
       ImportCSVDialogController importCSVDialogController = controllersResource.getImportCSVDialogController();
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
@@ -71,7 +76,7 @@ public class RuntimeWorksheetResource {
       importCSVDialogController.setImportCSVDialogModel(importCSVDialogModel, principal, commandDispatcher);
       return result;
    }
-
+   
    private final OpenWorksheetEvent openWorksheetEvent;
    private final ControllersResource controllersResource;
    private String runtimeId;

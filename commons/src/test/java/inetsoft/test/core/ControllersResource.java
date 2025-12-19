@@ -67,11 +67,11 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import static org.mockito.Mockito.*;
 
 public class ControllersResource {
-
+   
    public void initControllers() {
       MessageTestUtils.withMockMessageContext(this::createControllers);
    }
-
+   
    public void destroy() {
       viewsheetService = null;
       vsLifecycleService = null;
@@ -88,31 +88,31 @@ public class ControllersResource {
       vsChartBrushService = null;
       composerVSTableService = null;
       worksheetService = null;
-      if (staticConfigurationContext != null) {
+      if(staticConfigurationContext != null) {
          staticConfigurationContext.close();
          staticConfigurationContext = null;
       }
    }
-
+   
    private void createControllers() {
       viewsheetService = ViewsheetEngine.getViewsheetEngine();
-
+      
       worksheetService = WorksheetEngine.getWorksheetService();
-
+      
       RuntimeViewsheetRefServiceProxy runtimeViewsheetRefServiceProxy = new RuntimeViewsheetRefServiceProxy();
-
+      
       runtimeViewsheetRef = new RuntimeViewsheetRef(runtimeViewsheetRefServiceProxy) {
          @Override
          public String getRuntimeId() {
             return ControllersResource.this.runtimeId;
          }
-
+         
          @Override
          public void setRuntimeId(String runtimeId) {
             ControllersResource.this.runtimeId = runtimeId;
          }
       };
-
+      
       runtimeViewsheetManager = new RuntimeViewsheetManager(viewsheetService);
       List<VSObjectModelFactory<?, ?>> modelFactories = Arrays.asList(
               new VSCalcTableModel.VSCalcTableModelFactory(),
@@ -151,11 +151,11 @@ public class ControllersResource {
       objectTreeService = new VSObjectTreeService(objectModelFactoryService);
       securityEngine = SecurityEngine.getSecurity();
       securityEngine.init();
-
+      
       VSLayoutService vsLayoutService = new VSLayoutService(objectModelFactoryService);
       ParameterService parameterService = new ParameterService(viewsheetService);
       vsCompositionService = new VSCompositionService();
-
+      
       List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
               new AggregateRefModel.AggregateRefModelFactory(),
               new AliasDataRefModel.AliasDataRefModelFactory(),
@@ -174,13 +174,13 @@ public class ControllersResource {
       );
       dataRefModelFactoryService = new DataRefModelFactoryService(dataRefModelFactories);
       dataRefModelFactories.stream().forEach(f -> {
-         if (f instanceof DataRefModelWrapperFactory) {
+         if(f instanceof DataRefModelWrapperFactory) {
             ((DataRefModelWrapperFactory) f).setDataRefModelFactoryService(dataRefModelFactoryService);
          }
       });
-
+      
       ApplicationEventPublisher eventPublisher = event -> {
-         if (bookmarkService != null && event instanceof ProcessBookmarkEvent pbe) {
+         if(bookmarkService != null && event instanceof ProcessBookmarkEvent pbe) {
             bookmarkService.onApplicationEvent(pbe);
          }
       };
@@ -189,31 +189,31 @@ public class ControllersResource {
               runtimeViewsheetRef, eventPublisher);
       sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
-
+      
       bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine, coreLifecycleService);
-
+      
       vsLifecycleService = new VSLifecycleService(
               viewsheetService, assetRepository, coreLifecycleService, parameterService, new VSLifecycleControllerServiceProxy());
       licenseService = new LicenseService();
       openViewsheetController = new OpenViewsheetController(
               runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
               new OpenViewsheetServiceProxy(), viewsheetService);
-
+      
       worksheetEventService = new WorksheetEventService(viewsheetService, new WorksheetEventServiceProxy());
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository,
               worksheetEventService, new OpenWorksheetControllerServiceProxy()) {
          protected WorksheetService getWorksheetEngine() {
             return worksheetService;
          }
-
+         
          protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
             return runtimeViewsheetRef;
          }
       };
-
+      
       binaryTransferService = new BinaryTransferService();
       vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
-
+      
       securityProvider = securityEngine.getSecurityProvider();
       resourcePermissionService = new ResourcePermissionService(securityProvider, securityEngine);
       repletRegistryManager = new RepletRegistryManager();
@@ -222,10 +222,11 @@ public class ControllersResource {
       try {
          contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
                  resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
-      } catch (RemoteException e) {
+      }
+      catch(RemoteException e) {
          e.printStackTrace();
       }
-
+      
       deployService = new DeployService(contentRepositoryTreeService, securityEngine);
       composerVSTableServiceProxy = new ComposerVSTableServiceProxy();
       composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, composerVSTableServiceProxy);
@@ -235,83 +236,85 @@ public class ControllersResource {
       importXLSControllerService = new ImportXLSControllerService(viewsheetService, coreLifecycleService);
       importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
       importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy);
-
+      
       importCSVDialogServiceProxy = new ImportCSVDialogServiceProxy();
       importCSVDialogController = new ImportCSVDialogController(importCSVDialogServiceProxy, binaryTransferService) {
          public String getRuntimeId() {
             return ControllersResource.this.runtimeId;
          }
-
+         
          protected RuntimeViewsheetRef getRuntimeViewsheetRef() {
             return runtimeViewsheetRef;
          }
-
+         
          protected RuntimeWorksheet getRuntimeWorksheet(Principal principal) throws Exception {
             return worksheetService.getWorksheet(ControllersResource.this.runtimeId, principal);
          }
       };
-
+      
       importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService);
-
+      
       vsChartBrushService = new VSChartBrushService(coreLifecycleService, viewsheetService,
               new VSChartAreasServiceProxy());
       vsChartShowDetailsService = new VSChartShowDetailsService(viewsheetService, coreLifecycleService,
               new VSChartAreasServiceProxy(), new VSDialogService());
       fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
-
+      
       DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
       DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
       DataModelFolderManagerService dataModelFolderManagerService = Mockito.mock(DataModelFolderManagerService.class);
       DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
       databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
               dataModelFolderManagerService, dataSourceService);
-
+      
       openViewsheetService = new OpenViewsheetService(viewsheetService, objectTreeService);
    }
-
+   
    public void initApplicationContext(ConfigurationContext context) {
       ConfigurationContext spyContext;
       // Check if context is already a mock - if so, use it directly; otherwise create a spy
-      if (Mockito.mockingDetails(context).isMock()) {
+      if(Mockito.mockingDetails(context).isMock()) {
          spyContext = context;
-      } else {
+      }
+      else {
          spyContext = spy(context);
       }
-
+      
       //only for .WorksheetTest.groovy
       doReturn(worksheetEventService)
               .when(spyContext)
               .getSpringBean(WorksheetEventService.class);
-
+      
       doReturn(importCSVDialogService)
               .when(spyContext)
               .getSpringBean(ImportCSVDialogService.class);
-
+      
       //only for VSFormImportTest.groovy
       doReturn(importXLSControllerService)
               .when(spyContext)
               .getSpringBean(ImportXLSControllerService.class);
-
+      
       // Check if we need to create a new static mock
       // If we already have one that's not closed, just update its behavior
-      if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
+      if(staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
          return;
       }
-
+      
       // Close existing one if it exists and is not closed (cleanup)
-      if (staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
+      if(staticConfigurationContext != null && !staticConfigurationContext.isClosed()) {
          staticConfigurationContext.close();
       }
-
+      
       // Try to create a new static mock
       try {
          staticConfigurationContext = mockStatic(ConfigurationContext.class);
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
-      } catch (org.mockito.exceptions.base.MockitoException e) {
+      }
+      catch(org.mockito.exceptions.base.MockitoException e) {
          // If there's already a static mock registered from another source,
          // we can't create a new one or configure the existing one
-         if (e.getMessage() != null && e.getMessage().contains("static mocking is already registered")) {
+         if(e.getMessage() != null && e.getMessage().contains("static mocking is already registered")) {
             // In this case, we'll just skip setting up the static mock
             // The existing static mock from elsewhere will be used
             // Note: This means the static mock behavior won't be configured here
@@ -320,83 +323,83 @@ public class ControllersResource {
          throw e; // Re-throw if it's a different exception
       }
    }
-
+   
    public String getRuntimeId() {
       return runtimeId;
    }
-
+   
    public ViewsheetService getViewsheetService() {
       return viewsheetService;
    }
-
+   
    public OpenViewsheetController getOpenViewsheetController() {
       return openViewsheetController;
    }
-
+   
    public OpenWorksheetController getOpenWorksheetController() {
       return openWorksheetController;
    }
-
+   
    public WorksheetService getWorksheetService() {
       return worksheetService;
    }
-
+   
    public VSExportService getVSExportService() {
       return vsExportService;
    }
-
+   
    public ComposerVSTableController getComposerVSTableController() {
       return composerVSTableController;
    }
-
+   
    public ImportXLSController getImportXLSController() {
       return importXLSController;
    }
-
+   
    public ImportCSVDialogController getImportCSVDialogController() {
       return importCSVDialogController;
    }
-
+   
    public VSChartShowDetailsService getVSChartShowDetailsService() {
       return vsChartShowDetailsService;
    }
-
+   
    public VSChartBrushService getVSChartBrushService() {
       return vsChartBrushService;
    }
-
+   
    public FileApiService getFileApiService() {
       return fileApiService;
    }
-
+   
    public DatabaseDatasourcesController getDatabaseDatasourcesController() {
       return databaseDatasourcesController;
    }
-
+   
    public CoreLifecycleService getCoreLifecycleService() {
       return coreLifecycleService;
    }
-
+   
    public OpenViewsheetService getOpenViewsheetService() {
       return openViewsheetService;
    }
-
+   
    public ComposerVSTableService getComposerVSTableService() {
       return composerVSTableService;
    }
-
+   
    public ContentRepositoryTreeService getContentRepositoryTreeService() {
       return contentRepositoryTreeService;
    }
-
+   
    public WorksheetEventService getWorksheetEventService() {
       return worksheetEventService;
    }
-
+   
    public ImportCSVDialogService getImportCSVDialogService() {
       return importCSVDialogService;
    }
-
+   
    private String runtimeId;
    private RuntimeViewsheetRef runtimeViewsheetRef;
    private ViewsheetService viewsheetService;
@@ -431,7 +434,7 @@ public class ControllersResource {
    private BinaryTransferService binaryTransferService;
    private ComposerVSTableServiceProxy composerVSTableServiceProxy;
    private ComposerVSTableService composerVSTableService;
-
+   
    private ImportXLSControllerService importXLSControllerService;
    private ImportXLSControllerServiceProxy importXLSControllerServiceProxy;
    private ImportCSVDialogServiceProxy importCSVDialogServiceProxy;
@@ -440,6 +443,6 @@ public class ControllersResource {
    private ImportCSVDialogService importCSVDialogService;
    private OpenViewsheetService openViewsheetService;
    private VSChartShowDetailsService vsChartShowDetailsService;
-
+   
    MockedStatic<ConfigurationContext> staticConfigurationContext;
 }

@@ -72,11 +72,13 @@ class VSScriptTest {
          def handler = parsedJson.HANDLER
          def command = parsedJson.COMMAND
 
-         if ('ONINIT'.equals(handler)) {
+         if('ONINIT'.equals(handler)) {
             viewsheet.getViewsheetInfo().setOnInit(command)
-         } else if ('ONREFRESH'.equals(handler)) {
+         }
+         else if('ONREFRESH'.equals(handler)) {
             viewsheet.getViewsheetInfo().setOnLoad(command)
-         } else {
+         }
+         else {
             VSAssembly vsAssembly = (VSAssembly) viewsheet.getAssembly(handler)
             vsAssembly.getVSAssemblyInfo().setScript(command)
          }
@@ -84,9 +86,9 @@ class VSScriptTest {
       }
 
       //hide other assembly
-      if (assemblyNames != null) {
+      if(assemblyNames != null) {
          viewsheet.getAssemblies().each { it ->
-            if (!(it.getName() in assemblyNames)) {
+            if(!(it.getName() in assemblyNames)) {
                VSAssemblyInfo assemblyInfo = (VSAssemblyInfo) it.getInfo()
                //assemblyInfo.setVisible('hide')
                assemblyInfo.setScript("visible='hide'")
@@ -104,7 +106,8 @@ class VSScriptTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                  false, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -122,9 +125,10 @@ class VSScriptTest {
       String fileName = resourcePath + '/exportData' + suiteName
       File tempFile = new File(fileName + File.separator + caseName + '_' + scriptName + '.png')
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

@@ -73,7 +73,8 @@ class CSSTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                  false, false, false, false,
                  ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -86,10 +87,11 @@ class CSSTest {
     */
    def createExportFileByCase(String asset_id) {
       String fName
-      if (asset_id.startsWith('1^128^')) {
+      if(asset_id.startsWith('1^128^')) {
          fName = asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() + '.png' : asset_id.minus('1^128^__NULL__^') + '.png'
-      } else {
+      }
+      else {
          new Exception("the asset id not right: ").printStackTrace()
       }
 
@@ -97,9 +99,10 @@ class CSSTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

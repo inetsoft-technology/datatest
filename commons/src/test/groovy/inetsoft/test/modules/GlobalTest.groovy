@@ -69,7 +69,7 @@ class GlobalTest {
       context = ConfigurationContext.getContext()
       context.setHome(System.getProperty("sree.home"))
 
-      if (properties != null) {
+      if(properties != null) {
          properties.each { key, value ->
             SreeEnv.setProperty(key, value)
          }
@@ -92,11 +92,13 @@ class GlobalTest {
     * @return
     */
    def executeTest(String asset_id, String[] bks, Map<String, Object> params) {
-      if (asset_id.startsWith('1^128^')) {
+      if(asset_id.startsWith('1^128^')) {
          executeVS(asset_id, bks, params, true)
-      } else if (asset_id.startsWith('1^2^')) {
+      }
+      else if(asset_id.startsWith('1^2^')) {
          executeWS(asset_id, params)
-      } else {
+      }
+      else {
          new Exception('----input asset id not right-----').printStackTrace()
       }
    }
@@ -114,7 +116,7 @@ class GlobalTest {
       controllers.initControllers()
       ThreadContext.setContextPrincipal(admin)
 
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
@@ -127,17 +129,19 @@ class GlobalTest {
 
       def outFile, out
       types.each {
-         if (it == 'PNG') {
+         if(it == 'PNG') {
             outFile = createVSExportFile(asset_id, '.png')
             out = new FileOutputStream(outFile)
             try {
                viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                        false, false, false, false,
                        bks, false, false, null, new ExportResponse(out), admin)
-            } finally {
+            }
+            finally {
                out.close()
             }
-         } else if (it == 'PDF') {
+         }
+         else if(it == 'PDF') {
             outFile = createVSExportFile(asset_id, '.pdf')
             out = new FileOutputStream(outFile)
             try {
@@ -146,17 +150,20 @@ class GlobalTest {
                        bks, false, false, null, new ExportResponse(out), admin)
                Thread.sleep(2000)
                tutil.convertPDFToPNG(outFile.toString())
-            } finally {
+            }
+            finally {
                out.close()
             }
-         } else if (it == 'HTML') {
+         }
+         else if(it == 'HTML') {
             outFile = createVSExportFile(asset_id, '.html')
             out = new FileOutputStream(outFile)
             try {
                viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
                        false, false, false, false,
                        bks, false, false, null, new ExportResponse(out), admin)
-            } finally {
+            }
+            finally {
                out.close()
             }
          }
@@ -171,9 +178,10 @@ class GlobalTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fileName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -204,10 +212,10 @@ class GlobalTest {
       }
       try {
          assemblies.each {
-            if (it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+            if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
                TableAssembly tableAssembly = (TableAssembly) it
                String tableName = tableAssembly.getName()
-               if (!tableAssembly.isVisibleTable()) {
+               if(!tableAssembly.isVisibleTable()) {
                   return
                }
                setLiveData(tableAssembly)
@@ -219,9 +227,11 @@ class GlobalTest {
                exportUtil.exportWSObject(fileName, sortlens)
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
-      } finally {
+      }
+      finally {
          controllers.destroy()
       }
    }
@@ -243,7 +253,7 @@ class GlobalTest {
     * @return
     */
    def executeVSWithElement(String asset_id, String[] bks, Map<String, String[]> params) {
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       bks.each {
@@ -275,16 +285,16 @@ class GlobalTest {
       try {
          assemblies.each {
             assemblyName = it.getName()
-            if ((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
+            if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
                     it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
                     it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {
                return true
             }
             data = sandbox.getData(assemblyName, true, DataMap.NORMAL)
-            if (it instanceof ChartVSAssembly) {
+            if(it instanceof ChartVSAssembly) {
                final VGraphPair pair = sandbox.getVGraphPair(assemblyName, true, null, true, 1)
                data = pair.getData()
-               if (data instanceof BrushDataSet || data instanceof GeoDataSet || data instanceof MappedDataSet) {
+               if(data instanceof BrushDataSet || data instanceof GeoDataSet || data instanceof MappedDataSet) {
                   data = ((DataSetFilter) data).getDataSet()
                }
                BufferedImage image = pair.getImage(true, 72)
@@ -294,13 +304,14 @@ class GlobalTest {
                outFile = createVSElementFile(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
             }
-            if (it instanceof TableDataVSAssembly) {
+            if(it instanceof TableDataVSAssembly) {
                data = new SortFilter(sandbox.getVSTableLens(assemblyName, false))
                outFile = createVSElementFile(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
    }
@@ -314,9 +325,10 @@ class GlobalTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fileName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -330,9 +342,10 @@ class GlobalTest {
     */
    def createFileByCase(String asset_id, tableName) {
       String fileName
-      if (asset_id.startsWith '1^2^') {
+      if(asset_id.startsWith '1^2^') {
          fileName = 'WS' + File.separator + tableName + '.txt'
-      } else {
+      }
+      else {
          new Exception('---the asset id name not right--: ').printStackTrace()
       }
 
@@ -340,9 +353,10 @@ class GlobalTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fileName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

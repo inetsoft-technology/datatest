@@ -14,7 +14,7 @@ class ActionEventsUtil {
       event.setEntryId(vs_id)
       event.setViewer(isViewer)
 
-      if (parameters != null) {
+      if(parameters != null) {
          event.setParameters(parameters)
       }
       return event
@@ -56,9 +56,10 @@ class ActionEventsUtil {
     */
    def importAssetsFile(String path) {
       controllersResource.initControllers()
-      if (System.properties['os.name'].toString().toLowerCase().contains('windows')) {
+      if(System.properties['os.name'].toString().toLowerCase().contains('windows')) {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:/')), [], true, admin)
-      } else {
+      }
+      else {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:')), [], true, admin)
       }
    }

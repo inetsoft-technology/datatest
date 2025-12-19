@@ -52,7 +52,8 @@ class VSActionsTest extends ViewsheetTest {
             viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                     false, true, false, false,
                     null, false, false, null, new ExportResponse(out), principal)
-         } finally {
+         }
+         finally {
             out.close()
          }
       }
@@ -69,9 +70,10 @@ class VSActionsTest extends ViewsheetTest {
       String fileName = resourcePath + '/exportData' + File.separator + suiteName + File.separator + caseName
       File tempFile = new File(fileName + File.separator + assemblyName + '_' + idx + suffix)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
