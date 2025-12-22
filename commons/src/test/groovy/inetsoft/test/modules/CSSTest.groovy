@@ -2,6 +2,7 @@ package inetsoft.test.modules
 
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
+import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.portal.PortalThemesManager
 import inetsoft.sree.security.SRPrincipal
@@ -65,7 +66,10 @@ class CSSTest {
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
       File outFile = createExportFileByCase(asset_id)
       OutputStream out = new FileOutputStream(outFile)

@@ -125,7 +125,10 @@ class GlobalTest {
       viewsheetResource.initRuntimeVS(admin)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
       rvs.gotoBookmark('(Home)', admin.getUser().getUserIdentity(), admin)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
       def outFile, out
       types.each {
@@ -273,9 +276,12 @@ class GlobalTest {
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
       rvs.gotoBookmark(bk, admin.getUser().getUserIdentity(), admin)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = sandboxOpt.get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 

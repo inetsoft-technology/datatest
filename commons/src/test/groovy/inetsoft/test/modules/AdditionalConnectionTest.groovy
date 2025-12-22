@@ -5,6 +5,7 @@ import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.RuntimeWorksheet
 import inetsoft.report.composition.execution.AssetQuerySandbox
+import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.report.filter.SortFilter
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.SRPrincipal
@@ -92,7 +93,10 @@ class AdditionalConnectionTest {
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
       File outFile = createFileByCase(caseName, asset_id, principal, null)
       OutputStream out = new FileOutputStream(outFile)

@@ -121,9 +121,12 @@ class ViewsheetTest {
       initVS(params)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = sandboxOpt.get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 
