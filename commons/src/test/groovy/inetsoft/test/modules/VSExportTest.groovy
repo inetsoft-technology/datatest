@@ -43,14 +43,15 @@ class VSExportTest {
    def testExportAsHtml(String[] bks, Map<String, String[]> params) {
       executeVS(params)
       bks = normalizeBookmarks(bks)
-      
+
       File outFile = createFileByCase(caseName, '.html')
       OutputStream out = new FileOutputStream(outFile)
       try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
                  false, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -72,7 +73,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -93,7 +95,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
                  false, false, bks, false, false, csvConfig,
                  new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
 
@@ -115,7 +118,8 @@ class VSExportTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
                  false, false, true, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
 
@@ -129,7 +133,7 @@ class VSExportTest {
     * @throws IOException if file operations fail
     */
    def unzipFile(File outFile) {
-      if (outFile == null || !outFile.exists()) {
+      if(outFile == null || !outFile.exists()) {
          throw new IllegalArgumentException("Output file is null or does not exist: ${outFile}")
       }
 
@@ -137,9 +141,9 @@ class VSExportTest {
          String fileFolder = outFile.getParent().toString() + File.separator
          // Clear all csv files
          File folder = new File(fileFolder)
-         if (folder.exists() && folder.isDirectory()) {
+         if(folder.exists() && folder.isDirectory()) {
             folder.listFiles()?.each {
-               if (it.path.endsWith('.csv')) {
+               if(it.path.endsWith('.csv')) {
                   it.delete()
                }
             }
@@ -147,14 +151,15 @@ class VSExportTest {
 
          new ZipFile(outFile).withCloseable { ZipFile zipFile ->
             zipFile.entries().each { entry ->
-               if (!entry.isDirectory()) {
+               if(!entry.isDirectory()) {
                   def path = Paths.get(fileFolder + entry.name)
                   Files.createDirectories(path.parent)
                   Files.copy(zipFile.getInputStream(entry), path)
                }
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to unzip file: ${outFile}", e)
       }
    }
@@ -170,7 +175,8 @@ class VSExportTest {
          ThreadContext.setContextPrincipal(principal)
          viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
          viewsheetResource.initRuntimeVS(principal)
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to execute viewsheet", e)
       }
    }
@@ -188,13 +194,15 @@ class VSExportTest {
          String fileName = resourcePath + '/exportData' + suiteName
          File tempFile = new File(fileName + File.separator + caseName + File.separator + caseName + suffix)
 
-         if (!tempFile.getParentFile().exists()) {
+         if(!tempFile.getParentFile().exists()) {
             tempFile.getParentFile().mkdirs()
-         } else if (tempFile.exists()) {
+         }
+         else if(tempFile.exists()) {
             tempFile.delete()
          }
          return tempFile
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to create file by case: ${caseName}${suffix}", e)
       }
    }

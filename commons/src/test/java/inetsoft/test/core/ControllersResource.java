@@ -157,7 +157,7 @@ public class ControllersResource {
 
       dataRefModelFactoryService = new DataRefModelFactoryService(dataRefModelFactories);
       dataRefModelFactories.stream().forEach(f -> {
-         if (f instanceof DataRefModelWrapperFactory) {
+         if(f instanceof DataRefModelWrapperFactory) {
             ((DataRefModelWrapperFactory) f).setDataRefModelFactoryService(dataRefModelFactoryService);
          }
       });
@@ -191,7 +191,8 @@ public class ControllersResource {
       try {
          contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
                  resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
-      } catch (RemoteException e) {
+      }
+      catch(RemoteException e) {
          e.printStackTrace();
       }
 

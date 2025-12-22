@@ -52,13 +52,14 @@ class VPMTest {
          assemblies.each {
             assemblyName = it.getName()
             data = sandbox.getData(assemblyName, true, DataMap.NORMAL)
-            if (it instanceof TableDataVSAssembly) {
+            if(it instanceof TableDataVSAssembly) {
                data = sandbox.getVSTableLens(assemblyName, false)
             }
             exportData(data, getExportFilePath(userName, assemblyName))
 
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
    }

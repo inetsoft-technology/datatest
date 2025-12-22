@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.topmv
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
@@ -9,24 +8,24 @@ import spock.lang.Shared
 import spock.lang.Specification
 
 class TopMV_TableStructures_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'child-aggregate-distinct'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/child-aggregate-distinct'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -39,10 +38,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'child-plain-distinct'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/child-plain-distinct'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -56,10 +54,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'parent-aggregate-distinct-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col not public'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -72,10 +69,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'parent-aggregate-distinct-selection col public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col public'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -89,10 +85,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'parent-aggregate-maxrow-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-maxrow-selection col not public'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -105,10 +100,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'parent-plain-distinct'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-plain-distinct'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -121,10 +115,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'composite1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/composite1'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -137,10 +130,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'composite2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/composite2'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -154,10 +146,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'composite3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/composite3'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5', 'bk6'] as String[], false, true)
       expect:
       verifyAll {
@@ -169,10 +160,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/crossjoin'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -185,10 +175,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'date range'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/date range'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -201,10 +190,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'expression'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/expression'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -217,10 +205,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'intersect'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/intersect'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -233,10 +220,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'left outer join-select left'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/left outer join-select left'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -249,10 +235,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'right outer join-select right'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/right outer join-select right'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -265,10 +250,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'merge-join'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/merge-join'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -281,10 +265,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'unmerge-join'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/unmerge-join'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -297,10 +280,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'minus'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/minus'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -313,11 +295,10 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'union'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/union'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
-      mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4','bk5'] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -329,10 +310,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'threetables'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/threetables'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -345,10 +325,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'name group'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/name group'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -361,10 +340,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'numeric range'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/numeric range'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -377,10 +355,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'rename'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/rename'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
       expect:
@@ -393,10 +370,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'selection on aggregate second col'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection on aggregate second col'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -409,10 +385,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'selection on crosstab'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection on crosstab'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -425,10 +400,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'selection on hidden group col'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection on hidden group col'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -441,10 +415,9 @@ class TopMV_TableStructures_Spec extends Specification {
    def 'selection on other col'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/selection on other col'
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -455,5 +428,4 @@ class TopMV_TableStructures_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

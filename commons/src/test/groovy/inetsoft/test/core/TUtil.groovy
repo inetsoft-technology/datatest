@@ -50,15 +50,16 @@ class TUtil {
          def pageCounter = 0
          def pageTotals = pdDocument.getNumberOfPages()
 
-         for (PDPage page : pdDocument.getPages()) {
+         for(PDPage page : pdDocument.getPages()) {
             BufferedImage bufferedImage = pdfRenderer.renderImageWithDPI(pageCounter, 72, ImageType.RGB)
 
             def suffix = (isOnePage && pageTotals == 1) ? '.png' : '-' + (pageCounter++) + '.png';
             ImageIOUtil.writeImage(bufferedImage, pdfFilename + suffix, 300)
             Thread.sleep(500)
          }
-      } finally {
-         if (pdDocument != null) {
+      }
+      finally {
+         if(pdDocument != null) {
             pdDocument.close()
          }
       }
@@ -71,14 +72,16 @@ class TUtil {
       String wDatecmd = 'runas /savecred /user:administrator "cmd /c date ' + ndate + '"'
       String osName = System.getProperty("os.name")
 
-      if (osName.toLowerCase().contains('windows')) {
+      if(osName.toLowerCase().contains('windows')) {
          Runtime.getRuntime().exec(wDatecmd)
          Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time 00:00:00"')
          Thread.sleep(500)
-      } else if (osName.toLowerCase().contains('linux')) {
+      }
+      else if(osName.toLowerCase().contains('linux')) {
          /*  Runtime.getRuntime().exec('sudo date -s ' + ndate)
            Thread.sleep(500)*/
-      } else {
+      }
+      else {
          new Exception('------ modify system date failed: -----------' + ndate)
       }
    }
@@ -95,14 +98,16 @@ class TUtil {
       SimpleDateFormat timeFormat = new SimpleDateFormat('HH:mm:ss')
       String osName = System.getProperty("os.name")
 
-      if (osName.toLowerCase().contains('windows')) {
+      if(osName.toLowerCase().contains('windows')) {
          Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c date ' + dateFormat.format(new Date(ld)) + '"')
          Runtime.getRuntime().exec('runas /savecred /user:administrator "cmd /c time ' + timeFormat.format(new Date(ld)) + '"')
          Thread.sleep(500)
-      } else if (osName.toLowerCase().contains('linux')) {
+      }
+      else if(osName.toLowerCase().contains('linux')) {
          /* Runtime.getRuntime().exec('sudo date -s ' + lsimpleDateFormat.format(new Date(ld)))
           Thread.sleep(500)*/
-      } else {
+      }
+      else {
          new Exception('------restore date to current failed: -----------')
       }
    }

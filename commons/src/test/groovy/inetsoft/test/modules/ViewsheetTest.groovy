@@ -94,7 +94,7 @@ class ViewsheetTest {
     * @return
     */
    def executeVS(Map<String, String[]> params, String[] bks) {
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       bks.each {
@@ -125,12 +125,12 @@ class ViewsheetTest {
          assemblies.each {
             assemblyName = it.getName()
             //Ignore, and unexport assembly data when assembly is shape,group,selectionContainer, tab
-            if ((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
+            if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
                     it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
                     it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {
                return true
             }
-            if (it instanceof ChartVSAssembly) {
+            if(it instanceof ChartVSAssembly) {
                final VGraphPair pair = sandbox.getVGraphPair(assemblyName, true, null, true, 1)
                data = getVSChartDataSet(pair)
                //GDebug.printDataSet(data, 0)
@@ -141,13 +141,15 @@ class ViewsheetTest {
 
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), sortVSDataSet(data))
-            } else if (it instanceof TableDataVSAssembly) {
+            }
+            else if(it instanceof TableDataVSAssembly) {
                data = sandbox.getVSTableLens(assemblyName, false)
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
    }
@@ -158,21 +160,24 @@ class ViewsheetTest {
    private DataSet getVSChartDataSet(VGraphPair vgraphpair) {
       DataSet data = vgraphpair.getData()
       DataSet filter = data
-      while (true) {
-         if (filter instanceof VSDataSet) {
+      while(true) {
+         if(filter instanceof VSDataSet) {
             break
-         } else if (filter instanceof PairsDataSet) {
+         }
+         else if(filter instanceof PairsDataSet) {
             data = ((PairsDataSet) filter).getDataSet()
-         } else if (filter instanceof DataSetFilter) {
+         }
+         else if(filter instanceof DataSetFilter) {
             boolean useBase = filter instanceof BrushDataSet ||
                     filter instanceof GeoDataSet ||
                     filter instanceof MappedDataSet
             filter = ((DataSetFilter) filter).getDataSet()
 
-            if (useBase) {
+            if(useBase) {
                data = filter
             }
-         } else {
+         }
+         else {
             break
          }
       }
@@ -182,7 +187,7 @@ class ViewsheetTest {
                       .filter(ref -> ref instanceof ChartAggregateRef)
                       .anyMatch(ref -> ((ChartAggregateRef) ref).isDiscrete() &&
                               ((ChartAggregateRef) ref).getCalculator() != null);
-      if (((AbstractDataSet) data).getRowsProjectedForward() > 0 || !discreteCalc ||
+      if(((AbstractDataSet) data).getRowsProjectedForward() > 0 || !discreteCalc ||
               // need to wrap sub-dataset inside IntervalDataSet. (57229)
               data instanceof IntervalDataSet) {
          data = ((AbstractDataSet) data).getFullProjectedDataSet()
@@ -197,12 +202,13 @@ class ViewsheetTest {
     */
    private DataSet sortVSDataSet(DataSet vsDataSet) {
       DataSet sorted
-      if (vsDataSet instanceof FullProjectedDataSet) {
+      if(vsDataSet instanceof FullProjectedDataSet) {
          sorted = new FullProjectedDataSet(getSortedSubdataSets((FullProjectedDataSet) vsDataSet))
-      } else {
+      }
+      else {
          // apply ValueOrder sorting to the data set
          SortedDataSet sorted0 = new SortedDataSet(vsDataSet)
-         for (int i = 0; i < vsDataSet.getColCount(); i++) {
+         for(int i = 0; i < vsDataSet.getColCount(); i++) {
             sorted0.addSortColumn(vsDataSet.getHeader(i), false)
          }
          sorted = sorted0
@@ -214,11 +220,11 @@ class ViewsheetTest {
    private List<AbstractDataSet> getSortedSubdataSets(FullProjectedDataSet dset) {
       List<AbstractDataSet> subDataSets = new ArrayList<>()
 
-      for (AbstractDataSet subSet : dset.getSubDataSets()) {
+      for(AbstractDataSet subSet : dset.getSubDataSets()) {
          // apply ValueOrder sorting to each sub data set
          SortedDataSet sortedSubSet = new SortedDataSet(subSet)
 
-         for (int i = 0; i < subSet.getColCount(); i++) {
+         for(int i = 0; i < subSet.getColCount(); i++) {
             String header = subSet.getHeader(i)
             sortedSubSet.addSortColumn(header, false)
          }
@@ -250,7 +256,7 @@ class ViewsheetTest {
     */
    def exportAsPNG(String[] bks, Map<String, String[]> params, Boolean match, Boolean expandSelection) {
       initVS(params)
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.png')
@@ -259,7 +265,8 @@ class ViewsheetTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -274,7 +281,7 @@ class ViewsheetTest {
     */
    def exportAsPDF(Map<String, String[]> params, String[] bks) {
       initVS(params)
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.pdf')
@@ -285,7 +292,8 @@ class ViewsheetTest {
                  bks, false, false, null, new ExportResponse(out), principal)
          Thread.sleep(500)
          tUtil.convertPDFToPNG(outFile.toString())
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -308,9 +316,10 @@ class ViewsheetTest {
               (assemblyName != null ? assemblyName : vsName) +
               suffix)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

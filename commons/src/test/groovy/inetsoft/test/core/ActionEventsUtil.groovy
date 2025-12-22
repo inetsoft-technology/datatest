@@ -52,11 +52,11 @@ class ActionEventsUtil {
 
 
    /**
-   * import asset file to sree.home
-   */
-   def  importAssetsFile(String  path) {
+    * import asset file to sree.home
+    */
+   def importAssetsFile(String path) {
       controllersResource.initControllers()
-      if (System.properties['os.name'].toString().toLowerCase().contains('windows')){
+      if(System.properties['os.name'].toString().toLowerCase().contains('windows')) {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:/')), [], true, admin)
       }
       else {

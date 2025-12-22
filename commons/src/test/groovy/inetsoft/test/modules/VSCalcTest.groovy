@@ -33,13 +33,14 @@ class VSCalcTest extends ViewsheetTest {
          assemblies.each {
             assemblyName = it.getName()
 
-            if ((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
+            if((it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly
                     || it instanceof CrosstabVSAssembly)
                     && it.getVSAssemblyInfo().isVisible(true)) {
                viewsheetResource.convertToFreehand(principal, assemblyName)
             }
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
 
