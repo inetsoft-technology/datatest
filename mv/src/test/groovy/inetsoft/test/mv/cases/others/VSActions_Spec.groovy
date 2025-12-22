@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.others
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.IgnoreRest
@@ -17,15 +16,15 @@ class VSActions_Spec extends Specification {
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'numberic_jsrange'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/numberic_jsrange'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -39,8 +38,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/numberic_sqlrange'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -54,11 +53,11 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/numberic-rangeinc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -73,8 +72,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -88,8 +87,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -103,9 +102,9 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false,true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -118,8 +117,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
       expect:
@@ -133,8 +132,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection_compatible5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -148,11 +147,11 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/formulacol_aggrsinc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -167,8 +166,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -182,14 +181,14 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Order Model|TopMV', 'Order Model|TopMV',
-                                           'Order Model|TopMV', 'Order Model|TopMV'])
+                                            'Order Model|TopMV', 'Order Model|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -199,8 +198,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -214,8 +213,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -230,8 +229,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -245,8 +244,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -260,8 +259,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/astimeseries-freehand'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -275,11 +274,11 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Other/astimeseries-inc'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -294,8 +293,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
       expect:
@@ -309,8 +308,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
       expect:
@@ -325,8 +324,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
       expect:
@@ -341,8 +340,8 @@ class VSActions_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/brush filter'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -353,5 +352,4 @@ class VSActions_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

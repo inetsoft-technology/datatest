@@ -40,31 +40,13 @@ import java.text.DecimalFormat
 class MVTest {
    MVTest(String asset_id) {
       this.asset_id = asset_id
+      materializedViewResource = new MaterializedViewResource(this.asset_id, controllers)
    }
-
-   private static ControllersResource sharedControllers
 
    def static initHome() {
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-      sharedControllers = new ControllersResource()
-      sharedControllers.initControllers()
-   }
-
-   def static ControllersResource getControllersResource() {
-      if(sharedControllers == null) {
-         initHome()
-      }
-      return sharedControllers
-   }
-
-   def static initHome(def pro) {
-      initHome()
-      if(pro != null) {
-         pro.each { key, value ->
-            SreeEnv.setProperty(key, value)
-         }
-      }
-      SreeEnv.save()
+      controllers = new ControllersResource()
+      controllers.initControllers()
    }
 
    List getMVDefInfo(List<TableLens> datas) {
@@ -139,8 +121,7 @@ class MVTest {
       if(principal == null) {
          principal = createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       }
-      controllers = new ControllersResource()
-      controllers.initControllers()
+
       ThreadContext.setContextPrincipal(principal)
       viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params)
               , controllers)
@@ -149,10 +130,13 @@ class MVTest {
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       if(bk != null) {
          rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
-         rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+         Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox();
+         if(sandboxOpt.isPresent()) {
+            sandboxOpt.get().resetAll(new ChangedAssemblyList());
+         }
       }
       Viewsheet vs = rvs.getViewsheet()
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       Assembly[] assemblies = vs.getAssemblies()
       def datas = []
       def assemblyNames = []
@@ -258,6 +242,18 @@ class MVTest {
 
       printWriter.flush()
       printWriter.close()
+   }
+
+   def createMV(boolean applyVPM, boolean ... expandGroup) {
+      materializedViewResource.createMV(applyVPM, expandGroup)
+   }
+
+   def removeMV() {
+      materializedViewResource.removeMV()
+   }
+
+   def createIncrementMV(int count) {
+      materializedViewResource.createIncrementMV(count)
    }
 
    def export(TableLens table, def printWriter) {
@@ -453,8 +449,6 @@ class MVTest {
       principal.setIgnoreLogin(true)
 
       return principal
-
-//      return  new SRPrincipal(identityUser, identityRoles, groups, "host-org", Tool.getSecureRandom().nextLong())
    }
 
    OpenViewsheetEvent createOpenViewsheetEvent(Map<String, String[]> parameters) {
@@ -524,7 +518,8 @@ class MVTest {
       }
    }
 
-   private ControllersResource controllers
+   private static ControllersResource controllers
+   private static MaterializedViewResource materializedViewResource
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")

@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.Ignore
@@ -11,26 +10,27 @@ import spock.lang.Specification
 
 @Execution(ExecutionMode.SAME_THREAD)
 class Transform_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'Other_TestCase1'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -45,11 +45,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -64,11 +64,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -83,11 +83,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -102,11 +102,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], true, true)
 
       expect:
@@ -121,11 +121,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -140,11 +140,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -159,11 +159,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -178,11 +178,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -197,11 +197,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -216,11 +216,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], true, true)
 
       expect:
@@ -235,11 +235,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -254,11 +254,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -273,11 +273,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase14'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], true, true)
 
       expect:
@@ -292,11 +292,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase15'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -311,11 +311,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase16'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -330,11 +330,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase17'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -349,11 +349,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase18'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -368,11 +368,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/crosstab'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -387,11 +387,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/full-outer join'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -406,11 +406,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/hidecol1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -425,11 +425,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/left-outer join'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -444,11 +444,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/maxrow'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -463,11 +463,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/merge table'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -482,11 +482,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/Minus'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -501,11 +501,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/namegroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -520,11 +520,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/right-outer join'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -539,11 +539,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/rotate'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -558,11 +558,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/topTable with agg'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -577,11 +577,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/topTable with aggformula'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -596,11 +596,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/topTable with post'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -615,11 +615,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/toptable with rangecol'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -634,11 +634,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/topTable with ranking'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -653,11 +653,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/union join'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -672,11 +672,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/SubMV/union-distinct join'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -691,11 +691,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/dategroup'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -710,11 +710,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/distinct'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -729,11 +729,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/formula col'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -748,11 +748,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/hidecol2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -767,11 +767,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/subTable with subquery'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -786,11 +786,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -805,11 +805,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -824,11 +824,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -843,11 +843,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -862,11 +862,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -881,11 +881,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -900,11 +900,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -919,11 +919,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -938,11 +938,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -957,11 +957,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -976,11 +976,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -995,11 +995,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -1014,11 +1014,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/Top_TestCase13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -1033,11 +1033,11 @@ class Transform_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/TopMV/VSCondition'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id, MVTest.getControllersResource())
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, true)
 
       expect:
@@ -1049,5 +1049,4 @@ class Transform_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }
