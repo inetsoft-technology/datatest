@@ -63,7 +63,7 @@ class WorksheetTest {
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("ws.sree.home"))
 
-      if (properties != null) {
+      if(properties != null) {
          properties.each { key, value ->
             SreeEnv.setProperty(key, value)
          }
@@ -119,10 +119,10 @@ class WorksheetTest {
          assetQuerySandbox.getVariableTable().put(it.key, it.value)
       }
       assemblies.each {
-         if (it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+         if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
             TableAssembly tableAssembly = (TableAssembly) it
             String tableName = tableAssembly.getName()
-            if (!tableAssembly.isVisibleTable()) {
+            if(!tableAssembly.isVisibleTable()) {
                return
             }
 
@@ -135,11 +135,12 @@ class WorksheetTest {
 
             String fileName
             //check use diff variables to test inRange operator.
-            if (caseName.contains('test in range')) {
+            if(caseName.contains('test in range')) {
                tableAssembly.getAllVariables().each {
                   fileName = createExportFileByCase(asset_id, tableName + '_' + params.get(it.getName()), bk)
                }
-            } else {
+            }
+            else {
                fileName = createExportFileByCase(asset_id, tableName, bk)
             }
 
@@ -158,7 +159,7 @@ class WorksheetTest {
    }
 
    def exportData(def data, String filename, Boolean isFormat) {
-      if (data == null || data == '') {
+      if(data == null || data == '') {
          data = ['null']
       }
 
@@ -201,13 +202,13 @@ class WorksheetTest {
               .build()
       HashMap<String, Object> res = worksheetResource.processCSVUpload(model, multipartFile, admin)
       def failedInfo = res.get('validator').message
-      if (failedInfo != null) {
+      if(failedInfo != null) {
          assert false: failedInfo
       }
       RuntimeWorksheet runtimeWorksheet = worksheetResource.getRuntimeWorksheet(admin)
       Thread.sleep(sleepSecond)
       runtimeWorksheet.getWorksheet().getAssemblies().each {
-         if (it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+         if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
             TableLens lens = runtimeWorksheet.getAssetQuerySandbox().getTableLens(it.getName(), AssetQuerySandbox.LIVE_MODE)
             String fileName = createExportFileByCase(asset_id, it.getName(), suffix)
             exportData(lens, fileName, false)
@@ -239,19 +240,21 @@ class WorksheetTest {
          assemblies.each {
             assemblyName = it.getName()
 
-            if (it instanceof ChartVSAssembly) {
+            if(it instanceof ChartVSAssembly) {
                final VGraphPair pair = sandbox.getVGraphPair(assemblyName, true, null, true, 1)
                data = pair.getData()
-               if (data instanceof BrushDataSet || data instanceof GeoDataSet || data instanceof MappedDataSet) {
+               if(data instanceof BrushDataSet || data instanceof GeoDataSet || data instanceof MappedDataSet) {
                   data = ((DataSetFilter) data).getDataSet()
                }
-            } else if (it instanceof TableDataVSAssembly) {
+            }
+            else if(it instanceof TableDataVSAssembly) {
                data = sandbox.getVSTableLens(assemblyName, false)
             }
             outFile = createExportFileByCase(asset_id, assemblyName, null)
             exportUtil.exportVSObject(outFile.toString(), data)
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace()
       }
    }
@@ -265,20 +268,23 @@ class WorksheetTest {
    def createExportFileByCase(String asset_id, String assemblyName, String bk) {
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
       String objName = ''
-      if (asset_id.startsWith('1^128^')) {
+      if(asset_id.startsWith('1^128^')) {
          objName = 'VS' + File.separator + assemblyName + '.txt'
-      } else if (asset_id.startsWith('1^2^')) {
+      }
+      else if(asset_id.startsWith('1^2^')) {
          objName = (bk != null ? bk + '_' + assemblyName + '.txt' : assemblyName + '.txt')
-      } else {
+      }
+      else {
          new Exception("-------the Asset ID not right, please check-----").printStackTrace()
       }
 
       String fileName = resourcePath + '/exportData' + File.separator + suiteName + File.separator + caseName
       File tempFile = new File(fileName + File.separator + objName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -290,7 +296,7 @@ class WorksheetTest {
     */
    void compareData(String[] folderName) {
       compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'TXT')
-      if (folderName != null) {
+      if(folderName != null) {
          folderName.each {
             compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName + '/' + it, 'TXT')
          }

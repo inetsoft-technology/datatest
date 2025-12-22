@@ -28,14 +28,15 @@ class CompareUtil {
       String folderPath = exportUtil.getExportFolderPath(asset_id, packageName)
 
       try {
-         if (fileNames != null) {
+         if(fileNames != null) {
             fileNames.each {
                String resPath = folderPath + File.separator + it + '.txt'
                resArray.add(FileCompare(resPath))
             }
-         } else {
+         }
+         else {
             File folder = new File(folderPath)
-            if (!folder.exists() || !folder.isDirectory()) {
+            if(!folder.exists() || !folder.isDirectory()) {
                def status = [:]
                status.put('false', "Compare Failed: Folder does not exist or is not a directory: ${folderPath}")
                collectAndAssertFailures([status])
@@ -43,7 +44,7 @@ class CompareUtil {
             }
 
             File[] files = folder.listFiles()
-            if (files == null) {
+            if(files == null) {
                def status = [:]
                status.put('false', "Compare Failed: Cannot list files in folder (may be a permission issue): ${folderPath}")
                collectAndAssertFailures([status])
@@ -51,9 +52,9 @@ class CompareUtil {
             }
 
             files.each { file ->
-               if (file.isFile()) {
+               if(file.isFile()) {
                   String resPath = file.absolutePath
-                  if (resPath.endsWith('.txt') || resPath.endsWith('.html')) {
+                  if(resPath.endsWith('.txt') || resPath.endsWith('.html')) {
                      resArray.add(FileCompare(resPath))
                   }
                }
@@ -61,7 +62,8 @@ class CompareUtil {
          }
 
          collectAndAssertFailures(resArray)
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          def status = [:]
          status.put('false', "Compare Failed with exception: ${e.message}\nFolder: ${folderPath}")
          collectAndAssertFailures([status])
@@ -83,22 +85,23 @@ class CompareUtil {
       def resArray = []
       String folderPath = exportUtil.getExportFolderPath(asset_id, packageName)
 
-      if (fls != null) {
+      if(fls != null) {
          fls.each {
             String resPath = folderPath + File.separator + it + '.png'
             File resFile = new File(resPath)
-            if (resFile.exists() && !resPath.endsWith('_diff.png')) {
+            if(resFile.exists() && !resPath.endsWith('_diff.png')) {
                resArray.add(PNGCompare(resPath))
             }
          }
-      } else {
+      }
+      else {
          File folder = new File(folderPath)
-         if (!folder.exists()) {
+         if(!folder.exists()) {
             assert false: "Exported Folder didn't create, \n" + folder.getPath()
          }
          folder.listFiles().each { file ->
             String resPath = file.absolutePath
-            if (resPath.endsWith('.png') && !resPath.endsWith('_diff.png')) {
+            if(resPath.endsWith('.png') && !resPath.endsWith('_diff.png')) {
                resArray.add(PNGCompare(resPath))
             }
          }
@@ -137,31 +140,36 @@ class CompareUtil {
 
          def compareState = comparisonResult.getImageComparisonState()
 
-         if (compareState == ImageComparisonState.SIZE_MISMATCH) {
+         if(compareState == ImageComparisonState.SIZE_MISMATCH) {
             status.put('false', 'FAILED! The PNG size is Different! See ' + resFile)
             return status
-         } else if (compareState == ImageComparisonState.MISMATCH) {
+         }
+         else if(compareState == ImageComparisonState.MISMATCH) {
             String diffPath = resFile.replaceAll('.png', '_diff.png')
             BufferedImage resultImage = comparisonResult.getResult()
             mergePNG(resultImage, expectImage, diffPath)
             status.put('false', 'FAILED! Please check diff file:\n' + diffPath)
             return status
-         } else if (compareState == ImageComparisonState.MATCH) {
+         }
+         else if(compareState == ImageComparisonState.MATCH) {
             status.put('true', 'PASSED!')
             return status
-         } else {
+         }
+         else {
             status.put('false', 'FAILED! Unknown reasons.')
             return status
          }
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          status.put('false', "Compare Failed with exception: ${e.message}\nFile: ${resFile}")
          return status
-      } finally {
+      }
+      finally {
          // 确保资源正确释放
-         if (resImage != null) {
+         if(resImage != null) {
             resImage.flush()
          }
-         if (expectImage != null) {
+         if(expectImage != null) {
             expectImage.flush()
          }
       }
@@ -190,7 +198,8 @@ class CompareUtil {
          // 使用 writeImage 方法避免 ImageIO.write() 导致的 OOM 问题
          writeImage(combined, diffPath)
          combined.flush()
-      } finally {
+      }
+      finally {
          g.dispose()
       }
    }
@@ -209,7 +218,8 @@ class CompareUtil {
          new File(filePath).withOutputStream { fileOutputStream ->
             fileOutputStream.write(output.toByteArray())
          }
-      } finally {
+      }
+      finally {
          output.close()
       }
    }
@@ -234,14 +244,14 @@ class CompareUtil {
       File resFileObj = new File(resFile)
       File expFileObj = new File(expFile)
 
-      if (!expFileObj.exists() || !resFileObj.exists()) {
+      if(!expFileObj.exists() || !resFileObj.exists()) {
          status.put('false', "Compare Failed, Expect or Result File [" + expFile +
                  "] not found!")
          return status
       }
 
       // 快速失败：文件大小检查
-      if (resFileObj.length() != expFileObj.length()) {
+      if(resFileObj.length() != expFileObj.length()) {
          status.put('false', "Compare Failed, file size is different. " +
                  "Expect file size: ${expFileObj.length()}, Result file size: ${resFileObj.length()}")
          return status
@@ -253,14 +263,15 @@ class CompareUtil {
       long threshold = 200 * 1024  // 200KB 阈值
 
       // HTML文件：一律使用流式处理（体积可能很大）
-      if (isHTMLFile) {
+      if(isHTMLFile) {
          return streamCompare(resFile, expFile, charset, true)
       }
 
       // 文本文件：根据大小选择策略
-      if (fileSize > threshold) {
+      if(fileSize > threshold) {
          return streamCompare(resFile, expFile, charset, false)
-      } else {
+      }
+      else {
          return memoryCompare(resFile, expFile, charset, false)
       }
    }
@@ -277,52 +288,57 @@ class CompareUtil {
       def status = [:]
 
       List resList, expList
-      if (charset != null) {
+      if(charset != null) {
          resList = new File(resFile).readLines(charset)
          expList = new File(expFile).readLines(charset)
-      } else {
+      }
+      else {
          resList = new File(resFile).readLines()
          expList = new File(expFile).readLines()
       }
 
-      if (isHTML) {
+      if(isHTML) {
          def classPattern1 = ".c[0-9]* \\{"
          def classPattern2 = "class='c[0-9]*'"
          resList = resList.eachWithIndex { String it, int idx ->
-            if (it =~ classPattern1 || it =~ classPattern2) {
+            if(it =~ classPattern1 || it =~ classPattern2) {
                resList[idx] = it.replaceAll(classPattern1, " {").replaceAll(classPattern2, "class=''")
             }
          }
          expList = expList.eachWithIndex { String it, int idx ->
-            if (it =~ classPattern1 || it =~ classPattern2) {
+            if(it =~ classPattern1 || it =~ classPattern2) {
                expList[idx] = it.replaceAll(classPattern1, " {").replaceAll(classPattern2, "class=''")
             }
          }
       }
 
-      if ((resList == null || resList.size() <= 0) && expList != null) {
+      if((resList == null || resList.size() <= 0) && expList != null) {
          status.put('false', "Compare Failed, Result File[ \n" + resFile + "] " +
                  "is empty, but Expect File[\n" + expFile + "] is not empty!")
          return status
-      } else if (expList == null || expList.size() <= 0) {
+      }
+      else if(expList == null || expList.size() <= 0) {
          status.put('false', "Compare Failed, Expect File [ \n" + expFile + "] is empty!")
          return status
-      } else if (expList.size() != resList.size()) {
+      }
+      else if(expList.size() != resList.size()) {
          status.put('false', "Compare Failed, row number is " +
                  "different in expect file[ \n" + expFile + "] and result file[\n" +
                  resFile + "]!\n [Expect Rows:" + expList.size() + "]; Result Rows: [" + resList.size() + "]")
          return status
-      } else if (expList != resList) {
-         for (i in 0..<expList.size()) {
+      }
+      else if(expList != resList) {
+         for(i in 0..<expList.size()) {
             String diffFile = expFile.substring(expFile.indexOf("expectData") + 10)
-            if (expList[i] != resList[i]) {
+            if(expList[i] != resList[i]) {
                status.put('false', "Compare Failed at file, [\n" +
                        diffFile + "] in row [" + i + "], \n expect:[" + expList[i] + "], \n" +
                        "result:[" + resList[i] + "]")
                return status
             }
          }
-      } else {
+      }
+      else {
          status.put('true', "PASSED!")
          return status
       }
@@ -347,12 +363,12 @@ class CompareUtil {
          int lineNum = 0
          String resLine, expLine
 
-         while ((resLine = resReader.readLine()) != null) {
+         while((resLine = resReader.readLine()) != null) {
             expLine = expReader.readLine()
             lineNum++
 
             // 检查期望文件是否提前结束
-            if (expLine == null) {
+            if(expLine == null) {
                String diffFile = expFile.substring(expFile.indexOf("expectData") + 10)
                status.put('false', "Compare Failed at file [${diffFile}]: " +
                        "Result file has more lines. Mismatch at line ${lineNum}, " +
@@ -361,13 +377,13 @@ class CompareUtil {
             }
 
             // HTML处理（如果需要）
-            if (isHTML) {
+            if(isHTML) {
                resLine = normalizeHTML(resLine)
                expLine = normalizeHTML(expLine)
             }
 
             // 逐行比较
-            if (resLine != expLine) {
+            if(resLine != expLine) {
                String diffFile = expFile.substring(expFile.indexOf("expectData") + 10)
                status.put('false', "Compare Failed at file [${diffFile}] in row [${lineNum}], " +
                        "\n expect:[${expLine}], \n result:[${resLine}]")
@@ -376,7 +392,7 @@ class CompareUtil {
          }
 
          // 检查期望文件是否还有剩余行
-         if ((expLine = expReader.readLine()) != null) {
+         if((expLine = expReader.readLine()) != null) {
             String diffFile = expFile.substring(expFile.indexOf("expectData") + 10)
             status.put('false', "Compare Failed at file [${diffFile}]: " +
                     "Expect file has more lines. Mismatch at line ${lineNum + 1}, " +
@@ -386,7 +402,8 @@ class CompareUtil {
 
          status.put('true', "PASSED!")
          return status
-      } finally {
+      }
+      finally {
          resReader.close()
          expReader.close()
       }
@@ -399,10 +416,11 @@ class CompareUtil {
     * @return BufferedReader instance
     */
    private BufferedReader createReader(String filePath, String charset) {
-      if (charset != null) {
+      if(charset != null) {
          return new BufferedReader(new InputStreamReader(
                  new FileInputStream(filePath), charset))
-      } else {
+      }
+      else {
          return new BufferedReader(new FileReader(filePath))
       }
    }
@@ -415,7 +433,7 @@ class CompareUtil {
    private String normalizeHTML(String line) {
       def classPattern1 = ".c[0-9]* \\{"
       def classPattern2 = "class='c[0-9]*'"
-      if (line =~ classPattern1 || line =~ classPattern2) {
+      if(line =~ classPattern1 || line =~ classPattern2) {
          return line.replaceAll(classPattern1, " {")
                  .replaceAll(classPattern2, "class=''")
       }
@@ -438,12 +456,13 @@ class CompareUtil {
       String fileName = resourcePath + '/exportData' + suiteName
       def resArray = []
 
-      if (fls != null) {
+      if(fls != null) {
          fls.each {
             def resPath = fileName + File.separator + it + getSuffix(fmt)
             resArray.add(processFile(resPath, fmt, allowedPixelPercent))
          }
-      } else {
+      }
+      else {
          new File(fileName).listFiles().each { file ->
             resArray.add(processFile(file.absolutePath, fmt, allowedPixelPercent))
          }
@@ -453,11 +472,13 @@ class CompareUtil {
    }
 
    private processFile(String resPath, String fmt, allowedPixelPercent) {
-      if (fmt == 'PNG' && resPath.endsWith('.png') && !resPath.endsWith('_diff.png')) {
+      if(fmt == 'PNG' && resPath.endsWith('.png') && !resPath.endsWith('_diff.png')) {
          return allowedPixelPercent != null ? PNGCompare(resPath, allowedPixelPercent) : PNGCompare(resPath)
-      } else if (['TXT', 'CSV'].contains(fmt) && (resPath.endsWith('.csv') || resPath.endsWith('.txt'))) {
+      }
+      else if(['TXT', 'CSV'].contains(fmt) && (resPath.endsWith('.csv') || resPath.endsWith('.txt'))) {
          return FileCompare(resPath)
-      } else if ('HTML' == fmt && resPath.endsWith('.html')) {
+      }
+      else if('HTML' == fmt && resPath.endsWith('.html')) {
          return FileCompare(resPath, true)
       }
    }
@@ -469,7 +490,7 @@ class CompareUtil {
     */
    def getSuffix(String fmt) {
       def suffix
-      switch (fmt) {
+      switch(fmt) {
          case 'PNG': suffix = ".png"; break
          case 'PDF': suffix = '.pdf'; break
          case 'TXT': suffix = '.txt'; break
@@ -486,7 +507,7 @@ class CompareUtil {
    private void collectAndAssertFailures(List resArray) {
       def failedMessages = resArray.findAll { it != null && it.getAt('false') != null }
               .collect { it.getAt('false') }
-      if (failedMessages) {
+      if(failedMessages) {
          assert false: "\n" + failedMessages.join("\n") + "\n"
       }
    }

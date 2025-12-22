@@ -62,15 +62,15 @@ public class MaterializedViewResource {
             analysisJob = this.materializedViewApiService.analyze(req, this.principal);
 
             //wait the analysis job complete or fail
-            for (int retry = 0; retry < 800; retry++) {
+            for(int retry = 0; retry < 800; retry++) {
                AnalysisJob analysisJob1 = this.materializedViewApiService.getAnalysisJob(analysisJob.getId(), principal);
-               if (analysisJob1.isComplete()) {
+               if(analysisJob1.isComplete()) {
                   break;
                }
-               if (analysisJob1.isFailed()) {
+               if(analysisJob1.isFailed()) {
                   List<AnalysisError> errors = analysisJob1.getErrors();
                   StringBuilder msg = new StringBuilder();
-                  for (AnalysisError error : errors) {
+                  for(AnalysisError error : errors) {
                      msg.append(error.toString());
                   }
                   System.err.println("====MV Analyze Exception====" + msg);
@@ -78,9 +78,11 @@ public class MaterializedViewResource {
                }
                Thread.sleep(100);
             }
-         } catch (RuntimeException e) {
+         }
+         catch(RuntimeException e) {
             throw e;
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             throw new RuntimeException("Failed to analyze MV", e);
          }
          return analysisJob;
@@ -95,9 +97,10 @@ public class MaterializedViewResource {
     */
    public void createMV0(boolean applyVPM, boolean... expandGroup) {
       AnalysisJob analysisJob;
-      if (expandGroup == null || expandGroup.length == 0) {
+      if(expandGroup == null || expandGroup.length == 0) {
          analysisJob = analysisMV(applyVPM, false);
-      } else {
+      }
+      else {
          analysisJob = analysisMV(applyVPM, expandGroup[0]);
       }
 
@@ -108,7 +111,7 @@ public class MaterializedViewResource {
             materializedViewList = this.materializedViewApiService.getAnalysisJobViews(analysisJob.getId(), this.principal);
             List<MaterializedView> mvViews = materializedViewList.getViews();
 
-            for (MaterializedView mvView : mvViews) {
+            for(MaterializedView mvView : mvViews) {
                this.views.add(mvView.getName());
             }
 
@@ -118,28 +121,32 @@ public class MaterializedViewResource {
             this.materializedViewApiService.createMaterializedView(analysisJob.getId(), createRequest, this.principal);
 
             //wait create mv complete or fail
-            for (int retry = 0; retry < 200; retry++) {
+            for(int retry = 0; retry < 200; retry++) {
                try {
                   CreateMaterializedViewStatus createStatus = this.materializedViewApiService.getCreationStatus(
                           analysisJob.getId(), this.principal);
 
-                  if (createStatus.isComplete()) {
+                  if(createStatus.isComplete()) {
                      break;
-                  } else if (createStatus.isFailed()) {
+                  }
+                  else if(createStatus.isFailed()) {
                      String msg = createStatus.getError();
                      System.err.println("====MV Create Exception==== " + msg);
                      break;
                   }
-               } catch (Exception e) {
-                  if (e.getMessage().contains("The materialized view creation has not been started")) {
+               }
+               catch(Exception e) {
+                  if(e.getMessage().contains("The materialized view creation has not been started")) {
                      Thread.sleep(100);
-                  } else {
+                  }
+                  else {
                      e.printStackTrace();
                      break;
                   }
                }
             }
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             e.printStackTrace();
          }
       });
@@ -154,7 +161,8 @@ public class MaterializedViewResource {
    public void createMV(boolean applyVPM, boolean... expandGroup) {
       try {
          createMV0(applyVPM, expandGroup);
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to create MV", e);
       }
    }
@@ -170,15 +178,16 @@ public class MaterializedViewResource {
             UpdateMaterializedViewRequest updateRequest = new UpdateMaterializedViewRequest();
             updateRequest.setViews(this.views);
 
-            for (int i = 0; i < count; i++) {
+            for(int i = 0; i < count; i++) {
                UpdateMaterializedViewStatus updateStatus =
                        this.materializedViewApiService.update(updateRequest, this.principal);
 
                //wait update mv complete or fail
-               for (int retry = 0; retry < 200; retry++) {
-                  if (updateStatus.isComplete()) {
+               for(int retry = 0; retry < 200; retry++) {
+                  if(updateStatus.isComplete()) {
                      break;
-                  } else if (updateStatus.isFailed()) {
+                  }
+                  else if(updateStatus.isFailed()) {
                      String msg = updateStatus.getError();
                      System.err.println("====MV Update Exception==== " + msg);
                      break;
@@ -186,9 +195,11 @@ public class MaterializedViewResource {
                   //Thread.sleep(100);
                }
             }
-         } catch (RuntimeException e) {
+         }
+         catch(RuntimeException e) {
             throw e;
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             throw new RuntimeException("Failed to update MV", e);
          }
       });
@@ -203,9 +214,11 @@ public class MaterializedViewResource {
             DeleteMaterializedViewsRequest deleteRequest = new DeleteMaterializedViewsRequest();
             deleteRequest.setViews(this.views);
             this.materializedViewApiService.deleteMaterializedViews(deleteRequest, this.principal);
-         } catch (RuntimeException e) {
+         }
+         catch(RuntimeException e) {
             throw e;
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             throw new RuntimeException("Failed to remove MV", e);
          }
       });

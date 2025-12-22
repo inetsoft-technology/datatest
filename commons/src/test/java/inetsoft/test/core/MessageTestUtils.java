@@ -70,7 +70,7 @@ public final class MessageTestUtils {
       GenericMessage<String> message = new GenericMessage<>("test");
       MessageAttributes messageAttributes = new MessageAttributes(message);
 
-      if (runtimeId != null) {
+      if(runtimeId != null) {
          messageAttributes.setAttribute("sheetRuntimeId", runtimeId);
       }
 
@@ -88,7 +88,8 @@ public final class MessageTestUtils {
       try {
          MessageContext ctx = new MessageContext(headerAccessor, messagingTemplate, commandDispatcher);
          return action.apply(ctx);
-      } finally {
+      }
+      finally {
          // Cleanup
          MessageContextHolder.setMessageAttributes(null);
       }

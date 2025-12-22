@@ -37,9 +37,11 @@ public class RuntimeViewsheetResource {
          controllersResource.getOpenViewsheetController().openViewsheet(
                  openViewsheetEvent, ctx.getUser(), ctx.getCommandDispatcher(),
                  "http://localhost:8080/sree");
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to open viewsheet", e);
       }
       return controllersResource.getRuntimeId();
@@ -49,9 +51,11 @@ public class RuntimeViewsheetResource {
       try {
          return runtimeId == null ?
                  null : controllersResource.getViewsheetService().getViewsheet(runtimeId, principal);
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to get runtime viewsheet", e);
       }
    }
@@ -63,9 +67,11 @@ public class RuntimeViewsheetResource {
       try {
          controllersResource.getVSExportService().exportViewsheet(runtimeViewsheet, format, mactch,
                  expandSelections, current, previewPrintLayout, print, bookmarks, embedded, onlyDataComponents, csvConfig, response, principal);
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to export viewsheet", e);
       }
    }
@@ -85,9 +91,11 @@ public class RuntimeViewsheetResource {
       try {
          controllersResource.getComposerVSTableController().convertToFreehandTable(cevent, principal,
                  "http://localhost:8080/sree", commandDispatcher);
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to convert freehand", e);
       }
    }
@@ -98,7 +106,8 @@ public class RuntimeViewsheetResource {
       try {
          controllersResource.getCoreLifecycleService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
                  commandDispatcher, true, true, true, new ChangedAssemblyList(true));
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace();
       }
    }
@@ -115,11 +124,12 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          importXLSController.processGetAssemblyImage(runtimeId,
-            "xlsx", multipartFile, principal);
+                 "xlsx", multipartFile, principal);
          importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
                  principal, commandDispatcher);
 
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          e.printStackTrace();
       }
    }
@@ -146,10 +156,11 @@ public class RuntimeViewsheetResource {
    }
 
    private void closeViewsheet(String runtimeId) {
-      if (runtimeId != null) {
+      if(runtimeId != null) {
          try {
             controllersResource.getViewsheetService().closeViewsheet(runtimeId, null);
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             e.printStackTrace();
          }
       }

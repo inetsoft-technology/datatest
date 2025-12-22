@@ -30,9 +30,11 @@ public class RuntimeWorksheetResource {
       try {
          controllersResource.getOpenWorksheetController().openWorksheet(
                  openWorksheetEvent, ctx.getUser(), ctx.getCommandDispatcher());
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to open worksheet", e);
       }
       return controllersResource.getRuntimeId();
@@ -42,18 +44,21 @@ public class RuntimeWorksheetResource {
       try {
          return runtimeId == null ?
                  null : controllersResource.getWorksheetService().getWorksheet(runtimeId, principal);
-      } catch (RuntimeException e) {
+      }
+      catch(RuntimeException e) {
          throw e;
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to get runtime worksheet", e);
       }
    }
 
    private void closeWorksheet(String runtimeId) {
-      if (runtimeId != null) {
+      if(runtimeId != null) {
          try {
             controllersResource.getWorksheetService().closeWorksheet(runtimeId, null);
-         } catch (Exception e) {
+         }
+         catch(Exception e) {
             e.printStackTrace();
          }
       }

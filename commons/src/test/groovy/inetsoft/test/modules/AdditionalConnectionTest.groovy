@@ -54,18 +54,20 @@ class AdditionalConnectionTest {
       controllers = new ControllersResource()
       controllers.initControllers()
 
-      if (principals == null) {
+      if(principals == null) {
          principals = [admin]
       }
       principals.each {
          SUtil.setAdditionalDatasource(it)
          ThreadContext.setContextPrincipal(it)  //use to set additional db permission
 
-         if (asset_id.startsWith('1^128^')) {
+         if(asset_id.startsWith('1^128^')) {
             executeVS(asset_id, it, params)
-         } else if (asset_id.startsWith('1^2^')) {
+         }
+         else if(asset_id.startsWith('1^2^')) {
             executeWS(asset_id, it, params)
-         } else {
+         }
+         else {
             new Exception("====Input right asset_id========" + asset_id).printStackTrace()
          }
       }
@@ -91,7 +93,8 @@ class AdditionalConnectionTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
                  false, false, false, false,
                  ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
-      } finally {
+      }
+      finally {
          out.close()
       }
    }
@@ -116,10 +119,10 @@ class AdditionalConnectionTest {
          assetQuerySandbox.getVariableTable().put(it.key, it.value)
       }
       assemblies.each {
-         if (it.getAssemblyType() == Worksheet.TABLE_ASSET) {
+         if(it.getAssemblyType() == Worksheet.TABLE_ASSET) {
             TableAssembly tableAssembly = (TableAssembly) it
             String tableName = tableAssembly.getName()
-            if (!tableAssembly.isVisibleTable()) {
+            if(!tableAssembly.isVisibleTable()) {
                return
             }
 
@@ -154,15 +157,17 @@ class AdditionalConnectionTest {
       String fileName = ''
       String objName = ''
 
-      if (asset_id.startsWith('1^128^')) {
+      if(asset_id.startsWith('1^128^')) {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^128^__NULL__^'))
          fileName = 'VS' + File.separator + objName + '__' + principal.getIdentityID().getName() + '.png'
-      } else if (asset_id.startsWith('1^2^')) {
+      }
+      else if(asset_id.startsWith('1^2^')) {
          objName = (asset_id.indexOf('/') > 0 ?
                  asset_id.split('/').last() : asset_id.minus('1^2^__NULL__^'))
          fileName = 'WS' + File.separator + objName + '__' + tableName + '__' + principal.getIdentityID().getName() + '.txt'
-      } else {
+      }
+      else {
          new Exception("====Input right asset_id when export file======" + asset_id).printStackTrace()
       }
 
@@ -170,9 +175,10 @@ class AdditionalConnectionTest {
       File tempFile = new File(resourcePath + '/exportData' + suiteName + File.separator + caseName +
               File.separator + fileName)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile

@@ -50,24 +50,30 @@ class ExportUtil {
       try {
          prepareFile(fileName)
 
-         if (data == null || data == '') {
+         if(data == null || data == '') {
             data = ['null']
          }
 
-         if (data instanceof DataSet || data instanceof BoxDataSet) {
+         if(data instanceof DataSet || data instanceof BoxDataSet) {
             exportDataSet(fileName, data)
-         } else if (data instanceof TableLens) {
+         }
+         else if(data instanceof TableLens) {
             exportTableLens(fileName, data, isFormat)
-         } else if (data instanceof SelectionList) {
+         }
+         else if(data instanceof SelectionList) {
             exportSelectionList(fileName, data)
-         } else if (data instanceof StringBuffer) {
-            writeToFile(fileName, data.toString())
-         } else if (data instanceof BufferedImage) {
-            exportBufferedImage(fileName, data)
-         } else if (data != null) {
+         }
+         else if(data instanceof StringBuffer) {
             writeToFile(fileName, data.toString())
          }
-      } catch (Exception e) {
+         else if(data instanceof BufferedImage) {
+            exportBufferedImage(fileName, data)
+         }
+         else if(data != null) {
+            writeToFile(fileName, data.toString())
+         }
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to export VS object to file: ${fileName}", e)
       }
    }
@@ -82,20 +88,23 @@ class ExportUtil {
       try {
          prepareFile(fileName)
 
-         if (data == null || data == '') {
+         if(data == null || data == '') {
             data = ['null']
          }
 
-         if (data instanceof TableLens) {
+         if(data instanceof TableLens) {
             exportTableLens(fileName, data, true)
             // Note: Consider removing this sleep if not necessary for file system synchronization
             Thread.sleep(FILE_WRITE_DELAY_MS)
-         } else if (data instanceof StringBuffer) {
-            writeToFile(fileName, data.toString())
-         } else if (data != null) {
+         }
+         else if(data instanceof StringBuffer) {
             writeToFile(fileName, data.toString())
          }
-      } catch (Exception e) {
+         else if(data != null) {
+            writeToFile(fileName, data.toString())
+         }
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to export WS object to file: ${fileName}", e)
       }
    }
@@ -111,20 +120,22 @@ class ExportUtil {
       String resourcePath = getResourcePath()
       resourcePath = (packageName == null) ? (resourcePath + '/exportData') : (resourcePath + '/exportData/' + packageName)
 
-      if (asset_id.startsWith('1^128^__')) {
+      if(asset_id.startsWith('1^128^__')) {
          return resourcePath + File.separator + asset_id.substring(asset_id.lastIndexOf('^') + 1)
-      } else if (asset_id.startsWith('1^2^__')) {
+      }
+      else if(asset_id.startsWith('1^2^__')) {
          return resourcePath + File.separator + '/WSExp' + File.separator +
                  asset_id.substring(asset_id.lastIndexOf('^') + 1)
-      } else {
+      }
+      else {
          throw new IllegalArgumentException("Invalid asset_id format: ${asset_id}")
       }
    }
 
    private StringBuffer printSelectionValue(SelectionValue value, StringBuffer buffer) {
-      if (value instanceof CompositeSelectionValue) {
+      if(value instanceof CompositeSelectionValue) {
          String valueStr = value.toString()
-         if (valueStr.contains('SelectionList')) {
+         if(valueStr.contains('SelectionList')) {
             String str = value.getLevel() + '--' + valueStr.split("\\[SelectionList")[0].
                     toString().replaceAll('SelectionValue', '')
             value.getLevel().times {
@@ -134,9 +145,10 @@ class ExportUtil {
             buffer.append('\n')
          }
          value.getSelectionList().getSelectionValues().eachWithIndex { SelectionValue entry, int i ->
-            if (entry instanceof CompositeSelectionValue) {
+            if(entry instanceof CompositeSelectionValue) {
                printSelectionValue(entry, buffer)
-            } else {
+            }
+            else {
                String str2 = entry.getLevel() + '--' + entry.toString().replaceAll('SelectionValue', '')
                entry.getLevel().times {
                   str2 = ' ' + str2
@@ -145,7 +157,8 @@ class ExportUtil {
                buffer.append('\n')
             }
          }
-      } else {
+      }
+      else {
          buffer.append(value.toString().replaceAll('SelectionValue', ''))
          buffer.append('\n')
       }
@@ -177,16 +190,19 @@ class ExportUtil {
    }
 
    private def format(def val) {
-      if (val == null || val == '') {
+      if(val == null || val == '') {
          return NULL_STRING
-      } else if (val instanceof java.util.Date && !(val instanceof java.sql.Date) &&
+      }
+      else if(val instanceof java.util.Date && !(val instanceof java.sql.Date) &&
               !(val instanceof java.sql.Time)) {
          return DATE_FORMAT.get().format(val)
-      } else if (val instanceof Float || val instanceof Double) {
+      }
+      else if(val instanceof Float || val instanceof Double) {
          double doubleVal = (val as Number).doubleValue()
-         if (Double.isNaN(doubleVal)) {
+         if(Double.isNaN(doubleVal)) {
             return 'NaN'
-         } else {
+         }
+         else {
             return NUM_FORMAT.format(doubleVal)
          }
       }
@@ -199,12 +215,12 @@ class ExportUtil {
    private void prepareFile(String fileName) {
       File file = new File(fileName)
       File parentFile = file.getParentFile()
-      if (parentFile != null && !parentFile.exists()) {
-         if (!parentFile.mkdirs()) {
+      if(parentFile != null && !parentFile.exists()) {
+         if(!parentFile.mkdirs()) {
             throw new RuntimeException("Failed to create directory: ${parentFile.absolutePath}")
          }
       }
-      if (file.exists() && !file.delete()) {
+      if(file.exists() && !file.delete()) {
          throw new RuntimeException("Failed to delete existing file: ${file.absolutePath}")
       }
    }
@@ -217,9 +233,9 @@ class ExportUtil {
       int colCount = data.colCount
 
       // Write headers
-      for (int col = 0; col < colCount; col++) {
+      for(int col = 0; col < colCount; col++) {
          buffer.append(data.getHeader(col))
-         if (col < colCount - 1) {
+         if(col < colCount - 1) {
             buffer.append(', ')
          }
       }
@@ -227,10 +243,10 @@ class ExportUtil {
 
       // Write data rows
       int rowCount = data.rowCount
-      for (int row = 0; row < rowCount; row++) {
-         for (int col = 0; col < colCount; col++) {
+      for(int row = 0; row < rowCount; row++) {
+         for(int col = 0; col < colCount; col++) {
             buffer.append(format(data.getData(col, row)))
-            if (col < colCount - 1) {
+            if(col < colCount - 1) {
                buffer.append(', ')
             }
          }
@@ -250,14 +266,14 @@ class ExportUtil {
       int colCount = table.getColCount()
       int row = 0
 
-      while (table.moreRows(row)) {
-         for (int col = 0; col < colCount; col++) {
+      while(table.moreRows(row)) {
+         for(int col = 0; col < colCount; col++) {
             def obj = table.getObject(row, col)
-            if (obj instanceof DCMergeDatesCell) {
+            if(obj instanceof DCMergeDatesCell) {
                obj = ((DCMergeDatesCell) obj).getFormatedOriginalDate()
             }
             buffer.append(obj)
-            if (col < colCount - 1) {
+            if(col < colCount - 1) {
                buffer.append(', ')
             }
          }
@@ -288,7 +304,7 @@ class ExportUtil {
     */
    private void exportBufferedImage(String fileName, BufferedImage data) {
       File file = new File(fileName)
-      if (!ImageIO.write(data, 'png', file)) {
+      if(!ImageIO.write(data, 'png', file)) {
          throw new RuntimeException("Failed to write image to file: ${fileName}")
       }
    }
@@ -309,7 +325,8 @@ class ExportUtil {
    private String getResourcePath() {
       try {
          return new File(this.class.getResource('/expectData').getPath()).getParent()
-      } catch (Exception e) {
+      }
+      catch(Exception e) {
          throw new RuntimeException("Failed to get resource path", e)
       }
    }
