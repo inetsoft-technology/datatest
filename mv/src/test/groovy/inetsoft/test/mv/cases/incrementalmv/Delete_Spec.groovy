@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.IgnoreRest
@@ -10,26 +9,27 @@ import spock.lang.Specification
 
 @Execution(ExecutionMode.SAME_THREAD)
 class Delete_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'maxValue_Datetime'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/maxValue_Datetime'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -44,11 +44,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/maxValue_Double'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -63,11 +63,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/maxValue_Integer'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -82,11 +82,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/maxValue_String'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(4)
+      mvtest.createIncrementMV(4)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -101,11 +101,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/minValue_Datetime'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -120,11 +120,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/minValue_Double'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -139,11 +139,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/minValue_Integer'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -158,11 +158,11 @@ class Delete_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/minValue_String'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -176,10 +176,9 @@ class Delete_Spec extends Specification {
    def 'Testcase1'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase1'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -193,10 +192,9 @@ class Delete_Spec extends Specification {
    def 'Testcase_like'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase_like'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -209,10 +207,9 @@ class Delete_Spec extends Specification {
    def 'Testcase2'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase2'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -225,10 +222,9 @@ class Delete_Spec extends Specification {
    def 'Testcase3'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase3'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -241,10 +237,9 @@ class Delete_Spec extends Specification {
    def 'Testcase4'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase4'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -257,10 +252,9 @@ class Delete_Spec extends Specification {
    def 'Testcase5'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase5'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -273,10 +267,9 @@ class Delete_Spec extends Specification {
    def 'Testcase6'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase6'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -289,10 +282,9 @@ class Delete_Spec extends Specification {
    def 'Testcase7'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase7'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -305,10 +297,9 @@ class Delete_Spec extends Specification {
    def 'Testcase8'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase8'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -321,10 +312,9 @@ class Delete_Spec extends Specification {
    def 'Testcase9'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase9'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -337,10 +327,9 @@ class Delete_Spec extends Specification {
    def 'Testcase10'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase10'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -350,10 +339,9 @@ class Delete_Spec extends Specification {
    def 'Testcase11'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase11'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -366,10 +354,9 @@ class Delete_Spec extends Specification {
    def 'Testcase12'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase12'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -382,10 +369,9 @@ class Delete_Spec extends Specification {
    def 'Testcase13'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase13'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -398,10 +384,9 @@ class Delete_Spec extends Specification {
    def 'Testcase14'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase14'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -414,10 +399,9 @@ class Delete_Spec extends Specification {
    def 'Testcase15'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase15'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -430,10 +414,9 @@ class Delete_Spec extends Specification {
    def 'Testcase16'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase16'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -446,10 +429,9 @@ class Delete_Spec extends Specification {
    def 'Testcase17'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase17'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -462,10 +444,9 @@ class Delete_Spec extends Specification {
    def 'Testcase18'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase18'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -478,10 +459,9 @@ class Delete_Spec extends Specification {
    def 'Testcase19'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase19'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -494,10 +474,9 @@ class Delete_Spec extends Specification {
    def 'Testcase20'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase20'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -510,10 +489,9 @@ class Delete_Spec extends Specification {
    def 'Testcase21'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase21'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -526,10 +504,9 @@ class Delete_Spec extends Specification {
    def 'Testcase22'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase22'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -542,10 +519,9 @@ class Delete_Spec extends Specification {
    def 'Testcase23'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase23'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -558,10 +534,9 @@ class Delete_Spec extends Specification {
    def 'Testcase24'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase24'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -571,10 +546,9 @@ class Delete_Spec extends Specification {
    def 'Testcase25'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase25'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -587,13 +561,12 @@ class Delete_Spec extends Specification {
    def 'Testcase26'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase26'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -607,10 +580,9 @@ class Delete_Spec extends Specification {
    def 'Testcase27'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase27'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -623,10 +595,9 @@ class Delete_Spec extends Specification {
    def 'Testcase28'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase28'
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-
       mvtest = new MVTest(asset_id)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -637,5 +608,4 @@ class Delete_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

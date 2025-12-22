@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.IgnoreRest
@@ -12,26 +11,27 @@ import spock.lang.Specification
 
 @Execution(ExecutionMode.SAME_THREAD)
 class Append_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'S_TestCase1'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -46,11 +46,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -65,11 +65,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -84,11 +84,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -103,11 +103,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -122,11 +122,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -142,11 +142,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -161,11 +161,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -180,11 +180,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -199,11 +199,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -218,11 +218,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -238,11 +238,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -257,11 +257,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -276,11 +276,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase14'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -295,11 +295,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase15'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -314,11 +314,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase16'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -333,11 +333,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase18'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -352,11 +352,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase19'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -371,11 +371,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase20'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -390,11 +390,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase21'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -409,11 +409,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase22'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -428,11 +428,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase27'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -447,11 +447,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase28'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -466,11 +466,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase29'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -486,11 +486,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase30'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -506,11 +506,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase_like'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -525,11 +525,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -544,11 +544,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -563,11 +563,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -582,11 +582,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -601,11 +601,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -620,11 +620,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -639,11 +639,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -658,11 +658,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -677,11 +677,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -696,11 +696,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -715,11 +715,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -734,11 +734,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -753,11 +753,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -772,11 +772,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase14'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -791,11 +791,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase15'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -810,11 +810,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase16'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -829,11 +829,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase17'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -848,11 +848,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase18'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -867,11 +867,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase19'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -886,11 +886,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase20'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -905,11 +905,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase22'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -924,11 +924,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase23'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -943,11 +943,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase24'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -962,11 +962,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/M_Testcase25'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -981,11 +981,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/maxValue_Datetime'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1000,11 +1000,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/maxValue_Double'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1019,11 +1019,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/maxValue_Integer'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1038,11 +1038,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/maxValue_String'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1057,11 +1057,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/minValue_Datetime'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1076,11 +1076,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/minValue_Double'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1095,11 +1095,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/minValue_Integer'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1114,11 +1114,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/minValue_String'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1133,11 +1133,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/mvLastUpdatetime'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1152,11 +1152,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1171,11 +1171,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1190,11 +1190,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1209,11 +1209,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1228,11 +1228,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1247,11 +1247,11 @@ class Append_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/Script6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, null, true, false)
 
       expect:
@@ -1263,5 +1263,4 @@ class Append_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

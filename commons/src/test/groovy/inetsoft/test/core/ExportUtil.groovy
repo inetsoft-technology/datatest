@@ -17,6 +17,18 @@ import java.text.SimpleDateFormat
 
 class ExportUtil {
 
+   // Thread-safe date formatter using ThreadLocal
+   private static final ThreadLocal<SimpleDateFormat> DATE_FORMAT = new ThreadLocal<SimpleDateFormat>() {
+      @Override
+      protected SimpleDateFormat initialValue() {
+         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+      }
+   }
+
+   private static final NumberFormat NUM_FORMAT = new DecimalFormat("#0.####")
+   private static final String NULL_STRING = 'NULL'
+   private static final long FILE_WRITE_DELAY_MS = 1000L
+
    /**
     * export vs data
     * @param fileName
@@ -31,92 +43,38 @@ class ExportUtil {
     * export vs data view component
     * @param fileName
     * @param data
+    * @param isFormat whether to format the data
     * @return
     */
    def exportVSObject(String fileName, def data, Boolean isFormat) {
-      File file = new File(fileName)
-      if(!file.getParentFile().exists()) {
-         file.getParentFile().mkdirs()
-      } else if(file.exists()){
-         file.delete()
-      }
+      try {
+         prepareFile(fileName)
 
-      if(data == null || data == '') {
-         data = ['null']
-      }
-
-      if(data instanceof DataSet || data instanceof BoxDataSet) {
-         StringBuffer buffer = new StringBuffer()
-         for(int max = 0; max < data.colCount; max++) {
-            buffer.append(data.getHeader(max))
-            if(data.colCount != (max+1)) {
-               buffer.append(', ')
-            }
-         }
-         buffer.append('\n')
-         for(int row = 0 ; row < data.rowCount; row++) {
-            for(int col = 0; col < data.colCount; col++) {
-               buffer.append(format(data.getData(col, row)))
-               if(data.colCount != (col+1)) {
-                  buffer.append(', ')
-               }
-            }
-            buffer.append('\n')
-         }
-         file.withPrintWriter { printWriter ->
-            printWriter.println("The data size(row x col) is:(" + (data.rowCount + 1) + " x " + data.colCount + ")")
-            printWriter.print(buffer.toString())
-         }
-      }
-      else if(data instanceof TableLens) {
-         //TableLens table = new SortFilter(data) // sort table
-         TableLens table = wrapTable(data, isFormat)
-         StringBuffer buffer = new StringBuffer()
-         int row = 0
-         while (table.moreRows(row)) {
-            for(int col = 0; col < table.getColCount(); col++) {
-               def obj = table.getObject(row, col)
-               if(obj instanceof DCMergeDatesCell) {
-                  obj = ((DCMergeDatesCell) obj).getFormatedOriginalDate();
-               }
-               buffer.append(obj)
-               if(table.getColCount() != (col+1)) {
-                  buffer.append(', ')
-               }
-            }
-            buffer.append('\n')
-            row++
-         }
-         file.withPrintWriter { printWriter ->
-            printWriter.println("The data size(row x col) is:(" + row + " x " + table
-                    .getColCount() + ")")
-            printWriter.print(buffer.toString())
-         }
-      }
-      else if(data instanceof SelectionList) {
-         StringBuffer bufferAll = new StringBuffer()
-         data.getSelectionValues().eachWithIndex{ SelectionValue entry, int i ->
-            StringBuffer buffer = new StringBuffer()
-            bufferAll.append(printSelectionValue(entry, buffer).toString())
+         if(data == null || data == '') {
+            data = ['null']
          }
 
-         file.withPrintWriter { printWriter ->
-            printWriter.println("**level--[label, status, level, value], 0|8[unselectd], 9|1[selected], 2[include], 4[exclude]**" )
-            printWriter.print(bufferAll.toString())
+         if(data instanceof DataSet || data instanceof BoxDataSet) {
+            exportDataSet(fileName, data)
+         }
+         else if(data instanceof TableLens) {
+            exportTableLens(fileName, data, isFormat)
+         }
+         else if(data instanceof SelectionList) {
+            exportSelectionList(fileName, data)
+         }
+         else if(data instanceof StringBuffer) {
+            writeToFile(fileName, data.toString())
+         }
+         else if(data instanceof BufferedImage) {
+            exportBufferedImage(fileName, data)
+         }
+         else if(data != null) {
+            writeToFile(fileName, data.toString())
          }
       }
-      else if(data instanceof StringBuffer) {
-         file.withPrintWriter {printWriter ->
-            printWriter.print(data.toString())
-         }
-      }
-      else if(data instanceof BufferedImage) {
-         ImageIO.write(data, 'png', file)
-      }
-      else if(data != null) {
-         file.withPrintWriter {printWriter ->
-            printWriter.print(data)
-         }
+      catch(Exception e) {
+         throw new RuntimeException("Failed to export VS object to file: ${fileName}", e)
       }
    }
 
@@ -127,46 +85,27 @@ class ExportUtil {
     * @return
     */
    def exportWSObject(String fileName, def data) {
-      File file = new File(fileName)
-      if(!file.getParentFile().exists()) {
-         file.getParentFile().mkdirs()
-      } else if(file.exists()){
-         file.delete()
-      }
+      try {
+         prepareFile(fileName)
 
-      if(data == null || data == '') {
-         data = ['null']
-      }
+         if(data == null || data == '') {
+            data = ['null']
+         }
 
-      if(data instanceof TableLens) {
-         TableLens table = wrapTable(data, true)
-         StringBuffer buffer = new StringBuffer()
-         int row = 0
-         while (table.moreRows(row)) {
-            for(int col = 0; col < table.getColCount(); col++) {
-               buffer.append(table.getObject(row, col))
-               if(table.getColCount() != (col+1)) {
-                  buffer.append(', ')
-               }
-            }
-            buffer.append('\n')
-            row++
+         if(data instanceof TableLens) {
+            exportTableLens(fileName, data, true)
+            // Note: Consider removing this sleep if not necessary for file system synchronization
+            Thread.sleep(FILE_WRITE_DELAY_MS)
          }
-         file.withPrintWriter { printWriter ->
-            printWriter.println("The table size(row x col) is:(" + row + " x " + data.getColCount() + ")")
-            printWriter.print(buffer.toString())
+         else if(data instanceof StringBuffer) {
+            writeToFile(fileName, data.toString())
          }
-         Thread.sleep(1000)
-      }
-      else if(data instanceof StringBuffer) {
-         file.withPrintWriter {printWriter ->
-            printWriter.print(data.toString())
+         else if(data != null) {
+            writeToFile(fileName, data.toString())
          }
       }
-      else if(data != null) {
-         file.withPrintWriter {printWriter ->
-            printWriter.print(data)
-         }
+      catch(Exception e) {
+         throw new RuntimeException("Failed to export WS object to file: ${fileName}", e)
       }
    }
 
@@ -174,28 +113,30 @@ class ExportUtil {
     * return export file path, store by asset path
     * @param asset_id
     * @param packageName
-    * @return
+    * @return export folder path
+    * @throws IllegalArgumentException if asset_id format is invalid
     */
    String getExportFolderPath(String asset_id, String packageName) {
-      String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
-      resourcePath = (packageName == null)? (resourcePath + '/exportData') : (resourcePath + '/exportData/' + packageName)
+      String resourcePath = getResourcePath()
+      resourcePath = (packageName == null) ? (resourcePath + '/exportData') : (resourcePath + '/exportData/' + packageName)
 
       if(asset_id.startsWith('1^128^__')) {
-         return resourcePath +  File.separator + asset_id.substring(asset_id.lastIndexOf('^') + 1)
+         return resourcePath + File.separator + asset_id.substring(asset_id.lastIndexOf('^') + 1)
       }
       else if(asset_id.startsWith('1^2^__')) {
          return resourcePath + File.separator + '/WSExp' + File.separator +
-                  asset_id.substring(asset_id.lastIndexOf('^') + 1)
+                 asset_id.substring(asset_id.lastIndexOf('^') + 1)
       }
       else {
-        new Exception('------the asset_id not right-------------').printStackTrace()
+         throw new IllegalArgumentException("Invalid asset_id format: ${asset_id}")
       }
    }
 
    private StringBuffer printSelectionValue(SelectionValue value, StringBuffer buffer) {
       if(value instanceof CompositeSelectionValue) {
-         if(value.toString().split('SelectionList') != 0) {
-            String str = value.getLevel() + '--' + value.toString().split("\\[SelectionList")[0].
+         String valueStr = value.toString()
+         if(valueStr.contains('SelectionList')) {
+            String str = value.getLevel() + '--' + valueStr.split("\\[SelectionList")[0].
                     toString().replaceAll('SelectionValue', '')
             value.getLevel().times {
                str = ' ' + str
@@ -203,7 +144,7 @@ class ExportUtil {
             buffer.append(str)
             buffer.append('\n')
          }
-         value.getSelectionList().getSelectionValues().eachWithIndex{ SelectionValue entry, int i ->
+         value.getSelectionList().getSelectionValues().eachWithIndex { SelectionValue entry, int i ->
             if(entry instanceof CompositeSelectionValue) {
                printSelectionValue(entry, buffer)
             }
@@ -218,7 +159,7 @@ class ExportUtil {
          }
       }
       else {
-         buffer.append(value.toString().replaceAll('SelectionValue',''))
+         buffer.append(value.toString().replaceAll('SelectionValue', ''))
          buffer.append('\n')
       }
       return buffer
@@ -243,29 +184,150 @@ class ExportUtil {
          }
 
          Object getObject(int r, int c) {
-            return isFormat? format(lens.getObject(r, c)) : lens.getObject(r, c)
+            return isFormat ? format(lens.getObject(r, c)) : lens.getObject(r, c)
          }
       }
    }
 
    private def format(def val) {
-      if (val == null || val == '') {
-         val = 'NULL'
-      } else if (val instanceof java.util.Date && !(val instanceof java.sql.Date) &&
+      if(val == null || val == '') {
+         return NULL_STRING
+      }
+      else if(val instanceof java.util.Date && !(val instanceof java.sql.Date) &&
               !(val instanceof java.sql.Time)) {
-         val = dateformat.format(val)
-      } else if (val instanceof Float || val instanceof Double) {
-         if (val == Float.NaN || val == Double.NaN) {
-            val = 'NaN'
-         } else {
-            val = numformat.format((val as Number).doubleValue())
+         return DATE_FORMAT.get().format(val)
+      }
+      else if(val instanceof Float || val instanceof Double) {
+         double doubleVal = (val as Number).doubleValue()
+         if(Double.isNaN(doubleVal)) {
+            return 'NaN'
+         }
+         else {
+            return NUM_FORMAT.format(doubleVal)
          }
       }
-
       return val
    }
 
-   private final static NumberFormat numformat = new DecimalFormat("#0.####")
-   private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +
-           "HH:mm:ss")
+   /**
+    * Prepare file for writing: create parent directories and delete existing file
+    */
+   private void prepareFile(String fileName) {
+      File file = new File(fileName)
+      File parentFile = file.getParentFile()
+      if(parentFile != null && !parentFile.exists()) {
+         if(!parentFile.mkdirs()) {
+            throw new RuntimeException("Failed to create directory: ${parentFile.absolutePath}")
+         }
+      }
+      if(file.exists() && !file.delete()) {
+         throw new RuntimeException("Failed to delete existing file: ${file.absolutePath}")
+      }
+   }
+
+   /**
+    * Export DataSet or BoxDataSet to file
+    */
+   private void exportDataSet(String fileName, def data) {
+      StringBuilder buffer = new StringBuilder()
+      int colCount = data.colCount
+
+      // Write headers
+      for(int col = 0; col < colCount; col++) {
+         buffer.append(data.getHeader(col))
+         if(col < colCount - 1) {
+            buffer.append(', ')
+         }
+      }
+      buffer.append('\n')
+
+      // Write data rows
+      int rowCount = data.rowCount
+      for(int row = 0; row < rowCount; row++) {
+         for(int col = 0; col < colCount; col++) {
+            buffer.append(format(data.getData(col, row)))
+            if(col < colCount - 1) {
+               buffer.append(', ')
+            }
+         }
+         buffer.append('\n')
+      }
+
+      String content = "The data size(row x col) is:(${rowCount + 1} x ${colCount})\n" + buffer.toString()
+      writeToFile(fileName, content)
+   }
+
+   /**
+    * Export TableLens to file
+    */
+   private void exportTableLens(String fileName, TableLens data, Boolean isFormat) {
+      TableLens table = wrapTable(data, isFormat)
+      StringBuilder buffer = new StringBuilder()
+      int colCount = table.getColCount()
+      int row = 0
+
+      while(table.moreRows(row)) {
+         for(int col = 0; col < colCount; col++) {
+            def obj = table.getObject(row, col)
+            if(obj instanceof DCMergeDatesCell) {
+               obj = ((DCMergeDatesCell) obj).getFormatedOriginalDate()
+            }
+            buffer.append(obj)
+            if(col < colCount - 1) {
+               buffer.append(', ')
+            }
+         }
+         buffer.append('\n')
+         row++
+      }
+
+      String content = "The data size(row x col) is:(${row} x ${colCount})\n" + buffer.toString()
+      writeToFile(fileName, content)
+   }
+
+   /**
+    * Export SelectionList to file
+    */
+   private void exportSelectionList(String fileName, SelectionList data) {
+      StringBuilder bufferAll = new StringBuilder()
+      data.getSelectionValues().eachWithIndex { SelectionValue entry, int i ->
+         StringBuilder buffer = new StringBuilder()
+         bufferAll.append(printSelectionValue(entry, buffer).toString())
+      }
+
+      String content = "**level--[label, status, level, value], 0|8[unselectd], 9|1[selected], 2[include], 4[exclude]**\n" + bufferAll.toString()
+      writeToFile(fileName, content)
+   }
+
+   /**
+    * Export BufferedImage to PNG file
+    */
+   private void exportBufferedImage(String fileName, BufferedImage data) {
+      File file = new File(fileName)
+      if(!ImageIO.write(data, 'png', file)) {
+         throw new RuntimeException("Failed to write image to file: ${fileName}")
+      }
+   }
+
+   /**
+    * Write string content to file
+    */
+   private void writeToFile(String fileName, String content) {
+      File file = new File(fileName)
+      file.withPrintWriter { printWriter ->
+         printWriter.print(content)
+      }
+   }
+
+   /**
+    * Get resource path, cached for performance
+    */
+   private String getResourcePath() {
+      try {
+         return new File(this.class.getResource('/expectData').getPath()).getParent()
+      }
+      catch(Exception e) {
+         throw new RuntimeException("Failed to get resource path", e)
+      }
+   }
 }

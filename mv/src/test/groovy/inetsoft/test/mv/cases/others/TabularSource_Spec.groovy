@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.others
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.Ignore
@@ -18,15 +17,15 @@ class TabularSource_Spec extends Specification {
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'data.gov'() {
       given:
       String asset_id = '1^128^__NULL__^tabular source/data.gov'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter1', 'filter2'] as String[], false, true)
 
       expect:
@@ -37,8 +36,8 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/server file'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
       expect:
@@ -49,8 +48,8 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/odata'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
       expect:
@@ -61,10 +60,10 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/rest json'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
-      materializedViews.createIncrementMV(2)
+      mvtest.createIncrementMV(2)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], true, true)
 
       expect:
@@ -78,8 +77,8 @@ class TabularSource_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^tabular source/mongo'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter', 'brush', 'group'] as String[], false, true)
 
       expect:
@@ -87,5 +86,4 @@ class TabularSource_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

@@ -61,19 +61,38 @@ class ViewsheetTest {
 
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
+
+   /**
+    * Init runtime VS
+    * @return
+    */
+   def initVS() {
+      initVS(null)
+   }
+
    /**
     * Init runtime VS
     * @param params
     * @return
     */
    def initVS(Map<String, String[]> params) {
+      initVS(params, true)
+   }
+
+   /**
+    * Init runtime VS
+    * @param params
+    * @param isViewer
+    * @return
+    */
+   def initVS(Map<String, String[]> params, Boolean isViewer) {
       DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers = new ControllersResource()
       controllers.initControllers()
 
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -84,7 +103,7 @@ class ViewsheetTest {
     * @return
     */
    def executeVS(Map<String, String[]> params, String[] bks) {
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       bks.each {
@@ -102,9 +121,12 @@ class ViewsheetTest {
       initVS(params)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
-      rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+      if(sandboxOpt.isPresent()) {
+         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+      }
 
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = sandboxOpt.get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 
@@ -115,12 +137,12 @@ class ViewsheetTest {
          assemblies.each {
             assemblyName = it.getName()
             //Ignore, and unexport assembly data when assembly is shape,group,selectionContainer, tab
-            if ((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
+            if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
                     it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
                     it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {
                return true
             }
-            if (it instanceof ChartVSAssembly) {
+            if(it instanceof ChartVSAssembly) {
                final VGraphPair pair = sandbox.getVGraphPair(assemblyName, true, null, true, 1)
                data = getVSChartDataSet(pair)
                //GDebug.printDataSet(data, 0)
@@ -131,13 +153,15 @@ class ViewsheetTest {
 
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), sortVSDataSet(data))
-            } else if (it instanceof TableDataVSAssembly) {
+            }
+            else if(it instanceof TableDataVSAssembly) {
                data = sandbox.getVSTableLens(assemblyName, false)
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
             }
          }
-      } catch (Exception ex) {
+      }
+      catch(Exception ex) {
          new Exception("==========execute viewsheet failed:===========", ex).printStackTrace();
       }
    }
@@ -148,21 +172,24 @@ class ViewsheetTest {
    private DataSet getVSChartDataSet(VGraphPair vgraphpair) {
       DataSet data = vgraphpair.getData()
       DataSet filter = data
-      while (true) {
-         if (filter instanceof VSDataSet) {
+      while(true) {
+         if(filter instanceof VSDataSet) {
             break
-         } else if (filter instanceof PairsDataSet) {
+         }
+         else if(filter instanceof PairsDataSet) {
             data = ((PairsDataSet) filter).getDataSet()
-         } else if (filter instanceof DataSetFilter) {
+         }
+         else if(filter instanceof DataSetFilter) {
             boolean useBase = filter instanceof BrushDataSet ||
                     filter instanceof GeoDataSet ||
                     filter instanceof MappedDataSet
             filter = ((DataSetFilter) filter).getDataSet()
 
-            if (useBase) {
+            if(useBase) {
                data = filter
             }
-         } else {
+         }
+         else {
             break
          }
       }
@@ -172,7 +199,7 @@ class ViewsheetTest {
                       .filter(ref -> ref instanceof ChartAggregateRef)
                       .anyMatch(ref -> ((ChartAggregateRef) ref).isDiscrete() &&
                               ((ChartAggregateRef) ref).getCalculator() != null);
-      if (((AbstractDataSet) data).getRowsProjectedForward() > 0 || !discreteCalc ||
+      if(((AbstractDataSet) data).getRowsProjectedForward() > 0 || !discreteCalc ||
               // need to wrap sub-dataset inside IntervalDataSet. (57229)
               data instanceof IntervalDataSet) {
          data = ((AbstractDataSet) data).getFullProjectedDataSet()
@@ -187,12 +214,13 @@ class ViewsheetTest {
     */
    private DataSet sortVSDataSet(DataSet vsDataSet) {
       DataSet sorted
-      if (vsDataSet instanceof FullProjectedDataSet) {
+      if(vsDataSet instanceof FullProjectedDataSet) {
          sorted = new FullProjectedDataSet(getSortedSubdataSets((FullProjectedDataSet) vsDataSet))
-      } else {
+      }
+      else {
          // apply ValueOrder sorting to the data set
          SortedDataSet sorted0 = new SortedDataSet(vsDataSet)
-         for (int i = 0; i < vsDataSet.getColCount(); i++) {
+         for(int i = 0; i < vsDataSet.getColCount(); i++) {
             sorted0.addSortColumn(vsDataSet.getHeader(i), false)
          }
          sorted = sorted0
@@ -204,11 +232,11 @@ class ViewsheetTest {
    private List<AbstractDataSet> getSortedSubdataSets(FullProjectedDataSet dset) {
       List<AbstractDataSet> subDataSets = new ArrayList<>()
 
-      for (AbstractDataSet subSet : dset.getSubDataSets()) {
+      for(AbstractDataSet subSet : dset.getSubDataSets()) {
          // apply ValueOrder sorting to each sub data set
          SortedDataSet sortedSubSet = new SortedDataSet(subSet)
 
-         for (int i = 0; i < subSet.getColCount(); i++) {
+         for(int i = 0; i < subSet.getColCount(); i++) {
             String header = subSet.getHeader(i)
             sortedSubSet.addSortColumn(header, false)
          }
@@ -240,17 +268,22 @@ class ViewsheetTest {
     */
    def exportAsPNG(String[] bks, Map<String, String[]> params, Boolean match, Boolean expandSelection) {
       initVS(params)
-      if (bks == null) {
+      if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.png')
       OutputStream out = new FileOutputStream(outFile)
-      try{
+
+      try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
                  expandSelection, false, false, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      }catch (Exception ex) {
+      }
+      catch(Exception ex) {
          new Exception("==========export PNG failed:===========", ex).printStackTrace();
+      }
+      finally {
+         out.close()
       }
    }
 
@@ -264,7 +297,7 @@ class ViewsheetTest {
     */
    def exportAsPDF(Map<String, String[]> params, String[] bks) {
       initVS(params)
-      if (bks == null) {
+      if(bks == null) {
          bks = ['Home'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.pdf')
@@ -273,8 +306,12 @@ class ViewsheetTest {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
                  false, false, true, false,
                  bks, false, false, null, new ExportResponse(out), principal)
-      }catch (Exception ex) {
+      }
+      catch(Exception ex) {
          new Exception("==========export PDF failed:===========", ex).printStackTrace();
+      }
+      finally {
+         out.close()
       }
 
       Thread.sleep(500)
@@ -298,9 +335,10 @@ class ViewsheetTest {
               (assemblyName != null ? assemblyName : vsName) +
               suffix)
 
-      if (!tempFile.getParentFile().exists()) {
+      if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if (tempFile.exists()) {
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -346,7 +384,7 @@ class ViewsheetTest {
       compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
    }
 
-   private static String asset_id, suiteName, caseName
+   protected static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
 
    ExportUtil exportUtil = new ExportUtil()

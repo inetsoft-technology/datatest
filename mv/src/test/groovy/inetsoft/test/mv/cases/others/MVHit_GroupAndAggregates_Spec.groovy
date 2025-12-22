@@ -1,32 +1,31 @@
 package inetsoft.test.mv.cases.others
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 
 class MVHit_GroupAndAggregates_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'chart1'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -40,10 +39,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -57,17 +55,16 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query3|TopMV', 'Query3|TopMV',
-                                           'Query3|TopMV', 'Query3|TopMV',
-                                           'Query3|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV'])
+                                            'Query3|TopMV', 'Query3|TopMV',
+                                            'Query3|TopMV', 'Query1|TopMV',
+                                            'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -76,15 +73,15 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query3|TopMV', 'Query3|TopMV',
-                                           'Query3|TopMV', 'Query3|TopMV',
-                                           'Query3|TopMV', 'Query3|TopMV'])
+                                            'Query3|TopMV', 'Query3|TopMV',
+                                            'Query3|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -93,15 +90,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart5'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV'])
+                                            'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -110,15 +106,15 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart6'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV'])
+                                            'Query1|TopMV', 'Query1|TopMV',
+                                            'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -127,9 +123,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart7'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -143,9 +139,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart8'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -158,15 +154,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart9'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV', 'Query1|TopMV'])
+                                            'Query1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -175,15 +170,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart10'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV', 'Query1|TopMV'])
+                                            'Query1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -192,14 +186,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart11'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV'])
+                                            'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -208,15 +202,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart12'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query1|TopMV',
-                                           'Query1|TopMV'])
+                                            'Query1|TopMV'])
          mvtest.compareData(false)
       }
 
@@ -226,8 +219,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart13'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -242,8 +235,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/discrete_chart'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -257,8 +250,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-dategroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -272,9 +265,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-namegroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -287,9 +280,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-normalgroup-selectcolnotpublic'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -302,9 +295,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
 
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -318,8 +310,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -333,9 +325,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab2_1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -348,8 +340,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/crosstab3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -363,8 +355,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -378,9 +370,9 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
-      mvtest.executeVS(null, ['(Home)', 'bk1' ] as String[], false, true)
+
+      mvtest.createMV(false)
+      mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -394,8 +386,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
       expect:
@@ -409,8 +401,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -424,8 +416,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/date level is none'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -439,8 +431,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/name group on first aggregate'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
       expect:
@@ -454,8 +446,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/change from'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -469,8 +461,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/value of'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -484,8 +476,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/moving average'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -499,8 +491,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/running total'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -514,8 +506,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^hit mv/percent of'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
       expect:
@@ -526,5 +518,4 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

@@ -31,46 +31,31 @@ class VSExportTest {
    static initHome(String suiteName) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
-      this.suiteName = arrs.length == 1? null : arrs[1].replace('.', '/')
+      this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
    }
 
    /**
-    * test export vs as excel
-    * @param bks
-    * @return
-    */
-   def testExportAsExcel(String[] bks, Boolean match, Boolean expandSelection, Boolean onlyDataComponent) {
-      executeVS(null)
-      if(bks == null) {
-         bks = ['(Home)'] as String[]
-      }
-      File outFile = createFileByCase(caseName, '.xlsx')
-      OutputStream out = new FileOutputStream(outFile)
-
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_EXCEL, match,
-              expandSelection, false, false, false,
-              bks, false, onlyDataComponent, null, new ExportResponse(out), principal)
-
-      tUtil.convertExcelAsPNG(outFile.toString())
-   }
-
-   /**
-    * Test Export VS to HTML
-    * @param bks
-    * @return
+    * Test export viewsheet to HTML format
+    * @param bks bookmark names array, null will use default '(Home)'
+    * @param params parameters map for viewsheet execution
     */
    def testExportAsHtml(String[] bks, Map<String, String[]> params) {
       executeVS(params)
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
+
       File outFile = createFileByCase(caseName, '.html')
       OutputStream out = new FileOutputStream(outFile)
-
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
-              false, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_HTML, true,
+                 false, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
+      finally {
+         out.close()
+      }
    }
 
    /**
@@ -85,11 +70,17 @@ class VSExportTest {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
+
       File outFile = createFileByCase(caseName, '.png')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
-              expandSelection, false, false, false,
-              bks, false, false, null, new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, match,
+                 expandSelection, false, false, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
+      finally {
+         out.close()
+      }
    }
 
    /**
@@ -104,11 +95,18 @@ class VSExportTest {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
+
       File outFile = createFileByCase(caseName, '.zip')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
-              false, false, bks, false, false, csvConfig,
-              new ExportResponse(out), principal)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_CSV, false, false, false,
+                 false, false, bks, false, false, csvConfig,
+                 new ExportResponse(out), principal)
+      }
+      finally {
+         out.close()
+      }
+
       unzipFile(outFile)
    }
 
@@ -124,12 +122,19 @@ class VSExportTest {
       if(bks == null) {
          bks = ['Home'] as String[]
       }
+
       File outFile = createFileByCase(caseName, '.pdf')
       OutputStream out = new FileOutputStream(outFile)
-      viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
-              false, false, true, false,
-              bks, false, false, null, new ExportResponse(out), principal)
-      Thread.sleep(2000)
+      try {
+         viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PDF, true,
+                 false, false, true, false,
+                 bks, false, false, null, new ExportResponse(out), principal)
+      }
+      finally {
+         out.close()
+      }
+
+      Thread.sleep(PDF_EXPORT_WAIT_MS)
       tUtil.convertPDFToPNG(outFile.toString())
    }
 
@@ -142,7 +147,7 @@ class VSExportTest {
       String fileFolder = outFile.getParent().toString() + File.separator
       //clear all csv file
       new File(fileFolder).listFiles().each {
-         if (it.path.endsWith('.csv')) {
+         if(it.path.endsWith('.csv')) {
             it.delete()
          }
       }
@@ -163,7 +168,7 @@ class VSExportTest {
       DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent (params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -176,11 +181,12 @@ class VSExportTest {
    def createFileByCase(String caseName, String suffix) {
       String resourcePath = new File(this.class.getResource('/expectData').getPath()).getParent()
       String fileName = resourcePath + '/exportData' + suiteName
-      File tempFile = new File(fileName + File.separator  + caseName  + File.separator + caseName + suffix)
+      File tempFile = new File(fileName + File.separator + caseName + File.separator + caseName + suffix)
 
       if(!tempFile.getParentFile().exists()) {
          tempFile.getParentFile().mkdirs()
-      } else if(tempFile.exists()){
+      }
+      else if(tempFile.exists()) {
          tempFile.delete()
       }
       return tempFile
@@ -230,6 +236,8 @@ class VSExportTest {
    void compareHTML(String[] fls) {
       compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'HTML')
    }
+
+   private static final int PDF_EXPORT_WAIT_MS = 2000
 
    static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource

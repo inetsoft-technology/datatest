@@ -1,7 +1,6 @@
 package inetsoft.test.mv.cases.others
 
 import inetsoft.test.mv.MVTest
-import inetsoft.test.mv.MaterializedViewResource
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
@@ -9,23 +8,24 @@ import spock.lang.Shared
 import spock.lang.Specification
 
 class AssociationMV_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
+   @Shared
+           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
+                   String[], new String[0])
 
    def setupSpec() {
       MVTest.initHome()
    }
 
    def cleanup() {
-      materializedViews.removeMV()
+      mvtest.removeMV()
    }
 
    def 'TestCase_CalcField1'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -39,8 +39,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -54,8 +54,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompatileSelection'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -69,15 +69,15 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV',
-            'ASSOCIATION_Query1|TopMV', 'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV',
-            'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
+                                            'ASSOCIATION_Query1|TopMV', 'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV',
+                                            'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -87,8 +87,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -103,8 +103,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -119,8 +119,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider4'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -134,14 +134,14 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionlist'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Copy of Query11|TopMV', 'ASSOCIATION_Copy of Query12|TopMV', 'ASSOCIATION_Query1|TopMV',
-            'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
+                                            'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -150,8 +150,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -165,8 +165,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -180,8 +180,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -195,8 +195,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Condition'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -210,8 +210,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_ExpressionCondition'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -225,8 +225,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Formulacol'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -240,8 +240,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Hiddencolumn'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -255,8 +255,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_MaxRow'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -270,8 +270,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_MirrorCondition'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -285,11 +285,11 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_MVCondition1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true, admin)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], true, true)
 
       expect:
@@ -304,11 +304,11 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_MVCondition2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true, admin)
 
-      materializedViews.createIncrementMV(1)
+      mvtest.createIncrementMV(1)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], true, true)
 
       expect:
@@ -323,8 +323,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_NotSupportAssomv'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -338,8 +338,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Rangecol'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -353,8 +353,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_RangeSlider1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -368,8 +368,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_RangeSlider2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -383,8 +383,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_SelectionContainer'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -398,8 +398,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Byte'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -413,8 +413,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Long'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -428,8 +428,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Short'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -443,14 +443,14 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
-            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
+                                            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -460,14 +460,14 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
-            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
+                                            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -476,14 +476,14 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist3'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
-            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
+                                            'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -492,14 +492,14 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_SelectionTree'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Copy of Query11|TopMV', 'ASSOCIATION_Copy of Query12|TopMV', 'ASSOCIATION_Query1|TopMV',
-            'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
+                                            'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -508,8 +508,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableCondition1'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       def params = ['var': ['0.01', '0.05', '0.1'] as String[]]
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -524,8 +524,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableExpresion'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       def params = ['sts': ['CA', 'NJ', 'NY'] as String[]]
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -540,8 +540,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableRanking'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       def params = ['tn': ['20'] as String[]]
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -556,8 +556,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -571,8 +571,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter2'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -586,8 +586,8 @@ class AssociationMV_Spec extends Specification {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Census'
       mvtest = new MVTest(asset_id)
-      materializedViews = new MaterializedViewResource(asset_id)
-      materializedViews.createMV(false)
+
+      mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
@@ -598,5 +598,4 @@ class AssociationMV_Spec extends Specification {
    }
 
    MVTest mvtest
-   MaterializedViewResource materializedViews
 }

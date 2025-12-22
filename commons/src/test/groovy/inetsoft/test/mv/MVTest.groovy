@@ -40,22 +40,13 @@ import java.text.DecimalFormat
 class MVTest {
    MVTest(String asset_id) {
       this.asset_id = asset_id
+      materializedViewResource = new MaterializedViewResource(this.asset_id, controllers)
    }
 
    def static initHome() {
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
-      ControllersResource controllers = new ControllersResource()
+      controllers = new ControllersResource()
       controllers.initControllers()
-   }
-
-   def static initHome(def pro) {
-      initHome()
-      if(pro != null) {
-         pro.each {key, value ->
-            SreeEnv.setProperty(key, value)
-         }
-      }
-      SreeEnv.save()
    }
 
    List getMVDefInfo(List<TableLens> datas) {
@@ -65,17 +56,18 @@ class MVTest {
 
       def allMVInfos = []
       int count = 0
-      for(n in 0..< datas.size()) {
+      for(n in 0..<datas.size()) {
          if(datas[n] != null) {
             def mvInfos = []
             List<MVInfo> list = MVQuery.getMVInfos(datas[n])
 
             if(list != null && list.size() > 0) {
-               for(i in 0..< list.size()) {
+               for(i in 0..<list.size()) {
                   mvInfos[i] = list[i].getMVTable() + "|" + (list[i].isSub() ? "SubMV" :
-                        "TopMV")
+                          "TopMV")
                }
-            }else {
+            }
+            else {
                mvInfos = null
                System.err.println("=========can not hit mv=========")
             }
@@ -129,20 +121,22 @@ class MVTest {
       if(principal == null) {
          principal = createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       }
-      controllers = new ControllersResource()
-      controllers.initControllers()
+
       ThreadContext.setContextPrincipal(principal)
       viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params)
-            , controllers)
+              , controllers)
       viewsheetResource.initRuntimeVS(principal)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       if(bk != null) {
          rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
-         rvs.getViewsheetSandbox().resetAll(new ChangedAssemblyList())
+         Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox();
+         if(sandboxOpt.isPresent()) {
+            sandboxOpt.get().resetAll(new ChangedAssemblyList());
+         }
       }
       Viewsheet vs = rvs.getViewsheet()
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       Assembly[] assemblies = vs.getAssemblies()
       def datas = []
       def assemblyNames = []
@@ -155,14 +149,17 @@ class MVTest {
                assemblyNames.add(it.getName())
                if(it instanceof AssociatedSelectionVSAssembly) {
                   datas.add(((AssociatedSelectionVSAssembly) it).getSelectionList())
-               }else if(it instanceof TimeSliderVSAssembly) {
+               }
+               else if(it instanceof TimeSliderVSAssembly) {
                   datas.add((TimeSliderVSAssembly) it)
-               }else if(it instanceof CalendarVSAssembly) {
+               }
+               else if(it instanceof CalendarVSAssembly) {
                   datas.add((CalendarVSAssembly) it)
                }
             }
-         }else {
-            try{
+         }
+         else {
+            try {
                sandbox.shrink()
                String assemblyName = it.getName()
                def data = sandbox.getData(assemblyName, true, DataMap.NORMAL)
@@ -176,14 +173,15 @@ class MVTest {
                if(data instanceof TableLens) {
                   tableLens[n] = data
                }
-            }catch(Exception e) {
+            }
+            catch(Exception e) {
                e.printStackTrace()
             }
             n++
          }
       }
 
-      for(i in 0..< datas.size()) {
+      for(i in 0..<datas.size()) {
          exportData(datas[i], getExportFilePath(assemblyNames[i] as String,
                  principal, bk, incremental))
       }
@@ -195,7 +193,8 @@ class MVTest {
       File file = new File(fileName)
       if(!file.getParentFile().exists()) {
          file.getParentFile().mkdirs()
-      }else if(file.exists()){
+      }
+      else if(file.exists()) {
          file.delete()
       }
 
@@ -205,36 +204,56 @@ class MVTest {
          data = ['NULL']
       }
 
-      if(data instanceof Object[] && !(data instanceof  TableLens[])) {
+      if(data instanceof Object[] && !(data instanceof TableLens[])) {
          Object[] vals = (Object[]) data
          printWriter.println("The length of the array is: [" + vals.length + "]")
 
          vals.each {
             printWriter.println(format(it))
          }
-      }else if(data instanceof TableLens[]) {
+      }
+      else if(data instanceof TableLens[]) {
          TableLens[] tables = (TableLens[]) data
          tables.each {
             export(it, printWriter)
          }
-      }else if(data instanceof TableLens) {
-         export((TableLens)data, printWriter)
-      }else if(data instanceof SelectionList) {
-         export((SelectionList)data, printWriter)
-      }else if(data instanceof TimeSliderVSAssembly) {
-         export((TimeSliderVSAssembly)data, printWriter)
-      }else if(data instanceof CalendarVSAssembly) {
-         export((CalendarVSAssembly)data, printWriter)
-      }else if(data instanceof ListData) {
-         export((ListData)data, printWriter)
-      }else if(data instanceof StringBuffer) {
+      }
+      else if(data instanceof TableLens) {
+         export((TableLens) data, printWriter)
+      }
+      else if(data instanceof SelectionList) {
+         export((SelectionList) data, printWriter)
+      }
+      else if(data instanceof TimeSliderVSAssembly) {
+         export((TimeSliderVSAssembly) data, printWriter)
+      }
+      else if(data instanceof CalendarVSAssembly) {
+         export((CalendarVSAssembly) data, printWriter)
+      }
+      else if(data instanceof ListData) {
+         export((ListData) data, printWriter)
+      }
+      else if(data instanceof StringBuffer) {
          printWriter.println(data.toString())
-      }else if(data != null) {
+      }
+      else if(data != null) {
          printWriter.println(format(data))
       }
 
       printWriter.flush()
       printWriter.close()
+   }
+
+   def createMV(boolean applyVPM, boolean ... expandGroup) {
+      materializedViewResource.createMV(applyVPM, expandGroup)
+   }
+
+   def removeMV() {
+      materializedViewResource.removeMV()
+   }
+
+   def createIncrementMV(int count) {
+      materializedViewResource.createIncrementMV(count)
    }
 
    def export(TableLens table, def printWriter) {
@@ -243,21 +262,21 @@ class MVTest {
       StringBuffer buffer = new StringBuffer()
       int row = 0
       while(table.moreRows(row)) {
-         for(int col = 0; col < table.getColCount(); col++){
+         for(int col = 0; col < table.getColCount(); col++) {
             buffer.append(table.getObject(row, col))
          }
          buffer.append("\n")
          row++
       }
 
-      printWriter.println("The table size(row x col) is: ("+ row + " x " + table
-            .getColCount() + ")")
+      printWriter.println("The table size(row x col) is: (" + row + " x " + table
+              .getColCount() + ")")
       printWriter.println(buffer.toString())
       printWriter.flush()
    }
 
    def export(SelectionList list, def printWriter) {
-      list = (SelectionList)list.clone()
+      list = (SelectionList) list.clone()
       list.sort(XConstants.SORT_ASC)
       export(list, printWriter, null)
    }
@@ -270,21 +289,21 @@ class MVTest {
          }
          printWriter.print(format(it.getLabel()))
          printWriter.print("   SelectState:" + format(it.getState()))
-         if (it.getMeasureLabel() != null) {
+         if(it.getMeasureLabel() != null) {
             printWriter.print("   Measure:" + format(it.getMeasureLabel()))
          }
          printWriter.println()
 
          if(it instanceof CompositeSelectionValue) {
-            export(((CompositeSelectionValue)it).getSelectionList(), printWriter, (parent ==
-                  null ? "" : parent) + format(it.getLabel()))
+            export(((CompositeSelectionValue) it).getSelectionList(), printWriter, (parent ==
+                    null ? "" : parent) + format(it.getLabel()))
          }
       }
       printWriter.flush()
    }
 
    def export(TimeSliderVSAssembly assembly, def printWriter) {
-      SelectionList slist = (SelectionList)assembly.getSelectionList().clone()
+      SelectionList slist = (SelectionList) assembly.getSelectionList().clone()
       SelectionValue[] values = slist.getSelectionValues()
 
       printWriter.println("The min value is: [" + values[0].getLabel() + "]")
@@ -296,7 +315,7 @@ class MVTest {
    def export(CalendarVSAssembly assembly, def printWriter) {
       String[] ranges = assembly.getRange()
       printWriter.print("The range is: ")
-      ranges.each{
+      ranges.each {
          printWriter.print(format(it))
       }
       printWriter.println()
@@ -304,7 +323,7 @@ class MVTest {
       String[] dates = assembly.getDates()
       printWriter.print("The dates are: ")
       printWriter.print(dates.length == 0 ? "[No Selected]" : "")
-      dates.each{
+      dates.each {
          printWriter.print(format(it))
       }
       printWriter.println()
@@ -312,8 +331,8 @@ class MVTest {
    }
 
    def export(ListData data, def printWriter) {
-      Object[] vals = (Object[])data.getValues()
-      Object[] labels = (Object[])data.getLabels()
+      Object[] vals = (Object[]) data.getValues()
+      Object[] labels = (Object[]) data.getLabels()
       Arrays.sort(vals, new ComparatorImpl())
       Arrays.sort(labels, new ComparatorImpl())
 
@@ -335,26 +354,26 @@ class MVTest {
       File[] expFiles = expFolder.listFiles(incremental ? new IncrementalMVFilter() : new MVFilter())
 
       //if some component is not exported, fail case
-      if (files.length != expFiles.length) {
-         assert false : asset_id + " The file number is different in exp and export"
+      if(files.length != expFiles.length) {
+         assert false: asset_id + " The file number is different in exp and export"
       }
 
       def resArray = []
 
       files.each {
          String resPath = it.getAbsolutePath()
-           resArray.add(new CompareUtil().FileCompare(resPath))
+         resArray.add(new CompareUtil().FileCompare(resPath))
       }
 
       String failedInfo
       resArray.each {
-         if (it.getAt('false') != null) {
+         if(it.getAt('false') != null) {
             failedInfo += "\n" + it.getAt('false') + "\n"
          }
       }
 
-      if (failedInfo != null) {
-         assert false : failedInfo
+      if(failedInfo != null) {
+         assert false: failedInfo
       }
    }
 
@@ -385,7 +404,7 @@ class MVTest {
    String getExportFilePath(String assemblyName, SRPrincipal principal, String bookmark, boolean incremental) {
       String path = getExportFolderPath()
       path += File.separator + principal.getIdentityID().getName() + "_" + assemblyName +
-              (bookmark == '(Home)'? '':  '_'+ bookmark) + (incremental ? MV_INCREMENTAL : MV_EXT) + ".txt"
+              (bookmark == '(Home)' ? '' : '_' + bookmark) + (incremental ? MV_INCREMENTAL : MV_EXT) + ".txt"
 
       return path
    }
@@ -394,18 +413,21 @@ class MVTest {
       String path = new File(this.getClass().getResource("/expectData").getPath()
       ).getParent()
       return path + File.separator + "exportedData" + File.separator + asset_id
-            .substring(asset_id.lastIndexOf("^") + 1)
+              .substring(asset_id.lastIndexOf("^") + 1)
    }
 
    private String format(def val) {
       if(val == null || val == '') {
          val = ['NULL']
-      }else if(val instanceof Date) {
+      }
+      else if(val instanceof Date) {
          val = dateformat.format(val)
-      }else if(val instanceof Float || val instanceof Double) {
-         if(val == Float.NaN || val == Double.NaN){
+      }
+      else if(val instanceof Float || val instanceof Double) {
+         if(val == Float.NaN || val == Double.NaN) {
             val = 'NaN'
-         }else{
+         }
+         else {
             val = numformat.format((val as Number).doubleValue())
          }
       }
@@ -418,7 +440,7 @@ class MVTest {
       IdentityID[] identityRoles = new IdentityID[0]
 
       roles.each { role ->
-         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org'): new IdentityID()
+         IdentityID newRole = role != 'Administrator' ? new IdentityID(role, 'host-org') : new IdentityID()
          newRole.setName(role)
          identityRoles += newRole
       }
@@ -427,8 +449,6 @@ class MVTest {
       principal.setIgnoreLogin(true)
 
       return principal
-
-//      return  new SRPrincipal(identityUser, identityRoles, groups, "host-org", Tool.getSecureRandom().nextLong())
    }
 
    OpenViewsheetEvent createOpenViewsheetEvent(Map<String, String[]> parameters) {
@@ -445,6 +465,7 @@ class MVTest {
    /*
    * use to clean all properties setting for some special testing
    */
+
    static def clearEnv() {
       if(SreeEnv.getProperty('mv.outer.moveUp') != null) {
          SreeEnv.setProperty('mv.outer.moveUp', null)
@@ -463,7 +484,7 @@ class MVTest {
       }
    }
 
-   private class IncrementalMVFilter implements  FileFilter {
+   private class IncrementalMVFilter implements FileFilter {
       @Override
       boolean accept(File file) {
          String fileName = file.getName()
@@ -486,23 +507,24 @@ class MVTest {
          }
 
          if(o1 instanceof Comparable) {
-            return ((Comparable)o1).compareTo(o2)
+            return ((Comparable) o1).compareTo(o2)
          }
 
          if(o2 instanceof Comparable) {
-            return -1*((Comparable)o2).compareTo(o1)
+            return -1 * ((Comparable) o2).compareTo(o1)
          }
 
          return 0
       }
    }
 
-   private ControllersResource controllers
+   private static ControllersResource controllers
+   private static MaterializedViewResource materializedViewResource
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
    private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +
-         "HH:mm:ss")
+           "HH:mm:ss")
    private final String MV_INCREMENTAL = "__MVIncremental"
    private final String MV_EXT = "__MV"
 }
