@@ -256,7 +256,7 @@ class WorksheetTest {
       ThreadContext.setContextPrincipal(admin)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 

@@ -3,7 +3,6 @@ package inetsoft.test.modules
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.sree.security.IdentityID
-import inetsoft.sree.security.SRPrincipal
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.CrosstabVSAssembly
 import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
@@ -11,18 +10,11 @@ import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.uql.viewsheet.TableVSAssembly
 import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.util.ConfigurationContext
-import inetsoft.util.DataSpace
-import inetsoft.util.ThreadContext
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService
 import inetsoft.web.viewsheet.controller.OpenViewsheetController
 import inetsoft.web.viewsheet.controller.OpenViewsheetService
 import inetsoft.web.viewsheet.service.ExportResponse
 
-import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.TUtil
 import org.mockito.MockedStatic
 import static org.mockito.Mockito.*
 
@@ -70,7 +62,7 @@ class VSCalcTest extends ViewsheetTest {
    def checkConvert0(Map<String, String[]> params) {
       initVS(params, false)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
       String assemblyName

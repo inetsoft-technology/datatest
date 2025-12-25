@@ -1,6 +1,5 @@
 package inetsoft.test.modules
 
-import inetsoft.report.TableLens
 import inetsoft.sree.ClientInfo
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.IdentityID
@@ -43,7 +42,7 @@ class VPMTest {
       viewsheetResource.initRuntimeVS(user)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(user)
-      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox()
+      ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 
