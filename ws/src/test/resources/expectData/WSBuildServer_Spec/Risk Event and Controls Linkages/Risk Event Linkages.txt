@@ -1,4 +1,4 @@
-The table size(row x col) is:(417 x 10)
+The data size(row x col) is:(417 x 10)
 Id, Name, Controls, Risk Event Id, Risks, Risk Id, KRIs, Risk Event Id_1, Compliance, Risk Event Id_2
 100007, System or Hardware Failure, 3, 100007, NULL, NULL, NULL, NULL, NULL, NULL
 100040, Member/Customer Growth Inadequate, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL

@@ -1,4 +1,4 @@
-The table size(row x col) is:(338 x 9)
+The data size(row x col) is:(338 x 9)
 Risk Event Id, Id, Question, id_1, controlid, controlname, businessunitname, endofperiod, completed
 NULL, 100958, In case of any new enterprise agreements negotiated, can you confirm that the organisation has adhered to the collective bargaining requirements, including notifying employees of their right to representation, negotiating in good faith, ensuring the mandatory terms are included in the agreement, and following the proper voting and approval process?, NULL, NULL, NULL, NULL, NULL, NULL
 NULL, 100960, Can you confirm that the organisation has not refused or delayed entry to premises to a permit holder, or hindered or obstructed a permit holder in going about their permitted activities, and has not threatened, intimidated or otherwise discouraged employees from participating in discussions with permit holders?, NULL, NULL, NULL, NULL, NULL, NULL

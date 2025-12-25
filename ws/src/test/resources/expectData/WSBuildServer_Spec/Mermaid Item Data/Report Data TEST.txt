@@ -1,2 +1,2 @@
-The table size(row x col) is:(1 x 15)
+The data size(row x col) is:(1 x 15)
 FFICMPN, Item Number, ItemDescription, CW Code, Randon Weight Code, Act Rec, Split Flag, Act Cost, Market Cost, Class, Act 2 Mrkt Rate Calc Rate, Act 2 Mrkt Rate Calc Code, Allocation Override, Broken Case upcharge, FFJQOHH

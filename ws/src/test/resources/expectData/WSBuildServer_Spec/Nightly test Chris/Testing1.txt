@@ -1,4 +1,4 @@
-The table size(row x col) is:(6 x 4)
+The data size(row x col) is:(6 x 4)
 ID, Control Name, Test Objective, Test Scope
 1000000, Annual review and validation of financial models incl. spreadsheets by independent third party evidenced by sign-off, Ensure that model review and validation has occurred., Check the work done on model validation by reviewing a sample of models that have undergone review.  Check that adequate notes on the work performed and any findings exist.  Ensure that owner of the model has actioned the findings.
 

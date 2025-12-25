@@ -1,4 +1,4 @@
-The table size(row x col) is:(2729 x 23)
+The data size(row x col) is:(2729 x 23)
 Date, jmoduedate, Name, Job, Part, Assy, Seq, Est Setup, Est Prod, Ttl Est Hrs, Setup Hrs, Prod Hrs, Good Qty, Scrap Qty, Scrap Cost, OnTime, Late, LateorOntime, Late Hours, On Time Hours, Wkc, jmoproductionstandard, TimecardsGreater
 2018-12-28 03:17:31, NULL, TOILOLO, SAM                                      , 7557P-A             , 54501-1                       , 0, 110, 2, 5.25, 7.25, 0, 14.32, 21, 0, 0, NULL, NULL, OnTime, 0, 0, GRCNC, 4, 0
 2018-12-28 03:17:31, 2018-12-04 16:00:00, TOILOLO, SAM                                      , 7557P               , 54501-1                       , 0, 110, 2, 13, 15, 0, 36.81, 54, 0, 0, NULL, Late, Late, 15, 0, GRCNC, 4, 0

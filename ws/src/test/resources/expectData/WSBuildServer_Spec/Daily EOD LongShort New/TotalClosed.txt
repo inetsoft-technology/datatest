@@ -1,4 +1,4 @@
-The table size(row x col) is:(8 x 5)
+The data size(row x col) is:(8 x 5)
 total_closed_book_daily_pnl, total_closed_position_scenario_date_adjusted, total_closed_ytd_pnl, total_closed_mtd_pnl, total_closed_threeBGRiskCurrency
 -109.9541, 2020-04-03, 841902.6085, -119.8805, GBP
 0, 2020-04-03, -1291702.0029, 0, NOK

@@ -1,4 +1,4 @@
-The table size(row x col) is:(439 x 3)
+The data size(row x col) is:(439 x 3)
 Co, PB Group Code, PB Group Desc
   1,     1, HILLCREST PB FAMILY      
   1,    10, BUTTER-PORTIONS          

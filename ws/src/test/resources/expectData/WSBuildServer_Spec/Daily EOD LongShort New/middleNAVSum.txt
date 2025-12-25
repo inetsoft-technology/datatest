@@ -1,4 +1,4 @@
-The table size(row x col) is:(3 x 6)
+The data size(row x col) is:(3 x 6)
 navsum_position_scenario_date_adjusted, navsum_fund_id, navsum_book_gl_nav, navsum_book_gl_nav_start_of_year, navsum_book_gl_nav_start_of_month, navsum_book_gl_nav_start_of_quarter
 2020-04-03, 542405, 22685704.1068, 33525632.4745, 22576937.7021, 22576937.7021
 2020-04-03, 545379, 33116298.4524, 35020665.2928, 32969626.5382, 32969626.5382

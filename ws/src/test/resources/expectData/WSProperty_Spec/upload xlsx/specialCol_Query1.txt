@@ -1,4 +1,4 @@
-The table size(row x col) is:(15 x 11)
+The data size(row x col) is:(15 x 11)
 col0, col1, col2, col3, col4, col5, col6, col7, col8, col9, col10
 null, null, null, null, null, null, null, null, null, null, null
 null, null, null, null, null, null, null, null, null, null, null

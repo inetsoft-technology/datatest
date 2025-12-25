@@ -1,4 +1,4 @@
-The table size(row x col) is:(275 x 6)
+The data size(row x col) is:(275 x 6)
 id, controlid, controlname, businessunitname, endofperiod, completed
 100460, 100906, Can you confirm that the AML/CTF reporting entity has an enhanced customer due diligence program and that this has been applied to any new or proposed transactions with parties, either physically present in or incorporated in, a foreign prescribed country?, Corporate Office & Strategy, 2019-10-30, Yes
 100461, 100303, Can you confirm that all staff under your direct report have undertaken their mandatory privacy training for the current quarter?, Call Centre, 2019-10-30, No

@@ -1,2 +1,2 @@
-The table size(row x col) is:(1 x 46)
+The data size(row x col) is:(1 x 46)
 shipto_city_repo, vertical_repo, gc, brand, KVI Status, Risk Factor (Vertical Repo), Risk Status, Risk Factor (City Staples), Risk Status 1, GMV Contribution, col10, col11, col12, Average GMV, Vertical, Total Vertical GMV, Average GMV contribution, GMV Contribution %, GMV Contribution Score, Return, col20, col21, col22, Return %, Return/RVP Score, Buyer Retention, Buyer retention rate score, Buyer count, col28, col29, col30, Average No of buyers, col32, Total Vertical Buyers, Buyer Penetration, Buyer Penetration Score, RGM/Kg, Vertical 1, Average RGM/Kg, RGM/Kg Score, A2C%, col41, Factors, Weightage, Final Score, Category

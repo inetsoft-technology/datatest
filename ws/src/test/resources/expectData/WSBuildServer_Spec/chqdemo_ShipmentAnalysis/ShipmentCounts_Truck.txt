@@ -1,2 +1,2 @@
-The table size(row x col) is:(1 x 7)
+The data size(row x col) is:(1 x 7)
 EI File Number, Volume, Weight Chargeable, Mode, Departure Year, Month Number, Departure Quarter

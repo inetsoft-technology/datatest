@@ -1,4 +1,4 @@
-The table size(row x col) is:(36 x 4)
+The data size(row x col) is:(36 x 4)
 customer_id, state, reseller, f_boolean
 1, NJ, 0, False
 2, NJ, 0, False

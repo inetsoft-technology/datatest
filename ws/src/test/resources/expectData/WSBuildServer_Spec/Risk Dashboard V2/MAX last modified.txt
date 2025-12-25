@@ -1,4 +1,4 @@
-The table size(row x col) is:(67 x 2)
+The data size(row x col) is:(67 x 2)
 Last Modified Date, fxRecordId
 2018-09-27 13:24:59, 1000096
 2019-03-07 13:27:22, 1000432

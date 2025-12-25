@@ -1,4 +1,4 @@
-The table size(row x col) is:(3 x 29)
+The data size(row x col) is:(3 x 29)
 city, Baltimore, Dallas, Tucson, New York, Denver, Olympia, Chicago, Newark, Houston, Hartford, Cambridge, York, Los Angeles, New Brunswick, Middletown, Wayne, Boston, San Francisco, Rockville, Albany, Orlando, Las Vegas, Austin, Springfield, Plainfield, Seattle, Boulder, Camden
 order_date, 2002-01-05, 2002-01-05, 2002-01-06, 2002-01-10, 2002-01-11, 2002-01-11, 2002-01-12, 2002-01-15, 2002-01-18, 2002-01-21, 2002-01-21, 2002-02-04, 2002-02-06, 2002-02-12, 2002-02-19, 2002-02-22, 2002-03-01, 2002-03-05, 2002-03-25, 2002-03-31, 2002-04-10, 2002-04-17, 2002-04-20, 2002-04-23, 2002-05-03, 2002-05-14, 2002-06-13, 2002-09-11
 state, MD, TX, AZ, NY, CO, WA, IL, NJ, TX, CT, MA, PA, CA, NJ, NJ, NJ, MA, CA, MD, CA, FL, NV, TX, MA, NJ, WA, CO, NJ

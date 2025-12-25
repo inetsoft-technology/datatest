@@ -1,2 +1,2 @@
-The table size(row x col) is:(1 x 10)
+The data size(row x col) is:(1 x 10)
 event_date, event_time, event_time_microseconds, query_id, revision, size, thread_id, timestamp_ns, trace, trace_type

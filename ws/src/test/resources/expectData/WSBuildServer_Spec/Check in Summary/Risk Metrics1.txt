@@ -1,4 +1,4 @@
-The table size(row x col) is:(11 x 17)
+The data size(row x col) is:(11 x 17)
 Survey Name, Risk ID, user_id, first_name, last_name, email, dob, Reporting Metric, pretty_name, Previous Risk Date, Risk Modified Date, Initial Risk, Previous Risk, Current Risk, Site Name, Company Name, Risk Score
 HealthCi, 293105, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Sleep and Fatigue, How well have you slept, 2020-04-02 21:34:52, 2020-04-02 21:43:24, Elevated, Elevated, Elevated, Laverton, Cummins, 2
 HealthCi, 293106, 44555, Matt, Chitty, matt.chitty@cummins.com, 1978-09-03, Injury Prevention, Level of pain, 2020-04-02 21:34:52, 2020-04-02 21:43:25, Low, Low, Low, Laverton, Cummins, 1
