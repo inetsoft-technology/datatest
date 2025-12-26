@@ -1,4 +1,4 @@
-The table size(row x col) is:(13 x 7)
+The data size(row x col) is:(13 x 7)
 CATEGORY_ID, CATEGORY_NAME, CITY, CUSTOMER_ID, RESELLER, STATE, ZIP
 1, Games, Aachen, 3, true, TX, 03887
 1, Games, Austin, 17, true, TX, 28122

@@ -1,4 +1,4 @@
-The table size(row x col) is:(557 x 13)
+The data size(row x col) is:(557 x 13)
 Qtr, Contract Number, Subscription #, Account: Account Name, Account License Model, ProductCode, Product Name, Contract Term (months), Start Date, End Date, Status, Asset: Product: Product Code, Asset Quantity
 21Q4, 10049, SUB-0010991, ADAMA Agricultural Solutions (Agan), NULL, R-CON-VD-CM-10, Renewal Content-CM-10, 36, 2020-01-22, 2022-12-31, NULL, NULL, NULL
 21Q4, 10067, SUB-0011023, Kwangju Bank, NULL, R-TS-S-CM-1, Renewal Standard Support-CM-1, 36, 2020-02-27, 2023-02-26, NULL, NULL, NULL

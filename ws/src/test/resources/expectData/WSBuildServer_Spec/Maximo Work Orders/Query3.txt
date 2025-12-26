@@ -1,4 +1,4 @@
-The table size(row x col) is:(979 x 8)
+The data size(row x col) is:(979 x 8)
 Work Order, WO Description, Location, Asset, Status, Scheduled Start, Priority, Site
 1000, Relocate Guard Rails Around Compressor, BR300, 11300, COMP, NULL, 2, BEDFORD
 1000, Relocate Guard Rails Around Compressor, BR300, 11300, WAPPR, NULL, 2, BEDFORD

@@ -1,4 +1,4 @@
-The table size(row x col) is:(36 x 8)
+The data size(row x col) is:(36 x 8)
 contact_,id, ,customer_id,, ,first_,name,, ,last_,name,, 1_f, category_=id, =category_name=, _f1
 1, 1, John, Kelly, 1, 1, Games, 1
 2, 2, Lisa, Smith, 2, 2, Educational, 2

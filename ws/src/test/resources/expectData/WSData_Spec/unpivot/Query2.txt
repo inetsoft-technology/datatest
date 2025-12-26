@@ -1,4 +1,4 @@
-The table size(row x col) is:(10 x 6)
+The data size(row x col) is:(10 x 6)
 state, Measure, order_date, f_boolean, order_time, customer_id
 AZ, 2005-10-14, NULL, NULL, NULL, NULL
 CA, 2003-01-13, NULL, NULL, NULL, NULL

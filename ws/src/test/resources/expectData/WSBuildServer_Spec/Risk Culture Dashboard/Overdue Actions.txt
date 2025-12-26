@@ -1,4 +1,4 @@
-The table size(row x col) is:(4 x 2)
+The data size(row x col) is:(4 x 2)
 Period, overdue
 12M, 20
 1M, 36

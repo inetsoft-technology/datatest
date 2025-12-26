@@ -1,4 +1,4 @@
-The table size(row x col) is:(1001 x 34)
+The data size(row x col) is:(1001 x 34)
 Risk Event Id, Name, Description, Risk Owner Name, Risk Id, ID_1, Inherent Risk Rating - Rating Name, Residual Risk Rating - Rating Name, Risk Event Id_1, Id_1_3, id_1_1, kriid, name_1_1, bgcolor, KRI Name, KRI endofperiod, KRI completionbusinessunitname, KRI value, Risk Event Id_2, Id_2, Question, id_1_2, controlid, controlname, businessunitname, endofperiod_1, completed, Risk Event Id_3, Id_3, Control Name, Control Description, Controls Overall Effectiveness, Date of assessment, Control Type
 100007, System or Hardware Failure, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 100007, 100102, Backup Server Tested Quarterly by IT, Control Description, NULL, NULL, CONTROL
 100040, Member/Customer Growth Inadequate, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL

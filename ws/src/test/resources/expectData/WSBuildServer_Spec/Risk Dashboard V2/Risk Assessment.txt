@@ -1,4 +1,4 @@
-The table size(row x col) is:(48 x 22)
+The data size(row x col) is:(48 x 22)
 ID, Business Unit Id, Business Unit Name, Risk Id, Risk Name, Risk Owner Name, Inherent Risk Rating - Consequence, Inherent Risk Rating - Consequence Name, Inherent Risk Rating - Likelihood, Inherent Risk Rating - Likelihood Name, Inherent Risk Rating - Rating Name, Inherent Risk Rating - Total Score, Residual Risk Rating - Likelihood, Residual Risk Rating - Consequence, Residual Risk Rating - Likelihood Name, Residual Risk Rating - Rating Name, Residual Risk Rating - Total Score, Control Effectiveness, Status Name, Table Name, Next Review Date, Overdue
 1000020, 100061, Finance, 100080, Inadequate insurance coverage, protecht.consulting, 4, Major, 4, Likely - Once per year, High, 16, 2, 2, Unlikely - Once in every 10 years, Low, 4, Effective, Approved, table_110160, 2019-09-06, Overdue
 1000024, 100065, People & Culture, 100082, Staff bullying or misconduct, protecht.consulting, 4, Major, 3, Possible  - Once in every 3 years, Moderate, 12, 2, 2, Unlikely - Once in every 10 years, Low, 4, Effective, Approved, table_110160, 2018-12-12, Overdue
