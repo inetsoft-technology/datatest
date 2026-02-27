@@ -79,7 +79,7 @@
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
-                        <include>**/Binding_Spec</include>
+                        <include>**/*_Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
