@@ -6,7 +6,7 @@
 
     <groupId>com.inetsoft.test</groupId>
     <artifactId>datatest</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DataTest</name>
@@ -32,13 +32,13 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.version>1.0.0-SNAPSHOT</project.version>
+        <project.version>1.1.0-SNAPSHOT</project.version>
         <groovy.version>4.0.25</groovy.version>
         <spring.version>6.2.10</spring.version>
         <jackson.version>2.19.2</jackson.version>
         <inetsoft.storage.type>mapdb</inetsoft.storage.type>
         <root.dir>/inetsoft/styleBI/test/datatest-session</root.dir>
-       <!--<root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>-->
+        <!--<root.dir>E:\inetsoft\sr14_0\datatest-session</root.dir>-->
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
     </properties>
 
