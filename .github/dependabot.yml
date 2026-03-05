@@ -4,9 +4,8 @@ updates:
   - package-ecosystem: maven
     directory: /
     schedule:
-      interval: weekly
-      day: sunday
-      time: "09:00"
+      interval: monthly
+      time: "03:00"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 10
     groups:
