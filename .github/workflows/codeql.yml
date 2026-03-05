@@ -5,45 +5,37 @@ on:
     branches: [main, Stateless-Sessions1]
   pull_request:
     branches: [main, Stateless-Sessions1]
-  schedule:
-    - cron: "0 2 * * 1"
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   analyze:
-    name: CodeQL Analyze
     runs-on: ubuntu-latest
 
     permissions:
       security-events: write
       contents: read
-      actions: read
 
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [java]
+    env:
+      MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          server-id: gh-stylebi
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
-          queries: security-extended
+          languages: java
 
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Build for Analysis
+      - name: Build
         run: |
           ./mvnw compile -pl commons -DskipTests -q
 
