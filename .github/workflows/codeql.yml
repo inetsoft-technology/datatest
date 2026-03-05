@@ -1,0 +1,58 @@
+name: CodeQL Security Scan
+
+on:
+  push:
+    branches: [main, Stateless-Sessions1]
+  pull_request:
+    branches: [main, Stateless-Sessions1]
+  schedule:
+    - cron: "0 2 * * 1"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: CodeQL Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [java]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-extended
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build for Analysis
+        run: |
+          ./mvnw compile -pl commons -DskipTests -q
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          upload: true
+
+      - name: Upload SARIF if no analysis fails
+        if: success()
+        uses: github/codeql-action/upload-results@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          sarif_file: results.sarif
