@@ -1,10 +1,6 @@
 name: Scheduled Test Execution
 
 on:
-  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
-  # schedule:
-  #   - cron: '0 1 * * *'
-  # Manual trigger
   workflow_dispatch:
     inputs:
       module:
@@ -15,26 +11,29 @@ on:
         description: 'Test profile (for vsothers and mv module)'
         required: false
         default: ''
+  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
+  # schedule:
+  #   - cron: '0 1 * * *'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Grant execute permission for mvnw
         run: chmod +x mvnw
-      
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      
+
       - name: Configure Maven settings for private repository
         uses: s4u/maven-settings-action@v3.0.0
         with:
@@ -44,28 +43,24 @@ jobs:
               <username>${{ secrets.MAVEN_USERNAME }}</username>
               <password>${{ secrets.MAVEN_PASSWORD }}</password>
             </server>
-      
+
       - name: Initialize environment
         run: |
           ./mvnw clean
           ./mvnw package -pl commons -DskipTests
-      
+
       - name: Run tests
         run: |
           if [ -n "${{ github.event.inputs.module }}" ]; then
-            # Run specified module
             if [ -n "${{ github.event.inputs.profile }}" ]; then
-              # Module with profile (e.g., vsothers)
               ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
             else
-              # Regular module
               ./mvnw test -pl ${{ github.event.inputs.module }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
             fi
           else
-            # Run all modules
             ./mvnw test -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
           fi
-      
+
       - name: Publish Test Report
         if: always()
         uses: dorny/test-reporter@v1
