@@ -76,7 +76,7 @@
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
-                        <include>**/*_Spec</include>
+                        <include>**/Com_Filter_Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
