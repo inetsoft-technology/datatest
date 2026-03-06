@@ -1,0 +1,79 @@
+name: Scheduled Test Execution
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: 'Test module (leave blank for all)'
+        required: false
+        default: ''
+      profile:
+        description: 'Test profile (for vsothers and mv module)'
+        required: false
+        default: ''
+  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
+  # schedule:
+  #   - cron: '0 1 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Grant execute permission for mvnw
+        run: chmod +x mvnw
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Configure Maven settings for private repository
+        uses: s4u/maven-settings-action@v3.0.0
+        with:
+          servers: |
+            <server>
+              <id>gh-stylebi</id>
+              <username>${{ secrets.MAVEN_USERNAME }}</username>
+              <password>${{ secrets.MAVEN_PASSWORD }}</password>
+            </server>
+
+      - name: Initialize environment
+        run: |
+          ./mvnw clean
+          ./mvnw package -pl commons -DskipTests
+
+      - name: Run tests
+        run: |
+          if [ -n "${{ github.event.inputs.module }}" ]; then
+            if [ -n "${{ github.event.inputs.profile }}" ]; then
+              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+            else
+              ./mvnw test -pl ${{ github.event.inputs.module }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+            fi
+          else
+            ./mvnw test -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+          fi
+
+      - name: Publish Test Report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Maven Tests
+          path: '**/target/surefire-reports/*.xml'
+          reporter: java-junit
+
+      - name: Upload Spock reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: spock-reports
+          path: '**/target/spock-reports/'
+          retention-days: 7
+          if-no-files-found: ignore
