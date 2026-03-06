@@ -21,25 +21,39 @@ This is a Maven multi-module project containing the following test modules:
 
 ## Compile and Run Tests
 
-### Prerequisites: Configure root.dir
+### Configure License Key
 
-Before running tests locally, you **must** modify the `root.dir` property in the root `pom.xml` file.
+The project requires a license key to run tests. You can configure it in the following ways:
 
-Open the `pom.xml` file and locate the following configuration:
+#### Option 1: Command Line Parameter
 
-```xml
-<root.dir>/inetsoft/styleBI/test/datatest</root.dir>
-<!-- <root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir> -->
+Pass the license key directly via command line:
+
+```powershell
+# Windows PowerShell
+.mvnw.cmd test -pl vsscript -Dinetsoft.license.key="your-license-key"
+
+# Linux/Mac bash
+./mvnw test -pl vsscript -Dinetsoft.license.key="your-license-key"
 ```
 
-Uncomment the local path and modify it to your actual project path:
+#### Option 2: Environment Variable
 
-```xml
-<!-- <root.dir>/inetsoft/styleBI/test/datatest</root.dir> -->
-<root.dir>E:\inetsoft\sr14_0\test\datatest</root.dir>
+Set the license key as an environment variable:
+
+```powershell
+# Windows PowerShell
+$env:INETSOFT_LICENSE_KEY = "your-license-key"
+.mvnw.cmd test -pl vsscript
+
+# Windows CMD
+set INETSOFT_LICENSE_KEY=your-license-key
+mvnw.cmd test -pl vsscript
+
+# Linux/Mac bash
+export INETSOFT_LICENSE_KEY="your-license-key"
+./mvnw test -pl vsscript
 ```
-
-**Note**: Use backslashes `\` for Windows paths and forward slashes `/` for Linux/Mac paths.
 
 ### Initialize Environment
 
@@ -193,11 +207,10 @@ After pushing your branch, on your Git hosting platform (GitHub, GitLab, etc.):
 
 ## Important Notes
 
-1. **root.dir Configuration**: Must modify the `root.dir` property in `pom.xml` before running tests locally
-2. **commons Module**: Must package the `commons` module before running any tests
-3. **Test Resources**: Ensure test resource files (config files, test data) are correctly placed
-4. **Java Version**: Project requires Java 21
-5. **Memory Settings**: Some tests may require large memory. If encountering out-of-memory errors, adjust JVM parameters
+1. **commons Module**: Must package the `commons` module before running any tests
+2. **Test Resources**: Ensure test resource files (config files, test data) are correctly placed
+3. **Java Version**: Project requires Java 21
+4. **Memory Settings**: Some tests may require large memory. If encountering out-of-memory errors, adjust JVM parameters
 
 ## Docker Environment Testing
 
