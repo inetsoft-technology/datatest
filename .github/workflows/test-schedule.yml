@@ -107,6 +107,10 @@ jobs:
             ./mvnw test -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
           fi
 
+      - name: Generate Surefire HTML report
+        if: always()
+        run: ./mvnw surefire-report:report-only -Daggregate=true
+
       - name: Publish Test Report
         if: always()
         uses: dorny/test-reporter@v1
@@ -114,6 +118,15 @@ jobs:
           name: Maven Tests
           path: '**/target/surefire-reports/*.xml'
           reporter: java-junit
+
+      - name: Upload Surefire HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-html-report
+          path: target/site/
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Upload Spock reports
         if: always()
