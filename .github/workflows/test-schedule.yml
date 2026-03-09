@@ -16,9 +16,77 @@ on:
   #   - cron: '0 1 * * *'
 
 jobs:
+  build-stylebi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      stylebi-sha: ${{ steps.stylebi-sha.outputs.sha }}
+
+    steps:
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Configure Maven settings for private repository
+        uses: s4u/maven-settings-action@v3.0.0
+        with:
+          repositories: |
+            [
+              {
+                "id": "gh-stylebi",
+                "url": "https://maven.pkg.github.com/inetsoft-technology/stylebi",
+                "releases": { "enabled": "true" },
+                "snapshots": { "enabled": "true" }
+              }
+            ]
+          servers: |
+            [
+              {
+                "id": "gh-stylebi",
+                "username": "${{ secrets.MAVEN_USERNAME }}",
+                "password": "${{ secrets.MAVEN_PASSWORD }}"
+              }
+            ]
+
+      - name: Get stylebi-enterprise HEAD commit SHA
+        id: stylebi-sha
+        run: |
+          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
+            "https://api.github.com/repos/inetsoft-technology/stylebi-enterprise/commits/epic-70095" \
+            | jq -r '.sha')
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Cache stylebi-enterprise Maven artifacts
+        id: stylebi-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository/com/inetsoft
+          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}
+
+      - name: Checkout stylebi-enterprise with submodules
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: inetsoft-technology/stylebi-enterprise
+          token: ${{ secrets.MAVEN_PASSWORD }}
+          ref: epic-70095
+          submodules: recursive
+          path: stylebi-enterprise
+
+      - name: Build and install stylebi-enterprise to local Maven cache
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        working-directory: stylebi-enterprise
+        run: |
+          chmod +x mvnw
+          ./mvnw install -DskipTests -T 2C -q -pl '!community/web,!server,!community/server,!docker,!community/docker,!shell'
+
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    needs: build-stylebi
+    timeout-minutes: 60
 
     steps:
       - name: Checkout code
@@ -55,37 +123,11 @@ jobs:
       - name: Check Maven Settings
         run: cat ~/.m2/settings.xml
 
-      - name: Get stylebi-enterprise HEAD commit SHA
-        id: stylebi-sha
-        run: |
-          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
-            "https://api.github.com/repos/inetsoft-technology/stylebi-enterprise/commits/epic-70095" \
-            | jq -r '.sha')
-          echo "sha=$SHA" >> $GITHUB_OUTPUT
-
-      - name: Cache stylebi-enterprise Maven artifacts
-        id: stylebi-cache
-        uses: actions/cache@v4
+      - name: Restore stylebi-enterprise Maven artifacts from cache
+        uses: actions/cache/restore@v4
         with:
           path: ~/.m2/repository/com/inetsoft
-          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}
-
-      - name: Checkout stylebi-enterprise with submodules
-        if: steps.stylebi-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@v4
-        with:
-          repository: inetsoft-technology/stylebi-enterprise
-          token: ${{ secrets.MAVEN_PASSWORD }}
-          ref: epic-70095
-          submodules: recursive
-          path: stylebi-enterprise
-
-      - name: Build and install stylebi-enterprise to local Maven cache
-        if: steps.stylebi-cache.outputs.cache-hit != 'true'
-        working-directory: stylebi-enterprise
-        run: |
-          chmod +x mvnw
-          ./mvnw install -DskipTests -T 2C -q -pl '!community/web,!server,!community/server,!docker,!community/docker,!shell'
+          key: stylebi-enterprise-${{ needs.build-stylebi.outputs.stylebi-sha }}
 
       - name: Grant execute permission for mvnw
         run: chmod +x mvnw
