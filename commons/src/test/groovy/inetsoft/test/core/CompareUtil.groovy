@@ -165,7 +165,6 @@ class CompareUtil {
          return status
       }
       finally {
-         // 确保资源正确释放
          if(resImage != null) {
             resImage.flush()
          }
@@ -250,24 +249,25 @@ class CompareUtil {
          return status
       }
 
-      // 快速失败：文件大小检查
-      if(resFileObj.length() != expFileObj.length()) {
+      // Select comparison strategy based on file type and size
+      boolean isHTMLFile = isHTML || resFile.endsWith('.html')
+
+      // Fast fail: file size check (skip HTML files because cross-platform line ending differences cause size differences, but content is actually the same)
+      if(!isHTMLFile && resFileObj.length() != expFileObj.length()) {
          status.put('false', "Compare Failed, file size is different. " +
                  "Expect file size: ${expFileObj.length()}, Result file size: ${resFileObj.length()}")
          return status
       }
 
-      // 根据文件类型和大小选择比较策略
       long fileSize = resFileObj.length()
-      boolean isHTMLFile = isHTML || resFile.endsWith('.html')
-      long threshold = 200 * 1024  // 200KB 阈值
+      long threshold = 200 * 1024  // 200KB threshold
 
-      // HTML文件：一律使用流式处理（体积可能很大）
+      // HTML files: always use stream processing (files can be very large)
       if(isHTMLFile) {
          return streamCompare(resFile, expFile, charset, true)
       }
 
-      // 文本文件：根据大小选择策略
+      // Text files: select strategy based on size
       if(fileSize > threshold) {
          return streamCompare(resFile, expFile, charset, false)
       }
