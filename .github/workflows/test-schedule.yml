@@ -55,7 +55,23 @@ jobs:
       - name: Check Maven Settings
         run: cat ~/.m2/settings.xml
 
+      - name: Get stylebi-enterprise HEAD commit SHA
+        id: stylebi-sha
+        run: |
+          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
+            "https://api.github.com/repos/inetsoft-technology/stylebi-enterprise/commits/epic-70095" \
+            | jq -r '.sha')
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Cache stylebi-enterprise Maven artifacts
+        id: stylebi-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository/com/inetsoft
+          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}
+
       - name: Checkout stylebi-enterprise with submodules
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v4
         with:
           repository: inetsoft-technology/stylebi-enterprise
@@ -65,6 +81,7 @@ jobs:
           path: stylebi-enterprise
 
       - name: Build and install stylebi-enterprise to local Maven cache
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
         working-directory: stylebi-enterprise
         run: |
           chmod +x mvnw
