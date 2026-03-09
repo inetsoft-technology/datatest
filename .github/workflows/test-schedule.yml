@@ -156,7 +156,7 @@ jobs:
 
       - name: Generate Surefire HTML report
         if: always()
-        run: ./mvnw surefire-report:report-only -Daggregate=true
+        run: ./mvnw surefire-report:report-only
 
       - name: Publish Test Report
         if: always()
@@ -171,7 +171,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surefire-html-report
-          path: target/site/
+          path: '**/target/site/'
           retention-days: 7
           if-no-files-found: ignore
 
