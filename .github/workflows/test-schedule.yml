@@ -68,7 +68,7 @@ jobs:
         working-directory: stylebi-enterprise
         run: |
           chmod +x mvnw
-          ./mvnw install -DskipTests -T 2C -q -pl '!web,!server,!shell,!docker'
+          ./mvnw install -DskipTests -T 2C -q -pl '!community/web,!server,!community/server,!docker,!community/docker,!shell'
 
       - name: Grant execute permission for mvnw
         run: chmod +x mvnw
