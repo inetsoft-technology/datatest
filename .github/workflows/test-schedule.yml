@@ -154,27 +154,6 @@ jobs:
             ./mvnw test -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
           fi
 
-      - name: Generate Surefire HTML report
-        if: always()
-        run: |
-          echo "=== XML reports found ==="
-          find . -path "*/target/surefire-reports/TEST-*.xml" | head -20
-          echo "=== Running surefire-report:report-only ==="
-          if [ -n "${{ github.event.inputs.module }}" ]; then
-            ./mvnw surefire-report:report-only -pl ${{ github.event.inputs.module }}
-          else
-            MODULES=$(find . -path "*/target/surefire-reports/TEST-*.xml" \
-              | sed 's|/target/surefire-reports/.*||' | sed 's|^\./||' \
-              | sort -u | tr '\n' ',' | sed 's/,$//')
-            [ -n "$MODULES" ] && ./mvnw surefire-report:report-only -pl "$MODULES"
-          fi
-          echo "=== surefire-report.html search ==="
-          find . -name "surefire-report.html" 2>/dev/null
-          echo "=== any HTML under target ==="
-          find . -name "*.html" -path "*/target/*" 2>/dev/null | head -20
-          echo "=== vsexport/target/ top-level ==="
-          ls -la vsexport/target/ 2>/dev/null || echo "vsexport/target/ not found"
-
       - name: Publish Test Report
         if: always()
         uses: dorny/test-reporter@v1
@@ -182,15 +161,6 @@ jobs:
           name: Maven Tests
           path: '**/target/surefire-reports/*.xml'
           reporter: java-junit
-
-      - name: Upload Surefire HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: surefire-html-report
-          path: '**/target/site/'
-          retention-days: 7
-          if-no-files-found: ignore
 
       - name: Generate diff images HTML report
         if: always()
