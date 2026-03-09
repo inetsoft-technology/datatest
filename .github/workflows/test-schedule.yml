@@ -28,7 +28,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven
 
       - name: Configure Maven settings for private repository
         uses: s4u/maven-settings-action@v3.0.0
@@ -75,6 +74,15 @@ jobs:
           ref: epic-70095
           submodules: recursive
           path: stylebi-enterprise
+
+      - name: Cache Maven dependencies for stylebi build
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-stylebi-deps-${{ hashFiles('stylebi-enterprise/**/pom.xml') }}
+          restore-keys: |
+            maven-stylebi-deps-
 
       - name: Build and install stylebi-enterprise to local Maven cache
         if: steps.stylebi-cache.outputs.cache-hit != 'true'
