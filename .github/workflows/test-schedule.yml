@@ -18,14 +18,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Grant execute permission for mvnw
-        run: chmod +x mvnw
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -57,6 +54,24 @@ jobs:
 
       - name: Check Maven Settings
         run: cat ~/.m2/settings.xml
+
+      - name: Checkout stylebi-enterprise with submodules
+        uses: actions/checkout@v4
+        with:
+          repository: inetsoft-technology/stylebi-enterprise
+          token: ${{ secrets.MAVEN_PASSWORD }}
+          ref: epic-70095
+          submodules: recursive
+          path: stylebi-enterprise
+
+      - name: Build and install stylebi-enterprise to local Maven cache
+        working-directory: stylebi-enterprise
+        run: |
+          chmod +x mvnw
+          ./mvnw install -DskipTests -T 2C -q
+
+      - name: Grant execute permission for mvnw
+        run: chmod +x mvnw
 
       - name: Initialize environment
         run: |
