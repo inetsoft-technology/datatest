@@ -168,8 +168,12 @@ jobs:
               | sort -u | tr '\n' ',' | sed 's/,$//')
             [ -n "$MODULES" ] && ./mvnw surefire-report:report-only -pl "$MODULES"
           fi
-          echo "=== target/site contents ==="
-          find . -path "*/target/site*" | head -20
+          echo "=== surefire-report.html search ==="
+          find . -name "surefire-report.html" 2>/dev/null
+          echo "=== any HTML under target ==="
+          find . -name "*.html" -path "*/target/*" 2>/dev/null | head -20
+          echo "=== vsexport/target/ top-level ==="
+          ls -la vsexport/target/ 2>/dev/null || echo "vsexport/target/ not found"
 
       - name: Publish Test Report
         if: always()
@@ -199,11 +203,24 @@ jobs:
           <style>
             body { font-family: sans-serif; margin: 20px; }
             h1 { color: #333; }
-            .case { margin: 24px 0; border: 1px solid #ddd; border-radius: 4px; padding: 16px; }
-            .case h3 { margin: 0 0 12px; color: #c00; word-break: break-all; }
-            .case img { max-width: 100%; border: 1px solid #ccc; display: block; }
+            .case { margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; }
+            .toggle { display:block; width:100%; padding: 10px 14px; background:#fff0f0;
+                      border:none; text-align:left; cursor:pointer; color:#c00;
+                      font-size:0.95em; word-break:break-all; font-family:sans-serif; }
+            .toggle:hover { background:#ffe0e0; }
+            .toggle::before { content: '▶ '; font-size:0.8em; }
+            .toggle.open::before { content: '▼ '; }
+            .img-wrap { display:none; padding:12px; }
+            .img-wrap img { max-width:100%; border:1px solid #ccc; display:block; }
             .none { color: #666; }
           </style>
+          <script>
+            function toggle(btn) {
+              btn.classList.toggle('open');
+              var wrap = btn.nextElementSibling;
+              wrap.style.display = wrap.style.display === 'block' ? 'none' : 'block';
+            }
+          </script>
           </head><body><h1>Failed Test Diff Images</h1>
           HTMLEOF
 
@@ -212,7 +229,7 @@ jobs:
             found=1
             rel=$(echo "$img" | sed 's|^\./||' | sed 's|target/test-classes/exportData/||')
             b64=$(base64 -w 0 "$img")
-            echo "<div class='case'><h3>${rel}</h3><img src='data:image/png;base64,${b64}'/></div>" >> "$OUT"
+            echo "<div class='case'><button class='toggle' onclick='toggle(this)'>${rel}</button><div class='img-wrap'><img src='data:image/png;base64,${b64}'/></div></div>" >> "$OUT"
           done < <(find . -path "*/target/test-classes/exportData/*_diff.png" -print0 2>/dev/null)
 
           if [ "$found" -eq 0 ]; then
