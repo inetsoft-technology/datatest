@@ -156,7 +156,15 @@ jobs:
 
       - name: Generate Surefire HTML report
         if: always()
-        run: ./mvnw surefire-report:report-only
+        run: |
+          if [ -n "${{ github.event.inputs.module }}" ]; then
+            ./mvnw surefire-report:report-only -pl ${{ github.event.inputs.module }}
+          else
+            MODULES=$(find . -path "*/target/surefire-reports/TEST-*.xml" \
+              | sed 's|/target/surefire-reports/.*||' | sed 's|^\./||' \
+              | sort -u | tr '\n' ',' | sed 's/,$//')
+            [ -n "$MODULES" ] && ./mvnw surefire-report:report-only -pl "$MODULES"
+          fi
 
       - name: Publish Test Report
         if: always()
@@ -172,6 +180,47 @@ jobs:
         with:
           name: surefire-html-report
           path: '**/target/site/'
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Generate diff images HTML report
+        if: always()
+        run: |
+          OUT="target/diff-images-report.html"
+          mkdir -p target
+          cat > "$OUT" << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html><head><meta charset="UTF-8"><title>Test Diff Images</title>
+          <style>
+            body { font-family: sans-serif; margin: 20px; }
+            h1 { color: #333; }
+            .case { margin: 24px 0; border: 1px solid #ddd; border-radius: 4px; padding: 16px; }
+            .case h3 { margin: 0 0 12px; color: #c00; word-break: break-all; }
+            .case img { max-width: 100%; border: 1px solid #ccc; display: block; }
+            .none { color: #666; }
+          </style>
+          </head><body><h1>Failed Test Diff Images</h1>
+          HTMLEOF
+
+          found=0
+          while IFS= read -r -d '' img; do
+            found=1
+            rel=$(echo "$img" | sed 's|^\./||' | sed 's|src/test/resources/exportData/||')
+            b64=$(base64 -w 0 "$img")
+            echo "<div class='case'><h3>${rel}</h3><img src='data:image/png;base64,${b64}'/></div>" >> "$OUT"
+          done < <(find . -path "*/src/test/resources/exportData/*_diff.png" -print0 2>/dev/null)
+
+          if [ "$found" -eq 0 ]; then
+            echo "<p class='none'>No diff images found.</p>" >> "$OUT"
+          fi
+          echo "</body></html>" >> "$OUT"
+
+      - name: Upload diff images report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diff-images-report
+          path: target/diff-images-report.html
           retention-days: 7
           if-no-files-found: ignore
 
