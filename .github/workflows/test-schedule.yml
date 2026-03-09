@@ -38,11 +38,13 @@ jobs:
         uses: s4u/maven-settings-action@v3.0.0
         with:
           servers: |
-            <server>
-              <id>gh-stylebi</id>
-              <username>${{ secrets.MAVEN_USERNAME }}</username>
-              <password>${{ secrets.MAVEN_PASSWORD }}</password>
-            </server>
+            [
+              {
+                "id": "gh-stylebi",
+                "username": "${{ secrets.MAVEN_USERNAME }}",
+                "password": "${{ secrets.MAVEN_PASSWORD }}"
+              }
+            ]
 
       - name: Initialize environment
         run: |
