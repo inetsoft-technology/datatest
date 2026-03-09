@@ -128,9 +128,6 @@ jobs:
               }
             ]
 
-      - name: Check Maven Settings
-        run: cat ~/.m2/settings.xml
-
       - name: Restore stylebi-enterprise Maven artifacts from cache
         uses: actions/cache/restore@v4
         with:
