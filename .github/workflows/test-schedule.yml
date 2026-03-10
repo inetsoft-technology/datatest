@@ -277,7 +277,7 @@ jobs:
                       actual_b64 = base64.b64encode(actual_content.encode("utf-8")).decode()
                       f.write(
                           f"<div class='case'>"
-                          f"<button class='toggle' onclick='toggle(this.nextElementSibling) || this.classList.toggle(\"open\")'>{html.escape(rel)}</button>"
+                          f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>"
                           f"<div class='frame-wrap'>"
                           f"<div class='frame-row'>"
                           f"<div class='frame-col'>"
