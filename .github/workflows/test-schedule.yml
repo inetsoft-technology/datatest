@@ -253,13 +253,14 @@ jobs:
             .toggle::before { content: '\\25B6 '; font-size:0.8em; }
             .toggle.open::before { content: '\\25BC '; }
             .frame-wrap { display:none; padding:12px; }
-            .frame-row { display:flex; gap:8px; }
-            .frame-col { flex:1; min-width:0; }
+            .frame-row { display:flex; gap:8px; overflow-x:auto; }
+            .frame-col { flex:1; min-width:800px; }
             .frame-label { font-size:12px; font-weight:bold; margin-bottom:4px;
                            padding: 3px 8px; border-radius:3px; }
             .label-expect { background:#e8f4e8; color:#2a6a2a; }
             .label-actual { background:#fde8e8; color:#8b0000; }
-            iframe { width:100%; height:500px; border:1px solid #ccc; border-radius:3px; }
+            iframe { width:100%; height:600px; min-height:200px; border:1px solid #ccc; border-radius:3px;
+                     resize:vertical; overflow:auto; display:block; }
             .none { color: #666; }
           </style>
           <script>
