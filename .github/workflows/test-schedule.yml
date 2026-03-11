@@ -67,7 +67,7 @@ jobs:
 
       - name: Checkout stylebi-enterprise with submodules
         if: steps.stylebi-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: inetsoft-technology/stylebi-enterprise
           token: ${{ secrets.MAVEN_PASSWORD }}
@@ -103,7 +103,7 @@ jobs:
           echo "127.0.0.1 db2_server" | sudo tee -a /etc/hosts
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Java
         uses: actions/setup-java@v4
