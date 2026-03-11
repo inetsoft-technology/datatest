@@ -21,6 +21,7 @@ jobs:
     timeout-minutes: 60
     outputs:
       stylebi-sha: ${{ steps.stylebi-sha.outputs.sha }}
+      community-sha: ${{ steps.community-sha.outputs.sha }}
 
     steps:
       - name: Set up Java
@@ -58,12 +59,20 @@ jobs:
             | jq -r '.sha')
           echo "sha=$SHA" >> $GITHUB_OUTPUT
 
+      - name: Get stylebi (community) HEAD commit SHA
+        id: community-sha
+        run: |
+          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
+            "https://api.github.com/repos/inetsoft-technology/stylebi/commits/epic-70095" \
+            | jq -r '.sha')
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
       - name: Cache stylebi-enterprise Maven artifacts
         id: stylebi-cache
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository/com/inetsoft
-          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}
+          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}-community-${{ steps.community-sha.outputs.sha }}
 
       - name: Checkout stylebi-enterprise with submodules
         if: steps.stylebi-cache.outputs.cache-hit != 'true'
@@ -137,7 +146,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ~/.m2/repository/com/inetsoft
-          key: stylebi-enterprise-${{ needs.build-stylebi.outputs.stylebi-sha }}
+          key: stylebi-enterprise-${{ needs.build-stylebi.outputs.stylebi-sha }}-community-${{ needs.build-stylebi.outputs.community-sha }}
 
       - name: Grant execute permission for mvnw
         run: chmod +x mvnw
@@ -169,11 +178,57 @@ jobs:
 
       - name: Generate diff images HTML report
         if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          OUT="target/diff-images-report.html"
-          mkdir -p target
-          cat > "$OUT" << 'HTMLEOF'
-          <!DOCTYPE html>
+          python3 - << 'PYEOF'
+          import os, glob, base64, json, html, urllib.request, urllib.error, time
+
+          out_path = "target/diff-images-report.html"
+          os.makedirs("target", exist_ok=True)
+
+          github_token = os.environ.get("GITHUB_TOKEN", "")
+
+          def analyze_image(b64_img, token):
+              if not token:
+                  return ""
+              payload = {
+                  "model": "gpt-4o",
+                  "messages": [{
+                      "role": "user",
+                      "content": [
+                          {"type": "text", "text": (
+                              "This is a UI automated test diff image showing a comparison between expected and actual results. "
+                              "Please analyze the visual differences and describe: "
+                              "1) What specific UI elements differ, "
+                              "2) The likely cause of the test failure. "
+                              "Be concise and specific."
+                          )},
+                          {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{b64_img}"}}
+                      ]
+                  }],
+                  "max_tokens": 400
+              }
+              req = urllib.request.Request(
+                  "https://models.inference.ai.azure.com/chat/completions",
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=60) as resp:
+                      data = json.loads(resp.read().decode("utf-8"))
+                      return data["choices"][0]["message"]["content"]
+              except Exception as e:
+                  print(f"  AI analysis failed: {e}")
+                  return ""
+
+          diff_images = []
+          for path in glob.glob("./**/target/test-classes/exportData/**/*_diff.png", recursive=True):
+              rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
+              diff_images.append((rel, path))
+
+          with open(out_path, "w", encoding="utf-8") as f:
+              f.write("""<!DOCTYPE html>
           <html><head><meta charset="UTF-8"><title>Test Diff Images</title>
           <style>
             body { font-family: sans-serif; margin: 20px; }
@@ -183,10 +238,14 @@ jobs:
                       border:none; text-align:left; cursor:pointer; color:#c00;
                       font-size:0.95em; word-break:break-all; font-family:sans-serif; }
             .toggle:hover { background:#ffe0e0; }
-            .toggle::before { content: '▶ '; font-size:0.8em; }
-            .toggle.open::before { content: '▼ '; }
+            .toggle::before { content: '\\25B6 '; font-size:0.8em; }
+            .toggle.open::before { content: '\\25BC '; }
             .img-wrap { display:none; padding:12px; }
             .img-wrap img { max-width:100%; border:1px solid #ccc; display:block; }
+            .ai-box { margin-top:12px; padding:12px; background:#f0f7ff;
+                      border:1px solid #b0d4f1; border-radius:4px; }
+            .ai-box h3 { margin:0 0 8px 0; color:#1a5f9e; font-size:0.9em; }
+            .ai-box p { margin:0; font-size:0.9em; white-space:pre-wrap; line-height:1.6; }
             .none { color: #666; }
           </style>
           <script>
@@ -197,20 +256,31 @@ jobs:
             }
           </script>
           </head><body><h1>Failed Test Diff Images</h1>
-          HTMLEOF
+          """)
 
-          found=0
-          while IFS= read -r -d '' img; do
-            found=1
-            rel=$(echo "$img" | sed 's|^\./||' | sed 's|target/test-classes/exportData/||')
-            b64=$(base64 -w 0 "$img")
-            echo "<div class='case'><button class='toggle' onclick='toggle(this)'>${rel}</button><div class='img-wrap'><img src='data:image/png;base64,${b64}'/></div></div>" >> "$OUT"
-          done < <(find . -path "*/target/test-classes/exportData/*_diff.png" -print0 2>/dev/null)
+              if diff_images:
+                  for i, (rel, path) in enumerate(diff_images):
+                      with open(path, "rb") as img_f:
+                          b64 = base64.b64encode(img_f.read()).decode("utf-8")
+                      print(f"Analyzing [{i+1}/{len(diff_images)}]: {rel}")
+                      ai_text = analyze_image(b64, github_token)
+                      if i < len(diff_images) - 1:
+                          time.sleep(1)  # avoid rate limiting
+                      f.write(f"<div class='case'>")
+                      f.write(f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>")
+                      f.write(f"<div class='img-wrap'>")
+                      f.write(f"<img src='data:image/png;base64,{b64}'/>")
+                      if ai_text:
+                          f.write(f"<div class='ai-box'><h3>&#129302; AI Analysis</h3>"
+                                  f"<p>{html.escape(ai_text)}</p></div>")
+                      f.write(f"</div></div>\n")
+              else:
+                  f.write("<p class='none'>No diff images found.</p>")
 
-          if [ "$found" -eq 0 ]; then
-            echo "<p class='none'>No diff images found.</p>" >> "$OUT"
-          fi
-          echo "</body></html>" >> "$OUT"
+              f.write("</body></html>")
+
+          print(f"Report generated: {out_path} ({len(diff_images)} diff image(s))")
+          PYEOF
 
       - name: Upload diff images report
         if: always()
