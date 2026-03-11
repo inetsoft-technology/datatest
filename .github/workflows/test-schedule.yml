@@ -397,3 +397,12 @@ jobs:
           path: '**/target/spock-reports/'
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Upload exportData directory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exportData
+          path: '**/target/test-classes/exportData/'
+          retention-days: 7
+          if-no-files-found: ignore
