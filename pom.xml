@@ -40,6 +40,7 @@
         <root.dir>${maven.multiModuleProjectDirectory}</root.dir>
         <plugin.dir>${root.dir}/docker/src/test/resources/plugins</plugin.dir>
         <inetsoft.license.key>${env.INETSOFT_LICENSE_KEY}</inetsoft.license.key>
+        <use.testcontainers>false</use.testcontainers>
     </properties>
 
     <dependencies>
@@ -161,6 +162,14 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>5.13.0</version>
+        </dependency>
+
+        <!-- Testcontainers dependencies -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>1.19.8</version>
+            <scope>test</scope>
         </dependency>
 
         <!--load plugin from local for testing env -->

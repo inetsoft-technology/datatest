@@ -212,6 +212,49 @@ After pushing your branch, on your Git hosting platform (GitHub, GitLab, etc.):
 3. **Java Version**: Project requires Java 21
 4. **Memory Settings**: Some tests may require large memory. If encountering out-of-memory errors, adjust JVM parameters
 
+## Testcontainers Configuration
+
+The project supports using Testcontainers to automatically start database containers for testing. This is controlled by the `use.testcontainers` parameter.
+
+### Enable Testcontainers
+
+Add the `-Duse.testcontainers=true` parameter when running tests:
+
+```powershell
+# Windows PowerShell
+.mvnw.cmd test -pl vsothers -Pvscalc -Duse.testcontainers=true
+
+# Linux/Mac bash
+./mvnw test -pl vsothers -Pvscalc -Duse.testcontainers=true
+```
+
+### Hosts File Configuration
+
+When `use.testcontainers=true`, you need to add the following entries to your system's hosts file to map database hostnames to localhost.
+
+**Example:**
+
+```
+127.0.0.1 mysql_server
+127.0.0.1 db2_server
+```
+
+> **Note:** The actual hostnames depend on the databases used in your specific tests. Please refer to your test case configurations to determine which host entries are required.
+
+#### Windows
+Edit the file `C:\Windows\System32\drivers\etc\hosts` with administrator privileges.
+
+#### Linux/Mac
+Edit the file `/etc/hosts` with sudo:
+```bash
+sudo nano /etc/hosts
+```
+
+### Disable Testcontainers
+
+By default, Testcontainers is disabled (`use.testcontainers=false`). Tests will use pre-configured database connections instead of starting containers.
+
+
 ## Docker Environment Testing
 
 Docker environment testing configuration is pending (@TODO)

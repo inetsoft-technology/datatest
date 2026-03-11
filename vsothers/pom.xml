@@ -88,6 +88,7 @@
                         <com.athaydes.spockframework.report.outputDir>target/spock-reports</com.athaydes.spockframework.report.outputDir>
                         <disable.updateAssetDependencies>true</disable.updateAssetDependencies>
                         <sree.home>target/test-resources/server/config-${test.module}</sree.home>
+                        <use.testcontainers>${use.testcontainers}</use.testcontainers>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

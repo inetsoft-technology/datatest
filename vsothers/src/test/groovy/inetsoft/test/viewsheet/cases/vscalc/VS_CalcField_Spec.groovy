@@ -1,15 +1,40 @@
 package inetsoft.test.viewsheet.cases.vscalc
 
 import inetsoft.test.modules.ViewsheetTest
+import org.testcontainers.containers.FixedHostPortGenericContainer
+import org.testcontainers.containers.wait.strategy.Wait
+import java.time.Duration
 import spock.lang.IgnoreRest
 import spock.lang.Specification
 
 class VS_CalcField_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
+   static FixedHostPortGenericContainer mysqlContainer
+   static FixedHostPortGenericContainer db2Container
 
    def setupSpec() {
+      if (Boolean.getBoolean("use.testcontainers")) {
+         mysqlContainer = new FixedHostPortGenericContainer<>("ghcr.io/bonnieshi43/inetsoft-dbs/inetsoft-dbs-mysql:8.0.12")
+            .withFixedExposedPort(3306, 3306)
+            .waitingFor(Wait.forLogMessage(".*ready for connections.*", 2)
+               .withStartupTimeout(Duration.ofMinutes(3)))
+
+         db2Container = new FixedHostPortGenericContainer<>("ghcr.io/bonnieshi43/inetsoft-dbs/inetsoft-dbs-db2:10.5")
+            .withFixedExposedPort(50000, 50000)
+            .waitingFor(Wait.forLogMessage(".*DB2START processing was successful.*", 1)
+               .withStartupTimeout(Duration.ofMinutes(5)))
+
+         mysqlContainer.start()
+         db2Container.start()
+      }
+
       ViewsheetTest.initHome(this.class.getName())
+   }
+
+   def cleanupSpec() {
+      mysqlContainer?.stop()
+      db2Container?.stop()
    }
 
    /*
