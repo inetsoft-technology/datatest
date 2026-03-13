@@ -1,4 +1,4 @@
-name: VSExport Module Tests
+name: VsOthers Module Tests
 
 on:
   workflow_dispatch:
@@ -160,14 +160,31 @@ jobs:
           ./mvnw clean
           ./mvnw package -pl commons -DskipTests
 
-      - name: Run vsexport tests
-        run: ./mvnw test -pl vsexport -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+      - name: Run vs-calcfield tests
+        run: |
+          ./mvnw test -pl vsothers -Pvscalc -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Run vscrosstab tests
+        run: |
+          ./mvnw test -pl vsothers -Pvscrosstab -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Run vsfreehand tests
+        run: |
+          ./mvnw test -pl vsothers -Pvsfreehand -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Run otherassembly tests
+        run: |
+          ./mvnw test -pl vsothers -Potherassembly -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Run vspara tests
+        run: |
+          ./mvnw test -pl vsothers -Pvspara -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Publish Test Report
         if: always()
         uses: dorny/test-reporter@v1
         with:
-          name: VSExport Maven Tests
+          name: VsOthers Maven Tests
           path: '**/target/surefire-reports/*.xml'
           reporter: java-junit
 
@@ -181,7 +198,7 @@ jobs:
           os.makedirs("target", exist_ok=True)
 
           diff_images = []
-          for path in glob.glob("./vsexport/target/test-classes/exportData/**/*_diff.png", recursive=True):
+          for path in glob.glob("./vsothers/target/test-classes/exportData/**/*_diff.png", recursive=True):
               rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
               diff_images.append((rel, path))
 
@@ -234,7 +251,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-diff-images-report
+          name: vsothers-diff-images-report
           path: target/diff-images-report.html
           retention-days: 7
           if-no-files-found: ignore
@@ -249,7 +266,7 @@ jobs:
           os.makedirs("target", exist_ok=True)
 
           cases = []
-          for actual_path in glob.glob("./vsexport/target/test-classes/exportData/**/*.html", recursive=True):
+          for actual_path in glob.glob("./vsothers/target/test-classes/exportData/**/*.html", recursive=True):
               expect_path = actual_path.replace("/exportData/", "/expectData/")
               if not os.path.exists(expect_path):
                   continue
@@ -325,7 +342,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-html-diff-report
+          name: vsothers-html-diff-report
           path: target/html-diff-report.html
           retention-days: 7
           if-no-files-found: ignore
@@ -334,8 +351,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-spock-reports
-          path: 'vsexport/target/spock-reports/'
+          name: vsothers-spock-reports
+          path: 'vsothers/target/spock-reports/'
           retention-days: 7
           if-no-files-found: ignore
 
@@ -343,7 +360,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-exportData
-          path: 'vsexport/target/test-classes/exportData/'
+          name: vsothers-exportData
+          path: 'vsothers/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore

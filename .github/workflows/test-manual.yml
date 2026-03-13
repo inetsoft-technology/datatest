@@ -259,7 +259,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Generate HTML diff report
-        if: always()
+        if: always() && (github.event.inputs.module == 'vsexport' || (github.event.inputs.module == 'vsothers' && github.event.inputs.profile == 'vspara'))
         run: |
           python3 - << 'PYEOF'
           import os, glob, html, base64
@@ -341,7 +341,7 @@ jobs:
           PYEOF
 
       - name: Upload HTML diff report
-        if: always()
+        if: always() && (github.event.inputs.module == 'vsexport' || (github.event.inputs.module == 'vsothers' && github.event.inputs.profile == 'vspara'))
         uses: actions/upload-artifact@v4
         with:
           name: html-diff-report
