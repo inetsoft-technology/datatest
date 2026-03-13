@@ -1,19 +1,20 @@
-name: Scheduled Test Execution
+name: Manually Test Execution
 
 on:
   workflow_dispatch:
     inputs:
       module:
-        description: 'Test module (leave blank for all)'
-        required: false
+        description: 'Test module (required)'
+        required: true
         default: ''
       profile:
         description: 'Test profile (for vsothers and mv module)'
         required: false
         default: ''
-  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
-  # schedule:
-  #   - cron: '0 1 * * *'
+      test:
+        description: 'Test spec file name (leave blank for all)'
+        required: false
+        default: ''
 
 jobs:
   build-stylebi:
@@ -171,14 +172,14 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -n "${{ github.event.inputs.module }}" ]; then
-            if [ -n "${{ github.event.inputs.profile }}" ]; then
-              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+          if [ -n "${{ github.event.inputs.profile }}" ]; then
+            if [ -n "${{ github.event.inputs.test }}" ]; then
+              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dtest=${{ github.event.inputs.test }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
             else
-              ./mvnw test -pl ${{ github.event.inputs.module }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
             fi
           else
-            ./mvnw test -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+            ./mvnw test -pl ${{ github.event.inputs.module }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
           fi
 
       - name: Publish Test Report
