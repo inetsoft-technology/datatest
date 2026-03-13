@@ -1,4 +1,4 @@
-name: VSExport Module Tests
+name: CSS-VSScript Module Tests
 
 on:
   workflow_dispatch:
@@ -160,34 +160,39 @@ jobs:
           ./mvnw clean
           ./mvnw package -pl commons -DskipTests
 
-      - name: Run vsexport tests
-        run: ./mvnw test -pl vsexport -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+      - name: Run css tests
+        run: |
+          ./mvnw test -pl css -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
-      - name: Publish Test Report
+      - name: Run vsscript tests
+        run: |
+          ./mvnw test -pl vsscript  -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Publish CSS Test Report
         if: always()
         uses: dorny/test-reporter@v1
         with:
-          name: VSExport Maven Tests
-          path: '**/target/surefire-reports/*.xml'
+          name: CSS Maven Tests
+          path: 'css/target/surefire-reports/*.xml'
           reporter: java-junit
 
-      - name: Generate diff images HTML report
+      - name: Generate CSS diff images HTML report
         if: always()
         run: |
           python3 - << 'PYEOF'
           import os, glob, base64, html
 
-          out_path = "target/diff-images-report.html"
+          out_path = "target/css-diff-images-report.html"
           os.makedirs("target", exist_ok=True)
 
           diff_images = []
-          for path in glob.glob("./vsexport/target/test-classes/exportData/**/*_diff.png", recursive=True):
+          for path in glob.glob("./css/target/test-classes/exportData/**/*_diff.png", recursive=True):
               rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
               diff_images.append((rel, path))
 
           with open(out_path, "w", encoding="utf-8") as f:
               f.write("""<!DOCTYPE html>
-          <html><head><meta charset="UTF-8"><title>Test Diff Images</title>
+          <html><head><meta charset="UTF-8"><title>CSS Test Diff Images</title>
           <style>
             body { font-family: sans-serif; margin: 20px; }
             h1 { color: #333; }
@@ -209,62 +214,78 @@ jobs:
               wrap.style.display = wrap.style.display === 'block' ? 'none' : 'block';
             }
           </script>
-          </head><body><h1>Failed Test Diff Images</h1>
+          </head><body><h1>CSS Failed Test Diff Images</h1>
           """)
-
               if diff_images:
                   for i, (rel, path) in enumerate(diff_images):
                       with open(path, "rb") as img_f:
                           b64 = base64.b64encode(img_f.read()).decode("utf-8")
-                      print(f"Processing [{i+1}/{len(diff_images)}]: {rel}")
+                      print(f"Processing CSS [{i+1}/{len(diff_images)}]: {rel}")
                       f.write(f"<div class='case'>")
                       f.write(f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>")
                       f.write(f"<div class='img-wrap'>")
                       f.write(f"<img src='data:image/png;base64,{b64}'/>")
                       f.write(f"</div></div>\n")
               else:
-                  f.write("<p class='none'>No diff images found.</p>")
+                  f.write("<p class='none'>No CSS diff images found.</p>")
 
               f.write("</body></html>")
 
-          print(f"Report generated: {out_path} ({len(diff_images)} diff image(s))")
+          print(f"CSS report generated: {out_path} ({len(diff_images)} diff image(s))")
           PYEOF
 
-      - name: Upload diff images report
+      - name: Upload CSS diff images report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-diff-images-report
-          path: target/diff-images-report.html
+          name: css-diff-images-report
+          path: target/css-diff-images-report.html
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Generate HTML diff report
+      - name: Upload CSS Spock reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-spock-reports
+          path: 'css/target/spock-reports/'
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload CSS exportData directory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: css-exportData
+          path: 'css/target/test-classes/exportData/'
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Publish VSScript Test Report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: VSScript Maven Tests
+          path: 'css/target/surefire-reports/*.xml'
+          reporter: java-junit
+
+      - name: Generate VSScript diff images HTML report
         if: always()
         run: |
           python3 - << 'PYEOF'
-          import os, glob, html, base64
+          import os, glob, base64, html
 
-          out_path = "target/html-diff-report.html"
+          out_path = "target/vsscript-diff-images-report.html"
           os.makedirs("target", exist_ok=True)
 
-          cases = []
-          for actual_path in glob.glob("./vsexport/target/test-classes/exportData/**/*.html", recursive=True):
-              expect_path = actual_path.replace("/exportData/", "/expectData/")
-              if not os.path.exists(expect_path):
-                  continue
-              with open(expect_path, encoding="utf-8", errors="replace") as f:
-                  expect_content = f.read()
-              with open(actual_path, encoding="utf-8", errors="replace") as f:
-                  actual_content = f.read()
-              if expect_content == actual_content:
-                  continue
-              rel = actual_path.replace("./", "").replace("target/test-classes/exportData/", "")
-              cases.append((rel, expect_content, actual_content))
+          diff_images = []
+          for path in glob.glob("./vsscript/target/test-classes/exportData/**/*_diff.png", recursive=True):
+              rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
+              diff_images.append((rel, path))
 
           with open(out_path, "w", encoding="utf-8") as f:
               f.write("""<!DOCTYPE html>
-          <html><head><meta charset="UTF-8"><title>HTML File Diff Report</title>
+          <html><head><meta charset="UTF-8"><title>VSScript Test Diff Images</title>
           <style>
             body { font-family: sans-serif; margin: 20px; }
             h1 { color: #333; }
@@ -275,75 +296,60 @@ jobs:
             .toggle:hover { background:#ffe0e0; }
             .toggle::before { content: '\25B6 '; font-size:0.8em; }
             .toggle.open::before { content: '\25BC '; }
-            .frame-wrap { display:none; padding:12px; }
-            .frame-row { display:flex; gap:8px; overflow-x:auto; }
-            .frame-col { flex:1; min-width:800px; }
-            .frame-label { font-size:12px; font-weight:bold; margin-bottom:4px;
-                           padding: 3px 8px; border-radius:3px; }
-            .label-expect { background:#e8f4e8; color:#2a6a2a; }
-            .label-actual { background:#fde8e8; color:#8b0000; }
-            iframe { width:100%; height:600px; min-height:200px; border:1px solid #ccc; border-radius:3px;
-                     resize:vertical; overflow:auto; display:block; }
+            .img-wrap { display:none; padding:12px; }
+            .img-wrap img { max-width:100%; border:1px solid #ccc; display:block; }
             .none { color: #666; }
           </style>
           <script>
             function toggle(btn) {
               btn.classList.toggle('open');
               var wrap = btn.nextElementSibling;
-              wrap.style.display = wrap.style.display === 'flex' ? 'none' : 'flex';
+              wrap.style.display = wrap.style.display === 'block' ? 'none' : 'block';
             }
           </script>
-          </head><body><h1>Failed HTML File Diffs</h1>
+          </head><body><h1>VSScript Failed Test Diff Images</h1>
           """)
-              if cases:
-                  for rel, expect_content, actual_content in cases:
-                      expect_b64 = base64.b64encode(expect_content.encode("utf-8")).decode()
-                      actual_b64 = base64.b64encode(actual_content.encode("utf-8")).decode()
-                      f.write(
-                          f"<div class='case'>"
-                          f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>"
-                          f"<div class='frame-wrap'>"
-                          f"<div class='frame-row'>"
-                          f"<div class='frame-col'>"
-                          f"<div class='frame-label label-expect'>Expected</div>"
-                          f"<iframe src='data:text/html;base64,{expect_b64}'></iframe>"
-                          f"</div>"
-                          f"<div class='frame-col'>"
-                          f"<div class='frame-label label-actual'>Actual</div>"
-                          f"<iframe src='data:text/html;base64,{actual_b64}'></iframe>"
-                          f"</div>"
-                          f"</div></div></div>\n"
-                      )
+              if diff_images:
+                  for i, (rel, path) in enumerate(diff_images):
+                      with open(path, "rb") as img_f:
+                          b64 = base64.b64encode(img_f.read()).decode("utf-8")
+                      print(f"Processing VSScript [{i+1}/{len(diff_images)}]: {rel}")
+                      f.write(f"<div class='case'>")
+                      f.write(f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>")
+                      f.write(f"<div class='img-wrap'>")
+                      f.write(f"<img src='data:image/png;base64,{b64}'/>")
+                      f.write(f"</div></div>\n")
               else:
-                  f.write("<p class='none'>No HTML diff found.</p>")
+                  f.write("<p class='none'>No VSScript diff images found.</p>")
+
               f.write("</body></html>")
 
-          print(f"Found {len(cases)} HTML diff(s).")
+          print(f"VSScript report generated: {out_path} ({len(diff_images)} diff image(s))")
           PYEOF
 
-      - name: Upload HTML diff report
+      - name: Upload VSScript diff images report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-html-diff-report
-          path: target/html-diff-report.html
+          name: vsscript-diff-images-report
+          path: target/vsscript-diff-images-report.html
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Upload Spock reports
+      - name: Upload VSScript Spock reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-spock-reports
-          path: 'vsexport/target/spock-reports/'
+          name: vsscript-spock-reports
+          path: 'vsscript/target/spock-reports/'
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Upload exportData directory
+      - name: Upload VSScript exportData directory
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: vsexport-exportData
-          path: 'vsexport/target/test-classes/exportData/'
+          name: vsscript-exportData
+          path: 'vsscript/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore
