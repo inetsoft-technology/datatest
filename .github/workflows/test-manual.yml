@@ -1,4 +1,4 @@
-name: Scheduled Test Execution
+name: Manually Test Execution
 
 on:
   workflow_dispatch:
