@@ -15,9 +15,6 @@ on:
         description: 'Test spec file name (leave blank for all)'
         required: false
         default: ''
-  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
-  # schedule:
-  #   - cron: '0 1 * * *'
 
 jobs:
   build-stylebi:
