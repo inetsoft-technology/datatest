@@ -1,0 +1,258 @@
+name: Chart Module Tests
+
+on:
+  workflow_dispatch:
+  # Scheduled execution: 9:00 AM China time (1:00 AM UTC)
+  # schedule:
+  #   - cron: '0 1 * * *'
+
+jobs:
+  build-stylebi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      stylebi-sha: ${{ steps.stylebi-sha.outputs.sha }}
+      community-sha: ${{ steps.community-sha.outputs.sha }}
+
+    steps:
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Configure Maven settings for private repository
+        uses: s4u/maven-settings-action@v3.0.0
+        with:
+          repositories: |
+            [
+              {
+                "id": "gh-stylebi",
+                "url": "https://maven.pkg.github.com/inetsoft-technology/stylebi",
+                "releases": { "enabled": "true" },
+                "snapshots": { "enabled": "true" }
+              }
+            ]
+          servers: |
+            [
+              {
+                "id": "gh-stylebi",
+                "username": "${{ secrets.MAVEN_USERNAME }}",
+                "password": "${{ secrets.MAVEN_PASSWORD }}"
+              }
+            ]
+
+      - name: Get stylebi-enterprise HEAD commit SHA
+        id: stylebi-sha
+        run: |
+          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
+            "https://api.github.com/repos/inetsoft-technology/stylebi-enterprise/commits/epic-70095" \
+            | jq -r '.sha')
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Get stylebi (community) HEAD commit SHA
+        id: community-sha
+        run: |
+          SHA=$(curl -s -H "Authorization: token ${{ secrets.MAVEN_PASSWORD }}" \
+            "https://api.github.com/repos/inetsoft-technology/stylebi/commits/epic-70095" \
+            | jq -r '.sha')
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Cache stylebi-enterprise Maven artifacts
+        id: stylebi-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository/com/inetsoft
+          key: stylebi-enterprise-${{ steps.stylebi-sha.outputs.sha }}-community-${{ steps.community-sha.outputs.sha }}
+
+      - name: Checkout stylebi-enterprise with submodules
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: inetsoft-technology/stylebi-enterprise
+          token: ${{ secrets.MAVEN_PASSWORD }}
+          ref: epic-70095
+          submodules: recursive
+          path: stylebi-enterprise
+
+      - name: Update community submodule to branch HEAD
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        working-directory: stylebi-enterprise/community
+        run: |
+          git fetch origin epic-70095:epic-70095
+          git checkout epic-70095
+
+      - name: Cache Maven dependencies for stylebi build
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-stylebi-deps-${{ hashFiles('stylebi-enterprise/**/pom.xml') }}
+          restore-keys: |
+            maven-stylebi-deps-
+
+      - name: Build and install stylebi-enterprise to local Maven cache
+        if: steps.stylebi-cache.outputs.cache-hit != 'true'
+        working-directory: stylebi-enterprise
+        run: |
+          chmod +x mvnw
+          ./mvnw install -DskipTests -T 2C -q -pl '!community/web,!server,!community/server,!docker,!community/docker,!shell'
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build-stylebi
+    timeout-minutes: 60
+
+    steps:
+      - name: Configure /etc/hosts
+        run: |
+          echo "35.209.161.246 mysql_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 db2_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 derby_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 oracle_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 informix_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 postgres_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 sqlserver_server" | sudo tee -a /etc/hosts
+          echo "35.209.161.246 clickhouse_server" | sudo tee -a /etc/hosts
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Configure Maven settings for private repository
+        uses: s4u/maven-settings-action@v3.0.0
+        with:
+          repositories: |
+            [
+              {
+                "id": "gh-stylebi",
+                "url": "https://maven.pkg.github.com/inetsoft-technology/stylebi",
+                "releases": { "enabled": "true" },
+                "snapshots": { "enabled": "true" }
+              }
+            ]
+          servers: |
+            [
+              {
+                "id": "gh-stylebi",
+                "username": "${{ secrets.MAVEN_USERNAME }}",
+                "password": "${{ secrets.MAVEN_PASSWORD }}"
+              }
+            ]
+
+      - name: Restore stylebi-enterprise Maven artifacts from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/.m2/repository/com/inetsoft
+          key: stylebi-enterprise-${{ needs.build-stylebi.outputs.stylebi-sha }}-community-${{ needs.build-stylebi.outputs.community-sha }}
+
+      - name: Grant execute permission for mvnw
+        run: chmod +x mvnw
+
+      - name: Initialize environment
+        run: |
+          ./mvnw clean
+          ./mvnw package -pl commons -DskipTests
+
+      - name: Run chart tests
+        run: ./mvnw test -pl chart -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
+
+      - name: Publish Test Report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Chart Maven Tests
+          path: '**/target/surefire-reports/*.xml'
+          reporter: java-junit
+
+      - name: Generate diff images HTML report
+        if: always()
+        run: |
+          python3 - << 'PYEOF'
+          import os, glob, base64, html
+
+          out_path = "target/diff-images-report.html"
+          os.makedirs("target", exist_ok=True)
+
+          diff_images = []
+          for path in glob.glob("./**/target/test-classes/exportData/**/*_diff.png", recursive=True):
+              rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
+              diff_images.append((rel, path))
+
+          with open(out_path, "w", encoding="utf-8") as f:
+              f.write("""<!DOCTYPE html>
+          <html><head><meta charset="UTF-8"><title>Test Diff Images</title>
+          <style>
+            body { font-family: sans-serif; margin: 20px; }
+            h1 { color: #333; }
+            .case { margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; }
+            .toggle { display:block; width:100%; padding: 10px 14px; background:#fff0f0;
+                      border:none; text-align:left; cursor:pointer; color:#c00;
+                      font-size:0.95em; word-break:break-all; font-family:sans-serif; }
+            .toggle:hover { background:#ffe0e0; }
+            .toggle::before { content: '\25B6 '; font-size:0.8em; }
+            .toggle.open::before { content: '\25BC '; }
+            .img-wrap { display:none; padding:12px; }
+            .img-wrap img { max-width:100%; border:1px solid #ccc; display:block; }
+            .none { color: #666; }
+          </style>
+          <script>
+            function toggle(btn) {
+              btn.classList.toggle('open');
+              var wrap = btn.nextElementSibling;
+              wrap.style.display = wrap.style.display === 'block' ? 'none' : 'block';
+            }
+          </script>
+          </head><body><h1>Failed Test Diff Images</h1>
+          """)
+
+              if diff_images:
+                  for i, (rel, path) in enumerate(diff_images):
+                      with open(path, "rb") as img_f:
+                          b64 = base64.b64encode(img_f.read()).decode("utf-8")
+                      print(f"Processing [{i+1}/{len(diff_images)}]: {rel}")
+                      f.write(f"<div class='case'>")
+                      f.write(f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>")
+                      f.write(f"<div class='img-wrap'>")
+                      f.write(f"<img src='data:image/png;base64,{b64}'/>")
+                      f.write(f"</div></div>\n")
+              else:
+                  f.write("<p class='none'>No diff images found.</p>")
+
+              f.write("</body></html>")
+
+          print(f"Report generated: {out_path} ({len(diff_images)} diff image(s))")
+          PYEOF
+
+      - name: Upload diff images report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-diff-images-report
+          path: target/diff-images-report.html
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload Spock reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-spock-reports
+          path: '**/target/spock-reports/'
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Upload exportData directory
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chart-exportData
+          path: '**/target/test-classes/exportData/'
+          retention-days: 7
+          if-no-files-found: ignore
