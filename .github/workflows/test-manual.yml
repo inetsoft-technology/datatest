@@ -291,19 +291,17 @@ jobs:
           SIGN=$(printf "$STRING_TO_SIGN" | \
             openssl dgst -sha256 -hmac "$SECRET" -binary | base64)
           SIGN=$(python3 - <<EOF
-      import urllib.parse
-      print(urllib.parse.quote("${SIGN}"))
-      EOF
-      )
-      
-      WEBHOOK="${{ secrets.DINGTALK_WEBHOOK }}&timestamp=${TIMESTAMP}&sign=${SIGN}"
-      
-      curl -X POST "$WEBHOOK" \
-      -H "Content-Type: application/json" \
-      -d '{
-      "msgtype": "markdown",
-      "markdown": {
-        "title": "GitHub Actions Test Notification",
-        "text": "# GitHub Actions Test Notification\n\n**Repository:** ${{ github.repository }}\n\n**Branch:** ${{ github.ref_name }}\n\n**Status:** ${{ job.status }}\n\n**Run URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-      }
-  }'
+          import urllib.parse
+          print(urllib.parse.quote("${SIGN}"))
+          EOF
+          )
+          
+          WEBHOOK="${{ secrets.DINGTALK_WEBHOOK }}&timestamp=${TIMESTAMP}&sign=${SIGN}"
+          
+          curl -X POST "$WEBHOOK" \
+          -H "Content-Type: application/json" \
+          -d '{"msgtype": "markdown",
+          "markdown": {
+            "title": "Manual Test Execution Result",
+            "text": "# Manual Test Execution Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n## Test Artifacts\nPlease download the following artifacts from the Actions page:\n- **spock-reports**: Spock test reports\n- **diff-images-report**: Diff images HTML report\n- **html-diff-report**: HTML file diff report\n- **exportData**: Export data directory\n\n[View All Artifacts](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts)\n\n## Summary\nTest execution has completed. Please check the attached artifacts for detailed reports."
+          }'
