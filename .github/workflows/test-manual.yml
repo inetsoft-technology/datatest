@@ -282,21 +282,28 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Send DingTalk notification
+      - name: Send DingTalk Notification
         if: always()
-        uses: appleboy/dingtalk-action@v0.0.3
-        with:
-          webhook: ${{ secrets.DINGTALK_WEBHOOK }}
-          secret: ${{ secrets.DINGTALK_SECRET }}
-          type: markdown
-          title: "Manual Test Execution Result"
-          content: |
-            # Manual Test Execution Result
-            - **Status**: ${{ job.status }}
-            - **Module**: ${{ github.event.inputs.module }}
-            - **Profile**: ${{ github.event.inputs.profile || 'N/A' }}
-            - **Test**: ${{ github.event.inputs.test || 'All' }}
-            - **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-            
-            ## Summary
-            Test execution has completed. Please check the attached artifacts for detailed reports.
+        run: |
+          TIMESTAMP=$(date +%s000)
+          SECRET="${{ secrets.DINGTALK_SECRET }}"
+          STRING_TO_SIGN="${TIMESTAMP}\n${SECRET}"
+          SIGN=$(printf "$STRING_TO_SIGN" | \
+            openssl dgst -sha256 -hmac "$SECRET" -binary | base64)
+          SIGN=$(python3 - <<EOF
+      import urllib.parse
+      print(urllib.parse.quote("${SIGN}"))
+      EOF
+      )
+      
+      WEBHOOK="${{ secrets.DINGTALK_WEBHOOK }}&timestamp=${TIMESTAMP}&sign=${SIGN}"
+      
+      curl -X POST "$WEBHOOK" \
+      -H "Content-Type: application/json" \
+      -d '{
+      "msgtype": "markdown",
+      "markdown": {
+        "title": "GitHub Actions Test Notification",
+        "text": "# GitHub Actions Test Notification\n\n**Repository:** ${{ github.repository }}\n\n**Branch:** ${{ github.ref_name }}\n\n**Status:** ${{ job.status }}\n\n**Run URL:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      }
+  }'
