@@ -284,7 +284,7 @@ jobs:
 
       - name: Send DingTalk notification
         if: always()
-        uses: appleboy/dingtalk-action@master
+        uses: appleboy/dingtalk-action@v0.0.3
         with:
           webhook: ${{ secrets.DINGTALK_WEBHOOK }}
           secret: ${{ secrets.DINGTALK_SECRET }}
