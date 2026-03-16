@@ -303,5 +303,5 @@ jobs:
           -d '{"msgtype": "markdown",
           "markdown": {
             "title": "Manual Test Execution Result",
-            "text": "# Manual Test Execution Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\n\n## Summary\nTest execution has completed. Please check the attached artifacts for detailed reports."
+            "text": "# Manual Test Execution Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
