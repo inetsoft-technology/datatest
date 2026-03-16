@@ -281,3 +281,22 @@ jobs:
           path: '**/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Send DingTalk notification
+        if: always()
+        uses: appleboy/dingtalk-action@master
+        with:
+          webhook: ${{ secrets.DINGTALK_WEBHOOK }}
+          secret: ${{ secrets.DINGTALK_SECRET }}
+          type: markdown
+          title: "Manual Test Execution Result"
+          content: |
+            # Manual Test Execution Result
+            - **Status**: ${{ job.status }}
+            - **Module**: ${{ github.event.inputs.module }}
+            - **Profile**: ${{ github.event.inputs.profile || 'N/A' }}
+            - **Test**: ${{ github.event.inputs.test || 'All' }}
+            - **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            ## Summary
+            Test execution has completed. Please check the attached artifacts for detailed reports.
