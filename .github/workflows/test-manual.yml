@@ -302,6 +302,6 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"msgtype": "markdown",
           "markdown": {
-            "title": "Manual Test Execution Result",
-            "text": "# Manual Test Execution Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            "title": "Manual Test Result",
+            "text": "# Manual Test Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }}'

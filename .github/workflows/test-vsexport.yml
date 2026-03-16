@@ -262,3 +262,27 @@ jobs:
           path: 'vsexport/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Send DingTalk Notification
+        if: always()
+        run: |
+          TIMESTAMP=$(date +%s000)
+          SECRET="${{ secrets.DINGTALK_SECRET }}"
+          STRING_TO_SIGN="${TIMESTAMP}\n${SECRET}"
+          SIGN=$(printf "$STRING_TO_SIGN" | \
+            openssl dgst -sha256 -hmac "$SECRET" -binary | base64)
+          SIGN=$(python3 - <<EOF
+          import urllib.parse
+          print(urllib.parse.quote("${SIGN}"))
+          EOF
+          )
+          
+          WEBHOOK="${{ secrets.DINGTALK_WEBHOOK }}&timestamp=${TIMESTAMP}&sign=${SIGN}"
+          
+          curl -X POST "$WEBHOOK" \
+          -H "Content-Type: application/json" \
+          -d '{"msgtype": "markdown",
+          "markdown": {
+            "title": "VSExport Test Result",
+            "text": "# VSExport Test Result\n- **Status**: ${{ job.status }}\n- **Module**: vsexport\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }}'
