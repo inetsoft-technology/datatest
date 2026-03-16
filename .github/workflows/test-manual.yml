@@ -31,14 +31,14 @@ jobs:
     steps:
       - name: Configure /etc/hosts
         run: |
-          echo "35.212.141.226 mysql_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 db2_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 derby_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 oracle_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 informix_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 postgres_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 sqlserver_server" | sudo tee -a /etc/hosts
-          echo "35.212.141.226 clickhouse_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} mysql_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} db2_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} derby_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} oracle_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} informix_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} postgres_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} sqlserver_server" | sudo tee -a /etc/hosts
+          echo "${{ secrets.DATABASE_SERVER_IP }} clickhouse_server" | sudo tee -a /etc/hosts
 
       - name: Checkout code
         uses: actions/checkout@v4
@@ -304,4 +304,4 @@ jobs:
           "markdown": {
             "title": "Manual Test Execution Result",
             "text": "# Manual Test Execution Result\n- **Status**: ${{ job.status }}\n- **Module**: ${{ github.event.inputs.module }}\n- **Profile**: ${{ github.event.inputs.profile || 'N/A' }}\n- **Test**: ${{ github.event.inputs.test || 'All' }}\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          }'
+          }}'
