@@ -2,6 +2,13 @@ name: Build StyleBI
 
 on:
   workflow_call:
+    secrets:
+      MAVEN_USERNAME:
+        description: 'Maven username for GitHub Packages'
+        required: true
+      MAVEN_PASSWORD:
+        description: 'Maven password for GitHub Packages'
+        required: true
     outputs:
       stylebi-sha: 
         description: "StyleBI enterprise commit SHA"

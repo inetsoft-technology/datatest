@@ -19,6 +19,9 @@ on:
 jobs:
   build-stylebi:
     uses: ./.github/workflows/build-stylebi.yml
+    secrets:
+      MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
 
   test:
     runs-on: ubuntu-latest
