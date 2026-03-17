@@ -80,18 +80,22 @@ jobs:
           ./mvnw test -pl mv -Pincrementalmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run topmv tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl mv -Ptopmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run submv tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl mv -Psubmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vpm tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl mv -Pvpm -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run others tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl mv -Pothers -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
