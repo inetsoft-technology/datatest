@@ -25,6 +25,8 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
     needs: build-stylebi
     timeout-minutes: 60
 
