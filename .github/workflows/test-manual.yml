@@ -31,14 +31,6 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - name: Verify fonts
-        run: |
-          echo "=== Default Font ==="
-          fc-match
-          echo "=== Default Chinese Font ==="
-          fc-match -s 'sans:lang=zh' | head -n 1
-          echo "=== Default Monospace Font ==="
-          fc-match monospace
       - name: Configure /etc/hosts
         run: |
           echo "${{ secrets.DATABASE_SERVER_IP }} mysql_server" | sudo tee -a /etc/hosts
