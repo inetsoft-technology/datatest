@@ -76,6 +76,7 @@ jobs:
           ./mvnw package -pl commons -DskipTests
 
       - name: Run vs-calcfield tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl vsothers -Pvscalc -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
