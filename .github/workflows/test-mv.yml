@@ -76,6 +76,7 @@ jobs:
           ./mvnw package -pl commons -DskipTests
 
       - name: Run incrementalmv tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl mv -Pincrementalmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 

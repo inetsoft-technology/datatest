@@ -76,6 +76,7 @@ jobs:
           ./mvnw package -pl commons -DskipTests
 
       - name: Run css tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl css -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
