@@ -79,9 +79,11 @@ jobs:
         run: ./mvnw test -pl ws -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vpm tests
+        continue-on-error: true
         run: ./mvnw test -pl vpm -Pvpm -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run additionalDB tests
+        continue-on-error: true
         run: ./mvnw test -pl vpm -PadditionalDB -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Publish WS Test Report

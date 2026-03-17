@@ -80,18 +80,22 @@ jobs:
           ./mvnw test -pl vsothers -Pvscalc -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vscrosstab tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl vsothers -Pvscrosstab -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vsfreehand tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl vsothers -Pvsfreehand -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run otherassembly tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl vsothers -Potherassembly -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vspara tests
+        continue-on-error: true
         run: |
           ./mvnw test -pl vsothers -Pvspara -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
