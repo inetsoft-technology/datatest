@@ -1,4 +1,4 @@
-name: WS and VPM Module Tests
+name: WS Module Tests
 
 on:
   workflow_dispatch:
@@ -81,28 +81,12 @@ jobs:
         continue-on-error: true
         run: ./mvnw test -pl ws -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
-      - name: Run vpm tests
-        continue-on-error: true
-        run: ./mvnw test -pl vpm -Pvpm -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
-
-      - name: Run additionalDB tests
-        continue-on-error: true
-        run: ./mvnw test -pl vpm -PadditionalDB -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
-
       - name: Publish WS Test Report
         if: always()
         uses: dorny/test-reporter@v1
         with:
           name: WS Maven Tests
           path: 'ws/target/surefire-reports/*.xml'
-          reporter: java-junit
-
-      - name: Publish VPM Test Report
-        if: always()
-        uses: dorny/test-reporter@v1
-        with:
-          name: VPM Maven Tests
-          path: 'vpm/target/surefire-reports/*.xml'
           reporter: java-junit
 
       - name: Generate WS diff images HTML report
@@ -163,79 +147,12 @@ jobs:
           print(f"WS report generated: {out_path} ({len(diff_images)} diff image(s))")
           PYEOF
 
-      - name: Generate VPM diff images HTML report
-        if: always()
-        run: |
-          python3 - << 'PYEOF'
-          import os, glob, base64, html
-
-          out_path = "target/vpm-diff-images-report.html"
-          os.makedirs("target", exist_ok=True)
-
-          diff_images = []
-          for path in glob.glob("./vpm/target/test-classes/exportData/**/*_diff.png", recursive=True):
-              rel = path.replace("./", "").replace("target/test-classes/exportData/", "")
-              diff_images.append((rel, path))
-
-          with open(out_path, "w", encoding="utf-8") as f:
-              f.write("""<!DOCTYPE html>
-          <html><head><meta charset="UTF-8"><title>VPM Test Diff Images</title>
-          <style>
-            body { font-family: sans-serif; margin: 20px; }
-            h1 { color: #333; }
-            .case { margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; }
-            .toggle { display:block; width:100%; padding: 10px 14px; background:#fff0f0;
-                      border:none; text-align:left; cursor:pointer; color:#c00;
-                      font-size:0.95em; word-break:break-all; font-family:sans-serif; }
-            .toggle:hover { background:#ffe0e0; }
-            .toggle::before { content: '\25B6 '; font-size:0.8em; }
-            .toggle.open::before { content: '\25BC '; }
-            .img-wrap { display:none; padding:12px; }
-            .img-wrap img { max-width:100%; border:1px solid #ccc; display:block; }
-            .none { color: #666; }
-          </style>
-          <script>
-            function toggle(btn) {
-              btn.classList.toggle('open');
-              var wrap = btn.nextElementSibling;
-              wrap.style.display = wrap.style.display === 'block' ? 'none' : 'block';
-            }
-          </script>
-          </head><body><h1>VPM Failed Test Diff Images</h1>
-          """)
-              if diff_images:
-                  for i, (rel, path) in enumerate(diff_images):
-                      with open(path, "rb") as img_f:
-                          b64 = base64.b64encode(img_f.read()).decode("utf-8")
-                      print(f"Processing VPM [{i+1}/{len(diff_images)}]: {rel}")
-                      f.write(f"<div class='case'>")
-                      f.write(f"<button class='toggle' onclick='toggle(this)'>{html.escape(rel)}</button>")
-                      f.write(f"<div class='img-wrap'>")
-                      f.write(f"<img src='data:image/png;base64,{b64}'/>")
-                      f.write(f"</div></div>\n")
-              else:
-                  f.write("<p class='none'>No VPM diff images found.</p>")
-
-              f.write("</body></html>")
-
-          print(f"VPM report generated: {out_path} ({len(diff_images)} diff image(s))")
-          PYEOF
-
       - name: Upload WS diff images report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ws-diff-images-report
           path: target/ws-diff-images-report.html
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Upload VPM diff images report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: vpm-diff-images-report
-          path: target/vpm-diff-images-report.html
           retention-days: 7
           if-no-files-found: ignore
 
@@ -248,30 +165,12 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Upload VPM Spock reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: vpm-spock-reports
-          path: 'vpm/target/spock-reports/'
-          retention-days: 7
-          if-no-files-found: ignore
-
       - name: Upload WS exportData directory
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ws-exportData
           path: 'ws/target/test-classes/exportData/'
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Upload VPM exportData directory
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: vpm-exportData
-          path: 'vpm/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore
 
@@ -295,6 +194,6 @@ jobs:
           -H "Content-Type: application/json" \
           -d '{"msgtype": "markdown",
           "markdown": {
-            "title": "WS and VPM Test Result",
-            "text": "# WS and VPM Test Result\n- **Status**: ${{ job.status }}\n- **Module**: ws, vpm\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            "title": "WS Test Result",
+            "text": "# WS Test Result\n- **Status**: ${{ job.status }}\n- **Module**: ws\n- **Run URL**: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }}'
