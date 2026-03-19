@@ -89,15 +89,12 @@ jobs:
 
       - name: Run tests
         run: |
-          if [ -n "${{ github.event.inputs.profile }}" ]; then
-            if [ -n "${{ github.event.inputs.test }}" ]; then
-              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dtest=${{ github.event.inputs.test }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
-            else
-              ./mvnw test -pl ${{ github.event.inputs.module }} -P${{ github.event.inputs.profile }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
-            fi
-          else
-            ./mvnw test -pl ${{ github.event.inputs.module }} -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
-          fi
+          PROFILE="${{ github.event.inputs.profile }}"
+          TEST="${{ github.event.inputs.test }}"
+          ./mvnw test -pl ${{ github.event.inputs.module }} \
+            ${PROFILE:+-P$PROFILE} \
+            ${TEST:+-Dtest=$TEST} \
+            -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Publish Test Report
         if: always()
