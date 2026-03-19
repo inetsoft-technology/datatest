@@ -124,7 +124,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mv-exportData
-          path: 'mv/target/test-classes/exportData/'
+          path: 'mv/target/test-classes/exportedData/'
           retention-days: 7
           if-no-files-found: ignore
 
