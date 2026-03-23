@@ -137,7 +137,7 @@ public class ControllersResource {
       SharedFilterService sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
 
-      bookmarkService = new VSBookmarkService(objectService, coreLifecycleService);
+      bookmarkService = new VSBookmarkService(objectService);
       List<DataRefModelFactory<?, ?>> dataRefModelFactories = Arrays.asList(
               new AggregateRefModel.AggregateRefModelFactory(),
               new AliasDataRefModel.AliasDataRefModelFactory(),
