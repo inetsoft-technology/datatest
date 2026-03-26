@@ -80,10 +80,11 @@ public final class MessageTestUtils {
       // Use Mockito to mock SimpMessagingTemplate instead of creating real one
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
 
-      CommandDispatcher commandDispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null);
-
-      // Set thread-local context
+      // Set thread-local context before creating CommandDispatcher, as its constructor
+      // calls MessageContextHolder.currentMessageAttributes()
       MessageContextHolder.setMessageAttributes(messageAttributes);
+
+      CommandDispatcher commandDispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null);
 
       try {
          MessageContext ctx = new MessageContext(headerAccessor, messagingTemplate, commandDispatcher);
