@@ -162,7 +162,8 @@ public final class MessageTestUtils {
       headerAccessor.setUser(principal);
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
 
-      return new CommandDispatcher(headerAccessor, messagingTemplate, null) {
+      MessageContextHolder.setMessageAttributes(messageAttributes);
+      CommandDispatcher dispatcher = new CommandDispatcher(headerAccessor, messagingTemplate, null) {
          @Override
          public void sendCommand(String assemblyName, ViewsheetCommand command) {
             // NO-OP
@@ -178,6 +179,8 @@ public final class MessageTestUtils {
             return createNoOpCommandDispatcher(principal);
          }
       };
+      MessageContextHolder.setMessageAttributes(null);
+      return dispatcher;
    }
 
    /**
