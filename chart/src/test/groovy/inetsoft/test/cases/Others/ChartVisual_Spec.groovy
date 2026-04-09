@@ -144,6 +144,16 @@ class ChartVisual_Spec extends Specification{
       vstest.compareImage(null)
    }
 
+   //check svg shape
+   def 'Shape_SVG'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/Shape_SVG', caseName)
+      vstest.exportAsPNG(null, ['(Home)', 'brush', 'filter', 'zoom'] as String[])
+
+      expect:
+      vstest.compareImage(null)
+   }s
+
  //test text highlight and format setting
     def 'Aesthetic_Text'() {
       caseName = specificationContext.currentIteration.name
