@@ -359,4 +359,17 @@ class ChartProperties_Spec extends Specification{
       expect:
       vstest.compareImage(null)
    }
+
+   /*
+    check axis label on Opposite Side properties
+   */
+   def 'Opposite side'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/Opposite side', caseName)
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
+
+      expect:
+      vstest.compareImage(null)
+   }
+
 }
