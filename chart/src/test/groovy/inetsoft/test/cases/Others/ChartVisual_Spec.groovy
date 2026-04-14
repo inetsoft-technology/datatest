@@ -152,7 +152,7 @@ class ChartVisual_Spec extends Specification{
 
       expect:
       vstest.compareImage(null)
-   }s
+   }
 
  //test text highlight and format setting
     def 'Aesthetic_Text'() {
