@@ -471,6 +471,27 @@ class ChartProperties_Spec extends Specification{
       vsScriptTest.compareImage(['TestCase-Chart_FillBlank_fillTimeGap'] as String[])
    }
 
+   /**
+    * on bar,interval,auto,stack chart, check barRoundAllCorners,barCornerRadius
+    */
+   def 'TestCase-Chart_barCornerRadius'() {
+      given:
+      caseName = specificationContext.currentIteration.name
+      def TestData1 = [[HANDLER: 'Chart1',
+                        COMMAND: 'barCornerRadius=0;barRoundAllCorners=true']]
+      def TestData2 = [[HANDLER: 'Chart2',
+                        COMMAND: 'barCornerRadius=0.5;barRoundAllCorners=false']]
+      def TestData3 = [[HANDLER: 'Chart3',
+                        COMMAND: 'barCornerRadius=0.4;barRoundAllCorners=true']]
+      when:
+      vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Chart/barCornerRadius', caseName)
+      vsScriptTest.printVS('barCornerRadius1', TestData1, ['Chart1'] as String[])
+      vsScriptTest.printVS('barCornerRadius2', TestData2, ['Chart2'] as String[])
+      vsScriptTest.printVS('barCornerRadius3', TestData3, ['Chart3'] as String[])
+      then:
+      vsScriptTest.compareImage(['TestCase-Chart_barCornerRadius_barCornerRadius1','TestCase-Chart_barCornerRadius_barCornerRadius2','TestCase-Chart_barCornerRadius_barCornerRadius3'] as String[])
+   }
+
 
 
    static VSScriptTest vsScriptTest

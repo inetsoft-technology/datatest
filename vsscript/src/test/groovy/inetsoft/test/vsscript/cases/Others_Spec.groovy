@@ -62,15 +62,17 @@ class Others_Spec extends Specification {
                                COMMAND: 'Text1.value = "selectedObject: " + Tab1.selectedObject + ", index:" + Tab1.selectedIndex'
                        ]]
       def TestData2 = [[HANDLER: 'Tab1', COMMAND: 'selectedIndex=1']]
+      def TestData3 = [[HANDLER: 'Tab2', COMMAND: 'bottomTabs=true']]
       when:
       vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/Others/TabGroup', caseName)
       //Issue #45554
       vsScriptTest.printVS('script', TestData1, ['Tab1', 'Gauge1', 'SelectionList1', 'RadioButton1', 'Text1'] as String[])
       //Issue #49526
       vsScriptTest.printVS('selectednIdex', TestData2, ['Tab1', 'Gauge1', 'SelectionList1', 'RadioButton1'] as String[])
+      vsScriptTest.printVS('bottomTabs', TestData3, ['Tab2', 'SelectionList2', 'TableView1', 'Slider1'] as String[])
 
       then:
-      vsScriptTest.compareImage(['TestCase-Tab_script', 'TestCase-Tab_selectednIdex'] as String[])
+      vsScriptTest.compareImage(['TestCase-Tab_script', 'TestCase-Tab_selectednIdex', 'TestCase-Tab_bottomTabs'] as String[])
    }
 
    /**
