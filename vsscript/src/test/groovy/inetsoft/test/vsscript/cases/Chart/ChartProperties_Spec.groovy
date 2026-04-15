@@ -198,6 +198,7 @@ class ChartProperties_Spec extends Specification{
                                  'Chart1.legendBorder = Chart.DASH_LINE;\n' +
                                  'Chart1.legendBorderColor = [255,0,0];\n' +
                                  'Chart1.legendTitleColor = [255,0,0]\n' +
+                                 'Chart1.colorLegend.symbolSize=20\n' +
                                  'Chart1.legendTitleFont = new java.awt.Font("Serif", java.awt.Font.BOLD, 12);']]
       def TestData2 = [[HANDLER: 'Chart2',
                         COMMAND: 'Chart2.colorLegend.title = "Paid";\n' +
