@@ -67,8 +67,8 @@ public class RuntimeWorksheetResource {
    public HashMap<String, Object> processCSVUpload(ImportCSVDialogModel importCSVDialogModel, MultipartFile multipartFile, Principal principal) throws Exception {
       ImportCSVDialogController importCSVDialogController = controllersResource.getImportCSVDialogController();
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
-      importCSVDialogController.getUploadFile(multipartFile, runtimeId);
-      HashMap<String, Object> result = importCSVDialogController.getPreviewTable(importCSVDialogModel, runtimeId);
+      importCSVDialogController.getUploadFile(multipartFile, runtimeId, principal);
+      HashMap<String, Object> result = importCSVDialogController.getPreviewTable(importCSVDialogModel, runtimeId, principal);
       importCSVDialogController.setImportCSVDialogModel(importCSVDialogModel, principal, commandDispatcher);
       return result;
    }
