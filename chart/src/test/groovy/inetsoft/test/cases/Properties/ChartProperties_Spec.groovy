@@ -372,4 +372,16 @@ class ChartProperties_Spec extends Specification{
       vstest.compareImage(null)
    }
 
+   /*
+    check Bar Corner Radius and Round All Corners
+   */
+   def 'barcorner'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Properties/barcorner', caseName)
+      vstest.exportAsPNG(null, ['(Home)'] as String[])
+
+      expect:
+      vstest.compareImage(null)
+   }
+
 }
