@@ -17,7 +17,7 @@ import inetsoft.web.messaging.MessageAttributes;
 import inetsoft.web.messaging.MessageContextHolder;
 import inetsoft.web.viewsheet.command.ViewsheetCommand;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
-
+import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.web.viewsheet.service.CommandDispatcherService;
 import org.mockito.Mockito;
 import org.springframework.messaging.MessageChannel;
@@ -81,7 +81,8 @@ public final class MessageTestUtils {
       // Use Mockito to mock SimpMessagingTemplate instead of creating real one
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
       
-      CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate);
+      CommandDispatcherService dispatcherService =
+         new CommandDispatcherService(messagingTemplate, Mockito.mock(Cluster.class));
       CommandDispatcher commandDispatcher = new CommandDispatcher(headerAccessor, dispatcherService, null);
       
       // Set thread-local context
@@ -162,7 +163,8 @@ public final class MessageTestUtils {
       StompHeaderAccessor headerAccessor = messageAttributes.getHeaderAccessor();
       headerAccessor.setUser(principal);
       SimpMessagingTemplate messagingTemplate = Mockito.mock(SimpMessagingTemplate.class);
-      CommandDispatcherService dispatcherService = new CommandDispatcherService(messagingTemplate);
+      CommandDispatcherService dispatcherService =
+         new CommandDispatcherService(messagingTemplate, Mockito.mock(Cluster.class));
       
       return new CommandDispatcher(headerAccessor, dispatcherService, null) {
          @Override
