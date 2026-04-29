@@ -6,17 +6,18 @@ import inetsoft.enterprise.web.api.file.FileApiService;
 import inetsoft.report.composition.RuntimeWorksheet;
 import inetsoft.report.composition.WorksheetEngine;
 import inetsoft.report.composition.WorksheetService;
+import inetsoft.sree.RepletRegistryManager;
 import inetsoft.sree.internal.SUtil;
+import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
-import inetsoft.uql.XFactory;
+import inetsoft.uql.XRepository;
 import inetsoft.uql.asset.AssetRepository;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
 import inetsoft.web.admin.content.repository.DatabaseDatasourcesService;
-import inetsoft.web.admin.content.repository.RepletRegistryManager;
 import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
 import inetsoft.web.admin.schedule.ScheduleTaskFolderService;
@@ -55,7 +56,6 @@ import inetsoft.web.service.BinaryTransferService;
 import inetsoft.web.composer.vs.objects.controller.ComposerVSTableServiceProxy;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogServiceProxy;
 
-import java.rmi.RemoteException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
@@ -96,10 +96,12 @@ public class ControllersResource {
    
    private void createControllers() {
       viewsheetService = ViewsheetEngine.getViewsheetEngine();
+      Cluster cluster = Mockito.mock(Cluster.class);
       
       worksheetService = WorksheetEngine.getWorksheetService();
       
-      RuntimeViewsheetRefServiceProxy runtimeViewsheetRefServiceProxy = new RuntimeViewsheetRefServiceProxy();
+      RuntimeViewsheetRefServiceProxy runtimeViewsheetRefServiceProxy =
+              Mockito.mock(RuntimeViewsheetRefServiceProxy.class);
       
       runtimeViewsheetRef = new RuntimeViewsheetRef(runtimeViewsheetRefServiceProxy) {
          @Override
@@ -113,7 +115,7 @@ public class ControllersResource {
          }
       };
       
-      runtimeViewsheetManager = new RuntimeViewsheetManager(viewsheetService);
+      runtimeViewsheetManager = new RuntimeViewsheetManager(viewsheetService, cluster);
       List<VSObjectModelFactory<?, ?>> modelFactories = Arrays.asList(
               new VSCalcTableModel.VSCalcTableModelFactory(),
               new VSCheckBoxModel.VSCheckBoxModelFactory(),
@@ -186,22 +188,30 @@ public class ControllersResource {
       };
       coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService,
               vsLayoutService, parameterService, vsCompositionService, dataRefModelFactoryService,
-              runtimeViewsheetRef, eventPublisher);
+              runtimeViewsheetRef, eventPublisher, Mockito.mock(inetsoft.report.internal.license.LicenseManager.class),
+              securityEngine, cluster, Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class));
       sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
       
-      bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine, coreLifecycleService);
+      bookmarkService = new VSBookmarkService(objectService, viewsheetService, securityEngine,
+              ScheduleManager.getScheduleManager(), cluster, Mockito.mock(inetsoft.uql.util.XSessionService.class));
       
       vsLifecycleService = new VSLifecycleService(
-              viewsheetService, assetRepository, coreLifecycleService, parameterService, new VSLifecycleControllerServiceProxy());
-      licenseService = new LicenseService();
+              viewsheetService, assetRepository, coreLifecycleService, parameterService,
+              Mockito.mock(VSLifecycleControllerServiceProxy.class), Mockito.mock(inetsoft.util.log.LogManager.class),
+              Mockito.mock(inetsoft.uql.util.XSessionService.class), cluster, worksheetService,
+              Mockito.mock(RuntimeViewsheetRefService.class));
+      licenseService = new LicenseService(Mockito.mock(inetsoft.report.internal.license.LicenseManager.class));
       openViewsheetController = new OpenViewsheetController(
               runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
-              new OpenViewsheetServiceProxy(), viewsheetService);
+              Mockito.mock(OpenViewsheetServiceProxy.class), viewsheetService, securityEngine);
       
-      worksheetEventService = new WorksheetEventService(viewsheetService, new WorksheetEventServiceProxy());
+      org.springframework.beans.factory.ObjectProvider<WorksheetEventServiceProxy> worksheetEventServiceProxy =
+              Mockito.mock(org.springframework.beans.factory.ObjectProvider.class);
+      when(worksheetEventServiceProxy.getIfAvailable()).thenReturn(Mockito.mock(WorksheetEventServiceProxy.class));
+      worksheetEventService = new WorksheetEventService(viewsheetService, worksheetEventServiceProxy);
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository,
-              worksheetEventService, new OpenWorksheetControllerServiceProxy()) {
+              worksheetEventService, Mockito.mock(OpenWorksheetControllerServiceProxy.class), securityEngine) {
          protected WorksheetService getWorksheetEngine() {
             return worksheetService;
          }
@@ -211,33 +221,47 @@ public class ControllersResource {
          }
       };
       
-      binaryTransferService = new BinaryTransferService();
-      vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService);
+      binaryTransferService = new BinaryTransferService(Mockito.mock(inetsoft.util.FileSystemService.class));
+      vsExportService = new VSExportService(viewsheetService, coreLifecycleService, parameterService,
+              securityEngine, Mockito.mock(inetsoft.uql.util.XSessionService.class),
+              Mockito.mock(inetsoft.util.FileSystemService.class));
       
       securityProvider = securityEngine.getSecurityProvider();
-      resourcePermissionService = new ResourcePermissionService(securityProvider, securityEngine);
-      repletRegistryManager = new RepletRegistryManager();
+      resourcePermissionService = new ResourcePermissionService(securityProvider, securityEngine,
+              Mockito.mock(inetsoft.report.LibManagerProvider.class),
+              Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class));
+      repletRegistryManager = Mockito.mock(RepletRegistryManager.class);
       scheduleTaskFolderService = new ScheduleTaskFolderService(ScheduleManager.getScheduleManager(), securityEngine,
-              securityProvider);
-      try {
-         contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider, XFactory.getRepository(),
-                 resourcePermissionService, repletRegistryManager, scheduleTaskFolderService);
-      }
-      catch(RemoteException e) {
-         e.printStackTrace();
-      }
+              securityProvider, Mockito.mock(inetsoft.util.IndexedStorage.class),
+              Mockito.mock(inetsoft.uql.asset.sync.RenameTransformHandler.class));
+      contentRepositoryTreeService = new ContentRepositoryTreeService(securityProvider,
+              Mockito.mock(XRepository.class), resourcePermissionService,
+              Mockito.mock(inetsoft.web.admin.content.repository.RepletRegistryService.class),
+              scheduleTaskFolderService, Mockito.mock(inetsoft.mv.MVManager.class), securityEngine,
+              ScheduleManager.getScheduleManager(), Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class),
+              Mockito.mock(inetsoft.sree.web.dashboard.DashboardManager.class),
+              Mockito.mock(inetsoft.util.IndexedStorage.class),
+              Mockito.mock(inetsoft.sree.web.dashboard.DashboardRegistryManager.class),
+              Mockito.mock(inetsoft.report.LibManagerProvider.class),
+              Mockito.mock(inetsoft.web.RecycleBin.class), repletRegistryManager);
       
-      deployService = new DeployService(contentRepositoryTreeService, securityEngine);
-      composerVSTableServiceProxy = new ComposerVSTableServiceProxy();
+      deployService = new DeployService(contentRepositoryTreeService, securityEngine,
+              Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class), Mockito.mock(inetsoft.util.IndexedStorage.class),
+              Mockito.mock(inetsoft.sree.internal.DeployManagerService.class),
+              Mockito.mock(inetsoft.sree.web.dashboard.DashboardRegistryManager.class),
+              Mockito.mock(inetsoft.report.LibManagerProvider.class), Mockito.mock(inetsoft.util.FileSystemService.class),
+              Mockito.mock(inetsoft.web.admin.content.repository.RepletRegistryService.class));
+      composerVSTableServiceProxy = Mockito.mock(ComposerVSTableServiceProxy.class);
       composerVSTableController = new ComposerVSTableController(runtimeViewsheetRef, composerVSTableServiceProxy);
       composerVSTableService = new ComposerVSTableService(coreLifecycleService, objectTreeService, objectModelFactoryService,
               Mockito.mock(VSBindingService.class), assetRepository, viewsheetService, Mockito.mock(CrosstabDrillHandler.class),
               Mockito.mock(VSAssemblyInfoHandler.class));
       importXLSControllerService = new ImportXLSControllerService(viewsheetService, coreLifecycleService);
-      importXLSControllerServiceProxy = new ImportXLSControllerServiceProxy();
-      importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy);
+      importXLSControllerServiceProxy = Mockito.mock(ImportXLSControllerServiceProxy.class);
+      importXLSController = new ImportXLSController(runtimeViewsheetRef, importXLSControllerServiceProxy,
+              Mockito.mock(inetsoft.util.FileSystemService.class));
       
-      importCSVDialogServiceProxy = new ImportCSVDialogServiceProxy();
+      importCSVDialogServiceProxy = Mockito.mock(ImportCSVDialogServiceProxy.class);
       importCSVDialogController = new ImportCSVDialogController(importCSVDialogServiceProxy, binaryTransferService) {
          public String getRuntimeId() {
             return ControllersResource.this.runtimeId;
@@ -252,20 +276,24 @@ public class ControllersResource {
          }
       };
       
-      importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService);
+      importCSVDialogService = new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService,
+              Mockito.mock(inetsoft.report.composition.execution.AssetDataCache.class),
+              Mockito.mock(inetsoft.util.FileSystemService.class));
       
       vsChartBrushService = new VSChartBrushService(coreLifecycleService, viewsheetService,
-              new VSChartAreasServiceProxy());
+              Mockito.mock(VSChartAreasServiceProxy.class));
       vsChartShowDetailsService = new VSChartShowDetailsService(viewsheetService, coreLifecycleService,
-              new VSChartAreasServiceProxy(), new VSDialogService());
-      fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider);
+              Mockito.mock(VSChartAreasServiceProxy.class), Mockito.mock(VSDialogService.class));
+      fileApiService = new FileApiService(deployService, contentRepositoryTreeService, securityProvider,
+              Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class), Mockito.mock(inetsoft.util.IndexedStorage.class),
+              Mockito.mock(inetsoft.util.DataSpace.class), repletRegistryManager);
       
       DatabaseDatasourcesService databaseDatasourcesService = Mockito.mock(DatabaseDatasourcesService.class);
       DatabaseModelBrowserService databaseModelBrowserService = Mockito.mock(DatabaseModelBrowserService.class);
       DataModelFolderManagerService dataModelFolderManagerService = Mockito.mock(DataModelFolderManagerService.class);
       DataSourceService dataSourceService = Mockito.mock(DataSourceService.class);
       databaseDatasourcesController = new DatabaseDatasourcesController(databaseDatasourcesService, databaseModelBrowserService,
-              dataModelFolderManagerService, dataSourceService);
+              dataModelFolderManagerService, dataSourceService, Mockito.mock(XRepository.class));
       
       openViewsheetService = new OpenViewsheetService(viewsheetService, objectTreeService);
    }

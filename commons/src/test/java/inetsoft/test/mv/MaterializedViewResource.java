@@ -51,10 +51,14 @@ public class MaterializedViewResource {
       
       MVSupportService mvSupportService = MVSupportService.getInstance();
       ContentRepositoryTreeService contentRepositoryTreeService = controllersResource.getContentRepositoryTreeService();
-      MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService);
+      MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService, mock(inetsoft.sree.internal.cluster.Cluster.class),
+              mock(inetsoft.mv.MVManager.class), mock(inetsoft.sree.internal.DataCycleManager.class),
+              mock(inetsoft.sree.security.SecurityEngine.class), mock(inetsoft.mv.data.MVStorage.class));
       AssetRepository assetRepository = AssetUtil.getAssetRepository(false);
-      materializedViewApiService = new MaterializedViewApiService(mvService, assetRepository, mvSupportService);
-      materializedViewApiController = new MaterializedViewApiController(materializedViewApiService, new MaterializedViewApiServiceProxy());
+      materializedViewApiService = new MaterializedViewApiService(mvService, assetRepository, mvSupportService,
+              mock(inetsoft.sree.internal.cluster.Cluster.class));
+      materializedViewApiController = new MaterializedViewApiController(materializedViewApiService,
+              mock(MaterializedViewApiServiceProxy.class));
    }
    
    /**
