@@ -71,7 +71,9 @@ public class RuntimeViewsheetResource {
          throw e;
       }
       catch(Exception e) {
-         throw new RuntimeException("Failed to export viewsheet", e);
+         Throwable root = e;
+         while(root.getCause() != null) root = root.getCause();
+         throw new RuntimeException("Failed to export viewsheet [root: " + root.getClass().getName() + ": " + root.getMessage() + "]", e);
       }
    }
    

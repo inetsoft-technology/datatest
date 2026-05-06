@@ -60,6 +60,7 @@ class ViewsheetTest {
       context.setHome(System.getProperty("sree.home"))*/
 
       ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      ControllersResource.initSpringContext()
    }
 
    /**
@@ -280,7 +281,7 @@ class ViewsheetTest {
                  bks, false, false, null, new ExportResponse(out), principal)
       }
       catch(Exception ex) {
-         new Exception("==========export PNG failed:===========", ex).printStackTrace();
+         throw new RuntimeException("==========export PNG failed:===========", ex)
       }
       finally {
          out.close()

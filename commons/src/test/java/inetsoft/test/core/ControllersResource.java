@@ -9,6 +9,7 @@ import inetsoft.report.composition.WorksheetService;
 import inetsoft.sree.RepletRegistryManager;
 import inetsoft.sree.internal.SUtil;
 import inetsoft.sree.internal.cluster.Cluster;
+import inetsoft.sree.internal.cluster.MockCluster;
 import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
@@ -61,6 +62,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.mockito.*;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
@@ -96,7 +98,7 @@ public class ControllersResource {
    
    private void createControllers() {
       viewsheetService = ViewsheetEngine.getViewsheetEngine();
-      Cluster cluster = Mockito.mock(Cluster.class);
+      Cluster cluster = new MockCluster();
       
       worksheetService = WorksheetEngine.getWorksheetService();
       
@@ -186,10 +188,12 @@ public class ControllersResource {
             bookmarkService.onApplicationEvent(pbe);
          }
       };
+      inetsoft.uql.service.DataSourceRegistry dataSourceRegistry =
+              ConfigurationContext.getContext().getSpringBean(inetsoft.uql.service.DataSourceRegistry.class);
       coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService,
               vsLayoutService, parameterService, vsCompositionService, dataRefModelFactoryService,
               runtimeViewsheetRef, eventPublisher, Mockito.mock(inetsoft.report.internal.license.LicenseManager.class),
-              securityEngine, cluster, Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class));
+              securityEngine, cluster, dataSourceRegistry);
       sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
       
@@ -473,4 +477,27 @@ public class ControllersResource {
    private VSChartShowDetailsService vsChartShowDetailsService;
    
    MockedStatic<ConfigurationContext> staticConfigurationContext;
+
+   /**
+    * Initializes a real Spring ApplicationContext using DataTestSpringConfig, which provides
+    * mapdb storage and all engine beans needed after the epic-70095 singleton-to-Spring migration.
+    * Safe to call multiple times — a no-op if already initialized.
+    */
+   public static void initSpringContext() {
+      if(springContext != null && springContext.isActive()) {
+         return;
+      }
+
+      // Register beans first, then set the application context on ConfigurationContext BEFORE
+      // calling refresh(). This is necessary because Plugins' constructor calls
+      // FileSystemService.getInstance() which goes through ConfigurationContext.getSpringBean(),
+      // and that requires the application context to be set already.
+      AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+      ctx.register(DataTestSpringConfig.class);
+      ConfigurationContext.getContext().setApplicationContext(ctx);
+      ctx.refresh();
+      springContext = ctx;
+   }
+
+   private static AnnotationConfigApplicationContext springContext;
 }

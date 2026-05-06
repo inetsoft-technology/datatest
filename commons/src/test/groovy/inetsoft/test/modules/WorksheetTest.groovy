@@ -66,6 +66,7 @@ class WorksheetTest {
 
       context = ConfigurationContext.getContext()
       context.setHome(System.getProperty("ws.sree.home"))
+      ControllersResource.initSpringContext()
 
       if(properties != null) {
          properties.each { key, value ->
