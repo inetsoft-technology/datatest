@@ -25,6 +25,7 @@ class VSFormImportTest extends ViewsheetTest {
     * @return
     */
    def initVS() {
+      ensurePrincipal()
       DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers = new ControllersResource()
       controllers.initControllers()

@@ -9,6 +9,7 @@ import inetsoft.report.composition.WorksheetService;
 import inetsoft.sree.RepletRegistryManager;
 import inetsoft.sree.internal.SUtil;
 import inetsoft.sree.internal.cluster.Cluster;
+import inetsoft.sree.internal.cluster.MockCluster;
 import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
@@ -61,6 +62,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.mockito.*;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 
@@ -96,7 +98,7 @@ public class ControllersResource {
    
    private void createControllers() {
       viewsheetService = ViewsheetEngine.getViewsheetEngine();
-      Cluster cluster = Mockito.mock(Cluster.class);
+      Cluster cluster = new MockCluster();
       
       worksheetService = WorksheetEngine.getWorksheetService();
       
@@ -206,8 +208,8 @@ public class ControllersResource {
               runtimeViewsheetRef, runtimeViewsheetManager, vsLifecycleService, licenseService,
               Mockito.mock(OpenViewsheetServiceProxy.class), viewsheetService, securityEngine);
       
-      org.springframework.beans.factory.ObjectProvider<WorksheetEventServiceProxy> worksheetEventServiceProxy =
-              Mockito.mock(org.springframework.beans.factory.ObjectProvider.class);
+      ObjectProvider<WorksheetEventServiceProxy> worksheetEventServiceProxy =
+              Mockito.mock(ObjectProvider.class);
       when(worksheetEventServiceProxy.getIfAvailable()).thenReturn(Mockito.mock(WorksheetEventServiceProxy.class));
       worksheetEventService = new WorksheetEventService(viewsheetService, worksheetEventServiceProxy);
       openWorksheetController = new OpenWorksheetController(runtimeViewsheetManager, assetRepository,

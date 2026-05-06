@@ -13,6 +13,7 @@ import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -32,7 +33,7 @@ class VSExportTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**

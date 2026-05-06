@@ -18,6 +18,7 @@ import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 class CSSTest {
    CSSTest(String caseName) {
@@ -27,7 +28,7 @@ class CSSTest {
    static initHome(String suiteName) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**

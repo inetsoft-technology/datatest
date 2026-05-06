@@ -28,6 +28,7 @@ import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 class AdditionalConnectionTest {
    AdditionalConnectionTest(String caseName) {
@@ -39,7 +40,7 @@ class AdditionalConnectionTest {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
       context = ConfigurationContext.getContext()
-      context.setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**

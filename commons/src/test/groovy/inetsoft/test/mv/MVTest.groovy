@@ -32,6 +32,7 @@ import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 import inetsoft.report.composition.graph.VSDataSet
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 import java.text.SimpleDateFormat
 import java.text.NumberFormat
@@ -44,7 +45,7 @@ class MVTest {
    }
 
    def static initHome() {
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       controllers = new ControllersResource()
       controllers.initControllers()
    }
