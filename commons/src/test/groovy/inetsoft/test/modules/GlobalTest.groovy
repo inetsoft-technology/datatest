@@ -42,6 +42,7 @@ import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 import java.awt.image.BufferedImage
 
@@ -67,7 +68,7 @@ class GlobalTest {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
       context = ConfigurationContext.getContext()
-      context.setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
 
       if(properties != null) {
          properties.each { key, value ->

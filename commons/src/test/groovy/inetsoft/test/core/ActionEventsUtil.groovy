@@ -55,6 +55,7 @@ class ActionEventsUtil {
     * import asset file to sree.home
     */
    def importAssetsFile(String path) {
+      ensureAdmin()
       controllersResource.initControllers()
       if(System.properties['os.name'].toString().toLowerCase().contains('windows')) {
          controllersResource.getFileApiService().importAssets(new File(path.minus('file:/')), [], true, admin)
@@ -64,6 +65,13 @@ class ActionEventsUtil {
       }
    }
 
-   SRPrincipal admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+   SRPrincipal admin
    ControllersResource controllersResource = new ControllersResource()
+
+   private void ensureAdmin() {
+      if(admin == null) {
+         DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+         admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+      }
+   }
 }

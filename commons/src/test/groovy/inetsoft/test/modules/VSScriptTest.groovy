@@ -8,7 +8,6 @@ import inetsoft.uql.viewsheet.VSBookmark
 import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.uql.viewsheet.Viewsheet
 import inetsoft.uql.viewsheet.internal.VSAssemblyInfo
-import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
@@ -18,6 +17,7 @@ import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
@@ -35,7 +35,7 @@ class VSScriptTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.vsscript')
       this.suiteName = arrs.size() == 1 ? null : arrs[1].replace('.', '/')
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    def printVS(def bks, def assemblies) {

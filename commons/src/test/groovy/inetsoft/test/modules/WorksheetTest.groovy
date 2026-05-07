@@ -32,6 +32,7 @@ import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
@@ -65,7 +66,7 @@ class WorksheetTest {
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
 
       context = ConfigurationContext.getContext()
-      context.setHome(System.getProperty("ws.sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('ws.sree.home', '.'))
 
       if(properties != null) {
          properties.each { key, value ->
@@ -88,6 +89,7 @@ class WorksheetTest {
    }
 
    def initWS(String asset_id, SRPrincipal principal) {
+      ensureAdmin()
       DataSpace.getDataSpace()
       controllers = new ControllersResource()
       controllers.initControllers()
@@ -246,6 +248,7 @@ class WorksheetTest {
     * @return
     */
    def exportVSComponentData(String asset_id, Map<String, String[]> params) {
+      ensureAdmin()
       controllers = new ControllersResource()
       controllers.initControllers()
       //controllers.initApplicationContext(context)
@@ -342,5 +345,11 @@ class WorksheetTest {
    ExportUtil exportUtil = new ExportUtil()
    CompareUtil compareUtil = new CompareUtil()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-   SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], [] as String[])
+   SRPrincipal admin
+
+   private void ensureAdmin() {
+      if(admin == null) {
+         admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], [] as String[])
+      }
+   }
 }

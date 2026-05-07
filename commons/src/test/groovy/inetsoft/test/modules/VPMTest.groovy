@@ -20,6 +20,7 @@ import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.ExportUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 class VPMTest {
    VPMTest(String asset_id) {
@@ -28,7 +29,7 @@ class VPMTest {
 
    static initHome() {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
       controllers.initControllers()
    }

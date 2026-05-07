@@ -20,7 +20,6 @@ import inetsoft.web.viewsheet.service.CommandDispatcher;
 import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.web.viewsheet.service.CommandDispatcherService;
 import org.mockito.Mockito;
-import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
 import org.springframework.messaging.support.GenericMessage;

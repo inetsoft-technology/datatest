@@ -13,10 +13,13 @@ import inetsoft.report.composition.graph.IntervalDataSet
 import inetsoft.report.composition.graph.VGraphPair
 import inetsoft.report.composition.graph.VSDataSet
 import inetsoft.sree.security.SRPrincipal
+import inetsoft.sree.internal.SUtil
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.uql.asset.Assembly
+import inetsoft.uql.asset.AssetContent
+import inetsoft.uql.asset.AssetEntry
 import inetsoft.uql.viewsheet.ChartVSAssembly
 import inetsoft.uql.viewsheet.CurrentSelectionVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
@@ -26,7 +29,6 @@ import inetsoft.uql.viewsheet.TabVSAssembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.graph.ChartAggregateRef
-import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
@@ -37,6 +39,7 @@ import inetsoft.test.core.TUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
+import inetsoft.test.core.DatatestRuntimeBootstrap
 
 
 import java.awt.image.BufferedImage
@@ -56,10 +59,7 @@ class ViewsheetTest {
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
 
-      /*context = ConfigurationContext.getContext()
-      context.setHome(System.getProperty("sree.home"))*/
-
-      ConfigurationContext.getContext().setHome(System.getProperty("sree.home"))
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**
@@ -86,6 +86,7 @@ class ViewsheetTest {
     * @return
     */
    def initVS(Map<String, String[]> params, Boolean isViewer) {
+      ensurePrincipal()
       DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
       controllers = new ControllersResource()
       controllers.initControllers()
@@ -384,6 +385,17 @@ class ViewsheetTest {
       compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
    }
 
+   /**
+    * SRPrincipal triggers XSessionService via Spring; {@link #initHome} must run first
+    * to bind a minimal ApplicationContext before construction.
+    */
+   protected void ensurePrincipal() {
+      if(principal == null) {
+         principal = tUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
+                 new String[0])
+      }
+   }
+
    protected static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
 
@@ -391,6 +403,5 @@ class ViewsheetTest {
    CompareUtil compareUtil = new CompareUtil()
    TUtil tUtil = new TUtil()
 
-   SRPrincipal principal = tUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
-           new String[0])
+   SRPrincipal principal
 }
