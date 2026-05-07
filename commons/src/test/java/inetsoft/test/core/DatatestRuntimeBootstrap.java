@@ -4,8 +4,15 @@
 package inetsoft.test.core;
 
 import inetsoft.test.IntegrationTestConfiguration;
+import inetsoft.sree.security.AuthenticationProvider;
+import inetsoft.sree.security.EditableAuthenticationProvider;
+import inetsoft.sree.security.FSUser;
+import inetsoft.sree.security.IdentityID;
+import inetsoft.sree.security.Organization;
+import inetsoft.sree.security.SecurityEngine;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.util.DataSpace;
+import inetsoft.util.Plugins;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.StandardEnvironment;
@@ -59,6 +66,8 @@ public final class DatatestRuntimeBootstrap {
       ctx.setHome(resolved);
 
       if(ctx.getApplicationContext() != null) {
+         initializeSecurity(ctx);
+         initializePlugins(ctx);
          return;
       }
 
@@ -77,5 +86,34 @@ public final class DatatestRuntimeBootstrap {
       app.refresh();
       // Avoid Caffeine recursive compute when MVManager construction calls DataSpace.getDataSpace().
       ctx.getSpringBean(DataSpace.class);
+      initializeSecurity(ctx);
+      initializePlugins(ctx);
+   }
+
+   private static void initializeSecurity(ConfigurationContext ctx) {
+      SecurityEngine securityEngine = ctx.getSpringBean(SecurityEngine.class);
+      securityEngine.init();
+
+      AuthenticationProvider authenticationProvider =
+         securityEngine.getSecurityProvider().getAuthenticationProvider();
+      IdentityID adminId = new IdentityID("admin", Organization.getDefaultOrganizationID());
+
+      if(authenticationProvider.getUser(adminId) == null &&
+         authenticationProvider instanceof EditableAuthenticationProvider editable)
+      {
+         FSUser admin = new FSUser(adminId);
+         admin.setActive(true);
+         admin.setEmails(new String[0]);
+         admin.setGroups(new String[0]);
+         admin.setLocale("");
+         admin.setRoles(new IdentityID[] {
+            new IdentityID("Administrator", Organization.getDefaultOrganizationID())
+         });
+         editable.addUser(admin);
+      }
+   }
+
+   private static void initializePlugins(ConfigurationContext ctx) {
+      ctx.getSpringBean(Plugins.class).initBean();
    }
 }
