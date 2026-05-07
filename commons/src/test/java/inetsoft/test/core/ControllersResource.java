@@ -15,6 +15,7 @@ import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XRepository;
 import inetsoft.uql.asset.AssetRepository;
+import inetsoft.uql.service.DataSourceRegistry;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
@@ -182,6 +183,7 @@ public class ControllersResource {
             ((DataRefModelWrapperFactory) f).setDataRefModelFactoryService(dataRefModelFactoryService);
          }
       });
+      DataSourceRegistry dataSourceRegistry = DataSourceRegistry.getRegistry();
       
       ApplicationEventPublisher eventPublisher = event -> {
          if(bookmarkService != null && event instanceof ProcessBookmarkEvent pbe) {
@@ -191,7 +193,7 @@ public class ControllersResource {
       coreLifecycleService = new CoreLifecycleService(objectModelFactoryService, viewsheetService,
               vsLayoutService, parameterService, vsCompositionService, dataRefModelFactoryService,
               runtimeViewsheetRef, eventPublisher, Mockito.mock(inetsoft.report.internal.license.LicenseManager.class),
-              securityEngine, cluster, Mockito.mock(inetsoft.uql.service.DataSourceRegistry.class));
+              securityEngine, cluster, dataSourceRegistry);
       sharedFilterService = new SharedFilterService(Mockito.mock(SimpMessagingTemplate.class), viewsheetService);
       objectService = new VSObjectService(coreLifecycleService, viewsheetService, securityEngine, sharedFilterService);
       

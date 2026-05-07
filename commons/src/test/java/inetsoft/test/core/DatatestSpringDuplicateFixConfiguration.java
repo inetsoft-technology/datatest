@@ -8,14 +8,18 @@ import inetsoft.report.internal.license.LicenseManager;
 import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.sree.schedule.ScheduleClient;
 import inetsoft.uql.asset.DependencyHandler;
+import inetsoft.uql.jdbc.ConnectionPoolFactory;
+import inetsoft.uql.jdbc.DefaultConnectionPoolFactory;
 import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.uql.util.XSessionService;
 import inetsoft.util.DataCacheSweeper;
+import inetsoft.util.credential.CredentialService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import java.lang.reflect.Constructor;
 import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -94,5 +98,19 @@ public class DatatestSpringDuplicateFixConfiguration {
    @Primary
    public XSessionService datatestPrimaryXSessionService() {
       return new XSessionService();
+   }
+
+   @Bean(name = "connectionPoolFactory")
+   @Primary
+   public ConnectionPoolFactory connectionPoolFactory() {
+      return new DefaultConnectionPoolFactory();
+   }
+
+   @Bean
+   @Primary
+   public CredentialService credentialService() throws Exception {
+      Constructor<CredentialService> constructor = CredentialService.class.getDeclaredConstructor();
+      constructor.setAccessible(true);
+      return constructor.newInstance();
    }
 }
