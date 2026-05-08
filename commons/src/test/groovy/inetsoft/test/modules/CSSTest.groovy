@@ -19,6 +19,7 @@ import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
 import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 class CSSTest {
    private static Object initializedApplicationContext
@@ -142,14 +143,19 @@ class CSSTest {
    private CompareUtil compareUtil = new CompareUtil()
 
    private static synchronized ensureRuntimeInitialized() {
+      ConfigurationContext context = ConfigurationContext.getContext()
       def currentContext = ConfigurationContext.getContext().getApplicationContext()
 
-      if(currentContext != null && initializedApplicationContext == currentContext) {
-         return
+      if(currentContext == null) {
+         DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+         currentContext = context.getApplicationContext()
+      }
+      else {
+         context.setHome(System.getProperty('sree.home', '.'))
+         DatatestSpringRuntimeInitializer.initialize(context, currentContext)
       }
 
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
-      initializedApplicationContext = ConfigurationContext.getContext().getApplicationContext()
+      initializedApplicationContext = currentContext
    }
 }
