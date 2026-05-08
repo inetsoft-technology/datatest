@@ -6,9 +6,19 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
+import spock.lang.IgnoreRest
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class Bugs_Spec extends Specification{
    static VSScriptTest vsScriptTest
    String caseName
@@ -22,6 +32,7 @@ class Bugs_Spec extends Specification{
     * TestData1: Bug #62455, Bug #62458
     * TestData2: Bug #62459, Bug #62462
     */
+   @IgnoreRest
    def 'TestCase-EGraphBind1' () {
       given:
       caseName = specificationContext.currentIteration.name

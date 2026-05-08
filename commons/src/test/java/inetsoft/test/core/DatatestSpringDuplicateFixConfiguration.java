@@ -85,6 +85,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -191,9 +192,11 @@ public class DatatestSpringDuplicateFixConfiguration {
     * If those beans are still resolving while {@code MVManager} is being cached, Caffeine/CHM can throw
     * {@code IllegalStateException: Recursive update} (same class of issue as
     * {@link DatatestSpringRuntimeInitializer#initializeStorageAccess}).
-    * Force storage beans to finish before {@code MVManager} instantiation.
+    * Force storage beans to finish before {@code MVManager} instantiation, and use {@link Lazy} so
+    * {@code new MVManager} runs on first access after refresh—not during a nested {@code getBean} stack.
     */
    @Bean(name = "mvManager")
+   @Lazy
    @Primary
    @DependsOn({"dataSpace", "indexedStorage", "blobStorageManager"})
    public MVManager datatestMvManager(Cluster cluster, DataSpace dataSpace, IndexedStorage indexedStorage) {
