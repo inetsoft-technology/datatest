@@ -23,7 +23,7 @@ class VSFormImportTest extends ViewsheetTest {
       ensurePrincipal()
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(null, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(null, asset_id))
       viewsheetResource.initRuntimeVS(principal)
    }
 

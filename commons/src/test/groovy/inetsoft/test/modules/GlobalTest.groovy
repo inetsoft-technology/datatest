@@ -37,12 +37,11 @@ import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.awt.image.BufferedImage
 
@@ -115,15 +114,13 @@ class GlobalTest {
 
    def executeVS(String asset_id, String[] bks, Map<String, String[]> params, def types, boolean match) {
       ensureRuntimeInitialized()
-      controllers = new ControllersResource()
-      controllers.initControllers()
       ThreadContext.setContextPrincipal(admin)
 
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       SUtil.setAdditionalDatasource(admin)
       viewsheetResource.initRuntimeVS(admin)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
@@ -200,12 +197,9 @@ class GlobalTest {
     */
    def executeWS(String asset_id, Map<String, String[]> params) {
       ensureRuntimeInitialized()
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      controllers.initApplicationContext(context)
       ThreadContext.setContextPrincipal(admin)
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
-      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
+      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent)
       SUtil.setAdditionalDatasource(admin)
       worksheetResource.initRuntimeWS(admin)
 
@@ -236,9 +230,6 @@ class GlobalTest {
       }
       catch(Exception e) {
          e.printStackTrace()
-      }
-      finally {
-         controllers.destroy()
       }
    }
 
@@ -272,9 +263,8 @@ class GlobalTest {
     */
    def executeVSWithElement0(String asset_id, String bk, Map<String, String[]> params) {
       ensureRuntimeInitialized()
-      controllers.initControllers()
       viewsheetResource =
-              new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+              new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(admin)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
@@ -428,7 +418,6 @@ class GlobalTest {
    static ConfigurationContext context
    RuntimeViewsheetResource viewsheetResource
    RuntimeWorksheetResource worksheetResource
-   ControllersResource controllers = new ControllersResource()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    ExportUtil exportUtil = new ExportUtil()
    CompareUtil compareUtil = new CompareUtil()
@@ -444,10 +433,10 @@ class GlobalTest {
          return
       }
 
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
-      DataSpace.getDataSpace()
       context = ConfigurationContext.getContext()
-      initializedApplicationContext = context.getApplicationContext()
+      initializedApplicationContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
    }
 
 }

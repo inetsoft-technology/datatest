@@ -10,10 +10,8 @@ import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
 import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.nio.file.Files
@@ -170,9 +168,8 @@ class VSExportTest {
     */
    def executeVS(Map<String, String[]> params) {
       ensureRuntimeInitialized()
-      controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -247,23 +244,14 @@ class VSExportTest {
    RuntimeViewsheetResource viewsheetResource
    SRPrincipal principal = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])
-   ControllersResource controllers = new ControllersResource()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    CompareUtil compareUtil = new CompareUtil()
    TUtil tUtil = new TUtil()
 
    private static synchronized ensureRuntimeInitialized() {
       ConfigurationContext context = ConfigurationContext.getContext()
-      def currentContext = ConfigurationContext.getContext().getApplicationContext()
-
-      if(currentContext == null) {
-         DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
-         currentContext = context.getApplicationContext()
-      }
-      else {
-         context.setHome(System.getProperty('sree.home', '.'))
-         DatatestSpringRuntimeInitializer.initialize(context, currentContext)
-      }
+      def currentContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
 
       DataSpace.getDataSpace()
       initializedApplicationContext = currentContext

@@ -11,6 +11,7 @@ import inetsoft.sree.security.FSUser;
 import inetsoft.sree.security.IdentityID;
 import inetsoft.sree.security.Organization;
 import inetsoft.sree.security.SecurityEngine;
+import inetsoft.mv.MVManager;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.util.DataSpace;
 import inetsoft.util.IndexedStorage;
@@ -24,8 +25,7 @@ import java.util.WeakHashMap;
 
 /**
  * Datatest-specific runtime initialization that must run after the Spring context
- * exists, regardless of whether the context was created by Spock/Spring or by the
- * legacy {@link DatatestRuntimeBootstrap}.
+ * exists.
  */
 public final class DatatestSpringRuntimeInitializer {
    private DatatestSpringRuntimeInitializer() {
@@ -35,13 +35,29 @@ public final class DatatestSpringRuntimeInitializer {
       initialize(ctx, ctx.getApplicationContext());
    }
 
+   public static ApplicationContext ensureInitialized(String home) {
+      ConfigurationContext ctx = ConfigurationContext.getContext();
+      String resolved = (home == null || home.isEmpty()) ? "." : home;
+      ctx.setHome(resolved);
+
+      ApplicationContext applicationContext = ctx.getApplicationContext();
+      if(applicationContext == null) {
+         throw new IllegalStateException(
+            "Spring ApplicationContext is not bound. Make sure the Spec uses "
+               + "@ContextConfiguration with ConfigurationContextInitializer.");
+      }
+
+      initialize(ctx, applicationContext);
+      return applicationContext;
+   }
+
    public static void initialize(ConfigurationContext ctx, ApplicationContext applicationContext) {
       synchronized(INITIALIZED_CONTEXTS) {
          if(applicationContext != null && INITIALIZED_CONTEXTS.contains(applicationContext)) {
             return;
          }
 
-         initializeStorageAccess(ctx);
+         initializeStorageAccess(ctx, applicationContext);
          alignSreeEnv(ctx);
          initializeSecurity(ctx);
          initializePlugins(ctx);
@@ -72,11 +88,20 @@ public final class DatatestSpringRuntimeInitializer {
       }
    }
 
-   private static void initializeStorageAccess(ConfigurationContext ctx) {
+   private static void initializeStorageAccess(ConfigurationContext ctx,
+                                               ApplicationContext applicationContext)
+   {
       // Avoid Caffeine recursive compute when static accessors are called while another bean
       // such as MVManager is still being created.
       ctx.getSpringBean(DataSpace.class);
       ctx.getSpringBean(IndexedStorage.class);
+      // MVManager is @Lazy; first touch from a worker (e.g. RepletEngine) inside
+      // ConfigurationContext.getSpringBean -> MVDefMap -> DataSpace can re-enter the same
+      // Caffeine compute and throw IllegalStateException: Recursive update. Resolve it here
+      // on the initializer thread while storage beans are already cached.
+      if(applicationContext != null && applicationContext.containsBean("mvManager")) {
+         ctx.getSpringBean(MVManager.class);
+      }
    }
 
    private static void ensurePropertiesStorageInitialized(PropertiesEngine propertiesEngine) {

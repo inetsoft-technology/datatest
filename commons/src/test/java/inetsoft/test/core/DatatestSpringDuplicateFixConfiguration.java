@@ -110,11 +110,10 @@ import static org.mockito.Mockito.mock;
 
 /**
  * Loaded together with {@link inetsoft.test.BaseTestConfiguration} and
- * {@link inetsoft.test.IntegrationTestConfiguration} via {@link DatatestRuntimeBootstrap}
- * or {@code @ContextConfiguration}.
+ * {@link inetsoft.test.IntegrationTestConfiguration} via {@code @ContextConfiguration}.
  * <p>
  * Provides {@code @Primary} overrides where inetsoft-core registers overlapping beans,
- * and fills in beans required by {@link ControllersResource} that are not provided by
+ * and fills in beans required by datatest helpers that are not provided by
  * {@link inetsoft.test.IntegrationTestConfiguration}.
  * </p>
  */
@@ -244,7 +243,7 @@ public class DatatestSpringDuplicateFixConfiguration {
       return constructor.newInstance();
    }
 
-   // ─── Beans used by ControllersResource but absent from IntegrationTestConfiguration ───
+   // ─── Beans used by datatest helpers but absent from IntegrationTestConfiguration ───
 
    /**
     * SecurityProvider is obtained lazily (after scheduleManager calls securityEngine.init()).

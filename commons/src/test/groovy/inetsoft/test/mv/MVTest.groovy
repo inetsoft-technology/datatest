@@ -32,8 +32,6 @@ import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 import inetsoft.report.composition.graph.VSDataSet
 import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.ControllersResource
-import inetsoft.test.core.DatatestRuntimeBootstrap
 import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.text.SimpleDateFormat
@@ -47,7 +45,7 @@ class MVTest {
    MVTest(String asset_id) {
       ensureRuntimeInitialized()
       this.asset_id = asset_id
-      materializedViewResource = new MaterializedViewResource(this.asset_id, controllers)
+      materializedViewResource = new MaterializedViewResource(this.asset_id)
    }
 
    /**
@@ -64,23 +62,10 @@ class MVTest {
 
    private static synchronized ensureRuntimeInitialized() {
       ConfigurationContext ctx = ConfigurationContext.getContext()
-      def currentContext = ctx.getApplicationContext()
       String home = System.getProperty('sree.home', '.')
-
-      if(currentContext == null) {
-         DatatestRuntimeBootstrap.bootstrap(home)
-         currentContext = ctx.getApplicationContext()
-      }
-      else {
-         ctx.setHome(home)
-         DatatestSpringRuntimeInitializer.initialize(ctx, currentContext)
-      }
+      DatatestSpringRuntimeInitializer.ensureInitialized(home)
 
       DataSpace.getDataSpace()
-      if(controllers == null) {
-         controllers = new ControllersResource()
-         controllers.initControllers()
-      }
    }
 
    List getMVDefInfo(List<TableLens> datas) {
@@ -157,8 +142,7 @@ class MVTest {
       }
 
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params)
-              , controllers)
+      viewsheetResource = new RuntimeViewsheetResource(createOpenViewsheetEvent(params))
       viewsheetResource.initRuntimeVS(principal)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
@@ -557,7 +541,6 @@ class MVTest {
       }
    }
 
-   private static ControllersResource controllers
    private static MaterializedViewResource materializedViewResource
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id

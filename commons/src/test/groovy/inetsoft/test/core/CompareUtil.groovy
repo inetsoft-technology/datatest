@@ -9,6 +9,7 @@ import inetsoft.report.internal.png.PNGEncoder
 import java.awt.*
 import java.awt.image.BufferedImage
 import java.util.List
+import java.util.Locale
 
 class CompareUtil {
 
@@ -122,7 +123,8 @@ class CompareUtil {
    }
 
    def PNGCompare(String resFile, def allowedPixelPercent) {
-      String[] temp = resFile.split('exportData')
+      String exportRoot = resFile.contains('exportedData') ? 'exportedData' : 'exportData'
+      String[] temp = resFile.split(exportRoot, 2)
       def status = [:]
 
       BufferedImage expectImage = null
@@ -130,7 +132,7 @@ class CompareUtil {
 
       try {
          expectImage = ImageComparisonUtil.readImageFromResources('expectData' + temp[1])
-         resImage = ImageComparisonUtil.readImageFromResources('exportData' + temp[1])
+         resImage = ImageComparisonUtil.readImageFromResources(exportRoot + temp[1])
 
          ImageComparison imageComparison = new ImageComparison(expectImage, resImage)
          imageComparison.setAllowingPercentOfDifferentPixels(allowedPixelPercent)
@@ -239,7 +241,8 @@ class CompareUtil {
    def FileCompare(String resFile, String charset, Boolean isHTML) {
       def status = [:]
 
-      String expFile = resFile.replace('exportData', 'expectData')
+      // MVTest writes under "exportedData" (see MVTest.getExportFolderPath); substring "exportData" does not replace inside "exportedData".
+      String expFile = resFile.replace('exportedData', 'expectData').replace('exportData', 'expectData')
       File resFileObj = new File(resFile)
       File expFileObj = new File(expFile)
 
@@ -251,9 +254,11 @@ class CompareUtil {
 
       // Select comparison strategy based on file type and size
       boolean isHTMLFile = isHTML || resFile.endsWith('.html')
+      // MV / snapshot .txt: skip raw byte length — CRLF vs LF changes file size but readLines/readLine strip line terminators, so line compare below is authoritative
+      boolean skipRawSizeCheck = isHTMLFile || resFileObj.name.toLowerCase(Locale.ROOT).endsWith('.txt')
 
-      // Fast fail: file size check (skip HTML files because cross-platform line ending differences cause size differences, but content is actually the same)
-      if(!isHTMLFile && resFileObj.length() != expFileObj.length()) {
+      // Fast fail: file size check (skip HTML and .txt: cross-platform line endings differ in bytes but not in logical lines)
+      if(!skipRawSizeCheck && resFileObj.length() != expFileObj.length()) {
          status.put('false', "Compare Failed, file size is different. " +
                  "Expect file: ${expFileObj.name}, size: ${expFileObj.length()}; " +
                  "Result file: ${resFileObj.name}, size: ${resFileObj.length()}")

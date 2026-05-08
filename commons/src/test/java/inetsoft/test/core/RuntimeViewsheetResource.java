@@ -29,13 +29,7 @@ import java.security.Principal;
 
 public class RuntimeViewsheetResource {
    public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent) {
-      this(openViewsheetEvent, null);
-   }
-
-   public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent,
-                                   ControllersResource controllersResource) {
       this.openViewsheetEvent = openViewsheetEvent;
-      this.controllersResource = controllersResource;
    }
    
    public void initRuntimeVS(Principal principal) {
@@ -184,15 +178,11 @@ public class RuntimeViewsheetResource {
    }
 
    private ViewsheetService viewsheetService() {
-      return controllersResource != null ?
-         controllersResource.getViewsheetService() :
-         springBean(ViewsheetService.class);
+      return springBean(ViewsheetService.class);
    }
 
    private OpenViewsheetController openViewsheetController() {
-      return controllersResource != null ?
-         controllersResource.getOpenViewsheetController() :
-         springBean(OpenViewsheetController.class);
+      return springBean(OpenViewsheetController.class);
    }
 
    private RuntimeViewsheetRef runtimeViewsheetRef() {
@@ -200,39 +190,27 @@ public class RuntimeViewsheetResource {
    }
 
    private VSExportService vsExportService() {
-      return controllersResource != null ?
-         controllersResource.getVSExportService() :
-         springBean(VSExportService.class);
+      return springBean(VSExportService.class);
    }
 
    private CoreLifecycleService coreLifecycleService() {
-      return controllersResource != null ?
-         controllersResource.getCoreLifecycleService() :
-         springBean(CoreLifecycleService.class);
+      return springBean(CoreLifecycleService.class);
    }
 
    private ImportXLSController importXLSController() {
-      return controllersResource != null ?
-         controllersResource.getImportXLSController() :
-         springBean(ImportXLSController.class);
+      return springBean(ImportXLSController.class);
    }
 
    private ComposerVSTableController composerVSTableController() {
-      return controllersResource != null ?
-         controllersResource.getComposerVSTableController() :
-         springBean(ComposerVSTableController.class);
+      return springBean(ComposerVSTableController.class);
    }
 
    private VSChartShowDetailsService vsChartShowDetailsService() {
-      return controllersResource != null ?
-         controllersResource.getVSChartShowDetailsService() :
-         springBean(VSChartShowDetailsService.class);
+      return springBean(VSChartShowDetailsService.class);
    }
 
    private VSChartBrushService vsChartBrushService() {
-      return controllersResource != null ?
-         controllersResource.getVSChartBrushService() :
-         springBean(VSChartBrushService.class);
+      return springBean(VSChartBrushService.class);
    }
 
    private <T> T springBean(Class<T> type) {
@@ -240,7 +218,6 @@ public class RuntimeViewsheetResource {
    }
    
    private final OpenViewsheetEvent openViewsheetEvent;
-   private final ControllersResource controllersResource;
    private RuntimeViewsheet runtimeViewsheet;
    private String runtimeId;
 }

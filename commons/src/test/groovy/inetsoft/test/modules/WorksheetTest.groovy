@@ -27,12 +27,11 @@ import inetsoft.web.composer.model.ws.ImportCSVDialogModel
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
@@ -86,10 +85,9 @@ class WorksheetTest {
       ensureRuntimeInitialized()
       ensureAdmin()
       principal = principal ?: admin
-      controllers = createControllersResource()
       ThreadContext.setContextPrincipal(principal)
       admin.setIgnoreLogin(true)
-      worksheetResource = new RuntimeWorksheetResource(actionEventsUtil.openWorksheetEvent(asset_id), controllers)
+      worksheetResource = new RuntimeWorksheetResource(actionEventsUtil.openWorksheetEvent(asset_id))
       worksheetResource.initRuntimeWS(principal)
    }
 
@@ -104,9 +102,6 @@ class WorksheetTest {
       }
       catch(Exception ex) {
          ex.printStackTrace()
-      }
-      finally {
-         controllers?.destroy()
       }
    }
 
@@ -184,9 +179,6 @@ class WorksheetTest {
       catch(Exception ex) {
          ex.printStackTrace()
       }
-      finally {
-         controllers.destroy()
-      }
    }
 
    /**
@@ -243,10 +235,9 @@ class WorksheetTest {
    def exportVSComponentData(String asset_id, Map<String, String[]> params) {
       ensureRuntimeInitialized()
       ensureAdmin()
-      controllers = createControllersResource()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       admin.setIgnoreLogin(true)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(admin)
       ThreadContext.setContextPrincipal(admin)
 
@@ -278,9 +269,6 @@ class WorksheetTest {
       }
       catch(Exception e) {
          e.printStackTrace()
-      }
-      finally {
-         controllers.destroy()
       }
    }
 
@@ -329,7 +317,6 @@ class WorksheetTest {
    }
 
    private static String suiteName, caseName
-   private static ControllersResource controllers
    private static RuntimeWorksheetResource worksheetResource
    private static AssetQuerySandbox assetQuerySandbox
    private static RuntimeViewsheetResource viewsheetResource
@@ -353,7 +340,7 @@ class WorksheetTest {
          return
       }
 
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('ws.sree.home',
+      DatatestSpringRuntimeInitializer.ensureInitialized(System.getProperty('ws.sree.home',
               System.getProperty('sree.home', '.')))
       DataSpace.getDataSpace()
       context = ConfigurationContext.getContext()
@@ -368,12 +355,5 @@ class WorksheetTest {
       }
 
       initializedApplicationContext = currentContext
-   }
-
-   private static ControllersResource createControllersResource() {
-      ControllersResource resource = new ControllersResource()
-      resource.initControllers()
-      resource.initApplicationContext(context)
-      return resource
    }
 }

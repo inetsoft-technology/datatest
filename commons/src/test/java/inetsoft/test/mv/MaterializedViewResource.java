@@ -19,14 +19,11 @@ import inetsoft.web.admin.content.repository.MVService;
 import inetsoft.web.admin.content.repository.MVSupportService;
 import inetsoft.enterprise.web.api.mv.*;
 
-import inetsoft.test.core.ControllersResource;
-
 import org.mockito.MockedStatic;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -37,13 +34,14 @@ public class MaterializedViewResource {
     *
     * @param asset_id, the viewsheet asset_id
     */
-   public MaterializedViewResource(String asset_id, ControllersResource controllersResource) throws Exception {
+   public MaterializedViewResource(String asset_id) throws Exception {
       
       context = ConfigurationContext.getContext();
       context.setHome(System.getProperty("sree.home"));
       
-      Objects.requireNonNull(controllersResource, "controllersResource cannot be null");
-      Objects.requireNonNull(asset_id, "the asset not exist, check if asset_id is right");
+      if(asset_id == null) {
+         throw new NullPointerException("the asset not exist, check if asset_id is right");
+      }
       this.asset_id = asset_id;
       
       IdentityID identityUser = new IdentityID("admin", "host-org");
@@ -59,7 +57,8 @@ public class MaterializedViewResource {
       ThreadContext.setContextPrincipal(principal);
       
       MVSupportService mvSupportService = MVSupportService.getInstance();
-      ContentRepositoryTreeService contentRepositoryTreeService = controllersResource.getContentRepositoryTreeService();
+      ContentRepositoryTreeService contentRepositoryTreeService =
+         context.getSpringBean(ContentRepositoryTreeService.class);
       Cluster cluster = context.getSpringBean(Cluster.class);
       MVManager mvManager = context.getSpringBean(MVManager.class);
       SecurityEngine securityEngine = context.getSpringBean(SecurityEngine.class);
