@@ -41,6 +41,8 @@ import org.springframework.web.multipart.MultipartFile
 
 class WorksheetTest {
    static ConfigurationContext context
+   private static Object initializedApplicationContext
+   private static def pendingEnvProperties
 
    WorksheetTest(String caseName) {
       this.caseName = caseName
@@ -64,16 +66,7 @@ class WorksheetTest {
       System.err.print("=========ws.sree.home=====" + System.getProperty("ws.sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
-
-      context = ConfigurationContext.getContext()
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('ws.sree.home', '.'))
-
-      if(properties != null) {
-         properties.each { key, value ->
-            SreeEnv.setProperty(key, value)
-         }
-         SreeEnv.save()
-      }
+      pendingEnvProperties = properties
    }
 
    /**
@@ -82,6 +75,7 @@ class WorksheetTest {
     * @return
     */
    def clearEnv(def properties) {
+      ensureRuntimeInitialized()
       properties.each { key, value ->
          SreeEnv.setProperty(key, null)
       }
@@ -89,15 +83,13 @@ class WorksheetTest {
    }
 
    def initWS(String asset_id, SRPrincipal principal) {
+      ensureRuntimeInitialized()
       ensureAdmin()
-      DataSpace.getDataSpace()
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      controllers.initApplicationContext(context)
+      principal = principal ?: admin
+      controllers = createControllersResource()
       ThreadContext.setContextPrincipal(principal)
       admin.setIgnoreLogin(true)
       worksheetResource = new RuntimeWorksheetResource(actionEventsUtil.openWorksheetEvent(asset_id), controllers)
-      principal = principal ?: admin
       worksheetResource.initRuntimeWS(principal)
    }
 
@@ -114,7 +106,7 @@ class WorksheetTest {
          ex.printStackTrace()
       }
       finally {
-         controllers.destroy()
+         controllers?.destroy()
       }
    }
 
@@ -128,6 +120,7 @@ class WorksheetTest {
     */
    def executeWS(String asset_id, Map<String, Object> params, def mode, SRPrincipal principal, String bk) {
       initWS(asset_id, principal)
+      principal = principal ?: admin
       RuntimeWorksheet runtimeWorksheet = worksheetResource.getRuntimeWorksheet(principal)
       assetQuerySandbox = runtimeWorksheet.getAssetQuerySandbox()
       Assembly[] assemblies = runtimeWorksheet.getWorksheet().getAssemblies()
@@ -248,10 +241,9 @@ class WorksheetTest {
     * @return
     */
    def exportVSComponentData(String asset_id, Map<String, String[]> params) {
+      ensureRuntimeInitialized()
       ensureAdmin()
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      //controllers.initApplicationContext(context)
+      controllers = createControllersResource()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       admin.setIgnoreLogin(true)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
@@ -351,5 +343,37 @@ class WorksheetTest {
       if(admin == null) {
          admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], [] as String[])
       }
+   }
+
+   private static synchronized ensureRuntimeInitialized() {
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(currentContext != null && initializedApplicationContext == currentContext &&
+              pendingEnvProperties == null) {
+         return
+      }
+
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('ws.sree.home',
+              System.getProperty('sree.home', '.')))
+      DataSpace.getDataSpace()
+      context = ConfigurationContext.getContext()
+      currentContext = context.getApplicationContext()
+
+      if(pendingEnvProperties != null) {
+         pendingEnvProperties.each { key, value ->
+            SreeEnv.setProperty(key, value)
+         }
+         SreeEnv.save()
+         pendingEnvProperties = null
+      }
+
+      initializedApplicationContext = currentContext
+   }
+
+   private static ControllersResource createControllersResource() {
+      ControllersResource resource = new ControllersResource()
+      resource.initControllers()
+      resource.initApplicationContext(context)
+      return resource
    }
 }

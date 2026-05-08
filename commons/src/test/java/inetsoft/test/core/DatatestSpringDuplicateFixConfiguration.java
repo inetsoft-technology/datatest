@@ -19,6 +19,7 @@ import inetsoft.sree.schedule.ScheduleManager;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SecurityProvider;
 import inetsoft.uql.XRepository;
+import inetsoft.uql.asset.AssetEntry;
 import inetsoft.uql.asset.AssetRepository;
 import inetsoft.uql.asset.DependencyHandler;
 import inetsoft.uql.asset.sync.RenameTransformHandler;
@@ -77,6 +78,7 @@ import inetsoft.web.viewsheet.service.RuntimeViewsheetManager;
 import inetsoft.web.viewsheet.service.VSDialogService;
 import inetsoft.web.viewsheet.service.VSExportService;
 import inetsoft.web.viewsheet.service.VSLifecycleService;
+import inetsoft.web.viewsheet.service.CommandDispatcher;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -85,9 +87,13 @@ import org.springframework.context.annotation.Primary;
 
 import java.rmi.RemoteException;
 import java.lang.reflect.Constructor;
+import java.security.Principal;
 import java.util.Set;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.mock;
@@ -186,10 +192,24 @@ public class DatatestSpringDuplicateFixConfiguration {
    }
 
    @Bean
-   public WorksheetEventService worksheetEventService(ViewsheetService viewsheetService) {
+   public WorksheetEventService worksheetEventService(ViewsheetService viewsheetService) throws Exception {
       ObjectProvider<WorksheetEventServiceProxy> proxy = mock(ObjectProvider.class);
-      lenient().when(proxy.getIfAvailable()).thenReturn(mock(WorksheetEventServiceProxy.class));
-      return new WorksheetEventService(viewsheetService, proxy);
+      WorksheetEventServiceProxy serviceProxy = mock(WorksheetEventServiceProxy.class);
+      WorksheetEventService[] service = new WorksheetEventService[1];
+
+      lenient().when(serviceProxy.openWorksheet(
+         anyString(), nullable(Principal.class), any(AssetEntry.class),
+         anyBoolean(), anyBoolean(), any(CommandDispatcher.class)))
+         .thenAnswer(invocation -> service[0].openWorksheet(
+            invocation.getArgument(0),
+            invocation.getArgument(1),
+            invocation.getArgument(2),
+            invocation.getArgument(3),
+            invocation.getArgument(4),
+            invocation.getArgument(5)));
+      lenient().when(proxy.getIfAvailable()).thenReturn(serviceProxy);
+      service[0] = new WorksheetEventService(viewsheetService, proxy);
+      return service[0];
    }
 
    @Bean

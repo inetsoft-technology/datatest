@@ -255,7 +255,8 @@ class CompareUtil {
       // Fast fail: file size check (skip HTML files because cross-platform line ending differences cause size differences, but content is actually the same)
       if(!isHTMLFile && resFileObj.length() != expFileObj.length()) {
          status.put('false', "Compare Failed, file size is different. " +
-                 "Expect file size: ${expFileObj.length()}, Result file size: ${resFileObj.length()}")
+                 "Expect file: ${expFileObj.name}, size: ${expFileObj.length()}; " +
+                 "Result file: ${resFileObj.name}, size: ${resFileObj.length()}")
          return status
       }
 

@@ -20,6 +20,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.StandardEnvironment;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -120,7 +121,9 @@ public final class DatatestRuntimeBootstrap {
     * </p>
     */
    private static void alignSreeEnvAfterBootstrap(ConfigurationContext ctx) {
-      ctx.getSpringBean(PropertiesEngine.class).init(true);
+      PropertiesEngine propertiesEngine = ctx.getSpringBean(PropertiesEngine.class);
+      ensurePropertiesStorageInitialized(propertiesEngine);
+      propertiesEngine.init(true);
 
       for(String key : new String[] {
          "security.enabled", "security.login.orgLocation", "data.home", "adm.home"
@@ -134,6 +137,20 @@ public final class DatatestRuntimeBootstrap {
                   + "' absent from KV storage; applied from System property: " + sysProp);
             }
          }
+      }
+   }
+
+   private static void ensurePropertiesStorageInitialized(PropertiesEngine propertiesEngine) {
+      try {
+         Field kvStorage = PropertiesEngine.class.getDeclaredField("kvStorage");
+         kvStorage.setAccessible(true);
+
+         if(kvStorage.get(propertiesEngine) == null) {
+            propertiesEngine.initEngine();
+         }
+      }
+      catch(ReflectiveOperationException e) {
+         throw new IllegalStateException("Failed to verify PropertiesEngine key-value storage", e);
       }
    }
 
