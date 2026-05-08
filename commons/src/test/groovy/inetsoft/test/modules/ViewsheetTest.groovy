@@ -29,6 +29,7 @@ import inetsoft.uql.viewsheet.TabVSAssembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.graph.ChartAggregateRef
+import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
@@ -47,8 +48,10 @@ import java.awt.image.BufferedImage
 class ViewsheetTest {
    //static ConfigurationContext context
    static ControllersResource controllers
+   private static Object initializedApplicationContext
 
    ViewsheetTest(String asset_id, String caseName) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
    }
@@ -57,11 +60,19 @@ class ViewsheetTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
+   }
 
+   private static synchronized ensureRuntimeInitialized() {
       DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
-      controllers = new ControllersResource()
-      controllers.initControllers()
+
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(controllers == null || initializedApplicationContext != currentContext) {
+         controllers = new ControllersResource()
+         controllers.initControllers()
+         initializedApplicationContext = currentContext
+      }
    }
 
    /**
@@ -384,8 +395,8 @@ class ViewsheetTest {
    }
 
    /**
-    * SRPrincipal triggers XSessionService via Spring; {@link #initHome} must run first
-    * to bind a minimal ApplicationContext before construction.
+    * SRPrincipal triggers XSessionService via Spring; runtime initialization must run
+    * before principal construction so the ApplicationContext is available.
     */
    protected void ensurePrincipal() {
       if(principal == null) {
