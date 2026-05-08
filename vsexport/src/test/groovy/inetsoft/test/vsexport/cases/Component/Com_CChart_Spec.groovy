@@ -4,11 +4,26 @@ import inetsoft.test.modules.VSExportTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
 /**
  * use to test Chart when export as PNG,HTML,print layout
  */
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class Com_CChart_Spec extends Specification{
    static VSExportTest vsExportTest
    static String caseName

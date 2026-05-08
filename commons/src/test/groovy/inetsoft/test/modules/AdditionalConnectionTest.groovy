@@ -23,12 +23,11 @@ import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 class AdditionalConnectionTest {
    AdditionalConnectionTest(String caseName) {
@@ -40,7 +39,7 @@ class AdditionalConnectionTest {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
       context = ConfigurationContext.getContext()
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      DatatestSpringRuntimeInitializer.ensureInitialized(System.getProperty('sree.home', '.'))
    }
 
    /**
@@ -54,31 +53,23 @@ class AdditionalConnectionTest {
       SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
               [] as String[])
       DataSpace.getDataSpace()
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      controllers.initApplicationContext(context)
 
-      try {
-         if(principals == null) {
-            principals = [admin]
-         }
-         principals.each {
-            SUtil.setAdditionalDatasource(it)
-            ThreadContext.setContextPrincipal(it)  //use to set additional db permission
-
-            if(asset_id.startsWith('1^128^')) {
-               executeVS(asset_id, it, params)
-            }
-            else if(asset_id.startsWith('1^2^')) {
-               executeWS(asset_id, it, params)
-            }
-            else {
-               new Exception("====Input right asset_id========" + asset_id).printStackTrace()
-            }
-         }
+      if(principals == null) {
+         principals = [admin]
       }
-      finally {
-         controllers.destroy()
+      principals.each {
+         SUtil.setAdditionalDatasource(it)
+         ThreadContext.setContextPrincipal(it)  //use to set additional db permission
+
+         if(asset_id.startsWith('1^128^')) {
+            executeVS(asset_id, it, params)
+         }
+         else if(asset_id.startsWith('1^2^')) {
+            executeWS(asset_id, it, params)
+         }
+         else {
+            new Exception("====Input right asset_id========" + asset_id).printStackTrace()
+         }
       }
    }
 
@@ -90,7 +81,7 @@ class AdditionalConnectionTest {
     */
    def executeVS(String asset_id, SRPrincipal principal, Map<String, String[]> params) {
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
@@ -120,7 +111,7 @@ class AdditionalConnectionTest {
     */
    def executeWS(String asset_id, SRPrincipal principal, Map<String, Object[]> params) {
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
-      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
+      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent)
       worksheetResource.initRuntimeWS(principal)
 
       RuntimeWorksheet runtimeWorksheet = worksheetResource.getRuntimeWorksheet(principal)
@@ -237,7 +228,6 @@ class AdditionalConnectionTest {
    static ConfigurationContext context
    // for vs, ws
    private RuntimeViewsheetResource viewsheetResource
-   private ControllersResource controllers
    private AssetQuerySandbox assetQuerySandbox
    private RuntimeWorksheetResource worksheetResource
 

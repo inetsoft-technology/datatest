@@ -5,7 +5,22 @@ import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Retry
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class VS_Component_Spec extends Specification {
    static CSSTest cssTest
    static String caseName
@@ -262,7 +277,7 @@ class VS_Component_Spec extends Specification {
       cssTest.compareImage()
    }
 
-   //bug #59525，#59677
+   //bug #59525锛?59677
    @Retry(count = 3)
    def "test chart child selector1" () {
       caseName = specificationContext.currentIteration.name
@@ -485,7 +500,7 @@ class VS_Component_Spec extends Specification {
       cssTest.compareImage()
     }
 
-   //bug #59655，#59657, #60078, #60079
+   //bug #59655锛?59657, #60078, #60079
    @Retry(count = 3)
    def "test type option works on chart component selector" () {
       caseName = specificationContext.currentIteration.name

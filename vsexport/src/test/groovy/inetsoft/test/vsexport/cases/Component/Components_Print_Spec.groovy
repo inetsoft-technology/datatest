@@ -5,12 +5,27 @@ import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.See
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
 /**
  * 1) Check some component common usage
  * 2) this part use all vs in 'PrintLayout/Print'.it covered png, HTML, and PDF with print layout
  *
  */
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class Components_Print_Spec extends Specification{
    static VSExportTest vsExportTest
    static String caseName

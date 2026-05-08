@@ -99,6 +99,10 @@
                         <disable.updateAssetDependencies>true</disable.updateAssetDependencies>
                         <sree.home>${basedir}/target/test-resources/server/config-${test.module}</sree.home>
                         <plugin.dir>${plugin.dir}</plugin.dir>
+                        <data.home>${root.dir}/docker/src/test/resources/H2Data</data.home>
+                        <adm.home>${basedir}/target/test-resources/server/config-${test.module}</adm.home>
+                        <security.enabled>true</security.enabled>
+                        <security.login.orgLocation>domain</security.login.orgLocation>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

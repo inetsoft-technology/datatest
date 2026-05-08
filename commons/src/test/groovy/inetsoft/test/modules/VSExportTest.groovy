@@ -10,17 +10,19 @@ import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.zip.ZipFile
 
 class VSExportTest {
+   private static Object initializedApplicationContext
+
    VSExportTest(String asset_id, String caseName) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
    }
@@ -33,7 +35,6 @@ class VSExportTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**
@@ -166,10 +167,9 @@ class VSExportTest {
     * @return
     */
    def executeVS(Map<String, String[]> params) {
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      controllers.initControllers()
+      ensureRuntimeInitialized()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -244,8 +244,16 @@ class VSExportTest {
    RuntimeViewsheetResource viewsheetResource
    SRPrincipal principal = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])
-   ControllersResource controllers = new ControllersResource()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    CompareUtil compareUtil = new CompareUtil()
    TUtil tUtil = new TUtil()
+
+   private static synchronized ensureRuntimeInitialized() {
+      ConfigurationContext context = ConfigurationContext.getContext()
+      def currentContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
+
+      DataSpace.getDataSpace()
+      initializedApplicationContext = currentContext
+   }
 }

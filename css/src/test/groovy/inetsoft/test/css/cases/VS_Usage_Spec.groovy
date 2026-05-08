@@ -4,7 +4,22 @@ import inetsoft.test.modules.CSSTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class VS_Usage_Spec extends Specification {
    static CSSTest cssTest
    static String caseName

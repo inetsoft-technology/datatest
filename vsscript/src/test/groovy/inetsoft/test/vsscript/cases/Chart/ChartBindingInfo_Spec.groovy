@@ -4,14 +4,29 @@ import inetsoft.test.modules.VSScriptTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class ChartBindingInfo_Spec extends Specification{
    def setupSpec() {
       VSScriptTest.initHome(this.class.getName())
    }
 
    /**
-    * test chart script which inherit from parent，create normalchart banding all field
+    * test chart script which inherit from parent锛宑reate normalchart banding all field
     */
    def 'TestCase-BandingField' () {
       given:

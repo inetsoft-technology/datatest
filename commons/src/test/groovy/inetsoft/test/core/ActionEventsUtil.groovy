@@ -1,6 +1,8 @@
 package inetsoft.test.core
 
+import inetsoft.enterprise.web.api.file.FileApiService
 import inetsoft.sree.security.SRPrincipal
+import inetsoft.util.ConfigurationContext
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
 
@@ -56,21 +58,20 @@ class ActionEventsUtil {
     */
    def importAssetsFile(String path) {
       ensureAdmin()
-      controllersResource.initControllers()
+      FileApiService fileApiService = ConfigurationContext.getContext().getSpringBean(FileApiService)
       if(System.properties['os.name'].toString().toLowerCase().contains('windows')) {
-         controllersResource.getFileApiService().importAssets(new File(path.minus('file:/')), [], true, admin)
+         fileApiService.importAssets(new File(path.minus('file:/')), [], true, admin)
       }
       else {
-         controllersResource.getFileApiService().importAssets(new File(path.minus('file:')), [], true, admin)
+         fileApiService.importAssets(new File(path.minus('file:')), [], true, admin)
       }
    }
 
    SRPrincipal admin
-   ControllersResource controllersResource = new ControllersResource()
 
    private void ensureAdmin() {
       if(admin == null) {
-         DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+         DatatestSpringRuntimeInitializer.ensureInitialized(System.getProperty('sree.home', '.'))
          admin = new TUtil().createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       }
    }

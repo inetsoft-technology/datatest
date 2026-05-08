@@ -2,9 +2,12 @@ package inetsoft.test.core;
 
 import inetsoft.report.composition.RuntimeWorksheet;
 import inetsoft.report.composition.WorksheetService;
+import inetsoft.util.ConfigurationContext;
 import inetsoft.web.composer.model.ws.ImportCSVDialogModel;
+import inetsoft.web.composer.ws.OpenWorksheetController;
 import inetsoft.web.composer.ws.dialog.ImportCSVDialogController;
 import inetsoft.web.composer.ws.event.OpenWorksheetEvent;
+import inetsoft.web.viewsheet.model.RuntimeViewsheetRef;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -13,10 +16,8 @@ import java.security.Principal;
 import java.util.HashMap;
 
 public class RuntimeWorksheetResource {
-   public RuntimeWorksheetResource(OpenWorksheetEvent openWorksheetEvent,
-                                   ControllersResource controllersResource) {
+   public RuntimeWorksheetResource(OpenWorksheetEvent openWorksheetEvent) {
       this.openWorksheetEvent = openWorksheetEvent;
-      this.controllersResource = controllersResource;
    }
    
    public void initRuntimeWS(Principal principal) {
@@ -26,8 +27,8 @@ public class RuntimeWorksheetResource {
    
    private String openWorksheet(MessageTestUtils.MessageContext ctx, OpenWorksheetEvent openWorksheetEvent) {
       try {
-         controllersResource.getOpenWorksheetController().openWorksheet(
-                 openWorksheetEvent, ctx.getUser(), ctx.getCommandDispatcher());
+         openWorksheetController().openWorksheet(openWorksheetEvent, ctx.getUser(),
+                 ctx.getCommandDispatcher());
       }
       catch(RuntimeException e) {
          throw e;
@@ -35,7 +36,7 @@ public class RuntimeWorksheetResource {
       catch(Exception e) {
          throw new RuntimeException("Failed to open worksheet", e);
       }
-      return controllersResource.getRuntimeId();
+      return runtimeViewsheetRef().getRuntimeId();
    }
    
    public RuntimeWorksheet getRuntimeWorksheet(Principal principal) {
@@ -43,9 +44,9 @@ public class RuntimeWorksheetResource {
          if(runtimeId == null) {
             return null;
          }
-         WorksheetService worksheetService = controllersResource.getWorksheetService();
+         WorksheetService worksheetService = worksheetService();
          if(worksheetService == null) {
-            throw new IllegalStateException("WorksheetService is not initialized. Make sure controllers.initControllers() has been called.");
+            throw new IllegalStateException("WorksheetService is not initialized.");
          }
          return worksheetService.getWorksheet(runtimeId, principal);
       }
@@ -60,7 +61,7 @@ public class RuntimeWorksheetResource {
    private void closeWorksheet(String runtimeId) {
       if(runtimeId != null) {
          try {
-            controllersResource.getWorksheetService().closeWorksheet(runtimeId, null);
+            worksheetService().closeWorksheet(runtimeId, null);
          }
          catch(Exception e) {
             e.printStackTrace();
@@ -69,7 +70,7 @@ public class RuntimeWorksheetResource {
    }
    
    public HashMap<String, Object> processCSVUpload(ImportCSVDialogModel importCSVDialogModel, MultipartFile multipartFile, Principal principal) throws Exception {
-      ImportCSVDialogController importCSVDialogController = controllersResource.getImportCSVDialogController();
+      ImportCSVDialogController importCSVDialogController = importCSVDialogController();
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       importCSVDialogController.getUploadFile(multipartFile, runtimeId, principal);
       HashMap<String, Object> result =
@@ -77,8 +78,27 @@ public class RuntimeWorksheetResource {
       importCSVDialogController.setImportCSVDialogModel(importCSVDialogModel, principal, commandDispatcher);
       return result;
    }
+
+   private OpenWorksheetController openWorksheetController() {
+      return springBean(OpenWorksheetController.class);
+   }
+
+   private RuntimeViewsheetRef runtimeViewsheetRef() {
+      return springBean(RuntimeViewsheetRef.class);
+   }
+
+   private WorksheetService worksheetService() {
+      return springBean(WorksheetService.class);
+   }
+
+   private ImportCSVDialogController importCSVDialogController() {
+      return springBean(ImportCSVDialogController.class);
+   }
+
+   private <T> T springBean(Class<T> type) {
+      return ConfigurationContext.getContext().getSpringBean(type);
+   }
    
    private final OpenWorksheetEvent openWorksheetEvent;
-   private final ControllersResource controllersResource;
    private String runtimeId;
 }

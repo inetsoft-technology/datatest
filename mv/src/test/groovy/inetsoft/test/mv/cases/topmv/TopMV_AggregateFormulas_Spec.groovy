@@ -5,18 +5,37 @@ import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class TopMV_AggregateFormulas_Spec extends Specification {
-   @Shared
-           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-                   String[], new String[0])
+   @Shared def admin
 
    def setupSpec() {
-      MVTest.initHome()
+      MVTest.initHome(this.class.getName())
+   }
+
+   def setup() {
+      if(admin == null) {
+         admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+      }
    }
 
    def cleanup() {
-      mvtest.removeMV()
+      mvtest?.removeMV()
    }
 
    def 'child has aggregate'() {
@@ -139,7 +158,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       }
    }
 
-   //数据精度发生变化, 产品上数据精度从第3位开始发生变化
+   //The data precision has changed, with the product's data precision starting to vary from the 3rd decimal place. 
    def 'aggregate formula2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula2'

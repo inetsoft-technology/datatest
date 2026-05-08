@@ -6,21 +6,40 @@ import spock.lang.IgnoreRest
 import spock.lang.Retry
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class SubMV_Spec extends Specification {
-   @Shared
-           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-                   String[], new String[0])
+   @Shared def admin
 
    def setupSpec() {
-      MVTest.initHome()
+      MVTest.initHome(this.class.getName())
+   }
+
+   def setup() {
+      if(admin == null) {
+         admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+      }
    }
 
    def cleanup() {
-      mvtest.removeMV()
+      mvtest?.removeMV()
    }
 
-   //average 存在数据精度问题, bug #54404
+   //average 瀛樺湪鏁版嵁绮惧害闂, bug #54404
    def 'aggbase'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase'
@@ -102,7 +121,7 @@ class SubMV_Spec extends Specification {
       }
    }
 
-   //存在数据精度变化问题
+   //瀛樺湪鏁版嵁绮惧害鍙樺寲闂
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/crossjoin'
@@ -372,7 +391,7 @@ class SubMV_Spec extends Specification {
          mvtest.compareData(false)
       }
    }
-   //average存在数据精度问题
+   //average瀛樺湪鏁版嵁绮惧害闂
    def 'namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^submv/namegroup'

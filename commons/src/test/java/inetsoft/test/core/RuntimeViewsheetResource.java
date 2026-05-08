@@ -1,18 +1,26 @@
 package inetsoft.test.core;
 
+import inetsoft.analytic.composition.ViewsheetService;
 import inetsoft.report.composition.ChangedAssemblyList;
 import inetsoft.report.composition.RuntimeViewsheet;
 import inetsoft.report.internal.table.FormatTableLens2;
 import inetsoft.report.io.csv.CSVConfig;
 import inetsoft.sree.security.SRPrincipal;
+import inetsoft.util.ConfigurationContext;
+import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
 import inetsoft.web.composer.vs.objects.event.ConvertToFreehandTableEvent;
 import inetsoft.web.viewsheet.controller.ImportXLSController;
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent;
 import inetsoft.web.viewsheet.event.chart.VSChartBrushEvent;
 import inetsoft.web.viewsheet.event.chart.VSChartShowDetailsEvent;
+import inetsoft.web.viewsheet.controller.OpenViewsheetController;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsService;
+import inetsoft.web.viewsheet.controller.chart.VSChartBrushService;
+import inetsoft.web.viewsheet.model.RuntimeViewsheetRef;
+import inetsoft.web.viewsheet.service.CoreLifecycleService;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
 import inetsoft.web.viewsheet.service.ExportResponse;
+import inetsoft.web.viewsheet.service.VSExportService;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,10 +28,8 @@ import java.lang.reflect.Method;
 import java.security.Principal;
 
 public class RuntimeViewsheetResource {
-   public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent,
-                                   ControllersResource controllersResource) {
+   public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent) {
       this.openViewsheetEvent = openViewsheetEvent;
-      this.controllersResource = controllersResource;
    }
    
    public void initRuntimeVS(Principal principal) {
@@ -33,7 +39,7 @@ public class RuntimeViewsheetResource {
    
    private String openViewsheet(MessageTestUtils.MessageContext ctx, OpenViewsheetEvent openViewsheetEvent) {
       try {
-         controllersResource.getOpenViewsheetController().openViewsheet(
+         openViewsheetController().openViewsheet(
                  openViewsheetEvent, ctx.getUser(), ctx.getCommandDispatcher(),
                  "http://localhost:8080/sree");
       }
@@ -43,13 +49,13 @@ public class RuntimeViewsheetResource {
       catch(Exception e) {
          throw new RuntimeException("Failed to open viewsheet", e);
       }
-      return controllersResource.getRuntimeId();
+      return runtimeViewsheetRef().getRuntimeId();
    }
    
    public RuntimeViewsheet getRuntimeViewsheet(Principal principal) {
       try {
          return runtimeId == null ?
-                 null : controllersResource.getViewsheetService().getViewsheet(runtimeId, principal);
+                 null : viewsheetService().getViewsheet(runtimeId, principal);
       }
       catch(RuntimeException e) {
          throw e;
@@ -64,7 +70,7 @@ public class RuntimeViewsheetResource {
                         boolean embedded, boolean onlyDataComponents, CSVConfig csvConfig, ExportResponse response, SRPrincipal principal) throws Exception {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       try {
-         controllersResource.getVSExportService().exportViewsheet(runtimeViewsheet, format, match,
+         vsExportService().exportViewsheet(runtimeViewsheet, format, match,
                  expandSelections, current, previewPrintLayout, print, bookmarks, embedded, onlyDataComponents, csvConfig, response, principal);
       }
       catch(RuntimeException e) {
@@ -88,7 +94,7 @@ public class RuntimeViewsheetResource {
       cevent.setConfirmed(true);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
-         controllersResource.getComposerVSTableController().convertToFreehandTable(cevent, principal,
+         composerVSTableController().convertToFreehandTable(cevent, principal,
                  "http://localhost:8080/sree", commandDispatcher);
       }
       catch(RuntimeException e) {
@@ -103,7 +109,7 @@ public class RuntimeViewsheetResource {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
-         controllersResource.getCoreLifecycleService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
+         coreLifecycleService().refreshViewsheet(runtimeViewsheet, runtimeId, null,
                  commandDispatcher, true, true, true, new ChangedAssemblyList(true));
       }
       catch(Exception e) {
@@ -119,7 +125,7 @@ public class RuntimeViewsheetResource {
     */
    public void processImportXLS(SRPrincipal principal, MultipartFile multipartFile) {
       runtimeViewsheet = getRuntimeViewsheet(principal);
-      ImportXLSController importXLSController = controllersResource.getImportXLSController();
+      ImportXLSController importXLSController = importXLSController();
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          importXLSController.uploadExcelFile(runtimeId,
@@ -145,7 +151,7 @@ public class RuntimeViewsheetResource {
       Method method = VSChartShowDetailsService.class.getDeclaredMethod("getShowDetailDatas", VSChartShowDetailsEvent.class,
               RuntimeViewsheet.class, String.class, Principal.class);
       method.setAccessible(true);
-      return (FormatTableLens2) method.invoke(controllersResource.getVSChartShowDetailsService(), event,
+      return (FormatTableLens2) method.invoke(vsChartShowDetailsService(), event,
               runtimeViewsheet, assemblyName, principal);
    }
    
@@ -156,23 +162,62 @@ public class RuntimeViewsheetResource {
    public void brushOnChart(VSChartBrushEvent event, SRPrincipal principal) throws Exception {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
-      controllersResource.getVSChartBrushService().eventHandler(runtimeId, event,
+      vsChartBrushService().eventHandler(runtimeId, event,
               "http://localhost:8080/sree", principal, commandDispatcher);
    }
    
    private void closeViewsheet(String runtimeId) {
       if(runtimeId != null) {
          try {
-            controllersResource.getViewsheetService().closeViewsheet(runtimeId, null);
+            viewsheetService().closeViewsheet(runtimeId, null);
          }
          catch(Exception e) {
             e.printStackTrace();
          }
       }
    }
+
+   private ViewsheetService viewsheetService() {
+      return springBean(ViewsheetService.class);
+   }
+
+   private OpenViewsheetController openViewsheetController() {
+      return springBean(OpenViewsheetController.class);
+   }
+
+   private RuntimeViewsheetRef runtimeViewsheetRef() {
+      return springBean(RuntimeViewsheetRef.class);
+   }
+
+   private VSExportService vsExportService() {
+      return springBean(VSExportService.class);
+   }
+
+   private CoreLifecycleService coreLifecycleService() {
+      return springBean(CoreLifecycleService.class);
+   }
+
+   private ImportXLSController importXLSController() {
+      return springBean(ImportXLSController.class);
+   }
+
+   private ComposerVSTableController composerVSTableController() {
+      return springBean(ComposerVSTableController.class);
+   }
+
+   private VSChartShowDetailsService vsChartShowDetailsService() {
+      return springBean(VSChartShowDetailsService.class);
+   }
+
+   private VSChartBrushService vsChartBrushService() {
+      return springBean(VSChartBrushService.class);
+   }
+
+   private <T> T springBean(Class<T> type) {
+      return ConfigurationContext.getContext().getSpringBean(type);
+   }
    
    private final OpenViewsheetEvent openViewsheetEvent;
-   private final ControllersResource controllersResource;
    private RuntimeViewsheet runtimeViewsheet;
    private String runtimeId;
 }

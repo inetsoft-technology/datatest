@@ -9,14 +9,7 @@ import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.uql.viewsheet.TableVSAssembly
 import inetsoft.uql.viewsheet.VSBookmarkInfo
-import inetsoft.util.ConfigurationContext
-import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService
-import inetsoft.web.viewsheet.controller.OpenViewsheetController
-import inetsoft.web.viewsheet.controller.OpenViewsheetService
 import inetsoft.web.viewsheet.service.ExportResponse
-
-import org.mockito.MockedStatic
-import static org.mockito.Mockito.*
 
 class VSCalcTest extends ViewsheetTest {
    VSCalcTest(String asset_id, String caseName) {
@@ -24,34 +17,7 @@ class VSCalcTest extends ViewsheetTest {
    }
 
    def checkConvert(Map<String, String[]> params) {
-      try(MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
-         ConfigurationContext spyContext = spy(context)
-
-         OpenViewsheetController openViewsheetController = controllers.getOpenViewsheetController()
-         OpenViewsheetService openViewsheetService = controllers.getOpenViewsheetService()
-         ComposerVSTableService composerVSTableService = controllers.getComposerVSTableService()
-
-         doReturn(openViewsheetController)
-                 .when(spyContext)
-                 .getSpringBean(OpenViewsheetController.class)
-
-         doReturn(openViewsheetService)
-                 .when(spyContext)
-                 .getSpringBean(OpenViewsheetService.class)
-
-         doReturn(composerVSTableService)
-                 .when(spyContext)
-                 .getSpringBean(ComposerVSTableService.class)
-
-         staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext)
-
-         checkConvert0(params)
-      }
-      catch(Exception e) {
-         System.err.println("======convert========exceptions============");
-         e.printStackTrace();
-      }
-
+      checkConvert0(params)
    }
 
    /**

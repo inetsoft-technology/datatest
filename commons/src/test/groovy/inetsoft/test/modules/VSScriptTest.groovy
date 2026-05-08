@@ -8,21 +8,24 @@ import inetsoft.uql.viewsheet.VSBookmark
 import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.uql.viewsheet.Viewsheet
 import inetsoft.uql.viewsheet.internal.VSAssemblyInfo
+import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 
 class VSScriptTest {
+   private static Object initializedApplicationContext
+
    VSScriptTest(String asset_id, String caseName) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
    }
@@ -35,7 +38,6 @@ class VSScriptTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.vsscript')
       this.suiteName = arrs.size() == 1 ? null : arrs[1].replace('.', '/')
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    def printVS(def bks, def assemblies) {
@@ -55,11 +57,10 @@ class VSScriptTest {
     * @return
     */
    def printVS(Map<String, String[]> params, String[] bks, String scriptName, def testData, def assemblyNames) {
+      ensureRuntimeInitialized()
       SRPrincipal principal = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
-      DataSpace.getDataSpace()
-      controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet runtimeViewsheet = viewsheetResource.getRuntimeViewsheet(principal)
       Viewsheet viewsheet = runtimeViewsheet.getViewsheet()
@@ -151,7 +152,15 @@ class VSScriptTest {
 
    static String asset_id, suiteName, caseName
    RuntimeViewsheetResource viewsheetResource
-   ControllersResource controllers = new ControllersResource()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    CompareUtil compareUtil = new CompareUtil()
+
+   private static synchronized ensureRuntimeInitialized() {
+      ConfigurationContext context = ConfigurationContext.getContext()
+      def currentContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
+
+      DataSpace.getDataSpace()
+      initializedApplicationContext = currentContext
+   }
 }

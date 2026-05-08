@@ -6,18 +6,37 @@ import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class TopMV_Subquery_Spec extends Specification {
-   @Shared
-           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-                   String[], new String[0])
+   @Shared def admin
 
    def setupSpec() {
-      MVTest.initHome()
+      MVTest.initHome(this.class.getName())
+   }
+
+   def setup() {
+      if(admin == null) {
+         admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+      }
    }
 
    def cleanup() {
-      mvtest.removeMV()
+      mvtest?.removeMV()
    }
 
    def 'Subquery_Mode1_1'() {
@@ -50,7 +69,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   //手动不稳定重现filter之后数据不对的问题。第一次比较容易重现, 自动化export出来的数据不对
+   // he data precision has changed, with the product's data precision starting to vary from the 3rd decimal place.
    def 'Subquery_Mode1_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_3'
@@ -294,7 +313,7 @@ class TopMV_Subquery_Spec extends Specification {
    }
 
    @Ignore
-   //自动化mv table 传入的table len 不对，是selection list 的 full table
+   //鑷姩鍖杕v table 浼犲叆鐨則able len 涓嶅锛屾槸selection list 鐨?full table
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'

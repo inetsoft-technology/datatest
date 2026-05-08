@@ -77,17 +77,20 @@
                         --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
                         --add-opens=java.base/java.time=ALL-UNNAMED
                         --add-opens=java.base/java.text=ALL-UNNAMED
-                        --add-opens=java.management/sun.management=ALL-UNNAMED\
+                        --add-opens=java.management/sun.management=ALL-UNNAMED
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
                         <include>${test.module}/*Spec</include>
                     </includes>
+                    <environmentVariables>
+                        <INETSOFT_ADMIN_PASSWORD>Admin@1234!</INETSOFT_ADMIN_PASSWORD>
+                    </environmentVariables>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
                         <com.athaydes.spockframework.report.outputDir>target/spock-reports</com.athaydes.spockframework.report.outputDir>
                         <disable.updateAssetDependencies>true</disable.updateAssetDependencies>
-                        <sree.home>target/test-resources/server/config-${test.module}</sree.home>
+                        <sree.home>${basedir}/target/test-resources/server/config-${test.module}</sree.home>
                         <use.testcontainers>${use.testcontainers}</use.testcontainers>
                     </systemPropertyVariables>
                 </configuration>

@@ -37,12 +37,11 @@ import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.awt.image.BufferedImage
 
@@ -50,7 +49,10 @@ import java.awt.image.BufferedImage
  * to execute viewsheet/worksheet/report method
  */
 class GlobalTest {
+   private static Object initializedApplicationContext
+
    GlobalTest(String caseName) {
+      ensureRuntimeInitialized()
       this.caseName = caseName
    }
 
@@ -67,8 +69,7 @@ class GlobalTest {
    static initHome(String suiteName, def properties) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
-      context = ConfigurationContext.getContext()
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      ensureRuntimeInitialized()
 
       if(properties != null) {
          properties.each { key, value ->
@@ -112,16 +113,14 @@ class GlobalTest {
    }
 
    def executeVS(String asset_id, String[] bks, Map<String, String[]> params, def types, boolean match) {
-      DataSpace.getDataSpace()
-      controllers = new ControllersResource()
-      controllers.initControllers()
+      ensureRuntimeInitialized()
       ThreadContext.setContextPrincipal(admin)
 
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       SUtil.setAdditionalDatasource(admin)
       viewsheetResource.initRuntimeVS(admin)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
@@ -197,13 +196,10 @@ class GlobalTest {
     * @param asset_id : ws entry id
     */
    def executeWS(String asset_id, Map<String, String[]> params) {
-      DataSpace.getDataSpace()
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      controllers.initApplicationContext(context)
+      ensureRuntimeInitialized()
       ThreadContext.setContextPrincipal(admin)
       OpenWorksheetEvent openWorksheetEvent = actionEventsUtil.openWorksheetEvent(asset_id)
-      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent, controllers)
+      worksheetResource = new RuntimeWorksheetResource(openWorksheetEvent)
       SUtil.setAdditionalDatasource(admin)
       worksheetResource.initRuntimeWS(admin)
 
@@ -234,9 +230,6 @@ class GlobalTest {
       }
       catch(Exception e) {
          e.printStackTrace()
-      }
-      finally {
-         controllers.destroy()
       }
    }
 
@@ -269,10 +262,9 @@ class GlobalTest {
     * execute vs, then save chart as png, table as txt
     */
    def executeVSWithElement0(String asset_id, String bk, Map<String, String[]> params) {
-      DataSpace.getDataSpace()
-      controllers.initControllers()
+      ensureRuntimeInitialized()
       viewsheetResource =
-              new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
+              new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(admin)
 
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(admin)
@@ -426,12 +418,25 @@ class GlobalTest {
    static ConfigurationContext context
    RuntimeViewsheetResource viewsheetResource
    RuntimeWorksheetResource worksheetResource
-   ControllersResource controllers = new ControllersResource()
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    ExportUtil exportUtil = new ExportUtil()
    CompareUtil compareUtil = new CompareUtil()
    TUtil tutil = new TUtil()
    SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])
+
+   private static synchronized ensureRuntimeInitialized() {
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(currentContext != null && initializedApplicationContext == currentContext) {
+         context = ConfigurationContext.getContext()
+         return
+      }
+
+      context = ConfigurationContext.getContext()
+      initializedApplicationContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
+   }
 
 }

@@ -5,23 +5,43 @@ import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class VPM_Spec extends Specification {
-   @Shared admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-         String[], new String[0])
-   @Shared user0 = MVTest.createPrincipal('user0', ['Everyone', 'role1'] as
-         String[], ['group0'] as String[])
-   @Shared user1 = MVTest.createPrincipal('user1', ['Everyone'] as
-         String[], ['group0_1'] as String[])
-   @Shared user2 = MVTest.createPrincipal('user2', ['Everyone', 'role0'] as
-         String[], ['group1'] as String[])
+   @Shared def admin
+   @Shared def user0
+   @Shared def user1
+   @Shared def user2
 
    def setupSpec() {
-      MVTest.initHome()
+      MVTest.initHome(this.class.getName())
+   }
+
+   def setup() {
+      if(admin == null) {
+         admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+         user0 = MVTest.createPrincipal('user0', ['Everyone', 'role1'] as String[], ['group0'] as String[])
+         user1 = MVTest.createPrincipal('user1', ['Everyone'] as String[], ['group0_1'] as String[])
+         user2 = MVTest.createPrincipal('user2', ['Everyone', 'role0'] as String[], ['group1'] as String[])
+      }
    }
 
    def cleanup() {
-      mvtest.removeMV()
+      mvtest?.removeMV()
    }
 
    def 'condition'() {

@@ -3,8 +3,14 @@ package inetsoft.test.tabular.cases
 import inetsoft.test.modules.GlobalTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ServerFile_Spec extends Specification{
    static String caseName
    static GlobalTest globalTest

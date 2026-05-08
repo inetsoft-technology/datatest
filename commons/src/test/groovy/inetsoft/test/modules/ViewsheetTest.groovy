@@ -29,6 +29,7 @@ import inetsoft.uql.viewsheet.TabVSAssembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.graph.ChartAggregateRef
+import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
@@ -37,29 +38,35 @@ import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.TUtil
 import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 
 import java.awt.image.BufferedImage
 
 class ViewsheetTest {
    //static ConfigurationContext context
-   static ControllersResource controllers
+   private static Object initializedApplicationContext
 
    ViewsheetTest(String asset_id, String caseName) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
    }
 
    static initHome(String suiteName) {
-      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
-      //println '----suitename--------' + suiteName
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
+   }
 
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+   private static synchronized ensureRuntimeInitialized() {
+      ConfigurationContext context = ConfigurationContext.getContext()
+      def currentContext = DatatestSpringRuntimeInitializer.ensureInitialized(
+         System.getProperty('sree.home', '.'))
+
+      DataSpace.getDataSpace()
+      initializedApplicationContext = currentContext
    }
 
    /**
@@ -87,13 +94,9 @@ class ViewsheetTest {
     */
    def initVS(Map<String, String[]> params, Boolean isViewer) {
       ensurePrincipal()
-      DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      controllers = new ControllersResource()
-      controllers.initControllers()
-
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer))
       viewsheetResource.initRuntimeVS(principal)
    }
 
@@ -386,8 +389,8 @@ class ViewsheetTest {
    }
 
    /**
-    * SRPrincipal triggers XSessionService via Spring; {@link #initHome} must run first
-    * to bind a minimal ApplicationContext before construction.
+    * SRPrincipal triggers XSessionService via Spring; runtime initialization must run
+    * before principal construction so the ApplicationContext is available.
     */
    protected void ensurePrincipal() {
       if(principal == null) {

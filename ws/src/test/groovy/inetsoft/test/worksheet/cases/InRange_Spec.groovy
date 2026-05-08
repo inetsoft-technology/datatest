@@ -7,11 +7,26 @@ import spock.lang.IgnoreRest
 import spock.lang.Specification
 import spock.lang.Stepwise
 import spock.lang.Title
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import org.springframework.test.context.ContextConfiguration
 
 //@IgnoreIf({ System.getProperty("os.name").toLowerCase().contains("linux") })
 @Title("Use to test in range condition on a fixed time(2025-02-15 00;00:00) and change timezone to UTC+00:00) it only be execute on Windows")
 @IgnoreIf({ os.linux })
 @Stepwise
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class InRange_Spec extends Specification {
    static WorksheetTest wstest
    static TUtil tUtil = new TUtil()
