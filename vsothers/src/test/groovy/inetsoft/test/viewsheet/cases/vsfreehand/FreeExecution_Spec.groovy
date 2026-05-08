@@ -31,7 +31,6 @@ class FreeExecution_Spec extends Specification {
    /**
     * test freehand name group with query
     */
-    @IgnoreRest
    def 'FNGTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable1', caseName)

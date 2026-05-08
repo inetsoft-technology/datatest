@@ -43,7 +43,6 @@ class Global_Spec extends Specification {
           "   word-wrap: break-word;\n" +
           "}"
 
-   @IgnoreRest
    def "test global css selector apply on vs chart" () {
       caseName = specificationContext.currentIteration.name
       cssTest = new CSSTest(caseName)

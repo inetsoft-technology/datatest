@@ -209,7 +209,6 @@ class VPM_Spec extends Specification {
     *not apply vpm for user 'NJ', 'admin'
     *other users, apply condition, not apply hidden column
     */
-   @IgnoreRest
    def 'VPM3_Query'() {
       vpmtest = new VPMTest('1^128^__NULL__^VPM/VPM3_Query')
       //vpmtest.executeVS(admin, null)

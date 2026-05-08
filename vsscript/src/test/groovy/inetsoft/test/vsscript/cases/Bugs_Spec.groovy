@@ -32,7 +32,6 @@ class Bugs_Spec extends Specification{
     * TestData1: Bug #62455, Bug #62458
     * TestData2: Bug #62459, Bug #62462
     */
-   @IgnoreRest
    def 'TestCase-EGraphBind1' () {
       given:
       caseName = specificationContext.currentIteration.name

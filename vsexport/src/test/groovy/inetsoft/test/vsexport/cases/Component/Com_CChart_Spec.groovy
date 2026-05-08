@@ -35,7 +35,6 @@ class Com_CChart_Spec extends Specification{
    /**
     * check Chart Print: some properties
     */
-    @IgnoreRest
    def 'Print_CChart_Properties' () {
       caseName = specificationContext.currentIteration.name
       vsExportTest = new VSExportTest('1^128^__NULL__^Components/CChart/CChart_Properties' , caseName)

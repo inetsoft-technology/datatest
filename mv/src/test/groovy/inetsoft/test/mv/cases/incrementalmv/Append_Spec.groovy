@@ -41,7 +41,7 @@ class Append_Spec extends Specification {
    def cleanup() {
       mvtest?.removeMV()
    }
-   @IgnoreRest
+   
    def 'S_TestCase1'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase1'

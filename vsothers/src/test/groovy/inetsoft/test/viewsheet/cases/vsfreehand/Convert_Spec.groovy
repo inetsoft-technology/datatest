@@ -35,7 +35,6 @@ class Convert_Spec extends Specification {
     * test crosstab binding query, then convert to freehand, setRowHeight=0 to hide header
     */
    @Timeout(value = 60, unit = TimeUnit.SECONDS)
-   @IgnoreRest
    def 'CroTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable2', caseName)

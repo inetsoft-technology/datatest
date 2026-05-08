@@ -43,7 +43,7 @@ class VPM_Spec extends Specification {
    def cleanup() {
       mvtest?.removeMV()
    }
-   @IgnoreRest
+
    def 'condition'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/condition'
