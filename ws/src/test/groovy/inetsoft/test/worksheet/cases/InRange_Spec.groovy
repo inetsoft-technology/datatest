@@ -11,6 +11,8 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 //@IgnoreIf({ System.getProperty("os.name").toLowerCase().contains("linux") })
@@ -18,6 +20,13 @@ import org.springframework.test.context.ContextConfiguration
 @IgnoreIf({ os.linux })
 @Stepwise
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class InRange_Spec extends Specification {
    static WorksheetTest wstest
    static TUtil tUtil = new TUtil()

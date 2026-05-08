@@ -8,9 +8,18 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class WSProperty_Spec extends Specification {
    //if check ignore col, you can set  ignoreTypeColumns: [0,1,2], or set null
    //Note: create a null ws, as base ws
@@ -29,6 +38,10 @@ class WSProperty_Spec extends Specification {
                      newTableName: null,
                      removeQuotesCB: true,
                      unpivotCB: false ]
+
+   def setupSpec() {
+      WorksheetTest.initHome(this.class.getName())
+   }
 
    def setup() {
    }
