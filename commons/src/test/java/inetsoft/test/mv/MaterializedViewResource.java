@@ -1,6 +1,11 @@
 package inetsoft.test.mv;
 
+import inetsoft.mv.MVManager;
+import inetsoft.report.composition.WorksheetService;
+import inetsoft.sree.internal.DataCycleManager;
+import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.sree.security.IdentityID;
+import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SRPrincipal;
 import inetsoft.test.core.MessageTestUtils;
 import inetsoft.uql.asset.AssetRepository;
@@ -19,9 +24,11 @@ import inetsoft.test.core.ControllersResource;
 import org.mockito.MockedStatic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class MaterializedViewResource {
@@ -46,19 +53,33 @@ public class MaterializedViewResource {
       IdentityID[] identityRoles = {adminRole, new IdentityID("Everyone", "host-org")};
       
       this.principal = new SRPrincipal(identityUser, identityRoles, new String[0], "host-org", Tool.getSecureRandom().nextLong());
+      // Same as MVTest.createPrincipal: skip login session lookup; otherwise SecurityEngine.isLogin hits null users map.
+      this.principal.setIgnoreLogin(true);
       DataSpace.getDataSpace();
       ThreadContext.setContextPrincipal(principal);
       
       MVSupportService mvSupportService = MVSupportService.getInstance();
       ContentRepositoryTreeService contentRepositoryTreeService = controllersResource.getContentRepositoryTreeService();
-      MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService, mock(inetsoft.sree.internal.cluster.Cluster.class),
-              mock(inetsoft.mv.MVManager.class), mock(inetsoft.sree.internal.DataCycleManager.class),
-              mock(inetsoft.sree.security.SecurityEngine.class), mock(inetsoft.mv.data.MVStorage.class));
+      Cluster cluster = context.getSpringBean(Cluster.class);
+      MVManager mvManager = context.getSpringBean(MVManager.class);
+      SecurityEngine securityEngine = context.getSpringBean(SecurityEngine.class);
+      DataCycleManager dataCycleManager = mock(DataCycleManager.class);
+      // MVService.getDataCycles → dataCycleManager.getDataCycles(orgId); default mock returns null → NPE in for-loop.
+      lenient().when(dataCycleManager.getDataCycles(anyString()))
+         .thenReturn(Collections.emptyEnumeration());
+      MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService, cluster, mvManager,
+         dataCycleManager,
+         securityEngine,
+         mock(inetsoft.mv.data.MVStorage.class));
       AssetRepository assetRepository = AssetUtil.getAssetRepository(false);
-      materializedViewApiService = new MaterializedViewApiService(mvService, assetRepository, mvSupportService,
-              mock(inetsoft.sree.internal.cluster.Cluster.class));
-      materializedViewApiController = new MaterializedViewApiController(materializedViewApiService,
-              mock(MaterializedViewApiServiceProxy.class));
+      materializedViewApiService = new MaterializedViewApiService(mvService, assetRepository, mvSupportService, cluster);
+      // Controller delegates analyze / getAnalysisJob / … to MaterializedViewApiServiceProxy (cluster AOP), not to the
+      // service field directly — see enterprise MaterializedViewApiController. A Mockito mock proxy returns null.
+      WorksheetService worksheetService = context.getSpringBean(WorksheetService.class);
+      MaterializedViewApiServiceProxy materializedViewApiServiceProxy =
+         new MaterializedViewApiServiceProxy(cluster, worksheetService, materializedViewApiService);
+      materializedViewApiController =
+         new MaterializedViewApiController(materializedViewApiService, materializedViewApiServiceProxy);
    }
    
    /**
@@ -103,7 +124,7 @@ public class MaterializedViewResource {
          AnalysisJob analysisJob = new AnalysisJob();
          try {
             analysisJob = materializedViewApiController.analyze(null, analyzeRequest, principal);
-            
+
             //wait the analysis job complete or fail
             for(int retry = 0; retry < 800; retry++) {
                AnalysisJob analysisJob1 = materializedViewApiController.getAnalysisJob(analysisJob.getId(), null, principal);

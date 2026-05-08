@@ -36,6 +36,7 @@ import inetsoft.web.RecycleBin;
 import inetsoft.web.admin.content.database.model.DataModelFolderManagerService;
 import inetsoft.web.admin.content.repository.ContentRepositoryTreeService;
 import inetsoft.web.admin.content.repository.DatabaseDatasourcesService;
+import inetsoft.web.admin.content.repository.MVSupportService;
 import inetsoft.web.admin.content.repository.RepletRegistryService;
 import inetsoft.web.admin.content.repository.ResourcePermissionService;
 import inetsoft.web.admin.deploy.DeployService;
@@ -59,6 +60,8 @@ import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.mv.MVManager;
+import inetsoft.mv.MVWorksheetStorage;
+import inetsoft.storage.BlobStorageManager;
 import inetsoft.sree.web.dashboard.DashboardManager;
 import inetsoft.sree.web.dashboard.DashboardRegistryManager;
 import inetsoft.sree.internal.DeployManagerService;
@@ -362,6 +365,32 @@ public class DatatestSpringDuplicateFixConfiguration {
          mock(LibManagerProvider.class),
          mock(RecycleBin.class),
          repletRegistryManager);
+   }
+
+   /**
+    * {@link inetsoft.test.mv.MaterializedViewResource} uses {@link MVSupportService#getInstance()}, which
+    * resolves the bean from {@link inetsoft.util.ConfigurationContext}. Core wiring matches production:
+    * {@code new MVSupportService(MVManager, SecurityEngine, ScheduleManager, Cluster)} — a Mockito mock
+    * breaks {@link inetsoft.web.admin.content.repository.MVService#analyze} (controller returns null job).
+    */
+   @Bean
+   public MVSupportService mvSupportService(
+      MVManager mvManager,
+      SecurityEngine securityEngine,
+      ScheduleManager scheduleManager,
+      Cluster cluster)
+   {
+      return new MVSupportService(mvManager, securityEngine, scheduleManager, cluster);
+   }
+
+   /**
+    * {@link MVWorksheetStorage#getInstance()} is used when loading MV definitions (e.g. dispose / {@link inetsoft.mv.MVDefMap#get}).
+    * Wired like {@code inetsoft.web.factory.EngineConfiguration#mvWorksheetStorage}; missing from the datatest slice otherwise.
+    */
+   @Bean
+   @Lazy
+   public MVWorksheetStorage mvWorksheetStorage(@Lazy BlobStorageManager blobStorageManager) {
+      return new MVWorksheetStorage(blobStorageManager);
    }
 
    @Bean

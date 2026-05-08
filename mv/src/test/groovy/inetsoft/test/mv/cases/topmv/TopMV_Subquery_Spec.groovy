@@ -10,20 +10,33 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class TopMV_Subquery_Spec extends Specification {
-   @Shared
-           admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
-                   String[], new String[0])
+   @Shared def admin
 
    def setupSpec() {
-      MVTest.initHome()
+      MVTest.initHome(this.class.getName())
+   }
+
+   def setup() {
+      if(admin == null) {
+         admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
+      }
    }
 
    def cleanup() {
-      mvtest.removeMV()
+      mvtest?.removeMV()
    }
 
    def 'Subquery_Mode1_1'() {
@@ -56,7 +69,8 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   //鎵嬪姩涓嶇ǔ瀹氶噸鐜癴ilter涔嬪悗鏁版嵁涓嶅鐨勯棶棰樸€傜涓€娆℃瘮杈冨鏄撻噸鐜? 鑷姩鍖杄xport鍑烘潵鐨勬暟鎹笉瀵?   def 'Subquery_Mode1_3'() {
+   // he data precision has changed, with the product's data precision starting to vary from the 3rd decimal place.
+   def 'Subquery_Mode1_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_3'
       mvtest = new MVTest(asset_id)

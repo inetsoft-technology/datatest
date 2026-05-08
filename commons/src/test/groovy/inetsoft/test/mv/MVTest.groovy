@@ -26,6 +26,7 @@ import inetsoft.uql.viewsheet.SelectionValue
 import inetsoft.uql.viewsheet.TimeSliderVSAssembly
 import inetsoft.uql.viewsheet.Viewsheet
 import inetsoft.util.ConfigurationContext
+import inetsoft.util.DataSpace
 import inetsoft.util.Tool
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
@@ -33,21 +34,53 @@ import inetsoft.report.composition.graph.VSDataSet
 import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 import java.text.SimpleDateFormat
 import java.text.NumberFormat
 import java.text.DecimalFormat
 
 class MVTest {
+   /** Derived in {@link #initHome(String)} (ViewsheetTest pattern). */
+   static String suiteName
+
    MVTest(String asset_id) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       materializedViewResource = new MaterializedViewResource(this.asset_id, controllers)
    }
 
-   def static initHome() {
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
-      controllers = new ControllersResource()
-      controllers.initControllers()
+   /**
+    * Lightweight suite hook (same pattern as {@link inetsoft.test.modules.ViewsheetTest#initHome(String)}):
+    * logs {@code sree.home} and derives optional {@link #suiteName} from the spec class name.
+    * Does not bootstrap Spring — Spock {@code @ContextConfiguration} owns the single context and MapDB;
+    * {@link #ensureRuntimeInitialized()} runs from {@link #createPrincipal} or {@code new MVTest}.
+    */
+   static initHome(String suiteNameArg) {
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
+      def arrs = suiteNameArg.split('.cases')
+      suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
+   }
+
+   private static synchronized ensureRuntimeInitialized() {
+      ConfigurationContext ctx = ConfigurationContext.getContext()
+      def currentContext = ctx.getApplicationContext()
+      String home = System.getProperty('sree.home', '.')
+
+      if(currentContext == null) {
+         DatatestRuntimeBootstrap.bootstrap(home)
+         currentContext = ctx.getApplicationContext()
+      }
+      else {
+         ctx.setHome(home)
+         DatatestSpringRuntimeInitializer.initialize(ctx, currentContext)
+      }
+
+      DataSpace.getDataSpace()
+      if(controllers == null) {
+         controllers = new ControllersResource()
+         controllers.initControllers()
+      }
    }
 
    List getMVDefInfo(List<TableLens> datas) {
@@ -436,7 +469,12 @@ class MVTest {
       return "[" + val + "]"
    }
 
+   /**
+    * SRPrincipal triggers XSessionService via Spring; {@link #ensureRuntimeInitialized()} must run first.
+    * Call from {@code setup()} (after Spock-Spring loaded context), not {@code setupSpec()}.
+    */
    static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
+      ensureRuntimeInitialized()
       IdentityID identityUser = new IdentityID(userName, 'host-org')
       IdentityID[] identityRoles = new IdentityID[0]
 
