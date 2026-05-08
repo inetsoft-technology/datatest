@@ -58,7 +58,6 @@ import inetsoft.web.portal.controller.database.DataSourceService;
 import inetsoft.web.portal.controller.database.DatabaseModelBrowserService;
 import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.BinaryTransferService;
-import inetsoft.web.service.LicenseService;
 import inetsoft.mv.MVManager;
 import inetsoft.sree.web.dashboard.DashboardManager;
 import inetsoft.sree.web.dashboard.DashboardRegistryManager;
@@ -77,13 +76,14 @@ import inetsoft.web.viewsheet.service.CoreLifecycleService;
 import inetsoft.web.viewsheet.service.RuntimeViewsheetManager;
 import inetsoft.web.viewsheet.service.VSDialogService;
 import inetsoft.web.viewsheet.service.VSExportService;
-import inetsoft.web.viewsheet.service.VSLifecycleService;
 import inetsoft.web.viewsheet.service.CommandDispatcher;
 import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.rmi.RemoteException;
 import java.lang.reflect.Constructor;
@@ -110,6 +110,12 @@ import static org.mockito.Mockito.mock;
  */
 @Configuration
 public class DatatestSpringDuplicateFixConfiguration {
+
+   @Bean
+   public ApplicationListener<ContextRefreshedEvent> datatestSpringRuntimeInitializer() {
+      return event -> DatatestSpringRuntimeInitializer.initialize(
+         inetsoft.util.ConfigurationContext.getContext(), event.getApplicationContext());
+   }
 
    /**
     * With {@code mock.license.manager=true}, {@link inetsoft.test.BaseTestConfiguration} supplies an

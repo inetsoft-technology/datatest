@@ -1,5 +1,6 @@
 package inetsoft.test.modules
 
+import inetsoft.analytic.composition.ViewsheetService
 import inetsoft.sree.ClientInfo
 import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.IdentityID
@@ -14,35 +15,40 @@ import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.util.Tool
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent
+import inetsoft.web.portal.data.DatabaseDatasourcesController
+import inetsoft.web.viewsheet.controller.OpenViewsheetController
+import inetsoft.web.viewsheet.model.RuntimeViewsheetRef
 
-import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.ExportUtil
-import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.MessageTestUtils
 
 class VPMTest {
    VPMTest(String asset_id) {
       this.asset_id = asset_id
    }
 
-   static initHome() {
+   static initHome(ViewsheetService viewsheetService,
+                   OpenViewsheetController openViewsheetController,
+                   RuntimeViewsheetRef runtimeViewsheetRef,
+                   DatabaseDatasourcesController databaseDatasourcesController) {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
-      controllers.initControllers()
+      this.viewsheetService = viewsheetService
+      this.openViewsheetController = openViewsheetController
+      this.runtimeViewsheetRef = runtimeViewsheetRef
+      this.databaseDatasourcesController = databaseDatasourcesController
    }
 
    def executeVS(SRPrincipal user, Map<String, String[]> params) {
       user.setIgnoreLogin(true)
       ThreadContext.setContextPrincipal(user)
       OpenViewsheetEvent openViewsheetEvent = actionEventsUtil.createOpenViewsheetEvent(params, asset_id)
-      viewsheetResource = new RuntimeViewsheetResource(openViewsheetEvent, controllers)
       SUtil.setAdditionalDatasource(user)
-      viewsheetResource.initRuntimeVS(user)
+      String runtimeId = openRuntimeViewsheet(openViewsheetEvent, user)
 
-      RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(user)
+      RuntimeViewsheet rvs = viewsheetService.getViewsheet(runtimeId, user)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
@@ -72,7 +78,15 @@ class VPMTest {
     * @param datasource : 'Examples/Orders'
     */
    def refreshMetadata(String datasource) {
-      controllers.getDatabaseDatasourcesController().refreshMetadata(datasource)
+      databaseDatasourcesController.refreshMetadata(datasource)
+   }
+
+   private static String openRuntimeViewsheet(OpenViewsheetEvent openViewsheetEvent, SRPrincipal user) {
+      MessageTestUtils.withMockMessageContext(user, null, openViewsheetEvent, (ctx, event) -> {
+         openViewsheetController.openViewsheet(event, ctx.getUser(), ctx.getCommandDispatcher(),
+                 'http://localhost:8080/sree')
+         runtimeViewsheetRef.getRuntimeId()
+      })
    }
 
    def exportData(def data, String filename) {
@@ -107,8 +121,10 @@ class VPMTest {
    }
 
    private static String asset_id
-   private static ControllersResource controllers = new ControllersResource()
-   private static RuntimeViewsheetResource viewsheetResource
+   private static ViewsheetService viewsheetService
+   private static OpenViewsheetController openViewsheetController
+   private static RuntimeViewsheetRef runtimeViewsheetRef
+   private static DatabaseDatasourcesController databaseDatasourcesController
    private static ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    private static ExportUtil exportUtil = new ExportUtil()
    private static CompareUtil compareUtil = new CompareUtil()

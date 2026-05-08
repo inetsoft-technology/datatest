@@ -4,24 +4,12 @@
 package inetsoft.test.core;
 
 import inetsoft.test.IntegrationTestConfiguration;
-import inetsoft.sree.PropertiesEngine;
-import inetsoft.sree.SreeEnv;
-import inetsoft.sree.security.AuthenticationProvider;
-import inetsoft.sree.security.EditableAuthenticationProvider;
-import inetsoft.sree.security.FSUser;
-import inetsoft.sree.security.IdentityID;
-import inetsoft.sree.security.Organization;
-import inetsoft.sree.security.SecurityEngine;
 import inetsoft.util.ConfigurationContext;
-import inetsoft.util.DataSpace;
-import inetsoft.util.IndexedStorage;
-import inetsoft.util.Plugins;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.StandardEnvironment;
 
-import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -78,10 +66,7 @@ public final class DatatestRuntimeBootstrap {
             boolean active = !(existing instanceof ConfigurableApplicationContext) ||
                              ((ConfigurableApplicationContext) existing).isActive();
             if(active) {
-               initializeStorageAccess(ctx);
-               alignSreeEnvAfterBootstrap(ctx);
-               initializeSecurity(ctx);
-               initializePlugins(ctx);
+               DatatestSpringRuntimeInitializer.initialize(ctx, existing);
                return;
             }
             // Context registered but not yet refreshed (e.g. @ContextConfiguration initializer
@@ -102,90 +87,7 @@ public final class DatatestRuntimeBootstrap {
             DatatestSpringDuplicateFixConfiguration.class);
          ctx.setApplicationContext(app);
          app.refresh();
-         initializeStorageAccess(ctx);
-         alignSreeEnvAfterBootstrap(ctx);
-         initializeSecurity(ctx);
-         initializePlugins(ctx);
+         DatatestSpringRuntimeInitializer.initialize(ctx, app);
       }
-   }
-
-   /**
-    * Forces {@link PropertiesEngine#init(boolean)} to reload all properties from the KV backend
-    * after the Spring context is fully up. This is needed because the runner plugin may write
-    * {@code security.enabled} and other keys to the mapdb store during {@code generate-test-resources},
-    * but the PropertiesEngine may have been initialised lazily before the KV storage was fully
-    * accessible in the Spring bootstrap chain.
-    * <p>
-    * As a safety net, any JVM system property whose name matches a key absent from the KV storage
-    * is propagated into SreeEnv so that Surefire {@code <systemPropertyVariables>} can serve as a
-    * fallback (e.g. {@code <security.enabled>true</security.enabled>} in the module pom.xml).
-    * </p>
-    */
-   private static void alignSreeEnvAfterBootstrap(ConfigurationContext ctx) {
-      PropertiesEngine propertiesEngine = ctx.getSpringBean(PropertiesEngine.class);
-      ensurePropertiesStorageInitialized(propertiesEngine);
-      propertiesEngine.init(true);
-
-      for(String key : new String[] {
-         "security.enabled", "security.login.orgLocation", "data.home", "adm.home"
-      }) {
-         if(SreeEnv.getPropertyFromStorage(key) == null) {
-            String sysProp = System.getProperty(key);
-
-            if(sysProp != null) {
-               SreeEnv.setProperty(key, sysProp);
-               System.err.println("[datatest-bootstrap] '" + key
-                  + "' absent from KV storage; applied from System property: " + sysProp);
-            }
-         }
-      }
-   }
-
-   private static void initializeStorageAccess(ConfigurationContext ctx) {
-      // Avoid Caffeine recursive compute when static accessors are called while another bean
-      // such as MVManager is still being created.
-      ctx.getSpringBean(DataSpace.class);
-      ctx.getSpringBean(IndexedStorage.class);
-   }
-
-   private static void ensurePropertiesStorageInitialized(PropertiesEngine propertiesEngine) {
-      try {
-         Field kvStorage = PropertiesEngine.class.getDeclaredField("kvStorage");
-         kvStorage.setAccessible(true);
-
-         if(kvStorage.get(propertiesEngine) == null) {
-            propertiesEngine.initEngine();
-         }
-      }
-      catch(ReflectiveOperationException e) {
-         throw new IllegalStateException("Failed to verify PropertiesEngine key-value storage", e);
-      }
-   }
-
-   private static void initializeSecurity(ConfigurationContext ctx) {
-      SecurityEngine securityEngine = ctx.getSpringBean(SecurityEngine.class);
-      securityEngine.init();
-
-      AuthenticationProvider authenticationProvider =
-         securityEngine.getSecurityProvider().getAuthenticationProvider();
-      IdentityID adminId = new IdentityID("admin", Organization.getDefaultOrganizationID());
-
-      if(authenticationProvider.getUser(adminId) == null &&
-         authenticationProvider instanceof EditableAuthenticationProvider editable)
-      {
-         FSUser admin = new FSUser(adminId);
-         admin.setActive(true);
-         admin.setEmails(new String[0]);
-         admin.setGroups(new String[0]);
-         admin.setLocale("");
-         admin.setRoles(new IdentityID[] {
-            new IdentityID("Administrator", Organization.getDefaultOrganizationID())
-         });
-         editable.addUser(admin);
-      }
-   }
-
-   private static void initializePlugins(ConfigurationContext ctx) {
-      ctx.getSpringBean(Plugins.class).initBean();
    }
 }
