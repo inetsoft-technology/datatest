@@ -14,6 +14,7 @@ import inetsoft.sree.security.Organization;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.util.DataSpace;
+import inetsoft.util.IndexedStorage;
 import inetsoft.util.Plugins;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -77,6 +78,7 @@ public final class DatatestRuntimeBootstrap {
             boolean active = !(existing instanceof ConfigurableApplicationContext) ||
                              ((ConfigurableApplicationContext) existing).isActive();
             if(active) {
+               initializeStorageAccess(ctx);
                alignSreeEnvAfterBootstrap(ctx);
                initializeSecurity(ctx);
                initializePlugins(ctx);
@@ -100,8 +102,7 @@ public final class DatatestRuntimeBootstrap {
             DatatestSpringDuplicateFixConfiguration.class);
          ctx.setApplicationContext(app);
          app.refresh();
-         // Avoid Caffeine recursive compute when MVManager construction calls DataSpace.getDataSpace().
-         ctx.getSpringBean(DataSpace.class);
+         initializeStorageAccess(ctx);
          alignSreeEnvAfterBootstrap(ctx);
          initializeSecurity(ctx);
          initializePlugins(ctx);
@@ -138,6 +139,13 @@ public final class DatatestRuntimeBootstrap {
             }
          }
       }
+   }
+
+   private static void initializeStorageAccess(ConfigurationContext ctx) {
+      // Avoid Caffeine recursive compute when static accessors are called while another bean
+      // such as MVManager is still being created.
+      ctx.getSpringBean(DataSpace.class);
+      ctx.getSpringBean(IndexedStorage.class);
    }
 
    private static void ensurePropertiesStorageInitialized(PropertiesEngine propertiesEngine) {
