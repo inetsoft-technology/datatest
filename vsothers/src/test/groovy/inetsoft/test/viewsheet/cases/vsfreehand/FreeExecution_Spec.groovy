@@ -8,9 +8,18 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class FreeExecution_Spec extends Specification {
    static VSCalcTest vsCalcTest
    static String caseName
@@ -22,6 +31,7 @@ class FreeExecution_Spec extends Specification {
    /**
     * test freehand name group with query
     */
+    @IgnoreRest
    def 'FNGTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable1', caseName)

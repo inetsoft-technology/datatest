@@ -71,6 +71,7 @@ import inetsoft.web.viewsheet.controller.chart.VSChartBrushService;
 import inetsoft.web.viewsheet.controller.chart.VSChartShowDetailsService;
 import inetsoft.web.viewsheet.handler.crosstab.CrosstabDrillHandler;
 import inetsoft.web.viewsheet.model.RuntimeViewsheetRef;
+import inetsoft.web.viewsheet.model.VSObjectModelFactory;
 import inetsoft.web.viewsheet.model.VSObjectModelFactoryService;
 import inetsoft.web.viewsheet.service.CoreLifecycleService;
 import inetsoft.web.viewsheet.service.RuntimeViewsheetManager;
@@ -80,14 +81,19 @@ import inetsoft.web.viewsheet.service.CommandDispatcher;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.rmi.RemoteException;
 import java.lang.reflect.Constructor;
 import java.security.Principal;
+import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -111,10 +117,39 @@ import static org.mockito.Mockito.mock;
 @Configuration
 public class DatatestSpringDuplicateFixConfiguration {
 
+   /**
+    * Registers {@link VSObjectModelFactory} beans the same way as runtime component-scan (each
+    * factory is {@link Component} under {@code inetsoft.web.viewsheet.model}). Excludes
+    * {@link RuntimeViewsheetRef} so it does not clash with
+    * {@link inetsoft.test.IntegrationTestConfiguration#runtimeViewsheetRef}.
+    */
+   @Configuration
+   @ComponentScan(
+      basePackages = "inetsoft.web.viewsheet.model",
+      useDefaultFilters = false,
+      includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Component.class),
+      excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = RuntimeViewsheetRef.class)
+   )
+   static class DatatestVSObjectModelFactoryScan {
+   }
+
    @Bean
    public ApplicationListener<ContextRefreshedEvent> datatestSpringRuntimeInitializer() {
       return event -> DatatestSpringRuntimeInitializer.initialize(
          inetsoft.util.ConfigurationContext.getContext(), event.getApplicationContext());
+   }
+
+   /**
+    * {@link inetsoft.test.IntegrationTestConfiguration#objectModelFactoryService()} uses a hand-written
+    * factory list that omits crosstab. Prefer the full set of {@link VSObjectModelFactory} beans from
+    * {@link #DatatestVSObjectModelFactoryScan} (matches production wiring).
+    */
+   @Bean
+   @Primary
+   public VSObjectModelFactoryService datatestObjectModelFactoryService(
+      List<VSObjectModelFactory<?, ?>> modelFactories)
+   {
+      return new VSObjectModelFactoryService(modelFactories);
    }
 
    /**
@@ -148,6 +183,23 @@ public class DatatestSpringDuplicateFixConfiguration {
       securityEngine.init();
       return new ScheduleManager(securityEngine, cluster, mock(ScheduleClient.class),
          mock(DependencyHandler.class));
+   }
+
+   /**
+    * {@link MVManager} constructs {@code MVDefMap}, which calls {@link DataSpace#getDataSpace()} and
+    * {@link IndexedStorage#getIndexedStorage()} → {@link inetsoft.util.ConfigurationContext#getSpringBean}.
+    * If those beans are still resolving while {@code MVManager} is being cached, Caffeine/CHM can throw
+    * {@code IllegalStateException: Recursive update} (same class of issue as
+    * {@link DatatestSpringRuntimeInitializer#initializeStorageAccess}).
+    * Force storage beans to finish before {@code MVManager} instantiation.
+    */
+   @Bean(name = "mvManager")
+   @Primary
+   @DependsOn({"dataSpace", "indexedStorage", "blobStorageManager"})
+   public MVManager datatestMvManager(Cluster cluster, DataSpace dataSpace, IndexedStorage indexedStorage) {
+      Objects.requireNonNull(dataSpace, "dataSpace");
+      Objects.requireNonNull(indexedStorage, "indexedStorage");
+      return new MVManager(cluster);
    }
 
    @Bean

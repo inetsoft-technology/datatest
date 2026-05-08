@@ -6,14 +6,33 @@ import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.analytic.composition.ViewsheetService
 import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
+import inetsoft.web.portal.data.DatabaseDatasourcesController
+import inetsoft.web.viewsheet.controller.OpenViewsheetController
+import inetsoft.web.viewsheet.model.RuntimeViewsheetRef
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class VPM_Spec extends Specification {
+
+   @Autowired ViewsheetService viewsheetService
+   @Autowired OpenViewsheetController openViewsheetController
+   @Autowired RuntimeViewsheetRef runtimeViewsheetRef
+   @Autowired DatabaseDatasourcesController databaseDatasourcesController
 
    @Shared SRPrincipal admin
    @Shared SRPrincipal guest
@@ -22,7 +41,8 @@ class VPM_Spec extends Specification {
    @Shared SRPrincipal NY
 
    def setup() {
-      VPMTest.initHome()
+      VPMTest.initHome(viewsheetService, openViewsheetController, runtimeViewsheetRef,
+         databaseDatasourcesController)
 
       admin = VPMTest.createPrincipal('admin', ['Everyone', 'Administrator', 'Special'] as String[], [] as String[])
       guest = VPMTest.createPrincipal('guest', ['Everyone'] as String[], [] as String[])

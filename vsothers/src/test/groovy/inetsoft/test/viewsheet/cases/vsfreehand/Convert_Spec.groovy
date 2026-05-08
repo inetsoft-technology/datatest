@@ -11,10 +11,18 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
-@Ignore
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class Convert_Spec extends Specification {
    static VSCalcTest vsCalcTest
    static String caseName
@@ -27,6 +35,7 @@ class Convert_Spec extends Specification {
     * test crosstab binding query, then convert to freehand, setRowHeight=0 to hide header
     */
    @Timeout(value = 60, unit = TimeUnit.SECONDS)
+   @IgnoreRest
    def 'CroTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable2', caseName)
