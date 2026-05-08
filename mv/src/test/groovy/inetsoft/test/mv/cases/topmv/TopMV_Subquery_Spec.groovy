@@ -6,7 +6,13 @@ import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class TopMV_Subquery_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
@@ -50,8 +56,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   //手动不稳定重现filter之后数据不对的问题。第一次比较容易重现, 自动化export出来的数据不对
-   def 'Subquery_Mode1_3'() {
+   //鎵嬪姩涓嶇ǔ瀹氶噸鐜癴ilter涔嬪悗鏁版嵁涓嶅鐨勯棶棰樸€傜涓€娆℃瘮杈冨鏄撻噸鐜? 鑷姩鍖杄xport鍑烘潵鐨勬暟鎹笉瀵?   def 'Subquery_Mode1_3'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_3'
       mvtest = new MVTest(asset_id)
@@ -294,7 +299,7 @@ class TopMV_Subquery_Spec extends Specification {
    }
 
    @Ignore
-   //自动化mv table 传入的table len 不对，是selection list 的 full table
+   //鑷姩鍖杕v table 浼犲叆鐨則able len 涓嶅锛屾槸selection list 鐨?full table
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'

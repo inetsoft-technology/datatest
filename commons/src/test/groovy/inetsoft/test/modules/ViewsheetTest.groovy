@@ -54,12 +54,14 @@ class ViewsheetTest {
    }
 
    static initHome(String suiteName) {
-      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
-      //println '----suitename--------' + suiteName
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
 
       DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
+      controllers = new ControllersResource()
+      controllers.initControllers()
    }
 
    /**
@@ -87,10 +89,6 @@ class ViewsheetTest {
     */
    def initVS(Map<String, String[]> params, Boolean isViewer) {
       ensurePrincipal()
-      DataSpace.getDataSpace()  //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      controllers = new ControllersResource()
-      controllers.initControllers()
-
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)

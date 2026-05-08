@@ -2,7 +2,13 @@ package inetsoft.test.vsexport.cases.Format
 
 import inetsoft.test.modules.VSExportTest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class Format_Filter_Spec extends Specification {
    static VSExportTest vsExportTest
    static String caseName

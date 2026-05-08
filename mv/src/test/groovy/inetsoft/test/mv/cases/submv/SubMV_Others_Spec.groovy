@@ -5,7 +5,13 @@ import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.IgnoreRest
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class SubMV_Others_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
@@ -357,7 +363,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 建mv之后数据细微差别
+   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
    def 'percentage-select on group col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on group col'
       mvtest = new MVTest(asset_id)
@@ -372,7 +378,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 建mv之后数据细微差别
+   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
    def 'percentage-select on other col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on other col'
       mvtest = new MVTest(asset_id)

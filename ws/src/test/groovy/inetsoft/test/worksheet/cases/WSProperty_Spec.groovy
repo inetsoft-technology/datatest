@@ -4,7 +4,13 @@ import inetsoft.test.modules.WorksheetTest
 import spock.lang.Specification
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class WSProperty_Spec extends Specification {
    //if check ignore col, you can set  ignoreTypeColumns: [0,1,2], or set null
    //Note: create a null ws, as base ws
@@ -73,7 +79,7 @@ class WSProperty_Spec extends Specification {
       wstest.importCSVToEMTable(wsAsset, 'excelTest1.xlsx', file1, 'specialSheetName')
       file1.sheetSelected = 'specialCol'
       wstest.importCSVToEMTable(wsAsset, 'excelTest1.xlsx', file1, 'specialCol')
-      file1.sheetSelected = 'SSSSSSSSSSSSSSSSSSSSSSS_中文'
+      file1.sheetSelected = 'SSSSSSSSSSSSSSSSSSSSSSS_涓枃'
       wstest.importCSVToEMTable(wsAsset, 'excelTest1.xlsx', file1, 'longSheetName')
 
       expect:
@@ -216,13 +222,13 @@ class WSProperty_Spec extends Specification {
 
       file1.sheetSelected = 'valid_date format'
       wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, 'valid date')
-      file1.sheetSelected = '中文_date format'
-      wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, '中文_date')
+      file1.sheetSelected = '涓枃_date format'
+      wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, '涓枃_date')
       file1.sheetSelected = 'valid_text format'
       wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, 'valid text')
-      file1.sheetSelected = '中文_text format'
+      file1.sheetSelected = '涓枃_text format'
       file1.ignoreTypeColumns = [0]
-      wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, '中文_text')
+      wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, '涓枃_text')
       file1.sheetSelected = 'invalid_date format'
       file1.ignoreTypeColumns = [0,1,4,5,6,7,8,9,11,12,14,15,16,17,19,20,22,23,24,25,26,27,28,29,30,31,32]
       wstest.importCSVToEMTable(wsAsset,'dateFormatTest.xlsx', file1, 'invalid date')

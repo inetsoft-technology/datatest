@@ -4,7 +4,13 @@ import inetsoft.test.modules.VSCalcTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class FreeExecution_Spec extends Specification {
    static VSCalcTest vsCalcTest
    static String caseName
@@ -341,7 +347,7 @@ class FreeExecution_Spec extends Specification {
    }
 
    /**
-    * test freehand structure：RunQuery时,在一个列上竖向扩展两个column,必须在UI上指定RowGroup
+    * test freehand structure锛歊unQuery鏃?鍦ㄤ竴涓垪涓婄珫鍚戞墿灞曚袱涓猚olumn,蹇呴』鍦║I涓婃寚瀹歊owGroup
     * cover normal formual and runquery formula
     */
    def 'FSRunQuery'() {

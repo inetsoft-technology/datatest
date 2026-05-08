@@ -6,8 +6,14 @@ import spock.lang.Specification
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.IgnoreIf
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 @IgnoreIf({ os.linux })
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class WSBuildServer_Spec extends Specification {
    static WorksheetTest wstest
    static String caseName

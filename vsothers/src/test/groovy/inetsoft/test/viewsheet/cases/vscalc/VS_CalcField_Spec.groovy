@@ -6,7 +6,13 @@ import org.testcontainers.containers.wait.strategy.Wait
 import java.time.Duration
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class VS_CalcField_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
@@ -133,7 +139,7 @@ class VS_CalcField_Spec extends Specification{
    }
 
    /*
-    check calc field in gannt chart(start,end,vactual，visual pane)
+    check calc field in gannt chart(start,end,vactual锛寁isual pane)
    */
    def 'gantt chart'() {
       caseName = specificationContext.currentIteration.name

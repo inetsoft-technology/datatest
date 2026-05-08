@@ -2,7 +2,13 @@ package inetsoft.test.viewsheet.cases.vscrosstab
 
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class Crosstab_NewBinding_Spec extends Specification {
    def setupSpec() {
       ViewsheetTest.initHome(this.class.getName())
@@ -364,7 +370,7 @@ class Crosstab_NewBinding_Spec extends Specification {
    }
 
    /*
-   check asTime series, Year, Quater, Month, Week, Day，Hour, Minute
+   check asTime series, Year, Quater, Month, Week, Day锛孒our, Minute
     */
    def 'TimeSeries1'() {
       caseName = specificationContext.currentIteration.name

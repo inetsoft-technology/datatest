@@ -10,7 +10,13 @@ import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Subject
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class AdditionalDBVPM_Spec extends Specification {
    static GlobalTest globalTest
    static AdditionalConnectionTest additionalConnectionTest

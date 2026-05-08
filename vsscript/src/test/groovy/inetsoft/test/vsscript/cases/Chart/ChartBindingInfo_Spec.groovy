@@ -4,14 +4,20 @@ import inetsoft.test.modules.VSScriptTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ChartBindingInfo_Spec extends Specification{
    def setupSpec() {
       VSScriptTest.initHome(this.class.getName())
    }
 
    /**
-    * test chart script which inherit from parent，create normalchart banding all field
+    * test chart script which inherit from parent锛宑reate normalchart banding all field
     */
    def 'TestCase-BandingField' () {
       given:

@@ -3,10 +3,16 @@ package inetsoft.test.cases.Properties
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 /*
   check chart properties
  */
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ChartProperties_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
@@ -118,7 +124,7 @@ class ChartProperties_Spec extends Specification{
    }
 
    /*
-    1.check stack measure & secondary y /show points relation， exist Bug #52453
+    1.check stack measure & secondary y /show points relation锛?exist Bug #52453
    */
    def 'stackmeasures4'() {
       caseName = specificationContext.currentIteration.name

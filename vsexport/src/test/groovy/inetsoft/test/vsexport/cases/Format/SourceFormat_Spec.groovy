@@ -4,10 +4,16 @@ import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.modules.VSExportTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 /**
  * check source format apply on vs, report
  */
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class SourceFormat_Spec extends Specification {
    static String caseName
    static VSExportTest vsExportTest

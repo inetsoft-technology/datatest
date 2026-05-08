@@ -2,7 +2,13 @@ package inetsoft.test.cases.Others
 
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ChartVisual_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
@@ -73,7 +79,7 @@ class ChartVisual_Spec extends Specification{
    }
 
 
- //test merge legend：color & size，color& shape
+ //test merge legend锛歝olor & size锛宑olor& shape
    def 'MergeLengend'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Aesthetic/MergeLengend', caseName)

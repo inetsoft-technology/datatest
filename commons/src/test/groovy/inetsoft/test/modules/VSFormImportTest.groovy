@@ -1,13 +1,10 @@
 package inetsoft.test.modules
 
 import inetsoft.uql.viewsheet.FileFormatInfo
-import inetsoft.util.ConfigurationContext
-import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
 import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.RuntimeViewsheetResource
 
 import org.springframework.mock.web.MockMultipartFile
@@ -21,17 +18,11 @@ class VSFormImportTest extends ViewsheetTest {
 
    /**
     * Init runtime VS
-    * @param params
-    * @return
     */
    def initVS() {
       ensurePrincipal()
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
-      controllers = new ControllersResource()
-      controllers.initControllers()
-      controllers.initApplicationContext(ConfigurationContext.getContext())
-      ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       ThreadContext.setContextPrincipal(principal)
+      ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(null, asset_id), controllers)
       viewsheetResource.initRuntimeVS(principal)
    }
@@ -39,7 +30,6 @@ class VSFormImportTest extends ViewsheetTest {
    /**
     * import excel to current vs
     * @param file file name with suffix, eg: vs.xlsx
-    * @return
     */
    def importXLSToVS(String file) {
       try {
@@ -63,10 +53,5 @@ class VSFormImportTest extends ViewsheetTest {
       catch(Exception ex) {
          ex.printStackTrace()
       }
-      finally {
-         controllers.destroy()
-      }
    }
-
-   private static ControllersResource controllers
 }

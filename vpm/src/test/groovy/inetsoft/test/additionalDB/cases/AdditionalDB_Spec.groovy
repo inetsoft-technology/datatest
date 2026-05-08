@@ -10,7 +10,13 @@ import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Subject
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class AdditionalDB_Spec extends Specification {
    static AdditionalConnectionTest additionalConnectionTest
    static String caseName
@@ -136,7 +142,7 @@ class AdditionalDB_Spec extends Specification {
    /*
     *test user has permission to multiple additional db
     *old: admin can see 'reseller', user0 can see 'order_date', user1 can see 'first_name'
-    *now: 手动执行的结果: 目前user0和user1的结果一样. ws need manual check
+    *now: 鎵嬪姩鎵ц鐨勭粨鏋? 鐩墠user0鍜寀ser1鐨勭粨鏋滀竴鏍? ws need manual check
     *ws with manual run, to check column visible
     */
    @Issue('ws with manual run, to check column visible, VS, and Report have same result by user0 and user1')

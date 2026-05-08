@@ -4,6 +4,8 @@
 package inetsoft.test.core;
 
 import inetsoft.test.IntegrationTestConfiguration;
+import inetsoft.sree.PropertiesEngine;
+import inetsoft.sree.SreeEnv;
 import inetsoft.sree.security.AuthenticationProvider;
 import inetsoft.sree.security.EditableAuthenticationProvider;
 import inetsoft.sree.security.FSUser;
@@ -13,6 +15,7 @@ import inetsoft.sree.security.SecurityEngine;
 import inetsoft.util.ConfigurationContext;
 import inetsoft.util.DataSpace;
 import inetsoft.util.Plugins;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.StandardEnvironment;
@@ -48,6 +51,8 @@ public final class DatatestRuntimeBootstrap {
    private DatatestRuntimeBootstrap() {
    }
 
+   private static final Object BOOTSTRAP_LOCK = new Object();
+
    /**
     * Uses {@code System.getProperty("sree.home", ".")}. Convenience for viewsheet-oriented specs.
     */
@@ -65,29 +70,71 @@ public final class DatatestRuntimeBootstrap {
       String resolved = (home == null || home.isEmpty()) ? "." : home;
       ctx.setHome(resolved);
 
-      if(ctx.getApplicationContext() != null) {
+      synchronized(BOOTSTRAP_LOCK) {
+         var existing = ctx.getApplicationContext();
+         if(existing != null) {
+            boolean active = !(existing instanceof ConfigurableApplicationContext) ||
+                             ((ConfigurableApplicationContext) existing).isActive();
+            if(active) {
+               alignSreeEnvAfterBootstrap(ctx);
+               initializeSecurity(ctx);
+               initializePlugins(ctx);
+               return;
+            }
+            // Context registered but not yet refreshed (e.g. @ContextConfiguration initializer
+            // ran before refresh(), or another thread set it but hasn't called refresh() yet).
+            // Fall through to create and refresh our own context.
+         }
+
+         StandardEnvironment env = new StandardEnvironment();
+         Map<String, Object> props = new HashMap<>(4);
+         props.put("mock.license.manager", "true");
+         props.put("sree.home", resolved);
+         env.getPropertySources().addFirst(new MapPropertySource("datatest", props));
+
+         AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext();
+         app.setAllowBeanDefinitionOverriding(true);
+         app.setEnvironment(env);
+         app.register(DatatestBaseConfiguration.class, IntegrationTestConfiguration.class,
+            DatatestSpringDuplicateFixConfiguration.class);
+         ctx.setApplicationContext(app);
+         app.refresh();
+         // Avoid Caffeine recursive compute when MVManager construction calls DataSpace.getDataSpace().
+         ctx.getSpringBean(DataSpace.class);
+         alignSreeEnvAfterBootstrap(ctx);
          initializeSecurity(ctx);
          initializePlugins(ctx);
-         return;
       }
+   }
 
-      StandardEnvironment env = new StandardEnvironment();
-      Map<String, Object> props = new HashMap<>(4);
-      props.put("mock.license.manager", "true");
-      props.put("sree.home", resolved);
-      env.getPropertySources().addFirst(new MapPropertySource("datatest", props));
+   /**
+    * Forces {@link PropertiesEngine#init(boolean)} to reload all properties from the KV backend
+    * after the Spring context is fully up. This is needed because the runner plugin may write
+    * {@code security.enabled} and other keys to the mapdb store during {@code generate-test-resources},
+    * but the PropertiesEngine may have been initialised lazily before the KV storage was fully
+    * accessible in the Spring bootstrap chain.
+    * <p>
+    * As a safety net, any JVM system property whose name matches a key absent from the KV storage
+    * is propagated into SreeEnv so that Surefire {@code <systemPropertyVariables>} can serve as a
+    * fallback (e.g. {@code <security.enabled>true</security.enabled>} in the module pom.xml).
+    * </p>
+    */
+   private static void alignSreeEnvAfterBootstrap(ConfigurationContext ctx) {
+      ctx.getSpringBean(PropertiesEngine.class).init(true);
 
-      AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext();
-      app.setAllowBeanDefinitionOverriding(true);
-      app.setEnvironment(env);
-      app.register(DatatestBaseConfiguration.class, IntegrationTestConfiguration.class,
-         DatatestSpringDuplicateFixConfiguration.class);
-      ctx.setApplicationContext(app);
-      app.refresh();
-      // Avoid Caffeine recursive compute when MVManager construction calls DataSpace.getDataSpace().
-      ctx.getSpringBean(DataSpace.class);
-      initializeSecurity(ctx);
-      initializePlugins(ctx);
+      for(String key : new String[] {
+         "security.enabled", "security.login.orgLocation", "data.home", "adm.home"
+      }) {
+         if(SreeEnv.getPropertyFromStorage(key) == null) {
+            String sysProp = System.getProperty(key);
+
+            if(sysProp != null) {
+               SreeEnv.setProperty(key, sysProp);
+               System.err.println("[datatest-bootstrap] '" + key
+                  + "' absent from KV storage; applied from System property: " + sysProp);
+            }
+         }
+      }
    }
 
    private static void initializeSecurity(ConfigurationContext ctx) {

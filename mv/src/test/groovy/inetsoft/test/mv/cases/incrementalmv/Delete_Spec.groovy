@@ -6,8 +6,14 @@ import spock.lang.Execution
 import spock.lang.IgnoreRest
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 @Execution(ExecutionMode.SAME_THREAD)
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class Delete_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as

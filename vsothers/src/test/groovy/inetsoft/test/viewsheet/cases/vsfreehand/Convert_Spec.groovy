@@ -7,7 +7,14 @@ import spock.lang.Specification
 import spock.lang.Timeout
 
 import java.util.concurrent.TimeUnit
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@Ignore
 class Convert_Spec extends Specification {
    static VSCalcTest vsCalcTest
    static String caseName

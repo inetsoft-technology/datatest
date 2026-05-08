@@ -2,11 +2,17 @@ package inetsoft.test.cases.Brush
 
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 /*
 check brush, zoom, exlcude action on special binding, such as component binding, dynimac binding and so on
  */
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ChartBrushSpecial_Spec extends Specification {
    static ViewsheetTest vstest
    static String caseName

@@ -6,7 +6,13 @@ import spock.lang.IgnoreRest
 import spock.lang.Retry
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class SubMV_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
@@ -20,7 +26,7 @@ class SubMV_Spec extends Specification {
       mvtest.removeMV()
    }
 
-   //average 存在数据精度问题, bug #54404
+   //average 瀛樺湪鏁版嵁绮惧害闂, bug #54404
    def 'aggbase'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase'
@@ -102,7 +108,7 @@ class SubMV_Spec extends Specification {
       }
    }
 
-   //存在数据精度变化问题
+   //瀛樺湪鏁版嵁绮惧害鍙樺寲闂
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/crossjoin'
@@ -372,7 +378,7 @@ class SubMV_Spec extends Specification {
          mvtest.compareData(false)
       }
    }
-   //average存在数据精度问题
+   //average瀛樺湪鏁版嵁绮惧害闂
    def 'namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^submv/namegroup'

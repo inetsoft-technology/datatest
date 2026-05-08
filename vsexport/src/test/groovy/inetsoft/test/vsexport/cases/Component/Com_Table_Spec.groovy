@@ -4,7 +4,13 @@ import inetsoft.test.modules.VSExportTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class Com_Table_Spec extends Specification {
    static VSExportTest vsExportTest
    static String caseName
@@ -291,9 +297,9 @@ class Com_Table_Spec extends Specification {
 
    /**
     * check all date level add on 20210727
-    *  说明:
+    *  璇存槑:
     * 1. Freehand1withScript result same with studio report.
-    * 2. 将Freehand1完全转为formula script之后,一些cell merge到了一起, 但是与studio report一致, 暂时Ignore
+    * 2. 灏咶reehand1瀹屽叏杞负formula script涔嬪悗,涓€浜沜ell merge鍒颁簡涓€璧? 浣嗘槸涓巗tudio report涓€鑷? 鏆傛椂Ignore
     */
    def 'CTable_Crosstab2F7' () {
       caseName = specificationContext.currentIteration.name

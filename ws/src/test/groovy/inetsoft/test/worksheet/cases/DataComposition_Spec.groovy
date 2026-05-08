@@ -4,7 +4,13 @@ import inetsoft.test.modules.WorksheetTest
 import spock.lang.Specification
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class DataComposition_Spec extends Specification {
    static WorksheetTest wstest
    static String caseName

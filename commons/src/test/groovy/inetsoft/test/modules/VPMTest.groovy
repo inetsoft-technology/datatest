@@ -28,7 +28,7 @@ class VPMTest {
    }
 
    static initHome() {
-      System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
+      System.err.print("=========sree.home=====" + System.getProperty("sree.home") + "\n")
       DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
       controllers.initControllers()
@@ -50,12 +50,13 @@ class VPMTest {
       def data = null
       String assemblyName = ''
       String userName = user.getClientUserID().getName()
+      System.err.print("=========userName=====" + userName + "\n")
       try {
          assemblies.each {
             assemblyName = it.getName()
             data = sandbox.getData(assemblyName, true, DataMap.NORMAL)
             if(it instanceof TableDataVSAssembly) {
-               data = sandbox.getVSTableLens(assemblyName, false)
+               data = sandbox.getVSTableLens(assemblyName, false) ?: data
             }
             exportData(data, getExportFilePath(userName, assemblyName))
 

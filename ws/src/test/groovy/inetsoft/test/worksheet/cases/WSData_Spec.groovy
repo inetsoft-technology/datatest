@@ -7,7 +7,13 @@ import inetsoft.sree.security.SRPrincipal
 import spock.lang.Ignore
 import spock.lang.Retry
 import spock.lang.IgnoreRest
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class WSData_Spec extends Specification {
    static WorksheetTest wstest
    static String caseName

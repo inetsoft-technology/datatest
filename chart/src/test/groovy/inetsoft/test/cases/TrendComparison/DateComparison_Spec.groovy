@@ -3,8 +3,14 @@ package inetsoft.test.cases.TrendComparison
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 import spock.lang.Ignore
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class DateComparison_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
@@ -14,7 +20,7 @@ class DateComparison_Spec extends Specification{
    }
 
 
-   /*check period is year and interval is quarter， chart covered highlight & format & bookmark1 covered target band & project forward*/
+   /*check period is year and interval is quarter锛?chart covered highlight & format & bookmark1 covered target band & project forward*/
    def 'Year_Quarter'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Year_Quarter', caseName)
@@ -151,7 +157,7 @@ class DateComparison_Spec extends Specification{
    }
 
    /*check period and interval are same level. chart's old logic can coverd a part.we only need check peroperteies.
-   chart include highlight & format & axis properties test， bookmark include project forward & target line & fillseries as zero test*/
+   chart include highlight & format & axis properties test锛?bookmark include project forward & target line & fillseries as zero test*/
    def 'Same Level'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Same Level', caseName)
@@ -438,7 +444,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， granularity is year/quarter, bk1 check target line for runtime col*/
+   /*check custom period锛?granularity is year/quarter, bk1 check target line for runtime col*/
    def 'Custom_normal1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Custom_normal1', caseName)
@@ -452,7 +458,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is month/week */
+   /*check custom period锛?interval is month/week */
    def 'Custom_normal2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Custom_normal2', caseName)
@@ -465,7 +471,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is day */
+   /*check custom period锛?interval is day */
    def 'Custom_normal3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Custom_normal3', caseName)
@@ -478,7 +484,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is All */
+   /*check custom period锛?interval is All */
    def 'Custom_GranularityAll'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Custom_GranularityAll', caseName)
@@ -519,7 +525,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is quarter to date for each year/quarter */
+   /*check custom period锛?interval is quarter to date for each year/quarter */
    @Ignore
    def 'Custom_xtodate3'() {
       caseName = specificationContext.currentIteration.name
@@ -534,7 +540,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is month to date for each year/quarter */
+   /*check custom period锛?interval is month to date for each year/quarter */
    @Ignore
    def 'Custom_xtodate4'() {
       caseName = specificationContext.currentIteration.name
@@ -548,7 +554,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is month to date for each month */
+   /*check custom period锛?interval is month to date for each month */
    @Ignore
    def 'Custom_xtodate5'() {
       caseName = specificationContext.currentIteration.name
@@ -562,7 +568,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is week to date for each year/quarter */
+   /*check custom period锛?interval is week to date for each year/quarter */
    @Ignore
    def 'Custom_xtodate6'() {
       caseName = specificationContext.currentIteration.name
@@ -576,7 +582,7 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check custom period， interval is week to date for each month/week */
+   /*check custom period锛?interval is week to date for each month/week */
    @Ignore
    def 'Custom_xtodate7'() {
       caseName = specificationContext.currentIteration.name

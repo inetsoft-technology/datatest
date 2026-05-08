@@ -5,7 +5,13 @@ import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class TopMV_AggregateFormulas_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
@@ -139,8 +145,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       }
    }
 
-   //数据精度发生变化, 产品上数据精度从第3位开始发生变化
-   def 'aggregate formula2'() {
+   //鏁版嵁绮惧害鍙戠敓鍙樺寲, 浜у搧涓婃暟鎹簿搴︿粠绗?浣嶅紑濮嬪彂鐢熷彉鍖?   def 'aggregate formula2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula2'
       mvtest = new MVTest(asset_id)

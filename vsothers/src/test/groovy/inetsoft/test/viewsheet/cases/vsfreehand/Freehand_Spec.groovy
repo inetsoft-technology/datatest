@@ -3,7 +3,13 @@ package inetsoft.test.viewsheet.cases.vsfreehand
 import inetsoft.test.modules.VSCalcTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class Freehand_Spec extends Specification{
 
    def setupSpec() {
@@ -397,7 +403,7 @@ class Freehand_Spec extends Specification{
    /**
     * test set hyperlink on zero. --bug #56969
     * test set date format on Date column,FillBlank with Zero  is true.  --bug #56970
-    * coverd crosstab,非crosstab，formula script structure
+    * coverd crosstab,闈瀋rosstab锛宖ormula script structure
     */
    def 'FillBlankZeroDate'() {
       caseName = specificationContext.currentIteration.name

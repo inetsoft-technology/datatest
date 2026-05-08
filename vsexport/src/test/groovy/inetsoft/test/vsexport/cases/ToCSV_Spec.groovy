@@ -4,10 +4,16 @@ import inetsoft.report.io.csv.CSVConfig
 import inetsoft.test.modules.VSExportTest
 import spock.lang.IgnoreRest
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
 /**
  * check vs export as CSV
  */
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class ToCSV_Spec extends Specification {
    static VSExportTest vsExportTest
    static String caseName

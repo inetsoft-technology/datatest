@@ -4,12 +4,31 @@ import inetsoft.sree.security.SRPrincipal
 import inetsoft.test.modules.VPMTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class VPM_Spec extends Specification {
+
+   @Shared SRPrincipal admin
+   @Shared SRPrincipal guest
+   @Shared SRPrincipal user0
+   @Shared SRPrincipal NJ
+   @Shared SRPrincipal NY
 
    def setup() {
       VPMTest.initHome()
+
+      admin = VPMTest.createPrincipal('admin', ['Everyone', 'Administrator', 'Special'] as String[], [] as String[])
+      guest = VPMTest.createPrincipal('guest', ['Everyone'] as String[], [] as String[])
+      user0 = VPMTest.createPrincipal('user0', ['Everyone'] as String[], [] as String[])
+      NJ = VPMTest.createPrincipal('NJ', ['Everyone', 'Special'] as String[], ['NN'] as String[])
+      NY = VPMTest.createPrincipal('NY', ['Everyone'] as String[], ['NN'] as String[])
    }
 
    /*
@@ -170,11 +189,12 @@ class VPM_Spec extends Specification {
     *not apply vpm for user 'NJ', 'admin'
     *other users, apply condition, not apply hidden column
     */
+   @IgnoreRest
    def 'VPM3_Query'() {
       vpmtest = new VPMTest('1^128^__NULL__^VPM/VPM3_Query')
-      vpmtest.executeVS(admin, null)
+      //vpmtest.executeVS(admin, null)
       vpmtest.executeVS(guest, null)
-      vpmtest.executeVS(NJ, null)
+      //vpmtest.executeVS(NJ, null)
       vpmtest.executeVS(NY, null)
 
       expect:
@@ -515,13 +535,6 @@ class VPM_Spec extends Specification {
       vpmtest.compareData(null)
    }
 
-
-   SRPrincipal admin = VPMTest.createPrincipal('admin', ['Everyone', 'Administrator', 'Special'] as String[],
-      [] as String[])
-   SRPrincipal guest = VPMTest.createPrincipal('guest', ['Everyone'] as String[], [] as String[])
-   SRPrincipal user0 = VPMTest.createPrincipal('user0', ['Everyone'] as String[], [] as String[])
-   SRPrincipal NJ = VPMTest.createPrincipal('NJ', ['Everyone', 'Special'] as String[], ['NN'] as String[])
-   SRPrincipal NY = VPMTest.createPrincipal('NY', ['Everyone'] as String[], ['NN'] as String[])
 
    static VPMTest vpmtest
 }

@@ -6,7 +6,13 @@ import spock.lang.IgnoreRest
 import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
+import inetsoft.test.core.DatatestBaseConfiguration
+import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
+import inetsoft.test.IntegrationTestConfiguration
+import inetsoft.test.ConfigurationContextInitializer
+import org.springframework.test.context.ContextConfiguration
 
+@ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 class AssociationMV_Spec extends Specification {
    @Shared
            admin = MVTest.createPrincipal('admin', ['Everyone', 'Administrator'] as
@@ -455,8 +461,7 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
-   //建mv之后有精度问题
-   def 'TestCase_Selectionlist2'() {
+   //寤簃v涔嬪悗鏈夌簿搴﹂棶棰?   def 'TestCase_Selectionlist2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist2'
       mvtest = new MVTest(asset_id)
