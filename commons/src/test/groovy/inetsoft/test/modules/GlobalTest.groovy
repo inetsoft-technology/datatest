@@ -50,7 +50,10 @@ import java.awt.image.BufferedImage
  * to execute viewsheet/worksheet/report method
  */
 class GlobalTest {
+   private static Object initializedApplicationContext
+
    GlobalTest(String caseName) {
+      ensureRuntimeInitialized()
       this.caseName = caseName
    }
 
@@ -67,8 +70,7 @@ class GlobalTest {
    static initHome(String suiteName, def properties) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
-      context = ConfigurationContext.getContext()
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      ensureRuntimeInitialized()
 
       if(properties != null) {
          properties.each { key, value ->
@@ -112,7 +114,7 @@ class GlobalTest {
    }
 
    def executeVS(String asset_id, String[] bks, Map<String, String[]> params, def types, boolean match) {
-      DataSpace.getDataSpace()
+      ensureRuntimeInitialized()
       controllers = new ControllersResource()
       controllers.initControllers()
       ThreadContext.setContextPrincipal(admin)
@@ -197,7 +199,7 @@ class GlobalTest {
     * @param asset_id : ws entry id
     */
    def executeWS(String asset_id, Map<String, String[]> params) {
-      DataSpace.getDataSpace()
+      ensureRuntimeInitialized()
       controllers = new ControllersResource()
       controllers.initControllers()
       controllers.initApplicationContext(context)
@@ -269,7 +271,7 @@ class GlobalTest {
     * execute vs, then save chart as png, table as txt
     */
    def executeVSWithElement0(String asset_id, String bk, Map<String, String[]> params) {
-      DataSpace.getDataSpace()
+      ensureRuntimeInitialized()
       controllers.initControllers()
       viewsheetResource =
               new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
@@ -433,5 +435,19 @@ class GlobalTest {
    TUtil tutil = new TUtil()
    SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
            [] as String[])
+
+   private static synchronized ensureRuntimeInitialized() {
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(currentContext != null && initializedApplicationContext == currentContext) {
+         context = ConfigurationContext.getContext()
+         return
+      }
+
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
+      context = ConfigurationContext.getContext()
+      initializedApplicationContext = context.getApplicationContext()
+   }
 
 }

@@ -21,14 +21,16 @@ import inetsoft.test.core.TUtil
 import inetsoft.test.core.DatatestRuntimeBootstrap
 
 class CSSTest {
+   private static Object initializedApplicationContext
+
    CSSTest(String caseName) {
+      ensureRuntimeInitialized()
       this.caseName = caseName
    }
 
    static initHome(String suiteName) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**
@@ -37,6 +39,7 @@ class CSSTest {
    def InitCSS(def css) {
       InputStream inputStream = new ByteArrayInputStream(css.getBytes())
 
+      ensureRuntimeInitialized()
       DataSpace.getDataSpace().withOutputStream("portal", 'format.css', out -> Tool.copyTo(inputStream, out))
       PortalThemesManager.getManager().setCSSFile("portal/format.css")
 
@@ -59,6 +62,7 @@ class CSSTest {
     * @param params
     */
    def VSCSSTest(String asset_id, SRPrincipal principal, Map<String, String[]> params) {
+      ensureRuntimeInitialized()
       controllers.initControllers()
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
@@ -136,4 +140,16 @@ class CSSTest {
    SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], [] as String[])
 
    private CompareUtil compareUtil = new CompareUtil()
+
+   private static synchronized ensureRuntimeInitialized() {
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(currentContext != null && initializedApplicationContext == currentContext) {
+         return
+      }
+
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
+      initializedApplicationContext = ConfigurationContext.getContext().getApplicationContext()
+   }
 }

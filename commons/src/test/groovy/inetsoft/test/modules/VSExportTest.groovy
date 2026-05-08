@@ -20,7 +20,10 @@ import java.nio.file.Paths
 import java.util.zip.ZipFile
 
 class VSExportTest {
+   private static Object initializedApplicationContext
+
    VSExportTest(String asset_id, String caseName) {
+      ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
    }
@@ -33,7 +36,6 @@ class VSExportTest {
       System.err.print("=========sree.home=====" + System.getProperty("sree.home"))
       def arrs = suiteName.split('.cases')
       this.suiteName = arrs.length == 1 ? null : arrs[1].replace('.', '/')
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
    }
 
    /**
@@ -166,7 +168,7 @@ class VSExportTest {
     * @return
     */
    def executeVS(Map<String, String[]> params) {
-      DataSpace.getDataSpace() //after upgrade storage, need get first to get dataspace, then to get indexstorage.
+      ensureRuntimeInitialized()
       controllers.initControllers()
       ThreadContext.setContextPrincipal(principal)
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id), controllers)
@@ -248,4 +250,16 @@ class VSExportTest {
    ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
    CompareUtil compareUtil = new CompareUtil()
    TUtil tUtil = new TUtil()
+
+   private static synchronized ensureRuntimeInitialized() {
+      def currentContext = ConfigurationContext.getContext().getApplicationContext()
+
+      if(currentContext != null && initializedApplicationContext == currentContext) {
+         return
+      }
+
+      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+      DataSpace.getDataSpace()
+      initializedApplicationContext = ConfigurationContext.getContext().getApplicationContext()
+   }
 }
