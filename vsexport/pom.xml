@@ -78,6 +78,9 @@
                     <includes>
                         <include>**/*_Spec</include>
                     </includes>
+                    <environmentVariables>
+                        <INETSOFT_ADMIN_PASSWORD>Admin@1234!</INETSOFT_ADMIN_PASSWORD>
+                    </environmentVariables>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
                         <com.athaydes.spockframework.report.outputDir>target/spock-reports</com.athaydes.spockframework.report.outputDir>
