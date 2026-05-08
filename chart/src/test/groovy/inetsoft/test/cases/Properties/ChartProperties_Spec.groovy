@@ -7,12 +7,21 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 /*
   check chart properties
  */
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
 class ChartProperties_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
@@ -124,7 +133,7 @@ class ChartProperties_Spec extends Specification{
    }
 
    /*
-    1.check stack measure & secondary y /show points relationé”›?exist Bug #52453
+    1.check stack measure & secondary y /show points relationé”?exist Bug #52453
    */
    def 'stackmeasures4'() {
       caseName = specificationContext.currentIteration.name

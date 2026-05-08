@@ -38,16 +38,15 @@ import inetsoft.test.core.ActionEventsUtil
 import inetsoft.test.core.ExportUtil
 import inetsoft.test.core.TUtil
 import inetsoft.test.core.RuntimeViewsheetResource
-import inetsoft.test.core.ControllersResource
 import inetsoft.test.core.CompareUtil
 import inetsoft.test.core.DatatestRuntimeBootstrap
+import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 
 import java.awt.image.BufferedImage
 
 class ViewsheetTest {
    //static ConfigurationContext context
-   static ControllersResource controllers
    private static Object initializedApplicationContext
 
    ViewsheetTest(String asset_id, String caseName) {
@@ -63,16 +62,20 @@ class ViewsheetTest {
    }
 
    private static synchronized ensureRuntimeInitialized() {
-      DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
-      DataSpace.getDataSpace()
-
+      ConfigurationContext context = ConfigurationContext.getContext()
       def currentContext = ConfigurationContext.getContext().getApplicationContext()
 
-      if(controllers == null || initializedApplicationContext != currentContext) {
-         controllers = new ControllersResource()
-         controllers.initControllers()
-         initializedApplicationContext = currentContext
+      if(currentContext == null) {
+         DatatestRuntimeBootstrap.bootstrap(System.getProperty('sree.home', '.'))
+         currentContext = context.getApplicationContext()
       }
+      else {
+         context.setHome(System.getProperty('sree.home', '.'))
+         DatatestSpringRuntimeInitializer.initialize(context, currentContext)
+      }
+
+      DataSpace.getDataSpace()
+      initializedApplicationContext = currentContext
    }
 
    /**
@@ -102,7 +105,7 @@ class ViewsheetTest {
       ensurePrincipal()
       ThreadContext.setContextPrincipal(principal)
       ActionEventsUtil actionEventsUtil = new ActionEventsUtil()
-      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer), controllers)
+      viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id, isViewer))
       viewsheetResource.initRuntimeVS(principal)
    }
 
