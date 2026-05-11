@@ -93,6 +93,9 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.context.event.ContextRefreshedEvent;
 
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
+
 import java.rmi.RemoteException;
 import java.lang.reflect.Constructor;
 import java.security.Principal;
@@ -434,9 +437,55 @@ public class DatatestSpringDuplicateFixConfiguration {
    }
 
    @Bean
-   public ImportXLSController importXLSController(RuntimeViewsheetRef runtimeViewsheetRef) {
-      return new ImportXLSController(runtimeViewsheetRef,
-         mock(ImportXLSControllerServiceProxy.class), mock(FileSystemService.class));
+   public ImportXLSController importXLSController(
+      RuntimeViewsheetRef runtimeViewsheetRef,
+      ImportXLSControllerService importXLSControllerService,
+      FileSystemService fileSystemService)
+   {
+      ImportXLSControllerServiceProxy proxy =
+         importXlsControllerServiceProxyDelegate(importXLSControllerService);
+      return new ImportXLSController(runtimeViewsheetRef, proxy, fileSystemService);
+   }
+
+   /**
+    * {@link ImportXLSControllerServiceProxy} is not a concrete bean in datatest; delegate to the
+    * real {@link ImportXLSControllerService} so upload/process hit {@code ImportXLSService}.
+    * <p>
+    * Mockito {@code .when(proxy).sheetExists(...)} is wrapped in {@code try/catch} only because the
+    * proxy interface declares {@code throws Exception} on those methods (Java requires handling).
+    * </p>
+    */
+   private static ImportXLSControllerServiceProxy importXlsControllerServiceProxyDelegate(
+      ImportXLSControllerService importXLSControllerService)
+   {
+      ImportXLSControllerServiceProxy proxy = mock(ImportXLSControllerServiceProxy.class);
+      try {
+         lenient().doAnswer(new Answer<Boolean>() {
+            @Override
+            public Boolean answer(InvocationOnMock invocation) throws Throwable {
+               return importXLSControllerService.sheetExists(
+                  invocation.getArgument(0, String.class),
+                  invocation.getArgument(1, Principal.class));
+            }
+         }).when(proxy).sheetExists(anyString(), nullable(Principal.class));
+         lenient().doAnswer(new Answer<Void>() {
+            @Override
+            public Void answer(InvocationOnMock invocation) throws Throwable {
+               importXLSControllerService.processXLSUpload(
+                  invocation.getArgument(0, String.class),
+                  invocation.getArgument(1, String.class),
+                  invocation.getArgument(2, String.class),
+                  invocation.getArgument(3, Principal.class),
+                  invocation.getArgument(4, CommandDispatcher.class));
+               return null;
+            }
+         }).when(proxy).processXLSUpload(anyString(), anyString(), anyString(),
+            nullable(Principal.class), any(CommandDispatcher.class));
+      }
+      catch(Exception e) {
+         throw new IllegalStateException("ImportXLSControllerServiceProxy stubbing failed", e);
+      }
+      return proxy;
    }
 
    @Bean
