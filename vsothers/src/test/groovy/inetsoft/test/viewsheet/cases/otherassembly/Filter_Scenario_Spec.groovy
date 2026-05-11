@@ -14,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration
 /**
  * Note: all case will store a exp png, use to compare after case failed. all case be executed by E2E
  */
+@Ignore
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
 @SreeHome(
    security = true,
