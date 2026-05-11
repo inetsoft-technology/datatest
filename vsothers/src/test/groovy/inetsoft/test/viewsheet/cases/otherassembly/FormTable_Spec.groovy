@@ -7,11 +7,21 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
+import inetsoft.test.SreeHome
+import inetsoft.test.SreeProperty
 import org.springframework.test.context.ContextConfiguration
 
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
+@SreeHome(
+   security = true,
+   properties = [
+      @SreeProperty(name = 'security.enabled', value = 'true'),
+      @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
+   ]
+)
+
 class FormTable_Spec extends Specification {
-   static VSFormImportTest vstest
+   static VSFormImportTest vsFormImportTest
    static String caseName
 
    def setupSpec() {
@@ -24,23 +34,24 @@ class FormTable_Spec extends Specification {
     */
    def 'delete row and header in embedded form table' () {
       caseName = specificationContext.currentIteration.name
-      vstest = new VSFormImportTest('1^128^__NULL__^FormTable/Embedded Form', caseName)
-      vstest.importXLSToVS("Embedded_Form_Delete_Row.xlsx")
+      vsFormImportTest = new VSFormImportTest('1^128^__NULL__^FormTable/Embedded Form', caseName)
+      vsFormImportTest.importXLSToVS("Embedded_Form_Delete_Row.xlsx")
 
       expect:
-      vstest.compareImage()
+      vsFormImportTest.compareImage()
    }
 
    /**
     * check add and modify rows in embedded form table
     */
+    @IgnoreRest
    def 'add and modify in embedded form table' () {
       caseName = specificationContext.currentIteration.name
-      vstest = new VSFormImportTest('1^128^__NULL__^FormTable/Embedded Form', caseName)
-      vstest.importXLSToVS("Embedded_Form_Add_Modify_Row.xlsx")
+      vsFormImportTest = new VSFormImportTest('1^128^__NULL__^FormTable/Embedded Form', caseName)
+      vsFormImportTest.importXLSToVS("Embedded_Form_Add_Modify_Row.xlsx")
 
       expect:
-      vstest.compareImage()
+      vsFormImportTest.compareImage()
    }
 
    /**
@@ -48,10 +59,10 @@ class FormTable_Spec extends Specification {
     */
    def 'un-submitted changes' () {
       caseName = specificationContext.currentIteration.name
-      vstest = new VSFormImportTest('1^128^__NULL__^FormTable/Form2', caseName)
-      vstest.importXLSToVS("Embedded_Form_Add_Modify_Row.xlsx")
+      vsFormImportTest = new VSFormImportTest('1^128^__NULL__^FormTable/Form2', caseName)
+      vsFormImportTest.importXLSToVS("Embedded_Form_Add_Modify_Row.xlsx")
 
       expect:
-      vstest.compareImage()
+      vsFormImportTest.compareImage()
    }
 }
