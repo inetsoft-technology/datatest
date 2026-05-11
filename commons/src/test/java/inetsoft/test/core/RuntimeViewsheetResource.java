@@ -3,11 +3,16 @@ package inetsoft.test.core;
 import inetsoft.analytic.composition.ViewsheetService;
 import inetsoft.report.composition.ChangedAssemblyList;
 import inetsoft.report.composition.RuntimeViewsheet;
+import inetsoft.report.composition.execution.ViewsheetSandbox;
 import inetsoft.report.internal.table.FormatTableLens2;
 import inetsoft.report.io.csv.CSVConfig;
 import inetsoft.sree.security.SRPrincipal;
+import inetsoft.uql.asset.Assembly;
+import inetsoft.uql.viewsheet.TableVSAssembly;
+import inetsoft.uql.viewsheet.Viewsheet;
+import inetsoft.uql.viewsheet.internal.TableVSAssemblyInfo;
 import inetsoft.util.ConfigurationContext;
-import inetsoft.web.composer.vs.objects.controller.ComposerVSTableController;
+import inetsoft.web.composer.vs.objects.controller.ComposerVSTableService;
 import inetsoft.web.composer.vs.objects.event.ConvertToFreehandTableEvent;
 import inetsoft.web.viewsheet.controller.ImportXLSController;
 import inetsoft.web.viewsheet.event.OpenViewsheetEvent;
@@ -26,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.lang.reflect.Method;
 import java.security.Principal;
+import java.util.Optional;
 
 public class RuntimeViewsheetResource {
    public RuntimeViewsheetResource(OpenViewsheetEvent openViewsheetEvent) {
@@ -64,6 +70,14 @@ public class RuntimeViewsheetResource {
          throw new RuntimeException("Failed to get runtime viewsheet", e);
       }
    }
+
+   /**
+    * Runtime viewsheet id from the last {@link #initRuntimeVS}. For tests that must set
+    * {@code MessageContextHolder} (e.g. form import + PNG); not used by general export paths.
+    */
+   public String getRuntimeId() {
+      return runtimeId;
+   }
    
    public void exportVS(int format, boolean match, boolean expandSelections, boolean current,
                         boolean previewPrintLayout, boolean print, String[] bookmarks,
@@ -94,7 +108,7 @@ public class RuntimeViewsheetResource {
       cevent.setConfirmed(true);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
-         composerVSTableController().convertToFreehandTable(cevent, principal,
+         composerVSTableService().convertToFreehandTable(runtimeId, cevent, principal,
                  "http://localhost:8080/sree", commandDispatcher);
       }
       catch(RuntimeException e) {
@@ -128,11 +142,37 @@ public class RuntimeViewsheetResource {
       ImportXLSController importXLSController = importXLSController();
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
-         importXLSController.uploadExcelFile(runtimeId,
-                 "xlsx", multipartFile, principal);
-         importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
-                 principal, commandDispatcher);
-         
+         importXLSController.uploadExcelFile(runtimeId, "xlsx", multipartFile, principal);
+         // processXLSUpload reads runtimeViewsheetRef.getRuntimeId() from MessageContextHolder,
+         // which is cleared after initRuntimeVS(). Must restore the context with the correct runtimeId.
+         MessageTestUtils.withMockMessageContext(principal, runtimeId, (Runnable) () -> {
+            try {
+               importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",
+                       principal, commandDispatcher);
+            }
+            catch(Exception e) {
+               throw new RuntimeException("Failed to process XLS import", e);
+            }
+         });
+         // After import updates fmap in-place, dmap.VSTABLE holds stale VSTableLens with
+         // pre-computed filter state. Protect fmap via addScriptChangedForm so syncFormData
+         // skips fmap.remove during reset, then reset to clear dmap so export rebuilds
+         // fresh VSTableLens from the updated fmap.
+         Optional<ViewsheetSandbox> sandboxOpt = runtimeViewsheet.getViewsheetSandbox();
+         if(sandboxOpt.isPresent()) {
+            ViewsheetSandbox sandbox = sandboxOpt.get();
+            Viewsheet vs = runtimeViewsheet.getViewsheet();
+            for(Assembly assembly : vs.getAssemblies()) {
+               if(assembly instanceof TableVSAssembly) {
+                  TableVSAssembly tableAssembly = (TableVSAssembly) assembly;
+                  TableVSAssemblyInfo info = (TableVSAssemblyInfo) tableAssembly.getVSAssemblyInfo();
+                  if(info.isForm()) {
+                     sandbox.addScriptChangedForm(tableAssembly.getName());
+                  }
+               }
+            }
+            sandbox.reset(new ChangedAssemblyList());
+         }
       }
       catch(Exception e) {
          e.printStackTrace();
@@ -201,8 +241,8 @@ public class RuntimeViewsheetResource {
       return springBean(ImportXLSController.class);
    }
 
-   private ComposerVSTableController composerVSTableController() {
-      return springBean(ComposerVSTableController.class);
+   private ComposerVSTableService composerVSTableService() {
+      return springBean(ComposerVSTableService.class);
    }
 
    private VSChartShowDetailsService vsChartShowDetailsService() {

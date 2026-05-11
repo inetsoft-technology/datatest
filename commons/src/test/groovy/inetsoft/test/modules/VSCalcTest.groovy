@@ -2,13 +2,12 @@ package inetsoft.test.modules
 
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.ViewsheetSandbox
-import inetsoft.sree.security.IdentityID
 import inetsoft.uql.asset.Assembly
+import inetsoft.uql.viewsheet.CalcTableVSAssembly
 import inetsoft.uql.viewsheet.CrosstabVSAssembly
 import inetsoft.uql.viewsheet.EmbeddedTableVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.uql.viewsheet.TableVSAssembly
-import inetsoft.uql.viewsheet.VSBookmarkInfo
 import inetsoft.web.viewsheet.service.ExportResponse
 
 class VSCalcTest extends ViewsheetTest {
@@ -32,6 +31,8 @@ class VSCalcTest extends ViewsheetTest {
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
       String assemblyName
+      List<String> convertedAssemblies = []
+      File pngFile = createExportFileByCase(null, null, '_CALC.png')
 
       try {
          assemblies.each {
@@ -41,27 +42,43 @@ class VSCalcTest extends ViewsheetTest {
                     || it instanceof CrosstabVSAssembly)
                     && it.getVSAssemblyInfo().isVisible(true)) {
                viewsheetResource.convertToFreehand(principal, assemblyName)
+               convertedAssemblies.add(assemblyName)
             }
          }
       }
       catch(Exception e) {
-         e.printStackTrace()
+         throw new RuntimeException("convert to freehand failed: " + assemblyName, e)
       }
 
-      /*on design time, didn't init ibookmark, so the ibookmark of rvs is null,
-      in order to void NPE on line 867 of RuntimeViewsheet.java, use addBookmark methord to init ibookmark.*/
-      rvs.addBookmark("(Home)", VSBookmarkInfo.ALLSHARE,
-              new IdentityID("admin", "host-org"), false)
+      rvs = viewsheetResource.getRuntimeViewsheet(principal)
 
-      File pngFile = createExportFileByCase(null, null, '_CALC.png')
+      if(convertedAssemblies.isEmpty()) {
+         throw new RuntimeException("no visible table or crosstab assembly was converted")
+      }
+
+      convertedAssemblies.each {
+         Assembly assembly = rvs.getViewsheet().getAssembly(it)
+
+         if(!(assembly instanceof CalcTableVSAssembly)) {
+            throw new RuntimeException("assembly was not converted to freehand: " + it)
+         }
+      }
+
       OutputStream out = new FileOutputStream(pngFile)
       try {
          viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-                 false, false, false, false,
-                 ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+                 false, true, false, false,
+                 [] as String[], false, false, null, new ExportResponse(out), principal)
       }
       catch(Exception ex) {
-         ex.printStackTrace()
+         throw new RuntimeException("export converted viewsheet failed", ex)
+      }
+      finally {
+         out.close()
+      }
+
+      if(pngFile.length() == 0L) {
+         throw new RuntimeException("converted viewsheet export is empty: " + pngFile)
       }
    }
 }
