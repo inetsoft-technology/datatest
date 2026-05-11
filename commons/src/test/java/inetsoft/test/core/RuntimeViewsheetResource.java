@@ -123,6 +123,7 @@ public class RuntimeViewsheetResource {
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          importXLSController.uploadExcelFile(runtimeId, "xlsx", multipartFile, principal);
+         
          MessageTestUtils.withMockMessageContext(principal, runtimeId, (Runnable) () -> {
             try {
                importXLSController.processXLSUpload("xlsx", "http://localhost:8080/sree",

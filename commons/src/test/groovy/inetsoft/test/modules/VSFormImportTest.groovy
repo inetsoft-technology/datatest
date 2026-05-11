@@ -31,20 +31,8 @@ class VSFormImportTest extends ViewsheetTest {
       try {
          initVS()
          String rel = 'excelFiles/' + file
-         InputStream stream = VSFormImportTest.class.classLoader.getResourceAsStream(rel)
-         if(stream == null) {
-            stream = Thread.currentThread().contextClassLoader.getResourceAsStream(rel)
-         }
-         if(stream == null) {
-            throw new IllegalStateException('Missing classpath resource: ' + rel)
-         }
-         byte[] excelBytes
-         try {
-            excelBytes = stream.bytes
-         }
-         finally {
-            stream.close()
-         }
+         byte[] excelBytes = readClasspathResourceBytes(rel)
+
          MultipartFile multipartFile = new MockMultipartFile(file, file,
                  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', excelBytes)
          viewsheetResource.processImportXLS(principal, multipartFile)
@@ -65,6 +53,19 @@ class VSFormImportTest extends ViewsheetTest {
       }
       catch(Exception ex) {
          ex.printStackTrace()
+      }
+   }
+
+   /**
+    * Load bytes from classpath ({@code excelFiles/…}); tries this class's loader then context class loader.
+    */
+   private static byte[] readClasspathResourceBytes(String classpathRelative) {
+      try (InputStream stream = VSFormImportTest.class.classLoader.getResourceAsStream(classpathRelative)
+            ?: Thread.currentThread().contextClassLoader.getResourceAsStream(classpathRelative)) {
+         if(stream == null) {
+            throw new IllegalStateException('Missing classpath resource: ' + classpathRelative)
+         }
+         return stream.bytes
       }
    }
 }
