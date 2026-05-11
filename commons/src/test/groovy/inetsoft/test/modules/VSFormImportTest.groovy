@@ -1,7 +1,9 @@
 package inetsoft.test.modules
 
 import inetsoft.uql.viewsheet.FileFormatInfo
+import inetsoft.util.ConfigurationContext
 import inetsoft.util.ThreadContext
+import inetsoft.web.viewsheet.model.RuntimeViewsheetRef
 import inetsoft.web.viewsheet.service.ExportResponse
 
 import inetsoft.test.core.ActionEventsUtil
@@ -17,9 +19,6 @@ class VSFormImportTest extends ViewsheetTest {
       super(asset_id, caseName)
    }
 
-   /**
-    * Init runtime VS
-    */
    def initVS() {
       ensurePrincipal()
       ThreadContext.setContextPrincipal(principal)
@@ -28,37 +27,36 @@ class VSFormImportTest extends ViewsheetTest {
       viewsheetResource.initRuntimeVS(principal)
    }
 
-   /**
-    * import excel to current vs
-    * @param file file name with suffix, eg: vs.xlsx
-    */
    def importXLSToVS(String file) {
       try {
          initVS()
-         File excelFile = new File(this.class.getResource('/excelFiles').getPath() + '/' + file)
-         byte[] bytes
-         new FileInputStream(excelFile).withCloseable { fis -> bytes = fis.bytes }
-         MultipartFile multipartFile = new MockMultipartFile(excelFile.getName(), excelFile.getName(),
-                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', bytes)
+         String rel = 'excelFiles/' + file
+         InputStream stream = VSFormImportTest.class.classLoader.getResourceAsStream(rel)
+         if(stream == null) {
+            stream = Thread.currentThread().contextClassLoader.getResourceAsStream(rel)
+         }
+         if(stream == null) {
+            throw new IllegalStateException('Missing classpath resource: ' + rel)
+         }
+         byte[] excelBytes
+         try {
+            excelBytes = stream.bytes
+         }
+         finally {
+            stream.close()
+         }
+         MultipartFile multipartFile = new MockMultipartFile(file, file,
+                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', excelBytes)
          viewsheetResource.processImportXLS(principal, multipartFile)
 
          File pngFile = createExportFileByCase(null, null, '_Import.png')
          OutputStream out = new FileOutputStream(pngFile)
          try {
-            // Isolate MessageContext + refresh + export to this spec only — avoids changing
-            // behavior for all other RuntimeViewsheetResource.exportVS callers.
-            String rid = viewsheetResource.getRuntimeId()
+            String rid = ConfigurationContext.getContext().getSpringBean(RuntimeViewsheetRef.class).getRuntimeId()
             MessageTestUtils.withMockMessageContext(principal, rid, {
-               viewsheetResource.refreshViewsheet(principal)
-               try {
-                  // match=true: same layout path as other VS PNG tests; current=true: post-import runtime.
-                  viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, true,
-                          false, true, false, false,
-                          ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
-               }
-               catch(Exception exportEx) {
-                  throw new RuntimeException('Export after import failed', exportEx)
-               }
+               viewsheetResource.exportVS(FileFormatInfo.EXPORT_TYPE_PNG, false,
+                       false, true, false, false,
+                       ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
             } as Runnable)
          }
          finally {
