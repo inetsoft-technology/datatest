@@ -44,7 +44,6 @@ class FormTable_Spec extends Specification {
    /**
     * check add and modify rows in embedded form table
     */
-    @IgnoreRest
    def 'add and modify in embedded form table' () {
       caseName = specificationContext.currentIteration.name
       vsFormImportTest = new VSFormImportTest('1^128^__NULL__^FormTable/Embedded Form', caseName)
