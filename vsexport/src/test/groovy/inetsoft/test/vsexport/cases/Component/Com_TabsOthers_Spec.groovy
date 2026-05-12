@@ -17,6 +17,7 @@ class Com_TabsOthers_Spec extends Specification{
    /**
     * check Tab usages:
     * 1. table in tab, table title visible as false, shink to fit as true
+    * 2. table in tab, table title visible as false, shink to fit as true,tab bottoms is true
    */
    def 'CTab_Tab1' () {
       caseName = specificationContext.currentIteration.name
