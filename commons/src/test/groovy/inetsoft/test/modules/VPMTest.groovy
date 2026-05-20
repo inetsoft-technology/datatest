@@ -9,6 +9,7 @@ import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.uql.asset.Assembly
+import inetsoft.uql.util.ConnectionProcessor
 import inetsoft.uql.viewsheet.TableDataVSAssembly
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
@@ -45,7 +46,7 @@ class VPMTest {
       user.setIgnoreLogin(true)
       ThreadContext.setContextPrincipal(user)
       OpenViewsheetEvent openViewsheetEvent = actionEventsUtil.createOpenViewsheetEvent(params, asset_id)
-      SUtil.setAdditionalDatasource(user)
+      ConnectionProcessor.getInstance().setAdditionalDatasource(user)
       String runtimeId = openRuntimeViewsheet(openViewsheetEvent, user)
 
       RuntimeViewsheet rvs = viewsheetService.getViewsheet(runtimeId, user)
@@ -108,8 +109,14 @@ class VPMTest {
       return getExportFolderPath() + File.separator + userName + '_' + assemblyname + '.txt'
    }
 
-   static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
+  static SRPrincipal createPrincipal(String userName, String[] roles, String[] groups) {
       IdentityID identityUser = new IdentityID(userName, 'host-org')
+      SRPrincipal configuredPrincipal = createConfiguredPrincipal(identityUser, roles, groups)
+
+      if(configuredPrincipal != null) {
+         return configuredPrincipal
+      }
+
       ClientInfo user = new ClientInfo(identityUser, Tool.getIP())
       IdentityID[] identityRoles = new IdentityID[0]
       roles.each { role ->
@@ -117,7 +124,33 @@ class VPMTest {
          newRole.setName(role)
          identityRoles += newRole
       }
-      return new SRPrincipal(user, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      SRPrincipal principal = new SRPrincipal(user, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
+      principal.setIgnoreLogin(true)
+      return principal
+   }
+
+   private static SRPrincipal createConfiguredPrincipal(IdentityID identityUser, String[] roles, String[] groups) {
+      try {
+         SRPrincipal principal = SUtil.getPrincipal(identityUser, Tool.getIP(), false)
+
+         if(principal == null || isMissingRequestedIdentity(principal, roles, groups)) {
+            return null
+         }
+
+         principal.setIgnoreLogin(true)
+         return principal
+      }
+      catch(Exception ignored) {
+         return null
+      }
+   }
+
+   private static boolean isMissingRequestedIdentity(SRPrincipal principal, String[] roles, String[] groups) {
+      Set<String> principalRoles = principal.getRoles().collect { it.getName() } as Set
+      Set<String> principalGroups = principal.getGroups() as Set
+
+      return (roles != null && roles.any { !principalRoles.contains(it) }) ||
+         (groups != null && groups.any { !principalGroups.contains(it) })
    }
 
    private static String asset_id
