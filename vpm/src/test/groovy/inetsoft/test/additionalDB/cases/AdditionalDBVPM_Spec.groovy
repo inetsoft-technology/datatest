@@ -21,17 +21,23 @@ class AdditionalDBVPM_Spec extends Specification {
    static GlobalTest globalTest
    static AdditionalConnectionTest additionalConnectionTest
    static String caseName
-   @Shared SRPrincipal admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
-           [] as String[])
-   @Shared SRPrincipal user0 = TUtil.createPrincipal('user0', ['Everyone', 'Designer'] as String[],
-           [] as String[])
-   // @Shared SRPrincipal informix = TUtil.createPrincipal('informix', ['Everyone', 'Designer'] as String[],
-   //          [] as String[])
-   @Shared SRPrincipal user1 = TUtil.createPrincipal('user1', ['Everyone', 'Designer'] as String[],
-           ['group0'] as String[])
+   @Shared SRPrincipal admin
+   @Shared SRPrincipal user0
+   @Shared SRPrincipal user1
 
-   def setupSpec() {
+   def setup() {
       AdditionalConnectionTest.initHome(this.class.getName())
+
+      if(admin != null) {
+         return
+      }
+
+      admin = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[],
+              [] as String[])
+      user0 = TUtil.createPrincipal('user0', ['Everyone', 'Designer'] as String[],
+              [] as String[])
+      user1 = TUtil.createPrincipal('user1', ['Everyone', 'Designer'] as String[],
+              ['group0'] as String[])
    }
 
    /*

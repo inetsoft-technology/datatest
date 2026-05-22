@@ -7,13 +7,13 @@ import inetsoft.report.composition.RuntimeWorksheet
 import inetsoft.report.composition.execution.AssetQuerySandbox
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.report.filter.SortFilter
-import inetsoft.sree.internal.SUtil
 import inetsoft.sree.security.SRPrincipal
 import inetsoft.uql.asset.AggregateInfo
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.asset.TableAssembly
 import inetsoft.uql.asset.Worksheet
 import inetsoft.uql.asset.internal.TableAssemblyInfo
+import inetsoft.uql.util.ConnectionProcessor
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.util.ConfigurationContext
 import inetsoft.util.DataSpace
@@ -58,8 +58,8 @@ class AdditionalConnectionTest {
          principals = [admin]
       }
       principals.each {
-         SUtil.setAdditionalDatasource(it)
          ThreadContext.setContextPrincipal(it)  //use to set additional db permission
+         ConnectionProcessor.getInstance().setAdditionalDatasource(it)
 
          if(asset_id.startsWith('1^128^')) {
             executeVS(asset_id, it, params)
