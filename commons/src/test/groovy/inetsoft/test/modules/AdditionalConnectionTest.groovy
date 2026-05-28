@@ -28,6 +28,7 @@ import inetsoft.test.core.RuntimeViewsheetResource
 import inetsoft.test.core.RuntimeWorksheetResource
 import inetsoft.test.core.TUtil
 import inetsoft.test.core.DatatestSpringRuntimeInitializer
+import inetsoft.test.core.MessageTestUtils
 
 class AdditionalConnectionTest {
    AdditionalConnectionTest(String caseName) {
@@ -84,11 +85,13 @@ class AdditionalConnectionTest {
       viewsheetResource = new RuntimeViewsheetResource(actionEventsUtil.createOpenViewsheetEvent(params, asset_id))
       viewsheetResource.initRuntimeVS(principal)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
-      rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
-      Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
-      if(sandboxOpt.isPresent()) {
-         sandboxOpt.get().resetAll(new ChangedAssemblyList())
-      }
+      MessageTestUtils.withMockMessageContext(principal, null, {
+         rvs.gotoBookmark('(Home)', principal.getUser().getUserIdentity(), principal)
+         Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
+         if(sandboxOpt.isPresent()) {
+            sandboxOpt.get().resetAll(new ChangedAssemblyList())
+         }
+      } as Runnable)
 
       File outFile = createFileByCase(caseName, asset_id, principal, null)
       OutputStream out = new FileOutputStream(outFile)
