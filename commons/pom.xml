@@ -31,12 +31,12 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
                 <executions>
-                    <execution>
+                    <!--<execution>
                         <phase>package</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                    </execution>
+                    </execution>-->
                     <execution>
                         <id>test-jar</id>
                         <goals>
