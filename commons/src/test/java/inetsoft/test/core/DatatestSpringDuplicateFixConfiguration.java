@@ -61,7 +61,9 @@ import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.mv.MVManager;
 import inetsoft.mv.MVWorksheetStorage;
+import inetsoft.storage.BlobEngine;
 import inetsoft.storage.BlobStorageManager;
+import inetsoft.storage.KeyValueEngine;
 import inetsoft.sree.web.dashboard.DashboardManager;
 import inetsoft.sree.web.dashboard.DashboardRegistryManager;
 import inetsoft.sree.internal.DeployManagerService;
@@ -545,7 +547,8 @@ public class DatatestSpringDuplicateFixConfiguration {
       return new FileApiService(deployService, contentRepositoryTreeService,
          datatestSecurityProvider,
          mock(DataSourceRegistry.class), mock(IndexedStorage.class),
-         mock(DataSpace.class), repletRegistryManager);
+         mock(DataSpace.class), repletRegistryManager,
+         mock(KeyValueEngine.class), mock(BlobEngine.class));
    }
 
    @Bean
