@@ -1,0 +1,11 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars.json
+
+# Service account key(s) used by the google provider — never commit
+key.json
+*-key.json
+*.key.json
