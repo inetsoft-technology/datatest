@@ -18,7 +18,7 @@ jobs:
     env:
       TZ: Asia/Shanghai
     needs: build-stylebi
-    timeout-minutes: 60
+    timeout-minutes: 90
 
     steps:
       - name: Configure /etc/hosts
