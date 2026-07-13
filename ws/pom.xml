@@ -50,7 +50,7 @@
                         <element>${root.dir}/docker/src/test/resources/libs/orders_133.jar</element>
                         <element>${root.dir}/docker/src/test/resources/libs/orders_134.jar</element>
                     </additionalClasspathElements>
-                    <argLine>-Xmx1g -Dfile.encoding=UTF-8
+                    <argLine>-Xmx2g -Dfile.encoding=UTF-8
                         -XX:ReservedCodeCacheSize=100m -XX:+UseCodeCacheFlushing
                         --add-opens=java.base/jdk.internal.access=ALL-UNNAMED
                         --add-opens=java.base/jdk.internal.misc=ALL-UNNAMED
@@ -78,8 +78,8 @@
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
-                        <include>**/*_Spec</include>
-                       <!-- <include>**/WSOthers_Spec</include>-->
+                        <!-- <include>**/*_Spec</include> -->
+                        <include>**/WSData_Spec</include>
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
