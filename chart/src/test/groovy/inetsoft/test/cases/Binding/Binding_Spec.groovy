@@ -1,6 +1,7 @@
 package inetsoft.test.cases.Binding
 
 import inetsoft.test.modules.ViewsheetTest
+import spock.lang.Ignore
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
@@ -102,6 +103,7 @@ class Binding_Spec extends Specification{
       }
    }
 
+   @Ignore("CI: XMLA/OLAP server unreachable, Connection timed out")
    def 'binding8'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/ChartBinding/binding8', caseName)
