@@ -78,8 +78,8 @@
                         -Djava.locale.providers=CLDR -Duser.language=en -Duser.country=US
                     </argLine>
                     <includes>
-                        <!-- <include>**/*_Spec</include> -->
-                        <include>**/WSData_Spec</include>
+                        <include>**/*_Spec</include>
+                        <!-- <include>**/WSData_Spec</include> -->
                     </includes>
                     <systemPropertyVariables>
                         <show.license.exception>true</show.license.exception>
