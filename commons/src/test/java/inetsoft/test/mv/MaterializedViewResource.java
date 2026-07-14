@@ -69,7 +69,7 @@ public class MaterializedViewResource {
       MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService, cluster, mvManager,
          dataCycleManager,
          securityEngine,
-         mock(inetsoft.mv.data.MVStorage.class));
+         context.getSpringBean(inetsoft.mv.data.MVStorage.class));
       AssetRepository assetRepository = AssetUtil.getAssetRepository(false);
       materializedViewApiService = new MaterializedViewApiService(mvService, assetRepository, mvSupportService, cluster);
       // Controller delegates analyze / getAnalysisJob / … to MaterializedViewApiServiceProxy (cluster AOP), not to the
@@ -225,24 +225,36 @@ public class MaterializedViewResource {
     */
    public void createIncrementMV(int count) {
       MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
-         try(MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
-            ConfigurationContext spyContext = spy(context);
-            
-            doReturn(materializedViewApiService)
-                    .when(spyContext)
-                    .getSpringBean(MaterializedViewApiService.class);
-            
-            staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
-            
+         try {
             UpdateMaterializedViewRequest updateRequest = new UpdateMaterializedViewRequest();
             updateRequest.setViews(this.views);
-            
+
             for(int i = 0; i < count; i++) {
-               UpdateMaterializedViewStatus updateStatus =
-                       materializedViewApiController.update(this.principal.getIdentityID().getOrgID(), updateRequest, this.principal);
-               
+               UpdateMaterializedViewStatus updateStatus;
+
+               // mock scope is kept to just the update() call itself - the actual MV
+               // recreation runs asynchronously on a background thread, and MockedStatic
+               // replaces ConfigurationContext.getContext() for every thread in the JVM
+               // for as long as this block stays open, which would otherwise race with
+               // that background thread while the polling loop below is waiting.
+               try(MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
+                  ConfigurationContext spyContext = spy(context);
+
+                  doReturn(materializedViewApiService)
+                          .when(spyContext)
+                          .getSpringBean(MaterializedViewApiService.class);
+
+                  staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
+
+                  updateStatus = materializedViewApiController.update(
+                          this.principal.getIdentityID().getOrgID(), updateRequest, this.principal);
+               }
+
                //wait update mv complete or fail
                for(int retry = 0; retry < 200; retry++) {
+                  updateStatus = materializedViewApiController.getUpdateStatus(
+                          updateStatus.getId(), null, this.principal);
+
                   if(updateStatus.isComplete()) {
                      break;
                   }
@@ -251,7 +263,7 @@ public class MaterializedViewResource {
                      System.err.println("====MV Update Exception==== " + msg);
                      break;
                   }
-                  //Thread.sleep(100);
+                  Thread.sleep(100);
                }
             }
          }

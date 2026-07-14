@@ -61,6 +61,8 @@ import inetsoft.web.portal.data.DatabaseDatasourcesController;
 import inetsoft.web.service.BinaryTransferService;
 import inetsoft.mv.MVManager;
 import inetsoft.mv.MVWorksheetStorage;
+import inetsoft.mv.data.MVStorage;
+import inetsoft.mv.fs.internal.BlockFileStorage;
 import inetsoft.storage.BlobEngine;
 import inetsoft.storage.BlobStorageManager;
 import inetsoft.storage.KeyValueEngine;
@@ -173,6 +175,10 @@ public class DatatestSpringDuplicateFixConfiguration {
       lenient().when(claimed.standalone()).thenReturn(true);
       lenient().when(lm.calculateThreadPoolSize(anyInt(), nullable(String.class), anyInt()))
          .thenReturn(new int[] { 8, 16 });
+      // unstubbed int-returning mock methods default to 0; inetsoft.sree.schedule.ScheduleTask
+      // .getThreadPool() uses this directly (not via calculateThreadPoolSize) to size a
+      // fixed thread pool, and Executors.newFixedThreadPool(0, ...) throws IllegalArgumentException
+      lenient().when(lm.getAvailableCpuCount()).thenReturn(8);
       lenient().when(lm.getNamedUserCount()).thenReturn(100);
       lenient().when(lm.getNamedUserViewerSessionCount()).thenReturn(0);
       lenient().when(lm.getLicenseHash()).thenReturn("datatest");
@@ -395,6 +401,30 @@ public class DatatestSpringDuplicateFixConfiguration {
    @Lazy
    public MVWorksheetStorage mvWorksheetStorage(@Lazy BlobStorageManager blobStorageManager) {
       return new MVWorksheetStorage(blobStorageManager);
+   }
+
+   /**
+    * {@link MVStorage#getInstance()} is used when creating/appending materialized view data
+    * (e.g. {@link inetsoft.mv.local.LocalMVCreator} via {@link inetsoft.mv.MVDispatcher}); missing
+    * from the datatest slice otherwise, which causes MV create/update to fail with
+    * "No qualifying bean of type 'inetsoft.mv.data.MVStorage' available".
+    */
+   @Bean
+   @Lazy
+   public MVStorage mvStorage(@Lazy BlobStorageManager blobStorageManager) {
+      return new MVStorage(blobStorageManager);
+   }
+
+   /**
+    * {@link BlockFileStorage#getInstance()} is used when writing/deleting materialized view block
+    * files (e.g. {@link inetsoft.mv.fs.internal.DefaultBlockSystem#deleteFile}); missing from the
+    * datatest slice otherwise, which causes MV create/update to fail with
+    * "No qualifying bean of type 'inetsoft.mv.fs.internal.BlockFileStorage' available".
+    */
+   @Bean
+   @Lazy
+   public BlockFileStorage blockFileStorage(@Lazy BlobStorageManager blobStorageManager) {
+      return new BlockFileStorage(blobStorageManager);
    }
 
    @Bean
