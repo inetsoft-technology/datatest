@@ -500,10 +500,7 @@ class MVTest {
       @Override
       boolean accept(File file) {
          String fileName = file.getName()
-         if(fileName.indexOf(MV_EXT) > 0) {
-            return true
-         }
-         return false
+         return fileName.indexOf(MV_EXT) > 0 && fileName.indexOf(MV_INCREMENTAL) < 0
       }
    }
 

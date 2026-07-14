@@ -90,18 +90,20 @@ public class MaterializedViewResource {
    public void createMV(boolean applyVPM, boolean... expandGroup) {
       try(MockedStatic<ConfigurationContext> staticConfigurationContext = mockStatic(ConfigurationContext.class)) {
          ConfigurationContext spyContext = spy(context);
-         
+
          doReturn(materializedViewApiService)
                  .when(spyContext)
                  .getSpringBean(MaterializedViewApiService.class);
-         
+
          staticConfigurationContext.when(ConfigurationContext::getContext).thenReturn(spyContext);
-         
+
          createMV0(applyVPM, expandGroup);
       }
+      catch(RuntimeException e) {
+         throw e;
+      }
       catch(Exception e) {
-         System.err.println("==============exceptions============");
-         e.printStackTrace();
+         throw new RuntimeException("=========Failed to create MV=============", e);
       }
    }
    
@@ -146,7 +148,7 @@ public class MaterializedViewResource {
             throw e;
          }
          catch(Exception e) {
-            throw new RuntimeException("Failed to analyze MV", e);
+            throw new RuntimeException("==========Failed to analyze MV=========", e);
          }
          
          return analysisJob;
@@ -191,7 +193,7 @@ public class MaterializedViewResource {
                try {
                   CreateMaterializedViewStatus createStatus = materializedViewApiController.getCreationStatus(
                           analysisJob.getId(), null, this.principal);
-                  
+
                   if(createStatus.isComplete()) {
                      break;
                   }
@@ -200,6 +202,11 @@ public class MaterializedViewResource {
                      System.err.println("====MV Create Exception==== " + msg);
                      break;
                   }
+
+                  // job exists but not finished yet - without this sleep the loop busy-spins
+                  // through all 200 retries near-instantly and returns before the MV is
+                  // actually built and attached, so the next query falls back to live data.
+                  Thread.sleep(100);
                }
                catch(Exception e) {
                   if(e.getMessage().contains("The materialized view creation has not been started")) {
@@ -212,12 +219,15 @@ public class MaterializedViewResource {
                }
             }
          }
+         catch(RuntimeException e) {
+            throw e;
+         }
          catch(Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("=============Failed to create MV=============", e);
          }
       });
    }
-   
+
    /**
     * create incremental mv
     *
@@ -271,7 +281,7 @@ public class MaterializedViewResource {
             throw e;
          }
          catch(Exception e) {
-            throw new RuntimeException("Failed to update MV", e);
+            throw new RuntimeException("==========Failed to update MV==========", e);
          }
       });
    }
@@ -290,7 +300,7 @@ public class MaterializedViewResource {
             throw e;
          }
          catch(Exception e) {
-            throw new RuntimeException("Failed to remove MV", e);
+            throw new RuntimeException("==========Failed to remove MV===========", e);
          }
       });
    }
