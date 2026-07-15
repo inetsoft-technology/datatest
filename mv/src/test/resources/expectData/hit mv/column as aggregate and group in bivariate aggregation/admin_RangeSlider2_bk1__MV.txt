@@ -1,3 +1,3 @@
-The min value is: [26]
-The max value is: [66]
-Selected: [[35]] -> [[66]]
+The min value is: [15]
+The max value is: [44]
+Selected: [[15]] -> [[44]]
