@@ -192,6 +192,7 @@ class AdditionalDB_Spec extends Specification {
     *test user has/no permission to single tabular additional db
     *The Tabular database is unavailable in the cloud; execute this test manually.
     */
+   @Ignore("The Tabular database is unavailable in the cloud; execute this test manually.")
    def 'test user has-no permission to single tabular additional db' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
@@ -210,6 +211,7 @@ class AdditionalDB_Spec extends Specification {
     *use last one db
     *The Tabular database is unavailable in the cloud; execute this test manually.
     */
+   @Ignore("The Tabular database is unavailable in the cloud; execute this test manually.")
    def 'test user has permission to tabular multiple additional db' () {
       caseName = specificationContext.currentIteration.name
       additionalConnectionTest = new AdditionalConnectionTest(caseName)
