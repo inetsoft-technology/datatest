@@ -614,6 +614,13 @@ class CalcField_Spec extends Specification {
       }
    }
 
+   @Issue('http://173.220.179.100/issues/75659')
+   /**
+    * The live query and the materialized view legitimately iterate the rows in different orders,
+    * so they can return different (but equally valid) values for the tied rows.
+    * Making `FIRST`/`LAST` non-combinable would force detail materialization to make the two paths agree,
+    * but the performance cost is not justified.
+    */
    def 'Aggregate_ForDate'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'
