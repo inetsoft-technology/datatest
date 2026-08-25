@@ -69,9 +69,10 @@ class GlobalTest {
    static initHome(String suiteName, def properties) {
       def arrs = suiteName.split('.cases')
       this.suiteName = (arrs.length == 1 ? null : arrs[1].replace('.', '/'))
-      ensureRuntimeInitialized()
 
       if(properties != null) {
+         ensureRuntimeInitialized()
+
          properties.each { key, value ->
             SreeEnv.setProperty(key, value)
          }
