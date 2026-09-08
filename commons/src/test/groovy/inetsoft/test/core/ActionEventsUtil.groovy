@@ -48,6 +48,11 @@ class ActionEventsUtil {
          boolean createQuery() {
             return false
          }
+
+         @Override
+         String vsId() {
+            return null
+         }
       }
       return event
    }
