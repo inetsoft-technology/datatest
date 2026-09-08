@@ -273,14 +273,15 @@ public class DatatestSpringDuplicateFixConfiguration {
 
       lenient().when(serviceProxy.openWorksheet(
          anyString(), nullable(Principal.class), any(AssetEntry.class),
-         anyBoolean(), anyBoolean(), any(CommandDispatcher.class)))
+         anyBoolean(), anyBoolean(), nullable(String.class), any(CommandDispatcher.class)))
          .thenAnswer(invocation -> service[0].openWorksheet(
-            invocation.getArgument(0),
-            invocation.getArgument(1),
-            invocation.getArgument(2),
-            invocation.getArgument(3),
-            invocation.getArgument(4),
-            invocation.getArgument(5)));
+            (String) invocation.getArgument(0),
+            (Principal) invocation.getArgument(1),
+            (AssetEntry) invocation.getArgument(2),
+            (boolean) invocation.getArgument(3),
+            (boolean) invocation.getArgument(4),
+            (String) invocation.getArgument(5),
+            (CommandDispatcher) invocation.getArgument(6)));
       lenient().when(proxy.getIfAvailable()).thenReturn(serviceProxy);
       service[0] = new WorksheetEventService(viewsheetService, proxy);
       return service[0];
