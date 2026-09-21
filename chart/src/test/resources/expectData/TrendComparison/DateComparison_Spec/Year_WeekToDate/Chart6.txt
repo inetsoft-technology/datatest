@@ -1,4 +1,4 @@
-The data size(row x col) is:(89 x 6)
+The data size(row x col) is:(85 x 6)
 YearOfWeek(Date), DayOfWeek(Date), MonthOfWeekN(Date), WeekOfMonth(Date), Sum(Paid), Change from previous year of YearOfWeek(Date): Sum(Paid)
 2020-01-01 00:00:00, 1-5-1, 1, 5, 3, 0
 2020-01-01 00:00:00, 1-5-2, 1, 5, 2, -1
@@ -44,10 +44,6 @@ YearOfWeek(Date), DayOfWeek(Date), MonthOfWeekN(Date), WeekOfMonth(Date), Sum(Pa
 2020-01-01 00:00:00, 11-5-2, 11, 5, 2, -1
 2020-01-01 00:00:00, 11-5-3, 11, 5, 3, 0
 2020-01-01 00:00:00, 11-5-4, 11, 5, 3, 0
-2020-01-01 00:00:00, 12-5-1, 12, 5, 2, -1
-2020-01-01 00:00:00, 12-5-2, 12, 5, 2, -1
-2020-01-01 00:00:00, 12-5-3, 12, 5, 2, -1
-2020-01-01 00:00:00, 12-5-4, 12, 5, 2, -1
 2021-01-01 00:00:00, 1-5-1, 1, 5, 2, -1
 2021-01-01 00:00:00, 1-5-2, 1, 5, 2, 0
 2021-01-01 00:00:00, 1-5-3, 1, 5, 2, -1
