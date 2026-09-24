@@ -6,17 +6,17 @@ Others, CO, Boulder, 40, 40
 Others, CT, Hartford, 66, 66
 3, IL, Chicago, 70, 70
 4, IL, Chicago, 40, 40
-3, Others, New York, 102, 102
-3, Others, Olympia, 203, 305
-3, Others, Dallas, 487, 792
-3, Others, Austin, 77, 869
-3, Others, Seattle, 135, 1004
-3, Others, Houston, 154, 1158
-4, Others, Olympia, 203, 407
-4, Others, Austin, 55, 809
-4, Others, New York, 204, 204
-4, Others, Seattle, 108, 917
-4, Others, Dallas, 347, 754
-4, Others, Houston, 88, 1005
-Others, Others, Orlando, 168, 599
+3, Others, Austin, 77, 77
+3, Others, Dallas, 487, 564
+3, Others, Houston, 154, 718
+3, Others, New York, 102, 820
+3, Others, Olympia, 203, 1023
+3, Others, Seattle, 135, 1158
+4, Others, Austin, 55, 55
+4, Others, Dallas, 347, 402
+4, Others, Houston, 88, 490
+4, Others, New York, 204, 694
+4, Others, Olympia, 203, 897
+4, Others, Seattle, 108, 1005
 Others, Others, New York, 431, 431
+Others, Others, Orlando, 168, 599
