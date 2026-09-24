@@ -123,46 +123,41 @@ public class MaterializedViewResource {
       
       return MessageTestUtils.withMockMessageContext(this.principal, null, analyzeRequest, (ctx, req) -> {
          try {
-            // "prevents MV sharing" is just the UI's Proceed-confirmation prompt, not a hard
-            // failure - it's an order-dependent check, so re-running the analysis once mirrors
-            // clicking Proceed and usually succeeds. Any other analysis error fails immediately.
-            for(int attempt = 0; attempt < 2; attempt++) {
-               AnalysisJob analysisJob = materializedViewApiController.analyze(null, analyzeRequest, principal);
-               boolean sharingConflict = false;
+            // AnalysisJob.isFailed() only means the analyzer reported UserInfo warnings (e.g.
+            // "prevents MV sharing", "SQL formula may cause incorrect results"). The server
+            // publishes them while analysis is still running and keeps going to completion;
+            // the UI shows them with a Proceed button that simply uses the completed result.
+            // So mirror Proceed: log the warnings and wait for completion.
+            AnalysisJob analysisJob = materializedViewApiController.analyze(null, analyzeRequest, principal);
+            AnalysisJob status = analysisJob;
 
-               for(int retry = 0; retry < 800; retry++) {
-                  AnalysisJob analysisJob1 = materializedViewApiController.getAnalysisJob(analysisJob.getId(), null, principal);
-                  if(analysisJob1.isComplete()) {
-                     return analysisJob;
-                  }
-                  if(analysisJob1.isFailed()) {
-                     List<AnalysisError> errors = analysisJob1.getErrors();
+            for(int retry = 0; retry < 800; retry++) {
+               status = materializedViewApiController.getAnalysisJob(analysisJob.getId(), null, principal);
+
+               if(status.isComplete()) {
+                  if(status.isFailed()) {
                      StringBuilder msg = new StringBuilder();
-                     for(AnalysisError error : errors) {
+
+                     for(AnalysisError error : status.getErrors()) {
                         msg.append(error.toString());
                      }
 
-                     sharingConflict = msg.indexOf("prevents MV sharing") >= 0;
-
-                     if(sharingConflict && attempt == 0) {
-                        System.err.println("====MV Analyze sharing conflict, retrying once====" + msg);
-                        break;
-                     }
-
-                     // fail fast with the real analyzer error instead of letting the caller fall
-                     // through to getAnalysisJobViews(), which throws an unrelated
-                     // "Analysis is not complete" exception that hides this message.
-                     throw new RuntimeException("====MV Analyze Exception====" + msg);
+                     System.err.println("====MV Analyze warnings (proceeding)====" + msg);
                   }
-                  Thread.sleep(100);
+
+                  return analysisJob;
                }
 
-               if(!sharingConflict) {
-                  throw new RuntimeException("====MV Analyze Exception==== analysis did not complete in time");
-               }
+               Thread.sleep(100);
             }
 
-            throw new RuntimeException("====MV Analyze Exception==== analysis still not complete after retry");
+            StringBuilder msg = new StringBuilder();
+
+            for(AnalysisError error : status.getErrors()) {
+               msg.append(error.toString());
+            }
+
+            throw new RuntimeException("====MV Analyze Exception==== analysis did not complete in time" + msg);
          }
          catch(RuntimeException e) {
             throw e;
