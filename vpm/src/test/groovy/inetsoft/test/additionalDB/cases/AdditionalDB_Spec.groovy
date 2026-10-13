@@ -153,6 +153,7 @@ class AdditionalDB_Spec extends Specification {
     *now: 鎵嬪姩鎵ц鐨勭粨鏋? 鐩墠user0鍜寀ser1鐨勭粨鏋滀竴鏍? ws need manual check
     *ws with manual run, to check column visible
     */
+   @Ignore("The maria database is unavailable in the cloud; execute this test manually.")
    @Issue('ws with manual run, to check column visible, VS, and Report have same result by user0 and user1')
    def 'test user has permission to multiple additional db' () {
       caseName = specificationContext.currentIteration.name
