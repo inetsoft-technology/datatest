@@ -470,6 +470,10 @@ class MVTest {
 
       SRPrincipal principal = new SRPrincipal(identityUser, identityRoles, groups, 'host-org', Tool.getSecureRandom().nextLong())
       principal.setIgnoreLogin(true)
+      // mark it as a logged-in (non-SSO) principal like SUtil.getPrincipal() does, so its roles
+      // and groups are resolved through the security provider, including parent groups and
+      // inherited roles, instead of only the ones passed in here
+      principal.setProperty('__internal__', 'true')
 
       return principal
    }
