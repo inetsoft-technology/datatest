@@ -1,0 +1,64 @@
+name: Ensure DB server
+description: >
+  Make sure the GCP spot DB test server is running and its databases accept connections.
+  Starts the VM if it was preempted, resolves its current external IP into /etc/hosts, and
+  launches a background watchdog that restarts the VM if it gets preempted while tests run.
+
+inputs:
+  credentials_json:
+    description: GCP service account key JSON (needs compute.instances.get/start)
+    required: true
+  project_id:
+    description: GCP project id
+    required: false
+    default: stylebi
+  instance:
+    description: VM instance name
+    required: false
+    default: db-test-server
+  zone:
+    description: VM zone
+    required: false
+    default: us-west1-b
+  wait_minutes:
+    description: Max minutes to wait for the VM to start and all DB ports to open
+    required: false
+    default: '10'
+  watchdog:
+    description: Run a background watchdog that restarts the VM if it is preempted
+    required: false
+    default: 'true'
+
+runs:
+  using: composite
+  steps:
+    - name: Authenticate to GCP
+      uses: google-github-actions/auth@v2
+      with:
+        credentials_json: ${{ inputs.credentials_json }}
+
+    - name: Set up gcloud
+      uses: google-github-actions/setup-gcloud@v2
+
+    - name: Start DB server and wait until ready
+      shell: bash
+      env:
+        PROJECT_ID: ${{ inputs.project_id }}
+        INSTANCE: ${{ inputs.instance }}
+        ZONE: ${{ inputs.zone }}
+        WAIT_MINUTES: ${{ inputs.wait_minutes }}
+      run: |
+        bash "$GITHUB_ACTION_PATH/db-server.sh" ensure
+
+    - name: Start DB server watchdog
+      if: inputs.watchdog == 'true'
+      shell: bash
+      env:
+        PROJECT_ID: ${{ inputs.project_id }}
+        INSTANCE: ${{ inputs.instance }}
+        ZONE: ${{ inputs.zone }}
+      run: |
+        LOG="$RUNNER_TEMP/db-server-watchdog.log"
+        nohup bash "$GITHUB_ACTION_PATH/db-server.sh" watchdog > "$LOG" 2>&1 &
+        echo "DB server watchdog started (pid $!), log: $LOG"
+        echo "DB_SERVER_WATCHDOG_LOG=$LOG" >> "$GITHUB_ENV"

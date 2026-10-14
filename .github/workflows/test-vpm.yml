@@ -21,19 +21,13 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      - name: Configure /etc/hosts
-        run: |
-          echo "${{ secrets.DATABASE_SERVER_IP }} mysql_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} db2_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} derby_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} oracle_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} informix_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} postgres_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} sqlserver_server" | sudo tee -a /etc/hosts
-          echo "${{ secrets.DATABASE_SERVER_IP }} clickhouse_server" | sudo tee -a /etc/hosts
-
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Ensure DB server is running
+        uses: ./.github/actions/ensure-db-server
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
 
       - name: Set up Java
         uses: actions/setup-java@v4
@@ -177,6 +171,10 @@ jobs:
           path: 'vpm/target/test-classes/exportData/'
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Show DB server watchdog log
+        if: always()
+        run: cat "$DB_SERVER_WATCHDOG_LOG" 2>/dev/null || echo "No watchdog log"
 
       - name: Send DingTalk Notification
         if: always()
