@@ -222,7 +222,8 @@ class DateComparison_Spec extends Specification{
       }
    }
 
-   /*check period is year and interval is week to date, case include highlight*/
+   /*check period is year and interval is week to date, case include highlight.
+   Chart8 check end date 2021-01-02 whose week starts in previous year, should compare two full years(Bug #78454)*/
    def 'Year_WeekToDate'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^Chart/Date Comparison/Year_WeekToDate', caseName)
