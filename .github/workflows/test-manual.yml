@@ -38,9 +38,6 @@ jobs:
         uses: ./.github/actions/ensure-db-server
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
-          project_id: ${{ vars.GCP_PROJECT_ID || 'stylebi' }}
-          instance: ${{ vars.DB_SERVER_INSTANCE || 'db-test-server' }}
-          zone: ${{ vars.DB_SERVER_ZONE || 'us-west1-b' }}
 
       - name: Set up Java
         uses: actions/setup-java@v4

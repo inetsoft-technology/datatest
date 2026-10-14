@@ -29,11 +29,6 @@ inputs:
     required: false
     default: 'true'
 
-outputs:
-  ip:
-    description: External IP of the DB server
-    value: ${{ steps.ready.outputs.ip }}
-
 runs:
   using: composite
   steps:
@@ -46,7 +41,6 @@ runs:
       uses: google-github-actions/setup-gcloud@v2
 
     - name: Start DB server and wait until ready
-      id: ready
       shell: bash
       env:
         PROJECT_ID: ${{ inputs.project_id }}

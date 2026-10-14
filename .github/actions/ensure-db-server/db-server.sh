@@ -3,25 +3,43 @@
 #   db-server.sh ensure    start the VM if needed, map hostnames, wait for DB ports
 #   db-server.sh watchdog  loop forever, restarting the VM if it gets preempted
 # Requires PROJECT_ID, INSTANCE, ZONE (and WAIT_MINUTES for ensure) in the environment.
+# The repo is public: never print the server IP, and mask it as soon as it is resolved.
 set -uo pipefail
 
 DB_PORTS=(3306 5432 1433 50000 1521 9088 1527 8123)
 DB_HOSTS=(mysql_server db2_server derby_server oracle_server informix_server
           postgres_server sqlserver_server clickhouse_server)
+HOSTS_FILE=${HOSTS_FILE:-/etc/hosts}
 
 log() { echo "[$(date '+%H:%M:%S')] $*"; }
 
 gc() { gcloud compute instances "$@" "$INSTANCE" --zone="$ZONE" --project="$PROJECT_ID" --quiet; }
 
-vm_status() { gc describe --format='value(status)' 2>/dev/null; }
+# Prints the VM status, or nothing (with the gcloud error logged) if the lookup failed.
+vm_status() {
+  local out
+  if out=$(gc describe --format='value(status)' 2>&1); then
+    echo "$out"
+  else
+    log "gcloud describe failed: $out" >&2
+  fi
+}
 
 vm_ip() { gc describe --format='value(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null; }
+
+# Replace any existing *_server lines so repeated runs don't leave duplicate or stale entries.
+write_hosts() {
+  local ip=$1 h
+  for h in "${DB_HOSTS[@]}"; do
+    sudo sed -i "/[[:space:]]${h}\$/d" "$HOSTS_FILE"
+    echo "$ip $h" | sudo tee -a "$HOSTS_FILE" > /dev/null
+  done
+}
 
 # Ask GCP to bring the VM up. Spot capacity may be unavailable, so failures are not fatal;
 # callers retry until their own deadline.
 start_vm() {
-  local status
-  status=$(vm_status)
+  local status=$1
   case "$status" in
     RUNNING|PROVISIONING|STAGING|REPAIRING)
       return 0 ;;
@@ -33,6 +51,8 @@ start_vm() {
       gc resume --async || log "resume request failed, will retry" ;;
     STOPPING|SUSPENDING)
       log "VM is $status, waiting for it to settle" ;;
+    "")
+      log "VM status unknown, will retry" ;;
     *)
       log "Unexpected VM status '$status'" ;;
   esac
@@ -50,51 +70,54 @@ closed_ports() {
 
 ensure() {
   local deadline=$(( $(date +%s) + WAIT_MINUTES * 60 ))
-  local status ip="" closed
+  local status ip="" closed=""
 
   while :; do
     status=$(vm_status)
-    if [ -z "$status" ]; then
-      echo "::error::Cannot find VM $INSTANCE in $ZONE (project $PROJECT_ID). Was it destroyed?"
-      exit 1
-    fi
 
     if [ "$status" = RUNNING ]; then
       ip=$(vm_ip)
       if [ -n "$ip" ]; then
+        echo "::add-mask::$ip"
         closed=$(closed_ports "$ip")
         if [ -z "$closed" ]; then
           break
         fi
-        log "VM RUNNING at $ip, waiting for DB ports: $closed"
+        log "VM RUNNING, waiting for DB ports: $closed"
       fi
     else
-      start_vm
+      start_vm "$status"
     fi
 
     if [ "$(date +%s)" -ge "$deadline" ]; then
-      echo "::error::DB server not ready after ${WAIT_MINUTES} minutes (status=$status, ip=${ip:-none}, closed ports: ${closed:-n/a})"
+      echo "::error::DB server not ready after ${WAIT_MINUTES} minutes (status=${status:-unknown}, ip resolved=$([ -n "$ip" ] && echo yes || echo no), closed ports: ${closed:-n/a})"
       exit 1
     fi
     sleep 20
   done
 
-  log "DB server ready at $ip"
-  for h in "${DB_HOSTS[@]}"; do
-    echo "$ip $h" | sudo tee -a /etc/hosts > /dev/null
-  done
-  echo "ip=$ip" >> "$GITHUB_OUTPUT"
+  write_hosts "$ip"
+  log "DB server ready, /etc/hosts updated"
 }
 
 watchdog() {
-  local status
+  local status ip restarted=0
   log "Watchdog started for $INSTANCE"
   while :; do
     sleep 60
     status=$(vm_status)
     if [ "$status" != RUNNING ]; then
       log "VM status is '${status:-unknown}'"
-      start_vm
+      start_vm "$status"
+      restarted=1
+    elif [ "$restarted" = 1 ]; then
+      # The external IP is a reserved static address, but refresh hosts anyway in case it changed.
+      ip=$(vm_ip)
+      if [ -n "$ip" ]; then
+        write_hosts "$ip"
+        log "VM is RUNNING again, /etc/hosts refreshed"
+        restarted=0
+      fi
     fi
   done
 }
