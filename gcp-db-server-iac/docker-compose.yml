@@ -48,7 +48,7 @@ services:
     restart: unless-stopped
 
   clickhouse:
-    image: ghcr.io/bonnieshi43/inetsoft-dbs/inetsoft-dbs-clickhouse:22.1.3.7
+    image: ghcr.io/bonnieshi43/inetsoft-dbs/inetsoft-dbs-clickhouse:22.1.3.7-vol
     ports:
       - "8123:8123"
       - "9000:9000"
