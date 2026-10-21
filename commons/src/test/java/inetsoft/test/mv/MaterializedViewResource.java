@@ -350,7 +350,11 @@ public class MaterializedViewResource {
       }
    }
 
-   /** Poll count (x100ms) to wait for an MV creation or update to finish. */
+   /**
+    * Poll count (x100ms) to wait for an MV creation or update to finish: 5 minutes. Creating the
+    * small MVs of these cases normally takes a second or two, the limit only has to be well above
+    * that. When an MV hangs, every case that uses it waits this long before it fails.
+    */
    private static final int WAIT_RETRIES = 3000;
 
    private final MaterializedViewApiService materializedViewApiService;

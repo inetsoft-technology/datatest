@@ -12,6 +12,7 @@ import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.report.composition.execution.MVInfo
 import inetsoft.report.filter.SortFilter
+import inetsoft.report.internal.table.XTableLens
 import inetsoft.sree.SreeEnv
 import inetsoft.sree.security.IdentityID
 import inetsoft.sree.security.SRPrincipal
@@ -134,6 +135,10 @@ class MVTest {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
+
+      // errors left by an earlier call that was cut short by an exception must not be reported
+      executionErrors.clear()
+
       bks.each {
          executeTest(params, it, incremental, exportSelection, principal)
       }
@@ -280,7 +285,10 @@ class MVTest {
          }
       }
       catch(Exception e) {
-         // no MV for this component
+         // findRuntimeMV(findOnly) returns null when the component has no MV, so an exception
+         // is a real problem. Swallowing it would turn the check back into the weak one.
+         e.printStackTrace()
+         executionErrors.add("[MV lookup] " + assembly.getName() + ": " + e)
       }
    }
 
@@ -302,8 +310,9 @@ class MVTest {
          leaf = ((TableFilter) leaf).getTable()
       }
 
-      if(leaf != null && leaf.getClass().getSimpleName() == 'XSnapshotLens') {
-         def inner = leaf.@table
+      // a snapshot of a table, e.g. the data of a chart
+      if(leaf instanceof XTableLens) {
+         def inner = ((XTableLens) leaf).getTable()
 
          if(inner instanceof TableLens && !inner.is(lens)) {
             return findMVInfos((TableLens) inner)
@@ -311,6 +320,12 @@ class MVTest {
 
          // the data was already copied into memory, which drops the MV information
          hitUnobservable = true
+
+         if(!loggedUnobservable) {
+            loggedUnobservable = true
+            System.err.println("MVTest: can not tell which MV was used behind " +
+                    leaf.getClass().getName() + " wrapping " + inner?.getClass()?.getName())
+         }
       }
 
       return infos
@@ -680,6 +695,7 @@ class MVTest {
    private final List<String> executionErrors = []
    private final Set<String> hitMVs = new LinkedHashSet<String>()
    private boolean hitUnobservable
+   private boolean loggedUnobservable
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
