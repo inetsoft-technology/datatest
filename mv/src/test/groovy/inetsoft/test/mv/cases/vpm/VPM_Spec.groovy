@@ -54,7 +54,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -70,7 +70,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -90,7 +90,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['orders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -111,7 +111,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['orders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -128,7 +128,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['orders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -143,7 +143,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -159,7 +159,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['products2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['products2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -180,7 +180,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['categories1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -204,7 +204,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['categories1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -225,7 +225,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['categories1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -244,7 +244,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['categories1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -261,7 +261,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['products1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['products1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -277,7 +277,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['a1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['a1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -293,7 +293,7 @@ class VPM_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['b1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['b1|TopMV'])
          mvtest.compareData(false)
       }
    }

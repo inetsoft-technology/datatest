@@ -202,7 +202,7 @@ public class MaterializedViewResource {
                     analysisJob.getId(), this.principal.getIdentityID().getOrgID(), createRequest, this.principal);
             
             //wait create mv complete or fail
-            for(int retry = 0; retry < 200; retry++) {
+            for(int retry = 0; retry < WAIT_RETRIES; retry++) {
                try {
                   CreateMaterializedViewStatus createStatus = materializedViewApiController.getCreationStatus(
                           analysisJob.getId(), null, this.principal);
@@ -211,9 +211,8 @@ public class MaterializedViewResource {
                      break;
                   }
                   else if(createStatus.isFailed()) {
-                     String msg = createStatus.getError();
-                     System.err.println("====MV Create Exception==== " + msg);
-                     break;
+                     throw new MVCreateFailedException(
+                        "====MV Create Exception==== " + asset_id + ": " + createStatus.getError());
                   }
 
                   // job exists but not finished yet - without this sleep the loop busy-spins
@@ -221,14 +220,24 @@ public class MaterializedViewResource {
                   // actually built and attached, so the next query falls back to live data.
                   Thread.sleep(100);
                }
+               catch(MVCreateFailedException e) {
+                  throw e;
+               }
                catch(Exception e) {
-                  if(e.getMessage().contains("The materialized view creation has not been started")) {
+                  if(e.getMessage() != null &&
+                     e.getMessage().contains("The materialized view creation has not been started"))
+                  {
                      Thread.sleep(100);
                   }
                   else {
-                     e.printStackTrace();
-                     break;
+                     throw new RuntimeException(
+                        "====MV Create Exception==== " + asset_id + ": " + e, e);
                   }
+               }
+
+               if(retry == WAIT_RETRIES - 1) {
+                  throw new MVCreateFailedException(
+                     "====MV Create Exception==== " + asset_id + ": creation did not complete in time");
                }
             }
          }
@@ -274,19 +283,26 @@ public class MaterializedViewResource {
                }
 
                //wait update mv complete or fail
-               for(int retry = 0; retry < 200; retry++) {
+               boolean updated = false;
+
+               for(int retry = 0; retry < WAIT_RETRIES; retry++) {
                   updateStatus = materializedViewApiController.getUpdateStatus(
                           updateStatus.getId(), null, this.principal);
 
                   if(updateStatus.isComplete()) {
+                     updated = true;
                      break;
                   }
                   else if(updateStatus.isFailed()) {
-                     String msg = updateStatus.getError();
-                     System.err.println("====MV Update Exception==== " + msg);
-                     break;
+                     throw new MVCreateFailedException(
+                        "====MV Update Exception==== " + asset_id + ": " + updateStatus.getError());
                   }
                   Thread.sleep(100);
+               }
+
+               if(!updated) {
+                  throw new MVCreateFailedException(
+                     "====MV Update Exception==== " + asset_id + ": update did not complete in time");
                }
             }
          }
@@ -303,11 +319,17 @@ public class MaterializedViewResource {
     * remove mv
     */
    public void removeMV() {
+      // only the views created through this instance are removed
+      if(this.views.isEmpty()) {
+         return;
+      }
+
       MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
          try {
             DeleteMaterializedViewsRequest deleteRequest = new DeleteMaterializedViewsRequest();
-            deleteRequest.setViews(this.views);
+            deleteRequest.setViews(new ArrayList<>(this.views));
             materializedViewApiController.deleteMaterializedViews(null, deleteRequest, this.principal);
+            this.views.clear();
          }
          catch(RuntimeException e) {
             throw e;
@@ -318,6 +340,19 @@ public class MaterializedViewResource {
       });
    }
    
+   /**
+    * Thrown when an MV creation or update fails or does not finish in time, so the spec fails
+    * instead of running against live data.
+    */
+   public static class MVCreateFailedException extends RuntimeException {
+      public MVCreateFailedException(String message) {
+         super(message);
+      }
+   }
+
+   /** Poll count (x100ms) to wait for an MV creation or update to finish. */
+   private static final int WAIT_RETRIES = 3000;
+
    private final MaterializedViewApiService materializedViewApiService;
    private final MaterializedViewApiController materializedViewApiController;
    private ConfigurationContext context;

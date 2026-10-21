@@ -50,7 +50,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV', 'Query1|SubMV',
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'Query1|SubMV',
                                             'Query1|SubMV', 'Query1|SubMV',
                                             'Query1|SubMV', 'Query1|SubMV',
                                             'Query1|SubMV', 'Query1|SubMV',
@@ -71,7 +71,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll((['ORDERS1|SubMV', 'ORDERS1|SubMV']))
+         mvtest.getMVHitInfo().containsAll((['ORDERS1|SubMV', 'ORDERS1|SubMV']))
          mvtest.compareData(false)
       }
    }
@@ -86,7 +86,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -101,7 +101,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -116,7 +116,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -132,7 +132,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -147,7 +147,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS2|SubMV', 'ORDERS1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS2|SubMV', 'ORDERS1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -162,7 +162,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -177,7 +177,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV', 'Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV', 'Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -192,7 +192,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CUSTOMERS1|SubMV', 'ST_Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|SubMV', 'ST_Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -207,7 +207,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -221,7 +221,7 @@ class SubMV_Spec extends Specification {
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -237,7 +237,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -252,7 +252,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -267,7 +267,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV', 'Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -282,7 +282,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -297,7 +297,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV', 'PRODUCTS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -312,7 +312,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -327,7 +327,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -342,7 +342,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -357,7 +357,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -372,7 +372,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -387,7 +387,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV', 'Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -402,7 +402,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -417,7 +417,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['RETURNS1|SubMV', 'ORDER_DETAILS1|SubMV',
+         mvtest.getMVHitInfo().containsAll(['RETURNS1|SubMV', 'ORDER_DETAILS1|SubMV',
                                             'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
@@ -433,7 +433,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV',
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV',
                                             'ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
@@ -451,7 +451,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -466,7 +466,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -482,7 +482,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDER_DETAILS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDER_DETAILS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -497,7 +497,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ST_ST_Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ST_ST_Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -512,7 +512,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV', 'Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -528,7 +528,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -543,7 +543,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDER_DETAILS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDER_DETAILS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -558,7 +558,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -573,7 +573,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDER_DETAILS1|SubMV', 'ORDER_DETAILS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDER_DETAILS1|SubMV', 'ORDER_DETAILS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -588,7 +588,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ST_Query1|SubMV', 'ST_Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ST_Query1|SubMV', 'ST_Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -603,7 +603,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -618,7 +618,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -633,7 +633,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -648,7 +648,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -663,7 +663,7 @@ class SubMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|SubMV'])
          mvtest.compareData(false)
       }
    }

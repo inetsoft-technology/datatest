@@ -44,7 +44,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -59,7 +59,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -77,7 +77,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -93,7 +93,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCUSTOMERS1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCUSTOMERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -108,7 +108,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CUSTOMERS1|TopMV', 'CUSTOMERS2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|TopMV', 'CUSTOMERS2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -123,7 +123,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -138,7 +138,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['C_ORDERS1_ORDERS2|TopMV', 'ORDERS1|SubMV', 'ORDERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['C_ORDERS1_ORDERS2|TopMV', 'ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -153,7 +153,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -171,7 +171,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -187,7 +187,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['l1|TopMV', 'l1|TopMV', 'l1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['l1|TopMV', 'l1|TopMV', 'l1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -202,7 +202,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Order Model|TopMV', 'Order Model|TopMV',
+         mvtest.getMVHitInfo().containsAll(['Order Model|TopMV', 'Order Model|TopMV',
                                             'Order Model|TopMV', 'Order Model|TopMV'])
          mvtest.compareData(false)
       }
@@ -219,7 +219,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query1|TopMV', 'query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV', 'query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -234,7 +234,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -250,7 +250,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -265,7 +265,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Order Model|TopMV', 'Order Model|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Order Model|TopMV', 'Order Model|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -280,7 +280,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS|TopMV', 'ORDERS|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS|TopMV', 'ORDERS|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -298,7 +298,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -314,7 +314,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -329,7 +329,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -345,7 +345,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -361,7 +361,7 @@ class VSActions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Order Model|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
       }
    }
