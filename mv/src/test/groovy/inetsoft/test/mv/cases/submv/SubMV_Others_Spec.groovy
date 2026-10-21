@@ -47,7 +47,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -61,7 +61,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -75,7 +75,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -89,7 +89,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -103,7 +103,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -117,7 +117,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -131,7 +131,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -159,7 +159,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -173,7 +173,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV',
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV',
                                             'ORDERS1|SubMV', 'ORDERS1|SubMV',
                                             'ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
@@ -189,7 +189,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['categories1|SubMV', 'customers1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['categories1|SubMV', 'customers1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -203,7 +203,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ST_Query1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ST_Query1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -217,7 +217,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -231,7 +231,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['RETURNS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['RETURNS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -245,7 +245,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -259,7 +259,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -273,7 +273,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -287,7 +287,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -301,7 +301,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -315,7 +315,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -329,7 +329,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -343,7 +343,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'RETURNS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'RETURNS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -357,7 +357,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -371,7 +371,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -386,7 +386,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -401,7 +401,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -415,7 +415,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -429,7 +429,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -443,7 +443,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -458,7 +458,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -473,7 +473,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -487,7 +487,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -501,7 +501,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -517,7 +517,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -531,7 +531,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -545,7 +545,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['query21|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -559,7 +559,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -573,7 +573,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -587,7 +587,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -601,7 +601,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -616,7 +616,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -630,7 +630,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -645,7 +645,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Detail_Copy ofORDERS11_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Detail_Copy ofORDERS11_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -675,7 +675,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['customers_O|SubMV'])
          mvtest.compareData(false)
       }
    }

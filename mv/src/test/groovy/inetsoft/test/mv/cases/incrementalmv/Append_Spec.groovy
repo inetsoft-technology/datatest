@@ -55,7 +55,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -74,7 +74,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -93,7 +93,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -112,7 +112,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -131,7 +131,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -150,7 +150,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -170,7 +170,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -189,7 +189,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -208,7 +208,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -227,7 +227,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -246,7 +246,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -266,7 +266,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -285,7 +285,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -304,7 +304,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -323,7 +323,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -342,7 +342,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -361,7 +361,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -380,7 +380,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -399,7 +399,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -418,7 +418,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -437,7 +437,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVproducts1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVproducts1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -456,7 +456,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -475,7 +475,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -494,7 +494,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -514,7 +514,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -534,7 +534,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -553,7 +553,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -572,7 +572,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -591,7 +591,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -610,7 +610,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -629,7 +629,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -648,7 +648,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MinusTable|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MinusTable|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -667,7 +667,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['IntersectTable|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['IntersectTable|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -686,7 +686,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -705,7 +705,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -724,7 +724,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -743,7 +743,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -762,7 +762,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -781,7 +781,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -800,7 +800,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -819,7 +819,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -838,7 +838,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -857,7 +857,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -876,7 +876,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -895,7 +895,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -914,7 +914,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -933,7 +933,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -952,7 +952,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1_O|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -971,7 +971,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorderdetails1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorderdetails1_O|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -990,7 +990,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1009,7 +1009,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1028,7 +1028,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1047,7 +1047,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1066,7 +1066,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1085,7 +1085,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1104,7 +1104,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1123,7 +1123,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1142,7 +1142,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1161,7 +1161,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1180,7 +1180,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1199,7 +1199,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1218,7 +1218,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1237,7 +1237,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1256,7 +1256,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -1275,7 +1275,7 @@ class Append_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1_O|SubMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }

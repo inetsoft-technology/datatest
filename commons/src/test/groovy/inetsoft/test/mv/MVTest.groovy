@@ -1,15 +1,18 @@
 package inetsoft.test.mv
 
 import inetsoft.mv.data.MVQuery
+import inetsoft.mv.MVDef
 import inetsoft.mv.MVManager
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
+import inetsoft.report.TableFilter
 import inetsoft.report.TableLens
 import inetsoft.report.composition.execution.AssetTableLens
 import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.report.composition.execution.MVInfo
 import inetsoft.report.filter.SortFilter
+import inetsoft.report.internal.table.XTableLens
 import inetsoft.sree.SreeEnv
 import inetsoft.sree.security.IdentityID
 import inetsoft.sree.security.SRPrincipal
@@ -17,6 +20,7 @@ import inetsoft.test.core.CompareUtil
 import inetsoft.uql.XConstants
 import inetsoft.uql.asset.Assembly
 import inetsoft.uql.viewsheet.AssociatedSelectionVSAssembly
+import inetsoft.uql.viewsheet.BindableVSAssembly
 import inetsoft.uql.viewsheet.CalendarVSAssembly
 import inetsoft.uql.viewsheet.CompositeSelectionValue
 import inetsoft.uql.viewsheet.ListData
@@ -131,8 +135,20 @@ class MVTest {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
+
+      // errors left by an earlier call that was cut short by an exception must not be reported
+      executionErrors.clear()
+
       bks.each {
          executeTest(params, it, incremental, exportSelection, principal)
+      }
+
+      // fail after all bookmarks ran, so every broken component is listed in one report
+      if(!executionErrors.isEmpty()) {
+         String msg = asset_id + " failed to execute " + executionErrors.size() +
+                 " component(s):\n" + executionErrors.join("\n")
+         executionErrors.clear()
+         throw new AssertionError(msg)
       }
    }
 
@@ -163,6 +179,8 @@ class MVTest {
 
       assemblies.each {
          if(it instanceof SelectionVSAssembly) {
+            recordMVLookupHit(rvs, sandbox, (SelectionVSAssembly) it, principal)
+
             if(exportSelection) {
                assemblyNames.add(it.getName())
                if(it instanceof AssociatedSelectionVSAssembly) {
@@ -191,9 +209,22 @@ class MVTest {
                if(data instanceof TableLens) {
                   tableLens[n] = data
                }
+               else if(data != null) {
+                  // plain values (text, gauge, ...): the table behind them can not be inspected
+                  hitUnobservable = true
+
+                  if(it instanceof BindableVSAssembly) {
+                     recordMVLookupHit(rvs, sandbox, (BindableVSAssembly) it, principal)
+                  }
+               }
             }
             catch(Exception e) {
-               e.printStackTrace()
+               // assemblies without data (current selection, shapes, annotations) can not be
+               // queried and are not exported, which is not a failure
+               if(e.getMessage() == null || !e.getMessage().startsWith("Unsupported assembly found")) {
+                  e.printStackTrace()
+                  executionErrors.add("[" + bk + "] " + it.getName() + ": " + e)
+               }
             }
             n++
          }
@@ -204,7 +235,116 @@ class MVTest {
                  principal, bk, incremental))
       }
 
+      recordMVHits(tableLens)
       return tableLens
+   }
+
+   /**
+    * Remember the MVs the executed tables were actually read from.
+    */
+   private void recordMVHits(List tableLens) {
+      tableLens.each { lens ->
+         if(lens != null) {
+            List<MVInfo> infos = findMVInfos((TableLens) lens)
+
+            infos?.each { info ->
+               hitMVs.add(info.getMVTable() + "|" + (info.isSub() ? "SubMV" : "TopMV"))
+            }
+         }
+      }
+   }
+
+   /**
+    * Remember the MV a component resolves to. Selection lists, time sliders, calendars and
+    * components that show a plain value (text, ...) are not tables, a time slider even reads the
+    * range from the MV definition without running a query, so no table carries the MV
+    * information. The lookup is the one the sandbox does for the component, so it tells which MV
+    * the component can use, not that rows were read from it.
+    */
+   private void recordMVLookupHit(RuntimeViewsheet rvs, ViewsheetSandbox sandbox,
+                                  BindableVSAssembly assembly, SRPrincipal principal)
+   {
+      try {
+         String tname = assembly.getTableName()
+
+         if(tname == null) {
+            return
+         }
+
+         if(tname.startsWith(Assembly.TABLE_VS)) {
+            tname = tname.substring(Assembly.TABLE_VS.length())
+         }
+
+         def rmv = MVManager.getManager().findRuntimeMV(
+                 rvs.getEntry(), rvs.getViewsheet(), assembly.getName(), tname, principal,
+                 sandbox, true, true)
+         MVDef mvdef = rmv == null ? null : MVManager.getManager().get(rmv.getMV())
+
+         if(mvdef != null) {
+            hitMVs.add(mvdef.getMVTable() + "|" + (mvdef.isSub() ? "SubMV" : "TopMV"))
+         }
+      }
+      catch(Exception e) {
+         // findRuntimeMV(findOnly) returns null when the component has no MV, so an exception
+         // is a real problem. Swallowing it would turn the check back into the weak one.
+         e.printStackTrace()
+         executionErrors.add("[MV lookup] " + assembly.getName() + ": " + e)
+      }
+   }
+
+   /**
+    * Get the MV information of a table. A snapshot (e.g. the data of a chart) hides the table
+    * the MV was read for, so it is unwrapped.
+    */
+   private List<MVInfo> findMVInfos(TableLens lens) {
+      List<MVInfo> infos = MVQuery.getMVInfos(lens)
+
+      if(infos != null && !infos.isEmpty()) {
+         return infos
+      }
+
+      def leaf = lens
+      int depth = 0
+
+      while(leaf instanceof TableFilter && depth++ < 100) {
+         leaf = ((TableFilter) leaf).getTable()
+      }
+
+      // a snapshot of a table, e.g. the data of a chart
+      if(leaf instanceof XTableLens) {
+         def inner = ((XTableLens) leaf).getTable()
+
+         if(inner instanceof TableLens && !inner.is(lens)) {
+            return findMVInfos((TableLens) inner)
+         }
+
+         // the data was already copied into memory, which drops the MV information
+         hitUnobservable = true
+
+         if(!loggedUnobservable) {
+            loggedUnobservable = true
+            System.err.println("MVTest: can not tell which MV was used behind " +
+                    leaf.getClass().getName() + " wrapping " + inner?.getClass()?.getName())
+         }
+      }
+
+      return infos
+   }
+
+   /**
+    * Get the MVs that the queries executed by this instance actually hit. Unlike
+    * {@link #getMVDefInfo()}, an MV that is only defined but not used by the query is not
+    * included. For selection components and components that show a plain value only the MV
+    * found by the sandbox lookup is recorded, see {@link #recordMVLookupHit}. When nothing could
+    * be observed because every component returned a plain value (text, ...), the defined MVs are
+    * returned as before.
+    */
+   List getMVHitInfo() {
+      if(hitMVs.isEmpty() && hitUnobservable) {
+         return getMVDefInfo()
+      }
+
+      return hitMVs.toList()
    }
 
    def exportData(def data, String fileName) {
@@ -371,6 +511,15 @@ class MVTest {
       File[] files = folder.listFiles(incremental ? new IncrementalMVFilter() : new MVFilter())
       File[] expFiles = expFolder.listFiles(incremental ? new IncrementalMVFilter() : new MVFilter())
 
+      // listFiles returns null when the directory does not exist
+      if(files == null) {
+         assert false: asset_id + " nothing was exported: " + folder
+      }
+
+      if(expFiles == null) {
+         assert false: asset_id + " no expected data found: " + expFolder
+      }
+
       //if some component is not exported, fail case
       if(files.length != expFiles.length) {
          assert false: asset_id + " The file number is different in exp and export"
@@ -383,15 +532,15 @@ class MVTest {
          resArray.add(new CompareUtil().FileCompare(resPath))
       }
 
-      String failedInfo
+      def failures = []
       resArray.each {
          if(it.getAt('false') != null) {
-            failedInfo += "\n" + it.getAt('false') + "\n"
+            failures.add(it.getAt('false'))
          }
       }
 
-      if(failedInfo != null) {
-         assert false: failedInfo
+      if(!failures.isEmpty()) {
+         assert false: failures.join("\n")
       }
    }
 
@@ -442,7 +591,7 @@ class MVTest {
          val = dateformat.format(val)
       }
       else if(val instanceof Float || val instanceof Double) {
-         if(val == Float.NaN || val == Double.NaN) {
+         if(Double.isNaN((val as Number).doubleValue())) {
             val = 'NaN'
          }
          else {
@@ -542,7 +691,11 @@ class MVTest {
       }
    }
 
-   private static MaterializedViewResource materializedViewResource
+   private MaterializedViewResource materializedViewResource
+   private final List<String> executionErrors = []
+   private final Set<String> hitMVs = new LinkedHashSet<String>()
+   private boolean hitUnobservable
+   private boolean loggedUnobservable
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")

@@ -79,7 +79,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['C_CUSTOMERS1_CUSTOMERS2|TopMV', 'CUSTOMERS1|SubMV', 'CUSTOMERS2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['C_CUSTOMERS1_CUSTOMERS2|TopMV', 'CUSTOMERS1|SubMV', 'CUSTOMERS2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -348,7 +348,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['CUSTOMERS1|SubMV', 'ORDERS1|SubMV', 'CUSTOMERS1|SubMV', 'ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|SubMV', 'ORDERS1|SubMV', 'CUSTOMERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -378,7 +378,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -566,7 +566,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['ORDERS1_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -596,7 +596,7 @@ class AssociationMV_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Order Model|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
       }
    }

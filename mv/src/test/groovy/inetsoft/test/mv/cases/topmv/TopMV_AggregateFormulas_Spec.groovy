@@ -48,7 +48,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -63,7 +63,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -78,7 +78,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -93,7 +93,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -108,7 +108,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -123,7 +123,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Copy ofQuery12|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Copy ofQuery12|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -138,7 +138,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -153,7 +153,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['distinctcount|TopMV', 'median|TopMV', 'mode|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['distinctcount|TopMV', 'median|TopMV', 'mode|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -169,7 +169,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -184,7 +184,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -199,7 +199,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -214,7 +214,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -229,7 +229,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -244,7 +244,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -259,7 +259,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -274,7 +274,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -289,7 +289,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -304,7 +304,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -319,7 +319,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -334,7 +334,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -349,7 +349,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -364,7 +364,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query4_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query4_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -379,7 +379,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -394,7 +394,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -409,7 +409,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -424,7 +424,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -439,7 +439,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -454,7 +454,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -469,7 +469,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query3_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -485,7 +485,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['EM2_M_GandA|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['EM2_M_GandA|TopMV'])
          mvtest.compareData(false)
       }
    }

@@ -53,7 +53,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -72,7 +72,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -91,7 +91,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -110,7 +110,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -129,7 +129,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -148,7 +148,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -167,7 +167,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVSCRIPT1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -186,7 +186,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVScript1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVScript1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -202,7 +202,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['customers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -218,7 +218,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['customers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -233,7 +233,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -248,7 +248,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -263,7 +263,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorderdetails1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorderdetails1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -278,7 +278,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -293,7 +293,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -308,7 +308,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['customers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -323,7 +323,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -338,7 +338,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -365,7 +365,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['customers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -380,7 +380,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -395,7 +395,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -410,7 +410,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV', 'MVorderdetails1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV', 'MVorderdetails1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -425,7 +425,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders2|SubMV', 'MVorders1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -440,7 +440,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MinusTable|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MinusTable|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -455,7 +455,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['IntersectTable|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['IntersectTable|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -470,7 +470,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -485,7 +485,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -500,7 +500,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -515,7 +515,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -530,7 +530,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -545,7 +545,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|SubMV', 'MVorders2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|SubMV', 'MVorders2|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -572,7 +572,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVCustomers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -590,7 +590,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['MVorders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVorders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -606,7 +606,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['customers1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['customers1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -621,7 +621,7 @@ class Delete_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVDefInfo().containsAll(['orderdetails1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['orderdetails1|TopMV'])
          mvtest.compareData(false)
       }
    }
