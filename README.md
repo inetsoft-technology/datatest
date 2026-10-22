@@ -120,6 +120,26 @@ The `vsothers` module contains multiple test modes. Use the `-P` parameter to sp
 .\mvnw.cmd test -pl vsothers -Potherassembly
 ```
 
+#### 3. Date Comparison Specs: Strict Checks and Updating Baselines
+
+`DateComparison_Spec` (chart) and `Crosstab_DateComparsion_Spec` (vsothers, run with `-Pvscrosstab`) use `DcViewsheetTest` instead of `ViewsheetTest`:
+
+- an export failure fails the test (it is only printed in `ViewsheetTest`);
+- when no file names are given, every `.txt` and `.png` file under the case's `expectData` folder must have been exported by the run;
+- `exportAsPDF` exports the `(Home)` bookmark by default.
+
+To update the baselines, add `-Dupdate.baseline=true`. The exported files are copied into the module's `src/test/resources/expectData` and nothing is compared. Review the result with `git diff`.
+
+```powershell
+# update the data (txt) baselines of one case
+.\mvnw.cmd test -pl chart "-Dtest=DateComparison_Spec#Quarter_SameWeek" -Dupdate.baseline=true
+
+# also overwrite existing png baselines
+.\mvnw.cmd test -pl chart "-Dtest=DateComparison_Spec#Quarter_SameWeek" -Dupdate.baseline=true -Dupdate.baseline.png=true
+```
+
+A `.txt` baseline is always written. A `.png` baseline is only written when it is missing, unless `-Dupdate.baseline.png=true` is set, because pngs rendered on another platform differ on pixels. A baseline that is no longer exported is not deleted: remove it by hand. Run `mvnw clean` before a run after removing baselines, otherwise the old copy in `target/test-classes/expectData` is still checked.
+
 ### Other Commonly Used Commands
 
 ```powershell

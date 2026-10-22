@@ -60,8 +60,8 @@ class DcViewsheetTest extends ViewsheetTest {
          def missing = baselineNames(suffix).findAll { !new File(exportDir, it).exists() }
 
          if(missing) {
-            assert false: "\nBaseline files not exported by this run (" + suiteName + '/' +
-               caseName + "):\n" + missing.join("\n") + "\n"
+            throw new AssertionError("\nBaseline files not exported by this run (" + suiteName +
+               '/' + caseName + "):\n" + missing.join("\n") + "\n")
          }
       }
 
@@ -80,7 +80,9 @@ class DcViewsheetTest extends ViewsheetTest {
       names.each {
          File src = new File(exportDir, it)
          File dest = new File(target, it)
-         assert src.exists(): "Cannot update baseline, file was not exported: " + src
+         if(!src.exists()) {
+            throw new AssertionError("Cannot update baseline, file was not exported: " + src)
+         }
 
          if(overwrite || !dest.exists()) {
             Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING)
