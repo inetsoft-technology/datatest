@@ -23,6 +23,16 @@ class DcViewsheetTest extends ViewsheetTest {
       throw new RuntimeException(message + " " + asset_id + " [" + caseName + "]", ex)
    }
 
+   /**
+    * ViewsheetTest.exportAsPDF defaults to the bookmark 'Home', which no longer exists
+    * (the home bookmark is '(Home)'), so the exported PDF has no pages and no <name>-N.png
+    * is rendered from it.
+    */
+   @Override
+   def exportAsPDF(Map<String, String[]> params, String[] bks) {
+      super.exportAsPDF(params, bks == null ? ['(Home)'] as String[] : bks)
+   }
+
    @Override
    void compareData(String[] fls) {
       if(prepareCompare(fls, '.txt')) {
