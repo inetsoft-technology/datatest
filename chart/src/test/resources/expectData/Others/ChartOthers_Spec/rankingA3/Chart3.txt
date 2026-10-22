@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Product, Sum(Net Amount), % of total: Sum(Net Amount)
+6TB Solid Drive, 17359201.3, 0.0866
+EReader 7in, 26598034.8, 0.1326
+Laptop, 13288965.2, 0.0663
+Photo Fix, 15492720.0825, 0.0773
+TV 47in LED, 17120725.72, 0.0854
+Others, 110665652.357, 0.5519

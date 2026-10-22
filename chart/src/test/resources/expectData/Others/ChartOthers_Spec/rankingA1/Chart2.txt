@@ -1,0 +1,23 @@
+The data size(row x col) is:(22 x 4)
+Category, Product, Sum(Net Amount), % of Category: Sum(Net Amount)
+Business, Payroll Manager, 7688016.875, 0.5418
+Business, Xconnect Server, 6501798.6, 0.4582
+Educational, Math for Me, 6358348.8, 0.4098
+Educational, Animal World, 5171951.3, 0.3334
+Educational, Learn Spanish, 3984399.045, 0.2568
+Games, Play Box, 9796030.395, 0.4492
+Games, Barbie Fashion, 5820531.48, 0.2669
+Games, World of Battle, 2584358.5, 0.1185
+Games, Others, 3608003.2725, 0.1654
+Graphics, Photo Fix, 15492720.0825, 0.8826
+Graphics, Poster Design, 2061188.3625, 0.1174
+Hardware, EReader 7in, 26598034.8, 0.2761
+Hardware, 6TB Solid Drive, 17359201.3, 0.1802
+Hardware, TV 47in LED, 17120725.72, 0.1777
+Hardware, Others, 35263685.388, 0.366
+Office, Info Folder, 8091302.7, 0.3641
+Office, Web Calendar, 7627019.675, 0.3432
+Office, Fast Mail, 6507078.25, 0.2928
+Personal, Rent Hunter, 5139402.5, 0.3987
+Personal, Green Planet, 4107629.61, 0.3186
+Personal, Hotel Helper, 3643872.804, 0.2827

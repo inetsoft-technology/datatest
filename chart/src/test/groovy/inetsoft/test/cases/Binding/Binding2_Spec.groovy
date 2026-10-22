@@ -397,4 +397,37 @@ class Binding2_Spec extends Specification{
       vstest.compareData(null)
       //vstest.compareImage(null)
    }
+
+   /*
+    check Chart1 Month(Order Date) x Customer Top 5 + Others (color), % change from previous month; first month empty per line
+    check Chart2 Year(Order Date) x Sales Rep Top 5 + Others (color), value of previous year; never crosses Sales Rep
+    check Chart3 regression guard (#76906, #76911): Customer Top 5 + Others, change from previous on display order
+   */
+   def 'rankingB1'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Binding2/rankingB1', caseName)
+      vstest.executeVS(null, null)
+
+      expect:
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage(null)
+      }
+   }
+
+   /*
+    check Chart1 Month(Order Date) x Category Top 3 + Others (color), running sum reset every year
+    check Chart2 facet by Category Top 3, X = Month(Order Date), change from previous month; calc does not cross facets
+   */
+   def 'rankingB3'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Binding2/rankingB3', caseName)
+      vstest.executeVS(null, null)
+
+      expect:
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage(null)
+      }
+   }
 }
