@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 3)
+Customer, Sum(Net Amount), Running Sum: Sum(Net Amount)
+Bayer Corp, 3930066.7575, 3930066.7575
+Great Western Corp, 3895731.872, 7825798.6295
+Texas Corp, 3857123.313, 11682921.9425
+Reliable Corp, 3579948.72, 15262870.6625
+Great Western Inc, 3568661.9025, 18831532.565
+Reliable Group, 3556691.4125, 22388223.9775
+American Inc, 3413624.5285, 25801848.506
+Jersey Corp, 3269988.042, 29071836.548
+United Group, 3233558.0515, 32305394.5995
+California Corp, 3195563.5105, 35500958.11
+Others, 165024341.3495, 200525299.4595

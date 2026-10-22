@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Customer, Sum(Net Amount), Change from previous: Sum(Net Amount)
+Bayer Corp, 3930066.7575, NULL
+Great Western Corp, 3895731.872, -34334.8855
+Texas Corp, 3857123.313, -38608.559
+Reliable Corp, 3579948.72, -277174.593
+Great Western Inc, 3568661.9025, -11286.8175
+Others, 181693766.8945, 178125104.992

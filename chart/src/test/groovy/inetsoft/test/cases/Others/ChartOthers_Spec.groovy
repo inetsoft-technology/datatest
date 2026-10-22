@@ -256,4 +256,36 @@ class ChartOthers_Spec extends Specification{
       vstest.compareImage(null)
    }
 
+   /*
+    check Chart1 Pareto: Customer Top 10 + Others by value desc, Running Total on Y2; last point = grand total, Others = total - top 10
+    check Chart2 Category x Product Top 3 + Others (color), % of Category subtotal; each stacked bar sums to 100%
+   */
+   def 'rankingA1'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Others/rankingA1', caseName)
+      vstest.executeVS(null, null)
+
+      expect:
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage(null)
+      }
+   }
+
+   /*
+    check Chart1 Product Top 5 + Others by value desc, % of grand total; percents sum to 100%, Others last
+    check Chart2 Customer Top 10 by Sum(Quantity) + Others, Y = % of total Net Amount, Y2 = Sum(Quantity)
+    check Chart3 Product Top 5 + Others sorted by name, % of grand total; Others still last
+   */
+   def 'rankingA3'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^Chart/Others/rankingA3', caseName)
+      vstest.executeVS(null, null)
+
+      expect:
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage(null)
+      }
+   }
 }

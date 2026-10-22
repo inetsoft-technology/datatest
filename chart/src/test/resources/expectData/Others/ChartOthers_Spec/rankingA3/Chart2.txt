@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 4)
+Customer, Sum(Net Amount), Sum(Quantity), % of total: Sum(Net Amount)
+Bayer Corp, 3930066.7575, 44645, 0.0196
+Bromley Inc, 2461853.715, 41600, 0.0123
+Johnson Corp, 2988555.3685, 40500, 0.0149
+Union Corp, 2892596.9135, 38825, 0.0144
+Reliable Group, 3556691.4125, 35985, 0.0177
+United Corp, 3165389.422, 35380, 0.0158
+Reliable Corp, 3579948.72, 35200, 0.0179
+Mid-Atlantic Corp, 2984120.6905, 35170, 0.0149
+American Inc, 3413624.5285, 31680, 0.017
+Texas Corp, 3857123.313, 31535, 0.0192
+Others, 167695328.6185, 1462175, 0.8363
