@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 4)
+DayOfYear(Date), Year(Date), Sum(Quantity Purchased), Change from previous year of Year(Date): Sum(Quantity Purchased)
+355, 2020-01-01 00:00:00, 30, NULL
+356, 2020-01-01 00:00:00, 30, NULL
+357, 2020-01-01 00:00:00, 28, NULL
+358, 2020-01-01 00:00:00, 44, NULL
+359, 2020-01-01 00:00:00, 27, NULL
+360, 2020-01-01 00:00:00, 31, NULL
+361, 2020-01-01 00:00:00, 37, NULL
+362, 2020-01-01 00:00:00, 24, NULL
+363, 2020-01-01 00:00:00, 28, NULL
+364, 2020-01-01 00:00:00, 27, NULL
+365, 2020-01-01 00:00:00, 13, NULL
+366, 2020-01-01 00:00:00, 29, NULL

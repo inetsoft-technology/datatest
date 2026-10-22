@@ -1,0 +1,168 @@
+The data size(row x col) is:(84 x 5)
+Region, Month(Date), DataGroup(Date), Sum(Quantity Purchased), % Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+USA East, Mar
+Mar, 2018:2019, 588, NULL
+USA East, Mar
+Mar, 2020:2021, 691, 0.1752
+USA East, Apr
+Apr, 2018:2019, 514, NULL
+USA East, Apr
+Apr, 2020:2021, 497, -0.0331
+USA East, May
+May, 2018:2019, 590, NULL
+USA East, May
+May, 2020:2021, 583, -0.0119
+USA East, Jun
+Jun, 2018:2019, 413, NULL
+USA East, Jun
+Jun, 2020:2021, 575, 0.3923
+USA East, Jul
+Jul, 2018:2019, 573, NULL
+USA East, Jul
+Jul, 2020:2021, 500, -0.1274
+USA East, Aug
+Aug, 2018:2019, 502, NULL
+USA East, Aug
+Aug, 2020:2021, 540, 0.0757
+USA East, Sep
+Sep, 2018:2019, 511, NULL
+USA East, Sep
+Sep, 2020:2021, 472, -0.0763
+USA East, Oct
+Oct, 2018:2019, 559, NULL
+USA East, Oct
+Oct, 2020:2021, 554, -0.0089
+USA East, Nov
+Nov, 2018:2019, 544, NULL
+USA East, Nov
+Nov, 2020:2021, 590, 0.0846
+USA East, Dec
+Dec, 2018:2019, 619, NULL
+USA East, Dec
+Dec, 2020:2021, 526, -0.1502
+USA East, Jan
+Jan, 2018:2019, 519, NULL
+USA East, Jan
+Jan, 2020:2021, 372, -0.2832
+USA East, Feb
+Feb, 2018:2019, 464, NULL
+USA East, Feb
+Feb, 2020:2021, 259, -0.4418
+USA East, Mar
+Mar, 2018:2019, 530, NULL
+USA East, Mar
+Mar, 2020:2021, 297, -0.4396
+USA East, Apr
+Apr, 2018:2019, 596, NULL
+USA East, Apr
+Apr, 2020:2021, 372, -0.3758
+USA East, May
+May, 2018:2019, 455, NULL
+USA East, May
+May, 2020:2021, 482, 0.0593
+USA East, Jun
+Jun, 2018:2019, 601, NULL
+USA East, Jun
+Jun, 2020:2021, 450, -0.2512
+USA East, Jul
+Jul, 2018:2019, 532, NULL
+USA East, Jul
+Jul, 2020:2021, 241, -0.547
+USA East, Aug
+Aug, 2018:2019, 561, NULL
+USA East, Aug
+Aug, 2020:2021, 415, -0.2602
+USA East, Sep
+Sep, 2018:2019, 612, NULL
+USA East, Sep
+Sep, 2020:2021, 389, -0.3644
+USA East, Oct
+Oct, 2018:2019, 559, NULL
+USA East, Oct
+Oct, 2020:2021, 394, -0.2952
+USA East, Nov
+Nov, 2018:2019, 26, NULL
+USA East, Nov
+Nov, 2020:2021, 86, 2.3077
+USA West, Mar
+Mar, 2018:2019, 393, NULL
+USA West, Mar
+Mar, 2020:2021, 387, -0.0153
+USA West, Apr
+Apr, 2018:2019, 426, NULL
+USA West, Apr
+Apr, 2020:2021, 451, 0.0587
+USA West, May
+May, 2018:2019, 368, NULL
+USA West, May
+May, 2020:2021, 422, 0.1467
+USA West, Jun
+Jun, 2018:2019, 344, NULL
+USA West, Jun
+Jun, 2020:2021, 377, 0.0959
+USA West, Jul
+Jul, 2018:2019, 378, NULL
+USA West, Jul
+Jul, 2020:2021, 457, 0.209
+USA West, Aug
+Aug, 2018:2019, 443, NULL
+USA West, Aug
+Aug, 2020:2021, 452, 0.0203
+USA West, Sep
+Sep, 2018:2019, 456, NULL
+USA West, Sep
+Sep, 2020:2021, 399, -0.125
+USA West, Oct
+Oct, 2018:2019, 376, NULL
+USA West, Oct
+Oct, 2020:2021, 401, 0.0665
+USA West, Nov
+Nov, 2018:2019, 478, NULL
+USA West, Nov
+Nov, 2020:2021, 406, -0.1506
+USA West, Dec
+Dec, 2018:2019, 418, NULL
+USA West, Dec
+Dec, 2020:2021, 397, -0.0502
+USA West, Jan
+Jan, 2018:2019, 431, NULL
+USA West, Jan
+Jan, 2020:2021, 255, -0.4084
+USA West, Feb
+Feb, 2018:2019, 379, NULL
+USA West, Feb
+Feb, 2020:2021, 286, -0.2454
+USA West, Mar
+Mar, 2018:2019, 432, NULL
+USA West, Mar
+Mar, 2020:2021, 243, -0.4375
+USA West, Apr
+Apr, 2018:2019, 417, NULL
+USA West, Apr
+Apr, 2020:2021, 252, -0.3957
+USA West, May
+May, 2018:2019, 510, NULL
+USA West, May
+May, 2020:2021, 202, -0.6039
+USA West, Jun
+Jun, 2018:2019, 353, NULL
+USA West, Jun
+Jun, 2020:2021, 194, -0.4504
+USA West, Jul
+Jul, 2018:2019, 405, NULL
+USA West, Jul
+Jul, 2020:2021, 400, -0.0123
+USA West, Aug
+Aug, 2018:2019, 398, NULL
+USA West, Aug
+Aug, 2020:2021, 249, -0.3744
+USA West, Sep
+Sep, 2018:2019, 383, NULL
+USA West, Sep
+Sep, 2020:2021, 236, -0.3838
+USA West, Oct
+Oct, 2018:2019, 459, NULL
+USA West, Oct
+Oct, 2020:2021, 324, -0.2941
+USA West, Nov
+Nov, 2018:2019, 59, NULL
