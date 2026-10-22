@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+DataGroup(YearOfWeek_Date_), Quarter(YearOfWeek_Date_), Sum(Sum_Paid_), Change from previous range of DataGroup(YearOfWeek_Date_): Sum(Sum_Paid_)
+2020, 1st, 59, NULL
+2021, 1st, 35, -24

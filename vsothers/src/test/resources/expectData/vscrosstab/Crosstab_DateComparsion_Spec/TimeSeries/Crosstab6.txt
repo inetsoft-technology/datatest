@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 2)
+Month(Date), Change from previous month of Month(Date): Sum(Paid)
+2021 Jul, 0
+2021 Aug, -1
+2021 Sep, 1
+2021 Oct, -4
+2021 Nov, 7

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+DataGroup(Date), Year(Date), USA East, USA West
+2020, 2020, NULL, NULL
+2021, 2021, 183%, 140%

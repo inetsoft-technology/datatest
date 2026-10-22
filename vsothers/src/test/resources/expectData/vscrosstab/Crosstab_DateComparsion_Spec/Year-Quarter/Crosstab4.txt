@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 4)
+Year(Date), QuarterOfYear(Date), Sum(Paid), Change from previous year of Year(Date): Sum(Paid)
+2019, 1st, 99, -2
+2019, 2nd, 99, 3
+2019, 3rd, 99, 1
+2019, 4th, 105, 3
+2020, 1st, 101, 2
+2020, 2nd, 93, -6
+2020, 3rd, 104, 5
+2020, 4th, 99, -6
+2021, 1st, 70, -31
+2021, 2nd, 61, -32
+2021, 3rd, 69, -35
+2021, 4th, 73, -26

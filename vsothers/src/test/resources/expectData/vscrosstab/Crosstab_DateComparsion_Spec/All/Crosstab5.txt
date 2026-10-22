@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Region, DataGroup(Date), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid)
+USA East, 2021-10, $35.00, NULL
+USA East, 2021-11, $41.00, 6
+USA West, 2021-10, $25.00, NULL
+USA West, 2021-11, $13.00, -12

@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 6)
+Quarter(expdate), MonthOfQuarter(expdate), Sum(Paid), Change from previous quarter of Quarter(expdate): Sum(Paid), Sum(Num), Change from previous quarter of Quarter(expdate): Sum(Num)
+2021 2nd, 1, 4, 0, 48742, -11998
+2021 3rd, 1, 4, 0, 48926, 184
+2021 4th, 1, 2, -2, 24557, -24369

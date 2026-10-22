@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Year(Order Date), Sum(Total), Change from previous year of Year(Order Date): Sum(Total)
+2017, 3122312, NULL
+2019, 3710653, NULL
+2020, 4099986, 389333

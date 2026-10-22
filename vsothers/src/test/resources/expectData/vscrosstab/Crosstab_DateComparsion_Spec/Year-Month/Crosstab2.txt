@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 3)
+Year(Date), MonthOfQuarter(Date), Change from previous year of Year(Date): Sum(Paid)
+2018, Jan, NULL
+2018, 04/2018, NULL
+2018, 07/2018, NULL
+2018, 10/2018, NULL
+2019, 01/2019, -1
+2019, 04/2019, 0
+2019, 07/2019, 1
+2019, 10/2019, 0
+2020, 01/2020, 1
+2020, 04/2020, 0
+2020, 07/2020, -1
+2020, 10/2020, 0

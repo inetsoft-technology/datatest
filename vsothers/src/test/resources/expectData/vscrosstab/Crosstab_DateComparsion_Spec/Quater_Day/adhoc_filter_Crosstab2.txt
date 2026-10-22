@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+QuarterOfWeek(Date), DayOfWeek(Date), Sum(Quantity Purchased), Change from previous quarter of QuarterOfWeek(Date): Sum(Quantity Purchased)
+2021 3rd, 2021-07-11, 24, -7
+2021 3rd, 2021-07-12, 24, 4
+2021 3rd, 2021-07-13, 26, 12
+2021 3rd, 2021-07-14, 7, -25
+2021 3rd, 2021-07-15, 8, -1
+2021 3rd, 2021-07-16, 26, -6
+2021 4th, 2021-10-10, 6, -18
+2021 4th, 2021-10-11, 20, -4
+2021 4th, 2021-10-12, 10, -16
+2021 4th, 2021-10-13, 32, 25

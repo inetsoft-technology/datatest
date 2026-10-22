@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 5)
+Region, Year(Date), QuarterOfYear(Date), Sum(Total), % Change from previous year of Year(Date): Sum(Total)
+USA East, 01/01/2018, 1st, 295470, NULL
+USA East, 01/01/2018, 2nd, 390493, NULL
+USA East, 01/01/2018, 3rd, 433650, NULL
+USA East, 01/01/2018, 4th, 8127, NULL
+USA East, 01/01/2019, 1st, 387975, 31%
+USA East, 01/01/2019, 2nd, 245838, -37%
+USA East, 01/01/2019, 3rd, 1715347, 296%
+USA East, 01/01/2019, 4th, 40731, 401%
+USA East, 01/01/2020, 1st, 221099, -43%
+USA East, 01/01/2020, 2nd, 271474, 10%
+USA East, 01/01/2020, 3rd, 779202, -55%
+USA East, 01/01/2020, 4th, 52299, 28%
+USA West, 01/01/2018, 1st, 165956, NULL
+USA West, 01/01/2018, 2nd, 246564, NULL
+USA West, 01/01/2018, 3rd, 294522, NULL
+USA West, 01/01/2018, 4th, 1736, NULL
+USA West, 01/01/2019, 1st, 511045, 208%
+USA West, 01/01/2019, 2nd, 119593, -51%
+USA West, 01/01/2019, 3rd, 1065142, 262%
+USA West, 01/01/2019, 4th, 35093, 1,921%
+USA West, 01/01/2020, 1st, 147352, -71%
+USA West, 01/01/2020, 2nd, 210616, 76%
+USA West, 01/01/2020, 3rd, 671584, -37%
+USA West, 01/01/2020, 4th, 907, -97%

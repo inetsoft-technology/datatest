@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+Day(Date), % Change from previous quarter of Day(Date): Sum(Paid)
+2020-08-06, 0%
+2020-11-06, 0%
+2021-02-06, 0%
+2021-05-06, -50%
+2021-08-06, 100%
+2021-11-06, 0%

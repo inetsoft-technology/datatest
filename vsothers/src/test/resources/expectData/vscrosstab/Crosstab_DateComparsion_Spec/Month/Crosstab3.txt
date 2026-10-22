@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 5)
+DataGroup(Date), Month(Date), Region, Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid)
+2020, Mar, USA East, 1.00, NULL
+2020, Mar, USA West, 2.00, NULL
+2020, Jan, USA West, 8.00, NULL
+2020, Jan, USA East, 16.00, NULL
+2020, Feb, USA West, 31.00, NULL
+2020, Feb, USA East, 45.00, NULL
+2021, Sep, USA West, 16.00, NULL
+2021, Sep, USA East, 30.00, NULL
+2021, Aug, USA West, 18.00, NULL
+2021, Aug, USA East, 35.00, NULL
+2021, May, USA West, 14.00, 6
+2021, May, USA East, 41.00, 25
+2021, Jun, USA West, 22.00, -9
+2021, Jun, USA East, 34.00, -11
+2021, Jul, USA East, 26.00, 25
+2021, Jul, USA West, 30.00, 28

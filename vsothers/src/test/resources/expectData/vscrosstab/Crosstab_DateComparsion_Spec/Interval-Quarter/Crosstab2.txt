@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Quarter(Date), Change from previous year of Quarter(Date): Sum(Paid), Change from previous year of Quarter(Date): Sum(Discount)
+2019 4th, -2, 0.25
+2020 4th, -7, -0.65
+2021 4th, 8, -0.1

@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+Month(Date), DayOfMonth(Date), % Change from previous month of Month(Date): Sum(Quantity Purchased)
+2021 Oct, 1, 16%
+2021 Oct, 2, 144%
+2021 Oct, 3, 153%
+2021 Nov, 1, 77%
+2021 Nov, 2, -55%
+2021 Nov, 3, -3%

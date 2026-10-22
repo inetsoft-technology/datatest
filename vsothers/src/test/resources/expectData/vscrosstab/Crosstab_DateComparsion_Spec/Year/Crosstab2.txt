@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 6)
+DataGroup(Date), Year(Date), USA East, USA East, USA West, USA West
+NULL, NULL, Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid)
+2018:2019, 2018, 510, NULL, 362, NULL
+2018:2019, 2019, 50, NULL, 52, NULL
+2020:2021, 2020, 514, 4, 348, -14
+2020:2021, 2021, 44, -6, 28, -24
