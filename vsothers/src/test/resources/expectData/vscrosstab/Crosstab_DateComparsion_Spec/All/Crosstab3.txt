@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+DataGroup(Date), Sum(Paid), Change from previous range of DataGroup(Date): Sum(Paid)
+2021-10-01:06, 11, NULL
+2021-10-07:13, 14, 3
+2021-10-14:20, 14, 0

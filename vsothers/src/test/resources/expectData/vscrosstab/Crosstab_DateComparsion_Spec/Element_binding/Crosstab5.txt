@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Year(YearOfWeek_Date_), DayOfYear(YearOfWeek_Date_), Sum(Change from previous year of YearOfWeek_Date_: Sum_Paid_), Change from previous year of Year(YearOfWeek_Date_): Sum(Change from previous year of YearOfWeek_Date_: Sum_Paid_)
+2019, 2019-01-01, 13, NULL
+2020, 2020-01-01, 9, -4
+2021, 2021-01-01, -26, -35

@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 4)
+Year(Date), MonthOfQuarter(Date), Sum(Paid), Change from previous year of Year(Date): Sum(Paid)
+2019, Jan, 79, -5
+2019, Feb, 23, 3
+2019, Apr, 79, 1
+2019, May, 23, 2
+2019, Jul, 79, -2
+2019, Aug, 23, 3
+2019, Oct, 88, 5
+2019, Nov, 19, -3
+2020, Jan, 83, 4
+2020, Feb, 21, -2
+2020, Apr, 76, -3
+2020, May, 20, -3
+2020, Jul, 84, 5
+2020, Aug, 23, 0
+2020, Oct, 83, -5
+2020, Nov, 19, 0
+2021, Jan, 57, -26
+2021, Feb, 15, -6
+2021, Apr, 49, -27
+2021, May, 14, -6
+2021, Jul, 56, -28
+2021, Aug, 15, -8
+2021, Oct, 60, -23
+2021, Nov, 15, -4

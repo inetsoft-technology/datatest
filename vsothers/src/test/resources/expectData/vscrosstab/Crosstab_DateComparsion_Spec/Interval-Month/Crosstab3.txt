@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 2)
+Month(expdate), Change from previous quarter of Month(expdate): Sum(Paid)
+2020 Nov, 0
+2021 Feb, 0
+2021 May, 1
+2021 Aug, -1
+2021 Nov, 4

@@ -166,14 +166,22 @@ class ViewsheetTest {
          }
       }
       catch(Exception ex) {
-         new Exception("==========execute viewsheet failed:===========", ex).printStackTrace();
+         onExportFailure("==========execute viewsheet failed:===========", ex)
       }
+   }
+
+   /**
+    * Called when an export step throws. The default only prints the stack trace, subclasses
+    * can rethrow to fail the test.
+    */
+   protected void onExportFailure(String message, Exception ex) {
+      new Exception(message, ex).printStackTrace()
    }
 
    /**
     * getVSChart dataset. code from VSChartShowDataController.java, see applyChanges() function
     */
-   private DataSet getVSChartDataSet(VGraphPair vgraphpair) {
+   protected DataSet getVSChartDataSet(VGraphPair vgraphpair) {
       DataSet data = vgraphpair.getData()
       DataSet filter = data
       while(true) {
@@ -216,7 +224,7 @@ class ViewsheetTest {
     * sort dataset, make sure it show same with show data.
     * see line 255 of VSChartShowDataController.java
     */
-   private DataSet sortVSDataSet(DataSet vsDataSet) {
+   protected DataSet sortVSDataSet(DataSet vsDataSet) {
       DataSet sorted
       if(vsDataSet instanceof FullProjectedDataSet) {
          sorted = new FullProjectedDataSet(getSortedSubdataSets((FullProjectedDataSet) vsDataSet))
@@ -233,7 +241,7 @@ class ViewsheetTest {
       return sorted
    }
 
-   private List<AbstractDataSet> getSortedSubdataSets(FullProjectedDataSet dset) {
+   protected List<AbstractDataSet> getSortedSubdataSets(FullProjectedDataSet dset) {
       List<AbstractDataSet> subDataSets = new ArrayList<>()
 
       for(AbstractDataSet subSet : dset.getSubDataSets()) {
@@ -284,7 +292,7 @@ class ViewsheetTest {
                  bks, false, false, null, new ExportResponse(out), principal)
       }
       catch(Exception ex) {
-         new Exception("==========export PNG failed:===========", ex).printStackTrace();
+         onExportFailure("==========export PNG failed:===========", ex)
       }
       finally {
          out.close()
@@ -312,7 +320,7 @@ class ViewsheetTest {
                  bks, false, false, null, new ExportResponse(out), principal)
       }
       catch(Exception ex) {
-         new Exception("==========export PDF failed:===========", ex).printStackTrace();
+         onExportFailure("==========export PDF failed:===========", ex)
       }
       finally {
          out.close()

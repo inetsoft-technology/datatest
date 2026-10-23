@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+Day(Date), Name, USA West, USA East
+2021-11-06, Fancy Menus, NULL, 1
+2021-11-06, Xconnect Server, 1, NULL
+2021-11-07, Fancy Menus, NULL, 1
+2021-11-07, Xconnect Server, NULL, 1
+2021-11-08, Fancy Menus, 1, NULL
+2021-11-08, Xconnect Server, 1, NULL

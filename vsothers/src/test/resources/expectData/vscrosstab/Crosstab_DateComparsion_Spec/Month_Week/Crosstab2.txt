@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+MonthOfWeek(Date), WeekOfMonth(Date), Sum(Paid), % Change from previous month of MonthOfWeek(Date): Sum(Paid)
+2021 Aug, 1, 9, 125%
+2021 Sep, 1, 1, -89%
+2021 Oct, 1, 5, 400%

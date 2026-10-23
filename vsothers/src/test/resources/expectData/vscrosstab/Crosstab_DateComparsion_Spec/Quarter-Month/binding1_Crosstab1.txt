@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+Quarter(dateRange), MonthOfQuarter(dateRange), % Change from previous quarter of Quarter(dateRange): Sum(Paid)
+2021 2nd, 1, 17%
+2021 3rd, 1, 10%
+2021 4th, 1, 7%

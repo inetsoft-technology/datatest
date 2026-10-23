@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+Week(Date), Sum(Paid), Change from previous year of Week(Date): Sum(Paid)
+2020-11-01, 5, -1
+2021-11-07, 4, -1

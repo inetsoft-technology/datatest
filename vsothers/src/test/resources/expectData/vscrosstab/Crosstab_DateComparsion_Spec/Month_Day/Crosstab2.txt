@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+MonthOfWeek(Date), DayOfWeek(Date), Change from previous month of MonthOfWeek(Date): Sum(Paid)
+2021 Oct, 2021-10-05, 1
+2021 Nov, 2021-11-09, 0

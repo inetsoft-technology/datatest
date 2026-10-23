@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 5)
+NULL, 2018-05-06, 2019-05-06, 2020-05-06, 2021-05-06
+CalcField2, 36, 17, 29, 35
+Change from previous year of Day(CalcField1): CalcField2, NULL, -19, 12, 6

@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+Region, Week(Date), Sum(Paid)
+USA East, 2021-09-12, 3
+USA East, 2021-09-19, 2
+USA East, 2021-09-26, 3
+USA East, 2021-10-31, 1
+USA East, 2021-11-07, 4
+USA West, 2021-09-12, 3
+USA West, 2021-09-19, 1
+USA West, 2021-10-31, 2

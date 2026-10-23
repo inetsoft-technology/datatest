@@ -1,0 +1,66 @@
+The data size(row x col) is:(33 x 5)
+Region, Quarter(Date), DataGroup(Date), Sum(Quantity Purchased), % Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+USA East, 1st
+1st, 2018:2019, 588, NULL
+USA East, 1st
+1st, 2020:2021, 691, 0.1752
+USA East, 2nd
+2nd, 2018:2019, 1517, NULL
+USA East, 2nd
+2nd, 2020:2021, 1655, 0.091
+USA East, 3rd
+3rd, 2018:2019, 1586, NULL
+USA East, 3rd
+3rd, 2020:2021, 1512, -0.0467
+USA East, 4th
+4th, 2018:2019, 1722, NULL
+USA East, 4th
+4th, 2020:2021, 1670, -0.0302
+USA East, 1st
+1st, 2018:2019, 1513, NULL
+USA East, 1st
+1st, 2020:2021, 928, -0.3866
+USA East, 2nd
+2nd, 2018:2019, 1652, NULL
+USA East, 2nd
+2nd, 2020:2021, 1304, -0.2107
+USA East, 3rd
+3rd, 2018:2019, 1705, NULL
+USA East, 3rd
+3rd, 2020:2021, 1045, -0.3871
+USA East, 4th
+4th, 2018:2019, 585, NULL
+USA East, 4th
+4th, 2020:2021, 480, -0.1795
+USA West, 1st
+1st, 2018:2019, 393, NULL
+USA West, 1st
+1st, 2020:2021, 387, -0.0153
+USA West, 2nd
+2nd, 2018:2019, 1138, NULL
+USA West, 2nd
+2nd, 2020:2021, 1250, 0.0984
+USA West, 3rd
+3rd, 2018:2019, 1277, NULL
+USA West, 3rd
+3rd, 2020:2021, 1308, 0.0243
+USA West, 4th
+4th, 2018:2019, 1272, NULL
+USA West, 4th
+4th, 2020:2021, 1204, -0.0535
+USA West, 1st
+1st, 2018:2019, 1242, NULL
+USA West, 1st
+1st, 2020:2021, 784, -0.3688
+USA West, 2nd
+2nd, 2018:2019, 1280, NULL
+USA West, 2nd
+2nd, 2020:2021, 648, -0.4938
+USA West, 3rd
+3rd, 2018:2019, 1186, NULL
+USA West, 3rd
+3rd, 2020:2021, 885, -0.2538
+USA West, 4th
+4th, 2018:2019, 518, NULL
+USA West, 4th
+4th, 2020:2021, 324, -0.3745

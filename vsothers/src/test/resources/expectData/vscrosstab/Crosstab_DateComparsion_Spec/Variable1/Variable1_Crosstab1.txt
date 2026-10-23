@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 4)
+Quarter(Date), MonthOfQuarter(Date), Sum(Paid), Change from previous quarter of Quarter(Date): Sum(Paid)
+2021 1st, 1, 16, -5
+2021 1st, 2, 15, -4
+2021 1st, 3, 16, -5
+2021 2nd, 1, 12, -4
+2021 2nd, 2, 14, -1
+2021 2nd, 3, 14, -2
+2021 3rd, 1, 13, 1
+2021 3rd, 2, 15, 1
+2021 3rd, 3, 11, -3
+2021 4th, 1, 15, 2
+2021 4th, 2, 15, 0

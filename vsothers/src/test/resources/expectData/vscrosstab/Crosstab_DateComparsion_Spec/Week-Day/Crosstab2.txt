@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 4)
+Week(Date), DayOfWeek(Date), Sum(Paid), % Change from previous week of Week(Date): Sum(Paid)
+2021-07-25, Sun, 1, -67%
+2021-08-08, Mon, 1, 0%
+2021-08-15, Mon, 2, 100%
+2021-08-22, Sun, 2, 0%
+2021-08-29, Mon, 1, 0%
+2021-09-05, Mon, 1, 0%
+2021-09-12, Sun, 2, 0%
+2021-09-12, Mon, 1, 0%
+2021-09-19, Sun, 1, -50%
+2021-09-26, Sun, 1, 0%
+2021-10-03, Mon, 1, 0%
+2021-10-10, Sun, 1, 0%
+2021-10-10, Mon, 1, 0%
+2021-10-24, Mon, 1, 0%

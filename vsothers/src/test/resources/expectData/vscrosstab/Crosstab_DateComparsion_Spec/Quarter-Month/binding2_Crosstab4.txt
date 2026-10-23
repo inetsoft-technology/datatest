@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+Quarter(Calcdate), MonthOfQuarter(Calcdate), CalcField1, % Change from previous quarter of Quarter(Calcdate): CalcField1
+2020 4th, 1, 1, -67%
+2020 4th, 2, 2, 0%
+2021 1st, 1, 0, -100%
+2021 1st, 2, 2, 0%
+2021 2nd, 1, 2, NULL
+2021 2nd, 2, 2, 0%
+2021 3rd, 1, 2, 0%
+2021 3rd, 2, 1, -50%

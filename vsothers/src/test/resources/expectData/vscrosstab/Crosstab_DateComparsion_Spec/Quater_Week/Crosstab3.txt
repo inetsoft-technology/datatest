@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 4)
+QuarterOfWeek(Date), WeekOfMonth(Date), Sum(Paid), Change from previous quarter of QuarterOfWeek(Date): Sum(Paid)
+2021 2nd, 2021-05-02, 2, NULL
+2021 3rd, 2021-08-01, 1, -1

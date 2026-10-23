@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+Year(Date), Sum(Paid), % Change from previous year of Year(Date): Sum(Paid)
+2019, 118, -5%
+2020, 93, -21%

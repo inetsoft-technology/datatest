@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 4)
+Region, DataGroup(Date), Sum(Quantity Purchased), % Change from previous range of DataGroup(Date): Sum(Quantity Purchased)
+USA East, 2019:2020, 155, NULL
+USA East, 2021:2021, 97, -0.3742
+USA West, 2019:2020, 77, NULL
+USA West, 2021:2021, 20, -0.7403

@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+DataGroup(Date), Sum(Total), Change from previous range of DataGroup(Date): Sum(Total)
+2018, 1828990, NULL
+2019, 4085671, 2256681
+2020, 2347926, -1737745

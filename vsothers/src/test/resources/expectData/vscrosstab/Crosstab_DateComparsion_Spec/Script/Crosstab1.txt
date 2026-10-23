@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 4)
+Year(Order Date), MonthOfYear(Order Date), Total, Change from previous year of Year(Order Date): Total
+2020, Mar, 59155, NULL
+2020, Apr, 61092, NULL
+2020, May, 36610, NULL
+2020, Jun, 24139, NULL
+2020, Jul, 53724, NULL
+2020, Aug, 525, NULL
+2020, Sep, 5657, NULL
+2020, Oct, 2967, NULL
+2020, Nov, 2598, NULL
+2021, Jan, 34632, NULL
+2021, Feb, 37201, NULL
+2021, Mar, 59685, 530
+2021, Apr, 9911, -51181
+2021, May, 27900, -8710
+2021, Jun, 49, -24090
+2021, Jul, 33082, -20642
+2021, Aug, 59268, 58743
+2021, Sep, 1905, -3752
+2021, Oct, 47028, 44061
+2021, Nov, 9361, 6763

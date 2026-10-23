@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+Month(Date), Sum(Paid), % Change from previous month of Month(Date): Sum(Paid)
+2021 Mar, 2, -33%
+2021 Apr, 4, 100%
+2021 May, 4, 0%
+2021 Jun, 4, 0%
+2021 Jul, 4, 0%
+2021 Aug, 3, -25%
+2021 Sep, 4, 33%
+2021 Oct, NULL, -100%
+2021 Nov, 7, NULL

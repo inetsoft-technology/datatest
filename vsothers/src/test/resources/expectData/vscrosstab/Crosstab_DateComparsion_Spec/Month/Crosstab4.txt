@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+group, Month, % Change from previous range of DataGroup(Date): Sum(Paid)
+2020-02:04, Feb, NULL
+2020-02:04, Mar, NULL
+2020-02:04, Apr, NULL
+2020-03:08, Apr, -83%
+2020-03:08, May, 31%
+2020-03:08, Jun, NULL
+2020-03:08, Jul, NULL
+2020-03:08, Aug, NULL

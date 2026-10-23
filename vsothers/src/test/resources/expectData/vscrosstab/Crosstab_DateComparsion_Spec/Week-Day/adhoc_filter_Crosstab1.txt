@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 4)
+Week(Date), DayOfWeek(Date), Sum(Paid), Change from previous week of Week(Date): Sum(Paid)
+Oct. 3, 2021, Mon, 1, NULL
+Oct. 3, 2021, Tue, 1, 0
+Oct. 3, 2021, Fri, 1, NULL
+Oct. 10, 2021, Sun, 1, NULL
+Oct. 10, 2021, Mon, 1, 0
+Oct. 10, 2021, Wed, 1, NULL
+Oct. 10, 2021, Sat, 1, NULL
+Oct. 17, 2021, Wed, 1, 0
+Oct. 17, 2021, Thu, 0, NULL
+Oct. 24, 2021, Mon, 1, NULL
+Oct. 24, 2021, Tue, 1, NULL
+Oct. 24, 2021, Fri, 1, NULL
+Oct. 24, 2021, Sat, 1, NULL
+Oct. 31, 2021, Wed, 1, NULL
+Oct. 31, 2021, Thu, 1, NULL
+Oct. 31, 2021, Fri, 1, 0
+Nov. 7, 2021, Mon, 4, NULL

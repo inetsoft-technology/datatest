@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+DataGroup(State), Month(Date), Sum(Paid), Change from previous month of Month(Date): Sum(Paid)
+AGroup, 2021 Sep, 2, -2
+AGroup, 2021 Oct, 3, 1
+AZ, 2021 Sep, 1, NULL
+AZ, 2021 Oct, 2, 1
+MA, 2021 Sep, 2, NULL
+MD, 2021 Sep, 3, 2
+MD, 2021 Oct, 1, -2
+NJ, 2021 Sep, 3, 1
+NJ, 2021 Oct, 2, -1
+NV, 2021 Sep, 1, 0
+NY, 2021 Sep, 2, 1
+NY, 2021 Oct, 2, 0
+PA, 2021 Oct, 0, NULL
+TX, 2021 Sep, 3, 2
+TX, 2021 Oct, 2, -1
+WA, 2021 Sep, 0, NULL

@@ -1,5 +1,6 @@
 package inetsoft.test.viewsheet.cases.vscrosstab
 
+import inetsoft.test.modules.DcViewsheetTest
 import inetsoft.test.modules.ViewsheetTest
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -34,10 +35,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Interval-Year'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Year', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Year', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -46,10 +49,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Interval-Quarter'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Quarter', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Quarter', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -60,12 +65,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Interval-Month'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Month', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Month', caseName)
+      vstest.executeVS(null, ['(Home)', 'NamedGroup'] as String[])
       vstest.exportAsPNG(['(Home)', 'NamedGroup'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -76,10 +83,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Interval-Week'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Week', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Week', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -89,10 +98,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Interval-Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Interval-Day', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -101,12 +112,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Year-Quarter'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Quarter', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Quarter', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -116,12 +129,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Year-Month'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Month', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Month', caseName)
+      vstest.executeVS(null, ['(Home)', 'annotation'] as String[])
       vstest.exportAsPNG(['(Home)','annotation'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -132,12 +147,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Year-Week'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Week', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Week', caseName)
+      vstest.executeVS(null, ['(Home)', 'sort'] as String[])
       vstest.exportAsPNG(['(Home)','sort'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -147,12 +164,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Year-Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Year-Day', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -162,12 +181,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Quarter-Month'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quarter-Month', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quarter-Month', caseName)
+      vstest.executeVS(null, ['(Home)', 'binding1', 'binding2'] as String[])
       vstest.exportAsPNG(['(Home)','binding1','binding2'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -177,12 +198,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Quater_Week'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quater_Week', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quater_Week', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+          vstest.compareData(null)
           vstest.compareImage(null)
         }
    }
@@ -192,12 +215,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Quater_Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quater_Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Quater_Day', caseName)
+      vstest.executeVS(null, ['(Home)', 'adhoc_filter'] as String[])
       vstest.exportAsPNG(['(Home)','adhoc_filter'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -207,12 +232,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Month_Week'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Month_Week', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Month_Week', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -222,12 +249,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Month_Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Month_Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Month_Day', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -237,12 +266,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Week-Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Week-Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Week-Day', caseName)
+      vstest.executeVS(null, ['(Home)', 'adhoc_filter'] as String[])
       vstest.exportAsPNG(['(Home)', 'adhoc_filter'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -252,12 +283,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'All'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/All', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/All', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -267,12 +300,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Year'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Year', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Year', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -282,12 +317,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Quarter'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Quarter', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Quarter', caseName)
+      vstest.executeVS(null, ['(Home)', 'aggregate_sort'] as String[])
       vstest.exportAsPNG(['(Home)', 'aggregate_sort'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -297,12 +334,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Month'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Month', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Month', caseName)
+      vstest.executeVS(null, ['(Home)', 'adhoc_filter'] as String[])
       vstest.exportAsPNG(['(Home)', 'adhoc_filter'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -312,12 +351,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Week'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Week', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Week', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -327,12 +368,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Day'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Day', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Custom/Day', caseName)
+      vstest.executeVS(null, ['(Home)', 'sort1'] as String[])
       vstest.exportAsPNG(['(Home)', 'sort1'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -342,11 +385,13 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Variable1'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Variable1', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Variable1', caseName)
+      vstest.executeVS(null, ['(Home)', 'Variable1', 'Variable2'] as String[])
       vstest.exportAsPNG(['(Home)','Variable1','Variable2'] as String[], null, false, false)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -356,11 +401,13 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Variable2'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Variable2', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Variable2', caseName)
+      vstest.executeVS(null, ['(Home)', 'Quarter', 'sort'] as String[])
       vstest.exportAsPNG(['(Home)','Quarter','sort'] as String[], null, false, false)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -370,12 +417,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Element_binding'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Element_binding', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Element_binding', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
@@ -385,10 +434,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Script'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Script', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Script', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -397,10 +448,12 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'TimeSeries'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/TimeSeries', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/TimeSeries', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -409,11 +462,13 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'EmbeddedVS'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/EmbeddedVS', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/EmbeddedVS', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
+      vstest.compareData(null)
       vstest.compareImage(null)
    }
 
@@ -422,12 +477,14 @@ class Crosstab_DateComparsion_Spec extends Specification {
     */
    def 'Annotation'() {
       caseName = specificationContext.currentIteration.name
-      vstest = new ViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Annotation', caseName)
+      vstest = new DcViewsheetTest('1^128^__NULL__^Calculate/DateComparison/Special/Annotation', caseName)
+      vstest.executeVS(null, ['(Home)', 'annotation'] as String[])
       vstest.exportAsPNG(['(Home)','annotation'] as String[], null, false, false)
       vstest.exportAsPDF(null, null)
 
       expect:
       verifyAll{
+         vstest.compareData(null)
          vstest.compareImage(null)
       }
    }
