@@ -310,7 +310,7 @@ class ViewsheetTest {
    def exportAsPDF(Map<String, String[]> params, String[] bks) {
       initVS(params)
       if(bks == null) {
-         bks = ['Home'] as String[]
+         bks = ['(Home)'] as String[]
       }
       File outFile = createExportFileByCase(null, null, '.pdf')
       OutputStream out = new FileOutputStream(outFile)
