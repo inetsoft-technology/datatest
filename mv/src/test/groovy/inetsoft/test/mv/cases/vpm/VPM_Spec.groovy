@@ -44,6 +44,9 @@ class VPM_Spec extends Specification {
       mvtest?.removeMV()
    }
 
+   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
+   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
+   //the MV keeps only the time of day (1970-01-01).
    def 'condition'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/condition'
@@ -65,6 +68,7 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/condition in submv'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user0)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user0)
 
@@ -72,9 +76,13 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
+   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
+   //the MV keeps only the time of day (1970-01-01).
    def 'group-group'() {
       given:
       def user5 = MVTest.createPrincipal('user5', ['Everyone', 'role2'] as
@@ -95,6 +103,9 @@ class VPM_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
+   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
+   //the MV keeps only the time of day (1970-01-01).
    def 'group-subgroup'() {
       given:
       def user6 = MVTest.createPrincipal('user6', ['Everyone'] as
@@ -116,6 +127,9 @@ class VPM_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
+   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
+   //the MV keeps only the time of day (1970-01-01).
    def 'group-user'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/group-user'
@@ -138,6 +152,7 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/hiddencolumn'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, true, user0)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, true, user0)
 
@@ -145,6 +160,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -153,6 +169,8 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/hiddencolumn in submv'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, true, user0)
+      mvtest.executeVSWithoutMV(null, null, false, true, admin)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, true, user0)
       mvtest.executeVS(null, null, false, true, admin)
@@ -161,6 +179,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products2|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -173,6 +192,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/role-group'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user4)
+      mvtest.executeVSWithoutMV(null, null, false, false, user5)
       mvtest.createMV(true, true)
       mvtest.executeVS(null, null, false, false, user1)
       mvtest.executeVS(null, null, false, false, user4)
@@ -182,6 +204,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -197,6 +220,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/role-role'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user3)
+      mvtest.executeVSWithoutMV(null, null, false, false, user4)
+      mvtest.executeVSWithoutMV(null, null, false, false, user8)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user3)
       mvtest.executeVS(null, null, false, false, user4)
@@ -206,6 +232,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -218,6 +245,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/role-subgroup'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user6)
+      mvtest.executeVSWithoutMV(null, null, false, false, user7)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user1)
       mvtest.executeVS(null, null, false, false, user6)
@@ -227,6 +257,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -237,6 +268,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/role-user'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, admin)
+      mvtest.executeVSWithoutMV(null, null, false, false, user2)
+      mvtest.executeVSWithoutMV(null, null, false, false, user3)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, admin)
       mvtest.executeVS(null, null, false, false, user2)
@@ -246,6 +280,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -254,6 +289,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/user-user'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, admin)
+      mvtest.executeVSWithoutMV(null, null, false, false, user0)
+      mvtest.executeVSWithoutMV(null, null, false, false, user2)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, admin)
       mvtest.executeVS(null, null, false, false, user0)
@@ -263,6 +301,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -271,6 +310,8 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/user-aliastable1'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, true, user1)
+      mvtest.executeVSWithoutMV(null, null, false, true, user2)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, true, user1)
       mvtest.executeVS(null, null, false, true, user2)
@@ -279,6 +320,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['a1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -287,6 +329,8 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/user-aliastable2'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user2)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user1)
       mvtest.executeVS(null, null, false, false, user2)
@@ -295,6 +339,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['b1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

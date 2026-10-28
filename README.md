@@ -80,9 +80,6 @@ The following modules have only one test mode and can be executed directly:
 # CSS tests
 .\mvnw.cmd test -pl css
 
-# MV tests
-.\mvnw.cmd test -pl mv
-
 # OLAP tests
 .\mvnw.cmd test -pl olap
 
@@ -99,7 +96,7 @@ The following modules have only one test mode and can be executed directly:
 .\mvnw.cmd test -pl vsscript
 ```
 
-#### 2. Modules with Multiple Test Modes (vsothers)
+#### 2. Modules with Multiple Test Modes (vsothers, mv)
 
 The `vsothers` module contains multiple test modes. Use the `-P` parameter to specify the profile:
 
@@ -119,6 +116,30 @@ The `vsothers` module contains multiple test modes. Use the `-P` parameter to sp
 # OtherAssembly tests
 .\mvnw.cmd test -pl vsothers -Potherassembly
 ```
+
+The `mv` module also has one profile per test mode. Without `-P` only `topmv` runs.
+
+```powershell
+.\mvnw.cmd test -pl mv -Ptopmv
+.\mvnw.cmd test -pl mv -Psubmv
+.\mvnw.cmd test -pl mv -Pincrementalmv
+.\mvnw.cmd test -pl mv -Pvpm
+.\mvnw.cmd test -pl mv -Pothers
+```
+
+The profiles share the MV storage under `mv/target`. When running several of them one after another locally, delete `mv/target` before each one, or rows left by the previous profile make results differ.
+
+`-Dmv.compare` selects how the MV results are checked:
+
+- `golden` (default): compare with `expectData`.
+- `nomv`: in the cases that call `MVTest.executeVSWithoutMV` (in `topmv`, `submv`, `vpm` and `others`), run the viewsheet before its MV is created and compare every exported file with the result read from the MV (`MVTest.compareWithoutMV`), instead of `expectData`. The files without MV end with `__NoMV.txt`. The other cases, and the files of an incremental update, are still compared with `expectData`.
+- `both`: both checks.
+
+```powershell
+.\mvnw.cmd test -pl mv -Ptopmv "-Dmv.compare=nomv"
+```
+
+`nomv` only shows that the MV does not change the result. A bug shared by the MV and the database paths gives the same wrong result twice, and only `expectData` finds it. It is not used in `incrementalmv`: MV delete conditions and incremental updates make the MV hold different rows than the database on purpose. Incremental results are always compared with `expectData`.
 
 #### 3. Date Comparison Specs: Strict Checks and Updating Baselines
 

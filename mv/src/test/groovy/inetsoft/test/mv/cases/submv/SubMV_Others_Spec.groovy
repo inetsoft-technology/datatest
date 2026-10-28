@@ -2,6 +2,7 @@ package inetsoft.test.mv.cases.submv
 
 import inetsoft.test.mv.MVTest
 import spock.lang.Ignore
+import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.IgnoreRest
@@ -42,6 +43,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/mergejoin2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -49,6 +51,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -56,6 +59,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/postcondition'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -63,6 +67,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -70,6 +75,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/aggregate col is expression2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -77,6 +83,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -84,6 +91,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/aggregate second col is expression2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -91,6 +99,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -98,6 +107,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/aggregate formula'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -105,6 +115,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -112,6 +123,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/hidecolumn2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -119,6 +131,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -126,6 +139,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/aggregate-twocolumnsformula'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -133,6 +147,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -140,6 +155,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/calc field selection in child'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -147,6 +163,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2_O|TopMV', 'Query2_O|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -154,6 +171,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/child has percentage'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -161,6 +179,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -168,6 +187,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/crosstab'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -177,6 +197,7 @@ class SubMV_Others_Spec extends Specification {
                                             'ORDERS1|SubMV', 'ORDERS1|SubMV',
                                             'ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -184,6 +205,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/full outer join'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -191,6 +213,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories1|SubMV', 'customers1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -198,6 +221,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/hideintop'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -205,6 +229,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ST_Query1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -212,6 +237,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/hide-notgroupnotaggregate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -219,6 +245,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -226,6 +253,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/intersect-selection on right node'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -233,6 +261,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['RETURNS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -240,6 +269,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/join col as aggregate col 1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -247,6 +277,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -254,6 +285,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/join col as aggregate col 2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -261,6 +293,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -268,6 +301,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/join col as aggregate col 3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -275,6 +309,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -282,6 +317,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/join col as aggregate col 4'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -289,6 +325,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -296,6 +333,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/join-selection col not public'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -303,6 +341,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -310,6 +349,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/left outer join-select both'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -317,6 +357,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -324,6 +365,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/left outer join-select right'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -331,6 +373,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -338,6 +381,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/minus-selection on right node'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -345,6 +389,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'RETURNS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
    //Bug #38203
@@ -352,6 +397,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/namegroup-select on group col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -359,6 +405,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -366,6 +413,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/namegroup-select on other col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -373,6 +421,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -381,6 +430,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/percentage-select on group col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -388,6 +438,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -396,6 +447,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/percentage-select on other col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -403,6 +455,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -410,6 +463,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/ranking'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -417,6 +471,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -424,6 +479,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/ranking-aggregate1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -431,6 +487,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -438,6 +495,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/ranking-aggregate2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -445,6 +503,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -453,6 +512,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/right outer join-select both'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -460,6 +520,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -468,6 +529,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/right outer join-select left'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -475,6 +537,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'CUSTOMERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -482,6 +545,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/rotate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -489,6 +553,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -496,6 +561,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/select on aggregate used col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -503,6 +569,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -512,6 +579,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/top-aggregate-maxrow'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -519,6 +587,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -526,6 +595,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/top has percentage'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -533,6 +603,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -540,6 +611,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/top-plain-maxrow'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -547,6 +619,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query21|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -554,6 +627,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/unionall2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -561,6 +635,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS2|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -568,6 +643,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/union-select in both childs'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -575,6 +651,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -582,6 +659,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/union-select in one child'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -589,6 +667,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -596,6 +675,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/variable col is hidden'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -603,21 +683,27 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //Expected data was generated from the MV result, which ignores the condition ORDER_ID <> ?aaa
+   //(Others 1944, without MV 1911) (#79482). Update it after the fix.
+   @Issue('https://issues.inetsoft.com/issues/79482')
    def 'variable col is name grouped'() {
       String asset_id = '1^128^__NULL__^submv/variable col is name grouped'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['aaa': ['12001', '12002', '12003'] as String[]]
+      mvtest.executeVSWithoutMV(params, null, false, false, admin)
+      mvtest.createMV(false)
       mvtest.executeVS(params, null, false, false, admin)
 
       expect:
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -625,6 +711,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/variable condition on aggregate col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -632,6 +719,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Detail_ORDERS1_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -640,6 +728,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/variable condition on aggregate col 2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -647,6 +736,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Detail_Copy ofORDERS11_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -655,6 +745,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/unionsub'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -662,6 +753,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -670,6 +762,7 @@ class SubMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^submv/parameter in calc field'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -677,6 +770,7 @@ class SubMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

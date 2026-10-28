@@ -45,6 +45,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection on crosstab2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -52,6 +53,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -60,6 +62,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/aggregate table as subquery'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -67,6 +70,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDER_DETAILS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -75,6 +79,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection nested'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -82,6 +87,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -90,6 +96,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection nested1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -97,6 +104,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -105,6 +113,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection nested2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -112,6 +121,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ORDERS1|TopMV', 'ST_Query2_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -120,6 +130,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/child has maxrow'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -127,6 +138,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -135,6 +147,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/base is embedded setted name group'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -142,6 +155,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -150,6 +164,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/select on aggregate col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -157,6 +172,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -165,6 +181,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/variable col is not public'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -172,6 +189,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -180,6 +198,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/vs assembly-starting with'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -187,23 +206,27 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   @Issue('http://173.220.179.100/issues/44221')
+   //Expected data was generated from the MV result, which misses 2 rows (#79417). Update it after the fix.
+   @Issue(['http://173.220.179.100/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
    def 'v-contains'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-contains'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['product_name': ['a'] as String[]]
+      mvtest.executeVSWithoutMV(params, null, false, false)
+      mvtest.createMV(false)
       mvtest.executeVS(params, null, false, false)
 
       expect:
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['PRODUCTS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -212,14 +235,16 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/v-starting with'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['product_name': ['F'] as String[]]
+      mvtest.executeVSWithoutMV(params, null, false, false)
+      mvtest.createMV(false)
       mvtest.executeVS(params, null, false, false)
 
       expect:
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['PRODUCTS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -228,6 +253,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/vs assembly-contains'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -235,6 +261,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['categories|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -244,6 +271,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/vs_donut'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -251,6 +279,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -261,6 +290,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/chart_discrete'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, false, admin)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, false, admin)
 
@@ -268,6 +298,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -277,6 +308,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/ganttchart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -284,6 +316,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -293,6 +326,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/treechart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -300,6 +334,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -309,6 +344,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parameter prompts is false'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -316,6 +352,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Actions Raw|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -325,6 +362,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/interval chart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -332,6 +370,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query2|TopMV', 'ORDERS1|TopMV', 'CUSTOMERS1|TopMV', 'ASSOCIATION_Query1|TopMV', 'ASSOCIATION_CUSTOMERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -341,6 +380,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/value as color'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -348,6 +388,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['upload|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -358,6 +399,7 @@ class TopMV_Others_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/date range and number range'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -365,6 +407,7 @@ class TopMV_Others_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

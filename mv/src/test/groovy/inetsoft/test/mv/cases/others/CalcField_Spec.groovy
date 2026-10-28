@@ -44,6 +44,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotUsed_Assembly'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -51,6 +52,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -59,6 +61,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Output'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -66,6 +69,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -74,6 +78,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Chart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -81,6 +86,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -89,6 +95,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Crosstab'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -96,6 +103,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -104,6 +112,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Table'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -111,6 +120,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -119,6 +129,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_SelectionTree'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -126,6 +137,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -135,6 +147,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Calendar'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -142,6 +155,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -150,6 +164,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_RangeSlider'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -157,6 +172,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -165,6 +181,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Text'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -174,6 +191,7 @@ class CalcField_Spec extends Specification {
          // sub mv is picked while the query runs) can not be seen; confirm and switch to getMVHitInfo()
          mvtest.getMVDefInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -182,6 +200,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Chart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -189,6 +208,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -197,6 +217,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Crosstab'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -204,6 +225,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -212,6 +234,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Table'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -219,9 +242,12 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: the selection tree shows a year as 2003-01-01 00:00:00 with MV
+   //and as 2003 without MV.
    def 'NotPublic_SelectionTree'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_SelectionTree'
@@ -242,6 +268,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Calendar'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -249,6 +276,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -257,6 +285,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_RangeSlider'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -264,6 +293,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -272,6 +302,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Brush1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -279,6 +310,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -287,6 +319,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Brush2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -294,6 +327,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -302,6 +336,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_NameGroup1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -309,6 +344,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -317,6 +353,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_NameGroup2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -324,6 +361,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -332,6 +370,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_NormalGroup'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -339,6 +378,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -347,6 +387,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Zoom1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -354,6 +395,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -362,6 +404,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Public_Zoom2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -369,6 +412,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -377,6 +421,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NameGroup1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -384,6 +429,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -392,6 +438,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NameGroup2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -399,6 +446,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -407,6 +455,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_NormalGroup'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -414,6 +463,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -422,6 +472,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/NotPublic_Zoom1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -429,6 +480,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -437,6 +489,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Model'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -444,9 +497,12 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: Average keeps the integer type with MV (formula.avg.keep.type),
+   //so 17 with MV is 17.5 without MV (Bug #54404).
    def 'Aggregate_Public_Query'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Query'
@@ -467,6 +523,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Table'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -474,9 +531,12 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
+   //fields are computed from; the shared columns are the same.
    def 'Aggregate_Public_Brush1'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Public_Brush1'
@@ -492,6 +552,8 @@ class CalcField_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
+   //fields are computed from; the shared columns are the same.
    def 'Aggregate_NotPublic_NameGroup'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_NotPublic_NameGroup'
@@ -507,6 +569,8 @@ class CalcField_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
+   //fields are computed from; the shared columns are the same.
    @Issue('http://173.220.179.100/issues/48283')
    def 'chart_NthLargest for calcfield'() {
       given:
@@ -523,6 +587,8 @@ class CalcField_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
+   //fields are computed from; the shared columns are the same.
    @Issue('http://173.220.179.100/issues/49832')
    def 'chart_namegroup'() {
       given:
@@ -545,12 +611,14 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -560,6 +628,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/calcfield on group other'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -567,9 +636,12 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['OrdersAndReturns|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
+   //fields are computed from; the shared columns are the same.
    @Issue('http://173.220.179.100/issues/51346')
    def 'multiple calc on chart'() {
       given:
@@ -591,6 +663,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/calcfield on date legend'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -598,6 +671,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Sales|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -606,6 +680,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/calcfield on crosstab'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
@@ -613,6 +688,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -623,6 +699,9 @@ class CalcField_Spec extends Specification {
     * Making `FIRST`/`LAST` non-combinable would force detail materialization to make the two paths agree,
     * but the performance cost is not justified.
     */
+   //No compareWithoutMV: CalcField5 is First([Product:Total], [Customer:Address]); the first
+   //address has several rows, and the one used depends on the row order. The range slider
+   //labels and the exported chart data also differ in representation.
    def 'Aggregate_ForDate'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'
@@ -643,6 +722,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_Expression'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -650,6 +730,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['lm1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
