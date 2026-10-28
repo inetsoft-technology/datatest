@@ -44,6 +44,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/child-aggregate-distinct'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -51,6 +52,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -59,6 +61,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/child-plain-distinct'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -66,6 +69,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -75,6 +79,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col not public'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -82,6 +87,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -90,6 +96,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col public'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -97,6 +104,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -106,6 +114,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-maxrow-selection col not public'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -113,6 +122,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -121,6 +131,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parent-plain-distinct'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -128,6 +139,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -136,6 +148,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/composite1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -143,6 +156,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -151,6 +165,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/composite2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -158,6 +173,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -167,12 +183,14 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/composite3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5', 'bk6'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5', 'bk6'] as String[], false, true)
       expect:
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -181,6 +199,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/crossjoin'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -188,6 +207,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CATEGORIES1|TopMV', 'CATEGORIES1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -196,6 +216,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/date range'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -203,6 +224,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -211,6 +233,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/expression'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -218,6 +241,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -226,6 +250,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/intersect'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -233,6 +258,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -241,6 +267,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/left outer join-select left'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -248,6 +275,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -256,6 +284,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/right outer join-select right'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -263,6 +292,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -271,6 +301,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-join'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -278,6 +309,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -286,6 +318,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-join'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -293,6 +326,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query4_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -301,6 +335,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/minus'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -308,6 +343,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -316,6 +352,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/union'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5'] as String[], false, true)
 
@@ -323,6 +360,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['CATEGORIES1|SubMV', 'REGIONS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -331,6 +369,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/threetables'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -338,6 +377,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'RETURNS1|SubMV', 'PRODUCTS1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -346,6 +386,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/name group'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -353,6 +394,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -361,6 +403,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/numeric range'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -368,6 +411,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -376,6 +420,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/rename'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -383,6 +428,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ORDERS1|TopMV', 'Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -391,6 +437,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection on aggregate second col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -398,6 +445,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -406,6 +454,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection on crosstab'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -413,6 +462,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -421,6 +471,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection on hidden group col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -428,6 +479,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV', 'ORDERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -436,6 +488,7 @@ class TopMV_TableStructures_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/selection on other col'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -443,6 +496,7 @@ class TopMV_TableStructures_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

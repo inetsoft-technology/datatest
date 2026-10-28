@@ -44,6 +44,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -51,6 +52,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -59,6 +61,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -66,6 +69,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -75,6 +79,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -82,6 +87,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers1|TopMV', 'orders1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -90,6 +96,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode1_4'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -97,6 +104,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers1|TopMV', 'Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -105,6 +113,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -112,6 +121,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -120,6 +130,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -127,6 +138,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Detail_customers2|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -135,6 +147,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -142,6 +155,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ST_customers1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -150,6 +164,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_4'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -157,6 +172,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -165,6 +181,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_5'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -172,6 +189,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['customers1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -180,6 +198,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode2_6'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -187,6 +206,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -195,6 +215,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -202,6 +223,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -210,6 +232,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -217,6 +240,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -225,6 +249,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -232,6 +257,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -241,6 +267,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_4'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -248,6 +275,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -256,6 +284,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_5'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -263,6 +292,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -271,6 +301,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_6'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -278,6 +309,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -286,6 +318,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_7'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -293,6 +326,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['products1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -302,6 +336,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_8'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -309,6 +344,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query4_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -319,6 +355,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -326,6 +363,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Detail_Query4_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -335,6 +373,7 @@ class TopMV_Subquery_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_10'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -342,6 +381,7 @@ class TopMV_Subquery_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query4_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

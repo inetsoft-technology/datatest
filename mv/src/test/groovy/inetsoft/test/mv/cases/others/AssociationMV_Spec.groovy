@@ -44,6 +44,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -51,6 +52,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS|TopMV', 'ORDERS|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -59,6 +61,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -66,6 +69,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_l1|TopMV', 'l1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -74,6 +78,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompatileSelection'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -81,6 +86,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['C_CUSTOMERS1_CUSTOMERS2|TopMV', 'CUSTOMERS1|SubMV', 'CUSTOMERS2|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -89,6 +95,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -98,15 +105,19 @@ class AssociationMV_Spec extends Specification {
                                             'ASSOCIATION_Query1|TopMV', 'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV',
                                             'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   @Issue('http://173.220.179.100/issues/40344')
+   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
+   //first instead of last (#79506). Update it after the fix.
+   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -114,15 +125,19 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   @Issue('http://173.220.179.100/issues/40344')
+   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
+   //first instead of last (#79506). Update it after the fix.
+   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider3'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -130,15 +145,19 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   @Issue('http://173.220.179.100/issues/40344')
+   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
+   //first instead of last (#79506). Update it after the fix.
+   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider4'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider4'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -146,6 +165,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -154,6 +174,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionlist'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -162,6 +183,7 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Copy of Query11|TopMV', 'ASSOCIATION_Copy of Query12|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -170,6 +192,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -177,6 +200,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -185,6 +209,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -192,6 +217,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -200,6 +226,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeSelectionTree3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -207,6 +234,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -230,6 +258,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_ExpressionCondition'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -237,6 +266,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_PRODUCTS1|TopMV', 'PRODUCTS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -245,6 +275,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Formulacol'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -252,6 +283,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -260,6 +292,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Hiddencolumn'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -267,6 +300,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_products1|TopMV', 'products1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -275,6 +309,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_MaxRow'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -282,6 +317,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CUSTOMERS1|TopMV', 'ASSOCIATION_Query1|TopMV', 'CUSTOMERS1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -358,6 +394,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Rangecol'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -365,6 +402,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ASSOCIATION_Query1|TopMV', 'ORDERS1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -373,6 +411,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_RangeSlider1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -380,6 +419,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['MVSCRIPT1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -388,6 +428,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_RangeSlider2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -395,6 +436,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_Query2|TopMV', 'MVSCRIPT2|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -403,6 +445,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_SelectionContainer'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -410,6 +453,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'ORDERS1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -418,6 +462,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Byte'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -425,6 +470,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_Query1|TopMV', 'MVSCRIPT1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -433,6 +479,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Long'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -440,6 +487,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_Query1|TopMV', 'MVSCRIPT1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -448,6 +496,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist_Short'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -455,6 +504,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_Query1|TopMV', 'MVSCRIPT1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -463,6 +513,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist1'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -471,6 +522,7 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -480,6 +532,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -488,6 +541,7 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -496,6 +550,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Selectionlist3'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -504,6 +559,7 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVSCRIPT1|TopMV', 'ASSOCIATION_MVSCRIPT2|TopMV', 'ASSOCIATION_MVSCRIPT3|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'ASSOCIATION_Query3|TopMV', 'MVSCRIPT1|TopMV', 'MVSCRIPT2|TopMV', 'MVSCRIPT3|TopMV', 'Query1|TopMV', 'Query2|TopMV', 'Query3|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -512,6 +568,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_SelectionTree'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -520,6 +577,7 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Copy of Query11|TopMV', 'ASSOCIATION_Copy of Query12|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'Copy of Query11|TopMV', 'Copy of Query12|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -528,14 +586,16 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableCondition1'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['var': ['0.01', '0.05', '0.1'] as String[]]
+      mvtest.executeVSWithoutMV(params, ['(Home)', 'bk_select'] as String[], false, true)
+      mvtest.createMV(false)
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -544,14 +604,16 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableExpresion'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['sts': ['CA', 'NJ', 'NY'] as String[]]
+      mvtest.executeVSWithoutMV(params, ['(Home)', 'bk_select'] as String[], false, true)
+      mvtest.createMV(false)
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CUSTOMERS1|TopMV', 'CUSTOMERS1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -560,17 +622,21 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_VariableRanking'
       mvtest = new MVTest(asset_id)
 
-      mvtest.createMV(false)
       def params = ['tn': ['20'] as String[]]
+      mvtest.executeVSWithoutMV(params, ['(Home)', 'bk_select'] as String[], false, true)
+      mvtest.createMV(false)
       mvtest.executeVS(params, ['(Home)', 'bk_select'] as String[], false, true)
 
       expect:
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ORDERS1_O|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
+   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
+   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
    def 'TestCase_AdhocFilter'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter'
@@ -586,6 +652,9 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
+   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
+   //The exported chart data also has the aggregate a calc field uses without MV.
    def 'TestCase_AdhocFilter2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter2'
@@ -606,6 +675,7 @@ class AssociationMV_Spec extends Specification {
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Census'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -613,6 +683,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Data|TopMV', 'Data|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

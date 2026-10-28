@@ -7,6 +7,8 @@ import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.TableFilter
 import inetsoft.report.TableLens
+import inetsoft.report.XSessionManager
+import inetsoft.report.composition.execution.AssetDataCache
 import inetsoft.report.composition.execution.AssetTableLens
 import inetsoft.report.composition.execution.DataMap
 import inetsoft.report.composition.execution.ViewsheetSandbox
@@ -43,6 +45,24 @@ import java.text.NumberFormat
 import java.text.DecimalFormat
 
 class MVTest {
+   /**
+    * How the MV results are checked, from the system property {@code mv.compare}:
+    * {@code golden} (default) compares them with {@code expectData} only, {@code nomv} compares
+    * them with the result without MV ({@link #compareWithoutMV()}) in the cases that call
+    * {@link #executeVSWithoutMV}, and {@code both} does both.
+    */
+   static final String COMPARE_MODE = compareMode()
+
+   private static String compareMode() {
+      String mode = System.getProperty('mv.compare', 'golden')
+
+      if(!(mode in ['golden', 'nomv', 'both'])) {
+         throw new IllegalArgumentException("mv.compare must be golden, nomv or both: " + mode)
+      }
+
+      return mode
+   }
+
    /** Derived in {@link #initHome(String)} (ViewsheetTest pattern). */
    static String suiteName
 
@@ -149,6 +169,50 @@ class MVTest {
                  " component(s):\n" + executionErrors.join("\n")
          executionErrors.clear()
          throw new AssertionError(msg)
+      }
+   }
+
+   /**
+    * Execute the viewsheet without MV and export the data with the {@link #NO_MV_EXT} suffix, as
+    * the reference that {@link #compareWithoutMV()} compares the MV results with. It must run
+    * before {@link #createMV}: the MV does not exist yet, and a run after it could read the MV
+    * result from the data cache. The caches are cleared afterwards, so the MV run does not read
+    * this result either. See {@link #compareWithoutMV()} for the cases it applies to.
+    * <p>
+    * Does nothing when {@link #COMPARE_MODE} is {@code golden}.
+    */
+   def executeVSWithoutMV(Map<String, String[]> params, String[] bks, boolean incremental, boolean exportSelection) {
+      executeVSWithoutMV(params, bks, incremental, exportSelection, null)
+   }
+
+   def executeVSWithoutMV(Map<String, String[]> params, String[] bks, boolean incremental,
+                          boolean exportSelection, SRPrincipal principal)
+   {
+      if(COMPARE_MODE == 'golden') {
+         return
+      }
+
+      if(mvCreated) {
+         throw new IllegalStateException(asset_id + ": executeVSWithoutMV must run before createMV")
+      }
+
+      withoutMV = true
+
+      try {
+         executeVS(params, bks, incremental, exportSelection, principal)
+         ranWithoutMV = true
+
+         // findRuntimeMV also finds an MV left by an earlier case or created by another viewsheet
+         if(!hitMVs.isEmpty()) {
+            throw new AssertionError(asset_id + " used MV " + hitMVs + " before its MV was created")
+         }
+      }
+      finally {
+         withoutMV = false
+         hitMVs.clear()
+         hitUnobservable = false
+         AssetDataCache.getCache().clearCache()
+         XSessionManager.getSessionManager().clearCache()
       }
    }
 
@@ -403,6 +467,7 @@ class MVTest {
    }
 
    def createMV(boolean applyVPM, boolean ... expandGroup) {
+      mvCreated = true
       materializedViewResource.createMV(applyVPM, expandGroup)
    }
 
@@ -505,7 +570,16 @@ class MVTest {
       }
    }
 
+   /**
+    * Compare the exported data with {@code expectData}. Skipped when {@link #COMPARE_MODE} is
+    * {@code nomv} and this case compared its MV results with {@link #compareWithoutMV()};
+    * incremental results and cases without a run without MV are always compared.
+    */
    void compareData(boolean incremental) {
+      if(COMPARE_MODE == 'nomv' && ranWithoutMV && !incremental) {
+         return
+      }
+
       File folder = new File(getExportFolderPath())
       File expFolder = new File(getExportFolderPath().replaceAll('exportedData', 'expectData'))
       File[] files = folder.listFiles(incremental ? new IncrementalMVFilter() : new MVFilter())
@@ -544,6 +618,80 @@ class MVTest {
       }
    }
 
+   /**
+    * Compare the data exported with MV with the data exported by {@link #executeVSWithoutMV}.
+    * Each exported MV file must have a file without MV with the same content.
+    * <p>
+    * This only shows that the MV does not change the result. A bug in the code shared by both
+    * paths (aggregation, calculated fields, formatting, ...) gives the same wrong result twice
+    * and is only found by {@link #compareData} ({@code golden} or {@code both}).
+    * <p>
+    * Only for a full MV of a table without MV delete conditions. When the MV is created, the
+    * negated delete conditions are added to the table conditions, and an incremental update
+    * appends and deletes rows of the MV, so in both cases the MV does not hold what the
+    * database returns. Files of an incremental update ({@code __MVIncremental}) are not
+    * compared.
+    * <p>
+    * Does nothing when {@link #COMPARE_MODE} is {@code golden}.
+    */
+   void compareWithoutMV() {
+      if(COMPARE_MODE == 'golden') {
+         return
+      }
+
+      if(!ranWithoutMV) {
+         assert false: asset_id + " compareWithoutMV needs executeVSWithoutMV before createMV"
+      }
+
+      File folder = new File(getExportFolderPath())
+      File[] files = folder.listFiles(new MVFilter())
+
+      if(files == null || files.length == 0) {
+         assert false: asset_id + " nothing was exported with MV: " + folder
+      }
+
+      def failures = []
+
+      files.each {
+         File noMV = new File(folder, it.getName().replace(MV_EXT + ".txt", NO_MV_EXT + ".txt"))
+
+         if(!noMV.exists()) {
+            failures.add(it.getName() + ": not exported without MV")
+         }
+         else if(noMV.lastModified() < startTime) {
+            // left by an earlier run, the case did not call executeVSWithoutMV for this file
+            failures.add(it.getName() + ": not exported without MV in this run")
+         }
+         else {
+            List<String> mvLines = it.readLines('UTF-8')
+            List<String> noMVLines = noMV.readLines('UTF-8')
+
+            if(mvLines != noMVLines) {
+               failures.add(it.getName() + ": differs from the result without MV\n" +
+                       firstDifference(mvLines, noMVLines))
+            }
+         }
+      }
+
+      if(!failures.isEmpty()) {
+         assert false: asset_id + " MV results differ from the results without MV:\n" +
+                 failures.join("\n")
+      }
+   }
+
+   private static String firstDifference(List<String> mvLines, List<String> noMVLines) {
+      int n = Math.min(mvLines.size(), noMVLines.size())
+
+      for(int i = 0; i < n; i++) {
+         if(mvLines[i] != noMVLines[i]) {
+            return "  line " + (i + 1) + "\n    with MV:    " + mvLines[i] +
+                    "\n    without MV: " + noMVLines[i]
+         }
+      }
+
+      return "  with MV " + mvLines.size() + " lines, without MV " + noMVLines.size() + " lines"
+   }
+
    private TableLens wrapTable(TableLens lens) {
       return new AssetTableLens() {
          int getRowCount() {
@@ -571,7 +719,8 @@ class MVTest {
    String getExportFilePath(String assemblyName, SRPrincipal principal, String bookmark, boolean incremental) {
       String path = getExportFolderPath()
       path += File.separator + principal.getIdentityID().getName() + "_" + assemblyName +
-              (bookmark == '(Home)' ? '' : '_' + bookmark) + (incremental ? MV_INCREMENTAL : MV_EXT) + ".txt"
+              (bookmark == '(Home)' ? '' : '_' + bookmark) +
+              (withoutMV ? NO_MV_EXT : incremental ? MV_INCREMENTAL : MV_EXT) + ".txt"
 
       return path
    }
@@ -696,6 +845,10 @@ class MVTest {
    private final Set<String> hitMVs = new LinkedHashSet<String>()
    private boolean hitUnobservable
    private boolean loggedUnobservable
+   private boolean withoutMV
+   private boolean mvCreated
+   private boolean ranWithoutMV
+   private final long startTime = System.currentTimeMillis()
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
@@ -703,4 +856,5 @@ class MVTest {
            "HH:mm:ss")
    private final String MV_INCREMENTAL = "__MVIncremental"
    private final String MV_EXT = "__MV"
+   private final String NO_MV_EXT = "__NoMV"
 }

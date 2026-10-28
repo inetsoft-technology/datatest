@@ -43,6 +43,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/child has aggregate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -50,6 +51,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -58,6 +60,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/parent has aggregate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -65,6 +68,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -73,6 +77,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/date group'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -80,6 +85,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -88,6 +94,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/date group-none'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3'] as String[], false, true)
 
@@ -95,6 +102,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -103,6 +111,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/aggregate col is expression'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -110,6 +119,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -118,6 +128,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/aggregate second col is expression'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -125,6 +136,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Copy ofQuery12|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -133,6 +145,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/two columns formula'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -140,6 +153,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -148,6 +162,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/aggregate formula'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -155,15 +170,20 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['distinctcount|TopMV', 'median|TopMV', 'mode|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   //The data precision has changed, with the product's data precision starting to vary from the 3rd decimal place. 
+   //The data precision has changed, with the product's data precision starting to vary from the 3rd decimal place.
+   //Expected data has DB2 results that are wrong: Variance/StandardDeviation are population values (#79477),
+   //PopulationVariance/PopulationStandardDeviation are truncated to 1 decimal place (#79479). Update it after the fixes.
+   @Issue(['https://issues.inetsoft.com/issues/79477', 'https://issues.inetsoft.com/issues/79479'])
    def 'aggregate formula2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -171,6 +191,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -179,6 +200,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/both have aggregate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -186,6 +208,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -194,6 +217,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/no aggregate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -201,6 +225,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -209,6 +234,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-average'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -216,6 +242,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -224,6 +251,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-concatenate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -231,6 +259,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -239,6 +268,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-convariance'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -246,6 +276,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -254,6 +285,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-correlation'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -261,6 +293,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -269,6 +302,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-std deviation'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -276,6 +310,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -284,6 +319,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-std deviation pop'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -291,6 +327,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -299,6 +336,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-variance'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -306,6 +344,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -314,6 +353,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-variance pop'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -321,6 +361,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -329,6 +370,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/merge-weighted average'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -336,6 +378,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -344,6 +387,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-average'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -351,6 +395,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -359,6 +404,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-concatenate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -366,6 +412,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query4_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -374,6 +421,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-convariance'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -381,6 +429,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -389,6 +438,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-correlation'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -396,6 +446,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -404,6 +455,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-std deviation'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -411,6 +463,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -419,6 +472,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-std deviation pop'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -426,6 +480,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -434,6 +489,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-variance'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -441,6 +497,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -449,6 +506,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-variance pop'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -456,6 +514,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -464,6 +523,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/unmerge-weighted average'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -471,6 +531,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query3_O|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -480,6 +541,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       String asset_id = '1^128^__NULL__^topmv/datelevel_none'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, false)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, false)
 
@@ -487,6 +549,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['EM2_M_GandA|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
