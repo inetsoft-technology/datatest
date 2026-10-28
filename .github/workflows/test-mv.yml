@@ -76,30 +76,40 @@ jobs:
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
         run: |
+          # the profiles share the MV storage under mv/target
+          rm -rf mv/target
           ./mvnw test -pl mv -Pincrementalmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run topmv tests
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
         run: |
+          # the profiles share the MV storage under mv/target
+          rm -rf mv/target
           ./mvnw test -pl mv -Ptopmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run submv tests
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
         run: |
+          # the profiles share the MV storage under mv/target
+          rm -rf mv/target
           ./mvnw test -pl mv -Psubmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run vpm tests
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
         run: |
+          # the profiles share the MV storage under mv/target
+          rm -rf mv/target
           ./mvnw test -pl mv -Pvpm -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Run others tests
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
         run: |
+          # the profiles share the MV storage under mv/target
+          rm -rf mv/target
           ./mvnw test -pl mv -Pothers -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}"
 
       - name: Publish Test Report

@@ -49,24 +49,19 @@ class MVTest {
     * How the MV results are checked, from the system property {@code mv.compare}:
     * {@code golden} (default) compares them with {@code expectData} only, {@code nomv} compares
     * them with the result without MV ({@link #compareWithoutMV()}) in the cases that call
-    * {@link #executeVSWithoutMV}, and {@code both} does both.
+    * {@link #executeVSWithoutMV}, and {@code both} does both. An invalid value fails each case
+    * in {@link #MVTest(String)}.
     */
-   static final String COMPARE_MODE = compareMode()
-
-   private static String compareMode() {
-      String mode = System.getProperty('mv.compare', 'golden')
-
-      if(!(mode in ['golden', 'nomv', 'both'])) {
-         throw new IllegalArgumentException("mv.compare must be golden, nomv or both: " + mode)
-      }
-
-      return mode
-   }
+   static final String COMPARE_MODE = System.getProperty('mv.compare', 'golden')
 
    /** Derived in {@link #initHome(String)} (ViewsheetTest pattern). */
    static String suiteName
 
    MVTest(String asset_id) {
+      if(!(COMPARE_MODE in ['golden', 'nomv', 'both'])) {
+         throw new IllegalArgumentException("mv.compare must be golden, nomv or both: " + COMPARE_MODE)
+      }
+
       ensureRuntimeInitialized()
       this.asset_id = asset_id
       materializedViewResource = new MaterializedViewResource(this.asset_id)
