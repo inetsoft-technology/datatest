@@ -3,6 +3,7 @@ package inetsoft.test.mv.cases.topmv
 import inetsoft.test.mv.MVTest
 import spock.lang.IgnoreRest
 import spock.lang.Issue
+import spock.lang.PendingFeature
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -177,7 +178,11 @@ class TopMV_AggregateFormulas_Spec extends Specification {
    //The data precision has changed, with the product's data precision starting to vary from the 3rd decimal place.
    //Expected data has DB2 results that are wrong: Variance/StandardDeviation are population values (#79477),
    //PopulationVariance/PopulationStandardDeviation are truncated to 1 decimal place (#79479). Update it after the fixes.
+   //The MV creation fails: the query uses stddev_samp/variance_samp, which DB2 10.5 does not support
+   //(SQLCODE=-440, #79477 reopened). Pending until it is fixed; then update the expected data and
+   //remove @PendingFeature.
    @Issue(['https://issues.inetsoft.com/issues/79477', 'https://issues.inetsoft.com/issues/79479'])
+   @PendingFeature(reason = 'MV creation fails on DB2 10.5, #79477')
    def 'aggregate formula2'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/aggregate formula2'

@@ -207,12 +207,13 @@ public class MaterializedViewResource {
                   CreateMaterializedViewStatus createStatus = materializedViewApiController.getCreationStatus(
                           analysisJob.getId(), null, this.principal);
 
-                  if(createStatus.isComplete()) {
-                     break;
-                  }
-                  else if(createStatus.isFailed()) {
+                  // a failed creation is also complete, so check the failure first
+                  if(createStatus.isFailed()) {
                      throw new MVCreateFailedException(
                         "====MV Create Exception==== " + asset_id + ": " + createStatus.getError());
+                  }
+                  else if(createStatus.isComplete()) {
+                     break;
                   }
 
                   // job exists but not finished yet - without this sleep the loop busy-spins
@@ -289,13 +290,14 @@ public class MaterializedViewResource {
                   updateStatus = materializedViewApiController.getUpdateStatus(
                           updateStatus.getId(), null, this.principal);
 
-                  if(updateStatus.isComplete()) {
-                     updated = true;
-                     break;
-                  }
-                  else if(updateStatus.isFailed()) {
+                  // a failed update is also complete, so check the failure first
+                  if(updateStatus.isFailed()) {
                      throw new MVCreateFailedException(
                         "====MV Update Exception==== " + asset_id + ": " + updateStatus.getError());
+                  }
+                  else if(updateStatus.isComplete()) {
+                     updated = true;
+                     break;
                   }
                   Thread.sleep(100);
                }
@@ -340,6 +342,13 @@ public class MaterializedViewResource {
       });
    }
    
+   /**
+    * The names of the MVs created through this instance.
+    */
+   public List<String> getViews() {
+      return Collections.unmodifiableList(this.views);
+   }
+
    /**
     * Thrown when an MV creation or update fails or does not finish in time, so the spec fails
     * instead of running against live data.
