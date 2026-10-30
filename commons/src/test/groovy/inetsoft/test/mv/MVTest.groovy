@@ -463,7 +463,120 @@ class MVTest {
 
    def createMV(boolean applyVPM, boolean ... expandGroup) {
       mvCreated = true
+      createdApplyVPM = applyVPM
+      createdExpandGroup = expandGroup
       materializedViewResource.createMV(applyVPM, expandGroup)
+   }
+
+   /**
+    * Get the MVs hit since the last call (see {@link #getMVHitInfo()}) and forget them, so an
+    * execution, e.g. the one after an incremental update, is checked on its own. Otherwise the
+    * hits of all executions of the case add up.
+    */
+   List takeMVHits() {
+      List hits = getMVHitInfo()
+      hitMVs.clear()
+      hitUnobservable = false
+      return hits
+   }
+
+   /**
+    * Set the last update time of the MVs created by this instance, which is the value of
+    * {@code MV.LastUpdateTime} in the MV conditions of the next incremental update. MVDef has
+    * no setter, and the update runs on a background thread where {@code data.cache.ts} can not
+    * be set, so the field is set and the def is stored again, as MVManager does after an update.
+    * The update reads the def from MVManager. A viewsheet with selections also has association
+    * MVs, all of them are changed.
+    */
+   void setLastUpdateTime(long time) {
+      List<String> views = materializedViewResource.getViews()
+
+      if(views.isEmpty()) {
+         throw new IllegalStateException(asset_id + ": setLastUpdateTime needs createMV")
+      }
+
+      def field = MVDef.getDeclaredField('lastUpdateTime')
+      field.setAccessible(true)
+      MVManager manager = MVManager.getManager()
+
+      views.each { String name ->
+         MVDef mvdef = manager.get(name)
+         field.setLong(mvdef, time)
+         manager.add(mvdef)
+      }
+
+      views.each { String name ->
+         assert manager.get(name).getLastUpdateTime() == time: name + ": last update time not set"
+      }
+   }
+
+   /**
+    * Remove the MVs, create them again on the current data in the same way as
+    * {@link #createMV}, and execute the viewsheet. Its export is the expected result of the
+    * incremental update, see {@link #compareWithRebuild()}. The hits recorded before are
+    * dropped, so {@link #takeMVHits()} afterwards returns the hits of the rebuilt MV.
+    */
+   def rebuildMV(Map<String, String[]> params, String[] bks, boolean exportSelection) {
+      if(!mvCreated) {
+         throw new IllegalStateException(asset_id + ": rebuildMV needs createMV")
+      }
+
+      removeMV()
+      createMV(createdApplyVPM, createdExpandGroup)
+      AssetDataCache.getCache().clearCache()
+      XSessionManager.getSessionManager().clearCache()
+      takeMVHits()
+      rebuildTime = System.currentTimeMillis()
+      executeVS(params, bks, false, exportSelection)
+   }
+
+   /**
+    * Compare the data exported after the incremental update ({@code __MVIncremental}) with the
+    * data of the MV rebuilt on the final data by {@link #rebuildMV} ({@code __MV}). Both must
+    * be the same: the update appends and deletes the rows that a new MV would have.
+    * <p>
+    * Only for MV conditions that do not use {@code MV.} variables in the delete condition. Such
+    * a delete condition is ignored when the MV is created ({@code MVCreatorUtil.isConditionValid}),
+    * so a rebuilt MV keeps the rows the update deletes, unless the case deleted them from the
+    * database too. Append conditions with {@code MV.} variables are fine: they are also ignored
+    * when the MV is created, and a new MV has all the rows.
+    */
+   void compareWithRebuild() {
+      if(rebuildTime == 0) {
+         assert false: asset_id + " compareWithRebuild needs rebuildMV"
+      }
+
+      File folder = new File(getExportFolderPath())
+      File[] files = folder.listFiles(new IncrementalMVFilter())
+      files = files?.findAll { it.lastModified() >= startTime } as File[]
+
+      if(files == null || files.length == 0) {
+         assert false: asset_id + " nothing was exported after the incremental update: " + folder
+      }
+
+      def failures = []
+
+      files.each {
+         File rebuilt = new File(folder, it.getName().replace(MV_INCREMENTAL + ".txt", MV_EXT + ".txt"))
+
+         if(!rebuilt.exists() || rebuilt.lastModified() < rebuildTime) {
+            failures.add(it.getName() + ": not exported after the MV was rebuilt")
+         }
+         else {
+            List<String> incrementalLines = it.readLines('UTF-8')
+            List<String> rebuiltLines = rebuilt.readLines('UTF-8')
+
+            if(incrementalLines != rebuiltLines) {
+               failures.add(it.getName() + ": differs from the rebuilt MV\n" +
+                       firstDifference(incrementalLines, rebuiltLines, "incremental", "rebuilt"))
+            }
+         }
+      }
+
+      if(!failures.isEmpty()) {
+         assert false: asset_id + " incremental results differ from the rebuilt MV:\n" +
+                 failures.join("\n")
+      }
    }
 
    def removeMV() {
@@ -675,16 +788,23 @@ class MVTest {
    }
 
    private static String firstDifference(List<String> mvLines, List<String> noMVLines) {
-      int n = Math.min(mvLines.size(), noMVLines.size())
+      return firstDifference(mvLines, noMVLines, "with MV", "without MV")
+   }
+
+   private static String firstDifference(List<String> lines1, List<String> lines2,
+                                         String name1, String name2)
+   {
+      int n = Math.min(lines1.size(), lines2.size())
+      int width = Math.max(name1.length(), name2.length()) + 1
 
       for(int i = 0; i < n; i++) {
-         if(mvLines[i] != noMVLines[i]) {
-            return "  line " + (i + 1) + "\n    with MV:    " + mvLines[i] +
-                    "\n    without MV: " + noMVLines[i]
+         if(lines1[i] != lines2[i]) {
+            return "  line " + (i + 1) + "\n    " + (name1 + ":").padRight(width) + " " + lines1[i] +
+                    "\n    " + (name2 + ":").padRight(width) + " " + lines2[i]
          }
       }
 
-      return "  with MV " + mvLines.size() + " lines, without MV " + noMVLines.size() + " lines"
+      return "  " + name1 + " " + lines1.size() + " lines, " + name2 + " " + lines2.size() + " lines"
    }
 
    private TableLens wrapTable(TableLens lens) {
@@ -843,6 +963,9 @@ class MVTest {
    private boolean withoutMV
    private boolean mvCreated
    private boolean ranWithoutMV
+   private boolean createdApplyVPM
+   private boolean[] createdExpandGroup
+   private long rebuildTime
    private final long startTime = System.currentTimeMillis()
    private RuntimeViewsheetResource viewsheetResource
    private String asset_id
