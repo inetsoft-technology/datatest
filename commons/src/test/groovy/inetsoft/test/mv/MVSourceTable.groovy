@@ -56,6 +56,19 @@ class MVSourceTable {
             conn.commit()
          }
       }
+      catch(Exception e) {
+         // the connection goes back to the pool, so it must not keep the failed transaction
+         try {
+            if(!conn.getAutoCommit()) {
+               conn.rollback()
+            }
+         }
+         catch(Exception rollbackError) {
+            e.addSuppressed(rollbackError)
+         }
+
+         throw e
+      }
       finally {
          conn.close()
       }

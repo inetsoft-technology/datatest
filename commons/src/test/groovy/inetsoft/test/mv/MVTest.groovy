@@ -487,6 +487,10 @@ class MVTest {
     * be set, so the field is set and the def is stored again, as MVManager does after an update.
     * The update reads the def from MVManager. A viewsheet with selections also has association
     * MVs, all of them are changed.
+    * <p>
+    * The private field {@code MVDef.lastUpdateTime} is set by reflection. If it is renamed or
+    * removed, {@code getDeclaredField} throws {@code NoSuchFieldException} and every case that
+    * calls this method fails; change the field name here.
     */
    void setLastUpdateTime(long time) {
       List<String> views = materializedViewResource.getViews()
@@ -526,6 +530,9 @@ class MVTest {
       AssetDataCache.getCache().clearCache()
       XSessionManager.getSessionManager().clearCache()
       takeMVHits()
+      // compareWithRebuild then knows that an __MV file was written by this run, without
+      // comparing modification times, which some file systems keep only to the second
+      new File(getExportFolderPath()).listFiles(new MVFilter())?.each { it.delete() }
       rebuildTime = System.currentTimeMillis()
       executeVS(params, bks, false, exportSelection)
    }
@@ -548,7 +555,10 @@ class MVTest {
 
       File folder = new File(getExportFolderPath())
       File[] files = folder.listFiles(new IncrementalMVFilter())
-      files = files?.findAll { it.lastModified() >= startTime } as File[]
+      // a file system that keeps modification times to the second may show a file written just
+      // after startTime as older than it
+      long since = startTime - startTime % 1000
+      files = files?.findAll { it.lastModified() >= since } as File[]
 
       if(files == null || files.length == 0) {
          assert false: asset_id + " nothing was exported after the incremental update: " + folder
@@ -559,7 +569,8 @@ class MVTest {
       files.each {
          File rebuilt = new File(folder, it.getName().replace(MV_INCREMENTAL + ".txt", MV_EXT + ".txt"))
 
-         if(!rebuilt.exists() || rebuilt.lastModified() < rebuildTime) {
+         // rebuildMV deleted the old __MV files, so an existing one was exported by the rebuild
+         if(!rebuilt.exists()) {
             failures.add(it.getName() + ": not exported after the MV was rebuilt")
          }
          else {

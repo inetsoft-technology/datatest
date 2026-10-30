@@ -139,7 +139,13 @@ The profiles share the MV storage under `mv/target`. When running several of the
 .\mvnw.cmd test -pl mv -Ptopmv "-Dmv.compare=nomv"
 ```
 
-`nomv` only shows that the MV does not change the result. A bug shared by the MV and the database paths gives the same wrong result twice, and only `expectData` finds it. It is not used in `incrementalmv`: MV delete conditions and incremental updates make the MV hold different rows than the database on purpose. Incremental results are always compared with `expectData`.
+`nomv` only shows that the MV does not change the result. A bug shared by the MV and the database paths gives the same wrong result twice, and only `expectData` finds it. It is not used in `incrementalmv`: MV delete conditions and incremental updates make the MV hold different rows than the database on purpose. Incremental results are compared with `expectData`, except in `IncrementalDataChange_Spec`, which compares them with an MV rebuilt on the final data (`MVTest.compareWithRebuild`) or with the rows it expects.
+
+`IncrementalDataChange_Spec` (in `incrementalmv`) creates and drops tables in the H2 database `docker/src/test/resources/H2Data/mvorder1.mv.db`, and H2 rewrites the file even though the tables are dropped. Restore it before committing:
+
+```powershell
+git checkout -- docker/src/test/resources/H2Data/
+```
 
 #### 3. Date Comparison Specs: Strict Checks and Updating Baselines
 

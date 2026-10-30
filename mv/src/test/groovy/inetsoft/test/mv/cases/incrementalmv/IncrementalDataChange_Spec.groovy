@@ -51,6 +51,7 @@ import spock.lang.Specification
 import java.sql.Connection
 import java.sql.ResultSet
 import java.sql.SQLException
+import java.sql.Statement
 import java.sql.Timestamp
 
 /**
@@ -110,17 +111,45 @@ class IncrementalDataChange_Spec extends Specification {
    }
 
    def cleanup() {
-      mvtest?.removeMV()
-      source.execute("DROP VIEW IF EXISTS ${VIEW}")
-      source.drop()
-      DataSourceRegistry registry = DataSourceRegistry.getRegistry()
-
-      if(registry.getDataSource(LAZY_DS) != null) {
-         registry.removeDataSource(LAZY_DS)
-      }
       def repository = AssetUtil.getAssetRepository(false)
-      repository.removeSheet(AssetEntry.createAssetEntry(VS_ENTRY), admin, true)
-      repository.removeSheet(AssetEntry.createAssetEntry(WS_ENTRY), admin, true)
+
+      // every step runs even when an earlier one fails, so nothing is left for the next case
+      runAll(
+         { mvtest?.removeMV() },
+         { source.execute("DROP VIEW IF EXISTS ${VIEW}") },
+         { source.drop() },
+         {
+            DataSourceRegistry registry = DataSourceRegistry.getRegistry()
+
+            if(registry.getDataSource(LAZY_DS) != null) {
+               registry.removeDataSource(LAZY_DS)
+            }
+         },
+         { repository.removeSheet(AssetEntry.createAssetEntry(VS_ENTRY), admin, true) },
+         { repository.removeSheet(AssetEntry.createAssetEntry(WS_ENTRY), admin, true) })
+   }
+
+   /** Run all the steps, then throw the first failure with the later ones suppressed. */
+   private static void runAll(Closure... steps) {
+      Throwable failure = null
+
+      steps.each { Closure step ->
+         try {
+            step()
+         }
+         catch(Throwable e) {
+            if(failure == null) {
+               failure = e
+            }
+            else {
+               failure.addSuppressed(e)
+            }
+         }
+      }
+
+      if(failure != null) {
+         throw failure
+      }
    }
 
    def 'append condition > MV.MaxValue: the new rows are appended once'() {
@@ -448,10 +477,12 @@ class IncrementalDataChange_Spec extends Specification {
       List<String> values = []
 
       try {
-         ResultSet rs = conn.createStatement().executeQuery(query)
-
-         while(rs.next()) {
-            values << rs.getString(1)
+         conn.createStatement().withCloseable { Statement stmt ->
+            stmt.executeQuery(query).withCloseable { ResultSet rs ->
+               while(rs.next()) {
+                  values << rs.getString(1)
+               }
+            }
          }
 
          throw new AssertionError("the query did not fail, it returned " + values)
