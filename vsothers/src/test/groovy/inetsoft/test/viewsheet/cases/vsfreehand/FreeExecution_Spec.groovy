@@ -402,10 +402,7 @@ class FreeExecution_Spec extends Specification {
     * test a named cell ($total) in a freehand cell's foreground/background format expression,
     * and a failing format expression keeps the table's data (default format)
     * Bug #78493
-    * Ignored until datatest depends on a core containing the fix (stylebi #7166, 2.1.0);
-    * the current 1.2.0-SNAPSHOT core hides every row of both tables. Record the baseline then.
     */
-   @Ignore
    def 'FSFormatNamedCell'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSFormatNamedCell', caseName)
