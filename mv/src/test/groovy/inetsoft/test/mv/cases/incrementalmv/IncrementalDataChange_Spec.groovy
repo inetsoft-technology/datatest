@@ -2,6 +2,7 @@ package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.mv.MVManager
 import inetsoft.report.XSessionManager
+import inetsoft.sree.security.Organization
 import inetsoft.sree.security.Permission
 import inetsoft.sree.security.Resource
 import inetsoft.sree.security.ResourceAction
@@ -603,8 +604,9 @@ class IncrementalDataChange_Spec extends Specification {
    private static void grantRead(List<String> users, List<String> groups) {
       Resource resource = AssetUtil.getSecurityResource(AssetEntry.createAssetEntry(VS_ENTRY))
       Permission permission = new Permission()
-      permission.setUserGrantsForOrg(ResourceAction.READ, users as Set, 'host-org')
-      permission.setGroupGrantsForOrg(ResourceAction.READ, groups as Set, 'host-org')
+      String org = Organization.getDefaultOrganizationID()
+      permission.setUserGrantsForOrg(ResourceAction.READ, users as Set, org)
+      permission.setGroupGrantsForOrg(ResourceAction.READ, groups as Set, org)
       SecurityEngine.getSecurity().setPermission(resource.getType(), resource.getPath(), permission)
    }
 
