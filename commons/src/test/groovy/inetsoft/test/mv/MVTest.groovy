@@ -158,6 +158,8 @@ class MVTest {
          executeTest(params, it, incremental, exportSelection, principal)
       }
 
+      lastBookmarkCount = bks.length
+
       // fail after all bookmarks ran, so every broken component is listed in one report
       if(!executionErrors.isEmpty()) {
          String msg = asset_id + " failed to execute " + executionErrors.size() +
@@ -228,6 +230,48 @@ class MVTest {
             sandboxOpt.get().resetAll(new ChangedAssemblyList());
          }
       }
+
+      lastRuntime = rvs
+      lastBookmark = bk
+      lastPrincipal = principal
+      return exportRuntime(rvs, bk, incremental, exportSelection, principal)
+   }
+
+   /**
+    * Refresh the viewsheet opened by the last {@link #executeVS} call, as the Refresh button of
+    * the viewer does ({@code VSRefreshService}: {@code RuntimeViewsheet.resetRuntime()}, then
+    * the assemblies are reset), and export its data again. The viewsheet is not opened again,
+    * and the caches are not cleared, so the export shows what a user who keeps the viewsheet
+    * open sees after the refresh. The last executeVS must have run one bookmark: only the
+    * viewsheet of its last bookmark is kept.
+    */
+   def refreshVS(boolean incremental, boolean exportSelection) {
+      if(lastRuntime == null) {
+         throw new IllegalStateException(asset_id + ": refreshVS needs executeVS")
+      }
+
+      // only the viewsheet of the last bookmark is kept open
+      if(lastBookmarkCount > 1) {
+         throw new IllegalStateException(asset_id + ": refreshVS needs executeVS with one bookmark")
+      }
+
+      executionErrors.clear()
+      ThreadContext.setContextPrincipal(lastPrincipal)
+      lastRuntime.resetRuntime()
+      lastRuntime.getViewsheetSandbox().get().resetAll(new ChangedAssemblyList())
+      exportRuntime(lastRuntime, lastBookmark, incremental, exportSelection, lastPrincipal)
+
+      if(!executionErrors.isEmpty()) {
+         String msg = asset_id + " failed to refresh " + executionErrors.size() +
+                 " component(s):\n" + executionErrors.join("\n")
+         executionErrors.clear()
+         throw new AssertionError(msg)
+      }
+   }
+
+   private def exportRuntime(RuntimeViewsheet rvs, String bk, boolean incremental,
+                             boolean exportSelection, SRPrincipal principal)
+   {
       Viewsheet vs = rvs.getViewsheet()
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       Assembly[] assemblies = vs.getAssemblies()
@@ -407,6 +451,7 @@ class MVTest {
    }
 
    def exportData(def data, String fileName) {
+      exportedFiles.add(new File(fileName).getCanonicalPath())
       File file = new File(fileName)
       if(!file.getParentFile().exists()) {
          file.getParentFile().mkdirs()
@@ -554,13 +599,12 @@ class MVTest {
       }
 
       File folder = new File(getExportFolderPath())
-      File[] files = folder.listFiles(new IncrementalMVFilter())
-      // a file system that keeps modification times to the second may show a file written just
-      // after startTime as older than it
-      long since = startTime - startTime % 1000
-      files = files?.findAll { it.lastModified() >= since } as File[]
+      // the files this instance exported, not the folder: an earlier case of the same viewsheet
+      // leaves its files there, and modification times kept to the second can not tell them
+      // apart from the files of this case
+      File[] files = exported(MV_INCREMENTAL)
 
-      if(files == null || files.length == 0) {
+      if(files.length == 0) {
          assert false: asset_id + " nothing was exported after the incremental update: " + folder
       }
 
@@ -763,9 +807,10 @@ class MVTest {
       }
 
       File folder = new File(getExportFolderPath())
-      File[] files = folder.listFiles(new MVFilter())
+      // the files this instance exported, see compareWithRebuild
+      File[] files = exported(MV_EXT)
 
-      if(files == null || files.length == 0) {
+      if(files.length == 0) {
          assert false: asset_id + " nothing was exported with MV: " + folder
       }
 
@@ -777,8 +822,8 @@ class MVTest {
          if(!noMV.exists()) {
             failures.add(it.getName() + ": not exported without MV")
          }
-         else if(noMV.lastModified() < startTime) {
-            // left by an earlier run, the case did not call executeVSWithoutMV for this file
+         else if(!exportedFiles.contains(noMV.getCanonicalPath())) {
+            // left by an earlier case or run, this case did not call executeVSWithoutMV for it
             failures.add(it.getName() + ": not exported without MV in this run")
          }
          else {
@@ -796,6 +841,15 @@ class MVTest {
          assert false: asset_id + " MV results differ from the results without MV:\n" +
                  failures.join("\n")
       }
+   }
+
+   /**
+    * The files with the suffix (e.g. {@link #MV_INCREMENTAL}) that this instance exported and
+    * that still exist (rebuildMV deletes the {@link #MV_EXT} files).
+    */
+   private File[] exported(String suffix) {
+      return exportedFiles.findAll { it.endsWith(suffix + ".txt") }
+         .collect { new File(it) }.findAll { it.exists() } as File[]
    }
 
    private static String firstDifference(List<String> mvLines, List<String> noMVLines) {
@@ -977,8 +1031,14 @@ class MVTest {
    private boolean createdApplyVPM
    private boolean[] createdExpandGroup
    private long rebuildTime
-   private final long startTime = System.currentTimeMillis()
+   // the paths exported by this instance, for compareWithRebuild
+   private final Set<String> exportedFiles = new LinkedHashSet<>()
    private RuntimeViewsheetResource viewsheetResource
+   // the viewsheet opened by the last executeTest, for refreshVS
+   private RuntimeViewsheet lastRuntime
+   private String lastBookmark
+   private int lastBookmarkCount
+   private SRPrincipal lastPrincipal
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
    private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +

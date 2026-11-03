@@ -1,6 +1,12 @@
 package inetsoft.test.mv.cases.incrementalmv
 
+import inetsoft.mv.MVManager
 import inetsoft.report.XSessionManager
+import inetsoft.sree.security.Organization
+import inetsoft.sree.security.Permission
+import inetsoft.sree.security.Resource
+import inetsoft.sree.security.ResourceAction
+import inetsoft.sree.security.SecurityEngine
 import inetsoft.report.composition.execution.AssetDataCache
 import inetsoft.test.ConfigurationContextInitializer
 import inetsoft.test.IntegrationTestConfiguration
@@ -30,8 +36,13 @@ import inetsoft.uql.asset.MirrorTableAssembly
 import inetsoft.uql.asset.Worksheet
 import inetsoft.uql.asset.internal.AssetUtil
 import inetsoft.uql.erm.AttributeRef
+import inetsoft.uql.erm.XDataModel
+import inetsoft.uql.erm.vpm.VirtualPrivateModel
+import inetsoft.uql.erm.vpm.VpmCondition
 import inetsoft.uql.jdbc.JDBCDataSource
 import inetsoft.uql.jdbc.JDBCHandler
+import inetsoft.uql.schema.StringValue
+import inetsoft.uql.schema.UserVariable
 import inetsoft.uql.schema.XSchema
 import inetsoft.uql.service.DataSourceRegistry
 import inetsoft.uql.viewsheet.SelectionListVSAssembly
@@ -92,6 +103,7 @@ class IncrementalDataChange_Spec extends Specification {
    // a copy of mvtest whose queries are run while the rows are read (H2 LAZY_QUERY_EXECUTION), so
    // a query can fail after it returned some rows
    static final String LAZY_DS = 'mvtest_lazy'
+   static final String VPM = 'mvinc_data_change_vpm'
    static final String DAYS_BEFORE_UPDATE = 'new Date(MV.LastUpdateTime.getTime() - 5 * 86400000)'
 
    @Shared def admin
@@ -125,6 +137,8 @@ class IncrementalDataChange_Spec extends Specification {
                registry.removeDataSource(LAZY_DS)
             }
          },
+         { removeVPM() },
+         { removeGrant() },
          { repository.removeSheet(AssetEntry.createAssetEntry(VS_ENTRY), admin, true) },
          { repository.removeSheet(AssetEntry.createAssetEntry(WS_ENTRY), admin, true) })
    }
@@ -418,6 +432,232 @@ class IncrementalDataChange_Spec extends Specification {
          rows(true) == updatedRows
          mvtest.compareWithRebuild()
       }
+   }
+
+   // without MV conditions an update creates the MV again from the source; with "force append
+   // updates" it appends every row the source returns, for a source that holds only the new rows
+   def 'no MV condition, force append updates #forced: the MV has #expected after the source is replaced'() {
+      given:
+      source.createLike('MVSCRIPT')
+      insertIntegers(1..5)
+      copyIntegerAssets { BoundTableAssembly table ->
+         table.setMVUpdatePreConditionList(new ConditionList())
+         table.setMVForceAppendUpdates(forced)
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = integers(false)
+
+      and: 'the source has only the new rows'
+      source.execute("DELETE FROM ${TABLE}")
+      insertIntegers(6..8)
+      update()
+
+      then:
+      verifyAll {
+         created == ['MVSCRIPT1|TopMV']
+         mvtest.takeMVHits() == ['MVSCRIPT1|TopMV']
+         createdRows == (1..5).toList()
+         integers(true) == expected
+      }
+
+      where:
+      forced | expected
+      true   | (1..8).toList()
+      false  | (6..8).toList()
+   }
+
+   // MV.<column>.Min and MV.<column>.Max are variables of the update for every column of the MV,
+   // so a condition can use the range of another column, unlike MV.MaxValue
+   def 'append condition orderno > $(MV.customer_id.Max): the variable of another column takes the new rows'() {
+      given: 'customer_id is the same as orderno'
+      source.createLike('MVorders')
+      insertOrders(1: ['2020-01-01', 1, 0], 2: ['2020-01-02', 2, 0], 3: ['2020-01-03', 3, 0])
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1') { BoundTableAssembly table ->
+         ColumnRef orderno = (ColumnRef) table.getColumnSelection(false).getAttribute('orderno')
+         AssetCondition cond = new AssetCondition(XSchema.INTEGER)
+         cond.setOperation(XCondition.GREATER_THAN)
+         cond.addValue(variable('MV.customer_id.Max'))
+         ConditionList append = new ConditionList()
+         append.append(new ConditionItem(orderno, cond, 0))
+         table.setMVUpdatePreConditionList(append)
+         table.setMVDeletePreConditionList(new ConditionList())
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and:
+      insertOrders(4: ['2020-01-04', 4, 0], 5: ['2020-01-05', 5, 0])
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = orders(true)
+
+      and: 'no new rows: nothing is appended again'
+      update()
+      def updated2 = mvtest.takeMVHits()
+
+      and:
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         updated2 == ['MVorders1|TopMV']
+         createdRows == [1, 2, 3]
+         updatedRows == [1, 2, 3, 4, 5]
+         orders(true) == [1, 2, 3, 4, 5]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   def 'viewsheet open while the MV is updated: a refresh shows the appended rows'() {
+      given:
+      source.createLike('MVSCRIPT')
+      insertIntegers(1..5)
+      copyIntegerAssets()
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def createdRows = integers(false)
+      mvtest.takeMVHits()
+
+      and: 'the viewsheet stays open, and the caches are not cleared'
+      insertIntegers(6..8)
+      mvtest.createIncrementMV(1)
+      mvtest.refreshVS(true, false)
+
+      then:
+      verifyAll {
+         createdRows == (1..5).toList()
+         mvtest.takeMVHits() == ['MVSCRIPT1|TopMV']
+         integers(true) == (1..8).toList()
+      }
+   }
+
+   // with VPM an MV is created for each identity with READ on the viewsheet, with the rows it
+   // may see, and the update appends to each MV the new rows its identity may see. The
+   // viewsheet is granted to the users, or to their groups, which the analysis expands to the
+   // member users. Without a grant of its own the viewsheet inherits Everyone from the root
+   // folder, the analysis creates one MV for that role, and user0, whose VPM differs, does not
+   // use it.
+   def 'VPM, viewsheet granted to #grantee: after the update each user sees the old and the new rows of their own'() {
+      given: 'user0 sees the customers up to 102, user1 the others'
+      def user0 = MVTest.createPrincipal('user0', ['Everyone', 'role1'] as String[], ['group0'] as String[])
+      def user1 = MVTest.createPrincipal('user1', ['Everyone'] as String[], ['group0_1'] as String[])
+      source.createLike('MVorders')
+      insertOrders(1: ['2020-01-01', 101, 0], 2: ['2020-01-02', 102, 0],
+                   3: ['2020-01-03', 103, 0], 4: ['2020-01-04', 104, 0])
+      addVPM("vpm.user == 'user0' ? 'customer_id <= 102' : 'customer_id > 102'")
+      copyOrdersAssets('MV.MaxValue', null)
+      grantRead(users, groups)
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(true, expand)
+      def mvUsers = mvUsers()
+      mvtest.executeVS(null, null, false, false, user0)
+      def created0 = mvtest.takeMVHits()
+      mvtest.executeVS(null, null, false, false, user1)
+      def created1 = mvtest.takeMVHits()
+
+      and: '5 is a customer of user0, 6 of user1'
+      insertOrders(5: ['2020-01-05', 101, 0], 6: ['2020-01-06', 106, 0])
+      mvtest.createIncrementMV(1)
+      clearCaches()
+      mvtest.executeVS(null, null, true, false, user0)
+      def updated0 = mvtest.takeMVHits()
+      mvtest.executeVS(null, null, true, false, user1)
+      def updated1 = mvtest.takeMVHits()
+
+      then:
+      verifyAll {
+         // users with the same VPM conditions share an MV, e.g. user1 with the other members
+         // of its group that are not user0
+         mvUsers.any { it.contains('user0') && !it.contains('user1') }
+         mvUsers.any { it.contains('user1') && !it.contains('user0') }
+         [created0, created1, updated0, updated1].every { it == ['MVorders1|TopMV'] }
+         orders(false, 'user0') == [1, 2]
+         orders(false, 'user1') == [3, 4]
+         orders(true, 'user0') == [1, 2, 5]
+         orders(true, 'user1') == [3, 4, 6]
+      }
+
+      where:
+      grantee                    | users              | groups                  | expand
+      'user0 and user1'          | ['user0', 'user1'] | []                      | false
+      'their groups, expanded'   | []                 | ['group0', 'group0_1']  | true
+   }
+
+   /** Grant READ on the viewsheet of the case, which is removed with it. */
+   private static void grantRead(List<String> users, List<String> groups) {
+      Resource resource = AssetUtil.getSecurityResource(AssetEntry.createAssetEntry(VS_ENTRY))
+      Permission permission = new Permission()
+      String org = Organization.getDefaultOrganizationID()
+      permission.setUserGrantsForOrg(ResourceAction.READ, users as Set, org)
+      permission.setGroupGrantsForOrg(ResourceAction.READ, groups as Set, org)
+      SecurityEngine.getSecurity().setPermission(resource.getType(), resource.getPath(), permission)
+   }
+
+   private static void removeGrant() {
+      Resource resource = AssetUtil.getSecurityResource(AssetEntry.createAssetEntry(VS_ENTRY))
+      SecurityEngine engine = SecurityEngine.getSecurity()
+
+      if(engine.getPermission(resource.getType(), resource.getPath()) != null) {
+         engine.removePermission(resource.getType(), resource.getPath())
+      }
+   }
+
+   /** The users of each MV created for the viewsheet, the MV names sorted. */
+   private List<List<String>> mvUsers() {
+      List<String> views = ((MaterializedViewResource) mvtest.materializedViewResource).getViews()
+      return views.toSorted().collect { String name ->
+         (MVManager.getManager().get(name).getUsers() ?: []).collect { it.getName() }.sort()
+      }
+   }
+
+   /** Add a VPM to the data source mvtest with a trigger script on the table of the case. */
+   private static void addVPM(String script) {
+      DataSourceRegistry registry = DataSourceRegistry.getRegistry()
+      XDataModel model = registry.getDataModel('mvtest')
+      VpmCondition cond = new VpmCondition('by user')
+      cond.setType(VpmCondition.TABLE)
+      cond.setTable(TABLE)
+      cond.setScript(script)
+      VirtualPrivateModel vpm = new VirtualPrivateModel(VPM)
+      vpm.addCondition(cond)
+      model.addVirtualPrivateModel(vpm, true)
+      registry.setDataModel(model)
+   }
+
+   private static void removeVPM() {
+      DataSourceRegistry registry = DataSourceRegistry.getRegistry()
+      XDataModel model = registry.getDataModel('mvtest')
+
+      if(model?.getVirtualPrivateModel(VPM) != null) {
+         model.removeVirtualPrivateModel(VPM)
+         registry.setDataModel(model)
+      }
+   }
+
+   /** A variable as the condition dialog creates it. */
+   private static UserVariable variable(String name) {
+      UserVariable var = new UserVariable()
+      var.setName(name)
+      var.setAlias(name)
+      var.setValueNode(new StringValue(name))
+      return var
    }
 
    @Issue('https://issues.inetsoft.com/issues/77901')
@@ -733,17 +973,17 @@ class IncrementalDataChange_Spec extends Specification {
    }
 
    /** The lines of an exported file of the last run. */
-   private List<String> exported(String name, boolean incremental) {
+   private List<String> exported(String name, boolean incremental, String user = 'admin') {
       File folder = new File(new File(getClass().getResource('/expectData').getPath()).getParent(),
                              'exportedData/' + PATH)
-      File file = new File(folder, 'admin_' + name + (incremental ? '__MVIncremental.txt' : '__MV.txt'))
+      File file = new File(folder, user + '_' + name + (incremental ? '__MVIncremental.txt' : '__MV.txt'))
       assert file.exists(): 'not exported: ' + file
       return file.readLines('UTF-8')
    }
 
    /** The rows of the exported table, without the size and the header. */
-   private List<List<String>> rows(boolean incremental) {
-      return exported('Query1', incremental).drop(2).findAll { it }.collect {
+   private List<List<String>> rows(boolean incremental, String user = 'admin') {
+      return exported('Query1', incremental, user).drop(2).findAll { it }.collect {
          (it.substring(1, it.length() - 1).split(/\]\[/) as List<String>)
       }
    }
@@ -753,8 +993,8 @@ class IncrementalDataChange_Spec extends Specification {
    }
 
    /** The ordernos of the exported table (columns customer_id, discount, orderdate, orderno). */
-   private List<Integer> orders(boolean incremental) {
-      return rows(incremental).collect { it[3] as int }.sort()
+   private List<Integer> orders(boolean incremental, String user = 'admin') {
+      return rows(incremental, user).collect { it[3] as int }.sort()
    }
 
    private List<String> listValues(boolean incremental) {
