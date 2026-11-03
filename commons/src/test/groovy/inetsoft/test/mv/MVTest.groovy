@@ -228,6 +228,42 @@ class MVTest {
             sandboxOpt.get().resetAll(new ChangedAssemblyList());
          }
       }
+
+      lastRuntime = rvs
+      lastBookmark = bk
+      lastPrincipal = principal
+      return exportRuntime(rvs, bk, incremental, exportSelection, principal)
+   }
+
+   /**
+    * Refresh the viewsheet opened by the last {@link #executeVS} call, as the Refresh button of
+    * the viewer does ({@code VSRefreshService}: {@code RuntimeViewsheet.resetRuntime()}, then
+    * the assemblies are reset), and export its data again. The viewsheet is not opened again,
+    * and the caches are not cleared, so the export shows what a user who keeps the viewsheet
+    * open sees after the refresh.
+    */
+   def refreshVS(boolean incremental, boolean exportSelection) {
+      if(lastRuntime == null) {
+         throw new IllegalStateException(asset_id + ": refreshVS needs executeVS")
+      }
+
+      executionErrors.clear()
+      ThreadContext.setContextPrincipal(lastPrincipal)
+      lastRuntime.resetRuntime()
+      lastRuntime.getViewsheetSandbox().get().resetAll(new ChangedAssemblyList())
+      exportRuntime(lastRuntime, lastBookmark, incremental, exportSelection, lastPrincipal)
+
+      if(!executionErrors.isEmpty()) {
+         String msg = asset_id + " failed to refresh " + executionErrors.size() +
+                 " component(s):\n" + executionErrors.join("\n")
+         executionErrors.clear()
+         throw new AssertionError(msg)
+      }
+   }
+
+   private def exportRuntime(RuntimeViewsheet rvs, String bk, boolean incremental,
+                             boolean exportSelection, SRPrincipal principal)
+   {
       Viewsheet vs = rvs.getViewsheet()
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       Assembly[] assemblies = vs.getAssemblies()
@@ -407,6 +443,7 @@ class MVTest {
    }
 
    def exportData(def data, String fileName) {
+      exportedFiles.add(fileName)
       File file = new File(fileName)
       if(!file.getParentFile().exists()) {
          file.getParentFile().mkdirs()
@@ -554,11 +591,11 @@ class MVTest {
       }
 
       File folder = new File(getExportFolderPath())
-      File[] files = folder.listFiles(new IncrementalMVFilter())
-      // a file system that keeps modification times to the second may show a file written just
-      // after startTime as older than it
-      long since = startTime - startTime % 1000
-      files = files?.findAll { it.lastModified() >= since } as File[]
+      // the files this instance exported, not the folder: an earlier case of the same viewsheet
+      // leaves its files there, and modification times kept to the second can not tell them
+      // apart from the files of this case
+      File[] files = exportedFiles.findAll { it.endsWith(MV_INCREMENTAL + ".txt") }
+         .collect { new File(it) } as File[]
 
       if(files == null || files.length == 0) {
          assert false: asset_id + " nothing was exported after the incremental update: " + folder
@@ -978,7 +1015,13 @@ class MVTest {
    private boolean[] createdExpandGroup
    private long rebuildTime
    private final long startTime = System.currentTimeMillis()
+   // the paths exported by this instance, for compareWithRebuild
+   private final Set<String> exportedFiles = new LinkedHashSet<>()
    private RuntimeViewsheetResource viewsheetResource
+   // the viewsheet opened by the last executeTest, for refreshVS
+   private RuntimeViewsheet lastRuntime
+   private String lastBookmark
+   private SRPrincipal lastPrincipal
    private String asset_id
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
    private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +
