@@ -687,8 +687,8 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, which ignores the condition ORDER_ID <> ?aaa
-   //(Others 1944, without MV 1911) (#79482). Update it after the fix.
+   //No MV is created for the condition ORDER_ID <> ?aaa on the named group column (#79482), so the
+   //result is the one without MV (Others 1911) and no MV is hit.
    @Issue('https://issues.inetsoft.com/issues/79482')
    def 'variable col is name grouped'() {
       String asset_id = '1^128^__NULL__^submv/variable col is name grouped'
@@ -701,7 +701,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVHitInfo().containsAll(['ORDERS1_O|SubMV'])
+         mvtest.getMVHitInfo().isEmpty()
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

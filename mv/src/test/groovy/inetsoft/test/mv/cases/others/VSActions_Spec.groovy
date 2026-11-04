@@ -104,8 +104,7 @@ class VSActions_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, where bookmark bk1 selects FL -> Nova Tera instead of
-   //FL -> Old World Insurance (#79507). Update it after the fix.
+   //Bookmark bk1 restores the range slider selection FL -> Old World Insurance with MV (#79507).
    @Issue('https://issues.inetsoft.com/issues/79507')
    def 'selection_compatible2'() {
       given:

@@ -1,11 +1,13 @@
-The table size(row x col) is: (10 x 1)
+The table size(row x col) is: (12 x 1)
 [PRODUCT_NAME]
 [17 Inch LCD]
 [19 inch LCD]
 [House Hunter]
 [Info Folder]
 [InsideView]
+[MeToo AppServer]
 [Sync Me]
+[True Action]
 [Web Bridge]
 [Wireless Mouse]
 [Xconnect Server]

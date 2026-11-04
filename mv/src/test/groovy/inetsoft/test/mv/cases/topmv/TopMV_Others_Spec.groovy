@@ -210,7 +210,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, which misses 2 rows (#79417). Update it after the fix.
+   //The MV result keeps the 2 rows that contain an upper case "A" (#79417).
    @Issue(['http://173.220.179.100/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
    def 'v-contains'() {
       given:

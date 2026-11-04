@@ -230,8 +230,7 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, which drops the rows with an empty value in a "not
-   //equal to" condition (#79505). Update it after the fix.
+   //A "not equal to" condition keeps the rows with an empty value, with and without MV (#79505).
    @Issue('https://issues.inetsoft.com/issues/79505')
    def 'C_V_5'() {
       given:
@@ -677,8 +676,7 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, which drops the rows with an empty value in a "not
-   //equal to" condition (#79505). Update it after the fix.
+   //A "not equal to" condition keeps the rows with an empty value, with and without MV (#79505).
    @Issue('https://issues.inetsoft.com/issues/79505')
    def 'expression'() {
       given:
