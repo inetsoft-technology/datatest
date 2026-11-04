@@ -379,4 +379,40 @@ class FreeExecution_Spec extends Specification {
       expect:
       vsCalcTest.compareImage(null)
    }
+
+   /**
+    * test a cell formula var named like a CALC function (max, count, value) is undefined
+    * at the start of every row, and max() stays callable from other cells
+    * Bug #78247
+    */
+   def 'FSDeclaredVar'() {
+      caseName = specificationContext.currentIteration.name
+      vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSDeclaredVar', caseName)
+      vsCalcTest.executeVS(null, null)
+      vsCalcTest.exportAsPNG(null, null)
+
+      expect:
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
+   }
+
+   /**
+    * test a named cell ($total) in a freehand cell's foreground/background format expression,
+    * and a failing format expression keeps the table's data (default format)
+    * Bug #78493
+    */
+   def 'FSFormatNamedCell'() {
+      caseName = specificationContext.currentIteration.name
+      vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSFormatNamedCell', caseName)
+      vsCalcTest.executeVS(null, null)
+      vsCalcTest.exportAsPNG(null, null)
+
+      expect:
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
+   }
 }
