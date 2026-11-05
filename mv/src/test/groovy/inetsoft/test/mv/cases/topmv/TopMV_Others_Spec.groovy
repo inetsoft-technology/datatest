@@ -211,7 +211,7 @@ class TopMV_Others_Spec extends Specification {
    }
 
    //The MV result keeps the 2 rows that contain an upper case "A" (#79417).
-   @Issue(['http://173.220.179.100/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
+   @Issue(['https://issues.inetsoft.com/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
    def 'v-contains'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-contains'
@@ -265,7 +265,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/47853')
+   @Issue('https://issues.inetsoft.com/issues/47853')
    def 'vs_donut'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/vs_donut'
@@ -283,7 +283,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48175')
+   @Issue('https://issues.inetsoft.com/issues/48175')
    @Retry(count = 3)
    def 'chart_discrete'() {
       given:
@@ -302,7 +302,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48293')
+   @Issue('https://issues.inetsoft.com/issues/48293')
    def 'ganttchart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/ganttchart'
@@ -320,7 +320,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48293')
+   @Issue('https://issues.inetsoft.com/issues/48293')
    def 'treechart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/treechart'
@@ -338,7 +338,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48939')
+   @Issue('https://issues.inetsoft.com/issues/48939')
    def 'parameter prompts is false'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parameter prompts is false'
@@ -392,7 +392,12 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   //Bug #53475, chart can't display for 'bk1', display warning info
+   //Ignored, the case cannot pass by design:
+   //- bk1: the ad hoc filter cannot use the MV, so Chart1 shows the warning
+   //  "Table column doesn't exist in MV: order_time in Query2" instead of the chart (#53475).
+   //- Chart1 shows Sum of Query2.employee_id, which is First(employee_id, discount) grouped by discount,
+   //  so every row of a group ties on discount and the value depends on the row order. The order differs
+   //  with and without MV, so Sum(employee_id) differs while Count(address) is the same.
    @Ignore
    def 'date range and number range'() {
       given:

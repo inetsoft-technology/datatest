@@ -73,7 +73,7 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/37226')
+   @Issue('https://issues.inetsoft.com/issues/37226')
    def 'parent-aggregate-distinct-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col not public'
@@ -108,7 +108,7 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/37244')
+   @Issue('https://issues.inetsoft.com/issues/37244')
    def 'parent-aggregate-maxrow-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-maxrow-selection col not public'
@@ -177,6 +177,9 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
+   //Ignored: Query3 joins RETURNS1 twice. With a selection on RETURNS1.REASON (bk1, bk2, bk4, bk5) the MV
+   //returns more rows than without MV (#80445). The expected data is the result without MV.
+   @Issue('https://issues.inetsoft.com/issues/80445')
    @Ignore
    def 'composite3'() {
       given:

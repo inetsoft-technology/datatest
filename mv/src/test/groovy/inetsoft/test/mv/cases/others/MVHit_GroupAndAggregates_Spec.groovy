@@ -275,7 +275,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/49867')
+   @Issue('https://issues.inetsoft.com/issues/49867')
    def 'discrete_chart'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/discrete_chart'
@@ -446,7 +446,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/43498')
+   @Issue('https://issues.inetsoft.com/issues/43498')
    def 'freehand3'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/freehand3'

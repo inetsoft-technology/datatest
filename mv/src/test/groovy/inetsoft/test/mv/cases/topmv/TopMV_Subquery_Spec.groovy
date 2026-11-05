@@ -261,7 +261,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_4'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_4'
@@ -330,7 +330,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_8'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_8'
@@ -348,8 +348,9 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Ignore
-   //鑷姩鍖杕v table 浼犲叆鐨則able len 涓嶅锛屾槸selection list 鐨?full table
+   //Query1 shows Query4, a mirror of products1 with a subquery condition on products1. The SubMV
+   //Detail_Query4_O is created as before; the tables of the case read products1|TopMV. The results are the
+   //same as without MV.
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
@@ -361,13 +362,14 @@ class TopMV_Subquery_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVHitInfo().containsAll(['Detail_Query4_O|SubMV'])
+         mvtest.getMVDefInfo().containsAll(['Detail_Query4_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['products1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_10'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_10'

@@ -462,7 +462,7 @@ class TopMV_Conditions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/23220')
+   @Issue('https://issues.inetsoft.com/issues/23220')
    def 'v-ranking1'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-ranking1'
@@ -598,7 +598,7 @@ class TopMV_Conditions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/8268')
+   @Issue('https://issues.inetsoft.com/issues/8268')
    def 'variable expression'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/variable expression'
@@ -618,7 +618,10 @@ class TopMV_Conditions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/60758')
+   //Ignored: CUSTOMERS1 has a correlated subquery condition on CONTACTS1, which has a variable. The MV is
+   //created, but the viewsheet then shows "Correlated subquery condition not supported in MV." and no data
+   //(#80457). There is no expected data yet.
+   @Issue(['https://issues.inetsoft.com/issues/60758', 'https://issues.inetsoft.com/issues/80457'])
    @Ignore
    def 'variable in subquery'() {
       given:

@@ -641,7 +641,7 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/44348')
+   @Issue('https://issues.inetsoft.com/issues/44348')
    def 'C_V_29'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_29'
@@ -695,20 +695,24 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/44378')
-   @Ignore
+   //A condition that compares two fields is not supported by MV (#44378), so no MV is created and the
+   //result is the one without MV.
+   @Issue('https://issues.inetsoft.com/issues/44378')
    def 'field'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/field'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, null, false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
       expect:
       verifyAll {
-         mvtest.getMVHitInfo().containsAll(['Query2|TopMV'])
+         mvtest.getMVDefInfo().isEmpty()
+         mvtest.getMVHitInfo().isEmpty()
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

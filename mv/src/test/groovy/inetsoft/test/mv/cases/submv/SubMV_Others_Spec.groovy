@@ -425,7 +425,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
+   //bug #54403, the data differs slightly after the MV is created
    def 'percentage-select on group col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on group col'
       mvtest = new MVTest(asset_id)
@@ -442,7 +442,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
+   //bug #54403, the data differs slightly after the MV is created
    def 'percentage-select on other col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on other col'
       mvtest = new MVTest(asset_id)
@@ -573,7 +573,10 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //Bug#37854
+   //Ignored: Query1 is grouped by DISCOUNT with a maximum row count of 5. With MV the empty DISCOUNT is the
+   //first group and 0.15 is not shown, without MV the empty DISCOUNT is last (#80446). The expected data is
+   //the result without MV. Bookmarks bk1 and bk2 cover #37854 and are the same with and without MV.
+   @Issue(['https://issues.inetsoft.com/issues/37854', 'https://issues.inetsoft.com/issues/80446'])
    @Ignore
    def 'top-aggregate-maxrow'() {
       String asset_id = '1^128^__NULL__^submv/top-aggregate-maxrow'

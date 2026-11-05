@@ -535,7 +535,7 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/49843')
+   @Issue('https://issues.inetsoft.com/issues/49843')
    def 'datelevel_none'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/datelevel_none'
