@@ -228,7 +228,7 @@ class VSActions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38256')
+   @Issue('https://issues.inetsoft.com/issues/38256')
    def 'element binding3'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/element binding3'
@@ -362,7 +362,7 @@ class VSActions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/45181')
+   @Issue('https://issues.inetsoft.com/issues/45181')
    def 'drill down filter3'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/drill down filter3'
@@ -378,7 +378,7 @@ class VSActions_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48178')
+   @Issue('https://issues.inetsoft.com/issues/48178')
    def 'brush filter'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/brush filter'

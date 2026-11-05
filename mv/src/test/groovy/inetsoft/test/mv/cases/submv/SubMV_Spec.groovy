@@ -39,7 +39,7 @@ class SubMV_Spec extends Specification {
       mvtest?.removeMV()
    }
 
-   //average 瀛樺湪鏁版嵁绮惧害闂, bug #54404
+   //average has a data precision problem, bug #54404
    def 'aggbase'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase'
@@ -131,7 +131,7 @@ class SubMV_Spec extends Specification {
       }
    }
 
-   //瀛樺湪鏁版嵁绮惧害鍙樺寲闂
+   //the data precision changes
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/crossjoin'
@@ -438,7 +438,7 @@ class SubMV_Spec extends Specification {
          mvtest.compareWithoutMV()
       }
    }
-   //average瀛樺湪鏁版嵁绮惧害闂
+   //average has a data precision problem
    def 'namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^submv/namegroup'

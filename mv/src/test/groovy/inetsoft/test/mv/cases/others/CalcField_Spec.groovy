@@ -141,7 +141,7 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/43410')
+   @Issue('https://issues.inetsoft.com/issues/43410')
    def 'Public_Calendar'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Public_Calendar'
@@ -571,7 +571,7 @@ class CalcField_Spec extends Specification {
 
    //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
    //fields are computed from; the shared columns are the same.
-   @Issue('http://173.220.179.100/issues/48283')
+   @Issue('https://issues.inetsoft.com/issues/48283')
    def 'chart_NthLargest for calcfield'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_NthLargest for calcfield'
@@ -589,7 +589,7 @@ class CalcField_Spec extends Specification {
 
    //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
    //fields are computed from; the shared columns are the same.
-   @Issue('http://173.220.179.100/issues/49832')
+   @Issue('https://issues.inetsoft.com/issues/49832')
    def 'chart_namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup'
@@ -605,7 +605,7 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/49777')
+   @Issue('https://issues.inetsoft.com/issues/49777')
    def 'chart_namegroup2'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup2'
@@ -622,7 +622,7 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/50262')
+   @Issue('https://issues.inetsoft.com/issues/50262')
    def 'calcfield on group other'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/calcfield on group other'
@@ -642,7 +642,7 @@ class CalcField_Spec extends Specification {
 
    //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
    //fields are computed from; the shared columns are the same.
-   @Issue('http://173.220.179.100/issues/51346')
+   @Issue('https://issues.inetsoft.com/issues/51346')
    def 'multiple calc on chart'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/multiple calc on chart'
@@ -692,7 +692,7 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/75659')
+   @Issue('https://issues.inetsoft.com/issues/75659')
    /**
     * The live query and the materialized view legitimately iterate the rows in different orders,
     * so they can return different (but equally valid) values for the tied rows.

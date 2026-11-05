@@ -211,7 +211,7 @@ class TopMV_Others_Spec extends Specification {
    }
 
    //The MV result keeps the 2 rows that contain an upper case "A" (#79417).
-   @Issue(['http://173.220.179.100/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
+   @Issue(['https://issues.inetsoft.com/issues/44221', 'https://issues.inetsoft.com/issues/79417'])
    def 'v-contains'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/v-contains'
@@ -265,7 +265,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/47853')
+   @Issue('https://issues.inetsoft.com/issues/47853')
    def 'vs_donut'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/vs_donut'
@@ -283,7 +283,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48175')
+   @Issue('https://issues.inetsoft.com/issues/48175')
    @Retry(count = 3)
    def 'chart_discrete'() {
       given:
@@ -302,7 +302,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48293')
+   @Issue('https://issues.inetsoft.com/issues/48293')
    def 'ganttchart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/ganttchart'
@@ -320,7 +320,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48293')
+   @Issue('https://issues.inetsoft.com/issues/48293')
    def 'treechart'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/treechart'
@@ -338,7 +338,7 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/48939')
+   @Issue('https://issues.inetsoft.com/issues/48939')
    def 'parameter prompts is false'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parameter prompts is false'

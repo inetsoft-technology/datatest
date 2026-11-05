@@ -62,7 +62,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
 
    }
 
-   @Issue('http://173.220.179.100/issues/38616')
+   @Issue('https://issues.inetsoft.com/issues/38616')
    def 'chart-namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart/chart-namegroup'
@@ -239,7 +239,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38791')
+   @Issue('https://issues.inetsoft.com/issues/38791')
    def 'comparsionfilter-week'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/comparsionfilter-week'
@@ -325,7 +325,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/42260')
+   @Issue('https://issues.inetsoft.com/issues/42260')
    def 'parent-child selection tree'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/parent-child selection tree'
@@ -475,7 +475,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       mvtest.compareWithoutMV()
    }
 
-   @Issue('http://173.220.179.100/issues/52677')
+   @Issue('https://issues.inetsoft.com/issues/52677')
    def 'selection association4'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection association4'
@@ -611,7 +611,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38887')
+   @Issue('https://issues.inetsoft.com/issues/38887')
    def 'otherassembly-crosstab'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/otherassembly-crosstab'
@@ -629,7 +629,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/55927')
+   @Issue('https://issues.inetsoft.com/issues/55927')
    def 'otherassembly-text'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/otherassembly-text'
@@ -798,7 +798,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/54918')
+   @Issue('https://issues.inetsoft.com/issues/54918')
    def 'incremental adhoc filter'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/incremental adhoc filter'
@@ -818,8 +818,8 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/60645')
-   @Issue('http://173.220.179.100/issues/60746')
+   @Issue('https://issues.inetsoft.com/issues/60645')
+   @Issue('https://issues.inetsoft.com/issues/60746')
    def 'adhoc filter and drill filter'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/adhoc filter and drill filter'

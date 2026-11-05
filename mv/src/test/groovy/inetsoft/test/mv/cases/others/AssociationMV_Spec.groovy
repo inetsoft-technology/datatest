@@ -110,7 +110,7 @@ class AssociationMV_Spec extends Specification {
    }
 
    //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
-   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
+   @Issue(['https://issues.inetsoft.com/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider2'
@@ -129,7 +129,7 @@ class AssociationMV_Spec extends Specification {
    }
 
    //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
-   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
+   @Issue(['https://issues.inetsoft.com/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider3'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider3'
@@ -148,7 +148,7 @@ class AssociationMV_Spec extends Specification {
    }
 
    //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
-   @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
+   @Issue(['https://issues.inetsoft.com/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider4'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CompositeRangeSlider4'

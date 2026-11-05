@@ -261,7 +261,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_4'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_4'
@@ -330,7 +330,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_8'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_8'
@@ -349,7 +349,7 @@ class TopMV_Subquery_Spec extends Specification {
    }
 
    @Ignore
-   //鑷姩鍖杕v table 浼犲叆鐨則able len 涓嶅锛屾槸selection list 鐨?full table
+   //the table lens passed to the MV table in the test is wrong, it is the full table of the selection list
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
@@ -367,7 +367,7 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/38278')
+   @Issue('https://issues.inetsoft.com/issues/38278')
    def 'Subquery_Mode3_10'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_10'

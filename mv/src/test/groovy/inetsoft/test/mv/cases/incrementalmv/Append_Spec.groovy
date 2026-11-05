@@ -252,7 +252,7 @@ class Append_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/45013')
+   @Issue('https://issues.inetsoft.com/issues/45013')
    def 'S_TestCase12'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase12'
@@ -500,7 +500,7 @@ class Append_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/47598')
+   @Issue('https://issues.inetsoft.com/issues/47598')
    def 'S_TestCase30'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/S_TestCase30'

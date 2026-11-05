@@ -425,7 +425,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
+   //bug #54403, the data differs slightly after the MV is created
    def 'percentage-select on group col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on group col'
       mvtest = new MVTest(asset_id)
@@ -442,7 +442,7 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //bug #54403, 寤簃v涔嬪悗鏁版嵁缁嗗井宸埆
+   //bug #54403, the data differs slightly after the MV is created
    def 'percentage-select on other col'() {
       String asset_id = '1^128^__NULL__^submv/percentage-select on other col'
       mvtest = new MVTest(asset_id)

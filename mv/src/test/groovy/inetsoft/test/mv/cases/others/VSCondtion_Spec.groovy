@@ -641,7 +641,7 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/44348')
+   @Issue('https://issues.inetsoft.com/issues/44348')
    def 'C_V_29'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_29'
@@ -695,7 +695,7 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/44378')
+   @Issue('https://issues.inetsoft.com/issues/44378')
    @Ignore
    def 'field'() {
       given:

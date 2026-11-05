@@ -73,7 +73,7 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/37226')
+   @Issue('https://issues.inetsoft.com/issues/37226')
    def 'parent-aggregate-distinct-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-distinct-selection col not public'
@@ -108,7 +108,7 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
-   @Issue('http://173.220.179.100/issues/37244')
+   @Issue('https://issues.inetsoft.com/issues/37244')
    def 'parent-aggregate-maxrow-selection col not public'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/parent-aggregate-maxrow-selection col not public'
