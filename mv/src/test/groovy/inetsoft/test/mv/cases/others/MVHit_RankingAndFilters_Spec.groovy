@@ -647,6 +647,11 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
+   //Ignored: the composite range slider on ORDER_TIME, ORDER_DATE and ORDER_DATETIME orders its values
+   //differently with MV (minimum 07:30:00 with MV, the empty time without MV), so bk1 selects different data
+   //(#80458). The case does not compare with the result without MV, and the expected data was generated
+   //from the MV result.
+   @Issue('https://issues.inetsoft.com/issues/80458')
    @Ignore
    def 'chart-time type'() {
       given:

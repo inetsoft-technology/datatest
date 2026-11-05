@@ -618,7 +618,10 @@ class TopMV_Conditions_Spec extends Specification {
       }
    }
 
-   @Issue('https://issues.inetsoft.com/issues/60758')
+   //Ignored: CUSTOMERS1 has a correlated subquery condition on CONTACTS1, which has a variable. The MV is
+   //created, but the viewsheet then shows "Correlated subquery condition not supported in MV." and no data
+   //(#80457). There is no expected data yet.
+   @Issue(['https://issues.inetsoft.com/issues/60758', 'https://issues.inetsoft.com/issues/80457'])
    @Ignore
    def 'variable in subquery'() {
       given:
