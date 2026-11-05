@@ -23,6 +23,8 @@
         <case.module>topmv</case.module>
         <!-- golden, nomv or both, see MVTest.COMPARE_MODE -->
         <mv.compare>golden</mv.compare>
+        <!-- false runs every spec class in its own JVM, see the others profile -->
+        <mv.reuseForks>true</mv.reuseForks>
     </properties>
 
     <dependencies>
@@ -49,6 +51,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <forkCount>1</forkCount>
+                    <reuseForks>${mv.reuseForks}</reuseForks>
                     <additionalClasspathElements>
                         <element>../commons/target/test-classes</element>
                         <element>${root.dir}/docker/src/test/resources/libs/orders_131.jar</element>
@@ -175,6 +179,9 @@
             <id>others</id>
             <properties>
                 <case.module>others</case.module>
+                <!-- with -Dmv.compare=nomv or both, the whole profile in one JVM fills the 2g heap at
+                     VSActions_Spec and waits in XSwapper.waitForMemory -->
+                <mv.reuseForks>false</mv.reuseForks>
             </properties>
         </profile>
     </profiles>
