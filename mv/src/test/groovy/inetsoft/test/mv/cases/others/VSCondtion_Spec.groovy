@@ -710,6 +710,7 @@ class VSCondtion_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().isEmpty()
+         mvtest.getMVHitInfo().isEmpty()
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

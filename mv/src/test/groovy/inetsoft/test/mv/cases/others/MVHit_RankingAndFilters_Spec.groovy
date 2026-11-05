@@ -770,6 +770,8 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
+   //(Home) has no value for RadioButton1 and the viewsheet sets no default, so the radio button selects its
+   //first value (customer 1) and Query1 shows customer 1.
    def 'input5'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/input5'

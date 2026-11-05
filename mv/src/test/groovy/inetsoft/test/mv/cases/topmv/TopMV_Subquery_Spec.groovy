@@ -348,6 +348,9 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
+   //Query1 shows Query4, a mirror of products1 with a subquery condition on products1. The SubMV
+   //Detail_Query4_O is created as before; the tables of the case read products1|TopMV. The results are the
+   //same as without MV.
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
@@ -359,6 +362,7 @@ class TopMV_Subquery_Spec extends Specification {
 
       expect:
       verifyAll {
+         mvtest.getMVDefInfo().containsAll(['Detail_Query4_O|SubMV'])
          mvtest.getMVHitInfo().containsAll(['products1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
