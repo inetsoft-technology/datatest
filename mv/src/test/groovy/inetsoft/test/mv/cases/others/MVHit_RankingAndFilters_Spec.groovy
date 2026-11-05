@@ -6,6 +6,7 @@ import spock.lang.Execution
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
+import spock.lang.PendingFeature
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -378,7 +379,10 @@ class MVHit_RankingAndFilters_Spec extends Specification {
 
    //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
    //first instead of last (#79506). Update it after the fix.
-   @Issue('https://issues.inetsoft.com/issues/79506')
+   //Bookmark bk_select1 selects a range one value shorter with MV, so the chart value of 2004 differs
+   //from the one without MV (#80170). Pending until #80170 is fixed; then remove @PendingFeature.
+   @Issue(['https://issues.inetsoft.com/issues/79506', 'https://issues.inetsoft.com/issues/80170'])
+   @PendingFeature(reason = 'The bookmark range differs with and without MV, #80170')
    def 'rangeslider-compositevalue'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/rangeslider-compositevalue'

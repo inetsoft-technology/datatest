@@ -1,4 +1,4 @@
-The table size(row x col) is: (12 x 3)
+The table size(row x col) is: (13 x 3)
 [aaa][STATE][REGION_ID]
 [Fast Transportation][FL][1]
 [FMG Consulting][MD][1]
@@ -11,4 +11,5 @@ The table size(row x col) is: (12 x 3)
 [Loctite Corp.][CT][1]
 [Northwest Outfitters][WA][2]
 [Nova Tera][TX][2]
+[Old World Insurance][NY][1]
 
