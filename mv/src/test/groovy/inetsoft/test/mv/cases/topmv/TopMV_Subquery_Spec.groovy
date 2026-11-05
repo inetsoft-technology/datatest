@@ -348,8 +348,6 @@ class TopMV_Subquery_Spec extends Specification {
       }
    }
 
-   @Ignore
-   //the table lens passed to the MV table in the test is wrong, it is the full table of the selection list
    def 'Subquery_Mode3_9'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/Subquery_Mode3_9'
@@ -361,7 +359,7 @@ class TopMV_Subquery_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVHitInfo().containsAll(['Detail_Query4_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['products1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
