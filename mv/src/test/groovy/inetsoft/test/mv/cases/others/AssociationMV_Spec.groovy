@@ -109,8 +109,7 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
-   //first instead of last (#79506). Update it after the fix.
+   //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
    @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider2'() {
       given:
@@ -129,8 +128,7 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
-   //first instead of last (#79506). Update it after the fix.
+   //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
    @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider3'() {
       given:
@@ -149,8 +147,7 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
-   //first instead of last (#79506). Update it after the fix.
+   //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
    @Issue(['http://173.220.179.100/issues/40344', 'https://issues.inetsoft.com/issues/79506'])
    def 'TestCase_CompositeRangeSlider4'() {
       given:

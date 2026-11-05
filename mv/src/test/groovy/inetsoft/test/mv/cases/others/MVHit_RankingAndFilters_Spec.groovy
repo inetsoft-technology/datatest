@@ -377,8 +377,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, where the composite slider puts the empty DISCOUNT
-   //first instead of last (#79506). Update it after the fix.
+   //The composite slider puts the empty DISCOUNT first, with and without MV (#79506).
    //Bookmark bk_select1 selects a range one value shorter with MV, so the chart value of 2004 differs
    //from the one without MV (#80170). Pending until #80170 is fixed; then remove @PendingFeature.
    @Issue(['https://issues.inetsoft.com/issues/79506', 'https://issues.inetsoft.com/issues/80170'])
