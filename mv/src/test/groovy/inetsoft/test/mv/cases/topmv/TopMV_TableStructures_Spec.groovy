@@ -177,6 +177,9 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
+   //Ignored: Query3 joins RETURNS1 twice. With a selection on RETURNS1.REASON (bk1, bk2, bk4, bk5) the MV
+   //returns more rows than without MV (#80445). The expected data is the result without MV.
+   @Issue('https://issues.inetsoft.com/issues/80445')
    @Ignore
    def 'composite3'() {
       given:
