@@ -392,7 +392,12 @@ class TopMV_Others_Spec extends Specification {
       }
    }
 
-   //Bug #53475, chart can't display for 'bk1', display warning info
+   //Ignored, the case cannot pass by design:
+   //- bk1: the ad hoc filter cannot use the MV, so Chart1 shows the warning
+   //  "Table column doesn't exist in MV: order_time in Query2" instead of the chart (#53475).
+   //- Chart1 shows Sum of Query2.employee_id, which is First(employee_id, discount) grouped by discount,
+   //  so every row of a group ties on discount and the value depends on the row order. The order differs
+   //  with and without MV, so Sum(employee_id) differs while Count(address) is the same.
    @Ignore
    def 'date range and number range'() {
       given:
