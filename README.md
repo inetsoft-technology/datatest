@@ -129,6 +129,8 @@ The `mv` module also has one profile per test mode. Without `-P` only `topmv` ru
 
 The profiles share the MV storage under `mv/target`. When running several of them one after another locally, delete `mv/target` before each one, or rows left by the previous profile make results differ.
 
+The `others` profile runs every spec class in its own JVM (`mv.reuseForks=false`). With `-Dmv.compare=nomv` or `both`, the whole profile in one JVM fills the 2 GB heap at `VSActions_Spec` and stops in `XSwapper.waitForMemory`. Add `-Dmv.reuseForks=true` to run it in one JVM; set it to `false` to do the same in another profile.
+
 `-Dmv.compare` selects how the MV results are checked:
 
 - `golden` (default): compare with `expectData`.
