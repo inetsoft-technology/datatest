@@ -158,6 +158,12 @@
             </properties>
         </profile>
         <profile>
+            <id>wsmv</id>
+            <properties>
+                <case.module>wsmv</case.module>
+            </properties>
+        </profile>
+        <profile>
             <id>submv</id>
             <properties>
                 <case.module>submv</case.module>
