@@ -125,7 +125,10 @@ The `mv` module also has one profile per test mode. Without `-P` only `topmv` ru
 .\mvnw.cmd test -pl mv -Pincrementalmv
 .\mvnw.cmd test -pl mv -Pvpm
 .\mvnw.cmd test -pl mv -Pothers
+.\mvnw.cmd test -pl mv -Pwsmv
 ```
+
+`wsmv` runs one path through a worksheet MV (`WSMV_Path_Spec`): it turns `ws.mv.enabled` on, creates the MV for the worksheet only, checks that the viewsheet reads it, and updates it incrementally. Like `IncrementalDataChange_Spec` it changes the H2 file, see below.
 
 The profiles share the MV storage under `mv/target`. When running several of them one after another locally, delete `mv/target` before each one, or rows left by the previous profile make results differ.
 

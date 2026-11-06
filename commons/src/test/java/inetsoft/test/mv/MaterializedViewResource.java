@@ -2,12 +2,14 @@ package inetsoft.test.mv;
 
 import inetsoft.mv.MVManager;
 import inetsoft.report.composition.WorksheetService;
+import inetsoft.sree.RepositoryEntry;
 import inetsoft.sree.internal.DataCycleManager;
 import inetsoft.sree.internal.cluster.Cluster;
 import inetsoft.sree.security.IdentityID;
 import inetsoft.sree.security.SecurityEngine;
 import inetsoft.sree.security.SRPrincipal;
 import inetsoft.test.core.MessageTestUtils;
+import inetsoft.uql.asset.AssetEntry;
 import inetsoft.uql.asset.AssetRepository;
 import inetsoft.uql.asset.internal.AssetUtil;
 import inetsoft.util.ConfigurationContext;
@@ -17,6 +19,10 @@ import inetsoft.util.ThreadContext;
 import inetsoft.web.admin.content.repository.*;
 import inetsoft.web.admin.content.repository.MVService;
 import inetsoft.web.admin.content.repository.MVSupportService;
+import inetsoft.web.admin.content.repository.model.AnalyzeMVRequest;
+import inetsoft.web.admin.content.repository.model.AnalyzeMVResponse;
+import inetsoft.web.admin.content.repository.model.CreateUpdateMVRequest;
+import inetsoft.web.admin.content.repository.model.MaterializedModel;
 import inetsoft.enterprise.web.api.mv.*;
 
 import org.mockito.MockedStatic;
@@ -35,6 +41,20 @@ public class MaterializedViewResource {
     * @param asset_id, the viewsheet asset_id
     */
    public MaterializedViewResource(String asset_id) throws Exception {
+      this(asset_id, null);
+   }
+
+   /**
+    * constructor
+    *
+    * @param asset_id,    the viewsheet asset_id
+    * @param worksheetId, the identifier of a worksheet (e.g. {@code 1^2^__NULL__^path^host-org})
+    *                     to create the MVs for, or null to create them for the viewsheet. A
+    *                     worksheet is analyzed as the EM repository tree does (a WORKSHEET node
+    *                     through {@link MVService}), the public MV API analyzes viewsheets only.
+    */
+   public MaterializedViewResource(String asset_id, String worksheetId) throws Exception {
+      this.worksheetId = worksheetId;
       
       context = ConfigurationContext.getContext();
       context.setHome(System.getProperty("sree.home"));
@@ -66,7 +86,7 @@ public class MaterializedViewResource {
       // MVService.getDataCycles → dataCycleManager.getDataCycles(orgId); default mock returns null → NPE in for-loop.
       lenient().when(dataCycleManager.getDataCycles(anyString()))
          .thenReturn(Collections.emptyEnumeration());
-      MVService mvService = new MVService(contentRepositoryTreeService, mvSupportService, cluster, mvManager,
+      mvService = new MVService(contentRepositoryTreeService, mvSupportService, cluster, mvManager,
          dataCycleManager,
          securityEngine,
          context.getSpringBean(inetsoft.mv.data.MVStorage.class));
@@ -175,6 +195,11 @@ public class MaterializedViewResource {
     * @param expandGroup, create for users in group
     */
    public void createMV0(boolean applyVPM, boolean... expandGroup) {
+      if(worksheetId != null) {
+         createWorksheetMV(applyVPM, expandGroup != null && expandGroup.length > 0 && expandGroup[0]);
+         return;
+      }
+
       AnalysisJob analysisJob;
       
       if(expandGroup == null || expandGroup.length == 0) {
@@ -247,6 +272,83 @@ public class MaterializedViewResource {
          }
          catch(Exception e) {
             throw new RuntimeException("=============Failed to create MV=============", e);
+         }
+      });
+   }
+
+   /**
+    * Analyze the worksheet and create its MVs, as the EM repository tree does: analyze a
+    * WORKSHEET node, wait for the analysis, and create every MV it found. The MV names are kept
+    * in {@link #views} before the creation starts, so {@link #removeMV()} removes them even when
+    * the creation fails.
+    */
+   private void createWorksheetMV(boolean applyVPM, boolean expandGroup) {
+      MessageTestUtils.withMockMessageContext(this.principal, null, () -> {
+         try {
+            String path = AssetEntry.createAssetEntry(worksheetId).getPath();
+            ContentRepositoryTreeNode node = ContentRepositoryTreeNode.builder()
+               .label(path)
+               .path(path)
+               .type(RepositoryEntry.WORKSHEET)
+               .build();
+            AnalyzeMVRequest request = AnalyzeMVRequest.builder()
+               .addNodes(node)
+               .expanded(expandGroup)
+               .bypass(!applyVPM)
+               .full(true)
+               .build();
+            String analysisId = mvService.analyze(request, principal).getId();
+            AnalyzeMVResponse status = null;
+
+            for(int retry = 0; retry < 800; retry++) {
+               status = mvService.checkAnalyzeStatus(analysisId, principal);
+
+               if(status.completed()) {
+                  break;
+               }
+
+               Thread.sleep(100);
+            }
+
+            if(status == null || !status.completed()) {
+               throw new MVCreateFailedException(
+                  "====MV Analyze Exception==== " + worksheetId + ": analysis did not complete in time");
+            }
+
+            if(status.exception()) {
+               // like the viewsheet analysis: warnings are logged and the result is used
+               System.err.println("====MV Analyze warnings (proceeding)==== " + worksheetId);
+            }
+
+            if(status.status() != null) {
+               for(MaterializedModel model : status.status()) {
+                  this.views.add(model.name());
+               }
+            }
+
+            if(this.views.isEmpty()) {
+               throw new MVCreateFailedException(worksheetId + ": the worksheet analysis found no MV");
+            }
+
+            CreateUpdateMVRequest createRequest = CreateUpdateMVRequest.builder()
+               .mvNames(this.views)
+               .cycle("")
+               .noData(false)
+               .build();
+
+            // without a create id the MVs are created on this thread before create returns
+            mvService.create(null, analysisId, createRequest, principal);
+         }
+         catch(RuntimeException e) {
+            throw e;
+         }
+         catch(Throwable e) {
+            if(e instanceof InterruptedException) {
+               Thread.currentThread().interrupt();
+            }
+
+            throw new MVCreateFailedException(
+               "====MV Create Exception==== " + worksheetId + ": " + e, e);
          }
       });
    }
@@ -357,6 +459,10 @@ public class MaterializedViewResource {
       public MVCreateFailedException(String message) {
          super(message);
       }
+
+      public MVCreateFailedException(String message, Throwable cause) {
+         super(message, cause);
+      }
    }
 
    /**
@@ -367,6 +473,8 @@ public class MaterializedViewResource {
    private static final int WAIT_RETRIES = 3000;
 
    private final MaterializedViewApiService materializedViewApiService;
+   private final MVService mvService;
+   private final String worksheetId;
    private final MaterializedViewApiController materializedViewApiController;
    private ConfigurationContext context;
    private final SRPrincipal principal;

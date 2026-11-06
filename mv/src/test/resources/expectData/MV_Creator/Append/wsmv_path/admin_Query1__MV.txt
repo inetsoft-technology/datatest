@@ -1,0 +1,6 @@
+The table size(row x col) is: (4 x 4)
+[customer_id][discount][orderdate][orderno]
+[101][0][2020-01-01 00:00:00][1]
+[102][0][2020-01-02 00:00:00][2]
+[103][0][2020-01-08 00:00:00][3]
+

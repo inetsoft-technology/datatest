@@ -58,13 +58,23 @@ class MVTest {
    static String suiteName
 
    MVTest(String asset_id) {
+      this(asset_id, null)
+   }
+
+   /**
+    * @param worksheetId the identifier of the worksheet to create the MVs for (a worksheet MV),
+    *                    or null to create them for the viewsheet asset_id, see
+    *                    {@link MaterializedViewResource#MaterializedViewResource(String, String)}
+    */
+   MVTest(String asset_id, String worksheetId) {
       if(!(COMPARE_MODE in ['golden', 'nomv', 'both'])) {
          throw new IllegalArgumentException("mv.compare must be golden, nomv or both: " + COMPARE_MODE)
       }
 
       ensureRuntimeInitialized()
       this.asset_id = asset_id
-      materializedViewResource = new MaterializedViewResource(this.asset_id)
+      this.worksheetId = worksheetId
+      materializedViewResource = new MaterializedViewResource(this.asset_id, worksheetId)
    }
 
    /**
@@ -523,6 +533,52 @@ class MVTest {
       hitMVs.clear()
       hitUnobservable = false
       return hits
+   }
+
+   /**
+    * Get the worksheet MVs created by this instance that the executions since the last call
+    * actually read, and forget the hits like {@link #takeMVHits()}. An MV counts only when it is
+    * a worksheet MV ({@code MVDef.isWSMV()}) of the worksheet given to the constructor and a hit
+    * names its MV table. Hits come from the MV information of the executed tables, and for
+    * selections and components that show a plain value from the sandbox lookup of the viewsheet
+    * (see {@link #recordMVLookupHit}), which does not find worksheet MVs.
+    * <p>
+    * A hit only names the MV table, which is the same for every MV of the worksheet table, so
+    * the check fails when another worksheet MV of the worksheet exists, e.g. one left by an
+    * earlier run in the shared storage. When the executed tables did not show which MV they
+    * read, the check fails instead of falling back to the defined MVs, which would also pass
+    * when the data came from the database.
+    */
+   List<String> takeWSMVHits() {
+      if(worksheetId == null) {
+         throw new IllegalStateException(asset_id + ": takeWSMVHits needs a worksheet MV")
+      }
+
+      boolean unobservable = hitUnobservable
+      Set<String> hits = new LinkedHashSet<>(hitMVs)
+      hitMVs.clear()
+      hitUnobservable = false
+      assert !unobservable: asset_id + ": the executed tables do not show which MV they read"
+
+      MVManager manager = MVManager.getManager()
+      List<String> views = materializedViewResource.getViews()
+      List<String> others = manager.list(false).findAll { MVDef mvdef ->
+         mvdef.isWSMV() && worksheetId == mvdef.getWsId() && !views.contains(mvdef.getName())
+      }*.getName()
+      assert others.isEmpty(): asset_id + ": other worksheet MVs of the worksheet exist, " +
+         "a hit can not tell them apart: " + others
+
+      return views.findAll { String name ->
+         MVDef mvdef = manager.get(name)
+
+         mvdef != null && mvdef.isWSMV() && worksheetId == mvdef.getWsId() &&
+            hits.contains(mvdef.getMVTable() + "|" + (mvdef.isSub() ? "SubMV" : "TopMV"))
+      }
+   }
+
+   /** The names of the MVs created by this instance. */
+   List<String> materializedViewNames() {
+      return materializedViewResource.getViews()
    }
 
    /**
@@ -1040,6 +1096,7 @@ class MVTest {
    private int lastBookmarkCount
    private SRPrincipal lastPrincipal
    private String asset_id
+   private String worksheetId
    private final static NumberFormat numformat = new DecimalFormat("#0.####")
    private final static SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd " +
            "HH:mm:ss")
