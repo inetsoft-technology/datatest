@@ -2,7 +2,6 @@
 
 > 日期：2026-11-09　模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
 > 产品源码分支：`test-cluster-p1-52-second-rename`（可能与 datatest 实际使用的产品版本不同）
-> 完整讨论记录与脚本输出：`archive/vscalc-round-1/`
 
 ## 1. 结论
 
@@ -81,7 +80,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 | 已有公式的通用边界 | 并列、负数、NaN、整数溢出 | 8 | 低 | NaN、溢出 |
 | **合计** | | **99** | | |
 
-按优先级：前五行加工厂一致性共 67 个，是 G3、G4 的主体，大多是纯单元，先做；明细型求值要先确认测试入口。逐个用例的清单在 `archive/vscalc-round-1/02-unit-test-case-list.md`。
+按优先级：前五行加工厂一致性共 67 个，是 G3、G4 的主体，大多是纯单元，先做；明细型求值要先确认测试入口。
 
 ## 5. Dashboard 补充
 
