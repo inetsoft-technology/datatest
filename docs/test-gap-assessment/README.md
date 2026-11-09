@@ -23,7 +23,3 @@
 | chart | | 未开始 |
 | vsexport | | 未开始 |
 | ws、olap、tabular、vpm、vsscript、css、mv | | 未开始 |
-
-## archive/
-
-`archive/vscalc-round-1/` 是 vscalc 第一轮的完整讨论记录（讨论时间线、99 个单测用例清单、datatest 方案、脚本输出，以及撤回过的结论）。日常不需要读，需要追溯某个结论的来历时再看。
