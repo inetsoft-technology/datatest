@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 4)
+state, fx_boolean, Sum(CUSTOMER_ID), Change from previous: Sum(CUSTOMER_ID)
+NJ, false, 1602, NULL
+NJ, true, 494, NULL
+MA, false, 1002, -600
+MA, true, 1060, 566
+TX, false, 1876, 874
+CA, false, 734, -1142
+CA, true, 489, NULL
+WA, false, 812, 78
+WA, true, 378, -111
+NY, false, 997, 185
+MD, false, 978, -19
+PA, false, 616, -362
+Others, false, 1494, 878
+Others, true, 230, NULL

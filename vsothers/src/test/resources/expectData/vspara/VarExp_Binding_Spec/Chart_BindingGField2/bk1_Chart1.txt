@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+Customer:State, Customer:City, Sum(Product:Total)
+AZ, Tucson, 468098
+CA, Albany, 202294
+CO, Denver, 525569
+FL, Orlando, 390641
+IL, Chicago, 559501

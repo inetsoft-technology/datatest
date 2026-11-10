@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+DataGroup(Order:Date), Day(Order:Date), Sum(Order:Paid), Change from previous range of DataGroup(Order:Date): Sum(Order:Paid)
+2020, 2020-10-01, 10, NULL
+2020, 2020-10-05, 4, NULL
+2020, 2020-10-07, 8, NULL
+2021, 2021-10-04, 2, NULL
+2021, 2021-10-05, 8, 4
+2022, 2022-10-02, 9, NULL
+2022, 2022-10-03, 2, NULL
+2022, 2022-10-05, 13, 5

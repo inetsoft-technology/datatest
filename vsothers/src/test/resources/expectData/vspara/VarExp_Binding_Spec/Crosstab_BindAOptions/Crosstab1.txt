@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 10)
+fx_boolean, state, 1st, 1st, 2nd, 2nd, 3rd, 3rd, 4th, 4th
+NULL, NULL, Sum(CUSTOMER_ID), % of total by column: Sum(CUSTOMER_ID), Sum(CUSTOMER_ID), % of total by column: Sum(CUSTOMER_ID), Sum(CUSTOMER_ID), % of total by column: Sum(CUSTOMER_ID), Sum(CUSTOMER_ID), % of total by column: Sum(CUSTOMER_ID)
+false, MA, 162, 16%, 294, 29%, 258, 26%, 288, 29%
+false, MD, 264, 27%, 189, 19%, 242, 25%, 283, 29%
+false, NJ, 367, 23%, 562, 35%, 354, 22%, 319, 20%
+false, NY, 171, 17%, 219, 22%, 258, 26%, 349, 35%
+false, TX, 233, 12%, 533, 28%, 699, 37%, 411, 22%
+false, WA, 116, 14%, 348, 43%, 174, 21%, 174, 21%
+false, Others, 592, 21%, 846, 30%, 722, 25%, 684, 24%
+true, CA, 101, 21%, 110, 22%, 93, 19%, 185, 38%
+true, CO, 8, 13%, 24, 40%, 12, 20%, 16, 27%
+true, IL, 30, 18%, 50, 29%, 50, 29%, 40, 24%
+true, MA, 148, 14%, 376, 35%, 251, 24%, 285, 27%
+true, NJ, 57, 12%, 171, 35%, 133, 27%, 133, 27%
+true, WA, 108, 29%, 54, 14%, 81, 21%, 135, 36%
+Grand Total, NULL, 2357, 18%, 3776, 30%, 3327, 26%, 3302, 26%

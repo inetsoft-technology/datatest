@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+state, First(fx_low, state), Change from previous: First(fx_low, state)
+AZ, 2, NULL
+CA, 2, 0
+CO, 2, 0
+IL, 2, 0
+NV, 2, 0
+TX, 2, 0
+WA, 1.5, -0.5
+FL, 1.15, -0.35
+CT, 1, -0.15
+MA, 1, 0
+MD, 1, 0
+NJ, 1, 0
+NY, 0.5, -0.5
+PA, 0.5, 0

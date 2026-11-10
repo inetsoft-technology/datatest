@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 10)
+fx_boolean, state, 1st, 1st, 2nd, 2nd, 3rd, 3rd, 4th, 4th
+NULL, NULL, Average(CUSTOMER_ID), % of total by row: Average(CUSTOMER_ID), Average(CUSTOMER_ID), % of total by row: Average(CUSTOMER_ID), Average(CUSTOMER_ID), % of total by row: Average(CUSTOMER_ID), Average(CUSTOMER_ID), % of total by row: Average(CUSTOMER_ID)
+false, NV, 32, 182%, 32, 172%, 32, 168%, 32, 182%
+false, WA, 29, 165%, 29, 156%, 29, 153%, 29, 165%
+false, PA, 28, 159%, 28, 151%, 28, 147%, 28, 159%
+false, MA, 23.14, 132%, 22.62, 122%, 23.45, 123%, 24, 137%
+false, TX, 23.3, 132%, 22.21, 119%, 21.84, 115%, 22.83, 130%
+false, AZ, 20, 114%, 20, 108%, 20, 105%, 20, 114%
+false, Others, 14.43, 82%, 14.4, 77%, 15.78, 83%, 13.81, 79%
+true, MA, 29.6, 168%, 28.92, 155%, 27.89, 147%, 28.5, 162%
+true, WA, 27, 154%, 27, 145%, 27, 142%, 27, 154%
+true, NJ, 19, 108%, 19, 102%, 19, 100%, 19, 108%
+true, CA, 11.22, 64%, 11, 59%, 10.33, 54%, 10.88, 62%
+true, IL, 10, 57%, 10, 54%, 10, 53%, 10, 57%
+true, CO, 4, 23%, 4, 22%, 4, 21%, 4, 23%
+Grand Total, NULL, 1,759%, 100%, 1,860%, 100%, 1,901%, 100%, 1,756%, 100%

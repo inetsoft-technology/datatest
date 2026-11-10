@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 6)
+State, Bank Name, fx_start, fx_end, fx_mile, Fund
+IL, Farmers' and Traders' State Bank, 2012-05-29, 2012-06-23, 2012-06-14, 10442
+IL, Second Federal Savings and Loan Association of Chicago, 2012-07-10, 2012-08-04, 2012-07-26, 10453
+IL, Waukegan Savings Bank, 2012-07-24, 2012-08-18, 2012-08-09, 10456
+GA, First Cherokee State Bank, 2012-07-10, 2012-08-04, 2012-07-26, 10450
+GA, Georgia Trust Bank, 2012-07-10, 2012-08-04, 2012-07-26, 10451
+GA, Jasper Banking Company, 2012-07-17, 2012-08-11, 2012-08-02, 10455
+GA, Montgomery Bank & Trust, 2012-06-26, 2012-07-21, 2012-07-12, 10448
+GA, Security Exchange Bank, 2012-06-05, 2012-06-30, 2012-06-21, 10446
+FL, Putnam State Bank, 2012-06-05, 2012-06-30, 2012-06-21, 10445
+FL, Security Bank, National Association, 2012-04-24, 2012-05-19, 2012-05-10, 10439
+FL, The Royal Palm Bank of Florida, 2012-07-10, 2012-08-04, 2012-07-26, 10454
+KS, Heartland Bank, 2012-07-10, 2012-08-04, 2012-07-26, 10452
+MO, Glasgow Savings Bank, 2012-07-03, 2012-07-28, 2012-07-19, 10449
+TN, The Farmers Bank of Lynchburg, 2012-06-05, 2012-06-30, 2012-06-21, 10447
+NC, Waccamaw Bank, 2012-05-29, 2012-06-23, 2012-06-14, 10444
+OK, First Capital Bank, 2012-05-29, 2012-06-23, 2012-06-14, 10443
+SC, Carolina Federal Savings Bank, 2012-05-29, 2012-06-23, 2012-06-14, 10441
+AL, Alabama Trust Bank, National Association, 2012-05-08, 2012-06-02, 2012-05-24, 10440

@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+Customer:City, Sum(Product:Total), BackgroundShape
+Albany, 202294, NULL
+Denver, 525569, NULL
+Los Angeles, 856418, NULL
+Orlando, 390641, NULL
+San Francisco, 627936, NULL

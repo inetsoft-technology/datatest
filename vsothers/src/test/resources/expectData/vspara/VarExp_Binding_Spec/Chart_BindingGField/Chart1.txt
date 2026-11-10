@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 4)
+State, City, Region, Sum(Price)
+CT, Hartford, USA East, 20225
+FL, Orlando, USA East, 37230
+MA, Boston, USA East, 104130
+MA, Cambridge, USA East, 40465
+MA, Springfield, USA East, 68824
+MD, Baltimore, USA East, 96679
+MD, Rockville, USA East, 41487
+NJ, Camden, USA East, 43799
+NJ, Middletown, USA East, 57250
+NJ, New Brunswick, USA East, 51783
+NJ, Newark, USA East, 68016
+NJ, Plainfield, USA East, 44802
+NJ, Wayne, USA East, 53114
+NY, New York, USA East, 233477
+PA, York, USA East, 42386
+AZ, Tucson, USA West, 51955
+CA, Albany, USA West, 20274
+CA, Los Angeles, USA West, 85927
+CA, San Francisco, USA West, 61750
+CO, Boulder, USA West, 34718
+CO, Denver, USA West, 49777
+IL, Chicago, USA West, 55578
+NV, Las Vegas, USA West, 34944
+TX, Austin, USA West, 75383
+TX, Dallas, USA West, 96431
+TX, Houston, USA West, 60051
+WA, Olympia, USA West, 59354
+WA, Seattle, USA West, 24810

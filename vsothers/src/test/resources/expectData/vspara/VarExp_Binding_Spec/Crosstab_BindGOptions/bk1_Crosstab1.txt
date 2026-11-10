@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 5)
+fx_boolean, state, Jan, Feb, Mar
+false, TX, 11, 95, 127
+false, NJ, 64, 54, 249
+false, MA, 108, 36, 18
+false, Others, 371, 372, 400
+true, MA, NULL, 80, 68
+true, NJ, 38, NULL, 19
+true, CA, 39, 27, 35
+true, Others, 85, 47, 14

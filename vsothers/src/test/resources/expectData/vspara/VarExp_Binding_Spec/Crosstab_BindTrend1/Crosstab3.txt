@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 6)
+reseller, QuarterOfYear(order_date), Sum(discount), Compound Growth reseller: Sum(discount), Grand Total, Grand Total
+false, 1st, 0.3, 30%, 0.3, NULL
+false, 2nd, 0.7, 121%, 0.7, NULL
+false, 3rd, 0.5, 232%, 0.5, NULL
+false, 4th, 0.4, 364%, 0.4, NULL
+false, Total, 1.9, NULL, 1.9, NULL
+true, 1st, 2.45, 245%, 2.45, NULL
+true, 2nd, 1.75, 849%, 1.75, NULL
+true, 3rd, 2.05, 2,794%, 2.05, NULL
+true, 4th, 1.55, 7,279%, 1.55, NULL
+true, Total, 7.8, NULL, 7.8, NULL

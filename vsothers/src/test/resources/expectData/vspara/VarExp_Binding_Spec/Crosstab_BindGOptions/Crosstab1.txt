@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 6)
+fx_boolean, state, 2020, 2022, 2023, Grand Total
+false, TX, 447, 495, 534, 1476
+false, NJ, 218, 317, 479, 1014
+false, MA, 216, 162, 336, 714
+false, NY, 174, 313, 189, 676
+false, MD, 203, 320, 214, 737
+false, Others, 849, 875, 957, 2681
+true, MA, 365, 320, 216, 901
+true, NJ, 38, 209, 76, 323
+true, CA, 107, 123, 153, 383
+true, WA, 135, 54, 135, 324
+true, IL, 40, 60, 40, 140
+true, Others, 8, 20, 16, 44
+Grand Total, NULL, 2800, 3268, 3345, 9413

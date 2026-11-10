@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 13)
+Year(order_date), employee_id, customer_id, Min_employee_id, Q25_employee_id, Medium_employee_id, Q75_employee_id, Max_employee_id, Min_customer_id, Q25_customer_id, Medium_customer_id, Q75_customer_id, Max_customer_id
+2002-01-01, NULL, NULL, 1, 2, 2, 3, 4, 1, 9.5, 20, 27, 35
+2003-01-01, NULL, NULL, 1, 1, 2, 3, 4, 1, 10.5, 18, 28, 35
+2004-01-01, NULL, NULL, 1, 2, 2, 4, 4, 1, 10, 19, 27, 35
+2005-01-01, NULL, NULL, 1, 2, 3, 4, 4, 1, 8.5, 17, 26, 35

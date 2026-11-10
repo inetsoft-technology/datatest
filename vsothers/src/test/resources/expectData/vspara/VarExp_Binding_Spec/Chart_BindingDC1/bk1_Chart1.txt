@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 4)
+MonthOfQuarter(Order:Date), Quarter(Order:Date), Sum(Product:Total), Change from previous quarter of Quarter(Order:Date): Sum(Product:Total)
+1, 2022-10-01 00:00:00, 353175, NULL
+1, 2023-01-01 00:00:00, 438506, 85331
+1, 2023-04-01 00:00:00, 437021, -1485
+2, 2022-10-01 00:00:00, 533054, NULL
+2, 2023-01-01 00:00:00, 401380, -131674
+2, 2023-04-01 00:00:00, 259560, -141820
+3, 2022-10-01 00:00:00, 338854, NULL
+3, 2023-01-01 00:00:00, 369173, 30319
+3, 2023-04-01 00:00:00, 366846, -2327

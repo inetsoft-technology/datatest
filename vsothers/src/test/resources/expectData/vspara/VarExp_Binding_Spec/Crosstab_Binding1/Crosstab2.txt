@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 14)
+NULL, 4, 4, 4, 4, 3, 3, 3, 3, 2, 2, 2, 2, Grand Total
+NULL, HI, KY, NC, Others, MI, SD, WY, Others, CO, ID, KY, Others, NULL
+Sum(fmonthOfday), 10, 10, 10, 1416, 7, 7, 7, 1167, 4, 4, 4, 664, 3310
+% of total by column: Sum(fmonthOfday), 0%, 0%, 0%, 43%, 0%, 0%, 0%, 35%, 0%, 0%, 0%, 20%, 100%
