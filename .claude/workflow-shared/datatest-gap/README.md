@@ -48,4 +48,4 @@
 - 读大文件时 context-mode 会把 `Read` 换成索引搜索：用 `offset`/`limit`，或 `Bash` 的 `sed -n`，或 `ctx_execute` 只打印结论。
 - 在 `Bash` 的 heredoc 里写含反斜杠的 Python 会被改写（`\n` 变成真换行）：**写文件用 `Write`/`Edit` 工具**。
 - 脚本里打印中文或表情符号时，Windows 控制台默认 gbk 会报 `UnicodeEncodeError`：自写命令需 `PYTHONIOENCODING=utf-8`（`vs_backup_scan.py` 已处理）。
-- 产品源码默认位置 `E:\inetsoft\sr14_0\stylebi-main\community\core`，其分支可能与 datatest 实际使用的产品版本不同，分析前记录分支。
+- 产品源码默认位置 `E:\inetsoft\sr14_0\stylebi-main\community\core`，应在 `main`；datatest 以 `Stateless-Sessions1` 为准（主分支，PR 都 merge 到它）。`main` 分支的 datatest 是旧的，缺少 `DcViewsheetTest` 等，不能用来评估。

@@ -1,7 +1,7 @@
 # vspara 测试缺口与补充方案
 
 > 日期：2026-11-09　模块：`vsothers`，profile `-Pvspara`，spec `Para_VS_Spec`、`VarExp_Binding_Spec`、`VarExp_Properties_Spec`
-> 产品源码分支：`main`（datatest 当前在 `Stateless-Sessions1`，两边实际版本是否一致未核对）
+> datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（`f12b07ca59`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。第 4 节的产品单测盘点已在 `main` 上复核。
 
 ## 1. 结论
 
@@ -123,7 +123,6 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 - PNG 比对是否有容差、容差多大：`PNGCompare`（`CompareUtil.groovy:121`）未读，G2 的"在容差内看不出来"是推断。
 - `docs/vs/VSParaDynimac/`（`vsparameter.xlsx`、`vsdynimac.xlsx`、`Hyperlink_Dynimac.zip`）里团队可能已有缺口记录，**本轮没有解析**；该目录下的 `Hyperlink_Dynimac.zip` 没有对应 spec，是否属于 vspara 范围要用户确认。
 - `.__type__` 在前端的使用：只在 `show-hyperlink.service.ts` 看到有出现，未逐处读；浏览器发送哪些参数以开发为准。
-- 产品源码在 `main` 分支，datatest 在 `Stateless-Sessions1`，产品版本是否一致未核对。
 - 需要开发回答：空数组变量的条件语义；`prompt` 在 WS/VS 两层的优先关系；`$(组件)` 由哪个类解析；转换失败应报错还是回退字符串。
 - 需要用户决定：是否把 `Hyperlink_Dynimac` 纳入；VarExp 绑定类用例是整体追加数据比对，还是先试一个。
 

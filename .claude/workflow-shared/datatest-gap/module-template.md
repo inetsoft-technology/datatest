@@ -1,7 +1,7 @@
 # <module> 测试缺口与补充方案
 
 > 日期：<YYYY-MM-DD>　模块：`<maven 模块>`，profile `-P<profile>`，spec `<spec 文件>`
-> 产品源码分支：<branch>（可能与 datatest 实际使用的产品版本不同）
+> datatest 基线：`Stateless-Sessions1`；产品源码：`main`（<commit>，<版本>，与 datatest `pom.xml` 一致）
 
 ## 1. 结论
 
@@ -19,7 +19,7 @@
 
 - <比对遍历"实际导出"还是"基线清单"：file:line>
 - <导出失败是否让用例失败：file:line>
-- <exportData 是否清理、CI 命令是否带 clean>
+- <exportData 是否清理：Jenkins 准备阶段与 GitHub 工作流是否 clean，file:line>
 - <严格版基类的使用比例>
 - <基线是回归基线还是独立标准答案；没查就写"未查">
 

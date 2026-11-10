@@ -6,6 +6,8 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 评估一个 datatest 模块，**只产出一个文件**：`docs/test-gap-assessment/<module>.md`，结构见 `<TOOLS>/module-template.md`。不写别的文档，不落实。
 
 路径：`<TOOLS>` = `.claude/workflow-shared/datatest-gap`；`<PRODUCT>` = 产品源码仓库（本机默认 `E:\inetsoft\sr14_0\stylebi-main\community\core`）。
+
+**分支约定：** datatest 的主分支是 `Stateless-Sessions1`，评估与 PR 都以它为准、PR 也 merge 到它；`main` 是旧分支，**不能**当评估依据（它缺 `DcViewsheetTest`、`onExportFailure` 等，机制结论会不同）。产品源码对应 `main`（版本与 datatest `pom.xml` 的 `2.1.0-SNAPSHOT` 一致）。开始前先确认：`git rev-parse --abbrev-ref HEAD` 在 datatest 是 `Stateless-Sessions1` 系（或从它切出的分支），`git -C <PRODUCT> rev-parse --abbrev-ref HEAD` 是 `main`；不是就先停下问用户。
 先读 `<TOOLS>/README.md`（路由规则、证据纪律、本机的坑）。可以把独立的部分（读产品源码核实语义、盘点某个类的单测）交给子代理，但文件由你写，数字由你核对。
 
 ## 先读：哪些验证过，哪些没有
@@ -20,11 +22,11 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 **1. 读现有资料，定位**
 - 状态表；该模块已有的评估文件（有就在它的基础上更新，不推倒重来）。
 - 团队已有的设计文档（可选）：`docs/vs/<模块相关目录>/` 下的 xlsx、md，扫一眼是否已有缺口记录（vscalc 的 `docs/vs/VSCalcfield/vscalcfield auto.xlsx` 里 `analysis`、`Miss checkpoint` 两个 sheet 就是）。有就用，没有就跳过，不为解析它写工具。
-- 找到 spec、backup zip、基线目录、断言基类；记录产品源码分支（`git -C <PRODUCT> rev-parse --abbrev-ref HEAD`）。
+- 找到 spec、backup zip、基线目录、断言基类；文件头记录 datatest 基线（`Stateless-Sessions1`）与产品源码 `main` 的 commit。
 - **向用户确认一次矩阵维度**：先用一句话说明该模块的"特性"是什么，再提议维度（vscalc 用"计算字段类型 × 使用位置 × 数据源"）。不自行默认。
 
 **2. 审计验证机制（先于覆盖）**
-读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理且 CI 命令是否带 `clean`、CI 对失败的处理（`continue-on-error` / `catchError`）、严格版基类使用比例。
+读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理（CI 的 `clean` 在 `Jenkinsfile` 准备阶段与 GitHub 工作流里，不要只看测试阶段的命令）、CI 对失败的处理（`continue-on-error` / `catchError`）、严格版基类使用比例。
 
 **3. 覆盖矩阵、断言层、单测盘点**
 - 有 zip 与 Groovy spec 时运行 `vs_backup_scan.py` 的 `inventory`、`crosscheck`、`strictcheck`；不适用就说明，用等价办法并写明口径。
@@ -45,4 +47,4 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 
 ## 停下来问（不要自己决定）
 
-路由无法确定（单测与 dashboard 都说得通）；期望值取决于产品语义（列给开发，不替开发决定）；产品源码分支与 datatest 实际使用的版本明显不同；脚本不适用该模块的资产形式（问是否要写新扫描器）。
+路由无法确定（单测与 dashboard 都说得通）；期望值取决于产品语义（列给开发，不替开发决定）；datatest 不在 `Stateless-Sessions1` 系、或产品源码不在 `main`；脚本不适用该模块的资产形式（问是否要写新扫描器）。

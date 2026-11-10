@@ -1,7 +1,7 @@
 # vscalc 测试缺口与补充方案
 
 > 日期：2026-11-09　模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
-> 产品源码分支：`test-cluster-p1-52-second-rename`（可能与 datatest 实际使用的产品版本不同）
+> datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（`f12b07ca59`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。第 4 节的产品单测盘点已在 `main` 上复核。
 
 ## 1. 结论
 
@@ -41,7 +41,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 - 比对遍历的是"实际导出的文件"，不是"基线清单"：`CompareUtil.groovy:472`。导出少了文件时没有东西可比，用例照样通过。
 - 导出失败只打印堆栈：`ViewsheetTest.groovy:177`（`onExportFailure`）。
 - 严格版基类 `DcViewsheetTest` 已修了以上两点，但使用该基类的 spec 文件只有 2 个，使用 `ViewsheetTest` 系列的共 26 个。vscalc 用的是宽松版。
-- `exportData` 没有清理代码；GitHub 工作流先执行 `./mvnw clean`，Jenkins 命令不带 `clean`（工作区是否全新未确认）。
+- `exportData` 没有清理代码，但 CI 都会先清：Jenkins 准备阶段执行 `./mvnw clean -pl vsothers`（`Jenkinsfile:37`），GitHub 工作流先执行 `./mvnw clean`（`test-vsothers.yml:71`）。上一次导出的残留文件不是问题（本地手工重跑除外）。
 - CI 对失败的处理：GitHub 工作流 5 个测试步骤全是 `continue-on-error: true`；Jenkins 的 vscalc 阶段是 `catchError(buildResult: 'UNSTABLE')`，失败只让构建变 UNSTABLE。
 - 静态预测：22 个用例的基线文件与预期导出文件**完全一致**，所以换严格基类预计不会因文件集合而失败（未运行）。
 - 基线来源（回归基线还是独立标准答案）：**未查**。
