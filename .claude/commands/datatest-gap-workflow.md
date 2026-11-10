@@ -7,13 +7,14 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 
 路径：`<TOOLS>` = `.claude/workflow-shared/datatest-gap`；`<PRODUCT>` = 产品源码仓库（本机默认 `E:\inetsoft\sr14_0\stylebi-main\community\core`）。
 
-**分支约定：** datatest 的主分支是 `Stateless-Sessions1`，评估与 PR 都以它为准、PR 也 merge 到它；`main` 是旧分支，**不能**当评估依据（它缺 `DcViewsheetTest`、`onExportFailure` 等，机制结论会不同）。产品源码对应 `main`（版本与 datatest `pom.xml` 的 `2.1.0-SNAPSHOT` 一致）。开始前先确认：`git rev-parse --abbrev-ref HEAD` 在 datatest 是 `Stateless-Sessions1` 系（或从它切出的分支），`git -C <PRODUCT> rev-parse --abbrev-ref HEAD` 是 `main`；不是就先停下问用户。
+**分支约定：** datatest 的主分支是 `Stateless-Sessions1`，评估与 PR 都以它为准、PR 也 merge 到它；`main` 是旧分支，**不能**当评估依据（它缺 `DcViewsheetTest`、`onExportFailure` 以及 #203 的严格 `ViewsheetTest`，机制结论会不同）。产品源码对应 `main`（版本与 datatest `pom.xml` 的 `2.1.0-SNAPSHOT` 一致）。开始前先确认：`git rev-parse --abbrev-ref HEAD` 在 datatest 是 `Stateless-Sessions1` 系（或从它切出的分支），`git -C <PRODUCT> rev-parse --abbrev-ref HEAD` 是 `main`；不是就先停下问用户。
 先读 `<TOOLS>/README.md`（路由规则、证据纪律、本机的坑）。可以把独立的部分（读产品源码核实语义、盘点某个类的单测）交给子代理，但文件由你写，数字由你核对。
 
 ## 先读：哪些验证过，哪些没有
 
-验证过：`vs_backup_scan.py`（在 vscalc 上运行，结果与手工核对一致）；vscalc 已按本流程的产出格式做成样例 `docs/test-gap-assessment/vscalc.md`。
+验证过：`vs_backup_scan.py`（在 vscalc 上运行，结果与手工核对一致；`strictcheck` 的预测在 vscalc、vspara `Para_VS_Spec`、chart `TrendComparison_Spec` 上与实际运行一致）；vscalc 已按本流程的产出格式做成样例 `docs/test-gap-assessment/vscalc.md`。
 **没有端到端运行过：** 这套流程在其他模块上的表现；脚本在非 backup zip 资产上是否适用。汇报时说清楚哪些真的跑了。
+**脚本是照 vscalc 写的，换模块会不准，而且不准时不会报错**（适用范围见 `vs_backup_scan.py` 文件头的 Applicability 和 `<TOOLS>/README.md`）。用之前先确认适用，输出里的 "Not mapped"、"Not predicted" 必须写进结论的口径。
 
 ## 步骤
 
@@ -26,10 +27,13 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 - **向用户确认一次矩阵维度**：先用一句话说明该模块的"特性"是什么，再提议维度（vscalc 用"计算字段类型 × 使用位置 × 数据源"）。不自行默认。
 
 **2. 审计验证机制（先于覆盖）**
-读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理（CI 的 `clean` 在 `Jenkinsfile` 准备阶段与 GitHub 工作流里，不要只看测试阶段的命令）、CI 对失败的处理（`continue-on-error` / `catchError`）、严格版基类使用比例。
+读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理（CI 的 `clean` 在 `Jenkinsfile` 准备阶段与 GitHub 工作流里，不要只看测试阶段的命令）、CI 对失败的处理（`continue-on-error` / `catchError`）。`ViewsheetTest` 已默认严格（#203），机制是否生效以**实际运行**为准：跑该模块的 spec，记录导出异常、未导出的基线文件、导出了但没有基线的文件（PNG 像素差异单独列，本机与 CI 渲染不同）。本地运行前先 `./mvnw package -pl commons -DskipTests`，否则下游模块用的是旧的 commons test-jar。
 
 **3. 覆盖矩阵、断言层、单测盘点**
-- 有 zip 与 Groovy spec 时运行 `vs_backup_scan.py` 的 `inventory`、`crosscheck`、`strictcheck`；不适用就说明，用等价办法并写明口径。
+- 有 zip 与 Groovy spec 时运行 `vs_backup_scan.py` 的 `inventory`、`crosscheck`；不适用就说明，用等价办法并写明口径。
+  - `inventory`：vs、书签、组件类型、绑定表、脚本数是通用的；计算字段那几张表只适用于计算字段类模块，其他模块的矩阵维度要另行统计，不要把 0 当结论。
+  - `crosscheck`：孤儿 vs 只对**同一个 zip 的全部 spec** 才有意义（多个 spec 共用一个 zip 时，单个 spec 的孤儿列表大多是其他 spec 的 vs）；资产 id 不是字面量的用例在 "Not mapped" 里，对应 vs 可能是假孤儿。
+  - `strictcheck` 只是快速预判，能运行就以运行结果为准；"Not predicted" 的用例（子类、书签不是字面量）一律靠运行。
 - 断言层：哪些组件不被导出、只能靠整页 PNG；书签是否带选择状态；关键对象是否出现在基线。
 - 产品仓库单测盘点：先找实现类与运行时工厂，确认运行时实际走哪个类，再按**实现类名**找测试，看完整路径（同名类跨包）。
 

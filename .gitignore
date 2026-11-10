@@ -115,3 +115,7 @@ target/
 # Generated files
 generated/
 generated-test-sources/
+
+# Python bytecode
+__pycache__/
+*.pyc
