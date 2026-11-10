@@ -52,7 +52,7 @@ class VSFormImportTest extends ViewsheetTest {
          }
       }
       catch(Exception ex) {
-         ex.printStackTrace()
+         onExportFailure("==========import excel to viewsheet failed:===========", ex)
       }
    }
 
