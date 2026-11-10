@@ -18,7 +18,9 @@
 |---|---|---|
 | `inventory` | vs、书签、组件类型、绑定表、脚本数 | 计算字段类型、表达式分类、使用位置三张表只对计算字段类模块有意义；其他模块的矩阵维度不在脚本里 |
 | `crosscheck` | 孤儿 vs、用例的 vs 不在 zip、用例没有基线目录 | 多个 spec 共用一个 zip 时，单个 spec 的孤儿列表大多是其他 spec 的 vs（例如 vsfreehand 的 `Convert_Spec`）；资产 id 不是字面量的用例列在 "Not mapped"；"calc fields" 两列只对 vscalc 有意义 |
-| `strictcheck` | `executeVS`、`exportAsPNG` 两种参数顺序、`exportAsPDF`（页图不预测、不参与比对） | 子类（`VSCalcTest`、`VSActionsTest`、`VSFormImportTest`）和书签不是字面量的用例列在 "Not predicted"；脚本控制的可见性、书签状态下才出现的组件算不出来。能运行就以运行为准 |
+| `strictcheck` | 按调用形式取书签参数（`executeVS(params, bks)`、`exportAsPNG(params, bks)` 取第 2 个，`exportAsPNG(bks, params, match, expand)` 取第 1 个），参数按括号配对拆分，嵌套不限层数；`exportAsPDF`（页图不预测、不参与比对） | 子类（`VSCalcTest`、`VSActionsTest`、`VSFormImportTest`）和书签不是字面量的用例列在 "Not predicted"；脚本控制的可见性、书签状态下才出现的组件算不出来。能运行就以运行为准 |
+
+`strictcheck` 的数字都是静态推断。例如 `ChartBrush_Spec` 报 30/34（全是 `RM3_1_xx-0.png` 这类 PDF 页图，而该 spec 从未调用 `exportAsPDF`），看上去是陈旧基线，但没有运行确认过；写进评估文件时标"静态推断"，以运行结果为准。
 
 ## 路由：单测还是 dashboard
 

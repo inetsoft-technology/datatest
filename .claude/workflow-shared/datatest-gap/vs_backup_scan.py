@@ -350,23 +350,82 @@ def spec_bookmarks(path):
     """feature -> (asset id, executeVS bookmarks, exportAsPNG bookmarks or None, uses exportAsPDF,
     reason the exports cannot be predicted or None).
 
-    executeVS bookmarks: [] when the case does not call executeVS; a null/omitted list means (Home).
-    Both call shapes are read: executeVS(params, bks) and exportAsPNG(params, bks) as well as
-    exportAsPNG(bks, params, match, expand)."""
+    executeVS bookmarks: [] when the case does not call executeVS; a null list means (Home).
+    The bookmark argument is picked by call shape (ViewsheetTest signatures):
+      executeVS(params, bks)                      -> 2nd argument
+      exportAsPNG(params, bks)                    -> 2nd argument
+      exportAsPNG(bks, params, match, expand)     -> 1st argument
+    It must be null or a list of plain string literals; anything else (a variable, a call, an
+    unknown argument count) makes the case "not predicted" instead of guessing."""
     text = open(path, encoding='utf8', errors='ignore').read()
     parts = re.split(r"\n\s*def\s+'([^']+)'\s*\(", text)
     out = {}
+    pairs = {'(': ')', '[': ']', '{': '}'}
 
     def call_args(body, method):
-        return re.findall(r"\b" + method + r"\(([^()]*(?:\([^()]*\)[^()]*)*)\)", body)
+        """Argument lists (split at top-level commas) of every call to method in body.
+        Parentheses, brackets, braces and quoted strings are matched, so nesting depth is not
+        limited. A call that is not closed is returned as None."""
+        calls = []
+        for m in re.finditer(r"\b" + method + r"\(", body):
+            i, stack, quote, args, cur = m.end(), ['('], None, [], ''
+            while i < len(body) and stack:
+                c = body[i]
+                if quote:
+                    if c == '\\':
+                        cur += body[i:i + 2]
+                        i += 2
+                        continue
+                    if c == quote:
+                        quote = None
+                elif c in ('"', "'"):
+                    quote = c
+                elif c in pairs:
+                    stack.append(c)
+                elif c in pairs.values():
+                    stack.pop()
+                    if not stack:
+                        break
+                elif c == ',' and len(stack) == 1:
+                    args.append(cur.strip())
+                    cur = ''
+                    i += 1
+                    continue
+                cur += c
+                i += 1
+            if stack:
+                calls.append(None)
+                continue
+            if cur.strip() or args:
+                args.append(cur.strip())
+            calls.append(args)
+        return calls
 
-    def bookmarks(args):
-        lists = re.findall(r"\[([^\]]*)\]", args)
-        if lists:
-            return re.findall(r"'([^']+)'", lists[0]), True
-        literal = all(a.strip() in ('null', 'paras', 'params', 'para', 'parameters', '')
-                      for a in args.split(','))
-        return ['(Home)'], literal
+    def bookmark_arg(method, args):
+        if args is None:
+            return None
+        if method == 'executeVS' and len(args) == 2:
+            return args[1]
+        if method == 'exportAsPNG' and len(args) == 2:
+            return args[1]
+        if method == 'exportAsPNG' and len(args) == 4:
+            return args[0]
+        return None
+
+    def bookmarks(method, args):
+        """(bookmark names, ok). ok is False when they cannot be read statically."""
+        arg = bookmark_arg(method, args)
+        if arg is None:
+            return [], False
+        if arg == 'null':
+            return ['(Home)'], True
+        m = re.fullmatch(r"\[(.*?)\](?:\s+as\s+String\[\])?", arg, re.S)
+        if not m:
+            return [], False
+        items = [x.strip() for x in m.group(1).split(',') if x.strip()]
+        if not all(re.fullmatch(r"'[^']*'|\"[^\"]*\"", x) for x in items):
+            return [], False
+        return [x[1:-1] for x in items], True
 
     for i in range(1, len(parts), 2):
         body = parts[i + 1]
@@ -382,15 +441,15 @@ def spec_bookmarks(path):
             reason = 'subclass %s has its own exports' % cls
         ex_bks, png_bks = [], None
         for args in call_args(body, 'executeVS'):
-            b, ok = bookmarks(args)
+            b, ok = bookmarks('executeVS', args)
             ex_bks += [x for x in b if x not in ex_bks]
             if not ok and not reason:
-                reason = 'executeVS bookmarks not literal'
+                reason = 'executeVS bookmarks not readable: %s' % (', '.join(args) if args else 'unclosed call')
         for args in call_args(body, 'exportAsPNG'):
-            b, ok = bookmarks(args)
+            b, ok = bookmarks('exportAsPNG', args)
             png_bks = (png_bks or []) + [x for x in b if x not in (png_bks or [])]
             if not ok and not reason:
-                reason = 'exportAsPNG bookmarks not literal'
+                reason = 'exportAsPNG bookmarks not readable: %s' % (', '.join(args) if args else 'unclosed call')
         pdf = bool(call_args(body, 'exportAsPDF'))
         out[parts[i]] = (lit.group(1) if lit else None, ex_bks, png_bks, pdf, reason)
     return out
@@ -447,7 +506,8 @@ def strictcheck(zpath, spec, baseline):
         extra, absent = sorted(base - pred), sorted(pred - base)
         risky += bool(extra)
         nobase += bool(absent)
-        rows.append((f, ','.join(bks) or '-', 'yes' if png is not None else '', 'yes' if pdf else '',
+        rows.append((f, ','.join(bks) or 'no executeVS call', 'yes' if png is not None else '',
+                     'yes' if pdf else '',
                      len(base), len(pred), len(extra), ', '.join(extra[:3]),
                      len(absent), ', '.join(absent[:3]), ', '.join(missing_bk)))
     table(rows, ['feature', 'executeVS bookmarks', 'exportAsPNG', 'exportAsPDF (pages ignored)',
