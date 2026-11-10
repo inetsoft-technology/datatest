@@ -19,8 +19,8 @@ A datatest PR can be wrong in three ways:
 3. **Code, build and docs drift apart**: a profile in a `pom.xml`, a workflow, the README run
    commands and the `docs/` assessments no longer agree.
 
-The review is judgment only. Nothing in this skill compiles, runs specs, or writes to the local
-clone.
+The review is judgment only. Nothing in this skill compiles or runs specs. The only write to
+the local clone is `git fetch` (refs and objects); never change its working tree or check out.
 
 ## Who calls this skill
 
@@ -32,17 +32,17 @@ step yourself:
 |---|---|
 | The local clone path (read-only, `git -C <path> ...`) | Guessing a path |
 | The head commit under review (`HEAD_SHA`) | `headRefOid` from Step 1 |
-| "the fetch is done" | Step 1's `git fetch`, but only once `git -C <clone> cat-file -e HEAD_SHA` succeeds; otherwise fetch anyway |
+| "the fetch is done" | Step 1's `git fetch` (still subject to the `cat-file` check there) |
 | The number of unresolved review threads | The graphql query in Step 4 |
 | The previous round's review and the commit it covered | Reviewing the whole PR again (see **Re-review**) |
 | A required output format and tiers | Steps 3 and 4 |
 
-Under a bot you have no write access of any kind: do not run `gh pr review`, `gh pr comment`,
-`gh pr merge`, do not write or delete files, do not use `cd`, pipes, `;`, `&&` or `$(...)`, and do
-not send chat messages. Steps that need any of these are skipped; output the decision and body in
-the caller's format and let the caller post it. If the caller says it exported the changed images
-(e.g. "改动的图片已经导出到 ...，直接用 Read 看"), that is only an offer: for datatest do not open
-them, and do not report the export as missing when there is no `index.txt` (see **Expected data**).
+Under a bot the only write allowed is Step 1's `git fetch`: do not run `gh pr review`,
+`gh pr comment`, `gh pr merge`, do not write or delete files, do not use `cd`, pipes, `;`, `&&` or
+`$(...)`, and do not send chat messages. Steps that need any of these are skipped; output the
+decision and body in the caller's format and let the caller post it. If the caller says it
+exported the changed images (e.g. "改动的图片已经导出到 ...，直接用 Read 看"), ignore the export:
+do not open the images and do not comment on the export (see **Expected data**).
 
 **Invoked directly** (`/review-test-pr <number> [review 并合并]`): you do every step yourself,
 including posting (Step 4) and, only when asked, merging.
@@ -53,7 +53,7 @@ including posting (Step 4) and, only when asked, merging.
 (default) or `review 并合并`. Pass `--repo OWNER/REPO` on every `gh` command.
 
 **Hard limits:** only PR `N`; never `gh pr merge --admin`; never push to, edit or close the PR;
-never delete its branch; never check out over local changes in the clone.
+never delete its branch; never check out in the clone.
 
 ## 1. Load the PR
 
@@ -78,17 +78,25 @@ it has checked out, which may be old. For anything about the PR's code, go throu
 Stop and report (no review) if the PR is not `OPEN`, is a draft, or targets a branch other than
 the default branch (name the branch it targets).
 
-**Re-review.** When the caller gives a previous review and the commit it covered (`PREV`), review
-only `git -C <clone> diff PREV HEAD_SHA`, then check each blocking and should-fix item of the
-previous review: drop the resolved ones, repeat the unresolved ones at their old tier. If `PREV`
-is not local, try `git -C <clone> fetch -q origin PREV`; if it still cannot be found (force
-push), review the whole PR. Unchanged code only gets new findings when they
-are blocking.
+**Re-review.** `PREV` is the commit the previous review covered: given by the caller, or, when
+invoked directly, the `commit.oid` of this account's latest review in `gh pr view N --json reviews`.
+No previous review means a full review.
+- If `PREV` is not local, run `git -C <clone> fetch -q origin PREV`; if it still cannot be found
+  (force push), review the whole PR.
+- If `git -C <clone> log --merges --oneline PREV..HEAD_SHA` is empty, review
+  `git -C <clone> diff PREV HEAD_SHA`. Otherwise the author merged the base branch in, and that
+  diff also contains the base's changes: for each file in the PR's file list, compare
+  `git -C <clone> diff refs/remotes/origin/BASE...PREV -- PATH` with
+  `git -C <clone> diff refs/remotes/origin/BASE...HEAD_SHA -- PATH` and review only what differs.
+- Then check each blocking and should-fix item of the previous review: drop the resolved ones,
+  repeat the unresolved ones at their old tier. Code the new commits did not change only gets new
+  findings when they are blocking.
 
 ## 2. Review
 
 Group the changed files by module (first path segment: `chart`, `vsothers`, `mv`, `commons`, ...)
-and by kind below. Every change should be explained by the PR title and body; flag what is not.
+and by kind below. Every change should be explained by the PR title and body; a change that is
+not is should-fix.
 
 ### Expected data (`*/src/test/resources/expectData/**`)
 
@@ -99,7 +107,8 @@ Files sit under the spec and case they belong to, sometimes below a suite folder
 **Images (`.png` etc.): do not view them.** Expected-data PRs often update many images, so
 the review does not open or compare image content, even when the caller has exported them. Check
 only what the file list shows:
-- Images are only under `expectData`, in the spec folders of the modules the title names.
+- Images are only under `expectData`, in the spec folders of the modules the title (or, if the
+  title names none, the body) names. An image elsewhere is should-fix.
 - A deleted image has a reason in the body (see **Deleted or added baselines**).
 - Count the changed images per module and spec folder for the `## Images` section.
 
@@ -116,14 +125,15 @@ plainly that the review did not look at image content.
   a whole-file reformat or reordering that hides the real change.
 
 **Deleted or added baselines.** A deleted expected file is blocking unless the body explains why
-the case was removed. New baselines without a spec or case that produces them are should-fix
-(orphans).
+the case was removed. A new baseline folder `.../<Spec>/<case>/` whose case does not exist at the
+PR head (`git -C <clone> grep -n "def '<case>'" HEAD_SHA -- '*<Spec>.groovy'` finds nothing) is
+should-fix (orphan).
 
 **Scope of an expected-data PR** ("update expected data ..."): it should touch only `expectData`,
 plus the spec source if the title says so. Anything else (workflows, `pom.xml`, `commons`,
 credentials, modules the title does not mention) is should-fix at least; a credential is blocking.
 
-### Specs and test code (`*/src/test/groovy/**`, `*/src/test/java/**`, scripts such as `.claude/workflow-shared/**/*.py`)
+### Specs and test code (`*/src/test/groovy/**`, `*/src/test/java/**`, `.claude/**/*.py`)
 
 Review to the development standard: correctness, edge cases, readability, regressions. On top:
 - **Blocking: a false green.** A case that passes while the defect it guards is present: a
@@ -153,8 +163,8 @@ A change here changes every module. For each changed class or method:
 
 ### Build and CI (`pom.xml`, `*/pom.xml`, `.github/workflows/**`, `Jenkinsfile`, `docker/**`, `gcp-db-server-iac/**`)
 
-- The version (`2.1.0-SNAPSHOT` today) appears in the root `pom.xml` and in every module
-  `pom.xml` (some modules twice). A bump must change all of them; a module left on the old
+- The project version (e.g. `X.Y.Z-SNAPSHOT`) appears in the root `pom.xml` and in every module
+  `pom.xml` (some files twice). A bump must change all of them; a module left on the old
   version is blocking.
 - A new or renamed profile must match the README run commands and the workflow that runs it.
 - The `test-*.yml` workflows are manual (`workflow_dispatch`); a change that adds a schedule or a
@@ -164,7 +174,7 @@ A change here changes every module. For each changed class or method:
 - `gcp-db-server-iac`: never `terraform.tfvars`, `*.tfstate`, `*.tfplan` or keys in the PR
   (blocking).
 
-### Docs (`README.md`, `docs/**`, `.claude/**`)
+### Docs (`README.md`, `docs/**`, `.claude/**` except `*.py`)
 
 - Run commands, profile names and module lists must match the poms.
 - A `docs/test-gap-assessment` doc must match the code it describes: a gap marked as covered must
@@ -182,7 +192,8 @@ in docs.
 ### Tiers
 
 - **Blocking**: a false green, a correctness bug or regression, wrong or broken baselines, a
-  secret, a doc that contradicts the code. Any blocker means request changes.
+  secret, a doc that contradicts the code. Any blocker means request changes; no blocker means
+  approve, with the should-fix items in the body.
 - **Should fix**: real but smaller problems, flaky values, unknown impact of a framework change,
   missing run results.
 - **Suggestion**: naming, comments, style, optional refactors.
@@ -190,7 +201,7 @@ in docs.
   does not touch is a suggestion at most.
 - If the caller gives its own tiers or limits, follow the caller.
 
-### Do not run anything
+### Do not run specs
 
 Specs need a license key, a StyleBI build and the DB servers. List under `## Needs manual run`
 the module and profile commands whose specs or expected data changed, e.g.
@@ -235,13 +246,5 @@ and how many images changed (with the reminder that their content was not review
 
 | Mistake | Correct behavior |
 |---|---|
-| Opening or comparing changed images | Do not view images; count them and remind the author |
-| Writing files under a bot | Write nothing; output the body in the caller's format |
 | `gh pr diff N -- PATH` | No path filter; use `git -C <clone> diff ... -- PATH` |
-| Reviewing a `commons` change only in its own file | `git grep` every subclass and caller at `HEAD_SHA` |
-| Reading or grepping the clone's working tree as if it were the PR | `git show HEAD_SHA:PATH`, `git grep ... HEAD_SHA` |
-| Approving a spec whose comparison is skipped | A false green is blocking |
-| Running a spec to check it | Never; list it under Needs manual run |
 | Hard-coding a clone path or a reviewer account | Use the caller's path and `gh api user` |
-| Flagging Chinese in docs | Docs may be Chinese; only code must be English |
-| Re-reviewing the whole PR in round 2 | Only `PREV..HEAD`, plus the previous open items |
