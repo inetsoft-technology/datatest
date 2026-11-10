@@ -18,6 +18,11 @@ import org.springframework.test.context.ContextConfiguration
       @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
    ]
 )
+/**
+ * Crosstab cases compare the data files (executeVS) plus the whole-page PNG (exportAsPNG,
+ * compareImage([caseName])). Chart cases have no whole-page export: they compare the per-chart
+ * ChartN.png / bk1_ChartN.png that executeVS exports (compareImage(null)).
+ */
 class VarExp_Binding_Spec extends Specification{
    static ViewsheetTest vstest
    static String caseName
