@@ -159,7 +159,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 
 **G5 测试入口（明细型计算字段求值，17 个）：**
 
-运行时路径：`VSAQuery.appendCalcFields` 把 viewsheet 上 `baseOnDetail` 为 true 的计算字段（`CalculateRef` 包着 `ExpressionRef`）作为列加进绑定的 worksheet 表（聚合型走 G3 的 `CalcFieldFormula`）→ `AssetQuery.addExpression` 收集表达式列，引用了隐藏计算字段的会递归加入（如 `field['calc_quarter'] + field['CUSTOMER_ID']`）→ `PostProcessor.formula` 生成 `FormulaTableLens`，逐行执行脚本，再用 `Tool.getData` 转成声明类型（转换丢数据时保留原值）。捷径：所有表达式都是 `field['x']` 且类型与原列一致时，直接映射列（`ColumnMapFilter`），不执行脚本。只有 `sql=true` 的表达式下推 SQL；vscalc 的 58 个明细型计算字段（vs 文件里共 324 处 `CalculateRef` 引用）`sql` 全为 false 或未设，全部走脚本。
+运行时路径：`VSAQuery.appendCalcFields` 把 viewsheet 上 `baseOnDetail` 为 true 的计算字段（`CalculateRef` 包着 `ExpressionRef`）作为列加进绑定的 worksheet 表（聚合型走 G3 的 `CalcFieldFormula`）→ `AssetQuery.addExpression` 收集表达式列，引用了隐藏计算字段的会递归加入（如 `field['calc_quarter'] + field['CUSTOMER_ID']`）→ `PostProcessor.formula` 生成 `FormulaTableLens`，逐行执行脚本，再用 `Tool.getData` 转成声明类型（转换丢数据时保留原值）。捷径：所有表达式都是 `field['x']` 且类型与原列一致时，直接映射列（`ColumnMapFilter`），不执行脚本。`sql` 属性默认为 true，只在为 false 时才写进 XML（`ColumnRef.java:948`），所以没写 `sql` 的就是 SQL 表达式。vscalc 的 58 个明细型计算字段里，43 个是脚本表达式（`sql="false"`），15 个是 SQL 表达式（如 `field['customer_id']+10`、`concat(field['state'],'a')`、testDB2 的 `field['BaseFormula']*2`）。SQL 表达式在查询能合并时由数据库计算；不能合并时，同一段文本交给 `FormulaTableLens` 当脚本执行（`ExpressionRef.getScriptExpression`，有 `/*script ... script*/` 时取其中一段）。前一条路径为静态推断，未运行确认。
 
 现有测试几乎都在测并发、加锁、超时、swap（`FormulaTableLens*Lock/Stall/Swap/Timeout`、`VSAQueryCalcFieldConcurrencyTest` 等）；`FormulaTableLensTest` 的 5 个用例里只有 1 个是算术。13.8 也没有这一层的值语义测试。
 
@@ -186,7 +186,8 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 
 注意：
 - `CALC.edate(field['orderdate'], 2)` 是 vscalc 在用的表达式，会碰上 [#80953](https://issues.inetsoft.com/issues/80953) 问题 6 的跨年顺延（12-31 加 2 个月得 03-03），先按现有行为写并标注。
-- 明细型的除零、null 参与运算是 JavaScript 行为（`x/0` 得 Infinity，`null + "_"` 得 `"null_"`，`null * 2` 得 0），以及 `Tool.getData` 对 Infinity 的转换，不在 [#80953](https://issues.inetsoft.com/issues/80953) 里（那里问的是聚合型除零）；先按现有行为写，是否补问待定。
+- 明细型的除零、null 参与运算是 JavaScript 行为（`x/0` 得 Infinity，`null + "_"` 得 `"null_"`，`null * 2` 得 0），以及 `Tool.getData` 对 Infinity 的转换，不在 [#80953](https://issues.inetsoft.com/issues/80953) 里（那里问的是聚合型除零）；先按现有行为写，是否补问待定。这只适用于脚本执行的路径。
+- 15 个 SQL 表达式的计算字段：L1（`FormulaTableLens`）只能测到不合并时的脚本路径；合并后由数据库计算，要在 L2 用真实数据源测，而且同一表达式在两条路径上的结果可能不同（除零、null 拼接、整数除法），这类差异只能靠 L2 或 datatest 发现。
 
 ## 5. Dashboard 补充
 

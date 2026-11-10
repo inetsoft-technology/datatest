@@ -22,4 +22,5 @@
 | vscrosstab、vsfreehand、otherassembly（`vsothers` 其他 profile） | | 未开始 |
 | chart | | 未开始 |
 | vsexport | | 未开始 |
-| ws、olap、tabular、vpm、vsscript、css、mv | | 未开始 |
+| ws | [ws.md](ws.md) | 已评估，待评审 |
+| olap、tabular、vpm、vsscript、css、mv | | 未开始 |
