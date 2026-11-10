@@ -11,7 +11,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 2. **所有 56 个用例都不发送 `.__type__`**，而产品的 `ParameterService.readParameters` 在有该后缀时才做类型转换；该方法在产品仓库只有 1 个单测。浏览器真实走的转换路径两边都没测。
 3. 验证机制会静默通过：导出失败只打印堆栈；`nullVSTest2`、`Para_query` 的基线里有 7 个永远不会被比对的陈旧文件。
 
-先做（G1 已处理：基类已严格，陈旧基线已清）：把 VarExp 的绑定类用例加上数据比对；补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
+先做（G1：基类已严格，仍需清陈旧基线）：把 VarExp 的绑定类用例加上数据比对；补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
 
 ## 2. 覆盖情况
 
@@ -76,7 +76,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 **【已处理】** | 验证机制：导出失败只打印、一个组件失败后面全不导出、基线里有陈旧文件 | 参数值导致某个 Table/Chart 求值抛异常，后面的组件也没导出，用例照样绿；陈旧基线让人以为这些组件被验证过 | **处理结果：** 机制由 PR #203 在 `ViewsheetTest` 基类里默认严格化（导出失败即失败、其余组件继续导出并汇总、`compareData(null)`/`compareImage(null)` 要求基线文件都被导出），无需再迁移到 `DcViewsheetTest`；#206 修了 `executeVS0` 遇到 `PairsDataSet` 的死循环。`Para_query`、`nullVSTest2` 的 7 个陈旧基线文件的清理由用户确认已处理（本文档作者未在运行中复核） | 高 |
+| G1 **【机制已解决，陈旧基线待处理】** | 验证机制：导出失败只打印、一个组件失败后面全不导出、基线里有陈旧文件 | 参数值导致某个 Table/Chart 求值抛异常，后面的组件也没导出，用例照样绿；陈旧基线让人以为这些组件被验证过 | **处理结果：** 机制由 PR #203 在 `ViewsheetTest` 基类里默认严格化（导出失败即失败、其余组件继续导出并汇总、`compareData(null)`/`compareImage(null)` 要求基线文件都被导出），无需再迁移到 `DcViewsheetTest`；#206 修了 `executeVS0` 遇到 `PairsDataSet` 的死循环。**未处理：** `Para_query`（2 个）、`nullVSTest2`（5 个）的 7 个陈旧基线文件还在。`Para_VS_Spec` 尚未在严格基类下运行，按新规则（`compareData(null)`/`compareImage(null)` 要求基线文件都被导出）预计会因它们失败，待运行确认后清理 | 高 |
 | G2 | VarExp 32 个用例只比整页 PNG | 动态值让图表绑到了错误的字段、交叉表聚合列错位，但整体像素在容差内或缩略后看不出来（容差是否存在未查）；数据层的错误全靠肉眼 | dashboard：对含 Chart / TableData 组件的绑定类用例改用 `executeVS` 加 `compareData`（保留 PNG）。`executeVS0`（`ViewsheetTest.groovy:141-166`）只导出 `ChartVSAssembly`（.png + .txt）和 `TableDataVSAssembly`（.txt），Text、Gauge、Selection 等不导出，其动态值仍只靠 PNG；没有这两类组件的用例追加 `compareData` 是空转 | 高 |
 | G3 | 没有任何用例发送 `.__type__`；产品 `ParameterService.readParameters` 仅在有该后缀时调用 `Tool.getData(type, v, true)` | 浏览器传 `x.__type__=date` 时转换出错（格式、时区、多值、空串），datatest 与现有单测都发现不了 | 单测 + dashboard 补 1 个代表用例 | 高 |
 | G4 | 变量组件的类型面窄：没有 double、float、date、datetime、char | 这些类型的默认值、提示、多值转换出错 | 单测（转换）+ dashboard（1 个 ws 覆盖缺失类型） | 中 |
