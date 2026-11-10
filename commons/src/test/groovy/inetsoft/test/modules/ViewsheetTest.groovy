@@ -43,15 +43,58 @@ import inetsoft.test.core.DatatestSpringRuntimeInitializer
 
 
 import java.awt.image.BufferedImage
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
+/**
+ * Verification is strict:
+ * <ul>
+ *   <li>an export failure fails the test; when one assembly fails, the remaining assemblies are
+ *   still exported and all failures are reported together;</li>
+ *   <li>when compareData/compareImage get no file names, every baseline file under expectData
+ *   must have been exported by this run.</li>
+ * </ul>
+ * With -Dupdate.baseline=true the exported files are copied into the module's
+ * src/test/resources/expectData instead of being compared.
+ */
 class ViewsheetTest {
    //static ConfigurationContext context
    private static Object initializedApplicationContext
+   // export folders already cleaned in this JVM, so several instances of one case keep their files.
+   // A case that runs twice in one JVM is only cleaned before its first run.
+   private static final Set<String> cleanedExportDirs = Collections.synchronizedSet(new HashSet<String>())
 
    ViewsheetTest(String asset_id, String caseName) {
       ensureRuntimeInitialized()
       this.asset_id = asset_id
       this.caseName = caseName
+      cleanExportDir()
+   }
+
+   /**
+    * Fail the test with a verification problem of this case.
+    */
+   protected void violation(String message, Throwable cause = null) {
+      throw new AssertionError(message + ' ' + asset_id + ' [' + suiteName + '/' + caseName + ']',
+         cause)
+   }
+
+   /**
+    * Remove the files of a previous run of this case, otherwise a stale export hides a file that
+    * this run failed to export. Done once per case and JVM.
+    */
+   private void cleanExportDir() {
+      // without expectData on the classpath or a suite (initHome not called) there is no export
+      // folder of this case to clean; exporting reports the problem later
+      if(suiteName == null || caseName == null || this.class.getResource('/expectData') == null) {
+         return
+      }
+
+      File dir = exportFolder()
+
+      if(cleanedExportDirs.add(dir.absolutePath) && dir.exists()) {
+         dir.listFiles()?.each { if(it.isFile()) it.delete() }
+      }
    }
 
    static initHome(String suiteName) {
@@ -126,26 +169,30 @@ class ViewsheetTest {
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
       Optional<ViewsheetSandbox> sandboxOpt = rvs.getViewsheetSandbox()
-      if(sandboxOpt.isPresent()) {
-         sandboxOpt.get().resetAll(new ChangedAssemblyList())
+
+      if(!sandboxOpt.isPresent()) {
+         throw new IllegalStateException("No viewsheet sandbox for " + asset_id + ", bookmark " + bk)
       }
 
       ViewsheetSandbox sandbox = sandboxOpt.get()
+      sandbox.resetAll(new ChangedAssemblyList())
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
+      Map<String, Exception> failures = new LinkedHashMap<>()
 
-      def data = null
-      String assemblyName = ''
-      File outFile
-      try {
-         assemblies.each {
-            assemblyName = it.getName()
-            //Ignore, and unexport assembly data when assembly is shape,group,selectionContainer, tab
-            if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
-                    it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
-                    it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {
-               return true
-            }
+      assemblies.each {
+         String assemblyName = it.getName()
+         //Ignore, and unexport assembly data when assembly is shape,group,selectionContainer, tab
+         if((it instanceof VSAssembly && !it.getVSAssemblyInfo().isVisible(true)) ||
+                 it instanceof GroupContainerVSAssembly || it instanceof TabVSAssembly ||
+                 it instanceof CurrentSelectionVSAssembly || it instanceof ShapeVSAssembly) {
+            return
+         }
+
+         // export each assembly on its own, a failure must not skip the remaining assemblies
+         try {
+            def data
+            File outFile
             if(it instanceof ChartVSAssembly) {
                final VGraphPair pair = sandbox.getVGraphPair(assemblyName, true, null, true, 1)
                data = getVSChartDataSet(pair)
@@ -164,18 +211,24 @@ class ViewsheetTest {
                exportUtil.exportVSObject(outFile.toString(), data)
             }
          }
+         catch(Exception ex) {
+            failures.put(assemblyName, ex)
+         }
       }
-      catch(Exception ex) {
+
+      if(!failures.isEmpty()) {
+         Exception ex = new Exception("assemblies failed (bookmark " + bk + "): " +
+            failures.collect { k, v -> k + ": " + v }.join("; "))
+         failures.values().each { ex.addSuppressed(it) }
          onExportFailure("==========execute viewsheet failed:===========", ex)
       }
    }
 
    /**
-    * Called when an export step throws. The default only prints the stack trace, subclasses
-    * can rethrow to fail the test.
+    * Called when an export step throws: fails the test.
     */
    protected void onExportFailure(String message, Exception ex) {
-      new Exception(message, ex).printStackTrace()
+      violation(message, ex)
    }
 
    /**
@@ -367,7 +420,9 @@ class ViewsheetTest {
     * @param fileNames txt file names
     */
    void compareData(String[] fls) {
-      compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'TXT')
+      if(checkBaselineExported(fls, '.txt')) {
+         compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'TXT')
+      }
    }
 
    /**
@@ -382,7 +437,9 @@ class ViewsheetTest {
     * @param fls image names
     */
    void compareImage(String[] fls) {
-      compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'PNG')
+      if(checkBaselineExported(fls, '.png')) {
+         compareUtil.CompareFileByFeature(fls, suiteName + '/' + caseName, 'PNG')
+      }
    }
 
    /**
@@ -393,7 +450,90 @@ class ViewsheetTest {
    }
 
    void compareImageWithAllowedDiffPixel(def allowedPixelPercent) {
-      compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
+      if(checkBaselineExported(null, '.png')) {
+         compareUtil.CompareFileByFeature(null, suiteName + '/' + caseName, 'PNG', allowedPixelPercent)
+      }
+   }
+
+   /**
+    * @return true if the files should be compared, false if the baseline was updated instead
+    */
+   protected boolean checkBaselineExported(String[] fls, String suffix) {
+      if(Boolean.getBoolean('update.baseline')) {
+         writeBaseline(fls, suffix)
+         // nothing is compared in this mode, make that visible in the log
+         System.err.println("update.baseline=true: " + suffix + " baseline of " + suiteName + '/' +
+            caseName + " updated, NOT compared")
+         return false
+      }
+
+      if(fls == null) {
+         def missing = listNames(baselineFolder(), suffix).findAll { !new File(exportFolder(), it).exists() }
+
+         if(missing) {
+            violation("Baseline files not exported by this run:\n" + missing.join("\n") + "\n")
+         }
+      }
+
+      return true
+   }
+
+   private void writeBaseline(String[] fls, String suffix) {
+      List<String> names = fls != null ? fls.collect { it + suffix } : listNames(exportFolder(), suffix)
+      File target = new File(sourceBaselineFolder(), suiteName + File.separator + caseName)
+      target.mkdirs()
+
+      // png rendering differs between platforms: only write a missing png baseline unless
+      // -Dupdate.baseline.png=true
+      boolean overwrite = suffix != '.png' || Boolean.getBoolean('update.baseline.png')
+
+      names.each {
+         File src = new File(exportFolder(), it)
+         File dest = new File(target, it)
+
+         if(!src.exists()) {
+            throw new AssertionError("Cannot update baseline, file was not exported: " + src)
+         }
+
+         if(overwrite || !dest.exists()) {
+            Files.copy(src.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING)
+         }
+      }
+   }
+
+   private static List<String> listNames(File dir, String suffix) {
+      File[] files = dir.listFiles()
+
+      if(files == null) {
+         return []
+      }
+
+      return files.findAll {
+         it.isFile() && it.name.endsWith(suffix) && !it.name.endsWith('_diff.png')
+      }.collect { it.name }
+   }
+
+   protected File classesFolder() {
+      return new File(this.class.getResource('/expectData').getPath()).getParentFile()
+   }
+
+   protected File exportFolder() {
+      return new File(classesFolder(), 'exportData' + File.separator + suiteName +
+         File.separator + caseName)
+   }
+
+   protected File baselineFolder() {
+      return new File(classesFolder(), 'expectData' + File.separator + suiteName +
+         File.separator + caseName)
+   }
+
+   /**
+    * module/target/test-classes -> module/src/test/resources/expectData
+    */
+   protected File sourceBaselineFolder() {
+      return new File(classesFolder().parentFile.parentFile,
+         'src' + File.separator + 'test' + File.separator + 'resources' + File.separator +
+            'expectData')
    }
 
    /**
