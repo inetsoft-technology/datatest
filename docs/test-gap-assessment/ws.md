@@ -1,7 +1,7 @@
 # ws 测试缺口与补充方案
 
 > 日期：2026-11-10　模块：`ws`（无 profile，`./mvnw test -pl ws`），spec：`ws/src/test/groovy/inetsoft/test/worksheet/cases/` 下 7 个
-> datatest 基线：`Stateless-Sessions1`（`f83c650a`）；产品源码：`main`（`origin/main` `f0ef913306`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 一致）。本机产品仓库在 `D:\stylebi\community`，工作流默认路径不存在。
+> datatest 基线：`Stateless-Sessions1`（`f83c650a`）；产品源码：`main`（`origin/main` `f0ef913306`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 一致）。
 
 ## 1. 结论
 
@@ -20,7 +20,7 @@ ws 的用例规模不小（98 个用例、873 个基线文件），团队设计�
 
 - `WSBuildServer_Spec` 引用的 40 个 `BuildServer/...` worksheet **不在 zip 里**，导入 `assets/BuildServer.zip` 的代码已注释（`WSBuildServer_Spec.groovy` `setupSpec`），仓库里也没有这个文件。
 - 49 个 worksheet 没有被任何用例运行（如 `checkMergeable/CM1_7`、`CM8_distinct`、`CM8_maxrow`、`db2formula`、`oracle q1`），是否作为其他 worksheet 的来源未核对。
-- CI 实际运行的范围（去掉 Linux 上跳过的 2 个 spec 和 4 个 `@Ignore` 用例）：42 个 worksheet、470 张可见表。
+- CI 实际运行的范围（去掉类级 `@IgnoreIf({ os.linux })` 的 2 个 spec 和 4 个 `@Ignore` 用例；ws 没有用例级的 `@IgnoreIf`）：42 个 worksheet、470 张可见表。
 
 **覆盖矩阵**（维度：查询类型 × 处理步骤 × 执行路径；第二维度：取数方式 × 数据源；业务设计表作对照，已与用户确认）。下表为 CI 实际运行的 470 张可见表，单元格为"表数（worksheet 数）"，来自 `ws_scan.py inventory`：
 
@@ -41,7 +41,7 @@ ws 的用例规模不小（98 个用例、873 个基线文件），团队设计�
 - 聚合公式 24 种，Sum 59、Count 13、Max 12，其余多为 1～2 次；日期分组 16 个级别；范围列 DateRangeRef 139、NumericRangeRef 18；表达式列 SQL 113、脚本 82。
 - 数据源（表数）：Oracle 122、MySQL 41、mvtest 27、DB2 21、Examples/Orders 18、SQL Server 12、Informix 9、sqlite 5、PostgreSQL 5、Access 3、securityTest 3、Derby 2；ClickHouse 用例被 `@Ignore`。
 - 执行路径：只能静态看到 `mergeable=false`（用户关掉合并）7 张表；查询实际是否下推到 SQL 由运行时决定，**没有任何用例断言它**（见 G5）。
-- 取数方式：98 个用例全部 `LIVE_MODE`（`WorksheetTest.groovy:135`、`:222`），`RUNTIME_MODE` 为 0（见 G6）。
+- 取数方式：98 个用例全部 `LIVE_MODE`（`WorksheetTest.executeWS`，`:135`；`importCSVToEMTable`，`:222`），`RUNTIME_MODE` 为 0（见 G6）。
 - 业务设计表对照：`Worksheet Auto.xlsx` 中写了"ws->表"的行，176 行对应的表被运行并导出；17 行的 worksheet 不在 zip（如 `DataBaseQuery->leftJoin`），13 行的表名在 worksheet 里找不到（如 `range&formula->product1` 9 行），1 行是隐藏表。
 
 **验证机制：**

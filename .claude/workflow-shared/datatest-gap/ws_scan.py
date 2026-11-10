@@ -211,22 +211,48 @@ def table(rows, header):
     print()
 
 
+LINUX_SKIP = re.compile(r'^@IgnoreIf\(\{\s*os\.linux\s*\}\)')
+
+
+def annotations_above(before):
+    """The annotation lines directly above a declaration (blank lines and // comments in
+    between are allowed), nearest first. `before` is the text up to the declaration."""
+    out = []
+    for line in reversed(before.splitlines()):
+        s = line.strip()
+        if not s or s.startswith('//'):
+            continue
+        if s.startswith('@'):
+            out.append(s)
+            continue
+        break
+    return out
+
+
 def used_worksheets(specs):
-    """asset ids run by executeWS in features that are not @Ignore'd, in specs that are not
-    @IgnoreIf({ os.linux }) (skipped on the Linux CI runner)."""
+    """asset ids run by executeWS in the features CI runs: a spec is skipped when its CLASS
+    carries @IgnoreIf({ os.linux }) (the Linux CI runner); a feature is skipped when it carries
+    @Ignore or @IgnoreIf({ os.linux })."""
     used, skipped = set(), []
     for spec in specs:
         text = open(spec, encoding='utf8', errors='ignore').read()
         name = os.path.splitext(os.path.basename(spec))[0]
-        if re.search(r'^\s*@IgnoreIf\(\{\s*os\.linux\s*\}\)', text, re.M):
-            skipped.append(name + ' (whole spec, @IgnoreIf os.linux)')
+        cls = re.search(r'^\s*(?:public\s+)?class\s+\w+', text, re.M)
+        # the class annotations: everything between the last import and the class declaration
+        # (annotations such as @SreeHome span several lines, so annotations_above is not enough)
+        imports = list(re.finditer(r'^\s*import\s.*$', text[:cls.start()] if cls else '', re.M))
+        block = text[imports[-1].end() if imports else 0:cls.start()] if cls else ''
+        if cls and any(LINUX_SKIP.match(l.strip()) for l in block.splitlines()):
+            skipped.append(name + ' (whole spec, class-level @IgnoreIf os.linux)')
             continue
         parts = re.split(r"\n\s*def\s+'([^']+)'\s*\(", text)
         for i in range(1, len(parts), 2):
-            head = parts[i - 1][-200:]
-            if re.search(r'@Ignore\b(?!If)', head.splitlines()[-1] if head.splitlines() else '') or \
-               re.search(r'@Ignore\b(?!If)[^\n]*\n\s*$', head):
+            notes = annotations_above(parts[i - 1])
+            if any(re.match(r'@Ignore\b(?!If)', a) for a in notes):
                 skipped.append('%s / %s (@Ignore)' % (name, parts[i]))
+                continue
+            if any(LINUX_SKIP.match(a) for a in notes):
+                skipped.append('%s / %s (@IgnoreIf os.linux)' % (name, parts[i]))
                 continue
             used.update(re.findall(r"\.executeWS\(\s*'([^']+)'", parts[i + 1]))
     return used, skipped
@@ -331,17 +357,20 @@ def crosscheck(zpath, baseline, specs):
     byid = {re.sub(r'\^[^^]*$', '', k): k for k in wss}
     print('# Worksheet crosscheck: %d specs\n' % len(specs))
     used, rows, unmapped, missing = set(), [], [], []
+    unmapped_txt = [0]
     for spec in specs:
         name = os.path.splitext(os.path.basename(spec))[0]
         for feat, (ids, csv, other) in spec_features(spec).items():
-            if other:
-                unmapped.append('%s / %s: %s' % (name, feat, ', '.join(sorted(set(other)))))
             for kind, aid in csv:
                 k = byid.get(aid)
                 if k:
                     used.add(k)
             d = os.path.join(baseline, name, feat)
             base = set(os.listdir(d)) if os.path.isdir(d) else None
+            if other:
+                unmapped.append('%s / %s: %s' % (name, feat, ', '.join(sorted(set(other)))))
+                unmapped_txt[0] += sum(len([f for f in fs if f.endswith('.txt')])
+                                       for _, _, fs in os.walk(d)) if base is not None else 0
             for aid in ids:
                 k = byid.get(aid)
                 if k is None:
@@ -364,7 +393,9 @@ def crosscheck(zpath, baseline, specs):
     orphans = sorted(asset_path(k) for k in wss if k not in used)
     print('Worksheets no feature uses (over the %d specs given): %d %s\n' % (len(specs), len(orphans), orphans))
     print('Features whose worksheet is not in the zip: %s\n' % (missing or 'none'))
-    print('Not mapped (non-literal asset id or a call this scan does not model): %s\n' % (unmapped or 'none'))
+    print('Not mapped (non-literal asset id or a call this scan does not model): %d features, '
+          '%d baseline txt files not covered by this scan: %s\n'
+          % (len(unmapped), unmapped_txt[0], unmapped or 'none'))
     table(rows, ['spec', 'feature', 'worksheets', 'visible tables', 'baseline txt',
                  'visible table without <table>.txt', 'baseline txt not named after a visible table'])
     print('Names are matched literally. WorksheetTest also writes <bk>_<table>.txt, '
