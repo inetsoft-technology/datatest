@@ -7,11 +7,11 @@
 
 vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 2 个走会让导出失败的 `VSExportTest`。用例的"接线"面铺得不窄（WS 条件的 11 种运算符都带变量出现过，图表和交叉表的绑定、组件属性里的动态值有 32 个 vs），**问题是验证太粗、类型面太窄：**
 
-1. **VarExp 两个 spec 的 32 个用例只比整页 PNG**（`VarExp_Binding_Spec` 22 个，`VarExp_Properties_Spec` 10 个里 8 个），图表、交叉表的数据没有导出比对。
+1. **VarExp 两个 spec 的 32 个用例只比整页 PNG**（`VarExp_Binding_Spec` 22 个，`VarExp_Properties_Spec` 10 个里 8 个），图表、交叉表的数据没有导出比对。**已处理 Binding 的 22 个**（见 G2）；`VarExp_Properties_Spec` 的 10 个不在本轮范围（动态值多作用在属性上，`executeVS` 导出不到，留到 Dashboard 阶段）。
 2. **所有 56 个用例都不发送 `.__type__`**，而产品的 `ParameterService.readParameters` 在有该后缀时才做类型转换；该方法在产品仓库只有 1 个单测。浏览器真实走的转换路径两边都没测。
-3. 验证机制会静默通过：导出失败只打印堆栈；`nullVSTest2`、`Para_query` 的基线里有 7 个永远不会被比对的陈旧文件。
+3. 验证机制会静默通过：导出失败只打印堆栈；`nullVSTest2`、`Para_query` 的基线里有 7 个永远不会被比对的陈旧文件。**已处理**：机制由 PR #203/#206 解决，7 个陈旧基线已在严格基类下运行确认并删除。运行还暴露了 `Para_basequerysql` 的导出失败（见 TODO）。
 
-先做（G1：基类已严格，陈旧基线已清，`Para_basequerysql` 导出失败待查）：把 VarExp 的绑定类用例加上数据比对；补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
+先做（已完成：基类严格化、陈旧基线清理、VarExp_Binding 数据比对；待办：`Para_basequerysql`、15 个 Chart 的 `ChartN.png` 基线需在 GitHub 上生成）：补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
 
 ## 2. 覆盖情况
 
@@ -77,7 +77,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
 | G1 **【机制已解决，陈旧基线已清；`Para_basequerysql` 待查】** | 验证机制：导出失败只打印、一个组件失败后面全不导出、基线里有陈旧文件 | 参数值导致某个 Table/Chart 求值抛异常，后面的组件也没导出，用例照样绿；陈旧基线让人以为这些组件被验证过 | **处理结果：** 机制由 PR #203 在 `ViewsheetTest` 基类里默认严格化（导出失败即失败、其余组件继续导出并汇总、`compareData(null)`/`compareImage(null)` 要求基线文件都被导出），无需再迁移到 `DcViewsheetTest`；#206 修了 `executeVS0` 遇到 `PairsDataSet` 的死循环。**运行确认并已清理：** `Para_VS_Spec` 在严格基类下运行，`Para_query`（`Chart1.png`、`Chart1.txt`）、`nullVSTest2`（`RadioButton1.txt`、`RadioButton1_selected.txt`、`SelectionList1.txt`、`SelectionList1_selected.txt`、`Text1.txt`）这 7 个基线文件因"基线文件未被本次运行导出"而失败，已删除。严格基类还暴露了 `Para_basequerysql` 的导出失败（`TableView1: Variable in VPM condition missing: Ppid`，原先只打印堆栈、用例照样绿），原因待查（spec 缺参数，或产品行为变化），未在此处理 | 高 |
-| G2 | VarExp 32 个用例只比整页 PNG | 动态值让图表绑到了错误的字段、交叉表聚合列错位，但整体像素在容差内或缩略后看不出来（容差是否存在未查）；数据层的错误全靠肉眼 | dashboard：对含 Chart / TableData 组件的绑定类用例改用 `executeVS` 加 `compareData`（保留 PNG）。`executeVS0`（`ViewsheetTest.groovy:141-166`）只导出 `ChartVSAssembly`（.png + .txt）和 `TableDataVSAssembly`（.txt），Text、Gauge、Selection 等不导出，其动态值仍只靠 PNG；没有这两类组件的用例追加 `compareData` 是空转 | 高 |
+| G2 **【Binding 已处理，Properties 不在本轮】** | VarExp 32 个用例只比整页 PNG | 动态值让图表绑到了错误的字段、交叉表聚合列错位，但整体像素在容差内或缩略后看不出来；数据层的错误全靠肉眼 | **处理结果：** `VarExp_Binding_Spec` 的 22 个用例加了 `executeVS` + `compareData`（22 个用例都含 Chart 或表格，没有空转），89 个 `.txt` 基线已提交。`executeVS0` 只导出 `ChartVSAssembly`（`.png` + `.txt`）和 `TableDataVSAssembly`（`.txt`），所以：**15 个 Chart 用例**去掉整页 PNG，改为比每个 Chart 自己的 `ChartN.png` 加 `.txt`；**7 个 Crosstab 用例**保留整页 PNG 加 `.txt`（工具无法单独导出表格 PNG，整页 PNG 是格式检查的唯一手段）。PNG 基线在 GitHub 上生成，本机像素差异（3%～13%，字体渲染）属环境问题。`VarExp_Properties_Spec` 的 10 个用例作用于 Text、Gauge、Selection 等，`executeVS` 导出不到，不在本轮范围 | 高 |
 | G3 | 没有任何用例发送 `.__type__`；产品 `ParameterService.readParameters` 仅在有该后缀时调用 `Tool.getData(type, v, true)` | 浏览器传 `x.__type__=date` 时转换出错（格式、时区、多值、空串），datatest 与现有单测都发现不了 | 单测 + dashboard 补 1 个代表用例 | 高 |
 | G4 | 变量组件的类型面窄：没有 double、float、date、datetime、char | 这些类型的默认值、提示、多值转换出错 | 单测（转换）+ dashboard（1 个 ws 覆盖缺失类型） | 中 |
 | G5 | `ParameterTool.parseParameters`（文本里的 `{parameter.x}` 及 number/text/date/currency/percent 格式）在产品仓库没找到测试引用；dashboard 只有 `Para_textparameter1/2` 两个整页 PNG | 文本参数的格式化（小数位、货币符号、日期格式）出错，只能靠像素 | 单测 | 中 |
@@ -107,7 +107,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 | 场景 | 做法（新建 vs / 扩展 / 改基类） | 验证什么 | 前提 |
 |---|---|---|---|
 | 严格基类 **【已处理：PR #203 已把严格校验放进 `ViewsheetTest` 基类，不再需要迁移；以下为原方案，仅供追溯】** | 迁移，不新写基类：把 `new ViewsheetTest(` 换成 `new DcViewsheetTest(`，分两批。**第一批** `VarExp_Binding_Spec`（22 处）、`VarExp_Properties_Spec`（8 处；另 2 处已是 `VSExportTest`）：每个基线目录只有 1 个 PNG，与 `exportAsPNG` 的导出对应，`DcViewsheetTest` 对 `exportAsPNG` 的失败同样抛异常（`ViewsheetTest.groovy:295` 走 `onExportFailure`），预计可直接换。**第二批** `Para_VS_Spec`（24 处）：先清 `Para_query` 的 2 个、`nullVSTest2` 的 5 个陈旧基线再换 | 导出异常、少导出文件会让用例失败 | 以上是静态检查，换完要运行确认 |
-| VarExp 绑定类数据比对 | 扩展：先统计 22 个用例各含多少 Chart / TableData 组件，只给含这两类的用例追加（其余组件 `executeVS` 不导出）：`VarExp_Binding_Spec` 追加 `executeVS(null, ['(Home)','bk1'])` 与 `compareData`，保留 PNG；先用 `Chart_BindingGField` 一个试跑，再推广 | 动态值绑定后的图表/交叉表数据正确，不再只靠像素 | 需生成新基线；Chart 数据排序用 `sortVSDataSet`，已有 |
+| VarExp 绑定类数据比对 **【已处理：Binding 22 个用例，见 G2；待办：在 GitHub 上生成 15 个 Chart 用例的 `ChartN.png` 基线】** | 已按 G2 的方案实施；原计划（先试 `Chart_BindingGField` 再推广）已被替代 | 动态值绑定后的图表/交叉表数据正确，不再只靠像素 | `Chart_BindingSpecial1` 曾因 `executeVS0` 的 `PairsDataSet` 死循环卡住，已由 #206 修复 |
 | 带 `.__type__` 的参数 | 扩展：`Para_wscondition`、`Para_dataview` 各加一个变体用例，发送 `x.__type__` | 浏览器真实传参路径下，类型转换后条件结果正确 | 先确认浏览器发送的 type 取值（单测同一问题） |
 | 缺失变量类型 | 新建 ws + vs：一个 worksheet 含 double、float、date、datetime 的变量组件，各自驱动一个条件 | 这些类型的提示/多值/默认值接线 | 无 |
 | 孤儿 `Para_source` | 新建用例（vs 已在 zip） | 数据源参数接线 | 需要确认期望参数值 |
@@ -131,14 +131,28 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 ## 6. 局限与待确认
 
-- **没有运行任何测试。** `strictcheck` 是静态预测；"换严格基类后 `Para_query`、`nullVSTest2` 会失败"需要运行确认。
+- **运行情况：** `VarExp_Binding_Spec`、`Para_VS_Spec` 在本机运行过（严格基类下）；其余用例和 Java 单测未运行。本机的整页 PNG 与 GitHub 基线有像素差异，属环境差异，PNG 结果以 GitHub 为准。
 - `param_scan.py` 是本轮新写的，只在 vspara 上运行过；条件里变量的值类型无法从 zip 静态得到，所以 G4 只能说"变量组件里没有这些类型"，条件变量的类型未知。
 - 书签 `bk1` 里保存的是什么（选中项还是全部），静态无法判断；VarExp 动态值的取值来源是否都来自书签状态，未逐个核对。
-- PNG 比对是否有容差、容差多大：`PNGCompare`（`CompareUtil.groovy:121`）未读，G2 的"在容差内看不出来"是推断。
+- PNG 容差：`PNGCompare` 未读，不再影响结论（PNG 基线在 GitHub 上生成，本机只看数据比对）。
 - `docs/vs/VSParaDynimac/`（`vsparameter.xlsx`、`vsdynimac.xlsx`、`Hyperlink_Dynimac.zip`）里团队可能已有缺口记录，**本轮没有解析**；该目录下的 `Hyperlink_Dynimac.zip` 没有对应 spec，是否属于 vspara 范围要用户确认。
 - `.__type__` 在前端的使用：只在 `show-hyperlink.service.ts` 看到有出现，未逐处读；浏览器发送哪些参数以开发为准。
-- 需要开发回答：空数组变量的条件语义；`prompt` 在 WS/VS 两层的优先关系；`$(组件)` 由哪个类解析；转换失败应报错还是回退字符串。
-- 需要用户决定：是否把 `Hyperlink_Dynimac` 纳入；VarExp 绑定类用例是整体追加数据比对，还是先试一个。
+- 需要开发回答的问题见下面 "6.1 待开发确认的问题"。
+- 需要用户决定：是否把 `Hyperlink_Dynimac` 纳入 vspara（`Hyperlink_Dynimac.zip` 没有对应 spec）。VarExp 绑定类用例已按整体追加数据比对处理。
+
+### 6.1 待开发确认的问题
+
+处理方式暂定：这些是产品语义或可能的产品问题，**倾向提 bug / 问题单给开发，由开发确认并修复后补 Java 单测；也可由测试这边自己查清楚后补单测**，由负责人逐项决定。
+
+| # | 问题 | 阻塞什么 | 对应缺口 / 位置 |
+|---|---|---|---|
+| Q1 | VPM 数据源上的手写 SQL（`parseResult=3`，不读受保护表）该怎么写才能通过？不读 `orders.products` 的 SQL 也被拒绝是否符合预期？加 `-- vpm.tables:` 后仍报"表未知"是用法不对还是产品问题？ | `Para_basequerysql` 失败（见 TODO） | G1 遗留 |
+| Q2 | 浏览器实际发送哪些 `.__type__` 取值？转换失败应报错还是回退字符串？ | `ParameterService#readParameters` 单测（9 个）、`.__type__` dashboard 用例 | G3 |
+| Q3 | 带变量的条件，变量是空数组时是"忽略"还是"恒假"？ | `Condition` 变量解析单测（12 个） | G6 |
+| Q4 | `prompt` 在 WS 与 VS 两层的优先关系？`prompt=false` 的入口在哪层？ | `UserVariable` / `DefaultVariableAssembly` 单测（8 个） | G8 |
+| Q5 | `$(组件)` 由哪个类解析？ | `DynamicValue` / `DynamicValue2` 单测（8 个） | 第 4 节 |
+| Q6 | 文本参数 `{parameter.x}` 的合法格式串？缺失参数应保留占位符还是替换为空？ | `ParameterTool#parseParameters` 单测（10 个） | G5 |
+| Q7 | `XUtil#replaceVariable` 的 `doEncode` 预期？ | `XUtil` 单测（6 个） | 第 4 节 |
 
 ## 附：数据来源与复现
 
