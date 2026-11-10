@@ -144,12 +144,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingXY', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -160,12 +159,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingXYPath', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -176,12 +174,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGField', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, null)
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -192,12 +189,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGField2', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -208,12 +204,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingVisual', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -224,12 +219,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingStock', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, null)
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -240,12 +234,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingTField', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, null)
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -256,12 +249,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGantt', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -272,12 +264,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingTree', caseName)
       vstest.executeVS(null, null)
-      vstest.exportAsPNG(null, null)
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -288,12 +279,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingDC1', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -304,12 +294,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingDC2', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -320,12 +309,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingSpecial1', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -336,12 +324,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingSpecial2', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -352,12 +339,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindTrend1', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 
@@ -368,12 +354,11 @@ class VarExp_Binding_Spec extends Specification{
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindTrend2', caseName)
       vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
-      vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
       verifyAll {
          vstest.compareData(null)
-         vstest.compareImage([caseName] as String[])
+         vstest.compareImage(null)
       }
    }
 }
