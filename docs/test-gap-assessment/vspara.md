@@ -115,6 +115,20 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 每个新用例只验证"接线"，边界和语义放进第 4 节的单测。
 
+## TODO：`Para_basequerysql`（G1 遗留，后续处理）
+
+严格基类下该用例失败，原因是产品行为变化，不是 spec 写错；旧基线 `TableView1.txt` 是 VPM 出现之前导出的，用例以前只因为导出失败被吞掉才是绿的。
+
+- worksheet `wsForVSPara/ws_basequerySQL` 在数据源 `MySQL1` 上用手写 SQL（`parseResult=3`，未解析），读 `orders.orders`、`orders.contacts`、`orders.order_details`、`orders.customers`，不读 `orders.products`。
+- `MySQL1` 上有 VPM `VPMP1`，条件作用于 `orders.products`：`product_id >= $(Ppid)`。
+- 不传 `Ppid`：报 `Variable in VPM condition missing: Ppid`（`VpmCondition.normalizeExpression`，经 `VpmUtil.hasBlindTableCondition`），即使这条 SQL 并不读 `products`。
+- 传 `Ppid=10`：报 `Query rejected by VPM ... the sql is not parsed and the tables it reads are unknown`（默认 `vpm.unparsed.sql.policy=reject`，`VpmUtil.handleBlindVPM`）。
+- 已试：在 SQL 最前面加 `-- vpm.tables: orders.orders, orders.contacts, orders.order_details, orders.customers`。`vspara-storage.zip` 可以直接改（blob 摘要是内容的 MD5，同步更新 `blob-index.json` 的 `digest` 与 `length` 即可，不用起环境），但改后产品仍报"表未知"，原因未查清；已撤回。
+- 另一个做法：给 spec 加 `vpm.unparsed.sql.policy=warn`，但会同时改变 `Para_vpm1~3` 测的行为，不建议无条件使用。
+- 要问开发：VPM 数据源上的原生 SQL 应怎样写才能通过；SQL 不读受保护的表也被拒绝，是否符合预期。
+
+在此之前不要把基线改成异常。用例内也有同样的 TODO 注释。
+
 ## 6. 局限与待确认
 
 - **没有运行任何测试。** `strictcheck` 是静态预测；"换严格基类后 `Para_query`、`nullVSTest2` 会失败"需要运行确认。

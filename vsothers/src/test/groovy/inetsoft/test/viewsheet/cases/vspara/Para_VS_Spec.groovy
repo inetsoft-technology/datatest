@@ -152,6 +152,23 @@ class Para_VS_Spec extends Specification{
 
    /**
     * check parameter on complex query. see Bug #60502, Bug #60334
+    *
+    * TODO: this case fails under the strict ViewsheetTest (it used to be green because the export
+    * failure was only printed). The baseline TableView1.txt is from before the VPM below existed.
+    * - ws wsForVSPara/ws_basequerySQL runs a hand-written SQL on data source MySQL1 (parseResult=3,
+    *   not parsed). It reads orders.orders/contacts/order_details/customers, not orders.products.
+    * - MySQL1 has the VPM VPMP1 (condition on orders.products: product_id >= $(Ppid)).
+    * - Without Ppid: 'Variable in VPM condition missing: Ppid' (VpmCondition.normalizeExpression,
+    *   reached through VpmUtil.hasBlindTableCondition, even though the sql does not read products).
+    * - With Ppid=10: 'Query rejected by VPM ... the sql is not parsed and the tables it reads are
+    *   unknown' (default vpm.unparsed.sql.policy=reject, see VpmUtil.handleBlindVPM).
+    * - Tried: prefix '-- vpm.tables: orders.orders, orders.contacts, orders.order_details,
+    *   orders.customers' in the ws sql (vspara-storage.zip can be edited directly: blob digest is the
+    *   MD5 of the content, update blob-index.json digest and length). The tables were still reported
+    *   unknown; not understood yet. vpm.unparsed.sql.policy=warn would also change Para_vpm1-3.
+    * - To ask the developers: how should such a sql be written under a VPM, and is rejecting a sql
+    *   that does not read the protected table intended?
+    * Do not update the baseline to an exception. See docs/test-gap-assessment/vspara.md (G1).
     * @return
     */
    def 'Para_basequerysql'() {
