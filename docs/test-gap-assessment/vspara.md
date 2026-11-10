@@ -93,12 +93,12 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 | 被测类 | 现有测试（读过的） | 补什么 | 用例数 | 难度 | 待开发确认 |
 |---|---|---|---|---|---|
-| `web.viewsheet.service.ParameterService#readParameters` | `ParameterServiceTest` 1 个（只测丢弃上下文变量） | `.__type__` 转换（string/int/double/date/boolean/多值）、单元素数组折叠成标量、`.__type__` 自身被跳过、选择类参数（`AssetUtil.isSelectionParam`）、转换失败的行为 | 9 | 低 | 浏览器实际发送哪些 type 取值；转换失败应报错还是回退字符串 |
-| `report.internal.ParameterTool#parseParameters` | 未找到测试引用（`parseParameters`、`{parameter.`、`containsParameter` 在 test 目录 0 次） | `{parameter.x}` 的 number/text/date/currency/percent 格式、参数缺失、嵌套花括号、多个参数同一文本 | 10 | 低 | 格式串的合法写法；缺失参数应保留占位符还是替换为空 |
-| `uql.Condition`（变量解析，含 `ConditionList`） | `ConditionTest` 103 个，名称含 variable 的 13 个，静态看是标量 | 数组变量用于 ONE_OF/BETWEEN、空数组、含 null、类型不匹配、LIKE/STARTING/CONTAINS/DATE_IN/TOP_N 各用变量解析 | 12 | 低 | 空数组条件是"忽略"还是"恒假"；这是产品语义，由开发定 |
-| `uql.schema.UserVariable` / `uql.asset.DefaultVariableAssembly` | `UserVariableCdataTest` 9 个（名称看是序列化）；`DefaultVariableAssembly` 无同名测试 | 各 xtype 的默认值、默认表达式、多值、`prompt=false` 时取默认；序列化往返 | 8 | 中 | `prompt` 在 WS 与 VS 两层的优先关系 |
-| `uql.viewsheet.DynamicValue` / `DynamicValue2` | `DynamicValue2Test` 3 个 | `=parameter.x`、`$(组件)`、普通脚本表达式、数组/空值、类型转换（int/double/boolean） | 8 | 中 | `$(组件)` 实际由哪个类解析（未查到，需开发指路） |
-| `uql.util.XUtil#replaceVariable` | `XUtilReplaceVariableTest` 3 个 | `$(x)`/`${x}` 多种位置、转义、缺失变量、数组、编码选项 | 6 | 低 | `doEncode` 的预期 |
+| `web.viewsheet.service.ParameterService#readParameters` | `ParameterServiceTest` 1 个（只测丢弃上下文变量） | `.__type__` 转换（string/int/double/date/boolean/多值）、单元素数组折叠成标量、`.__type__` 自身被跳过、选择类参数（`AssetUtil.isSelectionParam`）、转换失败的行为 | 9 | 低 | 已确认（6.2-A）：转换规则源码明确，可直接写；转换失败数字类型返回 `null`、其他回退字符串 |
+| `report.internal.ParameterTool#parseParameters` | 未找到测试引用（`parseParameters`、`{parameter.`、`containsParameter` 在 test 目录 0 次） | `{parameter.x}` 的 number/text/date/currency/percent 格式、参数缺失、嵌套花括号、多个参数同一文本 | 10 | 低 | 已确认（6.2-D）：缺失参数输出 `"null"`；数组含 `null` 元素疑似 NPE，需单测确认 |
+| `uql.Condition`（变量解析，含 `ConditionList`） | `ConditionTest` 103 个，名称含 variable 的 13 个，静态看是标量 | 数组变量用于 ONE_OF/BETWEEN、空数组、含 null、类型不匹配、LIKE/STARTING/CONTAINS/DATE_IN/TOP_N 各用变量解析 | 12 | 低 | 内存路径已确认（6.2-B）：空数组匹配不到任何行；SQL 路径（`ConditionListHandler`）对空数组行为待确认（Q3） |
+| `uql.schema.UserVariable` / `uql.asset.DefaultVariableAssembly` | `UserVariableCdataTest` 9 个（名称看是序列化）；`DefaultVariableAssembly` 无同名测试 | 各 xtype 的默认值、默认表达式、多值、`prompt=false` 时取默认；序列化往返 | 8 | 中 | 同名时 VS 输入组件覆盖 WS 变量已确认；`prompt` 两层（WS `isPrompt`、VS `disableParameterSheet`）同时设置的优先级待确认（Q4） |
+| `uql.viewsheet.DynamicValue` / `DynamicValue2` | `DynamicValue2Test` 3 个 | `=parameter.x`、`$(组件)`、普通脚本表达式、数组/空值、类型转换（int/double/boolean） | 8 | 中 | 已确认（6.2-C）：`$(组件)` 由 `ViewsheetSandbox.executeVariableValue` 解析 |
+| `uql.util.XUtil#replaceVariable` | `XUtilReplaceVariableTest` 3 个 | `$(x)`/`${x}` 多种位置、转义、缺失变量、数组、编码选项 | 6 | 低 | 已确认（6.2-E）：`doEncode` 对每个元素单独 URL 编码，只认 `$(x)` |
 
 合计 53 个设计用例（不是已写好的）。
 
