@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 6)
+isfalse, NULL, NULL, isTrue, NULL, NULL
+IL, 59, NULL, euqaltoPA, 32, NULL
+MA, 60, 59, FL, 28, 32
+startAorC, 182, 60, MA, 70, 28
+startN, 41, 182, MD, 120, 70
+WA, 49, 41, startAorC, 317, 120
+NULL, 0, 49, startN, 389, 317
+NULL, 0, 0, TX, 293, 389
+NULL, 0, 0, WA, 101, 293
+2002, NULL, 124, 2003, NULL, 374
+2004, NULL, 120, 2004, NULL, 358
+Others , NULL, 147, Others , NULL, 618

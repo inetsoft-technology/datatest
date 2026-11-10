@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Year(date_cacl), NULL, USA East, USA West
+NULL, NULL, MD_test, TX_test
+2020, agg_calc, 0, 0
+NULL, Nth_String, Hardware, Educational

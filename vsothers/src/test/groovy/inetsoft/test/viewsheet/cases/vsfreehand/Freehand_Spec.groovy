@@ -61,10 +61,12 @@ class Freehand_Spec extends Specification{
    def 'CM11_1_3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreehandTable/Relation/CM11_1_3', caseName)
+      vsCalcTest.executeVS(null, ['(Home)','bk1'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)','bk1'] as String[])
 
       expect:
       verifyAll{
+         vsCalcTest.compareData(null)
          vsCalcTest.compareImage(null)
       }
    }
@@ -304,10 +306,12 @@ class Freehand_Spec extends Specification{
    def 'bug_topN'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreehandTable/Others/topN', caseName)
+      vsCalcTest.executeVS(null, ['(Home)'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       verifyAll{
+         vsCalcTest.compareData(null)
          vsCalcTest.compareImage(null)
       }
    }

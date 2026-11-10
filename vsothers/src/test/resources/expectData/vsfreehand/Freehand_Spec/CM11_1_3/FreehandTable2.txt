@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+2020, 2020
+Educational, Educational
+MD_test, TX_test
+0, 0

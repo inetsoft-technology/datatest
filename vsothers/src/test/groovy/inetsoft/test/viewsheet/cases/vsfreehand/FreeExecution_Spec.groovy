@@ -34,10 +34,14 @@ class FreeExecution_Spec extends Specification {
    def 'FNGTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -349,10 +353,14 @@ class FreeExecution_Spec extends Specification {
    def 'FSTopNTotal'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSTopNTotal', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**

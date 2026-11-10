@@ -122,6 +122,13 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 
 每个新用例只验证"接线"，边界和语义放进第 4 节的单测。
 
+**G1 试点结果（已做，4 个用例）：** `Freehand_Spec` 的 `CM11_1_3`（带书签 `bk1`）、`bug_topN`，`FreeExecution_Spec` 的 `FNGTable1`（命名分组）、`FSTopNTotal`（TopN + 总计），都在 `exportAsPNG` 前加了 `executeVS`，断言里加了 `compareData(null)`。
+
+- 生成 18 个 TXT 基线（`-Dupdate.baseline=true`，没有写任何 PNG）。连续两次正常运行，导出的 18 个 TXT 逐字一致，且与基线相同；基线里没有异常、本机路径、主机名。4 个用例本机仍因 PNG 像素差异失败，与试点无关。
+- TXT 里能看到整页 PNG 看不到或难以审阅的内容：TopN 的 `Others ` 行（带尾随空格，对应 `LayoutTool.java:1436` 的注释，用来区分命名分组的 Others）、命名分组标签、总计行，以及书签对结果的影响（`CM11_1_3` 的 Home 是 2×6，`bk1` 是 8×3）。
+- 基线是回归基线，只对"值变了"有效。已做的人工核对：`bug_topN` 四个季度之和 108+158+139+141=546 等于总计；`FSTopNTotal/Crosstab1` 的 Grand Total 2651+10111=12762 一致。**留意一点**：`FSTopNTotal/Crosstab1` 里 `false` 分组显示的三个州合计 1060+494+489=2043，但 `Total` 行是 2651，说明 TopN 下 `Total` 包含了未显示的州；这是否符合预期需要用例作者确认，基线按当前产品输出生成。
+- 推广到其余用例时的注意点：有图表的 vs，`executeVS` 还会导出 `ChartN.png`/`ChartN.txt`，`compareImage(null)` 会把图表 PNG 也纳入比较而失败，应改成 `compareImage([vs 名] as String[])`（同 `VarExp_Binding_Spec` 的 Crosstab 用例）；不能用 `-Dupdate.baseline.png=true` 在本机生成图表 PNG 基线（本机渲染与 CI 不同）。
+
 ## 6. 局限与待确认
 
 - **没验证的：**
