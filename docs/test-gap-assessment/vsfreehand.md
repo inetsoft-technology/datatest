@@ -129,6 +129,12 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 - 基线是回归基线，只对"值变了"有效。已做的人工核对：`bug_topN` 四个季度之和 108+158+139+141=546 等于总计；`FSTopNTotal/Crosstab1` 的 Grand Total 2651+10111=12762 一致。**留意一点**：`FSTopNTotal/Crosstab1` 里 `false` 分组显示的三个州合计 1060+494+489=2043，但 `Total` 行是 2651，说明 TopN 下 `Total` 包含了未显示的州；这是否符合预期需要用例作者确认，基线按当前产品输出生成。
 - 推广到其余用例时的注意点：有图表的 vs，`executeVS` 还会导出 `ChartN.png`/`ChartN.txt`，`compareImage(null)` 会把图表 PNG 也纳入比较而失败，应改成 `compareImage([vs 名] as String[])`（同 `VarExp_Binding_Spec` 的 Crosstab 用例）；不能用 `-Dupdate.baseline.png=true` 在本机生成图表 PNG 基线（本机渲染与 CI 不同）。
 
+**G1 推广（已做 spec，基线未提交）：** `Freehand_Spec` 与 `FreeExecution_Spec` 的其余 57 个用例用同样方式加了 `executeVS` + `compareData(null)`（`Freehand_Spec` 30 个、`FreeExecution_Spec` 27 个；含图表的 `CM11_1_1/2/4/5/6` 的 `compareImage` 改为显式文件名）。至此两个 spec 的 63 个用例都比较单元格数据（4 个试点、2 个原有的 `FSDeclaredVar`/`FSFormatNamedCell`、57 个推广）。`Convert_Spec` 没有改：`executeVS` 只会导出转换前的源表，不是 Freehand，转换后数据的比较属于 G2 的 TODO。
+
+- 推广的 57 个用例**没有提交 TXT 基线**（只提交 spec）。在这些基线补齐之前，这 57 个用例的 `compareData` 会因基线缺失而失败。
+- 已用本机运行验证过：`clean` 后用 `-Dupdate.baseline=true` 为 63 个用例生成共 230 个 TXT（含 3 个原有、18 个试点已提交的），再连续两次正常运行，两次导出的 230 个 TXT 逐字一致、与生成的基线相同；没有导出异常、没有基线缺失或多余的导出文件；TXT 里没有异常、本机路径、主机名。63 个用例的失败全部是本机 PNG 像素差异。
+- 生成基线的方法：`./mvnw clean -pl vsothers`，再 `./mvnw test -pl vsothers -Pvsfreehand -Dtest=Freehand_Spec,FreeExecution_Spec -Dupdate.baseline=true`，用 `git diff`/`git status` 审阅后提交；基线是回归基线，需要人工核对。GitHub 工作流目前没有传 `update.baseline` 的入口（`.github/workflows` 里搜不到）。
+
 ## 6. 局限与待确认
 
 - **没验证的：**
