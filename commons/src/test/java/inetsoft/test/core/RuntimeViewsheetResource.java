@@ -88,10 +88,18 @@ public class RuntimeViewsheetResource {
     * @param aname
     */
    public void convertToFreehand(SRPrincipal principal, String aname) {
+      convertToFreehand(principal, aname, true);
+   }
+
+   /**
+    * @param confirmed the event's confirmed flag; when false the service first runs
+    *                  VSEventUtil.fixAggregateInfo for crosstabs
+    */
+   public void convertToFreehand(SRPrincipal principal, String aname, boolean confirmed) {
       runtimeViewsheet = getRuntimeViewsheet(principal);
       ConvertToFreehandTableEvent cevent = new ConvertToFreehandTableEvent();
       cevent.setName(aname);
-      cevent.setConfirmed(true);
+      cevent.setConfirmed(confirmed);
       CommandDispatcher commandDispatcher = MessageTestUtils.createNoOpCommandDispatcher(principal);
       try {
          composerVSTableService().convertToFreehandTable(runtimeId, cevent, principal,
