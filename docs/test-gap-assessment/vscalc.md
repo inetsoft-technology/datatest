@@ -107,7 +107,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 
 运行时走 `report/filter` 版本公式，不走 `mv/formula`（`Util.createFormula`，`mv.formula` 只在物化视图改写时启用）。用例数是设计出来的数量，不是已写好的。
 
-**13.8 已有同类测试，先移植：** 13.8 产品线的汇总公式测试覆盖项目（Redmine `[#RPT Summary Formulas]` 系列，Jakub Kidacki）在 `style-intelligence` 仓库的 [`epic-test-coverage`](https://github.com/inetsoft-technology/style-intelligence/tree/epic-test-coverage/java/src/test/java/inetsoft/test/feature/report) 分支上（核对时为 `5b682845`，2026-11-10），共 9 个测试类、约 120 个用例，按 `gap:report.summary-formulas.*` 编号，已证实的缺陷按正确行为写并 `@Disabled("Bug #...")`。公式代码与 StyleBI 是同一份：`NthMostFrequent`、`Mode`、`DistinctCount`、`Correlation` 只差 import 和 `new Double`/`Double.valueOf`；`WeightedAverage` 多了 [#80540](https://issues.inetsoft.com/issues/80540) 的空字符串修复（StyleBI 尚未修，[#80584](https://issues.inetsoft.com/issues/80584)）；13.8 的 `report/filter` 下没有 `CalcFieldFormula`。所以 G4 的主体是把这些测试移植到 StyleBI `core`，移植后只有 `WeightedAverage` 空字符串用例会失败（对应 [#80584](https://issues.inetsoft.com/issues/80584)）。
+**13.8 已有同类测试，先移植：** 13.8 产品线的汇总公式测试覆盖项目（Jakub Kidacki；Redmine 里标题前缀为 "[#RPT Summary Formulas]" 的一系列单，如 [#80540](https://issues.inetsoft.com/issues/80540)、[#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)、[#80738](https://issues.inetsoft.com/issues/80738)）在 `style-intelligence` 仓库的 [`epic-test-coverage`](https://github.com/inetsoft-technology/style-intelligence/tree/epic-test-coverage/java/src/test/java/inetsoft/test/feature/report) 分支上（核对时为 `5b682845`，2026-11-10），共 9 个测试类、约 120 个用例，按 `gap:report.summary-formulas.*` 编号，已证实的缺陷按正确行为写并加 `@Disabled`，注明单号（如 `@Disabled("Bug #80700: ...")`）。公式代码与 StyleBI 是同一份：`NthMostFrequent`、`Mode`、`DistinctCount`、`Correlation` 只差 import 和 `new Double`/`Double.valueOf`；`WeightedAverage` 多了 [#80540](https://issues.inetsoft.com/issues/80540) 的空字符串修复（StyleBI 尚未修，[#80584](https://issues.inetsoft.com/issues/80584)）；13.8 的 `report/filter` 下没有 `CalcFieldFormula`。所以 G4 的主体是把这些测试移植到 StyleBI `core`，移植后只有 `WeightedAverage` 空字符串用例会失败（对应 [#80584](https://issues.inetsoft.com/issues/80584)）。
 
 **期望值怎么写：** 待开发确认的语义统一放在 [#80953](https://issues.inetsoft.com/issues/80953)，答复前按现有行为写并标注"待确认"；已证实的缺陷，建议按正确行为写并 `@Disabled`、注明 bug 号（13.8 覆盖项目的做法，如 [#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)）。
 
@@ -215,7 +215,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 | 3 | 除零与 NaN：`Correlation` 方差为 0 或一对数据（`getResult` 为 null、`getDoubleResult` 为 NaN）；`WeightedAverage` 权重和为 0；聚合型表达式除零 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3） |
 | 4 | `Mode` 并列按值升序 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 4）；13.8 测试方认为"随意"（[#80738](https://issues.inetsoft.com/issues/80738) 附注） |
 | 5 | Integer 与 Double 混合时是否为同一值 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 5） |
-| 6 | `CorrelationFormula.addValue(double[])` 的下标约定 | 已有单 [#80700](https://issues.inetsoft.com/issues/80700) 跟进 |
+| 6 | `CorrelationFormula.addValue(double[])` 的下标约定 | 由已有的 [#80700](https://issues.inetsoft.com/issues/80700) 跟进 |
 | 7 | 日期月末语义 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 6）。已运行：`dateAdd("m")` 截到月末；`edate` 同年内截月末，跨年顺延（2000-12-31 +2 得 2001-03-03），由处理 [#80953](https://issues.inetsoft.com/issues/80953) 的人决定是否另开缺陷 |
 
 13.8 的测试已按现有行为固定了 Mode 计 null、并列取小值、空 Mode 为 null、Correlation 方差为 0 返回 null、WeightedAverage 权重和为 0 返回 null（[#80953](https://issues.inetsoft.com/issues/80953) 问题 1、2 的 Mode 一侧、3a、3b、4，见该单备注）；若开发同意"与 13.8 一致"，只剩计算字段除零（问题 3c）、Integer 与 Double（问题 5）、日期月末（问题 6）需要答复。
