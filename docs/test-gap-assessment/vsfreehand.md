@@ -87,7 +87,7 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 |---|---|---|---|---|
 | G1 | 80/82 用例只比整页 PNG，没有单元格数据断言 | 单元格值错误但渲染差异小于容差、值在被裁掉/隐藏的行列、格式化前后的值不同；另外 PNG 基线跨平台不一致，换机器更新基线可能把错误值固化 | 机制（改 spec/基类，加 `executeVS`+`compareData`） | 高 |
 | G2 | Convert 只比 `_CALC.png`，无"转换前后数据一致"检查 | 转换后某些行/列、合计、聚合值与原交叉表/表不一致（例如转换漏掉小计、`fixLayoutAlias`/`fixPeridField` 改错列名），而渲染图因为是回归基线被一起"固化" | 机制（改 `VSCalcTest.checkConvert`）。**已做探索**：`VSCalcTest.compareConvertData` 对 51 个组件比较，32 个一致、19 个有差异，其中 12 个是设计行为（允许差异），7 个转入 TODO，见 [vsfreehand-g2-convert-probe.md](vsfreehand-g2-convert-probe.md) | 高 |
-| G3 | `CalcTableVSAQuery.getTableLens` 有两条执行路径（先尝试 `createCrosstabAssemblies` 转成临时 crosstab，失败/不适用则走 `CalcTableLens.process()`，见 `CalcTableVSAQuery.java:125-176`），产品单测 12 个文件都是锁/格式/回写/临时名，**没有两路径数据等价的测试** | 同一个 Freehand 布局，快速路径与脚本路径算出不同的值（例如 TopN、Others、空分组、合计行）；datatest 只对每个 vs 的当前路径做 PNG 快照，路径选择条件改了不会发现 | 单测 | 高 |
+| G3 | `CalcTableVSAQuery.getTableLens` 有两条路径，区别在**单元格脚本读的底表**：快速路径先把布局转成临时 crosstab（`createCrosstabAssemblies`），用预聚合的 crosstab 数据当底表；不满足条件则用明细表当底表，在脚本里分组聚合（`CalcTableVSAQuery.java:125-184`）。两条路径都由 `CalcTableLens.process()` 求值单元格。产品单测 12 个文件都是锁/格式/回写/临时名，**没有两路径数据等价的测试**，`createCrosstabHeaders`、`quickCheck`、`createCrosstabAssemblies`、`LayoutTool.createGroupCond` 在 `src/test` 里按名字都找不到 | 同一个 Freehand 布局，快速路径与脚本路径算出不同的值（例如 TopN、Others、空分组、合计行）；datatest 只对每个 vs 的当前路径做 PNG 快照，路径选择条件改了不会发现 | 单测 | 高 |
 | G4 | 转换链 `VSLayoutTool.generateLayout` → `VSTableConverter.changeTableMode` → `ComposerVSTableService.convertToFreehandTable` 在产品仓库**没有任何单测**（三个类按类名在 `src/test` 都找不到；`VSLayoutTool` 仅被 3 个无关测试引用） | 转换静默改变数据：清掉计算器（`:524-526`）、清钻取和日期比较（`:479-484`）、复制 fillBlankWithZero/sortOthersLast/mergeSpan（`:513-516`）这些分支一旦改错，只有靠 Convert_Spec 的 PNG 才可能发现 | 单测（布局部分）+ dashboard（G2） | 高 |
 | G5 | `RuntimeCalcTableLens`（1559 行，展开/分组后处理）单测只有一个序列化用例（`RuntimeCalcTableLensTest`，49 行）；其余引用它的 12 个测试关注锁/停滞/超时 | 横向/纵向展开、分组排序（升/降/按列/手动）、TopN+Others、日期级别分组、空分组、合并单元格的取值错误 | 单测 | 中（需开发先确认逻辑在哪个类，见 §6） |
 | G6 | 交互只有"书签恢复"，没有对 Freehand 做选择/刷选后重新执行的用例 | 选择变化后 Freehand 没刷新、缓存没失效（书签恢复是从头执行，覆盖不到增量刷新） | dashboard | 中 |
@@ -101,10 +101,10 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 
 | 被测类 | 补什么 | 用例数 | 难度 | 待开发确认 |
 |---|---|---|---|---|
-| `CalcTableVSAQuery`（`getTableLens`、`createCrosstabAssemblies`） | 同一布局分别走快速路径与脚本路径，逐格比对；期望值从原始数据手算。覆盖：多种汇总公式（Sum/Count/Average/Max/DistinctCount/NthMostFrequent）、两层嵌套分组、横向展开、合计/小计、TopN+Others、百分比 | 12 | 中（要沙箱+工作表；仓库已有 `RowFetchFailureTest`、`CalcTableVSAQueryLayoutWriteBackTest` 的搭建方式可参考） | 哪些布局应该走快速路径（`quickCheck`/`isTreeValid` 等判断，`CalcTableVSAQuery.java:1736`、`:2083`）；两路径在 TopN/Others/空分组上有差异时哪一个才是对的 |
+| `CalcTableVSAQuery`（`getTableLens`、`createCrosstabAssemblies`） | 同一布局分别走快速路径与脚本路径，逐格比对；期望值从原始数据手算。覆盖：多种汇总公式（Sum/Count/Average/Max/DistinctCount/NthMostFrequent）、两层嵌套分组、横向展开、合计/小计、TopN+Others、百分比 | 12 | 中（要沙箱+工作表；仓库已有 `RowFetchFailureTest`、`CalcTableVSAQueryLayoutWriteBackTest` 的搭建方式可参考） | 已从源码查明哪些布局走快速路径（见 §6 的"源码查明"）；"两路径不一致时以哪个为准"代码里没有声明，需要开发确认。没有强制走某条路径的开关（在 `getTableLens`、`createCrosstabAssemblies0` 里未看到，非全仓搜索），单测要靠布局本身控制 |
 | `VSLayoutTool.generateLayout` + `VSTableConverter.changeTableMode` | 交叉表→Freehand 布局：行/列头 1/2/3 层、汇总并排、总计/小计开关、mergeSpan、多聚合；简单表、嵌入表；断言每个单元格的 type/btype/expansion/formula | 14 | 中（纯布局无需执行，但要构造 `TableDataVSAssembly` 与元数据） | 无 |
 | `ComposerVSTableService.convertToFreehandTable` | 计算器被清除（百分比除外）、钻取被清除、日期比较被清除、fillBlankWithZero/sortOthersLast/mergeSpan 复制、`fixPeridField`、`fixLayoutAlias` | 8 | 高（服务依赖 `ViewsheetService`、集群代理，测试入口未确认） | 清除计算器后数值与原交叉表不同，这是设计如此还是需要提示用户；哪些差异是允许的 |
-| `RuntimeCalcTableLens`（展开、分组、TopN、Others、合并） | 展开 横/纵/无；分组排序升/降/按列/手动；TopN n/反向/Others；日期级别分组；空/null 分组；合并单元格；fillBlankWithZero | 18 | 中 | TopN/Others/排序在脚本路径下由哪个类计算（`RuntimeCalcTableLens` 里 `TopN` 只出现 3 次，逻辑可能在 `CalcTableScope`/`TableValueList`，**静态推断，未验证**） |
+| `RuntimeCalcTableLens`（展开、分组、TopN、Others、合并） | 展开 横/纵/无；分组排序升/降/按列/手动；TopN n/反向/Others；日期级别分组；空/null 分组；合并单元格；fillBlankWithZero | 18 | 中 | 已查明：脚本路径的分组/TopN/Others 由 `LayoutTool.createGroupCond` 生成条件（`LayoutTool.java:1409-1440`），不在 `RuntimeCalcTableLens`；`RuntimeCalcTableLens` 只在判断 `Others` 单元格类型时读 TopN（`:1041`）。测试对象应改为 `LayoutTool.createGroupCond`（`CalcGroup`/`CalcAggregate`），目前只有 `LegacyBuddhistManualOrderTest` 引用 `CalcGroup`。用例设计表里这一行的被测类需要从 `RuntimeCalcTableLens` 调整，难度待重新评估 |
 | `CalcTableScope` / `TableValueList` 的 `toList` 选项串 | `sort=asc/desc`、`rounddate=year…day`、`interval` 的组合与非法值（产品已有 `CalcTableScopeTest` 634 行、`TableValueListTest`，**未逐项审读**，补之前先对照现有用例去重） | 6 | 低 | 无 |
 
 难度：低 = 纯单元；中 = 需要脚本或沙箱环境；高 = 测试入口还没确认。用例数是设计出来的数量，不是已写好的。
@@ -130,11 +130,20 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
   - 孤儿判断是静态的（资产 id 字面量对 zip）；"未发现计算器的转换用例"是静态扫描，计算器若存在别的节点可能漏统计。
   - 产品单测盘点只做了按类名/引用的静态统计，没有运行产品仓库的测试，也没有逐项审读 `CalcTableScopeTest` 等现有用例的断言内容。
   - `RuntimeCalcTableLens` 是否真的承担展开/TopN 计算：静态推断。
-- **需要开发回答的问题：**
-  1. `CalcTableVSAQuery` 的快速路径（临时 crosstab）与脚本路径是否必须数据等价？哪些布局走快速路径？不一致时以哪个为准？
-  2. 转换时清除计算器、钻取、日期比较，导致转换后数值与原交叉表不同，是设计如此吗？测试里允许哪些差异？
-  3. Freehand 的 TopN / Others / 分组排序，在脚本路径下由哪个类负责？
-  4. `Convert_Spec.CroTable2` 里 `Thread.sleep(70000)` 的目的是什么？
+- **原先要问开发的问题，现已从源码和历史查明或已回答：**
+  1. **快速路径与脚本路径（已查源码）。** 两条路径都用同一套单元格脚本，区别是底表：快速路径用预聚合的 crosstab 数据，另一条用明细表。快速路径需要同时满足（`CalcTableVSAQuery.java`）：
+     - 不是明细模式（`:125`）；
+     - `quickCheck`（`:2083`）：列绑定单元格只能是汇总或分组，不能是明细；分组必须有排序（不是"原始顺序"）并且横向或纵向展开；**不能有公式（脚本）类型单元格**；
+     - 没有嵌套的同列分组（`:824`）；多个分组会被拆成每列一个 crosstab（`:833`）；
+     - 树结构有效、行列分组不重复、至少一个聚合、`perby` 有效、所有单元格都被用到（`:914-1013`，`allCellUsed` 在 `:1958`，含"汇总格跨越了带 TopN 的维度"时回退）；
+     - `createCrosstabHeaders`（`:1476`）遇到以下情况回退：**TopN 带 Others 但不是最内层分组**（`:1517`）、命名分组或日期间隔大于 1（`:1527`）、列找不到；
+     - 合并后中间有被跳过的列时回退（`:796`）。
+     各处回退条件说明开发的意图是"只在结果一致时才走快速路径"，但代码没有把"必须等价"写成声明，也没有说不一致时以谁为准（静态推断）。
+     **datatest 现状（静态，只检查 `quickCheck` 里的单元格级三条）：** 86 个 vs 里共 182 个 CalcTable，97 个一定走脚本路径（90 个含公式脚本单元格，7 个含明细列单元格），85 个满足单元格级条件、可能走快速路径（其余树结构条件没查）。实际走了哪条没有运行确认；可以打开日志 `inetsoft.report.composition.execution.DebugCalcCrosstabCheck`，`getTableLens` 会输出 `Use N crosstab(s)…`（`:146`）。
+  2. **转换时清除计算器、钻取、日期比较：** 产品设计，保持；已作为允许差异记入 `vsfreehand-g2-convert-probe.md`；"测试里怎么表示"转入 TODO（该文档 §7 T5）。
+  3. **TopN/Others/分组排序在脚本路径下的负责类（已查源码）：** `LayoutTool.createGroupCond`（`LayoutTool.java:1352-1440`），快速路径对应 `CalcTableVSAQuery.createCrosstabHeaders`（`:1507-1514` 把 TopN 转成 crosstab 的排名和 Others 选项）。TopN/Others 的语义因此在两处各实现一遍，这正是 G3 的等价风险所在。
+- **仍需作者确认的问题：**
+  1. `Convert_Spec.CroTable2` 里 `Thread.sleep(70000)` 的目的。已查到：2025-09-30 的提交 `52fc77e7`（说明 "mock context on vscalctest scope. then modify case to pass when execution."）给该用例加了 `@Timeout(60)` 和 `Thread.sleep(70000)`，2026-05-29 的提交 `bfe85d92`（"fix CroTable2 timeout issue…"）把超时改成 80 秒，sleep 保留。vs 里该用例只有一个脚本 `setRowHeight(2,0)`，没有任何耗时逻辑；仓库里 vsothers 的 spec 只有这一处 sleep。目的无法从代码和历史确认，只知道现在转换加导出超过约 10 秒用例就会超时。
 - **需要用户决定的事：**
   1. 先做哪一类：建议先做机制层（G1、G2，不依赖开发），再做单测（G3/G4）。
   2. 4 个孤儿 vs 是补用例还是从 zip 里删除。
