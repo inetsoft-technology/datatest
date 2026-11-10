@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+Year(orderdate), Lat, Long, BackgroundShape
+1997-01-01 00:00:00, 41.8796, -87.6244, NULL
+1997-01-01 00:00:00, 41.8796, -87.6244, NULL
+1998-01-01 00:00:00, 41.8796, -87.6244, NULL

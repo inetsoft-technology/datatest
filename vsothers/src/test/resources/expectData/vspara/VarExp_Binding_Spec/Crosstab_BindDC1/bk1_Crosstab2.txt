@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+Quarter(Order:Date), Sum(Order:Paid), Change from previous quarter of Quarter(Order:Date): Sum(Order:Paid)
+2022 3rd, 38, -13
+2022 4th, 47, 9

@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 6)
+reseller, state, Sum(discount), Compound Growth reseller: Sum(discount), Grand Total, Grand Total
+false, CA, 0.25, 25%, 0.25, NULL
+false, MA, 0.35, 69%, 0.35, NULL
+false, NJ, 0.95, 229%, 0.95, NULL
+false, Others, 0.35, 344%, 0.35, NULL
+false, Total, 1.9, NULL, 1.9, NULL
+true, NJ, 1.6, 160%, 1.6, NULL
+true, NY, 1.7, 602%, 1.7, NULL
+true, TX, 0.9, 1,234%, 0.9, NULL
+true, Others, 3.6, 6,035%, 3.6, NULL
+true, Total, 7.8, NULL, 7.8, NULL

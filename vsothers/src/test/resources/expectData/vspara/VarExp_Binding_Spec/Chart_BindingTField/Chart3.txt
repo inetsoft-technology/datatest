@@ -1,0 +1,19 @@
+The data size(row x col) is:(18 x 3)
+Product:Category, Product:Name, NthMostFrequent(Product:Total, 1)
+Business, MeToo AppServer, 18000
+Business, Xconnect Server, 40500
+Business, Others, 1125
+Personal, Green Planet, 1200
+Personal, True Action, 4378
+Personal, Others, 903
+Others, 19 inch LCD, 2480
+Others, Barbie's Fashion, 869
+Others, Fancy Menus, 833
+Others, Fast Go Game, 2800
+Others, Info Folder, 1197
+Others, Learn ABC, 300
+Others, Math for Me, 1880
+Others, Mega Icons, 8800
+Others, NetStorage, 39900
+Others, WebCalendar, 744
+Others, Others, 560

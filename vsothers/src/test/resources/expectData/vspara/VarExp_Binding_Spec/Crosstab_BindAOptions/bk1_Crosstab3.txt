@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 8)
+NULL, false, false, false, false, true, true, true
+NULL, AZ, CA, MA, Total, CA, MA, Total
+NthMostFrequent(company_name, 2), NULL, Whittaker & Co, Inc, AMG Logistics, Folk Mining, Computer Tech, World Software Resellers, Computer Tech
+NthSmallest(CUSTOMER_ID, 1), 20, 16, 18, 16, 9, 23, 9
+% of subtotal by column: NthSmallest(CUSTOMER_ID, 1), 2,000%, 1,600%, 1,800%, 1,600%, 900%, 2,300%, 900%

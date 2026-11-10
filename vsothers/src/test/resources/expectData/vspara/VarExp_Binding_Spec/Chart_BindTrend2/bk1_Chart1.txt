@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 4)
+city, company_name, Sum(customer_id), % of city: Sum(customer_id)
+Dallas, BigMart Foodstores, 682, 0.593
+Dallas, Nova Tera, 468, 0.407
+New York, Eastern Data, 75, 0.0752
+New York, FISGA Corp, 408, 0.4092
+New York, High Society Investments, 360, 0.3611
+New York, Old World Insurance, 154, 0.1545
+Boston, Ubermeyer, 432, 0.5106
+Boston, World Software Resellers, 414, 0.4894
+Olympia, Northwest Outfitters, 812, 1
+Plainfield, Pharma Research, 770, 1
+Los Angeles, Computer Tech, 273, 0.3714
+Los Angeles, West Coast Customs, 462, 0.6286
+Baltimore, FMG Consulting, 594, 0.8684
+Baltimore, George Services, 90, 0.1316
+Cambridge, XO Resellers, 646, 1

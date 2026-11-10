@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+Week(Order:Date), Sum(Order:Paid), Change from previous week of Week(Order:Date): Sum(Order:Paid)
+2022-12-18, 2, -1
+2022-12-25, 2, 0

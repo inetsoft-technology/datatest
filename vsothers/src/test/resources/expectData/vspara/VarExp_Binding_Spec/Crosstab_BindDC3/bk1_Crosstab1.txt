@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+DataGroup(Order:Date), Year(Order:Date), Sum(Product:Total), % Change from previous range of DataGroup(Order:Date): Sum(Product:Total)
+2020:2021, 2020, 2579794, NULL
+2020:2021, 2021, 1627371, NULL
+2021:2022, 2021, 3021855, 17%
+2021:2022, 2022, 1764816, 8%
+2022:2023, 2022, 2687679, -11%
+2022:2023, 2023, 1908931, 8%

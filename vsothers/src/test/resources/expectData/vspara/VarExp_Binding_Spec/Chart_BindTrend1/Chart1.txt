@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 4)
+state, company_name, Sum(customer_id), % of state: Sum(customer_id)
+NJ, Daycare One, 36, 0.0172
+NJ, Interstate Shop, 16, 0.0076
+NJ, Pharma Research, 770, 0.3674
+NJ, Rutgers Bank, 525, 0.2505
+NJ, Scheggie Services, 255, 0.1217
+NJ, Software Specialists, 494, 0.2357
+MA, AMG Logistics, 570, 0.2764
+MA, Ubermeyer, 432, 0.2095
+MA, World Software Resellers, 414, 0.2008
+MA, XO Resellers, 646, 0.3133
+TX, Big Ed"s BBQ, 484, 0.258
+TX, BigMart Foodstores, 682, 0.3635
+TX, Nova Tera, 468, 0.2495
+TX, The Big Cat, 242, 0.129
+CA, Computer Tech, 273, 0.2232
+CA, Direct Sales, 216, 0.1766
+CA, West Coast Customs, 462, 0.3778
+CA, Whittaker & Co, Inc, 272, 0.2224
+WA, Infinity Software, 378, 0.3176
+WA, Northwest Outfitters, 812, 0.6824
+NY, Eastern Data, 75, 0.0752
+NY, FISGA Corp, 408, 0.4092
+NY, High Society Investments, 360, 0.3611
+NY, Old World Insurance, 154, 0.1545
+MD, FMG Consulting, 594, 0.6074
+MD, George Services, 90, 0.092
+MD, InterLand Services, 294, 0.3006
+PA, Tricounty Auto, 616, 1

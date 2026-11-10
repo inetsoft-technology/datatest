@@ -1,0 +1,11 @@
+The data size(row x col) is:(4 x 4)
+Quarter(Order:Date), DataGroup(Order:Date), Sum(Product:Price), Change from previous range of DataGroup(Order:Date): Sum(Product:Price)
+2020 4th
+2021 4th
+2022 4th, 2020, 5621, NULL
+2020 4th
+2021 4th
+2022 4th, 2021, 3483, -2138
+2020 4th
+2021 4th
+2022 4th, 2022, 8143, 4660

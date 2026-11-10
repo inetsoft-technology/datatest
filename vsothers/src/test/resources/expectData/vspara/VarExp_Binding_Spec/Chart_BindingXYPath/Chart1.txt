@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 5)
+Product:Category, Customer:Region, Year(Order:Date), Average(Order:Paid), Sum(Product:Total)
+Business, USA East, 2022-01-01 00:00:00, 0.9365, 1054375
+Business, USA East, 2023-01-01 00:00:00, 0.8636, 1134500
+Business, USA West, 2022-01-01 00:00:00, 0.9, 840000
+Business, USA West, 2023-01-01 00:00:00, 0.8475, 1031875
+Educational, USA East, 2022-01-01 00:00:00, 0.8955, 67311
+Educational, USA East, 2023-01-01 00:00:00, 0.7973, 91544
+Educational, USA West, 2022-01-01 00:00:00, 0.9149, 63937
+Educational, USA West, 2023-01-01 00:00:00, 0.8462, 83873
+Games, USA East, 2022-01-01 00:00:00, 0.9554, 105778
+Games, USA East, 2023-01-01 00:00:00, 0.807, 112568
+Games, USA West, 2022-01-01 00:00:00, 0.9125, 83622
+Games, USA West, 2023-01-01 00:00:00, 0.8462, 89031
+Graphics, USA East, 2022-01-01 00:00:00, 0.9423, 128914
+Graphics, USA East, 2023-01-01 00:00:00, 0.8667, 108570
+Graphics, USA West, 2022-01-01 00:00:00, 0.92, 70279
+Graphics, USA West, 2023-01-01 00:00:00, 0.9, 91717
+Hardware, USA East, 2022-01-01 00:00:00, 0.9386, 924240
+Hardware, USA East, 2023-01-01 00:00:00, 0.8788, 569870
+Hardware, USA West, 2022-01-01 00:00:00, 0.9149, 532110
+Hardware, USA West, 2023-01-01 00:00:00, 0.8173, 661740
+Office Tools, USA East, 2022-01-01 00:00:00, 0.9565, 152598
+Office Tools, USA East, 2023-01-01 00:00:00, 0.873, 168042
+Office Tools, USA West, 2022-01-01 00:00:00, 0.9273, 98638
+Office Tools, USA West, 2023-01-01 00:00:00, 0.8226, 166647
+Personal, USA East, 2022-01-01 00:00:00, 0.9192, 195505
+Personal, USA East, 2023-01-01 00:00:00, 0.8452, 157978
+Personal, USA West, 2022-01-01 00:00:00, 0.9254, 135188
+Personal, USA West, 2023-01-01 00:00:00, 0.8734, 159355

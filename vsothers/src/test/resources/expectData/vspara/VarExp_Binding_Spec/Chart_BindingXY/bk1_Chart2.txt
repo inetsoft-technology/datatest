@@ -1,0 +1,32 @@
+The data size(row x col) is:(31 x 4)
+city, fx_boolean, Sum(CUSTOMER_ID), Change from previous: Sum(CUSTOMER_ID)
+Dallas, false, 1150, NULL
+New York, false, 997, -153
+Boston, false, 432, -565
+Boston, true, 414, NULL
+Olympia, false, 812, 380
+Plainfield, false, 770, -42
+Los Angeles, false, 462, -308
+Los Angeles, true, 273, NULL
+Baltimore, false, 684, 222
+Cambridge, true, 646, NULL
+York, false, 616, NULL
+Las Vegas, false, 576, -40
+Springfield, false, 570, -6
+New Brunswick, false, 525, -45
+Newark, true, 494, NULL
+Houston, false, 484, NULL
+Tucson, false, 440, -44
+Seattle, true, 378, NULL
+Rockville, false, 294, NULL
+Albany, false, 272, -22
+Camden, false, 255, -17
+Austin, false, 242, -13
+Orlando, false, 240, -2
+San Francisco, true, 216, NULL
+Chicago, true, 170, -46
+Denver, false, 160, NULL
+Hartford, false, 78, -82
+Boulder, true, 60, NULL
+Middletown, false, 36, NULL
+Wayne, false, 16, -20

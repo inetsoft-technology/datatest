@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+Customer:City, Sum(Product:Total), Change from first Customer:City: Sum(Product:Total)
+Los Angeles, 856418, 0
+San Francisco, 627936, -228482
+Denver, 525569, -330849
+Orlando, 390641, -465777
+Albany, 202294, -654124

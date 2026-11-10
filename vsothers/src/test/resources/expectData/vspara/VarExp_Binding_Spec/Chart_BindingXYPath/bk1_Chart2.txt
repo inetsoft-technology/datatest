@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 6)
+QuarterOfYear(Order:Date), Customer:Reseller, Salesperson:First Name, Sum(Product:Total), Sum(Product:Price), Sum(Order:Discount)
+2, 0, Annie, 1213468, 112274, 1.6
+2, 1, Annie, 96354, 8880, 0
+3, 0, Annie, 1063885, 92408, 4.55
+3, 1, Annie, 213592, 20297, 0.8
+4, 0, Annie, 809614, 81702, 1.5
+4, 1, Annie, 391342, 37633, 0.4
+1, 0, Annie, 384893, 43702, 1.35
+1, 1, Annie, 239835, 22257, 0

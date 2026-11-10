@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 4)
+fx_boolean, MonthOfYear(ORDER_DATE), First(CUSTOMER_ID, state), Running Sum by row: First(CUSTOMER_ID, state)
+false, Jan, 20, 20
+false, Mar, 20, 40
+false, Apr, 20, 60
+false, May, 20, 80
+false, Jul, 20, 100
+false, Others, 20, 120
+true, Feb, 10, 10
+true, Jul, 10, 20
+true, Jan, 4, 24
+true, Mar, 4, 28
+true, Apr, 4, 32
+true, Others, 4, 36
+Grand Total, NULL, 20, 20

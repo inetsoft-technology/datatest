@@ -1,0 +1,32 @@
+The data size(row x col) is:(31 x 4)
+fx_boolean, state, city, Sum(fx_cid2)
+false, AZ, Tucson, 22.26
+false, CA, Albany, 18.26
+false, CA, Los Angeles, 23.26
+false, CO, Denver, 10.26
+false, CT, Hartford, 8.26
+false, FL, Orlando, 14.26
+false, MA, Boston, 20.26
+false, MA, Springfield, 32.26
+false, MD, Baltimore, 42.52
+false, MD, Rockville, 16.26
+false, NJ, Camden, 17.26
+false, NJ, Middletown, 4.26
+false, NJ, New Brunswick, 27.26
+false, NJ, Plainfield, 37.26
+false, NJ, Wayne, 3.26
+false, NV, Las Vegas, 34.26
+false, NY, New York, 60.04
+false, PA, York, 30.26
+false, TX, Austin, 13.26
+false, TX, Dallas, 61.52
+false, TX, Houston, 24.26
+false, WA, Olympia, 31.26
+true, CA, Los Angeles, 15.26
+true, CA, San Francisco, 11.26
+true, CO, Boulder, 6.26
+true, IL, Chicago, 12.26
+true, MA, Boston, 25.26
+true, MA, Cambridge, 36.26
+true, NJ, Newark, 21.26
+true, WA, Seattle, 29.26

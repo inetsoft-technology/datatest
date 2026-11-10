@@ -1,0 +1,30 @@
+The data size(row x col) is:(29 x 4)
+state, company_name, Sum(customer_id), Running Sum state: Sum(customer_id)
+NJ, Daycare One, 36, 36
+NJ, Interstate Shop, 16, 52
+NJ, Pharma Research, 770, 822
+NJ, Rutgers Bank, 525, 1347
+NJ, Scheggie Services, 255, 1602
+NJ, Software Specialists, 494, 2096
+MA, AMG Logistics, 570, 570
+MA, Ubermeyer, 432, 1002
+MA, World Software Resellers, 414, 1416
+MA, XO Resellers, 646, 2062
+TX, Big Ed"s BBQ, 484, 484
+TX, BigMart Foodstores, 682, 1166
+TX, Nova Tera, 468, 1634
+TX, The Big Cat, 242, 1876
+CA, Computer Tech, 273, 273
+CA, Direct Sales, 216, 489
+CA, West Coast Customs, 462, 951
+CA, Whittaker & Co, Inc, 272, 1223
+WA, Infinity Software, 378, 378
+WA, Northwest Outfitters, 812, 1190
+NY, Eastern Data, 75, 75
+NY, FISGA Corp, 408, 483
+NY, High Society Investments, 360, 843
+NY, Old World Insurance, 154, 997
+MD, FMG Consulting, 594, 594
+MD, George Services, 90, 684
+MD, InterLand Services, 294, 978
+PA, Tricounty Auto, 616, 616

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+Year(order_date), Sum(discount), Compound Growth of year: Sum(discount)
+2002-01-01, 1.45, 1.45
+2003-01-01, 1.45, 1.45
+2004-01-01, 3.85, 3.85
+2005-01-01, 2.95, 2.95

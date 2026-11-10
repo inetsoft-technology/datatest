@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 11)
+MonthOfYear(ORDER_DATE), CT, CT, IL, IL, NV, NV, Others, Others, Grand Total, Grand Total
+NULL, sum_cid, count, sum_cid, count, sum_cid, count, sum_cid, count, Sum_cid, count
+Nov, NULL, NULL, 30, 3, 64, 2, 1213, 70, 1307, 75
+Apr, 18, 3, 10, 1, 32, 1, 1328, 68, 1388, 73
+Jun, 6, 1, 40, 4, 96, 3, 1025, 58, 1167, 66
+May, 12, 2, NULL, NULL, 32, 1, 1177, 61, 1221, 64
+Jul, NULL, NULL, 10, 1, 128, 4, 1108, 56, 1246, 61
+Aug, 6, 1, 30, 3, 32, 1, 961, 52, 1029, 57
+Others, 36, 6, 50, 5, 192, 6, 5126, 287, 5404, 304
+Grand Total, 78, 13, 170, 17, 576, 18, 11938, 652, 12762, 700
