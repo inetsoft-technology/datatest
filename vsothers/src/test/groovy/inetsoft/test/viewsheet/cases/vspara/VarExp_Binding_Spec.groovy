@@ -31,10 +31,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_Binding1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_Binding1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -43,10 +47,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindGOptions'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindGOptions', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -55,10 +63,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindAOptions'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindAOptions', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -67,10 +79,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindDC1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindDC1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -79,10 +95,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindDC2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindDC2', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -91,10 +111,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindDC3'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindDC3', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -103,10 +127,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Crosstab_BindTrend1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Crosstab_BindTrend1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -115,10 +143,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingXY'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingXY', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -127,10 +159,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingXYPath'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingXYPath', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -139,10 +175,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingGField'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGField', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -151,10 +191,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingGField2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGField2', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -163,10 +207,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingVisual'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingVisual', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -175,10 +223,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingStock'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingStock', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -187,10 +239,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingTField'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingTField', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -199,10 +255,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingGantt'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingGantt', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -211,10 +271,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingTree'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingTree', caseName)
+      vstest.executeVS(null, null)
       vstest.exportAsPNG(null, null)
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -223,10 +287,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingDC1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingDC1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -235,10 +303,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingDC2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingDC2', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -247,10 +319,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingSpecial1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingSpecial1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -259,10 +335,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindingSpecial2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindingSpecial2', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -271,10 +351,14 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindTrend1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindTrend1', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 
    /**
@@ -283,9 +367,13 @@ class VarExp_Binding_Spec extends Specification{
    def 'Chart_BindTrend2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^VarExp/Binding/Chart_BindTrend2', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vstest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vstest.compareImage(null)
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage([caseName] as String[])
+      }
    }
 }

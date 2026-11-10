@@ -11,7 +11,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 2. **所有 56 个用例都不发送 `.__type__`**，而产品的 `ParameterService.readParameters` 在有该后缀时才做类型转换；该方法在产品仓库只有 1 个单测。浏览器真实走的转换路径两边都没测。
 3. 验证机制会静默通过：导出失败只打印堆栈；`nullVSTest2`、`Para_query` 的基线里有 7 个永远不会被比对的陈旧文件。
 
-先做：换严格基类并清掉陈旧基线；把 VarExp 的绑定类用例加上数据比对；补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
+先做（G1 已处理：基类已严格，陈旧基线已清）：把 VarExp 的绑定类用例加上数据比对；补产品仓库的 `ParameterService`、`ParameterTool`、`Condition` 变量解析单测。
 
 ## 2. 覆盖情况
 
@@ -76,7 +76,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 | 验证机制：导出失败只打印、一个组件失败后面全不导出、基线里有陈旧文件 | 参数值导致某个 Table/Chart 求值抛异常，后面的组件也没导出，用例照样绿；陈旧基线让人以为这些组件被验证过 | 机制：迁移到 Stateless-Sessions1 已有的 `DcViewsheetTest`（vspara 用了 0 个），`Para_VS_Spec` 先清 7 个陈旧基线文件 | 高 |
+| G1 **【已处理】** | 验证机制：导出失败只打印、一个组件失败后面全不导出、基线里有陈旧文件 | 参数值导致某个 Table/Chart 求值抛异常，后面的组件也没导出，用例照样绿；陈旧基线让人以为这些组件被验证过 | **处理结果：** 机制由 PR #203 在 `ViewsheetTest` 基类里默认严格化（导出失败即失败、其余组件继续导出并汇总、`compareData(null)`/`compareImage(null)` 要求基线文件都被导出），无需再迁移到 `DcViewsheetTest`；#206 修了 `executeVS0` 遇到 `PairsDataSet` 的死循环。`Para_query`、`nullVSTest2` 的 7 个陈旧基线文件的清理由用户确认已处理（本文档作者未在运行中复核） | 高 |
 | G2 | VarExp 32 个用例只比整页 PNG | 动态值让图表绑到了错误的字段、交叉表聚合列错位，但整体像素在容差内或缩略后看不出来（容差是否存在未查）；数据层的错误全靠肉眼 | dashboard：对含 Chart / TableData 组件的绑定类用例改用 `executeVS` 加 `compareData`（保留 PNG）。`executeVS0`（`ViewsheetTest.groovy:141-166`）只导出 `ChartVSAssembly`（.png + .txt）和 `TableDataVSAssembly`（.txt），Text、Gauge、Selection 等不导出，其动态值仍只靠 PNG；没有这两类组件的用例追加 `compareData` 是空转 | 高 |
 | G3 | 没有任何用例发送 `.__type__`；产品 `ParameterService.readParameters` 仅在有该后缀时调用 `Tool.getData(type, v, true)` | 浏览器传 `x.__type__=date` 时转换出错（格式、时区、多值、空串），datatest 与现有单测都发现不了 | 单测 + dashboard 补 1 个代表用例 | 高 |
 | G4 | 变量组件的类型面窄：没有 double、float、date、datetime、char | 这些类型的默认值、提示、多值转换出错 | 单测（转换）+ dashboard（1 个 ws 覆盖缺失类型） | 中 |
@@ -106,7 +106,7 @@ vspara 有 56 个用例，其中 54 个走宽松基类 `ViewsheetTest`，只有 
 
 | 场景 | 做法（新建 vs / 扩展 / 改基类） | 验证什么 | 前提 |
 |---|---|---|---|
-| 严格基类 | 迁移，不新写基类：把 `new ViewsheetTest(` 换成 `new DcViewsheetTest(`，分两批。**第一批** `VarExp_Binding_Spec`（22 处）、`VarExp_Properties_Spec`（8 处；另 2 处已是 `VSExportTest`）：每个基线目录只有 1 个 PNG，与 `exportAsPNG` 的导出对应，`DcViewsheetTest` 对 `exportAsPNG` 的失败同样抛异常（`ViewsheetTest.groovy:295` 走 `onExportFailure`），预计可直接换。**第二批** `Para_VS_Spec`（24 处）：先清 `Para_query` 的 2 个、`nullVSTest2` 的 5 个陈旧基线再换 | 导出异常、少导出文件会让用例失败 | 以上是静态检查，换完要运行确认 |
+| 严格基类 **【已处理：PR #203 已把严格校验放进 `ViewsheetTest` 基类，不再需要迁移；以下为原方案，仅供追溯】** | 迁移，不新写基类：把 `new ViewsheetTest(` 换成 `new DcViewsheetTest(`，分两批。**第一批** `VarExp_Binding_Spec`（22 处）、`VarExp_Properties_Spec`（8 处；另 2 处已是 `VSExportTest`）：每个基线目录只有 1 个 PNG，与 `exportAsPNG` 的导出对应，`DcViewsheetTest` 对 `exportAsPNG` 的失败同样抛异常（`ViewsheetTest.groovy:295` 走 `onExportFailure`），预计可直接换。**第二批** `Para_VS_Spec`（24 处）：先清 `Para_query` 的 2 个、`nullVSTest2` 的 5 个陈旧基线再换 | 导出异常、少导出文件会让用例失败 | 以上是静态检查，换完要运行确认 |
 | VarExp 绑定类数据比对 | 扩展：先统计 22 个用例各含多少 Chart / TableData 组件，只给含这两类的用例追加（其余组件 `executeVS` 不导出）：`VarExp_Binding_Spec` 追加 `executeVS(null, ['(Home)','bk1'])` 与 `compareData`，保留 PNG；先用 `Chart_BindingGField` 一个试跑，再推广 | 动态值绑定后的图表/交叉表数据正确，不再只靠像素 | 需生成新基线；Chart 数据排序用 `sortVSDataSet`，已有 |
 | 带 `.__type__` 的参数 | 扩展：`Para_wscondition`、`Para_dataview` 各加一个变体用例，发送 `x.__type__` | 浏览器真实传参路径下，类型转换后条件结果正确 | 先确认浏览器发送的 type 取值（单测同一问题） |
 | 缺失变量类型 | 新建 ws + vs：一个 worksheet 含 double、float、date、datetime 的变量组件，各自驱动一个条件 | 这些类型的提示/多值/默认值接线 | 无 |
