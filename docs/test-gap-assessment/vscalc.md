@@ -118,7 +118,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 | `CorrelationFormula` | 已知值、方差为 0、一对数据、大偏移精度 | 11 | 低 | NaN 处理（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3a）；缺陷：大偏移精度 [#80950](https://issues.inetsoft.com/issues/80950)，`double[]` 下标 [#80700](https://issues.inetsoft.com/issues/80700)，空字符串 [#80701](https://issues.inetsoft.com/issues/80701)/[#80868](https://issues.inetsoft.com/issues/80868) |
 | `NthMostFrequentFormula` / `ModeFormula` | 频次、并列、n 越界、null | 15 | 低 | null 语义、并列规则（[#80953](https://issues.inetsoft.com/issues/80953) 问题 1、4）；缺陷：无参构造越界 [#80951](https://issues.inetsoft.com/issues/80951)（Low）；n 越界时忽略默认结果标志，[#80488](https://issues.inetsoft.com/issues/80488) 已拒（保持现状） |
 | `DistinctCountFormula` | 去重、null、空集、百分比 | 11 | 低 | 忽略 null 已确认（[#38229](https://issues.inetsoft.com/issues/38229)）；空集返回 0（[#80953](https://issues.inetsoft.com/issues/80953) 问题 2，可先按 0 写）；Integer/Double（问题 5）；缺陷：非 Integer 总数不算百分比 [#80952](https://issues.inetsoft.com/issues/80952)（Low） |
-| 明细型计算字段求值（`ExpressionRef`） | 算术、拼接、null、日期函数、参数、类型不一致 | 17 | 高（测试入口未确认） | 多项；日期月末（[#80953](https://issues.inetsoft.com/issues/80953) 问题 6，`edate` 跨年不截月末） |
+| 明细型计算字段求值（`ExpressionRef`） | 算术、拼接、null、日期函数、参数、类型不一致 | 17 | 中（入口已确认，见下文 G5） | 多项；日期月末（[#80953](https://issues.inetsoft.com/issues/80953) 问题 6，`edate` 跨年不截月末） |
 | `CalculateRef` 序列化 | `baseOnDetail` 默认值与往返 | 7 | 低 | 无 |
 | 公式工厂一致性 | 26 个枚举值都能创建 `report/filter` 实例 | 3 | 低 | 无 |
 | 已有公式的通用边界 | 并列、负数、NaN、整数溢出 | 8 | 低 | NaN、溢出 |
@@ -134,7 +134,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 | `DistinctCountFormula` | 去重、百分比、区分大小写和空字符串、reset、非 Integer 总数（按现有行为，见 [#80952](https://issues.inetsoft.com/issues/80952) 备注） | 空集、Integer 与 Double 混用 |
 | `CalcFieldFormula`、明细型计算字段、`CalculateRef` 序列化、公式工厂一致性 | 无 | 全部 |
 
-按优先级：先移植 13.8 的公式测试（G4）；再写 `CalcFieldFormula` 的表达式求值（G3，表里 14 个，期望值手算）和上表右列的补充；明细型求值要先确认测试入口。
+按优先级：先移植 13.8 的公式测试（G4）；再写 `CalcFieldFormula` 的表达式求值（G3，表里 14 个，期望值手算）和上表右列的补充；明细型求值（G5）入口已确认，见下文。
 
 **G3 具体补什么（`CalcFieldFormula` 表达式求值，14 个）：**
 
@@ -156,6 +156,37 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 其中"两列公式的列位置"和"聚合名映射"是 `CalcFieldFormula` 自己的逻辑，写错会悄悄算错或取错列，优先补。
 
 写法：加在现有 `CalcFieldFormulaTest` 里，复用它的环境（Spring 上下文 + `AssetQuerySandbox`，`box.getScriptEnv()` / `box.getScope()`）。表达式用运行时的真实形式，即 `field['Sum([price])']`，聚合名传 `"Sum([price])"`；现有测试直接写 `SUM` 的方式测不到名字替换。难度中，主要成本是启动 Spring 上下文。
+
+**G5 测试入口（明细型计算字段求值，17 个）：**
+
+运行时路径：`VSAQuery.appendCalcFields` 把 viewsheet 上 `baseOnDetail` 为 true 的计算字段（`CalculateRef` 包着 `ExpressionRef`）作为列加进绑定的 worksheet 表（聚合型走 G3 的 `CalcFieldFormula`）→ `AssetQuery.addExpression` 收集表达式列，引用了隐藏计算字段的会递归加入（如 `field['calc_quarter'] + field['CUSTOMER_ID']`）→ `PostProcessor.formula` 生成 `FormulaTableLens`，逐行执行脚本，再用 `Tool.getData` 转成声明类型（转换丢数据时保留原值）。捷径：所有表达式都是 `field['x']` 且类型与原列一致时，直接映射列（`ColumnMapFilter`），不执行脚本。只有 `sql=true` 的表达式下推 SQL；vscalc 的 324 个明细型计算字段 `sql` 全为 false 或未设，全部走脚本。
+
+现有测试几乎都在测并发、加锁、超时、swap（`FormulaTableLens*Lock/Stall/Swap/Timeout`、`VSAQueryCalcFieldConcurrencyTest` 等）；`FormulaTableLensTest` 的 5 个用例里只有 1 个是算术。13.8 也没有这一层的值语义测试。
+
+三层入口，产品里都有现成写法：
+
+| 层 | 入口 | 现成例子 | 适合测 | 成本 |
+|---|---|---|---|---|
+| L1 表达式列 | `new FormulaTableLens(DefaultTableLens, headers, formulas, new GraalJavaScriptEnv(), null)`，`setColType` 声明类型，`XTableUtil.assertEquals` 断言 | `FormulaTableLensTest` | 表达式语义：算术、拼接、null、日期函数、类型转换 | 低 |
+| L2 worksheet 端到端 | `EmbeddedTableAssembly` 加表达式列，`new AssetQuerySandbox(ws).getTableLens(name, RUNTIME)` | `WorksheetFormulaVarEndToEndTest` 的 `ws()` / `box()` | `addExpression`：计算字段互相引用、`field['x']` 捷径两个分支、`parameter.X` | 中 |
+| L3 viewsheet | `ViewsheetSandbox` + viewsheet 计算字段 | 同一测试类的 `vsTable()`（反射把 ws 接到 vs） | `appendCalcFields`：明细型/聚合型分流、同名列先删再加 | 较高 |
+
+用例分配（例子取自 vscalc 实际表达式，期望值手算）：
+
+| 类别 | vscalc 例子 | 层 | 个数 |
+|---|---|---|---|
+| 算术，含除零、一侧为 null | `price/customer_id`、`CUSTOMER_ID*REGION_ID`、`TotalPurchased-TotalReturned`、`customer_id+10` | L1 | 4 |
+| 字符串拼接，含 null 参与拼接 | `field['State']+"_"+field['City']`、`concat(field['customers:state'],'a')` | L1 | 3 |
+| 日期函数 | `CALC.quarter/year/day`、`dateAdd('m',5,...)`、`dateAdd('d',4,...)`、`CALC.edate(...,2)` | L1 | 4 |
+| 声明类型与结果类型不一致 | 声明 integer 得 double（`CALC.quarter(...)*2`）、timeInstant、boolean、转换丢数据时保留原值 | L1 | 3 |
+| 参数 | `field['city'] + '   ' + parameter.CheckBox1[0]`、`field['customer_id']+parameter.RadioButton1` | L2 | 1 |
+| 计算字段互相引用、`field['x']` 捷径两个分支 | `field['calc_quarter'] + field['CUSTOMER_ID']`；36 个纯 `field['x']` 字段 | L2 | 2 |
+
+另可在 L3 补 1～2 个（明细型加到绑定表、聚合型不加），不计入 17 个。
+
+注意：
+- `CALC.edate(field['orderdate'], 2)` 是 vscalc 在用的表达式，会碰上 [#80953](https://issues.inetsoft.com/issues/80953) 问题 6 的跨年顺延（12-31 加 2 个月得 03-03），先按现有行为写并标注。
+- 明细型的除零、null 参与运算是 JavaScript 行为（`x/0` 得 Infinity，`null + "_"` 得 `"null_"`，`null * 2` 得 0），以及 `Tool.getData` 对 Infinity 的转换，不在 [#80953](https://issues.inetsoft.com/issues/80953) 里（那里问的是聚合型除零）；先按现有行为写，是否补问待定。
 
 ## 5. Dashboard 补充
 
