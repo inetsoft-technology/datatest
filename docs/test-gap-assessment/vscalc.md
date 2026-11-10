@@ -10,7 +10,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 1. **验证机制会静默通过**：导出失败只打印堆栈、基线文件缺失不报错，而且 CI 失败也不会让流水线变红。
 2. **基线只是产品自己的输出**，只能发现回归，不能证明"算得对"。产品仓库里聚合型计算字段的求值只有 1 个值级单测，vscalc 在用的 5 个聚合函数没有专门单测。
 
-先做两件小事：把 22 个用例换成已有的严格基类（约 23 行）；给孤儿 vs `aggregate_trendcomparison` 补用例。再补产品仓库单测（9 组，共 99 个用例设计），最后补 dashboard 的薄弱场景。
+先做两件小事：把 22 处 `new ViewsheetTest(` 换成 Stateless-Sessions1 上已有的严格基类 `DcViewsheetTest`（`main` 上没有它）；给孤儿 vs `aggregate_trendcomparison` 补用例。再补产品仓库单测（9 组，共 99 个用例设计），最后补 dashboard 的薄弱场景。
 
 ## 2. 覆盖情况
 
@@ -40,7 +40,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 
 - 比对遍历的是"实际导出的文件"，不是"基线清单"：`CompareUtil.groovy:472`。导出少了文件时没有东西可比，用例照样通过。
 - 导出失败只打印堆栈：`ViewsheetTest.groovy:177`（`onExportFailure`）。
-- 严格版基类 `DcViewsheetTest` 已修了以上两点，但使用该基类的 spec 文件只有 2 个，使用 `ViewsheetTest` 系列的共 26 个。vscalc 用的是宽松版。
+- Stateless-Sessions1 上已有严格版基类 `DcViewsheetTest`（`commons/.../modules/DcViewsheetTest.groovy`；`main` 上没有）：导出失败抛异常（`:22`），不给文件名时要求基线文件必须全部被导出（`prepareCompare`），并支持 `-Dupdate.baseline=true`。但使用它的 spec 只有 2 个（`DateComparison_Spec`、`Crosstab_DateComparsion_Spec`）。vscalc 用的是宽松版，所以这个缺口不用开发新框架，只是**还没迁移**。
 - `exportData` 没有清理代码，但 CI 都会先清：Jenkins 准备阶段执行 `./mvnw clean -pl vsothers`（`Jenkinsfile:37`），GitHub 工作流先执行 `./mvnw clean`（`test-vsothers.yml:71`）。上一次导出的残留文件不是问题（本地手工重跑除外）。
 - CI 对失败的处理：GitHub 工作流 5 个测试步骤全是 `continue-on-error: true`；Jenkins 的 vscalc 阶段是 `catchError(buildResult: 'UNSTABLE')`，失败只让构建变 UNSTABLE。
 - 静态预测：22 个用例的基线文件与预期导出文件**完全一致**，所以换严格基类预计不会因文件集合而失败（未运行）。
@@ -53,7 +53,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 | 导出失败、基线缺失不报错；CI 失败不挡合入 | 某个组件导出抛异常或少导出文件，用例仍然通过 | 机制：换严格基类 | 高 |
+| G1 | 导出失败、基线缺失不报错；CI 失败不挡合入 | 某个组件导出抛异常或少导出文件，用例仍然通过 | 机制：迁移到已有的 `DcViewsheetTest`（不用新写基类） | 高 |
 | G2 | 孤儿 vs `aggregate_trendcomparison` | 趋势/比较类聚合的计算字段结果出错，无人发现 | dashboard：补用例 | 高 |
 | G3 | 聚合型计算字段求值只有 1 个值级单测，且表达式只是聚合名本身 | `Sum/Sum`、`Average*Average`、`Mode+10`、`if…else` 这类表达式算错 | 单测 | 高 |
 | G4 | Correlation、WeightedAverage、DistinctCount、Mode、NthMostFrequent 在 `report/filter` 无专门单测（已有的同名测试属于 MV 路径，不能替代） | 这些聚合函数实现改错，只有 vs 回归基线可能发现 | 单测 | 高 |
@@ -86,7 +86,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 
 | 场景 | 做法 | 验证什么 | 前提 |
 |---|---|---|---|
-| 验证机制（G1） | `VS_CalcField_Spec` 的 22 处 `new ViewsheetTest(` 换成 `new DcViewsheetTest(` | 导出失败、基线缺失不再静默通过 | 先跑一遍现有基类，搜输出里的 `execute viewsheet failed`，量出现在被吞掉多少异常 |
+| 验证机制（G1） | 迁移，一次完成：`VS_CalcField_Spec` 的 22 处 `new ViewsheetTest(` 换成 `new DcViewsheetTest(`。`strictcheck` 静态预测 22 个用例的基线与导出文件集合完全一致（基线多出 0 个、导出缺基线 0 个），所以预计不会因文件集合失败 | 导出失败、基线缺失不再静默通过 | 先跑一遍现有基类，搜输出里的 `execute viewsheet failed`，量出现在被吞掉多少异常 |
 | 孤儿 vs（G2） | 给 `aggregate_trendcomparison` 加 feature 和基线：书签 `(Home)`、`bk1`，预计导出 7 个文件 | 趋势/比较聚合的计算字段 | vs 已在 zip 里；基线用 `-Dupdate.baseline=true`（仅严格基类可用），生成后抽样独立核对 |
 | 聚合型 timeInstant、boolean（G8） | 新建小 vs | 目前 0 个 | 在 StyleBI 里制作并导出 backup 并入 zip |
 | Chart 的 shape / text / size 视觉绑定（G8） | 新建小 vs | 计算字段用于视觉绑定 | 同上 |
