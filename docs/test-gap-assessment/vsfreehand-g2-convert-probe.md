@@ -137,3 +137,14 @@ cat vsothers/target/g2_convert_probe.txt
 - 钻取状态的源是"已钻取"的视图，所以 A 类里的钻取差异是预期的，但没有验证"清除钻取后的源"与转换结果一致。
 - 只覆盖 `ConvertToCalc` 下 19 个 vs；聚合只有 Sum/Count/none，没有 Average/Max/DistinctCount 等（见 `vsfreehand.md` §2）。
 - 尚未判断哪些差异是 bug；上面 B 类都只是"需要确认"。
+
+## 9. 已落实：`checkConvert` 现在断言转换前后数据一致
+
+`VSCalcTest.checkConvert(params, allowedDiff = [:])`（`Convert_Spec` 每个用例都调用它，没有别的 spec 用）在转换并导出 PNG 之后，比较每个被转换组件转换前后的数据（规则同 §2），不一致就让用例失败，失败信息列出组件名和差异。
+
+- **允许名单：** `allowedDiff` 是"组件名 → 原因"，名单里的组件允许不同。`Convert_Spec` 里 10 个用例带了名单，共 19 个组件：12 个标"product design"（§5.2 的 A 类、B1、B2），7 个标"TODO T1/T2/T4"（`VSScriptEffect` 的 T3 对应的用例是 `@Ignore`，没有写）。其余 9 个用例不带名单，必须完全一致。
+- **维护：** 处理完 §7 的 TODO 后，把对应组件从 `Convert_Spec` 的 `allowedDiff` 里删掉。组件已经和源一致但还在名单里时，运行会在 stderr 打印 `no longer differs from its source, remove it from allowedDiff`，提示可以删。
+- **不需要基线：** 期望值是转换前组件自己的输出，不涉及 PNG，本机和 CI 的渲染差异不影响它。
+- **产出文件：** 每个组件的 `<名>_src.txt`（转换前）和 `<名>_calc.txt`（转换后）写在该用例的导出目录里，方便排查。
+- **验证：** 本机运行 `Convert_Spec`：没有任何数据检查造成的失败（失败的只有本机 PNG 差异 17 个和 `CroTable2` 超时 1 个，`VSScriptEffect` 被忽略）；反向验证：临时去掉 `DrillCroTable1` 的名单后，该用例因数据差异失败，信息列出 3 个组件的行数/列数变化，之后已还原。
+- **局限：** 只对 `Convert_Spec` 现有的 19 个 vs 的形态有效；列名含特殊字符、预聚合列名这类新形态需要新建 vs（见 `vsfreehand.md` §7 的 G10、G11）。`CroTable2` 里的 `Thread.sleep(70000)` 与 80 秒超时没有改动，本机仍会超时，数据检查多出的导出时间会让这个用例更接近超时。

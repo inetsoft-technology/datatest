@@ -15,8 +15,16 @@ class VSCalcTest extends ViewsheetTest {
       super(asset_id, caseName)
    }
 
-   def checkConvert(Map<String, String[]> params) {
-      checkConvert0(params)
+   /**
+    * Convert every visible table/crosstab to a freehand table, export the page as PNG, and check
+    * that the data of each converted component equals the data it had before the conversion.
+    * @param params viewsheet parameters
+    * @param allowedDiff component name -> reason. A component listed here may differ from its
+    *        source (known, accepted differences, e.g. the conversion clears date comparison,
+    *        drill and calculators); any other component that differs fails the case.
+    */
+   def checkConvert(Map<String, String[]> params, Map<String, String> allowedDiff = [:]) {
+      checkConvert0(params, allowedDiff)
    }
 
    /**
@@ -187,11 +195,13 @@ class VSCalcTest extends ViewsheetTest {
    }
 
    /**
-    * convert table as freehand, then export as PNG
+    * convert table as freehand, then export as PNG, then compare the converted data with the
+    * data before the conversion
     * @param params
+    * @param allowedDiff component name -> reason, see checkConvert
     * @return
     */
-   def checkConvert0(Map<String, String[]> params) {
+   def checkConvert0(Map<String, String[]> params, Map<String, String> allowedDiff = [:]) {
       initVS(params, false)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
@@ -200,6 +210,26 @@ class VSCalcTest extends ViewsheetTest {
       String assemblyName
       List<String> convertedAssemblies = []
       File pngFile = createExportFileByCase(null, null, '_CALC.png')
+
+      // the data before the conversion: all sources are exported first, so that converting one
+      // component cannot change the "before" data of another (a freehand table can be bound to
+      // another component of the same viewsheet)
+      List<String> candidates = assemblies.findAll {
+         (it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly ||
+            it instanceof CrosstabVSAssembly) && it.getVSAssemblyInfo().isVisible(true)
+      }.collect { it.getName() }
+      Map<String, String> before = [:]
+
+      candidates.each { name ->
+         try {
+            File f = createExportFileByCase(name, null, '_src.txt')
+            f.text = dumpLens(sandbox.getVSTableLens(name, false))
+            before[name] = f.text
+         }
+         catch(Exception ex) {
+            throw new RuntimeException("export of the source data failed: " + name, ex)
+         }
+      }
 
       try {
          assemblies.each {
@@ -246,6 +276,36 @@ class VSCalcTest extends ViewsheetTest {
 
       if(pngFile.length() == 0L) {
          throw new RuntimeException("converted viewsheet export is empty: " + pngFile)
+      }
+
+      // the data after the conversion
+      ViewsheetSandbox converted = rvs.getViewsheetSandbox().get()
+      Map<String, String> failures = new LinkedHashMap<>()
+
+      convertedAssemblies.each { name ->
+         String diff
+
+         try {
+            File f = createExportFileByCase(name, null, '_calc.txt')
+            f.text = dumpLens(converted.getVSTableLens(name, false))
+            diff = diffText(before[name], f.text)
+         }
+         catch(Exception ex) {
+            diff = 'export of the converted data failed: ' + ex
+         }
+
+         if(diff != 'SAME' && !allowedDiff.containsKey(name)) {
+            failures.put(name, diff)
+         }
+         else if(diff == 'SAME' && allowedDiff.containsKey(name)) {
+            System.err.println("checkConvert: " + name + " no longer differs from its source, " +
+               "remove it from allowedDiff (" + allowedDiff.get(name) + ")")
+         }
+      }
+
+      if(!failures.isEmpty()) {
+         violation("converted data differs from the data before the conversion:\n" +
+            failures.collect { k, v -> "  " + k + ": " + v }.join("\n") + "\n")
       }
    }
 }
