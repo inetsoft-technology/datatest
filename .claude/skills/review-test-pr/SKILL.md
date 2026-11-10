@@ -37,9 +37,9 @@ step yourself:
 | The previous round's review and the commit it covered | Reviewing the whole PR again (see **Re-review**) |
 | A required output format and tiers | Steps 3 and 4 |
 
-Under a bot the only write allowed is Step 1's `git fetch`: do not run `gh pr review`,
-`gh pr comment`, `gh pr merge`, do not write or delete files, do not use `cd`, pipes, `;`, `&&` or
-`$(...)`, and do not send chat messages. Steps that need any of these are skipped; output the
+Under a bot you are read-only apart from the fetch allowed in the Overview: do not run
+`gh pr review`, `gh pr comment`, `gh pr merge`, do not write or delete files, do not use `cd`,
+pipes, `;`, `&&` or `$(...)`, and do not send chat messages. Steps that need any of these are skipped; output the
 decision and body in the caller's format and let the caller post it. If the caller says it
 exported the changed images (e.g. "改动的图片已经导出到 ...，直接用 Read 看"), ignore the export:
 do not open the images and do not comment on the export (see **Expected data**).
@@ -78,9 +78,11 @@ it has checked out, which may be old. For anything about the PR's code, go throu
 Stop and report (no review) if the PR is not `OPEN`, is a draft, or targets a branch other than
 the default branch (name the branch it targets).
 
-**Re-review.** `PREV` is the commit the previous review covered: given by the caller, or, when
-invoked directly, the `commit.oid` of this account's latest review in `gh pr view N --json reviews`.
-No previous review means a full review.
+**Re-review.** `PREV` is the commit the previous review covered. Under a bot it is given by the
+caller. Invoked directly, take this account's latest review:
+`gh api user --jq .login` gives `LOGIN`, then
+`gh pr view N --repo OWNER/REPO --json reviews --jq '[.reviews[]|select(.author.login=="LOGIN")]|last|.commit.oid'`
+(substitute `LOGIN`). An empty result means no previous review: do a full review.
 - If `PREV` is not local, run `git -C <clone> fetch -q origin PREV`; if it still cannot be found
   (force push), review the whole PR.
 - If `git -C <clone> log --merges --oneline PREV..HEAD_SHA` is empty, review
@@ -176,10 +178,11 @@ A change here changes every module. For each changed class or method:
 
 ### Docs (`README.md`, `docs/**`, `.claude/**` except `*.py`)
 
-- Run commands, profile names and module lists must match the poms.
+- Run commands, profile names and module lists must match the poms. A run command that would not
+  work as written (wrong module, profile or property) is blocking.
 - A `docs/test-gap-assessment` doc must match the code it describes: a gap marked as covered must
   have the spec or case that covers it in the repo; a renamed class or method must be renamed in
-  the doc too.
+  the doc too. Other mismatches between docs and code are should-fix.
 - Docs may be in Chinese; do not flag the language.
 
 ### Secrets
@@ -192,7 +195,7 @@ in docs.
 ### Tiers
 
 - **Blocking**: a false green, a correctness bug or regression, wrong or broken baselines, a
-  secret, a doc that contradicts the code. Any blocker means request changes; no blocker means
+  secret, a doc run command that does not work. Any blocker means request changes; no blocker means
   approve, with the should-fix items in the body.
 - **Should fix**: real but smaller problems, flaky values, unknown impact of a framework change,
   missing run results.
