@@ -27,7 +27,7 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 - **向用户确认一次矩阵维度**：先用一句话说明该模块的"特性"是什么，再提议维度（vscalc 用"计算字段类型 × 使用位置 × 数据源"）。不自行默认。
 
 **2. 审计验证机制（先于覆盖）**
-读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理（CI 的 `clean` 在 `Jenkinsfile` 准备阶段与 GitHub 工作流里，不要只看测试阶段的命令）、CI 对失败的处理（`continue-on-error` / `catchError`）。`ViewsheetTest` 默认严格（#203）之后，机制是否生效以**实际运行**为准：跑该模块的 spec，记录导出异常、未导出的基线文件、导出了但没有基线的文件（PNG 像素差异单独列，本机与 CI 渲染不同）。#203 未合并时，再记严格版基类（`DcViewsheetTest`）的使用比例。
+读断言基类，每项给 `file:line`：比对遍历"实际导出"还是"基线清单"、导出失败是否让用例失败、`exportData` 是否清理（CI 的 `clean` 在 `Jenkinsfile` 准备阶段与 GitHub 工作流里，不要只看测试阶段的命令）、CI 对失败的处理（`continue-on-error` / `catchError`）。`ViewsheetTest` 已默认严格（#203），机制是否生效以**实际运行**为准：跑该模块的 spec，记录导出异常、未导出的基线文件、导出了但没有基线的文件（PNG 像素差异单独列，本机与 CI 渲染不同）。本地运行前先 `./mvnw package -pl commons -DskipTests`，否则下游模块用的是旧的 commons test-jar。
 
 **3. 覆盖矩阵、断言层、单测盘点**
 - 有 zip 与 Groovy spec 时运行 `vs_backup_scan.py` 的 `inventory`、`crosscheck`；不适用就说明，用等价办法并写明口径。
