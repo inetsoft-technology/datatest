@@ -162,6 +162,78 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
   2. 4 个孤儿 vs 是补用例还是从 zip 里删除。
   3. 数据层断言的 TXT 基线由谁人工核对（基线是回归基线，生成后要有人确认值对不对）。
 
+## 7. Redmine bug 对照与补充缺口
+
+**口径：**
+
+- Redmine（Product 项目）里标题含 "freehand" 的 Bug 共 1351 条（全部类型 1384 条）；去掉 Rejected/Ignored 后 1174 条，按修复版本分：13.x 520、12.x 82、14.x 44、stylebi-* 35、ai-* 14、未标版本 479。
+- 本节重点是 **StyleBI 线（stylebi-1.2.0 / 2.1.0）2025 年起的 35 条**：逐条读了标题，并用 `gh` 查了它们的修复 PR（`inetsoft-technology/stylebi`）改了哪些类、有没有带单测。2023–2024 年只读了 75 条相关标题；更早的、以及 13.x/14.x 线的 bug 没有逐条读，**是否适用于 StyleBI 2.1.0 未验证**。主题统计只按标题关键词，口径宽松，只用来看分布。
+- 产品源码以 `origin/main`（`89cf1b9012`，2026-11-10）核对。§2、§4 当初读的本地 checkout 较旧，那时还没有 `LayoutToolTest`，见下面 G4 的更正。
+
+**结论：**
+
+- StyleBI 线最近一批 freehand bug 的根因集中在**"转换生成的公式"与"快速路径（crosstab 优化）产出的结果表"之间的取数**：2026-07 一批（#75630、#75636、#75647、#75665、#75747、#75799、#75801）都是转换或优化后**表里只剩表头或数据丢失**，原因是生成的公式引用了结果表里不存在的列名或维度名。这类错误恰好是 G2（转换前后数据对比）能抓的，所以 G2 里已确认"一致"的 32 个组件值得尽快锁成断言。
+- 这批修复里，只有 2 个 PR 带了产品单测（#75647 的 PR 4261、#75747 的 PR 4445）；PR 4224（#75630、#75636）、4300（#75665）、4426（#75799）都只写了"手工复现"，没有单测。
+- 出现了"修复后回归"的链：#62548→#79806、#62888→#80507（由 #79806 的修复引起）、#76829→#77237、#75747→#75801（首次修复被回滚后重做）。datatest 里 #62548 有 `FSNone1`，#62888 一个都没有（见 G15）。
+
+**StyleBI 线 2025 年起 35 条 bug 的分布，以及修复是否带产品单测：**
+
+| 主题 | bug | 修复带产品单测 |
+|---|---|---|
+| 转换 / 快速路径取数 | #75630、#75636、#75647、#75665、#75747、#75799、#75801（相关：#75588、#75746） | 2 / 5 个 PR |
+| 脚本 / 作用域 | #75576、#75593、#75595、#75609、#75663、#75676、#78247、#78493 | 8 / 8 |
+| 导出 | #75748、#76829、#77237、#79581 | 3 / 4（#75748 没有） |
+| 锁 / 停滞 / 交换文件 / 集群 | #76905、#77909、#78115 | 3 / 3 |
+| 格式 | #78092（百分比汇总沿用了字段格式） | 1 / 1 |
+| Show Details | #76564（取数失败时 NPE） | 0 / 1 |
+| 性能 | #75614（宽表多分组被拆成多个 crosstab 子查询）、#75625 | 1 / 2 |
+| 编辑器 / 会话 / 批注（UI） | #72576、#72880、#75353、#75820、#75825、#78560 | 0 / 6，不在 datatest 范围 |
+
+### 7.1 补充的缺口
+
+判断单测还是 Dashboard 的依据：**期望值能直接写出来（纯函数、给定输入有确定输出）→ Java 单测；问题出在组件、绑定、数据源、书签之间的接线 → Dashboard**。
+
+| # | 缺口 | 依据 | 会放过什么错误 | 方向 | 优先级 |
+|---|---|---|---|---|---|
+| G10 | 列名含特殊字符（`, ? @ { } = ; &`、引号、反斜杠）的列，转换后公式里的列名被转义错 | #75665（`escapeColName` 多写了一个反斜杠，列名 `YYYY, MMM D` 转换后整列空白，PR 4300 无单测）；2023 年 #60608、#60816 是同一类（列名含引号） | 转换或脚本里对列名的转义出错，对应列整列空白。datatest 里只有 `NG_specialChar`（命名分组成员含单引号），**没有任何 vs 的列名含逗号等字符**（86 个 vs 里 freehand 单元格绑定的列名只有这 1 个含特殊字符） | **单测**：`escapeColName` 是纯函数，输入列名输出脚本字面量，期望值可直接写；**Dashboard**：另加 1 个代表 vs 验证接线（理由：转义后的名字最终要在 JS 引擎里查到真实列，这条链是接线） | 高 |
+| G11 | 聚合列本身就是预聚合列名（`Min(ftime)`、`Concat(fecid)`）的交叉表，转换后只剩表头 | #75799（`VSLayoutTool.getAggregateColumn` 总是剥一层 `formula(...)`，PR 4426 无单测） | 工作表里列名已带聚合函数的交叉表转换后丢行，没有任何提示 | **单测**：`getAggregateColumn` 是 `public static`，期望值可直接写；**Dashboard**：1 个代表 vs（工作表含预聚合列名），用 G2 对比转换前后 | 高 |
+| G12 | 嵌套的日期分组维度转换后无数据（`Month(ndate)` 在另一个维度下）；首次修复回归（#75801）后重做 | #75747、#75801；`LayoutToolTest`（5 个用例）已覆盖 | 产品单测已有；datatest 已有 `GroupAndTab`（#75747 的附件 `GroupAndTab.vso`）和 `CroTable7`（#75801 提到），G2 探索里这两个 vs 的组件转换前后一致 | **无需新增用例**：把 G2 里"一致"的组件锁成断言即可，这是这类 bug 最直接的防线 | 高（落地 G2） |
+| G13 | TopN/Others + 横向展开分组 + 快速路径：结果表里维度名解析不到，列和聚合值丢失 | #75630（PR 4224 无单测）、#75636；2024 年 #65744（聚合为 none 时 TopN 与 Others 不生效）、#65763（Others 组的平均值错）、#61734 | 快速路径（临时 crosstab）与脚本路径对同一布局算出不同的结果；`TableArray.hasMember`、`NamedCellRange` 对 `CrossFilter` 底表的裸列名解析出错。`origin/main` 里 `NamedCellRange` 有测试，但**没有一个直接测"维度名解析为该维度的不同取值"**（`getCrosstabCells` 是私有方法，测试里按名字找不到） | **单测**（对应 §3 的 G3）：期望值可从原始数据手算，两条路径逐格比；**Dashboard**：TopN+Others 的 vs 已有（25 个含 TopN，21 个带 Others），G1 推广后会有数据断言，不用新增 | 高 |
+| G14 | Freehand 上的 Show Details：取数失败时 NPE；Others 单元格、命名分组 + 时间序列时报错；导出 CSV 为空 | #76564（`BaseTableService.isEmptyCell` 对空 lens 解引用，PR 5154 无单测）；2023 年 #58582、#62417、2024 年 #65163 | 表构建失败或遇到特殊单元格时点 Show Details 崩溃，而不是提示。datatest 的 `RuntimeViewsheetResource` 只有 `showDetailOnChart`，**没有表的 Show Details 封装** | **单测**：`isEmptyCell` 空 lens 分支（私有方法，需走公开入口或反射，难度中）；**Dashboard**：新增 `showDetailOnTable` 的 helper 加 3 个用例（Others 单元格、命名分组 + 时间序列、无数据）（理由：控制器 → 服务 → lens 这条链是接线，期望值依赖产品行为，不能在单测里独立算出） | 中 |
+| G15 | 表脚本把组件值（`ComboBox.selectedLabel`、`RadioButton.selectedObject`）赋给 freehand 单元格 | #66427、#80507（#62888 被 #79806 的修复弄回归；#80507 是 13.x 线）；`#79806` 是 #62548 的回归 | 书签/选择状态下表脚本读不到组件值，单元格显示绑定的占位文字。86 个 vs 里 **0 个** 脚本引用组件值 | **Dashboard**：新建 1 个 vs（下拉框 + freehand + 表脚本），用书签恢复选择状态；理由：期望值依赖组件与表之间的接线，单测要搭整套沙箱。13.x 线已有对应的覆盖测试，StyleBI 2.1.0 是否也有未验证 | 中 |
+| G16 | 导出：freehand 表样式里"表尾行"的颜色串到数据行 | #75748（`ExportUtil.getColType` 还原时调用了 `setTrailerColCount`，应为 `setTrailerRowCount`，PR 4402 无单测）；#76829、#77237、#79581 已有产品单测 | 导出 PDF/PNG/Excel 时数据行被画成表尾行的深色。viewer 不受影响，只有导出才出现 | **Dashboard**（转 vsexport 评估）：1 个用带"区别明显的表尾行颜色"的表样式的 freehand vs，导出 PNG/PDF 比对；理由：只有渲染结果才看得出；**单测**可选：`getColType` 前后 `RuntimeCalcTableLens` 的行数/列数不变（低难度） | 中 |
+| G17 | 列数上限（column limit）下的 freehand | 2023–2024 年 #63594 一组：#63944、#64329、#64892、#65438（合并展开单元格、导出 HTML 无数据） | 开启列数限制后合并展开单元格错位、HTML 导出没有数据 | **Dashboard**（低优先）：用 `@SreeProperty` 设置列数限制，1 个用例；是否仍存在**未验证** | 低 |
+
+**没有新增缺口的几类（已有覆盖或不属于 datatest）：**
+
+- 脚本 / 作用域（8 个 bug，修复都带产品单测）、锁 / 停滞 / 交换文件 / 集群（3 个）、格式（#78092）：产品单测已覆盖，datatest 不重复。
+- 转换后格式丢失、百分比（2023–2024 年 #59719、#63270、#62953 等）：`Convert_Spec` 的 `PercentFormat`、`CroTable7`、`CroTable8` 已覆盖；`CroTable8/Crosstab2` 的 `% of total by row` 差异仍在 `vsfreehand-g2-convert-probe.md` 的 TODO（T2）。
+- 数据源形态：SQL 视图/查询源（#60468、#60460）、物化视图后 "Column not found"（#59433）：zip 里有 SQL 工作表源 11 个 vs，`mv` 模块里已有 Freehand 的 MV 用例；不新增。
+- UI / 编辑器 / 会话 / 批注（6 个）：不属于 datatest，由 composer 的回归测试负责。
+
+### 7.2 补充的单测与 Dashboard（只列新增，已有的见 §4、§5）
+
+| 被测类 / 场景 | 补什么 | 用例数 | 难度 | 待确认 |
+|---|---|---|---|---|
+| 单测：`LayoutTool.escapeColName` | 逐个特殊字符、引号、反斜杠、空格、中文列名的转义结果 | 10 | 低（可见性待确认） | 无 |
+| 单测：`VSLayoutTool.getAggregateColumn` | 普通聚合、已被函数包裹的聚合名（`Min(Min(ftime))` 对应的单元格值）、都不匹配时 | 4 | 低（`public static`） | 无 |
+| 单测：`BaseTableService.isEmptyCell` | lens 或 rlens 为空时返回 true | 2 | 中（私有静态方法，走公开入口 `createCalcTableConditions` 或反射） | 无 |
+| 单测：`ExportUtil.getColType`（可选） | 调用前后 `RuntimeCalcTableLens` 的表尾行数、列数不变 | 2 | 低到中 | 无 |
+| 单测：`NamedCellRange` 的裸维度名解析（并入 §4 的 `CalcTableVSAQuery` 双路径） | 对 `CrossFilter` 底表，裸维度名解析为该维度的不同取值；子合计、总计占位元组被跳过 | 6 | 中（`getCrosstabCells` 私有） | 无 |
+| Dashboard：特殊字符列名 | 新建 vs（工作表含 `YYYY, MMM D`、含引号的列名），转换后用 G2 对比；原生绑定同理 | 1 个 vs | 中（需要在界面或备份里新建工作表和 vs） | 无 |
+| Dashboard：预聚合列名 | 新建 vs（工作表含 `Min(ftime)` 这样的列，交叉表以它为聚合），转换后用 G2 对比 | 1 个 vs | 中（同上） | 无 |
+| Dashboard：表脚本引用组件值 | 新建 vs（下拉框 + freehand + `table[0][0] = ComboBox1.selectedLabel`），书签恢复选择 | 1 个 vs | 中 | StyleBI 2.1.0 是否有对应修复 |
+| Dashboard：Show Details | `showDetailOnTable` helper 加 3 个用例 | 3 | 中到高（服务装配同 `convertToFreehandTable`） | 无 |
+| Dashboard：导出表尾行颜色 | 带表尾行颜色的表样式 + freehand，导出比对 | 1 个 vs | 中（转 vsexport） | 无 |
+
+**更正（G4）：** §3 的 G4 和 §1 写的"转换链在产品仓库没有任何单测"需要收窄。`origin/main` 里现在有 `LayoutToolTest`（5 个用例），覆盖的是 `LayoutTool` 对嵌套日期维度的列名解析（#75747）。仍然没有单测的：`VSTableConverter`、`ComposerVSTableService.convertToFreehandTable`、`VSLayoutTool.getAggregateColumn`、`LayoutTool.escapeColName`、`LayoutTool.createGroupCond`、`CalcTableVSAQuery.createCrosstabHeaders`（按名字在 `origin/main` 的 `core/src/test` 里搜不到）。
+
+**局限：**
+
+- 只读了 StyleBI 线 35 条的详情和修复 PR；其余是标题；13.x/14.x 线（共 564 条）没有逐条读。
+- 修复"是否带单测"只看 PR 里是否改了 `src/test`；有的 bug 可能在别处（例如 `stylebi-wiz` 的回归测试）有覆盖，没有查。
+- #79806、#80507、#66427 属于 13.x/14.x 线，`origin/main` 里没有对应修复，G15 是否适用于 StyleBI 2.1.0 需要确认。
+
 ## 附：数据来源与复现
 
 ```
@@ -179,3 +251,5 @@ python .claude/workflow-shared/datatest-gap/vs_backup_scan.py strictcheck <同�
 - `crosscheck` 的孤儿列表按单个 spec 看没有意义（三个 spec 共用一个 zip），本文改用三个 spec 的并集；"calc fields / not in baseline" 两列只适用于计算字段类模块，且本模块基线是 PNG（TXT 仅 3 个），没有采用。
 - 覆盖矩阵里的单元格特性、数据源分类来自一份临时统计脚本（读 zip 内 `CalcTableVSAssembly/assemblyInfo/tableLayout/cellBinding`，只统计 `assemblyInfo` 那份；数据源由 `worksheetEntry/assetEntry` 的 type 与工作表内 table 类型归类）。该脚本没有入库；要复现需重新实现同样的口径。
 - 数字为 vs 个数（"有该特性的 vs"），不是单元格个数。
+- §7 的 Redmine 数据：Redmine 的 issues 查询，条件为标题包含 `freehand`、状态不限、每页 100 条，按 id 倒序翻页取完（1384 条）；按 tracker、状态、年份、修复版本、类别统计，再逐条读 2025 年起的标题。修复 PR 用 `gh pr list --repo inetsoft-technology/stylebi --state all --search "<bug 号> in:title" --json number,title,mergedAt,files` 查，再用 `gh pr view <号> --json body,files` 读描述；产品单测现状用 `git grep -l -w <方法名> origin/main -- core/src/test` 核对。
+- 主题分布是按标题关键词的粗统计（例如 "convert" 命中 227 条，2023 年起 49 条），词表宽松，只看相对大小，不作为精确数字引用。
