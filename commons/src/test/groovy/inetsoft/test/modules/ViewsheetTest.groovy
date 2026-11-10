@@ -242,7 +242,8 @@ class ViewsheetTest {
             break
          }
          else if(filter instanceof PairsDataSet) {
-            data = ((PairsDataSet) filter).getDataSet()
+            // advance filter too, otherwise this branch is taken forever (same as VSChartShowDataService)
+            data = filter = ((PairsDataSet) filter).getDataSet()
          }
          else if(filter instanceof DataSetFilter) {
             boolean useBase = filter instanceof BrushDataSet ||
