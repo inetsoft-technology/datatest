@@ -6,9 +6,19 @@
 
 | 文件 | 作用 | 验证状态 |
 |---|---|---|
-| `vs_backup_scan.py` | 静态扫描 StyleBI backup zip：`inventory`（组件、计算字段矩阵、书签数）、`crosscheck`（spec 对 vs 对基线）、`strictcheck`（预测严格基类会抱怨什么） | 在 vscalc 上运行，结果与手工核对一致 |
+| `vs_backup_scan.py` | 静态扫描 StyleBI backup zip：`inventory`（组件、计算字段矩阵、书签数）、`crosscheck`（spec 对 vs 对基线）、`strictcheck`（预测哪些基线文件不会被导出） | 在 vscalc 上运行，结果与手工核对一致；`strictcheck` 在 vscalc、vspara、chart `TrendComparison_Spec` 上与实际运行一致。**照 vscalc 写的，适用范围见下** |
 | `param_scan.py` | `params <zip>`：worksheet 变量组件（xtype×单/多值×prompt）、带变量的条件（按运算符）、VS 动态值（`=parameter.x`、`$(组件)`）；`cases <Spec.groovy…>`：每个用例的导出方法、比对方式、书签、参数。复用 `vs_backup_scan.load` | 在 vspara 上运行；`cases` 只认 `ViewsheetTest`/`VSExportTest` 写法 |
 | `module-template.md` | 产出文件的骨架 | vscalc 已按它写成样例 |
+
+## `vs_backup_scan.py` 的适用范围
+
+脚本靠正则读 spec，不运行测试。写法不在它覆盖范围内时，它不会报错，照样输出一张看起来完整的表。
+
+| 子命令 | 通用 | 不适用或会误判 |
+|---|---|---|
+| `inventory` | vs、书签、组件类型、绑定表、脚本数 | 计算字段类型、表达式分类、使用位置三张表只对计算字段类模块有意义；其他模块的矩阵维度不在脚本里 |
+| `crosscheck` | 孤儿 vs、用例的 vs 不在 zip、用例没有基线目录 | 多个 spec 共用一个 zip 时，单个 spec 的孤儿列表大多是其他 spec 的 vs（例如 vsfreehand 的 `Convert_Spec`）；资产 id 不是字面量的用例列在 "Not mapped"；"calc fields" 两列只对 vscalc 有意义 |
+| `strictcheck` | `executeVS`、`exportAsPNG` 两种参数顺序、`exportAsPDF`（页图不预测、不参与比对） | 子类（`VSCalcTest`、`VSActionsTest`、`VSFormImportTest`）和书签不是字面量的用例列在 "Not predicted"；脚本控制的可见性、书签状态下才出现的组件算不出来。能运行就以运行为准 |
 
 ## 路由：单测还是 dashboard
 
