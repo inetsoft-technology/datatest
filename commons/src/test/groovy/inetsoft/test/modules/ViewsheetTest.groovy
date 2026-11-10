@@ -60,7 +60,8 @@ import java.nio.file.StandardCopyOption
 class ViewsheetTest {
    //static ConfigurationContext context
    private static Object initializedApplicationContext
-   // export folders already cleaned in this JVM, so several instances of one case keep their files
+   // export folders already cleaned in this JVM, so several instances of one case keep their files.
+   // A case that runs twice in one JVM is only cleaned before its first run.
    private static final Set<String> cleanedExportDirs = Collections.synchronizedSet(new HashSet<String>())
 
    ViewsheetTest(String asset_id, String caseName) {
@@ -83,6 +84,12 @@ class ViewsheetTest {
     * this run failed to export. Done once per case and JVM.
     */
    private void cleanExportDir() {
+      // without expectData on the classpath or a suite (initHome not called) there is no export
+      // folder of this case to clean; exporting reports the problem later
+      if(suiteName == null || caseName == null || this.class.getResource('/expectData') == null) {
+         return
+      }
+
       File dir = exportFolder()
 
       if(cleanedExportDirs.add(dir.absolutePath) && dir.exists()) {
@@ -454,6 +461,9 @@ class ViewsheetTest {
    protected boolean checkBaselineExported(String[] fls, String suffix) {
       if(Boolean.getBoolean('update.baseline')) {
          writeBaseline(fls, suffix)
+         // nothing is compared in this mode, make that visible in the log
+         System.err.println("update.baseline=true: " + suffix + " baseline of " + suiteName + '/' +
+            caseName + " updated, NOT compared")
          return false
       }
 
