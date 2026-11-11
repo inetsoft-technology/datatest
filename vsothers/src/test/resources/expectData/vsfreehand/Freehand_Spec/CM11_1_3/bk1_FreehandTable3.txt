@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 7)
+2020, 2020, 2020, 2020, 2020, 2020, 2020
+Games, Games, Games, Games, Games, Games, Games
+CT_test, FL_test, MA_test, MD_test, NJ_test, NY_test, PA_test
+0, 2.25, 1.5, 0, 0, 0, 0.5

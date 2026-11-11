@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 9)
+reseller, state, 2022, 2022, NULL, 2020, 2020, NULL, Grand Total
+NULL, NULL, 1st, 3rd, Total, 1st, 2nd, Total, NULL
+false, MA, 46, 148, 194, 193, 92, 285, 479
+false, NJ, 57, 95, 152, 19, NULL, 19, 171
+false, CA, 22, 57, 79, 31, 36, 67, 146
+NULL, Total, 125, 300, 425, 243, 128, 371, 796
+true, TX, 169, 209, 378, 157, 123, 280, 658
+true, NJ, 85, 26, 111, 30, 86, 116, 227
+true, MA, 66, NULL, 66, 72, 126, 198, 264
+NULL, Total, 320, 235, 555, 259, 335, 594, 1149
+Grand Total, NULL, 445, 535, 980, 502, 463, 965, 1945

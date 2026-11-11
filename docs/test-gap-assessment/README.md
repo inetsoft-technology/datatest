@@ -19,7 +19,8 @@
 |---|---|---|
 | vscalc（`vsothers`，`-Pvscalc`） | [vscalc.md](vscalc.md) | 已评估；G1 已完成（PR #203）；疑似缺陷已报（[#80950](https://issues.inetsoft.com/issues/80950)–[#80952](https://issues.inetsoft.com/issues/80952)），待确认语义见 [#80953](https://issues.inetsoft.com/issues/80953) |
 | vspara（`vsothers`，`-Pvspara`） | [vspara.md](vspara.md) | 已评估，待评审 |
-| vscrosstab、vsfreehand、otherassembly（`vsothers` 其他 profile） | | 未开始 |
+| vsfreehand（`vsothers`，`-Pvsfreehand`） | [vsfreehand.md](vsfreehand.md) | 已评估，待评审 |
+| vscrosstab、otherassembly（`vsothers` 其他 profile） | | 未开始 |
 | chart | | 未开始 |
 | vsexport | | 未开始 |
 | ws | [ws.md](ws.md) | 已评估，待评审 |

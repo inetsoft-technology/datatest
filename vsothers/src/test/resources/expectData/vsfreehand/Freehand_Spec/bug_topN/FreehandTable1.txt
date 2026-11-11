@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 6)
+0, NULL, NULL, 1, NULL, NULL
+USA East, MD, 35%, USA East, MA, 35%
+USA East, NJ, 160%, USA East, NJ, 95%
+USA East, NY, 170%, USA East, NULL, NULL
+USA East, Others , 90%, USA East, NULL, NULL
+USA West, AZ, 70%, USA West, CA, 25%
+USA West, CA, 70%, USA West, CO, 15%
+USA West, TX, 90%, USA West, IL, 20%
+USA West, Others , 95%, USA West, Others , 0%
+1st, NULL, 108, 1st, NULL, 26
+2nd, NULL, 158, 2nd, NULL, 45
+3rd, NULL, 139, 3rd, NULL, 36
+4th, NULL, 141, 4th, NULL, 47
+NULL, NULL, 546, NULL, NULL, 154

@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 11)
+NULL, NULL, euqaltoPA, FL, IL, MA, MD, startAorC, startN, TX, WA
+2002, s_discount, 0.05, 0.3, 0.2, 0.2, 0, 0.25, 1.15, 0.45, 0.3
+NULL, s_eid, 24, 20, 21, 61, 54, 246, 201, 118, 57
+2004, s_discount, 0.1, 0.05, 0, 0.3, 0.35, 1.95, 3.35, 0.45, 0.25
+NULL, s_eid, 8, 8, 34, 63, 60, 235, 213, 164, 90
+in200201, s_discount, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+NULL, s_eid, NULL, NULL, 4, 3, 2, 14, 3, 7, 3
+equalTo20020208, s_discount, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+NULL, s_eid, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL
+in200304, s_discount, NULL, NULL, NULL, 0, 0, 0, 0, 0, NULL
+NULL, s_eid, NULL, NULL, NULL, 3, 4, 4, 11, 4, NULL

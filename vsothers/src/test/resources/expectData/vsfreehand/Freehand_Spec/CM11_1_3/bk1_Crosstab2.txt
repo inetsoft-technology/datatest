@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 9)
+Year(date_cacl), NULL, USA East, USA East, USA East, USA East, USA East, USA East, USA East
+NULL, NULL, CT_test, FL_test, MA_test, MD_test, NJ_test, NY_test, PA_test
+2020, agg_calc, 0, 2.25, 1.5, 0, 0, 0, 0.5
+NULL, Nth_String, Personal, Educational, Games, Games, Hardware, Games, Personal

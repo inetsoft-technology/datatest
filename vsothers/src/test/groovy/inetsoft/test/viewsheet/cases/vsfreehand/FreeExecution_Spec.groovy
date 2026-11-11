@@ -34,10 +34,14 @@ class FreeExecution_Spec extends Specification {
    def 'FNGTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -46,10 +50,14 @@ class FreeExecution_Spec extends Specification {
    def 'FNGTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -58,10 +66,14 @@ class FreeExecution_Spec extends Specification {
    def 'FNGTable3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable3', caseName)
+      vsCalcTest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -70,10 +82,14 @@ class FreeExecution_Spec extends Specification {
    def 'FNGTable4'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/NameGroups/FNGTable4', caseName)
+      vsCalcTest.executeVS(null, ['(Home)', 'bk1'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)', 'bk1'] as String[])
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -82,10 +98,14 @@ class FreeExecution_Spec extends Specification {
    def 'SortOthersTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/SortOthersTable1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -94,10 +114,14 @@ class FreeExecution_Spec extends Specification {
    def 'DateLevelTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/DateLevelTable1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -106,10 +130,14 @@ class FreeExecution_Spec extends Specification {
    def 'DateLevelTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/DateLevelTable2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -118,10 +146,14 @@ class FreeExecution_Spec extends Specification {
    def 'DateLevelTable3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/DateLevelTable3', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -130,10 +162,14 @@ class FreeExecution_Spec extends Specification {
    def 'ComBindingTable1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/ComBindingTable1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -142,10 +178,14 @@ class FreeExecution_Spec extends Specification {
    def 'ComBindingTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/ComBindingTable2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -154,10 +194,14 @@ class FreeExecution_Spec extends Specification {
    def 'ComBindingTable3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/ComBindingTable3', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -166,10 +210,14 @@ class FreeExecution_Spec extends Specification {
    def 'ComBindingTable4'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/ComBindingTable4', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -178,10 +226,14 @@ class FreeExecution_Spec extends Specification {
    def 'ComBindingTable5'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/ComBindingTable5', caseName)
+      vsCalcTest.executeVS(null, ['(Home)', 'quarter', 'noRangeID'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)', 'quarter', 'noRangeID'] as String[])
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -190,10 +242,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeExecute1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/FreeExecute1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -202,10 +258,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeExecute2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/FreeExecute2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -214,10 +274,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeExecute3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/FreeExecute3', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -226,10 +290,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeExecute4'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/FreeExecute4', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
     /**
@@ -239,10 +307,12 @@ class FreeExecution_Spec extends Specification {
    def 'DateManualSort'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/BindingOptions/DateManualSort', caseName)
+      vsCalcTest.executeVS(null, ['(Home)'] as String[])
       vsCalcTest.exportAsPNG(null, ['(Home)'] as String[])
 
       expect:
       verifyAll{
+         vsCalcTest.compareData(null)
          vsCalcTest.compareImage(null)
       }
    }
@@ -253,10 +323,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeLayout1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/Layouts/FreeLayout1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -265,10 +339,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeLayout2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/Layouts/FreeLayout2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -277,10 +355,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeLayout3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/Layouts/FreeLayout3', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -289,10 +371,14 @@ class FreeExecution_Spec extends Specification {
    def 'FreeLayout4'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/Layouts/FreeLayout4', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -301,10 +387,14 @@ class FreeExecution_Spec extends Specification {
    def 'FScript1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FScript1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -313,10 +403,14 @@ class FreeExecution_Spec extends Specification {
    def 'FScript2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FScript2', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
     /**
@@ -325,10 +419,14 @@ class FreeExecution_Spec extends Specification {
    def 'FScript3'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FScript3', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -337,10 +435,14 @@ class FreeExecution_Spec extends Specification {
    def 'FSNone1'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSNone1', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -349,10 +451,14 @@ class FreeExecution_Spec extends Specification {
    def 'FSTopNTotal'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSTopNTotal', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -362,10 +468,14 @@ class FreeExecution_Spec extends Specification {
    def 'FSRunQuery'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/FSRunQuery', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**
@@ -374,10 +484,14 @@ class FreeExecution_Spec extends Specification {
    def 'CellDatablockTest'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^FreeExecution/FormulaScript/CellDatablockTest', caseName)
+      vsCalcTest.executeVS(null, null)
       vsCalcTest.exportAsPNG(null, null)
 
       expect:
-      vsCalcTest.compareImage(null)
+      verifyAll {
+         vsCalcTest.compareData(null)
+         vsCalcTest.compareImage(null)
+      }
    }
 
    /**

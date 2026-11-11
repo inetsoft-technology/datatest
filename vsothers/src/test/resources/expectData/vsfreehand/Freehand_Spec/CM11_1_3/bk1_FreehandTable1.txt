@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 3)
+USA East, NULL, NULL
+2020, CT, Personal
+2020, FL, Educational
+2020, MA, Games
+2020, MD, Games
+2020, NJ, Hardware
+2020, NY, Games
+2020, PA, Personal
