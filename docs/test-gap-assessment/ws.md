@@ -82,7 +82,7 @@ XML 看不到运行时传入的值（变量值、`InRange_Spec` 的日期范围�
 | 表 assembly 类（可实例化 15 个） | `uql/asset/*TableAssembly.java` | 用到 11 个 | `CubeTableAssembly`（:36）、`DataTableAssembly`（:35）、`QueryBoundTableAssembly`（:34）、`TabularTableAssembly`（:46）：0 / 0 | 这些表类的取数出错；是否能由用户在 worksheet 里创建、CI 有没有对应数据源，**未核实**；`ScriptedTableAssembly` 是接口（`TabularTableAssembly` 实现它），不单列 |
 | 非表 assembly 类（8 个） | `uql/asset/*Assembly.java` | 用到 5 个：变量 25 / 17、命名分组 23 / 22、日期范围 2 / 2、镜像变量 1 / 1、镜像命名分组 2 / 2 | `MirrorDateRangeAssembly`、`DefaultConditionAssembly`、`MirrorConditionAssembly`：0 / 0（worksheet 里 `conditionAssemblies` 节点全是空的） | 可复用条件 assembly 与日期范围镜像的求值出错 |
 | 日期分组级别（21 个，不含 none） | `uql/XConstants.java:69-158` | 用到 16 个 | `am/pm`（:93）、`millisecond`（:109）、`week of month`（:130）、`day of year`（:134）、`am/pm of day`（:146）：0 / 0 | 这些级别的分组边界、标签算错 |
-| 聚合公式（27 个） | `uql/asset/AggregateFormula.java:43-149` | 用到 24 个（含 none） | `SumSQ`（:141）、`SumWT`（:145）、`Aggregate`（:149）：0 / 0 | 这三个公式的值或结果类型错 |
+| 聚合公式（27 个） | `uql/asset/AggregateFormula.java:43-149` | 用到 24 个（含 none） | `SumSQ`（:141）、`SumWT`（:145）、`Aggregate`（:149）：0 / 0 | 三个都是内部构件（MDX / 组合 SQL 用），用户选不到；不单独补测 |
 | join / 并集运算 | `uql/asset/TableAssemblyOperator.java:47-107` | 14 个可选运算用到 13 个 | `>=` join（:75）：全部 1 / CI 0（在没被运行的 worksheet 里） | `>=` 连接条件的取值错 |
 | 相对日期条件（`DateCondition` 子类 13 个） | `uql/asset/DateCondition.java:525-2443` | XML 里只看到 `YearCondition` 3 / 3、`QuarterCondition` 2 / 2（`postprocess` 的日期范围和命名分组，CI 运行） | 其余 11 个在 XML 里为 0 / 0；但 `InRange_Spec` 的 4 个 feature 用变量传入范围名（Year to date、Yesterday、Week before last week、This January、Last 3 months、Last 8-14 days、1st quarter this year、1st half of this year 等），按名字看几乎覆盖全部子类，**未逐个对应到子类**；该 spec 在 CI 跳过 | 相对日期范围算错（G4） |
 | 条件运算（15 个）及取反、等于标志 | `uql/XCondition.java:38-129` | 表条件里 date in：全部 3 / CI 0；like 1、starting with 2；取反 25 / 22、等于标志（>=、<=）26 / 23 | 命名分组里的条件另计：date in 2 / 2（都在命名分组 `Date`）、between 15 / 15 等；日期范围 assembly 里 date in 2 / 2（`NG_SR`、`NG_FR` 各 1）；`pseudo`、`correlated`：0 / 0 | 见 G8 |
@@ -240,12 +240,14 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `SummaryFilter2`（worksheet 分组聚合）+ `DateRangeRef` 级别 | 只有序列化与取消 | 各日期级别分组后的聚合值（含资产里零覆盖的 am/pm、millisecond、week of month、day of year、am/pm of day） | 6 | 中 | 无 |
 | `NumericRangeRef` | 只测改名与依赖 | 数值分段 | 4 | 低 | 区间边界的归属 |
 | 各库方言类（`OracleSQLHelper` 等 8 个） | 引用它们的测试多是别名、引号、like 大小写、嵌套派生表（只看文件名与引用，未读方法体）；`ClickhouseHelper` 2 个、`InformixSQLHelper` 3 个、`DB2SQLHelper` 5 个测试文件引用，最少 | 固定一组查询（日期分组、top N / max rows、集合运算、统计函数、null 排序），断言 8 个库各自生成的 SQL | 待定（按"类别 × 库"展开） | 中 | 各库应当生成什么 SQL；哪些组合在哪个库不支持、应当退回内存 |
-| `AggregateFormula`：`SumSQ`、`SumWT`、`Aggregate` | 未盘点 | 三个公式的值与结果类型 | 3 | 低 | 公式语义 |
-| **合计** | | | **移植 70 + 新写 65（不含各库方言类一行；聚合公式一行 3 个也未计入）** | | |
+| `AggregateFormula`：`SumSQ`、`SumWT`、`Aggregate` | 内部构件，用户选不到 | 不单独补测（已由统计公式的组合 SQL 间接覆盖） | 0 | – | – |
+| **合计** | | | **移植 70 + 新写 65（不含各库方言类一行；聚合公式一行不计）** | | |
 
 按优先级：先移植 13.8（G7 主体），再写 date in（G4）和上传（G3），unpivot（G7）次之，合并判断（G5）要先等开发确认规则。各库 SQL 生成（G11）和合并判断一样要先确认规则，排在其后。
 
 **移植进展（2026-11-11，产品仓库独立 worktree，分支 `test-ws-lens-unit-tests`，尚未推送）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
+
+**新写进展（2026-11-11，同一分支）：** 各库方言批次 3 个类已提交：`DateRangeRefDialectTest`（38，16 个日期级别 × 各库是否下推，并在 Derby 上执行对照 java.time）、`AggregateFormulaStatSqlTest`（41，3 个 `@Disabled`）、`SQLHelperOperationSupportTest`（13，`sqlhelper.xml` 与代码覆盖的支持矩阵）。
 
 | 测试类 | 来源 | 个数 | 跳过 |
 |---|---|---|---|
@@ -284,7 +286,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 1. `DateCondition` 能否注入参考日期（时区、周起始日规则一并确认）？否则 date in 只能靠改系统时间测试。
 2. worksheet 层的合并规则：哪些条件、聚合、表达式、数据类型组合应当下推到 SQL。
 3. 上传的日期、布尔类型识别规则；`NumericRangeRef` 区间边界；排名并列规则。
-4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。待确认：`AggregateHelper.getAggregateExpression` 返回 null（DB2 的 stddev/var，PostgreSQL、Informix、Derby、ClickHouse、H2 的统计函数）时是否一定退回内存；各库生成的 SQL 有没有预期文本可对照。
+4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。已确认：库没有原生统计函数时 `AggregateFormula` 退回 SUM/COUNT 组合 SQL（不是退回内存），在 Derby 上跑过：方差、标准差与 Java 参考值一致；协方差、相关系数在只有一列为 NULL 时与"两列都有值的行"不一致，单行相关系数除零报错（产品缺陷，单测里 3 个 `@Disabled`，待报 bug）。待确认：各库生成的 SQL 有没有预期文本可对照。
 
 **需要用户决定：**
 - 严格模式后数据库不可用也会让 CI 变红（以前异常被吞掉）：`ensure-db-server` 的等待和重试是否足够。
