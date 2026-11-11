@@ -19,11 +19,14 @@ class VSCalcTest extends ViewsheetTest {
     * Convert every visible table/crosstab to a freehand table, export the page as PNG, and check
     * that the data of each converted component equals the data it had before the conversion.
     * @param params viewsheet parameters
-    * @param allowedDiff component name -> reason. A component listed here may differ from its
-    *        source (known, accepted differences, e.g. the conversion clears date comparison,
-    *        drill and calculators); any other component that differs fails the case.
+    * @param allowedDiff component name -> reason, for the components that may differ from their
+    *        source (known differences, e.g. the conversion clears date comparison, drill and
+    *        calculators); any other component that differs fails the case. A listed component
+    *        must keep its row count: with a plain reason the row count must not change, with
+    *        [reason: '...', rows: '21 -> 108'] it must change exactly like that, so a different
+    *        change (for example losing rows) still fails the case.
     */
-   def checkConvert(Map<String, String[]> params, Map<String, String> allowedDiff = [:]) {
+   def checkConvert(Map<String, String[]> params, Map<String, Object> allowedDiff = [:]) {
       checkConvert0(params, allowedDiff)
    }
 
@@ -39,23 +42,11 @@ class VSCalcTest extends ViewsheetTest {
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
       sandbox.shrink()
-      List<String> names = rvs.getViewsheet().getAssemblies().findAll {
-         (it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly ||
-            it instanceof CrosstabVSAssembly) && it.getVSAssemblyInfo().isVisible(true)
-      }.collect { it.getName() }
-      Map<String, String> before = [:]
+      List<String> names = convertibleNames(rvs)
       Map<String, String> result = [:]
-
-      names.each { name ->
-         try {
-            File f = createExportFileByCase(name, null, '_src.txt')
-            f.text = dumpLens(sandbox.getVSTableLens(name, false))
-            before[name] = f.text
-         }
-         catch(Exception ex) {
-            result[name] = 'SRC-EXPORT-FAILED ' + ex
-         }
-      }
+      Map<String, String> errors = [:]
+      Map<String, String> before = dumpComponents(sandbox, names, '_src.txt', errors)
+      errors.each { name, ex -> result[name] = 'SRC-EXPORT-FAILED ' + ex }
 
       names.findAll { before.containsKey(it) }.each { name ->
          try {
@@ -69,29 +60,56 @@ class VSCalcTest extends ViewsheetTest {
       rvs = viewsheetResource.getRuntimeViewsheet(principal)
       sandbox = rvs.getViewsheetSandbox().get()
 
-      names.findAll { before.containsKey(it) && !result.containsKey(it) }.each { name ->
-         try {
-            if(!(rvs.getViewsheet().getAssembly(name) instanceof CalcTableVSAssembly)) {
-               result[name] = 'NOT-CONVERTED'
-               return
-            }
+      List<String> todo = names.findAll { before.containsKey(it) && !result.containsKey(it) }
 
-            File f = createExportFileByCase(name, null, '_calc.txt')
-            f.text = dumpLens(sandbox.getVSTableLens(name, false))
-            result[name] = diffText(before[name], f.text)
-         }
-         catch(Exception ex) {
-            result[name] = 'CALC-EXPORT-FAILED ' + ex
-         }
+      todo.findAll { !(rvs.getViewsheet().getAssembly(it) instanceof CalcTableVSAssembly) }.each {
+         result[it] = 'NOT-CONVERTED'
       }
+
+      errors = [:]
+      Map<String, String> after = dumpComponents(sandbox,
+         todo.findAll { !result.containsKey(it) }, '_calc.txt', errors)
+      errors.each { name, ex -> result[name] = 'CALC-EXPORT-FAILED ' + ex }
+      after.each { name, text -> result[name] = diffText(before[name], text) }
 
       return result
    }
 
+   /** the visible tables, crosstabs and embedded tables, the components that can be converted */
+   private static List<String> convertibleNames(RuntimeViewsheet rvs) {
+      return rvs.getViewsheet().getAssemblies().findAll {
+         (it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly ||
+            it instanceof CrosstabVSAssembly) && it.getVSAssemblyInfo().isVisible(true)
+      }.collect { it.getName() }
+   }
+
    /**
-    * One line per row, cells joined by ' | '. Cells inside a merged span (not its top-left cell)
-    * are written as '~', so a source that repeats the value over the span and a freehand table
-    * that leaves it empty compare equal. Values are written with toString().
+    * Export the data of the components to {name}{suffix} in the case export folder.
+    * @param errors filled with name -> failure for the components that could not be exported
+    * @return name -> the exported text
+    */
+   private Map<String, String> dumpComponents(ViewsheetSandbox sandbox, List<String> names,
+                                              String suffix, Map<String, String> errors)
+   {
+      Map<String, String> out = [:]
+
+      names.each { name ->
+         try {
+            File f = createExportFileByCase(name, null, suffix)
+            f.text = dumpLens(sandbox.getVSTableLens(name, false))
+            out[name] = f.text
+         }
+         catch(Exception ex) {
+            errors[name] = ex.toString()
+         }
+      }
+
+      return out
+   }
+
+   /**
+    * One line per row, cells joined by ' | ', null and empty values written as 'NULL', other
+    * values with toString().
     */
    private static String dumpLens(inetsoft.report.TableLens lens) {
       StringBuilder buf = new StringBuilder()
@@ -119,13 +137,9 @@ class VSCalcTest extends ViewsheetTest {
       List<String> out = []
 
       if(a.size() != b.size()) {
-         out << ("rows ${a.size()} -> ${b.size()}".toString())
-      }
-
-      if(a.size() != b.size()) {
-         // rows cannot be aligned, report the first rows of both sides only
-         out << ("first src row: [${a.size() > 1 ? a[1] : ''}] first calc row: [${b.size() > 1 ? b[1] : ''}]".toString())
-         return out.join(' | ')
+         // rows cannot be aligned, report the row counts and the first rows of both sides only
+         return "rows ${a.size()} -> ${b.size()} | first src row: [${a.size() > 1 ? a[1] : ''}] " +
+            "first calc row: [${b.size() > 1 ? b[1] : ''}]"
       }
 
       int bad = 0
@@ -198,10 +212,10 @@ class VSCalcTest extends ViewsheetTest {
     * convert table as freehand, then export as PNG, then compare the converted data with the
     * data before the conversion
     * @param params
-    * @param allowedDiff component name -> reason, see checkConvert
+    * @param allowedDiff component name -> reason or [reason: '...', rows: 'a -> b'], see checkConvert
     * @return
     */
-   def checkConvert0(Map<String, String[]> params, Map<String, String> allowedDiff = [:]) {
+   def checkConvert0(Map<String, String[]> params, Map<String, Object> allowedDiff = [:]) {
       initVS(params, false)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       ViewsheetSandbox sandbox = rvs.getViewsheetSandbox().get()
@@ -214,21 +228,11 @@ class VSCalcTest extends ViewsheetTest {
       // the data before the conversion: all sources are exported first, so that converting one
       // component cannot change the "before" data of another (a freehand table can be bound to
       // another component of the same viewsheet)
-      List<String> candidates = assemblies.findAll {
-         (it instanceof EmbeddedTableVSAssembly || it instanceof TableVSAssembly ||
-            it instanceof CrosstabVSAssembly) && it.getVSAssemblyInfo().isVisible(true)
-      }.collect { it.getName() }
-      Map<String, String> before = [:]
+      Map<String, String> errors = [:]
+      Map<String, String> before = dumpComponents(sandbox, convertibleNames(rvs), '_src.txt', errors)
 
-      candidates.each { name ->
-         try {
-            File f = createExportFileByCase(name, null, '_src.txt')
-            f.text = dumpLens(sandbox.getVSTableLens(name, false))
-            before[name] = f.text
-         }
-         catch(Exception ex) {
-            throw new RuntimeException("export of the source data failed: " + name, ex)
-         }
+      if(!errors.isEmpty()) {
+         throw new RuntimeException("export of the source data failed: " + errors)
       }
 
       try {
@@ -279,27 +283,40 @@ class VSCalcTest extends ViewsheetTest {
       }
 
       // the data after the conversion
-      ViewsheetSandbox converted = rvs.getViewsheetSandbox().get()
       Map<String, String> failures = new LinkedHashMap<>()
+      errors = [:]
+      Map<String, String> after = dumpComponents(rvs.getViewsheetSandbox().get(),
+         convertedAssemblies, '_calc.txt', errors)
+      errors.each { name, ex -> failures.put(name, 'export of the converted data failed: ' + ex) }
 
-      convertedAssemblies.each { name ->
-         String diff
+      after.each { name, text ->
+         String diff = diffText(before[name], text)
+         Object allowed = allowedDiff.get(name)
 
-         try {
-            File f = createExportFileByCase(name, null, '_calc.txt')
-            f.text = dumpLens(converted.getVSTableLens(name, false))
-            diff = diffText(before[name], f.text)
-         }
-         catch(Exception ex) {
-            diff = 'export of the converted data failed: ' + ex
+         if(allowed == null) {
+            if(diff != 'SAME') {
+               failures.put(name, diff)
+            }
+
+            return
          }
 
-         if(diff != 'SAME' && !allowedDiff.containsKey(name)) {
-            failures.put(name, diff)
+         // a listed component may differ, but its row count must change exactly as declared
+         // (unchanged when nothing is declared), losing rows is never accepted by accident
+         String reason = allowed instanceof Map ? allowed.get('reason') : allowed
+         String expectedRows = allowed instanceof Map ? allowed.get('rows') : null
+         int rowsBefore = before[name].readLines().size()
+         int rowsAfter = text.readLines().size()
+         String rowChange = rowsBefore == rowsAfter ? null : rowsBefore + ' -> ' + rowsAfter
+
+         if(rowChange != expectedRows) {
+            failures.put(name, 'allowed to differ (' + reason + '), but the rows changed ' +
+               (rowChange ?: 'not at all') + ' where ' + (expectedRows ?: 'no change') +
+               ' was declared')
          }
-         else if(diff == 'SAME' && allowedDiff.containsKey(name)) {
+         else if(diff == 'SAME') {
             System.err.println("checkConvert: " + name + " no longer differs from its source, " +
-               "remove it from allowedDiff (" + allowedDiff.get(name) + ")")
+               "remove it from allowedDiff (" + reason + ")")
          }
       }
 
