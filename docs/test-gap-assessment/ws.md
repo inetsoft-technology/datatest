@@ -265,6 +265,45 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 这批测试都是 lens 层的取值测试，不依赖数据库，覆盖了 G7 的主体（cross join、full outer、非等值、union、intersect、minus、distinct、rotate、top N）以及 G13 里脚本表达式列的计算（多列依赖、前向引用、出错、类白名单）。G7 里 unpivot、`RotatedQuery`、排名 lens 的取值，以及 G3、G4、G5 要等开发回答规则的部分，还没有做。
 
+### 4b. 补单测过程中遇到的未覆盖与待确认（2026-11-11，产品仓库分支 `test-ws-lens-unit-tests`）
+
+新补的 9 个测试类（各库方言 3、日期级别 2、unpivot 2、rotate 1，另有 13.8 移植 4 个）写完后，下面这些情况**没有测**，或测了但结论要人确认。每条写明原因，方便后续接手。
+
+**A. 没有测到的情况**
+
+| 类 | 没覆盖 | 原因 |
+|---|---|---|
+| `AggregateFormulaStatSqlTest` | 零方差（一列所有值相等）的相关系数；在真实的 MySQL / PostgreSQL / SQL Server 上执行组合 SQL；worksheet 端到端 | 只在内嵌 Derby 上跑；其他库的除零行为（MySQL 返回 NULL、PostgreSQL 报错）是经验判断，没验证；这些库要 CI 的库环境 |
+| `AggregateFormulaStatSqlTest` | 各库原生函数名是否真的存在 | 只断言生成的函数名文本，没有在各库执行 |
+| `DateRangeRefDialectTest` | 只有 Derby 真正执行了 SQL；其余库只断言"是否下推"和有没有表达式 | 其他库的函数语义没有执行验证；ClickHouse、H2 的"不分组"返回空表达式（看起来像遗漏）只是固定了现状；DB2 没有 second_part 同理 |
+| `DateRangeRefDialectTest` | `week` 在 `week.start` 不是周日且设置了 `user.locale.weekGrouping` 时不下推 | 该分支靠系统属性，另有 `DateRangeRefWeekPushdownTest` 部分覆盖，未逐库展开 |
+| `SQLHelperOperationSupportTest` | MySQL 按数据源版本（`getProductVersion()` > 4.1）判断 union；Derby 按版本（>= 10.3）判断 expression group by；Vertica、Hive、Snowflake、BigQuery、Dremio 等其他方言 | 版本分支要数据源对象；其他方言本批不在 CI 范围 |
+| `DateRangeRefLevelValuesTest` | `week of month`、`week of quarter`、`month of quarter full week`、`*_FULL_WEEK` 系列（5 个）的取值 | 这些周的定义（每月/季第一周怎么算、`forceDcToDateWeekOfMonth`）要开发确认，不能凭实现反推期望 |
+| `DateRangeRefLevelValuesTest` | 只测了周日为一周起始、系统时区；没测 `week.start` 其他取值、非默认时区、夏令时、`java.sql.Time` 类型 | 时区与周起始已有 `DateRangeRefPre1901Test`、`DateRangeRefWeekOfYearLocaleTest` 覆盖一部分，没有重复 |
+| `DateLevelSummaryTest` | 完整链路（日期列 → `DateRangeRef` → 聚合）、`SummaryFilter2` 的条件组、cube 模式、Sum 以外的公式、输入未排序 | 只验证了"日期级别取值 + 排序后按相邻行分组求和"；完整链路由 dashboard 用例覆盖 |
+| `AssetUtilUnpivotTest`、`UnpivotQueryTest` | unpivot 之后再聚合 / 做交叉表；`fixColumnSelection` 按第一行数据修正列类型；带格式或强制解析的日期类 `changeColumnType`；MV 转换 | 需要更长的 worksheet 链；日期格式要先确认"强制解析"的预期 |
+| `RotatedQueryTest` | 第一列有空值 / 空白的情况；旋转后再聚合；MV；表头值很长 | 没来得及；空值在 lens 层已有 `RotatedTableLens` 的"空表头取 `Column [n]`"测试 |
+
+**B. 看起来是产品缺陷、测试里已 `@Disabled`、尚未报 bug 的**
+
+- `RotatedQuery`：源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
+- 已报：#81095、#81096（统计公式 SQL）。
+
+**C. 需要开发回答才能写期望值的问题**（上面表里出现的，合并在一起）
+
+1. 各"周"类日期级别（week of month、week of quarter、full week 系列）的定义。
+2. `AM_PM_DATE_GROUP`、`MILLISECOND_DATE_GROUP`、`AM_PM_OF_DAY_DATE_GROUP` 在 `XConstants` 里有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"，是设计如此还是没做完。
+3. ClickHouse、H2 的"不分组"日期级别没有 SQL 表达式，是遗漏吗。
+4. 旋转后第一列重名应该报错、加别名，还是合并。
+5. 前面各节已列的：排名并列（ranking ties）、`NumericRangeRef` 区间边界、`DateCondition`、上传类型检测、`isQueryMergeable`。
+
+**D. 写测试的几个注意点**（以后接手少走弯路）
+
+- worksheet 级测试要有 `AssetDataCache` bean（`DistributedTableCacheStore` 要 mock 一个 `ObjectProvider`），再 `setActive(true)` 后 `refreshColumnSelection`，否则组合表的列是空的。
+- `SummaryFilter2` 只合并相邻的分组行，调用前必须按分组列排序（`AssetQuery` 用 `PostProcessor.sort`）。
+- 新建测试类的头注释少一个 ` */` 时，编译器报 "does not represent an annotation type"，和真正原因无关。
+- 用 `-q` 加 `-Dsurefire.failIfNoSpecifiedTests=false` 跑可能一个测试都没跑也返回成功，要看 `Tests run:`。
+
 ## 5. Dashboard 与机制补充
 
 | 场景 | 做法 | 验证什么 | 前提 |
