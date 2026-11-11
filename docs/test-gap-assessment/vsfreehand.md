@@ -78,7 +78,7 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 | 4 | 表头/汇总表头 → 文本；fake 列 → 文本 | `:284`、`:307` | 前者全部；fake 列未统计 | 前者有；fake 列**未验证** |
 | 5 | 多层行/列头的 cellName 复用、合并单元格 span 复制 | `:335-352`、`:456-502`、`:97` | 3 层行头 1 个 vs；`mergeSpan=false` 3 个 vs | 有；明细区合并 span（`:374`）**未验证** |
 | 6 | `fixOrderInfo`：日期型保留 interval，非日期清零 | `:518-543` | 日期级别 0–8、513/518/521；范围分组 | 有（静态） |
-| 7 | `fixTopN`：非最内层维度关闭 Others | `:548-600` | TopN 约 6 个 vs 带 Others，**外层维度带 Others 的未核对** | **未验证** |
+| 7 | `fixTopN`：非最内层维度关闭 Others | `:548-600` | TopN 约 6 个 vs 带 Others，**外层维度带 Others 的未核对** | **未验证**；`CroTable8/Crosstab1` 的转换输出里外层年份出现了 `Others` 组且 TopN 选中项与源不同，疑与此分支有关，见 `vsfreehand-g2-convert-probe.md` T4④ |
 | 8 | 分组列不在 `ainfo` 时 `getOriginalColumn` | `:368` | 未统计 | **未验证** |
 | 9 | 汇总格所处区域：明细/小计(G_FOOTER)/总计(FOOTER) | `:393-412` | 总计 4 个 vs、小计 3 个 vs | 有 |
 | 10 | 百分比：`perBy`(列/行) × 选项(OF_GROUP/OF_GRANDTOTAL) 四种组合 | `:431-446` | OF_GRANDTOTAL 5 个 vs，OF_GROUP 仅 `DCPTrendTable1`；`perBy` 两个值都有 | 四种组合**是否各有 1 个未逐一核对**；`CroTable8` 的百分比转换后数值变了（T2） |
@@ -97,7 +97,7 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 
 **验证机制：**
 
-- 比对遍历"实际导出"，并且额外检查基线→导出：`compareImage(null)`/`compareData(null)` 先在 `ViewsheetTest.groovy:471-477` 检查"基线文件是否都被导出"，再在 `CompareUtil.groovy:471-475` 遍历导出目录逐个比；TXT 导出了但无基线会失败（`CompareUtil.groovy:249-252`，"not found"）；PNG 无基线的行为静态上没读完（`CompareUtil.groovy:133-134`），**未验证**。
+- 比对遍历"实际导出"，并且额外检查基线→导出：`compareImage(null)`/`compareData(null)` 先在 `ViewsheetTest.groovy:471-477` 检查"基线文件是否都被导出"，再在 `CompareUtil.groovy:471-475` 遍历导出目录逐个比；TXT 导出了但无基线会失败（`CompareUtil.groovy:249-252`，"not found"）；PNG 无基线会失败：`readImageFromResources('expectData…')` 在 `try` 内抛异常，被 `CompareUtil.groovy:165-167` 记为 `Compare Failed with exception`（读代码得出，未单独运行）。
 - 导出失败会让用例失败：`onExportFailure` → `violation`（`ViewsheetTest.groovy:230-232`，PNG/PDF/executeVS 三处调用 `:223`、`:349`、`:377`）；转换流程在 `VSCalcTest.groovy:50/56/63/74/81` 对转换失败、无可转换组件、未变成 CalcTable、导出失败、导出为空分别抛异常。
 - `exportData` 清理：用例构造时按用例清一次（`ViewsheetTest.groovy:86-98`）；CI 在准备阶段整体清：`Jenkinsfile:37`（`./mvnw clean -pl vsothers`）、`.github/workflows/test-vsothers.yml:71`（`./mvnw clean`）。
 - CI 对失败的处理：Jenkins `catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE')`（`Jenkinsfile:78`），GitHub `continue-on-error: true`（`test-vsothers.yml:85`）；即 vsfreehand 失败不会让构建失败，只标 UNSTABLE/不阻断。
@@ -128,7 +128,7 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 | G8 | 4 个孤儿 vs、1 个 `@Ignore`、6 个未用书签；`CroTable2` 的 70 秒 sleep 让用例对机器速度敏感 | 孤儿/被忽略的 vs 对应的场景（ComBindingTable6 的 quarter/noRangeID 书签、NG4）实际没有被测；CroTable2 在慢机器上偶发失败，被当成噪声忽略 | 机制 + 清理 | 低 |
 | G9 | 没有分页（pageAfter）、cube/OLAP 数据源的 Freehand 用例 | 分页符、cube 源下的取值错误（是否支持 Freehand over cube 未验证） | dashboard，低优先；pageAfter 可能更适合 vsexport | 低 |
 | G18 | 转换产生的单元格公式文本没有断言：转换器生成 `sum(data['…@…'])`、分组条件等脚本，现在只比 PNG 和（G2 的）转换前后数据 | 数据碰巧相同但公式写错（换数据、换分组、加筛选后才暴露）；转换前的组件值本身错时，两边一起错检查不出来（期望值不独立） | 单测（`VSTableConverter` 逐单元格断言 type/btype/expansion/formula，并入 G4；预聚合列名、特殊字符列名两类转换 bug 已在 §7 的 G10/G11 记录）+ dashboard（G2 的比较之外，加手算期望值的小 vs） | 中 |
-| G19 | 手写公式脚本的函数面窄：zip 内去重后 355 条公式单元格，`sum` 176、`toList` 145、`mapList` 50、`inArray`/`inGroups` 19/13、`count` 9、`nthMostFrequent` 8、`nthLargest` 6、`none` 6、`countDistinct`/`max` 各 2、`rowList` 1。产品 `CalcTableScope` 暴露 25 个聚合函数，**17 个一次都没用过**：`average`、`min`、`product`、`concat`、`standardDeviation`、`variance`、`populationVariance`、`populationStandardDeviation`、`median`、`mode`、`correlation`、`covariance`、`weightedAverage`、`first`、`last`、`pthPercentile`、`nthSmallest`。脚本写法也窄：`if`/`var`/`&&` 总共几十处，参数脚本 11 处，`runQuery` 极少 | 这些函数在 Freehand 里的取值错误（含空值、除零、字符串列做数值聚合、跨单元格引用 `q2[...]` 出错）；含公式单元格的 vs 一定走脚本路径（见 G3），脚本路径的函数覆盖越窄，G3 的路径等价风险越大 | 单测（`CalcTableScope` 未覆盖函数，期望值手算）+ dashboard（新建 vs，按函数组） | 高 |
+| G19 | 手写公式脚本的函数面窄：zip 内去重后 355 条公式单元格，`sum` 176、`toList` 145、`mapList` 50、`inArray`/`inGroups` 19/13、`count` 9、`nthMostFrequent` 8、`nthLargest` 6、`none` 6、`countDistinct`/`max` 各 2、`rowList` 1。产品 `CalcTableScope` 暴露 25 个聚合函数，**datatest 的 zip 里有 17 个一次都没用过**（产品单测里这些函数已有覆盖，见 §4；这里说的只是 dashboard 一侧）：`average`、`min`、`product`、`concat`、`standardDeviation`、`variance`、`populationVariance`、`populationStandardDeviation`、`median`、`mode`、`correlation`、`covariance`、`weightedAverage`、`first`、`last`、`pthPercentile`、`nthSmallest`。脚本写法也窄：`if`/`var`/`&&` 总共几十处，参数脚本 11 处，`runQuery` 极少 | 这些函数在 Freehand 里的取值错误（含空值、除零、字符串列做数值聚合、跨单元格引用 `q2[...]` 出错）；含公式单元格的 vs 一定走脚本路径（见 G3），脚本路径的函数覆盖越窄，G3 的路径等价风险越大 | 单测只补边界（函数本身已有覆盖，见 §4）+ dashboard（新建 vs，按函数组，这是主要缺口） | 高 |
 | G20 | 特殊列几乎没有覆盖：calcfield 在 zip 里只有 3 个资产含（1 个交叉表日期型 calcfield、1 个 CalcTable 的 `First(...)` 聚合表达式型 string calcfield、1 个 CalcTable 的 none 聚合）；**Aggregate 类型 calcfield 在 Freehand 单元格里约 1 个 vs，默认类型更少**。日期：日期级别分组 44 个 vs、`rounddate` 覆盖 year…second，但没有 Date/Time/TimeInstant 三种类型的系统对比，没有跨年周/闰日/空值/时区边界，日期型 calcfield 做分组 1 例，转换的日期比较 1 例 | calcfield 作为分组/汇总/明细被 Freehand 取值时类型或聚合时机错误（先聚合还是后聚合）；日期边界分组错位；转换时 calcfield 丢失或类型变化 | dashboard（新建 vs：calcfield × 返回类型 × 单元格角色；同样的交叉表做转换）+ 单测（日期分组边界） | 高 |
 | G21 | `checkConvert` 的 `allowedDiff` 只约束行数、不约束单元格：名单里 19 个组件（12 个标 product design）转换后**任何单元格值**都可以不同，用例仍然通过。开发对 B1/B2 的回答针对的是"`Aggregate` 文字"和"日期标签格式"；`CroTable2/Crosstab2` 里 `NthLarge` 34→23、范围分组边界变化是**数值**变化，不在这两个回答的范围内（静态推断，未再向开发确认） | 名单内的组件转换后值错（分组边界错位、聚合值错）被"product design"一并放过；名单越大，G2 的断言越空 | 机制：把名单从"行数"收紧为按列/按类别声明允许差异（例如只允许标签列不同、数值列必须一致）；并向开发确认 B2 里的数值变化是否也是设计 | 高 |
 
@@ -138,13 +138,30 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 
 | 被测类 | 补什么 | 用例数 | 难度 | 待开发确认 |
 |---|---|---|---|---|
-| `CalcTableVSAQuery`（`getTableLens`、`createCrosstabAssemblies`） | 同一布局分别走快速路径与脚本路径，逐格比对；期望值从原始数据手算。覆盖：多种汇总公式（Sum/Count/Average/Max/DistinctCount/NthMostFrequent）、两层嵌套分组、横向展开、合计/小计、TopN+Others、百分比 | 12 | 中（要沙箱+工作表；仓库已有 `RowFetchFailureTest`、`CalcTableVSAQueryLayoutWriteBackTest` 的搭建方式可参考） | 已从源码查明哪些布局走快速路径（见 §6 的"源码查明"）；"两路径不一致时以哪个为准"代码里没有声明，需要开发确认。没有强制走某条路径的开关（在 `getTableLens`、`createCrosstabAssemblies0` 里未看到，非全仓搜索），单测要靠布局本身控制 |
-| `VSLayoutTool.generateLayout` + `VSTableConverter.changeTableMode` | 交叉表→Freehand 布局：行/列头 1/2/3 层、汇总并排、总计/小计开关、mergeSpan、多聚合；简单表、嵌入表；断言每个单元格的 type/btype/expansion/formula；另补分支清单里"无/未验证"的行：`fixTopN` 外层维度 Others（`:548-600`）、`perBy`×百分比选项四种组合（`:431-446`）、双列/带 N 公式的列名（`VSLayoutTool:784`）、fake 列、空布局（预聚合列名已在 §7.2 的 `getAggregateColumn` 行） | 20 | 中（纯布局无需执行，但要构造 `TableDataVSAssembly` 与元数据） | 无 |
+| `CalcTableVSAQuery`（`getTableLens`、`createCrosstabAssemblies`） | 同一布局分别走快速路径与脚本路径，逐格比对；期望值从原始数据手算。覆盖：多种汇总公式（Sum/Count/Average/Max/DistinctCount/NthMostFrequent）、两层嵌套分组、横向展开、合计/小计、TopN+Others、百分比 | ~~12~~ **0（改放 datatest，见 §5 "双路径对照"）** | 不适合产品仓库单测 | **产品仓库不写。** stylebi-main 会话的可行性判断：① 快速路径在 `CalcTableVSAQuery.java:198` 直接 `new CrosstabVSAQuery(box, …)`（我核对了这一行），mock 沙箱走不通，要真实沙箱；② 它在 core 里试过真实链路探针（`EmbeddedVS1.zip` + `box.getData`），能跑通，但已删除；③ 它说 CI 不执行 `@Tag("integration")`，所以 core 里的真实链路测试不会跑（我只在 `pom.xml:39` 看到分类的说明，**没核对 CI 是否真不跑，未验证**）。"两路径不一致时以哪个为准"代码里没有声明，需要开发确认；先按"两路径应一致"设计 |
+| `VSLayoutTool.generateLayout` + `VSTableConverter.changeTableMode` | 交叉表→Freehand 布局：行/列头 1/2/3 层、汇总并排、总计/小计开关、mergeSpan、多聚合；简单表、嵌入表；断言每个单元格的 type/btype/expansion/formula；另补分支清单里"无/未验证"的行：`fixTopN` 外层维度 Others（`:548-600`）、`perBy`×百分比选项四种组合（`:431-446`）、双列/带 N 公式的列名（`VSLayoutTool:784`）、fake 列、空布局（预聚合列名已在 §7.2 的 `getAggregateColumn` 行） | 20 | 中（纯布局无需执行；夹具是 `CrosstabVSAssembly` + 手填 `AggregateInfo` + 小底表包成 `CrossTabFilter`，stylebi-main 会话已验证能跑通 `generateLayout`） | **第一阶段已完成（产品仓库 PR #8002，`VSTableConverterTest` 现为 23 例，见表后"产品仓库单测进展"；下面是前一轮的 10 例明细）**：`VSTableConverterTest` 10 个用例已通过（stylebi-main 会话回报，我没重跑），含 `fixTopN` 7 个（外层行/列维度关 Others、最内层保留、单维度保留、无 TopN、外层日期级别维度 `Year(date)` 关）、`changeTableMode` 短路（模式相同/目标非 CALC 返回空布局）、`olayout` 为 null 返回默认 CALC 布局、汇总格保持 sales 列与 Sum 公式且 expansion 为 NONE。**`perBy`×百分比四种组合没写：** 映射改的是 `getAggregateRefs` 产生的局部副本，单元格上看不到，不能直接断言，设计待定。**结论：** `fixTopN` 本身没问题，`CroTable8/Crosstab1` 的外层 Others 在它之外，见探测文档 T4④。剩余分支（汇总格区域的小计/总计、多层头、`mergeSpan`）未做 |
 | `ComposerVSTableService.convertToFreehandTable` | 计算器被清除（百分比除外）、钻取被清除、日期比较被清除、fillBlankWithZero/sortOthersLast/mergeSpan 复制、`fixPeridField`、`fixLayoutAlias` | 8 | 高（服务依赖 `ViewsheetService`、集群代理，测试入口未确认） | 清除计算器后数值与原交叉表不同，这是设计如此还是需要提示用户；哪些差异是允许的 |
 | `RuntimeCalcTableLens`（展开、分组、TopN、Others、合并） | 展开 横/纵/无；分组排序升/降/按列/手动；TopN n/反向/Others；日期级别分组；空/null 分组；合并单元格；fillBlankWithZero | 18 | 中 | 已查明：脚本路径的分组/TopN/Others 由 `LayoutTool.createGroupCond` 生成条件（`LayoutTool.java:1409-1440`），不在 `RuntimeCalcTableLens`；`RuntimeCalcTableLens` 只在判断 `Others` 单元格类型时读 TopN（`:1041`）。测试对象应改为 `LayoutTool.createGroupCond`（`CalcGroup`/`CalcAggregate`），目前只有 `LegacyBuddhistManualOrderTest` 引用 `CalcGroup`。用例设计表里这一行的被测类需要从 `RuntimeCalcTableLens` 调整，难度待重新评估 |
-| `CalcTableScope` / `TableValueList` 的 `toList` 选项串 | `sort=asc/desc`、`rounddate=year…day`、`interval` 的组合与非法值（产品已有 `CalcTableScopeTest` 634 行、`TableValueListTest`，**未逐项审读**，补之前先对照现有用例去重） | 6 | 低 | 无 |
-| `CalcTableScope` 的 25 个聚合函数（对应 G19） | 17 个零覆盖函数（`average`、`min`、`product`、`concat`、`standardDeviation`、`variance`、`populationVariance`、`populationStandardDeviation`、`median`、`mode`、`correlation`、`covariance`、`weightedAverage`、`first`、`last`、`pthPercentile`、`nthSmallest`）各至少 1 个正常值用例，加共性边界：空值、全 null、除零、单行、字符串列；期望值从原始数据手算。补之前先对照 `CalcTableScopeTest`（634 行，未逐项审读）去重 | 24 | 低 | 空值/非数值列的预期（返回 0、null 还是报错）代码里没声明，需开发确认 |
-| 日期分组（`LayoutTool.createGroupCond`、`toList` 的 `rounddate`/`date`，对应 G12） | year/quarter/month/week/day/hour/minute/second 各级别；跨年周、闰日、null 日期、`interval>1`、`timeseries=true` 补零；Date/Time/TimeInstant 三种类型 | 14 | 中 | 周的起始日、时区取哪个；`interval>1` 时快速路径回退（`CalcTableVSAQuery.java:1527`）与脚本路径是否一致 |
+| `CalcTableScope` / `TableValueList` 的 `toList` 选项串 | `sort=asc/desc`、`rounddate=year…day`、`interval` 的组合与非法值（产品已有 `CalcTableScopeTest` 634 行、`TableValueListTest`，**未逐项审读**，补之前先对照现有用例去重） | **已补约 50 个**（产品仓库 `FormulaFunctionsTest`，stylebi-main 会话回报，PR #8002，全部通过，我没重跑；期望值是读代码推导的，不是独立规格）：sort/distinct/nonull/maxrows/date 各级别/月份和星期名顺序/rounddate 各级别和 interval/timeseries | 低 | **已确认的行为（用户在 Freehand 公式格里验证）：** `toList(…,"sort=desc,maxrows=2")` 对 `[4,1,3,2]` 界面显示 `3,4`，预期 `4,3`。原因（stylebi-main 会话读代码）：`maxrows` 截断后又用 `sort2`（默认升序）再排一次（`FormulaFunctions.java:178-184`、`:1510`），`sort2` 不在 `toList` 注释的选项列表里；`mapList` 有同样的再排序（`:921-926`，未运行）。已写进 Redmine #81071 的评论，预期值待开发回答。另一个未确认的备注：`toList` 的 `date` 选项和 `distinct=false` 会就地修改传入的数组 |
+| `CalcTableScope` 的聚合函数边界（对应 G19） | **更正：原先"17 个零覆盖函数、24 个用例"不成立。** 产品里已有的 `CalcTableScopeTest` 用参数化用例覆盖了这 17 个函数（`average`、`min`、`product`、`concat`、标准差/方差含总体版、`median`、`mode`、`correlation`、`covariance`、`weightedAverage`、`first`、`last`、`pthPercentile`、`nthSmallest`，以及 `nthLargest`、`nthMostFrequent`），多数用例集已带 `(null,null,null)` 空输入行（stylebi-main 会话核对，我抽查了函数名都出现在该测试里；逐项断言未审读）。**真正缺的只是边界**：数组含 null 元素、全 null 列、字符串列做数值聚合、除零（如 `weightedAverage` 权重和为 0）、`fillBlankWithZero`。已补 3 行单行输入（average 5.0、product 4.0、max/min 7/7）；其余边界**未逐项核对、未写** | 约 5–8（待核对后定） | 低 | 预期值待开发回答，见 Redmine Bug #81071 第二点（Fixed version stylebi-2.1.0；该 bug 由 stylebi-main 会话开出，我读过它的标题与"Code reading only"声明，前端观察见下）。回答后由产品仓库把边界用例加进 `CalcTableScopeTest` 已有数据源 |
+| 日期分组（`LayoutTool.createGroupCond`、`toList` 的 `rounddate`/`date`，对应 G20；§7.1 的 G12 是另一件事，指嵌套日期维度转换） | year/quarter/month/week/day/hour/minute/second 各级别；跨年周、闰日、null 日期、`interval>1`、`timeseries=true` 补零；Date/Time/TimeInstant 三种类型 | 14 | 中 | 周的起始日、时区取哪个；`interval>1` 时快速路径回退（`CalcTableVSAQuery.java:1527`）与脚本路径是否一致 |
+
+**#81071 第二点的前端观察**（stylebi-main 会话在界面上做的，不是代码推断，我没有重现）：Freehand 表按列 g 分组，数据 A 组 `v=10,20 w=0,0 s=x,y`，B 组 `v=空,空 w=1,2 s=z,z`。
+- 全 null 的 `v`：B 组 Sum/Average/Max/Min 全显示空；Weighted Average(v, w) 在 A、B 两组都为空。
+- 字符串列 `s`：Sum=0，Average=空，A、B 相同。
+- 打开"空白补零"后：上述空白里 Sum、Average、Weighted Average、字符串列的 Sum/Average 变 0，Max/Min 仍为空。
+- 不一致点（已记在 #81071）：全 null 数值列的 Sum 为空，而字符串列的 Sum 为 0；字符串列 Sum 为 0 而 Average 为空；开关打开后 Max/Min 不补 0。
+- 测试数据 CSV：`bug81071_point2_aggregate_edge.csv`，在 stylebi-main 会话的 scratchpad 里（需要时可复制到 datatest 侧，没有复制）。
+
+这属于 G19（函数面）里"空值/边界"的预期：**dashboard 一侧也适用**——新建 vs 验证这些值之前，要先有开发的预期，否则基线会把当前的不一致固化。
+
+
+**产品仓库单测进展（第一阶段收尾，stylebi-main 会话回报；community PR #8002，分支 `test-vsfreehand-gap-units`，最新提交 `51d373e063`；该 PR 的 build 检查还在跑、合并状态 blocked、原因未查；下面的通过数都是它回报的，我没有重跑）：**
+- **已完成：** `LayoutToolTest`（`escapeColName`）；新建 `VSLayoutToolAggregateColumnTest`（8 例）；新建 `VSTableConverterTest`（23 例：`fixTopN`、`changeTableMode` 短路与空布局、汇总/小计/总计单元格、嵌套行维度 cellName、展开列头、`mergeSpan`、fake 维度、无聚合按纯表转换）；`FormulaFunctionsTest`（`toList` 选项约 50 例）；`CalcTableScopeTest`（单行输入 3 行，以及脚本路径 vs 交叉表路径同一聚合比对：13 个聚合 × 9 组输入，105 组一致、12 组不同，已钉住）。4 个时区/语言组合（UTC/en-US、Los_Angeles/en-GB、Kolkata/de-DE、Auckland/tr-TR）下 6 个测试类共 343 例全过。
+- **没做、别当作已覆盖：** ① `perBy`×百分比四种组合（`VSTableConverter.java:431-446`）：改的是 `getAggregateRefs` 每次新建的局部副本，单元格上看不到，设计待定；② 两列/带 N 公式经 `changeTableMode`：夹具还原不了真实交叉表摘要格的命名（转换器按 `BindingTool.getFieldName` 找聚合，表头是 `Correlation(sales, qty)` 之类），试过抛空指针，是夹具问题，已撤销，只在 `getAggregateColumn` 层覆盖名字映射；③ `CalcTableScope` 聚合边界的预期值，等 #81071；④ 日期分组（`createGroupCond`、`toList` 的 `date`/`rounddate`）：周起始日、时区、`interval>1` 回退是否一致，等开发确认，`toList` 各级别已覆盖但 week 取整没写（依赖 `week.start` 配置）；⑤ 暂缓：`convertToFreehandTable`、`RuntimeCalcTableLens`（被测对象应改为 `LayoutTool.createGroupCond`）、`BaseTableService.isEmptyCell`、`ExportUtil.getColType`；⑥ 随机输入的 `toList` 不变量性质测试；⑦ `CalcTableVSAQuery` 双路径、`NamedCellRange`：在 datatest 侧做（见 §5）。
+- **本阶段开出的 Redmine bug（我读过 #81071、#81083、#81084、#81085 的标题和描述；都是函数级验证，界面没有验证，用户选择不再验证）：** **#81071** 列名反斜杠不转义（UI 已拒绝 `\` 和 `,`，低优先级）+ 聚合边界预期 + `toList("sort=desc,maxrows=2")` 显示 `3,4`（界面已确认）；**#81083** 手动排序值含 `'` `"` `(` 时 `Options()` 吞掉后面的选项（`maxrows`、`sorton`、`remainder` 等），单测对应用例 `@Disabled`；**#81084** 同一聚合脚本路径与交叉表路径结果不同（12 组，最明显：字符串列 `Mode` 脚本路径是 `-Infinity`，交叉表路径是 `a`）；**#81085** `getFieldNameByScript` 对含 `']` 的列名截断（探针验证），`hasFormulaBinding` 恒返回 true（只读代码，没有探针）。
+- **对 datatest 的直接用处：** #81084 可以由 §5 "双路径对照"直接验证：字符串列的 `Mode`/`Median`，以及全空列的 `Count`/`Average`（已加进场景 S2/S12）；#81083 的验证数据（`O'Brien`、`Say "hi"`、`"Lee (US"`，手动排序 + Top N）可以做成一个 Freehand 用例，前提是界面允许手动排序与 Top N 同用（描述里写明没查）。
+- **撤回的线索（别再用）：** 行总计 `Grand Total` 标签丢失（夹具产物，界面上不丢）；`fixTopN` 名字对不上（夹具里一致，未证实也未排除，真实 vs 里设计态与运行时表头是否不同仍是未验证的假设）。
 
 难度：低 = 纯单元；中 = 需要脚本或沙箱环境；高 = 测试入口还没确认。用例数是设计出来的数量，不是已写好的。
 
@@ -160,21 +177,24 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 | 数据源扩展（G9） | 新建 vs：cube/OLAP 源；pageAfter 分页 | 取值与分页 | 产品是否支持 Freehand over cube 未验证；pageAfter 建议放 vsexport 评估 |
 | 函数面扩展（对应 G19） | 新建 vs（3–5 个，按函数组）：统计类（average/median/mode/标准差/方差）、取值类（first/last/nthSmallest/concat）、双列类（correlation/covariance/weightedAverage）、脚本控制流（if/var/空值/除零）、跨单元格引用 `q2[...]` | 各函数在 Freehand 里的取值；与 G1 的 `executeVS`+`compareData` 同时用，期望值在单测里手算，这里只比接线 | 依赖 G1 的 TXT 基线机制；TXT 基线必须人工核对 |
 | 特殊列（对应 G20） | 新建 vs（3–4 个）：Aggregate 类型 calcfield、默认类型 calcfield，返回 string/number/date，分别作分组、汇总、明细；日期型 calcfield 分组；同样的交叉表做转换 | calcfield 在 Freehand 与转换后的取值；先聚合/后聚合时机 | 依赖 G2 的转换前后比较机制 |
+| 双路径对照（对应 G3，由原 §4 的 `CalcTableVSAQuery` 行改放这里） | 新建一组**成对** vs：同一布局，一个走快速路径，另一个在表里加一个 `BIND_FORMULA` 单元格（放在未使用的列，如公式 `1`）强制整表走脚本路径，逐格比对；底表用一个内嵌工作表（列：region、category（含 null 和空串）、year、date（含 null）、sales（含 null）、qty、name（含逗号、引号），20–30 行，有稀疏组合、重复值、全 null 的分组）；期望值用独立脚本从原始行算，不从产品输出抄。场景见下方列表 | 两条路径对同一布局算出相同的值；不一致的格记为"待确认"（以谁为准代码里没声明） | 用 `DebugCalcCrosstabCheck` 日志确认实际走了哪条（见附录命令）；**加公式格后其余单元格是否不变（列数多一列、`allCellUsed` 等）未验证**，要先做一对试探；不要用"分组改原始顺序"当开关，它会同时改变排序语义（stylebi-main 会话确认） |
+
+**双路径对照的场景（stylebi-main 会话读 `CalcTableVSAQuery.java` 得出，我核对了 :198、:1517-1527、`quickCheck` 里的 `BIND_FORMULA` 判断，其余未逐条核对）：** S1 单层分组 + Sum（基准）；S2 汇总公式 Sum/Count/Average/Max/Min/DistinctCount/NthMostFrequent（`countDistinct` 在快速路径会转成 `DistinctCount`，:1577）；S3 两层嵌套行分组；S4 行分组 + 列分组（横向展开）；S5 多个并列分组（拆成多个交叉表再拼回，`splitLayoutByColumns` :833）；S6 TopN：最内层带 Others、外层带 Others（预期回退脚本，本身验证回退）、外层不带 Others、BottomN；S7 排序升序/降序/按汇总值（原始顺序只走脚本，不做成对）；S8 日期分组 year/quarter/month/day、`interval=1` 与 `>1`（后者回退）、null 日期、`timeseries` 补零；S9 百分比（占分组/占总计、按行/按列）；S10 `fillBlankWithZero` 开关（稀疏数据）；S11 `sortOthersLast` 开关（与 TopN+Others 联用）；S12 null 分组值、空字符串分组值、含逗号和引号的分组值；S13 计算字段作聚合（:887-893）；S14 带 N 或两列公式（Correlation、NthLargest 等）；S15 合计/小计（脚本路径有，快速路径是否有对应值要看实际输出）。
+
+**快速路径的回退条件（同来源，任一不满足就静默回退脚本；`createCrosstabAssemblies` 外面还有 `catch(Exception)` 吞掉异常，也会回退，:136）：** 非明细；`quickCheck`（:2083）要求列绑定单元格只能是汇总/分组、分组排序不能是原始顺序、整表不能有公式单元格、分组展开必须是 H 或 V；同一列不能在嵌套分组里绑两次；行头与列头不能有同名分组；每个分组节点至多一个分组子节点；分组列必须在底表列选择里；TopN 带 Others 只允许最内层（:1517，我核对了）；命名分组、日期 `interval>1` 回退（:1527，我核对了）；行列头重复、聚合列与分组列同名回退；行列头都为空或没有聚合回退；`getPercentageBy==-1`（:997）和 `allCellUsed` 为 false（:1958）回退，具体条件见下。
+
+**两条回退条件的细节（stylebi-main 会话读代码补充，未运行；`getPercentageBy` 的 `-1` 判断我核对了 :2072）：**
+- `getPercentageBy` 返回 -1（:2054-2078）：遍历所有汇总格，取各自公式的百分比选项；`OF_ROW_GROUP`/`OF_ROW_GRANDTOTAL` 归为按行，其余百分比归为按列；第一个有百分比的格定方向，后面任何一个方向不同就返回 -1 并回退脚本。即**同一个表里既有行方向百分比又有列方向百分比的汇总格→回退**（交叉表只有一个 percentageBy 选项）；全都没有百分比返回 0，不回退。→ S9 要加一例"行方向与列方向百分比混用"，预期回退。
+- `allCellUsed` 为 false（:1958-2031）：只检查未被合并区域吞掉的格，文本格和明细格忽略。两类条件：① 某个分组格既不在行头树也不在列头树；② 存在 TopN 时，汇总格只在行头树而列方向有 TopN、只在列头树而行方向有 TopN、或两边都不在而任一方向有 TopN。判断依据是汇总格出现在哪棵树里，不是几何位置；`buildTree` 怎么挂汇总格没核对，所以"哪些布局会触发"要用布局实测。
+- `splitLayoutByColumns`（:827-862）：列头树根的直接子节点里有 ≥2 个分组格时触发，每个数据列克隆一份布局各自变成临时交叉表，拼回时第一个结果做基础、其余由 `mergeCrosstabs`（:433-466）把数据列**按行下标**追加。**`mergeCrosstabs` 的注释写明"假定所有交叉表行数相同"（我核对了 :431），不按分组键对齐。** 代码不保证与单个交叉表一致（未验证）；推断：若各子交叉表因 TopN 排序汇总列不同、或某数据列在某分组下全空而行集/行序不同，按下标对位会错行。→ S5 要单设一个"并列分组 + 稀疏数据 + TopN"场景，拼回结果与单个交叉表逐格比。
+- 真实链路探针的做法（stylebi-main 会话凭记忆复原，已删除、没有文件，只供设计参考，不当已验证）：`@SreeHome(importResources="/inetsoft/report/composition/EmbeddedVS1.zip")` + `RuntimeViewsheetExtension` 打开 vs，取 `ViewsheetSandbox`，用 `new CalcTableVSAssembly(vs, "Calc1")` 手搭 2×2 布局（一个分组列 + 一个 Sum 汇总），`box.getData("Calc1")` 取 `TableLens`，输出与同底表交叉表一致；约 17 秒；当时没有确认走了哪条路径，输出里没有表头行（原因没查）。
 
 每个新用例只验证"接线"，边界和语义放进第 4 节的单测。
 
-**G1 试点结果（已做，4 个用例）：** `Freehand_Spec` 的 `CM11_1_3`（带书签 `bk1`）、`bug_topN`，`FreeExecution_Spec` 的 `FNGTable1`（命名分组）、`FSTopNTotal`（TopN + 总计），都在 `exportAsPNG` 前加了 `executeVS`，断言里加了 `compareData(null)`。
-
-- 生成 18 个 TXT 基线（`-Dupdate.baseline=true`，没有写任何 PNG）。连续两次正常运行，导出的 18 个 TXT 逐字一致，且与基线相同；基线里没有异常、本机路径、主机名。4 个用例本机仍因 PNG 像素差异失败，与试点无关。
-- TXT 里能看到整页 PNG 看不到或难以审阅的内容：TopN 的 `Others ` 行（带尾随空格，对应 `LayoutTool.java:1436` 的注释，用来区分命名分组的 Others）、命名分组标签、总计行，以及书签对结果的影响（`CM11_1_3` 的 Home 是 2×6，`bk1` 是 8×3）。
-- 基线是回归基线，只对"值变了"有效。已做的人工核对：`bug_topN` 四个季度之和 108+158+139+141=546 等于总计；`FSTopNTotal/Crosstab1` 的 Grand Total 2651+10111=12762 一致。**`FSTopNTotal/Crosstab1` 的 `Total` 行：** `false` 分组显示的三个州合计 1060+494+489=2043，但 `Total` 行是 2651。看了 vs 的布局：州分组设了 TopN=3，而 `Total` 单元格的公式是 `sum(data['customer_id@reseller:$reseller'])`，只按 reseller 取数据，不受 TopN 限定的州列表约束，所以 2651 是这个单元格自己的公式决定的（包含未显示的州），不是基线把 bug 固化了。这个用例叫 "agg is none, then change to formula script rule"，用公式单元格汇总全部数据符合它的意图；如果作者认为 `Total` 应该只汇总显示出来的州，那是产品语义问题，改公式即可，基线随之更新。
-- 推广到其余用例时的注意点：有图表的 vs，`executeVS` 还会导出 `ChartN.png`/`ChartN.txt`，`compareImage(null)` 会把图表 PNG 也纳入比较而失败，应改成 `compareImage([vs 名] as String[])`（同 `VarExp_Binding_Spec` 的 Crosstab 用例）；不能用 `-Dupdate.baseline.png=true` 在本机生成图表 PNG 基线（本机渲染与 CI 不同）。
-
-**G1 推广（已做 spec，基线未提交）：** `Freehand_Spec` 与 `FreeExecution_Spec` 的其余 57 个用例用同样方式加了 `executeVS` + `compareData(null)`（`Freehand_Spec` 30 个、`FreeExecution_Spec` 27 个；含图表的 `CM11_1_1/2/4/5/6` 的 `compareImage` 改为显式文件名）。至此两个 spec 的 63 个用例都比较单元格数据（4 个试点、2 个原有的 `FSDeclaredVar`/`FSFormatNamedCell`、57 个推广）。`Convert_Spec` 没有改：`executeVS` 只会导出转换前的源表，不是 Freehand，转换后数据的比较属于 G2 的 TODO。
-
-- 推广的 57 个用例**没有提交 TXT 基线**（只提交 spec）。在这些基线补齐之前，这 57 个用例的 `compareData` 会因基线缺失而失败。
-- 已用本机运行验证过：`clean` 后用 `-Dupdate.baseline=true` 为 63 个用例生成共 230 个 TXT（含 3 个原有、18 个试点已提交的），再连续两次正常运行，两次导出的 230 个 TXT 逐字一致、与生成的基线相同；没有导出异常、没有基线缺失或多余的导出文件；TXT 里没有异常、本机路径、主机名。63 个用例的失败全部是本机 PNG 像素差异。
-- 生成基线的方法：`./mvnw clean -pl vsothers`，再 `./mvnw test -pl vsothers -Pvsfreehand -Dtest=Freehand_Spec,FreeExecution_Spec -Dupdate.baseline=true`，用 `git diff`/`git status` 审阅后提交；基线是回归基线，需要人工核对。GitHub 工作流目前没有传 `update.baseline` 的入口（`.github/workflows` 里搜不到）。
+**G1 现状（spec 已做，基线未全部提交）：** `Freehand_Spec` 与 `FreeExecution_Spec` 共 63 个用例已加 `executeVS` + `compareData(null)`（含 2 个原有先例；`Convert_Spec` 没改，转换后数据比较属于 G2）。已提交的 TXT 基线只覆盖 4 个试点用例和 2 个原有用例，其余 57 个待补，见 §6 "合并前待办"。
+- **生成基线的方法：** `./mvnw clean -pl vsothers`，再 `./mvnw test -pl vsothers -Pvsfreehand -Dtest=Freehand_Spec,FreeExecution_Spec -Dupdate.baseline=true`，用 `git diff`/`git status` 审阅后提交；基线是回归基线，必须人工核对。GitHub 工作流目前没有传 `update.baseline` 的入口。
+- **注意：** 有图表的 vs，`executeVS` 还会导出 `ChartN.png/txt`，`compareImage(null)` 会把图表 PNG 也纳入而失败，应写成 `compareImage([vs 名] as String[])`；不要在本机用 `-Dupdate.baseline.png=true` 生成图表 PNG 基线（本机渲染与 CI 不同）。
+- **已核对的一处语义（留给作者）：** `FSTopNTotal/Crosstab1` 的 `Total` 行是 2651，而显示的三个州合计 2043，因为该单元格公式 `sum(data['customer_id@reseller:$reseller'])` 不受州 TopN 限定。用例意图是"公式汇总全部数据"，若作者认为应只汇总显示的州，改公式、基线随之更新。
 
 ## 6. 局限与待确认
 
@@ -195,7 +215,14 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
      - `createCrosstabHeaders`（`:1476`）遇到以下情况回退：**TopN 带 Others 但不是最内层分组**（`:1517`）、命名分组或日期间隔大于 1（`:1527`）、列找不到；
      - 合并后中间有被跳过的列时回退（`:796`）。
      各处回退条件说明开发的意图是"只在结果一致时才走快速路径"，但代码没有把"必须等价"写成声明，也没有说不一致时以谁为准（静态推断）。
-     **datatest 现状（静态，只检查 `quickCheck` 里的单元格级三条）：** 86 个 vs 里共 182 个 CalcTable，97 个一定走脚本路径（90 个含公式脚本单元格，7 个含明细列单元格），85 个满足单元格级条件、可能走快速路径（其余树结构条件没查）。实际走了哪条没有运行确认；可以打开日志 `inetsoft.report.composition.execution.DebugCalcCrosstabCheck`，`getTableLens` 会输出 `Use N crosstab(s)…`（`:146`）。
+     **datatest 现状（静态，只检查 `quickCheck` 里的单元格级三条）：** 86 个 vs 里共 182 个 CalcTable，97 个一定走脚本路径（90 个含公式脚本单元格，7 个含明细列单元格），85 个满足单元格级条件、可能走快速路径（其余树结构条件没查）。
+     **实际运行（本机，打开 `DebugCalcCrosstabCheck` 的 DEBUG 日志，复现命令见附录；按日志里出现的 vs 资产 id 把每条 `Use … to support formula table` 归到最近的用例，属近似归属）：**
+     - `Freehand_Spec`（30 个 vs，87 个 vs×组件）：只走脚本路径 58、只走快速路径 19、**同一组件在同一用例里两条路径都走过 10**。
+     - `FreeExecution_Spec`（126 个 vs×组件）：只走脚本 110、只走快速 13、两条都走 3。
+     - 两个 spec 合计：脚本路径占绝大多数（约 79%），快速路径至少出现过的约 21%（45/213）。静态预测是 85 个"可能走快速"，实际运行里快速路径出现过的 vs×组件（Freehand + FreeExecution 45 个）低于这个数，说明单元格级条件之外的树结构条件和回退条件确实会把一部分挡回脚本路径；两者口径不同（归属近似），不直接相减。
+     - `Convert_Spec`（含转换后产生的 CalcTable）：只走脚本 26、只走快速 36、两条都走 4。
+     - **"两条路径都走过"是 G3 最直接的证据：** 同一组件在同一用例内（不同书签/选择状态或不同导出步骤）会在两条路径间切换，所以"快速路径与脚本路径结果不一致"在 datatest 里是会遇到的情形，但现有 PNG 无法区分。日志不带书签信息，哪次调用对应哪个书签未归因。
+     - 局限：vs×组件的个数 213 大于静态统计的 182 个 CalcTable，说明归属有重叠/误归（例如嵌套引用其他 vs 的日志行），数字只用于看比例，不作精确引用。
   2. **转换时清除计算器、钻取、日期比较：** 产品设计，保持；已作为允许差异记入 `vsfreehand-g2-convert-probe.md`；"测试里怎么表示"转入 TODO（该文档 §7 T5）。
   3. **TopN/Others/分组排序在脚本路径下的负责类（已查源码）：** `LayoutTool.createGroupCond`（`LayoutTool.java:1352-1440`），快速路径对应 `CalcTableVSAQuery.createCrosstabHeaders`（`:1507-1514` 把 TopN 转成 crosstab 的排名和 Others 选项）。TopN/Others 的语义因此在两处各实现一遍，这正是 G3 的等价风险所在。
 - **仍需作者确认的问题：**
@@ -204,6 +231,9 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
   1. 先做哪一类：建议先做机制层（G1、G2，不依赖开发），再做单测（G3/G4）。
   2. 4 个孤儿 vs 是补用例还是从 zip 里删除。
   3. 数据层断言的 TXT 基线由谁人工核对（基线是回归基线，生成后要有人确认值对不对）。
+- **合并前待办（在 GitHub 上处理，本评估不落实）：**
+  1. **57 个推广用例缺 TXT 基线。** 现状：`Freehand_Spec` 32 处、`FreeExecution_Spec` 31 处 `compareData`，已提交的 TXT 基线只有 10 + 11 = 21 个文件，63 个用例共需 230 个。缺基线的用例一跑 `compareData` 就失败；CI 是 `continue-on-error`/`catchError`，表现为 UNSTABLE 而不是红。处理办法：按 §5 "生成基线的方法" 的命令生成，用 `git diff`/`git status` 逐个审阅再提交；或者把 57 处推广从该 PR 拆出，只保留 4 个试点。
+  2. **CI 上 PNG 层的真实状态未知。** 本机 80 个用例全部像素不一致，所以 PNG 基线是否能在 CI 通过没验证过。查法：`gh run list --workflow test-vsothers.yml --branch Stateless-Sessions1 -L 5`，再 `gh run view <id> --log` 里搜 `diff percent` 与 `FAILED`。如果 CI 上这 80 个也失败，G1 的前提（"PNG 是现有防线"）要改写成"现有防线实际上是失效的"。
 
 ## 7. Redmine bug 对照与补充缺口
 
@@ -258,8 +288,8 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 
 | 被测类 / 场景 | 补什么 | 用例数 | 难度 | 待确认 |
 |---|---|---|---|---|
-| 单测：`LayoutTool.escapeColName` | 逐个特殊字符、引号、反斜杠、空格、中文列名的转义结果 | 10 | 低（可见性待确认） | 无 |
-| 单测：`VSLayoutTool.getAggregateColumn` | 普通聚合、已被函数包裹的聚合名（`Min(Min(ftime))` 对应的单元格值）、都不匹配时 | 4 | 低（`public static`） | 无 |
+| 单测：`LayoutTool.escapeColName` | **已写（未提交，在产品仓库 community 子模块分支 `test-vsfreehand-gap-units`）**：9 个特殊字符 `? @ { } , = ; & '` 各转义一次，另有 `YYYY, MMM D`、空格、空串、中文、双引号不转义；是私有方法，用反射访问，沿用 `LayoutToolTest` 已有写法 | 已写，`LayoutToolTest` 共 16 个 | 低 | **反斜杠 `\` 不转义**（`isSpecialMarker` 不含 `\`），列名含 `\` 时生成的脚本字符串可能出错，见 Redmine Bug #81071 第一点（**"Code reading only"，未在界面重现**）；现仅在测试里标注"当前行为、未确认"。**按低优先级：** 据 stylebi-main 会话所见，UI 在 CSV 导入时拒绝 `\` 和 `,`，重命名时看起来也拒绝，所以只有数据库真实列名、SQL 别名、Excel/JSON 字段或旧资产才可能出现（这是该会话的判断，我没有核对） |
+| 单测：`VSLayoutTool.getAggregateColumn` | **已写（同上）**：新建 `VSLayoutToolAggregateColumnTest`（该方法此前无任何测试），含 `Min(ftime)`/`Min(Min(ftime))` 保持 `Min(ftime)`（#75799）、两列公式和带 N 公式取第一列、单列公式保留逗号、`col` 为 null | 已写，8 个 | 低 | 无 |
 | 单测：`BaseTableService.isEmptyCell` | lens 或 rlens 为空时返回 true | 2 | 中（私有静态方法，走公开入口 `createCalcTableConditions` 或反射） | 无 |
 | 单测：`ExportUtil.getColType`（可选） | 调用前后 `RuntimeCalcTableLens` 的表尾行数、列数不变 | 2 | 低到中 | 无 |
 | 单测：`NamedCellRange` 的裸维度名解析（并入 §4 的 `CalcTableVSAQuery` 双路径） | 对 `CrossFilter` 底表，裸维度名解析为该维度的不同取值；子合计、总计占位元组被跳过 | 6 | 中（`getCrosstabCells` 私有） | 无 |
@@ -268,6 +298,8 @@ vsfreehand 有 82 个用例、82 个 vs，规模不小，但**几乎全靠整页
 | Dashboard：表脚本引用组件值 | 新建 vs（下拉框 + freehand + `table[0][0] = ComboBox1.selectedLabel`），书签恢复选择 | 1 个 vs | 中 | StyleBI 2.1.0 是否有对应修复 |
 | Dashboard：Show Details | `showDetailOnTable` helper 加 3 个用例 | 3 | 中到高（服务装配同 `convertToFreehandTable`） | 无 |
 | Dashboard：导出表尾行颜色 | 带表尾行颜色的表样式 + freehand，导出比对 | 1 个 vs | 中（转 vsexport） | 无 |
+
+表中 `escapeColName` 与 `getAggregateColumn` 两行的产品单测由 stylebi-main 会话完成并运行通过（`-Dtest=LayoutToolTest,VSLayoutToolAggregateColumnTest,CalcTableScopeTest`：16、8、87 个，全部通过）；我没有在本会话重跑，也没看过测试代码，只核对了 `CalcTableScopeTest` 里确有这些函数名。
 
 **更正（G4）：** §3 的 G4 和 §1 写的"转换链在产品仓库没有任何单测"需要收窄。`origin/main` 里现在有 `LayoutToolTest`（5 个用例），覆盖的是 `LayoutTool` 对嵌套日期维度的列名解析（#75747）。仍然没有单测的：`VSTableConverter`、`ComposerVSTableService.convertToFreehandTable`、`VSLayoutTool.getAggregateColumn`、`LayoutTool.escapeColName`、`LayoutTool.createGroupCond`、`CalcTableVSAQuery.createCrosstabHeaders`（按名字在 `origin/main` 的 `core/src/test` 里搜不到）。
 
@@ -288,6 +320,12 @@ python .claude/workflow-shared/datatest-gap/vs_backup_scan.py strictcheck <同�
 # 实际运行（本机 Windows）
 ./mvnw package -pl commons -DskipTests
 ./mvnw test -pl vsothers -Pvsfreehand
+
+# 查看 CalcTable 实际走快速路径还是脚本路径（测试 classpath 默认没有 SLF4J 绑定，日志是 NOP，需要临时加一个）
+# 本机 slf4j-simple 在 D:/m2-1；日志行形如 `Use 1 crosstab(s) to support formula table "X".` / `Use detail table to ...`
+./mvnw test -pl vsothers -Pvsfreehand -Dtest=Freehand_Spec \
+  -Dmaven.test.additionalClasspath=D:/m2-1/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar \
+  -Dorg.slf4j.simpleLogger.log.inetsoft.report.composition.execution.DebugCalcCrosstabCheck=debug
 ```
 
 **口径说明：**
