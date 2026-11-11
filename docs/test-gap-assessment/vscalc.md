@@ -90,7 +90,7 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 | G6 | 基线只是产品自己的输出 | 已有的错误结果被固化为基线，永远不报错 | 单测的手算期望值；新基线抽样独立核对。已有基线抽样（`aggregate_with`、`aggregate_date`）核对一致，见第 2 节 | 中 |
 | G7 | 选择类、展示类组件自身内容只有 PNG | 选择列表里计算字段的取值列表出错，但在 PNG 容差内 | dashboard：扩展基类。实际受影响的字段：`filter` 的 `max_time`、`parent-child tree` 的 `CalcField1`、`testDB2` 的 `c_date` | 中 |
 | G8 | 薄弱格子：聚合型 timeInstant/boolean、shape/text/size、condition 位置、Gauge/Text 类型、新图表类型 | 计算字段在这些位置取值或渲染出错 | dashboard：新建小 vs | 中 |
-| G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | 已核对（第 2 节）：3 个已断言（换了表头）、3 个没有绑定，真正缺的 3 个都在选择类组件上，并入 G7，不单独补 | 已并入 G7 |
+| G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | 已核对（第 2 节）：2 个已断言（`calc_date`、`edate`）、3 个没有绑定，真正缺的 3 个都在选择类组件上，并入 G7，不单独补 | 已并入 G7 |
 
 ### G1 方案：直接改 `ViewsheetTest`
 

@@ -22,6 +22,8 @@ crosscheck  spec feature -> viewsheet -> baseline folder. Reports viewsheets wit
 Semantics that were verified against product source (CalculateRef.java):
   baseOnDetail defaults to TRUE and is written ONLY when false. So an XML CalculateRef with
   no baseOnDetail attribute is DETAIL (row-level); baseOnDetail="false" is AGGREGATE.
+<ainfo> is skipped as a definition, so a Chart/Crosstab/CalcTable whose only reference to a calc
+field is inside <ainfo> is reported as "no binding".
 Limits: positions are classified from XML ancestry, name matching is textual. Treat counts as
 "present / absent", not as exact usage counts, and confirm anything surprising by hand.
 
@@ -300,6 +302,8 @@ def inventory(zpath):
     # a calc field can be used only through another calc field's expression (TopFormula =
     # Mode([BaseFormula])+10); that is a real use, not dead code
     def in_other_expr(d):
+        # heuristic: a name that only appears inside a string literal of another expression is
+        # also counted as an indirect use
         pat = re.compile(r"\[%s\]|\['%s'\]" % (re.escape(d[1]), re.escape(d[1])))
         return any(o[0] == d[0] and o[1] != d[1] and pat.search(o[5] or '') for o in defs_all)
     unbound = [d for d in defs_all if (d[0], d[1]) not in used]
