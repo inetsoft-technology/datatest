@@ -289,13 +289,29 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 - 已报 #81102（Redmine 里没有同类 bug，#61619 是数据量限制、#53227 是另一种缺列）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
 - 已报：#81095、#81096（统计公式 SQL）、#81102（旋转表重名列）。
 
-**C. 需要开发回答才能写期望值的问题**（上面表里出现的，合并在一起）
+**C. 原先认为需要开发回答的问题**（下面 E 节已从代码确认大部分，只读代码、没有向开发确认）
 
 1. 各"周"类日期级别（week of month、week of quarter、full week 系列）的定义。
 2. `AM_PM_DATE_GROUP`、`MILLISECOND_DATE_GROUP`、`AM_PM_OF_DAY_DATE_GROUP` 在 `XConstants` 里有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"，是设计如此还是没做完。
 3. ClickHouse、H2 的"不分组"日期级别没有 SQL 表达式，是遗漏吗。
 4. 旋转后第一列重名应该报错、加别名，还是合并（#81102 里我按 `fixAlias` 的本意写成加别名，开发可能另有定论）。
 5. 前面各节已列的：排名并列（ranking ties）、`NumericRangeRef` 区间边界、`DateCondition`、上传类型检测、`isQueryMergeable`。
+
+**E. 已从代码确认的答案（2026-11-11，只读代码，没有向开发确认）**
+
+C 里的问题，下面这些能从代码直接读出规则，所以**不必等开发**就能写期望值；"设计是否合理"仍是产品的判断，这里只说代码现在是什么。
+
+| 问题 | 代码里的规则 | 能否写测试 |
+|---|---|---|
+| 各"周"级别（C1） | 周按 `minimalDaysInFirstWeek = 7` 算（`JavaScriptEngine.datePart`、`DateTimeProcessor`）：每月第一个不满整周的部分属于**上个月**的最后一周。`month/quarter/year of full week` 都取"这一周的起始日（`week.start`）所在的月"，源码注释的例子：2024-01-01 的整周归 2023。`week of month` = `Calendar.WEEK_OF_MONTH`，为 0 时退到周起始日再取。`week of quarter`：季度第一个整周为第 1 周（`DateComparisonUtil.getQuarterFirstWeek`），值 = (距该周起始日的天数 + 1) / 7 向上取整。`forceDcToDateWeekOfMonth` 只在日期对比（date comparison）里用，worksheet 里为 -1 | **能**。可用 `java.time` 独立算期望，下一批补 |
+| am/pm、millisecond（C2） | 前端 `xconstants.ts` 只有常量，没有任何界面使用；Java 里只有旧的报表排序 `SortOrder`、`LayoutTool`、图表/报表常量和 viewsheet 脚本常量列表（`VSScriptableController`）用到；`DateRangeRef.getData` 不支持。结论：worksheet 里没有这些级别。剩下一问：viewsheet 脚本给范围列设这些级别时会怎样（没查） | 已用测试固定 |
+| ClickHouse、H2 没有"不分组"函数（C3） | 不是这两个库特有：`sqlhelper.xml` 25 个方言里 13 个**没有任何 `sqlfunc`**（derby embedded、cloudscape、hive、denodo、h2、dremio、snowflake、google bigquery、mongo、luciddb、exasol、databricks、clickhouse），所以所有日期级别，包括 none，都不下推（`isMergeable` 为 false）。看起来是"这些库没有配置日期函数表"，不是漏了单个级别。该范围列会让整张表因此不下推的影响没有验证 | 已固定现状 |
+| 旋转表重名（C4） | 根因已读出，见 #81102 的评论：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute(column)`，同名列被跳过，`fixAlias` 看不到。大小写不同的情况另有错位，没追到 | 已 `@Disabled` |
+| 排名并列（C5） | worksheet 排名在 `AssetQuery.getRankingTableLens` 里固定 `setEqualityKept(false)`（`AssetQuery.java:3292`），所以**恰好取 N 行**，不保留并列；`RankingTableLens` 用 `List.sort`（稳定排序），并列的行保持输入顺序，先出现的先取，top 和 bottom 一样。排名总是在内存里算（`PreAssetQuery.java:3710`）。风险：输入顺序本身不稳定时结果也不稳定，例如 #81087 | **能** |
+| `NumericRangeRef` 边界（C5） | 看 `ValueRangeInfo.inclusiveType`，默认 `LOWER`：每段 [下界, 上界)，最小值以下 `< 第一个值`，最大值以上 `>= 最后一个值`。`UPPER`：(下界, 上界]，两端 `<=` / `>`。`NONE`：每一段两端都闭，按顺序先匹配的先得，两端的"以下 / 以上"是严格的 `<` / `>`。一个值的特例：`BETWEEN v AND v`。空值落入"Others"（SQL 的 `CASE` 里）。**怀疑的不一致**：脚本版本的"最大值以上"分支没有 `!= null` 判断，`LOWER` 下最后一个值 <= 0 时 `null >= 0` 在 JS 里为真，空值会进入最后一段，SQL 版本进入 Others。没有运行验证 | **能**（SQL 和脚本表达式两个都写），怀疑那条先验证 |
+| `DateCondition` 参考日期（C5） | 不能注入。13 个子类都在方法里直接 `System.currentTimeMillis()`，`ZONE` 是静态的默认时区，周起始日读 `Tool.getFirstDayOfWeek()`。只有 `ToDateCondition` 有 `getRange(long)`，但是 private。现有的 `DateConditionTest` 也是相对"现在"取值 | 只能相对当前时间写期望（避开日界、周界、月界），或产品改成可注入 `Clock` |
+| 上传类型检测（C5） | `TextUtil.detectType` 只看文件头 8 个字节：`PK 03 04` 为 xlsx，`D0 CF 11 E0 A1 B1 1A E1` 为 xls，其余一律按分隔文本。列类型 `TextUtil.getType`：日期（`数字[.-/]数字[.-/]数字`加可选时间，按前后位数判断 yyyy-M-d 还是 M-d-yyyy/yy）、时间、整数（`Integer.parseInt`）、小数（`#,###.#`、`%`、`$`、`($..)`），其余为字符串；**没有布尔识别**（`CSVLoader` 的布尔只在类型已设成布尔时处理）。`CSVLoader` 逐行合并类型：数字类型混合变 Double，其他混合变 String，含"不适用"值的数字列变 String。`DelimitedFileReader.importHeader` 只用第一行数据判断类型 | **能** |
+| `isQueryMergeable`（C5） | `PreAssetQuery.isQueryMergeable0` 的 8 个阶段已在 3b-C 列出，规则在代码里。`XUtil.isQueryMergeable` 前半段已读：非 JDBC 查询、非 UniformSQL、解析失败、lossy、数据源为空或 Hive 未启用、`jdbc.pushdown.blacklist`（`*` 或查询名）、手写 SQL 里有 `$(@...)` 变量，都不合并；后半段没读 | **能**，哪些组合"应该合并"是产品判断，但现状可固定 |
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
 
