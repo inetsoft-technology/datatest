@@ -9,6 +9,7 @@ Read-only. Standard library only. Prints Markdown to stdout.
   python ws_scan.py crosscheck <storage.zip> <baseline-root> <Spec.groovy>...
   python ws_scan.py capability <storage.zip> <Spec.groovy>...
   python ws_scan.py flagcheck  <storage.zip>
+  python ws_scan.py dbmatrix   <storage.zip> <sqlhelper.xml> <Spec.groovy>...
 
 inventory   per table assembly: query type (the AssetQuery class that runs it), processing steps
             (pre / post / ranking conditions, group and aggregate, expression columns SQL vs script,
@@ -28,6 +29,13 @@ capability  what the PRODUCT can do (lists read from its source, with file:line)
             The lists are hard-coded (PRODUCT_REF); re-read the product before trusting a "zero".
 flagcheck   cross-check what inventory reads against the derived flags on assemblyInfo
             (hasAggregate, hasExpression, hasCondition, hasSort) and the crosstab column selection.
+dbmatrix    which SQL operations each database supports, read from the product's sqlhelper.xml
+            (core/src/main/resources/inetsoft/uql/sqlhelper.xml): operations listed as unsupported,
+            aggregate function names, date functions and what they mean per date group level; then
+            which scenarios (set operators, joins, date groups, aggregates, max rows, ...) the worksheets
+            of the CI scope put on which database. The database of a data source comes from its JDBC
+            url, a derived table (mirror, join, set operator, rotate) counts on the databases of the
+            tables it reads.
 
 Semantics verified against product source (community core, origin/main f0ef913306):
   TableAssemblyInfo.writeAttributes writes mergeable and visibleTable ONLY when false (defaults true),
@@ -45,6 +53,10 @@ Limits (check before trusting a number):
     checked through the visible tables built on them.
   * capability sees only what is written in the XML. A value passed at run time (a variable's value, the
     relative date range name InRange_Spec passes) is not visible; neither is what a script does.
+  * dbmatrix: "supported" only means "not listed as unsupported"; the overrides in code (MySQLHelper,
+    SQLServerHelper, DerbyHelper) are printed as text, and whether a query is really pushed down also
+    depends on the other branches of PreAssetQuery.isQueryMergeable0. A scenario count says a table with
+    that feature reads that database, not that the feature is what the table's result depends on.
   * crosscheck reads executeWS('<asset id>', ...) with a literal asset id; other calls
     (importCSVToEMTable, exportVSComponentData, non-literal ids) are listed as not mapped.
 """
@@ -703,6 +715,197 @@ def flagcheck(zpath):
           ['check', 'tables', 'examples'])
 
 
+# ---------------------------------------------------------------------------------------------
+# dbmatrix: which SQL operations each database supports (read from the product's sqlhelper.xml)
+# and which scenarios the worksheets of the CI scope put on which database.
+# ---------------------------------------------------------------------------------------------
+DB_COLUMNS = ['oracle', 'mysql', 'sql server', 'db2', 'informix', 'postgresql', 'derby', 'clickhouse', 'h2', 'sqlite']
+DB_SHORT = {'oracle': 'Oracle', 'mysql': 'MySQL', 'sql server': 'SQLSrv', 'db2': 'DB2', 'informix': 'Informix',
+            'postgresql': 'Postgres', 'derby': 'Derby', 'clickhouse': 'ClickH', 'h2': 'H2', 'sqlite': 'sqlite',
+            'embedded': 'embedded', '?': '?'}
+JDBC_DB = [('jdbc:oracle', 'oracle'), ('jdbc:mysql', 'mysql'), ('jdbc:db2', 'db2'), ('jdbc:sqlserver', 'sql server'),
+           ('jdbc:informix', 'informix'), ('jdbc:postgresql', 'postgresql'), ('jdbc:derby', 'derby'),
+           ('jdbc:clickhouse', 'clickhouse'), ('jdbc:h2', 'h2'), ('jdbc:sqlite', 'sqlite')]
+# supportsOperation overrides in code (uql/jdbc/*.java), not in sqlhelper.xml; read at PRODUCT_REF
+HELPER_OVERRIDES = [
+    ('MySQLHelper.java:87', 'concatenation_table: union only if the product version > 4.1, intersect / minus not; '
+                            'maxrows inside a WHERE subquery not supported'),
+    ('SQLServerHelper.java:104', 'concatenation_table: union only (intersect / minus not supported)'),
+    ('DerbyHelper.java:143-158', 'expression_groupby supported when the `expgrp` flag is on; maxrows inside a WHERE '
+                                 'subquery not supported (Bug #75322)'),
+]
+# level of a date group / range column -> the SQLHelper function it needs (uql/asset/DateRangeRef.java:1052-1131)
+DATE_LEVEL_FUNC = [
+    ('year', 'year'), ('quarter', 'quarter'), ('month', 'month'), ('week', 'week'), ('day', 'day'), ('hour', 'hour'),
+    ('minute', 'minute'), ('second', 'second'), ('quarter of year', 'quarter_part'), ('month of year', 'month_part'),
+    ('week of year', 'week_part'), ('day of month', 'day_part'), ('day of week', 'dayofweek'),
+    ('hour of day', 'hour_part'), ('minute of hour', 'minute_part'), ('second of minute', 'second_part')]
+DATE_LEVEL_NEVER = ['day of year', 'week of month', 'am/pm', 'millisecond', 'am/pm of day']
+STAT_FORMULAS = {'StandardDeviation', 'PopulationStandardDeviation', 'Variance', 'PopulationVariance',
+                 'Correlation', 'Covariance'}
+NEVER_PUSHED_FORMULAS = {'First', 'Last', 'Mode', 'Product', 'Concat', 'NthLargest', 'NthSmallest',
+                         'NthMostFrequent', 'PthPercentile'}
+
+
+def _jdbc_db(url):
+    u = (url or '').lower()
+    for prefix, db in JDBC_DB:
+        if u.startswith(prefix):
+            return db
+    return '?'
+
+
+def datasource_databases(zpath):
+    """data source name -> database type, from the JDBC url (the name can mislead: 'Access' is H2,
+    'Examples/Orders' is an embedded Derby)."""
+    z = zipfile.ZipFile(zpath)
+    bi = json.loads(z.read('blob-index.json'))
+    out = {}
+    for store, items in bi.items():
+        for key, v in items.items():
+            if (v.get('metadata') or {}).get('className', '') != 'inetsoft.uql.XDataSourceWrapper' or not v.get('digest'):
+                continue
+            d = v['digest']
+            try:
+                root = ET.fromstring(z.read('blobs/%s/%s' % (d[:2], d[2:])))
+            except ET.ParseError:
+                continue
+            for ds in root.iter('datasource'):
+                j = ds.find('ds_jdbc')
+                if j is not None and ds.get('name'):
+                    out[ds.get('name')] = (_jdbc_db(j.get('url')), j.get('url'))
+    return out
+
+
+def dbmatrix(zpath, helperxml, specs):
+    root = ET.parse(helperxml).getroot()
+    unsupported, afunc, sqlfunc, helpers = (collections.defaultdict(set), collections.defaultdict(dict),
+                                            collections.defaultdict(dict), {})
+    for e in root.iter('helper'):
+        helpers[e.get('type')] = e.get('class')
+    for e in root.iter('unsupported'):
+        unsupported[e.get('type')].add(e.get('op'))
+    for e in root.iter('aggregate'):
+        afunc[e.get('type')][e.get('function')] = e.get('name')
+    for e in root.iter('sqlfunc'):
+        sqlfunc[e.get('type')][e.get('function')] = e.get('command')
+    cols = [d for d in DB_COLUMNS if d in helpers]
+    head = ['item'] + [DB_SHORT[d] for d in cols]
+
+    print('# Database matrix: %s\n' % os.path.basename(zpath))
+    print('Read from %s (types without a <helper> entry are left out: %s). A "supported" cell only means '
+          'the operation is not listed as unsupported there; code overrides are listed below the first table.\n'
+          % (helperxml, [d for d in DB_COLUMNS if d not in helpers]))
+
+    print('### Operations listed as unsupported (X)\n')
+    ops = sorted({o for d in cols for o in unsupported[d]})
+    table([[o] + ['X' if o in unsupported[d] else '' for d in cols] for o in ops], head)
+    print('Code overrides of supportsOperation (not in the xml):\n')
+    for where, what in HELPER_OVERRIDES:
+        print('* `%s`: %s' % (where, what))
+    print()
+
+    print('### Aggregate SQL function names (- = none, the aggregate is then computed in memory or fails)\n')
+    funcs = sorted({f for d in cols for f in afunc[d]})
+    table([[f] + [afunc[d].get(f, '-') for d in cols] for f in funcs], head)
+
+    print('### Date functions defined per database, and what that means per date group level\n')
+    print('Date functions defined: %s\n' % {DB_SHORT[d]: len(sqlfunc[d]) for d in cols})
+    rows = []
+    for level, func in DATE_LEVEL_FUNC:
+        rows.append([level, func] + ['Y' if func in sqlfunc[d] else '-' for d in cols])
+    table(rows, ['level', 'function'] + [DB_SHORT[d] for d in cols])
+    print('Levels with NO SQL function on any database (always in memory): %s\n' % ', '.join(DATE_LEVEL_NEVER))
+
+    # ---- coverage: scenario x database in the CI scope ----
+    wss, dss = load_worksheets(zpath)
+    scope, skipped = _scope(wss, specs)
+    ds_db = datasource_databases(zpath)
+    print('### Data sources and their database (from the JDBC url)\n')
+    table([(n, v[0], v[1]) for n, v in sorted(ds_db.items())], ['data source', 'database', 'url'])
+
+    info = {}
+    for aid, wroot in wss.items():
+        tabs = {}
+        for cls, a in tables(wroot):
+            f = table_facts(cls, a)
+            tabs[f['name']] = (cls, a, f)
+        info[aid] = tabs
+
+    def deps(a):
+        out = [e.text for e in a.findall('tables/oneTableAssembly')]
+        t = a.find('tableAssembly')
+        if t is not None and t.text:
+            out.append(t.text)
+        mir = a.find('assemblyInfo/mirrorAssembly/mirrorAssembly/mirror')
+        if mir is not None and mir.text:
+            out.append(mir.text)
+        return out
+
+    memo = {}
+
+    def resolve(aid, name, depth=0):
+        if (aid, name) in memo:
+            return memo[(aid, name)]
+        memo[(aid, name)] = set()
+        tabs = info[aid]
+        if name not in tabs or depth > 12:
+            memo[(aid, name)] = {'?'}
+            return memo[(aid, name)]
+        cls, a, f = tabs[name]
+        if cls in ('EmbeddedTableAssembly', 'SnapshotEmbeddedTableAssembly'):
+            res = {'embedded'}
+        elif cls in ('BoundTableAssembly', 'PhysicalBoundTableAssembly', 'SQLBoundTableAssembly',
+                     'QueryBoundTableAssembly'):
+            res = {ds_db.get(f['datasource'], ('?',))[0]} if f['datasource'] else {'?'}
+        else:
+            res = set()
+            for d in deps(a):
+                res |= resolve(aid, d, depth + 1)
+            res = res or {'?'}
+        memo[(aid, name)] = res
+        return res
+
+    feat = collections.defaultdict(collections.Counter)
+    for aid in scope:
+        for name, (cls, a, f) in info[aid].items():
+            dbs = resolve(aid, name)
+            fs = {'(all tables)'}
+            for op in ('union', 'intersect', 'minus', 'full join', 'cross join', 'left join', 'right join',
+                       'inner join'):
+                if f['ops'].get(op):
+                    fs.add('operator: ' + op)
+            if any(v and (k.startswith(('>', '<')) or k == 'not-equal join') for k, v in f['ops'].items()):
+                fs.add('operator: non-equi join')
+            if f['dategroups']:
+                fs.add('date group (any level)')
+            fm = set(f['formulas'])
+            if fm & STAT_FORMULAS:
+                fs.add('aggregate: stddev / var / correl / covar')
+            if 'Median' in fm:
+                fs.add('aggregate: median')
+            if fm & NEVER_PUSHED_FORMULAS:
+                fs.add('aggregate: never pushed down (first, last, mode, ...)')
+            if fm - STAT_FORMULAS - NEVER_PUSHED_FORMULAS - {'Median', 'none'}:
+                fs.add('aggregate: other (sum, count, max, avg, ...)')
+            for step in ('max rows', 'distinct', 'ranking', 'sort', 'expression (SQL)', 'pre condition',
+                         'post condition', 'mergeable=false'):
+                if step in f['steps']:
+                    fs.add('step: ' + step)
+            if f['exprs'].get('DateRangeRef'):
+                fs.add('range column: DateRangeRef')
+            if f['exprs'].get('NumericRangeRef'):
+                fs.add('range column: NumericRangeRef')
+            for ft in fs:
+                for d in dbs:
+                    feat[ft][d] += 1
+    used = [d for d in DB_COLUMNS + ['embedded', '?'] if any(feat[x][d] for x in feat)]
+    print('### Scenarios per database, CI scope (tables of the %d worksheets; a derived table counts on the '
+          'database(s) of the tables it reads; hidden tables included)\n' % len(scope))
+    table([[ft] + [feat[ft][d] if feat[ft][d] else '' for d in used] for ft in sorted(feat)],
+          ['scenario'] + [DB_SHORT[d] for d in used])
+
+
 def main(argv):
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -716,6 +919,8 @@ def main(argv):
         capability(argv[2], argv[3:])
     elif len(argv) == 3 and argv[1] == 'flagcheck':
         flagcheck(argv[2])
+    elif len(argv) >= 5 and argv[1] == 'dbmatrix':
+        dbmatrix(argv[2], argv[3], argv[4:])
     else:
         print(__doc__)
         return 2

@@ -10,7 +10,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - 断言基类 `WorksheetTest` 吞掉异常、只比实际导出的文件，[#203](https://github.com/inetsoft-technology/datatest/pull/203) 只改了 `ViewsheetTest`，没有覆盖它。本机实际运行：98 个用例里 90 个"通过"，其中 46 个什么都没导出（`WSBuildServer_Spec` 40 个：worksheet 不在 zip 里；上传用例 6 个：基类第 214 行空指针），真正比对了数据的只有 44 个。**已处理（分支 `datatest-ws-strict`，待合并）：** `WorksheetTest` 改为严格模式；上传用例的根因是测试 Spring 配置把 `ImportCSVDialogServiceProxy`、`FileSystemService` 换成了 Mockito mock（预览返回空结果、缓存文件为 null），已改为真实对象；`WSProperty_Spec` 里 5 处 `中文` 被写成乱码（`涓枃`），按乱码找不到 sheet，已改正；`WSBuildServer_Spec` 连同 302 个基线已删除；3 个陈旧基线已删除。
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
-- 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、Derby 2；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
+- 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
 - 产品单测：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。13.8 已有可移植的 lens 测试（4 个测试类、70 个）。
 
 已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线。接下来：移植 13.8 的 lens 测试，补 unpivot、date in、上传、合并判断的单测，再做各库 SQL 差异（G11）。
@@ -42,7 +42,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - 条件运算符：前置 equal 25、greater 24、one of 18、less 16、null 12、between 8、contains 5、starting with 2、like 1；后置共 15；排名 top 9、bottom 4。**表条件里的 date in 在 CI 范围内为 0**（只出现在 `InRange_Spec` 的 worksheet 里）。表条件之外另有 4 个 date in 条件，分布在 3 个 assembly：命名分组 `Date` 里 2 个，日期范围 `NG_SR`、`NG_FR` 里各 1 个（都在 `postprocess` worksheet，由 CI 范围内的 `DataComposition_Spec` 运行）；它们是否被表应用未核实，明细见功能面差集。`ws_scan.py` 只读表上的条件，不读命名分组和日期范围。
 - 聚合公式 24 种，Sum 59、Count 13、Max 12，其余多为 1～2 次；日期分组 16 个级别；范围列 DateRangeRef 139、NumericRangeRef 18；表达式列 SQL 113、脚本 82。
 - 数据源（表数）：Oracle 122、MySQL 41、mvtest 27、DB2 21、Examples/Orders 18、SQL Server 12、Informix 9、sqlite 5、PostgreSQL 5、Access 3、securityTest 3、Derby 2；ClickHouse 用例被 `@Ignore`。
-- CI 的数据库：`gcp-db-server-iac` 用 Docker Compose 启动 8 个库：MySQL 8.0.12、PostgreSQL 11、SQL Server 2017、DB2 10.5、Oracle XE 11g、Informix 14.10、Derby 10.15、ClickHouse 22.1；`test-ws.yml` 测试前执行 `ensure-db-server`。ws 的服务器类数据源正好是这 8 个，Access、sqlite、mvtest、Examples/Orders、securityTest 是本地库。CI 范围内绑这 8 个库的表共 212 张（Oracle 122、MySQL 41、DB2 21、SQL Server 12、Informix 9、PostgreSQL 5、Derby 2、ClickHouse 0）；逻辑模型查询只落在 Oracle、MySQL、DB2 三个库，其余库只有物理表或手写 SQL。来自 `ws_scan.py inventory` 的 Bound sources。
+- CI 的数据库：`gcp-db-server-iac` 用 Docker Compose 启动 8 个库：MySQL 8.0.12、PostgreSQL 11、SQL Server 2017、DB2 10.5、Oracle XE 11g、Informix 14.10、Derby 10.15、ClickHouse 22.1；`test-ws.yml` 测试前执行 `ensure-db-server`。ws 的服务器类数据源正好是这 8 个，Access、sqlite、mvtest、Examples/Orders、securityTest 是本地库，数据库类型以 JDBC 地址为准：`Examples/Orders` 是嵌入式 Derby（`jdbc:derby:classpath:orders_133`），`Access`、`mvtest`、`securityTest` 三个数据源都是 H2（`Access` 只是名字），sqlite 是 sqlite。CI 范围内绑这 8 个库的表共 212 张（Oracle 122、MySQL 41、DB2 21、SQL Server 12、Informix 9、PostgreSQL 5、Derby 2、ClickHouse 0）；逻辑模型查询只落在 Oracle、MySQL、DB2 三个库，其余库只有物理表或手写 SQL。来自 `ws_scan.py inventory` 的 Bound sources。
 - 执行路径：只能静态看到 `mergeable=false`（用户关掉合并）7 张表；查询实际是否下推到 SQL 由运行时决定，**没有任何用例断言它**（见 G5）。
 - 取数方式：全部 58 个用例都是 `LIVE_MODE`（`WorksheetTest.executeWS`、`importCSVToEMTable`），`RUNTIME_MODE` 为 0（见 G6）。
 - 业务设计表对照：`Worksheet Auto.xlsx` 中写了"ws->表"的行，176 行对应的表被运行并导出；17 行的 worksheet 不在 zip（如 `DataBaseQuery->leftJoin`），13 行的表名在 worksheet 里找不到（如 `range&formula->product1` 9 行），1 行是隐藏表。
@@ -126,9 +126,9 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | 聚合公式 | `:3498`：百分比聚合 | 不可合并 | 只在 viewsheet 路径 | 无 |
 | 聚合公式 | `:3516`-`:3524`：`MODE`、`FIRST`、`LAST`、`PRODUCT`、`CONCAT`、`NTH_LARGEST`、`NTH_SMALLEST`、`NTH_MOST_FREQUENT`、`PTH_PERCENTILE` | 任何库都不下推 | First 8、Last 2、Mode 1、Product 1、Concat 1、NthLargest 1、NthSmallest 1、NthMostFrequent 1、PthPercentile 1；是否绑在库表上未核对 | 部分 |
 | 聚合公式 | `:3529`：`MEDIAN` 取决于库（`XUtil.supportMedian`） | 因库而异 | Median 1，在哪个库未核对 | 部分 |
-| 聚合公式 | `:3534`：Derby 上对整数列 `AVG` | 不可合并 | Derby 在 CI 范围 2 张表，该组合未核对 | 未验证 |
+| 聚合公式 | `:3534`：Derby 上对整数列 `AVG` | 不可合并 | Derby 在 CI 范围：服务器 2 张绑定表、嵌入式 `Examples/Orders` 18 张，该组合未核对 | 未验证 |
 | 聚合公式 | `:3541`：其余公式按 `helper.supportsOperation(公式名)` 逐库判断 | 因库而异 | Sum、Count、Max、Min、Average 等；Variance、StandardDeviation、Correlation、Covariance、WeightedAverage 等在哪些库下推未核对（G11） | 未验证 |
-| order by | `:3621`：库的 group 输出无序（H2） | 不可合并 | H2 是本地库（mvtest、Examples/Orders） | 部分 |
+| order by | `:3621`：库的 group 输出无序（H2） | 不可合并 | H2 是本地库（`mvtest`、`securityTest`，以及名为 `Access` 的数据源） | 部分 |
 | order by | `:3628`、`:3653`：库不支持 distinct + order by、聚合列 order by | 不可合并，因库而异 | 各库未核对 | 未验证 |
 | order by | `:3641`：聚合含 `FIRST` / `LAST` 且有排序 | 不可合并 | First 8、Last 2，是否带排序未核对 | 未验证 |
 | order by | `:3690`：隐藏列上的无括号函数关键字排序（#78489） | 不可合并 | 无对应资产 | 无 |
@@ -143,6 +143,62 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 合计 35 个分支：有 4、部分 7、无 5、未验证 19。**已验证覆盖的主要是"恒不可合并"的路径**（嵌入表、脚本表达式列、排名、用户关闭合并）；
 因库而异的判断（`supportsOperation`、日期分组函数、`MEDIAN`、范围列）和各种组合条件基本没有核对，对应 G11 和 G5。
 
+**各库 SQL 支持矩阵（3b-C 续，G11）：**
+
+来源：产品 `community/core/src/main/resources/inetsoft/uql/sqlhelper.xml` 的 `unsupported`、`aggregate`、`sqlfunc` 节点，加上三个库在代码里的覆盖（`MySQLHelper.java:87`、`SQLServerHelper.java:104`、`DerbyHelper.java:143-158`）；由 `ws_scan.py dbmatrix` 生成。
+✓ 的意思是"没有被列为不支持"，不是"实际验证过会下推"。`sqlite` 在 `sqlhelper.xml` 里没有条目，不在表中。
+
+| 能力（`SQLHelper` 操作名） | Oracle | MySQL | SQL Server | DB2 | Informix | PostgreSQL | Derby | ClickHouse | H2 |
+|---|---|---|---|---|---|---|---|---|---|
+| union 下推 | ✓ | ✓（版本 > 4.1） | ✓ | ✓ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| intersect、minus 下推 | ✓ | ✗ | ✗ | ✓（要求各子查询列名一致，`ConcatenatedQuery.java:402`） | ✗ | ✓ | ✗ | ✓ | ✓ |
+| full outer join | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ |
+| `maxrows`（行数上限写进 SQL） | ✓ | ✓（WHERE 子查询里除外） | ✓ | ✓ | ✗ | ✓ | ✓（WHERE 子查询里除外） | ✗ | ✗ |
+| FROM 子查询 | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| 表达式 group by（`expression_groupby`） | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✗（`expgrp` 打开时除外） | ✓ | ✓ |
+| 表达式列 group by（`expression_column_groupby`） | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| 聚合列、隐藏列 order by | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| 多个 distinct | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |
+| `correlation`、`covariance` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| stddev、var 的 SQL 函数名 | ✓ | ✓ | ✓ | – | – | – | – | – | – |
+| correl、covar 的 SQL 函数名 | ✓ | – | – | ✓ | – | – | – | – | – |
+| 日期函数个数（0 表示日期分组全在内存） | 22 | 25 | 22 | 30 | 9 | 24 | 9 | 0 | 0 |
+
+- "–" 表示 `sqlhelper.xml` 里没有该函数名；`AggregateHelper.getAggregateExpression` 对这种情况返回 null，注释写明"数据库不支持该聚合函数"，但 `isAggregateMergeable`（`PreAssetQuery.java:3541`）只检查 `supportsOperation(公式名)`，两层怎么衔接没有读。
+- 日期分组级别对应的函数在 `DateRangeRef.java:1052-1131`：year、quarter、month、week、day、hour、minute、second 以及 `*_part`、`dayofweek` 各用同名函数；`day of year`、`week of month`、`am/pm`、`millisecond`、`am/pm of day` 在**任何库**都没有 SQL 函数，只在内存里算，所以它们不存在跨库差异，只需要一条路径。Informix 和 Derby 只有 9 个函数，没有 week、hour、minute、second 等级别。
+- 日期分组的 `week` 在用户区域的一周起始日不是周日且设置了 `user.locale.weekGrouping` 时也不下推（`DateRangeRef.java:1040-1048`）。
+
+**现有覆盖对照**（CI 范围，`dbmatrix` 的"场景 × 库"表；派生表算在它读取的库上，含隐藏表，数字是表数）：
+
+- 集合运算：union 落在 Oracle 5、DB2 1、H2 4；intersect 只在 H2 3；minus 在 Oracle 2、PostgreSQL 1、H2 3。**MySQL、SQL Server 的 union 是 0，Oracle、DB2、PostgreSQL 的 intersect 是 0，不下推的库（MySQL、SQL Server、Informix、Derby）上 intersect、minus 的内存回退路径也是 0。**
+- full outer join：Oracle 2、SQL Server 1（支持下推）；MySQL 1、H2 2（不支持，走内存）；DB2、PostgreSQL、Informix、Derby 为 0。
+- 统计类聚合（stddev、var、correl、covar）：MySQL 1、Derby 1、H2 2；**Oracle、SQL Server 这两个有函数名映射的库是 0**，DB2 的 correl、covar 也是 0。
+- 日期分组：MySQL 15、DB2 4、Oracle 3、Derby 1、H2 4、sqlite 2；**SQL Server、PostgreSQL、Informix 是 0**。日期范围列 `DateRangeRef`：SQL Server、Informix、PostgreSQL 各 1 张。
+- max rows：Oracle 3、MySQL 1、Derby 6；**Informix、H2（不支持 maxrows，走内存）是 0，DB2、SQL Server、PostgreSQL 也是 0**。
+- distinct：Oracle 12、MySQL 5、Derby 1、H2 1；DB2、SQL Server、PostgreSQL、Informix 是 0。
+- 规模（表数，含派生表和隐藏表）：Oracle 166、MySQL 79、H2 68、Derby 30（含嵌入式 `Examples/Orders`）、DB2 29、SQL Server 17、Informix 11、PostgreSQL 8、sqlite 6、嵌入表 89；ClickHouse 为 0（`@Ignore`）。**SQL Server、Informix、PostgreSQL 的覆盖都很薄。**
+
+**对 G11 选代表场景的含义：** 同一场景在不同库上走不同路径的，才值得跨库各跑一遍。
+1. 集合运算：全部下推的库（Oracle、PostgreSQL）、只有 union 下推的库（MySQL、SQL Server）、都不下推的库（Informix、Derby）各取一个 union 和一个 minus。
+2. full outer join：内存回退的库（MySQL、Derby、H2）对下推的库（Oracle、SQL Server、DB2、PostgreSQL）。
+3. 统计聚合：有函数名的库（Oracle、MySQL、SQL Server）对没有的库（DB2、PostgreSQL 等）。
+4. 日期分组：补上 SQL Server、PostgreSQL；再对 Informix、Derby（缺 week、hour 等级别）和没有任何日期函数的 ClickHouse、H2 各取一个。
+5. max rows：支持的库对 Informix、ClickHouse、H2。
+
+**LIVE 模式的边界**（决定先只用 `LIVE_MODE`，G6 暂缓；以下是 LIVE 下测试结果的前提）：
+
+- 输入：每个明细表最多取 `asset.sample.maxrows` = 50000 行（`AssetQuery.java:3957`-`3975`，`defaults.properties:25`）；RUNTIME 模式没有这一项。
+- 输出：最多 `query.preview.maxrow` = 5000 行（`PreAssetQuery.java:1162`-`1170`，`Util.java:2897`，`defaults.properties:154`）；RUNTIME 用 `query.runtime.maxrow`，默认 0（不限）。测试主目录没有覆盖这几个属性。
+- 568 个基线里有 9 个恰好是 5000 个数据行，即被预览上限截断：`property_crossJoin.maxCellCount` 的 `TestData`、`Query1`，另外 7 个是 `@Ignore` 的 `specialChar`。截断时留下哪些行取决于输入的原始行序。
+- 其他 LIVE 与 RUNTIME 的差异：聚合信息和后置条件（LIVE 只在表标了 aggregate 时使用，`PreAssetQuery.java:3209`、`3258`；`WorksheetTest.setLiveData` 用 `setAggregate` 对齐）；行数上限的来源（LIVE 用 `getMaxDisplayRows`，`:1227`-`1247`）；公共列选择（`AssetQuerySandbox.java:117`-`121`）；SQL 表达式失败（非 RUNTIME 抛异常，RUNTIME 吞掉，`AssetQuery.java:4018`-`4021`）；超时（设计时 2 分钟，运行时 20 分钟，`AssetQuery.java:843`-`866`）。
+
+**G5 记录下推的做法（LIVE 模式下）：**
+
+- 入口：对表的克隆调用 `AssetQuery.createAssetQuery(table, LIVE_MODE, box, false, -1L, true, true)`（`ShowPlanService.java:44` 做的是同样的调用，但固定 `RUNTIME_MODE`），再取 `isQueryMergeable(false)`（`PreAssetQuery.java:2992`）和 `getQueryPlan()`。测试配置里没有 ShowPlan，不需要 Spring。
+- 计划里有生成的 SQL（`PreAssetQuery.java:3787`-`3792`）、可合并标记（`:3794`），以及 distinct、表达式、where、group by、having 各自是否下推的标记。
+- 限制：源不可合并或不偏好合并时 `getQueryPlan()` 返回 null（`:3774`-`3780`），所以先记 `isQueryMergeable(false)` 的布尔值；计划模式用原始别名（`:3785`），SQL 文本和实际执行的别名不同；`getQueryPlan()` 有副作用（`setPlan(true)`、`merge(vars)`），要在克隆上调用。
+- 建议先把"布尔值 + 各下推标记行"纳入基线，SQL 文本之后再加；别名和变量串是否稳定没有核对。
+
 ## 3. 缺口与方向
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
@@ -152,12 +208,12 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | G3 | 上传用例 6 个假通过；上传服务、`TextUtil.detectType` 无单测 | CSV/Excel 导入的列类型识别、分隔符、首行表头、unpivot 出错 | 机制（同 G1）+ 单测。**假通过已处理（待合并）**，根因是测试配置里的 mock 和 spec 里的乱码；单测未做 | 高 |
 | G4 | 表上的 date in 条件在 CI 上 0 覆盖（表条件之外的 4 个 date in 条件在命名分组和日期范围里，见覆盖情况）：`InRange_Spec` 在 Linux 跳过，只能在保存了管理员凭据的 Windows 上改系统时间运行；单测只覆盖本年/上年、本月、本周、本季度 | "年初至今""最近 N 个月/天""第 N 季度"等相对日期范围算错 | 单测（固定参考日期，期望值手算）；dashboard 不再改操作系统时间 | 高 |
 | G5 | 执行路径未验证：`checkMergeable` 用例只比数据；`PreAssetQuery.isQueryMergeable` 无单测 | 本应下推的查询退化到内存（性能问题），或下推与内存两条路径结果不一致（null 排序、字符串比较、日期分组） | 单测（合并规则）+ 基类记录合并结果（入口见第 5 节，分支清单见 3b-C） | 中 |
-| G6 | 只用 `LIVE_MODE`，从未走 `RUNTIME_MODE` | 只在运行时出现的错误：viewsheet/MV 读 worksheet 的结果、`runtimeSelected`、预览输入行数上限（`asset.sample.maxrows=50000`，`AssetQuery.java:3957`）以外的行为 | 机制：基类支持 `RUNTIME_MODE`，按查询类型各选代表用例 | 中 |
+| G6 | 只用 `LIVE_MODE`，从未走 `RUNTIME_MODE` | 只在运行时出现的错误：viewsheet/MV 读 worksheet 的结果、`runtimeSelected`、预览输入行数上限（`asset.sample.maxrows=50000`，`AssetQuery.java:3957`）以外的行为 | 机制：基类支持 `RUNTIME_MODE`，按查询类型各选代表用例。**暂缓：决定先只用 `LIVE_MODE`**，LIVE 模式的边界见 3b-C 续 | 低 |
 | G7 | lens 取值无单测：rotate、unpivot 完全没有；intersect、minus、cross join、max rows 只有序列化；full outer join 没有；非等值 join 只测取消；排名 lens 没有取值测试 | 这些操作的结果行、表头、null 处理出错，只有 datatest 回归基线可能发现 | 单测：先移植 13.8，再补缺 | 高 |
 | G8 | 薄弱格子：`>=` join、表上的 date in 在 CI 范围为 0；LIKE 1、starting with 2；Rotated/Unpivot/Concatenated 几乎没有后置条件；ClickHouse 被忽略 | 这些组合下的接线出错 | dashboard：新建小 worksheet（tester 衡量） | 中 |
 | G9 | 49 个 worksheet 没有用例运行 | 若是有意准备的场景，则对应能力未验证 | 核对后补用例或删除 | 低 |
 | G10 | 3 个陈旧基线（`CM1_3`、`CM1_5`、`Report/top1.txt`） | 让人误以为这些对象被验证过 | 随 G1 清理。**已处理（待合并）：** 删除 `CM1_3`、`CM1_5`、`Report/top1.txt` | 低 |
-| G11 | 各库 SQL 差异未区分：绑库的表 Oracle 占 122/212，ClickHouse 为 0，PostgreSQL 5、Derby 2；产品单测里引用各库方言类（`OracleSQLHelper`、`MySQLHelper`、`SQLServerHelper`、`DB2SQLHelper`、`InformixSQLHelper`、`PostgreSQLHelper`、`DerbyHelper`、`ClickhouseHelper`）的测试，多是别名、引号、like 大小写、嵌套派生表，日期分组、top N / max rows、集合运算、统计函数的各库生成未见专门测试 | 同一个 worksheet 在某个库上生成错误或不支持的 SQL（日期部分函数、`LIMIT`/`ROWNUM`/`TOP`、minus/intersect/full join、null 排序、字符串比较与大小写），换个库正常；下推与内存两条路径的结果不一致（G5）也会因库而异 | 单测：固定一组查询，断言各库生成的 SQL；dashboard：按"场景 × 库"为每类选代表 worksheet，在 8 个库各跑一遍（需先有 G5 的"是否下推"记录） | 中 |
+| G11 | 各库 SQL 差异未区分：绑库的表 Oracle 占 122/212，ClickHouse 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；产品单测里引用各库方言类（`OracleSQLHelper`、`MySQLHelper`、`SQLServerHelper`、`DB2SQLHelper`、`InformixSQLHelper`、`PostgreSQLHelper`、`DerbyHelper`、`ClickhouseHelper`）的测试，多是别名、引号、like 大小写、嵌套派生表，日期分组、top N / max rows、集合运算、统计函数的各库生成未见专门测试 | 同一个 worksheet 在某个库上生成错误或不支持的 SQL（日期部分函数、`LIMIT`/`ROWNUM`/`TOP`、minus/intersect/full join、null 排序、字符串比较与大小写），换个库正常；下推与内存两条路径的结果不一致（G5）也会因库而异 | 单测：固定一组查询，断言各库生成的 SQL；dashboard：按"场景 × 库"为每类选代表 worksheet，在 8 个库各跑一遍（需先有 G5 的"是否下推"记录）；支持矩阵和现有覆盖见 3b-C 续 | 中 |
 | G12 | 功能面零覆盖：产品能力清单里 CI 范围 worksheet 零使用的项（日期分组 5/21、聚合公式 3/27、变量数据类型 8/13、列引用 `NamedRangeRef`、`>=` join、4 个表类、3 个非表 assembly、5 个配置项、上传的固定宽度文本与 xlsb），明细见"功能面差集" | 这些能力出错，没有任何用例会发现 | 能手算期望值的 → 单测（日期分组、聚合公式、相对日期、上传）；接线 → dashboard 小 worksheet；表类、命名分组的用法先向开发确认 | 中 |
 | G13 | 已知 bug 的根因类别在 datatest 里没有验证：重命名与依赖传播、提示信息（子查询警告）、快照导出导入、JVM 区域（Excel 日期）、Long 变量、脚本表达式的几种写法（函数同名、`new Date(field[…])`、引用其他数据块）；近一年 Worksheet Execution 分类的 Bug 118 条，27 条与数据结果直接相关，见第 7 节 | 同类 bug 复发时没有用例会发现 | 能手算期望值的 → 单测；接线 → dashboard 小 worksheet；重命名、快照、提示信息需要先有机制（重命名与导入导出的调用、警告的断言） | 中 |
 
@@ -197,8 +253,8 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `WSBuildServer_Spec`（G2） | 二选一：补回 `BuildServer` 资产并去掉 Linux 跳过；或删除 spec 与 302 个基线 | 客户场景回归 | **已决定删除并处理（待合并）**；日后找到资产再补回 |
 | 上传（G3） | 修好基类后重跑 6 个用例，确认导出与基线一致 | 上传接线 | **已完成（待合并）：** 根因是测试配置的 mock 和 spec 里的乱码，重跑后 6 个用例都与基线一致 |
 | date in（G4） | 语义放单测；dashboard 留 1～2 个代表用例，不再依赖改操作系统时间 | 条件接线 | 产品是否支持测试用的参考日期（待开发确认） |
-| 执行路径（G5） | 基类记录每张表是否合并（或生成的 SQL）并纳入基线，先用于 `checkMergeable` 用例 | 下推与否的回归 | 入口：`AssetQuery.createAssetQuery(table, mode, box, false, -1L, true, true)` 后取 `isQueryMergeable(false)`（`PreAssetQuery.java:2992`，public）和 `getQueryPlan()`（`ShowPlanService.java:44` 做的就是这个调用）；测试配置里没有 ShowPlan，但 `WorksheetTest` 已有沙箱和表，可直接调用；计划节点里有没有 SQL 未核对 |
-| 运行时取数（G6） | 基类支持 `RUNTIME_MODE`，每种查询类型选 1 个代表 worksheet | viewsheet/MV 实际取数路径 | 无 |
+| 执行路径（G5） | 基类记录每张表是否合并（或生成的 SQL）并纳入基线，先用于 `checkMergeable` 用例 | 下推与否的回归 | 入口：`AssetQuery.createAssetQuery(table, mode, box, false, -1L, true, true)` 后取 `isQueryMergeable(false)`（`PreAssetQuery.java:2992`，public）和 `getQueryPlan()`（`ShowPlanService.java:44` 做的就是这个调用）；测试配置里没有 ShowPlan，但 `WorksheetTest` 已有沙箱和表，可直接调用；计划节点里有生成的 SQL 和下推标记（`PreAssetQuery.java:3787`-`3850`），但源不可合并时返回 null、计划模式用原始别名所以 SQL 与实际执行的别名不同；`ShowPlanService` 固定用 `RUNTIME_MODE`，测试应按实际执行的 `LIVE_MODE` 调用 |
+| 运行时取数（G6） | 基类支持 `RUNTIME_MODE`，每种查询类型选 1 个代表 worksheet | viewsheet/MV 实际取数路径 | 暂缓：决定先只用 `LIVE_MODE` |
 | 薄弱格子（G8） | 新建小 worksheet：`>=` join、date in、LIKE/starting with、Rotated/Unpivot/Concatenated 上的后置条件、ClickHouse | 这些组合的接线 | tester 衡量做哪些 |
 | 各库差异（G11） | 为这几类各选 1 个代表场景：日期分组、top N / max rows、minus/intersect/full join、统计函数、null 排序；同一场景在 8 个库各建一个小 worksheet（用各库自己的表），基线按库分开；先用 G5 的"是否下推"记录确认走的是哪条路径 | 各库方言生成与取数结果 | G5 的机制；各库造数方式（待定）；ClickHouse 用例目前 `@Ignore`，先确认原因 |
 | 功能面零覆盖（G12） | 新建小 worksheet：日期范围镜像与可复用条件 assembly、变量样式 `DATE_COMBOBOX` 与未覆盖的数据类型、命名分组作列引用（`NamedRangeRef`）、未设置的配置项（用 `initHome` 的 properties 参数）；表类 Cube/Data/QueryBound/Tabular 先确认是否可创建 | 这些能力的接线 | tester 衡量做哪些；表类待开发确认 |
@@ -212,7 +268,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 1. `DateCondition` 能否注入参考日期（时区、周起始日规则一并确认）？否则 date in 只能靠改系统时间测试。
 2. worksheet 层的合并规则：哪些条件、聚合、表达式、数据类型组合应当下推到 SQL。
 3. 上传的日期、布尔类型识别规则；`NumericRangeRef` 区间边界；排名并列规则。
-4. 各库方言：日期分组、top N / max rows、集合运算、统计函数在每个库上应当生成什么 SQL；哪些组合在某个库不支持、应当退回内存计算（例如 MySQL 8.0.12 是否下推 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN`）。
+4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。待确认：`AggregateHelper.getAggregateExpression` 返回 null（DB2 的 stddev/var，PostgreSQL、Informix、Derby、ClickHouse、H2 的统计函数）时是否一定退回内存；各库生成的 SQL 有没有预期文本可对照。
 
 **需要用户决定：**
 - 严格模式后数据库不可用也会让 CI 变红（以前异常被吞掉）：`ensure-db-server` 的等待和重试是否足够。
@@ -225,7 +281,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 - 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec` 和 `checkMergeable CM1`。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
-- 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）和各库 `SQLHelper.supportsOperation` 的实现没有读，所以"各库支持什么"只能列出判断点，不能列出结果。
+- 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）没有读。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
 - 49 个未运行的 worksheet 是否被其他 worksheet 引用为来源，未核对。
 - 13.8 测试移植到 StyleBI 的兼容性未逐个核对，用例数按 13.8 的测试数计。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 的差别只确认了预览输入行数上限一项。
@@ -297,6 +353,7 @@ python .claude/workflow-shared/datatest-gap/ws_scan.py inventory ws/src/test/res
 python .claude/workflow-shared/datatest-gap/ws_scan.py inventory ws/src/test/resources/config/wsStorage.zip ws/src/test/groovy/inetsoft/test/worksheet/cases/*_Spec.groovy
 python .claude/workflow-shared/datatest-gap/ws_scan.py capability ws/src/test/resources/config/wsStorage.zip ws/src/test/groovy/inetsoft/test/worksheet/cases/*_Spec.groovy
 python .claude/workflow-shared/datatest-gap/ws_scan.py flagcheck ws/src/test/resources/config/wsStorage.zip
+python .claude/workflow-shared/datatest-gap/ws_scan.py dbmatrix ws/src/test/resources/config/wsStorage.zip <产品仓库>/community/core/src/main/resources/inetsoft/uql/sqlhelper.xml ws/src/test/groovy/inetsoft/test/worksheet/cases/*_Spec.groovy
 python .claude/workflow-shared/datatest-gap/ws_scan.py crosscheck ws/src/test/resources/config/wsStorage.zip ws/src/test/resources/expectData ws/src/test/groovy/inetsoft/test/worksheet/cases/*_Spec.groovy
 ./mvnw package -pl commons -DskipTests && ./mvnw test -pl ws
 # 更新基线：加 -Dupdate.baseline=true（导出文件写回 ws/src/test/resources/expectData，不比对）
