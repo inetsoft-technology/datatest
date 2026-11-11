@@ -249,6 +249,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 **新写进展（2026-11-11，同一分支）：** 各库方言批次 3 个类已提交：`DateRangeRefDialectTest`（38，16 个日期级别 × 各库是否下推，并在 Derby 上执行对照 java.time）、`AggregateFormulaStatSqlTest`（41，3 个 `@Disabled`）、`SQLHelperOperationSupportTest`（13，`sqlhelper.xml` 与代码覆盖的支持矩阵）。同批次新增：`DateRangeRefLevelValuesTest`（5，19 个级别取值对照 java.time）、`DateLevelSummaryTest`（5，分组求和）。过程中确认：`SummaryFilter2` 只合并相邻行，输入必须先按分组列排序（`AssetQuery` 已排）；`week of year` 是"含 1 月 1 日的周为第 1 周"，12 月末可能落入下一年第 1 周。未覆盖：`week of month`、`week of quarter`、`*_FULL_WEEK` 系列（周的定义要开发确认）。
 **统计公式 SQL 缺陷已报：** #81095（协方差/相关系数只有一列为 NULL 时算错）、#81096（单行相关系数除零）。
+**unpivot（同一分支）：** `AssetUtilUnpivotTest`（14，`AssetUtil.unpivot` 的列名、类型、行序、null、列数越界、重名）、`UnpivotQueryTest`（3，worksheet 里执行 unpivot 并改列类型）。要点：保留的表头列的值保持原类型，只有列名转成文本；空白表头列用 `Column [n]`；度量列类型不同且都是数字时变 Double，否则变文本（小数按 `0.00##`）；跑 worksheet 测试要 `setActive(true)` 后 `refreshColumnSelection`，否则列为空。
 
 | 测试类 | 来源 | 个数 | 跳过 |
 |---|---|---|---|
