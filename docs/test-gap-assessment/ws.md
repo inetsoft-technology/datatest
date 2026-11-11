@@ -66,7 +66,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 | 跳过 4 | `specialChar`、`clickhouse`、`ws group case check`、`customer bugs` | `@Ignore` |
 
   真正比对了数据的用例 44 个（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 2）；873 个基线文件中 388 个本次没有被比对。没有"导出了但没有基线"的文件。
-- **处理后**（2026-11-11，严格模式，整套重跑）：58 个用例中 50 个通过且基线文件全部已导出（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 8），`InRange` 1 失败 3 跳过（改系统日期的 `runas` 未生效，同修改前），4 个 `@Ignore` 跳过。`WSProperty_Spec` 的上传 6 个用例现在真正导出，并与基线一致。`checkMergeable CM1` 在清理陈旧基线后单独重跑通过（整套重跑在清理之前）。`property_crossJoin.maxCellCount` 单独运行会失败（修改前同样），整套运行通过，存在顺序依赖，原因未查。
+- **处理后**（2026-11-11，严格模式，整套重跑）：58 个用例中 50 个通过且基线文件全部已导出（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 8），`InRange` 1 失败 3 跳过（改系统日期的 `runas` 未生效，同修改前），4 个 `@Ignore` 跳过。`WSProperty_Spec` 的上传 6 个用例现在真正导出，并与基线一致。`checkMergeable CM1` 在清理陈旧基线后单独重跑通过（整套重跑在清理之前）。`property_crossJoin.maxCellCount` 单独运行会失败（修改前同样），先跑 `WSData_Spec` 则通过；2026-11-11 已查清原因：`CrossJoinTableLens` 把最先加载完的那一侧设为 `main`（变化最快的一维，`CrossJoinTableLens.java:263-273`），两侧的行数由两个线程统计，谁先完成是竞态，所以同一个 cross join 的输出行序不固定；`Query1` 是三表 cross join，输出被预览上限（`query.preview.maxrow`=5000）截断，`TestData` 与 `All Sales1` 的因子顺序互换后保留的 5000 行完全不同（基线是 143 个 id × 35 个客户，失败时是 1 个 id × 143 个订单号 × 35 个客户），而基线只记录了其中一种。已排除：输入表的原始行序（两种情况相同）、表声明顺序和运算符对（相同）、别的 worksheet 的缓存（只有这一个 worksheet 含这三张表）、依赖内存状态的 `JoinTableLens` 分支（`Query1` 用不到）。CI 上这个用例是否稳定取决于竞态结果，没有确认；处理办法（改用例、放宽比对或报产品缺陷）待定。
 - 基线来源：`expectData` 共 27 次提交，均为"add exp""update txt"一类，是产品输出生成的回归基线，不是独立标准答案。
 
 **断言层：** 每张可见表导出为整表 txt（排序后），没有 PNG。隐藏表（13 张）不导出，只通过依赖它的可见表间接验证。查询是否下推、生成的 SQL、预览行数上限都不在断言里。
