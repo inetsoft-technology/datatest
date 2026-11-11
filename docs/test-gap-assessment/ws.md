@@ -284,17 +284,17 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `AssetUtilUnpivotTest`、`UnpivotQueryTest` | unpivot 之后再聚合 / 做交叉表；`fixColumnSelection` 按第一行数据修正列类型；带格式或强制解析的日期类 `changeColumnType`；MV 转换 | 需要更长的 worksheet 链；日期格式要先确认"强制解析"的预期 |
 | `RotatedQueryTest` | 第一列有空值 / 空白的情况；旋转后再聚合；MV；表头值很长 | 没来得及；空值在 lens 层已有 `RotatedTableLens` 的"空表头取 `Column [n]`"测试 |
 
-**B. 看起来是产品缺陷、测试里已 `@Disabled`、尚未报 bug 的**
+**B. 看起来是产品缺陷、测试里已 `@Disabled` 的**
 
-- `RotatedQuery`：源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
-- 已报：#81095、#81096（统计公式 SQL）。
+- 已报 #81102（Redmine 里没有同类 bug，#61619 是数据量限制、#53227 是另一种缺列）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
+- 已报：#81095、#81096（统计公式 SQL）、#81102（旋转表重名列）。
 
 **C. 需要开发回答才能写期望值的问题**（上面表里出现的，合并在一起）
 
 1. 各"周"类日期级别（week of month、week of quarter、full week 系列）的定义。
 2. `AM_PM_DATE_GROUP`、`MILLISECOND_DATE_GROUP`、`AM_PM_OF_DAY_DATE_GROUP` 在 `XConstants` 里有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"，是设计如此还是没做完。
 3. ClickHouse、H2 的"不分组"日期级别没有 SQL 表达式，是遗漏吗。
-4. 旋转后第一列重名应该报错、加别名，还是合并。
+4. 旋转后第一列重名应该报错、加别名，还是合并（#81102 里我按 `fixAlias` 的本意写成加别名，开发可能另有定论）。
 5. 前面各节已列的：排名并列（ranking ties）、`NumericRangeRef` 区间边界、`DateCondition`、上传类型检测、`isQueryMergeable`。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
