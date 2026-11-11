@@ -525,9 +525,10 @@ public class DatatestSpringDuplicateFixConfiguration {
    public ImportCSVDialogController importCSVDialogController(
       BinaryTransferService binaryTransferService,
       RuntimeViewsheetRef runtimeViewsheetRef,
-      WorksheetService worksheetService)
+      WorksheetService worksheetService,
+      ImportCSVDialogServiceProxy importCSVDialogServiceProxy)
    {
-      return new ImportCSVDialogController(mock(ImportCSVDialogServiceProxy.class), binaryTransferService)
+      return new ImportCSVDialogController(importCSVDialogServiceProxy, binaryTransferService)
       {
          @Override
          public String getRuntimeId() {
@@ -541,15 +542,29 @@ public class DatatestSpringDuplicateFixConfiguration {
       };
    }
 
+   /**
+    * The real proxy, not a mock: upload tests go through getUploadFile/getPreviewTable, a mock
+    * returns an empty result for them and the upload silently does nothing.
+    */
+   @Bean
+   public ImportCSVDialogServiceProxy importCSVDialogServiceProxy(
+      Cluster cluster, WorksheetService worksheetService,
+      ImportCSVDialogService importCSVDialogService)
+   {
+      return new ImportCSVDialogServiceProxy(cluster, worksheetService, importCSVDialogService);
+   }
+
    @Bean
    public ImportCSVDialogService importCSVDialogService(
       ViewsheetService viewsheetService,
       VSLayoutService vsLayoutService,
       BinaryTransferService binaryTransferService,
-      AssetDataCache assetDataCache)
+      AssetDataCache assetDataCache,
+      FileSystemService fileSystemService)
    {
+      // real FileSystemService: the uploaded file is stored in (and read back from) its cache
       return new ImportCSVDialogService(viewsheetService, vsLayoutService, binaryTransferService,
-         assetDataCache, mock(FileSystemService.class));
+         assetDataCache, fileSystemService);
    }
 
    @Bean

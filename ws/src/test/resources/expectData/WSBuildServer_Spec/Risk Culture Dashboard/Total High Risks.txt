@@ -1,5 +1,0 @@
-The data size(row x col) is:(4 x 2)
-Period, High Total
-12M, 47
-1M, 53
-3M, 53

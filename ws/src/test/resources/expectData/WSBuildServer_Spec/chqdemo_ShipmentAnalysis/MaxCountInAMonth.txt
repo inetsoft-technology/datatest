@@ -1,3 +1,0 @@
-The data size(row x col) is:(2 x 1)
-EI File Number
-52

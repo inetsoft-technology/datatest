@@ -1,5 +1,0 @@
-The data size(row x col) is:(4 x 2)
-Period, Logins Outside Top 5 1M
-12M, 10
-1M, 33
-3M, 33
