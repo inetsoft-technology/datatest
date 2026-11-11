@@ -2,8 +2,7 @@
 
 > 日期：2026-11-09　模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
 > datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（`f12b07ca59`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。第 4 节的产品单测盘点已在 `main` 上复核。
-> 2026-11-10 更新：G1 已由 PR #203 落实（`ViewsheetTest` 默认严格）；第 4、6 节补充了疑似缺陷的运行结果和 Redmine 单号（产品源码 `origin/main` `2527280fa1`）。
-> 2026-11-11 更新（[#80957](https://issues.inetsoft.com/issues/80957) 第 2、3 节）：基线来源与 SQL 独立核对、G9、书签选择状态、donut 均已核对，见第 2 节"核对结果"；第 2 节覆盖矩阵更正（扫描脚本误把绑定面板的候选字段算作使用）。第 4 节：G4 已提 stylebi PR [#7995](https://github.com/inetsoft-technology/stylebi/pull/7995)（13.8 测试按被测类并入，另补负权重等），G3 已提 stylebi PR [#8000](https://github.com/inetsoft-technology/stylebi/pull/8000)；G3 的聚合名写法更正为 `field['Sum([price])']`。
+> 状态（[#80957](https://issues.inetsoft.com/issues/80957)）：G1 已完成（PR #203，`ViewsheetTest` 默认严格）；基线来源与 SQL 独立核对、G9、书签选择状态、donut 已核对，见第 2 节"核对结果"；G4 已提 stylebi PR [#7995](https://github.com/inetsoft-technology/stylebi/pull/7995)，G3 已提 stylebi PR [#8000](https://github.com/inetsoft-technology/stylebi/pull/8000)。
 
 ## 1. 结论
 
@@ -35,7 +34,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 | Calendar / SelectionList / SelectionTree / TimeSlider | 6 / 6 / 5 / 3 | |
 | Gauge / Text | 3 / 3 | 类型和表达式单一（仅 integer，表达式均为"其他"） |
 
-2026-11-11 更正：原表中 Chart"维度 / 度量"（18 / 19）、Crosstab"维度"（12）、CalcTable"度量 / 维度"（9 / 8）统计的是 `<ainfo>`，即绑定面板为数据源列出的候选字段，数据源上的计算字段不管有没有绑定都会出现在里面（如 `calc_data group` 的 Chart4，候选 12 个维度、6 个度量，实际只绑定 1 个 x、1 个 y）。`vs_backup_scan.py` 已改为跳过 `<ainfo>`，并按 `rowheaders`/`colheaders` 识别 Crosstab 的行列。真实绑定已在 x / y、单元格、行 / 列里，各位置的结论不变。
+统计口径：只算实际绑定，不算 `<ainfo>`。`<ainfo>` 是绑定面板为数据源列出的候选字段，数据源上的计算字段不管有没有绑定都会出现在里面（如 `calc_data group` 的 Chart4，候选 12 个维度、6 个度量，实际只绑定 1 个 x、1 个 y）。`vs_backup_scan.py` 跳过 `<ainfo>`，并按 `rowheaders`/`colheaders` 识别 Crosstab 的行列。
 
 数据源：绑定的表有 Query1（6 个 vs）、OrdersAndReturns（4）、Order Model（4）等，其余基本一对一；底层是 DB2、MySQL 还是 embedded 未细分。
 图表类型已有 BAR、BAR_STACK、LINE、PIE、FUNNEL、GANTT、MAP、TREE、NETWORK、SUNBURST、TREEMAP；没有 AREA、POINT、RADAR、STOCK/CANDLE、BOXPLOT、MEKKO、WATERFALL、PARETO、STEP 等。
@@ -53,7 +52,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 **断言层：** 只有 Chart（TXT + PNG）和 Table、Crosstab、CalcTable（TXT）会导出数据。Selection、Calendar、TimeSlider、Gauge、Text 自身的内容只能靠整页 PNG（22 个用例中 19 个调用了 `exportAsPNG`）。但书签保存了选择状态，它们的**过滤效果**会进入被过滤的图表和表的数据：绑定计算字段的选择类组件 × 书签共 42 对，其中 23 对带有已应用的选择状态，分布在 11 个 vs。
 另有 6 个 vs 的个别计算字段名没有出现在基线 txt 里：`parent-child tree` 0/1、`calc_data group` 3/6、`filter` 4/5、`testDB2` 5/6、`testModel` 6/7、`testQuery` 7/8。已逐个核对，真正缺断言的只有 3 个，且都属于 G7（见下文）。
 
-**核对结果（2026-11-11，[#80957](https://issues.inetsoft.com/issues/80957) 第 2、3 节）：**
+**核对结果（[#80957](https://issues.inetsoft.com/issues/80957) 第 2、3 节）：**
 
 基线抽样独立核对：用 datatest 自带的数据库（`access` 为 H2 `docker/src/test/resources/H2Data/orders.mv.db`，`Examples/Orders` 为 Derby `docker/src/test/resources/libs/orders_133.jar`）按 worksheet/模型定义写 SQL，Python 手算，结果与基线**全部一致**：
 
@@ -135,7 +134,7 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 
 运行时走 `report/filter` 版本公式，不走 `mv/formula`（`Util.createFormula`，`mv.formula` 只在物化视图改写时启用）。用例数是设计出来的数量，不是已写好的。
 
-**13.8 已有同类测试，先移植：** 13.8 产品线的汇总公式测试覆盖项目（Jakub Kidacki；Redmine 里标题前缀为 "[#RPT Summary Formulas]" 的一系列单，如 [#80540](https://issues.inetsoft.com/issues/80540)、[#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)、[#80738](https://issues.inetsoft.com/issues/80738)）在 `style-intelligence` 仓库的 [`epic-test-coverage`](https://github.com/inetsoft-technology/style-intelligence/tree/epic-test-coverage/java/src/test/java/inetsoft/test/feature/report) 分支上（核对时为 `5b682845`，2026-11-10），共 9 个测试类、约 120 个用例，按 `gap:report.summary-formulas.*` 编号，已证实的缺陷按正确行为写并加 `@Disabled`，注明单号（如 `@Disabled("Bug #80700: ...")`）。公式代码与 StyleBI 是同一份：`NthMostFrequent`、`Mode`、`DistinctCount`、`Correlation` 只差 import 和 `new Double`/`Double.valueOf`；`WeightedAverage` 多了 [#80540](https://issues.inetsoft.com/issues/80540) 的空字符串修复（StyleBI 尚未修，[#80584](https://issues.inetsoft.com/issues/80584)）；13.8 的 `report/filter` 下没有 `CalcFieldFormula`。所以 G4 的主体是把这些测试移植到 StyleBI `core`，移植后只有 `WeightedAverage` 空字符串用例会失败（对应 [#80584](https://issues.inetsoft.com/issues/80584)）。（2026-11-11：此判断已过时。2026-11-09 至 11-11 StyleBI `main` 已修复 #80584、#80950、#80951、#80952、#80974、#80888、#80583、#80737，移植后只剩 Min 不读 `formula.parse.number`（[#80517](https://issues.inetsoft.com/issues/80517)）按正确行为写并 `@Disabled`，见 PR #7995。）
+**13.8 已有同类测试，先移植：** 13.8 产品线的汇总公式测试覆盖项目（Jakub Kidacki；Redmine 里标题前缀为 "[#RPT Summary Formulas]" 的一系列单，如 [#80540](https://issues.inetsoft.com/issues/80540)、[#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)、[#80738](https://issues.inetsoft.com/issues/80738)）在 `style-intelligence` 仓库的 [`epic-test-coverage`](https://github.com/inetsoft-technology/style-intelligence/tree/epic-test-coverage/java/src/test/java/inetsoft/test/feature/report) 分支上（核对时为 `5b682845`，2026-11-10），共 9 个测试类、约 120 个用例，按 `gap:report.summary-formulas.*` 编号，已证实的缺陷按正确行为写并加 `@Disabled`，注明单号（如 `@Disabled("Bug #80700: ...")`）。公式代码与 StyleBI 是同一份：`NthMostFrequent`、`Mode`、`DistinctCount`、`Correlation` 只差 import 和 `new Double`/`Double.valueOf`；`WeightedAverage` 多了 [#80540](https://issues.inetsoft.com/issues/80540) 的空字符串修复（StyleBI 尚未修，[#80584](https://issues.inetsoft.com/issues/80584)）；13.8 的 `report/filter` 下没有 `CalcFieldFormula`。所以 G4 的主体是把这些测试移植到 StyleBI `core`。StyleBI `main` 已修复 #80584、#80950、#80951、#80952、#80974、#80888、#80583、#80737，移植后只有 Min 不读 `formula.parse.number`（[#80517](https://issues.inetsoft.com/issues/80517)）的用例按正确行为写并 `@Disabled`，见 PR #7995。
 
 **期望值怎么写：** 待开发确认的语义统一放在 [#80953](https://issues.inetsoft.com/issues/80953)，答复前按现有行为写并标注"待确认"；已证实的缺陷，建议按正确行为写并 `@Disabled`、注明 bug 号（13.8 覆盖项目的做法，如 [#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)）。
 
@@ -183,7 +182,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 
 其中"两列公式的列位置"和"聚合名映射"是 `CalcFieldFormula` 自己的逻辑，写错会悄悄算错或取错列，优先补。
 
-写法：加在现有 `CalcFieldFormulaTest` 里，复用它的环境（Spring 上下文 + `AssetQuerySandbox`，`box.getScriptEnv()` / `box.getScope()`）。表达式和聚合名都用运行时的真实形式：表达式如 `field['Sum([price])'] / field['Sum([qty])']`，聚合名传 `"field['Sum([price])']"`（2026-11-11 更正：此前写的 `"Sum([price])"` 不是运行时的形式，替换后剩下 `field['SUM__PRICE__']`，测不到真实路径）；现有测试直接写 `SUM` 的方式测不到名字替换。难度中，主要成本是启动 Spring 上下文。
+写法：加在现有 `CalcFieldFormulaTest` 里，复用它的环境（Spring 上下文 + `AssetQuerySandbox`，`box.getScriptEnv()` / `box.getScope()`）。表达式和聚合名都用运行时的真实形式：表达式如 `field['Sum([price])'] / field['Sum([qty])']`，聚合名传 `"field['Sum([price])']"`（只传 `"Sum([price])"` 时替换后剩下 `field['SUM__PRICE__']`，测不到真实路径）；现有测试直接写 `SUM` 的方式测不到名字替换。难度中，主要成本是启动 Spring 上下文。
 
 **G5 测试入口（明细型计算字段求值，17 个）：**
 
@@ -268,7 +267,6 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 **没验证的：**
 - 严格模式已在本机跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。
 - 单测盘点按类名、文件名、方法名静态匹配，没有逐个读测试内容。
-- ~~`donut chart` 是 PIE 还是 DONUT~~、~~选择状态是否缩小数据~~：已核对（第 2 节）。
 - 基线独立核对只抽了 `aggregate_with`、`aggregate_date` 两个 vs；DB2、MySQL 上的 vs（`testDB2`、`testModel`、`testQuery` 等）未核对。
 - 只覆盖 vscalc 一个 spec，其他模块未评估。
 
