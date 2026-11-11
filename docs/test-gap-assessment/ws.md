@@ -313,6 +313,22 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | 上传类型检测（C5） | `TextUtil.detectType` 只看文件头 8 个字节：`PK 03 04` 为 xlsx，`D0 CF 11 E0 A1 B1 1A E1` 为 xls，其余一律按分隔文本。列类型 `TextUtil.getType`：日期（`数字[.-/]数字[.-/]数字`加可选时间，按前后位数判断 yyyy-M-d 还是 M-d-yyyy/yy）、时间、整数（`Integer.parseInt`）、小数（`#,###.#`、`%`、`$`、`($..)`），其余为字符串；**没有布尔识别**（`CSVLoader` 的布尔只在类型已设成布尔时处理）。`CSVLoader` 逐行合并类型：数字类型混合变 Double，其他混合变 String，含"不适用"值的数字列变 String。`DelimitedFileReader.importHeader` 只用第一行数据判断类型 | **能** |
 | `isQueryMergeable`（C5） | `PreAssetQuery.isQueryMergeable0` 的 8 个阶段已在 3b-C 列出，规则在代码里。`XUtil.isQueryMergeable` 前半段已读：非 JDBC 查询、非 UniformSQL、解析失败、lossy、数据源为空或 Hive 未启用、`jdbc.pushdown.blacklist`（`*` 或查询名）、手写 SQL 里有 `$(@...)` 变量，都不合并；后半段没读 | **能**，哪些组合"应该合并"是产品判断，但现状可固定 |
 
+**F. 按 E 节补的测试（同一分支）**
+
+| 类 | 测试数 | 结果 |
+|---|---|---|
+| `DateRangeRefFullWeekLevelsTest` | 3 | 8 个"整周"级别（week of month、week of quarter、month/quarter/year of full week 等）× 16 个日期，对照 `java.time` 按 E 节的规则算的期望，全部一致；变异检查有效 |
+| `NumericRangeRefBoundaryTest` | 5（1 个 `@Disabled`） | 三种包含方式（下界闭、上界闭、两端闭）的边界，SQL（Derby 执行）和脚本（表单公式引擎）两个表达式对同一张表，4 个一致。**确认了一个不一致**：脚本版本"最大值以上"没有 null 判断，最后一个分界值 <= 0 时 null 进入最后一段，SQL 版本进 Others（见下） |
+| `RankingTiesTest` | 6 | worksheet 排名恰好取 N 行、并列按输入顺序、`RankingCondition.equal` 选项在 worksheet 里被忽略（viewsheet 的 top N 会用它） |
+| `TextUtilTypeDetectionTest` | 43 | 文件类型（xlsx、xls、文本）和单值类型（整数、小数、日期、时间、字符串）的规则 |
+
+**F 里看起来是缺陷或值得问的：**
+- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 已 `@Disabled`，**还没有报 bug**（创建 Redmine 的操作被拒绝，等你决定）。
+- **`1.2.3` 被识别为日期**（格式 `M.d.yy`）：上传的版本号列会被当成日期。固定了现状，没有报。
+- **空字符串被识别为 double**：`getType("")`；文件加载器在调用前会跳过空值，所以现实里碰不到，固定了现状。
+- **整数带千分位**（`1,234`）识别为 double，不是整数；超过 int 范围的整数（`2147483648`）也是 double。固定了现状。
+- **`RankingCondition.equal` 在 worksheet 里被忽略**：`AssetQuery.getRankingTableLens` 固定 `setEqualityKept(false)`，而 viewsheet 的 top N 会传 `ranking.isEqual()`。若界面在 worksheet 里也提供"包含并列"选项，这就是问题；没有查界面。
+
 **D. 写测试的几个注意点**（以后接手少走弯路）
 
 - worksheet 级测试要有 `AssetDataCache` bean（`DistributedTableCacheStore` 要 mock 一个 `ObjectProvider`），再 `setActive(true)` 后 `refreshColumnSelection`，否则组合表的列是空的。
