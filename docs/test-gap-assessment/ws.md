@@ -245,6 +245,22 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 按优先级：先移植 13.8（G7 主体），再写 date in（G4）和上传（G3），unpivot（G7）次之，合并判断（G5）要先等开发确认规则。各库 SQL 生成（G11）和合并判断一样要先确认规则，排在其后。
 
+**移植进展（2026-11-11，产品仓库独立 worktree，分支 `test-ws-lens-unit-tests`，尚未推送）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
+
+| 测试类 | 来源 | 个数 | 跳过 |
+|---|---|---|---|
+| `JoinLensesTest` | `LensesJoinsFeatureTest` | 20 | 4 |
+| `SetOperationLensesTest` | `LensesSetOperationsFeatureTest`（取值类 18 个，11 个 cancel/dispose 不移植：StyleBI 已有同类测试） | 18 | 1 |
+| `SortSummaryFilterTest` | `OperationsTableLensFeatureTest`（去掉 1 个死锁测试） | 15 | 1 |
+| `RotateFormulaLensesTest` | `LensesTransformsFeatureTest` 的 rotate 5 个和 `FormulaTableLens` 5 个 | 10 | 0 |
+
+移植时遇到的 13.8 与 StyleBI 的差异，分三种：
+- **13.8 已修、StyleBI 没有的缺陷**（对应测试已 `@Disabled`，写明编号）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），两者在 StyleBI 侧还没有 issue；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧已有 issue，状态 New）。
+- **StyleBI 里新发现、尚未报告的缺陷**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。已用探针验证，对应的拼音排序测试已 `@Disabled`。
+- **有意的行为变化，测试已按 StyleBI 改写**：脚本一律按受限模式运行（Bug #77396），`setRestricted` 只记录标志，能否调用 Java 类由允许类的白名单决定；`FormulaTableLens` 一批一起计算的行只报告一次失败（13.8 是逐行各报一次）。
+
+这批测试都是 lens 层的取值测试，不依赖数据库，覆盖了 G7 的主体（cross join、full outer、非等值、union、intersect、minus、distinct、rotate、top N）以及 G13 里脚本表达式列的计算（多列依赖、前向引用、出错、类白名单）。G7 里 unpivot、`RotatedQuery`、排名 lens 的取值，以及 G3、G4、G5 要等开发回答规则的部分，还没有做。
+
 ## 5. Dashboard 与机制补充
 
 | 场景 | 做法 | 验证什么 | 前提 |
