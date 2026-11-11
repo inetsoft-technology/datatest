@@ -135,7 +135,7 @@ cat vsothers/target/g2_convert_probe.txt
 - 源数据取自转换前的 `getVSTableLens`，用的是 `getObject` 的原值（`toString`），不是界面显示的格式化文本；日期分隔符、数字格式之类的差异可能来自"原值 vs 已格式化文本"的表现形式，而不是转换错误。**B2 里的格式类差异尤其需要开发先判断。**
 - 行数不同的组件没有逐格比较，C 类和 B3 的"内容不同"只是看了首行。
 - 钻取状态的源是"已钻取"的视图，所以 A 类里的钻取差异是预期的，但没有验证"清除钻取后的源"与转换结果一致。
-- 只覆盖 `ConvertToCalc` 下 19 个 vs；聚合只有 Sum/Count/none，没有 Average/Max/DistinctCount 等（见 `vsfreehand.md` §2）。
+- 只覆盖 `ConvertToCalc` 下 19 个 vs；（原写"聚合只有 Sum/Count/none"读错了节点，实际公式 14 种，见 `vsfreehand.md` §2 的更正。）
 - 尚未判断哪些差异是 bug；上面 B 类都只是"需要确认"。
 
 ## 9. 已落实：`checkConvert` 现在断言转换前后数据一致
