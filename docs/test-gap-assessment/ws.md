@@ -323,7 +323,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | `TextUtilTypeDetectionTest` | 43 | 文件类型（xlsx、xls、文本）和单值类型（整数、小数、日期、时间、字符串）的规则 |
 
 **F 里看起来是缺陷或值得问的：**
-- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 已 `@Disabled`，**还没有报 bug**（创建 Redmine 的操作被拒绝，等你决定）。
+- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 已 `@Disabled`，已报 #81105。
 - **`1.2.3` 被识别为日期**（格式 `M.d.yy`）：上传的版本号列会被当成日期。固定了现状，没有报。
 - **空字符串被识别为 double**：`getType("")`；文件加载器在调用前会跳过空值，所以现实里碰不到，固定了现状。
 - **整数带千分位**（`1,234`）识别为 double，不是整数；超过 int 范围的整数（`2147483648`）也是 double。固定了现状。
