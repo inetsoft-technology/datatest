@@ -153,26 +153,21 @@ def role(asm, tags):
             return 'x'
         if 'yrefs' in t:
             return 'y'
-        if 'groupInfo' in t:
-            return 'bound-dim' if 'groups' in t else 'bound-aggr'
         return 'other'
     if asm == 'Crosstab':
         if 'conditions' in t:
             return 'condition'
-        if t & {'rowHeaders', 'rows'}:
+        if t & {'rowheaders', 'runtime_rowheaders'}:
             return 'row'
-        if t & {'colHeaders', 'cols'}:
+        if t & {'colheaders', 'runtime_colheaders'}:
             return 'col'
-        if 'groups' in t:
-            return 'dim'
         if t & {'aggregates', 'runtime_aggregates'}:
             return 'aggr'
         return 'other'
     if asm == 'CalcTable':
         if 'columnsVisibility' in t:
             return None
-        for k, r in (('cellBinding', 'cell-binding'), ('conditions', 'condition'),
-                     ('groups', 'dim'), ('aggregates', 'aggr')):
+        for k, r in (('cellBinding', 'cell-binding'), ('conditions', 'condition')):
             if k in t:
                 return r
         return 'other'
@@ -205,7 +200,12 @@ def calc_defs(root):
 
 
 def usages(root, names):
-    """(assemblyClass, role) -> set(calc names)"""
+    """(assemblyClass, role) -> set(calc names)
+
+    <ainfo> (Chart/Crosstab/CalcTable AggregateInfo) is the candidate field list that the binding
+    pane shows for the source table: every calc field of that table appears there whether or not it
+    is bound, so it is skipped. Real bindings are xrefs/yrefs/aesthetics (Chart), rowheaders/
+    colheaders/aggregates (Crosstab) and tableLayout cellBinding (CalcTable)."""
     parent = {c: p for p in root.iter() for c in p}
     res = collections.defaultdict(set)
     for e in root.iter():
@@ -217,7 +217,7 @@ def usages(root, names):
         a, tags, asm = e, set(), None
         while a in parent:
             a = parent[a]
-            if a.tag in ('allcalc', 'allaggr'):
+            if a.tag in ('allcalc', 'allaggr', 'ainfo'):
                 asm = 'DEF'
                 break
             if a.tag == 'assembly' and a.get('class', '').endswith('VSAssembly'):
@@ -297,8 +297,18 @@ def inventory(zpath):
         rows.append(('%s:%s' % pos, len(vsmap), dict(dts)))
     table(rows, ['assembly:position', 'viewsheets', 'calc dataTypes seen'])
     used = {(v, n) for m in use_all.values() for v, ns in m.items() for n in ns}
-    unused = [(d[0], d[1]) for d in defs_all if (d[0], d[1]) not in used]
-    print('Defined but not referenced by any assembly: %d %s\n' % (len(unused), unused[:10]))
+    # a calc field can be used only through another calc field's expression (TopFormula =
+    # Mode([BaseFormula])+10); that is a real use, not dead code
+    def in_other_expr(d):
+        pat = re.compile(r"\[%s\]|\['%s'\]" % (re.escape(d[1]), re.escape(d[1])))
+        return any(o[0] == d[0] and o[1] != d[1] and pat.search(o[5] or '') for o in defs_all)
+    unbound = [d for d in defs_all if (d[0], d[1]) not in used]
+    indirect = [(d[0], d[1]) for d in unbound if in_other_expr(d)]
+    unused = [(d[0], d[1]) for d in unbound if not in_other_expr(d)]
+    print('Defined but not referenced by any assembly or other calc field: %d %s\n'
+          % (len(unused), unused[:10]))
+    print('Referenced only through another calc field\'s expression: %d %s\n'
+          % (len(indirect), indirect[:10]))
     print('Components NOT exported by ViewsheetTest.executeVS0 (check the module base class): '
           + ', '.join(sorted(c for c in tot if c not in EXPORTED)))
 
@@ -339,11 +349,26 @@ def crosscheck(zpath, spec, baseline):
                         text += open(os.path.join(r, x), encoding='utf8', errors='ignore').read()
         names = set(calc_defs(root)) if root is not None else set()
         absent = sorted(n for n in names if n not in text)
+        where = collections.defaultdict(set)
+        if root is not None:
+            for (asm, _), ns in usages(root, names).items():
+                for n in ns:
+                    where[n].add(asm)
+        def label(n):
+            if not where[n]:
+                return '%s (no binding)' % n
+            if not where[n] & EXPORTED:
+                return '%s (only %s: not exported)' % (n, '/'.join(sorted(where[n])))
+            return '%s (in %s: header may differ)' % (n, '/'.join(sorted(where[n] & EXPORTED)))
         rows.append((f, 'yes' if os.path.isdir(d) else 'NO BASELINE', txt, png, len(names),
-                     '%d/%d' % (len(names) - len(absent), len(names)), ', '.join(absent[:4])))
+                     '%d/%d' % (len(names) - len(absent), len(names)),
+                     ', '.join(label(n) for n in absent[:4])))
     table(rows, ['feature', 'baseline dir', 'txt', 'png', 'calc fields', 'in baseline txt', 'not in baseline'])
-    print('"not in baseline" is a substring match: a calc field used only as a condition, or shown '
-          'under another header, is a false positive. Confirm by hand.')
+    print('"not in baseline" is a substring match on the calc-field name. The note says why it may be '
+          'absent: "no binding" (defined, or used only inside another calc field), "not exported" '
+          '(only in components executeVS0 does not export: no data assertion, only PNG), "header may differ" '
+          '(bound in an exported component, usually shown as a date level or named group: check '
+          'the txt by hand).')
 
 
 def spec_bookmarks(path):
