@@ -11,7 +11,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
-- 产品单测（评估时）：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。**2026-11-12 现状：** 已补 19 个测试类（4 个移植自 13.8、15 个新写），共 340 个测试，覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`XUtil.isQueryMergeable`；产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)。写测试发现的 8 个缺陷（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105）都已在 `main` 修复，另报 #81178、#81193、#81220、#81229、#81235、#81236 待处理（#81193 是 #81102 修复带来的回归）。第二批（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地、未推送）又补了 `CSVInfo` 的分隔符与表头与编码猜测和 `PreAssetQuery` 的全部 `is*Mergeable`，6 个类、246 个测试，见 4b-H2；之后又在同一分支补了 `XEmbeddedTable.setDataTypes`（23）、旋转与 unpivot 的名字类型分组（+7）、六个相对日期条件 `DateConditionRelativeRangesTest`（42）、命名分组 `NamedRangeRefGroupsTest`（12，其中 2 个 `@Disabled` 对应 #81235、#81236），共 330 个，见 4b-H3。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与日期类 `changeColumnType` 的完整路径、MV 转换（还没读）、其他零覆盖项。
+- 产品单测（评估时）：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。**2026-11-12 现状：** 已补 19 个测试类（4 个移植自 13.8、15 个新写），共 340 个测试，覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`XUtil.isQueryMergeable`；产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)。写测试发现的 8 个缺陷（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105）都已在 `main` 修复，另报 #81178、#81193、#81220、#81229、#81235、#81236 待处理（#81193 是 #81102 修复带来的回归）。第二批（产品仓库 PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064)，待合并）又补了 `CSVInfo` 的分隔符、表头、编码猜测，`PreAssetQuery` 的全部 `is*Mergeable`（246 个测试，见 4b-H2），`XEmbeddedTable.setDataTypes`、旋转与 unpivot 的补充、六个相对日期条件、命名分组，共 330 个新增测试，见 4b-H3。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与日期类 `changeColumnType` 的完整路径、MV 转换（已读代码，不加单测，见 4b-H3）、其他零覆盖项。
 
 已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异（生成层）的单测（PR #8046）。接下来：重新验证 `property_crossJoin.maxCellCount`（#81087 已修）；`PreAssetQuery` 合并判断的单测与基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
@@ -66,7 +66,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 | 跳过 4 | `specialChar`、`clickhouse`、`ws group case check`、`customer bugs` | `@Ignore` |
 
   真正比对了数据的用例 44 个（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 2）；873 个基线文件中 388 个本次没有被比对。没有"导出了但没有基线"的文件。
-- **处理后**（2026-11-11，严格模式，整套重跑）：58 个用例中 50 个通过且基线文件全部已导出（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 8），`InRange` 1 失败 3 跳过（改系统日期的 `runas` 未生效，同修改前），4 个 `@Ignore` 跳过。`WSProperty_Spec` 的上传 6 个用例现在真正导出，并与基线一致。`checkMergeable CM1` 在清理陈旧基线后单独重跑通过（整套重跑在清理之前）。`property_crossJoin.maxCellCount` 单独运行会失败（修改前同样），先跑 `WSData_Spec` 则通过；2026-11-11 已查清原因：`CrossJoinTableLens` 把最先加载完的那一侧设为 `main`（变化最快的一维，`CrossJoinTableLens.java:263-273`），两侧的行数由两个线程统计，谁先完成是竞态，所以同一个 cross join 的输出行序不固定；`Query1` 是三表 cross join，输出被预览上限（`query.preview.maxrow`=5000）截断，`TestData` 与 `All Sales1` 的因子顺序互换后保留的 5000 行完全不同（基线是 143 个 id × 35 个客户，失败时是 1 个 id × 143 个订单号 × 35 个客户），而基线只记录了其中一种。已排除：输入表的原始行序（两种情况相同）、表声明顺序和运算符对（相同）、别的 worksheet 的缓存（只有这一个 worksheet 含这三张表）、依赖内存状态的 `JoinTableLens` 分支（`Query1` 用不到）。已报产品缺陷 Redmine #81087（附单元层面的复现：同样两张已加载完的小表，300 次里最快变化的一侧有 0.3%～2% 会翻转）。CI 上这个用例是否稳定取决于竞态结果，没有确认；用例本身怎么处理（改用例或放宽比对）待定。
+- **处理后**（2026-11-11，严格模式，整套重跑）：58 个用例中 50 个通过且基线文件全部已导出（`DataComposition` 10、`WSAsset` 2、`WSData` 22、`WSOthers` 8、`WSProperty` 8），`InRange` 1 失败 3 跳过（改系统日期的 `runas` 未生效，同修改前），4 个 `@Ignore` 跳过。`WSProperty_Spec` 的上传 6 个用例现在真正导出，并与基线一致。`checkMergeable CM1` 在清理陈旧基线后单独重跑通过（整套重跑在清理之前）。`property_crossJoin.maxCellCount` 单独运行会失败、先跑 `WSData_Spec` 则通过，原因是产品缺陷 #81087（已修）：`CrossJoinTableLens` 把最先加载完的一侧设为变化最快的一维，两侧行数由两个线程统计，谁先完成是竞态，输出行序不固定；`Query1` 的三表 cross join 被预览上限（`query.preview.maxrow`=5000）截断，保留的行因此不同，基线只记录了其中一种。CI 上这个用例是否稳定取决于竞态结果，没有确认。
 - 基线来源：`expectData` 共 27 次提交，均为"add exp""update txt"一类，是产品输出生成的回归基线，不是独立标准答案。
 
 **断言层：** 每张可见表导出为整表 txt（排序后），没有 PNG。隐藏表（13 张）不导出，只通过依赖它的可见表间接验证。查询是否下推、生成的 SQL、预览行数上限都不在断言里。
@@ -262,8 +262,8 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | unpivot（`AssetUtil.unpivot`、`UnpivotQuery`） | 已做：`AssetUtilUnpivotTest`（14）、`UnpivotQueryTest`（6，含分组求和）；`XEmbeddedTableSetDataTypesTest`（23）覆盖列类型转换；没做 unpivot 后做交叉表 |
 | `RotatedQuery` | 已做：`RotatedQueryTest`（9，含空名 `Column [n]`、数字与日期表头、类型规则） |
 | `DateCondition` | 已做：`DateConditionBuiltinTest`（39）、`DateConditionRelativeRangesTest`（42：Year、Quarter、Month、Week、Weeks、Day，周起始日周日/周一/周六，内存判断与下推 SQL 范围；夏令时窗口内的天数用例会被跳过）；还有未核对：`DaysCondition` 与 `MonthsCondition` 的夏令时 |
-| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | **已做**（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地提交、未推送）：聚合、排序、条件、分组与选择列与排名、来源（`MirrorQuery`、`JoinQuery`、`ConcatenatedQuery`、SQL 手写模式）各一个类，共 5 个类、216 个测试，见 4b-H2；没测的只有 `PhysicalBoundQuery`、`LMBoundQuery` 固定返回 true 和 mongo 的真实 helper。SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
-| 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符、引号、表头、编码猜测已做（`CSVInfoDetectionTest`，30 个，产品仓库分支 `test-csvinfo-detection`，本地提交、未推送） |
+| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | **已做**（PR #8064）：聚合、排序、条件、分组与选择列与排名、来源（`MirrorQuery`、`JoinQuery`、`ConcatenatedQuery`、SQL 手写模式）各一个类，共 5 个类、216 个测试，见 4b-H2；没测的只有 `PhysicalBoundQuery`、`LMBoundQuery` 固定返回 true 和 mongo 的真实 helper。SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
+| 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符、引号、表头、编码猜测已做（`CSVInfoDetectionTest`，30 个，产品仓库 PR #8064） |
 | `RankingTableLens` | 已做：`RankingTiesTest`（6） |
 | `SummaryFilter2` + `DateRangeRef` 级别 | 已做：`DateRangeRefLevelValuesTest`（5）、`DateRangeRefFullWeekLevelsTest`（3）、`DateLevelSummaryTest`（5） |
 | `NumericRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5） |
@@ -287,7 +287,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 移植时遇到的 13.8 与 StyleBI 的差异，分三种：
 - **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号；2026-11-12 起 #81091、#81092 已在 `main` 修复，测试已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），**已在 StyleBI 侧报为 #81092、#81091**；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧已有 issue，状态 New，没有动）。
-- **StyleBI 里新发现的缺陷（已报 #81093）**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。已用探针验证，对应的拼音排序测试已 `@Disabled`。
+- **StyleBI 里新发现的缺陷（已报 #81093）**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。对应的拼音排序测试已 `@Disabled`。
 - **有意的行为变化，测试已按 StyleBI 改写**：脚本一律按受限模式运行（Bug #77396），`setRestricted` 只记录标志，能否调用 Java 类由允许类的白名单决定；`FormulaTableLens` 一批一起计算的行只报告一次失败（13.8 是逐行各报一次）。
 
 这批测试都是 lens 层的取值测试，不依赖数据库，覆盖了 G7 的主体（cross join、full outer、非等值、union、intersect、minus、distinct、rotate、top N）以及 G13 里脚本表达式列的计算（多列依赖、前向引用、出错、类白名单）。这一段写于第一批，之后 unpivot、`RotatedQuery`、排名、日期条件、上传类型检测和 `CSVLoader`、`XUtil.isQueryMergeable` 都已补测，现状见 4b-H。
@@ -313,32 +313,24 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 **B. 看起来是产品缺陷、测试里已 `@Disabled` 的**（2026-11-12：下面 #81102、#81095、#81096 已在 `main` 修复，测试已启用，见 H）
 
-- 已报 #81102（Redmine 里没有同类 bug，#61619 是数据量限制、#53227 是另一种缺列）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
-- 已报：#81095、#81096（统计公式 SQL）、#81102（旋转表重名列）。
-
-**C. 原先认为需要开发回答的问题**（下面 E 节已从代码确认大部分，只读代码、没有向开发确认）
-
-1. 各"周"类日期级别（week of month、week of quarter、full week 系列）的定义。
-2. `AM_PM_DATE_GROUP`、`MILLISECOND_DATE_GROUP`、`AM_PM_OF_DAY_DATE_GROUP` 在 `XConstants` 里有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"，是设计如此还是没做完。
-3. ClickHouse、H2 的"不分组"日期级别没有 SQL 表达式，是遗漏吗。
-4. 旋转后第一列重名应该报错、加别名，还是合并（#81102 里我按 `fixAlias` 的本意写成加别名，开发可能另有定论）。
-5. 前面各节已列的：排名并列（ranking ties）、`NumericRangeRef` 区间边界、`DateCondition`、上传类型检测、`isQueryMergeable`。
+- 已报 #81102（Redmine 里没有同类 bug）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据（`A, A, B` 得到 `item, A, B`；只差大小写的 `A, a` 得到 `item, a_1`，`A` 列不见了）。根因：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute`，同名列被跳过，`fixAlias` 看不到。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
+- 同批已报：#81095、#81096（统计公式 SQL，已修）。
 
 **E. 已从代码确认的答案（2026-11-11，只读代码，没有向开发确认）**
 
-C 里的问题，下面这些能从代码直接读出规则，所以**不必等开发**就能写期望值；"设计是否合理"仍是产品的判断，这里只说代码现在是什么。
+原先要向开发确认的问题，下面这些能从代码直接读出规则，所以**不必等开发**就能写期望值；"设计是否合理"仍是产品的判断，这里只说代码现在是什么。
 
 | 问题 | 代码里的规则 | 能否写测试 |
 |---|---|---|
-| 各"周"级别（C1） | 周按 `minimalDaysInFirstWeek = 7` 算（`JavaScriptEngine.datePart`、`DateTimeProcessor`）：每月第一个不满整周的部分属于**上个月**的最后一周。`month/quarter/year of full week` 都取"这一周的起始日（`week.start`）所在的月"，源码注释的例子：2024-01-01 的整周归 2023。`week of month` = `Calendar.WEEK_OF_MONTH`，为 0 时退到周起始日再取。`week of quarter`：季度第一个整周为第 1 周（`DateComparisonUtil.getQuarterFirstWeek`），值 = (距该周起始日的天数 + 1) / 7 向上取整。`forceDcToDateWeekOfMonth` 只在日期对比（date comparison）里用，worksheet 里为 -1 | **能**。可用 `java.time` 独立算期望，下一批补 |
-| am/pm、millisecond（C2） | 前端 `xconstants.ts` 只有常量，没有任何界面使用；Java 里只有旧的报表排序 `SortOrder`、`LayoutTool`、图表/报表常量和 viewsheet 脚本常量列表（`VSScriptableController`）用到；`DateRangeRef.getData` 不支持。结论：worksheet 里没有这些级别。剩下一问：viewsheet 脚本给范围列设这些级别时会怎样（没查） | 已用测试固定 |
-| ClickHouse、H2 没有"不分组"函数（C3） | 不是这两个库特有：`sqlhelper.xml` 25 个方言里 13 个**没有任何 `sqlfunc`**（derby embedded、cloudscape、hive、denodo、h2、dremio、snowflake、google bigquery、mongo、luciddb、exasol、databricks、clickhouse），所以所有日期级别，包括 none，都不下推（`isMergeable` 为 false）。看起来是"这些库没有配置日期函数表"，不是漏了单个级别。该范围列会让整张表因此不下推的影响没有验证 | 已固定现状 |
-| 旋转表重名（C4） | 根因已读出，见 #81102 的评论：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute(column)`，同名列被跳过，`fixAlias` 看不到。大小写不同的情况另有错位，没追到 | 已 `@Disabled` |
-| 排名并列（C5） | worksheet 排名在 `AssetQuery.getRankingTableLens` 里固定 `setEqualityKept(false)`（`AssetQuery.java:3292`），所以**恰好取 N 行**，不保留并列；`RankingTableLens` 用 `List.sort`（稳定排序），并列的行保持输入顺序，先出现的先取，top 和 bottom 一样。排名总是在内存里算（`PreAssetQuery.java:3710`）。风险：输入顺序本身不稳定时结果也不稳定，例如 #81087 | **能** |
-| `NumericRangeRef` 边界（C5） | 看 `ValueRangeInfo.inclusiveType`，默认 `LOWER`：每段 [下界, 上界)，最小值以下 `< 第一个值`，最大值以上 `>= 最后一个值`。`UPPER`：(下界, 上界]，两端 `<=` / `>`。`NONE`：每一段两端都闭，按顺序先匹配的先得，两端的"以下 / 以上"是严格的 `<` / `>`。一个值的特例：`BETWEEN v AND v`。空值落入"Others"（SQL 的 `CASE` 里）。**怀疑的不一致**：脚本版本的"最大值以上"分支没有 `!= null` 判断，`LOWER` 下最后一个值 <= 0 时 `null >= 0` 在 JS 里为真，空值会进入最后一段，SQL 版本进入 Others。没有运行验证 | **能**（SQL 和脚本表达式两个都写），怀疑那条先验证 |
-| `DateCondition` 参考日期（C5） | 不能注入。13 个子类都在方法里直接 `System.currentTimeMillis()`，`ZONE` 是静态的默认时区，周起始日读 `Tool.getFirstDayOfWeek()`。只有 `ToDateCondition` 有 `getRange(long)`，但是 private。现有的 `DateConditionTest` 也是相对"现在"取值 | 只能相对当前时间写期望（避开日界、周界、月界），或产品改成可注入 `Clock` |
-| 上传类型检测（C5） | `TextUtil.detectType` 只看文件头 8 个字节：`PK 03 04` 为 xlsx，`D0 CF 11 E0 A1 B1 1A E1` 为 xls，其余一律按分隔文本。列类型 `TextUtil.getType`：日期（`数字[.-/]数字[.-/]数字`加可选时间，按前后位数判断 yyyy-M-d 还是 M-d-yyyy/yy）、时间、整数（`Integer.parseInt`）、小数（`#,###.#`、`%`、`$`、`($..)`），其余为字符串；**`TextUtil.getType` 没有布尔识别，但 `CSVLoader` 有**（更正：此前写成"没有布尔识别"不对）：`CSVLoader` 用 `AssetUtil.getType`，列类型还是默认整数时遇到 `true`/`false`（不分大小写，`AssetUtil.java:2930-2933`）就把该列识别为布尔；之后出现任何其他值（`CSVLoader.java:158-163`），该列变字符串并保留原文；一列里先有数字再有 `true` 同样变字符串。已有单测 `CSVLoaderRulesTest`。`CSVLoader` 逐行合并类型：数字类型混合变 Double，其他混合变 String，含"不适用"值的数字列变 String。`DelimitedFileReader.importHeader` 只用第一行数据判断类型 | **能** |
-| `isQueryMergeable`（C5） | `PreAssetQuery.isQueryMergeable0` 的 8 个阶段已在 3b-C 列出，规则在代码里。`XUtil.isQueryMergeable` 前半段已读：非 JDBC 查询、非 UniformSQL、解析失败、lossy、数据源为空或 Hive 未启用、`jdbc.pushdown.blacklist`（`*` 或查询名）、手写 SQL 里有 `$(@...)` 变量，都不合并；后半段没读 | **能**，哪些组合"应该合并"是产品判断，但现状可固定 |
+| 各"周"级别 | 周按 `minimalDaysInFirstWeek = 7` 算（`JavaScriptEngine.datePart`、`DateTimeProcessor`）：每月第一个不满整周的部分属于**上个月**的最后一周。`month/quarter/year of full week` 都取"这一周的起始日（`week.start`）所在的月"，源码注释的例子：2024-01-01 的整周归 2023。`week of month` = `Calendar.WEEK_OF_MONTH`，为 0 时退到周起始日再取。`week of quarter`：季度第一个整周为第 1 周（`DateComparisonUtil.getQuarterFirstWeek`），值 = (距该周起始日的天数 + 1) / 7 向上取整。`forceDcToDateWeekOfMonth` 只在日期对比（date comparison）里用，worksheet 里为 -1 | **能**。可用 `java.time` 独立算期望，下一批补 |
+| am/pm、millisecond | 前端 `xconstants.ts` 只有常量，没有任何界面使用；Java 里只有旧的报表排序 `SortOrder`、`LayoutTool`、图表/报表常量和 viewsheet 脚本常量列表（`VSScriptableController`）用到；`DateRangeRef.getData` 不支持。结论：worksheet 里没有这些级别。剩下一问：viewsheet 脚本给范围列设这些级别时会怎样（没查） | 已用测试固定 |
+| ClickHouse、H2 没有"不分组"函数 | 不是这两个库特有：`sqlhelper.xml` 25 个方言里 13 个**没有任何 `sqlfunc`**（derby embedded、cloudscape、hive、denodo、h2、dremio、snowflake、google bigquery、mongo、luciddb、exasol、databricks、clickhouse），所以所有日期级别，包括 none，都不下推（`isMergeable` 为 false）。看起来是"这些库没有配置日期函数表"，不是漏了单个级别。该范围列会让整张表因此不下推的影响没有验证 | 已固定现状 |
+| 旋转表重名 | 根因已读出，见 #81102 的评论：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute(column)`，同名列被跳过，`fixAlias` 看不到。大小写不同的情况另有错位，没追到 | 已 `@Disabled` |
+| 排名并列 | worksheet 排名在 `AssetQuery.getRankingTableLens` 里固定 `setEqualityKept(false)`（`AssetQuery.java:3292`），所以**恰好取 N 行**，不保留并列；`RankingTableLens` 用 `List.sort`（稳定排序），并列的行保持输入顺序，先出现的先取，top 和 bottom 一样。排名总是在内存里算（`PreAssetQuery.java:3710`）。风险：输入顺序本身不稳定时结果也不稳定，例如 #81087 | **能** |
+| `NumericRangeRef` 边界 | 看 `ValueRangeInfo.inclusiveType`，默认 `LOWER`：每段 [下界, 上界)，最小值以下 `< 第一个值`，最大值以上 `>= 最后一个值`。`UPPER`：(下界, 上界]，两端 `<=` / `>`。`NONE`：每一段两端都闭，按顺序先匹配的先得，两端的"以下 / 以上"是严格的 `<` / `>`。一个值的特例：`BETWEEN v AND v`。空值落入"Others"（SQL 的 `CASE` 里）。**已确认并报 #81105（已修）**：脚本版本的"最大值以上"分支没有 `!= null` 判断，`LOWER` 下最后一个值 <= 0 时 `null >= 0` 在 JS 里为真，空值进入最后一段，SQL 版本进入 Others | **能**（SQL 和脚本表达式两个都写） |
+| `DateCondition` 参考日期 | 不能注入。13 个子类都在方法里直接 `System.currentTimeMillis()`，`ZONE` 是静态的默认时区，周起始日读 `Tool.getFirstDayOfWeek()`。只有 `ToDateCondition` 有 `getRange(long)`，但是 private。现有的 `DateConditionTest` 也是相对"现在"取值 | 只能相对当前时间写期望（避开日界、周界、月界），或产品改成可注入 `Clock` |
+| 上传类型检测 | `TextUtil.detectType` 只看文件头 8 个字节：`PK 03 04` 为 xlsx，`D0 CF 11 E0 A1 B1 1A E1` 为 xls，其余一律按分隔文本。列类型 `TextUtil.getType`：日期（`数字[.-/]数字[.-/]数字`加可选时间，按前后位数判断 yyyy-M-d 还是 M-d-yyyy/yy）、时间、整数（`Integer.parseInt`）、小数（`#,###.#`、`%`、`$`、`($..)`），其余为字符串；**`TextUtil.getType` 没有布尔识别，但 `CSVLoader` 有**：`CSVLoader` 用 `AssetUtil.getType`，列类型还是默认整数时遇到 `true`/`false`（不分大小写，`AssetUtil.java:2930-2933`）就把该列识别为布尔；之后出现任何其他值（`CSVLoader.java:158-163`），该列变字符串并保留原文；一列里先有数字再有 `true` 同样变字符串。已有单测 `CSVLoaderRulesTest`。`CSVLoader` 逐行合并类型：数字类型混合变 Double，其他混合变 String，含"不适用"值的数字列变 String。`DelimitedFileReader.importHeader` 只用第一行数据判断类型 | **能** |
+| `isQueryMergeable` | `PreAssetQuery.isQueryMergeable0` 的 8 个阶段已在 3b-C 列出，规则在代码里。`XUtil.isQueryMergeable`：非 JDBC 查询、非 UniformSQL、解析失败、lossy、数据源为空或 Hive 未启用、`jdbc.pushdown.blacklist`（`*` 或查询名）、手写 SQL 里有 `$(@...)` 变量，都不合并（已读完并写了 `XUtilQueryMergeableTest`） | **能**，哪些组合"应该合并"是产品判断，但现状可固定 |
 
 **F. 按 E 节补的测试（同一分支）**
 
@@ -353,7 +345,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | `CSVLoaderRulesTest` | 41 | 列类型合并（整数+小数→double，其他混合→字符串，含 N/A 的数字列→字符串，`true/false`→布尔）、表头去重、分隔符、引号、BOM、行列上限 |
 
 **F 里看起来是缺陷或值得问的：**
-- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 当时 `@Disabled`，已报 #81105，已在 `main` 修复，测试已启用并通过。
+- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 当时 `@Disabled`，已报 #81105，已在 `main` 修复，测试已启用并通过。
 - **`1.2.3` 被识别为日期**（格式 `M.d.yy`）：上传的版本号列会被当成日期。固定了现状，没有报。
 - **空字符串被识别为 double**：`getType("")`；文件加载器在调用前会跳过空值，所以现实里碰不到，固定了现状。
 - **整数带千分位**（`1,234`）识别为 double，不是整数；超过 int 范围的整数（`2147483648`）也是 double。固定了现状。
@@ -365,10 +357,10 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **`process()` 把"最大单元格大小"当成列上限传给 `loadData`**（`ImportCSVDialogService.java:598-599`，`Util.getOrganizationMaxCellSize()`，默认 500，对应的参数是 `colLimit`）；`getPreviewTable` 传的是 `getOrganizationMaxColumn()`（默认 200）。看上去是传错了常量，后果有限：第一次预览多读 201-500 列再在 `populateResultMap` 里截成 200。没验证，没报。
 - **`getPreviewTable` 里列上限提示可能丢**：`populateResultMap(.., csvInfo.isUnpivot())` 只在 unpivot 时检查列数，且此时表已被 `colLimit` 截成 200 列，所以改选项后的预览不会再带"列超限"提示（第一次上传预览有）。读代码得出，没运行验证。
 - **xlsb 的拒绝提示**：先走 `process()` 里的 `getSheetNames`，xlsb 是 zip，会被 `detectType` 当 xlsx，`getSheetNames` 可能先失败成 "Failed to parse XLS"，到不了 `loadData` 里的 xlsb 提示。没验证。
-- **`CSVInfo` 的分隔符、引号、表头、编码猜测：已补测并核对（2026-11-12，`CSVInfoDetectionTest` 30 个，产品仓库分支 `test-csvinfo-detection`，本地提交 `d3b8b53ff6`，未推送）。** 评分规则从代码读出并手算期望（前 10 行、每一行列数一致且多于 1 列得"列数 + 100"、不一致得"列数"、引号未闭合得 0；取各行最小值；严格更高才替换，所以平局取先出现的：引号处理开、再关，分隔符 tab、`;`、`,`、`|`），第一次运行 32 个中 31 个通过（唯一失败见下面的 XML），做了变异检查（平局规则、列数一致的偏移、检查行数、首行全数字判断、GB18030 到 GBK 的映射、引号必须紧跟分隔符，共 6 处单独变异都有测试变红；`+100` 改 `+99` 不改变任何实际排序，属于等价变异）。固定的现状、没有报缺陷的：
+- **`CSVInfo` 的分隔符、引号、表头、编码猜测：已补测并核对（2026-11-12，`CSVInfoDetectionTest` 30 个，产品仓库 PR #8064）。** 评分规则从代码读出并手算期望（前 10 行、每一行列数一致且多于 1 列得"列数 + 100"、不一致得"列数"、引号未闭合得 0；取各行最小值；严格更高才替换，所以平局取先出现的：引号处理开、再关，分隔符 tab、`;`、`,`、`|`），做过变异检查，全部被抓到。固定的现状、没有报缺陷的：
   - 每一行都带同样个数的"引号内逗号"（如 `"a,b",c`）时，不处理引号、3 列的得分（103）高于处理引号、2 列的得分（102），猜测结果是不处理引号；各行的个数不同时则处理引号。
   - 引号未闭合的行只有在它是检查范围里的最后一行时才会让引号处理被关掉（前面的行得 0 会被下一行的分数覆盖，0 不是粘住的）。
-  - **首行是否表头：** 有一个"全是数字"的非空单元格就不是表头。不处理引号时用 `String.split(delim)`（正则），`|` 被当成空匹配，首行被拆成单个字符，所以 `…|c1` 这样的首行会被判为数据，同样的数据用 `,` 就是表头（探针已验证）。只在 `|` 分隔且猜测结果不处理引号时发生（例如首行之外有一个字段中间带 `"`），影响小（只是上传对话框里"首行作为表头"勾选框的默认值，用户可以手动勾上）。**已报 #81220**（Query Engine，指给 Larry Liang，状态 New），测试注释已引用该编号。
+  - **首行是否表头：** 有一个"全是数字"的非空单元格就不是表头。不处理引号时用 `String.split(delim)`（正则），`|` 被当成空匹配，首行被拆成单个字符，所以 `…|c1` 这样的首行会被判为数据，同样的数据用 `,` 就是表头。只在 `|` 分隔且猜测结果不处理引号时发生（例如首行之外有一个字段中间带 `"`），影响小（只是上传对话框里"首行作为表头"勾选框的默认值，用户可以手动勾上）。**已报 #81220**（Query Engine，指给 Larry Liang，状态 New），测试注释已引用该编号。
   - `getFileEncode`：UTF-8、GBK（报为 GBK，GB2312/GB18030 映射到 GBK）、UTF-16 两种字节序（报为 "Unicode"）、纯 ASCII（用系统编码）都与代码一致。
   - `CSVInfo.writeXML`/`parseXML` 在整个产品里没有任何调用，所以没有写测试；顺带发现 Tab 保存后读回来是空格（属性值里的原始 Tab 被 XML 规范化），没有用户影响。
 
@@ -428,30 +420,26 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **`AM_PM`、`MILLISECOND`、`AM_PM_OF_DAY`** 有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"：前端常量文件只定义、没有对话框使用；Java 里只有 `ChartConstants`（viewsheet 脚本常量）、`SortOrder`、`LayoutTool` 引用。viewsheet 脚本给图表维度设这些级别会怎样没有验证，不在 worksheet 范围内。
 - **`NthQuarter`、`NthHalfYear`、`NthMonth` 的 setter 对越界值静默忽略**：整个类里 setter 风格一致，XML 解析直接给字段赋值、不经过 setter；只有直接用 API 误传（如 `new NthQuarterCondition(5, 0)`）才会悄悄变成第 1 季度，影响很小。界面是否经过 setter 没有查。
 
-**已报缺陷的那条**：`MonthsCondition` 的 Timestamp 差异（#81178）。探针（现在 21:01，纽约，"最近 3 个月"，SQL 范围 09-11 00:00 到 11-11 23:59:59）：Timestamp 09-11 00:00 内存 false；Timestamp 今天 23:59:59 内存 false（`Days` 为 true）；`java.util.Date` 今天中午内存 false（`Days` 为 true）；`java.sql.Date` 今天 true。`Days`、`Day`、`Week`、`Weeks` 的内存判断都按"天"比较，只有 `MonthsCondition` 不是。
+**已报缺陷的那条**：`MonthsCondition` 的 Timestamp 差异（#81178）：对 `Timestamp`、带时间的 `java.util.Date`，内存判断按时刻比较，与下推 SQL 的"天"范围不一致；`Days`、`Day`、`Week`、`Weeks` 都按天比较，`java.sql.Date` 不受影响。
 
 **读代码得出、没运行验证：** `DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先。（`CSVInfo` 选中 `quote=false` 的怀疑已验证成立并固定，见 4b-G。）
 
-**在带修复的产品上重跑 datatest（2026-11-12，本机）：** 本机 `I:\m2` 里的 `inetsoft-core-2.1.0-SNAPSHOT` 的 `CrossJoinTableLens` 字节码和含 #81087 修复的 `main` 编译结果完全一致，所以跑的是带修复的版本。
-- **`property_crossJoin.maxCellCount`**：单独在新 JVM 里跑 3 次，以及接着 `WSData_Spec` 在同一个 JVM 里跑 1 次，导出的 `Query1.txt` 校验和完全相同（MD5 `1f170b83…`），**行序已经确定，竞态消除**。输出是 5000 个不同的 id（左表 TestData 固定为变化最快的一边），既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行的"1 个 id × 143 个订单 × 35 个客户"，所以用例仍失败：**基线是按旧的竞态结果之一记录的，需要更新成新的确定输出**（改用例或放宽比对都不必了）。
-- **`WSData_Spec` 另有 4 个用例失败（`rotate`、`grouping1`、`condition1`、`condition2`）**，原因是 #81102 的修复：旋转表以前把第一列重名的列丢掉，基线固定了这个错误输出（如 `rotate/Query4` 基线 7 列，只有 6 个不同的 CATEGORY_ID；现在 21 列，重名列加 `_1`、`_2` 后缀，20 个产品都在）。`rotate/Query4`、`condition1/Query7` 的表头确认有 `_n` 后缀；`condition2/Query1`（基线 3×29）、`grouping1/Query1`（基线 3×14）是旋转表、列数大幅增加，没有逐列核对。这 4 个基线也要按新输出更新，更新前应人工看一遍新输出是否符合 `fixAlias` 的规则（A、A_1、A_2）。
-- 这说明严格模式后的 datatest 能发现产品修复带来的结果变化（也说明这几个基线固定了缺陷）。以上 5 个基线里**更新了 3 个（`rotate/Query4`、`condition1/Query7`、`grouping1/Query1`，核对通过，对应 3 个用例用新基线通过），其余 2 个（`condition2/Query1`、`Query3`）和 cross join 没有更新**（决定：基线更新和本文档放同一个 PR；更新前先确认新输出正确，核对结果如下）。
-- **`rotate/Query4`：已独立验证，新输出正确。** 用 `PRODUCTS1` 的"产品→类别"关系逐列核对：20 个产品各出现一次；每列表头的底名就是该产品的类别；重名列的后缀 `_1`、`_2` 在同一类别内按产品号升序编号。注意列顺序不是源表顺序：先是全部不带后缀的列（6 个），再是带后缀的列。**基线已更新**，`WSData_Spec#rotate` 用新基线通过。列序规则（单元探针验证）：各名字第一次出现的列在前、按源表顺序，重名列在后、也按源表顺序；列只从源表前面的行生成（见下面 `Query3`）。
-- **`condition1/Query7`、`grouping1/Query1`：已核对，基线已更新。** 来源行序和导出文件不同（导出已排序），所以没有按位置比，而是核对"新增的列正好是以前被丢弃的重名列，每列的（表头底名，数据）能对应到来源的一行"：`Query7` 来源 `MVPRODUCTS1`，19 个（类别，描述）配对完全一致，`Column [12]` 是来源里类别为空的那一行，后缀编号完整；唯一解释不了的是 `f_string` 这一列，它在旧基线里就有、位置和值没变，不是这次修复带来的。`Query1` 来源 `Embedded`，把"表头行"也算作数据行（来源把它当数据，旋转后成了一列，空小时那一行成了标签列）后，60 个来源行各出现一次，后缀编号完整。旧基线的列都不变。
-- **`condition2/Query1`：被列数上限（200）截断**（来源 701 行，旋转后每行一列）；旧基线 29 列是"去掉重名列"的结果。新输出前 200 列的内容没有独立验证。
-- **`condition2/Query3`：不是"列变多"这么简单，不能直接当新基线。** 它是 `PRODUCTS1`（2380 行）的旋转表，保存的列名是 1～20 的类别，按 `11` 分组、对 `2` 求和。新行为每行一列并受上限截断，而类别 `11` 第一次出现在第 1340 行，落在上限之外，分组列消失，结果从 3×2（组 3、5）变成 2×1（8）。也就是说 #81102 的修复让"保存的旋转表依赖重名列被丢弃"的 worksheet 悄悄改变了含义，**已确认是问题，已报 #81193**（回归，指给 Nelson Cao）：用单元探针复现并对比了修复前后——源表 300 行，类别 `11` 第一次出现在第 271 行，保存的列选择含 `1`～`11`；修复前旋转表 12 列（`11` 在），修复后 250 列（`11` 丢了，列选择里也没有）。上限 250 列是有意设计（#81102 里写过），修复前重名列被丢弃所以很少碰到上限，修复后每行一列，名字第一次出现得晚的列就被截掉，保存的 worksheet 里依赖它的分组、条件、聚合被悄悄丢弃。**这个基线保持不动，等开发决定**（#81193 里列了三个方向：被截断时先保留各名字第一次出现的列、加列上限提示、保留保存的选择里仍存在的名字）。
-- **`property_crossJoin.maxCellCount`：只验证了一部分。** 前 5000 行的 TestData 列与 `TestData` 的行依次一致（左表最快，已验证）；其余 7 列在 5000 行里是常量，都等于 `All Sales1` 第 1 行和 `Customer1` 第 1 行。但 `Customer1` 是没有排序的绑定表（`BoundTableAssembly`，无 `sortInfo`），行序来自数据库：新输出第 1 行客户是 NJ，旧基线和 `Customer1.txt` 导出的第 1 行是 AZ。这一列依赖数据库的返回顺序，无法独立确认，把它写进基线可能固定的是数据库行序，换环境会变。
+**在带修复的产品上重跑 datatest（2026-11-12，本机）：** 本机的 `inetsoft-core-2.1.0-SNAPSHOT` 与含 #81087 修复的 `main` 一致。
+- **`property_crossJoin.maxCellCount`：** 行序已确定，竞态消除（多次运行输出相同）。输出是 5000 个不同的 id，既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行时的另一种，所以用例仍失败：**基线是按旧的竞态结果之一记录的，需要更新**。新输出只验证了一部分：`TestData` 列与 `TestData` 的行依次一致，其余 7 列在 5000 行里是常量；但 `Customer1` 是没有排序的绑定表，第 1 行客户取决于数据库返回顺序（新输出 NJ，旧基线 AZ），写进基线固定的可能是数据库行序。**待定：给 `Customer1` 加排序，或只比对 `TestData` 列。**
+- **`WSData_Spec` 另有 4 个用例失败（`rotate`、`grouping1`、`condition1`、`condition2`）**，原因是 #81102 的修复：旋转表以前把第一列重名的列丢掉，基线固定了这个错误输出。这说明严格模式后的 datatest 能发现产品修复带来的结果变化（也说明这几个基线固定了缺陷）。决定：基线更新和本文档放同一个 PR，更新前先确认新输出正确。5 个基线的处理：
+  - **`rotate/Query4`、`condition1/Query7`、`grouping1/Query1`：已核对，基线已更新**，对应用例通过。核对对照来源数据：`rotate/Query4` 20 个产品各出现一次，列头底名是产品的类别，重名后缀按产品号升序；`Query7`、`Query1` 新增的列正好是以前被丢弃的重名列，后缀编号完整，旧基线的列都不变。列序规则：各名字第一次出现的列在前（按源表顺序），重名列在后（也按源表顺序）；列只从源表前面的行生成。
+  - **`condition2/Query1`、`Query3`：基线不更新，等开发。** `Query3` 是 `PRODUCTS1`（2380 行）的旋转表，保存的列名是 1～20 的类别，按 `11` 分组、对 `2` 求和；修复后每行一列并受列数上限截断，类别 `11` 第一次出现在第 1340 行，落在上限之外，分组列消失，结果从 3×2 变成 2×1。#81102 的修复让"保存的旋转表依赖重名列被丢弃"的 worksheet 悄悄改变了含义，**已报 #81193**（回归，指给 Nelson Cao；三个方向：被截断时先保留各名字第一次出现的列、加列上限提示、保留保存的选择里仍存在的名字）。`Query1` 同样被列数上限截断，新输出前面的列没有独立验证。
 
-**H2. 第二批（2026-11-12，产品分支 `test-csvinfo-and-mergeable-unit-tests`，从 `origin/main` 新建，本地提交、未推送，没有开 PR）**
+**H2. 第二批（2026-11-12，产品仓库 PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064)，待合并）**
 
 在同一个 JVM 里整体跑：6 个类、246 个测试，0 失败（`-Dsurefire.forkCount=1`）；每个类都做过变异检查。
 
 | 类 | 测试数 | 对象 |
 |---|---|---|
 | `CSVInfoDetectionTest` | 30 | 上传的分隔符、引号、首行表头、编码猜测（4b-G） |
-| `PreAssetQueryAggregateMergeableTest` | 86 | `isAggregateMergeable`：9 个永不下推的公式、百分比、无公式、`MEDIAN`（仅 Oracle 且主版本号 ≥ 10）、Derby 整数列 `AVG`、`sqlhelper.xml` 里 Sybase 不支持的方差类公式；变异 6 处全部被抓到 |
+| `PreAssetQueryAggregateMergeableTest` | 87 | `isAggregateMergeable`：9 个永不下推的公式、百分比、无公式、`MEDIAN`（仅 Oracle 且主版本号 ≥ 10）、Derby 整数列 `AVG`、`sqlhelper.xml` 里 Sybase 不支持的方差类公式；变异 6 处全部被抓到 |
 | `PreAssetQuerySortMergeableTest` | 26 | `isSortInfoMergeable`：H2 不保持分组顺序、Informix 不能按聚合排序、first/last 聚合、脚本计算列、有分组时丢弃其他列的排序；变异 5 处全部被抓到 |
-| `PreAssetQueryConditionMergeableTest` | 13 | `isConditionListMergeable`：条件列和比较值的列、非 `Condition`（排名）、日期条件、mongo 的 `ONE_OF`、子查询（同源、库能力）、having；变异 6 处全部被抓到 |
+| `PreAssetQueryConditionMergeableTest` | 14 | `isConditionListMergeable`：条件列和比较值的列、非 `Condition`（排名）、日期条件、mongo 的 `ONE_OF`、子查询（同源、库能力）、having；变异 6 处全部被抓到 |
 | `PreAssetQuerySourceMergeableTest` | 70 | 来源判断：Mirror（`FROM_SUBQUERY`、基表是否可下推、最大行数）、Join（内连接、全外连接、merge join、数据源、最大行数）、union/intersect/minus（各库）、SQL 手写模式（解析、丢信息、无表、已有 group by）、内嵌表/旋转表/反透视表；变异 12 处全部被抓到 |
 | `PreAssetQueryGroupMergeableTest` | 19 | 分组（交叉表、时间序列、命名分组、where 不能下推、排名与分组兼容的三种情况）、选择列（全隐藏、隐藏的脚本列、SQLite 的日期和布尔）、排名、整条查询、结果缓存；变异 13 处全部被抓到 |
 
@@ -459,10 +447,10 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **读代码和运行时发现的几点（没有报缺陷）：**
 - **Sybase 的平方和（`SUMSQ`）**：公式名是 `SumSQFormula`，代码用小写 `sumsqformula` 去查库能力，而 `sqlhelper.xml` 里 Sybase 的禁用项写的是 `sumsq`，对不上，所以声明了不支持却仍被下推。它是内部构件（用来拼方差的组合 SQL），用户选不到，没有实际影响；测试固定了现状。
-- **库的产品版本（已确认，影响很小，不报）**：`SQLHelper.getSQLHelper` 只在数据源**没有** `version` 时（MySQL、Oracle）才通过仓库查询 `DBProductVersion` 并设给 helper，Derby 总是查；数据源有版本时 helper 的版本是空字符串（单测探针验证）。数据源的 `version` 是**会持久化**的属性（`JDBCDataSource` 的 XML 里读写），但产品只给 MySQL 设过它（查询成功后缓存，保存数据源时就持久化了）。读 helper 版本的只有两处：`XUtil.supportMedian`（Oracle，版本 ≥ 10 才下推中位数）和 `DerbyHelper`（Derby 总是查，不受影响）；`MySQLHelper` 读的是数据源的版本，所以 MySQL 不受影响；`NamedRangeRef` 里按版本判断的代码已被注释掉。所以只有"Oracle 数据源的定义里手工写了 `version`"这一种情况会让中位数不下推（在内存里算，结果相同，只是慢），没有界面或代码会给 Oracle 设这个值。已写成测试固定现状，改成让 helper 读数据源版本后该测试会变红（已验证）。
+- **库的产品版本（影响很小，不报）：** helper 的版本只在数据源没有 `version` 时（MySQL、Oracle）才通过仓库查询 `DBProductVersion` 设置，Derby 总是查；数据源有版本时 helper 的版本是空字符串。数据源的 `version` 会持久化，但产品只给 MySQL 设过它。读 helper 版本的只有 `XUtil.supportMedian`（Oracle，版本 ≥ 10 才下推中位数）和 `DerbyHelper`；`MySQLHelper` 读数据源的版本，不受影响。所以只有"Oracle 数据源的定义里手工写了 `version`"才会让中位数不下推（改在内存里算，结果相同，只是慢），没有界面或代码会给 Oracle 设这个值。已写成测试固定现状。
 - **`isSortInfoMergeable()` 会改表**：有分组时它把不在分组、聚合列上的排序从**查询持有的表**里删掉。生产里 `AssetQuerySandbox`（第 482、954 行）先克隆表再建查询，所以改的是副本，不是资产；我直接构造查询才改到资产。不算缺陷，已写成测试。
-- **条件的两套判断不一致（已确认，性能问题，**已报 #81229**，指给 Nelson Cao，状态 New）**：`merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个把不能下推的条件拆出去，其余仍下推，再用 `isPreConditionListMergeable`（`isConditionListMergeable`）整体复核；mongo 的 `ONE_OF` 检查只在后者。探针走完整的 `merge()`：同样的 `k=1 AND k 属于 (1,2)`，非 mongo 库两个条件都下推；**mongo 上整个 where 都留在内存里**（`k=1` 本来能下推，`UniformSQL` 的 where 为空、3 项都留给内存）；对照：脚本计算列的条件只让它自己留在内存，`k=1` 仍然下推。所有条件都在内存里照样生效，所以结果相同，只是少了一次下推。已写成测试固定现状，给 `isConditionItemMergeable` 加上 mongo 检查后该测试变红（已验证）。
-- **各库能力要同时看 `sqlhelper.xml` 和 helper 类（写来源测试时第一次按 xml 推错了）**：`SQLServerHelper` 把 `CONCATENATION_TABLE` 限定成只有 union（intersect、minus 不支持），`MySQLHelper` 的 union 按数据源版本（> 4.1）、其余按 xml，`MongoHelper` 不支持 mirror 和 concatenation，`DerbyHelper` 只管表达式分组；Oracle、PostgreSQL、H2、Informix、Sybase 没有覆盖，只看 xml。之前 `SQLHelperOperationSupportTest` 的支持矩阵没有这层（只测了 xml 和 MySQL、SQL Server、Derby 的几个覆盖，见 3b-C 续），后来的来源测试里 SQL Server 的 intersect、minus 是 false 已按 helper 修正。
+- **条件的两套判断不一致（性能问题，**已报 #81229**，指给 Nelson Cao，状态 New）：** `merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个拆出不能下推的条件，其余仍下推，再用 `isConditionListMergeable` 整体复核；mongo 的 `ONE_OF` 检查只在后者，所以 mongo 上带 `ONE_OF` 的 where 整个留在内存（对照：脚本计算列的条件只让它自己留在内存）。所有条件在内存里照样生效，结果相同，只是少了一次下推。已写成测试固定现状。
+- **各库能力要同时看 `sqlhelper.xml` 和 helper 类：** `SQLServerHelper` 把 `CONCATENATION_TABLE` 限定成只有 union（intersect、minus 不支持），`MySQLHelper` 的 union 按数据源版本（> 4.1），`MongoHelper` 不支持 mirror 和 concatenation，`DerbyHelper` 只管表达式分组；Oracle、PostgreSQL、H2、Informix、Sybase 只看 xml。`SQLHelperOperationSupportTest` 的支持矩阵只含 xml 和少数覆盖（见 3b-C 续），来源测试里 SQL Server 的 intersect、minus 为 false 已按 helper 写。
 - **Join、Concatenated 里"数据源相同"的比较大多是多余的**：不同数据源的名字不同，组合表的 `getSource()` 已经是 null，更早就被拒绝了；只有"同名但定义不同的数据源"才走到这一步（用例里用同名、不同 URL 构造）。手写 SQL 模式里"解析成功且不丢信息"的检查与 `XUtil.isQueryMergeable` 重复（等价变异）；不重复的是"没有表或没有选择列"。
 - **`isRankingMergeable` 有排名条件就返回 false**：worksheet 的排名从不下推，和 4b-E 一致，是有意设计。
 
@@ -473,7 +461,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - 新建测试类的头注释少一个 ` */` 时，编译器报 "does not represent an annotation type"，和真正原因无关。
 - 用 `-q` 加 `-Dsurefire.failIfNoSpecifiedTests=false` 跑可能一个测试都没跑也返回成功，要看 `Tests run:`。
 
-**H3. 第三批（2026-11-12，同一产品分支，本地提交、未推送）**
+**H3. 第三批（2026-11-12，同一个 PR #8064）**
 
 | 类 | 测试数 | 对象 |
 |---|---|---|
@@ -520,7 +508,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 3. 上传的日期、布尔类型识别规则；`NumericRangeRef` 区间边界；排名并列规则。
 4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。已确认：库没有原生统计函数时 `AggregateFormula` 退回 SUM/COUNT 组合 SQL（不是退回内存），在 Derby 上跑过：方差、标准差与 Java 参考值一致；协方差、相关系数在只有一列为 NULL 时与"两列都有值的行"不一致，单行相关系数除零报错（产品缺陷，已报 #81095、#81096，已在 `main` 修复，单测已启用）。各库生成的 SQL 已由 `DateRangeRefDialectTest` 等固定文本，只有 Derby 真正执行；MySQL、PostgreSQL 的除零行为仍是经验判断。
 
-**2026-11-12 更新（上面第 1～3 条）：** 第 1 条：`DateCondition` 不能注入时间（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了单测，要不要改成可注入 `Clock` 是产品的事；第 2 条：规则从代码读出了 SQL 层部分，`PreAssetQuery` 的 `is*Mergeable` 还没读完；第 3 条：上传类型识别、数值分段边界、排名并列的规则都已从代码读出并写了测试（见 4b-E、F），"设计是否合理"仍是产品的判断。
+**2026-11-12 更新（上面第 1～3 条）：** 第 1 条：`DateCondition` 不能注入时间（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了单测，要不要改成可注入 `Clock` 是产品的事；第 2 条：`PreAssetQuery` 的 `is*Mergeable` 和 SQL 层规则都已从代码读出并写了测试，"应不应该合并"仍是产品判断；第 3 条：上传类型识别、数值分段边界、排名并列的规则都已从代码读出并写了测试（见 4b-E、F），"设计是否合理"仍是产品的判断。
 
 **需要用户决定：**
 - 严格模式后数据库不可用也会让 CI 变红（以前异常被吞掉）：`ensure-db-server` 的等待和重试是否足够。
@@ -530,7 +518,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **没验证的：**
 - 评估和处理后的运行都在本机（Windows）；CI 上严格模式后的结果未确认（CI 用同一份测试配置，上传的根因应相同）。
-- 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec` 和 `checkMergeable CM1`（#213 已合并；2026-11-12 在带产品修复的版本上又跑了 `WSData_Spec` 24 个用例和 `property_crossJoin.maxCellCount`：4 个失败都是旋转表的基线受 #81102 修复影响，加上 cross join，共 5 个用例（6 个基线文件）受影响，其中 3 个用例的基线已更新，其余通过；6 个 spec 的整套没有再跑，CI 上的结果未确认）。
+- 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec`、`checkMergeable CM1`，以及在带产品修复的版本上重跑 `WSData_Spec` 和 `property_crossJoin.maxCellCount`（结果见 4b-H）；6 个 spec 的整套没有再跑，CI 上的结果未确认。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
 - 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）当时没有读，后来读了并写了 `XUtilQueryMergeableTest`。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
@@ -614,10 +602,10 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Resolved | `NumericRangeRefBoundaryTest` | 无 |
 | #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | New | `DateConditionBuiltinTest` 固定现状 | 无 |
 | #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | New | 暂无（探针验证过，未写进单测） | `condition2/Query1`、`Query3` 的基线不更新，等开发 |
-| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（产品分支 `test-csvinfo-and-mergeable-unit-tests`，未推送） | 无 |
-| #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | New | `PreAssetQueryConditionMergeableTest` 固定现状（产品分支 `test-csvinfo-and-mergeable-unit-tests`，未推送） | 无 |
-| #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（`@Disabled`，产品分支，未推送）；脚本侧有通过的测试 | 无 |
-| #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（`@Disabled`）；脚本侧有通过的测试 | 无 |
+| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（PR #8064） | 无 |
+| #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | New | `PreAssetQueryConditionMergeableTest` 固定现状（PR #8064） | 无 |
+| #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（`@Disabled`，PR #8064）；脚本侧有通过的测试 | 无 |
+| #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（`@Disabled`，PR #8064）；脚本侧有通过的测试 | 无 |
 | #80538 | 非 distinct union 加载中多算一行（原来就有） | New | `SetOperationLensesTest` 的最后一个 `@Disabled` | 无 |
 
 ## 附：数据来源与复现
