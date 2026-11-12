@@ -2,8 +2,7 @@
 
 > 日期：2026-11-09　模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
 > datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（`f12b07ca59`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。第 4 节的产品单测盘点已在 `main` 上复核。
-> 状态（[#80957](https://issues.inetsoft.com/issues/80957)）：G1 已完成（PR #203，`ViewsheetTest` 默认严格）；基线来源与 SQL 独立核对、G9、书签选择状态、donut 已核对，见第 2 节"核对结果"；G4 已提 stylebi PR [#7995](https://github.com/inetsoft-technology/stylebi/pull/7995)，G3、G5 已提 stylebi PR [#8000](https://github.com/inetsoft-technology/stylebi/pull/8000)；G2、G7（含 G9）已在本 PR 完成；G8 暂不做。
-> 2026-11-12 更新：G5 继续深挖明细型计算字段的 null/类型边界，提了 3 个"Dev feedback needed"单：明细型 null 参与运算的 JS 强制转换语义（[#81197](https://issues.inetsoft.com/issues/81197)）、声明类型比结果窄时静默夹断（[#81200](https://issues.inetsoft.com/issues/81200)）、15 个 SQL 表达式计算字段在"合并进数据库 SQL"与"退回脚本"两条路径上结果不一致（[#81223](https://issues.inetsoft.com/issues/81223)）；顺带更正了第 3 节注释里"明细型除零得 Infinity"的错误猜测。
+> 状态（[#80957](https://issues.inetsoft.com/issues/80957)）：G1 已完成（PR #203，`ViewsheetTest` 默认严格）；基线来源与 SQL 独立核对、G9、书签选择状态、donut 已核对，见第 2 节"核对结果"；G4 已提 stylebi PR [#7995](https://github.com/inetsoft-technology/stylebi/pull/7995)，G3、G5 已提 stylebi PR [#8000](https://github.com/inetsoft-technology/stylebi/pull/8000)；G2、G7（含 G9）已在本 PR 完成；G8 暂不做。G5 明细型计算字段的 null/类型边界待开发确认：[#81197](https://issues.inetsoft.com/issues/81197)（null 参与运算）、[#81200](https://issues.inetsoft.com/issues/81200)（声明类型窄化）、[#81223](https://issues.inetsoft.com/issues/81223)（SQL 表达式合并/脚本两条路径不一致），见第 4 节 G5 注意事项。
 
 ## 1. 结论
 
@@ -216,8 +215,9 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 
 注意：
 - `CALC.edate(field['orderdate'], 2)` 是 vscalc 在用的表达式，会碰上 [#80953](https://issues.inetsoft.com/issues/80953) 问题 6 的跨年顺延（12-31 加 2 个月得 03-03），先按现有行为写并标注。
-- 2026-11-12 更正：明细型除零**不是** Infinity——查了代码，`FormulaTableLens` 和聚合型走的是同一条 `GraalJavaScriptEngine.exec → ScriptValueConverter.toHostResult/toHost`，NaN/Infinity 统一转 null，和 [#80953](https://issues.inetsoft.com/issues/80953) 问题 3c 是同一个问题，不用另问。真正没问过的是 null 参与运算：`null+10` 得 10、`null*2` 得 0、`"a"+null` 得字面文本 `"anull"`（JS 强制转换，不传播 null），已提 [#81197](https://issues.inetsoft.com/issues/81197)。`Tool.getData`/`FormulaTableLens` 把声明类型比结果窄（如结果是超出 Integer 范围的 Double）时，会被 Java 窄化转换静默夹成 `Integer.MAX_VALUE` 之类的数，不是保留原值也不是 null，和代码自己的注释对不上，已提 [#81200](https://issues.inetsoft.com/issues/81200)。
-- 15 个 SQL 表达式的计算字段：9 个是纯列引用，6 个有实际运算（`customer_id+10`、`BaseFormula+2`/`*2`、3 处 `concat(field['x'],'a')`）。查了 `PreAssetQuery` 的合并逻辑：能合并时这段表达式文本被当字面 SQL 嵌进查询，数据库自己算；不能合并（和这个字段本身无关，取决于同一查询里的 join/VPM/缓存等）时退回脚本路径。实测 H2 `NULL+10`/`NULL*2` 都是 null，和脚本路径的 10/0 不一致；`concat(a,b)` 在脚本作用域（`GraalJavaScriptEngine`）里根本没找到绑定，猜测退回脚本时会直接报错而不是算出错误值，但没跑起来确认。已提 [#81223](https://issues.inetsoft.com/issues/81223)。
+- 明细型除零是 null，不是 Infinity：`FormulaTableLens` 和聚合型走同一条 `GraalJavaScriptEngine.exec → ScriptValueConverter.toHostResult/toHost`，NaN/Infinity 统一转 null，和 [#80953](https://issues.inetsoft.com/issues/80953) 问题 3c 是同一个问题，不用另问。null 参与运算（`null+10` 得 10、`null*2` 得 0、`"a"+null` 得字面文本 `"anull"`，JS 强制转换、不传播 null）该不该当作 null 传播处理，待开发确认（[#81197](https://issues.inetsoft.com/issues/81197)）。
+- 声明类型比结果窄（如结果是超出 Integer 范围的 Double）时，`Tool.getData`/`FormulaTableLens` 会被 Java 窄化转换静默夹成 `Integer.MAX_VALUE` 之类的数，既不是保留原值也不是 null，是否符合预期待开发确认（[#81200](https://issues.inetsoft.com/issues/81200)）。
+- 15 个 SQL 表达式的计算字段：9 个是纯列引用，6 个有实际运算（`customer_id+10`、`BaseFormula+2`/`*2`、3 处 `concat(field['x'],'a')`）。`PreAssetQuery` 能合并时这段表达式文本被当字面 SQL 嵌进查询由数据库计算，不能合并（和这个字段本身无关，取决于同一查询里的 join/VPM/缓存等）时退回脚本路径，两条路径结果不一致：实测 H2 `NULL+10`/`NULL*2` 都是 null，脚本路径是 10/0；`concat(a,b)` 在脚本作用域（`GraalJavaScriptEngine`）里没有绑定，退回脚本大概率直接报错（未实测确认）。待开发确认（[#81223](https://issues.inetsoft.com/issues/81223)）。
 
 ## 5. Dashboard 补充
 
