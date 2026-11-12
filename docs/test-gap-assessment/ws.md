@@ -321,6 +321,9 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | `NumericRangeRefBoundaryTest` | 5（1 个 `@Disabled`） | 三种包含方式（下界闭、上界闭、两端闭）的边界，SQL（Derby 执行）和脚本（表单公式引擎）两个表达式对同一张表，4 个一致。**确认了一个不一致**：脚本版本"最大值以上"没有 null 判断，最后一个分界值 <= 0 时 null 进入最后一段，SQL 版本进 Others（见下） |
 | `RankingTiesTest` | 6 | worksheet 排名恰好取 N 行、并列按输入顺序、`RankingCondition.equal` 选项在 worksheet 里被忽略（viewsheet 的 top N 会用它） |
 | `TextUtilTypeDetectionTest` | 43 | 文件类型（xlsx、xls、文本）和单值类型（整数、小数、日期、时间、字符串）的规则 |
+| `XUtilQueryMergeableTest` | 16 | `XUtil.isQueryMergeable` 里 UniformSQL 测试没覆盖的分支：group by、聚合列、下推黑名单（`*`、名字列表、整词比较）、内嵌 `$(@var)`、非 JDBC 查询、没有数据源 |
+| `DateConditionBuiltinTest` | 39 | 相对"现在"的内置日期条件（ToDate、最近 N 个月/天、第 N 季度/半年/月、PartDate）：用 `java.time` 算期望，跨日时跳过；已在 UTC、上海、Lord_Howe、Kiritimati、Pago_Pago、伦敦下各跑通（`core/pom.xml` 写死 `-Duser.timezone=America/New_York`，`-DargLine` 覆盖不了，要改 pom 才能换时区） |
+| `CSVLoaderRulesTest` | 41 | 列类型合并（整数+小数→double，其他混合→字符串，含 N/A 的数字列→字符串，`true/false`→布尔）、表头去重、分隔符、引号、BOM、行列上限 |
 
 **F 里看起来是缺陷或值得问的：**
 - **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 已 `@Disabled`，已报 #81105。
@@ -328,6 +331,14 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **空字符串被识别为 double**：`getType("")`；文件加载器在调用前会跳过空值，所以现实里碰不到，固定了现状。
 - **整数带千分位**（`1,234`）识别为 double，不是整数；超过 int 范围的整数（`2147483648`）也是 double。固定了现状。
 - **`RankingCondition.equal` 在 worksheet 里被忽略**：`AssetQuery.getRankingTableLens` 固定 `setEqualityKept(false)`，而 viewsheet 的 top N 会传 `ranking.isEqual()`。若界面在 worksheet 里也提供"包含并列"选项，这就是问题；没有查界面。
+
+**G. 上传服务（`ImportCSVDialogService`）：读了代码，决定不加单测（2026-11-12）**
+- **环境不允许**：`loadData` 一开始就调 `ExcelFileSupport.getInstance().isXLSB(..)`，它用反射加载 `utils/inetsoft-xml-formats` 里的 `PoiExcelFileSupport`；该模块依赖 core，core 的测试类路径上没有它，所以连 CSV 上传也走不通。服务本身用 Mockito 能构造（5 个依赖都能顶替，`FileSystemService` 要返回 `Tool.getCacheDirectory()`，否则 `loadData` 按缓存键找不到文件，报 "Upload Timeout"）。要测只能放进 `utils/inetsoft-xml-formats/src/test`（有 core 的 tests jar 和 POI），那边的构建我没跑通（反应堆里 core 先失败）。
+- **固定宽度文本（`TextFileType.FIXED`）不是上传功能**：上传的类型只由 `TextUtil.detectType` 给出（DELIMITED、XLS、XLSX），`FixedFileReader`、`FixedFileInfo` 只被 `uql/text/TextOutput`（文本数据源）用，worksheet 上传到不了。上面 §3 表里"固定宽度文本没有用例"这一条不适用于上传。
+- **`process()` 把"最大单元格大小"当成列上限传给 `loadData`**（`ImportCSVDialogService.java:598-599`，`Util.getOrganizationMaxCellSize()`，默认 500，对应的参数是 `colLimit`）；`getPreviewTable` 传的是 `getOrganizationMaxColumn()`（默认 200）。看上去是传错了常量，后果有限：第一次预览多读 201-500 列再在 `populateResultMap` 里截成 200。没验证，没报。
+- **`getPreviewTable` 里列上限提示可能丢**：`populateResultMap(.., csvInfo.isUnpivot())` 只在 unpivot 时检查列数，且此时表已被 `colLimit` 截成 200 列，所以改选项后的预览不会再带"列超限"提示（第一次上传预览有）。读代码得出，没运行验证。
+- **xlsb 的拒绝提示**：先走 `process()` 里的 `getSheetNames`，xlsb 是 zip，会被 `detectType` 当 xlsx，`getSheetNames` 可能先失败成 "Failed to parse XLS"，到不了 `loadData` 里的 xlsb 提示。没验证。
+- **`CSVInfo` 的分隔符/表头猜测**（`getCSVInfo`、`getScore`）在 core 里、没有任何测试，不需要上面的环境；规则能从代码读出（评分取各行的最小值，列数一致 +100，平局取先出现的：tab、`;`、`,`、`|`，带引号优先）。读代码时发现一个可疑点：每一行都带同样个数的"引号内逗号"时，`quote=false` 的得分（列数更多）会高于 `quote=true`，被选中。没运行验证，没写。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
 
