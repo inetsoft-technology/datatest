@@ -66,6 +66,30 @@ class Para_VS_Spec extends Specification{
    }
 
    /*
+    The browser sends "<name>.__type__=<declared type>" only when a hyperlink parameter value is
+    null (show-hyperlink.service.ts: the value is the string "null"). Same ws and parameters as
+    Para_wscondition2, but the Top (top) and Bottom (Pbottom) numbers are sent as typed null, the
+    way a hyperlink would. A null integer is read as null, so both ranking conditions are
+    ignored and the other conditions still apply.
+   */
+   def 'Para_wscondition2_typedNullInteger'() {
+      def paras = new HashMap<String, String[]>()
+      paras.put('float', ['28.999'] as String[])
+      paras.put('top', ['null'] as String[])
+      paras.put('top.__type__', ['integer'] as String[])
+      paras.put('PstartYear', ['2020-01-01 00:00:00'] as String[])
+      paras.put('PendYear', ['2021-01-01 00:00:00'] as String[])
+      paras.put('Pbottom', ['null'] as String[])
+      paras.put('Pbottom.__type__', ['integer'] as String[])
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^ParaVS/Para_wscondition2', caseName)
+      vstest.executeVS(paras, null)
+
+      expect:
+      vstest.compareData(null)
+   }
+
+   /*
     check worksheet grouping parameter--date,boolean
    */
    def 'Para_wsgroup'() {
@@ -130,6 +154,26 @@ class Para_VS_Spec extends Specification{
    }
 
    /*
+    * check worksheet variable assemblies of type double, float, date and timeInstant (datetime):
+    * each variable drives one condition of ws_vartype and is the only one that drops one row.
+    * vdouble: combo box, Double >= 20.5 drops A. vfloat: multi-value list, Float in the list drops B.
+    * vdate: multi-value list, Date in the list drops D. vdatetime: text input with a default value
+    * (not sent here), DateTime <= 2020-05-01 12:00:00 drops F. The expected rows are C and E.
+   */
+   def 'Para_wsvartype'() {
+      def paras = new HashMap<String, String[]>()
+      paras.put('vdouble', ['20.5'] as String[])
+      paras.put('vfloat', ['1.5', '3.5', '4.5', '5.5', '6.5'] as String[])
+      paras.put('vdate', ['2020-01-01', '2020-02-01', '2020-03-01', '2020-05-01', '2020-06-01'] as String[])
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^ParaVS/Para_wsvartype', caseName)
+      vstest.executeVS(paras, null)
+
+      expect:
+      vstest.compareData(null)
+   }
+
+   /*
     * check worksheet databasequery parameter--datetime,integer
     * check sql query with parameter
    */
@@ -154,12 +198,14 @@ class Para_VS_Spec extends Specification{
    /**
     * check parameter on complex query. see Bug #60502, Bug #60334
     *
-    * Ignored: fails under the strict ViewsheetTest because MySQL1's VPM rejects the unparsed
-    * hand-written SQL of ws_basequerySQL; no bug filed yet. Do not update the baseline to an
-    * exception. Details and developer questions: docs/test-gap-assessment/vspara.md (TODO, 6.1).
+    * The hand-written SQL of ws_basequerySQL does not parse (parseResult=3, its time(...) call is
+    * not accepted by the SQL grammar) and MySQL1 has a VPM. Under the default
+    * vpm.unparsed.sql.policy=reject, VPM refuses an unparsed query unless the SQL declares the
+    * tables it reads, so the first line of that SQL is the comment
+    * "-- vpm.tables: orders.orders, orders.contacts, orders.order_details, orders.customers".
+    * Do not remove that line. Details: docs/test-gap-assessment/vspara.md, section 4.
     * @return
     */
-   @Ignore("VPM rejects the unparsed SQL of ws_basequerySQL, waiting for developer answer, see docs/test-gap-assessment/vspara.md")
    def 'Para_basequerysql'() {
       def paras = new HashMap<String, String[]>()
       paras.put('y2004', ['2004-01-01'] as String[])
@@ -305,6 +351,43 @@ class Para_VS_Spec extends Specification{
      expect:
       vstest.compareData(null)
       vstest.compareImage(null)
+   }
+
+   /*
+    The browser sends "<name>.__type__=<declared type>" only for a hyperlink parameter whose value
+    is the text "null" (show-hyperlink.service.ts). Same parameters as Para_dataview, but the
+    short, float and long ones are sent as typed null, the way a hyperlink would; each of them
+    gives the same data as leaving the parameter out. Data only: the images are not compared.
+    The boolean is left as in Para_dataview on purpose: a typed null boolean becomes false
+    (Bug #81180, Dev feedback needed), so it is not pinned here.
+   */
+   def 'Para_dataview_typedNull'() {
+      def paras = new HashMap<String, String[]>()
+      //table
+      paras.put('boolean', ['true'] as String[])
+      paras.put('short', ['null'] as String[])
+      paras.put('short.__type__', ['short'] as String[])
+      paras.put('date', ['2020-10-27', '2020-10-31'] as String[])
+      //freehandtable
+      paras.put('float', ['null'] as String[])
+      paras.put('float.__type__', ['float'] as String[])
+      paras.put('long', ['null'] as String[])
+      paras.put('long.__type__', ['long'] as String[])
+      paras.put('datetime_inrange', ['Last year'] as String[])
+      //crosstab
+      paras.put('company_startwith', ['D'] as String[])
+      paras.put('company_contains', ['Nova Tera'] as String[])
+      paras.put('orderdate', ['2018-09-30 12:00:00'] as String[])
+      //chart
+      paras.put('employee', ['%r%'] as String[])
+      paras.put('company', ['Nova Tera'] as String[])
+
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^ParaVS/Para_dataview', caseName)
+      vstest.executeVS(paras, null)
+
+      expect:
+      vstest.compareData(null)
    }
 
    /*
