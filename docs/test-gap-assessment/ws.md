@@ -414,7 +414,10 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **读代码得出、没运行验证：** `DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先；`CSVInfo` 在每行都有同样个数的引号内逗号时可能选中 `quote=false`。
 
-**待决定：** datatest 里 `property_crossJoin.maxCellCount` 用例：#81087 已在 `main` 修复，之前的失败原因（cross join 行序竞态）应已消除，要重新验证它单独跑和接着别的用例跑是否一致，再决定改用例还是放宽比对（还没做）。PR #8046 等待合并；#80538 修复后启用最后一个 `@Disabled`。
+**在带修复的产品上重跑 datatest（2026-11-12，本机）：** 本机 `I:\m2` 里的 `inetsoft-core-2.1.0-SNAPSHOT` 的 `CrossJoinTableLens` 字节码和含 #81087 修复的 `main` 编译结果完全一致，所以跑的是带修复的版本。
+- **`property_crossJoin.maxCellCount`**：单独在新 JVM 里跑 3 次，以及接着 `WSData_Spec` 在同一个 JVM 里跑 1 次，导出的 `Query1.txt` 校验和完全相同（MD5 `1f170b83…`），**行序已经确定，竞态消除**。输出是 5000 个不同的 id（左表 TestData 固定为变化最快的一边），既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行的"1 个 id × 143 个订单 × 35 个客户"，所以用例仍失败：**基线是按旧的竞态结果之一记录的，需要更新成新的确定输出**（改用例或放宽比对都不必了）。
+- **`WSData_Spec` 另有 4 个用例失败（`rotate`、`grouping1`、`condition1`、`condition2`）**，原因是 #81102 的修复：旋转表以前把第一列重名的列丢掉，基线固定了这个错误输出（如 `rotate/Query4` 基线 7 列，只有 6 个不同的 CATEGORY_ID；现在 21 列，重名列加 `_1`、`_2` 后缀，20 个产品都在）。`rotate/Query4`、`condition1/Query7` 的表头确认有 `_n` 后缀；`condition2/Query1`（基线 3×29）、`grouping1/Query1`（基线 3×14）是旋转表、列数大幅增加，没有逐列核对。这 4 个基线也要按新输出更新，更新前应人工看一遍新输出是否符合 `fixAlias` 的规则（A、A_1、A_2）。
+- 这说明严格模式后的 datatest 能发现产品修复带来的结果变化（也说明这几个基线固定了缺陷）。以上 5 个基线的更新还没做，要单独走 datatest 的 PR（期望数据要有人看）。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
 
