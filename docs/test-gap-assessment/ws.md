@@ -11,7 +11,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
-- 产品单测（评估时）：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。**2026-11-12 现状：** 已补 19 个测试类（4 个移植自 13.8、15 个新写），共 340 个测试，覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`XUtil.isQueryMergeable`；产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)。写测试发现的 8 个缺陷（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105）都已在 `main` 修复，另报 #81178、#81193、#81220、#81229 待处理（#81193 是 #81102 修复带来的回归）。第二批（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地、未推送）又补了 `CSVInfo` 的分隔符与表头与编码猜测和 `PreAssetQuery` 的全部 `is*Mergeable`，6 个类、246 个测试，见 4b-H2。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与日期类 `changeColumnType` 与 MV、`NamedRangeRef` 等零覆盖项。
+- 产品单测（评估时）：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。**2026-11-12 现状：** 已补 19 个测试类（4 个移植自 13.8、15 个新写），共 340 个测试，覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`XUtil.isQueryMergeable`；产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)。写测试发现的 8 个缺陷（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105）都已在 `main` 修复，另报 #81178、#81193、#81220、#81229、#81235、#81236 待处理（#81193 是 #81102 修复带来的回归）。第二批（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地、未推送）又补了 `CSVInfo` 的分隔符与表头与编码猜测和 `PreAssetQuery` 的全部 `is*Mergeable`，6 个类、246 个测试，见 4b-H2；之后又在同一分支补了 `XEmbeddedTable.setDataTypes`（23）、旋转与 unpivot 的名字类型分组（+7）、六个相对日期条件 `DateConditionRelativeRangesTest`（42）、命名分组 `NamedRangeRefGroupsTest`（12，其中 2 个 `@Disabled` 对应 #81235、#81236），共 330 个，见 4b-H3。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与日期类 `changeColumnType` 的完整路径、MV 转换（还没读）、其他零覆盖项。
 
 已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异（生成层）的单测（PR #8046）。接下来：重新验证 `property_crossJoin.maxCellCount`（#81087 已修）；`PreAssetQuery` 合并判断的单测与基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
@@ -259,9 +259,9 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | 计划项 | 现状 |
 |---|---|
 | lens：join、集合运算、rotate、filter（移植 13.8） | 已做：4 个类、63 个测试 |
-| unpivot（`AssetUtil.unpivot`、`UnpivotQuery`） | 已做：`AssetUtilUnpivotTest`（14）、`UnpivotQueryTest`（3）；没做 unpivot 后聚合、日期类 `changeColumnType` |
-| `RotatedQuery` | 已做：`RotatedQueryTest`（5） |
-| `DateCondition` | 已做：`DateConditionBuiltinTest`（39）；夏令时切换日只能跳过；`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对 |
+| unpivot（`AssetUtil.unpivot`、`UnpivotQuery`） | 已做：`AssetUtilUnpivotTest`（14）、`UnpivotQueryTest`（6，含分组求和）；`XEmbeddedTableSetDataTypesTest`（23）覆盖列类型转换；没做 unpivot 后做交叉表 |
+| `RotatedQuery` | 已做：`RotatedQueryTest`（9，含空名 `Column [n]`、数字与日期表头、类型规则） |
+| `DateCondition` | 已做：`DateConditionBuiltinTest`（39）、`DateConditionRelativeRangesTest`（42：Year、Quarter、Month、Week、Weeks、Day，周起始日周日/周一/周六，内存判断与下推 SQL 范围；夏令时窗口内的天数用例会被跳过）；还有未核对：`DaysCondition` 与 `MonthsCondition` 的夏令时 |
 | `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | **已做**（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地提交、未推送）：聚合、排序、条件、分组与选择列与排名、来源（`MirrorQuery`、`JoinQuery`、`ConcatenatedQuery`、SQL 手写模式）各一个类，共 5 个类、216 个测试，见 4b-H2；没测的只有 `PhysicalBoundQuery`、`LMBoundQuery` 固定返回 true 和 mongo 的真实 helper。SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
 | 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符、引号、表头、编码猜测已做（`CSVInfoDetectionTest`，30 个，产品仓库分支 `test-csvinfo-detection`，本地提交、未推送） |
 | `RankingTableLens` | 已做：`RankingTiesTest`（6） |
@@ -411,9 +411,9 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - `PreAssetQuery` 的 `is*Mergeable` 已全部覆盖（见 4b-H2）；没测的只有固定返回 true 的 `PhysicalBoundQuery`、`LMBoundQuery`（要真实的物理表或逻辑模型），以及 mongo 的真实 helper（用重写 `getSQLHelper` 的桩代替）。
 - 上传：`ImportCSVDialogService`（预览、unpivot 选项、行列上限提示、文件大小上限、xlsb 提示、Excel 读取）不加单测，原因见 G：`PoiExcelFileSupport` 在 `utils/inetsoft-xml-formats`，core 的测试类路径上没有；`CSVInfo` 的猜测已补测，见 4b-G。
 - unpivot 之后再聚合或做交叉表、`fixColumnSelection` 按第一行修正类型、日期类 `changeColumnType`、MV 转换；`RotatedQuery` 的空值、旋转后再聚合、MV。
-- `DateCondition`：`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对是否已被 `DateConditionTest` 覆盖；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
+- `DateCondition`：六个相对条件已补 `DateConditionRelativeRangesTest`（见 4b-H3）；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
 - 各库：只有 Derby 真正执行了 SQL，MySQL、PostgreSQL、SQL Server 等只断言了生成的文本；MySQL/PostgreSQL 除零行为是经验判断；Vertica、Hive、Snowflake、BigQuery 等方言。
-- `NamedRangeRef`、其他零覆盖的公式、4 个表类、变量数据类型等（见 G12）；dashboard 一侧的用例没有动。
+- `NamedRangeRef` 已补（见 4b-H3，只测了表达式层，没有跑完整视图表；日期类的命名分组没测）；MV 转换对 rotate/unpivot 的处理还没读；其他零覆盖的公式、4 个表类、变量数据类型等（见 G12）；dashboard 一侧的用例没有动。
 - 没验证过的判断：日期级别 `none` 不下推会让整张表不下推的影响；viewsheet 脚本给范围列设 am/pm 级别会怎样。（"界面在 worksheet 排名里是否提供包含并列"已查：条件编辑器的 TOP_N 只有 N 和列，没有，见下。）
 
 **测试里固定了现状、没有报缺陷的**（以下几条保持现状，不打算改）：
@@ -472,6 +472,22 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - `SummaryFilter2` 只合并相邻的分组行，调用前必须按分组列排序（`AssetQuery` 用 `PostProcessor.sort`）。
 - 新建测试类的头注释少一个 ` */` 时，编译器报 "does not represent an annotation type"，和真正原因无关。
 - 用 `-q` 加 `-Dsurefire.failIfNoSpecifiedTests=false` 跑可能一个测试都没跑也返回成功，要看 `Tests run:`。
+
+**H3. 第三批（2026-11-12，同一产品分支，本地提交、未推送）**
+
+| 类 | 测试数 | 对象 |
+|---|---|---|
+| `XEmbeddedTableSetDataTypesTest` | 23 | 工作表里改列类型（`setDataTypes`）：文本转整数/小数、千分位、`$`、`%`、括号负数；无法转换时报错与强制置 null；`N/A`、`NA` 为 null；带格式与不带格式的日期；其他列与行序不变 |
+| `RotatedQueryTest`（新增 4）、`UnpivotQueryTest`（新增 3） | +7 | 旋转：空名 `Column [n]`、数字与日期做表头、类型取决于是否全一致；unpivot：按维度分组求和 |
+| `DateConditionRelativeRangesTest` | 42 | Year、Quarter、Month、Week、Weeks、Day 六个相对日期条件：用 `java.time` 按当前时钟算期望，范围首尾一天在内、前后一天在外，SQL 范围到 23:59:59；周起始日周日、周一、周六；取反；非日期值不保留 |
+| `NamedRangeRefGroupsTest` | 12 | 命名分组：值归组、不在组里的值保持原样、同属两组归第一组、null 成员、整数列、无分组为 `0`、`isMergeable`、`getBaseName`；SQL 在 Derby 上跑、脚本在 `FormulaTableLens` 上跑，两边对同一批值 |
+
+- **验证：** 每类都做过变异检查（`DateConditionRelativeRangesTest`：Quarter 的 `*3`、Weeks 的 `to - 1`、Day 的 `==` 都变红；`NamedRangeRefGroupsTest`：access 判断、ELSE 分支、`ColorGroup` 前缀、组内 OR、无分组返回值、组名输出都变红）。相对日期用例在 America/New_York（pom 固定）、上海、奥克兰、Kiritimati、UTC 下都通过；纽约下"30 天前"的用例遇到夏令时窗口会被跳过（共 1 个跳过）。
+- **`NamedRangeRef` 发现 2 个缺陷，已报：#81235**（单引号不转义）、**#81236**（只含 null 的组生成 `IN ()`）。证据：在 Derby 上把 `getExpression()` 当 SELECT 跑，直接报语法错误；到 SQL 的路径是读代码确认的（`VSDimensionRef.createGroupRef` 包成 `NamedRangeRef`，`PreAssetQuery` 约 2683 行把表达式原样拼进 SQL，`SQLHelper.fixSQLExpression` 基类不处理）；没有在真实可下推的库上跑完整视图表。Derby 和 access 不下推，所以只影响 Oracle、MySQL、SQL Server 等。两个 SQL 侧测试 `@Disabled` 并写明 bug 号，脚本侧各有一个通过的测试。
+- **观察、未当缺陷：** 整数列里不在任何组的值，脚本侧返回 `7.0`，SQL 侧返回 `7`（`fnumber` 只对 float/double 用 `numberToString`）；没确认后续是否按字符串类型再转一遍，没有固定。
+- **没覆盖：** 日期类、浮点类的命名分组（`getExpression` 里有 `isdate`、`between` 分支，只有日期才走）；范围、前缀等非等值的命名分组（已有 #79129）；整条视图表路径。
+- **关联缺陷已知：** #79129（脚本表达式对范围、前缀、取反组不支持，已解决）与 #81235、#81236 不重合。
+
 
 ## 5. Dashboard 与机制补充
 
@@ -592,8 +608,10 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Resolved | `NumericRangeRefBoundaryTest` | 无 |
 | #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | New | `DateConditionBuiltinTest` 固定现状 | 无 |
 | #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | New | 暂无（探针验证过，未写进单测） | `condition2/Query1`、`Query3` 的基线不更新，等开发 |
-| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（产品分支 `test-csvinfo-detection`，未推送） | 无 |
+| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（产品分支 `test-csvinfo-and-mergeable-unit-tests`，未推送） | 无 |
 | #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | New | `PreAssetQueryConditionMergeableTest` 固定现状（产品分支 `test-csvinfo-and-mergeable-unit-tests`，未推送） | 无 |
+| #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（`@Disabled`，产品分支，未推送）；脚本侧有通过的测试 | 无 |
+| #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（`@Disabled`）；脚本侧有通过的测试 | 无 |
 | #80538 | 非 distinct union 加载中多算一行（原来就有） | New | `SetOperationLensesTest` 的最后一个 `@Disabled` | 无 |
 
 ## 附：数据来源与复现
