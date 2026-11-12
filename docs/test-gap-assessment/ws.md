@@ -245,7 +245,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 按优先级：先移植 13.8（G7 主体），再写 date in（G4）和上传（G3），unpivot（G7）次之，合并判断（G5）要先等开发确认规则。各库 SQL 生成（G11）和合并判断一样要先确认规则，排在其后。
 
-**移植进展（2026-11-11，产品仓库独立 worktree，分支 `test-ws-lens-unit-tests`，尚未推送）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
+**移植进展（2026-11-11，产品仓库独立 worktree，分支 `test-ws-lens-unit-tests`，已推送，见 4b-H）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
 
 **新写进展（2026-11-11，同一分支）：** 各库方言批次 3 个类已提交：`DateRangeRefDialectTest`（38，16 个日期级别 × 各库是否下推，并在 Derby 上执行对照 java.time）、`AggregateFormulaStatSqlTest`（41，3 个 `@Disabled`）、`SQLHelperOperationSupportTest`（13，`sqlhelper.xml` 与代码覆盖的支持矩阵）。同批次新增：`DateRangeRefLevelValuesTest`（5，19 个级别取值对照 java.time）、`DateLevelSummaryTest`（5，分组求和）。过程中确认：`SummaryFilter2` 只合并相邻行，输入必须先按分组列排序（`AssetQuery` 已排）；`week of year` 是"含 1 月 1 日的周为第 1 周"，12 月末可能落入下一年第 1 周。未覆盖：`week of month`、`week of quarter`、`*_FULL_WEEK` 系列（周的定义要开发确认）。
 **统计公式 SQL 缺陷已报：** #81095（协方差/相关系数只有一列为 NULL 时算错）、#81096（单行相关系数除零）。
@@ -259,7 +259,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `RotateFormulaLensesTest` | `LensesTransformsFeatureTest` 的 rotate 5 个和 `FormulaTableLens` 5 个 | 10 | 0 |
 
 移植时遇到的 13.8 与 StyleBI 的差异，分三种：
-- **13.8 已修、StyleBI 没有的缺陷**（对应测试已 `@Disabled`，写明编号）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），**已在 StyleBI 侧报为 #81092、#81091**；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧已有 issue，状态 New，没有动）。
+- **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号；2026-11-12 起 #81091、#81092 已在 `main` 修复，测试已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），**已在 StyleBI 侧报为 #81092、#81091**；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧已有 issue，状态 New，没有动）。
 - **StyleBI 里新发现的缺陷（已报 #81093）**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。已用探针验证，对应的拼音排序测试已 `@Disabled`。
 - **有意的行为变化，测试已按 StyleBI 改写**：脚本一律按受限模式运行（Bug #77396），`setRestricted` 只记录标志，能否调用 Java 类由允许类的白名单决定；`FormulaTableLens` 一批一起计算的行只报告一次失败（13.8 是逐行各报一次）。
 
@@ -284,7 +284,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `AssetUtilUnpivotTest`、`UnpivotQueryTest` | unpivot 之后再聚合 / 做交叉表；`fixColumnSelection` 按第一行数据修正列类型；带格式或强制解析的日期类 `changeColumnType`；MV 转换 | 需要更长的 worksheet 链；日期格式要先确认"强制解析"的预期 |
 | `RotatedQueryTest` | 第一列有空值 / 空白的情况；旋转后再聚合；MV；表头值很长 | 没来得及；空值在 lens 层已有 `RotatedTableLens` 的"空表头取 `Column [n]`"测试 |
 
-**B. 看起来是产品缺陷、测试里已 `@Disabled` 的**
+**B. 看起来是产品缺陷、测试里已 `@Disabled` 的**（2026-11-12：下面 #81102、#81095、#81096 已在 `main` 修复，测试已启用，见 H）
 
 - 已报 #81102（Redmine 里没有同类 bug，#61619 是数据量限制、#53227 是另一种缺列）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据。`A, A, B` 得到列 `item, A, B`，第二个 A 的值全丢；`A, a`（只差大小写）得到 `item, a_1`，`A` 列不见了，`a_1` 下面是 `A` 的值。`AssetUtil.fixAlias` 的本意是给重名列加 `_1` 别名，但旋转后的列选择在校验时把它们合并掉了。两个测试：`sameNamesInTheFirstColumnAreMadeDifferent`、`namesDifferingInCaseKeepAllColumns`。
 - 已报：#81095、#81096（统计公式 SQL）、#81102（旋转表重名列）。
@@ -326,11 +326,11 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | `CSVLoaderRulesTest` | 41 | 列类型合并（整数+小数→double，其他混合→字符串，含 N/A 的数字列→字符串，`true/false`→布尔）、表头去重、分隔符、引号、BOM、行列上限 |
 
 **F 里看起来是缺陷或值得问的：**
-- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 已 `@Disabled`，已报 #81105。
+- **数值分段脚本表达式对 null**：`getScriptExpression()` 的最大值以上分支没有 `field != null`，LOWER 模式下最后一个分界值 <= 0 时（以及上界闭、两端闭模式下最后一个分界值为负数时，这部分按 JS 的规则推断、没有运行）`null` 进入最后一段，SQL 版本是 Others。测试 `nullIsOthersWhenTheLastValueIsNotPositive` 当时 `@Disabled`，已报 #81105，已在 `main` 修复，测试已启用并通过。
 - **`1.2.3` 被识别为日期**（格式 `M.d.yy`）：上传的版本号列会被当成日期。固定了现状，没有报。
 - **空字符串被识别为 double**：`getType("")`；文件加载器在调用前会跳过空值，所以现实里碰不到，固定了现状。
 - **整数带千分位**（`1,234`）识别为 double，不是整数；超过 int 范围的整数（`2147483648`）也是 double。固定了现状。
-- **`RankingCondition.equal` 在 worksheet 里被忽略**：`AssetQuery.getRankingTableLens` 固定 `setEqualityKept(false)`，而 viewsheet 的 top N 会传 `ranking.isEqual()`。若界面在 worksheet 里也提供"包含并列"选项，这就是问题；没有查界面。
+- **`RankingCondition.equal` 在 worksheet 里被忽略**：`AssetQuery.getRankingTableLens` 固定 `setEqualityKept(false)`，而 viewsheet 的 top N 会传 `ranking.isEqual()`。**后来查清是有意设计**：viewsheet 的 top N 按分组（只有这条路径传 `isEqual()`），worksheet 的 top N 是平的，代码注释写明，条件编辑器的 TOP_N 也没有"包含并列"选项，见 4b-H。
 
 **G. 上传服务（`ImportCSVDialogService`）：读了代码，决定不加单测（2026-11-12）**
 - **环境不允许**：`loadData` 一开始就调 `ExcelFileSupport.getInstance().isXLSB(..)`，它用反射加载 `utils/inetsoft-xml-formats` 里的 `PoiExcelFileSupport`；该模块依赖 core，core 的测试类路径上没有它，所以连 CSV 上传也走不通。服务本身用 Mockito 能构造（5 个依赖都能顶替，`FileSystemService` 要返回 `Tool.getCacheDirectory()`，否则 `loadData` 按缓存键找不到文件，报 "Upload Timeout"）。要测只能放进 `utils/inetsoft-xml-formats/src/test`（有 core 的 tests jar 和 POI），那边的构建我没跑通（反应堆里 core 先失败）。
@@ -340,38 +340,38 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **xlsb 的拒绝提示**：先走 `process()` 里的 `getSheetNames`，xlsb 是 zip，会被 `detectType` 当 xlsx，`getSheetNames` 可能先失败成 "Failed to parse XLS"，到不了 `loadData` 里的 xlsb 提示。没验证。
 - **`CSVInfo` 的分隔符/表头猜测**（`getCSVInfo`、`getScore`）在 core 里、没有任何测试，不需要上面的环境；规则能从代码读出（评分取各行的最小值，列数一致 +100，平局取先出现的：tab、`;`、`,`、`|`，带引号优先）。读代码时发现一个可疑点：每一行都带同样个数的"引号内逗号"时，`quote=false` 的得分（列数更多）会高于 `quote=true`，被选中。没运行验证，没写。
 
-**H. 整体状态（2026-11-12，产品分支 `test-ws-lens-unit-tests`，23 个本地提交，未推送，没有开 PR）**
+**H. 整体状态（2026-11-12，产品分支 `test-ws-lens-unit-tests`，24 个提交，已推送，PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)，review 已通过，`build` 通过）**
 
 **验证：**
-- 同一个 JVM 整体跑（`-Dsurefire.forkCount=1 -Dsurefire.reuseForks=true`）19 个类：**340 个测试，0 失败，0 错误，12 个跳过**，12 个都是带缺陷编号的 `@Disabled`。
-- 每个类单独跑：19 个类各自单独跑（`-Dtest=<类名>`），测试数和跳过数与整体一致，全部 BUILD SUCCESS，没有类之间的隐含依赖。
+- 同一个 JVM 整体跑（`-Dsurefire.forkCount=1 -Dsurefire.reuseForks=true`）19 个类：**340 个测试，0 失败，0 错误，1 个跳过**（`SetOperationLensesTest` 的 #80538）。第一次整体跑时是 12 个跳过，都是带缺陷编号的 `@Disabled`；之后分支变基到含修复的 `main`，#81091、#81092、#81093、#81095、#81096、#81102、#81105 的修复都已在 `main` 上，对应的 11 个测试去掉 `@Disabled` 后直接通过（期望值是按代码规则独立推的，不是按修复前的输出写的）。
+- 每个类单独跑：19 个类各自单独跑（`-Dtest=<类名>`），测试数和跳过数与整体一致，全部 BUILD SUCCESS，没有类之间的隐含依赖（变基到含修复的 `main` 后又单独跑了一遍，结果相同）。
 - 日期相关的 162 个测试在 UTC、上海、Lord_Howe、Kiritimati、Pago_Pago、伦敦各跑通过；默认运行时区是 `core/pom.xml` 写死的 America/New_York，换时区要改 pom（`-DargLine` 覆盖不了）。
 - 做过变异检查（临时改主代码看测试是否变红，已还原）：方言、统计公式、日期条件、`XUtil.isQueryMergeable`、`CSVLoader`、`AssetUtil.getType`。
 - 分支里只新增测试文件，没有改主代码。
 
 | 类 | 测试数 | 跳过 | 对象 |
 |---|---|---|---|
-| `JoinLensesTest` | 20 | 4 | 13.8 移植：join |
+| `JoinLensesTest` | 20 | 0 | 13.8 移植：join |
 | `SetOperationLensesTest` | 18 | 1 | 13.8 移植：union、intersect、minus、distinct |
-| `SortSummaryFilterTest` | 15 | 1 | 13.8 移植：排序、汇总、top N |
+| `SortSummaryFilterTest` | 15 | 0 | 13.8 移植：排序、汇总、top N |
 | `RotateFormulaLensesTest` | 10 | 0 | 13.8 移植：rotate、脚本表达式列 |
 | `DateRangeRefDialectTest` | 38 | 0 | 各库日期级别下推，Derby 执行 |
-| `AggregateFormulaStatSqlTest` | 41 | 3 | 统计公式组合 SQL |
+| `AggregateFormulaStatSqlTest` | 41 | 0 | 统计公式组合 SQL |
 | `SQLHelperOperationSupportTest` | 13 | 0 | 各库支持矩阵 |
 | `DateRangeRefLevelValuesTest` | 5 | 0 | 日期级别取值 |
 | `DateRangeRefFullWeekLevelsTest` | 3 | 0 | 整周级别 |
 | `DateLevelSummaryTest` | 5 | 0 | 日期级别分组求和 |
 | `AssetUtilUnpivotTest` | 14 | 0 | unpivot |
 | `UnpivotQueryTest` | 3 | 0 | worksheet 里的 unpivot |
-| `RotatedQueryTest` | 5 | 2 | 旋转表 |
-| `NumericRangeRefBoundaryTest` | 5 | 1 | 数值分段边界 |
+| `RotatedQueryTest` | 5 | 0 | 旋转表 |
+| `NumericRangeRefBoundaryTest` | 5 | 0 | 数值分段边界 |
 | `RankingTiesTest` | 6 | 0 | 排名并列 |
 | `TextUtilTypeDetectionTest` | 43 | 0 | 文件类型与单值类型 |
 | `CSVLoaderRulesTest` | 41 | 0 | 列类型合并、表头、分隔符、行列上限 |
 | `XUtilQueryMergeableTest` | 16 | 0 | 下推规则（SQL 层） |
 | `DateConditionBuiltinTest` | 39 | 0 | 相对"现在"的内置日期条件 |
 
-**已报缺陷：** #81087（cross join 行序竞态，datatest 发现）、#81091（连接列检查，13.8 #80297）、#81092（`join.table.maxrows` 算进表头，13.8 #80298）、#81093（`TextComparer.isAsciiOnly`）、#81095（协方差/相关系数 NULL 配对）、#81096（单行相关系数除零）、#81102（旋转表重名列）、#81105（数值分段脚本 null）。#80538（非 distinct union 多算一行）原来就有，没有动。
+**已报缺陷：** #81087（cross join 行序竞态，datatest 发现）、#81091（连接列检查，13.8 #80297）、#81092（`join.table.maxrows` 算进表头，13.8 #80298）、#81093（`TextComparer.isAsciiOnly`）、#81095（协方差/相关系数 NULL 配对）、#81096（单行相关系数除零）、#81102（旋转表重名列）、#81105（数值分段脚本 null）。**这 8 个都已在 `main` 上修复**（Redmine 状态 Resolved，指给 Nelson Cao，版本 stylebi-2.1.0）。#80538（非 distinct union 多算一行）原来就有，状态 New，没有动，对应测试仍 `@Disabled`。**新报：#81178**（`MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL、和 `Days`/`Weeks` 条件不一致；测试 `timestampEarlierOnTheStartDayIsInSqlButNotInMemory` 固定了现状，指给 Larry Liang，状态 New）。
 
 **还没有覆盖的：**
 - `PreAssetQuery` 的 `isQueryMergeable` 及 `isConditionListMergeable`、`isAggregateInfoMergeable0`、`isSortInfoMergeable0`、`isRankingMergeable`、`isColumnSelectionMergeable`：要建沙箱和表，规则代码里能读出，没读也没写。（SQL 层 `XUtil.isQueryMergeable` 已测。）
@@ -380,20 +380,25 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - `DateCondition`：`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对是否已被 `DateConditionTest` 覆盖；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
 - 各库：只有 Derby 真正执行了 SQL，MySQL、PostgreSQL、SQL Server 等只断言了生成的文本；MySQL/PostgreSQL 除零行为是经验判断；Vertica、Hive、Snowflake、BigQuery 等方言。
 - `NamedRangeRef`、其他零覆盖的公式、4 个表类、变量数据类型等（见 G12）；dashboard 一侧的用例没有动。
-- 没验证过的判断：日期级别 `none` 不下推会让整张表不下推的影响；viewsheet 脚本给范围列设 am/pm 级别会怎样；界面在 worksheet 的排名里是否提供"包含并列"。
+- 没验证过的判断：日期级别 `none` 不下推会让整张表不下推的影响；viewsheet 脚本给范围列设 am/pm 级别会怎样。（"界面在 worksheet 排名里是否提供包含并列"已查：条件编辑器的 TOP_N 只有 N 和列，没有，见下。）
 
-**看起来不对、测试里固定了现状、没有报缺陷的：**
+**测试里固定了现状、没有报缺陷的**（以下几条保持现状，不打算改）：
 - `1.2.3` 被识别为日期（`M.d.yy`），版本号列会被当成日期。
 - 空字符串被识别为 double（现实里加载器会先跳过空值）；带千分位的整数 `1,234` 和超过 int 的整数识别为 double。
-- worksheet 排名固定 `setEqualityKept(false)`，`RankingCondition.equal` 被忽略，viewsheet 的 top N 会用它。
-- `sqlhelper.xml` 25 个方言里 13 个没有任何日期函数，所以所有日期级别都不下推（ClickHouse、H2 只是其中两个）；`DB2` 没有 second_part。
-- `AM_PM`、`MILLISECOND`、`AM_PM_OF_DAY` 有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"，worksheet 里没有这些级别。
-- `CSVLoader`：类型只由开头几行（表头算一行）决定，之后不符的值变 null；行数刚好等于 `rowLimit` 时也标记"超限"。
-- `MonthsCondition` 对 `Timestamp`：内存判断从"当前时刻往前 N 个月"算，下推 SQL 从那一天 0 点算，同一天更早的时刻 SQL 查得到、内存里被滤掉。
-- `NthQuarter`、`NthHalfYear`、`NthMonth` 的 setter 对越界值静默忽略，保留旧值。
-- 读代码得出、没运行验证：`DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先；`CSVInfo` 在每行都有同样个数的引号内逗号时可能选中 `quote=false`。
+- `CSVLoader`：类型只由开头几行（表头算一行）决定，之后不符的值变 null。
+- `CSVLoader`：行数刚好等于 `rowLimit` 时也标记"超限"。
 
-**待决定：** 产品分支是否推送并开 PR（PR 描述照 #7974：摘要表、"固定了看起来不对的行为"、Test plan）；datatest 里 `property_crossJoin.maxCellCount` 用例（改用例或放宽比对）。
+**逐条核对过代码、结论是有意设计或影响很小的**（测试里固定现状，注释已写明；PR #8046 里单列为"by design"）：
+- **worksheet 排名忽略 `RankingCondition.equal`：有意设计。** `AssetQuery.getRankingTableLens` 有两条路径：表名以 `TABLE_VS` 开头且有分组的 viewsheet 表用 `SummaryFilter`、按分组、会传 `isEqual()`；worksheet 表走 `RankingTableLens`，固定 `setEqualityKept(false)`，代码注释写"worksheet top-n 是平的（不分组）(49245)"。条件编辑器的 TOP_N 只有 N 和列，没有"包含并列"。此前写成"可能有问题"是措辞过头。
+- **`sqlhelper.xml` 25 个方言里 13 个没有任何日期函数**：`DateRangeRef.isMergeable` 由 `getExpression` 是否为空决定，空就退回内存分组，结果不变，只是不下推（性能）。ClickHouse、H2 至多是"可以加日期函数表"的改进项，不是遗漏造成的错误；`DB2` 没有 second_part 同理。
+- **`AM_PM`、`MILLISECOND`、`AM_PM_OF_DAY`** 有常量，但 `DateRangeRef.getData` 抛 "Unsupported option"：前端常量文件只定义、没有对话框使用；Java 里只有 `ChartConstants`（viewsheet 脚本常量）、`SortOrder`、`LayoutTool` 引用。viewsheet 脚本给图表维度设这些级别会怎样没有验证，不在 worksheet 范围内。
+- **`NthQuarter`、`NthHalfYear`、`NthMonth` 的 setter 对越界值静默忽略**：整个类里 setter 风格一致，XML 解析直接给字段赋值、不经过 setter；只有直接用 API 误传（如 `new NthQuarterCondition(5, 0)`）才会悄悄变成第 1 季度，影响很小。界面是否经过 setter 没有查。
+
+**已报缺陷的那条**：`MonthsCondition` 的 Timestamp 差异（#81178）。探针（现在 21:01，纽约，"最近 3 个月"，SQL 范围 09-11 00:00 到 11-11 23:59:59）：Timestamp 09-11 00:00 内存 false；Timestamp 今天 23:59:59 内存 false（`Days` 为 true）；`java.util.Date` 今天中午内存 false（`Days` 为 true）；`java.sql.Date` 今天 true。`Days`、`Day`、`Week`、`Weeks` 的内存判断都按"天"比较，只有 `MonthsCondition` 不是。
+
+**读代码得出、没运行验证：** `DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先；`CSVInfo` 在每行都有同样个数的引号内逗号时可能选中 `quote=false`。
+
+**待决定：** datatest 里 `property_crossJoin.maxCellCount` 用例：#81087 已在 `main` 修复，之前的失败原因（cross join 行序竞态）应已消除，要重新验证它单独跑和接着别的用例跑是否一致，再决定改用例还是放宽比对（还没做）。PR #8046 等待合并；#80538 修复后启用最后一个 `@Disabled`。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
 
