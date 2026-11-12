@@ -61,6 +61,8 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 | `aggregate_with` | query1（`orderno < 10` 的 18 行）按年 2001–2003：Correlation、WeightedAverage 与 `Calc_weight`、Sum(Calc_double) 与同比变化、Covariance、`Calc_first`、`Calc_last` | 与 Chart3、Crosstab1、FreehandTable1 一致；Covariance 是总体口径（除以 n） |
 | `aggregate_date` | Crosstab1 每个销售员的 `calc_date_max`、`calc_date_min`、`calc_date_count` | max 2020-12、min 2017-03 一致；count 按 Orders（7 列分组）与 Returns（5 列分组）以 City/State/Company/Category 做 FULL JOIN 推算为 769/1035/909/682，与基线一致 |
 
+已固化的错误基线（1 处）：`testWorksheet` 的 FreehandTable1、zoom_FreehandTable1 按 `c_date = CALC.edate(field['Date'], 10)` 的月份分组，数据来自 worksheet `foCalc` 的 snapshot。snapshot 里 2009-04-30 加 10 个月，旧 `edate` 跨年时日期溢出，算成 2010-03-02，基线里因此有 `2010 Mar` 一行；[#80953](https://issues.inetsoft.com/issues/80953) 修复后（stylebi `380cf76378`）结果为 2010-02-28。这张表不显示落在 2 月的值，所以该行消失。新结果正确，两个基线已删去这一行。
+
 G9（上述 8 个字段）：
 
 | vs | 字段 | 用在哪里 | 结论 |
