@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 3)
+Employee, Company, Sum(Total)
+Eric, AMG Logistics, 442419
+Eric, Daycare One, 375236
+Eric, Eastern Data, 634135
+Eric, Ernst Handel, 106290
+Eric, Fast Transportation, 195805
+Eric, FMG Consulting, 190989
+Eric, High Society Investments, 130124
+Eric, InterLand Services, 253623
+Eric, Interstate Shop, 205515
+Eric, Loctite Corp., 97363
+Robert, Big Ed's BBQ, 168172
+Robert, BigMart Foodstores, 228027
+Robert, Computer Tech, 225709
+Robert, Direct Sales, 329146
+Robert, FISGA Corp, 345724
+Robert, Folk Mining, 129882
+Robert, George Services, 114326
+Robert, Infinity Software, 124033
+Robert, Northwest Outfitters, 244587
+Robert, Nova Tera, 237085
