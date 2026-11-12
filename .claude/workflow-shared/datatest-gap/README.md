@@ -8,7 +8,7 @@
 |---|---|---|
 | `vs_backup_scan.py` | 静态扫描 StyleBI backup zip：`inventory`（组件、计算字段矩阵、书签数）、`crosscheck`（spec 对 vs 对基线）、`strictcheck`（预测哪些基线文件不会被导出） | 在 vscalc 上运行，结果与手工核对一致；`strictcheck` 在 vscalc、vspara、chart `TrendComparison_Spec` 上与实际运行一致。**照 vscalc 写的，适用范围见下** |
 | `param_scan.py` | `params <zip>`：worksheet 变量组件（xtype×单/多值×prompt）、带变量的条件（按运算符）、VS 动态值（`=parameter.x`、`$(组件)`）；`cases <Spec.groovy…>`：每个用例的导出方法、比对方式、书签、参数。复用 `vs_backup_scan.load` | 在 vspara 上运行；`cases` 只认 `ViewsheetTest`/`VSExportTest` 写法 |
-| `ws_scan.py` | 扫描 backup zip 里的 worksheet：`inventory <zip> [<Spec.groovy>...]`（查询类型 × 处理步骤矩阵、运算符、条件、聚合、表达式 SQL/脚本、数据源；传入 spec 时只统计 CI 实际运行的可见表）；`crosscheck <zip> <baseline-root> <Spec.groovy>...`（未运行的 worksheet、用例的 worksheet 不在 zip、可见表与基线文件对照）。属性默认值已按产品源码核对 | 在 ws 上运行；执行路径（是否下推 SQL）只是静态信号；`crosscheck` 只认字面量的 `executeWS` |
+| `ws_scan.py` | 扫描 backup zip 里的 worksheet：`inventory <zip> [<Spec.groovy>...]`（查询类型 × 处理步骤矩阵、运算符、条件、聚合、表达式 SQL/脚本、数据源；传入 spec 时只统计 CI 实际运行的可见表）；`crosscheck <zip> <baseline-root> <Spec.groovy>...`（未运行的 worksheet、用例的 worksheet 不在 zip、可见表与基线文件对照）；`capability <zip> <Spec.groovy>...`（按产品能力清单统计使用次数，全部 worksheet 与 CI 范围各一列，零覆盖项标出；清单写死在脚本里，产品变了要重读源码）；`flagcheck <zip>`（把 `inventory` 读到的用户设置节点与 `assemblyInfo` 上的派生标志逐表对照）；`dbmatrix <zip> <sqlhelper.xml> <Spec.groovy>...`（从产品的 `sqlhelper.xml` 读出各库支持的 SQL 操作、聚合函数名、日期函数，再统计 CI 范围的场景落在哪些库上；数据源的库类型取自 JDBC 地址）。属性默认值已按产品源码核对 | 在 ws 上运行；执行路径（是否下推 SQL）只是静态信号；`crosscheck` 只认字面量的 `executeWS` |
 | `module-template.md` | 产出文件的骨架 | vscalc 已按它写成样例 |
 
 ## `vs_backup_scan.py` 的适用范围

@@ -14,7 +14,10 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 
 验证过：`vs_backup_scan.py`（在 vscalc 上运行，结果与手工核对一致；`strictcheck` 的预测在 vscalc、vspara `Para_VS_Spec`、chart `TrendComparison_Spec` 上与实际运行一致）；vscalc 已按本流程的产出格式做成样例 `docs/test-gap-assessment/vscalc.md`。
 **没有端到端运行过：** 这套流程在其他模块上的表现；脚本在非 backup zip 资产上是否适用。汇报时说清楚哪些真的跑了。
-**3b、3c（深挖、防错）只在 vsfreehand 上跑过一次：** A（功能面差集）、C（分支清单）、D（已知 bug 反推）实际做了；B（运行时探测）没有重跑，直接引用了已有的探测结果（`docs/test-gap-assessment/vsfreehand-g2-convert-probe.md`），所以 B 作为流程步骤没被独立验证；E（输出形态矩阵）没做；3c 的三条是那次复查里出过的错。其他模块上都没验证过。
+**3b、3c（深挖、防错）在两个模块上跑过：**
+- **vsfreehand：** A（功能面差集）、C（分支清单）、D（已知 bug 反推）实际做了；B（运行时探测）没有重跑，直接引用了已有的探测结果（`docs/test-gap-assessment/vsfreehand-g2-convert-probe.md`），所以 B 作为流程步骤没被独立验证；E（输出形态矩阵）没做；3c 的三条是那次复查里出过的错。
+- **ws：** A、D 和 3c 的三条都做了。A 用 `ws_scan.py capability`（产品清单写死在脚本里，产品变了要重读源码）；3c 的"读用户设置节点"用 `ws_scan.py flagcheck` 交叉核对；D 只取了 Redmine 分类 "Worksheet Execution" 最近一年的 118 条，根因类别是按标题粗分的，没有逐条读描述。ws 不是典型的生成型，只有"查询下推到 SQL 还是退回内存"这一个判断点符合，所以只对它做了 C（分支清单），B、E 没做。ws 上核对时发现过两处错（一处靠交叉核对，一处靠对照产品源码的类声明）：把接口当成可实例化的类（`ScriptedTableAssembly`、`SQLExpressionRef`），以及只看表条件、漏掉命名分组和日期范围里的 date in。
+- 其他模块上都没验证过。
 **脚本是照 vscalc 写的，换模块会不准，而且不准时不会报错**（适用范围见 `vs_backup_scan.py` 文件头的 Applicability 和 `<TOOLS>/README.md`）。用之前先确认适用，输出里的 "Not mapped"、"Not predicted" 必须写进结论的口径。
 
 ## 步骤

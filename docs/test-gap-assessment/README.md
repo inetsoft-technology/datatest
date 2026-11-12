@@ -23,5 +23,5 @@
 | vscrosstab、otherassembly（`vsothers` 其他 profile） | | 未开始 |
 | chart | | 未开始 |
 | vsexport | | 未开始 |
-| ws | [ws.md](ws.md) | 已评估，待评审 |
+| ws | [ws.md](ws.md) | 已评估；G1、G2、G3（假通过）、G10 已完成（[#213](https://github.com/inetsoft-technology/datatest/pull/213)）；功能面差集、已知 bug 对照已补，待评审 |
 | olap、tabular、vpm、vsscript、css、mv | | 未开始 |
