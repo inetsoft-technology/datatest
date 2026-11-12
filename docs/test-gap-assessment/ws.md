@@ -248,7 +248,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | 被测类 | 当时的"待开发确认" | 现状 |
 |---|---|---|
 | `DateCondition` | 能否注入"当前时间"；时区与周起始日的规则 | 不能注入（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了测试，并在 6 个时区验证；是否改成可注入 `Clock` 是产品的事 |
-| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | 哪些组合应当合并 | 第一步已做：规则全部从代码读出并手算期望，"应不应该合并"仍是产品判断；"需沙箱"实际只要 `AssetQuerySandbox` 和 `SQLBoundQuery`，不需要真实数据库（库的类型只来自数据源定义，版本由 mock 的仓库提供） |
+| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | 哪些组合应当合并 | 已做：规则全部从代码读出并手算期望，"应不应该合并"仍是产品判断；"需沙箱"实际只要 `AssetQuerySandbox` 和 `SQLBoundQuery`，不需要真实数据库（库的类型只来自数据源定义，版本由 mock 的仓库提供） |
 | `TextUtil.detectType`、`CSVLoader`、`ImportCSVDialogService` | 日期与布尔的识别规则 | 已从代码读出并写了测试（`CSVLoader` 识别 `true`/`false`，`TextUtil.getType` 不识别）；上传服务因环境原因不加单测，难度实际是"高" |
 | `RankingTableLens` | 并列规则 | 已读出：worksheet 排名恰好取 N 行，有意设计（4b-H） |
 | `NumericRangeRef` | 区间边界的归属 | 已读出并写了测试；发现脚本版对 null 的问题（#81105，已修） |
@@ -262,7 +262,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | unpivot（`AssetUtil.unpivot`、`UnpivotQuery`） | 已做：`AssetUtilUnpivotTest`（14）、`UnpivotQueryTest`（3）；没做 unpivot 后聚合、日期类 `changeColumnType` |
 | `RotatedQuery` | 已做：`RotatedQueryTest`（5） |
 | `DateCondition` | 已做：`DateConditionBuiltinTest`（39）；夏令时切换日只能跳过；`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对 |
-| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | **第一步已做**（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地提交、未推送）：聚合、排序、条件、分组、选择列、排名各一个类，共 144 个测试，见 4b-H2；还没做的是第二步：`MirrorQuery`、`JoinQuery`、`ConcatenatedQuery` 的来源判断和 SQL 手写模式。SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
+| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | **已做**（产品分支 `test-csvinfo-and-mergeable-unit-tests`，本地提交、未推送）：聚合、排序、条件、分组与选择列与排名、来源（`MirrorQuery`、`JoinQuery`、`ConcatenatedQuery`、SQL 手写模式）各一个类，共 5 个类、216 个测试，见 4b-H2；没测的只有 `PhysicalBoundQuery`、`LMBoundQuery` 固定返回 true 和 mongo 的真实 helper。SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
 | 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符、引号、表头、编码猜测已做（`CSVInfoDetectionTest`，30 个，产品仓库分支 `test-csvinfo-detection`，本地提交、未推送） |
 | `RankingTableLens` | 已做：`RankingTiesTest`（6） |
 | `SummaryFilter2` + `DateRangeRef` 级别 | 已做：`DateRangeRefLevelValuesTest`（5）、`DateRangeRefFullWeekLevelsTest`（3）、`DateLevelSummaryTest`（5） |
@@ -406,7 +406,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 **已报缺陷：** #81087（cross join 行序竞态，datatest 发现）、#81091（连接列检查，13.8 #80297）、#81092（`join.table.maxrows` 算进表头，13.8 #80298）、#81093（`TextComparer.isAsciiOnly`）、#81095（协方差/相关系数 NULL 配对）、#81096（单行相关系数除零）、#81102（旋转表重名列）、#81105（数值分段脚本 null）。**这 8 个都已在 `main` 上修复**（Redmine 状态 Resolved，指给 Nelson Cao，版本 stylebi-2.1.0）。#80538（非 distinct union 多算一行）原来就有，状态 New，没有动，对应测试仍 `@Disabled`。**新报：#81178**（`MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL、和 `Days`/`Weeks` 条件不一致；测试 `timestampEarlierOnTheStartDayIsInSqlButNotInMemory` 固定了现状，指给 Larry Liang，状态 New）。
 
 **还没有覆盖的：**
-- `PreAssetQuery` 的来源判断：`MirrorQuery`（子查询可合并、`MIRROR_TABLE`、`FROM_SUBQUERY`）、`JoinQuery`（数据源相同、`FULL_OUTERJOIN`、`MAXROWS`）、`ConcatenatedQuery`（`UNION_TABLE` 等）、SQL 手写模式（解析失败、丢信息、选择列为空）还没写；条件、聚合、排序、分组、选择列、排名已测（见 4b-H2）。
+- `PreAssetQuery` 的 `is*Mergeable` 已全部覆盖（见 4b-H2）；没测的只有固定返回 true 的 `PhysicalBoundQuery`、`LMBoundQuery`（要真实的物理表或逻辑模型），以及 mongo 的真实 helper（用重写 `getSQLHelper` 的桩代替）。
 - 上传：`ImportCSVDialogService`（预览、unpivot 选项、行列上限提示、文件大小上限、xlsb 提示、Excel 读取）不加单测，原因见 G：`PoiExcelFileSupport` 在 `utils/inetsoft-xml-formats`，core 的测试类路径上没有；`CSVInfo` 的猜测已补测，见 4b-G。
 - unpivot 之后再聚合或做交叉表、`fixColumnSelection` 按第一行修正类型、日期类 `changeColumnType`、MV 转换；`RotatedQuery` 的空值、旋转后再聚合、MV。
 - `DateCondition`：`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对是否已被 `DateConditionTest` 覆盖；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
@@ -442,7 +442,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **H2. 第二批（2026-11-12，产品分支 `test-csvinfo-and-mergeable-unit-tests`，从 `origin/main` 新建，本地提交、未推送，没有开 PR）**
 
-在同一个 JVM 里整体跑：5 个类、174 个测试，0 失败（`-Dsurefire.forkCount=1`）；每个类都做过变异检查。
+在同一个 JVM 里整体跑：6 个类、246 个测试，0 失败（`-Dsurefire.forkCount=1`）；每个类都做过变异检查。
 
 | 类 | 测试数 | 对象 |
 |---|---|---|
@@ -450,6 +450,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 | `PreAssetQueryAggregateMergeableTest` | 86 | `isAggregateMergeable`：9 个永不下推的公式、百分比、无公式、`MEDIAN`（仅 Oracle 且主版本号 ≥ 10）、Derby 整数列 `AVG`、`sqlhelper.xml` 里 Sybase 不支持的方差类公式；变异 6 处全部被抓到 |
 | `PreAssetQuerySortMergeableTest` | 26 | `isSortInfoMergeable`：H2 不保持分组顺序、Informix 不能按聚合排序、first/last 聚合、脚本计算列、有分组时丢弃其他列的排序；变异 5 处全部被抓到 |
 | `PreAssetQueryConditionMergeableTest` | 13 | `isConditionListMergeable`：条件列和比较值的列、非 `Condition`（排名）、日期条件、mongo 的 `ONE_OF`、子查询（同源、库能力）、having；变异 6 处全部被抓到 |
+| `PreAssetQuerySourceMergeableTest` | 70 | 来源判断：Mirror（`FROM_SUBQUERY`、基表是否可下推、最大行数）、Join（内连接、全外连接、merge join、数据源、最大行数）、union/intersect/minus（各库）、SQL 手写模式（解析、丢信息、无表、已有 group by）、内嵌表/旋转表/反透视表；变异 12 处全部被抓到 |
 | `PreAssetQueryGroupMergeableTest` | 19 | 分组（交叉表、时间序列、命名分组、where 不能下推、排名与分组兼容的三种情况）、选择列（全隐藏、隐藏的脚本列、SQLite 的日期和布尔）、排名、整条查询、结果缓存；变异 13 处全部被抓到 |
 
 **搭建方式（可复用）：** 公共夹具 `MergeableFixture`：用 API 构造 `UniformSQL`（`addTable`、`selection.addColumn`、`setTable`），选择列要带表名 `a.k`，否则会被当作 SQL 表达式；直接 `new SQLBoundQuery(RUNTIME_MODE, new AssetQuerySandbox(ws), table, false, false)`；按库造数据源（derby、h2、postgresql、mysql、oracle、sql server、sybase、informix、sqlite）；不执行 SQL、不开连接。脚本表达式列要 `setSQL(false)`（表达式列默认是 SQL 表达式）。库的版本由 mock 的 `XRepository.getMetaData` 返回 `DBProductVersion`，且数据源本身不能配版本（见下）。
@@ -459,6 +460,8 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **库的产品版本（已确认，影响很小，不报）**：`SQLHelper.getSQLHelper` 只在数据源**没有** `version` 时（MySQL、Oracle）才通过仓库查询 `DBProductVersion` 并设给 helper，Derby 总是查；数据源有版本时 helper 的版本是空字符串（单测探针验证）。数据源的 `version` 是**会持久化**的属性（`JDBCDataSource` 的 XML 里读写），但产品只给 MySQL 设过它（查询成功后缓存，保存数据源时就持久化了）。读 helper 版本的只有两处：`XUtil.supportMedian`（Oracle，版本 ≥ 10 才下推中位数）和 `DerbyHelper`（Derby 总是查，不受影响）；`MySQLHelper` 读的是数据源的版本，所以 MySQL 不受影响；`NamedRangeRef` 里按版本判断的代码已被注释掉。所以只有"Oracle 数据源的定义里手工写了 `version`"这一种情况会让中位数不下推（在内存里算，结果相同，只是慢），没有界面或代码会给 Oracle 设这个值。已写成测试固定现状，改成让 helper 读数据源版本后该测试会变红（已验证）。
 - **`isSortInfoMergeable()` 会改表**：有分组时它把不在分组、聚合列上的排序从**查询持有的表**里删掉。生产里 `AssetQuerySandbox`（第 482、954 行）先克隆表再建查询，所以改的是副本，不是资产；我直接构造查询才改到资产。不算缺陷，已写成测试。
 - **条件的两套判断不一致（已确认，性能问题，待决定是否报）**：`merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个把不能下推的条件拆出去，其余仍下推，再用 `isPreConditionListMergeable`（`isConditionListMergeable`）整体复核；mongo 的 `ONE_OF` 检查只在后者。探针走完整的 `merge()`：同样的 `k=1 AND k 属于 (1,2)`，非 mongo 库两个条件都下推；**mongo 上整个 where 都留在内存里**（`k=1` 本来能下推，`UniformSQL` 的 where 为空、3 项都留给内存）；对照：脚本计算列的条件只让它自己留在内存，`k=1` 仍然下推。所有条件都在内存里照样生效，所以结果相同，只是少了一次下推。已写成测试固定现状，给 `isConditionItemMergeable` 加上 mongo 检查后该测试变红（已验证）。
+- **各库能力要同时看 `sqlhelper.xml` 和 helper 类（写来源测试时第一次按 xml 推错了）**：`SQLServerHelper` 把 `CONCATENATION_TABLE` 限定成只有 union（intersect、minus 不支持），`MySQLHelper` 的 union 按数据源版本（> 4.1）、其余按 xml，`MongoHelper` 不支持 mirror 和 concatenation，`DerbyHelper` 只管表达式分组；Oracle、PostgreSQL、H2、Informix、Sybase 没有覆盖，只看 xml。之前 `SQLHelperOperationSupportTest` 的支持矩阵没有这层（只测了 xml 和 MySQL、SQL Server、Derby 的几个覆盖，见 3b-C 续），后来的来源测试里 SQL Server 的 intersect、minus 是 false 已按 helper 修正。
+- **Join、Concatenated 里"数据源相同"的比较大多是多余的**：不同数据源的名字不同，组合表的 `getSource()` 已经是 null，更早就被拒绝了；只有"同名但定义不同的数据源"才走到这一步（用例里用同名、不同 URL 构造）。手写 SQL 模式里"解析成功且不丢信息"的检查与 `XUtil.isQueryMergeable` 重复（等价变异）；不重复的是"没有表或没有选择列"。
 - **`isRankingMergeable` 有排名条件就返回 false**：worksheet 的排名从不下推，和 4b-E 一致，是有意设计。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
