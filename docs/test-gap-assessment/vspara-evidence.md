@@ -150,10 +150,10 @@
 
 | # | 问题 | 结论 | 状态 |
 |---|---|---|---|
-| Q1 | VPM 数据源上的手写 SQL（`parseResult=3`，不读受保护表）该怎么写才能通过？不读 `orders.products` 的 SQL 也被拒绝是否符合预期？加 `-- vpm.tables:` 后仍报"表未知"是用法不对还是产品问题？ | 见上面的 TODO | **待确认（问开发）** |
+| Q1 | VPM 数据源上的手写 SQL（`parseResult=3`，不读受保护表）该怎么写才能通过？不读 `orders.products` 的 SQL 也被拒绝是否符合预期？加 `-- vpm.tables:` 后仍报"表未知"是用法不对还是产品问题？ | 拒绝是设计如此（Bug #77473，拒绝优先），不是缺陷；在 SQL 第一行加整行注释 `-- vpm.tables: orders.orders, orders.contacts, orders.order_details, orders.customers` 即可通过，已在 datatest 验证（`Para_basequerysql` 用旧基线通过）。详见 vspara.md 第 4 节 | **已确认（2026-11-12）；开发尚未正式确认** |
 | Q2 | `.__type__` 取值与转换失败的行为 | 与产品设计无关，源码已明确，见 A7-A。前端只在参数值为字符串 `"null"` 时才发 `.__type__`（`web/projects/portal/src/app/vsobjects/show-hyperlink.service.ts:119`） | **已确认，可直接写单测** |
 | Q3 | 变量为空数组时条件是"忽略"还是"恒假" | 内存过滤已确定：**缺失、null、`[null]` 和经 `VariableTable.put` 存入的空数组都被忽略（不过滤）**，只有绕过 `put` 时空数组才匹配不到任何行，见 A7-B。SQL 生成路径（`ConditionListHandler`）对空数组怎么处理未确定（可能生成 `IN ()`）。前端空选时显示全部，是因为不传值而不是传空数组，这一点以前端为准 | **内存路径已确认；SQL 路径（`ConditionListHandler`）对空数组的处理未确定，但经 `put` 的空数组到不了那里** |
-| Q4 | `prompt` 在 WS 与 VS 两层的优先关系 | WS 变量与 VS 输入组件同名时，**VS 组件覆盖**（不再弹窗：`analytic/composition/event/VSEventUtil.java:1550` 起的 `refreshParameters`，`vobj instanceof InputVSAssembly` 时跳过）。`prompt=false` 有两层：WS 变量自带的 `UserVariable.isPrompt()`（`uql/service/XEngine.java:1741`，false 时用默认值、不提示）和 VS 选项 `disableParameterSheet` / `disabledVariables`（`ViewsheetInfo`，不弹给用户）。两层同时存在时的取值优先级未读清 | **同名覆盖已确认；两层同时设置时的优先级待确认** |
+| Q4 | `prompt` 在 WS 与 VS 两层的优先关系 | 没有优先级冲突：vs 禁用参数框与 ws 变量 `prompt` 都只能压制，取并，任何一个说"不弹"就不弹。同名 VS 输入组件覆盖 WS 变量（`VSEventUtil.java:1550` 起的 `refreshParameters`）。浏览器已观察到 vs 禁用参数框压过 ws 变量的 `prompt="true"`。详见 vspara.md 第 4 节 | **已确认（2026-11-11）** |
 | Q5 | `$(组件)` 由哪个类解析 | `report/composition/execution/ViewsheetSandbox.java` 的 `executeDynamicValue` → `executeVariableValue`，规则见 A7-C | **已确认，可直接写单测** |
 | Q6 | 文本参数 `{parameter.x}` 的格式串与缺失参数 | `report/internal/ParameterTool.java`，见 A7-D | **已确认，可直接写单测** |
 | Q7 | `XUtil#replaceVariable` 的 `doEncode` | `uql/util/XUtil.java:5740`，见 A7-E | **已确认，可直接写单测** |
@@ -225,11 +225,11 @@
 - `MySQL1` 上有 VPM `VPMP1`，条件作用于 `orders.products`：`product_id >= $(Ppid)`。
 - 不传 `Ppid`：报 `Variable in VPM condition missing: Ppid`（`VpmCondition.normalizeExpression`，经 `VpmUtil.hasBlindTableCondition`），即使这条 SQL 并不读 `products`。
 - 传 `Ppid=10`：报 `Query rejected by VPM ... the sql is not parsed and the tables it reads are unknown`（默认 `vpm.unparsed.sql.policy=reject`，`VpmUtil.handleBlindVPM`）。
-- 已试：在 SQL 最前面加 `-- vpm.tables: orders.orders, orders.contacts, orders.order_details, orders.customers`。`vspara-storage.zip` 可以直接改（blob 摘要是内容的 MD5，同步更新 `blob-index.json` 的 `digest` 与 `length` 即可，不用起环境），但改后产品仍报"表未知"，原因未查清；已撤回。
+- 已做（2026-11-12）：在 SQL 最前面加 `-- vpm.tables: orders.orders, orders.contacts, orders.order_details, orders.customers`。`vspara-storage.zip` 直接改（blob 摘要是内容的 MD5，同步更新 `blob-index.json` 的 `digest` 与 `length`，不用起环境），用例通过。早先"改后仍报表未知"的原因已查清：测试存储目录 `target/test-resources/server/config-vspara` 已存在时不会重新还原，当时跑的还是旧内容；改 zip 后要先删掉该目录再跑。
 - 另一个做法：给 spec 加 `vpm.unparsed.sql.policy=warn`，但会同时改变 `Para_vpm1~3` 测的行为，不建议无条件使用。
-- 要问开发：VPM 数据源上的原生 SQL 应怎样写才能通过；SQL 不读受保护的表也被拒绝，是否符合预期。
+- 已回答（Q1，开发尚未正式确认）：加 `-- vpm.tables:` 注释；拒绝是设计如此（拒绝优先），不是缺陷。
 
-在此之前不要把基线改成异常。用例已加 `@Ignore`（原因同上，尚未提 bug），用例内只保留三行说明，细节在本节。得到开发回答后去掉 `@Ignore` 并更新基线。
+已处理（2026-11-12）：已去掉 `@Ignore`，基线没有改，用旧基线 `TableView1.txt` 通过。
 
 ## 附：数据来源与复现
 
