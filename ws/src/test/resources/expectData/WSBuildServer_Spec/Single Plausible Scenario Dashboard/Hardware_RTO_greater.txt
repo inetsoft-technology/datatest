@@ -1,5 +1,0 @@
-The data size(row x col) is:(4 x 2)
-ID, fx Greater
-1000000, 0
-1000140, 0
-1000148, 0
