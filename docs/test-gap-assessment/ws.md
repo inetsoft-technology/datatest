@@ -413,7 +413,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - unpivot 之后再聚合或做交叉表、`fixColumnSelection` 按第一行修正类型、日期类 `changeColumnType`、MV 转换；`RotatedQuery` 的空值、旋转后再聚合、MV。
 - `DateCondition`：六个相对条件已补 `DateConditionRelativeRangesTest`（见 4b-H3）；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
 - 各库：只有 Derby 真正执行了 SQL，MySQL、PostgreSQL、SQL Server 等只断言了生成的文本；MySQL/PostgreSQL 除零行为是经验判断；Vertica、Hive、Snowflake、BigQuery 等方言。
-- `NamedRangeRef` 已补（见 4b-H3，只测了表达式层，没有跑完整视图表；日期类的命名分组没测）；MV 转换对 rotate/unpivot 的处理还没读；其他零覆盖的公式、4 个表类、变量数据类型等（见 G12）；dashboard 一侧的用例没有动。
+- `NamedRangeRef` 已补（见 4b-H3，只测了表达式层，没有跑完整视图表；日期类的命名分组没测）；MV 对 rotate/unpivot 的处理已读、不加单测（见 4b-H3 末尾）；其他零覆盖的公式、4 个表类、变量数据类型等（见 G12）；dashboard 一侧的用例没有动。
 - 没验证过的判断：日期级别 `none` 不下推会让整张表不下推的影响；viewsheet 脚本给范围列设 am/pm 级别会怎样。（"界面在 worksheet 排名里是否提供包含并列"已查：条件编辑器的 TOP_N 只有 N 和列，没有，见下。）
 
 **测试里固定了现状、没有报缺陷的**（以下几条保持现状，不打算改）：
@@ -486,6 +486,12 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **`NamedRangeRef` 发现 2 个缺陷，已报：#81235**（单引号不转义）、**#81236**（只含 null 的组生成 `IN ()`）。证据：在 Derby 上把 `getExpression()` 当 SELECT 跑，直接报语法错误；到 SQL 的路径是读代码确认的（`VSDimensionRef.createGroupRef` 包成 `NamedRangeRef`，`PreAssetQuery` 约 2683 行把表达式原样拼进 SQL，`SQLHelper.fixSQLExpression` 基类不处理）；没有在真实可下推的库上跑完整视图表。Derby 和 access 不下推，所以只影响 Oracle、MySQL、SQL Server 等。两个 SQL 侧测试 `@Disabled` 并写明 bug 号，脚本侧各有一个通过的测试。
 - **观察、未当缺陷：** 整数列里不在任何组的值，脚本侧返回 `7.0`，SQL 侧返回 `7`（`fnumber` 只对 float/double 用 `numberToString`）；没确认后续是否按字符串类型再转一遍，没有固定。
 - **没覆盖：** 日期类、浮点类的命名分组（`getExpression` 里有 `isdate`、`between` 分支，只有日期才走）；范围、前缀等非等值的命名分组（已有 #79129）；整条视图表路径。
+- **MV 对 rotate/unpivot 的处理（只读代码，没有改动，没有加单测，没有报缺陷）：**
+  - **5 个位置，全是类型判断：** `SelectionUpTransformer` 的 `:210`、`:216`（子表是旋转表或 unpivot 表，选择条件不上移，`containsRotated`、`containsUnpivot`）和 `:1630`、`:1635`（父表是旋转表或 unpivot 表，`containsParentRotated`、`containsParentUnpivot`）；`WSMVSelectionDownTransformer.canMoveDown`（`:246`，两者都返回 false）；`VSMVAnalyzer`（`:851`，旋转表、unpivot 表、交叉表带 MV 更新条件时 `transformedWithMVUpdate`）；`MVDef.isColumnsShareable`（`:2533`，见下）。
+  - **不加单测的原因：** 现成的 `SelectionUpTransformerTest` 可用反射加 mock 调 `isMoveableToParent`（环境不麻烦，能加 2~3 个父表用例），但那只是把一个 `instanceof` 判断固定下来；"带旋转表的 worksheet 做 MV 后结果对"要真实的数据源和 MV 构建环境，不做。
+  - **`MVDef.isColumnsShareable` 的规则（读代码）：** `stored.isSharedBy(def)` 要求已有 MV 的列（名加类型）包含新定义的全部列（#48293），且两边列数相等，或新定义的绑定表树（沿 worksheet 递归经过所有 `ComposedTableAssembly`）里没有嵌入表和 unpivot 表。原因查了 Redmine：#52564（13.5，嵌入数据重新导入后更新 MV 失败）、#60857（13.7，unpivot 层级改了之后重建 MV，视图数据错，旧 MV 是新定义的列超集被误共享）。这是启发式：这两种表的内容由 worksheet 自己的设置决定，"列名是超集"不足以说明数据一样。
+  - **旋转表是否被覆盖：** 套在嵌入表或 unpivot 表上的，递归能走到底层，被覆盖；**套在数据库表或普通表上的没有特殊处理**。旋转表的列名由源表第一列的值生成，列数和列名随数据变化。读代码判断风险比 unpivot 低：列名来自值本身，同名列大多是同一个源行；但重名后缀（`A_1`、`A_2`）和空名（`Column [n]`）按行序和位置编号，源数据变了编号可能指向别的行，超过 250 列的截断（#81193）也可能让已有 MV 和新定义在边界上不同。**没有在真实 MV 上验证，是否有意要问开发**；不报缺陷，因为没有现象和复现。
+  - **顺带（读代码，不是缺陷）：** `isColumnsShareable` 递归遍历 `getTableAssemblies(false)`，`RotatedTableAssembly.getTableAssemblies()` 在源表找不到时返回 null，会抛 NPE；源表找不到的 worksheet 本身就是坏的，正常路径碰不到。
 - **关联缺陷已知：** #79129（脚本表达式对范围、前缀、取反组不支持，已解决）与 #81235、#81236 不重合。
 
 
