@@ -243,6 +243,17 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `AggregateFormula`：`SumSQ`、`SumWT`、`Aggregate` | 内部构件，用户选不到 | 不单独补测（已由统计公式的组合 SQL 间接覆盖） | 0 | – | – |
 | **合计** | | | **移植 70 + 新写 65（不含各库方言类一行；聚合公式一行不计）** | | |
 
+**上表"难度"和"待开发确认"两列是 2026-11-10 写的，下面是它们的现状（2026-11-12）：**
+
+| 被测类 | 当时的"待开发确认" | 现状 |
+|---|---|---|
+| `DateCondition` | 能否注入"当前时间"；时区与周起始日的规则 | 不能注入（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了测试，并在 6 个时区验证；是否改成可注入 `Clock` 是产品的事 |
+| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | 哪些组合应当合并 | 仍未做；规则在代码里能读出，"应不应该合并"是产品判断；难度仍是"高（需沙箱）" |
+| `TextUtil.detectType`、`CSVLoader`、`ImportCSVDialogService` | 日期与布尔的识别规则 | 已从代码读出并写了测试（`CSVLoader` 识别 `true`/`false`，`TextUtil.getType` 不识别）；上传服务因环境原因不加单测，难度实际是"高" |
+| `RankingTableLens` | 并列规则 | 已读出：worksheet 排名恰好取 N 行，有意设计（4b-H） |
+| `NumericRangeRef` | 区间边界的归属 | 已读出并写了测试；发现脚本版对 null 的问题（#81105，已修） |
+| 各库方言类 | 各库应当生成什么 SQL；哪些组合退回内存 | 生成层已由测试固定文本，只有 Derby 真正执行；退回内存的组合（13 个方言没有日期函数）已确认，结果不变 |
+
 **计划与现状对照（2026-11-12）**：上表是 2026-11-10 的计划，现状如下（逐类明细见 4b-H）。
 
 | 计划项 | 现状 |
@@ -459,7 +470,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 1. `DateCondition` 能否注入参考日期（时区、周起始日规则一并确认）？否则 date in 只能靠改系统时间测试。
 2. worksheet 层的合并规则：哪些条件、聚合、表达式、数据类型组合应当下推到 SQL。
 3. 上传的日期、布尔类型识别规则；`NumericRangeRef` 区间边界；排名并列规则。
-4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。已确认：库没有原生统计函数时 `AggregateFormula` 退回 SUM/COUNT 组合 SQL（不是退回内存），在 Derby 上跑过：方差、标准差与 Java 参考值一致；协方差、相关系数在只有一列为 NULL 时与"两列都有值的行"不一致，单行相关系数除零报错（产品缺陷，单测里 3 个 `@Disabled`，待报 bug）。待确认：各库生成的 SQL 有没有预期文本可对照。
+4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。已确认：库没有原生统计函数时 `AggregateFormula` 退回 SUM/COUNT 组合 SQL（不是退回内存），在 Derby 上跑过：方差、标准差与 Java 参考值一致；协方差、相关系数在只有一列为 NULL 时与"两列都有值的行"不一致，单行相关系数除零报错（产品缺陷，已报 #81095、#81096，已在 `main` 修复，单测已启用）。各库生成的 SQL 已由 `DateRangeRefDialectTest` 等固定文本，只有 Derby 真正执行；MySQL、PostgreSQL 的除零行为仍是经验判断。
 
 **2026-11-12 更新（上面第 1～3 条）：** 第 1 条：`DateCondition` 不能注入时间（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了单测，要不要改成可注入 `Clock` 是产品的事；第 2 条：规则从代码读出了 SQL 层部分，`PreAssetQuery` 的 `is*Mergeable` 还没读完；第 3 条：上传类型识别、数值分段边界、排名并列的规则都已从代码读出并写了测试（见 4b-E、F），"设计是否合理"仍是产品的判断。
 
@@ -471,16 +482,16 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **没验证的：**
 - 评估和处理后的运行都在本机（Windows）；CI 上严格模式后的结果未确认（CI 用同一份测试配置，上传的根因应相同）。
-- 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec` 和 `checkMergeable CM1`。
+- 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec` 和 `checkMergeable CM1`（#213 已合并；2026-11-12 在带产品修复的版本上又跑了 `WSData_Spec` 24 个用例和 `property_crossJoin.maxCellCount`：4 个失败都是旋转表的基线受 #81102 修复影响，加上 cross join，共 5 个用例（6 个基线文件）受影响，其中 3 个用例的基线已更新，其余通过；6 个 spec 的整套没有再跑，CI 上的结果未确认）。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
 - 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）当时没有读，后来读了并写了 `XUtilQueryMergeableTest`。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
 - 49 个未运行的 worksheet 是否被其他 worksheet 引用为来源，未核对。
-- 13.8 测试移植到 StyleBI 的兼容性未逐个核对，用例数按 13.8 的测试数计。
+- 13.8 测试移植到 StyleBI：**已完成并合并**（4 个类、63 个测试，PR #8046），与 13.8 的差异分三种，见第 4 节；这条不再是待确认。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 的差别只确认了预览输入行数上限一项。
 - 命名分组、变量、日期范围已在功能面差集里按能力清单统计，但它们在 worksheet 里的实际用法（命名分组是否被表应用、变量值如何传入）没有逐个核对。
-- 功能面差集里 `InRange_Spec` 的日期范围名与 `DateCondition` 子类的对应只按名字判断；`AggregateFormula` 三个零覆盖公式在产品单测里有没有测试未盘点。
-- 单测盘点中，除注明"只有序列化"的几个类外，其余按方法名判断；`SortFilter` 自身的测试未盘点。
+- 功能面差集里 `InRange_Spec` 的日期范围名与 `DateCondition` 子类的对应只按名字判断；`AggregateFormula` 三个零覆盖公式（`SumSQ`、`SumWT`、`Aggregate`）是内部构件，用户选不到，已由 `AggregateFormulaStatSqlTest` 的组合 SQL 间接覆盖。
+- 单测盘点中，除注明"只有序列化"的几个类外，其余按方法名判断（没有再扩展）；`SortFilter` 现在有 `SortSummaryFilterTest`（13.8 移植，15 个）。
 - 库 × 处理步骤的交叉统计没有做（`ws_scan.py` 只按数据源统计表数），G11 里各库覆盖只有表数；各库方言类相关测试只看了文件名和引用，未读方法体。
 
 ## 7. 已知 bug 对照（步骤 3b-D）
@@ -538,6 +549,25 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - 损坏数据导入的健壮性（3）：#77584、#77499、#77412
 
 **结论：** 数据相关的 27 条里，没有一类在 datatest 里有明确覆盖；覆盖最薄的是重命名与依赖传播、快照、提示信息、JVM 区域、Long 变量，以及脚本表达式的几种写法（函数同名、`new Date(field[…])`、引用其他数据块）。对应缺口见 G13。
+
+### 7b. 补单测时发现并报告的缺陷（2026-11-11 至 11-12）
+
+这些不在上面 118 条的范围内（分类不同，或创建时间在 2026-11-11 之后）。"测试"指产品仓库里固定或验证它的单测，"datatest"指对应的用例或基线。
+
+| bug id | 问题 | 状态 | 测试 | datatest |
+|---|---|---|---|---|
+| #81087 | `CrossJoinTableLens` 的行序取决于哪边先加载完，被行数上限截断的 cross join 每次保留的行不同 | Resolved（`main`） | 修复自带 `CrossJoinTableLensRowOrderTest` | `property_crossJoin.maxCellCount`：行序已确定，基线待更新（`Customer1` 无排序、依赖数据库行序，待决定） |
+| #81091 | 连接列检查不阻止 hash、merge join 引擎（13.8 #80297） | Resolved | `JoinLensesTest` | 无 |
+| #81092 | `join.table.maxrows` 把表头行算进上限（13.8 #80298） | Resolved | `JoinLensesTest` | 无 |
+| #81093 | `TextComparer.isAsciiOnly` 把所有基本平面非 ASCII 字符当 ASCII，中文不按拼音排序 | Resolved | `SortSummaryFilterTest` | 无 |
+| #81095 | 无原生函数的库里，协方差、相关系数在只有一列为 NULL 时算错 | Resolved | `AggregateFormulaStatSqlTest` | 无 |
+| #81096 | 单行相关系数除零 | Resolved | `AggregateFormulaStatSqlTest` | 无 |
+| #81102 | 旋转表第一列有重名值时丢列丢数据 | Resolved | `RotatedQueryTest` | `rotate`、`grouping1`、`condition1` 的基线已更新；`condition2` 两个待定（见 #81193） |
+| #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Resolved | `NumericRangeRefBoundaryTest` | 无 |
+| #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | New | `DateConditionBuiltinTest` 固定现状 | 无 |
+| #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | New | 暂无（探针验证过，未写进单测） | `condition2/Query1`、`Query3` 的基线不更新，等开发 |
+| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（产品分支 `test-csvinfo-detection`，未推送） | 无 |
+| #80538 | 非 distinct union 加载中多算一行（原来就有） | New | `SetOperationLensesTest` 的最后一个 `@Disabled` | 无 |
 
 ## 附：数据来源与复现
 
