@@ -261,7 +261,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 按优先级：先移植 13.8（G7 主体），再写 date in（G4）和上传（G3），unpivot（G7）次之，合并判断（G5）要先等开发确认规则。各库 SQL 生成（G11）和合并判断一样要先确认规则，排在其后。
 
-**移植进展（2026-11-11，产品仓库独立 worktree，分支 `test-ws-lens-unit-tests`，已推送，见 4b-H）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
+**移植进展（2026-11-11，分支 `test-ws-lens-unit-tests`，已随 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 合并，worktree 和分支已清理，见 4b-H）：** 13.8 的 4 个文件已移植为 4 个测试类、共 63 个测试，和已有的 lens、filter 测试放在同一个 JVM 里一起跑通过。
 
 **新写进展（2026-11-11，同一分支）：** 各库方言批次 3 个类已提交：`DateRangeRefDialectTest`（38，16 个日期级别 × 各库是否下推，并在 Derby 上执行对照 java.time）、`AggregateFormulaStatSqlTest`（41，3 个 `@Disabled`）、`SQLHelperOperationSupportTest`（13，`sqlhelper.xml` 与代码覆盖的支持矩阵）。同批次新增：`DateRangeRefLevelValuesTest`（5，19 个级别取值对照 java.time）、`DateLevelSummaryTest`（5，分组求和）。过程中确认：`SummaryFilter2` 只合并相邻行，输入必须先按分组列排序（`AssetQuery` 已排）；`week of year` 是"含 1 月 1 日的周为第 1 周"，12 月末可能落入下一年第 1 周。未覆盖：`week of month`、`week of quarter`、`*_FULL_WEEK` 系列（周的定义要开发确认）。
 **统计公式 SQL 缺陷已报：** #81095（协方差/相关系数只有一列为 NULL 时算错）、#81096（单行相关系数除零）。
@@ -281,7 +281,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 这批测试都是 lens 层的取值测试，不依赖数据库，覆盖了 G7 的主体（cross join、full outer、非等值、union、intersect、minus、distinct、rotate、top N）以及 G13 里脚本表达式列的计算（多列依赖、前向引用、出错、类白名单）。这一段写于第一批，之后 unpivot、`RotatedQuery`、排名、日期条件、上传类型检测和 `CSVLoader`、`XUtil.isQueryMergeable` 都已补测，现状见 4b-H。
 
-### 4b. 补单测过程中遇到的未覆盖与待确认（2026-11-11，产品仓库分支 `test-ws-lens-unit-tests`）
+### 4b. 补单测过程中遇到的未覆盖与待确认（2026-11-11，产品仓库分支 `test-ws-lens-unit-tests`，已随 PR #8046 合并）
 
 补的测试类（写这一节时是 9 个，后来增至 15 个新写的，另有 13.8 移植 4 个，清单见 H）写完后，下面这些情况**没有测**，或测了但结论要人确认。每条写明原因，方便后续接手。
 
@@ -356,7 +356,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **xlsb 的拒绝提示**：先走 `process()` 里的 `getSheetNames`，xlsb 是 zip，会被 `detectType` 当 xlsx，`getSheetNames` 可能先失败成 "Failed to parse XLS"，到不了 `loadData` 里的 xlsb 提示。没验证。
 - **`CSVInfo` 的分隔符/表头猜测**（`getCSVInfo`、`getScore`）在 core 里、没有任何测试，不需要上面的环境；规则能从代码读出（评分取各行的最小值，列数一致 +100，平局取先出现的：tab、`;`、`,`、`|`，带引号优先）。读代码时发现一个可疑点：每一行都带同样个数的"引号内逗号"时，`quote=false` 的得分（列数更多）会高于 `quote=true`，被选中。没运行验证，没写。
 
-**H. 整体状态（2026-11-12，产品分支 `test-ws-lens-unit-tests`，24 个提交，PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并）**
+**H. 整体状态（2026-11-12，PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并为一个提交 `35e99dcc92`；分支 `test-ws-lens-unit-tests` 的 24 个提交和本地 worktree 已清理）**
 
 **验证：**
 - 同一个 JVM 整体跑（`-Dsurefire.forkCount=1 -Dsurefire.reuseForks=true`）19 个类：**340 个测试，0 失败，0 错误，1 个跳过**（`SetOperationLensesTest` 的 #80538）。第一次整体跑时是 12 个跳过，都是带缺陷编号的 `@Disabled`；之后分支变基到含修复的 `main`，#81091、#81092、#81093、#81095、#81096、#81102、#81105 的修复都已在 `main` 上，对应的 11 个测试去掉 `@Disabled` 后直接通过（期望值是按代码规则独立推的，不是按修复前的输出写的）。
