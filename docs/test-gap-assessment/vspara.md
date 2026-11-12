@@ -140,8 +140,8 @@ V1、V2、V3 最值得先验。
 - 原来 zip 里 worksheet 的变量组件只有 string、integer、boolean、short、long、time、timeInstant（只出现在条件里）、byte；没有 double、float、date、datetime 的变量组件。
 - `ws_vartype`：内嵌表 `Data`（`Key`、`Double`、`Float`、`Date`、`DateTime` 五列，6 行 A 到 F），镜像表 `Query1` 带四个条件，由四个变量组件驱动：`vdouble`（double，下拉框，`Double >= 值`）、`vfloat`（float，多选列表，`Float` 属于列表）、`vdate`（date，多选列表，`Date` 属于列表）、`vdatetime`（timeInstant，文本输入，带默认值 `2020-05-01 12:00:00`，`DateTime <= 值`）。
 - 数据和参数是专门设计的：四个条件各自只会丢掉一行（A 被 `vdouble` 丢，B 被 `vfloat` 丢，D 被 `vdate` 丢，F 被 `vdatetime` 丢），所以任何一个条件被忽略或写错，结果都会变，不会被别的条件掩盖。用例 `Para_wsvartype` 发 `vdouble=20.5`、`vfloat` 五个值、`vdate` 五个日期，不发 `vdatetime`（走默认值），期望 C、E 两行，实测一致，`vdatetime` 默认值生效（F 被丢）。
-- 这两个资产是直接写 XML 加进 `vspara-storage.zip` 的（内嵌表数据按 `XEmbeddedTable.writePieceData` 的格式编码，vs 以 `Para_wsvariable` 为模板，去掉了选择树），没有在 Composer 里打开保存过；只在 datatest 里运行验证过，没有导入实例用界面打开。要在界面里编辑时先导入确认能正常打开。
-- 提示框、多选默认值等界面上的接线没有验证（datatest 不经过提示框），这里只验证了参数到条件的接线。
+- 这两个资产最初是直接写 XML 加进 `vspara-storage.zip` 的（内嵌表数据按 `XEmbeddedTable.writePieceData` 的格式编码，vs 以 `Para_wsvariable` 为模板，去掉了选择树）。2026-11-12 按 review 意见做了验证：用 EM 的导入功能（按产品导出包的格式打成包）导入本地实例，在 Composer 里打开 `ws_vartype`（四个变量控件的类型、选项、默认值都正确显示，连线正确）和 `Para_wsvartype`，门户里用用例同样的参数打开，结果是 C、E 两行；两个资产都在 Composer 里重新保存了一次。保存后内容的语义没变（内嵌数据、条件、变量的类型/样式/选项/默认值逐项一致），只是规范化了写法（去掉冗余的 `<view>`、列选择里部分 `dataType`、加 `<id>`、元数据），zip 里现在放的是 Composer 保存出来的版本，用例重跑通过，基线不变。
+- datatest 不经过提示框，提示框里的多选、默认值是在 Composer 的参数框里看的：`vdouble` 是下拉框、`vfloat` 和 `vdate` 是多选列表、`vdatetime` 是日期时间选择器且默认值已填好。
 
 **Q4 结论（`prompt` 两层优先级）：没有优先级冲突，两层都是只能压制的开关，取并。**
 
