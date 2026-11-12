@@ -1,19 +1,19 @@
 # ws 测试缺口与补充方案
 
-> 日期：2026-11-10　模块：`ws`（无 profile，`./mvnw test -pl ws`），spec：`ws/src/test/groovy/inetsoft/test/worksheet/cases/` 下 6 个（评估时 7 个，`WSBuildServer_Spec` 已删除）。2026-11-11 更新：G1、G2、G3 的假通过、G10 已在分支 `datatest-ws-strict` 处理（待合并），状态见各节
+> 日期：2026-11-10　模块：`ws`（无 profile，`./mvnw test -pl ws`），spec：`ws/src/test/groovy/inetsoft/test/worksheet/cases/` 下 6 个（评估时 7 个，`WSBuildServer_Spec` 已删除）。2026-11-11 更新：G1、G2、G3 的假通过、G10 已在分支 `datatest-ws-strict` 处理，PR #213 已于 2026-11-11 合入 `Stateless-Sessions1`，状态见各节
 > datatest 基线：`Stateless-Sessions1`（`f83c650a`）；产品源码：`main`（`origin/main` `f0ef913306`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 一致）。
 
 ## 1. 结论
 
 ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除 `WSBuildServer_Spec` 后 58 个用例、568 个基线 txt），团队设计表 `docs/ws/Worksheet Auto.xlsx` 里的组合也基本都做成了用例。**但评估时真正在验证数据的不到一半（98 个里 44 个）；严格模式处理后，58 个用例里除 `InRange` 和 4 个 `@Ignore` 外的 50 个都真正比对了数据。**
 
-- 断言基类 `WorksheetTest` 吞掉异常、只比实际导出的文件，[#203](https://github.com/inetsoft-technology/datatest/pull/203) 只改了 `ViewsheetTest`，没有覆盖它。本机实际运行：98 个用例里 90 个"通过"，其中 46 个什么都没导出（`WSBuildServer_Spec` 40 个：worksheet 不在 zip 里；上传用例 6 个：基类第 214 行空指针），真正比对了数据的只有 44 个。**已处理（分支 `datatest-ws-strict`，待合并）：** `WorksheetTest` 改为严格模式；上传用例的根因是测试 Spring 配置把 `ImportCSVDialogServiceProxy`、`FileSystemService` 换成了 Mockito mock（预览返回空结果、缓存文件为 null），已改为真实对象；`WSProperty_Spec` 里 5 处 `中文` 被写成乱码（`涓枃`），按乱码找不到 sheet，已改正；`WSBuildServer_Spec` 连同 302 个基线已删除；3 个陈旧基线已删除。
+- 断言基类 `WorksheetTest` 吞掉异常、只比实际导出的文件，[#203](https://github.com/inetsoft-technology/datatest/pull/203) 只改了 `ViewsheetTest`，没有覆盖它。本机实际运行：98 个用例里 90 个"通过"，其中 46 个什么都没导出（`WSBuildServer_Spec` 40 个：worksheet 不在 zip 里；上传用例 6 个：基类第 214 行空指针），真正比对了数据的只有 44 个。**已处理（分支 `datatest-ws-strict`，PR #213 已合并）：** `WorksheetTest` 改为严格模式；上传用例的根因是测试 Spring 配置把 `ImportCSVDialogServiceProxy`、`FileSystemService` 换成了 Mockito mock（预览返回空结果、缓存文件为 null），已改为真实对象；`WSProperty_Spec` 里 5 处 `中文` 被写成乱码（`涓枃`），按乱码找不到 sheet，已改正；`WSBuildServer_Spec` 连同 302 个基线已删除；3 个陈旧基线已删除。
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
-- 产品单测：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。13.8 已有可移植的 lens 测试（4 个测试类、70 个）。
+- 产品单测（评估时）：`RotatedQuery`、`UnpivotQuery`、上传与类型识别、worksheet 层的合并判断没有任何测试；intersect、minus、cross join、rotate、max rows 只有序列化测试。**2026-11-12 现状：** 已补 19 个测试类（4 个移植自 13.8、15 个新写），共 340 个测试，覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`XUtil.isQueryMergeable`；产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046)。写测试发现的 8 个缺陷（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105）都已在 `main` 修复，另报 #81178 待处理。仍没有的：`PreAssetQuery` 的 `is*Mergeable`、上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）。
 
-已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线。接下来：移植 13.8 的 lens 测试，补 unpivot、date in、上传、合并判断的单测，再做各库 SQL 差异（G11）。
+已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异（生成层）的单测（PR #8046）。接下来：重新验证 `property_crossJoin.maxCellCount`（#81087 已修）；`PreAssetQuery` 合并判断的单测与基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
 ## 2. 覆盖情况
 
@@ -203,17 +203,17 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 | `WorksheetTest` 吞异常、只比实际导出的文件，#203 未覆盖 | worksheet 打不开、某张表查询抛异常、上传失败，用例照样通过（评估时本机有 46 个这样的用例） | 机制：按 #203 的方式改 `WorksheetTest` 为严格模式。**已处理（待合并）** | 高 |
-| G2 | `WSBuildServer_Spec` 的 40 个 worksheet 不在 zip，Linux 上又被跳过 | 302 个基线文件代表的客户场景全部未验证，却显示为通过 | 机制/资产：补回资产或删除 spec 与基线。**已决定删除并处理（待合并）** | 高 |
-| G3 | 上传用例 6 个假通过；上传服务、`TextUtil.detectType` 无单测 | CSV/Excel 导入的列类型识别、分隔符、首行表头、unpivot 出错 | 机制（同 G1）+ 单测。**假通过已处理（待合并）**，根因是测试配置里的 mock 和 spec 里的乱码；单测未做 | 高 |
-| G4 | 表上的 date in 条件在 CI 上 0 覆盖（表条件之外的 4 个 date in 条件在命名分组和日期范围里，见覆盖情况）：`InRange_Spec` 在 Linux 跳过，只能在保存了管理员凭据的 Windows 上改系统时间运行；单测只覆盖本年/上年、本月、本周、本季度 | "年初至今""最近 N 个月/天""第 N 季度"等相对日期范围算错 | 单测（固定参考日期，期望值手算）；dashboard 不再改操作系统时间 | 高 |
-| G5 | 执行路径未验证：`checkMergeable` 用例只比数据；`PreAssetQuery.isQueryMergeable` 无单测 | 本应下推的查询退化到内存（性能问题），或下推与内存两条路径结果不一致（null 排序、字符串比较、日期分组） | 单测（合并规则）+ 基类记录合并结果（入口见第 5 节，分支清单见 3b-C） | 中 |
+| G1 | `WorksheetTest` 吞异常、只比实际导出的文件，#203 未覆盖 | worksheet 打不开、某张表查询抛异常、上传失败，用例照样通过（评估时本机有 46 个这样的用例） | 机制：按 #203 的方式改 `WorksheetTest` 为严格模式。**已处理（已合并，#213）** | 高 |
+| G2 | `WSBuildServer_Spec` 的 40 个 worksheet 不在 zip，Linux 上又被跳过 | 302 个基线文件代表的客户场景全部未验证，却显示为通过 | 机制/资产：补回资产或删除 spec 与基线。**已决定删除并处理（已合并，#213）** | 高 |
+| G3 | 上传用例 6 个假通过；上传服务、`TextUtil.detectType` 无单测 | CSV/Excel 导入的列类型识别、分隔符、首行表头、unpivot 出错 | 机制（同 G1）+ 单测。**假通过已处理（已合并，#213）**，根因是测试配置里的 mock 和 spec 里的乱码；上传类型识别和 `CSVLoader` 的单测已补（`TextUtilTypeDetectionTest`、`CSVLoaderRulesTest`），上传服务不加单测（环境原因，见 4b-G） | 高 |
+| G4 | 表上的 date in 条件在 CI 上 0 覆盖（表条件之外的 4 个 date in 条件在命名分组和日期范围里，见覆盖情况）：`InRange_Spec` 在 Linux 跳过，只能在保存了管理员凭据的 Windows 上改系统时间运行；单测只覆盖本年/上年、本月、本周、本季度（2026-11-12 已补 `DateConditionBuiltinTest`：ToDate、最近 N 个月/天、第 N 季度/半年/月、PartDate） | "年初至今""最近 N 个月/天""第 N 季度"等相对日期范围算错 | 单测（固定参考日期，期望值手算）；dashboard 不再改操作系统时间 | 高 |
+| G5 | 执行路径未验证：`checkMergeable` 用例只比数据；`PreAssetQuery.isQueryMergeable` 无单测（SQL 层 `XUtil.isQueryMergeable` 已补 `XUtilQueryMergeableTest`，`PreAssetQuery` 这批仍没有） | 本应下推的查询退化到内存（性能问题），或下推与内存两条路径结果不一致（null 排序、字符串比较、日期分组） | 单测（合并规则）+ 基类记录合并结果（入口见第 5 节，分支清单见 3b-C） | 中 |
 | G6 | 只用 `LIVE_MODE`，从未走 `RUNTIME_MODE` | 只在运行时出现的错误：viewsheet/MV 读 worksheet 的结果、`runtimeSelected`、预览输入行数上限（`asset.sample.maxrows=50000`，`AssetQuery.java:3957`）以外的行为 | 机制：基类支持 `RUNTIME_MODE`，按查询类型各选代表用例。**暂缓：决定先只用 `LIVE_MODE`**，LIVE 模式的边界见 3b-C 续 | 低 |
-| G7 | lens 取值无单测：rotate、unpivot 完全没有；intersect、minus、cross join、max rows 只有序列化；full outer join 没有；非等值 join 只测取消；排名 lens 没有取值测试 | 这些操作的结果行、表头、null 处理出错，只有 datatest 回归基线可能发现 | 单测：先移植 13.8，再补缺 | 高 |
+| G7 | lens 取值无单测：rotate、unpivot 完全没有；intersect、minus、cross join、max rows 只有序列化；full outer join 没有；非等值 join 只测取消；排名 lens 没有取值测试（**2026-11-12 起已补**：13.8 移植、unpivot、`RotatedQuery`、排名并列，见 4b-H） | 这些操作的结果行、表头、null 处理出错，只有 datatest 回归基线可能发现 | 单测：先移植 13.8，再补缺 | 高 |
 | G8 | 薄弱格子：`>=` join、表上的 date in 在 CI 范围为 0；LIKE 1、starting with 2；Rotated/Unpivot/Concatenated 几乎没有后置条件；ClickHouse 被忽略 | 这些组合下的接线出错 | dashboard：新建小 worksheet（tester 衡量） | 中 |
 | G9 | 49 个 worksheet 没有用例运行 | 若是有意准备的场景，则对应能力未验证 | 核对后补用例或删除 | 低 |
-| G10 | 3 个陈旧基线（`CM1_3`、`CM1_5`、`Report/top1.txt`） | 让人误以为这些对象被验证过 | 随 G1 清理。**已处理（待合并）：** 删除 `CM1_3`、`CM1_5`、`Report/top1.txt` | 低 |
-| G11 | 各库 SQL 差异未区分：绑库的表 Oracle 占 122/212，ClickHouse 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；产品单测里引用各库方言类（`OracleSQLHelper`、`MySQLHelper`、`SQLServerHelper`、`DB2SQLHelper`、`InformixSQLHelper`、`PostgreSQLHelper`、`DerbyHelper`、`ClickhouseHelper`）的测试，多是别名、引号、like 大小写、嵌套派生表，日期分组、top N / max rows、集合运算、统计函数的各库生成未见专门测试 | 同一个 worksheet 在某个库上生成错误或不支持的 SQL（日期部分函数、`LIMIT`/`ROWNUM`/`TOP`、minus/intersect/full join、null 排序、字符串比较与大小写），换个库正常；下推与内存两条路径的结果不一致（G5）也会因库而异 | 单测：固定一组查询，断言各库生成的 SQL；dashboard：按"场景 × 库"为每类选代表 worksheet，在 8 个库各跑一遍（需先有 G5 的"是否下推"记录）；支持矩阵和现有覆盖见 3b-C 续 | 中 |
+| G10 | 3 个陈旧基线（`CM1_3`、`CM1_5`、`Report/top1.txt`） | 让人误以为这些对象被验证过 | 随 G1 清理。**已处理（已合并，#213）：** 删除 `CM1_3`、`CM1_5`、`Report/top1.txt` | 低 |
+| G11 | 各库 SQL 差异未区分：绑库的表 Oracle 占 122/212，ClickHouse 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；产品单测里引用各库方言类（`OracleSQLHelper`、`MySQLHelper`、`SQLServerHelper`、`DB2SQLHelper`、`InformixSQLHelper`、`PostgreSQLHelper`、`DerbyHelper`、`ClickhouseHelper`）的测试，多是别名、引号、like 大小写、嵌套派生表，日期分组、top N / max rows、集合运算、统计函数的各库生成未见专门测试（生成层已补：`DateRangeRefDialectTest`、`AggregateFormulaStatSqlTest`、`SQLHelperOperationSupportTest`，只有 Derby 真正执行；dashboard 按库对照没做） | 同一个 worksheet 在某个库上生成错误或不支持的 SQL（日期部分函数、`LIMIT`/`ROWNUM`/`TOP`、minus/intersect/full join、null 排序、字符串比较与大小写），换个库正常；下推与内存两条路径的结果不一致（G5）也会因库而异 | 单测：固定一组查询，断言各库生成的 SQL；dashboard：按"场景 × 库"为每类选代表 worksheet，在 8 个库各跑一遍（需先有 G5 的"是否下推"记录）；支持矩阵和现有覆盖见 3b-C 续 | 中 |
 | G12 | 功能面零覆盖：产品能力清单里 CI 范围 worksheet 零使用的项（日期分组 5/21、聚合公式 3/27、变量数据类型 8/13、列引用 `NamedRangeRef`、`>=` join、4 个表类、3 个非表 assembly、5 个配置项、上传的固定宽度文本与 xlsb），明细见"功能面差集" | 这些能力出错，没有任何用例会发现 | 能手算期望值的 → 单测（日期分组、聚合公式、相对日期、上传）；接线 → dashboard 小 worksheet；表类、命名分组的用法先向开发确认 | 中 |
 | G13 | 已知 bug 的根因类别在 datatest 里没有验证：重命名与依赖传播、提示信息（子查询警告）、快照导出导入、JVM 区域（Excel 日期）、Long 变量、脚本表达式的几种写法（函数同名、`new Date(field[…])`、引用其他数据块）；近一年 Worksheet Execution 分类的 Bug 118 条，27 条与数据结果直接相关，见第 7 节 | 同类 bug 复发时没有用例会发现 | 能手算期望值的 → 单测；接线 → dashboard 小 worksheet；重命名、快照、提示信息需要先有机制（重命名与导入导出的调用、警告的断言） | 中 |
 
@@ -242,6 +242,22 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | 各库方言类（`OracleSQLHelper` 等 8 个） | 引用它们的测试多是别名、引号、like 大小写、嵌套派生表（只看文件名与引用，未读方法体）；`ClickhouseHelper` 2 个、`InformixSQLHelper` 3 个、`DB2SQLHelper` 5 个测试文件引用，最少 | 固定一组查询（日期分组、top N / max rows、集合运算、统计函数、null 排序），断言 8 个库各自生成的 SQL | 待定（按"类别 × 库"展开） | 中 | 各库应当生成什么 SQL；哪些组合在哪个库不支持、应当退回内存 |
 | `AggregateFormula`：`SumSQ`、`SumWT`、`Aggregate` | 内部构件，用户选不到 | 不单独补测（已由统计公式的组合 SQL 间接覆盖） | 0 | – | – |
 | **合计** | | | **移植 70 + 新写 65（不含各库方言类一行；聚合公式一行不计）** | | |
+
+**计划与现状对照（2026-11-12）**：上表是 2026-11-10 的计划，现状如下（逐类明细见 4b-H）。
+
+| 计划项 | 现状 |
+|---|---|
+| lens：join、集合运算、rotate、filter（移植 13.8） | 已做：4 个类、63 个测试 |
+| unpivot（`AssetUtil.unpivot`、`UnpivotQuery`） | 已做：`AssetUtilUnpivotTest`（14）、`UnpivotQueryTest`（3）；没做 unpivot 后聚合、日期类 `changeColumnType` |
+| `RotatedQuery` | 已做：`RotatedQueryTest`（5） |
+| `DateCondition` | 已做：`DateConditionBuiltinTest`（39）；夏令时切换日只能跳过；`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对 |
+| `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | 没做；SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
+| 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符猜测没写 |
+| `RankingTableLens` | 已做：`RankingTiesTest`（6） |
+| `SummaryFilter2` + `DateRangeRef` 级别 | 已做：`DateRangeRefLevelValuesTest`（5）、`DateRangeRefFullWeekLevelsTest`（3）、`DateLevelSummaryTest`（5） |
+| `NumericRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5） |
+| 各库方言类 | 生成层已做：`DateRangeRefDialectTest`（38）、`AggregateFormulaStatSqlTest`（41）、`SQLHelperOperationSupportTest`（13）；只有 Derby 真正执行 |
+| 合计 | 实际 19 个类（移植 4 + 新写 15）、340 个测试、1 个 `@Disabled`（#80538） |
 
 按优先级：先移植 13.8（G7 主体），再写 date in（G4）和上传（G3），unpivot（G7）次之，合并判断（G5）要先等开发确认规则。各库 SQL 生成（G11）和合并判断一样要先确认规则，排在其后。
 
@@ -411,9 +427,9 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 | 场景 | 做法 | 验证什么 | 前提 |
 |---|---|---|---|
-| 严格模式（G1） | 改 `WorksheetTest`：导出失败让用例失败、每张表单独捕获后汇总、基线文件必须都已导出、`-Dupdate.baseline`、清理 case 目录；`importCSVToEMTable` 空值安全并在失败时报错；`exportVSComponentData` 同样 | 打不开、查询异常、上传失败、少导出都会变红 | **已完成（待合并）：** G2 的 40 个已随 spec 删除、G3 的 6 个已修好、G10 的 3 个陈旧基线已删除 |
-| `WSBuildServer_Spec`（G2） | 二选一：补回 `BuildServer` 资产并去掉 Linux 跳过；或删除 spec 与 302 个基线 | 客户场景回归 | **已决定删除并处理（待合并）**；日后找到资产再补回 |
-| 上传（G3） | 修好基类后重跑 6 个用例，确认导出与基线一致 | 上传接线 | **已完成（待合并）：** 根因是测试配置的 mock 和 spec 里的乱码，重跑后 6 个用例都与基线一致 |
+| 严格模式（G1） | 改 `WorksheetTest`：导出失败让用例失败、每张表单独捕获后汇总、基线文件必须都已导出、`-Dupdate.baseline`、清理 case 目录；`importCSVToEMTable` 空值安全并在失败时报错；`exportVSComponentData` 同样 | 打不开、查询异常、上传失败、少导出都会变红 | **已完成（已合并，#213）：** G2 的 40 个已随 spec 删除、G3 的 6 个已修好、G10 的 3 个陈旧基线已删除 |
+| `WSBuildServer_Spec`（G2） | 二选一：补回 `BuildServer` 资产并去掉 Linux 跳过；或删除 spec 与 302 个基线 | 客户场景回归 | **已决定删除并处理（已合并，#213）**；日后找到资产再补回 |
+| 上传（G3） | 修好基类后重跑 6 个用例，确认导出与基线一致 | 上传接线 | **已完成（已合并，#213）：** 根因是测试配置的 mock 和 spec 里的乱码，重跑后 6 个用例都与基线一致 |
 | date in（G4） | 语义放单测；dashboard 留 1～2 个代表用例，不再依赖改操作系统时间 | 条件接线 | 产品是否支持测试用的参考日期（待开发确认） |
 | 执行路径（G5） | 基类记录每张表是否合并（或生成的 SQL）并纳入基线，先用于 `checkMergeable` 用例 | 下推与否的回归 | 入口：`AssetQuery.createAssetQuery(table, mode, box, false, -1L, true, true)` 后取 `isQueryMergeable(false)`（`PreAssetQuery.java:2992`，public）和 `getQueryPlan()`（`ShowPlanService.java:44` 做的就是这个调用）；测试配置里没有 ShowPlan，但 `WorksheetTest` 已有沙箱和表，可直接调用；计划节点里有生成的 SQL 和下推标记（`PreAssetQuery.java:3787`-`3850`），但源不可合并时返回 null、计划模式用原始别名所以 SQL 与实际执行的别名不同；`ShowPlanService` 固定用 `RUNTIME_MODE`，测试应按实际执行的 `LIVE_MODE` 调用 |
 | 运行时取数（G6） | 基类支持 `RUNTIME_MODE`，每种查询类型选 1 个代表 worksheet | viewsheet/MV 实际取数路径 | 暂缓：决定先只用 `LIVE_MODE` |
@@ -432,6 +448,8 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 3. 上传的日期、布尔类型识别规则；`NumericRangeRef` 区间边界；排名并列规则。
 4. 各库方言：支持矩阵已从 `sqlhelper.xml` 和代码覆盖读出（见 3b-C 续），MySQL 的 `INTERSECT`/`EXCEPT`、`FULL OUTER JOIN` 已确认不下推。已确认：库没有原生统计函数时 `AggregateFormula` 退回 SUM/COUNT 组合 SQL（不是退回内存），在 Derby 上跑过：方差、标准差与 Java 参考值一致；协方差、相关系数在只有一列为 NULL 时与"两列都有值的行"不一致，单行相关系数除零报错（产品缺陷，单测里 3 个 `@Disabled`，待报 bug）。待确认：各库生成的 SQL 有没有预期文本可对照。
 
+**2026-11-12 更新（上面第 1～3 条）：** 第 1 条：`DateCondition` 不能注入时间（子类里直接 `System.currentTimeMillis()`），已按"相对现在写期望、跨日时跳过"写了单测，要不要改成可注入 `Clock` 是产品的事；第 2 条：规则从代码读出了 SQL 层部分，`PreAssetQuery` 的 `is*Mergeable` 还没读完；第 3 条：上传类型识别、数值分段边界、排名并列的规则都已从代码读出并写了测试（见 4b-E、F），"设计是否合理"仍是产品的判断。
+
 **需要用户决定：**
 - 严格模式后数据库不可用也会让 CI 变红（以前异常被吞掉）：`ensure-db-server` 的等待和重试是否足够。
 - ws 的 CI：只能手动触发、失败不挡合入、Jenkins 无 ws 阶段，是否调整。
@@ -443,7 +461,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec` 和 `checkMergeable CM1`。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
-- 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）没有读。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
+- 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）当时没有读，后来读了并写了 `XUtilQueryMergeableTest`。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
 - 49 个未运行的 worksheet 是否被其他 worksheet 引用为来源，未核对。
 - 13.8 测试移植到 StyleBI 的兼容性未逐个核对，用例数按 13.8 的测试数计。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 的差别只确认了预览输入行数上限一项。
