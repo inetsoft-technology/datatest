@@ -456,9 +456,9 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **读代码和运行时发现的几点（没有报缺陷）：**
 - **Sybase 的平方和（`SUMSQ`）**：公式名是 `SumSQFormula`，代码用小写 `sumsqformula` 去查库能力，而 `sqlhelper.xml` 里 Sybase 的禁用项写的是 `sumsq`，对不上，所以声明了不支持却仍被下推。它是内部构件（用来拼方差的组合 SQL），用户选不到，没有实际影响；测试固定了现状。
-- **库的产品版本**：`SQLHelper.getSQLHelper` 只在数据源**没有**产品版本时（MySQL、Oracle）才通过仓库查询 `DBProductVersion` 并设给 helper，Derby 总是查；数据源上配了版本，helper 的版本反而是空字符串。`XUtil.supportMedian` 读的是 helper 的版本，所以数据源上手工配了版本的 Oracle，中位数不会下推。我只在 helper 层验证了（探针），没有确认生产里谁会给数据源手工配版本，影响未知。
+- **库的产品版本（已确认，影响很小，不报）**：`SQLHelper.getSQLHelper` 只在数据源**没有** `version` 时（MySQL、Oracle）才通过仓库查询 `DBProductVersion` 并设给 helper，Derby 总是查；数据源有版本时 helper 的版本是空字符串（单测探针验证）。数据源的 `version` 是**会持久化**的属性（`JDBCDataSource` 的 XML 里读写），但产品只给 MySQL 设过它（查询成功后缓存，保存数据源时就持久化了）。读 helper 版本的只有两处：`XUtil.supportMedian`（Oracle，版本 ≥ 10 才下推中位数）和 `DerbyHelper`（Derby 总是查，不受影响）；`MySQLHelper` 读的是数据源的版本，所以 MySQL 不受影响；`NamedRangeRef` 里按版本判断的代码已被注释掉。所以只有"Oracle 数据源的定义里手工写了 `version`"这一种情况会让中位数不下推（在内存里算，结果相同，只是慢），没有界面或代码会给 Oracle 设这个值。已写成测试固定现状，改成让 helper 读数据源版本后该测试会变红（已验证）。
 - **`isSortInfoMergeable()` 会改表**：有分组时它把不在分组、聚合列上的排序从**查询持有的表**里删掉。生产里 `AssetQuerySandbox`（第 482、954 行）先克隆表再建查询，所以改的是副本，不是资产；我直接构造查询才改到资产。不算缺陷，已写成测试。
-- **条件的两套判断不完全一致（只读了代码，没运行验证）**：`merge()` 用私有的 `isConditionItemMergeable` 决定哪些条件拆出来，`isPreConditionListMergeable` 用 `isConditionListMergeable`；后者有 mongo `ONE_OF` 的检查，前者没有。后果大概是 mongo 上带 `ONE_OF` 的 where 整体不下推（性能，不是结果错误），没验证。
+- **条件的两套判断不一致（已确认，性能问题，待决定是否报）**：`merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个把不能下推的条件拆出去，其余仍下推，再用 `isPreConditionListMergeable`（`isConditionListMergeable`）整体复核；mongo 的 `ONE_OF` 检查只在后者。探针走完整的 `merge()`：同样的 `k=1 AND k 属于 (1,2)`，非 mongo 库两个条件都下推；**mongo 上整个 where 都留在内存里**（`k=1` 本来能下推，`UniformSQL` 的 where 为空、3 项都留给内存）；对照：脚本计算列的条件只让它自己留在内存，`k=1` 仍然下推。所有条件都在内存里照样生效，所以结果相同，只是少了一次下推。已写成测试固定现状，给 `isConditionItemMergeable` 加上 mongo 检查后该测试变红（已验证）。
 - **`isRankingMergeable` 有排名条件就返回 false**：worksheet 的排名从不下推，和 4b-E 一致，是有意设计。
 
 **D. 写测试的几个注意点**（以后接手少走弯路）
