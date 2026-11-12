@@ -1,0 +1,15 @@
+value | state | measure
+1_CT | compatible | 1
+1_FL | compatible | 1
+1_MA | compatible | 4
+1_MD | compatible | 3
+1_NJ | compatible | 6
+1_NY | compatible | 4
+1_PA | compatible | 1
+2_AZ | compatible | 1
+2_CA | compatible | 4
+2_CO | compatible | 2
+2_IL | compatible | 1
+2_NV | compatible | 1
+2_TX | compatible | 4
+2_WA | compatible | 2

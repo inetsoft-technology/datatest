@@ -4,9 +4,13 @@ import inetsoft.graph.data.DataSet
 import inetsoft.report.TableLens
 import inetsoft.report.composition.execution.AssetTableLens
 import inetsoft.report.filter.DCMergeDatesCell
+import inetsoft.uql.viewsheet.AssociatedSelectionVSAssembly
+import inetsoft.uql.viewsheet.CalendarVSAssembly
 import inetsoft.uql.viewsheet.CompositeSelectionValue
 import inetsoft.uql.viewsheet.SelectionList
+import inetsoft.uql.viewsheet.SelectionVSAssembly
 import inetsoft.uql.viewsheet.SelectionValue
+import inetsoft.uql.viewsheet.TimeSliderVSAssembly
 import inetsoft.graph.data.BoxDataSet
 
 import javax.imageio.ImageIO
@@ -283,6 +287,85 @@ class ExportUtil {
 
       String content = "The data size(row x col) is:(${row} x ${colCount})\n" + buffer.toString()
       writeToFile(fileName, content)
+   }
+
+   /**
+    * Export what a selection assembly shows, so it can be compared as text and not only in a PNG:
+    * <ul>
+    * <li>selection list / tree: each value in display order (tree children indented by 3
+    *     spaces) with its state and, when the assembly has a measure, the measure label;</li>
+    * <li>range slider: the number of values, the first and last value and the selected range;</li>
+    * <li>calendar: the range and the selected dates.</li>
+    * </ul>
+    */
+   def exportSelection(String fileName, SelectionVSAssembly assembly) {
+      StringBuilder buffer = new StringBuilder()
+
+      if(assembly instanceof AssociatedSelectionVSAssembly) {
+         buffer.append('value | state | measure\n')
+         appendSelectionValues(buffer, assembly.getSelectionList(), '')
+      }
+      else if(assembly instanceof TimeSliderVSAssembly) {
+         SelectionList list = assembly.getSelectionList()
+         SelectionValue[] values = list == null ? new SelectionValue[0] : list.getSelectionValues()
+         buffer.append('values: ' + values.length + '\n')
+
+         if(values.length > 0) {
+            buffer.append('first: ' + format(values[0].getLabel()) + '\n')
+            buffer.append('last: ' + format(values[values.length - 1].getLabel()) + '\n')
+         }
+
+         buffer.append('selected: ' + format(assembly.getSelectedMin()) + ' -> ' +
+            format(assembly.getSelectedMax()) + '\n')
+      }
+      else if(assembly instanceof CalendarVSAssembly) {
+         buffer.append('range: ' + (assembly.getRange() ?: []).collect { format(it) }.join(', ') + '\n')
+         buffer.append('dates: ' + (assembly.getDates() ?: []).collect { format(it) }.join(', ') + '\n')
+      }
+      else {
+         throw new IllegalArgumentException('Selection assembly not supported: ' +
+            assembly.getClass().getName() + ' ' + assembly.getName())
+      }
+
+      prepareFile(fileName)
+      writeToFile(fileName, buffer.toString())
+   }
+
+   private void appendSelectionValues(StringBuilder buffer, SelectionList list, String indent) {
+      if(list == null) {
+         return
+      }
+
+      list.getSelectionValues().each { SelectionValue value ->
+         buffer.append(indent + format(value.getLabel()) + ' | ' + stateName(value) + ' | ' +
+            format(value.getMeasureLabel()) + '\n')
+
+         if(value instanceof CompositeSelectionValue) {
+            appendSelectionValues(buffer, value.getSelectionList(), indent + '   ')
+         }
+      }
+   }
+
+   private static String stateName(SelectionValue value) {
+      List<String> names = []
+
+      if(value.isSelected()) {
+         names << 'selected'
+      }
+
+      if(value.isIncluded()) {
+         names << 'included'
+      }
+
+      if(value.isExcluded()) {
+         names << 'excluded'
+      }
+
+      if((value.getState() & SelectionValue.STATE_COMPATIBLE) != 0) {
+         names << 'compatible'
+      }
+
+      return names ? names.join('+') : 'none'
    }
 
    /**

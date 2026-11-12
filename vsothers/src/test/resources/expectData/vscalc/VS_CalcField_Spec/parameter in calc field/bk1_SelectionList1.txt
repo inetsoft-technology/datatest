@@ -1,0 +1,15 @@
+value | state | measure
+AZ | compatible | 40
+CA | compatible | 139
+CO | compatible | 52
+CT | compatible | 26
+FL | compatible | 32
+IL | compatible | 30
+MA | compatible | 185
+MD | compatible | 112
+NJ | compatible | 217
+NV | compatible | 52
+NY | compatible | 131
+PA | compatible | 48
+TX | compatible | 170
+WA | compatible | 96

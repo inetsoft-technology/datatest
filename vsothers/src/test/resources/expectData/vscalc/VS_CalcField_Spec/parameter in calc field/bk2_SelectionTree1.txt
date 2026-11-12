@@ -1,0 +1,43 @@
+value | state | measure
+AZ | selected+compatible | 1
+   Tucson | included+compatible | 1
+CA | selected+compatible | 4
+   Albany | selected+compatible | 1
+   Los Angeles | selected+compatible | 2
+   San Francisco | compatible | 1
+CO | compatible | 2
+   Boulder | compatible | 1
+   Denver | compatible | 1
+CT | compatible | 1
+   Hartford | compatible | 1
+FL | compatible | 1
+   Orlando | compatible | 1
+IL | compatible | 1
+   Chicago | compatible | 1
+MA | compatible | 4
+   Boston | compatible | 2
+   Cambridge | compatible | 1
+   Springfield | compatible | 1
+MD | compatible | 3
+   Baltimore | compatible | 2
+   Rockville | compatible | 1
+NJ | compatible | 6
+   Camden | compatible | 1
+   Middletown | compatible | 1
+   New Brunswick | compatible | 1
+   Newark | compatible | 1
+   Plainfield | compatible | 1
+   Wayne | compatible | 1
+NV | compatible | 1
+   Las Vegas | compatible | 1
+NY | compatible | 4
+   New York | compatible | 4
+PA | compatible | 1
+   York | compatible | 1
+TX | compatible | 4
+   Austin | compatible | 1
+   Dallas | compatible | 2
+   Houston | compatible | 1
+WA | compatible | 2
+   Olympia | compatible | 1
+   Seattle | compatible | 1
