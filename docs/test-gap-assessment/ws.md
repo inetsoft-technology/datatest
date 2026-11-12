@@ -252,7 +252,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `RotatedQuery` | 已做：`RotatedQueryTest`（5） |
 | `DateCondition` | 已做：`DateConditionBuiltinTest`（39）；夏令时切换日只能跳过；`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对 |
 | `PreAssetQuery.isQueryMergeable` 及 `is*Mergeable` | 没做；SQL 层 `XUtil.isQueryMergeable` 已做（`XUtilQueryMergeableTest`，16） |
-| 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符猜测没写 |
+| 上传（`TextUtil`、`CSVLoader`、`ImportCSVDialogService`） | 类型识别和 `CSVLoader` 已做（`TextUtilTypeDetectionTest` 43、`CSVLoaderRulesTest` 41）；上传服务不加（环境原因，4b-G）；`CSVInfo` 的分隔符、引号、表头、编码猜测已做（`CSVInfoDetectionTest`，30 个，产品仓库分支 `test-csvinfo-detection`，本地提交、未推送） |
 | `RankingTableLens` | 已做：`RankingTiesTest`（6） |
 | `SummaryFilter2` + `DateRangeRef` 级别 | 已做：`DateRangeRefLevelValuesTest`（5）、`DateRangeRefFullWeekLevelsTest`（3）、`DateLevelSummaryTest`（5） |
 | `NumericRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5） |
@@ -354,7 +354,12 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 - **`process()` 把"最大单元格大小"当成列上限传给 `loadData`**（`ImportCSVDialogService.java:598-599`，`Util.getOrganizationMaxCellSize()`，默认 500，对应的参数是 `colLimit`）；`getPreviewTable` 传的是 `getOrganizationMaxColumn()`（默认 200）。看上去是传错了常量，后果有限：第一次预览多读 201-500 列再在 `populateResultMap` 里截成 200。没验证，没报。
 - **`getPreviewTable` 里列上限提示可能丢**：`populateResultMap(.., csvInfo.isUnpivot())` 只在 unpivot 时检查列数，且此时表已被 `colLimit` 截成 200 列，所以改选项后的预览不会再带"列超限"提示（第一次上传预览有）。读代码得出，没运行验证。
 - **xlsb 的拒绝提示**：先走 `process()` 里的 `getSheetNames`，xlsb 是 zip，会被 `detectType` 当 xlsx，`getSheetNames` 可能先失败成 "Failed to parse XLS"，到不了 `loadData` 里的 xlsb 提示。没验证。
-- **`CSVInfo` 的分隔符/表头猜测**（`getCSVInfo`、`getScore`）在 core 里、没有任何测试，不需要上面的环境；规则能从代码读出（评分取各行的最小值，列数一致 +100，平局取先出现的：tab、`;`、`,`、`|`，带引号优先）。读代码时发现一个可疑点：每一行都带同样个数的"引号内逗号"时，`quote=false` 的得分（列数更多）会高于 `quote=true`，被选中。没运行验证，没写。
+- **`CSVInfo` 的分隔符、引号、表头、编码猜测：已补测并核对（2026-11-12，`CSVInfoDetectionTest` 30 个，产品仓库分支 `test-csvinfo-detection`，本地提交 `d3b8b53ff6`，未推送）。** 评分规则从代码读出并手算期望（前 10 行、每一行列数一致且多于 1 列得"列数 + 100"、不一致得"列数"、引号未闭合得 0；取各行最小值；严格更高才替换，所以平局取先出现的：引号处理开、再关，分隔符 tab、`;`、`,`、`|`），第一次运行 32 个中 31 个通过（唯一失败见下面的 XML），做了变异检查（平局规则、列数一致的偏移、检查行数、首行全数字判断、GB18030 到 GBK 的映射、引号必须紧跟分隔符，共 6 处单独变异都有测试变红；`+100` 改 `+99` 不改变任何实际排序，属于等价变异）。固定的现状、没有报缺陷的：
+  - 每一行都带同样个数的"引号内逗号"（如 `"a,b",c`）时，不处理引号、3 列的得分（103）高于处理引号、2 列的得分（102），猜测结果是不处理引号；各行的个数不同时则处理引号。
+  - 引号未闭合的行只有在它是检查范围里的最后一行时才会让引号处理被关掉（前面的行得 0 会被下一行的分数覆盖，0 不是粘住的）。
+  - **首行是否表头：** 有一个"全是数字"的非空单元格就不是表头。不处理引号时用 `String.split(delim)`（正则），`|` 被当成空匹配，首行被拆成单个字符，所以 `…|c1` 这样的首行会被判为数据，同样的数据用 `,` 就是表头（探针已验证）。只在 `|` 分隔且猜测结果不处理引号时发生（例如首行之外有一个字段中间带 `"`），影响小，没报，是否报待决定。
+  - `getFileEncode`：UTF-8、GBK（报为 GBK，GB2312/GB18030 映射到 GBK）、UTF-16 两种字节序（报为 "Unicode"）、纯 ASCII（用系统编码）都与代码一致。
+  - `CSVInfo.writeXML`/`parseXML` 在整个产品里没有任何调用，所以没有写测试；顺带发现 Tab 保存后读回来是空格（属性值里的原始 Tab 被 XML 规范化），没有用户影响。
 
 **H. 整体状态（2026-11-12，PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并为一个提交 `35e99dcc92`；分支 `test-ws-lens-unit-tests` 的 24 个提交和本地 worktree 已清理）**
 
@@ -391,7 +396,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **还没有覆盖的：**
 - `PreAssetQuery` 的 `isQueryMergeable` 及 `isConditionListMergeable`、`isAggregateInfoMergeable0`、`isSortInfoMergeable0`、`isRankingMergeable`、`isColumnSelectionMergeable`：要建沙箱和表，规则代码里能读出，没读也没写。（SQL 层 `XUtil.isQueryMergeable` 已测。）
-- 上传：`ImportCSVDialogService`（预览、unpivot 选项、行列上限提示、文件大小上限、xlsb 提示、Excel 读取）不加单测，原因见 G：`PoiExcelFileSupport` 在 `utils/inetsoft-xml-formats`，core 的测试类路径上没有；`CSVInfo` 的分隔符/表头猜测在 core 里、没写。
+- 上传：`ImportCSVDialogService`（预览、unpivot 选项、行列上限提示、文件大小上限、xlsb 提示、Excel 读取）不加单测，原因见 G：`PoiExcelFileSupport` 在 `utils/inetsoft-xml-formats`，core 的测试类路径上没有；`CSVInfo` 的猜测已补测，见 4b-G。
 - unpivot 之后再聚合或做交叉表、`fixColumnSelection` 按第一行修正类型、日期类 `changeColumnType`、MV 转换；`RotatedQuery` 的空值、旋转后再聚合、MV。
 - `DateCondition`：`YearCondition`、`QuarterCondition`、`MonthCondition`、`WeekCondition`、`WeeksCondition`、`DayCondition` 没逐个核对是否已被 `DateConditionTest` 覆盖；夏令时切换日（代码里不能注入时间，只能跳过）；`DateRangeRef` 的 `week.start` 非周日、`java.sql.Time`。
 - 各库：只有 Derby 真正执行了 SQL，MySQL、PostgreSQL、SQL Server 等只断言了生成的文本；MySQL/PostgreSQL 除零行为是经验判断；Vertica、Hive、Snowflake、BigQuery 等方言。
@@ -412,7 +417,7 @@ C 里的问题，下面这些能从代码直接读出规则，所以**不必等�
 
 **已报缺陷的那条**：`MonthsCondition` 的 Timestamp 差异（#81178）。探针（现在 21:01，纽约，"最近 3 个月"，SQL 范围 09-11 00:00 到 11-11 23:59:59）：Timestamp 09-11 00:00 内存 false；Timestamp 今天 23:59:59 内存 false（`Days` 为 true）；`java.util.Date` 今天中午内存 false（`Days` 为 true）；`java.sql.Date` 今天 true。`Days`、`Day`、`Week`、`Weeks` 的内存判断都按"天"比较，只有 `MonthsCondition` 不是。
 
-**读代码得出、没运行验证：** `DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先；`CSVInfo` 在每行都有同样个数的引号内逗号时可能选中 `quote=false`。
+**读代码得出、没运行验证：** `DaysCondition` 的 SQL 用毫秒数减 24 小时，窗口里跨夏令时切换会差 1 小时；`ImportCSVDialogService.process()` 把"最大单元格大小"当成列上限传入，改选项后的预览可能丢"列超限"提示，xlsb 提示可能被 "Failed to parse XLS" 抢先。（`CSVInfo` 选中 `quote=false` 的怀疑已验证成立并固定，见 4b-G。）
 
 **在带修复的产品上重跑 datatest（2026-11-12，本机）：** 本机 `I:\m2` 里的 `inetsoft-core-2.1.0-SNAPSHOT` 的 `CrossJoinTableLens` 字节码和含 #81087 修复的 `main` 编译结果完全一致，所以跑的是带修复的版本。
 - **`property_crossJoin.maxCellCount`**：单独在新 JVM 里跑 3 次，以及接着 `WSData_Spec` 在同一个 JVM 里跑 1 次，导出的 `Query1.txt` 校验和完全相同（MD5 `1f170b83…`），**行序已经确定，竞态消除**。输出是 5000 个不同的 id（左表 TestData 固定为变化最快的一边），既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行的"1 个 id × 143 个订单 × 35 个客户"，所以用例仍失败：**基线是按旧的竞态结果之一记录的，需要更新成新的确定输出**（改用例或放宽比对都不必了）。
