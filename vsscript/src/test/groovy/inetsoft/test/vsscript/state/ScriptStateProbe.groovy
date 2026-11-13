@@ -24,7 +24,7 @@ import spock.lang.Specification
       @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
    ]
 )
-class ScriptStateProbe_Spec extends Specification {
+class ScriptStateProbe extends Specification {
    static final String TEXT_VS = '1^128^__NULL__^ScriptAuto/OutPut/OutPut1'
    static final String CROSSTAB_VS = '1^128^__NULL__^ScriptAuto/Table/Table_Crosstab1'
    static final String EGRAPH_VS = '1^128^__NULL__^ScriptAuto/Chart/EGraph1'

@@ -110,9 +110,27 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 | #80711 | `setGroupOrder("Date", Chart.NONE_DATE_GROUP, ...)` 后日期级别为 `null`（应为 `0`），设置被忽略 | 同上 |
 
 - 这三个 bug 在 Redmine 里状态是 Closed，但**当前检出的源码里仍然存在**；#80709 的描述写明修复在 13.8 线，这份检出不含它。是否已合入哪个分支，没有核对。
-- **用例：** `ScriptStateKnownBugs_Spec`（5 个）：3 个 bug 用例标 `@PendingFeature`（bug 存在时通过，**修复后会失败，提示解除标记**）+ 2 个对照用例（保证 bug 用例不是因为测试写错而失败）。`ScriptStateBugProbe_Spec` 是探路。
+- **用例：** `ScriptStateKnownBugs_Spec`（9 个）：每个 bug 三个——对照（正常路径）、`[bug present]`（精确断言当前失败特征：#80709/#80708 的失败消息，#80711 的日期级别为 `null`）、`@PendingFeature`（期望行为）。`@PendingFeature` 在**任何**失败下都算通过，单独用分不出"bug 存在"和"测试写错"，所以才加另外两个；bug 修复后 `[bug present]` 会变红、pending 会"意外通过"而失败，两处都提示解除。
 - **意义：** 这是第一次拿到"状态用例能抓到真实 bug"的证据，回应了"42 个用例全绿、没有 bug"的疑问。注意边界：这 3 个 bug 是**读写 `bindingInfo` 的接口抛异常**，直接执行脚本就能暴露；**没有**对"渲染错了"类的 bug 做验证。
 - **局限：** 只做了 3 条；#80989（`y2Axis`）、#80985（箱线图 `setBorderColor`）已筛出未做；"修复前版本变红"没做（这 3 条在当前版本本来就失败，无需修复前构建）。
+
+### 5.9 变异检查：用例能抓到"产品被改坏"（2026-11-13，本机）
+**做法：** 对 6 处产品代码各做一个最小改动，编译该类，临时替换本机 Maven 仓库里 `inetsoft-core` 的 jar，跑对应 spec，看哪些用例变红，再恢复 jar（每项后都恢复，结束时校验 sha256 与原件一致）。先做一个**对照**：用同一份源码不改动地重新编译替换，spec 必须保持全绿，以此证明"替换机制"和"源码与 jar 一致"成立。工具：`.claude/workflow-shared/datatest-gap/vsscript_mutation_check.py`（用法见手册 §6）。
+
+| 变异（产品代码） | spec | 预期变红 | 实际变红 |
+|---|---|---|---|
+| 对照：重新编译 `SubmitVSAScriptable`，不改 | `ScriptStateSubmit_Spec` | 无 | 无，5/5 通过 |
+| M1 `SubmitVSAScriptable` 去掉 `refreshAfterSubmit` 属性 | `ScriptStateSubmit_Spec` | `Submit_refreshAfterSubmit_roundtrip` | 该用例（1 个） |
+| M2 `TextVSAScriptable` 去掉 `autoSize` 属性 | `ScriptStateSpike_Spec` | `C_roundtrip_autoSize`、`D_script_vs_assembly_info` | 这两个（`C_roundtrip_autoSize` 的 true/false 两行都红，共 3 个失败） |
+| M3 `ChartVSAScriptable` 的 `colorField` 读出 `null` | `ScriptStateChartCrosstab_Spec` | `Chart_binding_roundtrip` | 该用例（1 个） |
+| M4 `VSInputService.multiApplySelection` 不再应用输入值 | `ScriptStateSubmit_Spec` | `Submit_applies_pending_input_values`、`Submit_script_runs_after_values_are_applied` | 这两个 + `Submit_script_alert_is_recorded_twice`（脚本读到的值变了，消息文本随之变化，属合理连带，共 3 个） |
+| M5 `JavaScriptEngine.alert` 级别强制为 INFO | `ScriptStateSpike_Spec` | `F_click_alert` | 该用例（1 个） |
+| M6 "修复" #80709（`isTopNReverse` 判空） | `ScriptStateKnownBugs_Spec` | `[bug present]` 变红 + pending 意外通过 | 两个都失败，另两个 bug 的用例保持 skipped/通过 |
+
+**结论：** 6 个变异全部被预期的用例抓到，没有漏报；M6 还证明 `[bug present]` + `@PendingFeature` 的设计在 bug 被修复时会给出信号。
+
+**没有做变异检查的用例（不能当作"已证明能失败"）：** `G_export_pdf_text`（PDF 导出）、`E_global_function`、`B_state_value`、`Crosstab_*`（Crosstab 的读回与往返）、Chart 的 `titleVisible/tooltipVisible` 往返、`Chart_binding_roundtrip` 中的 `xFields/yFields`、EGraph 读回（目前只在探路类里）、`Submit_without_values_changes_nothing`（它本身就是对照）。
+**局限：** 变异是我选的小改动，容易被抓；它证明"断言不是摆设"，不证明能抓住所有真实缺陷。
 
 ## 6. 目录与旧用例
 
@@ -125,7 +143,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 - **基线路径风险：** `VSScriptTest.initHome` 用类的包名推出 `expectData` 子目录。往 `render/` 迁移用例必须同步移动基线，否则找不到基线。**只读了代码，没实际跑过迁移。**
 - **旧用例只有同时满足三条才删：**
   1. 有对应的状态断言版，覆盖同样的属性（用生成的覆盖清单核对）。
-  2. **新用例能失败：** 在产品里故意改坏一个 setter/映射，确认新用例变红。原型 30 个用例一次全过，"能不能抓 bug"目前没有证据。
+  2. **新用例能失败：** 在产品里故意改坏一个 setter/映射，确认新用例变红。§5.9 已对 6 处做了变异检查，全部被抓到；未做的见该节清单。
   3. 在 CI 稳定运行一段时间（周期待定）。
 - 渲染可见的用例不删，迁到 `render/`。现有 PNG 用例本身并不稳（本机 114/115 失败，CI 里 `continue-on-error: true`），所以删的是"从未真正当过门禁"的用例。
 
@@ -140,7 +158,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 ## 8. 下一步
 
 **第 1 步：Submit（D3 的 `onSubmit` 部分）——已完成（2026-11-13）**
-- 代码：`state/ScriptStateSubmit_Spec.groovy`（4 个用例，全过）；探路 `ScriptStateSubmitProbe_Spec.groovy`。结果见 §5.7。
+- 代码：`state/ScriptStateSubmit_Spec.groovy`（4 个用例，全过）；探路 `ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
 - JaCoCo 增量：`SubmitVSAScriptable` 0/14 → 10/14 行（分支 1/8）；`report.script.viewsheet` 合并覆盖 52.8% → 53.1%。
 - 剩余：`SubmitVSAScriptable` 另 4 行及分支未跑到，原因未查；Submit 的其他场景（`confirm`、多个 Submit、`refreshAfterSubmit=false` 的刷新差异）未做。
 
@@ -192,7 +210,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 **做法：** 不改任何项目文件，用环境变量 `JAVA_TOOL_OPTIONS` 给测试 JVM 挂 JaCoCo 0.8.12 agent（`vsscript/pom.xml` 里 `argLine` 写死，所以不能走 `-DargLine`），产品类文件读 `D:/m2-1` 里的 `inetsoft-core-2.1.0-SNAPSHOT.jar`，用 `org.jacoco.cli` 生成报告。复现命令见手册 §2。
 
-| 范围 | 现有 115 个 PNG 用例 | 新增 30 个 state 用例 | 合并 |
+| 范围 | 现有 115 个 PNG 用例 | 新增 30 个 state 用例（当时的原型，含探路） | 合并 |
 |---|---|---|---|
 | `report.script.viewsheet`（75 个类，5356 行） | 2738（**51.1%**），分支 37.4% | 1279（23.9%），分支 17.7% | 2828（**52.8%**），分支 39.3% |
 | `util.script`（116 个类，9722 行） | 3424（35.2%），分支 25.9% | 2690（27.7%），分支 18.3% | 3491（35.9%），分支 26.6% |

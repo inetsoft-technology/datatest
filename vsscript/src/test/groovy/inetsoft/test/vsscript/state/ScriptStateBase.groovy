@@ -20,6 +20,9 @@ import inetsoft.web.viewsheet.service.CoreLifecycleService
  * Spike harness: open a runtime viewsheet, apply scripts, read state back. No PNG export.
  */
 class ScriptStateBase {
+   /** link uri argument the services expect; no request is made to it */
+   static final String BASE_URL = 'http://localhost:8080/sree'
+
    SRPrincipal principal
    RuntimeViewsheetResource res
    RuntimeViewsheet rvs

@@ -26,10 +26,15 @@
 ./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'
 
 # 只跑一个 spec
-./mvnw test -pl vsscript -Dtest=ScriptStateProbe_Spec -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
+./mvnw test -pl vsscript -Dtest=ScriptStateSpike_Spec -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
+
+# 探路类（名字不带 _Spec，默认不会跑，需要显式指定）
+./mvnw test -pl vsscript -Dtest=ScriptStateProbe -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
 ```
-- 单个 spec 约 15 秒，三个共 30 个用例，本机全部通过（2026-11-13）。
-- 看探路输出：`grep PROBE` 控制台输出（`ScriptStateProbe_Spec` 只打印不断言）。
+- 单个 spec 约 15 秒。`state/` 下 4 个断言型 spec（`*_Spec`）共 **29 个用例，其中 3 个是 `@PendingFeature`（已知 bug 仍存在）**，本机 0 失败（2026-11-13）。
+- **探路类不带 `_Spec` 后缀，不属于测试套件。** `vsscript/pom.xml` 的 surefire 配置是 `<include>**/*_Spec</include>`，所以 `ScriptStateProbe`、`ScriptStateSubmitProbe` 不会被默认运行（它们只打印、不断言，放进套件只会虚增"绿"用例）。要看探路输出：显式 `-Dtest=ScriptStateProbe`，再 `grep PROBE`。
+- **CI：** 这些 spec **没有单独接入 CI**。默认 `./mvnw test -pl vsscript` 会连同旧的 `cases/` 一起跑 `*_Spec`；评估文档记录 GitHub 工作流里 vsscript 步骤是 `continue-on-error: true`，所以即使失败也不会让流水线变红。是否单独收紧见方案 §7。
+- **合并前自测：** `./mvnw package -pl commons -DskipTests`，再 `./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'`。
 - 测试的 vs 资产来自 `vsscript/src/test/resources/config/vsscriptStorage.zip`（130 个 vs）。资产 id 写法：`1^128^__NULL__^<zip 内路径>`，如 `1^128^__NULL__^ScriptAuto/OutPut/OutPut1`。找可用的 id：看 `cases/**/*_Spec.groovy` 里 `new VSScriptTest('…', caseName)` 的第一个参数，同时看该 spec 里的组件名。
 
 **量覆盖率（JaCoCo，不改项目文件）：**
@@ -57,11 +62,10 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 | `RecordingDispatcher.groovy` | 记录所有 `sendCommand` 的 `CommandDispatcher`（commons 里的 `MessageTestUtils` 那个是 no-op，没改它） |
 | `ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
 | `ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
-| `ScriptStateProbe_Spec.groovy` | 探路：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...` |
-| `ScriptStateSubmit_Spec.groovy` | Submit 组件：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值 |
-| `ScriptStateSubmitProbe_Spec.groovy` | Submit 探路（资产结构、`VSInputService` 依赖、读入口），只打印 |
-| `ScriptStateKnownBugs_Spec.groovy` | Redmine 已关闭但当前版本仍复现的 Chart 脚本 bug（#80709/#80708/#80711），`@PendingFeature` + 对照用例 |
-| `ScriptStateBugProbe_Spec.groovy` | 上面三个 bug 的探路，只打印 |
+| `ScriptStateProbe.groovy` | **探路（不是测试套件）**：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...`，需 `-Dtest=ScriptStateProbe` 显式运行 |
+| `ScriptStateSubmit_Spec.groovy` | Submit 组件（5 个用例）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
+| `ScriptStateSubmitProbe.groovy` | **探路（不是测试套件）**：Submit 资产结构、`VSInputService` 依赖、读入口，只打印 |
+| `ScriptStateKnownBugs_Spec.groovy` | Redmine 已关闭但当前版本仍复现的 Chart 脚本 bug（#80709/#80708/#80711）。每个 bug 三个用例：**对照**（正常路径）、**\[bug present\]**（精确断言当前的失败特征，bug 修复或失败变样时会变红）、**`@PendingFeature`**（期望行为）。共 9 个用例，3 个 pending |
 
 **`ScriptStateBase` 的接口（`new ScriptStateBase('<资产id>')` 会打开 vs）：**
 
@@ -205,13 +209,18 @@ assert t.eval('Spinner1.selectedObject') == 7d
 
 1. 放在 `state/`，类名以 `_Spec` 结尾，带 §3 的注解。
 2. 断言具体值，不要只断言"非空"。
-3. **能失败：** 在产品里故意改坏对应 setter/映射（或把断言期望改错），确认用例变红再恢复。没做这步不要当作有效覆盖。
+3. **能失败：** 在产品里故意改坏对应 setter/映射，确认用例变红再恢复。没做这步不要当作有效覆盖。已有 6 个变异检查的结果见方案 §5.9。
+   - 工具：`.claude/workflow-shared/datatest-gap/vsscript_mutation_check.py`。它编译一个改坏的产品类，**临时替换本机 Maven 仓库里的 `inetsoft-core` jar**（先备份，每项后恢复，最后校验 sha256），跑指定 spec 并列出变红的用例。
+   - 前置：产品源码要和 jar 一致；先生成 classpath：`./mvnw -o dependency:build-classpath -pl vsscript -Dmdep.outputFile=<文件>`；设置环境变量 `CP_FILE`（必填）、`M2_REPO`、`PRODUCT_CORE`、`JAVAC`（见脚本头部注释）。
+   - **运行期间不要同时做别的构建；被中途杀掉时，把 `<MUT_WORK>_orig.jar` 拷回原 jar。**
+   - 新增变异：在脚本的 `MUTATIONS` 里加一行（源文件、改动函数、spec、预期变红的用例）；改动函数必须只匹配到一处，否则脚本直接报错。
+   - **注意：** 仓库里这份是把我实际跑通的脚本改成环境变量配置后的版本，**改造后没有整体重跑过**，只做了语法检查；第一次用请先看对照项是否全绿。
 4. 不要重复单测方向（逐属性往返、全局函数边界）。
 5. 需要像素才能验证的，放 `render/`（目录待建，见方案文档 §6），别放 `state/`。
 
 ## 7. 现状与下一步
 
-**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），共 51 个用例，0 失败（其中 3 个是已知 bug 的 pending 用例，见方案文档 §5.8）。
+**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），`_Spec` 断言型用例 29 个（3 个 pending，已知 bug，见方案文档 §5.8），0 失败；另有 2 个探路类（不属于套件）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
 **下一步（按优先级，详见方案文档 §4、§8、§10）：**
 0. JaCoCo 覆盖率基线已量（方案 §11）；Submit（`onSubmit`）已完成；**下一步 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。

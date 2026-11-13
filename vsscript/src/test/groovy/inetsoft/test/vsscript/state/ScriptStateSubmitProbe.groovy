@@ -31,7 +31,7 @@ import spock.lang.Unroll
       @SreeProperty(name = 'security.login.orgLocation', value = 'domain')
    ]
 )
-class ScriptStateSubmitProbe_Spec extends Specification {
+class ScriptStateSubmitProbe extends Specification {
    static void probe(String msg) { println "PROBE ${msg}" }
 
    static String desc(Throwable e) { e == null ? 'none' : "${e.class.simpleName}:${e.message?.take(120)}" }
@@ -125,7 +125,7 @@ class ScriptStateSubmitProbe_Spec extends Specification {
       try {
          MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
             clickService().onClick(t.runtimeId, 'Submit1', null, null, submitEvent([TextInput1: 'abc']),
-                                   'http://localhost:8080/sree', t.principal, rec)
+                                   ScriptStateBase.BASE_URL, t.principal, rec)
          }
       }
       catch(Throwable e) { err = e }
@@ -146,7 +146,7 @@ class ScriptStateSubmitProbe_Spec extends Specification {
       try {
          MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
             clickService().onClick(t.runtimeId, 'Submit1', null, null, submitEvent([TextInput1: 'abc']),
-                                   'http://localhost:8080/sree', t.principal, rec)
+                                   ScriptStateBase.BASE_URL, t.principal, rec)
          }
       }
       catch(Throwable e) { err = e }
@@ -170,7 +170,7 @@ class ScriptStateSubmitProbe_Spec extends Specification {
       try {
          MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
             clickService().onClick(t.runtimeId, 'Submit1', null, null, submitEvent(inputs),
-                                   'http://localhost:8080/sree', t.principal, rec)
+                                   ScriptStateBase.BASE_URL, t.principal, rec)
          }
       }
       catch(Throwable e) { err = e }

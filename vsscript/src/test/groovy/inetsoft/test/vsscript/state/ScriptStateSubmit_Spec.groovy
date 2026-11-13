@@ -52,7 +52,7 @@ class ScriptStateSubmit_Spec extends Specification {
       def rec = RecordingDispatcher.create(t.principal)
       MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
          clickService().onClick(t.runtimeId, 'Submit1', null, null, submitEvent(values),
-                                'http://localhost:8080/sree', t.principal, rec)
+                                ScriptStateBase.BASE_URL, t.principal, rec)
       }
       rec
    }
@@ -114,5 +114,19 @@ class ScriptStateSubmit_Spec extends Specification {
 
       then: 'the script saw the value that was submitted with the click'
       msgs.contains('submitted:7')
+   }
+
+   def 'Submit_script_alert_is_recorded_twice'() {
+      // Observed, cause not investigated (maybe once for the click and once for the refresh it triggers).
+      // Pinned so that a change in the number of messages is noticed instead of passing silently.
+      given:
+      def t = new ScriptStateBase(VS)
+      t.setScript('Submit1', 'alert("submitted:" + Spinner1.selectedObject, "info")')
+
+      when:
+      def msgs = RecordingDispatcher.messages(submit(t, [Spinner1: 7])).collect { it.message }
+
+      then:
+      msgs == ['submitted:7', 'submitted:7']
    }
 }

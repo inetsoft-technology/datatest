@@ -16,7 +16,6 @@ import inetsoft.web.viewsheet.service.ExportResponse
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.text.PDFTextStripper
 import org.springframework.test.context.ContextConfiguration
-import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -105,7 +104,7 @@ class ScriptStateSpike_Spec extends Specification {
 
       when:
       MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
-         service.onClick(t.runtimeId, 'Text1', null, null, null, 'http://localhost:8080/sree',
+         service.onClick(t.runtimeId, 'Text1', null, null, null, ScriptStateBase.BASE_URL,
                          t.principal, recorder)
       }
       def msgs = RecordingDispatcher.messages(recorder)
