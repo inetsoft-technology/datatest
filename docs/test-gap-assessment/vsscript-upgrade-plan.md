@@ -49,9 +49,9 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本"。现状（来�
 
 ### B. 状态断言，不经渲染（核心方案）
 - **做法：** 在 `VSScriptTest` 之外新增 harness：打开 `RuntimeViewsheet`，执行脚本，直接读 assembly 的 info / scriptable 属性值，与期望 JSON 比较；不调用 `exportVS`。vsothers 等模块的 `ViewsheetTest` 已有数据层断言写法，可复用。
-- **效果：** 确定性强，不受渲染差异影响；同时可捕获脚本报错。
+- **效果：** 确定性强，不受渲染差异影响。脚本报错**不能**靠刷新后捕获（刷新路径会吞掉 `ScriptException`），要在测试里直接 `scope.execute` 脚本并断言异常，见 §10.1。
 - **适用：** 组件属性 setter/getter、取值串解析、非 Chart 组件的脚本接线。
-- **前置：** 需确认脚本抛异常时产品的行为（弹消息、记日志、还是中断）——**未验证**。
+- **前置（已查，§10.1）：** 刷新路径里脚本异常被静默吞掉，无异常、无 `MessageCommand`、测试环境日志也不可见；直接执行会抛 `ScriptException`。
 
 ### C. 属性往返测试（反射生成）
 - 从各 `*VSAScriptable` 的 `addProperty` / `addFunctionProperty` 声明（共 282 个）自动生成参数化用例：脚本 `comp.prop = v`，读回应等于 `v`（Spock `where:` 或 JUnit `@ParameterizedTest`）。
@@ -138,7 +138,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本"。现状（来�
 - 评估文档中的统计是静态文本命中，零命中只代表字符串没出现，不代表特性没被覆盖。
 
 **待开发确认**
-- 脚本抛异常时：弹消息、记日志，还是中断导出？
+- ~~脚本抛异常时：弹消息、记日志，还是中断导出？~~ 已查（§10.1）：刷新路径静默吞掉；是否为产品有意设计，需开发确认。
 - `Input` 基类声明的属性是否被子类测试覆盖？
 - `pop*`、`applyChanges`、`addAction` 的预期行为与合法取值。
 - `ViewsheetScope` 数据函数是否有现成测试入口。
