@@ -11,6 +11,10 @@ import inetsoft.uql.viewsheet.VSAssembly
 import inetsoft.uql.viewsheet.Viewsheet
 import inetsoft.util.DataSpace
 import inetsoft.util.ThreadContext
+import inetsoft.util.ConfigurationContext
+import inetsoft.report.composition.ChangedAssemblyList
+import inetsoft.test.core.MessageTestUtils
+import inetsoft.web.viewsheet.service.CoreLifecycleService
 
 /**
  * Spike harness: open a runtime viewsheet, apply scripts, read state back. No PNG export.
@@ -46,6 +50,21 @@ class ScriptStateBase {
    }
 
    ViewsheetScope getScope() { rvs.getViewsheetSandbox().get().getScope() }
+
+   /** refresh the viewsheet with a recording dispatcher, so commands sent during refresh can be inspected */
+   RecordingDispatcher.Recorder refreshRecorded() {
+      def rec = RecordingDispatcher.create(principal)
+      def svc = ConfigurationContext.getContext().getSpringBean(CoreLifecycleService)
+      MessageTestUtils.withMockMessageContext(principal, runtimeId) {
+         svc.refreshViewsheet(rvs, runtimeId, null, rec, true, true, true, new ChangedAssemblyList(true))
+      }
+      rec
+   }
+
+   /** evaluate a script expression and return the raw (not unwrapped) result */
+   Object evalRaw(String expr) {
+      scope.execute(expr, ViewsheetScope.VIEWSHEET_SCRIPTABLE)
+   }
 
    /** evaluate a script expression in the viewsheet scope and return the unwrapped value */
    Object eval(String expr) {

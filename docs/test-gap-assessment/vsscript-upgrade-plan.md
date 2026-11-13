@@ -207,3 +207,68 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本"。现状（来�
 - 真正的差分用例（脚本设置 vs 资产里静态设置）。
 - Excel 导出，以及脚本里按导出格式分支（`exportFormat`）。
 - 这些用例都是单次手工运行的结果，还没有放进 CI。
+
+## 10. 第二轮探路结果（探路项 1–6，2026-11-13）
+
+探路代码：`vsscript/src/test/groovy/inetsoft/test/vsscript/state/ScriptStateProbe_Spec.groovy`（只打印观察结果 `PROBE ...`，不做断言，10 个用例都能运行）。
+
+### 10.1 脚本异常（探路 1）：最重要的发现
+
+| 触发方式 | 调用方能否发现 | 观察 |
+|---|---|---|
+| 组件脚本 / `ONINIT` / `ONREFRESH` 经刷新执行 | **不能** | 不抛异常；刷新期间没有 `MessageCommand`；vs 仍可用；报错语句**之前**的效果保留（`value="changed"; value=undefinedFn()` 之后值是 `changed`，`ONREFRESH` 里的 `from-onload` 也保留） |
+| 直接 `scope.execute(script, assemblyName)` | **能** | 抛 `ScriptException`，消息带中文提示，cause 里有具体错误：`ReferenceError: undefinedFn is not defined (line 1)`、`boom-direct (line 1)`；报错前的效果同样保留 |
+
+- 源码印证：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接 `// ignore`，所以刷新路径里脚本错误是被吞的。
+- **日志也看不到：** 测试环境没有 SLF4J 绑定（控制台提示 `Failed to load class "org.slf4j.impl.StaticLoggerBinder"`），所有日志被丢弃；直接引用 logback 类还会因版本不匹配报 `ClassNotFoundException: org.slf4j.spi.LoggingEventAware`。能否通过加绑定让日志可见：未验证。
+- **含义：** 现有 PNG 用例即使脚本报错也可能"通过"（基线若是那种状态）。方案 B 的可行做法是**测试里直接 `scope.execute` 每段脚本并断言不抛 `ScriptException`**；点击路径本来就会抛（见 §8）。
+- **新想法（未验证）：** 对 zip 里 130 个 vs 的所有脚本批量做"直接执行、断言不抛"的脚本健康检查，成本低、覆盖广。需确认直接执行与刷新时执行的上下文（如 `onClick` 会设置 `setUseDValue`）差异。
+
+### 10.2 真正的差分（探路 2）
+
+- 脚本路径（`Text1` 脚本 `autoSize = true`）与 Java 静态路径（`Text2` 的 `info.setAutoSizeValue(true)`）读回一致，均为 `true`。
+- **坑：** 静态路径必须用 `*Value` 系列 setter（DValue）。第一次用 `setAutoSize(true)`（运行时值），刷新后被重置为 `false`，差分一度显示"不一致"，属于探路写法错误。
+- 局限：`Text` 的 `wrapping` 的 setter 不在 `TextVSAssemblyInfo` 上（`TextVSAScriptable` 的 `addProperty("wrapping","isWrapping","setWrapping",…)` 指向别处），没做；也还没用"zip 资产里已有静态属性"的组件做对照。
+
+### 10.3 Chart 深层对象（探路 3）：可读
+
+脚本设置 `graph = new EGraph()`、`PointElement`、`setHint`、`LinearScale.setMax` 之后，状态断言全部能读到：
+- `Chart1.graph` 是 `EGraph`；`getElementCount()` = 1；`getElement(0)` 是 `PointElement`，`getHint(GraphElement.HINT_ALPHA)` = `0.5`。
+- `Chart1.graph.getScale("Quantity").getMax()` = `400`。
+- `Chart1.dataset.getRowCount()` = 3。
+
+即 Chart 的 EGraph 脚本也不必依赖 PNG（数值读回为 `Double`，断言时注意）。
+
+### 10.4 格式类对象（探路 4）：大部分可读
+
+- `Crosstab1.cellFormat[2][2]` → `ExtendedDecimalFormat[#,###.00]`；`colFormat[0]` → `ExtendedDateFormat[yyyy/MM/dd]`；`shrink` → `true`；`data[2][2]` → 1，`table[2][2]` → 2。
+- `Crosstab1.highlighted` 返回 `TableHighlightedArray` 对象，内部没有继续探。
+- `setPresenter(3,3,"HTMLPresenter")` 设置不报错，但 `Crosstab1.getPresenter(3,3)` 读取抛 `ScriptException`，没有找到读回方式（可能不存在该读取函数，未查源码确认）。
+
+### 10.5 属性自环往返（探路 5）：批量生成可行，成本比预想低
+
+用 `getVSAScriptable(name).getMemberKeys()` 枚举属性（脚本引擎是 Graal，不是 Rhino；`getIds()` 不存在），对每个标量属性做"读当前值 → 原样写回 → 再读"，不需要手写取值表：
+
+| 组件 | 枚举到的属性 | 标量且往返一致 | 不一致 | 写入报错 | 非标量或 null（跳过） |
+|---|---|---|---|---|---|
+| Text1 | 36 | 16 | 0 | 0 | 20 |
+| Crosstab1 | 57 | 22 | 0 | 1（`data.size`，只读） | 34 |
+| Chart1 | 146 | 57 | 0 | 0 | 89 |
+
+- 其中包含了评估文档里 43 个零命中属性的一部分：Text 的 `embedAsURL`、`popAlpha`、`popLocation`、`scaleVertical`；Crosstab 的 `keepRowHeightOnPrint`、`tipOnClick`；Chart 的 `combinedTooltip`、`dateComparisonEnabled`、`tipOnClick`、`separatedStyle`。
+- **局限：** "原样写回"只能发现 setter/getter 崩溃和类型转换问题，发现不了"写入映射错了字段"。后续需对布尔值取反、数值加一等再写一遍，这需要最小的类型规则，不是完整取值表。
+- 非标量（对象、数组、函数）和 null 的属性（共 143 个）这一轮没覆盖。
+
+### 10.6 Excel（探路 6，仅探路）
+
+- 导出成功（约 25 KB）。**测试 classpath 里没有 Apache POI**（datatest 的 pom 无依赖，本机 Maven 仓库也没有），但 xlsx 是 zip 包里的 XML，用 JDK 的 `ZipFile` 加正则就能读。
+- **`Text` 组件在 Excel 里是图片**（`xl/drawings` + `xl/media/*.png`），文字值 `xl-marker-456` 不在 `sharedStrings.xml` 也不在单元格里。所以"脚本改 Text 值是否进 Excel"不能按单元格断言。
+- **Crosstab 在 Excel 里是单元格：** 第一个 sheet 解析出 179 个单元格、整个包共享字符串 59 条，数值单元格可读（如 `B2=0`、`B3=1`、`D3=2`、`F3=3`）。导出里共有 5 个 worksheet，原因没查。
+- 还没把导出的单元格与脚本读到的数据（`Crosstab1.data`，30 行）逐项对比，需要写一个小的 sheet 解析辅助，或确认能否加 POI 测试依赖。
+
+### 10.7 本轮后的结论调整
+
+- 方案 B 里"脚本报错"不能再沿用"刷新后查 `MessageCommand`"的设想，应改为**直接执行脚本并断言异常**（§10.1）。
+- Chart 的深层对象（EGraph、scale、dataset）可以读，Chart 占 57% 的脚本用例不必继续只靠 PNG。
+- 方案 C 的批量生成可行，且 Text/Crosstab/Chart 三类已验证；下一步需要加"取反再写"的类型规则。
+- 仍未验证：日志可见性、直接执行与刷新执行的上下文差异、`highlighted` 内部、Excel 与脚本数据的逐项对比、表单提交路径、数据函数。
