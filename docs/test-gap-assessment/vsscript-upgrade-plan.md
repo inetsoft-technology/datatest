@@ -98,6 +98,22 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 - **读入口因组件而异：** TextInput 读 `value`（`selectedObject` 读到 undefined/null）；Spinner、Slider 读 `selectedObject`。
 - **观察：** 一次提交里这条 `alert` 被录到 **2 次**（都是 `submitted:7`）；原因未查（可能是点击时执行一次、刷新时又执行一次）。目前用例只断言"包含"，没有断言次数。
 
+### 5.8 bug 驱动首轮（Redmine，2026-11-13）：状态断言**抓到了真实 bug**
+- **取数：** 仓库里的 `redmine_fetch.py` 需要环境变量 `REDMINE_URL`/`REDMINE_KEY`（本机未设置），且只存标题等精简字段，没有描述。改用会话里的 Redmine MCP 工具 `getIssues`（带 `description`）。**过滤写法：`subject` 必须写成 `~script`**（带 `~` 才是"包含"，写 `script` 返回空）；一次最多取到的条数受输出大小限制，需分页。
+- **筛选：** 取最近更新的 40 条标题含 `script` 的 bug，其中 Bug 且 Resolved/Closed 且描述里带可复现脚本的有 8 条；挑了 3 条 Chart 脚本 bug（描述里有明确的复现脚本、预期、根因）。
+- **结果（当前产品检出 `stylebi-main` 分支 `bug-81309`）：3 个 bug 全部复现。**
+
+| Redmine | 现象（当前版本） | 对照（正常路径） |
+|---|---|---|
+| #80709 | `bindingInfo.isTopNReverse("State", ...)` 抛 `ScriptException: Failed to invoke script function`，源码 `VSChartBindingScriptable.java:709` 的 `getRankingOptionValue().equals(...)` 未判空 | `getTopN` 同一维度返回 0 |
+| #80708 | `bindingInfo.getGroupOrder("Date", ...)` 抛 `ScriptException` | 设置后 `YEAR`→5、`MONTH`→3 正常 |
+| #80711 | `setGroupOrder("Date", Chart.NONE_DATE_GROUP, ...)` 后日期级别为 `null`（应为 `0`），设置被忽略 | 同上 |
+
+- 这三个 bug 在 Redmine 里状态是 Closed，但**当前检出的源码里仍然存在**；#80709 的描述写明修复在 13.8 线，这份检出不含它。是否已合入哪个分支，没有核对。
+- **用例：** `ScriptStateKnownBugs_Spec`（5 个）：3 个 bug 用例标 `@PendingFeature`（bug 存在时通过，**修复后会失败，提示解除标记**）+ 2 个对照用例（保证 bug 用例不是因为测试写错而失败）。`ScriptStateBugProbe_Spec` 是探路。
+- **意义：** 这是第一次拿到"状态用例能抓到真实 bug"的证据，回应了"42 个用例全绿、没有 bug"的疑问。注意边界：这 3 个 bug 是**读写 `bindingInfo` 的接口抛异常**，直接执行脚本就能暴露；**没有**对"渲染错了"类的 bug 做验证。
+- **局限：** 只做了 3 条；#80989（`y2Axis`）、#80985（箱线图 `setBorderColor`）已筛出未做；"修复前版本变红"没做（这 3 条在当前版本本来就失败，无需修复前构建）。
+
 ## 6. 目录与旧用例
 
 ```
@@ -164,7 +180,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 | 步骤 | 做什么 | 与单测的区别 | 状态 |
 |---|---|---|---|
 | 0 | **JaCoCo 量覆盖**：对 `inetsoft.report.script.viewsheet.*`、`inetsoft.util.script.*` 统计行/分支覆盖，得到"哪些代码没被跑到"的客观清单，替代文本命中统计 | 目标清单来自代码 | **已跑通，结果见 §11** |
-| A | **bug 驱动**：从 Redmine 近两年脚本类 bug 的描述里抽出真实脚本做回归（评估文档只按标题分类，没读过描述） | 真实 vs 触发过的问题 | 未做；很多 bug 可能只有现象没有脚本，需逐条判断 |
+| A | **bug 驱动**：从 Redmine 近两年脚本类 bug 的描述里抽出真实脚本做回归（评估文档只按标题分类，没读过描述） | 真实 vs 触发过的问题 | **首轮已做（§5.8）**：40 条里 8 条带可用脚本，做了 3 条，全部复现；很多 bug 只有现象没有脚本，需逐条判断 |
 | B | **生命周期矩阵**：属性（从代码枚举，按类型生成合法值）× 触发位置（组件脚本、`ONINIT`、`ONREFRESH`、`onClick`）× 观察点（刷新后保留、导出体现、书签往返、重复执行幂等），断言系统不变量，不断言 getter/setter | 测运行时行为，不测取值 | 未做；非标量属性难自动生成，只能覆盖标量约一半 |
 | C | **造资产**：只在现有资产无法触发某个 0 覆盖类时才需要（如 `VSEGraphScriptable`、数据库脚本类）；缺失的组件类型已不需要（Thermometer/Cylinder/SlidingScale 已废弃） | 补输入，不补断言方式 | 未验证内存构造的 vs 能否打开成 `RuntimeViewsheet` |
 

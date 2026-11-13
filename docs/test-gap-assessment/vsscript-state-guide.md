@@ -60,6 +60,8 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 | `ScriptStateProbe_Spec.groovy` | 探路：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...` |
 | `ScriptStateSubmit_Spec.groovy` | Submit 组件：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值 |
 | `ScriptStateSubmitProbe_Spec.groovy` | Submit 探路（资产结构、`VSInputService` 依赖、读入口），只打印 |
+| `ScriptStateKnownBugs_Spec.groovy` | Redmine 已关闭但当前版本仍复现的 Chart 脚本 bug（#80709/#80708/#80711），`@PendingFeature` + 对照用例 |
+| `ScriptStateBugProbe_Spec.groovy` | 上面三个 bug 的探路，只打印 |
 
 **`ScriptStateBase` 的接口（`new ScriptStateBase('<资产id>')` 会打开 vs）：**
 
@@ -179,6 +181,12 @@ assert t.eval('Spinner1.selectedObject') == 7d
 ```
 完整用例见 `ScriptStateSubmit_Spec.groovy`。读回入口：TextInput 用 `value`，Spinner/Slider 用 `selectedObject`。
 
+### 4.9 从 Redmine 取 bug 做回归（bug 驱动）
+- 仓库里的 `.claude/workflow-shared/datatest-gap/redmine_fetch.py` 需要环境变量 `REDMINE_URL`、`REDMINE_KEY`，且只存标题等精简字段，**没有描述**。要拿描述，用 Redmine 的 `getIssues`（MCP 工具），参数 `subject: "~script"`（**必须带 `~`**）、`status_id: ["*"]`、`sort: "updated_on:desc"`、`limit`、`nometa: 1`，结果很大，要落盘后用脚本筛，别直接打印。
+- 筛选条件：Bug、Resolved/Closed、描述里有复现脚本、有预期结果。
+- 写法：脚本用 `t.scope.execute(script, '组件名')` 直接执行（刷新路径会吞异常）；bug 仍复现的用例标 `@PendingFeature(reason='Redmine #xxxx ...')`，并配一个正常路径的对照用例。**用例变成"意外通过"时 Spock 会报失败，那是该 bug 已修复的信号，去掉标记即可。**
+- 先用探路 spec 打印实际结果，再写断言；读不到状态时用 Java 对象读（如 `t.vs.getAssembly('Chart1').getVSChartInfo().getXFields()[0].getDateLevelValue()`）。
+
 ## 5. 已踩过的坑（别重复踩）
 
 1. **刷新路径吞脚本异常。** 组件脚本、`ONINIT`、`ONREFRESH` 经刷新执行时，错误不抛、不发消息、测试里也没有日志（没有 SLF4J 绑定）；报错语句**之前**的效果仍然保留。要验证"脚本没报错"必须**直接** `scope.execute`。源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接忽略。
@@ -203,7 +211,7 @@ assert t.eval('Spinner1.selectedObject') == 7d
 
 ## 7. 现状与下一步
 
-**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），共 42 个用例全过（见方案文档 §5）。
+**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），共 51 个用例，0 失败（其中 3 个是已知 bug 的 pending 用例，见方案文档 §5.8）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
 **下一步（按优先级，详见方案文档 §4、§8、§10）：**
 0. JaCoCo 覆盖率基线已量（方案 §11）；Submit（`onSubmit`）已完成；**下一步 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
