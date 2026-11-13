@@ -13,7 +13,7 @@
 | `vsscript_scan.py` | vsscript 专用静态扫描：`cases`（用例/脚本/处理组件）、`zip`、`api`（产品 `*VSAScriptable` 的 `addProperty` 清单）、`usage`、`zero`、`declzero`（脚本属性零命中） | 只在 vsscript 上运行；只认 `printVS` 写法；文本命中是上限，不含 Chart 的 EGraph 脚本对象 |
 | `redmine_fetch.py` | 用 Redmine REST API 按条件取 issue，翻页到 `total_count`，存精简 JSON；账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读 | 在真实服务器上运行过一次（2026-11-13，mv：`--subject MV`、`materializ`、`incremental`，`total_count` 与取回数一致）；没有时间范围过滤，取回后按 `created_on` 过滤；注意：Redmine MCP 服务的配置里这个密钥叫 `REDMINE_API_KEY`，本脚本读的是 `REDMINE_KEY`；系统代理可能让请求报 SSL 错误，需要把 `NO_PROXY` 设成包含服务器地址 |
 | `bug_classify.py` | 按标题关键词把 bug 粗分根因类别（步骤 3b-D），去掉编辑器 UI、Report 脚本、AI 插件等噪声 | 规则写给 vsscript 脚本类 bug；抽样约三分之二相关，数字是上限；换模块要改规则 |
-| `mv_bug_classify.py` | MV 用：按标题关键词把 MV 相关 bug 粗分 13 个根因类别（`--since` 限定时间，去掉 AI 插件、EM 界面、标题里的 MV 不是这个功能的噪声），并对照 `--datatest`、`--product` 目录里是否提到 bug 编号；`--sample N` 每类随机抽 N 条，用来人工核对分类 | 在 mv 近一年的 165 条上运行；抽样 81 条读了描述，约 85% 分对，类的数量只能当大致数字；"提到编号"不等于断言了这个行为；规则写给 2025-11 到 2026-11 的 2.1.0 bug，换时间段要重看 |
+| `mv_bug_classify.py` | MV 用：按标题关键词把 MV 相关 bug 粗分 13 个根因类别（`--since` 限定时间，去掉 AI 插件、EM 界面、标题里的 MV 不是这个功能的噪声），并对照 `--datatest`、`--product` 目录里是否提到 bug 编号；`--sample N` 每类随机抽 N 条，用来人工核对分类 | 在 mv 近一年的 165 条上运行；抽样 81 条读了描述，约 88% 分对（规则调整后），类的数量只能当大致数字；"提到编号"不等于断言了这个行为；规则写给 2025-11 到 2026-11 的 2.1.0 bug，换时间段要重看 |
 | `module-template.md` | 产出文件的骨架 | vscalc 已按它写成样例 |
 
 ## `vs_backup_scan.py` 的适用范围

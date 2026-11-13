@@ -40,8 +40,8 @@ BUCKETS = [  # first match wins, order matters
     ('增量更新与删除', r'incremental|delete condition|last block was full|while an incremental|Second incremental|rows of the deleted|deleted rows|MV update'),
     ('滑块、选择与书签', r'slider|selection list|selection state|selection tree|calendar|bookmark|selection of the MV'),
     ('空值与 NOT 条件（MV 与实时结果不同）', r'not equal|not contains|empty value|rows with an empty|\bNOT IN\b|is ignored after the MV'),
-    ('VPM、权限与跨租户', r'VPM|permis|cross-tenant|another org|org(anization)?[- ](boundary|scoped|id)|owner-scoped|MATERIALIZATION ACCESS|clone[d]? organization|cloned|organization|guest'),
-    ('日期、类型与时区', r'time ?zone|timestamp|TimeInstant|\bhour\b|Long variable|2147483647|saturates|DateMVColumn|MVUIntColumn|(?<![a-z])dates?(?![a-z])'),
+    ('VPM、权限与跨租户', r'VPM|permis|cross-tenant|another org|org(anization)?[- ](boundary|scoped|id)|owner-scoped|MATERIALIZATION ACCESS|clone[d]? organization|cloned|organization|guest|site admin'),
+    ('日期、类型与时区', r'time ?zone|timestamp|TimeInstant|\bhour\b|Long variable|2147483647|saturates|DateMVColumn|MVUIntColumn|date (type|column|level|range|comparison)'),
     ('公共 API（REST）', r'public API|\bAPI\b|No thread-bound request|users list is split'),
     ('并发、集群与文件', r'concurrent|race|swap|temp files|mvcolswap|System\.gc|deadlock|XJobPool|thread'),
     ('性能与内存', r'slow|hashCode|collision|performance|throttled|scans? .* from|inserts at index 0|resize|full list|memory leak|cache leak|Leak'),
@@ -80,8 +80,10 @@ def classify(i):
 
 def mentions(dirs, ids, exts):
     """id -> set of files that contain the 5-digit number as a whole token"""
-    pat = re.compile(r'(?<![0-9])(%s)(?![0-9])' % '|'.join(str(i) for i in ids))
     found = collections.defaultdict(set)
+    if not ids:          # an empty alternation would match everywhere
+        return found
+    pat = re.compile(r'(?<![0-9])(%s)(?![0-9])' % '|'.join(str(i) for i in ids))
     for d in dirs:
         for root, _, files in os.walk(d):
             if os.sep + 'target' in root or '/target' in root:

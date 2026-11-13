@@ -48,7 +48,8 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 
 - **A. 功能面差集（所有模块）：** 先从产品源码枚举该特性的"能力清单"——脚本函数、选项串的取值、枚举值、配置项、转换的分支——再逐项对照资产与 spec 的使用次数，**零覆盖项逐个列出**（例见 `docs/test-gap-assessment/vsfreehand.md` 的功能面差集缺口）。清单必须来自产品源码并写 `file:line`，不是凭印象；资产里统计不到的写"未统计"。
 - **D. 已知 bug 反推（所有模块，有 Redmine 记录时）：** 把相关 bug 按**根因类别**归类，看哪一类没有对应的验证；每个 bug 只写 id、根因类别、当前是否被覆盖。 结果写进模板的"已知 bug 对照"一节（步骤 4）。
-  - **取数：** 优先用 `<TOOLS>/redmine_fetch.py`（账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读，翻页到 `total_count`，不经过对话）；环境变量没设就问用户，不自己去翻 MCP 配置里的凭据。没有环境变量时退而用 `mcp__redmine__getIssues` 翻页，每页结果会落到文件，用脚本汇总，不读原文，并写明"只取了前 N 条，不是全量"。`redmine_fetch.py` 已在真实服务器上运行过一次（mv，2026-11-13，`total_count` 与取回数一致），仍要核对 `total_count`；用户若说账号配在 Claude 的 MCP 配置里（redmine 服务的 `REDMINE_URL`、`REDMINE_API_KEY`），得到用户明确同意后才可以读，只读值放进子进程环境，不打印、不写文件，密钥变量名要换成 `REDMINE_KEY`，必要时设 `NO_PROXY`。
+  - **取数：** 优先用 `<TOOLS>/redmine_fetch.py`（账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读，翻页到 `total_count`，不经过对话）；环境变量没设就问用户，不自己去翻 MCP 配置里的凭据。没有环境变量时退而用 `mcp__redmine__getIssues` 翻页，每页结果会落到文件，用脚本汇总，不读原文，并写明"只取了前 N 条，不是全量"。`redmine_fetch.py` 已在真实服务器上运行过一次（mv，2026-11-13，`total_count` 与取回数一致），仍要核对 `total_count`。
+  - **例外，需要用户明确同意：** 上一条禁止自己翻 MCP 配置里的凭据。只有用户明确说账号配在 Claude 的 MCP 配置里（redmine 服务的 `REDMINE_URL`、`REDMINE_API_KEY`），才可以读；读到的值只放进子进程环境，不打印、不写文件；密钥变量名要换成 `REDMINE_KEY`，系统代理报 SSL 错误时设 `NO_PROXY`。没有用户的明确说明就不读。
   - **分类：** `<TOOLS>/bug_classify.py` 是按标题关键词的粗分，规则写给 vsscript（脚本类 bug）；换模块要先改规则。每类抽样 7 条人工核对，写明相关比例，数字当上限；不读描述就不能写"根因是……"。
   - **口径必写：** 样本条件（关键词/分类、状态、时间范围）、取到几条、总数、过滤掉几条。**不得把一次 100 条的搜索当成结论**（vsscript 第一版就是这样，被指出样本太少）。
 - **生成型模块的判断：** 特性的核心是"由 A 生成 B"（表转换、导出、模板展开、迁移升级）。是的话做 B、C、E，不是就跳过。
