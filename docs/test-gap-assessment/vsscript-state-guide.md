@@ -186,7 +186,7 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 **已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路，30 个用例全过（见方案文档 §5）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
 **下一步（按优先级，详见方案文档 §4、§8、§10）：**
-0. 用 JaCoCo 量脚本相关类的覆盖率，得到"没覆盖"的客观清单（探路中）。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
+0. JaCoCo 覆盖率基线已量（方案 §11）；新的顺序是：**先做 Submit（`onSubmit`），再做 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
 1. D1+D2：对 zip 里 130 个 vs 的所有脚本直接执行并统计 `ScriptException`；固定"刷新吞异常/点击抛异常"的行为。
 2. D4：把现有 PNG 用例（Chart、Crosstab）改成状态断言版。
 3. D3：事件端到端（`onSubmit` 需接 `VSInputService`）。
