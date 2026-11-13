@@ -87,7 +87,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 | G4 | 43 个脚本属性零命中（§2 表）：`Thermometer`/`Cylinder`/`SlidingScale` 无资产；`ComboBox`、`Submit` 无组件脚本用例 | 这些属性的 setter/getter 写错、类型强转错、取值串解析错不会被发现 | 单测为主；每类只加 1 个 dashboard 代表用例 | 高 |
 | G5 | Chart 占组件脚本 57%（120/212），Calendar/Spinner/Line 各 1 个 | 非 Chart 组件的脚本回归几乎只靠 1–3 个用例 | dashboard（补 vs/扩展） | 中 |
 | G6 | 触发位置只有组件脚本、`ONINIT`、`ONREFRESH`：无事件脚本（onClick/onSubmit/confirm）、无 vs 级脚本存于资产；`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`、`createConnection`、`delayVisibility`、`event/OLD/CHANGED` 零命中 | 写表单/写回/事件类脚本的回归不会被发现 | 单测（`ViewsheetScope` 已有 14 个用例，补接口）；交互部分不属于静态 datatest，另行规划 | 高 |
-| G7 | 全局脚本函数（`CALC.*`、`inArray`、`split`、`rtrim`、`union`、`formatNumber`、`mapList` 等）在 vsscript 零命中；近两周 Redmine 里这类 bug 最密（见 §7） | 函数返回值的边界错误（空串、重复数、舍入、闰年…） | 单测（期望值可独立算出） | 高 |
+| G7 | 全局脚本函数（`CALC.*`、`inArray`、`split`、`rtrim`、`union`、`formatNumber`、`mapList` 等）在 vsscript 零命中；2025 年起 31 条里 27 条是这一类（见 §7） | 函数返回值的边界错误（空串、重复数、舍入、闰年…） | 单测（期望值可独立算出） | 高 |
 | G8 | 68 个 vs 未被引用，其中 `ScriptAuto/VS_Self/vsAlias`、`ScriptAuto/ScriptEngine/selectedObjec` 是自动化目录下的孤儿 | 资产存在但没跑，说明用例被删或漏写 | 机制（确认删除或补用例） | 低 |
 
 方向判断：属性取值、函数返回值 → 单测；组件与脚本绑定的渲染 → dashboard；清单与基线脱节 → 改机制。
@@ -123,7 +123,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 ## 6. 局限与待确认
 
-- 我的扫描器（scratchpad，不在仓库）是正则读 spec，只认 `HANDLER:/COMMAND:` 写法；属性文本命中是上限（`value`、`field` 等常见词会偏高），零命中则只代表字符串没出现（动态拼接的属性名、`eval` 看不到）。
+- 扫描器 `.claude/workflow-shared/datatest-gap/vsscript_scan.py` 是正则读 spec，只认 `HANDLER:/COMMAND:` 写法；属性清单只含各 `*VSAScriptable` 里 `addProperty` 声明的名字，**不含** Chart 的 EGraph/GraphElement 脚本对象和 `bindingInfo` 方法（它们走别的类），所以 Chart 的功能面差集没统计；属性文本命中是上限（`value`、`field` 等常见词会偏高），零命中则只代表字符串没出现（动态拼接的属性名、`eval` 看不到）。
 - `vs_backup_scan.py` 的 `strictcheck`/`crosscheck` 没有用：vsscript 用的是 `VSScriptTest`（`printVS`），不是 `ViewsheetTest`，脚本不适用；孤儿统计是自写代码的结果。
 - 未运行：CI 实际通过情况；脚本异常是否进入 PNG（G2）。本机运行未传 license 参数（有渲染结果，说明可运行）。
 - 需要开发回答：脚本抛异常时产品是弹消息、记日志还是直接中断导出？`Input` 基类声明的属性是否被子类测试覆盖？`pop*`、`applyChanges`、`addAction` 的预期行为。
@@ -132,27 +132,29 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 ## 7. 已知 bug 对照（步骤 3b-D）
 
-取自 Redmine 搜索 `subject ~ script` 的最近 100 条（按更新时间倒序），再人工挑出 Viewsheet/Chart/Freehand 脚本和全局函数相关的。根因类别按标题粗分，**没有逐条读描述**。"datatest"列只按 API 名在 spec/资产脚本里文本命中判断，没核对触发条件。
+**样本与口径（先读这个）：**
+- Redmine 里按标题含 `script`（`subject ~ script`，所有状态）取到 **2000 条**，更新时间从 2026-11 回溯到 2018-11。**还没取完**（取到第 2000 条时仍有数据，没拿到服务端总数），所以这是"最近更新的 2000 条"，不是全量。
+- 其中 Bug 类 1702 条。再用 `bug_classify.py` 按分类过滤（去掉 AI Plugin、Security、Enterprise Manager、Scheduler 等）、按标题关键词去掉编辑器 UI、Report 脚本（band/section）、部署脚本、前端测试等噪声，**剩 798 条**当作"viewsheet 脚本相关"。
+- 根因类别是**按标题关键词分的，没读描述**。每类抽样 7 条人工看，大约三分之二确实相关，类与类之间有混入（例如 `ScriptEntry.Builder`、`Data Folder Browser` 被分到了不对的类）。**数字是上限，只能当线索。**
+- "vsscript 现状"一列是按类别对照 §2 的统计，不是逐条核对触发条件。
 
-| bug id | 根因类别 | 当前是否被覆盖 |
-|---|---|---|
-| 79669、79672、79674、79675–79683（CALC/引擎函数返回值边界） | 全局函数边界值 | 否（`CALC.`、`inArray`、`split`、`rtrim` 零命中；产品单测未查） |
-| 81011、81164 | `union()` 重复数 | 否 |
-| 81014、81259、81260 | `toList/mapList` 选项与副作用 | 部分（`toList` 有 2 处使用，选项不同） |
-| 81233 | `formatNumber` 舍入 | 否 |
-| 80985、81032 | Chart 脚本 `SchemaElement` 边框色 | 同 API 有用例（`SchemaElement` 4、`setBorderColor` 6），触发条件（箱线图、无色框）未核对 |
-| 80989、80993 | Chart `y2Axis`、`StackRange` | 同 API 有用例（`y2Axis` 6、`StackRange` 7），触发条件未核对 |
-| 80708、80709、80711 | Chart `bindingInfo` 的 group order、TopN reverse | 部分（`setGroupOrder` 3、`getGroupOrder` 1；`isTopNReverse` 0、`Chart.NONE_DATE*` 0） |
-| 81033 | Chart 脚本编辑器列出的常量 `FIRST_FORMULA/LAST_FORMULA` | 否（零命中） |
-| 80507 | Freehand 把 combo box 的 `selectedLabel` 赋给单元格 | 部分（`selectedLabel` 12 处，ComboBox 无组件脚本用例） |
-| 81194 | Crosstab `.data[row][col]` 行数和值 | 同 API 有用例（`.data[` 17），触发条件未核对 |
-| 80875 | 输出组件 `highlighted[name]` | 同 API 有用例（5），触发条件未核对 |
-| 79699 | 嵌套 vs 里组件 `onClick` | 否（事件脚本零用例） |
-| 80278 | 表单 `resetSubmitForms()` 在 onSubmit 客户端脚本里 | 否（事件/Submit 零用例） |
-| 79860、80834 | 脚本沙箱：JVM 默认时区被改、超时/中断丢失 | 否（不属于渲染比对，应走产品单测） |
-| 81084、81085 | Freehand 脚本路径与聚合结果不一致、`getFieldNameByScript` 截断 | 否（`getFieldNameByScript` 零命中） |
+| 根因类别（标题关键词归类） | bug 数 | 其中 2025 年起 | vsscript 现状 |
+|---|---|---|---|
+| Chart 脚本 API（bindingInfo、SchemaElement、EGraph、轴/图例） | 126 | 30 | 有：Chart 组件脚本 120 个、spec 里 57 个用例；触发条件未核对 |
+| 表/交叉表/自由表脚本（单元格、列宽、公式） | 113 | 17 | 偏薄：Table 5、Crosstab 9、CalcTable 7 个组件脚本 |
+| 选择/输入组件脚本（selectedObject、values/labels、Calendar、Slider） | 97 | 16 | 偏薄：共 33 个组件脚本（TimeSlider 12，Spinner 1、Calendar 1，ComboBox 0） |
+| 引擎/沙箱/异常（GraalJS、Rhino、锁、超时、报错日志） | 86 | 31 | **无**：没有任何用例断言脚本报错、超时、并发（G2） |
+| 属性设置不生效（visible、format、hyperlink、size…） | 69 | 11 | 部分：基础属性有（Text 23 个、`VS_Base`）；其中 12 条标题带 export/portal/viewer，PNG 导出看不到 Viewer 与导出的差异 |
+| 触发时机/顺序（onInit、onRefresh、onClick、onLoad） | 67 | 27 | 部分：`ONINIT` 14、`ONREFRESH` 6；`onClick` 等事件脚本 0（G6） |
+| 全局函数与计算函数边界（CALC、字符串/日期/数组函数） | 31 | 27 | **无**：零命中（G7）；近两年集中爆发 |
+| 参数与嵌入 viewsheet（parameter、thisParameter、embedded） | 30 | 16 | 偏薄：`parameter` 3 处、嵌入只有 `VS_embedded` 1 个用例 |
+| 请求新增脚本属性（"add script for…"，记在 Bug 里） | 13 | 8 | 未核对：`smoothLines`、`layoutDirection`、`snap`（最近一批 Epic #74519）在 spec 里搜不到；这些属性的产品实现位置我没定位 |
+| 数据访问函数（runQuery、getImage、appendRow、refreshData） | 11 | 0 | **无**：`runQuery` 1 处，其余 0（G6） |
+| 未归类 | 155 | 32 | 不判断 |
 
-按根因类别看，没有任何对应验证的类别：**全局函数边界值、事件脚本、脚本沙箱/超时、Chart 常量清单**。
+按根因类别看，没有对应验证的是：**引擎/沙箱/异常、全局函数边界、数据访问函数、事件触发**。有用例但相对 bug 数偏薄的是：选择/输入组件（97 条对 33 个脚本）、表类（113 条对 21 个脚本）。
+
+最近两周的具体条目（来自第一次的 100 条搜索，人工挑选，未重新核对）：`union()` 重复数 81011/81164、`toList/mapList` 81014/81259/81260、`formatNumber` 舍入 81233、Chart `StackRange` 80993、`y2Axis` 80989、`bindingInfo.setGroupOrder/getGroupOrder/isTopNReverse` 80711/80708/80709、箱线图 `setBorderColor` 80985/81032、Crosstab `.data[row][col]` 81194、`highlighted[name]` 80875、嵌套 vs `onClick` 79699、`resetSubmitForms()` 80278。
 
 ## 附：数据来源与复现
 
@@ -161,8 +163,13 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 ./mvnw package -pl commons -DskipTests
 ./mvnw test -pl vsscript
 
-# 扫描器：scratchpad 里的 vsscript_scan.py（未入库）；子命令 cases / zip / api / usage / zero / declzero
+# 扫描器：python .claude/workflow-shared/datatest-gap/vsscript_scan.py <cases|zip|api|usage|zero|declzero>（产品源码路径用环境变量 PRODUCT_CORE）
 # 口径：spec 脚本 = 各用例 COMMAND 字符串；资产脚本 = zip 里各组件 assemblyInfo/script；
 #       API = 产品 *VSAScriptable.java 里 addProperty("名"…) 与 addFunctionProperty(cls,"名"…)，沿 extends 链合并
 # 产品单测盘点：E:\inetsoft\sr14_0\stylebi-main\community\core\src\test\**\report\script\viewsheet\*.java
+
+# Redmine：取数与分类（§7）
+# 取全量需要 REDMINE_URL、REDMINE_KEY 环境变量；脚本未在真实服务器上运行过，首次运行请核对 total_count
+python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject script --out issues.json
+python .claude/workflow-shared/datatest-gap/bug_classify.py issues.json [--list <类别前缀> <条数>]
 ```
