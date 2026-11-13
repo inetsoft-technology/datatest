@@ -32,6 +32,23 @@
 - 看探路输出：`grep PROBE` 控制台输出（`ScriptStateProbe_Spec` 只打印不断言）。
 - 测试的 vs 资产来自 `vsscript/src/test/resources/config/vsscriptStorage.zip`（130 个 vs）。资产 id 写法：`1^128^__NULL__^<zip 内路径>`，如 `1^128^__NULL__^ScriptAuto/OutPut/OutPut1`。找可用的 id：看 `cases/**/*_Spec.groovy` 里 `new VSScriptTest('…', caseName)` 的第一个参数，同时看该 spec 里的组件名。
 
+**量覆盖率（JaCoCo，不改项目文件）：**
+```
+# 一次性：把 agent 和命令行工具下到任意临时目录（Maven Central，0.8.12）
+./mvnw dependency:copy -Dartifact=org.jacoco:org.jacoco.agent:0.8.12:jar:runtime -DoutputDirectory=<DIR> -Dmdep.stripVersion=true
+./mvnw dependency:copy -Dartifact=org.jacoco:org.jacoco.cli:0.8.12:jar:nodeps   -DoutputDirectory=<DIR> -Dmdep.stripVersion=true
+
+# 跑测试时挂 agent（vsscript/pom.xml 的 argLine 写死，所以用环境变量，不用 -DargLine）
+export JAVA_TOOL_OPTIONS="-javaagent:<DIR>/org.jacoco.agent-runtime.jar=destfile=<DIR>/x.exec,append=true,includes=inetsoft.report.script.*:inetsoft.util.script.*"
+./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'
+unset JAVA_TOOL_OPTIONS
+
+# 出报告（产品类文件用本机 Maven 仓库里的 jar；本机仓库在 D:/m2-1，不是 ~/.m2）
+java -jar <DIR>/org.jacoco.cli-nodeps.jar report <DIR>/x.exec   --classfiles <M2>/com/inetsoft/stylebi/inetsoft-core/2.1.0-SNAPSHOT/inetsoft-core-2.1.0-SNAPSHOT.jar --csv <DIR>/x.csv
+# 合并多次运行：java -jar ...cli-nodeps.jar merge a.exec b.exec --destfile all.exec
+```
+CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与解读见方案文档 §11。
+
 ## 3. 代码结构
 
 | 文件 | 作用 |
@@ -153,7 +170,7 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 6. **`OnClickService` 要手动构造**（见 §4.3）；表单提交需要 `VSInputService`，目前没接，是待办。
 7. **脚本引擎是 Graal，不是 Rhino。** 枚举属性用 `getVSAScriptable(name).getMemberKeys()`，没有 `getIds()`。
 8. **Excel 里 Text 是图片。** `xl/drawings` + `xl/media/*.png`，脚本改的 Text 值不在单元格里，要用表格类组件断言。
-9. **测试里没有 Apache POI。** 要么用 §4.7 的 zip 读法，要么另加依赖（版本能否取到未验证）。
+9. **vsscript 测试 classpath 上没有 Apache POI。** 本机 Maven 仓库在 `D:/m2-1`（不是 `~/.m2`），里面有 POI 5.4.0，加测试依赖应可行（未试）；也可以用 §4.7 的 zip 读法。
 10. **bash 里别在 heredoc 里放复杂 Groovy。** 写测试文件用编辑器或 Write 工具。
 
 ## 6. 写完新用例的检查清单
@@ -168,7 +185,8 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 
 **已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路，30 个用例全过（见方案文档 §5）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
-**下一步（按优先级，详见方案文档 §4、§8）：**
+**下一步（按优先级，详见方案文档 §4、§8、§10）：**
+0. 用 JaCoCo 量脚本相关类的覆盖率，得到"没覆盖"的客观清单（探路中）。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
 1. D1+D2：对 zip 里 130 个 vs 的所有脚本直接执行并统计 `ScriptException`；固定"刷新吞异常/点击抛异常"的行为。
 2. D4：把现有 PNG 用例（Chart、Crosstab）改成状态断言版。
 3. D3：事件端到端（`onSubmit` 需接 `VSInputService`）。

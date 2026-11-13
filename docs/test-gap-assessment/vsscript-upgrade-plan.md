@@ -83,7 +83,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 `getMemberKeys()` 枚举：Text1 36、Crosstab1 57、Chart1 146 个成员；其中标量 16 / 22 / 57 个，原样写回全部一致（Crosstab 的只读成员 `data.size` 写入报错）。非标量或 null 共 143 个未覆盖。
 
 ### 5.6 导出
-- 测试里**没有 Apache POI**（pom 无依赖，本机 Maven 仓库也没有）；xlsx 用 JDK `ZipFile` + 正则可读。
+- vsscript 测试 classpath 上**没有 Apache POI**（pom 无依赖，`import` 编译失败）。本机 Maven 仓库（`D:/m2-1`，不是 `~/.m2`）里有 POI 5.4.0，加测试依赖应可行（未试）；不加的话 xlsx 可用 JDK `ZipFile` + 正则读。
 - PDF：PDFBox 提取文字，脚本改的 Text 值可见（通过）。
 - Excel：`Text` 组件导出为图片（`xl/drawings` + `xl/media/*.png`），不能按单元格断言；Crosstab 是单元格（第一个 sheet 179 个单元格、59 条共享字符串）。导出包含 5 个 worksheet，原因未查；还没把单元格与脚本数据逐项对比。
 
@@ -138,6 +138,53 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 - D1 产出"zip 内脚本抛 `ScriptException` 的数量与分布"，并有已知误报清单。
 - 脚本报错、点击触发 warning 至少各有一个稳定用例。
 - 旧用例的处理有逐个对应的记录，没有无记录删除。
+
+## 10. 资产里的脚本不够时怎么办
+
+**事实（2026-11-13，数 zip）：** `vsscriptStorage.zip` 里 147 个文件、139 个 vs，只有 **200 个 `<script>` 节点**；没有 Thermometer、Cylinder、SlidingScale 组件（ComboBox 12 个、Submit 9 个有）。所以 D1（批量执行资产里的脚本）只是"体检"，不等于覆盖；资产没写到的脚本能力它发现不了。datatest 里原本也没有覆盖率工具。
+
+**处理办法：先把"没覆盖"量准，再用三个与单测不同的来源补。**
+
+| 步骤 | 做什么 | 与单测的区别 | 状态 |
+|---|---|---|---|
+| 0 | **JaCoCo 量覆盖**：对 `inetsoft.report.script.viewsheet.*`、`inetsoft.util.script.*` 统计行/分支覆盖，得到"哪些代码没被跑到"的客观清单，替代文本命中统计 | 目标清单来自代码 | **已跑通，结果见 §11** |
+| A | **bug 驱动**：从 Redmine 近两年脚本类 bug 的描述里抽出真实脚本做回归（评估文档只按标题分类，没读过描述） | 真实 vs 触发过的问题 | 未做；很多 bug 可能只有现象没有脚本，需逐条判断 |
+| B | **生命周期矩阵**：属性（从代码枚举，按类型生成合法值）× 触发位置（组件脚本、`ONINIT`、`ONREFRESH`、`onClick`）× 观察点（刷新后保留、导出体现、书签往返、重复执行幂等），断言系统不变量，不断言 getter/setter | 测运行时行为，不测取值 | 未做；非标量属性难自动生成，只能覆盖标量约一半 |
+| C | **造资产**：补缺失的组件类型（改 XML 复制，或用 Java API 内存构造 `Viewsheet`） | 补输入，不补断言方式 | 未验证内存构造的 vs 能否打开成 `RuntimeViewsheet` |
+
+**顺序：** 0 → D1+D2（定位成体检）→ A → B（在 0 量出的缺口上生成）→ C（只补缺的类型）。
+
+**局限：** 覆盖率只能量出"跑没跑到"，量不出"断言对不对"，仍需"故意改坏产品看用例变红"（手册 §6）；A 取决于 bug 描述里有没有可用脚本；B 的合法值对对象、数组、格式类属性很难自动生成。
+
+## 11. JaCoCo 覆盖率结果（2026-11-13，本机）
+
+**做法：** 不改任何项目文件，用环境变量 `JAVA_TOOL_OPTIONS` 给测试 JVM 挂 JaCoCo 0.8.12 agent（`vsscript/pom.xml` 里 `argLine` 写死，所以不能走 `-DargLine`），产品类文件读 `D:/m2-1` 里的 `inetsoft-core-2.1.0-SNAPSHOT.jar`，用 `org.jacoco.cli` 生成报告。复现命令见手册 §2。
+
+| 范围 | 现有 115 个 PNG 用例 | 新增 30 个 state 用例 | 合并 |
+|---|---|---|---|
+| `report.script.viewsheet`（75 个类，5356 行） | 2738（**51.1%**），分支 37.4% | 1279（23.9%），分支 17.7% | 2828（**52.8%**），分支 39.3% |
+| `util.script`（116 个类，9722 行） | 3424（35.2%），分支 25.9% | 2690（27.7%），分支 18.3% | 3491（35.9%），分支 26.6% |
+
+**读法（注意）：**
+- 旧用例本机 114/115 因像素差异失败，但脚本照样执行，**覆盖率统计的是"执行到了"，不是"断言通过"**；它说明脚本路径跑过，不说明验证过。
+- **合并后只比旧用例多 1.7 个百分点。** 我的 state 用例复用了旧用例的资产，所以跑到的代码大部分重合。结论：**D1/D2/D4 这类基于现有资产的用例，只能把"已跑到的代码"换成更可靠的断言，不会扩大覆盖面；扩大覆盖面只能靠新资产、新脚本**（§10 的来源 A/B/C）。
+- 现有资产合起来对 `report.script.viewsheet` 只覆盖约一半，对 `util.script`（脚本引擎和计算函数）只覆盖约三分之一；后者大部分是计算函数，已由产品单测覆盖，不计入本方案缺口。
+
+**合并后仍为 0 行的类（`report.script.viewsheet`，14 个）：**
+`SubmitVSAScriptable`、`ThermometerVSAScriptable`、`CylinderVSAScriptable`、`SlidingScaleVSAScriptable`、`VSEGraphScriptable`、`DBScriptable`、`PreparedStatementScriptable`、`CallableStatementScriptable`，以及内部类 `PViewsheetScriptable.AttributeScriptable`、`TableDataVSAScriptable.TableFormRowScriptable`、`VSAScriptable.TipDataCondition`、`VSAScriptable.TipDataConditionArray`。
+- `SubmitVSAScriptable`：zip 里有 9 个 Submit 组件，但没有任何用例引用，所以仍是 0。
+- `Thermometer/Cylinder/SlidingScale`：zip 里没有这些组件（与前面一致）。
+- `VSEGraphScriptable`、`DB/PreparedStatement/CallableStatement`：数据库脚本接口，现有用例没碰。
+
+**合并后覆盖最低的类（行数 ≥ 40）：** `ScalarCoercion` 1/59、`VSPropertyDescriptor` 13/46、`ViewsheetVSAScriptable` 40/124、`TabVSAScriptable` 35/79、`ImageVSAScriptable` 35/64、`TableDataVSAScriptable` 310/564、`TextVSAScriptable` 42/75、`ChartVSAScriptable` 200/357。
+- `ScalarCoercion` 几乎没跑到（2%）：它和脚本值类型转换有关，是值得先看的类。
+- `ViewsheetVSAScriptable`（vs 级脚本对象，如 `thisViewsheet`、`onInit`）32%，与评估文档"vs 级函数零命中"一致。
+
+**对方案的影响：**
+1. 优先级调整：**新资产和新脚本比"把旧用例改成状态断言"更能提升覆盖**。D4（改写旧用例）降到"提高断言可靠性"，不再算覆盖面工作。
+2. 14 个 0 覆盖类是最直接的补充目标，其中前 4 个组件脚本类（Submit、Thermometer、Cylinder、SlidingScale）对应 §10 的来源 C。
+3. 之后每批补充都用同样的方法量一次，记录增量，不再用文本命中统计。
+4. 局限：只统计 `inetsoft.report.script.*` 和 `inetsoft.util.script.*`；行覆盖不等于逻辑覆盖；产品 jar 版本与源码若不一致，行号会偏。
 
 ## 附：原型代码
 
