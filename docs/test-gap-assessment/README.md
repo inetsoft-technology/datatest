@@ -17,8 +17,8 @@
 
 | 模块 | 文件 | 状态 |
 |---|---|---|
-| vscalc（`vsothers`，`-Pvscalc`） | [vscalc.md](vscalc.md) | 已评估；G1 已完成（PR #203）；疑似缺陷已报（[#80950](https://issues.inetsoft.com/issues/80950)–[#80952](https://issues.inetsoft.com/issues/80952)），待确认语义见 [#80953](https://issues.inetsoft.com/issues/80953) |
-| vspara（`vsothers`，`-Pvspara`） | [vspara.md](vspara.md) | 已评估，待评审 |
+| vscalc（`vsothers`，`-Pvscalc`） | [vscalc.md](vscalc.md)、[vscalc-java-unit-tests.md](vscalc-java-unit-tests.md) | 已评估；G1 已完成（PR #203）；G4 单测已合入 `main`，G3/G5 等在产品 PR #8000/#8052（144 行矩阵，新开 #81202–#81215）；#80950–#80952 已修；待确认语义见 [#80953](https://issues.inetsoft.com/issues/80953) |
+| vspara（`vsothers`，`-Pvspara`） | [vspara.md](vspara.md)、[vspara-java-unit-tests.md](vspara-java-unit-tests.md) | 已评估；G1、G2（Binding）已完成；产品单测 14 个类 425 个用例，新开 #81106–#81119，疑点 1/2/3/7 已修（#7981）；待办见 vspara.md §7 |
 | vsfreehand（`vsothers`，`-Pvsfreehand`） | [vsfreehand.md](vsfreehand.md) | 已评估，待评审 |
 | vscrosstab、otherassembly（`vsothers` 其他 profile） | | 未开始 |
 | chart | | 未开始 |
