@@ -92,7 +92,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 方向判断：属性取值、函数返回值 → 单测；组件与脚本绑定的渲染 → dashboard；清单与基线脱节 → 改机制。
 
-> **后续（2026-11-13）：** 对"PNG 之外的验证方式"做了可行性方案和原型，见 `docs/test-gap-assessment/vsscript-upgrade-plan.md`。原型（状态断言、属性往返、全局函数、点击 + alert、PDF 导出文字，以及 Chart/Crosstab 各一组）共 20 个用例在本机全部通过；第二轮探路（脚本异常、EGraph、格式对象、属性自环、Excel）见方案文档 §10，关键发现是刷新路径会吞掉脚本异常，代码在 `vsscript/src/test/groovy/inetsoft/test/vsscript/state/`。G2/G4/G6/G7 的方向据此细化为该方案的 B、C、E、F、G。
+> **后续（2026-11-13）：** 对"PNG 之外的验证方式"做了方案与原型，见 `docs/test-gap-assessment/vsscript-upgrade-plan.md`。结论：datatest 只做单测做不到的（真实 vs 资产 + 运行时的脚本健康检查、异常契约、事件端到端、真实数据读回、导出一致性），属性取值与全局函数边界交给产品单测；关键发现是刷新路径会静默吞掉脚本异常。
 
 ## 4. Java 单测补充
 
