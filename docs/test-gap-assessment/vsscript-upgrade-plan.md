@@ -141,7 +141,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 ## 10. 资产里的脚本不够时怎么办
 
-**事实（2026-11-13，数 zip）：** `vsscriptStorage.zip` 里 147 个文件、139 个 vs，只有 **200 个 `<script>` 节点**；没有 Thermometer、Cylinder、SlidingScale 组件（ComboBox 12 个、Submit 9 个有）。所以 D1（批量执行资产里的脚本）只是"体检"，不等于覆盖；资产没写到的脚本能力它发现不了。datatest 里原本也没有覆盖率工具。
+**事实（2026-11-13，数 zip）：** `vsscriptStorage.zip` 里 147 个文件、139 个 vs，只有 **200 个 `<script>` 节点**；ComboBox 12 个、Submit 9 个有（Thermometer、Cylinder、SlidingScale 已废弃、仅为向后兼容保留，不计入缺口）。所以 D1（批量执行资产里的脚本）只是"体检"，不等于覆盖；资产没写到的脚本能力它发现不了。datatest 里原本也没有覆盖率工具。
 
 **处理办法：先把"没覆盖"量准，再用三个与单测不同的来源补。**
 
@@ -150,7 +150,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 | 0 | **JaCoCo 量覆盖**：对 `inetsoft.report.script.viewsheet.*`、`inetsoft.util.script.*` 统计行/分支覆盖，得到"哪些代码没被跑到"的客观清单，替代文本命中统计 | 目标清单来自代码 | **已跑通，结果见 §11** |
 | A | **bug 驱动**：从 Redmine 近两年脚本类 bug 的描述里抽出真实脚本做回归（评估文档只按标题分类，没读过描述） | 真实 vs 触发过的问题 | 未做；很多 bug 可能只有现象没有脚本，需逐条判断 |
 | B | **生命周期矩阵**：属性（从代码枚举，按类型生成合法值）× 触发位置（组件脚本、`ONINIT`、`ONREFRESH`、`onClick`）× 观察点（刷新后保留、导出体现、书签往返、重复执行幂等），断言系统不变量，不断言 getter/setter | 测运行时行为，不测取值 | 未做；非标量属性难自动生成，只能覆盖标量约一半 |
-| C | **造资产**：补缺失的组件类型（改 XML 复制，或用 Java API 内存构造 `Viewsheet`） | 补输入，不补断言方式 | 未验证内存构造的 vs 能否打开成 `RuntimeViewsheet` |
+| C | **造资产**：只在现有资产无法触发某个 0 覆盖类时才需要（如 `VSEGraphScriptable`、数据库脚本类）；缺失的组件类型已不需要（Thermometer/Cylinder/SlidingScale 已废弃） | 补输入，不补断言方式 | 未验证内存构造的 vs 能否打开成 `RuntimeViewsheet` |
 
 **顺序：** 0 → D1+D2（定位成体检）→ A → B（在 0 量出的缺口上生成）→ C（只补缺的类型）。
 
@@ -171,9 +171,9 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 - 现有资产合起来对 `report.script.viewsheet` 只覆盖约一半，对 `util.script`（脚本引擎和计算函数）只覆盖约三分之一；后者大部分是计算函数，已由产品单测覆盖，不计入本方案缺口。
 
 **合并后仍为 0 行的类（`report.script.viewsheet`，14 个）：**
-`SubmitVSAScriptable`、`ThermometerVSAScriptable`、`CylinderVSAScriptable`、`SlidingScaleVSAScriptable`、`VSEGraphScriptable`、`DBScriptable`、`PreparedStatementScriptable`、`CallableStatementScriptable`，以及内部类 `PViewsheetScriptable.AttributeScriptable`、`TableDataVSAScriptable.TableFormRowScriptable`、`VSAScriptable.TipDataCondition`、`VSAScriptable.TipDataConditionArray`。
+`SubmitVSAScriptable`、`VSEGraphScriptable`、`DBScriptable`、`PreparedStatementScriptable`、`CallableStatementScriptable`，以及内部类 `PViewsheetScriptable.AttributeScriptable`、`TableDataVSAScriptable.TableFormRowScriptable`、`VSAScriptable.TipDataCondition`、`VSAScriptable.TipDataConditionArray`。
 - `SubmitVSAScriptable`：zip 里有 9 个 Submit 组件，但没有任何用例引用，所以仍是 0。
-- `Thermometer/Cylinder/SlidingScale`：zip 里没有这些组件（与前面一致）。
+- `ThermometerVSAScriptable`、`CylinderVSAScriptable`、`SlidingScaleVSAScriptable` 也是 0，但这三个组件已废弃（仅为向后兼容保留），**忽略，不计入缺口**；下面的"14 个"实际有效目标是 11 个。
 - `VSEGraphScriptable`、`DB/PreparedStatement/CallableStatement`：数据库脚本接口，现有用例没碰。
 
 **合并后覆盖最低的类（行数 ≥ 40）：** `ScalarCoercion` 1/59、`VSPropertyDescriptor` 13/46、`ViewsheetVSAScriptable` 40/124、`TabVSAScriptable` 35/79、`ImageVSAScriptable` 35/64、`TableDataVSAScriptable` 310/564、`TextVSAScriptable` 42/75、`ChartVSAScriptable` 200/357。
@@ -182,7 +182,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 **对方案的影响：**
 1. 优先级调整：**新资产和新脚本比"把旧用例改成状态断言"更能提升覆盖**。D4（改写旧用例）降到"提高断言可靠性"，不再算覆盖面工作。
-2. 14 个 0 覆盖类是最直接的补充目标，其中前 4 个组件脚本类（Submit、Thermometer、Cylinder、SlidingScale）对应 §10 的来源 C。
+2. 有效的 0 覆盖目标是 11 个（去掉 3 个废弃组件）。组件脚本类只剩 `SubmitVSAScriptable`，zip 里已有 Submit 资产，只缺用例，不需要造资产；`VSEGraphScriptable` 和三个数据库脚本类才需要新脚本或新资产（§10 来源 C 的范围随之缩小）。
 3. 之后每批补充都用同样的方法量一次，记录增量，不再用文本命中统计。
 4. 局限：只统计 `inetsoft.report.script.*` 和 `inetsoft.util.script.*`；行覆盖不等于逻辑覆盖；产品 jar 版本与源码若不一致，行号会偏。
 
