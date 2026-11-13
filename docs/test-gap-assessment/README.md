@@ -24,4 +24,5 @@
 | chart | | 未开始 |
 | vsexport | | 未开始 |
 | ws | [ws.md](ws.md) | 已评估；G1、G2、G3（假通过）、G10 已完成（[#213](https://github.com/inetsoft-technology/datatest/pull/213)）；功能面差集、已知 bug 对照已补，待评审 |
-| olap、tabular、vpm、vsscript、css、mv | | 未开始 |
+| vsscript | [vsscript.md](vsscript.md) | 已评估，待评审；G1（比对清单与陈旧基线）可直接修 |
+| olap、tabular、vpm、css、mv | | 未开始 |
