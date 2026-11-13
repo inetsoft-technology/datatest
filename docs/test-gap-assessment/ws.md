@@ -11,7 +11,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
-- 产品单测：lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件（含六个相对条件）、数值分段与命名分组、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则都已有测试：28 个类、670 个测试（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并 340 个，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 待合并 330 个），见 4b-A。写测试发现的缺陷 14 个：8 个已在 `main` 修复（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105），6 个待处理（#81178、#81193、#81220、#81229、#81235、#81236；#81193 是 #81102 修复带来的回归），见 7b。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与交叉表、MV（已读代码，不加单测，见 4b-I）、其他零覆盖项（见 4b-H）。
+- 产品单测：lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件（含六个相对条件）、数值分段与命名分组、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则都已有测试：28 个类、670 个测试（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并 340 个，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并 330 个），见 4b-A。写测试发现的缺陷 14 个：8 个已在 `main` 修复（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105），6 个待处理（#81178、#81193、#81220、#81229、#81235、#81236；#81193 是 #81102 修复带来的回归），见 7b。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与交叉表、MV（已读代码，不加单测，见 4b-I）、其他零覆盖项（见 4b-H）。
 
 已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异、下推规则的单测（PR #8046、#8064）。接下来：`condition2` 两个基线（等 #81193）；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
@@ -238,9 +238,9 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `NumericRangeRef`、命名分组 `NamedRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5）、`NamedRangeRefGroupsTest`（12） |
 | 各库方言类 | 生成层已做：`DateRangeRefDialectTest`（38）、`AggregateFormulaStatSqlTest`（41）、`SQLHelperOperationSupportTest`（13）；只有 Derby 真正执行 |
 | MV 对 rotate/unpivot 的处理 | 已读代码，不加单测（见 4b-I） |
-| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个待合并），3 个 `@Disabled`（#80538、#81235、#81236） |
+| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个已合并），3 个 `@Disabled`（#80538、#81235、#81236） |
 
-### 4b. 已补的单测、发现与未覆盖（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 待合并）
+### 4b. 已补的单测、发现与未覆盖（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并）
 
 按主题写：测试类清单与验证（A）、搭建方式（B）、与 13.8 的差异（C）、缺陷（D）、从代码读出的规则（E）、固定现状的行为（F）、上传服务与 `CSVInfo`（G）、没有覆盖的（H）、MV 对 rotate/unpivot 的处理（I）、在带修复的产品上重跑 datatest（J）。
 
@@ -306,7 +306,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 **D. 写测试发现的缺陷**（清单与状态见 7b，这里只写要点）
 
-- **已修（`main`，Redmine Resolved，指给 Nelson Cao，版本 stylebi-2.1.0）：** #81087（cross join 行序竞态，datatest 发现）、#81091、#81092、#81093（见 C）、#81095（统计公式：只有一列为 NULL 时协方差/相关系数算错）、#81096（单行相关系数除零）、#81102、#81105。
+- **已修（`main`，Redmine Closed，指给 Nelson Cao，版本 stylebi-2.1.0）：** #81087（cross join 行序竞态，datatest 发现）、#81091、#81092、#81093（见 C）、#81095（统计公式：只有一列为 NULL 时协方差/相关系数算错）、#81096（单行相关系数除零）、#81102、#81105。
   - **#81102**（Redmine 里没有同类 bug）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据（`A, A, B` 得到 `item, A, B`；只差大小写的 `A, a` 得到 `item, a_1`，`A` 列不见了）。根因：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute`，同名列被跳过，`fixAlias` 看不到。
   - **#81105**：数值分段脚本表达式的"最大值以上"分支没有 `!= null` 判断，`LOWER` 下最后一个分界值 <= 0 时 `null >= 0` 在 JS 里为真，空值进入最后一段，SQL 版本进入 Others。
 - **待处理：**
@@ -455,7 +455,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 | bug id | 根因类别 | 当前是否被覆盖（datatest） |
 |---|---|---|
-| [#81047](https://issues.inetsoft.com/issues/81047)（New） | 表达式列：脚本函数名（`year`、`dateAdd`、`month`）与同表列名冲突，表悄悄只显示 1 行样例数据 | 否（静态）：脚本表达式里有 `year(` 4 处、`dateAdd(` 9 处、`month(` 1 处，但没找到与同表同名列的组合；`range&formula` 里同名的 `year`、`dateadd` 是 SQL 表达式列，不是同一触发条件 |
+| [#81047](https://issues.inetsoft.com/issues/81047)（Closed，已修，PR [#8051](https://github.com/inetsoft-technology/stylebi/pull/8051) 已合并，版本 stylebi-2.1.0） | 表达式列：脚本函数名（`year`、`dateAdd`、`month`）与同表列名冲突，表悄悄只显示 1 行样例数据 | 否（静态）：脚本表达式里有 `year(` 4 处、`dateAdd(` 9 处、`month(` 1 处，但没找到与同表同名列的组合；`range&formula` 里同名的 `year`、`dateadd` 是 SQL 表达式列，不是同一触发条件 |
 | #79997（Resolved） | 表达式列：脚本里与自己的列同名的顶层变量 | 未验证：有 8 处 `var x =`，是否与列同名未核对 |
 | #77999 | 表达式列：`new Date(field['…'])` | 否：`new Date(` 有 2 处，没有 `new Date(field[` |
 | #73000 | 表达式列：脚本引用另一个数据块 | 否：按 `data[`、`tables[`、`ws.` 搜，0 处（只搜了这几种写法） |
@@ -506,14 +506,14 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 | bug id | 问题 | 状态 | 测试 | datatest |
 |---|---|---|---|---|
-| #81087 | `CrossJoinTableLens` 的行序取决于哪边先加载完，被行数上限截断的 cross join 每次保留的行不同 | Resolved（`main`） | 修复自带 `CrossJoinTableLensRowOrderTest` | `property_crossJoin.maxCellCount`：行序已确定，已给 `Customer1` 加排序、`Query1` 基线已更新，单独运行和跟在其他 spec 之后运行均通过 |
-| #81091 | 连接列检查不阻止 hash、merge join 引擎（13.8 #80297） | Resolved | `JoinLensesTest` | 无 |
-| #81092 | `join.table.maxrows` 把表头行算进上限（13.8 #80298） | Resolved | `JoinLensesTest` | 无 |
-| #81093 | `TextComparer.isAsciiOnly` 把所有基本平面非 ASCII 字符当 ASCII，中文不按拼音排序 | Resolved | `SortSummaryFilterTest` | 无 |
-| #81095 | 无原生函数的库里，协方差、相关系数在只有一列为 NULL 时算错 | Resolved | `AggregateFormulaStatSqlTest` | 无 |
-| #81096 | 单行相关系数除零 | Resolved | `AggregateFormulaStatSqlTest` | 无 |
-| #81102 | 旋转表第一列有重名值时丢列丢数据 | Resolved | `RotatedQueryTest` | `rotate`、`grouping1`、`condition1` 的基线已更新；`condition2` 两个待定（见 #81193） |
-| #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Resolved | `NumericRangeRefBoundaryTest` | 无 |
+| #81087 | `CrossJoinTableLens` 的行序取决于哪边先加载完，被行数上限截断的 cross join 每次保留的行不同 | Closed（`main`） | 修复自带 `CrossJoinTableLensRowOrderTest` | `property_crossJoin.maxCellCount`：行序已确定，已给 `Customer1` 加排序、`Query1` 基线已更新，单独运行和跟在其他 spec 之后运行均通过 |
+| #81091 | 连接列检查不阻止 hash、merge join 引擎（13.8 #80297） | Closed | `JoinLensesTest` | 无 |
+| #81092 | `join.table.maxrows` 把表头行算进上限（13.8 #80298） | Closed | `JoinLensesTest` | 无 |
+| #81093 | `TextComparer.isAsciiOnly` 把所有基本平面非 ASCII 字符当 ASCII，中文不按拼音排序 | Closed | `SortSummaryFilterTest` | 无 |
+| #81095 | 无原生函数的库里，协方差、相关系数在只有一列为 NULL 时算错 | Closed | `AggregateFormulaStatSqlTest` | 无 |
+| #81096 | 单行相关系数除零 | Closed | `AggregateFormulaStatSqlTest` | 无 |
+| #81102 | 旋转表第一列有重名值时丢列丢数据 | Closed | `RotatedQueryTest` | `rotate`、`grouping1`、`condition1` 的基线已更新；`condition2` 两个待定（见 #81193） |
+| #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Closed | `NumericRangeRefBoundaryTest` | 无 |
 | #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | New | `DateConditionBuiltinTest` 固定现状 | 无 |
 | #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | New | 暂无（探针验证过，未写进单测） | `condition2/Query1`、`Query3` 的基线不更新，等开发 |
 | #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（PR #8064） | 无 |
