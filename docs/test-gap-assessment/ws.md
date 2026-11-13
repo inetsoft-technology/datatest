@@ -13,7 +13,7 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
 - 产品单测：lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件（含六个相对条件）、数值分段与命名分组、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则都已有测试：28 个类、670 个测试（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并 340 个，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 待合并 330 个），见 4b-A。写测试发现的缺陷 14 个：8 个已在 `main` 修复（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105），6 个待处理（#81178、#81193、#81220、#81229、#81235、#81236；#81193 是 #81102 修复带来的回归），见 7b。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与交叉表、MV（已读代码，不加单测，见 4b-I）、其他零覆盖项（见 4b-H）。
 
-已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异、下推规则的单测（PR #8046、#8064）。接下来：`property_crossJoin.maxCellCount` 的基线（行序已确定，基线待更新）和 `condition2` 两个基线（等 #81193）；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
+已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异、下推规则的单测（PR #8046、#8064）。接下来：`condition2` 两个基线（等 #81193）；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
 ## 2. 覆盖情况
 
@@ -393,7 +393,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 **J. 在带修复的产品上重跑 datatest**（本机）
 
 本机的 `inetsoft-core-2.1.0-SNAPSHOT` 与含 #81087 修复的 `main` 一致。
-- **`property_crossJoin.maxCellCount`：** 行序已确定，竞态消除（多次运行输出相同）。输出是 5000 个不同的 id，既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行时的另一种，所以用例仍失败：**基线是按旧的竞态结果之一记录的，需要更新**。新输出只验证了一部分：`TestData` 列与 `TestData` 的行依次一致，其余 7 列在 5000 行里是常量；但 `Customer1` 是没有排序的绑定表，第 1 行客户取决于数据库返回顺序（新输出 NJ，旧基线 AZ），写进基线固定的可能是数据库行序。**待定：给 `Customer1` 加排序，或只比对 `TestData` 列。**
+- **`property_crossJoin.maxCellCount`：** 行序已确定，竞态消除（多次运行输出相同）。输出是 5000 个不同的 id，既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行时的另一种，所以原来的基线按旧的竞态结果之一记录，用例会失败。**已处理：** 给 `Customer1` 加了排序（`Customer.State`、`Customer.Reseller` 升序；它有重复的 `(State, Reseller)` 行，内容相同，同时排两列后顺序不再影响结果），`Query1` 的基线更新为新输出（5000 个 id，id 列与 `TestData` 逐行一致，State、Reseller 每行都是 AZ、0）；`TestData`、`Customer1`、`All Sales1` 的基线本来就和新输出一致。单独运行、以及在同一 JVM 里跟在 `WSOthers_Spec` 之后运行，用例都通过（本机 Windows；CI 未确认，其他 spec 组合没试）。剩余风险：`All Sales1` 的 SQL 没有 ORDER BY，`Query1` 里 Employee、Order Number 等列取它的第一行（Annie, 12002），同样依赖数据库行序，目前几次运行都稳定，未处理。
 - **`WSData_Spec` 另有 4 个用例失败（`rotate`、`grouping1`、`condition1`、`condition2`）**，原因是 #81102 的修复：旋转表以前把第一列重名的列丢掉，基线固定了这个错误输出。这说明严格模式后的 datatest 能发现产品修复带来的结果变化（也说明这几个基线固定了缺陷）。决定：基线更新和本文档放同一个 PR，更新前先确认新输出正确。5 个基线的处理：
   - **`rotate/Query4`、`condition1/Query7`、`grouping1/Query1`：已核对，基线已更新**，对应用例通过。核对对照来源数据：`rotate/Query4` 20 个产品各出现一次，列头底名是产品的类别，重名后缀按产品号升序；`Query7`、`Query1` 新增的列正好是以前被丢弃的重名列，后缀编号完整，旧基线的列都不变。列序规则：各名字第一次出现的列在前（按源表顺序），重名列在后（也按源表顺序）；列只从源表前面的行生成。
   - **`condition2/Query1`、`Query3`：基线不更新，等开发。** `Query3` 是 `PRODUCTS1`（2380 行）的旋转表，保存的列名是 1～20 的类别，按 `11` 分组、对 `2` 求和；修复后每行一列并受列数上限截断，类别 `11` 第一次出现在第 1340 行，落在上限之外，分组列消失，结果从 3×2 变成 2×1。#81102 的修复让"保存的旋转表依赖重名列被丢弃"的 worksheet 悄悄改变了含义，**已报 #81193**（回归，指给 Nelson Cao；三个方向：被截断时先保留各名字第一次出现的列、加列上限提示、保留保存的选择里仍存在的名字）。`Query1` 同样被列数上限截断，新输出前面的列没有独立验证。
@@ -506,7 +506,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 | bug id | 问题 | 状态 | 测试 | datatest |
 |---|---|---|---|---|
-| #81087 | `CrossJoinTableLens` 的行序取决于哪边先加载完，被行数上限截断的 cross join 每次保留的行不同 | Resolved（`main`） | 修复自带 `CrossJoinTableLensRowOrderTest` | `property_crossJoin.maxCellCount`：行序已确定，基线待更新（`Customer1` 无排序、依赖数据库行序，待决定） |
+| #81087 | `CrossJoinTableLens` 的行序取决于哪边先加载完，被行数上限截断的 cross join 每次保留的行不同 | Resolved（`main`） | 修复自带 `CrossJoinTableLensRowOrderTest` | `property_crossJoin.maxCellCount`：行序已确定，已给 `Customer1` 加排序、`Query1` 基线已更新，单独运行和跟在其他 spec 之后运行均通过 |
 | #81091 | 连接列检查不阻止 hash、merge join 引擎（13.8 #80297） | Resolved | `JoinLensesTest` | 无 |
 | #81092 | `join.table.maxrows` 把表头行算进上限（13.8 #80298） | Resolved | `JoinLensesTest` | 无 |
 | #81093 | `TextComparer.isAsciiOnly` 把所有基本平面非 ASCII 字符当 ASCII，中文不按拼音排序 | Resolved | `SortSummaryFilterTest` | 无 |
