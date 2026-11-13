@@ -225,33 +225,74 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 - 静态推断：孤儿 viewsheet 的数量（195）、`NOT Transform` 没被引用（只搜了字面量 id）、关键词匹配的"名字级"数量；`getMVDefInfo` 在 `AssociationMV_Spec` 里是否因为关联 MV 本来就不能用命中断言（关联 MV 是单独的表）而是有意为之，没有核对。
 - 产品能力清单与分支来自代理读取源码，`file:line` 大部分用 `grep -n` 核对，带 `~` 的偏差 1 至 3 行；没有检查 Ignite、`SubMVTask` 内部、`MVBuilder` 分块规则。`SelectionUpTransformer` 的 `mv.outer.moveUp`、`mv.union.moveUp`、`mv.ignore.nestedSelection` 在代码里是驼峰，默认文件里是小写，`SreeEnv` 查找是否区分大小写没有核对。
 - 组件和选项扫描只读 XML 里存在的节点；`vs_backup_scan.py` 的 `inventory` 能直接读 `mvStorage.zip`，但它的计算字段几张表只适用于计算字段模块，本轮只用了它的 `load`、`load_bookmarks` 和 `inventory` 的组件计数；`crosscheck`、`strictcheck` 没有用（mv 的 spec 不是 `ViewsheetTest`）。XML 节点名（`viewsheetInfo`、`timeInfo`、`logScale`、`measureValue` 等）对照真实 XML 核对过，`rangeType` 各数字的含义没有核对。
+- §7 只看了近一年（2025-11-13 起）的 165 条 Bug，不含 spark mv，更早的 1547 条没看；分类按标题，抽样 81 条里约 88% 分对（按调整后的规则），各类的数量只能当大致数字；"提到编号"只搜了 mv 的 spec 和 `community/core`、`community/server`、`enterprise` 的 `src/test/java` 文件内容，没有读测试内容，测试里没写编号的 bug 看不出来；`redmine_fetch.py` 没有时间范围过滤，是取回后再按 `created_on` 过滤的。
 - 按 viewsheet 名字关键词做的统计容易误配：曾把 `unmerge-*`（不可合并公式的用例）当成 merge join 数到 33 个，已改正；表里带"名字级"的数字只表示名字里含这个词，没有核对内容；`rank|top` 这类词会匹配 `topmv` 目录，已不再使用。
 - 13.8 的对照主要读了测试方法名、类声明和 import，只读了个别用例的方法体，没有编译运行；分支是 `E:\style-intelligence` 的 `epic-test-coverage`（`6b0ba0e7f2`），该分支之外（别的 `coverage-*` 分支、13.8 主线上的测试）没有查；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是我改的，我没动。
 - **需要开发回答的问题：** WS MV 的语义（`isWsMVNotAllowed` 恒为 false 并注释 "currently disabled"，与 `ws.mv.enabled` 并存）；`mv.outer.moveUp` 对左右连接单侧条件的准确规则；`mv.compare=nomv/both` 是否应作为 CI 的默认（维护者的决定是 CI 只做 golden）；`RankingConditionTest` 整类 `@Disabled("Ignite causing problems")` 现在是否仍然需要。
 - **需要用户决定的事：** 是否把 `wsmv` 加进 `test-mv.yml`（G6）；关联 MV 的命中能否记录、要不要做（G1，PR #188 里没换）；#80458、#80446 现在去掉 `@Ignore` 的基线来源；12 个失败用例先在 CI 环境确认（G8）。
 
-## 7. 已知 bug 对照
+## 7. 已知 bug 对照（步骤 3b-D）
 
-**说明：** 2.1.0 的 MV 相关单，维护者另有逐张的分析（我没有把它放进本文）；本节是整个 Redmine 的标题粗分，用来看根因类别有没有空白，覆盖判断更粗。
+**样本与口径（先读这个）：**
 
-范围：Redmine "Product" 项目、跟踪类型 Bug、2025-11-13 至 2026-11-13 创建、标题含 MV 的约 150 条（子串过滤，另含少量噪声；没有 "MV" 分类，分散在 Query Engine、Other、Enterprise Manager、Security）。根因类别按标题归类，只对 11 条读了描述（81043、80570、80344、80313、79869、79854、79747、79403、78824、76626、75667），**是粗分**。"是否被覆盖"：datatest 列的是 spec 或注释里提到了该编号，产品单测列的是 `core/src/test/java/inetsoft/mv` 里的测试文件提到了该编号；**"提到编号"不等于断言了这个行为，没有逐个核对**。AI 插件、Wiz 工具类（约 20 条）不属于核心 MV 行为，不列。
+- **取数：** Redmine 的 `Product` 项目，按标题含关键词取（`subject ~`，所有状态），用 `redmine_fetch.py` 翻页取到服务端总数：`MV` 1599 条、`materializ` 190 条、`incremental` 57 条，取回的数量和服务端 `total_count` 一致；三份合并去重后 1766 条，其中 Bug 类 1712 条（2015 年至今）。这是候选池，不是"MV bug"的结论：标题含关键词不等于是 MV 的问题。
+- **范围：** 只看近一年，创建时间不早于 2025-11-13，共 **165 条 Bug**。不看 spark mv（产品已不支持，这一年里标题也没有出现 spark）。更早的 1547 条不在本节范围。
+- **过滤：** 先去掉 38 条噪声，剩 **127 条**：AI 插件和 Wiz 工具类 23 条（分类为 AI Plugin、AI Wiz）、EM 对话框和界面细节 6 条、标题里的 MV 不是这个功能的 9 条（存储升级、H2 文件名、日期格式化、页分隔等）。
+- **分类：** 按标题关键词分根因类别（`.claude/workflow-shared/datatest-gap/mv_bug_classify.py`，第一条命中的规则生效），**没有读全部描述**。**每类抽样 7 条（不足 7 条的取全部）读了描述核对，共 81 条：81 条都和 MV 有关，按调整后的规则有 71 条分在了正确的类里（约 88%），10 条分错了**：#73865（EM 里 MV 资产的选中状态，不是选择组件）、#79402、#79387（分到性能，实际是哈希表扩容的正确性问题、清理范围）、#76971（日期列写缓冲区溢出，根因是并行写）、#78331（脚本条件被超时中断）、#78340（WS MV 没被使用）、#73220、#79265（创建或调度时的异常）、#75659（交叉表数据变了）、#77901（取数错误被吞）。**抽样是在调整规则之前抽的**：评审后把日期规则收窄、给 VPM 规则加了 `site admin`，只影响抽样里的 #78059（改到 VPM）和 #79400（改到性能），这两条改后都分对了；调整后没有重新抽样。**各类的数量只能当大致数字。**
+- **覆盖对照：** "被提到"指 bug 编号出现在 `mv/src/test/groovy` 的 spec 里，或出现在产品仓库的测试里（`community/core`、`community/server`、`enterprise` 的 `src/test/java`）。**被提到不等于断言了这个行为**，没有读测试内容；测试里没写编号的 bug 看不出来。
 
-| bug id | 根因类别 | 当前是否被覆盖（datatest / 产品单测） |
-|---|---|---|
-| #79505、#79870、#79482、#79417、#80152（空值 / NOT 条件，MV 与实时结果不同） | MV 路径对 NULL、空值、NOT 条件的语义与实时路径不同（最大的一组，2.1.0） | #79505、#79482、#79417 datatest 提到（`@Issue` 或基线更新，提交 #196）；#79505、#79482、#79417、#79870、#80152 产品单测提到；#79870、#80152 datatest 没有提到 |
-| #79506、#79507、#80458、#80170、#79508（滑块、选择） | 范围滑块、选择列表在 MV 后取值顺序、边界、书签恢复不同 | #79506、#79507、#79508、#80170 datatest 提到；#80458 datatest 的用例被 `@Ignore`（已 Resolved，可重新启用）；#79507、#80458 产品单测提到；#80170（New）无验证用例的断言信息，未核对 |
-| #80445、#80446、#80457、#80342（其他结果错） | 多次 join 同一表的选择、分组 + maxRows、相关子查询、DB2 方差 | #80445、#80457、#80446 datatest 用例被 `@Ignore`（#80446 已 Resolved，另两个 New）；#80446 产品单测提到；#80342（DB2 一行方差为 0，New）datatest 没有提到 |
-| #79858、#79649、#76971、#77154、#79403、#80155（日期、类型） | 日期、时间戳、时区类型、数值饱和、BitDimIndex 最小键、变量默认值超范围 | datatest 没有提到；这六个产品单测均提到 |
-| #79854、#79869、#79747、#80570、#81043（增量更新和删除） | 增量路径与全量构建不等价 | #79747 datatest 提到；这五个产品单测均提到；#80313、#80344（New）产品单测里没有提到（datatest 见下一行） |
-| #80313、#80344（增量，未关闭） | 第二次无新行更新、`MV.<col>.Max` 追加条件后偶发越界 | #80344：`IncrementalDataChange_Spec` 的 `$(MV.customer_id.Max)` 用例部分覆盖（据维护者此前记录有过部分运行失败，本轮该 spec 16/16 通过）；#80313：datatest 没有（等修复后补）；产品单测都没有提到 |
-| #78053、#78339、#78340、#78331、#77666、#78390、#78452（WS MV） | WS MV 的使用、Tabular 来源、VPM 隐藏列和行条件、创建失败 | datatest 只有 `WSMV_Path_Spec` 一个用例，且不在 CI；命中与变量闸门由产品仓库的 `AssetQueryWorksheetMVTest` 覆盖（#78053、#78339、#78340；我只核对了该测试存在，没有逐个核对断言）；#78331、#77666、#78390 产品单测提到；#78452 的回归单测随修复提交（`MVDefWorksheetSerializationTest`） |
-| #75659、#77901（其他结果、创建失败） | 交叉表数据变化、创建时数据库错误被吞 | 都在 datatest 的 `@Issue` 里；#77901 产品单测在其他包 |
-| #79384、#79416、#79383、#79652、#76938、#78117、#81059、#81060、#81061（创建、更新失败） | 并行构建吞掉错误、创建死锁、公共 API 报告错误 | #79384 产品单测提到；其余未验证；公共 API 类（#81059 至 #81061，未关闭）不属于静态 datatest |
-| #79262、#79265、#78322、#78368、#79385、#77247、#78246（并发、集群） | 数据周期、集群互相删文件、共享 MVDef 并发 | 产品单测提到 #77247、#78246；其余未验证；集群超出静态 datatest |
-| #78390、#77666、#80096、#81297、#81309（VPM 与安全） | VPM 行条件和隐藏列、组织 id 变更后 MV 无数据、EM 权限 | #78390、#77666、#80096 产品单测提到；#81297、#81309（未关闭）未验证 |
-| #79408、#79402、#79404、#79400、#79413、#79387（性能与内存） | 哈希冲突、调整大小、扫描慢、过期清理节流 | #79408、#79400、#79387 产品单测提到；其余未验证 |
+| 根因类别（标题关键词归类） | bug 数 | 未关闭 | datatest 提到 | 产品单测提到 | 都没有 | 抽样核对 |
+|---|---|---|---|---|---|---|
+| 创建与更新失败（构建、cycle、后台任务） | 24 | 1 | 1 | 6 | 17 | 6/7 |
+| VPM、权限与跨租户 | 26 | 5 | 0 | 12 | 14 | 8/8 |
+| 并发、集群与文件 | 12 | 0 | 0 | 6 | 6 | 7/7 |
+| 使用 MV 时的异常（NPE、越界、报错） | 9 | 1 | 0 | 3 | 6 | 4/7 |
+| 增量更新与删除 | 9 | 2 | 1 | 6 | 3 | 7/7 |
+| 日期、类型与时区 | 6 | 3 | 1 | 6 | 0 | 4/5 |
+| 性能与内存 | 9 | 0 | 0 | 3 | 6 | 6/8 |
+| 滑块、选择与书签 | 7 | 3 | 5 | 3 | 2 | 6/7 |
+| 空值与 NOT 条件（MV 与实时结果不同） | 6 | 3 | 4 | 6 | 0 | 6/6 |
+| MV 没被使用或读不到数据 | 6 | 1 | 1 | 3 | 2 | 5/6 |
+| 公共 API（REST） | 5 | 3 | 0 | 1 | 4 | 5/5 |
+| 其他结果与 MV 不一致（分组、join、子查询、聚合） | 4 | 1 | 1 | 2 | 2 | 3/4 |
+| MV 代码缺陷（配置项、桩、从不调用） | 4 | 0 | 0 | 0 | 4 | 4/4 |
+| 合计 | 127 | 23 | 14 | 57 | 66 | 71/81 |
 
-未关闭的 MV bug（2026-11-13，标题含 MV）：#81297、#81061、#81060、#81059、#80457、#80445、#80344、#80342、#80313、#80170、#80096、#81309、#79508（Feedback）；已 Resolved 未关闭：#80458、#80446、#80155、#80152、#79870、#79858、#78452。
+**读法：**
+
+- **datatest 能碰到的是"结果和不用 MV 不一致"那几类**：空值与 NOT 条件、滑块与选择、增量更新、日期与类型、其他结果不一致，再加"MV 没被使用或读不到数据"（结果和实时不同），这六类共 38 条，datatest 提到了其中 13 条，产品单测提到 26 条，两边都没提到编号的有 9 条（增量 3、滑块 2、其他结果 2、没被使用 2）。
+- **datatest 本来就不该管的**：并发与文件、性能与内存、VPM 与跨租户、公共 API、代码缺陷、使用时的异常、创建与更新失败（后者里的集群和 cycle 放在 `test/cluster`），这七类共 89 条。66 条没被提到编号的 bug 里，9 条在上一类、57 条在这一类（9 + 57 = 66），后者可以由产品单测或集群用例覆盖，不属于 datatest 的缺口；它们是否真的有测试，看不出来。
+- 这一年的 bug 里，**根因最集中的是 MV 路径与实时路径在空值、NOT 条件、滑块取值上的语义不同**（上表的头几类），而 `others` 里 5 个本机失败的用例也落在这一带（见 §2），说明这类问题还在持续出现。
+
+**未关闭的 23 条**（状态不是 Closed、Rejected、Ignored，所以包含 Resolved；状态按 2026-11-13）。"dt/pr"表示被 datatest/产品单测提到，`--` 表示没有：
+
+| bug | 状态 | dt | pr | 类别 | 标题 |
+|---|---|---|---|---|---|
+| #79508 | Feedback | dt | pr | 日期、类型与时区 | postgres `time with time zone` 按小时分组，MV 与实时的分组不同 |
+| #80446 | Resolved | dt | pr | 空值与 NOT | 分组表设最大行数，MV 后空值组排在最前 |
+| #80458 | Resolved | dt | pr | 滑块与选择 | 时间/日期/时间戳组合范围滑块取值顺序不同 |
+| #80170 | New | dt | -- | 滑块与选择 | 书签恢复的组合范围滑块少选一个值 |
+| #80445 | New | dt | -- | 滑块与选择 | 同一表 join 两次，选择列表多出行 |
+| #80457 | New | dt | -- | 没被使用 | 带变量的关联子查询，提示不支持且没有数据 |
+| #79858 | Resolved | -- | pr | 日期、类型与时区 | 带时区时间戳改成 TimeInstant 后整列为空 |
+| #79870 | Resolved | -- | pr | 空值与 NOT | 数据库表"不等于"保留了空值行 |
+| #80152 | Resolved | -- | pr | 空值与 NOT | "不包含"变量条件多出行 |
+| #80155 | Resolved | -- | pr | 日期、类型与时区 | Long 变量默认值超过 int 范围不生效 |
+| #80096 | Resolved | -- | pr | VPM、权限与跨租户 | 修改组织 id 后组织的 MV 没有数据 |
+| #80313 | New | -- | -- | 增量更新与删除 | 增量更新没有新行的第二次更新后 viewer 打不开 |
+| #80344 | New | -- | -- | 增量更新与删除 | `MV.<列>.Max` 追加条件增量更新后越界（`IncrementalDataChange_Spec` 里有 `$(MV.customer_id.Max)` 用例，不是按编号找到的） |
+| #80342 | New | -- | -- | 其他结果不一致 | DB2 方差和标准差单行分组为 0 |
+| #73812 | Resolved | -- | -- | 使用 MV 时的异常 | 匿名用户 NP |
+| #78452 | Resolved | -- | -- | 创建与更新失败 | `ws.mv.enabled=true` 时建 WS MV 报错 |
+| #80856 | Resolved | -- | -- | VPM、权限与跨租户 | EM 仓库和 MV 接口的权限闸门 |
+| #81297 | New | -- | -- | VPM、权限与跨租户 | 只有 MATERIALIZATION ACCESS 的用户 |
+| #81309 | Resolved | -- | -- | VPM、权限与跨租户 | 克隆组织的 id 变更 |
+| #81331 | In Progress | -- | -- | VPM、权限与跨租户 | id 变更被拒绝后下一个 id |
+| #81059 | In Progress | -- | -- | 公共 API | 用户列表按空格拆分 |
+| #81060 | In Progress | -- | -- | 公共 API | 失败的分析任务被报告为完成 |
+| #81061 | In Progress | -- | -- | 公共 API | 更新不存在的 MV 带 cycle 时 NPE |
+
+其中 datatest 能验证、**两边都没提到编号**的未关闭 bug 是：#80313、#80344、#80342（见 G5 和 T9）。#80445（`composite3`）、#80457（`variable in subquery`）有被 `@Ignore` 的用例，#80170（`rangeslider-compositevalue`）有 `@PendingFeature` 的用例，也就是说用例在，等修复后启用。公共 API 类（#81059 至 #81061）、权限类和 id 变更类不属于静态 datatest。
 
 ## 8. 具体要做（按顺序，均未开始）
 
@@ -285,6 +326,14 @@ python .claude/workflow-shared/datatest-gap/ws_scan.py inventory mv/src/test/res
 
 # 13.8 对照：直接在 E:\style-intelligence（分支 epic-test-coverage）的 java/src/test/java 下按文件名、类名、import grep；
 #   StyleBI 是否有对应类：在 D:/stylebi/community/core/src/main/java 下找同名 .java
+
+# 已知 bug 对照（近一年，需要 REDMINE_URL、REDMINE_KEY 环境变量）
+#   python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject MV --out mv.json
+#   python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject materializ --out mat.json
+#   python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject incremental --out inc.json
+#   python .claude/workflow-shared/datatest-gap/mv_bug_classify.py mv.json mat.json inc.json --since 2025-11-13 \
+#       --datatest mv/src/test/groovy --product <stylebi>/community/core/src/test/java \
+#       --product <stylebi>/community/server/src/test/java --product <stylebi>/enterprise/src/test/java [--sample 7]
 
 # viewsheet 的组件和选项扫描，含书签状态（复用 vs_backup_scan.load 和 load_bookmarks）
 #   python .claude/workflow-shared/datatest-gap/mv_vs_scan.py
