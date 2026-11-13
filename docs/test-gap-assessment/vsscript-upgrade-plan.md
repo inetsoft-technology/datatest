@@ -82,9 +82,9 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本"。现状（来�
 
 **可覆盖：** `onClick`、`onSubmit`、`resetSubmitForms`、`confirmEvent` 的确认/取消两条分支、嵌套 vs 的 `onClick`（bug 79699）、`appendRow`/`saveWorksheet` 后的写回结果。
 
-**未验证（动手前必须先查）：**
-- 脚本异常是否也经 `MessageCommand`，还是只写日志。
-- click 事件在 `ActionEventsUtil` 里具体对应哪些方法。
+**当时未验证，现已查清（§8、§9、§10.1）：**
+- 脚本异常：点击路径会抛给调用方；刷新路径被静默吞掉，不经 `MessageCommand`，测试环境日志也不可见。
+- click 入口：`ActionEventsUtil` 没有 click 封装，直接调用 `OnClickService.onClick`（手动构造，见 §9.3）。
 
 ### G. 导出结构化断言
 - **Excel/CSV：** POI 或直接读 CSV，断言单元格值、格式、合并区域、隐藏行列。
