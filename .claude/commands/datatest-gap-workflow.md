@@ -17,6 +17,7 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 **3b、3c（深挖、防错）在两个模块上跑过：**
 - **vsfreehand：** A（功能面差集）、C（分支清单）、D（已知 bug 反推）实际做了；B（运行时探测）没有重跑，直接引用了已有的探测结果（`docs/test-gap-assessment/vsfreehand-g2-convert-probe.md`），所以 B 作为流程步骤没被独立验证；E（输出形态矩阵）没做；3c 的三条是那次复查里出过的错。
 - **ws：** A、D 和 3c 的三条都做了。A 用 `ws_scan.py capability`（产品清单写死在脚本里，产品变了要重读源码）；3c 的"读用户设置节点"用 `ws_scan.py flagcheck` 交叉核对；D 只取了 Redmine 分类 "Worksheet Execution" 最近一年的 118 条，根因类别是按标题粗分的，没有逐条读描述。ws 不是典型的生成型，只有"查询下推到 SQL 还是退回内存"这一个判断点符合，所以只对它做了 C（分支清单），B、E 没做。ws 上核对时发现过两处错（一处靠交叉核对，一处靠对照产品源码的类声明）：把接口当成可实例化的类（`ScriptedTableAssembly`、`SQLExpressionRef`），以及只看表条件、漏掉命名分组和日期范围里的 date in。
+- **vsscript：** 评估做过（`docs/test-gap-assessment/vsscript.md`）。`vs_backup_scan.py` 不适用（用 `VSScriptTest.printVS`，不是 `ViewsheetTest`），改用 `<TOOLS>/vsscript_scan.py`（只在 vsscript 上运行；属性清单不含 Chart 的 EGraph 脚本对象）。本机跑 vsscript 会 114/115 个用例因 PNG 渲染差异失败，不能当通过依据。D 用 2000 条 `subject ~ script` 的 Redmine 记录分类，不是全量。
 - 其他模块上都没验证过。
 **脚本是照 vscalc 写的，换模块会不准，而且不准时不会报错**（适用范围见 `vs_backup_scan.py` 文件头的 Applicability 和 `<TOOLS>/README.md`）。用之前先确认适用，输出里的 "Not mapped"、"Not predicted" 必须写进结论的口径。
 
@@ -47,6 +48,9 @@ argument-hint: [模块名，如 "vscalc"；留空 = 询问选哪个模块]
 
 - **A. 功能面差集（所有模块）：** 先从产品源码枚举该特性的"能力清单"——脚本函数、选项串的取值、枚举值、配置项、转换的分支——再逐项对照资产与 spec 的使用次数，**零覆盖项逐个列出**（例见 `docs/test-gap-assessment/vsfreehand.md` 的功能面差集缺口）。清单必须来自产品源码并写 `file:line`，不是凭印象；资产里统计不到的写"未统计"。
 - **D. 已知 bug 反推（所有模块，有 Redmine 记录时）：** 把相关 bug 按**根因类别**归类，看哪一类没有对应的验证；每个 bug 只写 id、根因类别、当前是否被覆盖。 结果写进模板的"已知 bug 对照"一节（步骤 4）。
+  - **取数：** 优先用 `<TOOLS>/redmine_fetch.py`（账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读，翻页到 `total_count`，不经过对话）；环境变量没设就问用户，不自己去翻 MCP 配置里的凭据。没有环境变量时退而用 `mcp__redmine__getIssues` 翻页，每页结果会落到文件，用脚本汇总，不读原文，并写明"只取了前 N 条，不是全量"。`redmine_fetch.py` 尚未在真实服务器上运行过，首次运行核对 `total_count`。
+  - **分类：** `<TOOLS>/bug_classify.py` 是按标题关键词的粗分，规则写给 vsscript（脚本类 bug）；换模块要先改规则。每类抽样 7 条人工核对，写明相关比例，数字当上限；不读描述就不能写"根因是……"。
+  - **口径必写：** 样本条件（关键词/分类、状态、时间范围）、取到几条、总数、过滤掉几条。**不得把一次 100 条的搜索当成结论**（vsscript 第一版就是这样，被指出样本太少）。
 - **生成型模块的判断：** 特性的核心是"由 A 生成 B"（表转换、导出、模板展开、迁移升级）。是的话做 B、C、E，不是就跳过。
 - **B. 运行时探测（生成型）：** 跑一遍生成过程，把**输出**落下来再统计（单元格类型/公式/展开方式、行列数、关键属性），不要只统计输入资产。**运行探测是允许的**（"只读，不落实"指不改产品和不提交修复，不是不能运行）：探测代码默认放 scratchpad，附录里写复现命令；如果探测值得留在仓库（例：vsfreehand 的 `ConvertDataProbe`，非 `*Spec` 类，CI 不会选中），要先问用户，且它不属于本流程要产出的那一个文件。写进文件的是汇总结果，不是原始 dump；可参考 vsfreehand 的 G2 探测（转换前后逐组件比较，区分"允许差异"与"待确认差异"）。
 - **C. 分支清单（生成型）：** 对关键生成/转换方法列出 if/switch 分支（`file:line` + 一句话含义），逐个标注"哪个资产/用例会走到"：有、无、未验证。没有用例走到的分支就是缺口，写"会放过什么错误"。
