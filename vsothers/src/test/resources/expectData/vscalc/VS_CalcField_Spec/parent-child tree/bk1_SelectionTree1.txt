@@ -1,0 +1,14 @@
+value | state | measure
+2 | selected+compatible | 12
+   7 | none | 22
+   8 | none | 3
+1 | none | 11
+   5 | selected+compatible | 34
+   6 | none | 21
+3 | none | 2
+   9 | none | 15
+   10 | none | 67
+   11 | none | 14
+4 | none | 1
+   12 | none | 29
+   13 | none | 43

@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+STATE, Change from previous by row: Calc_agg2, Moving Average of 5 by row: Calc_agg2
+AZ, NULL, 607.6667
+CA, 783, 475.25
+CO, -1063, 428.2
+CT, -82, 374.2
+FL, 162, 542
+IL, -70, 687.6
+MA, 1892, 1080.8
+MD, -1174, 1148
+NJ, 1156, 1298.4
+NV, -1468, 1009.2
+NY, 346, 1206.8
+PA, -306, 1036
+TX, 1260, 1151
+WA, -686, 1227.3333

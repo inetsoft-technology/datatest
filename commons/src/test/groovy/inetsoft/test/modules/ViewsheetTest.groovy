@@ -24,6 +24,7 @@ import inetsoft.uql.viewsheet.ChartVSAssembly
 import inetsoft.uql.viewsheet.CurrentSelectionVSAssembly
 import inetsoft.uql.viewsheet.FileFormatInfo
 import inetsoft.uql.viewsheet.GroupContainerVSAssembly
+import inetsoft.uql.viewsheet.SelectionVSAssembly
 import inetsoft.uql.viewsheet.ShapeVSAssembly
 import inetsoft.uql.viewsheet.TabVSAssembly
 import inetsoft.uql.viewsheet.TableDataVSAssembly
@@ -150,11 +151,24 @@ class ViewsheetTest {
     * @return
     */
    def executeVS(Map<String, String[]> params, String[] bks) {
+      executeVS(params, bks, false)
+   }
+
+   /**
+    * execute vs
+    * @param params
+    * @param bks eg: ['Home', 'brush1', 'brush2', 'exclude1', 'zoom'] as String[]
+    * @param exportSelection also export the selection list / tree, range slider and calendar
+    *        assemblies as txt (see {@link ExportUtil#exportSelection}). Off by default: the
+    *        existing cases have no baselines for these files.
+    * @return
+    */
+   def executeVS(Map<String, String[]> params, String[] bks, boolean exportSelection) {
       if(bks == null) {
          bks = ['(Home)'] as String[]
       }
       bks.each {
-         executeVS0(params, it)
+         executeVS0(params, it, exportSelection)
       }
    }
 
@@ -165,6 +179,17 @@ class ViewsheetTest {
     * @return
     */
    def executeVS0(Map<String, String[]> params, String bk) {
+      executeVS0(params, bk, false)
+   }
+
+   /**
+    * execute vs
+    * @param params
+    * @param bk
+    * @param exportSelection also export the selection assemblies, see executeVS
+    * @return
+    */
+   def executeVS0(Map<String, String[]> params, String bk, boolean exportSelection) {
       initVS(params)
       RuntimeViewsheet rvs = viewsheetResource.getRuntimeViewsheet(principal)
       rvs.gotoBookmark(bk, principal.getUser().getUserIdentity(), principal)
@@ -209,6 +234,10 @@ class ViewsheetTest {
                data = sandbox.getVSTableLens(assemblyName, false)
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
+            }
+            else if(exportSelection && it instanceof SelectionVSAssembly) {
+               outFile = createExportFileByCase(assemblyName, bk, '.txt')
+               exportUtil.exportSelection(outFile.toString(), (SelectionVSAssembly) it)
             }
          }
          catch(Exception ex) {
