@@ -1,17 +1,16 @@
 # vscalc 测试缺口与补充方案
 
-> 日期：2026-11-09　模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
-> datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（`f12b07ca59`，2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。第 4 节的产品单测盘点已在 `main` 上复核。
-> 2026-11-10 更新：G1 已由 PR #203 落实（`ViewsheetTest` 默认严格）；第 4、6 节补充了疑似缺陷的运行结果和 Redmine 单号（产品源码 `origin/main` `2527280fa1`）。
+> 模块：`vsothers`，profile `-Pvscalc`，spec `VS_CalcField_Spec`
+> datatest 基线：`Stateless-Sessions1`（主分支）；产品源码：`main`（2.1.0-SNAPSHOT，与 datatest `pom.xml` 版本一致）。Java 单测结果见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)。
 
 ## 1. 结论
 
 vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型、明细型和聚合型两类计算字段、各种聚合函数，团队设计表里列的缺口基本都已落实。**问题不在"有没有用例"，而在"用例能不能发现错误"：**
 
 1. **验证机制会静默通过**：导出失败只打印堆栈、基线文件缺失不报错，而且 CI 失败也不会让流水线变红。
-2. **基线只是产品自己的输出**，只能发现回归，不能证明"算得对"。产品仓库里聚合型计算字段的求值只有 1 个值级单测，vscalc 在用的 5 个聚合函数没有专门单测。
+2. **基线只是产品自己的输出**，只能发现回归，不能证明"算得对"。产品仓库已补上：5 个聚合函数的单测已合入 `main`，聚合型/明细型计算字段求值、`CalculateRef`、公式工厂的单测在 PR #8000/#8052（144 行矩阵，353 个用例），并查出 10 个新缺陷（见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)）。
 
-G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。接下来给孤儿 vs `aggregate_trendcomparison` 补用例。再补产品仓库单测（9 组，共 99 个用例设计），最后补 dashboard 的薄弱场景。
+G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。dashboard 侧剩孤儿 vs `aggregate_trendcomparison`（G2）和薄弱场景（G7–G9）；Java 单测侧（G3–G6）剩等开发回答的语义（[#80953](https://issues.inetsoft.com/issues/80953)）。
 
 ## 2. 覆盖情况
 
@@ -56,10 +55,10 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 |---|---|---|---|---|
 | G1 | 导出失败、基线缺失不报错；一个组件失败后面的组件都不导出；CI 失败不挡合入 | 某个组件导出抛异常或少导出文件，用例仍然通过 | 机制：直接改 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进去（见下）。**已完成：PR #203** | 高 |
 | G2 | 孤儿 vs `aggregate_trendcomparison` | 趋势/比较类聚合的计算字段结果出错，无人发现 | dashboard：补用例 | 高 |
-| G3 | 聚合型计算字段求值只有 1 个值级单测，且表达式只是聚合名本身 | `Sum/Sum`、`Average*Average`、`Mode+10`、`if…else` 这类表达式算错 | 单测 | 高 |
-| G4 | Correlation、WeightedAverage、DistinctCount、Mode、NthMostFrequent 在 `report/filter` 无专门单测（已有的同名测试属于 MV 路径，不能替代） | 这些聚合函数实现改错，只有 vs 回归基线可能发现 | 单测 | 高 |
-| G5 | 明细型计算字段的值级语义没有系统测试 | 四则运算、除零、null、拼接、日期、参数替换出错 | 单测 + dashboard 代表用例 | 中 |
-| G6 | 基线只是产品自己的输出 | 已有的错误结果被固化为基线，永远不报错 | 单测的手算期望值；新基线抽样独立核对 | 中 |
+| G3 | 聚合型计算字段求值只有 1 个值级单测，且表达式只是聚合名本身 | `Sum/Sum`、`Average*Average`、`Mode+10`、`if…else` 这类表达式算错 | 单测。**已落实：PR #8000/#8052（未合入 `main`），查出 #81202、#81203、#81212** | 高 |
+| G4 | Correlation、WeightedAverage、DistinctCount、Mode、NthMostFrequent 在 `report/filter` 无专门单测（已有的同名测试属于 MV 路径，不能替代） | 这些聚合函数实现改错，只有 vs 回归基线可能发现 | 单测。**已完成：[stylebi#7995](https://github.com/inetsoft-technology/stylebi/pull/7995) 已合入 `main`** | 高 |
+| G5 | 明细型计算字段的值级语义没有系统测试 | 四则运算、除零、null、拼接、日期、参数替换出错 | 单测 + dashboard 代表用例。**单测已落实：PR #8000/#8052，查出 #81204、#81206、#81214 等；dashboard 代表用例未做** | 中 |
+| G6 | 基线只是产品自己的输出 | 已有的错误结果被固化为基线，永远不报错 | 单测的手算期望值（**已做**：144 行矩阵，预言来源以规格、手算为主）；新基线抽样独立核对（未做） | 中 |
 | G7 | 选择类、展示类组件自身内容只有 PNG | 选择列表里计算字段的取值列表出错，但在 PNG 容差内 | dashboard：扩展基类 | 中 |
 | G8 | 薄弱格子：聚合型 timeInstant/boolean、shape/text/size、condition 位置、Gauge/Text 类型、新图表类型 | 计算字段在这些位置取值或渲染出错 | dashboard：新建小 vs | 中 |
 | G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | dashboard：核对后补 | 低 |
@@ -92,7 +91,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 
 **上线：** 严格即默认，不加开关。基类提交后，各模块自己跑、自己处理变红的用例（产品 bug 报给开发，陈旧基线删除或用 `update.baseline` 重新生成并抽样核对）。
 
-**本机运行结果**（2026-11-10，PNG 像素差异因本机与 CI 渲染不同，不计入）：
+**严格基类的运行结果**（PNG 像素差异因渲染环境与 CI 不同，不计入）：
 
 - vscalc：22 个用例，数据比对全部通过，没有导出异常，没有未导出的基线文件；22 个失败全是 PNG 像素差异（文字抗锯齿/字体）。
 - vspara：查出 3 个用例。`Para_basequerysql` 导出异常 `Variable in VPM condition missing: Ppid`（`MySQL1` 的 VPM `VPMP1` 要求变量 `Ppid`，spec 未传），以前被吞掉、导出目录为空而假通过；`Para_query`、`nullVSTest2` 是静态预测过的 7 个陈旧基线文件。其余失败为 PNG 像素差异和 `VSExportTest` 的 HTML 比对（与本改动无关）。
@@ -105,89 +104,15 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 
 ## 4. Java 单测补充（产品仓库 `core`）
 
-运行时走 `report/filter` 版本公式，不走 `mv/formula`（`Util.createFormula`，`mv.formula` 只在物化视图改写时启用）。用例数是设计出来的数量，不是已写好的。
+**已基本落实**，详细结果见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)。
 
-**13.8 已有同类测试，先移植：** 13.8 产品线的汇总公式测试覆盖项目（Jakub Kidacki；Redmine 里标题前缀为 "[#RPT Summary Formulas]" 的一系列单，如 [#80540](https://issues.inetsoft.com/issues/80540)、[#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)、[#80738](https://issues.inetsoft.com/issues/80738)）在 `style-intelligence` 仓库的 [`epic-test-coverage`](https://github.com/inetsoft-technology/style-intelligence/tree/epic-test-coverage/java/src/test/java/inetsoft/test/feature/report) 分支上（核对时为 `5b682845`，2026-11-10），共 9 个测试类、约 120 个用例，按 `gap:report.summary-formulas.*` 编号，已证实的缺陷按正确行为写并加 `@Disabled`，注明单号（如 `@Disabled("Bug #80700: ...")`）。公式代码与 StyleBI 是同一份：`NthMostFrequent`、`Mode`、`DistinctCount`、`Correlation` 只差 import 和 `new Double`/`Double.valueOf`；`WeightedAverage` 多了 [#80540](https://issues.inetsoft.com/issues/80540) 的空字符串修复（StyleBI 尚未修，[#80584](https://issues.inetsoft.com/issues/80584)）；13.8 的 `report/filter` 下没有 `CalcFieldFormula`。所以 G4 的主体是把这些测试移植到 StyleBI `core`，移植后只有 `WeightedAverage` 空字符串用例会失败（对应 [#80584](https://issues.inetsoft.com/issues/80584)）。
-
-**期望值怎么写：** 待开发确认的语义统一放在 [#80953](https://issues.inetsoft.com/issues/80953)，答复前按现有行为写并标注"待确认"；已证实的缺陷，建议按正确行为写并 `@Disabled`、注明 bug 号（13.8 覆盖项目的做法，如 [#80700](https://issues.inetsoft.com/issues/80700)、[#80701](https://issues.inetsoft.com/issues/80701)）。
-
-| 被测类 | 补什么 | 用例数 | 难度 | 待开发确认 |
-|---|---|---|---|---|
-| `CalcFieldFormula` | 多聚合运算、条件分支、除零、null、字符串结果 | 14 | 中（需脚本环境） | 除零返回什么（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3c）；字符串结果 |
-| `WeightedAverageFormula` | 基本、null、权重和为 0、负权重 | 13 | 低（纯单元） | 权重和为 0 返回什么（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3b）；空字符串见 [#80540](https://issues.inetsoft.com/issues/80540)/[#80584](https://issues.inetsoft.com/issues/80584) |
-| `CorrelationFormula` | 已知值、方差为 0、一对数据、大偏移精度 | 11 | 低 | NaN 处理（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3a）；缺陷：大偏移精度 [#80950](https://issues.inetsoft.com/issues/80950)，`double[]` 下标 [#80700](https://issues.inetsoft.com/issues/80700)，空字符串 [#80701](https://issues.inetsoft.com/issues/80701)/[#80868](https://issues.inetsoft.com/issues/80868) |
-| `NthMostFrequentFormula` / `ModeFormula` | 频次、并列、n 越界、null | 15 | 低 | null 语义、并列规则（[#80953](https://issues.inetsoft.com/issues/80953) 问题 1、4）；缺陷：无参构造越界 [#80951](https://issues.inetsoft.com/issues/80951)（Low）；n 越界时忽略默认结果标志，[#80488](https://issues.inetsoft.com/issues/80488) 已拒（保持现状） |
-| `DistinctCountFormula` | 去重、null、空集、百分比 | 11 | 低 | 忽略 null 已确认（[#38229](https://issues.inetsoft.com/issues/38229)）；空集返回 0（[#80953](https://issues.inetsoft.com/issues/80953) 问题 2，可先按 0 写）；Integer/Double（问题 5）；缺陷：非 Integer 总数不算百分比 [#80952](https://issues.inetsoft.com/issues/80952)（Low） |
-| 明细型计算字段求值（`ExpressionRef`） | 算术、拼接、null、日期函数、参数、类型不一致 | 17 | 中（入口已确认，见下文 G5） | 多项；日期月末（[#80953](https://issues.inetsoft.com/issues/80953) 问题 6，`edate` 跨年不截月末） |
-| `CalculateRef` 序列化 | `baseOnDetail` 默认值与往返 | 7 | 低 | 无 |
-| 公式工厂一致性 | 26 个枚举值都能创建 `report/filter` 实例 | 3 | 低 | 无 |
-| 已有公式的通用边界 | 并列、负数、NaN、整数溢出 | 8 | 低 | NaN、溢出 |
-| **合计** | | **99** | | |
-
-**13.8 已覆盖与 StyleBI 需自补：**
-
-| 被测类 | 13.8 已覆盖（移植） | StyleBI 自己补 |
-|---|---|---|
-| `WeightedAverageFormula` | 基本、缺一半的数据对、权重和为 0、空字符串 | 负权重（13.8 只顺带测了一组） |
-| `CorrelationFormula` | 系数、方差为 0、一对数据、缺一半的数据对、`double[]`（[#80700](https://issues.inetsoft.com/issues/80700) 已 `@Disabled`）、空字符串（[#80701](https://issues.inetsoft.com/issues/80701)） | 大数值精度（[#80950](https://issues.inetsoft.com/issues/80950)） |
-| `NthMostFrequentFormula` / `ModeFormula` | 按频次、并列和 null、n<1 取 1、n 超出范围、空集 | 无参构造（[#80951](https://issues.inetsoft.com/issues/80951)） |
-| `DistinctCountFormula` | 去重、百分比、区分大小写和空字符串、reset、非 Integer 总数（按现有行为，见 [#80952](https://issues.inetsoft.com/issues/80952) 备注） | 空集、Integer 与 Double 混用 |
-| `CalcFieldFormula`、明细型计算字段、`CalculateRef` 序列化、公式工厂一致性 | 无 | 全部 |
-
-按优先级：先移植 13.8 的公式测试（G4）；再写 `CalcFieldFormula` 的表达式求值（G3，表里 14 个，期望值手算）和上表右列的补充；明细型求值（G5）入口已确认，见下文。
-
-**G3 具体补什么（`CalcFieldFormula` 表达式求值，14 个）：**
-
-被测的是聚合型计算字段（`baseOnDetail="false"`）在运行时的求值。`AssetQuery` / `AbstractCrosstabVSAQuery` 先找出表达式引用的聚合，每个聚合建一个子公式；每行数据按位置分给子公式（普通公式占 1 列，两列公式 Correlation、WeightedAverage、First、Last 占 2 列，`startPos` / `isformula2`）。取结果时，表达式里的聚合名先做文本替换（大写、非法字符换成 `_`，`generateRuntimeScript`），子公式结果放进作用域（null 换成占位值），再交给脚本引擎执行。
-
-现状：`origin/main` 的 `CalcFieldFormulaTest` 有 33 个用例，几乎都是构造校验、null 标记、reset、clone、百分比；真正校验求值结果的只有 1 个（`initializerlessLet...`，表达式只引用一个 `SUM`）。13.8 没有这个类。
-
-vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小数据、期望值手算：
-
-| 类别 | 内容（vscalc 里的例子） | 个数 |
-|---|---|---|
-| 多个聚合组合运算 | `Sum/Sum`（testQuery、testModel）、`Average*Average`、`Correlation+Correlation`、`Mode+Mode`；聚合加常数 `Mode+10`、`Sum*2` | 5 |
-| 条件分支 | `if (Count(Company) > 1500) {...} else {...}` 两个分支，结果是字符串且类型正确 | 2 |
-| 两列公式的列位置 | 普通公式与两列公式混用（如 `Sum(a) + WeightedAverage(b, c) + Count(d)`），各子公式取到自己的列；按真实路径 `Object[]` 输入（`double[]` 路径会撞上 [#80700](https://issues.inetsoft.com/issues/80700)） | 2 |
-| 聚合名映射 | 带特殊字符的名字（`orders:orderno`、`Month(Date)`）、大小写、同一聚合在表达式里出现两次、日期类型结果（`Max(Month(Date))`） | 2 |
-| null 和空分组 | 某个子公式结果为 null；空分组时有无默认结果标志 | 2 |
-| 除零 | `Sum(a)/Sum(b)`，Sum(b) 为 0；按现有行为写，标注待确认（[#80953](https://issues.inetsoft.com/issues/80953) 问题 3c） | 1 |
-
-其中"两列公式的列位置"和"聚合名映射"是 `CalcFieldFormula` 自己的逻辑，写错会悄悄算错或取错列，优先补。
-
-写法：加在现有 `CalcFieldFormulaTest` 里，复用它的环境（Spring 上下文 + `AssetQuerySandbox`，`box.getScriptEnv()` / `box.getScope()`）。表达式用运行时的真实形式，即 `field['Sum([price])']`，聚合名传 `"Sum([price])"`；现有测试直接写 `SUM` 的方式测不到名字替换。难度中，主要成本是启动 Spring 上下文。
-
-**G5 测试入口（明细型计算字段求值，17 个）：**
-
-运行时路径：`VSAQuery.appendCalcFields` 把 viewsheet 上 `baseOnDetail` 为 true 的计算字段（`CalculateRef` 包着 `ExpressionRef`）作为列加进绑定的 worksheet 表（聚合型走 G3 的 `CalcFieldFormula`）→ `AssetQuery.addExpression` 收集表达式列，引用了隐藏计算字段的会递归加入（如 `field['calc_quarter'] + field['CUSTOMER_ID']`）→ `PostProcessor.formula` 生成 `FormulaTableLens`，逐行执行脚本，再用 `Tool.getData` 转成声明类型（转换丢数据时保留原值）。捷径：所有表达式都是 `field['x']` 且类型与原列一致时，直接映射列（`ColumnMapFilter`），不执行脚本。`sql` 属性默认为 true，只在为 false 时才写进 XML（`ColumnRef.java:948`），所以没写 `sql` 的就是 SQL 表达式。vscalc 的 58 个明细型计算字段里，43 个是脚本表达式（`sql="false"`），15 个是 SQL 表达式（如 `field['customer_id']+10`、`concat(field['state'],'a')`、testDB2 的 `field['BaseFormula']*2`）。SQL 表达式在查询能合并时由数据库计算；不能合并时，同一段文本交给 `FormulaTableLens` 当脚本执行（`ExpressionRef.getScriptExpression`，有 `/*script ... script*/` 时取其中一段）。前一条路径为静态推断，未运行确认。
-
-现有测试几乎都在测并发、加锁、超时、swap（`FormulaTableLens*Lock/Stall/Swap/Timeout`、`VSAQueryCalcFieldConcurrencyTest` 等）；`FormulaTableLensTest` 的 5 个用例里只有 1 个是算术。13.8 也没有这一层的值语义测试。
-
-三层入口，产品里都有现成写法：
-
-| 层 | 入口 | 现成例子 | 适合测 | 成本 |
-|---|---|---|---|---|
-| L1 表达式列 | `new FormulaTableLens(DefaultTableLens, headers, formulas, new GraalJavaScriptEnv(), null)`，`setColType` 声明类型，`XTableUtil.assertEquals` 断言 | `FormulaTableLensTest` | 表达式语义：算术、拼接、null、日期函数、类型转换 | 低 |
-| L2 worksheet 端到端 | `EmbeddedTableAssembly` 加表达式列，`new AssetQuerySandbox(ws).getTableLens(name, RUNTIME)` | `WorksheetFormulaVarEndToEndTest` 的 `ws()` / `box()` | `addExpression`：计算字段互相引用、`field['x']` 捷径两个分支、`parameter.X` | 中 |
-| L3 viewsheet | `ViewsheetSandbox` + viewsheet 计算字段 | 同一测试类的 `vsTable()`（反射把 ws 接到 vs） | `appendCalcFields`：明细型/聚合型分流、同名列先删再加 | 较高 |
-
-用例分配（例子取自 vscalc 实际表达式，期望值手算）：
-
-| 类别 | vscalc 例子 | 层 | 个数 |
-|---|---|---|---|
-| 算术，含除零、一侧为 null | `price/customer_id`、`CUSTOMER_ID*REGION_ID`、`TotalPurchased-TotalReturned`、`customer_id+10` | L1 | 4 |
-| 字符串拼接，含 null 参与拼接 | `field['State']+"_"+field['City']`、`concat(field['customers:state'],'a')` | L1 | 3 |
-| 日期函数 | `CALC.quarter/year/day`、`dateAdd('m',5,...)`、`dateAdd('d',4,...)`、`CALC.edate(...,2)` | L1 | 4 |
-| 声明类型与结果类型不一致 | 声明 integer 得 double（`CALC.quarter(...)*2`）、timeInstant、boolean、转换丢数据时保留原值 | L1 | 3 |
-| 参数 | `field['city'] + '   ' + parameter.CheckBox1[0]`、`field['customer_id']+parameter.RadioButton1` | L2 | 1 |
-| 计算字段互相引用、`field['x']` 捷径两个分支 | `field['calc_quarter'] + field['CUSTOMER_ID']`；36 个纯 `field['x']` 字段 | L2 | 2 |
-
-另可在 L3 补 1～2 个（明细型加到绑定表、聚合型不加），不计入 17 个。
-
-注意：
-- `CALC.edate(field['orderdate'], 2)` 是 vscalc 在用的表达式，会碰上 [#80953](https://issues.inetsoft.com/issues/80953) 问题 6 的跨年顺延（12-31 加 2 个月得 03-03），先按现有行为写并标注。
-- 明细型的除零、null 参与运算是 JavaScript 行为（`x/0` 得 Infinity，`null + "_"` 得 `"null_"`，`null * 2` 得 0），以及 `Tool.getData` 对 Infinity 的转换，不在 [#80953](https://issues.inetsoft.com/issues/80953) 里（那里问的是聚合型除零）；先按现有行为写，是否补问待定。这只适用于脚本执行的路径。
-- 15 个 SQL 表达式的计算字段：L1（`FormulaTableLens`）只能测到不合并时的脚本路径；合并后由数据库计算，要在 L2 用真实数据源测，而且同一表达式在两条路径上的结果可能不同（除零、null 拼接、整数除法），这类差异只能靠 L2 或 datatest 发现。
+- **G4**（Correlation、WeightedAverage、DistinctCount、Mode、NthMostFrequent）：已合入 `main`（[stylebi#7995](https://github.com/inetsoft-technology/stylebi/pull/7995)，从 13.8 `epic-test-coverage` 移植）。
+- **G3、G5、`CalculateRef`、公式工厂、通用边界**：在 [stylebi#8000](https://github.com/inetsoft-technology/stylebi/pull/8000)（CI 通过，未合入 `main`），加固在 [stylebi#8052](https://github.com/inetsoft-technology/stylebi/pull/8052)。
+- 结果：矩阵 144 行，通过 113、不一致 20、没写 10；13 个测试类 353 个用例，0 失败、19 个跳过（`@Disabled` 的不一致用例）；变异检查全部抓到（38 + 5）。
+- 开出 10 个 Redmine bug（[#81202](https://issues.inetsoft.com/issues/81202)–[#81206](https://issues.inetsoft.com/issues/81206)、[#81211](https://issues.inetsoft.com/issues/81211)–[#81215](https://issues.inetsoft.com/issues/81215)），关联 [#81200](https://issues.inetsoft.com/issues/81200)、[#81197](https://issues.inetsoft.com/issues/81197)；[#81207](https://issues.inetsoft.com/issues/81207) 判为非缺陷。
+- 本文原先设计的 99 个用例、G3/G5 的测试入口分析（`CalcFieldFormula` 的聚合名映射与列位置；明细型的 L1 表达式列 / L2 worksheet / L3 viewsheet 三层入口）已落成测试，设计细节不再保留在这里；注意点留给 datatest 的有两条：
+  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。
+  - 明细型除零（`x/0` 得 Infinity）、null 参与运算是 JavaScript 行为，按现状钉住，没有向开发另问。
 
 ## 5. Dashboard 补充
 
@@ -203,7 +128,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 | 选择类组件自身内容（G7） | 扩展 `executeVS0` 导出这些组件的数据 | 选择列表的取值列表等 | `commons` 的 `ExportUtil` 已有 `exportSelectionList`，可能可复用；能否从沙箱取到数据未验证 |
 | 个别计算字段未入基线（G9） | 核对那 6 个 vs，确认是只做条件还是漏断言 | | 无 |
 
-做法原则：**新建小 vs，不改已有 vs**（改已有 vs 会让已有基线整体变动，混进噪声）；每个新用例只验证"接线"，边界和语义放在第 4 节的单测里，不为边界值堆 vs。zip 是整个 storage 的二进制备份，改完后用 `vs_backup_scan.py inventory` 前后对比，确认只有预期的 vs 变了。
+做法原则：**新建小 vs，不改已有 vs**（改已有 vs 会让已有基线整体变动，混进噪声）；每个新用例只验证"接线"，边界和语义放在产品单测里（[vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)），不为边界值堆 vs。zip 是整个 storage 的二进制备份，改完后用 `vs_backup_scan.py inventory` 前后对比，确认只有预期的 vs 变了。
 
 ## 6. 局限与待确认
 
@@ -217,20 +142,24 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 | 4 | `Mode` 并列按值升序 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 4）；13.8 测试方认为"随意"（[#80738](https://issues.inetsoft.com/issues/80738) 附注） |
 | 5 | Integer 与 Double 混合时是否为同一值 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 5） |
 | 6 | `CorrelationFormula.addValue(double[])` 的下标约定 | 由已有的 [#80700](https://issues.inetsoft.com/issues/80700) 跟进 |
-| 7 | 日期月末语义 | 待答（[#80953](https://issues.inetsoft.com/issues/80953) 问题 6）。已运行：`dateAdd("m")` 截到月末；`edate` 同年内截月末，跨年顺延（2000-12-31 +2 得 2001-03-03），由处理 [#80953](https://issues.inetsoft.com/issues/80953) 的人决定是否另开缺陷 |
+| 7 | 日期月末语义 | **已修**：[stylebi#7968](https://github.com/inetsoft-technology/stylebi/pull/7968) 之后 `edate`/`dateAdd` 都用 `Calendar.add`，截到月末（原先 2000-12-31 +2 得 2001-03-03 的跨年顺延已不存在；#8000 的测试断言截断值 2001-02-28、2001-03-15） |
 
-13.8 的测试已按现有行为固定了 Mode 计 null、并列取小值、空 Mode 为 null、Correlation 方差为 0 返回 null、WeightedAverage 权重和为 0 返回 null（[#80953](https://issues.inetsoft.com/issues/80953) 问题 1、2 的 Mode 一侧、3a、3b、4，见该单备注）；若开发同意"与 13.8 一致"，只剩计算字段除零（问题 3c）、Integer 与 Double（问题 5）、日期月末（问题 6）需要答复。
+**产品单测的状态：** 问题 1–5、3a、3c 开发仍只给倾向、没有决定（Q1 Mode 忽略 null 有兼容性风险；Q2 空 `DistinctCount` 保持 0；Q5 不要钉）；相关 6 行 `hold` 没写，其余按现状钉住并标"pending"，见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md) §4、§5。
+
+**单测新发现的缺陷**（10 个，详见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md) §3）：[#81202](https://issues.inetsoft.com/issues/81202) 聚合名映射（小写名、`a b`/`a_b` 冲突、`ß`）、[#81203](https://issues.inetsoft.com/issues/81203) tr_TR 的 `toUpperCase/toLowerCase`、[#81204](https://issues.inetsoft.com/issues/81204) `CALC.quarter(null)`（Normal），其余 Low；另 [#81200](https://issues.inetsoft.com/issues/81200)（声明 Integer 被截断）。
+
+13.8 的测试已按现有行为固定了 Mode 计 null、并列取小值、空 Mode 为 null、Correlation 方差为 0 返回 null、WeightedAverage 权重和为 0 返回 null（[#80953](https://issues.inetsoft.com/issues/80953) 问题 1、2 的 Mode 一侧、3a、3b、4，见该单备注）；若开发同意"与 13.8 一致"，只剩计算字段除零（问题 3c）、Integer 与 Double（问题 5）需要答复（日期月末已修）。
 
 开发对边界语义的倾向：实际报表碰不到的边界结果保持现状（[#80488](https://issues.inetsoft.com/issues/80488)、[#80541](https://issues.inetsoft.com/issues/80541) 均以兼容性为由拒绝）。
 
-**疑似缺陷（已运行确认，`origin/main` `2527280fa1`）：**
+**疑似缺陷（已运行确认；#80950、#80951、#80952、#80584、#80974 均已在 `main` 修复）：**
 
 | 缺陷 | 结果 | 正常使用能否碰到 | 单号 |
 |---|---|---|---|
-| `CorrelationFormula` 一次遍历求和，大数值丢精度 | `y = 3x + 7`：x 在 1e7 时 0.99987，1e8 时 0.962，1e9 时为 null（应为 1） | 能，交叉表/图表/汇总的 `Object[]` 路径 | [#80950](https://issues.inetsoft.com/issues/80950)（Normal） |
+| `CorrelationFormula` 一次遍历求和，大数值丢精度 | `y = 3x + 7`：x 在 1e7 时 0.99987，1e8 时 0.962，1e9 时为 null（应为 1） | 能，交叉表/图表/汇总的 `Object[]` 路径 | [#80950](https://issues.inetsoft.com/issues/80950)（Normal，**已修**） |
 | `CorrelationFormula.addValue(double[])` 读 `v[2]` | 长度 2 的数组抛 `ArrayIndexOutOfBoundsException`；`CalcFieldFormula:157` 传的正是 `{x, y}` | 未找到会调用 `CalcFieldFormula.addValue(double[])` 的路径 | 已有 [#80700](https://issues.inetsoft.com/issues/80700) |
-| `NthMostFrequentFormula()` 无参构造 n 为 0 | `getResult` 抛 `IndexOutOfBoundsException: Index -1` | 不能：`CalcTableLens` 只做 `instanceof`，交叉表合并单元格改用 `SumFormula`，目标线界面选不到 | [#80951](https://issues.inetsoft.com/issues/80951)（Low） |
-| `DistinctCountFormula` 百分比只认 `Integer` 总数 | 总数为 Long/Double/Short 时返回原始计数 | 不能：总数来自同一公式的 `getOriginalResult()`，恒为 Integer | [#80952](https://issues.inetsoft.com/issues/80952)（Low）；13.8 的 `countPercentageNeedsIntegerTotal` 把它当作规则，已在单里请开发二选一 |
+| `NthMostFrequentFormula()` 无参构造 n 为 0 | `getResult` 抛 `IndexOutOfBoundsException: Index -1` | 不能：`CalcTableLens` 只做 `instanceof`，交叉表合并单元格改用 `SumFormula`，目标线界面选不到 | [#80951](https://issues.inetsoft.com/issues/80951)（Low，**已修**） |
+| `DistinctCountFormula` 百分比只认 `Integer` 总数 | 总数为 Long/Double/Short 时返回原始计数 | 不能：总数来自同一公式的 `getOriginalResult()`，恒为 Integer | [#80952](https://issues.inetsoft.com/issues/80952)（Low，**已修**）；13.8 的 `countPercentageNeedsIntegerTotal` 把它当作规则，已在单里请开发二选一 |
 
 **需要你决定：**
 - 严格模式要不要真正挡住合入：目前 GitHub 工作流 `continue-on-error`、Jenkins 为 UNSTABLE，改基类只是把"静默通过"变成"测试失败"。
@@ -238,7 +167,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 - G8 里要做哪几个新场景。
 
 **没验证的：**
-- 严格模式已在本机跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。
+- 严格模式已跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。
 - 单测盘点按类名、文件名、方法名静态匹配，没有逐个读测试内容。
 - `donut chart` 这个 vs 的类型是 PIE（3），不是 DONUT（0x13），是否有意未核实。
 - 选择状态是否真的缩小了数据范围，静态上无法判断（书签可能只保存选中项）。
