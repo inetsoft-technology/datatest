@@ -230,7 +230,7 @@ vscalc 实际用到 36 种聚合型表达式，用例按这些形状设计，小
 | Table / Crosstab / CalcTable 的 condition 位置（G8） | 新建小 vs | 计算字段用于条件 | 同上 |
 | Gauge / Text 非 integer 类型（G8） | 新建小 vs | 计算字段用于 Gauge、Text | 同上 |
 | 新图表类型（G8） | 新建小 vs（AREA、POINT、RADAR、WATERFALL 等择要） | 计算字段在这些图表上取值与渲染 | 同上；先确认产品允许这些图表绑定计算字段 |
-| 选择类组件自身内容（G7） | **已完成**：`executeVS(params, bks, true)` 额外把 SelectionList / SelectionTree（值、状态、度量）、RangeSlider（值个数、首尾值、选中范围）、Calendar（范围、选中日期）导出为 txt（`ExportUtil.exportSelection`）。默认关闭，其他 spec 不受影响。vscalc 里有选择类组件绑定计算字段的 12 个用例打开，新增 50 个基线 | 选择列表的取值列表、度量等 | 原有 `exportSelectionList` 不含度量，没有复用。抽样核对：`parent-child tree` 的 `CalcField1`（Sum(label_number)）13 个节点与 worksheet 嵌入数据逐个一致；`filter` 的 `max_time` 按自身分组取 Max，等于值本身 |
+| 选择类组件自身内容（G7） | **已完成**：`executeVS(params, bks, true)` 额外把 SelectionList / SelectionTree（值、状态、度量）、RangeSlider（值个数、首尾值、选中范围）、Calendar（范围、选中日期）导出为 txt（`ExportUtil.exportSelection`）。默认关闭，其他 spec 不受影响。vscalc 里有选择类组件绑定计算字段的 12 个用例打开，新增 53 个基线 | 选择列表的取值列表、度量等 | 原有 `exportSelectionList` 不含度量，没有复用。抽样核对：`parent-child tree` 的 `CalcField1`（Sum(label_number)）13 个节点与 worksheet 嵌入数据逐个一致；`filter` 的 `max_time` 按自身分组取 Max，等于值本身 |
 | 个别计算字段未入基线（G9） | 已核对，并入 G7（第 2 节），随 G7 完成 | | 无 |
 
 做法原则：**新建小 vs，不改已有 vs**（改已有 vs 会让已有基线整体变动，混进噪声）；每个新用例只验证"接线"，边界和语义放在第 4 节的单测里，不为边界值堆 vs。zip 是整个 storage 的二进制备份，改完后用 `vs_backup_scan.py inventory` 前后对比，确认只有预期的 vs 变了。
