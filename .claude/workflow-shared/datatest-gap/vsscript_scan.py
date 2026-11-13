@@ -8,11 +8,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import vs_backup_scan as v
 
 DT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
-ZIP = DT + r'\vsscript\src\test\resources\config\vsscriptStorage.zip'
-SPECS = sorted(glob.glob(DT + r'\vsscript\src\test\groovy\**\*_Spec.groovy', recursive=True))
-BASE = DT + r'\vsscript\src\test\resources\expectData'
-PROD = os.environ.get('PRODUCT_CORE', r'E:\inetsoft\sr14_0\stylebi-main\community\core') + \
-    r'\src\main\java\inetsoft\report\script\viewsheet'
+ZIP = os.path.join(DT, 'vsscript', 'src', 'test', 'resources', 'config', 'vsscriptStorage.zip')
+SPECS = sorted(glob.glob(os.path.join(DT, 'vsscript', 'src', 'test', 'groovy', '**', '*_Spec.groovy'), recursive=True))
+# Product source (branch main) is required for api/usage/zero/declzero: set PRODUCT_CORE to the product's `core` directory.
+_CORE = os.environ.get('PRODUCT_CORE')
+PROD = os.path.join(_CORE or '', 'src', 'main', 'java', 'inetsoft', 'report', 'script', 'viewsheet')
+_USAGE = 'usage: PRODUCT_CORE=<product>/community/core python vsscript_scan.py cases|zip|api|usage|zero <Scriptable...>|declzero'
+_CMDS = ('cases', 'zip', 'api', 'usage', 'zero', 'declzero')
+if __name__ == '__main__' and (len(sys.argv) < 2 or sys.argv[1] not in _CMDS):
+    sys.exit(_USAGE)
+if __name__ == '__main__' and sys.argv[1] != 'cases' and sys.argv[1] != 'zip' and not _CORE:
+    sys.exit('PRODUCT_CORE is not set. ' + _USAGE)
 
 
 def read(p):
@@ -68,7 +74,6 @@ def zip_assemblies():
             nm = info.find('name').text if info is not None and info.find('name') is not None else None
             sc = info.find('script') if info is not None else None
             d[nm] = (v.short(c), (sc.text or '').strip() if sc is not None else '')
-        vsscr = r.find('.//viewsheetInfo')
         res[v.asset_id(key)] = dict(asm=d, root=r)
     return res
 
@@ -94,9 +99,6 @@ def api_full(cls, n):
         n = cls[n][0]
     return props
 
-
-TYPE2SCR = {  # assembly short type -> scriptable class (checked in product: VSAScriptable creation)
-}
 
 if __name__ == '__main__':
     cmd = sys.argv[1]

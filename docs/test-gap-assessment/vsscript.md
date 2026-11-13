@@ -17,7 +17,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 **规模：** 11 个 spec，115 个用例（114 个运行，`TestCase-Script_Order_OneWay4` 被 `@Ignore`，`ScriptEngine_Spec.groovy:84`），`printVS` 调用 236 次；基线 PNG 246 张（`expectData/cases/**`）；`vsscriptStorage.zip` 里 130 个 viewsheet，485 个组件，其中 spec 引用了 62 个，**68 个未被引用**（其中 66 个在 `Manual/*` 下，spec 注释写明"manual case covered"；`ScriptAuto/` 下的 2 个：`VS_Self/vsAlias`、`ScriptEngine/selectedObjec`）。所有用例的 vs id 都是字面量，没有"Not mapped"，所以孤儿列表可信（口径：我自写的扫描器，见附录）。zip 内书签/选择状态未统计。
 
-**覆盖矩阵**（维度：组件类型 × 脚本能力 × 触发位置，已与用户确认；数据来自 scratchpad 扫描器，正则读 spec，静态）：
+**覆盖矩阵**（维度：组件类型 × 脚本能力 × 触发位置，已与用户确认；数据来自仓库内的 `vsscript_scan.py`，正则读 spec，静态）：
 
 | 触发位置 | 用例里的脚本数 |
 |---|---|
@@ -163,7 +163,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 ./mvnw package -pl commons -DskipTests
 ./mvnw test -pl vsscript
 
-# 扫描器：python .claude/workflow-shared/datatest-gap/vsscript_scan.py <cases|zip|api|usage|zero|declzero>（产品源码路径用环境变量 PRODUCT_CORE）
+# 扫描器：python .claude/workflow-shared/datatest-gap/vsscript_scan.py <cases|zip|api|usage|zero|declzero>（需要环境变量 PRODUCT_CORE=产品的 community/core 目录，`cases`、`zip` 不需要）
 # 口径：spec 脚本 = 各用例 COMMAND 字符串；资产脚本 = zip 里各组件 assemblyInfo/script；
 #       API = 产品 *VSAScriptable.java 里 addProperty("名"…) 与 addFunctionProperty(cls,"名"…)，沿 extends 链合并
 # 产品单测盘点：E:\inetsoft\sr14_0\stylebi-main\community\core\src\test\**\report\script\viewsheet\*.java
