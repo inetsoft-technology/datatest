@@ -92,6 +92,8 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 方向判断：属性取值、函数返回值 → 单测；组件与脚本绑定的渲染 → dashboard；清单与基线脱节 → 改机制。
 
+> **后续（2026-11-13）：** 对"PNG 之外的验证方式"做了可行性方案和原型，见 `docs/test-gap-assessment/vsscript-upgrade-plan.md`。原型（状态断言、属性往返、全局函数、点击 + alert、PDF 导出文字，以及 Chart/Crosstab 各一组）共 20 个用例在本机全部通过，代码在 `vsscript/src/test/groovy/inetsoft/test/vsscript/state/`。G2/G4/G6/G7 的方向据此细化为该方案的 B、C、E、F、G。
+
 ## 4. Java 单测补充
 
 产品里 `report/script/viewsheet/` 已有 369 个用例（47 个测试类，按 `@Test`/`@ParameterizedTest` 计数），所以这里只列**名字匹配不到测试**或**用例数远少于声明属性数**的类。统计口径：测试类名以被测类名开头，属性名文本命中，未读用例内容。
