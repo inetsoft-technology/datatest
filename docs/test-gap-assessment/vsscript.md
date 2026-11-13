@@ -8,7 +8,7 @@
 vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 PNG 比对"。115 个用例、246 张基线，**验证只有 PNG 像素比对一条路**（`vsscript` 不用 `ViewsheetTest`，没有数据层断言），且 57% 的组件脚本用例落在 Chart 上。三个最大的问题：
 
 1. **机制有漏洞（可以直接改）：** `LengendsProperty2` 导出了、基线也在，但比对清单里把 `LengendsProperty1` 写了两遍，这张图从来没被比；另有 11 张基线没有任何用例引用；`Viewsheet_Spec` 用无参 `compareImage()`，比的是"实际导出"，导出缺失不会被发现。
-2. **功能面差集：** 产品脚本对象声明了 282 个属性/函数（`addProperty` 等），其中 43 个在 spec 与 zip 内所有脚本里没有任何文本命中；`Thermometer`/`Cylinder`/`SlidingScale` 在 zip 里一个资产都没有；`ComboBox`、`Submit` 没有任何组件脚本用例；视图表级函数（`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`…）和全局脚本函数（`CALC.*`、`inArray`、`split`…）零用例，而最近 Redmine 里这两类 bug 最密集。
+2. **功能面差集：** 产品脚本对象声明了 282 个属性/函数（`addProperty` 等），其中 43 个在 spec 与 zip 内所有脚本里没有任何文本命中；`ComboBox`、`Submit` 没有任何组件脚本用例（`Thermometer`/`Cylinder`/`SlidingScale` 已废弃，仅为向后兼容保留，不计入缺口）；视图表级函数（`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`…）和全局脚本函数（`CALC.*`、`inArray`、`split`…）零用例，而最近 Redmine 里这两类 bug 最密集。
 3. **本机无法判定通过与否：** 本机跑 115 个用例 114 个失败，全部是 PNG 像素差异（中位数 0.95%，阈值 0.001%），是渲染环境差异，不是产品错误。CI（GitHub 工作流）里该步骤 `continue-on-error: true`，失败不会让流水线变红。
 
 先做：G1（修清单，零成本）→ G4/G7 里"期望值可独立算出"的部分放进产品单测 → 少量 dashboard 补组件类型的接线用例。
@@ -35,7 +35,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 | RadioButton、CheckBox、Slider、TextInput、GroupContainer、Image、CurrentSelection | 各 3 | | |
 | Rectangle、Oval、Tab、Gauge、SelectionList、SelectionTree | 各 2 | | |
 | Spinner、Line、Calendar | 各 1 | | |
-| **ComboBox、Submit、Thermometer、Cylinder、SlidingScale** | **0** | 40 / 27 / 33 / 33 / 33 | 后三者 zip 里没有资产；Submit 只在未引用的 `Manual/*` vs 里 |
+| **ComboBox、Submit** | **0** | 40 / 27 | Submit 只在未引用的 `Manual/*` vs 里；Thermometer/Cylinder/SlidingScale 已废弃，不计入 |
 
 **验证机制：**
 
@@ -84,7 +84,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 | G1 | 比对清单与基线脱节：`ChartProperties_Spec.groovy:268-270` 把 `LengendsProperty1` 写了两遍，`LengendsProperty2` 导出了且有基线却从不被比；11 张基线无人引用；`Viewsheet_Spec` 无参 `compareImage()` 只比实际导出 | Chart2 的图例脚本回归不会报；`Viewsheet_Spec` 里某个导出丢失不会报；陈旧基线遮盖了"用例被删"的事实 | 机制（改清单；`Viewsheet_Spec` 改成点名） | 高 |
 | G2 | 阈值 0.001% 且只有 PNG：产品行为对了但渲染变了会误报，渲染没变但数据层错了（脚本报错被吞）不会报 | 脚本抛异常后组件保持原样，若基线也是那种状态则永远通过（脚本异常处理**未验证**，需开发确认） | 机制 + 单测 | 中 |
 | G3 | CI 里 vsscript 步骤 `continue-on-error: true`，本机 114/115 失败无法分辨真假 | 真回归和渲染噪声混在一起，没人盯 | 机制（先看 CI 实际通过情况，再决定要不要收紧） | 中 |
-| G4 | 43 个脚本属性零命中（§2 表）：`Thermometer`/`Cylinder`/`SlidingScale` 无资产；`ComboBox`、`Submit` 无组件脚本用例 | 这些属性的 setter/getter 写错、类型强转错、取值串解析错不会被发现 | 单测为主；每类只加 1 个 dashboard 代表用例 | 高 |
+| G4 | 43 个脚本属性零命中（§2 表）；`ComboBox`、`Submit` 无组件脚本用例（Thermometer/Cylinder/SlidingScale 已废弃，忽略） | 这些属性的 setter/getter 写错、类型强转错、取值串解析错不会被发现 | 单测为主；每类只加 1 个 dashboard 代表用例 | 高 |
 | G5 | Chart 占组件脚本 57%（120/212），Calendar/Spinner/Line 各 1 个 | 非 Chart 组件的脚本回归几乎只靠 1–3 个用例 | dashboard（补 vs/扩展） | 中 |
 | G6 | 触发位置只有组件脚本、`ONINIT`、`ONREFRESH`：无事件脚本（onClick/onSubmit/confirm）、无 vs 级脚本存于资产；`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`、`createConnection`、`delayVisibility`、`event/OLD/CHANGED` 零命中 | 写表单/写回/事件类脚本的回归不会被发现 | 单测（`ViewsheetScope` 已有 14 个用例，补接口）；交互部分不属于静态 datatest，另行规划 | 高 |
 | G7 | 全局脚本函数（`CALC.*`、`inArray`、`split`、`rtrim`、`union`、`formatNumber`、`mapList` 等）在 vsscript 零命中；2025 年起 31 条里 27 条是这一类（见 §7） | 函数返回值的边界错误（空串、重复数、舍入、闰年…） | 单测（期望值可独立算出） | 高 |
@@ -92,13 +92,15 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 方向判断：属性取值、函数返回值 → 单测；组件与脚本绑定的渲染 → dashboard；清单与基线脱节 → 改机制。
 
+> **后续（2026-11-13）：** 对"PNG 之外的验证方式"做了方案与原型，见 `docs/test-gap-assessment/vsscript-upgrade-plan.md`。结论：datatest 只做单测做不到的（真实 vs 资产 + 运行时的脚本健康检查、异常契约、事件端到端、真实数据读回、导出一致性），属性取值与全局函数边界交给产品单测；关键发现是刷新路径会静默吞掉脚本异常。
+
 ## 4. Java 单测补充
 
 产品里 `report/script/viewsheet/` 已有 369 个用例（47 个测试类，按 `@Test`/`@ParameterizedTest` 计数），所以这里只列**名字匹配不到测试**或**用例数远少于声明属性数**的类。统计口径：测试类名以被测类名开头，属性名文本命中，未读用例内容。
 
 | 被测类 | 补什么 | 用例数 | 难度 | 待开发确认 |
 |---|---|---|---|---|
-| `OvalVSAScriptable`、`CylinderVSAScriptable`、`ThermometerVSAScriptable`、`SlidingScaleVSAScriptable`（均无同名测试类，运行时工厂 `ViewsheetScope.java:782-791,833`） | 每类的继承属性 get/set 往返（Shape 4、RangeOutput 7 个声明属性） | 8 | 低 | 否 |
+| `OvalVSAScriptable`（无同名测试类；Cylinder/Thermometer/SlidingScale 已废弃，不补） | 每类的继承属性 get/set 往返（Shape 4、RangeOutput 7 个声明属性） | 8 | 低 | 否 |
 | `RangeOutputVSAScriptable`、`ShapeVSAScriptable`、`SelectionVSAScriptable`、`InputVSAScriptable`（基类，无同名测试） | 基类声明属性：`shadowInfo`、`labelGap/Position/Text`、…… | 12 | 低 | `Input` 基类是否已被子类测试覆盖需开发确认 |
 | `TextVSAScriptable`、`ImageVSAScriptable` | `popComponent`、`popAlpha`、`popLocation` | 6 | 低 | `pop*` 的合法取值串 |
 | `RangeSliderVSAScriptable` | `rangeSize` | 3 | 低 | 取值边界 |
@@ -115,7 +117,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 | 场景 | 做法 | 验证什么 | 前提 |
 |---|---|---|---|
-| 无用例的组件类型：ComboBox、Submit、Thermometer、Cylinder、SlidingScale | 新建 vs（每类型 1 个，zip 里已有 `Manual/Form/Forms_Submit`、`Manual/OutPut/Submit_Action` 可复用） | 脚本改标题/值/可见性后组件渲染 | 无 |
+| 无用例的组件类型：ComboBox、Submit | 新建 vs（每类型 1 个，zip 里已有 `Manual/Form/Forms_Submit`、`Manual/OutPut/Submit_Action` 可复用） | 脚本改标题/值/可见性后组件渲染 | 无 |
 | 属性零命中里属于"渲染可见"的：`popComponent/popLocation`（Text、Image）、`shadowInfo`、`labelPosition/labelText`、`bottomTabs`、`snap/tickLabelVisible`、`scaleVertical` | 在已有 vs 上扩展脚本 | 渲染效果 | 属性确实影响渲染的部分需开发确认 |
 | Chart 以外各组件的"每个声明属性设一次"基线 | 新建 vs，非 Chart 组件各 1 个用例（Calendar、Spinner、Line 目前各 1 个） | 脚本→渲染的接线 | 无 |
 | `LengendsProperty2` 清单修正 | 改 `ChartProperties_Spec.groovy:268-270`（G1） | 既有基线生效 | 本机需用 CI 基线核对 |
