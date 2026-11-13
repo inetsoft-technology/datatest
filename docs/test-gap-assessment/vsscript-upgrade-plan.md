@@ -90,6 +90,14 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 - PDF：PDFBox 提取文字，脚本改的 Text 值可见（通过）。
 - Excel：`Text` 组件导出为图片（`xl/drawings` + `xl/media/*.png`），不能按单元格断言；Crosstab 是单元格（第一个 sheet 179 个单元格、59 条共享字符串）。导出包含 5 个 worksheet，原因未查；还没把单元格与脚本数据逐项对比。
 
+### 5.7 Submit 与表单提交
+- `SubmitVSAScriptable` 只声明一个属性：`refreshAfterSubmit`（`isRefresh/setRefresh`）。zip 里 Submit 的资产：`Manual/Form/Forms_Submit`（Slider1、Spinner1、CheckBox1、ComboBox1、TextInput1、Submit1、TableView1、RadioButton1/2）、`Manual/OutPut/Submit_Action`（Submit1 默认 `refreshAfterSubmit=true`，Submit2 为 `false`）。这些 Submit 在资产里都没有脚本。
+- 提交路径：`OnClickService.onClick(..., submitEvent, ...)` → `VSInputService.multiApplySelection`。**`VSInputService` 构造需要 10 个依赖，但这条路径只用 `VSObjectService`、`CoreLifecycleService`、`ViewsheetService`（测试上下文里有真实 Bean），其余 7 个只在编辑对话框里用，传 null 即可。**
+- `InputValue`、`VSSubmitEvent` 是接口，Groovy 里用 Map 强转构造：`[assemblyName: {n}, value: {v}] as InputValue`。
+- 验证结果：提交 `TextInput1='abc'`、`Spinner1=7`、`Slider1=3` 后，`TextInput1.value`='abc'，`Spinner1.selectedObject`=7（原为 0），`Slider1.selectedObject`=3（原为 67）；不发值则不变（对照用例）。Submit 脚本里能读到刚提交的值（`alert("submitted:"+Spinner1.selectedObject)` → `submitted:7`）。
+- **读入口因组件而异：** TextInput 读 `value`（`selectedObject` 读到 undefined/null）；Spinner、Slider 读 `selectedObject`。
+- **观察：** 一次提交里这条 `alert` 被录到 **2 次**（都是 `submitted:7`）；原因未查（可能是点击时执行一次、刷新时又执行一次）。目前用例只断言"包含"，没有断言次数。
+
 ## 6. 目录与旧用例
 
 ```
@@ -115,10 +123,10 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 ## 8. 下一步
 
-**第 1 步：Submit（D3 的 `onSubmit` 部分，`state/` 下一个 spec）**
-1. 探路：测试里怎么构造/获得 `VSInputService`（`OnClickService` 的表单提交分支要用，此前点击用例传 null）；先看 zip 里 `Manual/Form/Forms_Submit`、`Manual/OutPut/Submit_Action` 等 Submit vs 的结构。
-2. 写提交用例：设 Submit 脚本、触发提交、断言状态与录到的命令；配"故意改坏变红"的验证。
-3. 用 JaCoCo 量 `SubmitVSAScriptable` 的增量，结果写回 §11。
+**第 1 步：Submit（D3 的 `onSubmit` 部分）——已完成（2026-11-13）**
+- 代码：`state/ScriptStateSubmit_Spec.groovy`（4 个用例，全过）；探路 `ScriptStateSubmitProbe_Spec.groovy`。结果见 §5.7。
+- JaCoCo 增量：`SubmitVSAScriptable` 0/14 → 10/14 行（分支 1/8）；`report.script.viewsheet` 合并覆盖 52.8% → 53.1%。
+- 剩余：`SubmitVSAScriptable` 另 4 行及分支未跑到，原因未查；Submit 的其他场景（`confirm`、多个 Submit、`refreshAfterSubmit=false` 的刷新差异）未做。
 
 **第 2 步：D1 + D2（`state/` 下，一个 spec）**
 1. 取出 zip 里全部 vs 的所有脚本（组件脚本、`ONINIT`、`ONREFRESH`），逐段直接执行，统计抛 `ScriptException` 的数量与分布。
@@ -187,6 +195,8 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 **合并后覆盖最低的类（行数 ≥ 40）：** `ScalarCoercion` 1/59、`VSPropertyDescriptor` 13/46、`ViewsheetVSAScriptable` 40/124、`TabVSAScriptable` 35/79、`ImageVSAScriptable` 35/64、`TableDataVSAScriptable` 310/564、`TextVSAScriptable` 42/75、`ChartVSAScriptable` 200/357。
 - `ScalarCoercion` 几乎没跑到（2%）：它和脚本值类型转换有关，是值得先看的类。
 - `ViewsheetVSAScriptable`（vs 级脚本对象，如 `thisViewsheet`、`onInit`）32%，与评估文档"vs 级函数零命中"一致。
+
+**增量记录：** Submit 用例落地后（§8 第 1 步）：`SubmitVSAScriptable` 0/14 → 10/14 行；`report.script.viewsheet` 合并 52.8% → 53.1%。
 
 **对方案的影响：**
 1. 优先级调整：**新资产和新脚本比"把旧用例改成状态断言"更能提升覆盖**。D4（改写旧用例）降到"提高断言可靠性"，不再算覆盖面工作。

@@ -58,6 +58,8 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 | `ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
 | `ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
 | `ScriptStateProbe_Spec.groovy` | 探路：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...` |
+| `ScriptStateSubmit_Spec.groovy` | Submit 组件：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值 |
+| `ScriptStateSubmitProbe_Spec.groovy` | Submit 探路（资产结构、`VSInputService` 依赖、读入口），只打印 |
 
 **`ScriptStateBase` 的接口（`new ScriptStateBase('<资产id>')` 会打开 vs）：**
 
@@ -160,6 +162,23 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 ```
 `FileFormatInfo` 常量：`EXPORT_TYPE_EXCEL=0`、`POWERPOINT=1`、`PDF=2`、`PNG=4`、`HTML=5`、`CSV=6`。
 
+### 4.8 表单提交（Submit）
+```groovy
+// VSInputService 只需要 3 个真实 Bean，其余 7 个编辑器依赖传 null
+def ctx = ConfigurationContext.getContext()
+def input = new VSInputService(ctx.getSpringBean(VSObjectService), ctx.getSpringBean(CoreLifecycleService),
+                               ctx.getSpringBean(ViewsheetService), null, null, null, null, null, null, null)
+def click = new OnClickService(ctx.getSpringBean(CoreLifecycleService), input, ctx.getSpringBean(ViewsheetService))
+
+// InputValue / VSSubmitEvent 是接口，用 Map 强转
+def items = [[assemblyName: { 'Spinner1' }, value: { 7 }] as InputValue] as InputValue[]
+def ev = [values: { items }] as VSSubmitEvent
+MessageTestUtils.withMockMessageContext(t.principal, t.runtimeId) {
+   click.onClick(t.runtimeId, 'Submit1', null, null, ev, 'http://localhost:8080/sree', t.principal, recorder) }
+assert t.eval('Spinner1.selectedObject') == 7d
+```
+完整用例见 `ScriptStateSubmit_Spec.groovy`。读回入口：TextInput 用 `value`，Spinner/Slider 用 `selectedObject`。
+
 ## 5. 已踩过的坑（别重复踩）
 
 1. **刷新路径吞脚本异常。** 组件脚本、`ONINIT`、`ONREFRESH` 经刷新执行时，错误不抛、不发消息、测试里也没有日志（没有 SLF4J 绑定）；报错语句**之前**的效果仍然保留。要验证"脚本没报错"必须**直接** `scope.execute`。源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接忽略。
@@ -171,7 +190,8 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 7. **脚本引擎是 Graal，不是 Rhino。** 枚举属性用 `getVSAScriptable(name).getMemberKeys()`，没有 `getIds()`。
 8. **Excel 里 Text 是图片。** `xl/drawings` + `xl/media/*.png`，脚本改的 Text 值不在单元格里，要用表格类组件断言。
 9. **vsscript 测试 classpath 上没有 Apache POI。** 本机 Maven 仓库在 `D:/m2-1`（不是 `~/.m2`），里面有 POI 5.4.0，加测试依赖应可行（未试）；也可以用 §4.7 的 zip 读法。
-10. **bash 里别在 heredoc 里放复杂 Groovy。** 写测试文件用编辑器或 Write 工具。
+10. **一次提交里 Submit 脚本的 `alert` 会被录到两次**（原因未查），断言消息时用"包含"，别断言条数。
+11. **bash 里别在 heredoc 里放复杂 Groovy。** 写测试文件用编辑器或 Write 工具。
 
 ## 6. 写完新用例的检查清单
 
@@ -183,10 +203,10 @@ def shared = zip.getInputStream(zip.getEntry('xl/sharedStrings.xml')).getText('U
 
 ## 7. 现状与下一步
 
-**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路，30 个用例全过（见方案文档 §5）。
+**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），共 42 个用例全过（见方案文档 §5）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
 **下一步（按优先级，详见方案文档 §4、§8、§10）：**
-0. JaCoCo 覆盖率基线已量（方案 §11）；新的顺序是：**先做 Submit（`onSubmit`），再做 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
+0. JaCoCo 覆盖率基线已量（方案 §11）；Submit（`onSubmit`）已完成；**下一步 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
 1. D1+D2：对 zip 里 130 个 vs 的所有脚本直接执行并统计 `ScriptException`；固定"刷新吞异常/点击抛异常"的行为。
 2. D4：把现有 PNG 用例（Chart、Crosstab）改成状态断言版。
 3. D3：事件端到端（`onSubmit` 需接 `VSInputService`）。
