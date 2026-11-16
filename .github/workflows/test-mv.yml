@@ -87,6 +87,21 @@ jobs:
           done
           exit $status
 
+      - name: Run wsmv tests
+        # run every profile even when an earlier one failed; a failed profile fails the job
+        if: ${{ !cancelled() && steps.init.outcome == 'success' }}
+        run: |
+          # the profiles share the MV storage under mv/target, so each one starts without it
+          rm -rf mv/target
+          status=0
+          ./mvnw test -pl mv -Pwsmv -Dinetsoft.license.key="${{ secrets.INETSOFT_LICENSE_KEY }}" || status=$?
+          # keep the reports of this profile, the next profile deletes mv/target
+          mkdir -p mv-reports/wsmv
+          for d in surefire-reports spock-reports test-classes/exportedData; do
+            [ -d mv/target/$d ] && cp -r mv/target/$d mv-reports/wsmv/
+          done
+          exit $status
+
       - name: Run topmv tests
         # run every profile even when an earlier one failed; a failed profile fails the job
         if: ${{ !cancelled() && steps.init.outcome == 'success' }}
