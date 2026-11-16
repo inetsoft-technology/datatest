@@ -650,17 +650,16 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   //Ignored: the composite range slider on ORDER_TIME, ORDER_DATE and ORDER_DATETIME orders its values
-   //differently with MV (minimum 07:30:00 with MV, the empty time without MV), so bk1 selects different data
-   //(#80458). The case does not compare with the result without MV, and the expected data was generated
-   //from the MV result.
+   //The composite range slider on ORDER_TIME, ORDER_DATE and ORDER_DATETIME used to order its values
+   //differently with MV when the server is east of UTC (minimum 07:30:00 with MV, the empty time without MV),
+   //so bk1 selected different data (#80458, fixed). The expected data is the result without MV.
    @Issue('https://issues.inetsoft.com/issues/80458')
-   @Ignore
    def 'chart-time type'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart-time type'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -668,6 +667,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 

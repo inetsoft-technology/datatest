@@ -13,4 +13,3 @@ The table size(row x col) is: (13 x 2)
 [11][8277253]
 [12][1754266]
 
-
