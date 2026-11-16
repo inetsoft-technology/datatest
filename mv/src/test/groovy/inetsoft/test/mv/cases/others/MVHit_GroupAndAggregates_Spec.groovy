@@ -459,6 +459,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_RETURNS1|TopMV', 'ST_Query2_O|SubMV', 'RETURNS1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ST_Query2_O|SubMV', 'RETURNS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

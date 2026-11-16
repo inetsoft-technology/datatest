@@ -162,6 +162,7 @@ class SubMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2_O|TopMV', 'Query2_O|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -573,11 +574,10 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
-   //Ignored: Query1 is grouped by DISCOUNT with a maximum row count of 5. With MV the empty DISCOUNT is the
-   //first group and 0.15 is not shown, without MV the empty DISCOUNT is last (#80446). The expected data is
-   //the result without MV. Bookmarks bk1 and bk2 cover #37854 and are the same with and without MV.
+   //Query1 is grouped by DISCOUNT with a maximum row count of 5. With MV the empty DISCOUNT used to be the
+   //first group and 0.15 was not shown, without MV the empty DISCOUNT is last (#80446, fixed). The expected
+   //data is the result without MV. Bookmarks bk1 and bk2 cover #37854.
    @Issue(['https://issues.inetsoft.com/issues/37854', 'https://issues.inetsoft.com/issues/80446'])
-   @Ignore
    def 'top-aggregate-maxrow'() {
       String asset_id = '1^128^__NULL__^submv/top-aggregate-maxrow'
       mvtest = new MVTest(asset_id)
@@ -755,6 +755,7 @@ class SubMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

@@ -51,6 +51,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['view|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -85,6 +86,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['view|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -119,6 +121,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -136,6 +139,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -154,6 +158,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -171,6 +176,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -259,6 +265,9 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
+         // only selection components: the lookup finds query1|TopMV, the sub mv is picked while the
+         // query runs and can not be seen (same as NotPublic_Text)
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -275,6 +284,9 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
+         // only selection components: the lookup finds query1|TopMV, the sub mv is picked while the
+         // query runs and can not be seen (same as NotPublic_Text)
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -292,6 +304,9 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
+         // only selection components: the lookup finds query1|TopMV, the sub mv is picked while the
+         // query runs and can not be seen (same as NotPublic_Text)
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -309,6 +324,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['view|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -326,6 +342,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -343,6 +360,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -360,6 +378,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -377,6 +396,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -394,6 +414,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -411,6 +432,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -496,6 +518,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_view|TopMV', 'view|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['view|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -514,6 +537,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query|TopMV', 'query|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -548,6 +572,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2|TopMV', 'ASSOCIATION_query1|TopMV', 'Query2|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -565,6 +590,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query1|TopMV', 'query1|SubMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query1|SubMV', 'query1|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -601,6 +627,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Order Model|TopMV', 'Order Model|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
       }
    }
@@ -617,6 +644,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -654,6 +682,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
       }
    }
@@ -687,6 +716,7 @@ class CalcField_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['OrdersAndReturns_O|SubMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

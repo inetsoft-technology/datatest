@@ -320,6 +320,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Final|TopMV', 'Final|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Final|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -338,6 +339,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -394,6 +396,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ASSOCIATION_Query1|TopMV', 'ORDERS1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -647,17 +650,16 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   //Ignored: the composite range slider on ORDER_TIME, ORDER_DATE and ORDER_DATETIME orders its values
-   //differently with MV (minimum 07:30:00 with MV, the empty time without MV), so bk1 selects different data
-   //(#80458). The case does not compare with the result without MV, and the expected data was generated
-   //from the MV result.
+   //The composite range slider on ORDER_TIME, ORDER_DATE and ORDER_DATETIME used to order its values
+   //differently with MV when the server is east of UTC (minimum 07:30:00 with MV, the empty time without MV),
+   //so bk1 selected different data (#80458, fixed). The expected data is the result without MV.
    @Issue('https://issues.inetsoft.com/issues/80458')
-   @Ignore
    def 'chart-time type'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/chart-time type'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -665,6 +667,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -731,6 +734,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ORDERS1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -801,6 +805,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query11|TopMV', 'Query11|TopMV', 'Query3|TopMV', 'Query7|TopMV', 'Query8|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query11|TopMV', 'Query3|TopMV', 'Query7|TopMV', 'Query8|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -841,6 +846,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CUSTOMERS1|TopMV', 'ASSOCIATION_Query1|TopMV',
                                             'ASSOCIATION_Query2|TopMV', 'CUSTOMERS1|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|TopMV', 'Query1|TopMV', 'Query2|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
