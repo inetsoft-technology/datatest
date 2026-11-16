@@ -162,6 +162,7 @@ class SubMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2_O|TopMV', 'Query2_O|TopMV', 'query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -755,6 +756,7 @@ class SubMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

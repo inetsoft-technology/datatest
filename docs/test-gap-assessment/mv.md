@@ -294,11 +294,11 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 其中 datatest 能验证、**两边都没提到编号**的未关闭 bug 是：#80313、#80344、#80342（见 G5 和 T9）。#80445（`composite3`）、#80457（`variable in subquery`）有被 `@Ignore` 的用例，#80170（`rangeslider-compositevalue`）有 `@PendingFeature` 的用例，也就是说用例在，等修复后启用。公共 API 类（#81059 至 #81061）、权限类和 id 变更类不属于静态 datatest。
 
-## 8. 具体要做（按顺序，均未开始）
+## 8. 具体要做（按顺序；T1 已做，其余未开始）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 前提 / 注意 |
 |---|---|---|---|---|
-| T1 | 给 78 个只断言已定义的用例补基表 MV 的命中检查（G1 第一步）：保留 `getMVDefInfo().containsAll([...])`，从同一个列表取出不带 `ASSOCIATION_` 的名字，加 `getMVHitInfo().containsAll([...])`；脚本生成，期望值取自原列表；`NotPublic_Text` 不动；列表里全是 `ASSOCIATION_` 的用例单独列出 | datatest 分支 `test-mv-association-base-hit`（已建，未改文件）：`AssociationMV_Spec`、`CalcField_Spec`、`Transform_Spec`、`MVHit_*`、`VSCondtion_Spec`、`SubMV_Others_Spec`、`TopMV_*` | 跑涉及的 spec；加了之后失败的用例单独列出，不删检查；加一次反向检查：把某个基表 MV 名改错，用例应当失败 | 只验证了 `TestCase_Selectionlist1` 的命中记录里有基表 MV，其余要改完才知道 |
+| T1 | 给 78 个只断言已定义的用例补基表 MV 的命中检查（G1 第一步）：保留 `getMVDefInfo().containsAll([...])`，从同一个列表取出不带 `ASSOCIATION_` 的名字，加 `getMVHitInfo().containsAll([...])`；脚本生成，期望值取自原列表；`NotPublic_Text` 不动；列表里全是 `ASSOCIATION_` 的用例单独列出 | datatest 分支 `test-mv-association-base-hit`（已建，未改文件）：`AssociationMV_Spec`、`CalcField_Spec`、`Transform_Spec`、`MVHit_*`、`VSCondtion_Spec`、`SubMV_Others_Spec`、`TopMV_*` | 跑涉及的 spec；加了之后失败的用例单独列出，不删检查；加一次反向检查：把某个基表 MV 名改错，用例应当失败 | **已做（2026-11-16，分支 `test-mv-association-base-hit`）**：78 个用例都加了命中检查；10 个 spec 本机运行，新检查只让 `CalcField_Spec` 的 `NotPublic_SelectionTree`、`NotPublic_Calendar`、`NotPublic_RangeSlider` 失败：已定义 `query1|SubMV`，命中记录只有 `query1|TopMV`。这三个 viewsheet 只有选择组件，命中靠查找记录，看不到查询时才选的子 MV（与 `NotPublic_Text` 同一原因），改为只检查 `query1|TopMV` 并加注释；这三个用例也就是反向检查：已定义但没观察到命中的 MV 会让新检查失败，而原来的 `getMVDefInfo` 检查照样通过。其余失败是 §2 已列的 8 个（others 5、`Other_TestCase17`），新检查在这些用例里都通过 |
 | T2 | 把 `wsmv` profile 加进 `test-mv.yml`（G6） | `.github/workflows/test-mv.yml`，照 `vpm` 一步的写法 | workflow 手动触发一次，`WSMV_Path_Spec` 出现在报告里 | 该 spec 改动 `docker/src/test/resources/H2Data/mvorder1.mv.db`，只影响本机 |
 | T3 | 本机 12 个失败用例：先在 CI 上确认，再按各 bug 的状态逐个更新 golden（核对新输出，不直接复制）；增量三个用例的日期条件改相对日期 | `MV_Creator`、`vs query and condition`、`hit mv`、`vpm` 的基线；`Append_Spec`、`Delete_Spec`、`Transform_Spec` | 各 profile 在干净的 `mv/target` 下 0 失败；`both` 下 `nomv` 比较仍通过 | 见 G8；#79870 现在是 Resolved（Redmine，修复见 stylebi PR #7747、#7756、#8045） |
 | T4 | 用 `NOT Transform` 的 11 个现成 viewsheet 建反向路径 spec（G2） | `mv/src/test/groovy/.../cases/` 下新 spec（放哪个 profile 待定） | 每个用例：不命中、结果与不用 MV 一致；反向：把对应的拒绝规则关掉时用例失败（做不到就说明） | 先逐个确认 11 个 viewsheet 各触发哪条规则 |
