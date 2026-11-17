@@ -209,7 +209,7 @@ class TopMV_TableStructures_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CATEGORIES1|TopMV', 'CATEGORIES1|TopMV', 'Query1|TopMV'])
-         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['CATEGORIES1|TopMV', 'Query1|TopMV', 'ASSOCIATION_CATEGORIES1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -431,7 +431,7 @@ class TopMV_TableStructures_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ORDERS1|TopMV', 'Query1_O|TopMV'])
-         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'Query1_O|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'Query1_O|TopMV', 'ASSOCIATION_ORDERS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

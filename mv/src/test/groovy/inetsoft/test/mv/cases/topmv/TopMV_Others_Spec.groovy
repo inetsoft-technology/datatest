@@ -120,7 +120,7 @@ class TopMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_ORDERS1|TopMV', 'ORDERS1|TopMV', 'ST_Query2_O|SubMV'])
-         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'ST_Query2_O|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'ST_Query2_O|SubMV', 'ASSOCIATION_ORDERS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -369,8 +369,9 @@ class TopMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
+         // ASSOCIATION_Query1|TopMV: built for every MV table; no selection is on Query1, so nothing reads it
          mvtest.getMVDefInfo().containsAll(['Query1|TopMV', 'Query2|TopMV', 'ORDERS1|TopMV', 'CUSTOMERS1|TopMV', 'ASSOCIATION_Query1|TopMV', 'ASSOCIATION_CUSTOMERS1|TopMV'])
-         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query2|TopMV', 'ORDERS1|TopMV', 'CUSTOMERS1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query2|TopMV', 'ORDERS1|TopMV', 'CUSTOMERS1|TopMV', 'ASSOCIATION_CUSTOMERS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
