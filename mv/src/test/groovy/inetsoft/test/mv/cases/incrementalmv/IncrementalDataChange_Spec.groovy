@@ -829,8 +829,10 @@ class IncrementalDataChange_Spec extends Specification {
    // of the append does not exclude the rows of the delete condition, while the MV creation does
    // (MVCreatorUtil.mergeConditionList). So a new row that both conditions take is appended and
    // kept, and only the next update deletes it. This is how the update works, not a bug: the
-   // case keeps the behavior. The append condition orderno > MV.MaxValue takes only new rows, so
-   // the second update appends nothing again.
+   // case keeps the behavior (decided 2026-11-17, see T9 in docs/test-gap-assessment/mv.md §8).
+   // If an update ever leaves such a row out, this case fails on updatedRows: then check whether
+   // the product changed on purpose and update the case. The append condition
+   // orderno > MV.MaxValue takes only new rows, so the second update appends nothing again.
    def 'a new row of both the append and the delete condition: the update keeps it, the next update deletes it'() {
       given:
       source.createLike('MVorders')
