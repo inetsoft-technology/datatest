@@ -117,7 +117,12 @@ class ScriptStateSubmit_Spec extends Specification {
    }
 
    def 'Submit_script_alert_is_recorded_twice'() {
-      // Observed, cause not investigated (maybe once for the click and once for the refresh it triggers).
+      // This is the COMPONENT script (Properties > Script), not the onClick script. Cause, from a probe that counted the
+      // alerts per submit (since removed, the numbers are in vsscript-upgrade-plan.md 5.7): the submit flow runs the component scripts of the input assemblies once while the
+      // input values are applied (OnClickService, processChange) and once more in the refresh. Same count for a script
+      // on an unrelated Slider (2 with refreshAfterSubmit on, 1 off); a plain refresh runs it once. The Submit's own
+      // script runs twice even with refreshAfterSubmit off. Whether that is intended is a question for development.
+      // The onClick script runs exactly once (Submit_onClick_script_runs_once).
       // Pinned so that a change in the number of messages is noticed instead of passing silently.
       given:
       def t = new ScriptStateBase(VS)
@@ -128,5 +133,28 @@ class ScriptStateSubmit_Spec extends Specification {
 
       then:
       msgs == ['submitted:7', 'submitted:7']
+   }
+
+   def 'Submit_onClick_script_runs_once'() {
+      // Spinner1 keeps its value across refreshes, so "+1" counts the executions: submitted 7 -> 8 means once.
+      given:
+      def t = new ScriptStateBase(VS)
+      def info = t.vs.getAssembly('Submit1').getVSAssemblyInfo()
+      info.setRefreshValue(refreshOn.toString())
+      info.setOnClick('Spinner1.selectedObject = Spinner1.selectedObject + 1')
+      info.setScriptEnabled(true)
+      t.res.refreshViewsheet(t.principal)
+
+      expect: 'the setup itself did not run the onClick script'
+      t.eval('Spinner1.selectedObject') == 0d
+
+      when:
+      submit(t, [Spinner1: 7])
+
+      then: 'applied value 7, then the onClick script once'
+      t.eval('Spinner1.selectedObject') == 8d
+
+      where:
+      refreshOn << [true, false]
    }
 }
