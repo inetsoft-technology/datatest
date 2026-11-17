@@ -161,6 +161,7 @@ class SubMV_Others_Spec extends Specification {
 
       expect:
       verifyAll {
+         // ASSOCIATION_Query2_O|TopMV: built for every MV table; no selection is on Query2_O, so nothing reads it
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query2_O|TopMV', 'Query2_O|TopMV', 'query1|TopMV'])
          mvtest.getMVHitInfo().containsAll(['Query2_O|TopMV', 'query1|TopMV'])
          mvtest.compareData(false)
@@ -755,7 +756,7 @@ class SubMV_Others_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
-         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'Query1|SubMV', 'Query2|SubMV', 'ASSOCIATION_Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

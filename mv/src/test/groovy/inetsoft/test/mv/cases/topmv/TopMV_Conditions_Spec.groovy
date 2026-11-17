@@ -613,7 +613,7 @@ class TopMV_Conditions_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CUSTOMERS1|TopMV', 'CUSTOMERS1|TopMV'])
-         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS1|TopMV', 'ASSOCIATION_CUSTOMERS1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
