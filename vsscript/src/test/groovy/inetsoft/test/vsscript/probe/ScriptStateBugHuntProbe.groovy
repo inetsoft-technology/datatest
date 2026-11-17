@@ -1,5 +1,6 @@
-package inetsoft.test.vsscript.state
+package inetsoft.test.vsscript.probe
 
+import inetsoft.test.vsscript.support.ScriptStateBase
 import inetsoft.test.ConfigurationContextInitializer
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.SreeHome

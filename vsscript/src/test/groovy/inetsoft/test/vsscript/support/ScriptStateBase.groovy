@@ -1,4 +1,4 @@
-package inetsoft.test.vsscript.state
+package inetsoft.test.vsscript.support
 
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.script.viewsheet.ViewsheetScope

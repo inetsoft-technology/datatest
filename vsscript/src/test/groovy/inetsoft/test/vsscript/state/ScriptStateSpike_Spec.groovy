@@ -1,5 +1,7 @@
 package inetsoft.test.vsscript.state
 
+import inetsoft.test.vsscript.support.ScriptStateBase
+import inetsoft.test.vsscript.support.RecordingDispatcher
 import inetsoft.test.IntegrationTestConfiguration
 import inetsoft.test.ConfigurationContextInitializer
 import inetsoft.test.SreeHome

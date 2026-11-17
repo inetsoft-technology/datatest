@@ -147,7 +147,9 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 ```
 vsscript/src/test/groovy/inetsoft/test/vsscript/
 ├── cases/    现有 115 个 PNG 用例，暂不动
-├── state/    新：D1–D8（已有原型）
+├── state/    新：状态断言用例，只放 *_Spec（D1–D8）
+├── support/  共用工具（ScriptStateBase、RecordingDispatcher），不是用例
+├── probe/    探路类（*Probe，默认不跑，只打印）
 └── render/   新：必须用 PNG 才能验证的用例（D9）
 ```
 - **基线路径风险：** `VSScriptTest.initHome` 用类的包名推出 `expectData` 子目录。往 `render/` 迁移用例必须同步移动基线，否则找不到基线。**只读了代码，没实际跑过迁移。**
@@ -168,7 +170,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 ## 8. 下一步
 
 **第 1 步：Submit（D3 的 `onSubmit` 部分）——已完成（2026-11-13）**
-- 代码：`state/ScriptStateSubmit_Spec.groovy`（现 8 个用例，全过）；探路 `ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
+- 代码：`state/ScriptStateSubmit_Spec.groovy`（现 8 个用例，全过）；探路 `probe/ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
 - JaCoCo 增量：`SubmitVSAScriptable` 0/14 → 10/14 行（分支 1/8）；`report.script.viewsheet` 合并覆盖 52.8% → 53.1%。
 - 剩余：`SubmitVSAScriptable` 另 4 行及分支未跑到，原因未查；Submit 的其他场景（`confirm`、多个 Submit、`refreshAfterSubmit=false` 的刷新差异）未做。
 
@@ -249,4 +251,4 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 ## 附：原型代码
 
-`vsscript/src/test/groovy/inetsoft/test/vsscript/state/`：`ScriptStateBase`（开 vs、设脚本、读值、录命令刷新）、`RecordingDispatcher`、`ScriptStateSpike_Spec`（10 个）、`ScriptStateChartCrosstab_Spec`（10 个）、`ScriptStateProbe_Spec`（10 个探路，只打印不断言）。运行：`./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'`（先 `./mvnw package -pl commons -DskipTests`），本机 30 个全部通过。
+`vsscript/src/test/groovy/inetsoft/test/vsscript/`（用例在 `state/`，共用工具在 `support/`，探路类在 `probe/`）：`ScriptStateBase`（开 vs、设脚本、读值、录命令刷新）、`RecordingDispatcher`、`ScriptStateSpike_Spec`（10 个）、`ScriptStateChartCrosstab_Spec`（10 个）、`ScriptStateProbe_Spec`（10 个探路，只打印不断言）。运行：`./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'`（先 `./mvnw package -pl commons -DskipTests`），本机 30 个全部通过。

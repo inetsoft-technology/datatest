@@ -1,4 +1,4 @@
-package inetsoft.test.vsscript.state
+package inetsoft.test.vsscript.support
 
 import inetsoft.sree.internal.cluster.Cluster
 import inetsoft.web.messaging.MessageAttributes

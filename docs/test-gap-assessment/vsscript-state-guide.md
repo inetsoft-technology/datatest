@@ -2,7 +2,7 @@
 
 > 给接手的人。读完这份应该能：跑起来、看懂已有代码、写出新用例、知道哪些坑已经踩过、知道下一步做什么。
 > 方案与结论见 `vsscript-upgrade-plan.md`；缺口来源见 `vsscript.md`。
-> 本手册里的代码都来自分支 `vsscript-state-assert-spike` 上跑通的原型，路径下文都相对 `vsscript/src/test/groovy/inetsoft/test/vsscript/state/`。
+> 本手册里的代码都来自分支 `vsscript-state-assert-spike` 上跑通的原型，文件在 `vsscript/src/test/groovy/inetsoft/test/vsscript/` 下的三个目录里：`state/`（用例）、`support/`（共用工具）、`probe/`（探路类），下文文件名前写了目录。
 
 ## 1. 这套东西解决什么
 
@@ -56,19 +56,24 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 
 ## 3. 代码结构
 
+三个目录，各管一类，不要混放：
+- `state/`：**只放 `*_Spec`**，也就是用例。surefire 只运行 `**/*_Spec`（`vsscript/pom.xml`），所以只有这里的文件会跑进套件和 CI。
+- `support/`：共用工具（`ScriptStateBase`、`RecordingDispatcher`），**不是用例**，spec 和探路类都用它们。新的共用方法加在这里；将来别的模块也要用时再考虑提到 `commons`（`commons` 改了要先 `./mvnw package -pl commons -DskipTests`）。
+- `probe/`：探路类（`*Probe`），不带 `_Spec`，所以默认不跑，要 `-Dtest=<类名>` 显式指定；只打印、不断言，结论固化进 `state/` 的用例后可以删。
+
 | 文件 | 作用 |
 |---|---|
-| `ScriptStateBase.groovy` | 测试基类/工具：开 vs、设脚本、读值、录命令刷新 |
-| `RecordingDispatcher.groovy` | 记录所有 `sendCommand` 的 `CommandDispatcher`（commons 里的 `MessageTestUtils` 那个是 no-op，没改它） |
-| `ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
-| `ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
-| `ScriptStateProbe.groovy` | **探路（不是测试套件）**：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...`，需 `-Dtest=ScriptStateProbe` 显式运行 |
-| `ScriptStateSubmit_Spec.groovy` | Submit 组件（8 个用例，含 onClick 只执行一次）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
-| `ScriptStateSubmitProbe.groovy` | **探路（不是测试套件）**：Submit 资产结构、`VSInputService` 依赖、读入口，只打印 |
-| `ScriptStateKnownBugs_Spec.groovy` | 仍复现的 Chart/Crosstab 脚本 bug：#80708/#80709（Chart 与 Crosstab 两半，#81530）、#78585 第 2 项（#81531）、编辑器列出的常量未定义（#81534）、`xAxis` 读回（#81540）；#80711 已修，转为回归。每个 bug 三个用例：**对照**（正常路径）、**\[bug present\]**（精确断言当前的失败特征，bug 修复或失败变样时会变红）、**`@PendingFeature`**（期望行为，修复后会"意外通过"而报警）。共 23 个用例，8 个 pending |
-| `ScriptStateChartScriptFixes_Spec.groovy` | 已在 stylebi 修好的 Chart 脚本 bug 的端到端回归（5 个用例）：#81032 的箱线图边框色（取真实 `VGraph` 绘制并数像素）、`y2Axis` 不泄漏到主度量 |
-| `ScriptStateHealthProbe.groovy` | **探路**：D1，对 130 个 vs 的所有脚本直接执行并统计 `ScriptException`（`-Dprobe.offset/limit` 可分段）。共用工具 `ScriptStateBase.viewsheetIds()` / `paint()` 在基类里 |
-| `ScriptStateBugHuntProbe.groovy` | **探路**（已精简为 3 个方法）：BH3 编辑器清单里的常量与类是否都有定义（需 `-Dprobe.lists=<json>`）、BH5 找有两个以上度量的图表、BH10 全局轴对象（`xAxis`/`yAxis`/`y2Axis`）写后读回矩阵。之前探到的结论都已固化进 spec |
+| `support/ScriptStateBase.groovy` | 测试基类/工具：开 vs、设脚本、读值、录命令刷新 |
+| `support/RecordingDispatcher.groovy` | 记录所有 `sendCommand` 的 `CommandDispatcher`（commons 里的 `MessageTestUtils` 那个是 no-op，没改它） |
+| `state/ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
+| `state/ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
+| `probe/ScriptStateProbe.groovy` | **探路（不是测试套件）**：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...`，需 `-Dtest=ScriptStateProbe` 显式运行 |
+| `state/ScriptStateSubmit_Spec.groovy` | Submit 组件（8 个用例，含 onClick 只执行一次）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
+| `probe/ScriptStateSubmitProbe.groovy` | **探路（不是测试套件）**：Submit 资产结构、`VSInputService` 依赖、读入口，只打印 |
+| `state/ScriptStateKnownBugs_Spec.groovy` | 仍复现的 Chart/Crosstab 脚本 bug：#80708/#80709（Chart 与 Crosstab 两半，#81530）、#78585 第 2 项（#81531）、编辑器列出的常量未定义（#81534）、`xAxis` 读回（#81540）；#80711 已修，转为回归。每个 bug 三个用例：**对照**（正常路径）、**\[bug present\]**（精确断言当前的失败特征，bug 修复或失败变样时会变红）、**`@PendingFeature`**（期望行为，修复后会"意外通过"而报警）。共 23 个用例，8 个 pending |
+| `state/ScriptStateChartScriptFixes_Spec.groovy` | 已在 stylebi 修好的 Chart 脚本 bug 的端到端回归（5 个用例）：#81032 的箱线图边框色（取真实 `VGraph` 绘制并数像素）、`y2Axis` 不泄漏到主度量 |
+| `probe/ScriptStateHealthProbe.groovy` | **探路**：D1，对 130 个 vs 的所有脚本直接执行并统计 `ScriptException`（`-Dprobe.offset/limit` 可分段）。共用工具 `ScriptStateBase.viewsheetIds()` / `paint()` 在基类里 |
+| `probe/ScriptStateBugHuntProbe.groovy` | **探路**（已精简为 3 个方法）：BH3 编辑器清单里的常量与类是否都有定义（需 `-Dprobe.lists=<json>`）、BH5 找有两个以上度量的图表、BH10 全局轴对象（`xAxis`/`yAxis`/`y2Axis`）写后读回矩阵。之前探到的结论都已固化进 spec |
 
 **`ScriptStateBase` 的接口（`new ScriptStateBase('<资产id>')` 会打开 vs）：**
 
