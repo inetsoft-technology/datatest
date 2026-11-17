@@ -25,5 +25,5 @@
 | vsexport | | 未开始 |
 | ws | [ws.md](ws.md) | 已评估；G1、G2、G3（假通过）、G10 已完成（[#213](https://github.com/inetsoft-technology/datatest/pull/213)）；功能面差集、已知 bug 对照已补，待评审 |
 | mv（6 个 profile） | [mv.md](mv.md) | 已评估，待评审；本机整套运行 615 个用例，12 个失败（vpm 4、incrementalmv 3、others 5），原因未确认；命中断言偏弱、反向路径和 `mv.*` 配置项缺口见 G1、G2、G4 |
-| vsscript | [vsscript.md](vsscript.md) | 已评估，待评审；G1（比对清单与陈旧基线）可直接修 |
+| vsscript | [vsscript.md](vsscript.md)、[vsscript-java-unit-tests.md](vsscript-java-unit-tests.md) | 已评估，待评审；G1（比对清单与陈旧基线）可直接修；产品单测 PR #8213（未合入，21 个类约 95 个新增用例，开 #81460–#81467）已覆盖 G4/G6/G7 的大部分单测项 |
 | olap、tabular、vpm、css | | 未开始 |
