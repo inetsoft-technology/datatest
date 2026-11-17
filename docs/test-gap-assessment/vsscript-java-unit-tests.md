@@ -1,6 +1,6 @@
 # vsscript 产品仓库 Java 单测结果（community PR #8213）
 
-> 来源：产品 PR [inetsoft-technology/stylebi#8213](https://github.com/inetsoft-technology/stylebi/pull/8213)「Add unit tests for viewsheet script properties, ViewsheetScope functions and global script functions」，分支 `test-vsscript-unit-analysis`，状态 **OPEN（未合入 `main`）**，只改测试代码，不新增测试类。
+> 来源：产品 PR [inetsoft-technology/stylebi#8213](https://github.com/inetsoft-technology/stylebi/pull/8213)「Add unit tests for viewsheet script properties, ViewsheetScope functions and global script functions」，分支 `test-vsscript-unit-analysis`，状态 **已合入 `main`**（`82bf34a268`，2026-11-17 11:05；下文是合入前核对的结果），只改测试代码，不新增测试类。
 > 核对时的产品 `main`（本机）`b6f680a11`；PR head `1542238578`（已多次合并 `main`）。PR 描述里的数字取自描述，**未重跑**；"新增方法数""同名命中"是我对 PR 与 `b6f680a11` 的 diff 做的静态统计，口径见 §6。
 > 缺口全貌见 [vsscript.md](vsscript.md)；datatest 侧方案见 [vsscript-upgrade-plan.md](vsscript-upgrade-plan.md)。
 

@@ -4,6 +4,7 @@
 > 依据：`vsscript.md`（缺口评估）+ 三轮原型/探路。**已确认**＝读过源码或在本机跑通；**未验证**＝没查或没跑。
 > **接手请先读 `vsscript-state-guide.md`**（怎么跑、代码结构、写用例的配方、已踩的坑）。
 > 实施方式：由 AI 按批次推进，每批产出一个可运行的 spec，结果写回本文。不估人天，只标相对大小（小/中/大）。
+> **更新（2026-11-17）：** D1 已跑（§5.1），Submit 的"2 次 alert"已查明（§5.7），已提 4 个单并补回归用例（§5.10），套件现为 59 个用例（5 个 pending），26 个有效变异全部翻红，开发对 #81530 的真实修复也按预期触发了报警（§5.9、§5.10）。
 
 ## 1. 结论
 
@@ -32,7 +33,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 | D2 | **异常契约**：把"刷新路径吞异常、点击路径抛异常、报错前的效果保留"固定成用例 | G2；PNG 和单测都看不到 | 小 | §5.1 |
 | D3 | **事件端到端**：`onClick`、`confirm`、`onSubmit`、嵌套 vs 的 `onClick`、`parameter` | G6；评估文档里零用例 | 中 | §5.2 |
 | D4 | **真实数据读回**：Crosstab 的 `data/table`、Chart 的 `EGraph/scale/dataset`、格式对象；把现有 PNG 用例改成状态断言版 | G5；现有用例"画进 Text 再比图" | 中 | §5.3 |
-| D5 | **触发顺序与跨组件**：`ONINIT`/`ONREFRESH`/组件脚本的先后，Text 读取 Crosstab 等 | 触发时机类 bug（67 条） | 中 | 未验证 |
+| D5 | **触发顺序与跨组件**：`ONINIT`/`ONLOAD`/组件脚本的先后，Text 读取 Crosstab 等 | 触发时机类 bug（67 条） | 中 | 未验证 |
 | D6 | **差分**：脚本设置 vs 资产静态属性，两者读回应一致 | 不依赖基线的正确性 | 小 | §5.4 |
 | D7 | **导出一致性**：同一 vs 多格式导出（PDF 文字、Excel 单元格），脚本效果应进入导出 | Viewer 与导出的差异（12 条 bug） | 中 | §5.6 |
 | D8 | **数据函数端到端**：`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`（单测已有 `ViewsheetScopeTest` 14 个用例，这里只测经真实 vs 的路径） | 写回类 bug | 中 | 入口未验证 |
@@ -59,13 +60,14 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 ### 5.1 脚本异常（最重要）
 | 触发方式 | 调用方能否发现 | 观察 |
 |---|---|---|
-| 组件脚本 / `ONINIT` / `ONREFRESH`（经刷新执行） | **不能** | 不抛异常，无 `MessageCommand`，vs 仍可用；报错语句之前的效果保留 |
+| 组件脚本 / `ONINIT` / `ONLOAD`（经刷新执行） | **不能** | 不抛异常，无 `MessageCommand`，vs 仍可用；报错语句之前的效果保留 |
 | 直接 `scope.execute(script, 组件名)` | 能 | 抛 `ScriptException`，cause 含具体错误，如 `ReferenceError: undefinedFn is not defined (line 1)` |
 | 点击（`OnClickService.onClick`） | 能 | 无 try/catch，异常抛给调用方 |
 
 - 源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接 `// ignore`。
 - 测试环境没有 SLF4J 绑定（`Failed to load class "org.slf4j.impl.StaticLoggerBinder"`），日志被丢弃；直接引用 logback 类会因版本不匹配 `ClassNotFoundException`。加绑定能否让日志可见：未验证。
 - 含义：现有 PNG 用例遇到脚本报错，基线若恰好是那种状态也会"通过"。
+- **D1 结果（2026-11-17，探路类 `ScriptStateHealthProbe`）：** 130 个 vs 全部能打开，83 个带脚本，共执行 213 段（组件 179、`ONLOAD` 18、`ONINIT` 16），3 段报错，**全是误报**：2 段读 `parameter.state`（直接执行没传参数，且对应用例被 `@Ignore`），1 段读父视图表 `pviewsheet`（内嵌 vs 单独打开没有父）。**现有资产里没有真实的脚本错误。** `ViewsheetInfo` 只有 `onInit`/`onLoad`，没有 `onRefresh`。
 - 产品仓库另有 `ScriptStateLint`（词法检查，带单测），与 D1 不同（D1 是真实执行）；是否可复用：未查。
 
 ### 5.2 点击与消息
@@ -86,7 +88,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 `getMemberKeys()` 枚举：Text1 36、Crosstab1 57、Chart1 146 个成员；其中标量 16 / 22 / 57 个，原样写回全部一致（Crosstab 的只读成员 `data.size` 写入报错）。非标量或 null 共 143 个未覆盖。
 
 ### 5.6 导出
-- vsscript 测试 classpath 上**没有 Apache POI**（pom 无依赖，`import` 编译失败）。本机 Maven 仓库（`D:/m2-1`，不是 `~/.m2`）里有 POI 5.4.0，加测试依赖应可行（未试）；不加的话 xlsx 可用 JDK `ZipFile` + 正则读。
+- vsscript 测试 classpath 上**没有 Apache POI**（pom 无依赖，`import` 编译失败）。本机 Maven 仓库（`~/.m2/settings.xml` 里的 `localRepository`，不一定是 `~/.m2`）里有 POI 5.4.0，加测试依赖应可行（未试）；不加的话 xlsx 可用 JDK `ZipFile` + 正则读。
 - PDF：PDFBox 提取文字，脚本改的 Text 值可见（通过）。
 - Excel：`Text` 组件导出为图片（`xl/drawings` + `xl/media/*.png`），不能按单元格断言；Crosstab 是单元格（第一个 sheet 179 个单元格、59 条共享字符串）。导出包含 5 个 worksheet，原因未查；还没把单元格与脚本数据逐项对比。
 
@@ -96,7 +98,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 - `InputValue`、`VSSubmitEvent` 是接口，Groovy 里用 Map 强转构造：`[assemblyName: {n}, value: {v}] as InputValue`。
 - 验证结果：提交 `TextInput1='abc'`、`Spinner1=7`、`Slider1=3` 后，`TextInput1.value`='abc'，`Spinner1.selectedObject`=7（原为 0），`Slider1.selectedObject`=3（原为 67）；不发值则不变（对照用例）。Submit 脚本里能读到刚提交的值（`alert("submitted:"+Spinner1.selectedObject)` → `submitted:7`）。
 - **读入口因组件而异：** TextInput 读 `value`（`selectedObject` 读到 undefined/null）；Spinner、Slider 读 `selectedObject`。
-- **观察：** 一次提交里这条 `alert` 被录到 **2 次**（都是 `submitted:7`）；原因未查（可能是点击时执行一次、刷新时又执行一次）。目前用例只断言"包含"，没有断言次数。
+- **已查明（2026-11-17，用一个数 alert 次数的探路类，已删除，数字就在下面）：** 这条是 Submit 的**组件脚本**，不是 onClick。提交流程先在"输入应用"阶段重算输入组件，再在刷新里执行，所以组件脚本共 2 次（放在无关的 Slider 上也一样；关掉 `refreshAfterSubmit` 后无关组件降为 1 次，Submit 自己的脚本仍是 2 次）；普通刷新只执行 1 次。**onClick 脚本只执行 1 次**（`Submit_onClick_script_runs_once`，用 Spinner 累加当计数器）。是否有意需开发确认，不当作 bug；`Submit_script_alert_is_recorded_twice` 钉住次数 2。
 
 ### 5.8 bug 驱动首轮（Redmine，2026-11-13）：状态断言**抓到了真实 bug**
 - **取数：** 仓库里的 `redmine_fetch.py` 需要环境变量 `REDMINE_URL`/`REDMINE_KEY`（本机未设置），且只存标题等精简字段，没有描述。改用会话里的 Redmine MCP 工具 `getIssues`（带 `description`）。**过滤写法：`subject` 必须写成 `~script`**（带 `~` 才是"包含"，写 `script` 返回空）；一次最多取到的条数受输出大小限制，需分页。
@@ -129,8 +131,16 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 
 **结论：** 6 个变异全部被预期的用例抓到，没有漏报；M6 还证明 `[bug present]` + `@PendingFeature` 的设计在 bug 被修复时会给出信号。
 
-**没有做变异检查的用例（不能当作"已证明能失败"）：** `G_export_pdf_text`（PDF 导出）、`E_global_function`、`B_state_value`、`Crosstab_*`（Crosstab 的读回与往返）、Chart 的 `titleVisible/tooltipVisible` 往返、`Chart_binding_roundtrip` 中的 `xFields/yFields`、EGraph 读回（目前只在探路类里）、`Submit_without_values_changes_nothing`（它本身就是对照）。
+**补充（2026-11-17）——机制与结果：** 改用"覆盖类"：把改过的 `.class` 编译后放进 `vsscript/target/test-classes/`（类路径上排在产品 jar 之前），**不碰本机 Maven 仓库**，用后删除并校验无残留；先把未改源码按 `git` 重编译，与 jar 逐类 `javap -c` 比对（两批分别 10、29 个类，全部一致）。第 1 批 11 个（还原 #8004 的修复 4 个、模拟修复 #80708/#80709/#81530/#81531/#81540 共 7 个）、第 2 批 13 个（`Spike`/`ChartCrosstab`/`Submit` 里的 Text、Crosstab、Chart 属性，`formatNumber`，PDF 导出，onClick 执行次数）全部按预期翻红；还原 #8004 补上了"修复前会失败"的证明。**`formatNumber` 第一次没翻**（补丁落在测试走不到的分支），改到实际路径后翻红：补丁要打在用例真正走的路径上。**真实修复也当作一次变异跑过：** #81530 的实际修复（`f0aad94be6`）覆盖进去后，预期的 8 个用例全部翻转、没有连带失败，随后把它们改成修复后的预期（修复前的 jar 上这 5 个回归用例会红，覆盖修复后 54 通过 / 5 pending / 0 失败）。**仍未做变异：** `#81534` 的 `[bug present]` 与 113 个类名的守护用例（没找到补丁点）；`Submit_without_values_changes_nothing` 本身是对照。变异脚本在会话临时目录，未入库。
 **局限：** 变异是我选的小改动，容易被抓；它证明"断言不是摆设"，不证明能抓住所有真实缺陷。
+
+### 5.10 提单与回归补充（2026-11-17）
+- **已提单（stylebi，类别 Viewsheet Execution）：** #81530（Crosstab `getTopN`/`isTopNReverse`/`getGroupOrder`、Chart `isTopNReverse`/`getGroupOrder` 在未设置字段上抛异常；Crosstab `getTopN` 此前无单，#80708/#80709 只修在 13.8 线；**已于同日修复，PR #8301，community `f0aad94be6`**，相关用例已改成回归，需要含该提交的 `inetsoft-core`）、#81531（Chart `isTopNReverse(field, 0)` 返回错误的 false，#78585 第 2 项只修在 wiz 线）、#81534（编辑器列出的 `Chart.FIRST_FORMULA`/`LAST_FORMULA`/`DASH_MASK`/`WIDTH_MASK` 在脚本里 undefined，#81033 只修在 13.8 线）、#81540（`xAxis` 的 getter 读到 Y 轴描述符）。
+- **§5.8 的三个 bug：** #80711 已由 #81032（PR #8004）移植，用例转为回归；#80708/#80709 见 #81530。**"Closed"不等于 stylebi 已修，修复常在 13.8 或 wiz 线**；补漏办法是取这些线上的脚本类 bug 在 stylebi 复测。
+- **已修好的端到端回归：** #81032 的箱线图边框色（取真实 `VGraph` 绘制并数像素）和 `y2Axis` 不泄漏到主度量（读运行时描述符），见 `ScriptStateChartScriptFixes_Spec`。
+- **后续补漏又提 2 个单：** #81550（脚本写入的区间数超过设计数时，Gauge 属性对话框第 4、5 格显示 0，点"确定"会存下，#78585 第 1 项只修在 wiz 线）、#81551（Low：脚本函数报错的消息不带原因，#78585 第 3 项；wiz 线的做法有暴露 JDBC/SQL 细节的顾虑，由开发定）；并给 #81531 补了 `getGroupOrder(field, 0)` 同样不对称的说明。#81430 里已写进展记录。
+- **线索未提单：** 分离图上 `yAxis`/`y2Axis` 的写入落在各度量描述符上，读回读的是图表级描述符，所以读不回；判断为"分发写入"的设计结果。
+- **界面验证：** 用独立容器（社区镜像 2.1.202611170332，其 `inetsoft-core` 与本机、企业镜像的 jar SHA-256 相同）+ Composer Console，脚本用 try/catch + `alert()` 读结果。8081 是共用 Mongo 的 3 节点集群且常被别人重启，不要在上面验证。
 
 ## 6. 目录与旧用例
 
@@ -158,14 +168,13 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 ## 8. 下一步
 
 **第 1 步：Submit（D3 的 `onSubmit` 部分）——已完成（2026-11-13）**
-- 代码：`state/ScriptStateSubmit_Spec.groovy`（4 个用例，全过）；探路 `ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
+- 代码：`state/ScriptStateSubmit_Spec.groovy`（现 8 个用例，全过）；探路 `ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
 - JaCoCo 增量：`SubmitVSAScriptable` 0/14 → 10/14 行（分支 1/8）；`report.script.viewsheet` 合并覆盖 52.8% → 53.1%。
 - 剩余：`SubmitVSAScriptable` 另 4 行及分支未跑到，原因未查；Submit 的其他场景（`confirm`、多个 Submit、`refreshAfterSubmit=false` 的刷新差异）未做。
 
-**第 2 步：D1 + D2（`state/` 下，一个 spec）**
-1. 取出 zip 里全部 vs 的所有脚本（组件脚本、`ONINIT`、`ONREFRESH`），逐段直接执行，统计抛 `ScriptException` 的数量与分布。
-2. 固定 D2 的三条行为。
-3. 结果（数字、误报情况、与刷新执行的差异）写回本节。
+**第 2 步：D1 + D2**
+- D1 已完成（2026-11-17，探路类 `ScriptStateHealthProbe`，结果见 §5.1）：130 个 vs、213 段脚本，3 段报错全是误报。
+- D2（把"刷新吞异常 / 直接执行抛 / 点击抛"固定成用例）未做；`ScriptStateKnownBugs_Spec` 已用直接执行的方式断言了若干异常。
 
 ## 9. 缺口对应与验收标准
 
@@ -191,7 +200,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 ## 10. 资产里的脚本不够时怎么办
 
-**事实（2026-11-13，数 zip）：** `vsscriptStorage.zip` 里 147 个文件、139 个 vs，只有 **200 个 `<script>` 节点**；ComboBox 12 个、Submit 9 个有（Thermometer、Cylinder、SlidingScale 已废弃、仅为向后兼容保留，不计入缺口）。所以 D1（批量执行资产里的脚本）只是"体检"，不等于覆盖；资产没写到的脚本能力它发现不了。datatest 里原本也没有覆盖率工具。
+**事实（2026-11-13，数 zip）：** `vsscriptStorage.zip` 里 130 个 vs，只有 **200 个 `<script>` 节点**（另有非空 `ONINIT` 16 段、`ONLOAD` 18 段）；ComboBox 12 个、Submit 9 个有（Thermometer、Cylinder、SlidingScale 已废弃、仅为向后兼容保留，不计入缺口）。所以 D1（批量执行资产里的脚本）只是"体检"，不等于覆盖；资产没写到的脚本能力它发现不了。datatest 里原本也没有覆盖率工具。
 
 **处理办法：先把"没覆盖"量准，再用三个与单测不同的来源补。**
 
@@ -199,7 +208,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 |---|---|---|---|
 | 0 | **JaCoCo 量覆盖**：对 `inetsoft.report.script.viewsheet.*`、`inetsoft.util.script.*` 统计行/分支覆盖，得到"哪些代码没被跑到"的客观清单，替代文本命中统计 | 目标清单来自代码 | **已跑通，结果见 §11** |
 | A | **bug 驱动**：从 Redmine 近两年脚本类 bug 的描述里抽出真实脚本做回归（评估文档只按标题分类，没读过描述） | 真实 vs 触发过的问题 | **首轮已做（§5.8）**：40 条里 8 条带可用脚本，做了 3 条，全部复现；很多 bug 只有现象没有脚本，需逐条判断 |
-| B | **生命周期矩阵**：属性（从代码枚举，按类型生成合法值）× 触发位置（组件脚本、`ONINIT`、`ONREFRESH`、`onClick`）× 观察点（刷新后保留、导出体现、书签往返、重复执行幂等），断言系统不变量，不断言 getter/setter | 测运行时行为，不测取值 | 未做；非标量属性难自动生成，只能覆盖标量约一半 |
+| B | **生命周期矩阵**：属性（从代码枚举，按类型生成合法值）× 触发位置（组件脚本、`ONINIT`、`ONLOAD`、`onClick`）× 观察点（刷新后保留、导出体现、书签往返、重复执行幂等），断言系统不变量，不断言 getter/setter | 测运行时行为，不测取值 | 未做；非标量属性难自动生成，只能覆盖标量约一半 |
 | C | **造资产**：只在现有资产无法触发某个 0 覆盖类时才需要（如 `VSEGraphScriptable`、数据库脚本类）；缺失的组件类型已不需要（Thermometer/Cylinder/SlidingScale 已废弃） | 补输入，不补断言方式 | 未验证内存构造的 vs 能否打开成 `RuntimeViewsheet` |
 
 **顺序：** 0 → D1+D2（定位成体检）→ A → B（在 0 量出的缺口上生成）→ C（只补缺的类型）。
@@ -208,7 +217,7 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 
 ## 11. JaCoCo 覆盖率结果（2026-11-13，本机）
 
-**做法：** 不改任何项目文件，用环境变量 `JAVA_TOOL_OPTIONS` 给测试 JVM 挂 JaCoCo 0.8.12 agent（`vsscript/pom.xml` 里 `argLine` 写死，所以不能走 `-DargLine`），产品类文件读 `D:/m2-1` 里的 `inetsoft-core-2.1.0-SNAPSHOT.jar`，用 `org.jacoco.cli` 生成报告。复现命令见手册 §2。
+**做法：** 不改任何项目文件，用环境变量 `JAVA_TOOL_OPTIONS` 给测试 JVM 挂 JaCoCo 0.8.12 agent（`vsscript/pom.xml` 里 `argLine` 写死，所以不能走 `-DargLine`），产品类文件读本机 Maven 仓库里的 `inetsoft-core-2.1.0-SNAPSHOT.jar`，用 `org.jacoco.cli` 生成报告。复现命令见手册 §2。
 
 | 范围 | 现有 115 个 PNG 用例 | 新增 30 个 state 用例（当时的原型，含探路） | 合并 |
 |---|---|---|---|

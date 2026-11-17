@@ -31,7 +31,7 @@
 # 探路类（名字不带 _Spec，默认不会跑，需要显式指定）
 ./mvnw test -pl vsscript -Dtest=ScriptStateProbe -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
 ```
-- 单个 spec 约 15 秒。`state/` 下 4 个断言型 spec（`*_Spec`）共 **29 个用例，其中 3 个是 `@PendingFeature`（已知 bug 仍存在）**，本机 0 失败（2026-11-13）。
+- 单个 spec 约 15 秒。`state/` 下 5 个断言型 spec（`*_Spec`）共 **59 个用例，其中 5 个是 `@PendingFeature`（已知 bug 仍存在）**。**注意：** #81530 的 5 个回归用例需要含 `f0aad94be6` 的 `inetsoft-core`；本机 Maven 仓库里的 `inetsoft-core` jar 早于它时这 5 个会红，重新 `install` core 后 0 失败（2026-11-17，已用该提交覆盖验证）。
 - **探路类不带 `_Spec` 后缀，不属于测试套件。** `vsscript/pom.xml` 的 surefire 配置是 `<include>**/*_Spec</include>`，所以 `ScriptStateProbe`、`ScriptStateSubmitProbe` 不会被默认运行（它们只打印、不断言，放进套件只会虚增"绿"用例）。要看探路输出：显式 `-Dtest=ScriptStateProbe`，再 `grep PROBE`。
 - **CI：** 这些 spec **没有单独接入 CI**。默认 `./mvnw test -pl vsscript` 会连同旧的 `cases/` 一起跑 `*_Spec`；评估文档记录 GitHub 工作流里 vsscript 步骤是 `continue-on-error: true`，所以即使失败也不会让流水线变红。是否单独收紧见方案 §7。
 - **合并前自测：** `./mvnw package -pl commons -DskipTests`，再 `./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'`。
@@ -48,7 +48,7 @@ export JAVA_TOOL_OPTIONS="-javaagent:<DIR>/org.jacoco.agent-runtime.jar=destfile
 ./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'
 unset JAVA_TOOL_OPTIONS
 
-# 出报告（产品类文件用本机 Maven 仓库里的 jar；本机仓库在 D:/m2-1，不是 ~/.m2）
+# 出报告（产品类文件用本机 Maven 仓库里的 jar；本机仓库是 `~/.m2/settings.xml` 里的 `localRepository`，不一定是 ~/.m2）
 java -jar <DIR>/org.jacoco.cli-nodeps.jar report <DIR>/x.exec   --classfiles <M2>/com/inetsoft/stylebi/inetsoft-core/2.1.0-SNAPSHOT/inetsoft-core-2.1.0-SNAPSHOT.jar --csv <DIR>/x.csv
 # 合并多次运行：java -jar ...cli-nodeps.jar merge a.exec b.exec --destfile all.exec
 ```
@@ -63,9 +63,12 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 | `ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
 | `ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
 | `ScriptStateProbe.groovy` | **探路（不是测试套件）**：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...`，需 `-Dtest=ScriptStateProbe` 显式运行 |
-| `ScriptStateSubmit_Spec.groovy` | Submit 组件（5 个用例）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
+| `ScriptStateSubmit_Spec.groovy` | Submit 组件（8 个用例，含 onClick 只执行一次）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
 | `ScriptStateSubmitProbe.groovy` | **探路（不是测试套件）**：Submit 资产结构、`VSInputService` 依赖、读入口，只打印 |
-| `ScriptStateKnownBugs_Spec.groovy` | Redmine 已关闭但当前版本仍复现的 Chart 脚本 bug（#80709/#80708/#80711）。每个 bug 三个用例：**对照**（正常路径）、**\[bug present\]**（精确断言当前的失败特征，bug 修复或失败变样时会变红）、**`@PendingFeature`**（期望行为）。共 9 个用例，3 个 pending |
+| `ScriptStateKnownBugs_Spec.groovy` | 仍复现的 Chart/Crosstab 脚本 bug：#80708/#80709（Chart 与 Crosstab 两半，#81530）、#78585 第 2 项（#81531）、编辑器列出的常量未定义（#81534）、`xAxis` 读回（#81540）；#80711 已修，转为回归。每个 bug 三个用例：**对照**（正常路径）、**\[bug present\]**（精确断言当前的失败特征，bug 修复或失败变样时会变红）、**`@PendingFeature`**（期望行为，修复后会"意外通过"而报警）。共 23 个用例，8 个 pending |
+| `ScriptStateChartScriptFixes_Spec.groovy` | 已在 stylebi 修好的 Chart 脚本 bug 的端到端回归（5 个用例）：#81032 的箱线图边框色（取真实 `VGraph` 绘制并数像素）、`y2Axis` 不泄漏到主度量 |
+| `ScriptStateHealthProbe.groovy` | **探路**：D1，对 130 个 vs 的所有脚本直接执行并统计 `ScriptException`（`-Dprobe.offset/limit` 可分段）。共用工具 `ScriptStateBase.viewsheetIds()` / `paint()` 在基类里 |
+| `ScriptStateBugHuntProbe.groovy` | **探路**（已精简为 3 个方法）：BH3 编辑器清单里的常量与类是否都有定义（需 `-Dprobe.lists=<json>`）、BH5 找有两个以上度量的图表、BH10 全局轴对象（`xAxis`/`yAxis`/`y2Axis`）写后读回矩阵。之前探到的结论都已固化进 spec |
 
 **`ScriptStateBase` 的接口（`new ScriptStateBase('<资产id>')` 会打开 vs）：**
 
@@ -193,16 +196,16 @@ assert t.eval('Spinner1.selectedObject') == 7d
 
 ## 5. 已踩过的坑（别重复踩）
 
-1. **刷新路径吞脚本异常。** 组件脚本、`ONINIT`、`ONREFRESH` 经刷新执行时，错误不抛、不发消息、测试里也没有日志（没有 SLF4J 绑定）；报错语句**之前**的效果仍然保留。要验证"脚本没报错"必须**直接** `scope.execute`。源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接忽略。
+1. **刷新路径吞脚本异常。** 组件脚本、`ONINIT`、`ONLOAD` 经刷新执行时，错误不抛、不发消息、测试里也没有日志（没有 SLF4J 绑定）；报错语句**之前**的效果仍然保留。要验证"脚本没报错"必须**直接** `scope.execute`。源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接忽略。
 2. **静态路径用 `*Value` setter。** `setAutoSize` 是运行时值，刷新后被重置；资产里存的静态值要用 `setAutoSizeValue`。
 3. **读写入口不对称。** `bindingInfo` 只有 setter；`setPresenter` 没找到读回方式；`getPresenter(3,3)` 读取抛 `ScriptException`。先探路再写断言。
 4. **数值是 `Double`。** `data.length` 读回 `30.0`，和整数比较要转。
 5. **不要引用 logback 类。** 版本不匹配，`ClassNotFoundException: org.slf4j.spi.LoggingEventAware`，整个 spec 会挂。
-6. **`OnClickService` 要手动构造**（见 §4.3）；表单提交需要 `VSInputService`，目前没接，是待办。
+6. **`OnClickService` 要手动构造**（见 §4.3）；表单提交要再带 `VSInputService`（见 §4.8）。
 7. **脚本引擎是 Graal，不是 Rhino。** 枚举属性用 `getVSAScriptable(name).getMemberKeys()`，没有 `getIds()`。
 8. **Excel 里 Text 是图片。** `xl/drawings` + `xl/media/*.png`，脚本改的 Text 值不在单元格里，要用表格类组件断言。
-9. **vsscript 测试 classpath 上没有 Apache POI。** 本机 Maven 仓库在 `D:/m2-1`（不是 `~/.m2`），里面有 POI 5.4.0，加测试依赖应可行（未试）；也可以用 §4.7 的 zip 读法。
-10. **一次提交里 Submit 脚本的 `alert` 会被录到两次**（原因未查），断言消息时用"包含"，别断言条数。
+9. **vsscript 测试 classpath 上没有 Apache POI。** 本机 Maven 仓库（`~/.m2/settings.xml` 里的 `localRepository`，不一定是 `~/.m2`）里有 POI 5.4.0，加测试依赖应可行（未试）；也可以用 §4.7 的 zip 读法。
+10. **一次提交里 Submit 的组件脚本的 `alert` 会被录到两次**（输入应用和刷新各执行一次，onClick 脚本只执行一次，见方案 §5.7），断言消息时用"包含"，别断言条数。
 11. **bash 里别在 heredoc 里放复杂 Groovy。** 写测试文件用编辑器或 Write 工具。
 
 ## 6. 写完新用例的检查清单
@@ -210,7 +213,8 @@ assert t.eval('Spinner1.selectedObject') == 7d
 1. 放在 `state/`，类名以 `_Spec` 结尾，带 §3 的注解。
 2. 断言具体值，不要只断言"非空"。
 3. **能失败：** 在产品里故意改坏对应 setter/映射，确认用例变红再恢复。没做这步不要当作有效覆盖。已有 6 个变异检查的结果见方案 §5.9。
-   - 工具：`.claude/workflow-shared/datatest-gap/vsscript_mutation_check.py`。它编译一个改坏的产品类，**临时替换本机 Maven 仓库里的 `inetsoft-core` jar**（先备份，每项后恢复，最后校验 sha256），跑指定 spec 并列出变红的用例。
+   - **更安全的做法（2026-11-17 已用，不改本机 Maven 仓库）：** 把改过的 `.class` 编译（`javac -proc:none`，类路径取 `dependency:build-classpath` 的结果再加 `tern-annotations` jar）后放进 `vsscript/target/test-classes/`，它在类路径上排在 `inetsoft-core` jar 之前；用后删除并确认无残留。改动前先把未改源码重编译并与 jar 逐类 `javap -c` 比对，不一致就停。补丁要打在**用例实际走到的路径**上（`formatNumber` 曾因此漏报）。脚本未入库。
+   - 旧工具（会替换本机 Maven 仓库里的 jar，被打断要手动恢复）：`.claude/workflow-shared/datatest-gap/vsscript_mutation_check.py`。它编译一个改坏的产品类，**临时替换本机 Maven 仓库里的 `inetsoft-core` jar**（先备份，每项后恢复，最后校验 sha256），跑指定 spec 并列出变红的用例。
    - 前置：产品源码要和 jar 一致；先生成 classpath：`./mvnw -o dependency:build-classpath -pl vsscript -Dmdep.outputFile=<文件>`；设置环境变量 `CP_FILE`（必填）、`M2_REPO`、`PRODUCT_CORE`、`JAVAC`（见脚本头部注释）。
    - **运行期间不要同时做别的构建；被中途杀掉时，把 `<MUT_WORK>_orig.jar` 拷回原 jar。**
    - 新增变异：在脚本的 `MUTATIONS` 里加一行（源文件、改动函数、spec、预期变红的用例）；改动函数必须只匹配到一处，否则脚本直接报错。
@@ -220,19 +224,20 @@ assert t.eval('Spinner1.selectedObject') == 7d
 
 ## 7. 现状与下一步
 
-**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、6 项探路、Submit 提交（`onSubmit`），`_Spec` 断言型用例 29 个（3 个 pending，已知 bug，见方案文档 §5.8），0 失败；另有 2 个探路类（不属于套件）。
+**已完成：** 6 类方案的最小用例、Crosstab/Chart 例子、探路、Submit（`onSubmit`、onClick），`_Spec` 断言型用例 59 个（5 个 pending，已知 bug 仍存在，见方案 §5.8、§5.10）；探路类 4 个（不属于套件）；D1 已跑（无真实脚本错误）；24 个有效变异全部翻红（方案 §5.9）；已提 4 个单（方案 §5.10）。
 **没做：** 批量覆盖（D1–D9 里除了原型示例以外的内容）；`render/` 目录；旧 `cases/` 的任何改动；CI 接入。
 **下一步（按优先级，详见方案文档 §4、§8、§10）：**
-0. JaCoCo 覆盖率基线已量（方案 §11）；Submit（`onSubmit`）已完成；**下一步 D1+D2**。资产里的脚本只有 200 个，D1 只是体检，不等于覆盖；资产不够时的补法见方案文档 §10（bug 驱动、生命周期矩阵、造资产）。
-1. D1+D2：对 zip 里 130 个 vs 的所有脚本直接执行并统计 `ScriptException`；固定"刷新吞异常/点击抛异常"的行为。
+0. JaCoCo 基线（方案 §11）、Submit、D1 已完成；D2（固定异常契约）未做。
+1. 补漏扫描：取只修在 13.8 / wiz 线的脚本类 bug，在 stylebi 上复测（已提 4 个单，方法见方案 §5.10）。
 2. D4：把现有 PNG 用例（Chart、Crosstab）改成状态断言版。
-3. D3：事件端到端（`onSubmit` 需接 `VSInputService`）。
+3. D3 其余（`confirm` 取消分支、嵌套 vs 的 `onClick`、`parameter`）。
 4. D6、D7、D5、D8、D9。
 
 ## 8. 待确认
 
 - 刷新路径吞脚本异常是不是产品有意设计？（需开发回答）
-- 直接执行脚本与刷新时执行的上下文是否一致（如 `onClick` 会设置 `setUseDValue`）？D1 会量一下。
+- 直接执行脚本与刷新时执行的上下文是否一致（如 `onClick` 会设置 `setUseDValue`）？D1 已量：误报来自缺参数、内嵌 vs 缺父视图表（方案 §5.1）。
 - 产品里的 `ScriptStateLint` 能否复用？未查。
+- 提交流程里输入组件的组件脚本在"输入应用"和刷新各执行一次（Submit 自己的脚本关掉刷新后仍是 2 次），是否有意？（方案 §5.7）
 - CI 里是否收紧 `continue-on-error`；基线是否人工核对过；旧用例稳定多久后处理。
 - 非标量属性（`highlighted` 内部、`dataConditions` 等）的读回方式，需逐个探。
