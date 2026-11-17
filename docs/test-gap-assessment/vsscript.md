@@ -1,6 +1,7 @@
 # vsscript 测试缺口与补充方案
 
 > 日期：2026-11-13　模块：`vsscript`，spec `vsscript/src/test/groovy/inetsoft/test/vsscript/cases/**/*_Spec.groovy`（11 个）
+> 产品仓库 Java 单测的新增（community PR #8213，未合入）见 [vsscript-java-unit-tests.md](vsscript-java-unit-tests.md)；§2 差集表、§3 G4/G6/G7、§4 已按它标注。
 > datatest 基线：`Stateless-Sessions1`（`4a552ce8`；评估在从它切出的分支上做，HEAD `080da329`）；产品源码：`main`（`9d54035b32`，2.1.0-SNAPSHOT）
 
 ## 1. 结论
@@ -11,7 +12,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 2. **功能面差集：** 产品脚本对象声明了 282 个属性/函数（`addProperty` 等），其中 43 个在 spec 与 zip 内所有脚本里没有任何文本命中；`ComboBox`、`Submit` 没有任何组件脚本用例（`Thermometer`/`Cylinder`/`SlidingScale` 已废弃，仅为向后兼容保留，不计入缺口）；视图表级函数（`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`…）和全局脚本函数（`CALC.*`、`inArray`、`split`…）零用例，而最近 Redmine 里这两类 bug 最密集。
 3. **本机无法判定通过与否：** 本机跑 115 个用例 114 个失败，全部是 PNG 像素差异（中位数 0.95%，阈值 0.001%），是渲染环境差异，不是产品错误。CI（GitHub 工作流）里该步骤 `continue-on-error: true`，失败不会让流水线变红。
 
-先做：G1（修清单，零成本）→ G4/G7 里"期望值可独立算出"的部分放进产品单测 → 少量 dashboard 补组件类型的接线用例。
+先做：G1（修清单，零成本）→ G4/G6/G7 里"期望值可独立算出"的部分已由产品 PR #8213 补单测（待合入，见 §4）→ 少量 dashboard 补组件类型的接线用例。
 
 ## 2. 覆盖情况
 
@@ -54,7 +55,9 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 **功能面差集（步骤 3b-A）：** 能力清单来自产品 `inetsoft/report/script/viewsheet/*VSAScriptable.java` 里的 `addProperty("名", …)` / `addFunctionProperty(cls, "名", …)`（`VSAScriptable.java:379-405, 728-741` 等；运行时由 `ViewsheetScope.java:764-862` 创建，已确认各组件→脚本类的对应）。统计口径：属性名在 spec 里所有脚本文本、spec 源码、zip 里所有组件 `<script>` 节点的**文本命中**（单词边界；命中是上限，不等于验证过；`value`、`field` 这类常见词偏高）。声明合计 282 个，**零文本命中 43 个**；另有 20 个仅出现在 zip 资产脚本里（spec 脚本没有，但 vs 被引用时会被渲染）。
 
-| 声明类 | 零命中的属性 | 产品单测里有无同名命中（仅名字匹配，未读内容） |
+> **2026-11-17 更新：** 下表"产品单测里有无同名命中"一列是 PR #8213 之前（`main` `b6f680a11`）的结果。PR 合入后 `popAlpha/popComponent/popLocation`、`rangeSize`、`applyChanges`、`scaledSize`、`shadowInfo`、`labelPosition/labelText` 都有了同名单测（`colors/lines/sizes` 只有相关路径的 frame 用例，属性名本身仍无命中）；详见 [vsscript-java-unit-tests.md](vsscript-java-unit-tests.md) §3。datatest 侧的零命中数不变。
+
+| 声明类 | 零命中的属性 | 产品单测里有无同名命中（仅名字匹配，未读内容；PR #8213 之前） |
 |---|---|---|
 | ChartVSAScriptable | `combinedTooltip`、`dateComparisonEnabled`、`padding`、`singleStyle`、`tipOnClick` | 前四项在 `ChartVSAScriptableTest` 有名字，`padding` 无 |
 | TableDataVSAScriptable | `col`、`field`、`row`、`keepRowHeightOnPrint`、`tipOnClick` | `keepRowHeightOnPrint`/`tipOnClick` 在 `TableVSAScriptableTest` 有名字；`col/row/field` 太常见，不判断 |
@@ -84,10 +87,10 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 | G1 | 比对清单与基线脱节：`ChartProperties_Spec.groovy:268-270` 把 `LengendsProperty1` 写了两遍，`LengendsProperty2` 导出了且有基线却从不被比；11 张基线无人引用；`Viewsheet_Spec` 无参 `compareImage()` 只比实际导出 | Chart2 的图例脚本回归不会报；`Viewsheet_Spec` 里某个导出丢失不会报；陈旧基线遮盖了"用例被删"的事实 | 机制（改清单；`Viewsheet_Spec` 改成点名） | 高 |
 | G2 | 阈值 0.001% 且只有 PNG：产品行为对了但渲染变了会误报，渲染没变但数据层错了（脚本报错被吞）不会报 | 脚本抛异常后组件保持原样，若基线也是那种状态则永远通过（脚本异常处理**未验证**，需开发确认） | 机制 + 单测 | 中 |
 | G3 | CI 里 vsscript 步骤 `continue-on-error: true`，本机 114/115 失败无法分辨真假 | 真回归和渲染噪声混在一起，没人盯 | 机制（先看 CI 实际通过情况，再决定要不要收紧） | 中 |
-| G4 | 43 个脚本属性零命中（§2 表）；`ComboBox`、`Submit` 无组件脚本用例（Thermometer/Cylinder/SlidingScale 已废弃，忽略） | 这些属性的 setter/getter 写错、类型强转错、取值串解析错不会被发现 | 单测为主；每类只加 1 个 dashboard 代表用例 | 高 |
+| G4 | 43 个脚本属性零命中（§2 表）；`ComboBox`、`Submit` 无组件脚本用例（Thermometer/Cylinder/SlidingScale 已废弃，忽略） | 这些属性的 setter/getter 写错、类型强转错、取值串解析错不会被发现 | 单测为主；每类只加 1 个 dashboard 代表用例。**单测部分：PR #8213 已覆盖 `pop*`、`rangeSize`、`applyChanges`、`scaledSize`、`shadowInfo`、`label*`、ComboBox（待合入）；余下 dashboard 代表用例** | 高（单测部分待合入） |
 | G5 | Chart 占组件脚本 57%（120/212），Calendar/Spinner/Line 各 1 个 | 非 Chart 组件的脚本回归几乎只靠 1–3 个用例 | dashboard（补 vs/扩展） | 中 |
-| G6 | 触发位置只有组件脚本、`ONINIT`、`ONREFRESH`：无事件脚本（onClick/onSubmit/confirm）、无 vs 级脚本存于资产；`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`、`createConnection`、`delayVisibility`、`event/OLD/CHANGED` 零命中 | 写表单/写回/事件类脚本的回归不会被发现 | 单测（`ViewsheetScope` 已有 14 个用例，补接口）；交互部分不属于静态 datatest，另行规划 | 高 |
-| G7 | 全局脚本函数（`CALC.*`、`inArray`、`split`、`rtrim`、`union`、`formatNumber`、`mapList` 等）在 vsscript 零命中；2025 年起 31 条里 27 条是这一类（见 §7） | 函数返回值的边界错误（空串、重复数、舍入、闰年…） | 单测（期望值可独立算出） | 高 |
+| G6 | 触发位置只有组件脚本、`ONINIT`、`ONREFRESH`：无事件脚本（onClick/onSubmit/confirm）、无 vs 级脚本存于资产；`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`、`createConnection`、`delayVisibility`、`event/OLD/CHANGED` 零命中 | 写表单/写回/事件类脚本的回归不会被发现 | 单测：`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`、`addImage`、`delayVisibility`、`isCancelled`、`addAction` 已由 PR #8213 补 18 个用例（待合入）；**仍缺 `viewsheetUser`、`exportFormat`、`confirmEvent`、`param`、事件脚本**；交互部分不属于静态 datatest，另行规划 | 高（单测部分待合入） |
+| G7 | 全局脚本函数（`CALC.*`、`inArray`、`split`、`rtrim`、`union`、`formatNumber`、`mapList` 等）在 vsscript 零命中；2025 年起 31 条里 27 条是这一类（见 §7） | 函数返回值的边界错误（空串、重复数、舍入、闰年…） | 单测（期望值可独立算出）。**PR #8213 已补 `formatNumber`、`rtrim`、`split`、`union`、`toList`、`dateAdd/dateDiff`、`monthname` 等边界，开出 #81460–#81467（待合入）；`inArray`、`mapList`、`CALC.*` 本 PR 未专门新增（`main` 已有测试）** | 高（大部分待合入） |
 | G8 | 68 个 vs 未被引用，其中 `ScriptAuto/VS_Self/vsAlias`、`ScriptAuto/ScriptEngine/selectedObjec` 是自动化目录下的孤儿 | 资产存在但没跑，说明用例被删或漏写 | 机制（确认删除或补用例） | 低 |
 
 方向判断：属性取值、函数返回值 → 单测；组件与脚本绑定的渲染 → dashboard；清单与基线脱节 → 改机制。
@@ -113,6 +116,8 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 用例数是设计出来的数量；难度：低 = 纯单元，中 = 需脚本环境，高 = 测试入口未确认。
 
+> **2026-11-17 对账（PR #8213，未合入）：** 上表里 `TextVSAScriptable`/`ImageVSAScriptable` 的 `pop*`、`RangeSlider` 的 `rangeSize`、`TableVSAScriptable` 的 `applyChanges`、`VSAScriptable` 的 `scaledSize`、`Shape` 的 `shadowInfo`、`Input` 基类的 `label*`、`ViewsheetScope` 的 8 个函数、全局函数的 `split/rtrim/union/formatNumber` 等边界，PR 都已补测试（见 [vsscript-java-unit-tests.md](vsscript-java-unit-tests.md) §3）；本表设计的用例数（总计约 98）不再作为待办，合入后以 PR 实际为准。**仍然没有的：** `VSChartBindingScriptable` 的 `colors/lines/sizes` 属性名本身（只有 frame 相关用例）、`viewsheetUser`、`exportFormat`、`confirmEvent`、`param`、事件脚本，以及 `CalcTable`/`Crosstab` 的逐项属性（PR 各只加 1 个用例）。
+
 ## 5. Dashboard 补充
 
 | 场景 | 做法 | 验证什么 | 前提 |
@@ -128,7 +133,8 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 - 扫描器 `.claude/workflow-shared/datatest-gap/vsscript_scan.py` 是正则读 spec，只认 `HANDLER:/COMMAND:` 写法；属性清单只含各 `*VSAScriptable` 里 `addProperty` 声明的名字，**不含** Chart 的 EGraph/GraphElement 脚本对象和 `bindingInfo` 方法（它们走别的类），所以 Chart 的功能面差集没统计；属性文本命中是上限（`value`、`field` 等常见词会偏高），零命中则只代表字符串没出现（动态拼接的属性名、`eval` 看不到）。
 - `vs_backup_scan.py` 的 `strictcheck`/`crosscheck` 没有用：vsscript 用的是 `VSScriptTest`（`printVS`），不是 `ViewsheetTest`，脚本不适用；孤儿统计是自写代码的结果。
 - 未运行：CI 实际通过情况；脚本异常是否进入 PNG（G2）。本机运行未传 license 参数（有渲染结果，说明可运行）。
-- 需要开发回答：脚本抛异常时产品是弹消息、记日志还是直接中断导出？`Input` 基类声明的属性是否被子类测试覆盖？`pop*`、`applyChanges`、`addAction` 的预期行为。
+- 产品单测（PR #8213）未合入；上面对它的结论只对 PR head 成立，用例数与变异结果取自 PR 描述，没有重跑。
+- 需要开发回答：#81467（`dateDiff("q")` 季度边界）；`Pins` 用例（5 个，见 vsscript-java-unit-tests.md §5）是否为期望行为；脚本抛异常时产品是弹消息、记日志还是直接中断导出？`Input` 基类声明的属性是否被子类测试覆盖？`pop*`、`applyChanges`、`addAction` 的预期行为。
 - 需要用户决定：G3（CI 是否收紧 `continue-on-error`）；基线是否人工核对过；§4 里全局脚本函数是否归 vsscript 评估范围（它们更像"脚本引擎"，可能另有归属）。
 - 团队设计文档（`docs/vs/VSOtherAssembly/VSOutPutInputOthers.xlsx` 等）：未读。
 
@@ -156,7 +162,7 @@ vsscript 的特性是"在 viewsheet 组件上执行用户脚本，再对整页 P
 
 按根因类别看，没有对应验证的是：**引擎/沙箱/异常、全局函数边界、数据访问函数、事件触发**。有用例但相对 bug 数偏薄的是：选择/输入组件（97 条对 33 个脚本）、表类（113 条对 21 个脚本）。
 
-最近两周的具体条目（来自第一次的 100 条搜索，人工挑选，未重新核对）：`union()` 重复数 81011/81164、`toList/mapList` 81014/81259/81260、`formatNumber` 舍入 81233、Chart `StackRange` 80993、`y2Axis` 80989、`bindingInfo.setGroupOrder/getGroupOrder/isTopNReverse` 80711/80708/80709、箱线图 `setBorderColor` 80985/81032、Crosstab `.data[row][col]` 81194、`highlighted[name]` 80875、嵌套 vs `onClick` 79699、`resetSubmitForms()` 80278。
+最近两周的具体条目（来自第一次的 100 条搜索，人工挑选，未重新核对）。其中 `union()` 重复数、`toList` 等已被 PR #8213 的单测重新查出同类 bug #81460/#81461/#81465（已在 `main` 修复）：`union()` 重复数 81011/81164、`toList/mapList` 81014/81259/81260、`formatNumber` 舍入 81233、Chart `StackRange` 80993、`y2Axis` 80989、`bindingInfo.setGroupOrder/getGroupOrder/isTopNReverse` 80711/80708/80709、箱线图 `setBorderColor` 80985/81032、Crosstab `.data[row][col]` 81194、`highlighted[name]` 80875、嵌套 vs `onClick` 79699、`resetSubmitForms()` 80278。
 
 ## 附：数据来源与复现
 
