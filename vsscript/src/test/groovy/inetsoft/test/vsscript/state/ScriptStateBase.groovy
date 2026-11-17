@@ -97,6 +97,13 @@ class ScriptStateBase {
       def user = principal
       CompletableFuture.runAsync { ThreadContext.setContextPrincipal(user); pair.waitInit() }.get(120, TimeUnit.SECONDS)
       def vgraph = pair.getExpandedVGraph()
+
+      if(vgraph == null || pair.isFailed()) {
+         // report it as the failure of the case instead of failing later with a NullPointerException
+         return [failure: pair.getFailure() ?: new IllegalStateException("no graph was created for ${chart}"),
+                 painted: 0, magenta: 0, pairFailed: pair.isFailed()]
+      }
+
       def img = new BufferedImage(400, 300, BufferedImage.TYPE_INT_ARGB)
       def g = img.createGraphics()
       Throwable failure = null
