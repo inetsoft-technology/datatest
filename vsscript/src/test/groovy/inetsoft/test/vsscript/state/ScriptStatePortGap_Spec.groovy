@@ -19,7 +19,8 @@ import spock.lang.Specification
  * on StyleBI. Two kinds of case:
  * <ul>
  *   <li>Regression: the 13.8 bug does not occur on StyleBI. A plain case with the correct value (#79672, #79676,
- *       #79677, #79678 factdouble, #79683, #79685, #81011, #81233).</li>
+ *       #79677, #79678 factdouble, #79683, #79685, #81011, #81233, and the table functions #79669 inArray and
+ *       #81014 toList maxrows=null).</li>
  *   <li>Still open on StyleBI: the three-case pattern of ScriptStateKnownBugs_Spec - a control, a "[bug present]" case
  *       that pins today's wrong value (it turns red when the bug is fixed), and a @PendingFeature case that asserts the
  *       expected value (it "passes unexpectedly", i.e. fails, once the bug is fixed; then drop the annotation and the
@@ -30,6 +31,9 @@ import spock.lang.Specification
  * does not change the design value (#63079), TextInput.value == null on load is true (#72042). TextInput has no
  * placeholderText property on StyleBI at all (#63510, #63079: the 13.8 feature #59271 does not exist here).
  * Not testable with the assets we have: #79699 (needs a dashboard embedded two levels deep; no asset embeds a viewsheet).
+ * Not covered (no way in from a viewsheet script, or a server setting): #79673 (JSObject Shape conversion), #79786
+ * (SecureClassShutter class names), #79470 / #79809 (script.execution.stackdepth), #80875 (highlighted[] on an output
+ * component: needs an output with two matching highlights, no asset has one).
  * Scripts run through scope.execute because the refresh path swallows script errors.
  */
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])
@@ -42,6 +46,7 @@ import spock.lang.Specification
 )
 class ScriptStatePortGap_Spec extends Specification {
    static final String VS = '1^128^__NULL__^ScriptAuto/Chart/ChartBandingInfo'
+   static final String TABLE_VS = '1^128^__NULL__^Manual/OtherScript/scope4'   // TableView1: header reseller|Year(orderdate)|state|...
    static final String FREEHAND_VS = '1^128^__NULL__^ScriptAuto/SpecialScript/FreehandFormula'
 
    /** any assembly script scope works for the global functions; the chart of this asset is used */
@@ -309,5 +314,25 @@ class ScriptStatePortGap_Spec extends Specification {
       then:
       near(r[0], 1d)
       near(r[1], 2d)
+   }
+
+   // ---- table functions on a real table (13.8: #79669 inArray(table, v), #81014 toList maxrows=null) ----
+   def '#79669 inArray finds a value of a table and not a missing one'() {
+      given:
+      def t = new ScriptStateBase(TABLE_VS)
+
+      expect: 'a state value of a data row is found, an unknown text is not'
+      run(t, "inArray(TableView1.table, TableView1.table[2][2])", 'TableView1') == true
+      run(t, "inArray(TableView1.table, 'no-such-value-zz')", 'TableView1') == false
+   }
+
+   def '#81014 toList treats maxrows=null as unset and keeps sort=desc'() {
+      given:
+      def t = new ScriptStateBase(TABLE_VS)
+      def list = { String opts -> run(t, "toList(TableView1.table, 'field=reseller${opts}').join('|')", 'TableView1') }
+
+      expect:
+      list(',sort=desc') == list(',sort=asc').split('[|]', -1).toList().reverse().join('|')
+      list(',sort=desc,maxrows=null') == list(',sort=desc')
    }
 }

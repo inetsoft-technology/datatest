@@ -135,4 +135,20 @@ class ScriptStateBackportProbe2 extends Specification {
       }
       true
    }
+
+   /** #79669 inArray(table, v), #81014 toList(table, 'maxrows=null') on a real table of an asset */
+   def "table functions"() {
+      expect:
+      def t = new ScriptStateBase(PFX + 'Manual/OtherScript/scope4')
+      p "cols => " + run(t, 'TableView1', "var tb = TableView1.table; var s = ''; for(var c = 0; c < tb.length; c++) { s += tb[0][c] + '|' } ; s")
+      p "rows => " + run(t, 'TableView1', 'TableView1.table.length')
+      def first = run(t, 'TableView1', 'TableView1.table[1][0]')
+      p "first value => ${first}"
+      p "inArray(table, first) => " + run(t, 'TableView1', "inArray(TableView1.table, TableView1.table[1][0])")
+      p "inArray(table, missing) => " + run(t, 'TableView1', "inArray(TableView1.table, 'no-such-value-zz')")
+      p "toList asc => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=asc').slice(0, 4).join(',')")
+      p "toList desc => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=desc').slice(0, 4).join(',')")
+      p "toList desc maxrows=null => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=desc,maxrows=null').slice(0, 4).join(',')")
+      true
+   }
 }
