@@ -297,6 +297,7 @@ class ExportUtil {
     * <li>range slider: the number of values, the first and last value and the selected range;</li>
     * <li>calendar: the range and the selected dates.</li>
     * </ul>
+    * Other selection types are not supported; check {@link #isSelectionExportable} first.
     */
    def exportSelection(String fileName, SelectionVSAssembly assembly) {
       StringBuilder buffer = new StringBuilder()
@@ -329,6 +330,15 @@ class ExportUtil {
 
       prepareFile(fileName)
       writeToFile(fileName, buffer.toString())
+   }
+
+   /**
+    * Whether {@link #exportSelection} supports this assembly: selection list / tree, range
+    * slider and calendar. Other types (e.g. a selection container) are skipped by callers.
+    */
+   static boolean isSelectionExportable(Object assembly) {
+      return assembly instanceof AssociatedSelectionVSAssembly ||
+         assembly instanceof TimeSliderVSAssembly || assembly instanceof CalendarVSAssembly
    }
 
    private void appendSelectionValues(StringBuilder buffer, SelectionList list, String indent) {

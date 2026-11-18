@@ -159,7 +159,8 @@ class ViewsheetTest {
     * @param params
     * @param bks eg: ['Home', 'brush1', 'brush2', 'exclude1', 'zoom'] as String[]
     * @param exportSelection also export the selection list / tree, range slider and calendar
-    *        assemblies as txt (see {@link ExportUtil#exportSelection}). Off by default: the
+    *        assemblies as txt (see {@link ExportUtil#exportSelection}); other selection types
+    *        are skipped. Off by default: the
     *        existing cases have no baselines for these files.
     * @return
     */
@@ -235,7 +236,7 @@ class ViewsheetTest {
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportVSObject(outFile.toString(), data)
             }
-            else if(exportSelection && it instanceof SelectionVSAssembly) {
+            else if(exportSelection && ExportUtil.isSelectionExportable(it)) {
                outFile = createExportFileByCase(assemblyName, bk, '.txt')
                exportUtil.exportSelection(outFile.toString(), (SelectionVSAssembly) it)
             }
