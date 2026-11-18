@@ -131,6 +131,7 @@ class Transform_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVCustomers1|TopMV', 'MVCustomers1|TopMV', 'MVCustomers1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV', 'MVCustomers1|SubMV', 'ASSOCIATION_MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -149,7 +150,9 @@ class Transform_Spec extends Specification {
 
       expect:
       verifyAll {
+         // ASSOCIATION_Query1|TopMV: built for every MV table; no selection is on Query1, so nothing reads it
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'ASSOCIATION_orders1|TopMV', 'Query1|TopMV', 'orders1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV', 'orders1|TopMV', 'ASSOCIATION_orders1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -168,7 +171,9 @@ class Transform_Spec extends Specification {
 
       expect:
       verifyAll {
+         // ASSOCIATION_Query1|TopMV: built for every MV table; no selection is on Query1, so nothing reads it
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Query1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }
@@ -244,7 +249,9 @@ class Transform_Spec extends Specification {
 
       expect:
       verifyAll {
+         // ASSOCIATION_Query1|TopMV: built for every MV table; no selection is on Query1, so nothing reads it
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_MVCustomers1|TopMV', 'ASSOCIATION_Query1|TopMV', 'MVCustomers1|TopMV', 'Query1|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['MVCustomers1|TopMV', 'Query1|TopMV', 'ASSOCIATION_MVCustomers1|TopMV'])
          mvtest.compareData(false)
          mvtest.compareData(true)
       }

@@ -33,6 +33,7 @@ import inetsoft.uql.asset.DateRangeRef
 import inetsoft.uql.asset.ExpressionValue
 import inetsoft.uql.asset.GroupRef
 import inetsoft.uql.asset.MirrorTableAssembly
+import inetsoft.uql.asset.TableAssembly
 import inetsoft.uql.asset.Worksheet
 import inetsoft.uql.asset.internal.AssetUtil
 import inetsoft.uql.erm.AttributeRef
@@ -70,7 +71,11 @@ import java.sql.Timestamp
  * cases create a table in the local H2 database {@code mvorder1} (data source {@code mvtest}),
  * insert and delete rows, and check the MV after each update. The append conditions take the
  * new rows ({@code > MV.MaxValue}, {@code > MV.LastUpdateTime}), as users write them, unlike
- * the other incremental cases, whose data never changes.
+ * the other incremental cases, whose data never changes. Some cases have the kinds of MV
+ * conditions of those cases instead: constant conditions, post-aggregate conditions,
+ * conditions on a join, mirror or minus table, a column or a subquery as the value, and
+ * {@code MV.MaxValue} and {@code MV.MinValue} in append and delete conditions on columns of
+ * other types.
  * <p>
  * The worksheet and the viewsheet are copies of {@code MV_Creator/Append} assets made by the
  * case, bound to its table and with its MV conditions, and removed when it ends;
@@ -699,6 +704,601 @@ class IncrementalDataChange_Spec extends Specification {
          mvtest.takeMVHits() == ['MVSCRIPT1|TopMV']
          integers(true) == (1..5).toList()
       }
+   }
+
+   // Constant MV conditions, as most cases of Append_Spec and Delete_Spec have, but on data that
+   // changes. The MV creation applies a constant delete condition (the new MV leaves its rows
+   // out) and does not apply the append condition, so the rows the append condition skips are
+   // deleted from the database before the rebuild. No new row is taken by both conditions: an
+   // update keeps such a row until the next update (see the case after the join case).
+   def 'constant append and delete conditions: the new rows of the append condition are appended, the same as a rebuilt MV'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-01-02', 3: '2020-01-03', 4: '2020-01-04')
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1') { BoundTableAssembly table ->
+         ColumnRef customer = column(table, 'customer_id')
+         table.setMVUpdatePreConditionList(atLeast(customer, 105))
+         table.setMVDeletePreConditionList(oneOf(customer, [102, 106]))
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and: '5 (customer 105) and 6 (107) are new, 7 (customer 100) is below the append condition'
+      insertOrders(5: '2020-01-05', 6: ['2020-01-06', 107, 0], 7: ['2020-01-07', 100, 0])
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = orders(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 7")
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [1, 3, 4]
+         updatedRows == [1, 3, 4, 5, 6]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // Post-aggregate MV conditions (mvUpdatePostConds, mvDeletePostConds), which the update merges
+   // into the post conditions of the table, on a table grouped by customer. The new rows are of
+   // new customers only, so the update appends whole new groups (an update does not merge rows
+   // into the groups of the MV, see the case of the table grouped by month). The delete condition
+   // takes no new group, as in the constant case.
+   def 'post-aggregate append and delete conditions on a grouped table: the new groups are appended, the same as a rebuilt MV'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: ['2020-01-01', 101, 0.25], 2: ['2020-01-02', 102, 0.5], 3: ['2020-01-03', 101, 0.5],
+                   4: ['2020-01-04', 103, 0.25])
+      copyCustomerGroupedAssets()
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = rows(false)
+
+      and: 'customers 105 (two rows) and 107 are new, 100 is below the append condition'
+      insertOrders(5: ['2020-01-05', 105, 0.25], 6: ['2020-01-06', 105, 0.5], 7: ['2020-01-07', 107, 0.25],
+                   8: ['2020-01-08', 100, 0.25])
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = rows(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 8")
+      mvtest.rebuildMV(null, null, false)
+
+      then: 'customer_id, Sum(discount)'
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [['101', '0.75'], ['103', '0.25']]
+         updatedRows == [['101', '0.75'], ['103', '0.25'], ['105', '0.75'], ['107', '0.25']]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // MV conditions on a join table (a composed table), which the update also applies to the
+   // tables of the join (MVIncremental.mergeAppendCondition), as in Append_Spec M_Testcase2: the
+   // join of MVorders1 and MVorders2 on customer_id, here both bound to the case's table. The
+   // delete condition takes no new row, as in the constant case.
+   def 'append and delete conditions on a join table: the new joined rows are appended, the same as a rebuilt MV'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-01-02', 3: '2020-01-03', 4: '2020-01-04')
+      copyJoinAssets()
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = values('orderno', false)
+
+      and: '5 (customer 105) and 6 (107) are new, 7 (customer 100) is below the append condition'
+      insertOrders(5: '2020-01-05', 6: ['2020-01-06', 107, 0], 7: ['2020-01-07', 100, 0])
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = values('orderno', true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 7")
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == ['Query1|TopMV']
+         updated == ['Query1|TopMV']
+         createdRows == ['1', '3', '4']
+         updatedRows == ['1', '3', '4', '5', '6']
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // An update deletes first and appends afterwards (LocalMVIncremental.update0), and the query
+   // of the append does not exclude the rows of the delete condition, while the MV creation does
+   // (MVCreatorUtil.mergeConditionList). So a new row that both conditions take is appended and
+   // kept, and only the next update deletes it. This is how the update works, not a bug: the
+   // case keeps the behavior (decided 2026-11-17, see T9 in docs/test-gap-assessment/mv.md §8).
+   // If an update ever leaves such a row out, this case fails on updatedRows: then check whether
+   // the product changed on purpose and update the case. The append condition
+   // orderno > MV.MaxValue takes only new rows, so the second update appends nothing again.
+   def 'a new row of both the append and the delete condition: the update keeps it, the next update deletes it'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-01-02', 3: '2020-01-03', 4: '2020-01-04')
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1') { BoundTableAssembly table ->
+         table.setMVUpdatePreConditionList(afterMaxValue(column(table, 'orderno')))
+         table.setMVDeletePreConditionList(oneOf(column(table, 'customer_id'), [102, 106]))
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def createdRows = orders(false)
+      mvtest.takeMVHits()
+
+      and: '5 (customer 105) and 6 (106, of the delete condition) are new'
+      insertOrders(5: '2020-01-05', 6: '2020-01-06')
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = orders(true)
+
+      and: 'no new rows: the delete condition takes 6'
+      update()
+      def updated2 = mvtest.takeMVHits()
+      def updatedRows2 = orders(true)
+
+      and:
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         updated == ['MVorders1|TopMV']
+         updated2 == ['MVorders1|TopMV']
+         createdRows == [1, 3, 4]
+         updatedRows == [1, 3, 4, 5, 6]
+         updatedRows2 == [1, 3, 4, 5]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // MV.MaxValue and MV.MinValue on the column types of the MV_Creator/Append maxValue_* and
+   // minValue_* cases, which use = and so append the same rows again on data that does not
+   // change. Here the new values beyond the values of the MV are appended, and the others not;
+   // these are deleted from the database before the rebuild.
+   def 'append condition #column #op MV.#bound: the new values beyond the MV are appended'() {
+      given:
+      source.createLike('MVSCRIPT')
+      insertValues(column, initial)
+      copyAssets("MV_Creator/Append/${asset}", tableName) { BoundTableAssembly table ->
+         ConditionList append = (ConditionList) ((ConditionList) table.getMVUpdatePreConditionList()).clone()
+         setExpression((AssetCondition) append.getConditionItem(0).getXCondition(),
+                       op == '>' ? XCondition.GREATER_THAN : XCondition.LESS_THAN, 'MV.' + bound)
+         table.setMVUpdatePreConditionList(append)
+         table.setMVDeletePreConditionList(new ConditionList())
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdValues = firstColumn(false)
+
+      and:
+      insertValues(column, taken + skipped)
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedValues = firstColumn(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      skipped.each { source.execute("DELETE FROM ${TABLE} WHERE \"${column.toUpperCase()}\" = ${literal(column, it)}") }
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == [tableName + '|TopMV']
+         updated == [tableName + '|TopMV']
+         createdValues == initial.collect { shown(column, it) }.sort()
+         updatedValues == (initial + taken).collect { shown(column, it) }.sort()
+         mvtest.compareWithRebuild()
+      }
+
+      where:
+      asset               | tableName   | column        | op  | bound      | initial                                    | taken                      | skipped
+      'minValue_Integer'  | 'MVSCRIPT1' | 'INTEGER'     | '<' | 'MinValue' | [10, 20, 30]                               | [1, 5]                     | [25]
+      'maxValue_Double'   | 'MVSCRIPT1' | 'DOUBLE'      | '>' | 'MaxValue' | [1.5, 2.5, 3.5]                            | [4.25, 5.75]               | [2.75]
+      'minValue_Double'   | 'MVSCRIPT1' | 'DOUBLE'      | '<' | 'MinValue' | [1.5, 2.5, 3.5]                            | [0.25, -1.5]               | [2.75]
+      'maxValue_String'   | 'MVScript1' | 'string'      | '>' | 'MaxValue' | ['b', 'd', 'f']                            | ['g', 'h']                 | ['c']
+      'minValue_String'   | 'MVScript1' | 'string'      | '<' | 'MinValue' | ['b', 'd', 'f']                            | ['a', 'ab']                | ['e']
+      'maxValue_Datetime' | 'MVScript1' | 'timeinstant' | '>' | 'MaxValue' | ['2020-01-02', '2020-01-04', '2020-01-06'] | ['2020-01-07', '2020-01-09'] | ['2020-01-03']
+      'minValue_Datetime' | 'MVScript1' | 'timeinstant' | '<' | 'MinValue' | ['2020-01-02', '2020-01-04', '2020-01-06'] | ['2019-12-30', '2020-01-01'] | ['2020-01-05']
+   }
+
+   // The value of the append condition is another column, as in Append_Spec S_TestCase28. The
+   // old rows have customer_id != orderno, so the condition takes only new rows.
+   def 'append condition customer_id = orderno (a column): the new rows with equal columns are appended'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-01-02', 3: '2020-01-03')
+      copyAssets('MV_Creator/Append/S_TestCase28', 'MVorders1') { BoundTableAssembly table ->
+         table.setMVDeletePreConditionList(new ConditionList())
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and: '4 and 5 have customer_id = orderno, 6 has customer 106'
+      insertOrders(4: ['2020-01-04', 4, 0], 5: ['2020-01-05', 5, 0], 6: '2020-01-06')
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = orders(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 6")
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [1, 2, 3]
+         updatedRows == [1, 2, 3, 4, 5]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // The value of the append condition is a subquery on another table, as in Append_Spec
+   // S_TestCase29: orderno in the customer_id of MVCustomers1 (the database table MVCustomers,
+   // customer_id 1 to 20), correlated on orderno = customer_id. The old rows have ordernos above
+   // 20, so the condition takes only new rows.
+   def 'append condition orderno in a subquery on another table: the new rows found there are appended'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(101: '2020-01-01', 102: '2020-01-02', 103: '2020-01-03')
+      copyAssets('MV_Creator/Append/S_TestCase29', 'MVorders1') { BoundTableAssembly table ->
+         table.setMVDeletePreConditionList(new ConditionList())
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and: 'customers 5 and 6 exist, 1000 does not'
+      insertOrders(5: '2020-01-05', 6: '2020-01-06', 1000: '2020-01-07')
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = orders(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 1000")
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [101, 102, 103]
+         updatedRows == [5, 6, 101, 102, 103]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // The delete conditions col = MV.MaxValue and col = MV.MinValue of the MV_Creator/Delete
+   // maxValue_* and minValue_* cases on data that changes, with the append condition
+   // col > MV.MaxValue. The update computes the MV values before it deletes, so it deletes the
+   // largest or smallest value of the MV and appends the new value. The MV creation ignores both
+   // conditions, so the deleted row is deleted from the database before the rebuild.
+   def 'delete condition #column = MV.#bound: the update deletes that value of the MV and appends the new one'() {
+      given:
+      source.createLike('MVSCRIPT')
+      insertValues(column, initial)
+      copyAssets("MV_Creator/Delete/${asset}", tableName) { BoundTableAssembly table ->
+         // qualified: the data variable column hides the method
+         ColumnRef col = IncrementalDataChange_Spec.column(table, column)
+         table.setMVUpdatePreConditionList(expression(col, XCondition.GREATER_THAN, 'MV.MaxValue'))
+      }
+      mvtest = new MVTest(VS_ID)
+      def removed = bound == 'MaxValue' ? initial.last() : initial.first()
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdValues = firstColumn(false)
+
+      and:
+      insertValues(column, [added])
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedValues = firstColumn(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE \"${column.toUpperCase()}\" = ${literal(column, removed)}")
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         created == [tableName + '|TopMV']
+         updated == [tableName + '|TopMV']
+         createdValues == initial.collect { shown(column, it) }.sort()
+         updatedValues == (initial - [removed] + [added]).collect { shown(column, it) }.sort()
+         mvtest.compareWithRebuild()
+      }
+
+      where: 'initial is sorted'
+      asset               | tableName   | column        | bound      | initial                                    | added
+      'maxValue_Integer'  | 'MVSCRIPT1' | 'INTEGER'     | 'MaxValue' | [10, 20, 30]                               | 40
+      'minValue_Integer'  | 'MVSCRIPT1' | 'INTEGER'     | 'MinValue' | [10, 20, 30]                               | 40
+      'maxValue_Double'   | 'MVSCRIPT1' | 'DOUBLE'      | 'MaxValue' | [1.5, 2.5, 3.5]                            | 4.25
+      'minValue_Double'   | 'MVSCRIPT1' | 'DOUBLE'      | 'MinValue' | [1.5, 2.5, 3.5]                            | 4.25
+      'maxValue_String'   | 'MVScript1' | 'string'      | 'MaxValue' | ['b', 'd', 'f']                            | 'g'
+      'minValue_String'   | 'MVScript1' | 'string'      | 'MinValue' | ['b', 'd', 'f']                            | 'g'
+      'maxValue_Datetime' | 'MVScript1' | 'timeinstant' | 'MaxValue' | ['2020-01-02', '2020-01-04', '2020-01-06'] | '2020-01-07'
+      'minValue_Datetime' | 'MVScript1' | 'timeinstant' | 'MinValue' | ['2020-01-02', '2020-01-04', '2020-01-06'] | '2020-01-07'
+   }
+
+   // An MV condition on a mirror table, as in Append_Spec M_Testcase1: Query1 mirrors MVorders1
+   // grouped by Year(orderdate) with Sum(orderno), and the MV is on Query1. The new rows are of
+   // a new year only, as an update appends whole groups (see the case of the table grouped by
+   // month). No delete condition: one on orderno, which is not a group column, is neither
+   // applied when the MV is created nor by an update, as the MV has no orderno to delete.
+   def 'append condition on a grouped mirror table: the new year is appended, the same as a rebuilt MV'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-02-01', 3: '2021-01-01')
+      copyAssets('MV_Creator/Append/M_Testcase1', 'MVorders1', { TableAssembly table -> clearConditions(table) }, null) { Worksheet ws, BoundTableAssembly detail ->
+         TableAssembly mirror = (TableAssembly) ws.getAssembly('Query1')
+         ColumnRef orderno = (ColumnRef) ((ConditionList) mirror.getMVUpdatePreConditionList()).getConditionItem(0).getAttribute()
+         clearConditions(mirror)
+         mirror.setMVUpdatePreConditionList(atLeast(orderno, 5))
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = rows(false)
+
+      and: '5 and 6 are in 2022, 4 (in 2023) is below the append condition'
+      insertOrders(5: '2022-01-01', 6: '2022-03-01', 4: '2023-01-01')
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = rows(true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 4")
+      mvtest.rebuildMV(null, null, false)
+
+      then: 'Year(orderdate), Sum(orderno)'
+      verifyAll {
+         created == ['Query1|TopMV']
+         updated == ['Query1|TopMV']
+         createdRows == [['2020-01-01 00:00:00', '3'], ['2021-01-01 00:00:00', '3']]
+         updatedRows == [['2020-01-01 00:00:00', '3'], ['2021-01-01 00:00:00', '3'],
+                         ['2022-01-01 00:00:00', '11']]
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   // MV conditions on a minus table, as in Append_Spec M_Testcase6: MinusTable is Query1 minus
+   // Query2, mirrors of MVorderdetails1 and MVorderdetails2, and the MV is on MinusTable. Here
+   // MVorderdetails1 is bound to the case's table and MVorderdetails2 to a view of its rows with
+   // quantity >= 100, so the minus table has the rows with quantity < 100. (A union of tables
+   // has the MVs on its tables, M_Testcase5, and a rotated table on the table it rotates,
+   // M_Testcase9 and M_Testcase22, so their own MV conditions are not used.)
+   def 'append and delete conditions on a minus table: the new rows of the minus are appended, the same as a rebuilt MV'() {
+      given:
+      source.createLike('MVorderdetails')
+      source.execute("CREATE VIEW ${VIEW} AS SELECT * FROM ${TABLE} WHERE quantity >= 100")
+      insertDetails(101: 1, 102: 1, 103: 1, 104: 200)
+      copyAssets('MV_Creator/Append/M_Testcase6', 'MVorderdetails1', { TableAssembly table -> clearConditions(table) }, null) { Worksheet ws, BoundTableAssembly left ->
+         BoundTableAssembly right = (BoundTableAssembly) ws.getAssembly('MVorderdetails2')
+         right.getSourceInfo().setSource(VIEW)
+         // the asset filters both tables on orderno (not MV conditions), which would leave none
+         // of the case's rows
+         left.setPreConditionList(new ConditionList())
+         right.setPreConditionList(new ConditionList())
+         ['MVorderdetails2', 'Query1', 'Query2'].each { clearConditions((TableAssembly) ws.getAssembly(it)) }
+         TableAssembly minus = (TableAssembly) ws.getAssembly('MinusTable')
+         ColumnRef orderno = (ColumnRef) ((ConditionList) minus.getMVUpdatePreConditionList()).getConditionItem(0).getAttribute()
+         clearConditions(minus)
+         minus.setMVUpdatePreConditionList(atLeast(orderno, 105))
+         minus.setMVDeletePreConditionList(oneOf(orderno, [102, 108]))
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = values('orderno', false)
+
+      and: '105 is new, 107 is in the view (quantity 300), 100 is below the append condition'
+      insertDetails(105: 1, 107: 300, 100: 1)
+      update()
+      def updated = mvtest.takeMVHits()
+      def updatedRows = values('orderno', true)
+
+      and: 'the database gets the rows of the MV, so a rebuilt MV has them too'
+      source.execute("DELETE FROM ${TABLE} WHERE orderno = 100")
+      mvtest.rebuildMV(null, null, false)
+
+      then: '104 and 107 are in the view, 102 is left out by the delete condition'
+      verifyAll {
+         created == ['MinusTable|TopMV']
+         updated == ['MinusTable|TopMV']
+         createdRows == ['101', '103']
+         updatedRows == ['101', '103', '105']
+         mvtest.compareWithRebuild()
+      }
+   }
+
+   private static void clearConditions(TableAssembly table) {
+      table.setMVUpdatePreConditionList(new ConditionList())
+      table.setMVDeletePreConditionList(new ConditionList())
+      table.setMVUpdatePostConditionList(new ConditionList())
+      table.setMVDeletePostConditionList(new ConditionList())
+   }
+
+   /** orderno -> quantity, with product_id 1. */
+   private void insertDetails(Map<Integer, Integer> rows) {
+      rows.each { no, quantity ->
+         source.execute("INSERT INTO ${TABLE} (orderno, product_id, quantity) VALUES (${no}, 1, ${quantity})")
+      }
+   }
+
+   /** {@code col <op> expression}, with the type of the column. */
+   private static ConditionList expression(ColumnRef col, int op, String expression) {
+      AssetCondition cond = new AssetCondition(col.getDataType())
+      cond.setOperation(op)
+      ExpressionValue value = new ExpressionValue()
+      value.setType(ExpressionValue.JAVASCRIPT)
+      value.setExpression(expression)
+      cond.addValue(value)
+      return single(col, cond)
+   }
+
+   // the asset names the columns string and timeinstant, the database STRING and TIMEINSTANT
+   private void insertValues(String column, List values) {
+      values.each { source.execute("INSERT INTO ${TABLE} (\"${column.toUpperCase()}\") VALUES (${literal(column, it)})") }
+   }
+
+   private static String literal(String column, Object value) {
+      switch(column) {
+         case 'DOUBLE': return String.valueOf(value)
+         case 'timeinstant': return "TIMESTAMP '${value} 00:00:00'"
+         default: return "'${value}'"
+      }
+   }
+
+   /** A value as the export shows it. */
+   private static String shown(String column, Object value) {
+      return column == 'timeinstant' ? value + ' 00:00:00' : String.valueOf(value)
+   }
+
+   /** The values of the first column of the exported table, sorted as strings. */
+   private List<String> firstColumn(boolean incremental) {
+      return rows(incremental).collect { it[0] }.sort()
+   }
+
+   /**
+    * MV_Creator/Append/mvLastUpdatetime grouped by customer_id with Sum(discount), with the
+    * post-aggregate append condition {@code customer_id >= 105} and delete condition
+    * {@code customer_id one of 102, 106}, and no pre-aggregate MV conditions.
+    */
+   private void copyCustomerGroupedAssets() {
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1', { BoundTableAssembly table ->
+         ColumnSelection cols = table.getColumnSelection(false)
+         ColumnRef customer = column(table, 'customer_id')
+         AggregateInfo ainfo = new AggregateInfo()
+         ainfo.setGroups([new GroupRef(customer)] as GroupRef[])
+         ainfo.setAggregates([new AggregateRef(cols.getAttribute('discount'), AggregateFormula.SUM)] as AggregateRef[])
+         table.setAggregateInfo(ainfo)
+         table.setAggregate(true)
+         table.setMVUpdatePreConditionList(new ConditionList())
+         table.setMVDeletePreConditionList(new ConditionList())
+         table.setMVUpdatePostConditionList(atLeast(customer, 105))
+         table.setMVDeletePostConditionList(oneOf(customer, [102, 106]))
+      }, { Viewsheet vs ->
+         TableVSAssembly table = (TableVSAssembly) vs.getAssembly('Query1')
+         ColumnSelection cols = new ColumnSelection()
+         ['customer_id', 'discount'].each { cols.addAttribute(new ColumnRef(new AttributeRef(null, it))) }
+         table.setColumnSelection(cols)
+      })
+   }
+
+   /**
+    * MV_Creator/Append/M_Testcase2, the inner join of MVorders1 and MVorders2 on customer_id,
+    * with both tables bound to the case's table and without their own MV conditions, and on the
+    * join the append condition {@code MVorders1.customer_id >= 105} and the delete condition
+    * {@code MVorders1.customer_id one of 102, 106}.
+    */
+   private void copyJoinAssets() {
+      Closure noConditions = { TableAssembly table ->
+         table.setMVUpdatePreConditionList(new ConditionList())
+         table.setMVDeletePreConditionList(new ConditionList())
+      }
+
+      copyAssets('MV_Creator/Append/M_Testcase2', 'MVorders1', noConditions, null) { Worksheet ws, BoundTableAssembly left ->
+         BoundTableAssembly right = (BoundTableAssembly) ws.getAssembly('MVorders2')
+         right.getSourceInfo().setSource(TABLE)
+         noConditions(right)
+         TableAssembly join = (TableAssembly) ws.getAssembly('Query1')
+         ColumnRef customer = column(join, 'MVorders1.customer_id')
+         join.setMVUpdatePreConditionList(atLeast(customer, 105))
+         join.setMVDeletePreConditionList(oneOf(customer, [102, 106]))
+      }
+   }
+
+   private static ColumnRef column(TableAssembly table, String name) {
+      ColumnRef col = (ColumnRef) table.getColumnSelection(false).getAttribute(name)
+      assert col != null: table.getName() + ' has no column ' + name
+      return col
+   }
+
+   /** {@code col >= from}. */
+   private static ConditionList atLeast(ColumnRef col, int from) {
+      AssetCondition cond = new AssetCondition(XSchema.INTEGER)
+      cond.setOperation(XCondition.GREATER_THAN)
+      cond.setEqual(true)
+      cond.addValue(from)
+      return single(col, cond)
+   }
+
+   /** {@code col > MV.MaxValue}. */
+   private static ConditionList afterMaxValue(ColumnRef col) {
+      AssetCondition cond = new AssetCondition(XSchema.INTEGER)
+      cond.setOperation(XCondition.GREATER_THAN)
+      ExpressionValue value = new ExpressionValue()
+      value.setType(ExpressionValue.JAVASCRIPT)
+      value.setExpression('MV.MaxValue')
+      cond.addValue(value)
+      return single(col, cond)
+   }
+
+   /** {@code col one of values}. */
+   private static ConditionList oneOf(ColumnRef col, List<Integer> values) {
+      AssetCondition cond = new AssetCondition(XSchema.INTEGER)
+      cond.setOperation(XCondition.ONE_OF)
+      values.each { cond.addValue(it) }
+      return single(col, cond)
+   }
+
+   private static ConditionList single(ColumnRef col, AssetCondition cond) {
+      ConditionList list = new ConditionList()
+      list.append(new ConditionItem(col, cond, 0))
+      return list
+   }
+
+   /** The values of a column of the exported table, found by its header, sorted as numbers. */
+   private List<String> values(String header, boolean incremental) {
+      List<List<String>> lines = exported('Query1', incremental).drop(1).findAll { it }.collect {
+         (it.substring(1, it.length() - 1).split(/\]\[/) as List<String>)
+      }
+      int idx = lines[0].indexOf(header)
+      assert idx >= 0: 'no column ' + header + ' in ' + lines[0]
+      return lines.drop(1).collect { it[idx] }.sort { it as double }
    }
 
    /** A copy of the mvtest data source that runs its queries lazily, see {@link #LAZY_DS}. */

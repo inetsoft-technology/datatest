@@ -1,3 +1,3 @@
-The data size(row x col) is:(2 x 7)
-CATEGORY_ID, 3, 6, 4, 5, 1, 2
-PRODUCT_ID, 1, 3, 4, 10, 13, 17
+The data size(row x col) is:(2 x 21)
+CATEGORY_ID, 3, 6, 4, 5, 1, 2, 3_1, 4_1, 6_1, 4_2, 6_2, 4_3, 5_1, 3_2, 1_1, 1_2, 1_3, 2_1, 2_2, 1_4
+PRODUCT_ID, 1, 3, 4, 10, 13, 17, 2, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 18, 19, 20

@@ -7,6 +7,9 @@ Read-only. Standard library only. Prints Markdown to stdout.
                      (with specs: only the visible tables of the worksheets the specs run, leaving
                      out @Ignore'd features and specs skipped on Linux by @IgnoreIf({ os.linux }))
   python ws_scan.py crosscheck <storage.zip> <baseline-root> <Spec.groovy>...
+  python ws_scan.py capability <storage.zip> <Spec.groovy>...
+  python ws_scan.py flagcheck  <storage.zip>
+  python ws_scan.py dbmatrix   <storage.zip> <sqlhelper.xml> <Spec.groovy>...
 
 inventory   per table assembly: query type (the AssetQuery class that runs it), processing steps
             (pre / post / ranking conditions, group and aggregate, expression columns SQL vs script,
@@ -17,6 +20,22 @@ crosscheck  spec feature -> worksheet -> baseline folder: worksheets no feature 
             specs given, so pass every spec that shares the zip), features whose worksheet is missing,
             and per feature the visible tables (each one is exported as <table>.txt) against the
             baseline txt files.
+capability  what the PRODUCT can do (lists read from its source, with file:line) against what the
+            worksheets use: table classes, non-table assemblies (variable, named group, date range,
+            condition), condition operations by place (table / named group / date range assembly),
+            join and set operators, aggregate formulas, date group levels, relative date condition
+            classes, variable styles and types, column reference classes, patterns in script
+            expression columns. Counts for all worksheets and for the CI scope; zero rows are flagged.
+            The lists are hard-coded (PRODUCT_REF); re-read the product before trusting a "zero".
+flagcheck   cross-check what inventory reads against the derived flags on assemblyInfo
+            (hasAggregate, hasExpression, hasCondition, hasSort) and the crosstab column selection.
+dbmatrix    which SQL operations each database supports, read from the product's sqlhelper.xml
+            (core/src/main/resources/inetsoft/uql/sqlhelper.xml): operations listed as unsupported,
+            aggregate function names, date functions and what they mean per date group level; then
+            which scenarios (set operators, joins, date groups, aggregates, max rows, ...) the worksheets
+            of the CI scope put on which database. The database of a data source comes from its JDBC
+            url, a derived table (mirror, join, set operator, rotate) counts on the databases of the
+            tables it reads.
 
 Semantics verified against product source (community core, origin/main f0ef913306):
   TableAssemblyInfo.writeAttributes writes mergeable and visibleTable ONLY when false (defaults true),
@@ -32,6 +51,12 @@ Limits (check before trusting a number):
     are static signals, not the executed path. Confirm with a run.
   * Hidden tables (visibleTable="false") are not exported by WorksheetTest, so their steps are only
     checked through the visible tables built on them.
+  * capability sees only what is written in the XML. A value passed at run time (a variable's value, the
+    relative date range name InRange_Spec passes) is not visible; neither is what a script does.
+  * dbmatrix: "supported" only means "not listed as unsupported"; the overrides in code (MySQLHelper,
+    SQLServerHelper, DerbyHelper) are printed as text, and whether a query is really pushed down also
+    depends on the other branches of PreAssetQuery.isQueryMergeable0. A scenario count says a table with
+    that feature reads that database, not that the feature is what the table's result depends on.
   * crosscheck reads executeWS('<asset id>', ...) with a literal asset id; other calls
     (importCSVToEMTable, exportVSComponentData, non-literal ids) are listed as not mapped.
 """
@@ -403,6 +428,484 @@ def crosscheck(zpath, baseline, specs):
           'candidates to read, not findings.')
 
 
+# ---------------------------------------------------------------------------------------------
+# capability: what the product can do (from its source) against what the assets and specs use.
+# The lists below were read from the product source at COMMUNITY_CORE_REF; the number after the
+# colon is the line of the constant or class declaration. They go stale when the product changes:
+# re-read the source and update the lists before trusting a "zero" row.
+# ---------------------------------------------------------------------------------------------
+PRODUCT_REF = 'community/core/src/main/java/inetsoft/ @ 333566db8 (main, 2026-11-11)'
+
+# concrete table classes (ScriptedTableAssembly is an interface implemented by TabularTableAssembly)
+CAP_TABLE_CLASSES = [
+    ('BoundTableAssembly', 'uql/asset/BoundTableAssembly.java:40'),
+    ('PhysicalBoundTableAssembly', 'uql/asset/PhysicalBoundTableAssembly.java:26'),
+    ('SQLBoundTableAssembly', 'uql/asset/SQLBoundTableAssembly.java:45'),
+    ('QueryBoundTableAssembly', 'uql/asset/QueryBoundTableAssembly.java:34'),
+    ('EmbeddedTableAssembly', 'uql/asset/EmbeddedTableAssembly.java:41'),
+    ('SnapshotEmbeddedTableAssembly', 'uql/asset/SnapshotEmbeddedTableAssembly.java:62'),
+    ('DataTableAssembly', 'uql/asset/DataTableAssembly.java:35'),
+    ('TabularTableAssembly', 'uql/asset/TabularTableAssembly.java:46'),
+    ('CubeTableAssembly', 'uql/asset/CubeTableAssembly.java:36'),
+    ('MirrorTableAssembly', 'uql/asset/MirrorTableAssembly.java:41'),
+    ('RelationalJoinTableAssembly', 'uql/asset/RelationalJoinTableAssembly.java:32'),
+    ('MergeJoinTableAssembly', 'uql/asset/MergeJoinTableAssembly.java:31'),
+    ('ConcatenatedTableAssembly', 'uql/asset/ConcatenatedTableAssembly.java:36'),
+    ('RotatedTableAssembly', 'uql/asset/RotatedTableAssembly.java:38'),
+    ('UnpivotTableAssembly', 'uql/asset/UnpivotTableAssembly.java:39'),
+]
+CAP_OTHER_ASSEMBLIES = [
+    ('DefaultVariableAssembly', 'uql/asset/DefaultVariableAssembly.java:42'),
+    ('MirrorVariableAssembly', 'uql/asset/MirrorVariableAssembly.java:41'),
+    ('DefaultNamedGroupAssembly', 'uql/asset/DefaultNamedGroupAssembly.java:41'),
+    ('MirrorNamedGroupAssembly', 'uql/asset/MirrorNamedGroupAssembly.java:41'),
+    ('DefaultDateRangeAssembly', 'uql/asset/DefaultDateRangeAssembly.java:42'),
+    ('MirrorDateRangeAssembly', 'uql/asset/MirrorDateRangeAssembly.java:42'),
+    ('DefaultConditionAssembly', 'uql/asset/DefaultConditionAssembly.java:39'),
+    ('MirrorConditionAssembly', 'uql/asset/MirrorConditionAssembly.java:39'),
+]
+CAP_CONDITIONS = [  # uql/XCondition.java
+    ('none', 38), ('equal to', 46), ('one of', 52), ('less than', 60), ('greater than', 68), ('between', 76),
+    ('starting with', 82), ('contains', 88), ('null', 94), ('top n', 100), ('bottom n', 106), ('date in', 112),
+    ('pseudo', 118), ('like', 124), ('correlated', 129)]
+# uql/asset/TableAssemblyOperator.java; JOIN (:47) and CONCATENATION (:95) are base bits, not choices
+CAP_JOINS = [
+    ('inner join', 51), ('left join', 55), ('right join', 59), ('full join', 63), ('not-equal join', 67),
+    ('> join', 71), ('>= join', 75), ('< join', 79), ('<= join', 83), ('merge join', 87), ('cross join', 91),
+    ('union', 99), ('intersect', 103), ('minus', 107)]
+# uql/asset/AggregateFormula.java; the name is what the worksheet XML writes (getFormulaName)
+CAP_FORMULAS = [
+    ('none', 43), ('Average', 47), ('Count', 51), ('DistinctCount', 55), ('Max', 59), ('Min', 63), ('Sum', 67),
+    ('First', 71), ('Last', 75), ('Median', 79), ('Mode', 83), ('Correlation', 87), ('Covariance', 91),
+    ('Variance', 95), ('StandardDeviation', 99), ('PopulationVariance', 104),
+    ('PopulationStandardDeviation', 108), ('WeightedAverage', 113), ('Product', 117), ('Concat', 121),
+    ('NthLargest', 125), ('NthSmallest', 129), ('NthMostFrequent', 133), ('PthPercentile', 137),
+    ('SumSQFormula', 141), ('SumWTFormula', 145), ('Aggregate', 149)]
+CAP_DATE_LEVELS = [  # uql/XConstants.java; 'none' (:69) is not a level
+    ('year', 73), ('quarter', 77), ('month', 81), ('week', 85), ('day', 89), ('am/pm', 93), ('hour', 97),
+    ('minute', 101), ('second', 105), ('millisecond', 109), ('quarter of year', 118), ('month of year', 122),
+    ('week of year', 126), ('week of month', 130), ('day of year', 134), ('day of month', 138),
+    ('day of week', 142), ('am/pm of day', 146), ('hour of day', 150), ('minute of hour', 154),
+    ('second of minute', 158)]
+CAP_DATE_CONDITIONS = [  # uql/asset/DateCondition.java (inner classes)
+    ('ToDateCondition', 525), ('YearCondition', 709), ('QuarterCondition', 841), ('NthQuarterCondition', 1006),
+    ('NthHalfYearCondition', 1170), ('MonthCondition', 1343), ('NthMonthCondition', 1504),
+    ('WeekCondition', 1671), ('WeeksCondition', 1808), ('DayCondition', 1977), ('MonthsCondition', 2121),
+    ('DaysCondition', 2288), ('PartDateCondition', 2443)]
+CAP_VAR_STYLES = [  # uql/schema/UserVariable.java
+    ('NONE', 50), ('COMBOBOX', 54), ('LIST', 58), ('RADIO_BUTTONS', 62), ('CHECKBOXES', 66),
+    ('DATE_COMBOBOX', 70)]
+CAP_VAR_TYPES = [  # uql/schema/XSchema.java (the XML xtype); 'character' (:70) is an alias of char
+    ('string', 46), ('boolean', 50), ('float', 54), ('double', 58), ('decimal', 62), ('char', 66), ('byte', 74),
+    ('short', 78), ('integer', 82), ('long', 86), ('timeInstant', 90), ('date', 94), ('time', 98)]
+# column reference classes that can appear in a column selection (SQLExpressionRef is an interface
+# implemented by the range refs, it never appears as a class name in the XML)
+CAP_COLUMN_REFS = [
+    ('ExpressionRef', 'uql/erm/ExpressionRef.java:35'), ('DateRangeRef', 'uql/asset/DateRangeRef.java:53'),
+    ('NumericRangeRef', 'uql/asset/NumericRangeRef.java:40'), ('NamedRangeRef', 'uql/asset/NamedRangeRef.java:38')]
+VAR_STYLE_NAME = {'0': 'NONE', '1': 'COMBOBOX', '2': 'LIST', '3': 'RADIO_BUTTONS', '4': 'CHECKBOXES',
+                  '5': 'DATE_COMBOBOX'}
+SCRIPT_PATTERNS = [
+    ('new Date(', r'new\s+Date\s*\('), ("new Date(field[", r'new\s+Date\s*\(\s*field\s*\['),
+    ('year(', r'\byear\s*\('), ('month(', r'\bmonth\s*\('), ('dateAdd(', r'\bdateAdd\s*\('),
+    ("field['..']", r'field\s*\['), ('getFullYear()', r'getFullYear\s*\('),
+    ('var <name> =', r'\bvar\s+\w+\s*='), ('data[ / tables[ / ws.', r'\bdata\s*\[|\btables?\s*\[|\bws\.')]
+
+
+def _scope(wss, specs):
+    ids, skipped = used_worksheets(specs)
+    return {k for k in wss if re.sub(r'\^[^^]*$', '', k) in ids}, skipped
+
+
+def _cap_table(title, ref, items, c, notes=None):
+    """items: [(name, position)], c: (all, ci) Counters keyed by name."""
+    print('### %s  (%s)\n' % (title, ref))
+    rows = []
+    for name, pos in items:
+        a, b = c[0][name], c[1][name]
+        where = pos if isinstance(pos, str) else ':%d' % pos
+        rows.append((name, where, a, b, 'ZERO in CI' + (' and everywhere' if a == 0 else '') if b == 0 else ''))
+    table(rows, ['item', 'product', 'all worksheets', 'CI scope', ''])
+    known = {n for n, _ in items}
+    extra = [(k, c[0][k], c[1][k]) for k in c[0] if k not in known]
+    if extra:
+        print('Not in the list: %s\n' % ', '.join('%s (%d / %d)' % e for e in extra))
+    if notes:
+        print(notes + '\n')
+
+
+def capability(zpath, specs):
+    wss, dss = load_worksheets(zpath)
+    scope, skipped = _scope(wss, specs)
+
+    def counters():
+        return collections.Counter(), collections.Counter()
+
+    def add(c, key, aid, n=1):
+        c[0][key] += n
+        if aid in scope:
+            c[1][key] += n
+
+    print('# Capability diff: %s\n' % os.path.basename(zpath))
+    print('Product source: %s. Counts are how often the capability appears in the worksheet XML '
+          '(hidden tables included); "all" = every worksheet in the zip (%d), "CI scope" = the %d worksheets '
+          'run by the features CI runs. Skipped: %s\n' % (PRODUCT_REF, len(wss), len(scope), skipped))
+    print('Values passed at run time (variable values, the range names InRange_Spec passes) are NOT in the XML.\n')
+
+    c = counters()
+    for aid, root in wss.items():
+        for cls, a in tables(root):
+            add(c, cls, aid)
+    _cap_table('Table assembly classes', 'concrete classes; ScriptedTableAssembly is an interface',
+               CAP_TABLE_CLASSES, c)
+
+    c = counters()
+    names = {n for n, _ in CAP_OTHER_ASSEMBLIES}
+    for aid, root in wss.items():
+        for e in root.iter('assembly'):
+            if short(e.get('class')) in names:
+                add(c, short(e.get('class')), aid)
+    _cap_table('Non-table assembly classes', 'uql/asset/*Assembly.java', CAP_OTHER_ASSEMBLIES, c,
+               'ConditionAssembly nodes: the `conditionAssemblies` elements in the tables are empty containers.')
+
+    # conditions by place
+    place_of = {'preConditions': 'pre', 'postConditions': 'post', 'topNConditions': 'ranking',
+                'namedGroupInfo': 'named group'}
+    byplace, flags = collections.defaultdict(counters), counters()
+    for aid, root in wss.items():
+        parent = {ch: p for p in root.iter() for ch in p}
+        for e in root.iter():
+            if e.tag not in ('condition', 'xCondition') or e.get('operation') is None:
+                continue
+            # DateCondition$ leaves are counted in their own table; XConditionInfo is an info wrapper
+            # (operation 1 placeholder) around a condition, not a condition
+            if short(e.get('class')).startswith('DateCondition$') or short(e.get('class')) == 'XConditionInfo':
+                continue
+            try:
+                op = CONDITION.get(int(e.get('operation')), e.get('operation'))
+            except ValueError:
+                continue
+            place, x = 'other', e
+            while x in parent:
+                x = parent[x]
+                if x.tag in place_of:
+                    place = place_of[x.tag]
+                    break
+                if x.tag == 'assembly' and short(x.get('class')) == 'DefaultDateRangeAssembly':
+                    place = 'date range assembly'
+                    break
+            add(byplace[place], op, aid)
+            if e.get('negated') == 'true':
+                add(flags, 'negated', aid)
+            if e.get('equal') == 'true':
+                add(flags, 'equal (>=, <=)', aid)
+    print('### Condition operations by place  (uql/XCondition.java:38-129)\n')
+    places = ['pre', 'post', 'ranking', 'named group', 'date range assembly', 'other']
+    table([(n, 'XCondition.java:%d' % ln) + tuple('%d / %d' % (byplace[p][0][n], byplace[p][1][n]) for p in places)
+           for n, ln in CAP_CONDITIONS], ['operation', 'product'] + places)
+    print('cells are all / CI scope. Flags (all / CI): %s\n' % {k: (flags[0][k], flags[1][k]) for k in flags[0]})
+
+    c_join, c_form, c_dg = counters(), counters(), counters()
+    for aid, root in wss.items():
+        for cls, a in tables(root):
+            f = table_facts(cls, a)
+            for src, dst in ((f['ops'], c_join), (f['formulas'], c_form), (f['dategroups'], c_dg)):
+                for k, v in src.items():
+                    add(dst, k, aid, v)
+    _cap_table('Join and set operators', 'uql/asset/TableAssemblyOperator.java; base bits JOIN and CONCATENATION '
+               'are not choices', CAP_JOINS, c_join)
+    _cap_table('Aggregate formulas (27)', 'uql/asset/AggregateFormula.java', CAP_FORMULAS, c_form)
+    _cap_table('Date group levels (21)', 'uql/XConstants.java', CAP_DATE_LEVELS, c_dg)
+
+    c = counters()
+    for aid, root in wss.items():
+        for e in root.iter():
+            cl = e.get('class') or ''
+            if 'DateCondition$' in cl:
+                add(c, cl.split('$')[-1], aid)
+    _cap_table('Relative date conditions (DateCondition subclasses)', 'uql/asset/DateCondition.java',
+               CAP_DATE_CONDITIONS, c,
+               'Only the classes written in the XML are counted. A date-in table condition keeps its range '
+               'name in a variable (empty condition_data), so the ranges InRange_Spec passes are not visible here.')
+
+    c_style, c_type, c_flag = counters(), counters(), counters()
+    for aid, root in wss.items():
+        for v in root.iter('variable'):
+            if v.get('xtype') is None:
+                continue
+            add(c_style, VAR_STYLE_NAME.get(v.get('style'), 'no style attribute'), aid)
+            add(c_type, v.get('xtype'), aid)
+            for k in ('multipleSelection', 'embedded', 'sortValue', 'prompt'):
+                if v.get(k) == 'true':
+                    add(c_flag, k, aid)
+    _cap_table('Variable styles', 'uql/schema/UserVariable.java', CAP_VAR_STYLES, c_style,
+               'Variables without a style attribute are listed under "no style attribute"; whether that '
+               'means NONE was not checked. Options (all / CI): %s' % {k: (c_flag[0][k], c_flag[1][k]) for k in c_flag[0]})
+    _cap_table('Variable data types', 'uql/schema/XSchema.java', CAP_VAR_TYPES, c_type)
+
+    c = counters()
+    for aid, root in wss.items():
+        for cls, a in tables(root):
+            sel = a.find('assemblyInfo/normalColumnSelection/ColumnSelection')
+            for cr in (sel if sel is not None else []):
+                inner = cr.find('dataRef') if cr.tag == 'dataRef' else None
+                if inner is not None:
+                    add(c, short(inner.get('class')), aid)
+    _cap_table('Column reference classes', 'normalColumnSelection; AttributeRef (plain columns) not listed',
+               CAP_COLUMN_REFS, c)
+
+    # script expression columns: the script is the text of the inner ExpressionRef
+    texts = []
+    for aid, root in wss.items():
+        for cls, a in tables(root):
+            sel = a.find('assemblyInfo/normalColumnSelection/ColumnSelection')
+            for cr in (sel if sel is not None else []):
+                inner = cr.find('dataRef') if cr.tag == 'dataRef' else None
+                if inner is not None and short(inner.get('class')) == 'ExpressionRef' and cr.get('sql') == 'false':
+                    texts.append((aid in scope, inner.text or ''))
+    print('### Script expression columns: %d (CI scope %d)\n' % (len(texts), sum(1 for s_, _ in texts if s_)))
+    table([(k, sum(1 for _, t in texts if re.search(p, t)), sum(1 for s_, t in texts if s_ and re.search(p, t)))
+           for k, p in SCRIPT_PATTERNS], ['pattern in the script', 'all', 'CI scope'])
+
+
+# ---------------------------------------------------------------------------------------------
+# flagcheck: cross-check what inventory reads against the derived flags on assemblyInfo
+# ---------------------------------------------------------------------------------------------
+def flagcheck(zpath):
+    wss, dss = load_worksheets(zpath)
+    special = ('ExpressionRef', 'DateRangeRef', 'NumericRangeRef', 'NamedRangeRef')
+
+    def kinds(info, sel_name):
+        sel = info.find(sel_name + '/ColumnSelection')
+        k = collections.Counter()
+        for cr in (sel if sel is not None else []):
+            inner = cr.find('dataRef') if cr.tag == 'dataRef' else None
+            if inner is not None and short(inner.get('class')) in special:
+                k[short(inner.get('class'))] += 1
+        return k
+
+    mism, examples, n = collections.Counter(), collections.defaultdict(list), 0
+    for aid, root in wss.items():
+        for cls, a in tables(root):
+            n += 1
+            info = a.find('assemblyInfo')
+            at, name = info.attrib, info.findtext('name')
+            nk, ck = kinds(info, 'normalColumnSelection'), kinds(info, 'crosstabColumnSelection')
+            if any(ck[k] > nk[k] for k in special):
+                mism['crosstab selection has more than normal'] += 1
+            gi = a.find('groupInfo/groupInfo')
+            agg = False
+            if gi is not None:
+                ae, ge = gi.find('aggregates'), gi.find('groups')
+                agg = bool((ae is not None and len(ae)) or (ge is not None and len(ge)))
+            conds = any(a.find(t) is not None and a.findall(t + '/conditions/condition')
+                        for t in ('preConditions', 'postConditions', 'topNConditions'))
+            st = a.find('sortInfo/sortInfo')
+            checks = (('hasAggregate', agg), ('hasExpression', nk['ExpressionRef'] > 0), ('hasCondition', conds),
+                      ('hasSort', st is not None and len(st) > 0))
+            for flag, scanned in checks:
+                if scanned != (at.get(flag) == 'true'):
+                    mism[flag] += 1
+                    examples[flag].append('%s (scan %s, flag %s)' % (name, scanned, at.get(flag)))
+    print('# Flag cross-check: %s\n' % os.path.basename(zpath))
+    print('%d table assemblies. A flag is a derived value on assemblyInfo; the scan reads the user-set '
+          'nodes (groupInfo, pre/post/topN conditions, sortInfo, normalColumnSelection). A mismatch means '
+          'one of the two is wrong for that table: look at the XML before trusting either.\n' % n)
+    table([(k, v, '; '.join(examples[k][:4])) for k, v in sorted(mism.items())] or [('(none)', 0, '')],
+          ['check', 'tables', 'examples'])
+
+
+# ---------------------------------------------------------------------------------------------
+# dbmatrix: which SQL operations each database supports (read from the product's sqlhelper.xml)
+# and which scenarios the worksheets of the CI scope put on which database.
+# ---------------------------------------------------------------------------------------------
+DB_COLUMNS = ['oracle', 'mysql', 'sql server', 'db2', 'informix', 'postgresql', 'derby', 'clickhouse', 'h2', 'sqlite']
+DB_SHORT = {'oracle': 'Oracle', 'mysql': 'MySQL', 'sql server': 'SQLSrv', 'db2': 'DB2', 'informix': 'Informix',
+            'postgresql': 'Postgres', 'derby': 'Derby', 'clickhouse': 'ClickH', 'h2': 'H2', 'sqlite': 'sqlite',
+            'embedded': 'embedded', '?': '?'}
+JDBC_DB = [('jdbc:oracle', 'oracle'), ('jdbc:mysql', 'mysql'), ('jdbc:db2', 'db2'), ('jdbc:sqlserver', 'sql server'),
+           ('jdbc:informix', 'informix'), ('jdbc:postgresql', 'postgresql'), ('jdbc:derby', 'derby'),
+           ('jdbc:clickhouse', 'clickhouse'), ('jdbc:h2', 'h2'), ('jdbc:sqlite', 'sqlite')]
+# supportsOperation overrides in code (uql/jdbc/*.java), not in sqlhelper.xml; read at PRODUCT_REF
+HELPER_OVERRIDES = [
+    ('MySQLHelper.java:87', 'concatenation_table: union only if the product version > 4.1, intersect / minus not; '
+                            'maxrows inside a WHERE subquery not supported'),
+    ('SQLServerHelper.java:104', 'concatenation_table: union only (intersect / minus not supported)'),
+    ('DerbyHelper.java:143-158', 'expression_groupby supported when the `expgrp` flag is on; maxrows inside a WHERE '
+                                 'subquery not supported (Bug #75322)'),
+]
+# level of a date group / range column -> the SQLHelper function it needs (uql/asset/DateRangeRef.java:1052-1131)
+DATE_LEVEL_FUNC = [
+    ('year', 'year'), ('quarter', 'quarter'), ('month', 'month'), ('week', 'week'), ('day', 'day'), ('hour', 'hour'),
+    ('minute', 'minute'), ('second', 'second'), ('quarter of year', 'quarter_part'), ('month of year', 'month_part'),
+    ('week of year', 'week_part'), ('day of month', 'day_part'), ('day of week', 'dayofweek'),
+    ('hour of day', 'hour_part'), ('minute of hour', 'minute_part'), ('second of minute', 'second_part')]
+DATE_LEVEL_NEVER = ['day of year', 'week of month', 'am/pm', 'millisecond', 'am/pm of day']
+STAT_FORMULAS = {'StandardDeviation', 'PopulationStandardDeviation', 'Variance', 'PopulationVariance',
+                 'Correlation', 'Covariance'}
+NEVER_PUSHED_FORMULAS = {'First', 'Last', 'Mode', 'Product', 'Concat', 'NthLargest', 'NthSmallest',
+                         'NthMostFrequent', 'PthPercentile'}
+
+
+def _jdbc_db(url):
+    u = (url or '').lower()
+    for prefix, db in JDBC_DB:
+        if u.startswith(prefix):
+            return db
+    return '?'
+
+
+def datasource_databases(zpath):
+    """data source name -> database type, from the JDBC url (the name can mislead: 'Access' is H2,
+    'Examples/Orders' is an embedded Derby)."""
+    z = zipfile.ZipFile(zpath)
+    bi = json.loads(z.read('blob-index.json'))
+    out = {}
+    for store, items in bi.items():
+        for key, v in items.items():
+            if (v.get('metadata') or {}).get('className', '') != 'inetsoft.uql.XDataSourceWrapper' or not v.get('digest'):
+                continue
+            d = v['digest']
+            try:
+                root = ET.fromstring(z.read('blobs/%s/%s' % (d[:2], d[2:])))
+            except ET.ParseError:
+                continue
+            for ds in root.iter('datasource'):
+                j = ds.find('ds_jdbc')
+                if j is not None and ds.get('name'):
+                    out[ds.get('name')] = (_jdbc_db(j.get('url')), j.get('url'))
+    return out
+
+
+def dbmatrix(zpath, helperxml, specs):
+    root = ET.parse(helperxml).getroot()
+    unsupported, afunc, sqlfunc, helpers = (collections.defaultdict(set), collections.defaultdict(dict),
+                                            collections.defaultdict(dict), {})
+    for e in root.iter('helper'):
+        helpers[e.get('type')] = e.get('class')
+    for e in root.iter('unsupported'):
+        unsupported[e.get('type')].add(e.get('op'))
+    for e in root.iter('aggregate'):
+        afunc[e.get('type')][e.get('function')] = e.get('name')
+    for e in root.iter('sqlfunc'):
+        sqlfunc[e.get('type')][e.get('function')] = e.get('command')
+    cols = [d for d in DB_COLUMNS if d in helpers]
+    head = ['item'] + [DB_SHORT[d] for d in cols]
+
+    print('# Database matrix: %s\n' % os.path.basename(zpath))
+    print('Read from %s (types without a <helper> entry are left out: %s). A "supported" cell only means '
+          'the operation is not listed as unsupported there; code overrides are listed below the first table.\n'
+          % (helperxml, [d for d in DB_COLUMNS if d not in helpers]))
+
+    print('### Operations listed as unsupported (X)\n')
+    ops = sorted({o for d in cols for o in unsupported[d]})
+    table([[o] + ['X' if o in unsupported[d] else '' for d in cols] for o in ops], head)
+    print('Code overrides of supportsOperation (not in the xml):\n')
+    for where, what in HELPER_OVERRIDES:
+        print('* `%s`: %s' % (where, what))
+    print()
+
+    print('### Aggregate SQL function names (- = none, the aggregate is then computed in memory or fails)\n')
+    funcs = sorted({f for d in cols for f in afunc[d]})
+    table([[f] + [afunc[d].get(f, '-') for d in cols] for f in funcs], head)
+
+    print('### Date functions defined per database, and what that means per date group level\n')
+    print('Date functions defined: %s\n' % {DB_SHORT[d]: len(sqlfunc[d]) for d in cols})
+    rows = []
+    for level, func in DATE_LEVEL_FUNC:
+        rows.append([level, func] + ['Y' if func in sqlfunc[d] else '-' for d in cols])
+    table(rows, ['level', 'function'] + [DB_SHORT[d] for d in cols])
+    print('Levels with NO SQL function on any database (always in memory): %s\n' % ', '.join(DATE_LEVEL_NEVER))
+
+    # ---- coverage: scenario x database in the CI scope ----
+    wss, dss = load_worksheets(zpath)
+    scope, skipped = _scope(wss, specs)
+    ds_db = datasource_databases(zpath)
+    print('### Data sources and their database (from the JDBC url)\n')
+    table([(n, v[0], v[1]) for n, v in sorted(ds_db.items())], ['data source', 'database', 'url'])
+
+    info = {}
+    for aid, wroot in wss.items():
+        tabs = {}
+        for cls, a in tables(wroot):
+            f = table_facts(cls, a)
+            tabs[f['name']] = (cls, a, f)
+        info[aid] = tabs
+
+    def deps(a):
+        out = [e.text for e in a.findall('tables/oneTableAssembly')]
+        t = a.find('tableAssembly')
+        if t is not None and t.text:
+            out.append(t.text)
+        mir = a.find('assemblyInfo/mirrorAssembly/mirrorAssembly/mirror')
+        if mir is not None and mir.text:
+            out.append(mir.text)
+        return out
+
+    memo = {}
+
+    def resolve(aid, name, depth=0):
+        if (aid, name) in memo:
+            return memo[(aid, name)]
+        memo[(aid, name)] = set()
+        tabs = info[aid]
+        if name not in tabs or depth > 12:
+            memo[(aid, name)] = {'?'}
+            return memo[(aid, name)]
+        cls, a, f = tabs[name]
+        if cls in ('EmbeddedTableAssembly', 'SnapshotEmbeddedTableAssembly'):
+            res = {'embedded'}
+        elif cls in ('BoundTableAssembly', 'PhysicalBoundTableAssembly', 'SQLBoundTableAssembly',
+                     'QueryBoundTableAssembly'):
+            res = {ds_db.get(f['datasource'], ('?',))[0]} if f['datasource'] else {'?'}
+        else:
+            res = set()
+            for d in deps(a):
+                res |= resolve(aid, d, depth + 1)
+            res = res or {'?'}
+        memo[(aid, name)] = res
+        return res
+
+    feat = collections.defaultdict(collections.Counter)
+    for aid in scope:
+        for name, (cls, a, f) in info[aid].items():
+            dbs = resolve(aid, name)
+            fs = {'(all tables)'}
+            for op in ('union', 'intersect', 'minus', 'full join', 'cross join', 'left join', 'right join',
+                       'inner join'):
+                if f['ops'].get(op):
+                    fs.add('operator: ' + op)
+            if any(v and (k.startswith(('>', '<')) or k == 'not-equal join') for k, v in f['ops'].items()):
+                fs.add('operator: non-equi join')
+            if f['dategroups']:
+                fs.add('date group (any level)')
+            fm = set(f['formulas'])
+            if fm & STAT_FORMULAS:
+                fs.add('aggregate: stddev / var / correl / covar')
+            if 'Median' in fm:
+                fs.add('aggregate: median')
+            if fm & NEVER_PUSHED_FORMULAS:
+                fs.add('aggregate: never pushed down (first, last, mode, ...)')
+            if fm - STAT_FORMULAS - NEVER_PUSHED_FORMULAS - {'Median', 'none'}:
+                fs.add('aggregate: other (sum, count, max, avg, ...)')
+            for step in ('max rows', 'distinct', 'ranking', 'sort', 'expression (SQL)', 'pre condition',
+                         'post condition', 'mergeable=false'):
+                if step in f['steps']:
+                    fs.add('step: ' + step)
+            if f['exprs'].get('DateRangeRef'):
+                fs.add('range column: DateRangeRef')
+            if f['exprs'].get('NumericRangeRef'):
+                fs.add('range column: NumericRangeRef')
+            for ft in fs:
+                for d in dbs:
+                    feat[ft][d] += 1
+    used = [d for d in DB_COLUMNS + ['embedded', '?'] if any(feat[x][d] for x in feat)]
+    print('### Scenarios per database, CI scope (tables of the %d worksheets; a derived table counts on the '
+          'database(s) of the tables it reads; hidden tables included)\n' % len(scope))
+    table([[ft] + [feat[ft][d] if feat[ft][d] else '' for d in used] for ft in sorted(feat)],
+          ['scenario'] + [DB_SHORT[d] for d in used])
+
+
 def main(argv):
     try:
         sys.stdout.reconfigure(encoding='utf-8')
@@ -412,6 +915,12 @@ def main(argv):
         inventory(argv[2], argv[3:])
     elif len(argv) >= 5 and argv[1] == 'crosscheck':
         crosscheck(argv[2], argv[3], argv[4:])
+    elif len(argv) >= 4 and argv[1] == 'capability':
+        capability(argv[2], argv[3:])
+    elif len(argv) == 3 and argv[1] == 'flagcheck':
+        flagcheck(argv[2])
+    elif len(argv) >= 5 and argv[1] == 'dbmatrix':
+        dbmatrix(argv[2], argv[3], argv[4:])
     else:
         print(__doc__)
         return 2

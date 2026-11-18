@@ -3,6 +3,8 @@ package inetsoft.test.mv
 import inetsoft.mv.data.MVQuery
 import inetsoft.mv.MVDef
 import inetsoft.mv.MVManager
+import inetsoft.mv.MVTableMetaData
+import inetsoft.mv.RuntimeMV
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.TableFilter
@@ -349,7 +351,40 @@ class MVTest {
       }
 
       recordMVHits(tableLens)
+      recordAssociationMVHits(sandbox)
       return tableLens
+   }
+
+   /**
+    * Remember the association MVs ({@code ASSOCIATION_<table>}) the selections used. The
+    * association of the selections is computed from the table metadata of the sandbox, one per
+    * table of a selection (including its additional tables), which reads the association MV
+    * instead of running a query, so neither the tables nor {@link #recordMVLookupHit} see it.
+    * {@code MVTableMetaData} keeps the MV in {@code meta_rmv}; it is null when the metadata does
+    * not use it (a runtime condition on the table or a sub table when the metadata was created)
+    * and cleared when it falls back to the full MV (a missing column or a failed query).
+    * Only the metadata the sandbox has cached is read, so a lookup here can not create one.
+    * Both fields are private and have no getter; a rename in the product breaks this on purpose.
+    */
+   private void recordAssociationMVHits(ViewsheetSandbox sandbox) {
+      try {
+         Map metamap = (Map) sandbox.@metarep.@metamap
+
+         metamap.values().each { meta ->
+            if(meta instanceof MVTableMetaData) {
+               RuntimeMV rmv = (RuntimeMV) meta.@meta_rmv
+               MVDef mvdef = rmv?.getMV() == null ? null : MVManager.getManager().get(rmv.getMV())
+
+               if(mvdef != null) {
+                  hitMVs.add(mvdef.getMVTable() + "|" + (mvdef.isSub() ? "SubMV" : "TopMV"))
+               }
+            }
+         }
+      }
+      catch(Exception e) {
+         e.printStackTrace()
+         executionErrors.add("[association MV] " + e)
+      }
    }
 
    /**
@@ -448,7 +483,9 @@ class MVTest {
     * Get the MVs that the queries executed by this instance actually hit. Unlike
     * {@link #getMVDefInfo()}, an MV that is only defined but not used by the query is not
     * included. For selection components and components that show a plain value only the MV
-    * found by the sandbox lookup is recorded, see {@link #recordMVLookupHit}. When nothing could
+    * found by the sandbox lookup is recorded, see {@link #recordMVLookupHit}; the association MVs
+    * the selections used are recorded from the table metadata, see
+    * {@link #recordAssociationMVHits}. When nothing could
     * be observed because every component returned a plain value (text, ...), the defined MVs are
     * returned as before.
     */
@@ -458,6 +495,16 @@ class MVTest {
       }
 
       return hitMVs.toList()
+   }
+
+   /**
+    * The warnings of the analysis done by the last {@link #createMV}, as
+    * {@code <bound table>: <message>} (see {@link MaterializedViewResource#getAnalysisWarnings}).
+    * A case that expects no MV checks here which rule rejected the table, so that an exception
+    * in the analyzer, which also leaves no MV, does not pass as the expected rejection.
+    */
+   List<String> getAnalysisWarnings() {
+      return materializedViewResource.getAnalysisWarnings()
    }
 
    def exportData(def data, String fileName) {

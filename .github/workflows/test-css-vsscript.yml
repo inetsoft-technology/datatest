@@ -179,8 +179,10 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: VSScript Maven Tests
-          path: 'css/target/surefire-reports/*.xml'
+          path: 'vsscript/target/surefire-reports/*.xml'
           reporter: java-junit
+          # vsscript is not a gate yet (its test step is continue-on-error); publish the report without failing the job
+          fail-on-error: false
 
       - name: Generate VSScript diff images HTML report
         if: always()

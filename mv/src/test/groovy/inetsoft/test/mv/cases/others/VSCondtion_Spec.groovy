@@ -51,6 +51,7 @@ class VSCondtion_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_l2|TopMV', 'l2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['l2|TopMV', 'ASSOCIATION_l2|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -68,6 +69,7 @@ class VSCondtion_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_query3|TopMV', 'query3|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['query3|TopMV', 'ASSOCIATION_query3|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -85,6 +87,7 @@ class VSCondtion_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_CUSTOMERS|TopMV', 'CUSTOMERS|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['CUSTOMERS|TopMV', 'ASSOCIATION_CUSTOMERS|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
@@ -745,6 +748,7 @@ class VSCondtion_Spec extends Specification {
       expect:
       verifyAll {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_l2|TopMV', 'l2|TopMV'])
+         mvtest.getMVHitInfo().containsAll(['l2|TopMV', 'ASSOCIATION_l2|TopMV'])
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }

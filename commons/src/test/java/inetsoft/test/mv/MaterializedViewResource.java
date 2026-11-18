@@ -141,6 +141,8 @@ public class MaterializedViewResource {
       analyzeRequest.setExpandGroups(expandGroup);
       analyzeRequest.setFullData(true);
       
+      analysisWarnings.clear();
+
       return MessageTestUtils.withMockMessageContext(this.principal, null, analyzeRequest, (ctx, req) -> {
          try {
             // AnalysisJob.isFailed() only means the analyzer reported UserInfo warnings (e.g.
@@ -160,6 +162,7 @@ public class MaterializedViewResource {
 
                      for(AnalysisError error : status.getErrors()) {
                         msg.append(error.toString());
+                        analysisWarnings.add(error.getBoundTable() + ": " + error.getMessage());
                      }
 
                      System.err.println("====MV Analyze warnings (proceeding)====" + msg);
@@ -452,6 +455,16 @@ public class MaterializedViewResource {
    }
 
    /**
+    * The warnings of the last viewsheet analysis ({@link #analysisMV}), one per analysis error
+    * as {@code <bound table>: <message>}; empty when the analysis reported none. The analyzer
+    * reports here why it does not create an MV for a table (embedded table, named group
+    * variable, ...), and also an exception it ran into. Not set by a worksheet analysis.
+    */
+   public List<String> getAnalysisWarnings() {
+      return Collections.unmodifiableList(this.analysisWarnings);
+   }
+
+   /**
     * Thrown when an MV creation or update fails or does not finish in time, so the spec fails
     * instead of running against live data.
     */
@@ -480,4 +493,5 @@ public class MaterializedViewResource {
    private final SRPrincipal principal;
    private final String asset_id;
    List<String> views = new ArrayList<>();
+   private final List<String> analysisWarnings = new ArrayList<>();
 }
