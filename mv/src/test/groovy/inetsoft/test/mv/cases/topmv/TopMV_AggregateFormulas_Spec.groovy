@@ -535,7 +535,10 @@ class TopMV_AggregateFormulas_Spec extends Specification {
       }
    }
 
-   @Issue('https://issues.inetsoft.com/issues/49843')
+   //NTime is a formula column declared Time. Without MV it keeps the date of NDateTime
+   //(2018-12-20 00:02:07), with MV it is the time of day (1970-01-01 00:02:07), so compareWithoutMV
+   //fails until #81682 is answered. The expected data is the MV result.
+   @Issue(['https://issues.inetsoft.com/issues/49843', 'https://issues.inetsoft.com/issues/81682'])
    def 'datelevel_none'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/datelevel_none'
