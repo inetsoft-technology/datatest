@@ -198,6 +198,8 @@ class NotTransform_Spec extends Specification {
 
    // Despite the folder name, the analyzer accepts this viewsheet now (a chart and a range
    // slider on the measure): the MV is created and hit, and the result is the one without MV.
+   // No bug is known for it; see docs/test-gap-assessment/mv.md §6 item 6. If the analyzer is
+   // meant to reject it again, this case fails on the MV checks.
    def 'adhocfilter_measure'() {
       given:
       run('adhocfilter_measure')
