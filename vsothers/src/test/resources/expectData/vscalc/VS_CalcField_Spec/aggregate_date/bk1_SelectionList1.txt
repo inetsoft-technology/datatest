@@ -1,0 +1,8 @@
+value | state | measure
+Business | selected+compatible | NULL
+Educational | selected+compatible | NULL
+Games | selected+compatible | NULL
+Graphics | selected+compatible | NULL
+Hardware | compatible | NULL
+Office Tools | compatible | NULL
+Personal | compatible | NULL

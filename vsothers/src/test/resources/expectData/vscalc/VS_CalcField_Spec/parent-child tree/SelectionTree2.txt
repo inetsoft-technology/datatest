@@ -1,0 +1,14 @@
+value | state | measure
+1 | compatible | 11
+   5 | compatible | 34
+   6 | compatible | 21
+2 | compatible | 12
+   7 | compatible | 22
+   8 | compatible | 3
+3 | compatible | 2
+   9 | compatible | 15
+   10 | compatible | 67
+   11 | compatible | 14
+4 | compatible | 1
+   12 | compatible | 29
+   13 | compatible | 43

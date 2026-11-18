@@ -1,0 +1,9 @@
+value | state | measure
+Data analysis_shenzhen | compatible | 1
+Data entry_wuhan | compatible | 1
+determination_beijing | compatible | 1
+Field implementation_weinan | compatible | 1
+Interview_shanghai | compatible | 1
+Questionnaire confirmation_tianjin | compatible | 1
+Questionnaire design_xian | compatible | 1
+Report submission_tianshui | compatible | 1

@@ -1,6 +1,5 @@
-The data size(row x col) is:(12 x 3)
+The data size(row x col) is:(11 x 3)
 month, fromFormula, quarter
-2010 Mar, 2010, 2
 2001 May, 2001, 3
 2001 Mar, 2001, 2
 2000 May, 2000, 3

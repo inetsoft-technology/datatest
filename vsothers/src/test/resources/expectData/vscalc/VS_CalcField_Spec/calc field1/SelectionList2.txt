@@ -1,0 +1,8 @@
+value | state | measure
+Business | compatible | 4940
+Educational | compatible | 6354
+Games | compatible | 11925
+Graphics | compatible | 3891
+Hardware | compatible | 11805
+Office Tools | compatible | 6588
+Personal | compatible | 8507

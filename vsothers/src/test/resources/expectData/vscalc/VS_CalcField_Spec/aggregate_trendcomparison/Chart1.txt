@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 6)
+STATE, Year(Calc_date), Average(CUSTOMER_ID), Calc_agg, % of total: Calc_agg, Value of previous: Calc_agg
+NV, 2017-01-01 00:00:00, 32, 32, 0.1809, NULL
+NV, 2018-01-01 00:00:00, 32, 32, 0.1809, 32
+WA, 2019-01-01 00:00:00, 28.5556, 28.5556, 0.1614, NULL
+WA, 2020-01-01 00:00:00, 28.375, 28.375, 0.1604, 28.5556
+PA, 2017-01-01 00:00:00, 28, 28, 0.1583, NULL
+PA, 2018-01-01 00:00:00, 28, 28, 0.1583, 28

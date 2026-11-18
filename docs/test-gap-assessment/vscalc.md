@@ -10,7 +10,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 1. **验证机制会静默通过**：导出失败只打印堆栈、基线文件缺失不报错，而且 CI 失败也不会让流水线变红。
 2. **基线只是产品自己的输出**，只能发现回归，不能证明"算得对"。产品仓库已补上：5 个聚合函数的单测已合入 `main`，聚合型/明细型计算字段求值、`CalculateRef`、公式工厂的单测在 PR #8000/#8052（144 行矩阵，353 个用例），并查出 10 个新缺陷（见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)）。
 
-G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。dashboard 侧剩孤儿 vs `aggregate_trendcomparison`（G2）和薄弱场景（G7–G9）；Java 单测侧（G3–G6）剩等开发回答的语义（[#80953](https://issues.inetsoft.com/issues/80953)）。
+G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。dashboard 侧 G2（孤儿 vs `aggregate_trendcomparison`）、G7（含 G9）已完成，剩薄弱场景 G8（暂不做）；Java 单测侧（G3–G6）剩等开发回答的语义（[#80953](https://issues.inetsoft.com/issues/80953)）。
 
 ## 2. 覆盖情况
 
@@ -25,13 +25,15 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 
 | 使用位置 | 覆盖的 vs 数（共 23） | 评价 |
 |---|---|---|
-| Chart 的 x / y / 维度 / 度量 | 14 / 16 / 18 / 19 | 充分 |
+| Chart 的 x / y | 14 / 16 | 充分 |
 | Chart 的 color / size / text / **shape** | 7 / 4 / 4 / **2** | shape 薄 |
-| Crosstab 的维度 / 度量 / **条件** | 12 / 12 / **3** | 条件薄 |
-| CalcTable 的单元格 / 度量 / 维度 / **条件** | 9 / 9 / 8 / **1** | 条件很薄 |
+| Crosstab 的行 / 列 / 度量 / **条件** | 8 / 3 / 12 / **3**（行或列共 9） | 条件薄 |
+| CalcTable 的单元格 / **条件** | 9 / **1** | 条件很薄 |
 | Table 的列 / **条件** | 6 / **2** | 条件薄 |
 | Calendar / SelectionList / SelectionTree / TimeSlider | 6 / 6 / 5 / 3 | |
 | Gauge / Text | 3 / 3 | 类型和表达式单一（仅 integer，表达式均为"其他"） |
+
+统计口径：只算实际绑定，不算 `<ainfo>`。`<ainfo>` 是绑定面板为数据源列出的候选字段，数据源上的计算字段不管有没有绑定都会出现在里面（如 `calc_data group` 的 Chart4，候选 12 个维度、6 个度量，实际只绑定 1 个 x、1 个 y）。`vs_backup_scan.py` 跳过 `<ainfo>`，并按 `rowheaders`/`colheaders` 识别 Crosstab 的行列。
 
 数据源：绑定的表有 Query1（6 个 vs）、OrdersAndReturns（4）、Order Model（4）等，其余基本一对一；底层是 DB2、MySQL 还是 embedded 未细分。
 图表类型已有 BAR、BAR_STACK、LINE、PIE、FUNNEL、GANTT、MAP、TREE、NETWORK、SUNBURST、TREEMAP；没有 AREA、POINT、RADAR、STOCK/CANDLE、BOXPLOT、MEKKO、WATERFALL、PARETO、STEP 等。
@@ -44,24 +46,51 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 - `exportData` 没有清理代码，但 CI 都会先清：Jenkins 准备阶段执行 `./mvnw clean -pl vsothers`（`Jenkinsfile:37`），GitHub 工作流先执行 `./mvnw clean`（`test-vsothers.yml:71`）。上一次导出的残留文件不是问题（本地手工重跑除外）。
 - CI 对失败的处理：GitHub 工作流 5 个测试步骤全是 `continue-on-error: true`；Jenkins 的 vscalc 阶段是 `catchError(buildResult: 'UNSTABLE')`，失败只让构建变 UNSTABLE。
 - 静态预测：22 个用例的基线文件与预期导出文件**完全一致**，所以换严格基类预计不会因文件集合而失败（未运行）。
-- 基线来源（回归基线还是独立标准答案）：**未查**。
+- 基线来源：回归基线，不是独立标准答案。所有 txt 基线都来自 `c6208b58`（2024-08-21）一次生成，之后再没改过；此后 6 个 "update exp" 提交只改 PNG。2026-03 改用 testcontainer（`d474bfeb`）后 txt 也没变。抽样独立核对未发现错误结果被固化，见下文"核对结果"。
 
 **断言层：** 只有 Chart（TXT + PNG）和 Table、Crosstab、CalcTable（TXT）会导出数据。Selection、Calendar、TimeSlider、Gauge、Text 自身的内容只能靠整页 PNG（22 个用例中 19 个调用了 `exportAsPNG`）。但书签保存了选择状态，它们的**过滤效果**会进入被过滤的图表和表的数据：绑定计算字段的选择类组件 × 书签共 42 对，其中 23 对带有已应用的选择状态，分布在 11 个 vs。
-另有 6 个 vs 的个别计算字段名没有出现在基线 txt 里：`parent-child tree` 0/1、`calc_data group` 3/6、`filter` 4/5、`testDB2` 5/6、`testModel` 6/7、`testQuery` 7/8（子串匹配，可能是只做了条件或换了表头，需核对）。
+另有 6 个 vs 的个别计算字段名没有出现在基线 txt 里：`parent-child tree` 0/1、`calc_data group` 3/6、`filter` 4/5、`testDB2` 5/6、`testModel` 6/7、`testQuery` 7/8。已逐个核对，真正缺断言的只有 3 个，且都属于 G7（见下文）。
+
+**核对结果（[#80957](https://issues.inetsoft.com/issues/80957) 第 2、3 节）：**
+
+基线抽样独立核对：用 datatest 自带的数据库（`access` 为 H2 `docker/src/test/resources/H2Data/orders.mv.db`，`Examples/Orders` 为 Derby `docker/src/test/resources/libs/orders_133.jar`）按 worksheet/模型定义写 SQL，Python 手算，结果与基线**全部一致**：
+
+| vs | 核对内容 | 结果 |
+|---|---|---|
+| `aggregate_with` | query1（`orderno < 10` 的 18 行）按年 2001–2003：Correlation、WeightedAverage 与 `Calc_weight`、Sum(Calc_double) 与同比变化、Covariance、`Calc_first`、`Calc_last` | 与 Chart3、Crosstab1、FreehandTable1 一致；Covariance 是总体口径（除以 n） |
+| `aggregate_date` | Crosstab1 每个销售员的 `calc_date_max`、`calc_date_min`、`calc_date_count` | max 2020-12、min 2017-03 一致；count 按 Orders（7 列分组）与 Returns（5 列分组）以 City/State/Company/Category 做 FULL JOIN 推算为 769/1035/909/682，与基线一致 |
+
+已固化的错误基线（1 处）：`testWorksheet` 的 FreehandTable1、zoom_FreehandTable1 按 `c_date = CALC.edate(field['Date'], 10)` 的月份分组，数据来自 worksheet `foCalc` 的 snapshot。snapshot 里 2009-04-30 加 10 个月，旧 `edate` 跨年时日期溢出，算成 2010-03-02，基线里因此有 `2010 Mar` 一行；[#80953](https://issues.inetsoft.com/issues/80953) 修复后（stylebi `380cf76378`）结果为 2010-02-28。这张表不显示落在 2 月的值，所以该行消失。新结果正确，两个基线已删去这一行。
+
+G9（上述 8 个字段）：
+
+| vs | 字段 | 用在哪里 | 结论 |
+|---|---|---|---|
+| `calc_data group` | `calc_date` | Crosstab2 的列维度 | 已断言：表头显示为分组值 2020/2019/2018/Others |
+| `calc_data group` | `CalcField2`、`Calc_mindate` | 没有组件绑定 | 不需要断言 |
+| `testModel` | `NthSmallest` | 没有组件绑定 | 不需要断言（`BaseFormula` 通过 `TopFormula = Mode([BaseFormula])+10` 间接使用） |
+| `testQuery` | `edate` | FreehandTable2 的 5 个日期层级列、FreehandTable3 的 `CalcField` 列 | 已断言 |
+| `filter` | `max_time` | SelectionList1 的度量 | **缺断言**，只有 PNG，归 G7 |
+| `parent-child tree` | `CalcField1` | SelectionTree1 的度量 | **缺断言**，只有 PNG，归 G7 |
+| `testDB2` | `c_date` | RangeSlider2/3，且都是全选（`full="true"`），不过滤数据 | **缺断言**，只有 PNG，归 G7 |
+
+书签选择状态：确实缩小了数据。56 对 (Home)/书签（含 `zoom`）导出中 51 对不同，多数行数变少。5 对相同，原因都正常：`aggregate_nthpth` Chart1 和 `chart` bk1 的 Chart2 是刷选的源图（刷选不过滤源图自己）；`chart` 的 bk2 没有选择状态；`aggregate_time` Crosstab2 绑定 Query2，选择作用在 type 上（推断）；`testWorksheet` FreehandTable1 绑定 snapshot，刷选在 SQL Query1 上。`chart` bk1 的 Chart3 只剩表头也正常：Chart3 本身只有 2019、2020，刷选的是 2018。
+
+donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `donut="true"`，再加一个 `Total@` 度量（与产品 `DonutChartFilter.createChartInfo` 生成的结构一致）。基线中 Total 行 909 等于 14 个扇区之和。
 
 ## 3. 缺口与方向
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
 | G1 | 导出失败、基线缺失不报错；一个组件失败后面的组件都不导出；CI 失败不挡合入 | 某个组件导出抛异常或少导出文件，用例仍然通过 | 机制：直接改 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进去（见下）。**已完成：PR #203** | 高 |
-| G2 | 孤儿 vs `aggregate_trendcomparison` | 趋势/比较类聚合的计算字段结果出错，无人发现 | dashboard：补用例 | 高 |
+| G2 | 孤儿 vs `aggregate_trendcomparison` | 趋势/比较类聚合的计算字段结果出错，无人发现 | dashboard：补用例。**已完成**（第 5 节） | 高 |
 | G3 | 聚合型计算字段求值只有 1 个值级单测，且表达式只是聚合名本身 | `Sum/Sum`、`Average*Average`、`Mode+10`、`if…else` 这类表达式算错 | 单测。**已落实：PR #8000/#8052（未合入 `main`），查出 #81202、#81203、#81212** | 高 |
 | G4 | Correlation、WeightedAverage、DistinctCount、Mode、NthMostFrequent 在 `report/filter` 无专门单测（已有的同名测试属于 MV 路径，不能替代） | 这些聚合函数实现改错，只有 vs 回归基线可能发现 | 单测。**已完成：[stylebi#7995](https://github.com/inetsoft-technology/stylebi/pull/7995) 已合入 `main`** | 高 |
 | G5 | 明细型计算字段的值级语义没有系统测试 | 四则运算、除零、null、拼接、日期、参数替换出错 | 单测 + dashboard 代表用例。**单测已落实：PR #8000/#8052，查出 #81204、#81206、#81214 等；dashboard 代表用例未做** | 中 |
 | G6 | 基线只是产品自己的输出 | 已有的错误结果被固化为基线，永远不报错 | 单测的手算期望值（**已做**：144 行矩阵，预言来源以规格、手算为主）；新基线抽样独立核对（未做） | 中 |
-| G7 | 选择类、展示类组件自身内容只有 PNG | 选择列表里计算字段的取值列表出错，但在 PNG 容差内 | dashboard：扩展基类 | 中 |
+| G7 | 选择类、展示类组件自身内容只有 PNG | 选择列表里计算字段的取值列表出错，但在 PNG 容差内 | dashboard：扩展基类。实际受影响的字段：`filter` 的 `max_time`、`parent-child tree` 的 `CalcField1`、`testDB2` 的 `c_date`。**已完成**（第 5 节） | 中 |
 | G8 | 薄弱格子：聚合型 timeInstant/boolean、shape/text/size、condition 位置、Gauge/Text 类型、新图表类型 | 计算字段在这些位置取值或渲染出错 | dashboard：新建小 vs | 中 |
-| G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | dashboard：核对后补 | 低 |
+| G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | 已核对（第 2 节）：2 个已断言（`calc_date`、`edate`）、3 个没有绑定，真正缺的 3 个都在选择类组件上，并入 G7，不单独补 | 已并入 G7 |
 
 ### G1 方案：直接改 `ViewsheetTest`
 
@@ -111,22 +140,22 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 - 结果：矩阵 144 行，通过 113、不一致 20、没写 10；13 个测试类 353 个用例，0 失败、19 个跳过（`@Disabled` 的不一致用例）；变异检查全部抓到（38 + 5）。
 - 开出 10 个 Redmine bug（[#81202](https://issues.inetsoft.com/issues/81202)–[#81206](https://issues.inetsoft.com/issues/81206)、[#81211](https://issues.inetsoft.com/issues/81211)–[#81215](https://issues.inetsoft.com/issues/81215)），关联 [#81200](https://issues.inetsoft.com/issues/81200)、[#81197](https://issues.inetsoft.com/issues/81197)；[#81207](https://issues.inetsoft.com/issues/81207) 判为非缺陷。
 - 本文原先设计的 99 个用例、G3/G5 的测试入口分析（`CalcFieldFormula` 的聚合名映射与列位置；明细型的 L1 表达式列 / L2 worksheet / L3 viewsheet 三层入口）已落成测试，设计细节不再保留在这里；注意点留给 datatest 的有两条：
-  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。
-  - 明细型除零（`x/0` 得 Infinity）、null 参与运算是 JavaScript 行为，按现状钉住，没有向开发另问。
+  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。实测 H2 `NULL+10`/`NULL*2` 都是 null，脚本路径是 10/0；`concat(a,b)` 在脚本作用域里没有绑定，退回脚本大概率报错（未实测）。两条路径不一致待开发确认（[#81223](https://issues.inetsoft.com/issues/81223)）。
+  - 明细型除零（`x/0` 得 Infinity）、null 参与运算是 JavaScript 行为，按现状钉住；null 参与运算（`null+10` 得 10、`"a"+null` 得 `"anull"`）是否应传播 null 待开发确认（[#81197](https://issues.inetsoft.com/issues/81197)）。
 
 ## 5. Dashboard 补充
 
 | 场景 | 做法 | 验证什么 | 前提 |
 |---|---|---|---|
 | 验证机制（G1） | 不改 spec，改 `ViewsheetTest`（第 3 节 G1 方案）。就 vscalc 而言，`strictcheck` 静态预测 22 个用例的基线与导出文件集合完全一致（基线多出 0 个、导出缺基线 0 个），所以预计不会因文件集合失败 | 导出失败、基线缺失不再静默通过 | 各模块自行运行并处理变红的用例 |
-| 孤儿 vs（G2） | 给 `aggregate_trendcomparison` 加 feature 和基线：书签 `(Home)`、`bk1`，预计导出 7 个文件 | 趋势/比较聚合的计算字段 | vs 已在 zip 里；基线用 `-Dupdate.baseline=true`（仅严格基类可用），生成后抽样独立核对 |
+| 孤儿 vs（G2） | **已完成**：用例 `aggregate_trendcomparison`，书签 `(Home)`、`bk1`，4 个 txt 基线（Chart1、Crosstab1）。只比数据：PNG 基线要等第 6 节"PNG 在哪个平台生成"定了再加 | 趋势/比较聚合的计算字段 | 基线用 `-Dupdate.baseline=true` 生成，按内部关系核对一致：`Calc_agg` 等于 Average(CUSTOMER_ID)；% of total、Value of previous 按图表可见行手算一致；Crosstab 的 Change from previous 与 Moving Average of 5（前后各 2 个，居中窗口）可由同一组 Sum 反推，14 行全部一致 |
 | 聚合型 timeInstant、boolean（G8） | 新建小 vs | 目前 0 个 | 在 StyleBI 里制作并导出 backup 并入 zip |
 | Chart 的 shape / text / size 视觉绑定（G8） | 新建小 vs | 计算字段用于视觉绑定 | 同上 |
 | Table / Crosstab / CalcTable 的 condition 位置（G8） | 新建小 vs | 计算字段用于条件 | 同上 |
 | Gauge / Text 非 integer 类型（G8） | 新建小 vs | 计算字段用于 Gauge、Text | 同上 |
 | 新图表类型（G8） | 新建小 vs（AREA、POINT、RADAR、WATERFALL 等择要） | 计算字段在这些图表上取值与渲染 | 同上；先确认产品允许这些图表绑定计算字段 |
-| 选择类组件自身内容（G7） | 扩展 `executeVS0` 导出这些组件的数据 | 选择列表的取值列表等 | `commons` 的 `ExportUtil` 已有 `exportSelectionList`，可能可复用；能否从沙箱取到数据未验证 |
-| 个别计算字段未入基线（G9） | 核对那 6 个 vs，确认是只做条件还是漏断言 | | 无 |
+| 选择类组件自身内容（G7） | **已完成**：`executeVS(params, bks, true)` 额外把 SelectionList / SelectionTree（值、状态、度量）、RangeSlider（值个数、首尾值、选中范围）、Calendar（范围、选中日期）导出为 txt（`ExportUtil.exportSelection`）。默认关闭，其他 spec 不受影响。vscalc 里有选择类组件绑定计算字段的 12 个用例打开，新增 53 个基线 | 选择列表的取值列表、度量等 | 原有 `exportSelectionList` 不含度量，没有复用。抽样核对：`parent-child tree` 的 `CalcField1`（Sum(label_number)）13 个节点与 worksheet 嵌入数据逐个一致；`filter` 的 `max_time` 按自身分组取 Max，等于值本身 |
+| 个别计算字段未入基线（G9） | 已核对，并入 G7（第 2 节），随 G7 完成 | | 无 |
 
 做法原则：**新建小 vs，不改已有 vs**（改已有 vs 会让已有基线整体变动，混进噪声）；每个新用例只验证"接线"，边界和语义放在产品单测里（[vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)），不为边界值堆 vs。zip 是整个 storage 的二进制备份，改完后用 `vs_backup_scan.py inventory` 前后对比，确认只有预期的 vs 变了。
 
@@ -169,8 +198,7 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 **没验证的：**
 - 严格模式已跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。
 - 单测盘点按类名、文件名、方法名静态匹配，没有逐个读测试内容。
-- `donut chart` 这个 vs 的类型是 PIE（3），不是 DONUT（0x13），是否有意未核实。
-- 选择状态是否真的缩小了数据范围，静态上无法判断（书签可能只保存选中项）。
+- 基线独立核对只抽了 `aggregate_with`、`aggregate_date` 两个 vs；DB2、MySQL 上的 vs（`testDB2`、`testModel`、`testQuery` 等）未核对。
 - 只覆盖 vscalc 一个 spec，其他模块未评估。
 
 ## 附：数据来源与复现
@@ -179,4 +207,16 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 python .claude/workflow-shared/datatest-gap/vs_backup_scan.py inventory vsothers/src/test/resources/config/vscalc-storage.zip
 python .claude/workflow-shared/datatest-gap/vs_backup_scan.py crosscheck vsothers/src/test/resources/config/vscalc-storage.zip vsothers/src/test/groovy/inetsoft/test/viewsheet/cases/vscalc/VS_CalcField_Spec.groovy vsothers/src/test/resources/expectData/vscalc/VS_CalcField_Spec
 python .claude/workflow-shared/datatest-gap/vs_backup_scan.py strictcheck vsothers/src/test/resources/config/vscalc-storage.zip vsothers/src/test/groovy/inetsoft/test/viewsheet/cases/vscalc/VS_CalcField_Spec.groovy vsothers/src/test/resources/expectData/vscalc/VS_CalcField_Spec
+```
+
+基线独立核对的取数 SQL（数据库文件先复制出来再连；H2 文件格式 2，用 h2 2.1.214，用户名为空；Derby 用 10.14.2.0，classpath 加 `orders_133.jar`）：
+
+```sql
+-- aggregate_with / query1（H2, jdbc:h2:<copy>/orders;ACCESS_MODE_DATA=r）；Calc_double = quantity / customer_id，按 YEAR(orderdate) 分组手算
+SELECT od.QUANTITY, o.CUSTOMER_ID, o.ORDERDATE, c.COMPANY FROM ORDERDETAILS od, ORDERS o, CUSTOMERS c
+ WHERE od.ORDERNO < 10 AND od.ORDERNO = o.ORDERNO AND o.CUSTOMER_ID = c.CUSTOMER_ID;
+-- aggregate_date / OrdersAndReturns（Derby, jdbc:derby:classpath:orders_133;user=SA）
+-- Orders 分组：DISTINCT City, State, Company, 年月(ORDER_DATE), LAST_NAME, CATEGORY_NAME（ORDERS-CUSTOMERS-REGIONS-SALES_EMPLOYEES-ORDER_DETAILS-PRODUCTS-CATEGORIES）
+-- Returns 分组：DISTINCT City, State, Company, CATEGORY_NAME, 年月(ORDER_DATE)（RETURNS-ORDERS-CUSTOMERS，RETURNS-PRODUCTS-CATEGORIES）
+-- calc_date_count(销售员) = Σ 该销售员的 Orders 分组 × max(1, 同 City/State/Company/Category 的 Returns 分组数)
 ```

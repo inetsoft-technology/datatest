@@ -1,0 +1,8 @@
+value | state | measure
+Business | selected+compatible | 781
+Educational | selected+compatible | 979
+Games | selected+compatible | 1688
+Hardware | selected+compatible | 1637
+Office Tools | selected+compatible | 932
+Graphics | compatible | 537
+Personal | compatible | 965

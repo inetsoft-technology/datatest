@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+STATE, Change from previous by row: Calc_agg2, Moving Average of 5 by row: Calc_agg2
+NJ, NULL, 475.5
+NV, -439, 475.5

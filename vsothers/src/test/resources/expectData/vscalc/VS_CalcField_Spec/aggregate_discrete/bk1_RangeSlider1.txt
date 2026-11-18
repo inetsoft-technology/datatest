@@ -1,0 +1,4 @@
+values: 61
+first: $0.00
+last: $3,000.00
+selected: 0 -> 1250

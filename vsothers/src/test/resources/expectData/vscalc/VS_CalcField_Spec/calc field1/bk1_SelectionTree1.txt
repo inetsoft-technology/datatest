@@ -1,0 +1,318 @@
+value | state | measure
+Business | selected+compatible | 2020-09-01 00:00:00
+   1 | included+compatible | 2019-08-01 00:00:00
+   2 | included+compatible | 2017-10-01 00:00:00
+   4 | included+compatible | 2017-03-01 00:00:00
+   5 | included+compatible | 2020-09-01 00:00:00
+   7 | included+compatible | 2019-08-01 00:00:00
+   8 | included+compatible | 2020-08-01 00:00:00
+   9 | included+compatible | 2020-08-01 00:00:00
+   10 | included+compatible | 2020-09-01 00:00:00
+   11 | included+compatible | 2020-08-01 00:00:00
+   12 | included+compatible | 2020-09-01 00:00:00
+   13 | included+compatible | 2019-08-01 00:00:00
+   14 | included+compatible | 2020-09-01 00:00:00
+   15 | included+compatible | 2017-10-01 00:00:00
+   18 | included+compatible | 2020-08-01 00:00:00
+   19 | included+compatible | 2020-09-01 00:00:00
+   20 | included+compatible | 2020-09-01 00:00:00
+   21 | included+compatible | 2020-08-01 00:00:00
+   22 | included+compatible | 2017-05-01 00:00:00
+   23 | included+compatible | 2020-08-01 00:00:00
+   25 | included+compatible | 2017-05-01 00:00:00
+   27 | included+compatible | 2020-08-01 00:00:00
+   35 | included+compatible | 2020-09-01 00:00:00
+   36 | included+compatible | 2020-09-01 00:00:00
+   39 | included+compatible | 2019-08-01 00:00:00
+   3 | excluded | NULL
+   6 | excluded | NULL
+   16 | excluded | NULL
+   17 | excluded | NULL
+   24 | excluded | NULL
+   26 | excluded | NULL
+   28 | excluded | NULL
+   29 | excluded | NULL
+   30 | excluded | NULL
+   31 | excluded | NULL
+   32 | excluded | NULL
+   33 | excluded | NULL
+   34 | excluded | NULL
+Educational | selected+compatible | 2020-09-01 00:00:00
+   1 | included+compatible | 2019-08-01 00:00:00
+   2 | included+compatible | 2017-03-01 00:00:00
+   3 | included+compatible | 2020-09-01 00:00:00
+   4 | included+compatible | 2019-08-01 00:00:00
+   5 | included+compatible | 2017-05-01 00:00:00
+   8 | included+compatible | 2017-10-01 00:00:00
+   9 | included+compatible | 2020-08-01 00:00:00
+   10 | included+compatible | 2017-05-01 00:00:00
+   11 | included+compatible | 2017-03-01 00:00:00
+   13 | included+compatible | 2017-10-01 00:00:00
+   14 | included+compatible | 2017-05-01 00:00:00
+   16 | included+compatible | 2020-09-01 00:00:00
+   17 | included+compatible | 2020-09-01 00:00:00
+   18 | included+compatible | 2019-08-01 00:00:00
+   19 | included+compatible | 2019-08-01 00:00:00
+   20 | included+compatible | 2020-09-01 00:00:00
+   21 | included+compatible | 2020-09-01 00:00:00
+   22 | included+compatible | 2017-05-01 00:00:00
+   23 | included+compatible | 2017-10-01 00:00:00
+   26 | included+compatible | 2020-09-01 00:00:00
+   29 | included+compatible | 2017-03-01 00:00:00
+   30 | included+compatible | 2020-08-01 00:00:00
+   33 | included+compatible | 2017-10-01 00:00:00
+   34 | included+compatible | 2020-09-01 00:00:00
+   40 | included+compatible | 2017-05-01 00:00:00
+   6 | excluded | NULL
+   7 | excluded | NULL
+   12 | excluded | NULL
+   15 | excluded | NULL
+   24 | excluded | NULL
+   25 | excluded | NULL
+   27 | excluded | NULL
+   28 | excluded | NULL
+   31 | excluded | NULL
+   32 | excluded | NULL
+   35 | excluded | NULL
+   39 | excluded | NULL
+   41 | excluded | NULL
+   42 | excluded | NULL
+   45 | excluded | NULL
+Games | selected+compatible | 2020-09-01 00:00:00
+   1 | included+compatible | 2017-03-01 00:00:00
+   2 | included+compatible | 2020-09-01 00:00:00
+   3 | included+compatible | 2017-05-01 00:00:00
+   4 | included+compatible | 2017-05-01 00:00:00
+   5 | included+compatible | 2020-09-01 00:00:00
+   6 | included+compatible | 2017-05-01 00:00:00
+   7 | included+compatible | 2019-08-01 00:00:00
+   9 | included+compatible | 2020-09-01 00:00:00
+   10 | included+compatible | 2020-08-01 00:00:00
+   11 | included+compatible | 2020-08-01 00:00:00
+   12 | included+compatible | 2017-05-01 00:00:00
+   13 | included+compatible | 2019-08-01 00:00:00
+   14 | included+compatible | 2020-09-01 00:00:00
+   15 | included+compatible | 2020-08-01 00:00:00
+   16 | included+compatible | 2019-08-01 00:00:00
+   17 | included+compatible | 2020-08-01 00:00:00
+   18 | included+compatible | 2020-09-01 00:00:00
+   20 | included+compatible | 2019-08-01 00:00:00
+   21 | included+compatible | 2017-05-01 00:00:00
+   23 | included+compatible | 2020-09-01 00:00:00
+   24 | included+compatible | 2020-09-01 00:00:00
+   26 | included+compatible | 2020-08-01 00:00:00
+   30 | included+compatible | 2020-09-01 00:00:00
+   31 | included+compatible | 2019-08-01 00:00:00
+   32 | included+compatible | 2017-05-01 00:00:00
+   33 | included+compatible | 2020-08-01 00:00:00
+   35 | included+compatible | 2020-09-01 00:00:00
+   37 | included+compatible | 2017-10-01 00:00:00
+   40 | included+compatible | 2017-03-01 00:00:00
+   44 | included+compatible | 2017-10-01 00:00:00
+   48 | included+compatible | 2020-08-01 00:00:00
+   49 | included+compatible | 2017-10-01 00:00:00
+   51 | included+compatible | 2019-08-01 00:00:00
+   76 | included+compatible | 2017-05-01 00:00:00
+   8 | excluded | NULL
+   19 | excluded | NULL
+   22 | excluded | NULL
+   25 | excluded | NULL
+   27 | excluded | NULL
+   28 | excluded | NULL
+   29 | excluded | NULL
+   34 | excluded | NULL
+   36 | excluded | NULL
+   38 | excluded | NULL
+   39 | excluded | NULL
+   41 | excluded | NULL
+   43 | excluded | NULL
+   45 | excluded | NULL
+   46 | excluded | NULL
+   47 | excluded | NULL
+   53 | excluded | NULL
+   56 | excluded | NULL
+   67 | excluded | NULL
+   74 | excluded | NULL
+Hardware | selected+compatible | 2020-09-01 00:00:00
+   1 | included+compatible | 2020-09-01 00:00:00
+   4 | included+compatible | 2017-10-01 00:00:00
+   5 | included+compatible | 2019-08-01 00:00:00
+   6 | included+compatible | 2017-03-01 00:00:00
+   7 | included+compatible | 2020-09-01 00:00:00
+   8 | included+compatible | 2020-08-01 00:00:00
+   9 | included+compatible | 2017-10-01 00:00:00
+   10 | included+compatible | 2020-08-01 00:00:00
+   11 | included+compatible | 2020-09-01 00:00:00
+   12 | included+compatible | 2019-08-01 00:00:00
+   13 | included+compatible | 2020-08-01 00:00:00
+   15 | included+compatible | 2020-08-01 00:00:00
+   16 | included+compatible | 2020-09-01 00:00:00
+   17 | included+compatible | 2020-08-01 00:00:00
+   18 | included+compatible | 2019-08-01 00:00:00
+   19 | included+compatible | 2017-05-01 00:00:00
+   20 | included+compatible | 2019-08-01 00:00:00
+   21 | included+compatible | 2017-03-01 00:00:00
+   22 | included+compatible | 2017-05-01 00:00:00
+   24 | included+compatible | 2017-10-01 00:00:00
+   25 | included+compatible | 2020-09-01 00:00:00
+   27 | included+compatible | 2020-08-01 00:00:00
+   28 | included+compatible | 2020-09-01 00:00:00
+   32 | included+compatible | 2019-08-01 00:00:00
+   33 | included+compatible | 2017-05-01 00:00:00
+   42 | included+compatible | 2020-08-01 00:00:00
+   50 | included+compatible | 2017-10-01 00:00:00
+   52 | included+compatible | 2020-09-01 00:00:00
+   53 | included+compatible | 2017-05-01 00:00:00
+   61 | included+compatible | 2020-08-01 00:00:00
+   2 | excluded | NULL
+   3 | excluded | NULL
+   14 | excluded | NULL
+   23 | excluded | NULL
+   26 | excluded | NULL
+   29 | excluded | NULL
+   30 | excluded | NULL
+   31 | excluded | NULL
+   34 | excluded | NULL
+   35 | excluded | NULL
+   36 | excluded | NULL
+   37 | excluded | NULL
+   38 | excluded | NULL
+   39 | excluded | NULL
+   40 | excluded | NULL
+   41 | excluded | NULL
+   43 | excluded | NULL
+   45 | excluded | NULL
+   46 | excluded | NULL
+   48 | excluded | NULL
+   51 | excluded | NULL
+   57 | excluded | NULL
+   60 | excluded | NULL
+   90 | excluded | NULL
+Office Tools | selected+compatible | 2020-09-01 00:00:00
+   1 | included+compatible | 2020-08-01 00:00:00
+   3 | included+compatible | 2019-08-01 00:00:00
+   4 | included+compatible | 2017-05-01 00:00:00
+   5 | included+compatible | 2017-05-01 00:00:00
+   6 | included+compatible | 2020-09-01 00:00:00
+   7 | included+compatible | 2020-09-01 00:00:00
+   9 | included+compatible | 2020-09-01 00:00:00
+   10 | included+compatible | 2020-09-01 00:00:00
+   11 | included+compatible | 2017-10-01 00:00:00
+   12 | included+compatible | 2017-10-01 00:00:00
+   14 | included+compatible | 2020-08-01 00:00:00
+   15 | included+compatible | 2020-09-01 00:00:00
+   16 | included+compatible | 2020-08-01 00:00:00
+   17 | included+compatible | 2019-08-01 00:00:00
+   18 | included+compatible | 2020-08-01 00:00:00
+   19 | included+compatible | 2017-05-01 00:00:00
+   21 | included+compatible | 2020-08-01 00:00:00
+   23 | included+compatible | 2017-03-01 00:00:00
+   24 | included+compatible | 2017-10-01 00:00:00
+   27 | included+compatible | 2020-09-01 00:00:00
+   29 | included+compatible | 2017-03-01 00:00:00
+   32 | included+compatible | 2020-08-01 00:00:00
+   54 | included+compatible | 2017-05-01 00:00:00
+   2 | excluded | NULL
+   8 | excluded | NULL
+   13 | excluded | NULL
+   20 | excluded | NULL
+   22 | excluded | NULL
+   25 | excluded | NULL
+   26 | excluded | NULL
+   28 | excluded | NULL
+   30 | excluded | NULL
+   31 | excluded | NULL
+   33 | excluded | NULL
+   34 | excluded | NULL
+   35 | excluded | NULL
+   36 | excluded | NULL
+   37 | excluded | NULL
+   38 | excluded | NULL
+   39 | excluded | NULL
+   40 | excluded | NULL
+   41 | excluded | NULL
+   42 | excluded | NULL
+   52 | excluded | NULL
+   53 | excluded | NULL
+Graphics | compatible | 2020-09-01 00:00:00
+   1 | compatible | 2020-09-01 00:00:00
+   2 | compatible | 2020-08-01 00:00:00
+   3 | compatible | 2020-09-01 00:00:00
+   4 | compatible | 2020-08-01 00:00:00
+   8 | compatible | 2020-09-01 00:00:00
+   9 | compatible | 2020-08-01 00:00:00
+   10 | compatible | 2020-09-01 00:00:00
+   14 | compatible | 2020-08-01 00:00:00
+   16 | compatible | 2020-08-01 00:00:00
+   17 | compatible | 2020-09-01 00:00:00
+   18 | compatible | 2020-08-01 00:00:00
+   19 | compatible | 2019-08-01 00:00:00
+   20 | compatible | 2020-08-01 00:00:00
+   22 | compatible | 2017-05-01 00:00:00
+   24 | compatible | 2020-08-01 00:00:00
+   28 | compatible | 2020-09-01 00:00:00
+   29 | compatible | 2017-10-01 00:00:00
+   5 | excluded | NULL
+   6 | excluded | NULL
+   7 | excluded | NULL
+   11 | excluded | NULL
+   12 | excluded | NULL
+   13 | excluded | NULL
+   15 | excluded | NULL
+   21 | excluded | NULL
+   23 | excluded | NULL
+   25 | excluded | NULL
+   26 | excluded | NULL
+   27 | excluded | NULL
+   31 | excluded | NULL
+   35 | excluded | NULL
+   42 | excluded | NULL
+Personal | compatible | 2020-09-01 00:00:00
+   1 | compatible | 2017-05-01 00:00:00
+   2 | compatible | 2019-08-01 00:00:00
+   4 | compatible | 2017-05-01 00:00:00
+   5 | compatible | 2017-05-01 00:00:00
+   6 | compatible | 2020-08-01 00:00:00
+   7 | compatible | 2020-09-01 00:00:00
+   8 | compatible | 2019-08-01 00:00:00
+   9 | compatible | 2020-09-01 00:00:00
+   11 | compatible | 2017-10-01 00:00:00
+   12 | compatible | 2019-08-01 00:00:00
+   13 | compatible | 2019-08-01 00:00:00
+   15 | compatible | 2017-10-01 00:00:00
+   16 | compatible | 2017-03-01 00:00:00
+   17 | compatible | 2020-09-01 00:00:00
+   18 | compatible | 2019-08-01 00:00:00
+   19 | compatible | 2020-09-01 00:00:00
+   20 | compatible | 2019-08-01 00:00:00
+   21 | compatible | 2020-09-01 00:00:00
+   22 | compatible | 2017-10-01 00:00:00
+   23 | compatible | 2020-08-01 00:00:00
+   24 | compatible | 2017-10-01 00:00:00
+   26 | compatible | 2020-09-01 00:00:00
+   27 | compatible | 2017-05-01 00:00:00
+   28 | compatible | 2020-08-01 00:00:00
+   29 | compatible | 2017-10-01 00:00:00
+   32 | compatible | 2020-08-01 00:00:00
+   35 | compatible | 2017-05-01 00:00:00
+   3 | excluded | NULL
+   10 | excluded | NULL
+   14 | excluded | NULL
+   25 | excluded | NULL
+   30 | excluded | NULL
+   31 | excluded | NULL
+   33 | excluded | NULL
+   34 | excluded | NULL
+   36 | excluded | NULL
+   37 | excluded | NULL
+   39 | excluded | NULL
+   42 | excluded | NULL
+   43 | excluded | NULL
+   44 | excluded | NULL
+   48 | excluded | NULL
+   52 | excluded | NULL
+   58 | excluded | NULL
+   60 | excluded | NULL
+   61 | excluded | NULL
+   65 | excluded | NULL
+   72 | excluded | NULL

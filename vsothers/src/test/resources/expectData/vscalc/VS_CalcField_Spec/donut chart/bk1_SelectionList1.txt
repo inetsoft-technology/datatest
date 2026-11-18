@@ -1,0 +1,15 @@
+value | state | measure
+1_MA | selected+compatible | 4
+1_MD | selected+compatible | 3
+2_IL | selected+compatible | 1
+2_NV | selected+compatible | 1
+2_TX | selected+compatible | 4
+2_WA | selected+compatible | 2
+1_CT | compatible | 1
+1_FL | compatible | 1
+1_NJ | compatible | 6
+1_NY | compatible | 4
+1_PA | compatible | 1
+2_AZ | compatible | 1
+2_CA | compatible | 4
+2_CO | compatible | 2

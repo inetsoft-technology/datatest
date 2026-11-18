@@ -58,7 +58,7 @@ class VS_CalcField_Spec extends Specification{
    def 'filter'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/filter', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -74,7 +74,7 @@ class VS_CalcField_Spec extends Specification{
    def 'parent-child tree'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/parent-child tree', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -90,7 +90,7 @@ class VS_CalcField_Spec extends Specification{
    def 'parameter in calc field'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/parameter in calc field', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1', 'bk2'] as String[], null, true, false)
 
       expect:
@@ -121,7 +121,7 @@ class VS_CalcField_Spec extends Specification{
    def 'calc field1'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/calc field1', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -137,7 +137,7 @@ class VS_CalcField_Spec extends Specification{
    def 'funnel chart'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/funnel chart', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -153,7 +153,7 @@ class VS_CalcField_Spec extends Specification{
    def 'gantt chart'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/gantt chart', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -169,7 +169,7 @@ class VS_CalcField_Spec extends Specification{
    def 'treemap chart'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/treemap chart', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -202,7 +202,7 @@ class VS_CalcField_Spec extends Specification{
    def 'donut chart'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/donut chart', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -218,7 +218,7 @@ class VS_CalcField_Spec extends Specification{
    def 'aggregate_date'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/aggregate_date', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -266,7 +266,7 @@ class VS_CalcField_Spec extends Specification{
    def 'aggregate_with'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/aggregate_with', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -282,7 +282,7 @@ class VS_CalcField_Spec extends Specification{
    def 'aggregate_discrete'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/aggregate_discrete', caseName)
-      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[], true)
       vstest.exportAsPNG(['(Home)', 'bk1'] as String[], null, true, false)
 
       expect:
@@ -290,6 +290,19 @@ class VS_CalcField_Spec extends Specification{
          vstest.compareData(null)
          vstest.compareImage(null)
       }
+   }
+
+   /*
+    check aggregate calc fields with trend and comparison (the vs had no case before).
+    Data only: no PNG baseline yet, local rendering differs from CI.
+   */
+   def 'aggregate_trendcomparison'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/aggregate_trendcomparison', caseName)
+      vstest.executeVS(null, ['(Home)', 'bk1'] as String[])
+
+      expect:
+      vstest.compareData(null)
    }
 
    /*
@@ -344,7 +357,7 @@ class VS_CalcField_Spec extends Specification{
    def 'testDB2'() {
       caseName = specificationContext.currentIteration.name
       vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/testDB2', caseName)
-      vstest.executeVS(null, ['(Home)'] as String[])
+      vstest.executeVS(null, ['(Home)'] as String[], true)
       vstest.exportAsPNG(['(Home)'] as String[], null, true, false)
 
       expect:

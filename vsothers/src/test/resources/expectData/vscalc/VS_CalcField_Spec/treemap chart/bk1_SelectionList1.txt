@@ -1,0 +1,13 @@
+value | state | measure
+Albany | selected+compatible | NULL
+Austin | selected+compatible | NULL
+Boston | selected+compatible | NULL
+Camden | selected+compatible | NULL
+Chicago | selected+compatible | NULL
+Denver | selected+compatible | NULL
+Hartford | selected+compatible | NULL
+Los Angeles | compatible | NULL
+New York | compatible | NULL
+Orlando | compatible | NULL
+Rockville | compatible | NULL
+San Francisco | compatible | NULL
