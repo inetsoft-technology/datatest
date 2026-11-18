@@ -6,7 +6,7 @@
 
 ## 1. 结论
 
-mv 的验证机制是各模块里最严的一个：每个用例导出的文件数必须等于基线文件数，逐文件比对（`MVTest.groovy:798`-`836`），导出异常和 MV 创建失败都会让用例失败，再配上"命中了哪个 MV"的断言和"与不用 MV 的结果比较"。本机 6 个 profile 全部运行了一遍：615 个用例执行，**12 个失败**（vpm 4、incrementalmv 3、others 5），全部在单独重跑时稳定复现。others 的 5 个在 `-Dmv.compare=both` 下，MV 的结果与不用 MV 的结果一致，只有基线与两者都不同，说明这 5 个是基线与当前输出不一致，不是 MV 路径与实时路径的差异；原因没有确认（见 G8），CI 上的结果也没有确认。
+mv 的验证机制是各模块里最严的一个：每个用例导出的文件数必须等于基线文件数，逐文件比对（`MVTest.groovy:798`-`836`），导出异常和 MV 创建失败都会让用例失败，再配上"命中了哪个 MV"的断言和"与不用 MV 的结果比较"。本机 6 个 profile 全部运行了一遍：615 个用例执行，**12 个失败**（vpm 4、incrementalmv 3、others 5），全部在单独重跑时稳定复现。others 的 5 个在 `-Dmv.compare=both` 下，MV 的结果与不用 MV 的结果一致，只有基线与两者都不同，说明这 5 个是基线与当前输出不一致，不是 MV 路径与实时路径的差异。**T3（2026-11-18）已查明并更新：12 个都是产品已关闭的修复让 golden 过期，没有新的产品问题，见 §6 第 7 条**；CI 上的结果仍没有确认。
 
 **已经做过和已经决定的**（本文不重复）：命中断言（datatest PR #188，约 489 处断言换成命中记录）、MV 开/关对比（`-Dmv.compare`，PR #193）、增量 MV 的源数据变化和全量重建对比（PR #194、#195）、WS MV 的一条通路（PR #200）、已修 bug 的 golden 更新（PR #196、#197）、`@Ignore` 用例和旧链接的整理（PR #198）、`others` 每个 spec 单独 JVM（PR #199）、cycle 在 `test/cluster` 的验证（enterprise PR #1604、#1701，我没有核对）。以下几项按维护者的说明是**已决定不做**的（仓库里没找到书面记录）：datatest 各 workflow 的定时运行不恢复、`mvStorage.zip` 的清理不做、`where:` 数据表改写不做、`@Retry` 不改。
 
@@ -15,12 +15,12 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 1. **反向路径几乎没有用例**（G2）：全部用例里只有 2 个断言了"没有命中"；zip 里专为此准备的 11 个 `NOT Transform` viewsheet 没有任何 spec 引用（T4 已补 9 个，§6 第 6 条）；产品侧决定 MV 能不能建、能不能命中的分支（`VSMVAnalyzer`、`SelectionUpTransformer` 的二十多个 fault）既没有 dashboard 用例，产品仓库也几乎没有单测（`SelectionUpTransformer` 2048 行只有 3 个测试，`MVTransformer` 673 行没有，G3）。
 2. **`mv.*` 配置项几乎空白**（G4）：产品读的 20 多个属性里只有 `ws.mv.enabled` 被设置过。
 3. **`wsmv` profile 不在 CI 里**（G6）：`test-mv.yml` 只跑 incrementalmv、topmv、submv、vpm、others 五个 profile，PR #200 加的 `WSMV_Path_Spec` 在 CI 里从不运行（静态结论，只看了 `.github/workflows/test-mv.yml`）。
-4. **本机 12 个用例失败**（G8）：与已知的几处问题对得上（#79870、#79508 等），见 §2 的运行结果；基线还没跟上这些修复。
+4. **本机 12 个用例失败**（G8）：与已知的几处问题对得上（#79870、#79508 等），见 §2 的运行结果；基线还没跟上这些修复。**T3 已更新这 12 个用例的 golden**（§6 第 7 条）；同时第一次整套用 `-Dmv.compare=both` 运行，发现 4 个用例用 MV 与不用 MV 的结果不同（G14，原因待查）。
 5. **组件和选项的零覆盖项**（G13）：`viewsheetInfo` 的 `associationEnabled=false`、`bypass=true`、`meta=true` 在 804 个 viewsheet 里一个都没有；整个 `CalcMV` 目录 38 个 viewsheet 没被引用（§2 的详细扫描）。
 
 仍然成立的两点：命中断言留有一个已知的洞（78 个用例只断言"已定义"，是 PR #188 里没换的含 `ASSOCIATION_` 的断言，G1）；`getMVHitInfo` 在组件都返回纯值时退回成"已定义"。
 
-先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（PR #226 已加）和本机失败的 12 个用例在 CI 上的结果，再按各 bug 的状态逐个更新 golden（核对新输出，不直接复制）；补 `mv.*` 配置项几个会改变结果的场景。T1、T2、T5 已在 PR #226 完成；`NOT Transform` 的反向路径用例（T4）已补 9 个（§6 第 6 条）；原来要问开发的问题大部分已从代码确认（§6）。
+先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（PR #226 已加）和 T3 更新后的 golden 在 CI 上的结果；查 G14 的 4 个用例用 MV 与不用 MV 结果不同的原因；补 `mv.*` 配置项几个会改变结果的场景。T1、T2、T5 已在 PR #226 完成；`NOT Transform` 的反向路径用例（T4）已补 9 个（§6 第 6 条）；原来要问开发的问题大部分已从代码确认（§6）。
 
 ## 2. 覆盖情况
 
@@ -49,7 +49,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 - 比对遍历"实际导出"并要求文件数相等：`compareData` 列出导出文件和基线文件，数量不同直接失败（`MVTest.groovy:816`-`818`），导出目录或基线目录不存在也失败（`:807`-`813`），再逐文件比内容（`:836`）。导出了但没有基线的文件，会因文件数不同而失败，所以不存在"导出了但没有基线"的静默情形。
 - 导出异常让用例失败：所有书签跑完后汇总，有错就抛 `AssertionError`（`:174`-`:179`）；MV 创建失败、分析失败在 `MaterializedViewResource.java:123`-`:126`、`:180`-`:186` 抛异常，创建失败先于"完成"判断（`:235`）。
 - 命中断言（PR #188）：`getMVHitInfo()` 只记录真正读过的 MV；**当所有组件都是纯值（文本等），拿不到 MV 信息时，退回 `getMVDefInfo()`，即只代表"已定义"**（`MVTest.groovy:455`-`461`，`hitUnobservable` 设置在 `:327`、`:435`）。图表数据被拷成内存快照时同样丢信息（`:432`-`:435`）。
-- 与不用 MV 的结果比较（PR #193）：`-Dmv.compare=golden`（默认）只比基线，`nomv`、`both` 才比不用 MV 的结果（`MVTest.groovy:55`、`:856`-`:857`）。**CI 用默认的 golden**，所以 `compareWithoutMV()` 在 CI 里不执行（`:857` 直接返回）；基线是回归基线（来自 MV 的输出），不是独立标准答案。整套没有跑 `nomv`、`both`；只对 others 的 5 个失败用例跑过 `both`（见下面的运行结果）。
+- 与不用 MV 的结果比较（PR #193）：`-Dmv.compare=golden`（默认）只比基线，`nomv`、`both` 才比不用 MV 的结果（`MVTest.groovy:55`、`:856`-`:857`）。**CI 用默认的 golden**，所以 `compareWithoutMV()` 在 CI 里不执行（`:857` 直接返回）；基线是回归基线（来自 MV 的输出），不是独立标准答案。本轮评估时整套没有跑 `nomv`、`both`；T3（2026-11-18）第一次 6 个 profile 整套用 `both` 运行，`compareWithoutMV` 让 4 个用例失败（G14），在默认的 `golden` 下这 4 个通过。
 - 导出目录清理：`.github/workflows/test-mv.yml` 每个 profile 的步骤开头 `rm -rf mv/target`，运行后把报告复制到 `mv-reports/<profile>/`；本机连跑多个 profile 前也要手工删，否则存储互相污染。`Jenkinsfile` 里没有 mv 阶段。
 - **CI 触发与失败处理：** `.github/workflows/test-mv.yml` 只有 `workflow_dispatch`，定时触发被注释掉（`:4`-`:6`），这是维护者的决定（所有 datatest workflow 的 `schedule` 都不恢复）；每个 profile 失败时 `exit $status`，`!cancelled()` 保证后面的 profile 照跑，整个 job 仍然失败。**workflow 里只有 `incrementalmv`、`topmv`、`submv`、`vpm`、`others` 五步（`:82`、`:97`、`:112`、`:127`、`:142`），没有 `wsmv`**，所以 `WSMV_Path_Spec` 在 CI 里不运行。`Jenkinsfile` 没有 mv。
 - **实际运行结果（本机 Windows，datatest `Stateless-Sessions1` + 产品 `main`，默认 `golden`，每个 profile 单独 `-P` 运行、之前清空 `mv/target`）：**
@@ -63,7 +63,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 | incrementalmv | 172 个用例（`IncrementalDataChange` 的参数化展开为 16 个）：**3 失败**，行数都差 1：`Append_Spec.mvLastUpdatetime`（期望 11 行、实际 10）、`Delete_Spec.Testcase8`（5 对 4）、`Transform_Spec.Other_TestCase17`（123 对 122）。这个 profile 没有 `compareWithoutMV`（增量的 MV 本来就不等于数据库，所以不做开/关对比），无法区分是 MV 的错还是基线陈旧。据维护者说明，这个 profile 的数据依赖当前日期、每年要更新基线，三个用例都是行数差 1，**更像日期漂移，但没有核对这三个用例的条件** |
 | others | 223 个用例：**5 失败**，7 跳过（`TabularSource_Spec` 整类 5 个；`MVHit_RankingAndFilters_Spec` 2 个，含 `chart-time type`）。失败：`MVHit_GroupAndAggregates.running total`（postgres 时间列 `00:00:00` 对 `23:00:00`，与 vpm 同一类）、`MVHit_RankingAndFilters.selection association4`（期望 NULL、实际 0）、`VSCondtion.assembly_query`（期望 0、实际 NULL）、`VSCondtion.C_V_5`（257 行对 255 行）、`VSCondtion.expression`（44 行对 23 行）。`-Dmv.compare=both` 下这 5 个的"MV 与不用 MV"比较都通过，golden 比较失败。`C_V_5`、`expression` 的行数（257/255、44/23，含 3 行表头）与 Redmine #79870 的验证备注（2026-11-06）一致：`expression` 41 行变 20 行、`C_V_5` 254 行变 252 行；#79870 的修复让"不等于"不再保留空值行（stylebi PR #7756、#8045），golden 是 PR #196 按 #79505 更新的；`running total` 是 #79508（Feedback，golden 按 MV 结果生成）；`selection association4`、`assembly_query` 的 NULL 与 0 之差我没有在 Redmine 找到对应记录，可能同属空值语义的修复，未核对 |
 
-  本机的 `inetsoft-core-2.1.0-SNAPSHOT.jar` 构建于 2026-11-13 08:25，早于 `main` 当前的 `28cf7947b9`（11:14）；之后的 5 个提交是组织 id、combo box 等（没有核对它们是否影响查询结果）。jar 里已经含 11-12 的 #8082（#80155）、#8083（#80458）、#8084（#80446）三个 MV 修复，这些修复会改变 MV 输出的顺序和空值位置，datatest 的基线可能还是修复前生成的，这是**假设**，没有验证；Redmine 上已记录了其中大部分（#79870、#79508、vpm 的时间列），所以这 12 个多数不是新问题，是基线还没更新。
+  本机的 `inetsoft-core-2.1.0-SNAPSHOT.jar` 构建于 2026-11-13 08:25，早于 `main` 当前的 `28cf7947b9`（11:14）；之后的 5 个提交是组织 id、combo box 等（没有核对它们是否影响查询结果）。jar 里已经含 11-12 的 #8082（#80155）、#8083（#80458）、#8084（#80446）三个 MV 修复，这些修复会改变 MV 输出的顺序和空值位置，datatest 的基线可能还是修复前生成的，这是**假设**，没有验证；Redmine 上已记录了其中大部分（#79870、#79508、vpm 的时间列），所以这 12 个多数不是新问题，是基线还没更新。（以上是 11-13 的记录；T3 在 11-18 逐个查明了原因并更新了 golden，增量三个用例不是日期漂移，`selection association4`、`assembly_query` 也有对应的修复，见 §6 第 7 条。）
 
   topmv 的 16 个、submv 的 3 个基线文件本次没有被导出，对应的是 `@Ignore` 的用例（`composite3`、`top-aggregate-maxrow` 等）；没有"导出了但没有基线"的文件。PNG 没有参与（mv 的比对都是文本）。
 
@@ -149,12 +149,13 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 | G5 | 增量更新：Append、Delete、Transform 共 156 个用例是 golden + 命中，**不做开/关对比，也不做与全量重建的比较**（增量的 MV 不等于数据库，所以不做开/关对比；重建对比只在 `IncrementalDataChange_Spec` 里用，PR #194、#195）；`IncrementalDataChange_Spec` 本轮 16/16 通过（T9 补用例后为 41 个，按迭代计，2026-11-17 本机全部通过）。仍没有用例的：#80313（第二次无新行更新后 viewer 打不开，New，等修复后补用例）；#80344（`MV.<列>.Max` 追加条件后偶发 `Index 0 out of bounds`，New）只有 `$(MV.customer_id.Max)` 一个用例部分覆盖，据维护者此前记录有过部分运行失败，本轮该 spec 没有失败 | 增量路径独有的错误：#80313、#80344 复发或未修好时，大部分增量用例比的是 MV 自己的输出，不会暴露；数据真正变化时的增量结果只有 `IncrementalDataChange_Spec` 的用例与全量重建对照（原 16 个，T9 补完后 41 个，按迭代计）（156 个 golden 用例数据库不变，本来就不该等于全量重建，见 T9） | dashboard：在 `IncrementalDataChange_Spec` 里补数据变化的场景，对照 `Append_Spec`、`Delete_Spec` 的条件类型找缺的（原计划给 Append/Delete 现有用例加 `compareWithRebuild` 不可行，见 T9）；#80313、#80344 等修复后补 | 中 |
 | G6 | **`wsmv` profile 不在 `test-mv.yml` 里**，`WSMV_Path_Spec` 在 CI 里不运行（静态：只看了 workflow 文件）。WS MV 只有这 1 个用例（PR #200 有意只走一条通路；"是否使用 MV"的判断由产品仓库的 `AssetQueryWorksheetMVTest` 的 25 个单测覆盖）；产品侧 `WSMVTransformer`、`WSMVAnalyzer`、两个 `WSMV*DownTransformer` 没有单测；`isWsMVNotAllowed` 恒为 false 的注释与 `ws.mv.enabled` 并存 | WS MV 的创建、读取、增量在 CI 里没有任何保护；WS MV 的选择下移、聚合下移、条件被清除的行为出错只有单测能发现，而单测没有 | 机制：把 `wsmv` 加进 `test-mv.yml`（该 spec 会改动 `mvorder1.mv.db`，CI 里没关系）；单测补 `WSMVAnalyzer`、两个 `WSMV*DownTransformer`；WS MV 的语义已从代码确认（§6"读代码确认的结论"第 1 条，`isWsMVNotAllowed` 的注释已过时） | 高 |
 | G7 | 不可合并聚合公式：Product、Concat 在 viewsheet 里 0 个；其他不可合并公式各 1 至 23 个，且只验证"结果和基线一致"，不验证退回"读明细再在内存聚合"这条路径（`AssetQuery.java:175`-`:203`） | 不可合并公式被当成可合并公式在 MV 上直接合并（例如 Product 被当作 Sum 合并），结果错但基线是 MV 输出，不会发现 | 单测（`MVTransformer.isCombinable` 对每个公式的判断，期望值可由 `AggregateFormula.isCombinable` 的规则独立得出）；dashboard 补 Product、Concat 各一个 | 中 |
-| G8 | 本机 12 个用例失败且稳定复现：vpm 4 个、others 5 个、incrementalmv 3 个。多数是已知的"基线还没跟上修复"：`C_V_5`、`expression`（#79870）、`running total`（#79508）、vpm 的时间列；incrementalmv 3 个行数差 1，该 profile 的数据依赖当前日期（维护者说明）。`selection association4`、`assembly_query` 的 NULL 与 0 我没有找到记录，未核对。CI 上是否也失败未确认 | 失败常态化以后，真实的 MV 回归会被淹没；基线是 MV 的输出，修复后不更新，用例就在固定旧行为 | 机制/基线：在 CI 环境确认；按各 bug 的状态逐个更新（核对新输出对不对再更新，不直接复制）；时间列让它不依赖服务器时区；与日期相关的用例把日期条件改成相对日期 | 中 |
+| G8 | 本机 12 个用例失败且稳定复现：vpm 4 个、others 5 个、incrementalmv 3 个。多数是已知的"基线还没跟上修复"：`C_V_5`、`expression`（#79870）、`running total`（#79508）、vpm 的时间列；incrementalmv 3 个行数差 1，该 profile 的数据依赖当前日期（维护者说明）。`selection association4`、`assembly_query` 的 NULL 与 0 我没有找到记录，未核对。CI 上是否也失败未确认 | 失败常态化以后，真实的 MV 回归会被淹没；基线是 MV 的输出，修复后不更新，用例就在固定旧行为 | 机制/基线：在 CI 环境确认；按各 bug 的状态逐个更新（核对新输出对不对再更新，不直接复制）。**T3 已做（2026-11-18）**：12 个都是已关闭修复让 golden 过期（#79508、#79870、#81084、#81182、#80953、#81043），逐个核对后更新；增量三个不是日期漂移，不用改相对日期（§6 第 7 条） | 中 |
 | G9 | 被忽略的用例：`TabularSource_Spec` 整类（5 个，据维护者说明：继续 `@Ignore`，由维护者自己重做用例）；`chart-time type`（#80458）、`top-aggregate-maxrow`（#80446）这两个对应的 bug 现在是 Resolved，修复后应去掉 `@Ignore`，并补选择列表的 golden；`composite3`（#80445）、`variable in subquery`（#80457）仍是 New；`date range and number range` 按设计不可能通过（`TopMV_Others_Spec.groovy:401`-`:407`） | Tabular 数据源的 MV 创建与命中没有回归保护（#78339 已修）；#80458、#80446 已修，但用例仍被忽略，修复没有被固定 | 用例：#80458、#80446 现在可以去掉 `@Ignore`（`MVHit_RankingAndFilters_Spec` 在 surefire 里跳过 2 个，其中 1 个是 `chart-time type`，另 1 个没查）；先在本机运行并核对新输出 | 低 |
 | G10 | CI 的触发：`test-mv.yml` 只能手动触发，`Jenkinsfile` 没有 mv；这是维护者的决定（所有 datatest workflow 的 `schedule` 都不恢复），本文不建议恢复。另一个可以评估的点：5 个 profile 各启动一次 JVM，是否合并或并行（本机整套约 20 分钟，topmv 2 分 43 秒、incrementalmv 2 分 58 秒、others 7 分 31 秒） | 回归在下一次有人手动触发前一直不被发现；本轮在本机就发现 12 个失败 | 不改；只在 §6 记一个问题：手动触发的节奏是否够 | 低 |
 | G11 | 195 个 viewsheet 没有被 spec 按字面量引用（`hit mv` 110、`CalcMV` 38、`NOT Transform` 11 等）；16+3 个基线属于 `@Ignore` 用例；1 个 viewsheet 有基线但没被引用 | 资产里已经准备好的场景没有被运行（可能是遗留，也可能是引用方式静态看不到）；陈旧基线让人误以为被验证过 | 先核对是真孤儿还是间接引用，再决定删除或补用例（G2 的 11 个先用上） | 低 |
 | G12 | 按需创建、MV 过期、数据周期、集群：datatest 没有用例，这是有意的——cycle 的风险在真实环境，放在 `test/cluster`（CY-02/03/04，enterprise PR #1604、#1701，本轮没有运行）；`MVRule`、`MVManager` 已有单测（22 个、35 个，mock 为主）。**datatest 里没有、单测里也没有**的是 `mv.ondemand` 按需创建、`isStale`、`isExpired`、无 MATERIALIZATION ACCESS 返回 null 的分支 | 按需创建出错、MV 过期判断出错、权限缺失时的行为 | 单测（产品仓库，补上面几个分支；`mv.ondemand` 的行为 13.8 的 `ConfigMvBehaviorS2Test.mvOndemand` 已有，可移植）；cycle 与集群不属于静态 datatest | 低 |
 | G13 | 按 viewsheet 组件和选项的详细扫描（§2）发现的零覆盖项：`viewsheetInfo` 的 `associationEnabled=false`、`bypass=true`、`meta=true` 三个选项 0 个 viewsheet；`full=true` 只在 incrementalmv；图表百分比 0；计算字段 `@nomv` 0；Product、Concat 聚合 0；嵌入表组件 1 个但没被引用；整个 `CalcMV` 目录 38 个 viewsheet 没被引用 | `associationEnabled=false` 时仍然建了关联 MV；`bypass` 的 MV 带了 VPM 过滤或相反（#78390、#77666 同类）；设计态 `meta` 用了 MV；`full=true` 时瘦 MV 仍被缩列，选择列表缺值；图表百分比时仍用物理 MV 导致结果错；带 `@nomv` 的计算字段被建进 MV；明细型计算字段的 MV 出错（`appendDetailCalc`） | dashboard：每个选项一个用例（改现有 viewsheet 的 `viewsheetInfo` 即可，不需要新建数据）；`CalcMV` 的 38 个 viewsheet 先核对是遗留还是可直接用，再补 spec | 中 |
+| G14 | 第一次整套用 `-Dmv.compare=both` 运行（T3，2026-11-18，产品 `main` `6b936637cf`，每个 profile 前清空 `mv/target`、还原 H2 文件），4 个用例的 `compareWithoutMV` 失败，`compareData`（golden）通过：`SubMV_Spec.aggbase`（不用 MV 时 `Query1` 的数值是整数，如 `109993`，用 MV 是 `109993.4167`；`Query4` 不用 MV 时出现 `-0` 且行顺序不同）、`crossjoin`（`Sum(QUANTITY)` 用 MV `251.0727`、不用 MV `251`）、`rangecolumn`（图表的数值用 MV 带小数、不用 MV 是整数）、`TopMV_AggregateFormulas_Spec.datelevel_none`（计算字段 `NTime` 的 None 级别：用 MV 是 `1970-01-01 00:02:07`，不用 MV 是 `2018-12-20 00:02:07`）。产品 `631443a906`（11-17）上 `aggbase`、`datelevel_none` 同样失败，不是 11-18 的提交引起的；golden 来自 MV 的输出，哪边对还没有核对。同类的已知差异有 `formula.avg.keep.type`（Bug #54404，`running total` 的注释），这里的方向相反（用 MV 带小数） | 默认 golden 下这些用例照样通过，用 MV 与不用 MV 的差异不会被发现；如果错的是 MV 一侧，golden 在固定错误结果 | 逐个查哪边对（用数据库独立算），是产品问题就提 bug；之后 golden 按正确的一侧更新 | 中 |
 
 方向判断：期望值能不依赖产品输出、独立算出来 → 单测；问题出在组件、绑定、数据源之间的接线 → dashboard；验证机制本身的缺陷 → 改基类，不是加用例。
 
@@ -214,7 +215,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 | WS MV 进 CI（G6） | 把 `wsmv` profile 加进 `.github/workflows/test-mv.yml`（照 `vpm` 一步的写法） | `WSMV_Path_Spec` 在 CI 里运行 | 该 spec 会改动 `docker/src/test/resources/H2Data/mvorder1.mv.db`（不影响 CI）；本机运行已通过 |
 | 不可合并公式（G7） | 为 Product、Concat 各加一个 viewsheet | 不可合并公式的结果与不用 MV 一致 | 无 |
 | 重新启用被忽略的用例（G9） | #80458 的 `chart-time type`、#80446 的 `top-aggregate-maxrow` 去掉 `@Ignore`，基线换成"不用 MV 的结果"；Tabular 的 5 个等原因确认 | 已修的 bug 被固定 | 先在本机运行，确认新输出正确 |
-| 失败用例的基线（G8） | 先在 CI 确认 12 个失败；按各 bug 的状态逐个更新：#79870（`C_V_5`、`expression`）、#79508（`running total`）、vpm 的时间列、增量三个用例的日期条件改相对日期 | 失败不再常态化 | 先核对新输出对不对，再更新 |
+| 失败用例的基线（G8） | 按各 bug 的状态逐个更新：#79870（`C_V_5`、`expression`、`Testcase8`）、#79508（`running total`、vpm 的时间列）、#81084、#81182、#80953 与 #81043（增量两个） | 失败不再常态化 | **已做（T3）**，§6 第 7 条 |
 
 每个新用例只验证"接线"，边界和语义放进第 4 节的单测。
 
@@ -229,7 +230,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 - 按 viewsheet 名字关键词做的统计容易误配：曾把 `unmerge-*`（不可合并公式的用例）当成 merge join 数到 33 个，已改正；表里带"名字级"的数字只表示名字里含这个词，没有核对内容；`rank|top` 这类词会匹配 `topmv` 目录，已不再使用。
 - 13.8 的对照主要读了测试方法名、类声明和 import，只读了个别用例的方法体，没有编译运行；分支是 `E:\style-intelligence` 的 `epic-test-coverage`（`6b0ba0e7f2`），该分支之外（别的 `coverage-*` 分支、13.8 主线上的测试）没有查；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是我改的，我没动。
 - **需要开发回答的问题（2026-11-17 读代码后剩下的）：** `mv.outer.moveUp=true` 时结果与不用 MV 不同（左表行在右表的匹配都不满足选择时整行被删掉，已实测，见下面"读代码确认的结论"第 2 条），是已知限制还是 bug；`mv.compare=nomv/both` 是否应作为 CI 的默认（维护者的决定是 CI 只做 golden）。`RankingConditionTest` 本机临时补上四个测试 bean 并修掉 `MVSupportService.AnalysisResult.waitFor` 的死锁后 3 个测试都通过，要不要按此重新启用（§6 第 4 条）。原来列的 WS MV 语义、关联 MV 命中能否记录已从代码确认，不用再问。
-- **需要用户决定的事：** 12 个失败用例先在 CI 环境确认（G8）。原来列的 `wsmv` 进 CI、#80458/#80446 的基线来源已在 PR #226 处理。
+- **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（G8；用户 11-18 决定暂不触发 CI）。增量删除条件也删掉 NULL 行（#79870、#81043 的规则）用户已接受（2026-11-18）。原来列的 `wsmv` 进 CI、#80458/#80446 的基线来源已在 PR #226 处理。
 
 ### 读代码确认的结论（2026-11-17，产品源码 `main` `af5a802550`）
 
@@ -258,6 +259,17 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
    - **`vs assembly-field condition` 不进 spec：** 数据源 `testparameter` 不在 `mvStorage.zip` 里，表格导出 `(1 x 0)`；分析器给出 "Comparison with a field is not supported"，同一条规则已由 `VSCondtion_Spec.field`（#44378）覆盖。
    - **`subquery`：资产有错，已改成 one of，进了 spec。** 原来 `RETURNS2`（按 `ORDER_ID` 分组）的聚合后条件是 `Sum(QUANTITY) > 子查询 RETURNS1.QUANTITY`，建 MV 并命中（`ORDERS1`、`RETURNS1`、`RETURNS2`、`ASSOCIATION_RETURNS1`），但 `Query2` 用 MV 70 行、不用 MV 64 行（多出的 6 行 `Sum(QUANTITY)` 为 2 到 5）。原因：子查询返回 249 行，`>` 只取第一行（`Condition.java:667`-`:680`，`values.get(0)`）；子查询表被设成 `distinct` 后执行（`AssetConditionGroup.java:86`-`:100`），行顺序没有定义。实测不用 MV 时在 Oracle 上执行 `select distinct ORDER_ID, PRODUCT_ID, QUANTITY`，第一行 `[12005, 24, 5]`，阈值 5；用 MV 时同一子查询走 `RETURNS1` 的 MV，第一行 `[12005, 3, 1]`，阈值 1。两边的聚合都在内存里做（查询计划 "having clause will be post processed"），差别只在子查询的行顺序，即使不用 MV 结果也取决于数据库。用户判断是用例的问题：`>` 后面应是一个值，多个值应该用 one of（2026-11-18）。该 worksheet 只有这个 viewsheet 用（zip 里查过，spec 里也没有别处引用），所以直接改了 `mvStorage.zip` 里 `SUBQUERY/subquery` 的这个条件（`operation` 4 改 2，blob 和 `blob-index.json` 的 digest 一起换，其他条目不变）。改后建 MV 并命中，三个组件用 MV 与不用 MV 逐字节相同；`Query2` 23 行，`Sum(QUANTITY)` 都在子查询的取值集合（1 到 20）里，其中不超过 5 的 8 组、等于 1 的 2 组，与原来 `> 1`（69 组）、`> 5`（63 组）、共 71 个订单的结果推算一致。
    - **验证：** `NotTransform_Spec` 9 个用例在 `golden` 和 `both` 下都通过；6 个 profile 整套运行两次（`subquery` 用例加入前一次；改 zip 后在 PR 最终代码上一次，others 执行数 223 加 9），都只有 §2 已列的 12 个失败。改后的 `mvStorage.zip` 与 base 逐条目比较：只有 `SUBQUERY/subquery` 的 blob（1 个字节：`operation="4"` 改 `"2"`）和 `blob-index.json` 里它的一条不同。基线是当前输出；没走 MV 的用例两条路径相同，所以另做了一个独立核对：`crosstab ws` 全部单元格之和 17656854 等于 `group variable` 的 Others 合计（同一张表、同一个度量）。反向检查（临时 spec，未提交）：用同样的断言跑 `cube`，`warned` 失败（警告是空指针）；跑 `adhocfilter_measure`，`getMVDefInfo().isEmpty()`、`getMVHitInfo().isEmpty()` 失败；把 `group variable` 基线改一个数，`compareData` 失败。拒绝规则本身是产品代码，不改产品就关不掉，所以没有做"关掉规则"的反向检查。
+
+7. **T3 的结果（本机 12 个失败用例，2026-11-18）。** 先在产品 `631443a906` 上逐个分析，再把产品重建到 `main` `6b936637cf` 运行后更新。12 个都是产品已关闭的修复让 golden 过期，能对比的用例用 MV 与不用 MV 的输出相同，没有发现新的产品问题。共 20 个 golden 文件内容有变化（其余导出只差换行，没有动），每个都按对应的修复核对（脚本逐格比较，不是直接复制）：
+   - **vpm 4 个、`running total`：#79508**（stylebi PR #7616、#8162，Closed）：postgres 的 `time with time zone` 按库里存的时间显示，不再按 +08:00 换算。直接查 `postgres_server`：`order_time` 存的是 `06:01:01+07:36:36` 这样的值；vpm 11 个文件里每一行的 `order_time` 都等于库里存的时间（共 2877 行，其中 2805 格有变化），只有这一列变；`running total` 只有一格小时 `00` 变 `23`，与 #79508 的验证记录一致。spec 注释原说不用 MV 时会换算、所以不做 `compareWithoutMV`，这个理由已不成立，vpm 4 个用例补了不用 MV 的运行和 `compareWithoutMV`，`both` 下通过。
+   - **`C_V_5`、`expression`：#79870**："不等于"按 SQL 丢掉空值行。只删行、不加行（252、20 行，与 #79870 验证备注一致），删掉的行在条件列上都是 NULL；注释和 `@Issue` 从 #79505 改为 #79870。
+   - **`selection association4`：#81084**（stylebi PR #8015）：自由表的 `Count` 没有数据时为 0。只有 15 格从 NULL 变 0，其他值不变。
+   - **`assembly_query`：#81182**（stylebi PR #8055）：分母为 0 的 Correlation 是 NULL。书签 `bk1` 只选 `dis = 0.15`，各组 DISCOUNT 是常数，方差为 0，只有原来的一格 0 变 NULL。
+   - **`Delete_Spec.Testcase8`：#79870**（stylebi PR #7756）：建 MV 时只保留"NOT(删除条件)为真"的行，删除条件 `Year(orderdate)` 等于 2002 或 2001 时，年份为 NULL 的行也不在 MV 里。只少了这一行。
+   - **`Append_Spec.mvLastUpdatetime`：#80953 与 #81043**：追加条件的公式 `CALC.edate(..., -12*(年-2003)-(月-10))` 算下来总是 2003-11-01，旧的 `edate` 把负的月份偏移都算成月底（2003-11-30），#80953（stylebi PR #7968）修好；删除条件 `orderdate <= MV.LastUpdateTime` 在更新时也删掉日期为 NULL 的 3 行（#81043，stylebi PR #8005：比较类删除条件更新时与建 MV 一样删 NULL 行）。更新后的 7 行正好是初始数据里 2003-11-01 及以后的行。
+   - **`Transform_Spec.Other_TestCase17`：#81043**：删除条件 `customer_id < MV.MaxValue-30` 不匹配任何客户，更新时只删掉 `customer_id` 为 NULL 的一行（orderno 7）；追加条件在更新前后都没有加出行（`orderno` 1 到 20 各一行，没有重复），不影响结果。
+   - 删除条件也删掉 NULL 行是开发在 #80570、#81043 里定的规则，用户 2026-11-18 接受；原计划"增量三个用例改相对日期"不需要（不是日期漂移）。
+   - **验证：** 6 个 profile 整套用 `both` 运行，每个 profile 前清空 `mv/target`、还原 `docker/src/test/resources/H2Data` 的 `*.mv.db`：topmv 130 个执行 / 1 失败、submv 86 / 3、incrementalmv 197 / 0、wsmv 1 / 0、vpm 14 / 0、others 232 / 0；失败的 4 个只在 `compareWithoutMV` 上失败（G14），golden 都通过。另外注意：不清空 `mv/target` 连跑时，`TopMV_Subquery_Spec.Subquery_Mode3_9`、`Subquery_Mode3_10` 的书签选择没有生效而失败（`SelectState` 8 对 9），清空后通过，是上一次运行留下的存储造成的。
 
 ## 7. 已知 bug 对照（步骤 3b-D）
 
@@ -296,7 +308,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 | bug | 状态 | dt | pr | 类别 | 标题 |
 |---|---|---|---|---|---|
-| #79508 | Feedback | dt | pr | 日期、类型与时区 | postgres `time with time zone` 按小时分组，MV 与实时的分组不同 |
+| #79508 | Closed（11-17） | dt | pr | 日期、类型与时区 | postgres `time with time zone` 按小时分组，MV 与实时的分组不同 |
 | #80446 | Resolved | dt | pr | 空值与 NOT | 分组表设最大行数，MV 后空值组排在最前 |
 | #80458 | Resolved | dt | pr | 滑块与选择 | 时间/日期/时间戳组合范围滑块取值顺序不同 |
 | #80170 | New | dt | -- | 滑块与选择 | 书签恢复的组合范围滑块少选一个值 |
@@ -322,13 +334,13 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 其中 datatest 能验证、**两边都没提到编号**的未关闭 bug 是：#80313、#80344、#80342（见 G5 和 T9）。#80445（`composite3`）、#80457（`variable in subquery`）有被 `@Ignore` 的用例，#80170（`rangeslider-compositevalue`）有 `@PendingFeature` 的用例，也就是说用例在，等修复后启用。公共 API 类（#81059 至 #81061）、权限类和 id 变更类不属于静态 datatest。
 
-## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、剩下两个问题等开发答复，T4 已做（PR #232），其余未开始）
+## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、剩下两个问题等开发答复，T4 已做（PR #232），T3 已做（golden 已更新，CI 未触发），其余未开始）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 前提 / 注意 |
 |---|---|---|---|---|
 | T1 | 给 78 个只断言已定义的用例补基表 MV 的命中检查（G1 第一步）：保留 `getMVDefInfo().containsAll([...])`，从同一个列表取出不带 `ASSOCIATION_` 的名字，加 `getMVHitInfo().containsAll([...])`；脚本生成，期望值取自原列表；`NotPublic_Text` 不动；列表里全是 `ASSOCIATION_` 的用例单独列出 | `AssociationMV_Spec`、`CalcField_Spec`、`Transform_Spec`、`MVHit_*`、`VSCondtion_Spec`、`SubMV_Others_Spec`、`TopMV_*` | 跑涉及的 spec；加了之后失败的用例单独列出，不删检查；加一次反向检查：把某个基表 MV 名改错，用例应当失败 | **已做（2026-11-16，datatest PR #226）**：78 个用例都加了命中检查；10 个 spec 本机运行，新检查只让 `CalcField_Spec` 的 `NotPublic_SelectionTree`、`NotPublic_Calendar`、`NotPublic_RangeSlider` 失败：已定义 `query1|SubMV`，命中记录只有 `query1|TopMV`。这三个 viewsheet 只有选择组件，命中靠查找记录，看不到查询时才选的子 MV（与 `NotPublic_Text` 同一原因），改为只检查 `query1|TopMV` 并加注释；这三个用例也就是反向检查：已定义但没观察到命中的 MV 会让新检查失败，而原来的 `getMVDefInfo` 检查照样通过。其余失败是 §2 已列的 8 个（others 5、`Other_TestCase17`），新检查在这些用例里都通过 |
 | T2 | 把 `wsmv` profile 加进 `test-mv.yml`（G6） | `.github/workflows/test-mv.yml`，照 `vpm` 一步的写法 | workflow 手动触发一次，`WSMV_Path_Spec` 出现在报告里 | **已做（2026-11-16，datatest PR #226）**：在 incrementalmv 之后加了一步 wsmv，写法与其他 profile 相同；本机 `-Pwsmv` 1 个用例通过；CI 还没有触发。该 spec 自己建表、结束时删表，做法与 CI 里已在跑的 `IncrementalDataChange_Spec` 相同 |
-| T3 | 本机 12 个失败用例：先在 CI 上确认，再按各 bug 的状态逐个更新 golden（核对新输出，不直接复制）；增量三个用例的日期条件改相对日期 | `MV_Creator`、`vs query and condition`、`hit mv`、`vpm` 的基线；`Append_Spec`、`Delete_Spec`、`Transform_Spec` | 各 profile 在干净的 `mv/target` 下 0 失败；`both` 下 `nomv` 比较仍通过 | 见 G8；#79870 现在是 Resolved（Redmine，修复见 stylebi PR #7747、#7756、#8045） |
+| T3 | 本机 12 个失败用例：先在 CI 上确认，再按各 bug 的状态逐个更新 golden（核对新输出，不直接复制）；增量三个用例的日期条件改相对日期 | `MV_Creator`、`vs query and condition`、`hit mv`、`vpm` 的基线；`Append_Spec`、`Delete_Spec`、`Transform_Spec` | 各 profile 在干净的 `mv/target` 下 0 失败；`both` 下 `nomv` 比较仍通过 | **已做（2026-11-18）**：12 个用例的 20 个 golden 文件逐个按对应的修复核对后更新，用例加了注释和 `@Issue`；vpm 4 个加了 `compareWithoutMV`；增量三个不改相对日期（不是日期漂移）。结果和验证见 §6 第 7 条；CI 未触发 |
 | T4 | 用 `NOT Transform` 的 11 个现成 viewsheet 建反向路径 spec（G2） | `mv/src/test/groovy/.../cases/others/NotTransform_Spec`（others profile） | 每个用例：不命中、结果与不用 MV 一致；反向：把对应的拒绝规则关掉时用例失败（做不到就说明） | **已做（2026-11-18，datatest PR #232，`others` profile 的 `NotTransform_Spec`，9 个用例）**：11 个 viewsheet 逐个运行并读分析器结果，见 §6 第 6 条；`subquery` 的资产有错（`>` 比较多行子查询），改成 one of；`cube`、`vs assembly-field condition` 不进 spec |
 | T5 | `#80458`、`#80446` 对应的 `@Ignore` 用例去掉 `@Ignore`（G9） | `MVHit_RankingAndFilters_Spec.chart-time type`、`SubMV_Others_Spec.top-aggregate-maxrow` | 本机运行；基线换成"不用 MV 的结果"，`both` 下通过 | **已做（2026-11-16，datatest PR #226）**：两个 bug 都已 Closed（11-16 人工验证）。两个用例都去掉了 `@Ignore`，`chart-time type` 加了 `executeVSWithoutMV` 和 `compareWithoutMV`。在 `both` 模式下 MV 与不用 MV 的输出逐字节相同；`chart-time type` 换了 2 个滑块基线（最小值改为空时间那一行），与 #80458 验证记录里不用 MV 的结果一致，`Chart1_bk1` 只是去掉末尾一个空行；`top-aggregate-maxrow` 的 Query1 基线不变（本来就是不用 MV 的结果），补了 3 个选择列表基线。之后在默认 golden 模式下两个用例都通过 |
 | T6 | `mv.*` 配置项的几个会改变结果的场景（G4）：`mv.preferred.block`（#79869）、`mv.union.moveUp`、`mv.outer.moveUp`、`mv.ignore.nestedSelection`、`date.common.options` | 复用现有 viewsheet，`@SreeProperty` 设置属性 | 改值后命中且结果与不用 MV 一致 | `MVTest.clearEnv` 要补复位；`mv.outer.moveUp` 的期望值等 T10 (a)：差异有意则用"右表匹配都满足或都不满足条件"的数据断言一致，另加一个用例固定已知差异；是 bug 则先提 bug |
