@@ -38,7 +38,7 @@ class ScriptStateBackportProbe2 extends Specification {
          def v = JavaScriptEngine.unwrap(t.scope.execute(expr, assembly))
          return v == null ? 'null' : "${v} (${v.class.simpleName})"
       }
-      catch(ScriptException e) {
+      catch(Exception e) {
          Throwable c = e
          while(c.cause != null && c.cause != c) { c = c.cause }
          return "EX ${c.class.simpleName}: ${c.message}".toString()
@@ -149,6 +149,69 @@ class ScriptStateBackportProbe2 extends Specification {
       p "toList asc => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=asc').slice(0, 4).join(',')")
       p "toList desc => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=desc').slice(0, 4).join(',')")
       p "toList desc maxrows=null => " + run(t, 'TableView1', "var c0 = TableView1.table[0][0]; toList(TableView1.table, 'field=' + c0 + ',sort=desc,maxrows=null').slice(0, 4).join(',')")
+      true
+   }
+
+   /** wiz line: #76915 bean-style assignment on a script-built graph object, #76850/#76851 createMekkoGraph / createBulletGraph */
+   def "wiz script graph objects"() {
+      when:
+      def t = new ScriptStateBase('1^128^__NULL__^ScriptAuto/Chart/ChartBandingInfo')
+      def bean = { String cls, String ctor, String prop, String setter, String getter, String value ->
+         p "${cls}.${prop} bean-style => " + run(t, 'Chart1', "var o = new ${cls}(${ctor}); o.${prop} = ${value}; o.${getter}()")
+         p "${cls}.${prop} setter     => " + run(t, 'Chart1', "var o = new ${cls}(${ctor}); o.${setter}(${value}); o.${getter}()")
+         true
+      }
+      bean('LineElement', '"State", "Quantity"', 'endArrow', 'setEndArrow', 'isEndArrow', 'true')
+      bean('LineElement', '"State", "Quantity"', 'startArrow', 'setStartArrow', 'isStartArrow', 'true')
+      bean('LineElement', '"State", "Quantity"', 'hint', 'setHint', 'getHint', '"x"')
+      bean('IntervalElement', '"State", "Quantity"', 'alpha', 'setAlpha', 'getAlpha', '0.5')
+      p "EGraph.coordinate bean-style => " + run(t, 'Chart1', 'var g = new EGraph(); g.legendLayout = 4; g.getLegendLayout()')
+      p "EGraph.coordinate setter => " + run(t, 'Chart1', 'var g = new EGraph(); g.setLegendLayout(4); g.getLegendLayout()')
+      p "typeof createMekkoGraph => " + run(t, 'Chart1', 'typeof createMekkoGraph')
+      p "typeof createBulletGraph => " + run(t, 'Chart1', 'typeof createBulletGraph')
+      p "createBulletGraph(null...) => " + run(t, 'Chart1', "createBulletGraph('PRICE', ['REORDER_LEVEL','NUMBER_INSTOCK'], 'PRODUCT_ID', 0x0000FF, ['PRODUCT_NAME'], ['DESCRIPTION'], 'vertical=false')")
+
+      then:
+      true
+   }
+
+   /** wiz line #81194: Crosstab .data[row][col] versus .table */
+   def "crosstab data access"() {
+      when:
+      def t = new ScriptStateBase('1^128^__NULL__^ScriptAuto/Table/Table_Crosstab1')
+      def names = t.vs.getAssemblies().findAll { it.class.simpleName == 'CrosstabVSAssembly' }*.name
+      p "crosstabs: ${names}"
+      names.each { n ->
+         p "${n}: table.length=" + run(t, n, "${n}.table.length") + " table[0].length=" + run(t, n, "${n}.table[0].length") +
+            " data.length=" + run(t, n, "${n}.data.length") + " data[0].length=" + run(t, n, "${n}.data[0].length")
+         (0..3).each { r ->
+            p "${n} row ${r}: table=" + run(t, n, "var s=''; for(var c=0;c<${n}.table[0].length;c++){s+=${n}.table[${r}][c]+'|'}; s") +
+               " data=" + run(t, n, "var s=''; for(var c=0;c<${n}.data[0].length;c++){s+=${n}.data[${r}][c]+'|'}; s")
+         }
+      }
+
+      then:
+      true
+   }
+
+   def "bean assignment on more script-built graph objects"() {
+      when:
+      [['AxisSpec', '', 'lineVisible', 'setLineVisible', 'isLineVisible', 'false'],
+       ['AxisSpec', '', 'labelVisible', 'setLabelVisible', 'isLabelVisible', 'false'],
+       ['LinearScale', '', 'min', 'setMin', 'getMin', '5'],
+       ['LinearScale', '', 'max', 'setMax', 'getMax', '50'],
+       ['LegendSpec', '', 'visible', 'setVisible', 'isVisible', 'false'],
+       ['TextSpec', '', 'rotation', 'setRotation', 'getRotation', '30'],
+       ['IntervalElement', '"State", "Quantity"', 'stackGroup', 'setStackGroup', 'isStackGroup', 'true'],
+       ['PointElement', '"State", "Quantity"', 'collisionModifier', 'setCollisionModifier', 'getCollisionModifier', '1'],
+      ].each { c ->
+         p "${c[0]}.${c[2]} bean-style => " + run(new ScriptStateBase('1^128^__NULL__^ScriptAuto/Chart/ChartBandingInfo'), 'Chart1',
+            "var o = new ${c[0]}(${c[1]}); o.${c[2]} = ${c[5]}; o.${c[4]}()")
+         p "${c[0]}.${c[2]} setter     => " + run(new ScriptStateBase('1^128^__NULL__^ScriptAuto/Chart/ChartBandingInfo'), 'Chart1',
+            "var o = new ${c[0]}(${c[1]}); o.${c[3]}(${c[5]}); o.${c[4]}()")
+      }
+
+      then:
       true
    }
 }

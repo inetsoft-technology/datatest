@@ -31,6 +31,10 @@ import spock.lang.Specification
  * does not change the design value (#63079), TextInput.value == null on load is true (#72042). TextInput has no
  * placeholderText property on StyleBI at all (#63510, #63079: the 13.8 feature #59271 does not exist here).
  * Not testable with the assets we have: #79699 (needs a dashboard embedded two levels deep; no asset embeds a viewsheet).
+ * Wiz line (version ai-wiz-1.1.0, 199 issues with 'script' in the subject; almost all are about the Claude plugin
+ * tools, not StyleBI): the core script items are #76915 (cases below), #81194 (Crosstab .data is the raw detail table, by
+ * design, decided in that issue), createMekkoGraph / createBulletGraph (#76850, #76851: script library functions that the
+ * test storage does not hold) and the Gauge ranges (already #81550).
  * Not covered (no way in from a viewsheet script, or a server setting): #79673 (JSObject Shape conversion), #79786
  * (SecureClassShutter class names), #79470 / #79809 (script.execution.stackdepth), #80875 (highlighted[] on an output
  * component: needs an output with two matching highlights, no asset has one).
@@ -334,5 +338,37 @@ class ScriptStatePortGap_Spec extends Specification {
       expect:
       list(',sort=desc') == list(',sort=asc').split('[|]', -1).toList().reverse().join('|')
       list(',sort=desc,maxrows=null') == list(',sort=desc')
+   }
+
+   // ---- wiz line: bean-style property assignment on a graph object the chart script builds itself (wiz #76915) ----
+   def '#76915 bean-style assignment on a script-built EGraph and LineElement reaches the setter'() {
+      given:
+      def t = new ScriptStateBase(VS)
+
+      expect:
+      run(t, 'var o = new LineElement("State", "Quantity"); o.endArrow = true; o.isEndArrow()') == true
+      run(t, 'var o = new LineElement("State", "Quantity"); o.startArrow = true; o.isStartArrow()') == true
+      near(run(t, 'var g = new EGraph(); g.legendLayout = 4; g.getLegendLayout()'), 4d)
+   }
+
+   /**
+    * Not a bug report, a pinned limit: the fix of #76915 wraps only EGraph and GraphElement (HostBeanProxy.WRAPPED_TYPES,
+    * "kept narrow on purpose"). The same assignment on a script-built AxisSpec, LinearScale, LegendSpec or TextSpec is
+    * dropped without an error, while the explicit setter works. Rhino accepted all of them. When the list is widened this
+    * case turns red: flip the expectations to the setter's value and drop the "[known limit]" part of the name.
+    */
+    def '#76915 [known limit] bean-style assignment on script-built AxisSpec, LinearScale, LegendSpec, TextSpec is silently dropped'() {
+      given:
+      def t = new ScriptStateBase(VS)
+
+      expect: 'the setter works (control), the bean-style write leaves the default'
+      run(t, 'var o = new AxisSpec(); o.setLineVisible(false); o.isLineVisible()') == false
+      run(t, 'var o = new AxisSpec(); o.lineVisible = false; o.isLineVisible()') == true
+      near(run(t, 'var o = new LinearScale(); o.setMin(5); o.getMin()'), 5d)
+      near(run(t, 'var o = new LinearScale(); o.min = 5; o.getMin()'), 0d)
+      run(t, 'var o = new LegendSpec(); o.setVisible(false); o.isVisible()') == false
+      run(t, 'var o = new LegendSpec(); o.visible = false; o.isVisible()') == true
+      near(run(t, 'var o = new TextSpec(); o.setRotation(30); o.getRotation()'), 30d)
+      near(run(t, 'var o = new TextSpec(); o.rotation = 30; o.getRotation()'), 0d)
    }
 }
