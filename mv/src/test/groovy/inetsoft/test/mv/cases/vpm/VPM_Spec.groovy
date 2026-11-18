@@ -3,6 +3,7 @@ package inetsoft.test.mv.cases.vpm
 import inetsoft.test.mv.MVTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -44,14 +45,15 @@ class VPM_Spec extends Specification {
       mvtest?.removeMV()
    }
 
-   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
-   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
-   //the MV keeps only the time of day (1970-01-01).
+   //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and
+   //without MV (#79508).
+   @Issue('https://issues.inetsoft.com/issues/79508')
    def 'condition'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/condition'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user0)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user0)
 
@@ -59,6 +61,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -80,9 +83,9 @@ class VPM_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
-   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
-   //the MV keeps only the time of day (1970-01-01).
+   //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and
+   //without MV (#79508).
+   @Issue('https://issues.inetsoft.com/issues/79508')
    def 'group-group'() {
       given:
       def user5 = MVTest.createPrincipal('user5', ['Everyone', 'role2'] as
@@ -90,6 +93,10 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/group-group'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user0)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user2)
+      mvtest.executeVSWithoutMV(null, null, false, false, user5)
       mvtest.createMV(true, true)
       mvtest.executeVS(null, null, false, false, user0)
       mvtest.executeVS(null, null, false, false, user1)
@@ -100,12 +107,13 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
-   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
-   //the MV keeps only the time of day (1970-01-01).
+   //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and
+   //without MV (#79508).
+   @Issue('https://issues.inetsoft.com/issues/79508')
    def 'group-subgroup'() {
       given:
       def user6 = MVTest.createPrincipal('user6', ['Everyone'] as
@@ -115,6 +123,9 @@ class VPM_Spec extends Specification {
       String asset_id = '1^128^__NULL__^vpm/group-subgroup'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user6)
+      mvtest.executeVSWithoutMV(null, null, false, false, user7)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user1)
       mvtest.executeVS(null, null, false, false, user6)
@@ -124,17 +135,21 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
-   //No compareWithoutMV: order_time is a postgres "time with time zone". Without MV it is shown as
-   //the same instant in the local time zone, so a time near midnight gets the date 1970-01-02;
-   //the MV keeps only the time of day (1970-01-01).
+   //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and
+   //without MV (#79508).
+   @Issue('https://issues.inetsoft.com/issues/79508')
    def 'group-user'() {
       given:
       String asset_id = '1^128^__NULL__^vpm/group-user'
 
       mvtest = new MVTest(asset_id)
+      mvtest.executeVSWithoutMV(null, null, false, false, user0)
+      mvtest.executeVSWithoutMV(null, null, false, false, user1)
+      mvtest.executeVSWithoutMV(null, null, false, false, user2)
       mvtest.createMV(true, false)
       mvtest.executeVS(null, null, false, false, user0)
       mvtest.executeVS(null, null, false, false, user1)
@@ -144,6 +159,7 @@ class VPM_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['orders1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
