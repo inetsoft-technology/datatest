@@ -57,6 +57,9 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
+   //bk1 selects only dis = 0.15, so Correlation(dis, id) has a zero denominator in every group and
+   //is NULL with and without MV (#81182).
+   @Issue('https://issues.inetsoft.com/issues/81182')
    def 'assembly_query'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/assembly_query'
@@ -233,8 +236,9 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   //A "not equal to" condition keeps the rows with an empty value, with and without MV (#79505).
-   @Issue('https://issues.inetsoft.com/issues/79505')
+   //A "not equal to" condition drops the rows with a null value, like SQL, with and without MV (#79870,
+   //which replaced the behaviour of #79505).
+   @Issue(['https://issues.inetsoft.com/issues/79505', 'https://issues.inetsoft.com/issues/79870'])
    def 'C_V_5'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/C_V_5'
@@ -679,8 +683,9 @@ class VSCondtion_Spec extends Specification {
       }
    }
 
-   //A "not equal to" condition keeps the rows with an empty value, with and without MV (#79505).
-   @Issue('https://issues.inetsoft.com/issues/79505')
+   //A "not equal to" condition drops the rows with a null value, like SQL, with and without MV (#79870,
+   //which replaced the behaviour of #79505).
+   @Issue(['https://issues.inetsoft.com/issues/79505', 'https://issues.inetsoft.com/issues/79870'])
    def 'expression'() {
       given:
       String asset_id = '1^128^__NULL__^vs query and condition/expression'

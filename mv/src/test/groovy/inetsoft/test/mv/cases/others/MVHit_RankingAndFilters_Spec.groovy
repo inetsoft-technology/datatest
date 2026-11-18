@@ -479,7 +479,8 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       mvtest.compareWithoutMV()
    }
 
-   @Issue('https://issues.inetsoft.com/issues/52677')
+   //A freehand Count cell without rows is 0, with and without MV (#81084).
+   @Issue(['https://issues.inetsoft.com/issues/52677', 'https://issues.inetsoft.com/issues/81084'])
    def 'selection association4'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/selection association4'

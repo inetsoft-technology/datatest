@@ -3,6 +3,7 @@ package inetsoft.test.mv.cases.submv
 import inetsoft.test.mv.MVTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import spock.lang.Issue
 import spock.lang.Retry
 import spock.lang.Shared
 import spock.lang.Specification
@@ -39,13 +40,16 @@ class SubMV_Spec extends Specification {
       mvtest?.removeMV()
    }
 
-   //average has a data precision problem, bug #54404
+   //No compareWithoutMV: Query1 (avg) averages Sum(ORDER_ID). Without MV this is pushed down to DB2
+   //as AVG of an integer and truncated (109993 instead of 109993.4167, checked in DB2); the MV value is
+   //the exact one. Known, not to be fixed (#76921, #50746). Query4 (covariance) is 0 in every group
+   //(DISCOUNT is constant), without MV some groups are -0 from floating point noise.
+   @Issue('https://issues.inetsoft.com/issues/76921')
    def 'aggbase'() {
       given:
       String asset_id = '1^128^__NULL__^submv/aggbase'
       mvtest = new MVTest(asset_id)
 
-      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -59,7 +63,6 @@ class SubMV_Spec extends Specification {
                                             'Query1|SubMV', 'Query1|SubMV',
                                             'Query1|SubMV', 'Query1|SubMV', 'Query1|SubMV'])
          mvtest.compareData(false)
-         mvtest.compareWithoutMV()
       }
    }
 
@@ -131,13 +134,15 @@ class SubMV_Spec extends Specification {
       }
    }
 
-   //the data precision changes
+   //No compareWithoutMV: Query2 averages Sum(QUANTITY). Without MV this is pushed down to DB2 as
+   //AVG of an integer and truncated (251 instead of 251.0727); the MV value is the exact one. Known,
+   //not to be fixed (#76921, #50746).
+   @Issue('https://issues.inetsoft.com/issues/76921')
    def 'crossjoin'() {
       given:
       String asset_id = '1^128^__NULL__^submv/crossjoin'
       mvtest = new MVTest(asset_id)
 
-      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5', 'bk6'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4', 'bk5', 'bk6'] as String[], false, true)
 
@@ -145,7 +150,6 @@ class SubMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['PRODUCTS1|SubMV', 'ORDER_DETAILS1|SubMV', 'ORDERS1|SubMV'])
          mvtest.compareData(false)
-         mvtest.compareWithoutMV()
       }
    }
 
@@ -546,12 +550,15 @@ class SubMV_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: the chart averages QUANTITY of Query2, which is Sum(QUANTITY) of Query1.
+   //Without MV this is pushed down to DB2 as AVG of an integer and truncated (71 instead of 71.9495);
+   //the MV value is the exact one. Known, not to be fixed (#76921, #50746).
+   @Issue('https://issues.inetsoft.com/issues/76921')
    def 'rangecolumn'() {
       given:
       String asset_id = '1^128^__NULL__^submv/rangecolumn'
       mvtest = new MVTest(asset_id)
 
-      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2', 'bk3', 'bk4'] as String[], false, true)
 
@@ -559,7 +566,6 @@ class SubMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['ST_ST_Query1|SubMV'])
          mvtest.compareData(false)
-         mvtest.compareWithoutMV()
       }
    }
 

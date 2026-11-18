@@ -567,8 +567,8 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       }
    }
 
-   //Expected data was generated from the MV result, which groups 23:59:59+07:36:36 into hour 00
-   //instead of 23 (#79508). Update it after the fix.
+   //A postgres "time with time zone" is read as the stored wall clock, so 23:59:59+07:36:36 is in
+   //hour 23 with and without MV (#79508).
    //No compareWithoutMV: Average keeps the integer type with MV (formula.avg.keep.type), so 73 with MV is
    //73.5 without MV (Bug #54404).
    @Issue('https://issues.inetsoft.com/issues/79508')

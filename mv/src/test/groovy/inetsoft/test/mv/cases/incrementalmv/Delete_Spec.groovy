@@ -4,6 +4,7 @@ import inetsoft.test.mv.MVTest
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.IgnoreRest
+import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -313,6 +314,9 @@ class Delete_Spec extends Specification {
       }
    }
 
+   //MV creation keeps the rows where NOT(delete condition) is true, so the row with a null
+   //Year(orderdate) is not in the MV (#79870).
+   @Issue('https://issues.inetsoft.com/issues/79870')
    def 'Testcase8'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Delete/Testcase8'
