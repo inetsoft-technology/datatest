@@ -1,6 +1,5 @@
-The table size(row x col) is: (121 x 4)
+The table size(row x col) is: (120 x 4)
 [customer_id][discount][orderdate][orderno]
-[[NULL]][0][2002-09-01 00:00:00][7]
 [1][0][2001-01-13 00:00:00][68]
 [1][0][2001-10-24 00:00:00][80]
 [1][0][2002-06-24 00:00:00][72]

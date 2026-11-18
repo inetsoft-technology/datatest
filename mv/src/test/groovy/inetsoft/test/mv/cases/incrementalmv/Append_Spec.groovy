@@ -1148,6 +1148,10 @@ class Append_Spec extends Specification {
       }
    }
 
+   //The append condition evaluates to 2003-11-01 whatever the current date is (CALC.edate, #80953).
+   //The delete condition orderdate <= MV.LastUpdateTime also deletes the rows with a null orderdate on
+   //the update, as MV creation would (#81043), so only the appended rows remain.
+   @Issue(['https://issues.inetsoft.com/issues/80953', 'https://issues.inetsoft.com/issues/81043'])
    def 'mvLastUpdatetime'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Creator/Append/mvLastUpdatetime'

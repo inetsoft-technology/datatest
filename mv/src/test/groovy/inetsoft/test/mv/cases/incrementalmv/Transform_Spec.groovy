@@ -5,6 +5,7 @@ import org.spockframework.runtime.model.parallel.ExecutionMode
 import spock.lang.Execution
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
+import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -352,6 +353,9 @@ class Transform_Spec extends Specification {
       }
    }
 
+   //The delete condition customer_id < MV.MaxValue-30 matches no customer, but on the update it also
+   //deletes the row with a null customer_id (orderno 7), as MV creation would (#81043).
+   @Issue('https://issues.inetsoft.com/issues/81043')
    def 'Other_TestCase17'() {
       given:
       String asset_id = '1^128^__NULL__^MV_Transform/Other/Other_TestCase17'
