@@ -497,6 +497,16 @@ class MVTest {
       return hitMVs.toList()
    }
 
+   /**
+    * The warnings of the analysis done by the last {@link #createMV}, as
+    * {@code <bound table>: <message>} (see {@link MaterializedViewResource#getAnalysisWarnings}).
+    * A case that expects no MV checks here which rule rejected the table, so that an exception
+    * in the analyzer, which also leaves no MV, does not pass as the expected rejection.
+    */
+   List<String> getAnalysisWarnings() {
+      return materializedViewResource.getAnalysisWarnings()
+   }
+
    def exportData(def data, String fileName) {
       exportedFiles.add(new File(fileName).getCanonicalPath())
       File file = new File(fileName)
