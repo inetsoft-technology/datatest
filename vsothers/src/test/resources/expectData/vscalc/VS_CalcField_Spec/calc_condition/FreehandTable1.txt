@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+Category, NULL, Sum(TotalPurchased)/A_Ratio
+Office Tools, Sum(TotalPurchased), $1,489,839
+NULL, A_Ratio, 0.75
+Games, Sum(TotalPurchased), $1,064,530
+NULL, A_Ratio, 0.68
+Graphics, Sum(TotalPurchased), $1,018,812
+NULL, A_Ratio, 0.58
+Educational, Sum(TotalPurchased), $792,470
+NULL, A_Ratio, 0.53

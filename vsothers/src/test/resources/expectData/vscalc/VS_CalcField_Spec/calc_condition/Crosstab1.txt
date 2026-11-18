@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 2)
+Region, Sum(D_Number)
+USA East, 28733
+USA West, 18802
