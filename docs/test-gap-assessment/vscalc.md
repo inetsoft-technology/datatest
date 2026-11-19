@@ -140,8 +140,8 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 - 结果：矩阵 144 行，通过 113、不一致 20、没写 10；13 个测试类 353 个用例，0 失败、19 个跳过（`@Disabled` 的不一致用例）；变异检查全部抓到（38 + 5）。
 - 开出 10 个 Redmine bug（[#81202](https://issues.inetsoft.com/issues/81202)–[#81206](https://issues.inetsoft.com/issues/81206)、[#81211](https://issues.inetsoft.com/issues/81211)–[#81215](https://issues.inetsoft.com/issues/81215)），关联 [#81200](https://issues.inetsoft.com/issues/81200)、[#81197](https://issues.inetsoft.com/issues/81197)；[#81207](https://issues.inetsoft.com/issues/81207) 判为非缺陷。
 - 本文原先设计的 99 个用例、G3/G5 的测试入口分析（`CalcFieldFormula` 的聚合名映射与列位置；明细型的 L1 表达式列 / L2 worksheet / L3 viewsheet 三层入口）已落成测试，设计细节不再保留在这里；注意点留给 datatest 的有两条：
-  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。实测 H2 `NULL+10`/`NULL*2` 都是 null，脚本路径是 10/0；`concat(a,b)` 在脚本作用域里没有绑定，退回脚本大概率报错（未实测）。两条路径不一致待开发确认（[#81223](https://issues.inetsoft.com/issues/81223)）。
-  - 明细型除零（`x/0` 得 Infinity）、null 参与运算是 JavaScript 行为，按现状钉住；null 参与运算（`null+10` 得 10、`"a"+null` 得 `"anull"`）是否应传播 null 待开发确认（[#81197](https://issues.inetsoft.com/issues/81197)）。
+  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。实测 H2 `NULL+10`/`NULL*2` 都是 null，脚本路径是 10/0；`concat(a,b)` 在脚本作用域里没有绑定，退回脚本会报错（开发已实测 `TypeError`）。开发结论（[#81223](https://issues.inetsoft.com/issues/81223)，Rejected，不改）：`sql="true"` 字段只在查询合并时有 SQL 语义，退回脚本是尽力兼容，不加脚本版 `concat`；datatest 只在合并路径上断言 SQL 语义，期望值按数据源写，非合并路径改用 Script 类型字段测。已核对 vscalc：6 个做实际计算的字段（`testModel`、`testQuery`、`testDB2`）的基线都在合并路径上，`concat` 的值（如 `OHa`、`AZa`）不可能来自脚本路径，算术字段与它们同一查询；按 `concat` 分组的数据里没有 null 的 state，null 语义差异不影响现有基线。datatest 无需改动。
+  - 明细型除零（`x/0` 得 Infinity）、null 参与运算（`null+10` 得 10、`"a"+null` 得 `"anull"`，不传播 null）是 JavaScript 行为，开发确认是预期（[#81197](https://issues.inetsoft.com/issues/81197)），单测按预期断言。
 
 ## 5. Dashboard 补充
 
