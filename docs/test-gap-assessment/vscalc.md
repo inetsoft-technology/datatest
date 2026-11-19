@@ -10,7 +10,7 @@ vscalc 的 dashboard 覆盖面不窄：22 个用例覆盖了 11 种图表类型�
 1. **验证机制会静默通过**：导出失败只打印堆栈、基线文件缺失不报错，而且 CI 失败也不会让流水线变红。
 2. **基线只是产品自己的输出**，只能发现回归，不能证明"算得对"。产品仓库已补上：5 个聚合函数的单测已合入 `main`，聚合型/明细型计算字段求值、`CalculateRef`、公式工厂的单测在 PR #8000/#8052（144 行矩阵，353 个用例），并查出 10 个新缺陷（见 [vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)）。
 
-G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。dashboard 侧 G2（孤儿 vs `aggregate_trendcomparison`）、G7（含 G9）已完成，剩薄弱场景 G8（暂不做）；Java 单测侧（G3–G6）剩等开发回答的语义（[#80953](https://issues.inetsoft.com/issues/80953)）。
+G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` 的严格逻辑合进基类，一次覆盖 chart、vsothers 共 31 个 spec，严格即默认，不加开关。dashboard 侧 G2（孤儿 vs `aggregate_trendcomparison`）、G7（含 G9）已完成，G8 做了条件、TopN、高亮和 Gauge 这一组（新 vs `calc_condition`，见第 5 节），其余 G8 场景不做；Java 单测侧（G3–G6）剩等开发回答的语义（[#80953](https://issues.inetsoft.com/issues/80953)）。
 
 ## 2. 覆盖情况
 
@@ -27,11 +27,11 @@ G1 已完成：PR #203 直接修改了 `ViewsheetTest`，把 `DcViewsheetTest` �
 |---|---|---|
 | Chart 的 x / y | 14 / 16 | 充分 |
 | Chart 的 color / size / text / **shape** | 7 / 4 / 4 / **2** | shape 薄 |
-| Crosstab 的行 / 列 / 度量 / **条件** | 8 / 3 / 12 / **3**（行或列共 9） | 条件薄 |
-| CalcTable 的单元格 / **条件** | 9 / **1** | 条件很薄 |
-| Table 的列 / **条件** | 6 / **2** | 条件薄 |
+| Crosstab 的行 / 列 / 度量 / **条件** | 8 / 3 / 12 / **3**（行或列共 9） | 条件薄；更正：这 3 个都是 `state_details`（Show Details 的钻取条件，`TableDataVSAssembly.writeState`），过滤条件实际为 **0**。G8 补了 1 个 |
+| CalcTable 的单元格 / **条件** | 9 / **1** | 条件很薄；更正：这 1 个同样是 `state_details`，过滤条件实际为 **0**。G8 补了 1 个 |
+| Table 的列 / **条件** | 6 / **2** | 条件薄（2 个都是明细型，真实的过滤条件） |
 | Calendar / SelectionList / SelectionTree / TimeSlider | 6 / 6 / 5 / 3 | |
-| Gauge / Text | 3 / 3 | 类型和表达式单一（仅 integer，表达式均为"其他"） |
+| Gauge / Text | 3 / 3 | Gauge 仅 integer（G8 补了 1 个 double）；Text 已有 string、date、double、integer |
 
 统计口径：只算实际绑定，不算 `<ainfo>`。`<ainfo>` 是绑定面板为数据源列出的候选字段，数据源上的计算字段不管有没有绑定都会出现在里面（如 `calc_data group` 的 Chart4，候选 12 个维度、6 个度量，实际只绑定 1 个 x、1 个 y）。`vs_backup_scan.py` 跳过 `<ainfo>`，并按 `rowheaders`/`colheaders` 识别 Crosstab 的行列。
 
@@ -89,7 +89,7 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 | G5 | 明细型计算字段的值级语义没有系统测试 | 四则运算、除零、null、拼接、日期、参数替换出错 | 单测 + dashboard 代表用例。**单测已落实：PR #8000/#8052，查出 #81204、#81206、#81214 等；dashboard 代表用例未做** | 中 |
 | G6 | 基线只是产品自己的输出 | 已有的错误结果被固化为基线，永远不报错 | 单测的手算期望值（**已做**：144 行矩阵，预言来源以规格、手算为主）；新基线抽样独立核对（未做） | 中 |
 | G7 | 选择类、展示类组件自身内容只有 PNG | 选择列表里计算字段的取值列表出错，但在 PNG 容差内 | dashboard：扩展基类。实际受影响的字段：`filter` 的 `max_time`、`parent-child tree` 的 `CalcField1`、`testDB2` 的 `c_date`。**已完成**（第 5 节） | 中 |
-| G8 | 薄弱格子：聚合型 timeInstant/boolean、shape/text/size、condition 位置、Gauge/Text 类型、新图表类型 | 计算字段在这些位置取值或渲染出错 | dashboard：新建小 vs | 中 |
+| G8 | 薄弱格子：聚合型 timeInstant/boolean、shape/text/size、condition 位置、Gauge/Text 类型、新图表类型 | 计算字段在这些位置取值或渲染出错 | dashboard：新建小 vs。**条件、Freehand TopN、高亮、Gauge double 已完成**（新 vs `calc_condition`，第 5 节）；其余不做，理由见第 5 节 | 中 |
 | G9 | 上述 6 个 vs 的个别计算字段没有数据断言 | 这些字段的结果出错，数据比对发现不了 | 已核对（第 2 节）：2 个已断言（`calc_date`、`edate`）、3 个没有绑定，真正缺的 3 个都在选择类组件上，并入 G7，不单独补 | 已并入 G7 |
 
 ### G1 方案：直接改 `ViewsheetTest`
@@ -140,8 +140,8 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 - 结果：矩阵 144 行，通过 113、不一致 20、没写 10；13 个测试类 353 个用例，0 失败、19 个跳过（`@Disabled` 的不一致用例）；变异检查全部抓到（38 + 5）。
 - 开出 10 个 Redmine bug（[#81202](https://issues.inetsoft.com/issues/81202)–[#81206](https://issues.inetsoft.com/issues/81206)、[#81211](https://issues.inetsoft.com/issues/81211)–[#81215](https://issues.inetsoft.com/issues/81215)），关联 [#81200](https://issues.inetsoft.com/issues/81200)、[#81197](https://issues.inetsoft.com/issues/81197)；[#81207](https://issues.inetsoft.com/issues/81207) 判为非缺陷。
 - 本文原先设计的 99 个用例、G3/G5 的测试入口分析（`CalcFieldFormula` 的聚合名映射与列位置；明细型的 L1 表达式列 / L2 worksheet / L3 viewsheet 三层入口）已落成测试，设计细节不再保留在这里；注意点留给 datatest 的有两条：
-  - 明细型的 15 个 SQL 表达式计算字段：产品单测只能测到"查询不能合并、当脚本执行"的路径；合并后由数据库计算，除零、null 拼接、整数除法的结果可能与脚本路径不同，只能靠真实数据源或 datatest 发现。实测 H2 `NULL+10`/`NULL*2` 都是 null，脚本路径是 10/0；`concat(a,b)` 在脚本作用域里没有绑定，退回脚本大概率报错（未实测）。两条路径不一致待开发确认（[#81223](https://issues.inetsoft.com/issues/81223)）。
-  - 明细型除零（`x/0` 得 Infinity）、null 参与运算是 JavaScript 行为，按现状钉住；null 参与运算（`null+10` 得 10、`"a"+null` 得 `"anull"`）是否应传播 null 待开发确认（[#81197](https://issues.inetsoft.com/issues/81197)）。
+  - 明细型的 SQL 表达式计算字段（`sql="true"`）：只在查询合并时由数据库按 SQL 语义计算；datatest 只在合并路径上断言，期望值按数据源写（[#81223](https://issues.inetsoft.com/issues/81223)）。vscalc 中做实际计算的 6 个（`testModel`、`testQuery`、`testDB2`）的基线都在合并路径上，数据里没有 null 的 state，无需改动。
+  - 明细型除零（`x/0` 得 Infinity）、null 参与运算（`null+10` 得 10、`"a"+null` 得 `"anull"`）按 JavaScript 语义，是预期行为（[#81197](https://issues.inetsoft.com/issues/81197)）。
 
 ## 5. Dashboard 补充
 
@@ -149,11 +149,8 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 |---|---|---|---|
 | 验证机制（G1） | 不改 spec，改 `ViewsheetTest`（第 3 节 G1 方案）。就 vscalc 而言，`strictcheck` 静态预测 22 个用例的基线与导出文件集合完全一致（基线多出 0 个、导出缺基线 0 个），所以预计不会因文件集合失败 | 导出失败、基线缺失不再静默通过 | 各模块自行运行并处理变红的用例 |
 | 孤儿 vs（G2） | **已完成**：用例 `aggregate_trendcomparison`，书签 `(Home)`、`bk1`，4 个 txt 基线（Chart1、Crosstab1）。只比数据：PNG 基线要等第 6 节"PNG 在哪个平台生成"定了再加 | 趋势/比较聚合的计算字段 | 基线用 `-Dupdate.baseline=true` 生成，按内部关系核对一致：`Calc_agg` 等于 Average(CUSTOMER_ID)；% of total、Value of previous 按图表可见行手算一致；Crosstab 的 Change from previous 与 Moving Average of 5（前后各 2 个，居中窗口）可由同一组 Sum 反推，14 行全部一致 |
-| 聚合型 timeInstant、boolean（G8） | 新建小 vs | 目前 0 个 | 在 StyleBI 里制作并导出 backup 并入 zip |
-| Chart 的 shape / text / size 视觉绑定（G8） | 新建小 vs | 计算字段用于视觉绑定 | 同上 |
-| Table / Crosstab / CalcTable 的 condition 位置（G8） | 新建小 vs | 计算字段用于条件 | 同上 |
-| Gauge / Text 非 integer 类型（G8） | 新建小 vs | 计算字段用于 Gauge、Text | 同上 |
-| 新图表类型（G8） | 新建小 vs（AREA、POINT、RADAR、WATERFALL 等择要） | 计算字段在这些图表上取值与渲染 | 同上；先确认产品允许这些图表绑定计算字段 |
+| 条件、TopN、高亮、Gauge（G8） | **已完成**：新 vs `vs-calcfield/calc_condition`（数据源 `Examples/Analysis` 的 `OrdersAndReturns`；计算字段 `D_Number` 明细 integer `field['Quantity Purchased']`、`D_String` 明细 string `field['Category']`、`A_Ratio` 聚合 double `Sum(TotalReturned)/Sum(TotalPurchased)`，都是 `sql="false"`，不受 #81223 影响）。Crosstab1 过滤条件 `D_Number > 10`；Crosstab2 高亮 `A_Ratio > 0.6` 与按 A_Ratio 的 Top 4；FreehandTable1 过滤条件 `D_String` 不等于 `Hardware` 与按 A_Ratio 的 Top 4（历史 bug #49829 的场景）；Gauge1 绑定 A_Ratio；Crosstab3 用单元格右键 Filter 对 A_Ratio 做即席过滤（生成 RangeSlider1，放进 Selection Container，选中 0.55 到 0.70，历史 bug #48876 的场景），与 Crosstab2 分开，避免和 TopN 的先后顺序混在一起。用例 `calc_condition`，5 个 txt 基线（含 G7 导出的 RangeSlider1）和 1 个 PNG 基线；高亮和 Gauge 只在 PNG 里。PNG 基线是本机生成的，CI 平台像素不同时直接替换 | 计算字段用于过滤条件、TopN、高亮、Gauge | 条件对话框只列明细型计算字段（Crosstab、Freehand 都如此），聚合层的过滤由 TopN、高亮和即席过滤覆盖。独立核对：worksheet 执行计划里 Orders、Returns 的 SQL 直接在 Derby `orders_133` 上执行（2622、197 行），按 City、State、Company、Category 做 FULL OUTER JOIN（3395 行）后自算，与基线逐值一致（USA East 28733、USA West 18802；A_Ratio Hardware 0.7685、Office Tools 0.7464、Games 0.6760、Graphics 0.5771、Educational 0.5259、Personal 0.5164；整体 0.5762；即席过滤 0.55 到 0.70 只留 Games、Graphics）。zip 只合并了新 vs、它的书签存储和 `Examples/Analysis` 的依赖条目，EM 备份里的 license、jwt 密钥、权限键迁移、本地数据源等没有带入 |
+| 其余 G8 场景 | **不做**：Redmine 历史 bug（标题检索）中条件/高亮/TopN 约 23 个、Gauge/Text 14 个，以错误数据为主；视觉绑定 8 个、新图表类型 12 个，以渲染和报错为主，用户能直接看到。聚合型日期已有 6 个 vs（含 `chart` 的 `Calc_Max_Date`），聚合型布尔的声明类型问题在 #81632 | | 有需要时单独评估 |
 | 选择类组件自身内容（G7） | **已完成**：`executeVS(params, bks, true)` 额外把 SelectionList / SelectionTree（值、状态、度量）、RangeSlider（值个数、首尾值、选中范围）、Calendar（范围、选中日期）导出为 txt（`ExportUtil.exportSelection`）。默认关闭，其他 spec 不受影响。vscalc 里有选择类组件绑定计算字段的 12 个用例打开，新增 53 个基线 | 选择列表的取值列表、度量等 | 原有 `exportSelectionList` 不含度量，没有复用。抽样核对：`parent-child tree` 的 `CalcField1`（Sum(label_number)）13 个节点与 worksheet 嵌入数据逐个一致；`filter` 的 `max_time` 按自身分组取 Max，等于值本身 |
 | 个别计算字段未入基线（G9） | 已核对，并入 G7（第 2 节），随 G7 完成 | | 无 |
 
@@ -193,7 +190,7 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 **需要你决定：**
 - 严格模式要不要真正挡住合入：目前 GitHub 工作流 `continue-on-error`、Jenkins 为 UNSTABLE，改基类只是把"静默通过"变成"测试失败"。
 - PNG 基线在哪个平台生成，要和 CI 一致。
-- G8 里要做哪几个新场景。
+- G8 已决定：做条件、TopN、高亮、Gauge 一组，其余不做（第 5 节）。
 
 **没验证的：**
 - 严格模式已跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。

@@ -306,6 +306,27 @@ class VS_CalcField_Spec extends Specification{
    }
 
    /*
+    check calc fields in conditions, highlight, TopN and Gauge (G8 of vscalc.md):
+    Crosstab1 condition on a detail calc field, Crosstab2 highlight and Top 4 on an aggregate
+    calc field, FreehandTable1 condition plus Top 4 on an aggregate calc field, Crosstab3 ad hoc
+    filter (RangeSlider1) on an aggregate calc field, Gauge1 bound to a double aggregate calc
+    field. The highlight and the Gauge are only in the png.
+    The png baseline was generated locally; replace it if the CI platform renders other pixels.
+   */
+   def 'calc_condition'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/calc_condition', caseName)
+      vstest.executeVS(null, ['(Home)'] as String[], true)
+      vstest.exportAsPNG(['(Home)'] as String[], null, true, false)
+
+      expect:
+      verifyAll {
+         vstest.compareData(null)
+         vstest.compareImage(null)
+      }
+   }
+
+   /*
     check data group on calcfield
    */
    def 'calc_data group'() {
