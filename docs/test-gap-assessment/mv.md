@@ -20,7 +20,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 仍然成立的两点：命中断言留有一个已知的洞（78 个用例只断言"已定义"，是 PR #188 里没换的含 `ASSOCIATION_` 的断言，G1）；`getMVHitInfo` 在组件都返回纯值时退回成"已定义"。
 
-先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（PR #226 已加）和 T3 更新后的 golden 在 CI 上的结果；补 `mv.*` 配置项几个会改变结果的场景（T6）；组件和选项的零覆盖项（T11）。T1、T2、T5 已在 PR #226 完成；`NOT Transform` 的反向路径用例（T4）已补 9 个（§6 第 6 条）；产品仓库的单测（T7、T8）和 `RankingConditionTest` 的重新启用在 stylebi PR #8473（§4）；要问开发的问题都已有答复（#81658、#81659、#81682，§6）。
+先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（PR #226 已加）和 T3 更新后的 golden 在 CI 上的结果；补 `mv.*` 配置项几个会改变结果的场景（T6）；组件和选项的零覆盖项（T11）。T1、T2、T5 已在 PR #226 完成；`NOT Transform` 的反向路径用例（T4）已补 9 个（§6 第 6 条）；产品仓库的单测（T7、T8）和 `RankingConditionTest` 的重新启用已在 stylebi PR #8473 合并（§4）；要问开发的问题都已有答复（#81658、#81659、#81682，§6）。
 
 ## 2. 覆盖情况
 
@@ -163,7 +163,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 产品仓库已有的 MV 单测：`core/src/test/java/inetsoft/mv` 下 87 个文件，另有 10 个在其他包（均在 `core`，其他模块没有）；唯一的 `@Disabled` 是 `RankingConditionTest` 整个类（"Ignite causing problems"，没有 bug 编号；测试环境已不用 Ignite；本机绕过注解运行时被测试配置缺 bean 和一个死锁挡住，临时补上后通过，见 §6"读代码确认的结论"第 4 条；**stylebi PR #8473 已重新启用，只改测试代码**）。较强的是：聚合公式（`inetsoft.mv.formula` 15 个类里 14 个有测试，接口 `MergeableFormula` 除外）、`data` 包（`BitDimIndex`、`SubMV`、`XDimDictionary`、`MVQuery`）、`MVDef`、`MVManager`、`MVBuilder`。测试用 Mockito 的很多，没有一个显式搭嵌入数据库。同名类按完整路径区分：`inetsoft.report.filter` 下的 `DistinctCount`、`Median`、`Mode`、`NthMostFrequent` 的测试不算在 `inetsoft.mv.formula` 头上；运行时 `GroupedTableBlock.getMVFormula` 把 `DistinctCount`、`Median`、`Mode` 路由到 `inetsoft.mv.formula`，`NthMostFrequent` 路由到 `inetsoft.report.filter`（`GroupedTableBlock.java:123`-`:136`）。
 
-**T7、T8 已做（2026-11-19，stylebi PR #8473，12 个提交，每个测试类一个；CI 通过，待 review）。** 只加测试，没有改产品代码。每个新类都把它覆盖的产品代码逐处改坏过，每处至少让一个用例失败（改完还原）；`inetsoft.mv` 下全部测试加两个 web 类在一个 JVM 里 788 个用例 0 失败，每个类单独运行也通过。
+**T7、T8 已做（2026-11-19，stylebi PR #8473，12 个提交，每个测试类一个；2026-11-19 已合并，`612dfd4843`）。** 只加测试，没有改产品代码。每个新类都把它覆盖的产品代码逐处改坏过，每处至少让一个用例失败（改完还原）；`inetsoft.mv` 下全部测试加两个 web 类在一个 JVM 里 788 个用例 0 失败，每个类单独运行也通过。
 
 | 测试类 | 用例 | 内容 | 对应 |
 |---|---|---|---|
@@ -358,7 +358,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 其中 datatest 能验证、**两边都没提到编号**的未关闭 bug 是：#80313、#80344、#80342（见 G5 和 T9）。#80445（`composite3`）、#80457（`variable in subquery`）有被 `@Ignore` 的用例，#80170（`rangeslider-compositevalue`）有 `@PendingFeature` 的用例，也就是说用例在，等修复后启用。公共 API 类（#81059 至 #81061）、权限类和 id 变更类不属于静态 datatest。
 
-## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、开发已答复（#81658），T4 已做（PR #232），T3 已做（golden 已更新，CI 未触发），T7、T8 已做（stylebi PR #8473，待 review）；T6、T11 未开始）
+## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、开发已答复（#81658），T4 已做（PR #232），T3 已做（golden 已更新，CI 未触发），T7、T8 已做（stylebi PR #8473，已合并）；T6、T11 未开始）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 前提 / 注意 |
 |---|---|---|---|---|
