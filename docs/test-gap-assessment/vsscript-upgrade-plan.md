@@ -4,7 +4,7 @@
 > 依据：`vsscript.md`（缺口评估）+ 三轮原型/探路。**已确认**＝读过源码或在本机跑通；**未验证**＝没查或没跑。
 > **接手请先读 `vsscript-state-guide.md`**（怎么跑、代码结构、写用例的配方、已踩的坑）。
 > 实施方式：由 AI 按批次推进，每批产出一个可运行的 spec，结果写回本文。不估人天，只标相对大小（小/中/大）。
-> **更新（2026-11-17）：** D1 已跑（§5.1），Submit 的"2 次 alert"已查明（§5.7），已提 4 个单并补回归用例（§5.10），套件现为 59 个用例（5 个 pending），26 个有效变异全部翻红，开发对 #81530 的真实修复也按预期触发了报警（§5.9、§5.10）。
+> **更新（2026-11-17）：** D1 已跑（§5.1），Submit 的"2 次 alert"已查明（§5.7），已提 4 个单并补回归用例（§5.10），套件当时为 59 个用例（5 个 pending），26 个有效变异全部翻红，开发对 #81530 的真实修复也按预期触发了报警（§5.9、§5.10）。**2026-11-18：** 修复陆续合并后，与 Java 重复的 16 个用例（#81531、#81534、#81540、#81550 的三件套）已删除，套件现为 44 个用例、没有 pending（`state/` 下 6 个 spec，含总检）；下面 §5.8–§5.10 是当时的记录，不再改。
 
 ## 1. 结论
 
@@ -14,6 +14,26 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 1. **与单测分工，不重复。** 产品仓库已有单测专门覆盖单个脚本类（`report/script/viewsheet/` 48 个文件 369 个用例，`util/script/Calc*Test` 约 249 个用例）。datatest 只测单测做不到的：**真实 vs 资产 + 完整运行时**里的脚本行为。
 2. **PNG 只留给渲染。** 需要像素才能验证的用例放单独目录，不再承担状态验证。
 3. **旧用例不急着删。** 新用例稳定并证明"能失败"之后再处理（§6）。
+
+## 1a. 范围与放置规则的调整（2026-11-18，领导定）
+
+**目标：** 升级 vsscript 的测试，让自动化覆盖更全，发现更多问题和遗漏。**范围：**只做探针和现有框架的升级；需要新增 Dashboard（资产）的，写进 §12 的 TODO，暂不做。
+
+**一个发现或一条回归测试放哪里，按这个顺序判断：**
+1. Java 单测已经覆盖 → 不在 datatest 加用例。
+2. 还没有，但 Java 单测能写 → 补 Java 单测（bug 还没修的，用 `@Disabled("Bug #xxxxx ...")` 写期望行为，修好后去掉）。
+3. 只有 Java 单测机制够不到的才放 datatest：需要真实打开的 vs 与资产、刷新/提交流程、真实绘图、对全部资产的检查。
+
+**怎么用：** 写用例之前先在 `community/core/src/test` 里搜同一函数，再用 `gh pr list --repo inetsoft-technology/stylebi --state all --search "<单号>"` 查有没有修复 PR；探针只用来**发现**，结论落到上面的哪一层由这个顺序决定。单测的输入要能区分错误实现（旧的 CALC 单测只用 p=0.5、只有 null、只有整数，所以没抓到 #81609 的 4 个函数缺陷）。
+
+**到目前为止的结果（来自这套方法）：** 提了 16 个单（#81530、#81531、#81534、#81540、#81550、#81551、#81609、#81610、#81619、#81626、#81627、#81633、#81635、#81651、#81652、#81657），其中 13 个已被开发修复并合并，修复 PR 都带了 Java 测试。所以这些回归的“家”在 Java；datatest 的价值是**发现**，以及用真实路径**核实** Java 夹具里的疑点（#81626、#81627 就是这样成立的）。
+
+**由此推出的调整：**
+- **D4（把现有 PNG 用例改成状态断言）和 D9（渲染用例迁到 `render/`）决定不做**，收益低。
+- D5、D6、D8 先判断 Java 单测能不能覆盖，能的转 Java。
+- D2（固定异常契约）等开发给出语义再做。
+- 被吞错误总检（`state/ScriptStateRefreshTripwire_Spec`，§5.1）是 D1 的延伸，必须放 datatest：对全部 130 个 vs 走真实刷新，记录命令、用户消息和 WARN/ERROR 日志，出现白名单之外的事件就失败。
+- **#230 里已合并的 `ScriptStateKnownBugs_Spec` 中，与 Java 重复且已过期的 16 个用例已于 2026-11-18 清理**（#81531、#81534、#81540、#81550 的三件套：对照、`[bug present]`、`@PendingFeature`；修复已合并并带了 Java 测试，core 含修复后它们会变红）。保留的 10 个是 #80708 / #80709 / #80711 / Crosstab 的回归，在真实资产上读 `bindingInfo`，它们都通过，暂不删。
 
 ## 2. 分工：单测 vs datatest
 
@@ -32,12 +52,12 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 | D1 | **脚本健康检查**：zip 里 130 个 vs 的所有脚本，直接 `scope.execute` 并断言不抛 `ScriptException` | 资产里已有脚本在报错却无人知道 | 小 | §5.1 |
 | D2 | **异常契约**：把"刷新路径吞异常、点击路径抛异常、报错前的效果保留"固定成用例 | G2；PNG 和单测都看不到 | 小 | §5.1 |
 | D3 | **事件端到端**：`onClick`、`confirm`、`onSubmit`、嵌套 vs 的 `onClick`、`parameter` | G6；评估文档里零用例 | 中 | §5.2 |
-| D4 | **真实数据读回**：Crosstab 的 `data/table`、Chart 的 `EGraph/scale/dataset`、格式对象；把现有 PNG 用例改成状态断言版 | G5；现有用例"画进 Text 再比图" | 中 | §5.3 |
+| D4 | ~~**真实数据读回**：Crosstab 的 `data/table`、Chart 的 `EGraph/scale/dataset`、格式对象；把现有 PNG 用例改成状态断言版~~ **决定不做（2026-11-18，见 §1a）** | G5；现有用例"画进 Text 再比图" | 中 | §5.3 |
 | D5 | **触发顺序与跨组件**：`ONINIT`/`ONLOAD`/组件脚本的先后，Text 读取 Crosstab 等 | 触发时机类 bug（67 条） | 中 | 未验证 |
 | D6 | **差分**：脚本设置 vs 资产静态属性，两者读回应一致 | 不依赖基线的正确性 | 小 | §5.4 |
 | D7 | **导出一致性**：同一 vs 多格式导出（PDF 文字、Excel 单元格），脚本效果应进入导出 | Viewer 与导出的差异（12 条 bug） | 中 | §5.6 |
 | D8 | **数据函数端到端**：`appendRow`、`setCellValue`、`saveWorksheet`、`refreshData`（单测已有 `ViewsheetScopeTest` 14 个用例，这里只测经真实 vs 的路径） | 写回类 bug | 中 | 入口未验证 |
-| D9 | **渲染用例（PNG）**：只保留图例位置、颜色、布局这类像素可见的，放 `render/` | 渲染回归 | 小（迁移） | §6 |
+| D9 | ~~**渲染用例（PNG）**：只保留图例位置、颜色、布局这类像素可见的，放 `render/`~~ **决定不做（2026-11-18，见 §1a）** | 渲染回归 | 小（迁移） | §6 |
 
 ## 4. 优先级
 
@@ -65,7 +85,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 | 点击（`OnClickService.onClick`） | 能 | 无 try/catch，异常抛给调用方 |
 
 - 源码：`ViewsheetSandbox.java:1685` 对 `ConfirmException | ScriptException` 直接 `// ignore`。
-- 测试环境没有 SLF4J 绑定（`Failed to load class "org.slf4j.impl.StaticLoggerBinder"`），日志被丢弃；直接引用 logback 类会因版本不匹配 `ClassNotFoundException`。加绑定能否让日志可见：未验证。
+- 测试环境没有 SLF4J 绑定（`Failed to load class "org.slf4j.impl.StaticLoggerBinder"`），日志被丢弃；直接引用 logback 类会因版本不匹配 `ClassNotFoundException`。**加绑定能让日志可见：已验证（2026-11-18）。** 不能用 logback-classic / slf4j-api 2.x 当测试依赖（干净构建时 `inetsoft-runner-maven-plugin:configure` 会失败）；改为在测试里自带一个 slf4j 1.7 的绑定（`src/test/groovy/org/slf4j/impl/StaticLoggerBinder.groovy` + `support/LogRecorder.groovy`），不加依赖。用它做了“被吞错误总检”（`state/ScriptStateRefreshTripwire_Spec`）：130 个 vs 走真实刷新，8 个有事件，其中 1 个是真实发现（`Relation`，#81633）。
 - 含义：现有 PNG 用例遇到脚本报错，基线若恰好是那种状态也会"通过"。
 - **D1 结果（2026-11-17，探路类 `ScriptStateHealthProbe`）：** 130 个 vs 全部能打开，83 个带脚本，共执行 213 段（组件 179、`ONLOAD` 18、`ONINIT` 16），3 段报错，**全是误报**：2 段读 `parameter.state`（直接执行没传参数，且对应用例被 `@Ignore`），1 段读父视图表 `pviewsheet`（内嵌 vs 单独打开没有父）。**现有资产里没有真实的脚本错误。** `ViewsheetInfo` 只有 `onInit`/`onLoad`，没有 `onRefresh`。
 - 产品仓库另有 `ScriptStateLint`（词法检查，带单测），与 D1 不同（D1 是真实执行）；是否可复用：未查。
@@ -112,7 +132,7 @@ vsscript 现在只有"整页 PNG 像素比对"一条验证路径，而脚本的�
 | #80711 | `setGroupOrder("Date", Chart.NONE_DATE_GROUP, ...)` 后日期级别为 `null`（应为 `0`），设置被忽略 | 同上 |
 
 - 这三个 bug 在 Redmine 里状态是 Closed，但**当前检出的源码里仍然存在**；#80709 的描述写明修复在 13.8 线，这份检出不含它。是否已合入哪个分支，没有核对。
-- **用例：** `ScriptStateKnownBugs_Spec`（9 个）：每个 bug 三个——对照（正常路径）、`[bug present]`（精确断言当前失败特征：#80709/#80708 的失败消息，#80711 的日期级别为 `null`）、`@PendingFeature`（期望行为）。`@PendingFeature` 在**任何**失败下都算通过，单独用分不出"bug 存在"和"测试写错"，所以才加另外两个；bug 修复后 `[bug present]` 会变红、pending 会"意外通过"而失败，两处都提示解除。
+- **用例（当时的记录；#81531、#81534、#81540、#81550 的用例已于 2026-11-18 删除，见 §1a）：** `ScriptStateKnownBugs_Spec`（当时 9 个）：每个 bug 三个——对照（正常路径）、`[bug present]`（精确断言当前失败特征：#80709/#80708 的失败消息，#80711 的日期级别为 `null`）、`@PendingFeature`（期望行为）。`@PendingFeature` 在**任何**失败下都算通过，单独用分不出"bug 存在"和"测试写错"，所以才加另外两个；bug 修复后 `[bug present]` 会变红、pending 会"意外通过"而失败，两处都提示解除。
 - **意义：** 这是第一次拿到"状态用例能抓到真实 bug"的证据，回应了"42 个用例全绿、没有 bug"的疑问。注意边界：这 3 个 bug 是**读写 `bindingInfo` 的接口抛异常**，直接执行脚本就能暴露；**没有**对"渲染错了"类的 bug 做验证。
 - **局限：** 只做了 3 条；#80989（`y2Axis`）、#80985（箱线图 `setBorderColor`）已筛出未做；"修复前版本变红"没做（这 3 条在当前版本本来就失败，无需修复前构建）。
 
@@ -173,6 +193,8 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 - 代码：`state/ScriptStateSubmit_Spec.groovy`（现 8 个用例，全过）；探路 `probe/ScriptStateSubmitProbe.groovy`（不属于套件）。结果见 §5.7。
 - JaCoCo 增量：`SubmitVSAScriptable` 0/14 → 10/14 行（分支 1/8）；`report.script.viewsheet` 合并覆盖 52.8% → 53.1%。
 - 剩余：`SubmitVSAScriptable` 另 4 行及分支未跑到，原因未查；Submit 的其他场景（`confirm`、多个 Submit、`refreshAfterSubmit=false` 的刷新差异）未做。
+
+**新增（2026-11-18）：被吞错误总检**已做成用例（`state/ScriptStateRefreshTripwire_Spec`，用 `support/LogRecorder` 和 `org/slf4j/impl/StaticLoggerBinder` 读日志，不加依赖）；与不带新文件的基线逐用例对比，已有用例的结果没有变化。放置规则和 D4/D9 的决定见 §1a，需要新资产的内容见 §12。
 
 **第 2 步：D1 + D2**
 - D1 已完成（2026-11-17，探路类 `ScriptStateHealthProbe`，结果见 §5.1）：130 个 vs、213 段脚本，3 段报错全是误报。
@@ -248,6 +270,20 @@ vsscript/src/test/groovy/inetsoft/test/vsscript/
 2. 有效的 0 覆盖目标是 11 个（去掉 3 个废弃组件）。组件脚本类只剩 `SubmitVSAScriptable`，zip 里已有 Submit 资产，只缺用例，不需要造资产；`VSEGraphScriptable` 和三个数据库脚本类才需要新脚本或新资产（§10 来源 C 的范围随之缩小）。
 3. 之后每批补充都用同样的方法量一次，记录增量，不再用文本命中统计。
 4. 局限：只统计 `inetsoft.report.script.*` 和 `inetsoft.util.script.*`；行覆盖不等于逻辑覆盖；产品 jar 版本与源码若不一致，行号会偏。
+
+## 12. TODO：需要新 Dashboard 或资产的内容（2026-11-18，暂不做）
+
+范围决定：这一轮只做探针和现有框架的升级，不新增 Dashboard。下面这些做起来需要新资产（或改资产），先记在这里；每一项的优先级和是否值得做，到时候再按 §1a 的顺序判断（先看 Java 能不能做）。
+
+| 要补的资产或改动 | 为什么需要 | 对应的 bug / 缺口 |
+|---|---|---|
+| 嵌套两层的 embedded 仪表板（根 → Mid → Inner，Inner 里有带 `onClick` 脚本的 Text） | 现有资产里没有任何一个嵌入了 viewsheet，测不到嵌套的 `onClick` | #79699（13.8）；D3 的“嵌套 vs 的 `onClick`” |
+| 带两个同时命中的高亮的输出组件（Text / Gauge） | `highlighted[name]` 在多个高亮同时命中时的行为 | #80875（13.8） |
+| 真实流程回归的资产：`setAction`、RadioButton 切换后 `selectedObject` 刷新、脚本绑定 shape 图片（含 SVG）、脚本设 `SelectionTree.expandAll` | 原单的附件资产我们没有，需要自己造 | #72673、#72722、#74224、#74225、#72666 |
+| 脚本库函数进测试存储（`createBulletGraph` 等 5 个） | 测试存储里没有脚本库，这些函数在脚本里是 `undefined`，测不到 | #76850、#76851 |
+| 含更多 `onInit` / `onLoad` / 事件脚本的资产 | 现在只有 16 个 ONINIT、18 个 ONLOAD，没有 ONREFRESH；D5（触发顺序）和 D3 其余需要 | D5、D3 |
+| 覆盖 0 的脚本类的资产或脚本：`VSEGraphScriptable`、`DBScriptable`、`PreparedStatementScriptable`、`CallableStatementScriptable`、`ScalarCoercion` | §10 来源 C | §11 的 JaCoCo 清单 |
+| 可选，改现有资产：`ScriptAuto/Selection/Relation` 的 onInit 改到 onLoad；`Manual/OtherScript/scope3` 的列绑定表达式、`Manual/Selection/Selection_Calendar` 的列（总检里的已知警告） | 总检白名单里这三个是资产配置问题；改资产会动 PNG 基线，要先评估 | #81633（Relation）；总检的 `EXPECTED` |
 
 ## 附：原型代码
 
