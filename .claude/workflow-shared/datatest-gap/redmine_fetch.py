@@ -3,13 +3,14 @@
 Credentials are read from the environment only; nothing is printed or written about them:
     REDMINE_URL   e.g. https://issues.example.com   (no trailing path)
     REDMINE_KEY   a Redmine REST API key
+                  (REDMINE_API_KEY, the name the Redmine MCP config uses, is accepted too)
 
 Usage:
     python redmine_fetch.py --subject script --out issues.json
     python redmine_fetch.py --subject script --category-id 12 --out issues_vs.json
 
 Prints total_count reported by the server and how many were saved; if they differ it says so.
-NOT yet run against a live server (written from the Redmine REST API docs): check the first run's counts.
+Run against a live server on 2026-11-13 (mv): total_count matched the saved count; still check it on each run.
 """
 import argparse
 import json
