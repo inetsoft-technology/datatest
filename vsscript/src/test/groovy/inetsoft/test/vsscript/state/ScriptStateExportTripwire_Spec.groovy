@@ -97,8 +97,10 @@ class ScriptStateExportTripwire_Spec extends Specification {
          }
       }
 
-      def unexpected = failures.findAll { k, v -> !EXPECTED.keySet().any { k.startsWith(it) } || !EXPECTED.find { n, m -> k.startsWith(n) }.value.with { m -> v.contains(m) } }
-      def gone = EXPECTED.keySet().findAll { n -> !failures.keySet().any { it.startsWith(n) } }
+      // the failure keys are "<vs name> (<format>)", or the plain name when the open failed; match the vs name exactly (a name that merely starts with a listed one is not expected)
+      def vsOf = { String k -> k.replaceAll(/ \((EXCEL|PDF)\)$/, '') }
+      def unexpected = failures.findAll { k, v -> EXPECTED[vsOf(k)] == null || !v.contains(EXPECTED[vsOf(k)]) }
+      def gone = EXPECTED.keySet().findAll { n -> !failures.keySet().any { vsOf(it) == n } }
 
       then:
       unexpected == [:]

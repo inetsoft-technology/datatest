@@ -11,6 +11,9 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.core.MessageTestUtils
 import inetsoft.util.ConfigurationContext
+import inetsoft.report.composition.WorksheetEngine
+import inetsoft.uql.asset.Worksheet
+import inetsoft.util.Tool
 import inetsoft.web.viewsheet.controller.OnClickService
 import inetsoft.web.viewsheet.service.CoreLifecycleService
 import inetsoft.web.viewsheet.service.VSInputService
@@ -54,10 +57,28 @@ class ScriptStateWriteBack_Spec extends Specification {
       (0..<(t.eval("${table}.table.length") as int)).collect { t.eval("String(${table}.table[${it}])") as String }
    }
 
+   /** the worksheet of appendRows as XML, before a test writes to it (appendRow and setCellValue write the embedded table NullTable and save it) */
+   static String snapshot() {
+      def sw = new StringWriter()
+      def pw = new PrintWriter(sw)
+      new ScriptStateBase(APPEND).vs.getOriginalWorksheet().writeXML(pw)
+      pw.flush()
+      sw.toString()
+   }
+
+   /** put the worksheet back to a snapshot: the test home is shared with the other specs and with later runs */
+   static void restore(String xml) {
+      def t = new ScriptStateBase(APPEND)
+      def ws = new Worksheet()
+      ws.parseXML(Tool.parseXML(new ByteArrayInputStream(xml.getBytes('UTF-8'))).documentElement)
+      WorksheetEngine.getWorksheetService().getAssetRepository().setSheet(t.vs.getBaseEntry(), ws, t.principal, true)
+   }
+
    def 'appendRow_and_setCellValue_in_an_onClick_script_change_the_worksheet_and_are_saved'() {
       // appendRows: Submit2 runs appendRow("NullTable", [1, "aaa"]), setCellValue("NullTable", 1, 1, "setCellValue"), saveWorksheet()
       // (the screenshots of the manual case: a row 1,aaa is added, the string of the first row is setCellValue)
       given: 'the saved data already holds setCellValue from an earlier run (the zip was taken after a manual run), so blank the cell first'
+      def snap = snapshot()
       def clear = new ScriptStateBase(APPEND)
       clear.eval('setCellValue("NullTable", 1, 1, "")')
       clear.eval('saveWorksheet()')
@@ -78,11 +99,17 @@ class ScriptStateWriteBack_Spec extends Specification {
 
       and: 'saveWorksheet wrote it: a viewsheet opened afterwards sees the same'
       rows(new ScriptStateBase(APPEND), 'TableView1') == after
+
+      cleanup: 'the appended row and the cell stay in the shared test home otherwise'
+      if(snap != null) {
+         restore(snap)
+      }
    }
 
    def 'a_second_click_appends_again_not_replaces'() {
       // negative control for the case above: the row count follows the number of clicks
       given:
+      def snap = snapshot()
       def t = new ScriptStateBase(APPEND)
       def before = (rows(t, 'TableView1')).size()
 
@@ -92,6 +119,11 @@ class ScriptStateWriteBack_Spec extends Specification {
 
       then:
       rows(t, 'TableView1').size() == before + 2
+
+      cleanup: 'the two appended rows stay in the shared test home otherwise'
+      if(snap != null) {
+         restore(snap)
+      }
    }
 
    def 'applyChanges_and_saveWorksheet_save_a_form_table_edit_and_nothing_is_saved_before_the_click'() {
