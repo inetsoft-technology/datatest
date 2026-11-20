@@ -50,7 +50,7 @@ class Viewsheet_Spec extends Specification {
       vsScriptTest.printVS('format', TestData1, null)
       vsScriptTest.printVS('property', TestData2, null)
       then:
-      vsScriptTest.compareImage()
+      vsScriptTest.compareImage(['TestCase-VS_Base_format', 'TestCase-VS_Base_property'] as String[])
 
    }
 
@@ -67,7 +67,7 @@ class Viewsheet_Spec extends Specification {
       vsScriptTest = new VSScriptTest('1^128^__NULL__^ScriptAuto/VS_Self/VS_Baisc', caseName)
       vsScriptTest.printVS('self', TestData1, null)
       then:
-      vsScriptTest.compareImage()
+      vsScriptTest.compareImage(['TestCase-VS_Self_self'] as String[])
    }
 
    /**
@@ -86,7 +86,7 @@ class Viewsheet_Spec extends Specification {
       vsScriptTest.printVS('onInit', TestData1,null)
       vsScriptTest.printVS('onRefresh', TestData2, null)
       then:
-      vsScriptTest.compareImage()
+      vsScriptTest.compareImage(['TestCase-VS_embedded_onInit', 'TestCase-VS_embedded_onRefresh'] as String[])
    }
 
    static VSScriptTest vsScriptTest

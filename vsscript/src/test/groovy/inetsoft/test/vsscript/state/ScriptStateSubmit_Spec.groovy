@@ -120,7 +120,7 @@ class ScriptStateSubmit_Spec extends Specification {
 
    def 'Submit_script_alert_is_recorded_twice'() {
       // This is the COMPONENT script (Properties > Script), not the onClick script. Cause, from a probe that counted
-      // the alerts per submit (since removed, the numbers are in vsscript-upgrade-plan.md 5.7): the submit flow runs
+      // the alerts per submit (since removed, the numbers are in vsscript-upgrade-notes.md 5.7): the submit flow runs
       // the component scripts of the input assemblies once while the input values are applied (OnClickService,
       // processChange) and once more in the refresh. Same count for a script on an unrelated Slider (2 with
       // refreshAfterSubmit on, 1 off); a plain refresh runs it once. The Submit's own script runs twice even with

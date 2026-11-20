@@ -266,7 +266,7 @@ class ChartProperties_Spec extends Specification{
       vsScriptTest.printVS('LengendsProperty3', TestData3, ['Chart1'] as String[])
       then:
       vsScriptTest.compareImage(['TestCase-Chart_LengendsProperty_LengendsProperty1',
-                                 'TestCase-Chart_LengendsProperty_LengendsProperty1',
+                                 'TestCase-Chart_LengendsProperty_LengendsProperty2',
                                  'TestCase-Chart_LengendsProperty_LengendsProperty3',] as String[])
    }
 

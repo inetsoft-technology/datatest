@@ -1,6 +1,6 @@
 # vsscript：没被任何测试跑到的脚本方法（JaCoCo，2026-11-18）
 
-> 目的：用覆盖率找“还没人测”的脚本代码，作为补 Java 单测、补 datatest 的清单。放置规则见 [vsscript-upgrade-plan.md](vsscript-upgrade-plan.md) §1a：**能 Java 的就 Java**。本文件只列事实和建议，不是已做的工作。
+> 目的：用覆盖率找“还没人测”的脚本代码，作为补 Java 单测、补 datatest 的清单。放置规则见 [vsscript-upgrade-plan.md](vsscript-upgrade-plan.md) §2：**能 Java 的就 Java**。本文件只列事实和建议，不是已做的工作。
 
 ## 1. 做法和口径
 

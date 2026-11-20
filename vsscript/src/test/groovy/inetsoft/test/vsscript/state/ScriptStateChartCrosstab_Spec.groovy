@@ -9,7 +9,6 @@ import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import org.springframework.test.context.ContextConfiguration
 import spock.lang.Specification
-import spock.lang.Unroll
 
 /**
  * Spike 2: state assertions on a Crosstab and a Chart, reusing the assets of the existing PNG cases
@@ -26,25 +25,6 @@ import spock.lang.Unroll
 class ScriptStateChartCrosstab_Spec extends Specification {
    static final String CROSSTAB_VS = '1^128^__NULL__^ScriptAuto/Table/Table_Crosstab1'
    static final String CHART_VS = '1^128^__NULL__^ScriptAuto/Chart/ChartBandingInfo'
-
-   // Crosstab: property round trip (same properties the PNG case sets on Crosstab2)
-   @Unroll
-   def 'Crosstab_roundtrip_#prop'() {
-      given:
-      def t = new ScriptStateBase(CROSSTAB_VS)
-
-      when:
-      t.setScript('Crosstab2', "${prop} = ${literal}")
-
-      then:
-      t.eval("Crosstab2.${prop}") == expected
-
-      where:
-      prop           | literal           | expected
-      'titleVisible' | 'false'           | false
-      'wrapping'     | 'true'            | true
-      'tableStyle'   | '"ReverseHeader"' | 'ReverseHeader'
-   }
 
    // Crosstab: script reads data that the PNG case can only show by drawing it into a Text
    def 'Crosstab_data_readable'() {
@@ -100,23 +80,5 @@ class ScriptStateChartCrosstab_Spec extends Specification {
       xs as List == ['Region']
       ys as List == ['Paid']
       color == 'State'
-   }
-
-   // Chart: simple property
-   @Unroll
-   def 'Chart_roundtrip_#prop'() {
-      given:
-      def t = new ScriptStateBase(CHART_VS)
-
-      when:
-      t.setScript('Chart1', "${prop} = ${literal}")
-
-      then:
-      t.eval("Chart1.${prop}") == expected
-
-      where:
-      prop             | literal | expected
-      'titleVisible'   | 'false' | false
-      'tooltipVisible' | 'false' | false
    }
 }

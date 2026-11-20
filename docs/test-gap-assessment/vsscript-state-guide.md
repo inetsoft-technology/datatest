@@ -29,9 +29,9 @@
 ./mvnw test -pl vsscript -Dtest=ScriptStateSpike_Spec -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
 
 # 探路类（名字不带 _Spec，默认不会跑，需要显式指定）
-./mvnw test -pl vsscript -Dtest=ScriptStateProbe -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
+./mvnw test -pl vsscript -Dtest=ScriptStateHealthProbe -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false
 ```
-- 单个 spec 约 15 秒。`state/` 下 6 个断言型 spec（`*_Spec`）共 **44 个用例，没有 `@PendingFeature`**（2026-11-18 清理了与 Java 重复的 16 个，见方案 §1a）。**注意：** #81530 的 5 个回归用例需要含 `f0aad94be6` 的 `inetsoft-core`；本机 Maven 仓库里的 `inetsoft-core` jar 早于它时这 5 个会红，重新 `install` core 后 0 失败（2026-11-17，已用该提交覆盖验证）。
+- 单个 spec 约 15 秒。`state/` 下 6 个断言型 spec（`*_Spec`）共 **约 100 个用例（2026-11-20：101）**（2026-11-18 清理了与 Java 重复的 16 个，见方案 §1a）。**注意：** #81530 的 5 个回归用例需要含 `f0aad94be6` 的 `inetsoft-core`；本机 Maven 仓库里的 `inetsoft-core` jar 早于它时这 5 个会红，重新 `install` core 后 0 失败（2026-11-17，已用该提交覆盖验证）。
 - **探路类不带 `_Spec` 后缀，不属于测试套件。** `vsscript/pom.xml` 的 surefire 配置是 `<include>**/*_Spec</include>`，所以 `ScriptStateProbe`、`ScriptStateSubmitProbe` 不会被默认运行（它们只打印、不断言，放进套件只会虚增"绿"用例）。要看探路输出：显式 `-Dtest=ScriptStateProbe`，再 `grep PROBE`。
 - **CI：** 这些 spec **没有单独接入 CI**。默认 `./mvnw test -pl vsscript` 会连同旧的 `cases/` 一起跑 `*_Spec`；评估文档记录 GitHub 工作流里 vsscript 步骤是 `continue-on-error: true`，所以即使失败也不会让流水线变红。是否单独收紧见方案 §7。
 - **合并前自测：** `./mvnw package -pl commons -DskipTests`，再 `./mvnw test -pl vsscript -Dtest='ScriptState*_Spec'`。
@@ -67,11 +67,9 @@ CSV 按 `PACKAGE`/`CLASS` 汇总 `LINE_COVERED`/`LINE_MISSED` 即可。结果与
 | `support/RecordingDispatcher.groovy` | 记录所有 `sendCommand` 的 `CommandDispatcher`（commons 里的 `MessageTestUtils` 那个是 no-op，没改它） |
 | `support/LogRecorder.groovy` | 记录产品的 WARN / ERROR 日志事件（`LogRecorder.events()`、`clear()`、`bound()`）。vsscript 的测试 classpath 上只有 slf4j-api 1.7 而没有绑定，产品的日志全被丢弃；`src/test/groovy/org/slf4j/impl/StaticLoggerBinder.groovy` 是 slf4j 1.7 的绑定，把日志路由到它（**这个文件在三个目录之外**，因为包名必须是 `org.slf4j.impl`）。没有加任何依赖 |
 | `state/ScriptStateRefreshTripwire_Spec.groovy` | **被吞错误总检**：对测试存储里全部 vs（130 个）走真实打开 + 真实刷新，同时记录命令（`MessageCommand`）、线程的用户消息、WARN/ERROR 日志；出现白名单（`EXPECTED` / `OPTIONAL`）之外的事件，或白名单里的条目不再出现，都失败（白名单只能缩小）。已知 7 个 vs 有条目（脚本自己的 `alert`、`pviewsheet` 误报、两个资产配置警告、`Relation` 的 #81633），1 个可选（`ShapseApply` 缺形状图片）。用 `-Dtripwire.print=true` 打印当前全部事件，方便更新白名单 |
-| `state/ScriptStateSpike_Spec.groovy` | 6 类方案各一个最小例子：状态断言、属性往返、差分、全局函数、点击+alert、PDF 导出 |
-| `state/ScriptStateChartCrosstab_Spec.groovy` | Crosstab 与 Chart 的读回例子 |
-| `probe/ScriptStateProbe.groovy` | **探路（不是测试套件）**：脚本异常、差分、EGraph、格式对象、属性枚举、Excel；只打印 `PROBE ...`，需 `-Dtest=ScriptStateProbe` 显式运行 |
+| `state/ScriptStateSpike_Spec.groovy` | 冒烟：脚本值读回、点击 + alert（属性往返、差分、全局函数、PDF 文本已于 2026-11-20 删除，Java 单测和 `ScriptStateExportContent_Spec` 覆盖） |
+| `state/ScriptStateChartCrosstab_Spec.groovy` | Crosstab 数据读回、脚本写 Text、Chart bindingInfo（属性往返已于 2026-11-20 删除，Java 的 `ScriptPropertyRoundTripTest` 覆盖） |
 | `state/ScriptStateSubmit_Spec.groovy` | Submit 组件（8 个用例，含 onClick 只执行一次）：`refreshAfterSubmit` 往返、提交应用输入值、对照用例、Submit 脚本能读到刚提交的值、`alert` 录到 2 次（已固定条数） |
-| `probe/ScriptStateSubmitProbe.groovy` | **探路（不是测试套件）**：Submit 资产结构、`VSInputService` 依赖、读入口，只打印 |
 | `state/ScriptStateKnownBugs_Spec.groovy` | 已修复的 Chart/Crosstab 脚本 bug 在真实资产上的回归：#80708/#80709（Chart 与 Crosstab 两半，#81530）、#80711，共 10 个用例。#81531、#81534、#81540、#81550 的用例（三件套：对照、\[bug present\]、`@PendingFeature`）已在 2026-11-18 删除：修复已合并并带了 Java 测试（`VSChartBindingScriptableTest`、`ChartConstantsScopeTest`、`AxisScriptableTest`、`RangeOutputVSAssemblyInfoTest`），core 含修复后这些用例会变红。**仍未修的 bug 如果只有真实 vs 才能显示，仍可用三件套的写法** |
 | `state/ScriptStateChartScriptFixes_Spec.groovy` | 已在 stylebi 修好的 Chart 脚本 bug 的端到端回归（5 个用例）：#81032 的箱线图边框色（取真实 `VGraph` 绘制并数像素）、`y2Axis` 不泄漏到主度量 |
 | `probe/ScriptStateHealthProbe.groovy` | **探路**：D1，对 130 个 vs 的所有脚本直接执行并统计 `ScriptException`（`-Dprobe.offset/limit` 可分段）。共用工具 `ScriptStateBase.viewsheetIds()` / `paint()` 在基类里 |

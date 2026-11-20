@@ -1,7 +1,7 @@
 # VSScript 手工用例自动化
 
 来源：`docs/vsscript/VSScript-Manual-Case.xlsx`，实际共 56 个手工用例（Component 34、OtherScript 22；表头 OverView 写的 32 和 22 与实际不符）。资产都在 `vsscriptStorage.zip` 的 `Manual/` 下，不需要新资产。
-自动化落点：`vsscript/src/test/groovy/.../state/ScriptStateManual_Spec.groovy`（55 个用例）。三个数字的关系：手工用例 56 个；其中 40 个有了自动用例（含"部分"，见汇总）；这 40 个手工用例对应 55 个自动用例，因为一个手工用例常拆成几个断言型用例（如 `Viewsheet3` 的 4 个资产各一个，`ScopePara4` 有参数、无参数各一个）。用 `ScriptStateBase` 在进程内打开运行时 viewsheet，读脚本写进组件的状态，不出 PNG、不开浏览器。
+自动化落点：`vsscript/src/test/groovy/.../state/ScriptStateManual_Spec.groovy`（55 个用例）。三个数字的关系：手工用例 56 个；其中 42 个有了自动用例（含"部分"，见汇总）；这 42 个手工用例对应 58 个自动用例（`ScriptStateManual_Spec` 55 个，`ScriptStateWriteBack_Spec` 3 个），因为一个手工用例常拆成几个断言型用例（如 `Viewsheet3` 的 4 个资产各一个，`ScopePara4` 有参数、无参数各一个）。用 `ScriptStateBase` 在进程内打开运行时 viewsheet，读脚本写进组件的状态，不出 PNG、不开浏览器。
 
 ## 方法
 
@@ -76,7 +76,7 @@
 | Confirm | OtherScript/sConfirm | 已做 | 点 Submit 弹确认；Yes 后列表禁用、radio 隐藏；No 不变 |
 | Event | OtherScript/sEvent | 已做（部分） | onInit 排序；`event` 对象要经事件触发，没做 |
 | pviewsheet | OtherScript/pViewsheet | B | 父子视图表要先打开链接 |
-| saveworksheet / appendRow | OtherScript/saveworksheet、appendRows | 手工 | 会改工作表数据 |
+| saveworksheet / appendRow | OtherScript/saveworksheet、appendRows | 已做 | `ScriptStateWriteBack_Spec`：Submit2 的 `appendRow` 加一行 `1,aaa` 并 `setCellValue`，保存后重新打开仍在；表单表改格子（`NY` 到 `NY1`）点 Submit1 才保存，点之前另一个会话看到的还是原值；末尾还原 |
 | scriptAction | 新建 chart | Java 单测 | `graph.script.action.support` 建议放 core 单测 |
 | parameterScript | OtherScript/Script_Order_OneWay4 | 已做 | 带参数 `state=NK,NY,NJ` 打开 |
 
@@ -84,15 +84,15 @@
 
 | 状态 | Component | OtherScript | 合计 |
 |---|---|---|---|
-| 已做（含部分） | 26 | 14 | 40 |
+| 已做（含部分） | 26 | 16 | 42 |
 | 已覆盖 | 2 | 1 | 3 |
 | B（未做） | 1 | 4 | 5 |
 | C（未做） | 2 | 0 | 2 |
-| 保留手工 | 3 | 2 | 5 |
+| 保留手工 | 3 | 0 | 3 |
 | Java 单测 | 0 | 1 | 1 |
 | 合计 | 34 | 22 | 56 |
 
-剩下的 B、C 价值不高，决定不做（2026-11-19）。
+剩下的 B、C 价值不高，决定不做（2026-11-19）；保留手工的 3 个是上传、邮件定时任务、图片弹出组件（视觉和外部依赖）。
 
 ## 验证
 
@@ -115,6 +115,10 @@
   - 未做变异：`ScopePara2`、`ScopePara4`、`ScriptOrderOneWay1`、`ScriptOrder4`、`SEvent`（读脚本引擎和参数，不是属性表映射）。
 - **真实服务：**在隔离的企业版容器里（镜像 2026-11-18，`vsscriptStorage.zip` 还原存储，验证后已删除）确认了两处，都与手工截图一致：`ScopePara1` 点参数对话框 OK 后的文本；`Gauge_Actions` 悬停一个点后 Gauge 变 120、图表标题 `Filter: state = CA, 2000-01-01 00:00:00.0`。
 - **新 main：**用 origin/main 14baf5fe27 的 core 重跑，`state/` 下 99 个用例全部通过；`cases/` 下旧的 PNG 比对 114/115 因像素差异失败，与之前一致（本机渲染环境，CI 里该步骤 `continue-on-error`）。
+
+### 写回类（`ScriptStateWriteBack_Spec`，2026-11-20）
+
+`appendRow`、`setCellValue`、`applyChanges`、`saveWorksheet`（D8 的代表）。写入落在测试 home 的存储里（`vsscript/target/test-resources/server/config-vsscript`），**这个目录只在不存在时才从 `vsscriptStorage.zip` 还原**，所以用例对"打开时的状态"做相对断言，并把改过的格子还原；`appendRow` 加的行在本机 home 里会留下，删掉该目录即可重新从 zip 开始（干净检出和 CI 总是如此）。zip 本身是手工跑过之后的状态（`NullTable` 已有 `setCellValue` 和 `1,aaa`），所以第一个用例先把格子清空再点，否则 `setCellValue` 的断言不起作用。变异验证：`saveWorksheet` 不落盘，3 个用例全红；`appendRow` 不写单元格值、`setCellValue` 不写格子，各让第一个用例变红；`appendRow` 去掉 `insertRow` 是等价变异（`setObject` 写到末尾行会自动扩行），没有变红。
 
 ## 结论
 
