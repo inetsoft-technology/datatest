@@ -69,8 +69,8 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 
 **比对清单的修正（G1）：** `ChartProperties_Spec` 的 LengendsProperty 用例把 `LengendsProperty1` 写了两遍，`LengendsProperty2` 导出了、基线也在，却从不被比，已改成比 `LengendsProperty2`；`Viewsheet_Spec` 三个用例用无参 `compareImage()`（比“实际导出了什么”，某张丢失不会被发现），已改成点名。本机无法核对基线，第一次 CI 跑到时 `LengendsProperty2` 如果变红，先怀疑基线。
 
-**没有任何用例引用的基线（8 张，未删除）**，是用例改名或删除后留下的，是否删由有 CI 基线的人决定（可由 git 恢复）：
-`cases/Chart/ChartBindingInfo_Spec/TestCase-BandingField_Chartmap.png`、`cases/Chart/ChartProperties_Spec/TestCase-Chart_barCornerRadius_barCornerRadius1/2/3.png`、`…/TestCase-FillBlank_fillTimeGap.png`、`cases/Form_Spec/TestCase_RCB_binding_script1.png`、`cases/Others_Spec/TestCase-Tab_bottomTabs.png`、`cases/Viewsheet_Spec/TestCase-VS_embedded_VS.png`。
+**没有任何用例引用的基线（8 张，2026-11-20 已删除，评审建议；可由 git 恢复）**，是用例改名或删除后留下的：
+`cases/Chart/ChartBindingInfo_Spec/TestCase-BandingField_Chartmap.png`、`cases/Chart/ChartProperties_Spec/TestCase-Chart_barCornerRadius_barCornerRadius1/2/3.png`、`…/TestCase-FillBlank_fillTimeGap.png`（现用的是 `TestCase-Chart_FillBlank_fillTimeGap`）、`cases/Form_Spec/TestCase_RCB_binding_script1.png`、`cases/Others_Spec/TestCase-Tab_bottomTabs.png`、`cases/Viewsheet_Spec/TestCase-VS_embedded_VS.png`。基线现为 238 张，每张都被比对清单点名。
 
 ## 5. TODO：需要新资产的内容（暂不做）
 
