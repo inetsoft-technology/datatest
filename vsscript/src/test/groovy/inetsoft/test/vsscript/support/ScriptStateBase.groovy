@@ -31,12 +31,13 @@ class ScriptStateBase {
    RuntimeViewsheetResource res
    RuntimeViewsheet rvs
 
-   ScriptStateBase(String assetId) {
+   /** @param parameters the viewsheet parameters of the open request (the URL query), or null */
+   ScriptStateBase(String assetId, Map<String, String[]> parameters = null) {
       DatatestSpringRuntimeInitializer.ensureInitialized(System.getProperty('sree.home', '.'))
       DataSpace.getDataSpace()
       principal = TUtil.createPrincipal('admin', ['Everyone', 'Administrator'] as String[], new String[0])
       ThreadContext.setContextPrincipal(principal)
-      res = new RuntimeViewsheetResource(new ActionEventsUtil().createOpenViewsheetEvent(null, assetId))
+      res = new RuntimeViewsheetResource(new ActionEventsUtil().createOpenViewsheetEvent(parameters, assetId))
       res.initRuntimeVS(principal)
       rvs = res.getRuntimeViewsheet(principal)
    }
