@@ -1,0 +1,6 @@
+{
+  "env": {
+    "REDMINE_URL": "https://issues.inetsoft.com",
+    "REDMINE_KEY": "<your own Redmine REST API key>"
+  }
+}

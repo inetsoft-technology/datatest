@@ -37,9 +37,14 @@ def main():
     ap.add_argument('--out', required=True)
     ap.add_argument('--page', type=int, default=100)
     a = ap.parse_args()
-    base, key = os.environ.get('REDMINE_URL'), os.environ.get('REDMINE_KEY')
+    # REDMINE_API_KEY is the name the Redmine MCP server config uses; accept it too
+    base = os.environ.get('REDMINE_URL')
+    key = os.environ.get('REDMINE_KEY') or os.environ.get('REDMINE_API_KEY')
     if not base or not key:
-        sys.exit('set REDMINE_URL and REDMINE_KEY in the environment')
+        sys.exit('REDMINE_URL and REDMINE_KEY (or REDMINE_API_KEY) are not set. '
+                 'Copy .claude/settings.local.json.example to .claude/settings.local.json, '
+                 'fill in your own values and restart Claude Code, or export them in the shell. '
+                 'See .claude/workflow-shared/datatest-gap/README.md (section "不用 MCP，用脚本取 Redmine").')
     params = {'status_id': '*', 'limit': a.page, 'sort': 'id:asc'}  # id order: stable under paging
     if a.subject:
         params['subject'] = '~' + a.subject

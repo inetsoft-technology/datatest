@@ -61,6 +61,16 @@
 | 方法名关键词当作测试质量 | 只写"没看到"；读过测试内容后才能写"没有" |
 | 用静态结果下"一定缩小了数据范围"之类的结论（书签可能只存选中项） | 静态无法判断的，明说无法判断 |
 
+## 不用 MCP，用脚本取 Redmine
+
+步骤 3b-D 优先用 `redmine_fetch.py`（翻页到 `total_count`，不经过对话）。每个人用自己的密钥，密钥不入库：
+
+1. 在 Redmine 网页右上角"我的账号"，右侧"API 访问密钥"点"显示"，复制密钥。
+2. 把 `.claude/settings.local.json.example` 复制成 `.claude/settings.local.json`，填上自己的 `REDMINE_KEY`（`REDMINE_URL` 已是 `https://issues.inetsoft.com`）。这个文件已被 `.gitignore` 忽略，不要提交。重启 Claude Code 后生效。不想建文件也可以在启动 claude 的终端里先设环境变量（PowerShell：`$env:REDMINE_URL='...'; $env:REDMINE_KEY='...'`）。
+3. 验证：`python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject crosstab --out issues.json`，看打印的 `total_count` 与保存条数是否一致。
+
+变量名：脚本读 `REDMINE_KEY`，也认 `REDMINE_API_KEY`（Redmine MCP 服务配置里用的名字）。系统代理报 SSL 错误时，把 `NO_PROXY` 设成包含 `issues.inetsoft.com`。没有变量时才退到 `mcp__redmine__getIssues` 翻页（要写明"只取了前 N 条"之类的口径）。
+
 ## 本机环境注意事项（踩过的坑）
 
 - 读大文件时 context-mode 会把 `Read` 换成索引搜索：用 `offset`/`limit`，或 `Bash` 的 `sed -n`，或 `ctx_execute` 只打印结论。

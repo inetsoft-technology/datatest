@@ -119,3 +119,6 @@ generated-test-sources/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Local Claude Code settings (may hold personal Redmine key)
+.claude/settings.local.json
