@@ -17,7 +17,7 @@ import spock.lang.Specification
  * inetsoft-core that contains community f0aad94be6; on an older jar they fail.
  *
  * The cases of the other bugs found by the same sweep were removed on 2026-11-18, when their fixes were merged with Java
- * tests (placement rule of vsscript-upgrade-plan.md section 1a): #81531 (VSChartBindingScriptableTest), #81534
+ * tests (placement rule of vsscript-upgrade-plan.md section 2): #81531 (VSChartBindingScriptableTest), #81534
  * (ChartConstantsScopeTest), #81540 (AxisScriptableTest) and #81550 (RangeOutputVSAssemblyInfoTest). The pattern they
  * used, for a bug that is still open and that only a real viewsheet can show: a control on the working path, a
  * "[bug present]" case that asserts the exact failure seen today (it turns red when the bug is fixed), and a

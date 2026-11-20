@@ -16,6 +16,7 @@ import inetsoft.util.ConfigurationContext
 import inetsoft.report.composition.ChangedAssemblyList
 import inetsoft.test.core.MessageTestUtils
 import inetsoft.web.viewsheet.service.CoreLifecycleService
+import inetsoft.web.viewsheet.service.ExportResponse
 import java.awt.image.BufferedImage
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.TimeUnit
@@ -55,6 +56,19 @@ class ScriptStateBase {
    void setOnInit(String script) {
       vs.getViewsheetInfo().setOnInit(script)
       res.refreshViewsheet(principal)
+   }
+
+   /**
+    * export the viewsheet through the real export service (the one the viewer uses) into a temporary file
+    * @param format a FileFormatInfo.EXPORT_TYPE_* value
+    * @return the file; the caller deletes it
+    */
+   File exportFile(int format, String suffix) {
+      def file = File.createTempFile('vsscript-export', suffix)
+      file.withOutputStream { out ->
+         res.exportVS(format, true, false, false, false, false, ['(Home)'] as String[], false, false, null, new ExportResponse(out), principal)
+      }
+      file
    }
 
    ViewsheetScope getScope() { rvs.getViewsheetSandbox().get().getScope() }
