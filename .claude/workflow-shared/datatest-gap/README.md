@@ -11,7 +11,7 @@
 | `ws_scan.py` | 扫描 backup zip 里的 worksheet：`inventory <zip> [<Spec.groovy>...]`（查询类型 × 处理步骤矩阵、运算符、条件、聚合、表达式 SQL/脚本、数据源；传入 spec 时只统计 CI 实际运行的可见表）；`crosscheck <zip> <baseline-root> <Spec.groovy>...`（未运行的 worksheet、用例的 worksheet 不在 zip、可见表与基线文件对照）；`capability <zip> <Spec.groovy>...`（按产品能力清单统计使用次数，全部 worksheet 与 CI 范围各一列，零覆盖项标出；清单写死在脚本里，产品变了要重读源码）；`flagcheck <zip>`（把 `inventory` 读到的用户设置节点与 `assemblyInfo` 上的派生标志逐表对照）；`dbmatrix <zip> <sqlhelper.xml> <Spec.groovy>...`（从产品的 `sqlhelper.xml` 读出各库支持的 SQL 操作、聚合函数名、日期函数，再统计 CI 范围的场景落在哪些库上；数据源的库类型取自 JDBC 地址）。属性默认值已按产品源码核对 | 在 ws 上运行；执行路径（是否下推 SQL）只是静态信号；`crosscheck` 只认字面量的 `executeWS` |
 | `mv_vs_scan.py` | `[<repo-root>]`：对 `mv/.../mvStorage.zip` 的 viewsheet 按 MV 相关的组件和选项做静态扫描（`viewsheetInfo` 的 `full`/`associationEnabled`/`bypass`/`mvOnDemand`/`meta`、时间滑块的单值和复合、日历、选择组件的度量、图表和交叉表的日期级别/百分比/排名、不可合并公式、列表输入和标量绑定、计算字段的 `@nomv`/`parameter.`），再与 mv 各 spec 字面量引用的 viewsheet 求交，按 profile 分开；末尾另统计书签状态（选择、画刷、缩放、钻取、adhoc）；复用 `vs_backup_scan.load`、`load_bookmarks` | 在 mvStorage.zip 上运行，XML 节点名对照真实 XML 核对过；只是静态存在与否，不代表用例断言了这条规则；spec 里 id 不是字面量的 viewsheet 会显示成未引用；`rangeType` 的数字含义没有解码 |
 | `vsscript_scan.py` | vsscript 专用静态扫描：`cases`（用例/脚本/处理组件）、`zip`、`api`（产品 `*VSAScriptable` 的 `addProperty` 清单）、`usage`、`zero`、`declzero`（脚本属性零命中） | 只在 vsscript 上运行；只认 `printVS` 写法；文本命中是上限，不含 Chart 的 EGraph 脚本对象 |
-| `redmine_fetch.py` | 用 Redmine REST API 按条件取 issue，翻页到 `total_count`，存精简 JSON；账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读 | 在真实服务器上运行过一次（2026-11-13，mv：`--subject MV`、`materializ`、`incremental`，`total_count` 与取回数一致）；没有时间范围过滤，取回后按 `created_on` 过滤；注意：Redmine MCP 服务的配置里这个密钥叫 `REDMINE_API_KEY`，本脚本读的是 `REDMINE_KEY`；系统代理可能让请求报 SSL 错误，需要把 `NO_PROXY` 设成包含服务器地址 |
+| `redmine_fetch.py` | 用 Redmine REST API 按条件取 issue，翻页到 `total_count`，存精简 JSON；账号从环境变量 `REDMINE_URL`、`REDMINE_KEY` 读（也认 `REDMINE_API_KEY`） | 在真实服务器上运行过一次（2026-11-13，mv：`--subject MV`、`materializ`、`incremental`，`total_count` 与取回数一致）；没有时间范围过滤，取回后按 `created_on` 过滤；注意：Redmine MCP 服务的配置里这个密钥叫 `REDMINE_API_KEY`，本脚本两个名字都认（优先 `REDMINE_KEY`）；系统代理可能让请求报 SSL 错误，需要把 `NO_PROXY` 设成包含服务器地址 |
 | `bug_classify.py` | 按标题关键词把 bug 粗分根因类别（步骤 3b-D），去掉编辑器 UI、Report 脚本、AI 插件等噪声 | 规则写给 vsscript 脚本类 bug；抽样约三分之二相关，数字是上限；换模块要改规则 |
 | `mv_bug_classify.py` | MV 用：按标题关键词把 MV 相关 bug 粗分 13 个根因类别（`--since` 限定时间，去掉 AI 插件、EM 界面、标题里的 MV 不是这个功能的噪声），并对照 `--datatest`、`--product` 目录里是否提到 bug 编号；`--sample N` 每类随机抽 N 条，用来人工核对分类 | 在 mv 近一年的 165 条上运行；抽样 81 条读了描述，约 88% 分对（规则调整后），类的数量只能当大致数字；"提到编号"不等于断言了这个行为；规则写给 2025-11 到 2026-11 的 2.1.0 bug，换时间段要重看 |
 | `module-template.md` | 产出文件的骨架 | vscalc 已按它写成样例 |
@@ -60,6 +60,16 @@
 | 粗脚本与精确口径不一致（统计所有 `ExpressionRef` 与只统计 `allcalc` 定义） | 文件里引用的数字必须来自脚本输出；换口径要重跑 |
 | 方法名关键词当作测试质量 | 只写"没看到"；读过测试内容后才能写"没有" |
 | 用静态结果下"一定缩小了数据范围"之类的结论（书签可能只存选中项） | 静态无法判断的，明说无法判断 |
+
+## 不用 MCP，用脚本取 Redmine
+
+步骤 3b-D 优先用 `redmine_fetch.py`（翻页到 `total_count`，不经过对话）。每个人用自己的密钥，密钥不入库：
+
+1. 在 Redmine 网页右上角"我的账号"，右侧"API 访问密钥"点"显示"，复制密钥。
+2. 把 `.claude/settings.local.json.example` 复制成 `.claude/settings.local.json`，填上自己的 `REDMINE_KEY`（`REDMINE_URL` 已是 `https://issues.inetsoft.com`）。这个文件已被 `.gitignore` 忽略，不要提交。重启 Claude Code 后生效。不想建文件也可以在启动 claude 的终端里先设环境变量（PowerShell：`$env:REDMINE_URL='...'; $env:REDMINE_KEY='...'`）。
+3. 验证：`python .claude/workflow-shared/datatest-gap/redmine_fetch.py --subject crosstab --out issues.json`，看打印的 `total_count` 与保存条数是否一致。
+
+变量名：脚本读 `REDMINE_KEY`，也认 `REDMINE_API_KEY`（Redmine MCP 服务配置里用的名字）。系统代理报 SSL 错误时，把 `NO_PROXY` 设成包含 `issues.inetsoft.com`。没有变量时才退到 `mcp__redmine__getIssues` 翻页（要写明"只取了前 N 条"之类的口径）。
 
 ## 本机环境注意事项（踩过的坑）
 
