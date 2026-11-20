@@ -1,7 +1,7 @@
 # VSScript 手工用例自动化
 
 来源：`docs/vsscript/VSScript-Manual-Case.xlsx`，实际共 56 个手工用例（Component 34、OtherScript 22；表头 OverView 写的 32 和 22 与实际不符）。资产都在 `vsscriptStorage.zip` 的 `Manual/` 下，不需要新资产。
-自动化落点：`vsscript/src/test/groovy/.../state/ScriptStateManual_Spec.groovy`（55 个用例）。用 `ScriptStateBase` 在进程内打开运行时 viewsheet，读脚本写进组件的状态，不出 PNG、不开浏览器。
+自动化落点：`vsscript/src/test/groovy/.../state/ScriptStateManual_Spec.groovy`（55 个用例）。三个数字的关系：手工用例 56 个；其中 40 个有了自动用例（含"部分"，见汇总）；这 40 个手工用例对应 55 个自动用例，因为一个手工用例常拆成几个断言型用例（如 `Viewsheet3` 的 4 个资产各一个，`ScopePara4` 有参数、无参数各一个）。用 `ScriptStateBase` 在进程内打开运行时 viewsheet，读脚本写进组件的状态，不出 PNG、不开浏览器。
 
 ## 方法
 

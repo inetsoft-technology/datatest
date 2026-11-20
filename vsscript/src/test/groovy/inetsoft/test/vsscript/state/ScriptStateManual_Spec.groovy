@@ -44,11 +44,6 @@ import spock.lang.Specification
 class ScriptStateManual_Spec extends Specification {
    static String id(String path) { "1^128^__NULL__^Manual/${path}" }
 
-   /**
-    * The assembly info the script wrote to. A property that is read back through the script scope only is not
-    * enough: a property that is missing from the scriptable still reads back what the script assigned (it becomes a
-    * plain JavaScript field), as the mutation check of the tip view showed.
-    */
    /** OnClickService with a real VSInputService; the editor-only dependencies of VSInputService are null (as in ScriptStateSubmit_Spec) */
    static OnClickService clickService() {
       def ctx = ConfigurationContext.getContext()
@@ -128,6 +123,11 @@ class ScriptStateManual_Spec extends Specification {
       rec
    }
 
+   /**
+    * The assembly info the script wrote to. A property that is read back through the script scope only is not
+    * enough: a property that is missing from the scriptable still reads back what the script assigned (it becomes a
+    * plain JavaScript field), as the mutation check of the tip view showed.
+    */
    static Object model(ScriptStateBase t, String assembly) { t.vs.getAssembly(assembly).getVSAssemblyInfo() }
 
    // ---- Viewsheet ----
@@ -175,13 +175,14 @@ class ScriptStateManual_Spec extends Specification {
       t.eval('Text1.value') == 'testaaa'
    }
 
-   def 'ScopePara4_without_the_parameter_is_empty_text'() {
-      // negative control for the case above
+   def 'ScopePara4_without_the_parameter_leaves_the_default_text'() {
+      // negative control for the case above: parameter.myPara is undefined, so the script does not change Text1 and
+      // it keeps the text it was saved with
       given:
       def t = new ScriptStateBase(id('OtherScript/scopePara4'))
 
       expect:
-      t.eval('Text1.value') != 'testaaa'
+      t.eval('Text1.value') == 'text'
    }
 
    // ---- Script scope: order and relations ----
