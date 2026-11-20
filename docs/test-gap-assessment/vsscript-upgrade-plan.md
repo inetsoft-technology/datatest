@@ -1,8 +1,8 @@
 # vsscript 测试升级方案（现状版）
 
 > 更新：2026-11-20　模块：`vsscript`　Redmine：Test Case #81430
-> 本页只放：目标和放置规则、方向的完成情况、验收、TODO。原始方案、验证数据、变异清单、JaCoCo 结果在 `vsscript-upgrade-notes.md`（归档，本页的 §x 指向它的同号章节）。
-> 怎么跑、代码结构、写用例的配方：`vsscript-state-guide.md`。手工用例自动化：`vsscript-manual-automation.md`。旧 PNG 用例的处置：`vsscript-png-disposition.md`。
+> 本页只放：目标和放置规则、方向的完成情况、验收、TODO。原始方案、验证数据、变异清单、JaCoCo 结果是本文件的上一版：`git show 5487b4c0:docs/test-gap-assessment/vsscript-upgrade-plan.md`（本页的“旧版 §x”指它）。
+> 怎么跑、代码结构、写用例的配方：`vsscript-state-guide.md`。手工用例自动化：`vsscript-manual-automation.md`。
 
 ## 1. 为什么、做什么
 
@@ -22,13 +22,13 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 
 | # | 方向 | 状态 | 落点 |
 |---|---|---|---|
-| D1 | 脚本健康检查（130 个 vs、213 段脚本直接执行） | **完成**：0 个真实脚本错误，3 个误报 | 探针 `ScriptStateHealthProbe`；结果 notes §5.1 |
+| D1 | 脚本健康检查（130 个 vs、213 段脚本直接执行） | **完成**：0 个真实脚本错误，3 个误报 | 探针 `ScriptStateHealthProbe`；结果旧版 §5.1 |
 | D2 | 异常契约（刷新吞异常 / 直接执行抛 / 点击抛） | **等开发**确认语义；#81796 用例先把现状固定住 | `ScriptStateExportTripwire_Spec`、`ScriptStateKnownBugs_Spec` |
 | D3 | 事件端到端（Submit、confirm、parameter、点击、输入、选择、flyover） | **完成**；嵌套 vs 的 `onClick` 需新资产 | `ScriptStateSubmit_Spec`、`ScriptStateManual_Spec` |
 | D4 | 旧 PNG 用例改状态断言 | **放弃**（收益低，2026-11-18） | — |
 | D5 | 触发顺序（ONINIT / ONLOAD / ONREFRESH） | 未做：现有资产没有 ONREFRESH，需新资产 | §5 TODO |
 | D6 | 差分 | **完成**，以“和 13.8 对比”的形式（找 bug 最多的方法） | 本地 `diff13/`（含机器路径，不提交） |
-| D7 | 导出一致性 | **完成**：导出不报错总检；脚本值进 Excel / PDF；8 个 Table / Freehand 的整行与状态一致 | `ScriptStateExportTripwire_Spec`、`ScriptStateExportContent_Spec`；notes §5.11、§5.12 |
+| D7 | 导出一致性 | **完成**：导出不报错总检；脚本值进 Excel / PDF；8 个 Table / Freehand 的整行与状态一致 | `ScriptStateExportTripwire_Spec`、`ScriptStateExportContent_Spec`；本表 |
 | D8 | 数据函数端到端（写回） | **完成**：`appendRow`、`setCellValue`、`applyChanges`、`saveWorksheet` | `ScriptStateWriteBack_Spec` |
 | D9 | 渲染用例迁到 `render/` | **放弃**（2026-11-18） | — |
 
@@ -42,17 +42,35 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 
 **找到的问题：** 这个单子下共提 29 个（从 #81530 到 #81889、#81929、#81930，清单见 Redmine #81430 的评论）。大多数来自和 13.8 的差分和端口缺口扫描；D1、PNG 转换、手工用例自动化这三条线没有发现产品缺陷（价值是回归保护）。修复 PR 都带了 Java 测试，回归测试放在 Java。
 
-**验收标准（notes §9）：**
+**验收标准（旧版 §9）：**
 
 | 标准 | 状态 |
 |---|---|
 | `state/` 用例在本机和 CI 结果一致 | **未验证**：CI 还没有跑到测试（“Ensure DB server” 一步 gcloud 权限报错），Linux 上的 PDF 和像素用例不知道 |
-| 每个新用例“故意改坏产品后变红” | **基本满足**，例外：#81534 的用例、`Submit_without_values_changes_nothing`、Freehand 的导出页面、PDF 值一致；方法是编译改过的类放进 `vsscript/target/test-classes`（notes §5.9） |
+| 每个新用例“故意改坏产品后变红” | **基本满足**，例外：#81534 的用例、`Submit_without_values_changes_nothing`、Freehand 的导出页面、PDF 值一致；方法是编译改过的类放进 `vsscript/target/test-classes`（旧版 §5.9） |
 | D1 产出异常数量和误报清单 | 完成 |
 | 脚本报错、点击 warning 至少各有一个稳定用例 | 完成 |
-| 旧 PNG 用例有逐个处置记录 | 完成：`vsscript-png-disposition.md`（全部保留，没有删除；比对清单的 G1 问题已修） |
+| 旧 PNG 用例有处置记录 | 完成：见 §4a（全部保留，没有删除；比对清单的 G1 问题已修） |
 
 **待决定：** state/ 是否收紧 CI 的 `continue-on-error`（要等 CI 先跑到）；报告步骤是否保留 `fail-on-error: false`。
+
+## 4a. 旧 PNG 用例的处置（`cases/`，D4、D9 放弃，2026-11-20）
+
+**处置：全部保留，没有删除、没有改动用例本身**；它们继续做渲染回归（像素），脚本效果的状态断言见 §3。本机 114/115 失败（渲染环境），以 CI 基线为准，CI 还没跑到。每个 spec 的用例数（共 115）：
+
+| spec | 用例 | spec | 用例 | spec | 用例 |
+|---|---|---|---|---|---|
+| Bugs_Spec | 5 | Form_Spec | 5 | Selection_Spec | 17 |
+| ChartBindingInfo_Spec | 13 | Others_Spec | 6 | Table_Spec | 13 |
+| ChartProperties_Spec | 16 | OutPut_Spec | 3 | Viewsheet_Spec | 3 |
+| Egraph_Spec | 28 | ScriptEngine_Spec | 6 | | |
+
+全部 130 个 vs（包括这些用例用到的）还各被刷新总检和导出总检覆盖。
+
+**比对清单的修正（G1）：** `ChartProperties_Spec` 的 LengendsProperty 用例把 `LengendsProperty1` 写了两遍，`LengendsProperty2` 导出了、基线也在，却从不被比，已改成比 `LengendsProperty2`；`Viewsheet_Spec` 三个用例用无参 `compareImage()`（比“实际导出了什么”，某张丢失不会被发现），已改成点名。本机无法核对基线，第一次 CI 跑到时 `LengendsProperty2` 如果变红，先怀疑基线。
+
+**没有任何用例引用的基线（8 张，未删除）**，是用例改名或删除后留下的，是否删由有 CI 基线的人决定（可由 git 恢复）：
+`cases/Chart/ChartBindingInfo_Spec/TestCase-BandingField_Chartmap.png`、`cases/Chart/ChartProperties_Spec/TestCase-Chart_barCornerRadius_barCornerRadius1/2/3.png`、`…/TestCase-FillBlank_fillTimeGap.png`、`cases/Form_Spec/TestCase_RCB_binding_script1.png`、`cases/Others_Spec/TestCase-Tab_bottomTabs.png`、`cases/Viewsheet_Spec/TestCase-VS_embedded_VS.png`。
 
 ## 5. TODO：需要新资产的内容（暂不做）
 
