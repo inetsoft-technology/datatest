@@ -6,12 +6,12 @@
 
 - **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。59 个用例中，除 `InRange_Spec` 和 4 个 `@Ignore` 外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
-- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`checkMergeable CM1`、`CM2` 已断言每张表能否下推到 SQL（G5，期望值来自设计矩阵），其余用例只比数据。
+- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值来自设计矩阵），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）；dashboard 没有按库对照（G11）。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-23，产品为 `main` `06e8ee1c92`）：** 除 `InRange_Spec`（本机无法改系统日期）和 `SqlQuery`（产品性能缺陷 #82116，见 4b-J）外全部通过。
 
-**接下来：** `SqlQuery` 等 #82116；G5 推广到 `merge CM1`～`CM8`（期望值从设计矩阵 `Merge_TestCaseList` 整理）；G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
+**接下来：** `SqlQuery` 等 #82116；G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
 
 ## 2. 覆盖情况
 
@@ -153,7 +153,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 与设计一致（不可合并，原因相符） | `CM1`（设计 `CM1_4`）、`CM1_7`、`CM1_9`、`CM1_19`（Informix）、`CM1_29`、`CM1_55`（DB2）、`CM1_61`；`CM2_2`（where）、`CM2_8`（where）、`CM2_10`、`CM2_11`、`CM2_15`（group by）、`CM2_20`（having）、`CM2_30`、`CM2_44`（select，Informix） |
 | 资产没复现设计场景，按实际（可合并）记录 | `CM1_6`（设计是 FreeformSQL，资产是普通结构化 SQL）、`CM1_32`～`CM1_35`（设计是 Access；名为 Access 的数据源是 H2，产品按 JDBC 地址和驱动判断为 H2，支持集合运算下推） |
 
-另 10 张辅助表（底表、嵌入表、外部表）没有设计预期，按实际记录。把一行期望改错用例会失败。
+另 10 张辅助表（底表、嵌入表、外部表）没有设计预期，按实际记录。
+
+`merge CM1`～`CM8`（112 张表）也已打开。设计 `Merge_Rule`、`Merge_TestCaseList` 描述的是可合并时如何合并进 SQL，只有个别用例写明某一步不可合并。结果全部与设计一致：109 张整体可合并；`merge CM2` 的 `CM2_3`（条件不可合并，where 为 false）、`CM2_5`（分组不可合并，group by、having 为 false）、`CM2_2`（含可见的 JS 表达式列 `js_M2_08`，select 为 false，对应 `CheckMergeable_Rule` 的 2.5 与 Pre1 第 3 条）。
+
+把一行期望改错用例会失败。
 
 ## 3. 缺口与方向
 
@@ -163,7 +167,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | G2 | `WSBuildServer_Spec` 的 40 个 worksheet 不在 zip | 302 个基线代表的场景未验证 | **已完成**：spec 与基线已删除（#213） | 高 |
 | G3 | 上传用例假通过；上传无单测 | 列类型识别、分隔符、表头、unpivot 出错 | **已完成**：假通过已修（#213）；`TextUtilTypeDetectionTest`、`CSVLoaderRulesTest`、`CSVInfoDetectionTest`；上传服务不加单测（4b-G） | 高 |
 | G4 | 表上的 date in 在 CI 为 0（`InRange_Spec` 只能在保存了管理员凭据的 Windows 上改系统时间运行） | 相对日期范围算错 | 单测已补（`DateConditionBuiltinTest`、`DateConditionRelativeRangesTest`）；dashboard 等产品支持注入参考日期 | 高 |
-| G5 | 不记录是否下推 | 本应下推的退回内存；两条路径结果不一致 | 规则单测已补（4b-A）；基类已能记录（`exportMergePlan`），`checkMergeable CM1`、`CM2` 已断言（第 2 节）；待推广到 `merge CM*` 和其他 spec | 中 |
+| G5 | 不记录是否下推 | 本应下推的退回内存；两条路径结果不一致 | 规则单测已补（4b-A）；基类已能记录（`exportMergePlan`），`DataComposition_Spec` 的 `checkMergeable`、`merge` 9 个用例已断言（第 2 节）；其他 spec 未打开 | 中 |
 | G6 | 只用 `LIVE_MODE` | 只在运行时出现的错误 | **暂缓** | 低 |
 | G7 | lens 取值 | 结果行、表头、null 处理出错 | 单测已补（4b-A）；未做 unpivot 后聚合、MV | 高 |
 | G8 | 薄弱格子：`>=` join、表上 date in、LIKE 1、starting with 2、Rotated/Unpivot/Concatenated 的后置条件、ClickHouse | 这些组合的接线出错 | dashboard 新建小 worksheet，范围待定 | 中 |
@@ -311,7 +315,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `WSBuildServer_Spec`（G2） | 删除 spec 与 302 个基线 | 已完成（#213）；找到资产再补回 |
 | 上传（G3） | 修好基类后重跑 | 已完成（#213） |
 | date in（G4） | 语义放单测；dashboard 留 1～2 个代表用例，不依赖改系统时间 | 等产品支持注入参考日期 |
-| 执行路径（G5） | `exportMergePlan` 写 `<表名>.plan.txt` 并纳入基线 | `checkMergeable CM1`、`CM2` 已完成；`merge CM*` 待做 |
+| 执行路径（G5） | `exportMergePlan` 写 `<表名>.plan.txt` 并纳入基线 | `checkMergeable CM1`、`CM2`，`merge CM1`～`CM8` 已完成；其他 spec 未打开 |
 | 运行时取数（G6） | 基类支持 `RUNTIME_MODE` | 暂缓 |
 | 薄弱格子（G8） | 新建小 worksheet：`>=` join、date in、LIKE/starting with、Rotated/Unpivot/Concatenated 后置条件、ClickHouse | 范围待定 |
 | 各库差异（G11） | 每类代表场景在 8 个库各建一个小 worksheet，基线按库分开 | 需先有 G5；各库造数方式待定；ClickHouse 先确认 `@Ignore` 原因 |
@@ -357,7 +361,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
-- 查询是否下推只在 `checkMergeable CM1`、`CM2` 断言；其余用例没有。
+- 查询是否下推只在 `DataComposition_Spec` 的 9 个用例断言；其他 spec 没有。
 - 设计矩阵里约 88 个"不可合并"用例资产没有实现（含 Access、Sybase、Ingres 等 CI 没有的库）。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 只确认了行数上限的差别。
 - 命名分组、变量、日期范围在 worksheet 里的实际用法；`InRange_Spec` 的范围名与 `DateCondition` 子类只按名字对应。

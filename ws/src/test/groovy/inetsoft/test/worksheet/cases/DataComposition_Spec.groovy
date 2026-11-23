@@ -54,9 +54,16 @@ class DataComposition_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   /**
+    * The merge cases also write &lt;table&gt;.plan.txt. In the design (Merge_Rule,
+    * Merge_TestCaseList of docs/ws/DataCompostion_matrix.xls) these are merge situations, so every
+    * table is mergeable except the steps the design makes unmergeable: merge CM2 CM2_3 (where),
+    * CM2_5 (group by, having) and CM2_2 (select, a visible script expression column).
+    */
    def 'merge CM1' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM1',null, null)
 
       expect:
@@ -66,6 +73,7 @@ class DataComposition_Spec extends Specification {
    def 'merge CM2' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM2',null, null)
 
       expect:
@@ -75,6 +83,7 @@ class DataComposition_Spec extends Specification {
    def 'merge CM3' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM3',null, null)
 
       expect:
@@ -93,6 +102,7 @@ class DataComposition_Spec extends Specification {
       paras.put('State2', 'CA')
       paras.put('Customer_id', '5')
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM4',paras, null)
 
       expect:
@@ -102,6 +112,7 @@ class DataComposition_Spec extends Specification {
    def 'merge CM5' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM5', null, null)
 
       expect:
@@ -111,6 +122,7 @@ class DataComposition_Spec extends Specification {
    def 'merge CM7' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM7', null, null)
 
       expect:
@@ -120,6 +132,7 @@ class DataComposition_Spec extends Specification {
    def 'merge CM8' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/merge/CM8', null, null)
 
       expect:
