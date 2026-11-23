@@ -84,9 +84,6 @@ import java.sql.Timestamp
  * condition uses {@code MV.} variables, which the MV creation ignores. The last update time is
  * set by the case ({@link MVTest#setLastUpdateTime(long)}), so the results do not depend on
  * the time the case runs.
- * <p>
- * Running the cases changes {@code docker/src/test/resources/H2Data/mvorder1.mv.db}, even
- * though the table is dropped; restore it with git before committing.
  */
 @Execution(ExecutionMode.SAME_THREAD)
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])

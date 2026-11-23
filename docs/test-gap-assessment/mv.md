@@ -42,7 +42,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 - 导出异常让用例失败：所有书签跑完后汇总抛 `AssertionError`（`:174`-`:179`）；MV 创建、分析失败在 `MaterializedViewResource.java:123`-`:126`、`:180`-`:186` 抛异常，创建失败先于"完成"判断（`:235`）。
 - 命中断言（PR #188）：`getMVHitInfo()` 只记录真正读过的 MV；所有组件都是纯值时退回 `getMVDefInfo()`，只代表"已定义"（`MVTest.groovy:455`-`461`，`hitUnobservable` 在 `:327`、`:435`）；图表数据拷成内存快照时同样丢信息（`:432`-`:435`）。关联 MV 的命中从元数据缓存记录（PR #228，§6 第 3、5 条）。
 - 与不用 MV 比较（PR #193）：`-Dmv.compare=golden`（默认）只比基线，`nomv`、`both` 才比不用 MV 的结果（`MVTest.groovy:55`、`:856`-`:857`）。**CI 用默认 golden，`compareWithoutMV()` 在 CI 里不执行**（`:857` 直接返回）。基线是回归基线（MV 的输出），不是独立标准答案。
-- 导出目录清理：`test-mv.yml` 每个 profile 步骤开头 `rm -rf mv/target`，报告复制到 `mv-reports/<profile>/`。本机连跑多个 profile 前也必须清空 `mv/target`，否则存储互相污染（例如 `TopMV_Subquery_Spec.Subquery_Mode3_9`、`Subquery_Mode3_10` 的书签选择不生效而失败）。`Jenkinsfile` 没有 mv 阶段。
+- 导出目录清理：`test-mv.yml` 每个 profile 步骤开头 `rm -rf mv/target`，报告复制到 `mv-reports/<profile>/`。本机连跑多个 profile 前也必须清空 `mv/target`，否则存储互相污染（例如 `TopMV_Subquery_Spec.Subquery_Mode3_9`、`Subquery_Mode3_10` 的书签选择不生效而失败）。`Jenkinsfile` 没有 mv 阶段。H2 库（`docker/src/test/resources/H2Data`）在 `generate-test-resources` 阶段复制到 `mv/target/H2Data`，`data.home` 指向副本（`mv/pom.xml`），运行不改已跟踪的文件。
 - CI 触发：`test-mv.yml` 只有 `workflow_dispatch`，定时触发被注释掉（`:4`-`:6`）；某个 profile 失败时 `exit $status`，`!cancelled()` 保证后续 profile 照跑。`wsmv` 一步已加（T2），CI 尚未触发。
 - **实际运行结果**（2026-11-23，本机 Windows，产品 `main` 当日构建，`-Dmv.compare=both`，每个 profile 前清空 `mv/target`、还原 `docker/src/test/resources/H2Data` 的 `*.mv.db`；T13）：
 
@@ -326,8 +326,8 @@ datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344�
 ## 附：数据来源与复现
 
 ```
-# 每个 profile 单独运行（本机，先 ./mvnw package -pl commons -DskipTests，运行前 rm -rf mv/target，
-# 并还原 docker/src/test/resources/H2Data 的 *.mv.db；对比不用 MV 加 -Dmv.compare=both）
+# 每个 profile 单独运行（本机，先 ./mvnw package -pl commons -DskipTests，运行前 rm -rf mv/target；
+# 对比不用 MV 加 -Dmv.compare=both）
 ./mvnw test -pl mv -Ptopmv
 ./mvnw test -pl mv -Psubmv
 ./mvnw test -pl mv -Pincrementalmv

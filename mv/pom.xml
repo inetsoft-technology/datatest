@@ -100,6 +100,34 @@
                 </configuration>
             </plugin>
             <plugin>
+                <!-- the H2 databases are copied to target and data.home points there, so a run
+                     does not change the tracked docker/src/test/resources/H2Data files -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-h2-data</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/H2Data</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>${root.dir}/docker/src/test/resources/H2Data</directory>
+                                    <filtering>false</filtering>
+                                    <excludes>
+                                        <exclude>*.trace.db</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.inetsoft.stylebi.build</groupId>
                 <artifactId>inetsoft-runner-maven-plugin</artifactId>
                 <version>${project.version}</version>
@@ -122,7 +150,7 @@
                         <security.enabled>true</security.enabled>
                         <security.login.orgLocation>domain</security.login.orgLocation>
                         <adm.home>${basedir}/target/test-resources/server/config-${test.module}</adm.home>
-                        <data.home>${root.dir}/docker/src/test/resources/H2Data</data.home>
+                        <data.home>${project.build.directory}/H2Data</data.home>
                         <inetsoft.org.default_org.max.cell.size>10000</inetsoft.org.default_org.max.cell.size>
                     </properties>
                 </configuration>

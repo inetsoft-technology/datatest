@@ -44,10 +44,9 @@ import spock.lang.Specification
  * MV cases on a worksheet and a viewsheet that the case makes at run time, as a copy of
  * existing assets with the table, columns and conditions it needs, removed when it ends;
  * {@code mvStorage.zip} is not changed. A case can also create a table in the local H2 database
- * {@code mvorder1} (data source {@code mvtest}) and drop it at the end; running it still changes
- * {@code docker/src/test/resources/H2Data/mvorder1.mv.db}, restore it with git before
- * committing. Each case runs the viewsheet without and with MV and checks the rows of the MV
- * run itself, so it also fails in the default {@code golden} mode,
+ * {@code mvorder1} (data source {@code mvtest}) and drop it at the end. Each case runs the
+ * viewsheet without and with MV and checks the rows of the MV run itself, so it also fails in
+ * the default {@code golden} mode,
  * where {@link MVTest#compareWithoutMV()} does nothing; it has no golden files.
  */
 @Execution(ExecutionMode.SAME_THREAD)
