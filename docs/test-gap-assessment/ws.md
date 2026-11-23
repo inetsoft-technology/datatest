@@ -211,7 +211,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | G6 | 只用 `LIVE_MODE`，从未走 `RUNTIME_MODE` | 只在运行时出现的错误：viewsheet/MV 读 worksheet 的结果、`runtimeSelected`、预览输入行数上限（`asset.sample.maxrows=50000`，`AssetQuery.java:3957`）以外的行为 | 机制：基类支持 `RUNTIME_MODE`，按查询类型各选代表用例。**暂缓：决定先只用 `LIVE_MODE`**，LIVE 模式的边界见 3b-C 续 | 低 |
 | G7 | lens 取值：13.8 移植、unpivot、`RotatedQuery`、排名并列已有单测（见 4b-A）；没补的是 unpivot 之后再聚合、MV | 这些操作的结果行、表头、null 处理出错，只有 datatest 回归基线可能发现 | 单测：先移植 13.8，再补缺 | 高 |
 | G8 | 薄弱格子：`>=` join、表上的 date in 在 CI 范围为 0；LIKE 1、starting with 2；Rotated/Unpivot/Concatenated 几乎没有后置条件；ClickHouse 被忽略 | 这些组合下的接线出错 | dashboard：新建小 worksheet（tester 衡量） | 中 |
-| G9 | 49 个 worksheet 没有用例运行 | 若是有意准备的场景，则对应能力未验证 | 核对后补用例或删除 | 低 |
+| G9 | 49 个 worksheet 没有用例运行 | 若是有意准备的场景，则对应能力未验证 | 核对后补用例或删除。**已核对（2026-11-23，见第 5 节"未运行的 worksheet"）：** 没有被其他资产引用；30 个是迁移前 query 的原件，副本已在被测的 worksheet 里，1 个（`Common/nullws`）其实被上传用例使用，11 个是产品示例，只有 `suquery_execute` 的测试点没有覆盖，值得补 | 低 |
 | G10 | 3 个陈旧基线（`CM1_3`、`CM1_5`、`Report/top1.txt`） | 让人误以为这些对象被验证过 | 随 G1 清理。**已处理（已合并，#213）：** 删除 `CM1_3`、`CM1_5`、`Report/top1.txt` | 低 |
 | G11 | 各库 SQL 差异未区分：绑库的表 Oracle 占 122/212，ClickHouse 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；产品单测里引用各库方言类（`OracleSQLHelper`、`MySQLHelper`、`SQLServerHelper`、`DB2SQLHelper`、`InformixSQLHelper`、`PostgreSQLHelper`、`DerbyHelper`、`ClickhouseHelper`）的测试，多是别名、引号、like 大小写、嵌套派生表，日期分组、top N / max rows、集合运算、统计函数的各库生成未见专门测试（生成层已补：`DateRangeRefDialectTest`、`AggregateFormulaStatSqlTest`、`SQLHelperOperationSupportTest`，只有 Derby 真正执行；dashboard 按库对照没做） | 同一个 worksheet 在某个库上生成错误或不支持的 SQL（日期部分函数、`LIMIT`/`ROWNUM`/`TOP`、minus/intersect/full join、null 排序、字符串比较与大小写），换个库正常；下推与内存两条路径的结果不一致（G5）也会因库而异 | 单测：固定一组查询，断言各库生成的 SQL；dashboard：按"场景 × 库"为每类选代表 worksheet，在 8 个库各跑一遍（需先有 G5 的"是否下推"记录）；支持矩阵和现有覆盖见 3b-C 续 | 中 |
 | G12 | 功能面零覆盖：产品能力清单里 CI 范围 worksheet 零使用的项（日期分组 5/21、聚合公式 3/27、变量数据类型 8/13、列引用 `NamedRangeRef`、`>=` join、4 个表类、3 个非表 assembly、5 个配置项、上传的固定宽度文本与 xlsb），明细见"功能面差集" | 这些能力出错，没有任何用例会发现 | 能手算期望值的 → 单测（日期分组、聚合公式、相对日期、上传）；接线 → dashboard 小 worksheet；表类、命名分组的用法先向开发确认 | 中 |
@@ -419,9 +419,23 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | 薄弱格子（G8） | 新建小 worksheet：`>=` join、date in、LIKE/starting with、Rotated/Unpivot/Concatenated 上的后置条件、ClickHouse | 这些组合的接线 | tester 衡量做哪些 |
 | 各库差异（G11） | 为这几类各选 1 个代表场景：日期分组、top N / max rows、minus/intersect/full join、统计函数、null 排序；同一场景在 8 个库各建一个小 worksheet（用各库自己的表），基线按库分开；先用 G5 的"是否下推"记录确认走的是哪条路径 | 各库方言生成与取数结果 | G5 的机制；各库造数方式（待定）；ClickHouse 用例目前 `@Ignore`，先确认原因 |
 | 功能面零覆盖（G12） | 新建小 worksheet：日期范围镜像与可复用条件 assembly、变量样式 `DATE_COMBOBOX` 与未覆盖的数据类型、命名分组作列引用（`NamedRangeRef`）、未设置的配置项（用 `initHome` 的 properties 参数）；表类 Cube/Data/QueryBound/Tabular 先确认是否可创建 | 这些能力的接线 | tester 衡量做哪些；表类待开发确认 |
-| 未运行的 worksheet（G9） | 核对 49 个是否作为来源被引用，再补用例或删除 | | 无 |
+| 未运行的 worksheet（G9） | 核对 49 个是否作为来源被引用，再补用例或删除 | 字符串变量与布尔、日期时间列比较，DB2 上的查询变量（`suquery_execute`） | 已核对，结果见下；补 `suquery_execute` 用例要先定期望值的独立推导方式；删不删其余资产待定 |
 
 做法原则同 vscalc：新建小 worksheet，不改已有资产；改 zip 后用 `ws_scan.py inventory` 前后对比。
+
+**未运行的 worksheet（G9，2026-11-23 核对）：** 49 个由 `ws_scan.py crosscheck` 列出（6 个 spec 都没有用到）。逐个看了版本与保存时间、表与数据源，并在 zip 里所有资产（worksheet、viewsheet 等）中找引用：标识符 `^<路径>^` 和外部表名 `OUTER_<路径>_…` 都没有，**49 个都没有被其他资产引用**。按来源分 5 类：
+
+| 类别 | 数量 | 依据 | 结论 |
+|---|---|---|---|
+| 迁移前 query 等资产的原件，副本已在测 | 30 | 27 个是 `createdBy="anonymous"`、2024-01-15 由 13.7 保存、只有一张与 worksheet 同名的 SQL 表（旧版 query 迁移成的 worksheet）；另 3 个是 `OtherAsset/Gstate`（命名分组）、`OtherAsset/testBoolean`（变量，均 2022 年由 13.3 保存）和 `mysql q1`（2024-04 由 14.0 保存）；被测的组合 worksheet 里有内容相同的副本，多数同名或"名字+1"，如 `oracle q1` → `Common/sql query` 的 `oracle q11`、`query2` → 5 个 worksheet 的 `query21`、`CM1_2_03` → `merge/CM1`；`CM8_distinct`、`CM8` 的副本改了名：`merge/CM8` 的 `CM8_1_1`～`CM8_1_6`（表、列、条件相同，其中 5 个设了 distinct，`CM8_1_5` 没有） | 不是缺口 |
+| 其实在用 | 1 | `Common/nullws`：`WSProperty_Spec` 的 7 个上传用例把它当作导入的空白目标（`importCSVToEMTable`），`ws_scan.py` 没有建模这个调用 | 不是缺口；`ws_scan.py` 可补上这个调用 |
+| 产品示例 | 11 | `Examples/*`：`createdBy="inetsoft"`，2018-2022 年由 13.0 保存，随服务器备份进入 zip | 不属于 ws 数据测试，不补用例 |
+| 迁移前 query 的原件，没有副本 | 6 | `Sample Queries/Fast Go Game`、`Wireless Mouse`、`sales by state`（产品示例查询）、`userInfo`（`securityTest` 的用户表，安全模块的内容）、`db2formula`（DB2 上 `ORDERS`、`CUSTOMERS` 的连接，看不出特殊之处）、`suquery_execute`（见下） | 只有 `suquery_execute` 值得补 |
+| 新建未用 | 1 | `DB/clickhouse_sql`：2025-08 由 14.0 新建，查 ClickHouse 的 `system.session_log`（IPv6 函数），另有一张 Array 表；`@Ignore` 的 `clickhouse` 用例用的是 `DB/clickhouse` | 归 G8、G11 的 ClickHouse，等 `clickhouse` 用例去掉 `@Ignore` 时一起用上 |
+
+**`suquery_execute`：** 名字里有 suquery，但没有子查询。DB2 上 `CUSTOMERS`、`PRODUCTS` 的查询，where 里三个字符串类型（文本输入，`xtype="string"`）的变量分别与 double、boolean、timeInstant 列比较：`PRICE > $(expr)`、`RESELLER = $(exb)`、`PRODUCE_DATETIME < $(exd)`。打开 worksheet 时 `SQLBoundTableAssembly.fixConditionVariable` 按列的类型给变量定类型，执行时按这个类型转换字符串值再绑定。现有覆盖：被测的 worksheet 里查询用变量的有 8 张表（`Common/databaseQuery`、`Common/sql query`、`Formula/mysql sql formula`、`Formula/oracle sql formula`），spec 传的都是字符串，比较对象是数值列或聚合（`customer_id`、`contact_id`、`rownum`、`SUM(...)`）和一个 MySQL 日期表达式（`date_add(order_date, interval 1 year) > $(y2005)`），库是 SQL Server、MySQL、Oracle；产品单测 `SQLBoundTableBuiltinVariableTest.promptVariableStillTakesColumnType` 只测了 INTEGER 列。**没有覆盖的：** 字符串变量与布尔列、日期时间列比较，以及 DB2 上的查询变量。`WSAsset_Spec.varible` 里的布尔、日期时间变量用在 worksheet 条件上，是另一条路径，不算覆盖。
+
+**另外：** `WSOthers_Spec` 的 `ws group case check` 用到的 `wsCheck/ws1` 不在 zip 里，用例是 `@Ignore`，去掉前要先补回资产。只看了表结构，没有执行这 49 个 worksheet。
 
 ## 6. 局限与待确认
 
@@ -443,7 +457,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
 - 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）不在这份清单里，它的规则见 4b-E，已写 `XUtilQueryMergeableTest`。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
-- 49 个未运行的 worksheet 是否被其他 worksheet 引用为来源，未核对。
+- 49 个未运行的 worksheet 已核对（第 5 节"未运行的 worksheet"），但只看了表结构，没有执行；它们原来是为哪个用例准备的，git 历史里查不到（ws 的 spec 从没引用过）。
 
 - `LIVE_MODE` 与 `RUNTIME_MODE` 的差别只确认了预览输入行数上限一项。
 - 命名分组、变量、日期范围已在功能面差集里按能力清单统计，但它们在 worksheet 里的实际用法（命名分组是否被表应用、变量值如何传入）没有逐个核对。
