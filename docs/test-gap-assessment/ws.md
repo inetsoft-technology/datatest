@@ -238,7 +238,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `NumericRangeRef`、命名分组 `NamedRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5）、`NamedRangeRefGroupsTest`（12） |
 | 各库方言类 | 生成层已做：`DateRangeRefDialectTest`（38）、`AggregateFormulaStatSqlTest`（41）、`SQLHelperOperationSupportTest`（13）；只有 Derby 真正执行 |
 | MV 对 rotate/unpivot 的处理 | 已读代码，不加单测（见 4b-I） |
-| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个已合并）；原有 3 个 `@Disabled`（#80538、#81235、#81236），缺陷都已修复：#81235、#81236 的由开发在修复 PR 里启用，#80538 的在 stylebi PR [#8643](https://github.com/inetsoft-technology/stylebi/pull/8643) 启用（待合并） |
+| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个已合并）；原有 3 个 `@Disabled`（#80538、#81235、#81236），缺陷都已修复：#81235、#81236 的由开发在修复 PR 里启用，#80538 的在 stylebi PR [#8643](https://github.com/inetsoft-technology/stylebi/pull/8643) 启用（已合并） |
 
 ### 4b. 已补的单测、发现与未覆盖（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并）
 
@@ -277,11 +277,11 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `DateConditionRelativeRangesTest` | #8064 | 42 | 1 | Year、Quarter、Month、Week、Weeks、Day 六个相对日期条件：用 `java.time` 按当前时钟算期望，范围首尾一天在内、前后一天在外，SQL 范围到 23:59:59；周起始日周日、周一、周六；取反；非日期值不保留 |
 | `NamedRangeRefGroupsTest` | #8064 | 12 | 2 | 命名分组：值归组、不在组里的值保持原样、同属两组归第一组、null 成员、整数列、无分组为 `0`、`isMergeable`、`getBaseName`；SQL 在 Derby 上跑、脚本在 `FormulaTableLens` 上跑，两边对同一批值 |
 
-跳过的（上表"跳过"列是合并时的数）：`SetOperationLensesTest` 1 个（#80538，已修复，stylebi PR #8643 启用，待合并）、`NamedRangeRefGroupsTest` 2 个（#81235、#81236，已修复并由修复 PR 启用）、`DateConditionRelativeRangesTest` 1 个（夏令时窗口内的"30 天前"，只在纽约时区的这段日期出现）。
+跳过的（上表"跳过"列是合并时的数）：`SetOperationLensesTest` 1 个（#80538，已修复，stylebi PR #8643 启用，已合并）、`NamedRangeRefGroupsTest` 2 个（#81235、#81236，已修复并由修复 PR 启用）、`DateConditionRelativeRangesTest` 1 个（夏令时窗口内的"30 天前"，只在纽约时区的这段日期出现）。
 
 **验证：**
 - 同一个 JVM 整体跑（`-Dsurefire.forkCount=1 -Dsurefire.reuseForks=true`）：PR #8046 的 19 个类 340 个测试，0 失败，1 个跳过；PR #8064 的 11 个类 338 个测试（含 #8046 里已有的旋转与 unpivot 测试），0 失败，3 个跳过。每个类单独跑，测试数和跳过数与整体一致，没有类之间的隐含依赖。
-- 带缺陷编号的 `@Disabled` 在对应修复进 `main` 后已去掉并通过（#81091、#81092、#81093、#81095、#81096、#81102、#81105 共 11 个测试）；期望值是按代码规则独立推的，不是按修复前的输出写的。后来的 #81235、#81236 由开发在修复 PR 里去掉 `@Disabled`；#81178、#81220、#81229 原来"固定现状"的测试由修复 PR 改成修复后的期望（`timestampEarlierOnTheStartDayIsInSqlAndInMemory`、`firstRowOfAPipeFileWithoutQuoteHandlingIsCutWithLiteralDelimiter`、`oneOfOnMongoIsTheOnlyConditionKeptInMemory`）。#80538 的测试在 stylebi PR #8643 去掉 `@Disabled`：`main`（`601948b92b`）上 18 个测试 0 失败 0 跳过，换回修复前的 `UnionTableLens.java` 时它失败（期望 -5，实际 -6）。
+- 带缺陷编号的 `@Disabled` 在对应修复进 `main` 后已去掉并通过（#81091、#81092、#81093、#81095、#81096、#81102、#81105 共 11 个测试）；期望值是按代码规则独立推的，不是按修复前的输出写的。后来的 #81235、#81236 由开发在修复 PR 里去掉 `@Disabled`；#81178、#81220、#81229 原来"固定现状"的测试由修复 PR 改成修复后的期望（`timestampEarlierOnTheStartDayIsInSqlAndInMemory`、`firstRowOfAPipeFileWithoutQuoteHandlingIsCutWithLiteralDelimiter`、`oneOfOnMongoIsTheOnlyConditionKeptInMemory`）。#80538 的测试在 stylebi PR #8643（已合并，`949be94731`）去掉 `@Disabled`：`main`（`601948b92b`）上 18 个测试 0 失败 0 跳过，换回修复前的 `UnionTableLens.java` 时它失败（期望 -5，实际 -6）。
 - 日期相关测试在 UTC、上海、奥克兰、Lord_Howe、Kiritimati、Pago_Pago、伦敦下跑通过；默认运行时区是 `core/pom.xml` 写死的 America/New_York，换时区要改 pom（`-DargLine` 覆盖不了）。依赖当前时钟的测试用 `DayChange` 扩展：断言失败且日期在测试期间变了，就跳过而不是失败；夏令时窗口内的天数用例也会跳过。
 - 变异检查（临时改主代码看测试是否变红，已还原）：方言、统计公式、日期条件（含六个相对条件）、`XUtil.isQueryMergeable`、`CSVLoader`、`AssetUtil.getType`、`CSVInfo`、`PreAssetQuery` 五个类（共 42 处）、命名分组；全部被抓到。个别等价变异（`+100` 改 `+99`、数据源相等判断多余、手写 SQL 的解析结果检查与 `XUtil.isQueryMergeable` 重复）不改变结果，不算漏。
 - 只新增测试文件，没有改主代码。
@@ -298,7 +298,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 **C. 与 13.8 的差异（移植 `style-intelligence` 的 lens 测试时遇到）**
 
 两边 lens 代码逻辑基本相同，但 StyleBI 多了并发与加锁改动，移植逐个适配。差异分三种：
-- **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号，修复进 `main` 后已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），已在 StyleBI 侧报为 #81092、#81091（已修）；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧的 issue 已由 stylebi #8209 修复，对应测试在 stylebi PR #8643 启用，待合并）。
+- **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号，修复进 `main` 后已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），已在 StyleBI 侧报为 #81092、#81091（已修）；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧的 issue 已由 stylebi #8209 修复，对应测试在 stylebi PR #8643 启用，已合并）。
 - **StyleBI 里新发现的缺陷（已报 #81093，已修）**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。
 - **有意的行为变化，测试已按 StyleBI 改写**：脚本一律按受限模式运行（Bug #77396），`setRestricted` 只记录标志，能否调用 Java 类由允许类的白名单决定；`FormulaTableLens` 一批一起计算的行只报告一次失败（13.8 是逐行各报一次）。
 
@@ -527,7 +527,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | Closed（stylebi #8270） | `PreAssetQueryConditionMergeableTest`（修复 PR 改为修复后的期望） | 无 |
 | #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | Closed（stylebi #8236） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（修复 PR 已启用） | 无 |
 | #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | Closed（stylebi #8238） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（修复 PR 已启用） | 无 |
-| #80538 | 非 distinct union 加载中多算一行（原来就有） | Closed（stylebi #8209） | 修复自带 `UnionTableLensTest`；`SetOperationLensesTest` 的 `@Disabled` 在 stylebi PR #8643 去掉（待合并） | 无 |
+| #80538 | 非 distinct union 加载中多算一行（原来就有） | Closed（stylebi #8209） | 修复自带 `UnionTableLensTest`；`SetOperationLensesTest` 的 `@Disabled` 在 stylebi PR #8643 去掉（已合并） | 无 |
 
 ## 附：数据来源与复现
 
