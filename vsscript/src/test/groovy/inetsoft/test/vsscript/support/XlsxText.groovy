@@ -71,4 +71,20 @@ class XlsxText {
    static List<String> allTexts(File file) {
       read(file).values().collectMany { rows -> rows.values().collectMany { it.values() } }
    }
+
+   /** the texts of the text boxes of the workbook (xl/drawings/*.xml): the Text components of a viewsheet are exported as text boxes, not as cells */
+   static List<String> drawingTexts(File file) {
+      def zip = new ZipFile(file)
+
+      try {
+         zip.entries().findAll { it.name ==~ /xl\/drawings\/[^\/]+\.xml/ }.collectMany { e ->
+            def doc = new XmlSlurper(false, false).parse(zip.getInputStream(e))
+            // the parser is not namespace aware: the text runs of a drawing are named "a:t", not "t"
+            doc.'**'.findAll { it.name() == 't' || it.name().endsWith(':t') }*.text()
+         }
+      }
+      finally {
+         zip.close()
+      }
+   }
 }

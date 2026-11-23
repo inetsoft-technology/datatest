@@ -23,10 +23,10 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 | # | 方向 | 状态 | 落点 |
 |---|---|---|---|
 | D1 | 脚本健康检查（130 个 vs、213 段脚本直接执行） | **完成**：0 个真实脚本错误，3 个误报 | 探针 `ScriptStateHealthProbe`；结果旧版 §5.1 |
-| D2 | 异常契约（刷新吞异常 / 直接执行抛 / 点击抛） | **等开发**确认语义；#81796 用例先把现状固定住 | `ScriptStateExportTripwire_Spec`、`ScriptStateKnownBugs_Spec` |
+| D2 | 异常契约（刷新吞异常 / 直接执行抛 / 点击抛） | **导出路径已定**：#81796 修好（PR #8467），导出时失败的组件脚本被跳过、文档带警告文字，`ScriptStateExportTripwire_Spec` 已改成固定这个行为；**刷新路径仍等开发**确认（NPE / ClassCastException 按 #81633 的设计只写日志） | `ScriptStateExportTripwire_Spec`、`ScriptStateRefreshTripwire_Spec` |
 | D3 | 事件端到端（Submit、confirm、parameter、点击、输入、选择、flyover） | **完成**；嵌套 vs 的 `onClick` 需新资产 | `ScriptStateSubmit_Spec`、`ScriptStateManual_Spec` |
 | D4 | 旧 PNG 用例改状态断言 | **放弃**（收益低，2026-11-18） | — |
-| D5 | 触发顺序（ONINIT / ONLOAD / ONREFRESH） | 未做：现有资产没有 ONREFRESH，需新资产 | §5 TODO |
+| D5 | 触发顺序（ONINIT / ONLOAD） | **完成**（2026-11-23）：不需要新资产，脚本在真实资产上内存里设置。onInit 只跑一次、onLoad 每次刷新都跑；onInit 写的带“设计值/运行值”的属性第二次刷新就回到设计值（文档里的已知陷阱）。注意：产品里没有独立的 ONREFRESH 脚本，Composer 里的 “onRefresh” 就是 onLoad，旧版把它们数成两个，“0 个 ONREFRESH”不是资产缺口 | `ScriptStateTriggerOrder_Spec` |
 | D6 | 差分 | **完成**，以“和 13.8 对比”的形式（找 bug 最多的方法） | 本地 `diff13/`（含机器路径，不提交） |
 | D7 | 导出一致性 | **完成**：导出不报错总检；脚本值进 Excel / PDF；8 个 Table / Freehand 的整行与状态一致 | `ScriptStateExportTripwire_Spec`、`ScriptStateExportContent_Spec`；本表 |
 | D8 | 数据函数端到端（写回） | **完成**：`appendRow`、`setCellValue`、`applyChanges`、`saveWorksheet` | `ScriptStateWriteBack_Spec` |
@@ -36,7 +36,7 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 
 手工用例（`docs/vsscript/VSScript-Manual-Case.xlsx`）56 个：42 个已自动化（含部分），3 个原来已被别的用例覆盖，3 个保留手工（上传、邮件定时任务、图片弹出位置），7 个价值低不做，1 个归 Java 单测。
 
-`state/` 现为 10 个 spec、101 个用例，本机 0 失败（2026-11-20 删去与 Java 重复的 15 个往返、差分、全局函数、PDF 文本用例和两个早期探路类）。
+`state/` 现为 14 个 spec、110 个用例（2026-11-23 新增 4 个 spec 共 9 个用例，见下），本机 0 失败（2026-11-20 删去与 Java 重复的 15 个往返、差分、全局函数、PDF 文本用例和两个早期探路类）。2026-11-23 新增：`ScriptStateExportMatrix_Spec`（失败脚本放在测试存储里每种组件类型上，导出 Excel / PDF；白名单只能缩小：SelectionList PDF #82105、SelectionTree 刷新 #82107、Tab / 内嵌 Viewsheet 无警告文字）、`ScriptStateResetSweep_Spec`（alpha / tip 复位；白名单 Image / GroupContainer 的 `imageAlpha` #82098；白名单清空时已验证会红并点名这两项）、`ScriptStateScopeReads_Spec`（#81786 越界读 undefined、#81929 未设置参数读 null，及其记录在案的副作用 `'x' in parameter` 恒为 true）、`ScriptStateTriggerOrder_Spec`（D5）。
 
 ## 4. 成果和验收
 
@@ -80,7 +80,7 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 | 带两个同时命中的高亮的输出组件 | `highlighted[name]` 多个高亮同时命中 | #80875 |
 | 真实流程回归资产：`setAction`、RadioButton 切换后 `selectedObject` 刷新、脚本绑定 shape 图片、脚本设 `SelectionTree.expandAll` | 原单附件没有 | #72673、#72722、#74224、#74225、#72666 |
 | 脚本库函数进测试存储（`createBulletGraph` 等） | 现在这些函数是 `undefined` | #76850、#76851 |
-| 含更多 ONINIT / ONLOAD / 事件脚本的资产（现在 16 个 ONINIT、18 个 ONLOAD、0 个 ONREFRESH） | D5、D3 其余 | D5 |
+| 含更多事件脚本的资产（现在 16 个 ONINIT、18 个 ONLOAD；ONREFRESH 就是 onLoad，不是另一种脚本） | D3 其余 | 仅事件脚本需要；D5 已不需要 |
 | 可选，改现有资产：`Relation` 的 onInit 改 onLoad、`scope3` 的列绑定、`Selection_Calendar` 的列 | 总检白名单里的已知警告；改资产会动 PNG 基线，先评估 | #81633 |
 
 （带分组展开的 Freehand 公式格不需要新资产：现有的 scope2 在内存里改成公式格即可，已用于差分。）
