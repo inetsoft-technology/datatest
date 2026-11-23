@@ -6,7 +6,7 @@
 
 - **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。59 个用例中，除 `InRange_Spec` 和 4 个 `@Ignore` 外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
-- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值来自设计矩阵），其余用例只比数据。
+- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）；dashboard 没有按库对照（G11）。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-23，产品为 `main` `06e8ee1c92`）：** 除 `InRange_Spec`（本机无法改系统日期）和 `SqlQuery`（产品性能缺陷 #82116，见 4b-J）外全部通过。
@@ -144,7 +144,9 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 输出：最多 `query.preview.maxrow` = 5000 行；RUNTIME 用 `query.runtime.maxrow`（默认不限）。被截断的基线：`property_crossJoin.maxCellCount` 的 `TestData`、`Query1`，以及 `@Ignore` 的 `specialChar` 7 个。
 - 其他差异：聚合与后置条件的使用、行数上限来源、公共列选择、SQL 表达式失败的处理、超时（设计时 2 分钟，运行时 20 分钟）。
 
-**G5 是否下推的断言：** `WorksheetTest.exportMergePlan = true` 时，每张导出的表另写 `<表名>.plan.txt`：`mergeable`（`isQueryMergeable(false)`）、`source`（`isSourceMergeable()`），来源可合并时再写 where、group by、having、sort、select、ranking 各步。每项判断都在表的克隆上新建查询（`createAssetQuery(t, mode, box, false, -1L, true, false)`），不影响导出的数据。来源不可合并时各步都返回 false，所以不写。LIVE 与 RUNTIME 的判断结果相同。生成的 SQL 文本没有纳入。
+**G5 是否下推的断言：** `WorksheetTest.exportMergePlan = true` 时，每张导出的表另写 `<表名>.plan.txt`：`mergeable`（`isQueryMergeable(false)`）、`source`（`isSourceMergeable()`），来源可合并时再写 where、group by、having、sort、select、ranking 各步。每项判断都在表的克隆上新建查询（`createAssetQuery(t, mode, box, false, -1L, true, false)`），不影响导出的数据。来源不可合并时各步都返回 false，所以不写。某一步为 false 表示这一步没有全部下推，能下推的部分仍进 SQL（`merge CM2` 的 `CM2_3`：3 条前置条件里 SQL 表达式列和普通列的 2 条在 WHERE 里，脚本表达式列的 1 条在内存）。LIVE 与 RUNTIME 的判断结果相同。生成的 SQL 文本没有纳入基线。
+
+**判断与实际执行一致：** 对 142 张表按 sandbox 的方式执行查询并读出实际发给数据库的 SQL（一次性核对，未纳入测试）：执行后的判断与 plan 基线全部一致；判断为可合并的表，前置条件、分组、distinct、排序都出现在 SQL 里；判断为不可合并的部分都不在 SQL 里，组合表不可合并时没有合并后的 SQL。datatest 里产品的 SQL 日志不可用（slf4j-api 1.7 与 logback 1.5 不兼容，日志为空实现）。
 
 已在 `checkMergeable CM1`、`CM2` 打开（30 张表）。设计矩阵 `docs/ws/DataCompostion_matrix.xls` 的 `CheckMergeable_TestCaseList` 规划了约 108 个"不可合并"用例（`CM1_1`～`CM1_64`、`CM2_1`～`CM2_44`），资产实现了其中 20 个：
 
@@ -155,7 +157,12 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 
 另 10 张辅助表（底表、嵌入表、外部表）没有设计预期，按实际记录。
 
-`merge CM1`～`CM8`（112 张表）也已打开。设计 `Merge_Rule`、`Merge_TestCaseList` 描述的是可合并时如何合并进 SQL，只有个别用例写明某一步不可合并。结果全部与设计一致：109 张整体可合并；`merge CM2` 的 `CM2_3`（条件不可合并，where 为 false）、`CM2_5`（分组不可合并，group by、having 为 false）、`CM2_2`（含可见的 JS 表达式列 `js_M2_08`，select 为 false，对应 `CheckMergeable_Rule` 的 2.5 与 Pre1 第 3 条）。
+`merge CM1`～`CM8`（112 张表）也已打开。设计 `Merge_Rule`、`Merge_TestCaseList` 描述的是可合并时如何合并进 SQL，只有个别用例写明某一步不可合并。结果：109 张整体可合并；`merge CM2` 的 `CM2_3`（条件不可合并，where 为 false）、`CM2_5`（分组不可合并，group by、having 为 false）、`CM2_2`（select 为 false）。
+
+**期望值的来源：**
+- 来自设计、先于结果：用例表的整体是否可合并；`checkMergeable` 设计写明的不可合并原因；merge 系列"默认可合并"和 `CM2_3`、`CM2_5` 的例外。
+- 看到结果后对照设计核对：`merge CM2_2`（设计是可见的 SQL 表达式列；表里还有可见的 JS 表达式列 `js_M2_08`，按 `CheckMergeable_Rule` 2.5 与 Pre1 第 3 条 select 不可合并）；各表在主要原因之外的步骤值（如 `checkMergeable CM2_2` 的 select 也为 false）。
+- 按实际记录：`CM1_6`、`CM1_32`～`CM1_35`（资产没复现设计场景）和 10 张辅助表。
 
 把一行期望改错用例会失败。
 
