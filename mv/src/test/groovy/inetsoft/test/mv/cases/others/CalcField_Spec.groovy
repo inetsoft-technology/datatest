@@ -4,6 +4,7 @@ import inetsoft.test.mv.MVTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
+import spock.lang.PendingFeature
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -727,7 +728,7 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   @Issue('https://issues.inetsoft.com/issues/75659')
+   @Issue(['https://issues.inetsoft.com/issues/75659', 'https://issues.inetsoft.com/issues/81668'])
    /**
     * The live query and the materialized view legitimately iterate the rows in different orders,
     * so they can return different (but equally valid) values for the tied rows.
@@ -737,6 +738,10 @@ class CalcField_Spec extends Specification {
    //No compareWithoutMV: CalcField5 is First([Product:Total], [Customer:Address]); the first
    //address has several rows, and the one used depends on the row order. The range slider
    //labels and the exported chart data also differ in representation.
+   //SelectionTree2 (default, bk_select): the golden measure is a Timestamp (2020-12-30 00:00:00);
+   //#81668 converts the aggregate calc field to its declared Date (2020-12-30). Pending until
+   //#81668 is closed; then update the golden and remove @PendingFeature.
+   @PendingFeature(reason = 'SelectionTree2 golden has the Timestamp measure of before #81668')
    def 'Aggregate_ForDate'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'

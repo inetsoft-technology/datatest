@@ -40,9 +40,6 @@ import java.sql.Timestamp
  * <p>
  * The viewsheet reads the MV and not the database: a row added only to the source table (the
  * sentinel) never shows while the MV is used.
- * <p>
- * Running the case changes {@code docker/src/test/resources/H2Data/mvorder1.mv.db}, even though
- * the table is dropped; restore it with git before committing.
  */
 @Execution(ExecutionMode.SAME_THREAD)
 @ContextConfiguration(classes = [DatatestBaseConfiguration, IntegrationTestConfiguration, DatatestSpringDuplicateFixConfiguration], initializers = [ConfigurationContextInitializer])

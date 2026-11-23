@@ -20,8 +20,9 @@ import org.springframework.test.context.ContextConfiguration
  * Not covered here, see docs/test-gap-assessment/mv.md (T4):
  * <ul>
  * <li>{@code cube}: the cube binding does not resolve in this environment (the chart is empty
- * with and without MV), and the analyzer throws a NullPointerException in
- * {@code MVDef.createAggregateInfo} before it reaches the cube rule.</li>
+ * with and without MV): the base worksheet has no table {@code ___inetsoft_cube_db2_1/l1}, so the
+ * analyzer rejects it before the cube rule ("could not find table assembly", logged only, no
+ * reason in the analysis result). Since #81659 it no longer throws, and no MV is created.</li>
  * <li>{@code vs assembly-field condition}: its data source {@code testparameter} is not in
  * mvStorage.zip, the table has no columns; the field comparison rule is covered by
  * {@code VSCondtion_Spec.field}.</li>

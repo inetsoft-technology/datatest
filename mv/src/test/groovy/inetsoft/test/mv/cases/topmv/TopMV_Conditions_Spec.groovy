@@ -619,11 +619,11 @@ class TopMV_Conditions_Spec extends Specification {
       }
    }
 
-   //Ignored: CUSTOMERS1 has a correlated subquery condition on CONTACTS1, which has a variable. The MV is
-   //created, but the viewsheet then shows "Correlated subquery condition not supported in MV." and no data
-   //(#80457). There is no expected data yet.
+   //CUSTOMERS1 has a correlated subquery condition on CONTACTS1, which has a variable. The viewsheet used to
+   //hit ORDERS1|SubMV, then show "Correlated subquery condition not supported in MV." and no data (#80457,
+   //fixed). Now it does not use ORDERS1|SubMV and hits ORDERS1|TopMV. The expected data is the result
+   //without MV.
    @Issue(['https://issues.inetsoft.com/issues/60758', 'https://issues.inetsoft.com/issues/80457'])
-   @Ignore
    def 'variable in subquery'() {
       given:
       String asset_id = '1^128^__NULL__^topmv/variable in subquery'
@@ -637,7 +637,8 @@ class TopMV_Conditions_Spec extends Specification {
 
       expect:
       verifyAll {
-         mvtest.getMVHitInfo().containsAll(['ORDERS1|SubMV'])
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV'])
+         !mvtest.getMVHitInfo().contains('ORDERS1|SubMV')
          mvtest.compareData(false)
          mvtest.compareWithoutMV()
       }
