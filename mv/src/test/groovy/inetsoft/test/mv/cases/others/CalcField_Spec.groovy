@@ -4,6 +4,7 @@ import inetsoft.test.mv.MVTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
+import spock.lang.PendingFeature
 import spock.lang.Shared
 import spock.lang.Specification
 import inetsoft.test.core.DatatestBaseConfiguration
@@ -738,8 +739,9 @@ class CalcField_Spec extends Specification {
    //address has several rows, and the one used depends on the row order. The range slider
    //labels and the exported chart data also differ in representation.
    //SelectionTree2 (default, bk_select): the golden measure is a Timestamp (2020-12-30 00:00:00);
-   //#81668 converts the aggregate calc field to its declared Date (2020-12-30). Update the golden
-   //after #81668 is closed.
+   //#81668 converts the aggregate calc field to its declared Date (2020-12-30). Pending until
+   //#81668 is closed; then update the golden and remove @PendingFeature.
+   @PendingFeature(reason = 'SelectionTree2 golden has the Timestamp measure of before #81668')
    def 'Aggregate_ForDate'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'

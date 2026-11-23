@@ -1250,8 +1250,8 @@ class IncrementalDataChange_Spec extends Specification {
          created == ['MVorders1|TopMV']
          updated == ['MVorders1|TopMV']
          createdRows == [1]
-         // row 3 was inserted after the first update had started reading
-         firstRows == [1, 2]
+         assert firstRows == [1, 2]: 'the first update read row 3, so the row was inserted before that ' +
+            'update read the view (a timing problem of the case, not the defect of #79854)'
          orders(true) == [1, 2, 3]
       }
    }
@@ -1285,7 +1285,8 @@ class IncrementalDataChange_Spec extends Specification {
             Thread.sleep(100)
          }
 
-         throw new AssertionError('no query on ' + view + ' within 30 s')
+         throw new AssertionError('no query on ' + view + ' seen in INFORMATION_SCHEMA.SESSIONS ' +
+            'within 30 s: the update did not read the view, or H2 no longer reports EXECUTING_STATEMENT')
       }
       finally {
          conn.close()
