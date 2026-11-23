@@ -11,9 +11,9 @@ ws 的用例规模不小（评估时 98 个用例、873 个基线文件；删除
 - CI（GitHub，ubuntu）上 `InRange_Spec` 整个跳过（评估时 `WSBuildServer_Spec` 也跳过，已删除），所以**表条件里的 date in（相对日期）在 CI 上是 0 覆盖**；GitHub 工作流只能手动触发，失败也不挡合入；Jenkins 没有 ws 阶段。
 - 所有用例都用设计时的 `LIVE_MODE` 取数，从没走过 viewsheet / MV 实际用的 `RUNTIME_MODE`；名为 `checkMergeable` 的用例也只比数据，不检查查询是否下推到 SQL。
 - 各库的 SQL 差异没有被区分：CI 用 `gcp-db-server-iac` 启动的 8 个库（MySQL、PostgreSQL、SQL Server、DB2、Oracle、Informix、Derby、ClickHouse），但 CI 范围内绑这 8 个库的 212 张表里 Oracle 占 122 张，ClickHouse 因 `@Ignore` 为 0，PostgreSQL 5、服务器上的 Derby 2（嵌入式 Derby 的 `Examples/Orders` 另有 18 张）；日期分组、top N / max rows、集合运算、统计函数在各库的 SQL 生成，既没有 dashboard 用例按库对照，产品单测也未见专门覆盖（G11）。
-- 产品单测：lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件（含六个相对条件）、数值分段与命名分组、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则都已有测试：28 个类、670 个测试（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并 340 个，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并 330 个），见 4b-A。写测试发现的缺陷 14 个：8 个已在 `main` 修复（#81087、#81091、#81092、#81093、#81095、#81096、#81102、#81105），6 个待处理（#81178、#81193、#81220、#81229、#81235、#81236；#81193 是 #81102 修复带来的回归），见 7b。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与交叉表、MV（已读代码，不加单测，见 4b-I）、其他零覆盖项（见 4b-H）。
+- 产品单测：lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件（含六个相对条件）、数值分段与命名分组、各库日期与统计公式的 SQL、上传的类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则都已有测试：28 个类、670 个测试（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并 340 个，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并 330 个），见 4b-A。写测试发现的缺陷 14 个，全部已在 `main` 修复（Redmine 均为 Closed，2026-11-23 查；其中 #81193 是 #81102 修复带来的回归），原来就有的 #80538 也已修复，见 7b。仍没有的：上传服务（环境原因，见 4b-G）、各库真正执行（只有 Derby）、unpivot 后聚合与交叉表、MV（已读代码，不加单测，见 4b-I）、其他零覆盖项（见 4b-H）。
 
-已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异、下推规则的单测（PR #8046、#8064）。接下来：`condition2` 两个基线（等 #81193）；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
+已做：`WorksheetTest` 改成和 `ViewsheetTest` 一样的严格模式，并处理了因此变红的假通过和 3 个陈旧基线（PR #213 已合并）；移植 13.8 的 lens 测试，补 unpivot、date in、上传类型识别、各库 SQL 差异、下推规则的单测（PR #8046、#8064）；#81193 修复后核对并更新了 `condition2/Query1` 的基线，`Query3` 恢复为原基线（见 4b-J）；2026-11-23 本机重跑整套，4 个没通过（见 4b-J 末尾）。接下来：`WSAsset_Spec.varible` 旋转表的重名列名（`7` 与 `7.00_1`）是否算缺陷、`range&formula` 的 `f_byte` 在 `main` 上复现并找原因、`SqlQuery` 运行太慢；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景要先定做哪些。
 
 ## 2. 覆盖情况
 
@@ -238,7 +238,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `NumericRangeRef`、命名分组 `NamedRangeRef` | 已做：`NumericRangeRefBoundaryTest`（5）、`NamedRangeRefGroupsTest`（12） |
 | 各库方言类 | 生成层已做：`DateRangeRefDialectTest`（38）、`AggregateFormulaStatSqlTest`（41）、`SQLHelperOperationSupportTest`（13）；只有 Derby 真正执行 |
 | MV 对 rotate/unpivot 的处理 | 已读代码，不加单测（见 4b-I） |
-| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个已合并），3 个 `@Disabled`（#80538、#81235、#81236） |
+| 合计 | 28 个类（移植 4 + 新写 24）、670 个测试（PR #8046 的 340 个已合并，PR #8064 新增 330 个已合并）；原有 3 个 `@Disabled`（#80538、#81235、#81236），缺陷都已修复：#81235、#81236 的由开发在修复 PR 里启用，#80538 的在 stylebi PR [#8643](https://github.com/inetsoft-technology/stylebi/pull/8643) 启用（待合并） |
 
 ### 4b. 已补的单测、发现与未覆盖（产品仓库 PR [#8046](https://github.com/inetsoft-technology/stylebi/pull/8046) 已合并，PR [#8064](https://github.com/inetsoft-technology/stylebi/pull/8064) 已合并）
 
@@ -277,11 +277,11 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | `DateConditionRelativeRangesTest` | #8064 | 42 | 1 | Year、Quarter、Month、Week、Weeks、Day 六个相对日期条件：用 `java.time` 按当前时钟算期望，范围首尾一天在内、前后一天在外，SQL 范围到 23:59:59；周起始日周日、周一、周六；取反；非日期值不保留 |
 | `NamedRangeRefGroupsTest` | #8064 | 12 | 2 | 命名分组：值归组、不在组里的值保持原样、同属两组归第一组、null 成员、整数列、无分组为 `0`、`isMergeable`、`getBaseName`；SQL 在 Derby 上跑、脚本在 `FormulaTableLens` 上跑，两边对同一批值 |
 
-跳过的：`SetOperationLensesTest` 1 个（#80538）、`NamedRangeRefGroupsTest` 2 个（#81235、#81236，`@Disabled` 并写明编号）、`DateConditionRelativeRangesTest` 1 个（夏令时窗口内的"30 天前"，只在纽约时区的这段日期出现）。
+跳过的（上表"跳过"列是合并时的数）：`SetOperationLensesTest` 1 个（#80538，已修复，stylebi PR #8643 启用，待合并）、`NamedRangeRefGroupsTest` 2 个（#81235、#81236，已修复并由修复 PR 启用）、`DateConditionRelativeRangesTest` 1 个（夏令时窗口内的"30 天前"，只在纽约时区的这段日期出现）。
 
 **验证：**
 - 同一个 JVM 整体跑（`-Dsurefire.forkCount=1 -Dsurefire.reuseForks=true`）：PR #8046 的 19 个类 340 个测试，0 失败，1 个跳过；PR #8064 的 11 个类 338 个测试（含 #8046 里已有的旋转与 unpivot 测试），0 失败，3 个跳过。每个类单独跑，测试数和跳过数与整体一致，没有类之间的隐含依赖。
-- 带缺陷编号的 `@Disabled` 在对应修复进 `main` 后已去掉并通过（#81091、#81092、#81093、#81095、#81096、#81102、#81105 共 11 个测试）；期望值是按代码规则独立推的，不是按修复前的输出写的。
+- 带缺陷编号的 `@Disabled` 在对应修复进 `main` 后已去掉并通过（#81091、#81092、#81093、#81095、#81096、#81102、#81105 共 11 个测试）；期望值是按代码规则独立推的，不是按修复前的输出写的。后来的 #81235、#81236 由开发在修复 PR 里去掉 `@Disabled`；#81178、#81220、#81229 原来"固定现状"的测试由修复 PR 改成修复后的期望（`timestampEarlierOnTheStartDayIsInSqlAndInMemory`、`firstRowOfAPipeFileWithoutQuoteHandlingIsCutWithLiteralDelimiter`、`oneOfOnMongoIsTheOnlyConditionKeptInMemory`）。#80538 的测试在 stylebi PR #8643 去掉 `@Disabled`：`main`（`601948b92b`）上 18 个测试 0 失败 0 跳过，换回修复前的 `UnionTableLens.java` 时它失败（期望 -5，实际 -6）。
 - 日期相关测试在 UTC、上海、奥克兰、Lord_Howe、Kiritimati、Pago_Pago、伦敦下跑通过；默认运行时区是 `core/pom.xml` 写死的 America/New_York，换时区要改 pom（`-DargLine` 覆盖不了）。依赖当前时钟的测试用 `DayChange` 扩展：断言失败且日期在测试期间变了，就跳过而不是失败；夏令时窗口内的天数用例也会跳过。
 - 变异检查（临时改主代码看测试是否变红，已还原）：方言、统计公式、日期条件（含六个相对条件）、`XUtil.isQueryMergeable`、`CSVLoader`、`AssetUtil.getType`、`CSVInfo`、`PreAssetQuery` 五个类（共 42 处）、命名分组；全部被抓到。个别等价变异（`+100` 改 `+99`、数据源相等判断多余、手写 SQL 的解析结果检查与 `XUtil.isQueryMergeable` 重复）不改变结果，不算漏。
 - 只新增测试文件，没有改主代码。
@@ -298,7 +298,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 **C. 与 13.8 的差异（移植 `style-intelligence` 的 lens 测试时遇到）**
 
 两边 lens 代码逻辑基本相同，但 StyleBI 多了并发与加锁改动，移植逐个适配。差异分三种：
-- **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号，修复进 `main` 后已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），已在 StyleBI 侧报为 #81092、#81091（已修）；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧已有 issue，状态 New，没有动，对应测试仍 `@Disabled`）。
+- **13.8 已修、StyleBI 没有的缺陷**（对应测试当时 `@Disabled`、写明编号，修复进 `main` 后已启用）：Bug #80298（`join.table.maxrows` 把表头行算进上限，`JoinTable.java:111`）、Bug #80297（连接列检查不阻止引擎启动，`JoinTable.java:80-93`），已在 StyleBI 侧报为 #81092、#81091（已修）；Bug #80538（非 distinct union 在加载中多算一行，StyleBI 侧的 issue 已由 stylebi #8209 修复，对应测试在 stylebi PR #8643 启用，待合并）。
 - **StyleBI 里新发现的缺陷（已报 #81093，已修）**：`TextComparer.isAsciiOnly`（`report/filter/TextComparer.java`，2025-06-11 为 Bug #71460 加的快速路径）用 `getBytes(US_ASCII).length == length()` 判断 ASCII，对任何基本平面的非 ASCII 字符都返回 true（被替换成 `?`），所以 collator 被绕过，中文默认区域下按码点排序而不是拼音。
 - **有意的行为变化，测试已按 StyleBI 改写**：脚本一律按受限模式运行（Bug #77396），`setRestricted` 只记录标志，能否调用 Java 类由允许类的白名单决定；`FormulaTableLens` 一批一起计算的行只报告一次失败（13.8 是逐行各报一次）。
 
@@ -309,12 +309,12 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 - **已修（`main`，Redmine Closed，指给 Nelson Cao，版本 stylebi-2.1.0）：** #81087（cross join 行序竞态，datatest 发现）、#81091、#81092、#81093（见 C）、#81095（统计公式：只有一列为 NULL 时协方差/相关系数算错）、#81096（单行相关系数除零）、#81102、#81105。
   - **#81102**（Redmine 里没有同类 bug）：`RotatedQuery`，源表第一列有重名时，旋转后的表丢列、丢数据（`A, A, B` 得到 `item, A, B`；只差大小写的 `A, a` 得到 `item, a_1`，`A` 列不见了）。根因：`RotatedQuery.fixColumnSelection` 用互斥的 `addAttribute`，同名列被跳过，`fixAlias` 看不到。
   - **#81105**：数值分段脚本表达式的"最大值以上"分支没有 `!= null` 判断，`LOWER` 下最后一个分界值 <= 0 时 `null >= 0` 在 JS 里为真，空值进入最后一段，SQL 版本进入 Others。
-- **待处理：**
-  - **#81178**（指给 Larry Liang，New）：`MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断按时刻比较，与下推 SQL 的"天"范围不一致；`Days`、`Day`、`Week`、`Weeks` 都按天比较，`java.sql.Date` 不受影响。
-  - **#81193**（指给 Nelson Cao，回归）：#81102 修复后旋转表只从源表前面的行生成列，名字出现得晚的列被列数上限截掉，保存的 worksheet 里依赖它们的分组、条件、聚合悄悄丢失（见 4b-J）。
-  - **#81220**（指给 Larry Liang）：`CSVInfo` 把 `|` 首行当正则拆成单个字符，表头猜错（见 4b-G）。
-  - **#81229**（指给 Nelson Cao）：`merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个拆出不能下推的条件，其余仍下推，再用 `isConditionListMergeable` 整体复核；mongo 的 `ONE_OF` 检查只在后者，所以 mongo 上带 `ONE_OF` 的 where 整个留在内存（对照：脚本计算列的条件只让它自己留在内存）。结果相同，只是少了一次下推（性能）。已写成测试固定现状。
-  - **#81235、#81236**（指给 Larry Liang）：命名分组的 SQL 表达式 `NamedRangeRef.getExpression()` 对值或组名里的单引号不转义；只含 null 的组生成空的 `IN ()`。两者在 Derby 上把表达式当 SELECT 跑，直接报语法错误；到 SQL 的路径是读代码确认的（`VSDimensionRef.createGroupRef` 包成 `NamedRangeRef`，`PreAssetQuery` 约 2683 行把表达式原样拼进 SQL，`SQLHelper.fixSQLExpression` 基类不处理）；没有在真实可下推的库上跑完整视图表。Derby 和 access 不下推，所以只影响 Oracle、MySQL、SQL Server 等。两个 SQL 侧测试 `@Disabled`，脚本侧各有一个通过的测试。关联缺陷 #79129（脚本表达式对范围、前缀、取反组不支持，已解决）与它们不重合。
+- **第二批，也已修（`main`，Redmine Closed，版本 stylebi-2.1.0，2026-11-23 查）：**
+  - **#81178**（stylebi #8313）：`MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断按时刻比较，与下推 SQL 的"天"范围不一致；`Days`、`Day`、`Week`、`Weeks` 都按天比较，`java.sql.Date` 不受影响。修复后内存判断也按整天比较。
+  - **#81193**（stylebi #8092，回归）：#81102 修复后旋转表只从源表前面的行生成列，名字出现得晚的列被列数上限截掉，保存的 worksheet 里依赖它们的分组、条件、聚合悄悄丢失。开发采纳了两个方向：截断时先保留各名字第一次出现的列（按源表顺序），再放重名列；截断时提示"The data is limited to 250 columns."。datatest 的结果见 4b-J。
+  - **#81220**（stylebi #8226）：`CSVInfo` 把 `|` 首行当正则拆成单个字符，表头猜错（见 4b-G）；修复后按字面分隔符切。
+  - **#81229**（stylebi #8270）：`merge()` 对只有 AND 的 where，先用私有的 `isConditionItemMergeable` 逐个拆出不能下推的条件，其余仍下推，再用 `isConditionListMergeable` 整体复核；mongo 的 `ONE_OF` 检查只在后者，所以 mongo 上带 `ONE_OF` 的 where 整个留在内存（对照：脚本计算列的条件只让它自己留在内存）。结果相同，只是少了一次下推（性能）。修复后两处共用一个检查，只有 `ONE_OF` 留在内存；在真实 MongoDB 上确认了下推的 SQL，返回的行因另一个缺陷 #81649（空派生表）没能比对。
+  - **#81235、#81236**（stylebi #8236、#8238）：命名分组的 SQL 表达式 `NamedRangeRef.getExpression()` 对值或组名里的单引号不转义；只含 null 的组生成空的 `IN ()`。两者在 Derby 上把表达式当 SELECT 跑，直接报语法错误；到 SQL 的路径是读代码确认的（`VSDimensionRef.createGroupRef` 包成 `NamedRangeRef`，`PreAssetQuery` 约 2683 行把表达式原样拼进 SQL，`SQLHelper.fixSQLExpression` 基类不处理）；没有在真实可下推的库上跑完整视图表。Derby 和 access 不下推，所以只影响 Oracle、MySQL、SQL Server 等。修复后单引号加倍、只含 null 的组不再生成 `IN ()`；两个 SQL 侧测试已由修复 PR 启用。关联缺陷 #79129（脚本表达式对范围、前缀、取反组不支持，已解决）与它们不重合。
 
 **E. 从代码读出的规则**（只读代码，没有向开发确认；"设计是否合理"仍是产品的判断，这里只说代码现在是什么，所以不必等开发就能写期望值）
 
@@ -360,7 +360,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 `CSVInfo` 的分隔符、引号、表头、编码猜测（`CSVInfoDetectionTest` 30 个）：评分规则从代码读出并手算期望（前 10 行、每一行列数一致且多于 1 列得"列数 + 100"、不一致得"列数"、引号未闭合得 0；取各行最小值；严格更高才替换，所以平局取先出现的：引号处理开、再关，分隔符 tab、`;`、`,`、`|`）。固定的现状、没有报缺陷的：
 - 每一行都带同样个数的"引号内逗号"（如 `"a,b",c`）时，不处理引号、3 列的得分（103）高于处理引号、2 列的得分（102），猜测结果是不处理引号；各行的个数不同时则处理引号。
 - 引号未闭合的行只有在它是检查范围里的最后一行时才会让引号处理被关掉（前面的行得 0 会被下一行的分数覆盖，0 不是粘住的）。
-- **首行是否表头：** 有一个"全是数字"的非空单元格就不是表头。不处理引号时用 `String.split(delim)`（正则），`|` 被当成空匹配，首行被拆成单个字符，所以 `…|c1` 这样的首行会被判为数据，同样的数据用 `,` 就是表头。只在 `|` 分隔且猜测结果不处理引号时发生（例如首行之外有一个字段中间带 `"`），影响小（只是上传对话框里"首行作为表头"勾选框的默认值，用户可以手动勾上）。**已报 #81220**，测试注释已引用该编号。
+- **首行是否表头：** 有一个"全是数字"的非空单元格就不是表头。不处理引号时用 `String.split(delim)`（正则），`|` 被当成空匹配，首行被拆成单个字符，所以 `…|c1` 这样的首行会被判为数据，同样的数据用 `,` 就是表头。只在 `|` 分隔且猜测结果不处理引号时发生（例如首行之外有一个字段中间带 `"`），影响小（只是上传对话框里"首行作为表头"勾选框的默认值，用户可以手动勾上）。**已报 #81220，已修（stylebi #8226）：** 不处理引号时也按字面分隔符切，`|` 与 `,` 的结果相同；测试已改成修复后的期望。
 - `getFileEncode`：UTF-8、GBK（报为 GBK，GB2312/GB18030 映射到 GBK）、UTF-16 两种字节序（报为 "Unicode"）、纯 ASCII（用系统编码）都与代码一致。
 - `CSVInfo.writeXML`/`parseXML` 在整个产品里没有任何调用，所以没有写测试；Tab 保存后读回来是空格（属性值里的原始 Tab 被 XML 规范化），没有用户影响。
 
@@ -396,7 +396,14 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 - **`property_crossJoin.maxCellCount`：** 行序已确定，竞态消除（多次运行输出相同）。输出是 5000 个不同的 id，既不是基线里的"143 个 id × 1 个订单 × 35 个客户"，也不是以前单独运行时的另一种，所以原来的基线按旧的竞态结果之一记录，用例会失败。**已处理：** 给 `Customer1` 加了排序（`Customer.State`、`Customer.Reseller` 升序；它有重复的 `(State, Reseller)` 行，内容相同，同时排两列后顺序不再影响结果），`Query1` 的基线更新为新输出（5000 个 id，id 列与 `TestData` 逐行一致，State、Reseller 每行都是 AZ、0）；`TestData`、`Customer1`、`All Sales1` 的基线本来就和新输出一致。单独运行、以及在同一 JVM 里跟在 `WSOthers_Spec` 之后运行，用例都通过（本机 Windows；CI 未确认，其他 spec 组合没试）。剩余风险：`All Sales1` 的 SQL 没有 ORDER BY，`Query1` 里 Employee、Order Number 等列取它的第一行（Annie, 12002），同样依赖数据库行序，目前几次运行都稳定，未处理。
 - **`WSData_Spec` 另有 4 个用例失败（`rotate`、`grouping1`、`condition1`、`condition2`）**，原因是 #81102 的修复：旋转表以前把第一列重名的列丢掉，基线固定了这个错误输出。这说明严格模式后的 datatest 能发现产品修复带来的结果变化（也说明这几个基线固定了缺陷）。决定：基线更新和本文档放同一个 PR，更新前先确认新输出正确。5 个基线的处理：
   - **`rotate/Query4`、`condition1/Query7`、`grouping1/Query1`：已核对，基线已更新**，对应用例通过。核对对照来源数据：`rotate/Query4` 20 个产品各出现一次，列头底名是产品的类别，重名后缀按产品号升序；`Query7`、`Query1` 新增的列正好是以前被丢弃的重名列，后缀编号完整，旧基线的列都不变。列序规则：各名字第一次出现的列在前（按源表顺序），重名列在后（也按源表顺序）；列只从源表前面的行生成。
-  - **`condition2/Query1`、`Query3`：基线不更新，等开发。** `Query3` 是 `PRODUCTS1`（2380 行）的旋转表，保存的列名是 1～20 的类别，按 `11` 分组、对 `2` 求和；修复后每行一列并受列数上限截断，类别 `11` 第一次出现在第 1340 行，落在上限之外，分组列消失，结果从 3×2 变成 2×1。#81102 的修复让"保存的旋转表依赖重名列被丢弃"的 worksheet 悄悄改变了含义，**已报 #81193**（回归，指给 Nelson Cao；三个方向：被截断时先保留各名字第一次出现的列、加列上限提示、保留保存的选择里仍存在的名字）。`Query1` 同样被列数上限截断，新输出前面的列没有独立验证。
+  - **`condition2/Query1`、`Query3`：等 #81193 修复后处理，已完成。** `Query3` 是 `PRODUCTS1`（2380 行）的旋转表，保存的列名是 1～20 的类别，按 `11` 分组、对 `2` 求和；只有 #81102 的修复时，每行一列并受列数上限截断，类别 `11` 第一次出现在第 1340 行，落在上限之外，分组列消失，结果从 3×2 变成 2×1，**报为 #81193**（回归）。开发修复（stylebi #8092）：截断时先保留各名字第一次出现的列，再放重名列，并提示列数上限。在含该修复的本机产品（2026-11-23 构建，`RotatedQuery` 里有 `common.limited.column`）上重跑：
+    - `Query3`：与原基线一致（3×2：`11, 2` / `3, 3` / `5, 5`），基线不动。
+    - `Query1`：`query21`（MySQL，按 `order_date` 升序，701 行，28 个城市）的旋转表，前置条件"`Dallas` 属于（`Houston`、`Baltimore`）"按行判断，留下 `order_date`、`state` 两行。新输出 3×200：前 29 列（表头列和 28 个城市）与原基线逐格相同，后面 171 列是重名列（`Tucson_1`、`Cambridge_1`…）。核对：从 `query21` 的导出数据按 `order_date` 排序，独立推出"各城市第一次出现的行在前、其余行在后、重名后缀按出现次数编号"，与新输出对比：28 个首列、169 个重名列和截断所在日期（2003-02-20）的 2 列全部吻合；同一天的几行只按集合比，因为同日的先后取决于数据库返回的顺序。截在 200 列而不是 250 列：旋转表先被 `RotatedQuery` 截到 250 列，sandbox 取表时再按组织的列数上限截一次（`AssetQuerySandbox.getColumnLimitTableLens`，`max.col.count`，默认 200，`Util.MAX_COLUMN_COUNT`），开发在 #81193 里提过 composer 预览会同时显示 200 列的提示。**基线已更新。**剩余风险：同一天的行序依赖数据库（`query21` 只按 `order_date` 排序），本机运行稳定，未处理。
+- **整套重跑（2026-11-23，本机 Windows）：** 用的 `inetsoft-core-2.1.0-SNAPSHOT` 是当天 08:06 在本机 install 的（`Implementation-Version` 202611230006），含 #8092，具体来自哪个提交查不到，可能带有未合并的改动。58 个用例：50 个通过，7 个跳过（`InRange_Spec` 3 个因 `@Stepwise` 跟着跳过，`WSData_Spec` 2 个、`WSOthers_Spec` 1 个、`WSProperty_Spec` 1 个是 `@Ignore`），4 个没通过，基线都没动：
+  - **`InRange_Spec` 第一个用例：环境原因。** `TUtil.changeSystemDateToDay` 用 `runas /savecred` 改系统日期，本机没有保存的管理员凭据，日期没改成（运行后日志时间仍是当天），按今天的日期取数，行数不同。与产品无关。
+  - **`WSAsset_Spec.varible`：#81102 的同类变化，当时只重跑了 `WSData_Spec`，没有发现。** `rotation`、`Copy of rotation1` 从 6×20 变成 6×200：前 20 列（`CUSTOMER_ID` 和 19 个客户）与原基线逐格相同，后面是重名列，截在 200 列（同上，sandbox 的列数上限）。**列名不一致：** 第一次出现的列显示为 `7`，同一个值的重名列叫 `7.00_1`。原因（读代码）：`RotatedQuery.makeHeadersUnique` 只把重名列的表头换成字符串别名，别名用 `AssetUtil.format(值)` 拼出来，Double 按 `0.00##` 格式化成 `7.00`；第一次出现的列保留原来的 Double 值，导出时显示成 `7`。另外，`AssetUtil.getNumberFormat` 把格式缓存在静态变量里，只看第一次调用时的 `trim`（`#.####` 或 `0.00##`），之后不再区分，所以别名的写法理论上取决于同一个 JVM 里先走了哪条路径；本机单独跑和整套跑结果相同（都是 `7.00_1`）。**基线没更新**：要先确认 `7.00_1` 这样的列名算不算缺陷（是否报 bug，待定）。
+  - **`range&formula/Embedded`：原因未查。** 表达式列 `f_byte`（声明类型 `byte`，表达式 `field['byte']/0.5`）原基线是 -6、-2，即 250、254 按有符号 byte 窄化后的值；现在是 250、254，超出 byte 范围，也就是说这一列不再按声明的类型转换。`main` 最近两周没有直接改 byte 转换的提交，脚本、数值转换相关的提交有十几个，没有二分；又因为 jar 的来源提交未知，还不能确定这是 `main` 的行为。**基线没更新。**
+  - **`WSData_Spec.SqlQuery`：运行太慢。** 整套里跑到 312 秒时报 `ExpiredSheetException`（sheet 过期）；单独重跑通过，但用了 347 秒。数据没有问题，是用例运行时间接近 sheet 的过期时间，整套里可能因为负载更高而超时。
 
 
 ## 5. Dashboard 与机制补充
@@ -432,7 +439,7 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 
 **没验证的：**
 - 评估和处理后的运行都在本机（Windows）；CI 上严格模式后的结果未确认（CI 用同一份测试配置，上传的根因应相同）。
-- 严格模式的整套重跑在清理 3 个陈旧基线之前，之后只重跑了 `DataComposition_Spec`、`WSOthers_Spec`、`checkMergeable CM1`，以及在带产品修复的版本上重跑 `WSData_Spec` 和 `property_crossJoin.maxCellCount`（结果见 4b-J）；6 个 spec 的整套没有再跑，CI 上的结果未确认。
+- 6 个 spec 的整套在 2026-11-23 本机重跑过一次（结果和 4 个没通过的用例见 4b-J 末尾），CI 上的结果未确认：`test-ws.yml` 最后一次运行是 2026-10-13（失败），在严格模式合并之前。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 执行路径是静态信号（`mergeable=false`），实际是否下推没有运行确认。
 - 下推分支清单（3b-C）只读了 `PreAssetQuery` 和各查询类的 `isSourceMergeable`；`XUtil.isQueryMergeable`（`BoundQuery.java:83`）不在这份清单里，它的规则见 4b-E，已写 `XUtilQueryMergeableTest`。各库支持矩阵来自 `sqlhelper.xml` 和 MySQL、SQL Server、Derby 三个覆盖，其余库没有代码覆盖是按 grep `supportsOperation(String op` 判断的。
@@ -512,15 +519,15 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | #81093 | `TextComparer.isAsciiOnly` 把所有基本平面非 ASCII 字符当 ASCII，中文不按拼音排序 | Closed | `SortSummaryFilterTest` | 无 |
 | #81095 | 无原生函数的库里，协方差、相关系数在只有一列为 NULL 时算错 | Closed | `AggregateFormulaStatSqlTest` | 无 |
 | #81096 | 单行相关系数除零 | Closed | `AggregateFormulaStatSqlTest` | 无 |
-| #81102 | 旋转表第一列有重名值时丢列丢数据 | Closed | `RotatedQueryTest` | `rotate`、`grouping1`、`condition1` 的基线已更新；`condition2` 两个待定（见 #81193） |
+| #81102 | 旋转表第一列有重名值时丢列丢数据 | Closed | `RotatedQueryTest` | `rotate`、`grouping1`、`condition1` 的基线已更新；`condition2` 见 #81193 |
 | #81105 | 数值分段的脚本表达式把 null 放进最后一段，SQL 放进 Others | Closed | `NumericRangeRefBoundaryTest` | 无 |
-| #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | New | `DateConditionBuiltinTest` 固定现状 | 无 |
-| #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | New | 暂无（探针验证过，未写进单测） | `condition2/Query1`、`Query3` 的基线不更新，等开发 |
-| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | New | `CSVInfoDetectionTest`（PR #8064） | 无 |
-| #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | New | `PreAssetQueryConditionMergeableTest` 固定现状（PR #8064） | 无 |
-| #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（`@Disabled`，PR #8064）；脚本侧有通过的测试 | 无 |
-| #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | New（指给 Larry Liang） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（`@Disabled`，PR #8064）；脚本侧有通过的测试 | 无 |
-| #80538 | 非 distinct union 加载中多算一行（原来就有） | New | `SetOperationLensesTest` 的最后一个 `@Disabled` | 无 |
+| #81178 | `MonthsCondition` 对 `Timestamp`、带时间的 `java.util.Date`，内存判断和下推 SQL 不一致 | Closed（stylebi #8313） | `DateConditionBuiltinTest`（修复 PR 改为修复后的期望） | 无 |
+| #81193 | #81102 修复后，旋转表只从源表前 250 行生成列，保存的 worksheet 里名字出现得晚的列悄悄消失（回归） | Closed（stylebi #8092） | 修复自带 `RotatedQueryTest` 的用例 | `condition2/Query3` 恢复为原基线（3×2）；`condition2/Query1` 核对后更新（3×200） |
+| #81220 | `CSVInfo` 不处理引号时用正则切首行，`\|` 分隔的首行被拆成单个字符，首行有数字就不被当作表头 | Closed（stylebi #8226） | `CSVInfoDetectionTest`（修复 PR 改为修复后的期望） | 无 |
+| #81229 | mongo 的"属于（ONE_OF）"检查只在 `isConditionListMergeable`，不在拆分用的 `isConditionItemMergeable`，带 `ONE_OF` 的 where 整个留在内存（性能，结果相同） | Closed（stylebi #8270） | `PreAssetQueryConditionMergeableTest`（修复 PR 改为修复后的期望） | 无 |
+| #81235 | 命名分组的值或组名里带单引号，`NamedRangeRef.getExpression()` 下推的 SQL 不转义，查询报语法错误（脚本表达式已转义） | Closed（stylebi #8236） | `NamedRangeRefGroupsTest.quoteInAValueOrInAGroupNameInSql`（修复 PR 已启用） | 无 |
+| #81236 | 命名分组只含 null（空值）一个成员时，下推的 SQL 表达式生成空的 `IN ()`，查询报语法错误 | Closed（stylebi #8238） | `NamedRangeRefGroupsTest.groupOfOnlyNullInSql`（修复 PR 已启用） | 无 |
+| #80538 | 非 distinct union 加载中多算一行（原来就有） | Closed（stylebi #8209） | 修复自带 `UnionTableLensTest`；`SetOperationLensesTest` 的 `@Disabled` 在 stylebi PR #8643 去掉（待合并） | 无 |
 
 ## 附：数据来源与复现
 
