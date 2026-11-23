@@ -106,10 +106,10 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 |---|---|---|---|---|
 | 数据源 | `EmbeddedQuery.java:166`、`DataQuery.java:133`、`CubeQuery.java:897` | 恒不可合并，嵌入表一律在内存算 | 嵌入表 40 张（含快照 20 张）；Data、Cube 无表 | 有 |
 | 数据源 | `AssetQuery.java:890`：表 `isSQLMergeable()` 为 false（用户关闭合并），或含运行时 MV | 不可合并 | `mergeable=false` 7 张；运行时 MV 归 mv 模块 | 有 |
-| 数据源 | `BoundQuery.java:285`：SQL 表走父类，其余用 `smergeable`（`XUtil.isQueryMergeable`，`:83`）；`PhysicalBoundQuery.java:130`、`LMBoundQuery.java:155` 恒为 true | 逻辑模型与物理表默认可合并 | 物理表 114、逻辑模型 63；`XUtil.isQueryMergeable` 的分支未读 | 未验证 |
-| 数据源 | `MirrorQuery.java:311`：子查询可合并、库支持 `MIRROR_TABLE`、`FROM_SUBQUERY`；有最大行数而库不支持 `MAXROWS` 时不可合并 | 镜像表能否下推取决于库 | 镜像表 51 张；各库的支持情况未核对 | 未验证 |
-| 数据源 | `JoinQuery.java:154`：库支持 `FROM_SUBQUERY`、`MAXROWS`、`FULL_OUTERJOIN`；`join.table.maxrows` 非 0；所有子查询可合并；同一数据源 | join 能否下推取决于库和配置 | join 65 张，full join 5 张；`join.table.maxrows` 只有 `propertyMaxRows` 设置过；full join 在哪些库未核对 | 部分 |
-| 数据源 | `ConcatenatedQuery.java:319`：两表时 union / intersect / minus 分别需要库支持 `UNION_TABLE` / `INTERSECT_TABLE` / `MINUS_TABLE`；子查询可合并；同一数据源 | 并集运算能否下推取决于库 | union 10、intersect 5、minus 6；哪个库不支持哪个运算待开发确认 | 未验证 |
+| 数据源 | `BoundQuery.java:285`：SQL 表走父类，其余用 `smergeable`（`XUtil.isQueryMergeable`，`:83`）；`PhysicalBoundQuery.java:130`、`LMBoundQuery.java:155` 恒为 true | 逻辑模型与物理表默认可合并 | 物理表 114、逻辑模型 63；`XUtil.isQueryMergeable` 的规则后来已读（4b-E）并由 `XUtilQueryMergeableTest` 覆盖，资产会走哪些分支未核对 | 未验证 |
+| 数据源 | `MirrorQuery.java:311`：子查询可合并、库支持 `MIRROR_TABLE`、`FROM_SUBQUERY`；有最大行数而库不支持 `MAXROWS` 时不可合并 | 镜像表能否下推取决于库 | 镜像表 51 张；各库对 `FROM_SUBQUERY`、`MAXROWS` 的支持见下面的支持矩阵，规则由 `PreAssetQuerySourceMergeableTest` 覆盖；资产在哪些库上未核对 | 未验证 |
+| 数据源 | `JoinQuery.java:154`：库支持 `FROM_SUBQUERY`、`MAXROWS`、`FULL_OUTERJOIN`；`join.table.maxrows` 非 0；所有子查询可合并；同一数据源 | join 能否下推取决于库和配置 | join 65 张，full join 5 张；`join.table.maxrows` 只有 `propertyMaxRows` 设置过；哪些库支持 full outer join 见下面的支持矩阵（MySQL、Derby、H2 不支持），规则由 `PreAssetQuerySourceMergeableTest` 覆盖；5 张 full join 表在哪些库未核对 | 部分 |
+| 数据源 | `ConcatenatedQuery.java:319`：两表时 union / intersect / minus 分别需要库支持 `UNION_TABLE` / `INTERSECT_TABLE` / `MINUS_TABLE`；子查询可合并；同一数据源 | 并集运算能否下推取决于库 | union 10、intersect 5、minus 6；哪个库不支持哪个运算已从代码读出，见下面的支持矩阵（MySQL、SQL Server 不下推 intersect、minus，Informix、Derby 三种都不下推），规则由 `PreAssetQuerySourceMergeableTest` 覆盖；这些表在哪些库未核对 | 未验证 |
 | 子查询 | `PreAssetQuery.java:3042`：作为子查询且 SQL 不可合并 | 不可合并 | 同上，`mergeable=false` 的表被 join、镜像引用时 | 未验证 |
 | where | `:3112`、`:3143`：条件列或条件值是列，且该列不可合并（数据类型、脚本表达式列） | 不可合并 | 前置条件的表 90 张（全部 worksheet）；落在脚本表达式列上的条件未核对 | 未验证 |
 | where | `:3118`：mongo 的 `ONE_OF` | 不可合并 | CI 无 mongo | 无 |
@@ -140,8 +140,8 @@ ws 的核心不是"由 A 生成 B"，只有"某个查询下推到 SQL 还是退�
 | select | `:1723` 起：表达式里 `field['…']` 引用的列不可合并，或 `getExpressionColumn` 为 null | 不可合并 | 未核对 | 未验证 |
 | ranking | `PreAssetQuery.java:3710`：有排名条件即不可合并 | 排名总在内存 | 排名表 13 张（CI 范围） | 有 |
 
-合计 35 个分支：有 4、部分 7、无 5、未验证 19。**已验证覆盖的主要是"恒不可合并"的路径**（嵌入表、脚本表达式列、排名、用户关闭合并）；
-因库而异的判断（`supportsOperation`、日期分组函数、`MEDIAN`、范围列）和各种组合条件基本没有核对，对应 G11 和 G5。
+合计 35 个分支：有 4、部分 7、无 5、未验证 19（评估时的资产核对结果，之后没有重新核对资产）。**资产上已验证覆盖的主要是"恒不可合并"的路径**（嵌入表、脚本表达式列、排名、用户关闭合并）；
+因库而异的判断（`supportsOperation`、日期分组函数、`MEDIAN`、范围列）和各种组合条件，资产会不会走到基本没有核对，对应 G11 和 G5。分支本身的规则后来已由产品单测覆盖：`PreAssetQuery` 的 `is*Mergeable` 共 5 个类、216 个测试，SQL 层 `XUtilQueryMergeableTest`（见 4b-A）；各库的支持情况见下面的支持矩阵。
 
 **各库 SQL 支持矩阵（3b-C 续，G11）：**
 
