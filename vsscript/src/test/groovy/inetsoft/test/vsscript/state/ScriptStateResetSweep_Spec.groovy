@@ -111,6 +111,10 @@ class ScriptStateResetSweep_Spec extends Specification {
       def gone = KNOWN_STAYS.findAll { checked[it] > 0 && !stays.contains(it) }.sort()
       def unchecked = KNOWN_STAYS.findAll { checked[it] == 0 }.sort()
 
+      if(System.getProperty('matrix.print')) {
+         invalid.each { println "RESETSWEEP invalid ${it}" }
+      }
+
       then: 'the sweep reached every listed property (else the storage has no such component)'
       unchecked == []
 

@@ -137,10 +137,14 @@ class ScriptStateExportMatrix_Spec extends Specification {
                Throwable c = e
                while(c.cause != null && c.cause != c) c = c.cause
                refreshFailures[type] = c.class.simpleName
+               try { t.setScript(a.name, '') } catch(Throwable ignore) {}
                return
             }
 
             observed[type] = FORMATS.keySet().collectEntries { n -> [(n): export(t, n)] }
+            // clear the failing script before moving to the next type on the same viewsheet, so later
+            // exports in this loop are not exported alongside an earlier type's unrelated failing script
+            try { t.setScript(a.name, '') } catch(Throwable ignore) {}
          }
       }
 
