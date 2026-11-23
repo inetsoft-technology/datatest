@@ -410,7 +410,9 @@ def crosscheck(zpath, baseline, specs):
                 if k:
                     vis_all |= {f['name'] for f in (table_facts(c, a) for c, a in tables(wss[k]))
                                 if f['visible'] and f['name']}
-            txt = {x for x in (base or set()) if x.endswith('.txt')}
+            # <table>.plan.txt (WorksheetTest.exportMergePlan) belongs to the table like <table>.txt
+            txt = {x[:-len('.plan.txt')] + '.txt' if x.endswith('.plan.txt') else x
+                   for x in (base or set()) if x.endswith('.txt')}
             plain = {t + '.txt' for t in vis_all}
             rows.append((name, feat, len(ids), len(vis_all), 'NO BASELINE' if base is None else len(txt),
                          ', '.join(sorted(plain - txt))[:80],

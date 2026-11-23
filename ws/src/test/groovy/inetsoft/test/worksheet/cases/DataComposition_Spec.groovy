@@ -28,9 +28,16 @@ class DataComposition_Spec extends Specification {
       WorksheetTest.initHome(this.class.getName())
    }
 
+   /**
+    * Besides the data, every table's &lt;table&gt;.plan.txt records whether its query can be merged
+    * into SQL. The expected values of the case tables (CM1_*, CM2_*) come from the design in
+    * docs/ws/DataCompostion_matrix.xls (CheckMergeable_TestCaseList), where every case is an
+    * unmergeable situation; see docs/test-gap-assessment/ws.md (G5) for the per-table check.
+    */
    def 'checkMergeable CM1' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/checkMergeable/CM1', null, null)
 
       expect:
@@ -40,6 +47,7 @@ class DataComposition_Spec extends Specification {
    def 'checkMergeable CM2' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
       wstest.executeWS('1^2^__NULL__^datacomposition/checkMergeable/CM2',null, null)
 
       expect:
