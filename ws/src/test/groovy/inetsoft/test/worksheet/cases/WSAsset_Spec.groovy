@@ -32,6 +32,9 @@ class WSAsset_Spec extends Specification {
    }
    /**
     * check varible apply
+    * rotation and Copy of rotation1 are rotated tables of query11 (371 rows). query11 is sorted by
+    * ORDER_DATE, CUSTOMER_ID, EMPLOYEE_ID so that the column order is deterministic; the baselines
+    * have 200 columns because the sandbox cuts a table at max.col.count (default 200).
     */
    def 'varible' () {
       def paras = new HashMap<String, Object>()

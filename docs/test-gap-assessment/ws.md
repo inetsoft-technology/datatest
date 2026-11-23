@@ -286,7 +286,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `rotate/Query4`、`condition1/Query7`、`grouping1/Query1` | #81102 修复后多出以前被丢的重名列 | 对照来源核对后更新基线 |
 | `condition2/Query3` | #81193 修复后与原基线一致（3×2） | 不变 |
 | `condition2/Query1` | 3×29 → 3×200：前 29 列不变，后面是重名列，截在 sandbox 列数上限 200（`max.col.count`） | 对照 `query21` 独立推导后更新；剩余风险：同一天的行序依赖数据库 |
-| `WSAsset_Spec.varible` 的 `rotation`、`Copy of rotation1` | 6×20 → 6×200，同上 | 对照 `query11` 做与行序无关的核对后更新；列的先后依赖 Oracle 返回顺序，无法独立推导 |
+| `WSAsset_Spec.varible` 的 `rotation`、`Copy of rotation1` | 6×20 → 6×200，同上 | 给来源 `query11` 加排序（`ORDER_DATE`、`CUSTOMER_ID`、`EMPLOYEE_ID`，顺序完全确定），基线由排序后的 `query11` 独立推导，与输出逐字节一致；同一 worksheet 的其他 12 张表输出不变 |
 | `range&formula/Embedded` | `f_byte`（byte，`field['byte']/0.5`）-6、-2 → 250、254 | #81200 有意修改（超出声明类型范围时保留原值）；基线已更新 |
 | `WSData_Spec.SqlQuery` | 整套里 312 秒时 sheet 过期，单独运行约 340 秒通过 | 产品性能缺陷 **#82116**（见下）；等修复 |
 | `InRange_Spec` | 系统日期没改成（无保存的管理员凭据） | 环境原因 |
@@ -353,8 +353,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 命名分组、变量、日期范围在 worksheet 里的实际用法；`InRange_Spec` 的范围名与 `DateCondition` 子类只按名字对应。
 - 49 个未运行的 worksheet 只看了表结构，没有执行。
 - 库 × 处理步骤的交叉统计没有做。
-- 依赖数据库行序的基线：`All Sales1`、`condition2/Query1`、`WSAsset_Spec.varible`、`queryVariableTypes`，本机运行稳定。
-
+- 依赖数据库行序的基线：`All Sales1`、`condition2/Query1`（同一天的行）、`queryVariableTypes`，本机运行稳定。
 ## 7. 已知 bug 对照
 
 范围：Redmine "Product"、分类 "Worksheet Execution"、Bug、2025-11-01 至 2026-11-11 创建，共 118 条（`project_id=1`、`category_id=19`、`tracker_id=1`）。按标题粗分；覆盖情况只看 datatest 一侧。
@@ -430,5 +429,5 @@ python .claude/workflow-shared/datatest-gap/ws_scan.py dbmatrix ws/src/test/reso
 python .claude/workflow-shared/datatest-gap/ws_scan.py crosscheck ws/src/test/resources/config/wsStorage.zip ws/src/test/resources/expectData ws/src/test/groovy/inetsoft/test/worksheet/cases/*_Spec.groovy
 ./mvnw package -pl commons -DskipTests && ./mvnw test -pl ws
 # 更新基线：加 -Dupdate.baseline=true（导出文件写回 ws/src/test/resources/expectData，不比对）
-# 删除过 spec 或基线后先 ./mvnw clean -pl ws
+# 删除过 spec 或基线、改过 wsStorage.zip 后先 ./mvnw clean -pl ws（zip 只在 target/test-resources/server/config-ws 不存在时导入）
 ```

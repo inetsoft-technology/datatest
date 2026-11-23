@@ -147,6 +147,11 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   /**
+    * Query1 is a rotated table of query21 (701 rows): its baseline has 200 columns because the
+    * sandbox cuts a table at the organization column limit (max.col.count, default 200), not the
+    * full rotated result. The first occurrence of every name comes first (#81193).
+    */
     def 'condition2' () {
       def paras = new HashMap<String, Object>()
       paras.put('num1', 3)
