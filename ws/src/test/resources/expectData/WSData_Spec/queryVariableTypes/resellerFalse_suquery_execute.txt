@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 10)
+CUSTOMER_ID, STATE, RESELLER, PRODUCE_DATETIME, PRODUCE_TIME, PRICE, NUMBER_INSTOCK, PRODUCT_NAME, PRODUCT_EXIST, PRODUCER
+4, CO, false, 2001-01-01 01:01:01, NULL, 75, 32, Green Planet, true, Advanced Integrity
+13, CA, false, 2000-12-12 11:59:59, 11:59:59, 35, 72, Easy Chess, true, Enigma Productions
+23, MA, false, 2001-01-01 01:13:13, 01:13:13, 210, 0, 17 Inch LCD, true, Lockbox Servers

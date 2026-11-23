@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 10)
+CUSTOMER_ID, STATE, RESELLER, PRODUCE_DATETIME, PRODUCE_TIME, PRICE, NUMBER_INSTOCK, PRODUCT_NAME, PRODUCT_EXIST, PRODUCER
+1, NJ, true, 2001-01-01 01:01:01, 01:01:01, 2250, 7, Xconnect Server, true, American Computer Vision
+3, NY, true, 2001-01-01 01:01:01, 01:01:01, 399, 55, Info Folder, true, Cyber Opportunities
+5, MD, true, 2001-01-01 01:01:01, NULL, 129, 104, House Hunter, false, Advanced Integrity
+8, CO, true, 2000-12-12 11:59:59, NULL, 248, 18, WebCalendar, true, Continental Innovations Corp.
+14, MD, true, 2000-12-12 11:59:59, 11:59:59, 200, 42, Fast Go Game, true, Enigma Productions

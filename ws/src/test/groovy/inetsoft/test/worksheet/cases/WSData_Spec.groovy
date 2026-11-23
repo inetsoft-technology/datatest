@@ -147,6 +147,11 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   /**
+    * Query1 is a rotated table of query21 (701 rows): its baseline has 200 columns because the
+    * sandbox cuts a table at the organization column limit (max.col.count, default 200), not the
+    * full rotated result. The first occurrence of every name comes first (#81193).
+    */
     def 'condition2' () {
       def paras = new HashMap<String, Object>()
       paras.put('num1', 3)
@@ -265,6 +270,28 @@ class WSData_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
+
+   /**
+    * Text input variables in the where of a DB2 query, compared with columns of other types:
+    * PRICE > $(expr) (decimal), RESELLER = $(exb) (boolean in the worksheet, VARCHAR in DB2) and
+    * PRODUCE_DATETIME < $(exd) (timestamp). The values sit on the boundaries of the data: a price
+    * equal to expr and a timestamp equal to exd must be left out. The baselines were derived from
+    * the rows of ORDERS.CUSTOMERS and ORDERS.PRODUCTS read with plain JDBC, not from the product.
+    */
+   def 'queryVariableTypes' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      // reseller true: price 125.00 (id 2) and 2001-01-01 01:13:13 (ids 21, 22) are left out
+      wstest.executeWS('1^2^__NULL__^suquery_execute',
+                       [expr: '125', exb: 'true', exd: '2001-01-01 01:13:13'], 'resellerTrue')
+      // reseller false: 2006-01-01 09:09:09 (id 19) and later (ids 9, 10) are left out
+      wstest.executeWS('1^2^__NULL__^suquery_execute',
+                       [expr: '30', exb: 'false', exd: '2006-01-01 09:09:09'], 'resellerFalse')
+
+      expect:
+      wstest.compareData(null)
+   }
+
    @Ignore
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name
