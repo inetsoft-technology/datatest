@@ -338,10 +338,10 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 | #80170 | Closed（11-18） | dt | pr | 滑块与选择 | 书签恢复的组合范围滑块少选一个值 |
 | #80445 | Closed（11-17） | dt | pr | 滑块与选择 | 同一表 join 两次，选择列表多出行 |
 | #80457 | Closed（11-17） | dt | pr | 没被使用 | 带变量的关联子查询，提示不支持且没有数据 |
-| #79858 | Resolved | -- | pr | 日期、类型与时区 | 带时区时间戳改成 TimeInstant 后整列为空 |
+| #79858 | Closed（11-16） | dt | pr | 日期、类型与时区 | 带时区时间戳改成 TimeInstant 后整列为空 |
 | #79870 | Resolved | -- | pr | 空值与 NOT | 数据库表"不等于"保留了空值行 |
-| #80152 | Resolved | -- | pr | 空值与 NOT | "不包含"变量条件多出行 |
-| #80155 | Resolved | -- | pr | 日期、类型与时区 | Long 变量默认值超过 int 范围不生效 |
+| #80152 | Closed（11-18） | dt | pr | 空值与 NOT | "不包含"变量条件多出行 |
+| #80155 | Closed（11-15） | dt | pr | 日期、类型与时区 | Long 变量默认值超过 int 范围不生效 |
 | #80096 | Resolved | -- | pr | VPM、权限与跨租户 | 修改组织 id 后组织的 MV 没有数据 |
 | #80313 | New | -- | -- | 增量更新与删除 | 增量更新没有新行的第二次更新后 viewer 打不开 |
 | #80344 | New | -- | -- | 增量更新与删除 | `MV.<列>.Max` 追加条件增量更新后越界（`IncrementalDataChange_Spec` 里有 `$(MV.customer_id.Max)` 用例，不是按编号找到的） |
@@ -358,7 +358,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 
 其中 datatest 能验证、**两边都没提到编号**的未关闭 bug 是：#80313、#80344、#80342（见 G5 和 T9）。#80445（`composite3`）、#80457（`variable in subquery`）、#80170（`rangeslider-compositevalue`）已关闭，对应用例已启用（T12）。公共 API 类（#81059 至 #81061）、权限类和 id 变更类不属于静态 datatest。
 
-## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、开发已答复（#81658），T4 已做（PR #232），T3 已做（golden 已更新，CI 未触发），T7、T8 已做（stylebi PR #8473，已合并），T12、T13 已做；T6、T11 未开始）
+## 8. 具体要做（按顺序；T1、T2、T5 已做（PR #226，T2 的 CI 还没触发），T9 已做（PR #229），T10 的 (a)(b)(c) 都已做、开发已答复（#81658），T4 已做（PR #232），T3 已做（golden 已更新，CI 未触发），T7、T8 已做（stylebi PR #8473，已合并），T12、T13、T14 已做；T6、T11 未开始）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 前提 / 注意 |
 |---|---|---|---|---|
@@ -375,6 +375,7 @@ mv 的验证机制是各模块里最严的一个：每个用例导出的文件�
 | T11 | 按组件和选项扫描发现的零覆盖项补用例（G13）：`associationEnabled=false`、`bypass=true`、`meta=true`、`full=true`（非增量 profile）、图表百分比、`@nomv` 计算字段；核对 `CalcMV` 38 个 viewsheet | 复用现有 viewsheet，改 `viewsheetInfo` 的对应属性（运行时复制，不改 `mvStorage.zip`，做法同 `WSMV_Path_Spec`）；`CalcMV` 新建 spec | 每个选项：命中/不命中符合预期且结果与不用 MV 一致 | 先确认每个选项的预期行为（`associationEnabled=false` 不建关联 MV 等，见产品报告） |
 | T12 | 重新启用三个 bug 已关闭的用例（G9）：`composite3`（#80445）、`variable in subquery`（#80457）去掉 `@Ignore`，`rangeslider-compositevalue`（#80170）去掉 `@PendingFeature` | `TopMV_TableStructures_Spec`、`TopMV_Conditions_Spec`、`MVHit_RankingAndFilters_Spec` | 本机 `both` 和默认 golden 模式各运行一次 | **已做（2026-11-23）**：core 为 2026-11-23 构建（含 stylebi #8212、#8184、#8083，三个修复都带产品单测）。三个用例在 `both` 下 MV 与不用 MV 的输出逐字节相同，基线即不用 MV 的结果。`composite3`：Query1 的 7 个基线内容不变（只有换行符不同，未改），补了 3 个选择列表 × 7 个书签共 21 个基线（原来导出比基线多出这些文件，`compareData` 报 file number different）；`bk1` 是 0 行，即 #80445 修复后的结果。`variable in subquery`：原来没有基线，补了 `SelectionList1`、`TableView1`（默认、`bk1`）4 个；命中从 `ORDERS1|SubMV` 变为 `ORDERS1|TopMV`，断言改为命中 `ORDERS1|TopMV` 且不命中 `ORDERS1|SubMV`（#80457 的修复让带关联子查询的条件不用 MV）。`rangeslider-compositevalue`：`bk_select1` 的两个基线各改一行，滑块终点 `2004-08-29 04:25:15` → `2004-08-30 05:45:05`，2004 年 `18.7189` → `18.9294`，与 #80170 的验证记录一致（比书签保存的终点多一个值，是 #79506 修复的结果）。之后 `both` 和 golden 模式下三个用例都通过 |
 | T13 | 用新产品重跑 datatest（#81682、#81659 修复后），确认 `datelevel_none` 和 `cube` | 6 个 profile 整套；`TopMV_AggregateFormulas_Spec`、`NotTransform_Spec` 的注释 | 每个 profile 前清空 `mv/target`、还原 `docker/src/test/resources/H2Data` 的 `*.mv.db`，用 `-Dmv.compare=both` 运行 | **已做（2026-11-23）**：core 为 2026-11-23 构建（含 `b3fa4de4aa`、`f47db94f8b`、`c4f9d75bff`）。结果：topmv 130 个执行 / 0 失败（跳过 1），submv 86 / 0，incrementalmv 197 / 0，wsmv 1 / 0，vpm 14 / 0，others 232 / 1（跳过 5）。`datelevel_none`：不用 MV 时 `NTime` 也是 `1970-01-01` 的时间，与 MV 的输出逐字节相同，`compareWithoutMV` 通过，golden 不变，注释改为已修。`cube`：见 §6 第 6 条，仍不进 spec，类注释改为现在的原因。others 唯一的失败是新出现的 `CalcField_Spec.Aggregate_ForDate`：`SelectionTree2` 默认和 `bk_select` 两个基线各 30 行，度量值从 `2020-12-30 00:00:00` 变成 `2020-12-30`，日期和选中状态都不变。原因是 #81668（`c4f9d75bff`，11-18）：聚合计算字段现在按声明的类型转换，声明为 Date 的值不再是 Timestamp。这是有意的行为变化，与 MV 无关；#81668 还是 Resolved，基线等它关闭后再更新 |
+| T14 | 给已关闭、datatest 没有用例的 MV bug 补用例：#79854、#79858、#80152、#80155、#80570（#81043 一并） | `IncrementalDataChange_Spec`（incrementalmv）；新建 `TopMV_RuntimeAssets_Spec`（topmv） | 每个用例单独运行，`both` 和默认 golden 模式；incrementalmv 整套 `both` | **已做（2026-11-23）**：都不改 `mvStorage.zip`，用例运行时复制已有资产，在代码里改表、列、条件，需要时在本地 H2（`mvorder1`）建表，用完删除；断言写在 MV 运行的导出上（行数或值），默认 golden 模式下也起作用，`both` 下再与不用 MV 的结果比较。(1) #80570/#81043：`IncrementalDataChange_Spec` 参数化用例，`customer_id` 有两行为空，删除条件 `customer_id` 不等于 / 小于 `MV.LastUpdateTime != null ? 103 : null`（含 `MV.`，建 MV 时忽略，只有更新时删除），更新后空值行也被删掉（剩 [3] / [3, 4]）。(2) #79854：同一 spec，表经一个每行等 1.5 秒的视图读取（H2 `CREATE ALIAS ... FOR 'java.lang.Thread.sleep(long)'`），另一线程在 `INFORMATION_SCHEMA.SESSIONS` 看到对该视图的查询正在执行时插入第 3 行；断言第一次更新后是 [1, 2]、第二次更新后是 [1, 2, 3]。反向检查：第一次更新后把最后更新时间设为当前时间（模拟修复前取更新结束时间），用例在最后一步失败（[1, 2]）。(3) #80155：`TopMV_RuntimeAssets_Spec`，H2 `MVorders` 上 `customer_id <op> ?v`，`v` 为 Long 变量，默认值超出 int：`> 3000000000` 0 行、`> -3000000000` 119 行、`< 4294967297` 119 行（修复前这三个界值会回绕成 -1294967296、1294967296、1，结果分别是 119 行（全部非空行）、0 行、0 行）。`=` 没放进用例：不用 MV 时 `=` 条件经 `ConditionListHandler.fixConditionValue` 按列的 sqlType 转换值（`>`、`<` 不转），复制来的旧 worksheet 列的 sqlType 都存成 12（VARCHAR），值变成字符串 "4294967297"，H2 转 INT 溢出，查询失败；把列和 `AttributeRef` 的 sqlType 改成 INTEGER（新建 worksheet 应有的类型）后，`CoreTool.getData("integer", 4294967297L)` 回绕成 1，不用 MV 时 `customer_id = ?v` 不报错、返回 customer 1 的 6 行，用 MV 是 0 行；常量 `= 4294967297` 被截成 2147483647。这是不用 MV 的查询路径的问题，已在 UI 上用新建的 worksheet 复现（`Examples/Orders` 的 `CATEGORIES`，v=4294967297 返回 ID 1，v=4294967298 返回 ID 2），提了 #82099。(4) #80152：复制 `topmv/v-contains`（DB2），加脚本表达式列 `E = field['PRODUCT_NAME'] + ''`（`setSQL(false)`，否则当 SQL 下推到 DB2 失败），条件改到 E 上，`product_name=a`：9 行，与不用 MV 相同。(5) #79858：复制 `MV_Transform/TopMV/dategroup`，SQL 查询表 `query11` 改为查用例建的 H2 表 `MVRT_TZ`（`ORDERDATE TIMESTAMP WITH TIME ZONE`），列类型设为 TimeInstant，去掉镜像表：用 MV 时两行都有值（`2020-01-01 08:00:00`、`2020-01-02 10:30:00`），与不用 MV 相同。复制来的 `query11` 带着原来的分组（reseller、state、季度、年，Sum(discount)）和排序，用例把它们清掉；不清时用小写别名会让旧分组列重新对上，不用 MV 的导出没有列、建 MV 报 "Error executing query for MV data"，是用例构造的问题，不是产品问题。除 (2) 的模拟反向检查外，这些用例都没有在修复前的产品上运行过，只在当前产品上通过 |
 
 ## 附：数据来源与复现
 

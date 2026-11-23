@@ -109,6 +109,8 @@ class IncrementalDataChange_Spec extends Specification {
    // a query can fail after it returned some rows
    static final String LAZY_DS = 'mvtest_lazy'
    static final String VPM = 'mvinc_data_change_vpm'
+   // an H2 function that waits, so that reading a view that calls it takes a while
+   static final String SLEEP = 'MVINC_DATA_CHANGE_SLEEP'
    static final String DAYS_BEFORE_UPDATE = 'new Date(MV.LastUpdateTime.getTime() - 5 * 86400000)'
 
    @Shared def admin
@@ -134,6 +136,7 @@ class IncrementalDataChange_Spec extends Specification {
       runAll(
          { mvtest?.removeMV() },
          { source.execute("DROP VIEW IF EXISTS ${VIEW}") },
+         { source.execute("DROP ALIAS IF EXISTS ${SLEEP}") },
          { source.drop() },
          {
             DataSourceRegistry registry = DataSourceRegistry.getRegistry()
@@ -1151,6 +1154,141 @@ class IncrementalDataChange_Spec extends Specification {
          createdRows == ['101', '103']
          updatedRows == ['101', '103', '105']
          mvtest.compareWithRebuild()
+      }
+   }
+
+   // A delete condition with an MV. variable, which the MV creation ignores, so the MV has every
+   // row and only the update deletes. customer_id is empty on two rows: the update deletes them
+   // too, as the MV creation and the database do for the same condition (#80570 for "not equal
+   // to", #81043 for the comparisons). A rebuilt MV keeps every row, so the rows are checked.
+   @Issue(['https://issues.inetsoft.com/issues/80570', 'https://issues.inetsoft.com/issues/81043'])
+   def 'delete condition customer_id #name 103: the update deletes the rows with an empty customer_id too'() {
+      given:
+      source.createLike('MVorders')
+      insertOrders(1: '2020-01-01', 2: '2020-01-02', 3: '2020-01-03', 4: '2020-01-04',
+                   5: ['2020-01-05', 'NULL', 0], 6: ['2020-01-06', 'NULL', 0])
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1') { BoundTableAssembly table ->
+         clearConditions(table)
+         ConditionList delete = expression(column(table, 'customer_id'), op,
+                                           'MV.LastUpdateTime != null ? 103 : null')
+         delete.getConditionItem(0).getXCondition().setNegated(negated)
+         table.setMVDeletePreConditionList(delete)
+      }
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and: 'no new rows, the update only deletes'
+      update()
+      def updated = mvtest.takeMVHits()
+
+      then:
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [1, 2, 3, 4, 5, 6]
+         orders(true) == left
+      }
+
+      where:
+      name           | op                     | negated | left
+      'not equal to' | XCondition.EQUAL_TO    | true    | [3]
+      'less than'    | XCondition.LESS_THAN   | false   | [3, 4]
+   }
+
+   // The table is read through a view that waits 1.5 s for each row, so an update reads for a few
+   // seconds. A row inserted while the update reads (seen in H2 as a running query on the view)
+   // is not read by that update, and must be taken by the next one: the last update time is the
+   // time the update started reading, not the time it ended, which is after the new row (#79854).
+   // Real times are used, the case does not set the last update time.
+   @Issue('https://issues.inetsoft.com/issues/79854')
+   def 'a row inserted while an update reads the source: the next update appends it'() {
+      given:
+      source.createLike('MVorders')
+      source.execute("CREATE ALIAS ${SLEEP} FOR 'java.lang.Thread.sleep(long)'")
+      source.execute("CREATE VIEW ${VIEW} AS SELECT * FROM ${TABLE} WHERE ${SLEEP}(1500) IS NULL")
+      insertOrders(1: '2020-01-01')
+      copyOrdersAssets('MV.LastUpdateTime', null, null, { Worksheet ws, BoundTableAssembly table ->
+         table.getSourceInfo().setSource(VIEW)
+      })
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def created = mvtest.takeMVHits()
+      def createdRows = orders(false)
+
+      and: 'row 2 is new; row 3 is inserted while the update reads the view'
+      insertOrderAt(2, new Timestamp(System.currentTimeMillis()))
+      Throwable insertFailure = null
+      Thread inserter = Thread.start {
+         try {
+            waitForQueryOn(VIEW)
+            insertOrderAt(3, new Timestamp(System.currentTimeMillis()))
+         }
+         catch(Throwable e) {
+            insertFailure = e
+         }
+      }
+      update()
+      inserter.join(60000)
+      def firstRows = orders(true)
+
+      and: 'the next update'
+      update()
+      def updated = mvtest.takeMVHits()
+
+      then:
+      insertFailure == null
+      !inserter.isAlive()
+      verifyAll {
+         created == ['MVorders1|TopMV']
+         updated == ['MVorders1|TopMV']
+         createdRows == [1]
+         // row 3 was inserted after the first update had started reading
+         firstRows == [1, 2]
+         orders(true) == [1, 2, 3]
+      }
+   }
+
+   /** Insert a row of the orders table with customer_id 100 + no, discount 0 and the time. */
+   private void insertOrderAt(int no, Timestamp time) {
+      source.execute("INSERT INTO ${TABLE} (orderno, customer_id, discount, orderdate) " +
+                     "VALUES (${no}, ${100 + no}, 0, TIMESTAMP '${time}')")
+   }
+
+   /** Wait until a session of the mvtest database runs a query on the view (30 s at most). */
+   private void waitForQueryOn(String view) {
+      JDBCDataSource ds = (JDBCDataSource) DataSourceRegistry.getRegistry().getDataSource('mvtest')
+      Connection conn = new JDBCHandler().getConnection(ds, admin)
+
+      try {
+         long end = System.currentTimeMillis() + 30000
+
+         while(System.currentTimeMillis() < end) {
+            boolean running = conn.createStatement().withCloseable { Statement stmt ->
+               stmt.executeQuery("SELECT COUNT(*) FROM INFORMATION_SCHEMA.SESSIONS " +
+                                 "WHERE UPPER(EXECUTING_STATEMENT) LIKE '%${view}%' " +
+                                 "AND EXECUTING_STATEMENT NOT LIKE '%INFORMATION_SCHEMA%'")
+                  .withCloseable { ResultSet rs -> rs.next() && rs.getInt(1) > 0 }
+            }
+
+            if(running) {
+               return
+            }
+
+            Thread.sleep(100)
+         }
+
+         throw new AssertionError('no query on ' + view + ' within 30 s')
+      }
+      finally {
+         conn.close()
       }
    }
 
