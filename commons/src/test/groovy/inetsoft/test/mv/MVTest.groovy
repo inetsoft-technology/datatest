@@ -563,6 +563,14 @@ class MVTest {
       printWriter.close()
    }
 
+   /**
+    * Set the "full data" option of the next {@link #createMV} (true by default), see
+    * {@link MaterializedViewResource#setFullData}.
+    */
+   void setFullData(boolean fullData) {
+      materializedViewResource.setFullData(fullData)
+   }
+
    def createMV(boolean applyVPM, boolean ... expandGroup) {
       mvCreated = true
       createdApplyVPM = applyVPM

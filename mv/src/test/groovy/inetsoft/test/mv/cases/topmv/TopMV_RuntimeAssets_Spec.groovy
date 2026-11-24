@@ -20,6 +20,7 @@ import inetsoft.uql.asset.AssetVariable
 import inetsoft.uql.asset.BoundTableAssembly
 import inetsoft.uql.asset.ColumnRef
 import inetsoft.uql.asset.DefaultVariableAssembly
+import inetsoft.uql.asset.MirrorTableAssembly
 import inetsoft.uql.asset.SQLBoundTableAssembly
 import inetsoft.uql.asset.SortInfo
 import inetsoft.uql.asset.TableAssembly
@@ -31,6 +32,7 @@ import inetsoft.uql.jdbc.UniformSQL
 import inetsoft.uql.schema.UserVariable
 import inetsoft.uql.schema.XSchema
 import inetsoft.uql.schema.XValueNode
+import inetsoft.uql.viewsheet.CalculateRef
 import inetsoft.uql.viewsheet.TableVSAssembly
 import inetsoft.uql.viewsheet.Viewsheet
 import org.spockframework.runtime.model.parallel.ExecutionMode
@@ -250,6 +252,112 @@ class TopMV_RuntimeAssets_Spec extends Specification {
          dates[0] != dates[1]
          mvtest.compareWithoutMV()
       }
+   }
+
+   // An expression the MV cannot hold (MVTool.isExpressionMVCompatible): one marked
+   // "/* @nomv */", or one that reads parameter.<name>. A worksheet table with such a column is
+   // not materialized at all, as it depends on the input (#48975); on a mirror of the table, the
+   // table below gets a SubMV and the mirror computes the column at run time; a viewsheet calc
+   // field of the kind makes the analyzer keep a SubMV of a mirror of the table (MVorders1_O) and
+   // compute the field at run time. The analysis gives no warning in any of them. A plain
+   // expression gets the TopMV of the table (control). The viewsheet table shows customer_id,
+   // orderno and the expression E; the case runs it with k = 1 and k = 100 and checks every row
+   // of the MV run: E is 2 * customer_id or customer_id + k (a NULL customer_id is 0 in the
+   // script), so the parameter is read at run time and not taken from the MV.
+   @Issue('https://issues.inetsoft.com/issues/48975')
+   def 'expression #expression on the #where: MVs #mvs, E computed at run time'() {
+      given:
+      copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1', { Worksheet ws, BoundTableAssembly table ->
+         clearMVConditions(table)
+
+         if(where != 'viewsheet calc field') {
+            TableAssembly target = table
+
+            if(where == 'mirror') {
+               target = new MirrorTableAssembly(ws, 'M1', table)
+               ws.addAssembly(target)
+            }
+
+            ColumnSelection cols = target.getColumnSelection(false)
+            ColumnRef column = new ColumnRef(script('E', expression))
+            column.setDataType(XSchema.INTEGER)
+            column.setSQL(false)
+            cols.addAttribute(column)
+            target.setColumnSelection(cols, false)
+         }
+      }, { Viewsheet vs ->
+         if(where == 'viewsheet calc field') {
+            CalculateRef calc = new CalculateRef(true)
+            calc.setDataRef(script('E', expression))
+            calc.setDataType(XSchema.INTEGER)
+            calc.setSQL(false)
+            vs.addCalcField('MVorders1', calc)
+         }
+
+         TableVSAssembly view = (TableVSAssembly) vs.getAssembly('Query1')
+         view.setTableName(where == 'mirror' ? 'M1' : 'MVorders1')
+         ColumnSelection cols = new ColumnSelection()
+         ['customer_id', 'orderno', 'E'].each { cols.addAttribute(new ColumnRef(new AttributeRef(null, it))) }
+         view.setColumnSelection(cols)
+      })
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      mvtest.executeVSWithoutMV(parameter(1), null, false, false)
+      mvtest.createMV(false)
+      def defs = MVTest.getMVDefInfo()
+      def warnings = mvtest.getAnalysisWarnings()
+      mvtest.executeVS(parameter(1), null, false, false)
+
+      then:
+      verifyAll {
+         defs.toSet() == mvs as Set
+         warnings == []
+         mvtest.takeMVHits().toSet() == mvs as Set
+         wrongE(1, fn) == []
+         columnValues('Query1', 'E').size() == 120
+         mvtest.compareWithoutMV()
+      }
+
+      when: 'another parameter value, the same MV'
+      mvtest.executeVS(parameter(100), null, false, false)
+
+      then:
+      verifyAll {
+         mvtest.takeMVHits().toSet() == mvs as Set
+         wrongE(100, fn) == []
+      }
+
+      where:
+      where                  | expression                                    | mvs                    | fn
+      'worksheet table'      | "field['customer_id'] * 2"                    | ['MVorders1|TopMV']    | { int c, int k -> c * 2 }
+      'worksheet table'      | "/* @nomv */ field['customer_id'] * 2"        | []                     | { int c, int k -> c * 2 }
+      'worksheet table'      | "field['customer_id'] + Number(parameter.k)"  | []                     | { int c, int k -> c + k }
+      'mirror'               | "/* @nomv */ field['customer_id'] * 2"        | ['MVorders1|SubMV']    | { int c, int k -> c * 2 }
+      'mirror'               | "field['customer_id'] + Number(parameter.k)"  | ['MVorders1|SubMV']    | { int c, int k -> c + k }
+      'viewsheet calc field' | "field['customer_id'] * 2"                    | ['MVorders1|TopMV']    | { int c, int k -> c * 2 }
+      'viewsheet calc field' | "/* @nomv */ field['customer_id'] * 2"        | ['MVorders1_O|SubMV']  | { int c, int k -> c * 2 }
+      'viewsheet calc field' | "field['customer_id'] + Number(parameter.k)"  | ['MVorders1_O|SubMV']  | { int c, int k -> c + k }
+   }
+
+   private static Map<String, String[]> parameter(int k) {
+      return ['k': [k as String] as String[]]
+   }
+
+   private static ExpressionRef script(String name, String expression) {
+      ExpressionRef expr = new ExpressionRef(null, name)
+      expr.setExpression(expression)
+      return expr
+   }
+
+   /** The rows of the MV run whose E is not fn(customer_id, k), a NULL customer_id is 0. */
+   private List<String> wrongE(int k, Closure fn) {
+      List<String> ids = columnValues('Query1', 'customer_id')
+      List<String> es = columnValues('Query1', 'E')
+      return (0..<ids.size()).findAll { i ->
+         int c = ids[i] == '[NULL]' ? 0 : ids[i] as int
+         es[i] != (fn(c, k) as String)
+      }.collect { ids[it] + ' -> ' + es[it] }
    }
 
    private static ColumnRef typed(String name, String type) {

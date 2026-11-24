@@ -102,6 +102,16 @@ public class MaterializedViewResource {
    }
    
    /**
+    * Set the "full data" option of the next analyses, as the EM analyze page does; true by
+    * default. With false, a table that only selections use gets a thin MV of the selection
+    * columns ({@code VSMVAnalyzer.shrinkTable}). The option is applied to the viewsheet by
+    * the analysis, so the value saved in the viewsheet is not used.
+    */
+   public void setFullData(boolean fullData) {
+      this.fullData = fullData;
+   }
+
+   /**
     * create mv, for 1 time
     *
     * @param applyVPM,    apply vpm to mv
@@ -139,7 +149,7 @@ public class MaterializedViewResource {
       analyzeRequest.setViewsheetId(asset_id);
       analyzeRequest.setBypassVpm(!applyVPM);
       analyzeRequest.setExpandGroups(expandGroup);
-      analyzeRequest.setFullData(true);
+      analyzeRequest.setFullData(fullData);
       
       analysisWarnings.clear();
 
@@ -298,7 +308,7 @@ public class MaterializedViewResource {
                .addNodes(node)
                .expanded(expandGroup)
                .bypass(!applyVPM)
-               .full(true)
+               .full(fullData)
                .build();
             String analysisId = mvService.analyze(request, principal).getId();
             AnalyzeMVResponse status = null;
@@ -492,6 +502,7 @@ public class MaterializedViewResource {
    private ConfigurationContext context;
    private final SRPrincipal principal;
    private final String asset_id;
+   private boolean fullData = true;
    List<String> views = new ArrayList<>();
    private final List<String> analysisWarnings = new ArrayList<>();
 }

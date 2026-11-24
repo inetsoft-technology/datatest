@@ -139,6 +139,51 @@ class VPM_Spec extends Specification {
       }
    }
 
+   // "Bypass VPM": createMV(false) analyzes with bypass (MaterializedViewResource), so the MV is
+   // built without VPM and used without it (ViewsheetSandbox.java:249, the VPM check of
+   // MVManager.isVPMCompatible), and every user sees all rows through the MV. Without MV the VPM
+   // of vpm/group-user keeps 11 of the 700 rows for user0 and user1 (the golden files of
+   // 'group-user'). Checked on the MV run itself, so also in golden mode.
+   def 'group-user, MV built with bypass VPM: every user sees all rows through the MV'() {
+      given:
+      mvtest = new MVTest('1^128^__NULL__^vpm/group-user')
+
+      when: 'no MV yet: the VPM applies'
+      def noMV = [user0: lines(user0), admin: lines(admin)]
+      mvtest.takeMVHits()
+
+      and: 'an MV built with bypass'
+      mvtest.createMV(false)
+      def defs = MVTest.getMVDefInfo()
+      def withMV = [user0, user1, user2, admin].collectEntries { user ->
+         def rows = lines(user)
+         [(user.getName()): [rows, mvtest.takeMVHits()]]
+      }
+
+      then:
+      verifyAll {
+         noMV.user0.size() == 11
+         noMV.admin.size() == 700
+         defs == ['orders1|TopMV']
+         withMV.values().every { it[1] == ['orders1|TopMV'] }
+         withMV.values().every { it[0] == noMV.admin }
+      }
+   }
+
+   /**
+    * The data rows (without the size and header lines) of Query1 run by the user. The export is
+    * deleted after it is read: the folder is the one of 'group-user', whose compareData counts
+    * its files.
+    */
+   private List<String> lines(def user) {
+      mvtest.executeVS(null, null, false, false, user)
+      File file = new File(new File(getClass().getResource('/expectData').getPath()).getParent(),
+                           'exportedData/vpm/group-user/' + user.getIdentityID().getName() + '_Query1__MV.txt')
+      List<String> rows = file.readLines('UTF-8').drop(2).findAll { it }
+      file.delete()
+      return rows
+   }
+
    //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and
    //without MV (#79508).
    @Issue('https://issues.inetsoft.com/issues/79508')

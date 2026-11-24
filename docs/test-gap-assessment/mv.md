@@ -10,9 +10,9 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 **已做和已决定的**（本文不重复）：命中断言（datatest PR #188）、MV 开/关对比（`-Dmv.compare`，PR #193）、增量与全量重建对比（PR #194、#195、#229）、WS MV 的一条通路（PR #200）、golden 更新（PR #196、#197，T3）、`@Ignore` 整理与启用（PR #198、#226，T12）、`others` 每个 spec 单独 JVM（PR #199）、关联 MV 命中检查（PR #226、#228）、反向路径 `NotTransform_Spec`（PR #232）、产品单测（stylebi PR #8473）、cycle 在 `test/cluster` 验证（enterprise PR #1604、#1701，未核对）。**已决定不做**（维护者说明，仓库里没有书面记录）：datatest 各 workflow 的定时运行不恢复、`mvStorage.zip` 不清理、`where:` 数据表不改写、`@Retry` 不改、CI 只做 golden 比较。
 
-仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`viewsheetInfo` 的 `associationEnabled=false`、`full=false`（瘦 MV）、受 VPM 限制的用户在 bypass 下用 MV、`@nomv` 表达式没有用例（G13）；`meta=true` 的单测在 stylebi PR #8746（T19）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
+仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`meta=true` 的单测在 stylebi PR #8746（T19，G13）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
 
-先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；组件和选项的零覆盖项（T11）。
+先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；不可合并公式 Product、Concat（T16）。
 
 ## 2. 覆盖情况
 
@@ -75,10 +75,10 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 | 规则（触发节点） | zip 里的 viewsheet | 被 spec 引用 | profile | 判断 |
 |---|---|---|---|---|
-| `viewsheetInfo associationEnabled="false"`（不建关联 MV，`TableMetaDataTransformer.java:48`-`:54`） | **0** | 0 | — | 没有用例 |
-| `viewsheetInfo bypass="true"`（建 MV、用 MV 时都不套 VPM，`ViewsheetSandbox.java:249`-`:250`、`MVManager.isVPMCompatible`） | 0 | — | 除 vpm 外全部 | 分析时由请求决定，viewsheet 里的值被覆盖（`MVSupportService.java:1478`）：`createMV(applyVPM)` 传 `bypass=!applyVPM`（`MaterializedViewResource.java:140`），除 `vpm` 外的用例都在 bypass 下建 MV；受 VPM 限制的用户在 bypass 下用 MV 没有用例 |
+| `viewsheetInfo associationEnabled="false"`（不建关联 MV，`TableMetaDataTransformer.java:48`-`:54`） | 0 | — | others | 运行时改 `TestCase_Census`（T11，`MVViewsheetOptions_Spec`） |
+| `viewsheetInfo bypass="true"`（建 MV、用 MV 时都不套 VPM，`ViewsheetSandbox.java:249`-`:250`、`MVManager.isVPMCompatible`） | 0 | — | 除 vpm 外全部 | 分析时由请求决定，viewsheet 里的值被覆盖（`MVSupportService.java:1478`）：`createMV(applyVPM)` 传 `bypass=!applyVPM`（`MaterializedViewResource.java:140`），除 `vpm` 外的用例都在 bypass 下建 MV；受 VPM 限制的用户在 bypass 下用 MV：`VPM_Spec` 的 bypass 用例（T11） |
 | `viewsheetInfo meta="true"`（`needMV()` 为 false，`ViewsheetSandbox.java:1477`-`:1480`） | **0** | 0 | — | 只在设计态起作用（runtime 下 `needMV()` 恒为 true），datatest 以 viewer 打开，dashboard 用例走不到；由单测覆盖（`ViewsheetSandboxMVEnabledTest`，stylebi PR #8746，T19） |
-| `viewsheetInfo full`（false 时只用于选择的表建瘦 MV，`VSMVAnalyzer.shrinkTable`，`:547`） | true 103 | — | 全部 | 分析时由请求决定：`createMV` 总传 `fullData=true`（`MaterializedViewResource.java:142`），viewsheet 里的值不起作用；EM 分析页默认也是 true。**full=false 没有用例**，产品单测也没有 |
+| `viewsheetInfo full`（false 时只用于选择的表建瘦 MV，`VSMVAnalyzer.shrinkTable`，`:547`） | true 103 | — | 全部 | 分析时由请求决定：`createMV` 总传 `fullData=true`（`MaterializedViewResource.java:142`），viewsheet 里的值不起作用；EM 分析页默认也是 true。full=false：`MVTest.setFullData(false)`，`MVViewsheetOptions_Spec`（T11） |
 | `viewsheetInfo mvOnDemand` | true 598、false 206 | 428 / 181 | 各 profile | 有 |
 | 选择组件带度量（阻止瘦 MV，`VSMVAnalyzer.java:1204`-`:1220`） | 选择列表 10、选择树 5 | 8、5 | others 12、submv 1 | 有 |
 | 选择组件数据源是别的组件 | 时间滑块 5、日历 1 | 4、1 | others | 有（含义未逐项核对） |
@@ -90,7 +90,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | 组件百分比（`percentageByValue`；`VSAggregateRef.java:403` 转成 `AggregateRef.setPercentage`） | 1（`hit mv/percent of`：图表、交叉表、自由表，占总计） | 1 | others | 交叉表基线有占小计、占总计，bk1 带选择；图表导出的是原始值，百分比在出图时算，导出验证不到；占分组 0。worksheet 聚合百分比另有 `SubMV_Others_Spec` 的 `child has percentage` 等；`isAggregateCombinable` 的百分比分支有单测（`AbstractTransformerTest`，stylebi PR #8677） |
 | 排名（`rankingOptRValue` 9 或 10） | 图表 43、交叉表 3 | 23、3 | others 为主，topmv 1 | 有 |
 | 不可合并聚合公式 | DistinctCount 20、Median 12、Mode 6、NthLargest 4、NthMostFrequent 3、NthSmallest 2、PthPercentile 3；Product、Concat 0 | 10、8、4、3、2、1、2 | 几乎全在 others | topmv、submv 几乎没有 |
-| 表达式含 `@nomv` 或 `parameter.`（`MVTool.isExpressionMVCompatible`，`:630`） | **0** | 0 | — | 分析器的拒绝有单测（`VSMVAnalyzerAcceptableTest`）；端到端没有用例 |
+| 表达式含 `@nomv` 或 `parameter.`（`MVTool.isExpressionMVCompatible`，`:630`） | 0 | — | topmv | 分析器的拒绝有单测（`VSMVAnalyzerAcceptableTest`）；端到端：运行时加表达式（T11，`TopMV_RuntimeAssets_Spec`） |
 | 计算字段含 `parameter.` | 1 | 1 | submv | 只有 1 个 |
 | 计算字段引用聚合（拒绝，`VSMVAnalyzer.java:865`-`:904`） | 23 | 21 | others 19、topmv 2 | 有 |
 | 列表输入组件绑定表（动态表，`VSMVAnalyzer.java:666`-`:669`、`:816`-`:819`） | 17 | 12 | others | 有；是否断言不命中未核对 |
@@ -140,7 +140,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | G10 | `test-mv.yml` 只能手动触发，`Jenkinsfile` 没有 mv（维护者决定不恢复定时）；本机整套约 20 分钟（topmv 2 分 43 秒、incrementalmv 2 分 58 秒、others 7 分 31 秒） | 回归在下一次手动触发前不被发现 | 不改 | 低 |
 | G11 | 195 个 viewsheet 没被字面量引用；1 个 viewsheet 有基线没被引用；`@Ignore` 只剩 `TabularSource_Spec`（5 个）和 `date range and number range`，它们的基线不被导出 | 准备好的场景没被运行；陈旧基线让人误以为被验证过 | 先核对真孤儿还是间接引用，再删除或补用例（T17，未开始；`CalcMV` 38 个已核对，测试点已被覆盖，见 §2） | 低 |
 | G12 | 按需创建、MV 过期、数据周期、集群：datatest 有意不覆盖，cycle 放在 `test/cluster`（CY-02/03/04，enterprise PR #1604、#1701）；`MVRule`、`MVManager` 已有单测（22、35 个） | MV 过期判断出错 | `mv.ondemand` 按需创建（`MVManagerFindRuntimeMVTest`，T7）；`isStale`、`isExpired` 引起的重建（stylebi PR #8677）。过期 MV 对没有 MATERIALIZATION ACCESS 的用户：照常使用、不触发重建（#82140 修复后）。只设 `mv.maxAge` 时超龄 MV 仍被使用、不重建，单测固定现状，待开发确认（#82142） | 低 |
-| G13 | 零覆盖项：`associationEnabled=false`；`full=false`（datatest 分析时总传 `full=true`）；受 VPM 限制的用户在 bypass 下用 MV（datatest 除 `vpm` 外都以 bypass 建 MV，但用户不受 VPM 限制）；`@nomv`、`parameter.` 表达式端到端；`meta=true` 只在设计态起作用，单测在 stylebi PR #8746（T19）；Product、Concat 0（G7） | `associationEnabled=false` 仍建关联 MV；瘦 MV 缺列或命中了用到其他列的查询；bypass 的 MV 套了 VPM 或用户看不到全部行（#78390、#77666 同类）；设计态 `meta` 用了 MV；`@nomv` 表达式被建进 MV、参数变了结果不变 | dashboard 四组（T11）；`meta` 写单测（T19）。组件百分比、`CalcMV` 已核对，有覆盖（§2） | 中 |
+| G13 | 零覆盖项：`associationEnabled=false`；`full=false`（datatest 分析时总传 `full=true`）；受 VPM 限制的用户在 bypass 下用 MV（datatest 除 `vpm` 外都以 bypass 建 MV，但用户不受 VPM 限制）；`@nomv`、`parameter.` 表达式端到端；`meta=true` 只在设计态起作用；Product、Concat 0（G7） | `associationEnabled=false` 仍建关联 MV；瘦 MV 缺列；bypass 的 MV 套了 VPM 或用户看不到全部行（#78390、#77666 同类）；设计态 `meta` 用了 MV；`@nomv` 表达式被建进 MV、参数变了结果不变 | **已做**：dashboard 四组（T11）；`meta` 单测（T19，stylebi PR #8746）。组件百分比、`CalcMV` 已核对，有覆盖（§2）；Product、Concat 见 T16 | 中 |
 | G14 | 用 MV 与不用 MV 的差异在默认 golden 下不会被发现。`both` 下发现 4 个用例不一致，都是不用 MV 的一侧不对：`SubMV_Spec.aggbase`、`crossjoin`、`rangecolumn` 是 Average 下推 DB2 不加 CAST 被截成整数（#76921，开发决定不修；#50746），`aggbase` 的 covariance 另有浮点误差 `-0`（不提 bug）；`TopMV_AggregateFormulas_Spec.datelevel_none` 是 `CoreTool.getTimeData`（`:2265`）保留了日期（#81682，已修 `b3fa4de4aa`）。同类已知差异：`formula.avg.keep.type`（#54404） | — | **已处理**：前三个去掉 `compareWithoutMV` 并注释 #76921；`datelevel_none` 在新产品上 `both` 通过（T13）；golden 都不变 | 中 |
 
 方向判断：期望值能不依赖产品输出、独立算出来 → 单测；问题出在组件、绑定、数据源之间的接线 → dashboard；验证机制本身的缺陷 → 改基类，不是加用例。
@@ -208,7 +208,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | 不可合并公式（G7） | Product、Concat 各加一个 viewsheet | 结果与不用 MV 一致 | 未做（T16） |
 | 重新启用被忽略的用例（G9） | 去掉 `@Ignore` / `@PendingFeature`，基线取不用 MV 的结果 | 已修的 bug 被固定 | **已做（T5、T12）**；Tabular 5 个由维护者重做 |
 | golden 更新（G8） | 按各 bug 核对后更新 | 失败不再常态化 | **已做（T3）** |
-| 零覆盖项（G13） | 运行时复制资产改 `viewsheetInfo`、表达式（不改 zip）；`full=false` 要给 `MaterializedViewResource.createMV` 加参数；bypass 加在 `VPM_Spec` | 见 T11 | 未做（T11） |
+| 零覆盖项（G13） | 运行时改 `viewsheetInfo`（`TestCase_Census` 在仓库里改、cleanup 还原，复制会丢书签）、运行时复制资产加表达式（不改 zip）；`MVTest.setFullData`；bypass 加在 `VPM_Spec` | 见 T11 | **已做（T11）** |
 
 每个新用例只验证"接线"，边界和语义放进第 4 节的单测。
 
@@ -305,7 +305,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 
 datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）。
 
-## 8. 具体要做（T11、T16–T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
+## 8. 具体要做（T16–T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 状态 / 注意 |
 |---|---|---|---|---|
@@ -319,7 +319,7 @@ datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344�
 | T8 | 新写转换层单测（G3、G6） | 产品仓库 | 同上 | **已做（stylebi PR #8473）**：5 个测试类共 106 个用例，用真实的 Worksheet、Viewsheet 和 `TransformationDescriptor` 搭夹具，见 §4 |
 | T9 | 增量更新与全量重建一致性（G5） | `IncrementalDataChange_Spec` | 增量结果与重建一致；反向：去掉重建前的数据库删除，新用例失败 | **已做（datatest PR #229）**：补 23 个用例（41 个按迭代计），incrementalmv 整套 197 个执行。覆盖：常量追加/删除、聚合后条件、Join/Mirror/Minus 组合表、字段比较、子查询、`MV.MaxValue`/`MinValue`（整数、浮点、字符串、日期时间，追加和删除）。Union、Rotated 的 MV 建在子表上，没有这条增量路径；分组 Mirror 上对非分组列的删除条件不生效。**不给 `Append_Spec`、`Delete_Spec` 现有用例加重建对比**：它们数据库不变，全量建 MV 不用追加条件过滤（`MVDispatcher.java:370`），不含 `MV.`、`@incrementalOnly` 的删除条件建时已排除（`MVCreatorUtil.mergeConditionList`，`:828`；`isConditionValid`，`:877`），对比要么必然失败（如 `S_TestCase1` 更新后 22 行、重建 21 行）要么是空检查。**发现的行为**：同一次更新里同时满足追加和删除条件的新行先被追加保留、下次更新才删除（`LocalMVIncremental.update0`，`:67`-`:228`，先删后加、追加查询不带"NOT 删除条件"），用户决定按设计处理，用一个用例固定 |
 | T10 | (a) 实测 `mv.outer.moveUp`；(b) `RankingConditionTest`；(c) 关联 MV 命中检查（G1） | (a) datatest 本机；(b) 产品仓库；(c) `commons` 的 `MVTest.groovy` 与 78 个用例 | — | **已做**：(a) 差异实测出现，已知限制（#81658，§6 第 2 条）；(b) stylebi PR #8473 重新启用（§6 第 4 条）；(c) datatest PR #228（§6 第 5 条），依赖产品两个私有字段，改 `commons` 后要重建 tests jar |
-| T11 | 零覆盖项补用例（G13），dashboard 四组：(1) `associationEnabled=false`：不建 `ASSOCIATION_*`（`TableMetaDataTransformer.java:52`），sandbox 不算关联；(2) bypass：受 VPM 限制的用户用 MV 时 VPM 不生效，行数等于不受限时；(3) `full=false`：只用于选择的表建瘦 MV，只有选择列，结果与不用 MV 一致；(4) `@nomv`、`parameter.` 表达式：换参数值结果跟着变，与不用 MV 一致 | (1)(3)(4) 运行时复制资产（不改 `mvStorage.zip`）；(2) `VPM_Spec`；(3) 先给 `MaterializedViewResource.createMV` 加 `full` 参数（改 `commons` 后重建 tests jar） | `both` 和 golden；断言写在 MV 运行的导出、`MVDef` 上 | **未开始**，预期行为已读代码确认（bypass 即 VPM 不生效，用户确认）。不做：`meta`（只在设计态起作用，写单测，T19）；组件百分比、`CalcMV`（已核对，有覆盖，§2） |
+| T11 | 零覆盖项补用例（G13），dashboard 四组：`associationEnabled=false`、bypass、`full=false`、`@nomv`/`parameter.` 表达式 | `others/MVViewsheetOptions_Spec`（新）、`VPM_Spec`、`TopMV_RuntimeAssets_Spec`；`commons` 的 `MaterializedViewResource.setFullData`、`MVTest.setFullData` | `both` 和 golden；断言写在 MV 运行的导出、命中和 `MVDef` 上 | **已做（2026-11-24）**：(1) `TestCase_Census` 关掉关联：只建 `Data|TopMV`，不建 `ASSOCIATION_Data`；`bk_select` 下三个选择列表没有被排除的值（开着时 Region 1/4、State 15/50），值与 golden 相同；图表等其他组件与 golden 相同。viewsheet 在仓库里改、`cleanup` 还原（复制会丢书签）。(2) `VPM_Spec` 的 bypass 用例（`vpm/group-user`）：不用 MV 时 VPM 生效，user0 11 行、admin 700 行；bypass 建 MV 后只有 `orders1|TopMV`，user0、user1、user2、admin 都命中它，结果都等于 admin 不用 MV 的 700 行。导出读完即删，免得多出文件影响 `group-user` 的 `compareData`。(3) `TestCase_Selectionlist1` 的 full：只被选择列表用的 `MVSCRIPT1/2/3`，full=false 时 MV 只有选择列（`INTEGER`；`STRING`；`DATE1` 和它的日期级别），full=true 时全部列；两种都等于 golden 和不用 MV。(4) `TopMV_RuntimeAssets_Spec` 8 个迭代（运行时复制 `mvLastUpdatetime`）：worksheet 表的 `@nomv`、`parameter.` 表达式列让整张表不建 MV（#48975）；放在镜像表上时基表建 `MVorders1|SubMV`；viewsheet 计算字段建 `MVorders1_O|SubMV`；普通表达式建 TopMV（对照）。k=1、k=100 各运行一次，逐行核对 E；分析都没有警告。验证：`others` 253 个、`topmv` 147 个、`vpm` 15 个，`both` 和 golden 下都 0 失败（跳过的是原有的 `@Ignore`） |
 | T12 | 启用 bug 已关闭的用例（G9）：`composite3`（#80445）、`variable in subquery`（#80457）、`rangeslider-compositevalue`（#80170） | `TopMV_TableStructures_Spec`、`TopMV_Conditions_Spec`、`MVHit_RankingAndFilters_Spec` | `both` 和 golden 各运行一次 | **已做（2026-11-23）**：三个用例 MV 与不用 MV 逐字节相同。`composite3` 补 21 个选择列表基线，`bk1` 0 行；`variable in subquery` 补 4 个基线，断言改为命中 `ORDERS1|TopMV` 且不命中 `ORDERS1|SubMV`；`rangeslider-compositevalue` 的 `bk_select1` 两个基线各改一行（滑块终点 `2004-08-30 05:45:05`，2004 年 `18.9294`，#79506 修复的结果） |
 | T13 | 用新产品重跑（#81682、#81659 修复后） | 6 个 profile 整套；`TopMV_AggregateFormulas_Spec`、`NotTransform_Spec` 的注释 | 清空 `mv/target`、还原 H2，`both` | **已做（2026-11-23）**：core 含 `b3fa4de4aa`、`f47db94f8b`、`c4f9d75bff`；结果见 §2。`datelevel_none` 通过，golden 不变；`cube` 仍不进 spec（§6 第 6 条）。唯一失败 `CalcField_Spec.Aggregate_ForDate`：`SelectionTree2` 默认和 `bk_select` 两个基线各 30 行，度量值从 `2020-12-30 00:00:00` 变成 `2020-12-30`（#81668，聚合计算字段按声明类型转换，有意变化，与 MV 无关），基线在 T15 更新 |
 | T14 | 给已关闭、datatest 没有用例的 MV bug 补用例：#79854、#79858、#80152、#80155、#80570（含 #81043） | `IncrementalDataChange_Spec`；新建 `TopMV_RuntimeAssets_Spec`（topmv） | 单独运行，`both` 和 golden；incrementalmv 整套 `both` | **已做（2026-11-23）**：不改 `mvStorage.zip`，运行时复制资产改表/列/条件，需要时在 H2（`mvorder1`）建表用完删；断言写在 MV 运行的导出上，golden 模式下也起作用。(1) #80570/#81043：删除条件含 `MV.`，更新后空值行被删掉。(2) #79854：慢视图（每行 1.5 秒）查询执行中插入第 3 行，第二次更新后为 [1, 2, 3]；有模拟反向检查。(3) #80155：Long 变量超出 int 的 `>`、`<` 三个界值（0、119、119 行）；`=` 见 T15。(4) #80152：脚本表达式列（`setSQL(false)`）上的"不包含"条件，9 行与不用 MV 相同。(5) #79858：H2 `TIMESTAMP WITH TIME ZONE` 列设为 TimeInstant，用 MV 两行都有值；复制来的 `query11` 必须清掉原有分组和排序。验证：`TopMV_RuntimeAssets_Spec` 在 `both` 和 golden 下 6/6，incrementalmv 整套 `both` 201/0 |
