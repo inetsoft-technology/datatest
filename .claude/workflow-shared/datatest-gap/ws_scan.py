@@ -373,7 +373,16 @@ def spec_features(path):
         ids = re.findall(r"\.executeWS\(\s*'([^']+)'", body)
         other = re.findall(r"\.(importCSVToEMTable|exportVSComponentData|executeWS)\(\s*([^'\s,)][^,)]*)", body)
         csv = re.findall(r"\.(importCSVToEMTable|exportVSComponentData)\(\s*'([^']+)'", body)
-        out[parts[i]] = (ids, csv, [o[0] for o in other])
+        # an asset id passed through a local variable: def wsAsset = '1^2^...'
+        assigns = dict(re.findall(r"\bdef\s+(\w+)\s*=\s*'(\d+\^\d+\^[^']+)'", body))
+        unresolved = []
+        for kind, arg in other:
+            arg = arg.strip()
+            if kind != 'executeWS' and arg in assigns:
+                csv.append((kind, assigns[arg]))
+            else:
+                unresolved.append(kind)
+        out[parts[i]] = (ids, csv, unresolved)
     return out
 
 
