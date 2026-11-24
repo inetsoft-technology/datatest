@@ -6,12 +6,12 @@
 
 - **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。59 个用例中，除 `InRange_Spec` 和 4 个 `@Ignore` 外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
-- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`；没有用例断言查询是否下推到 SQL（G5）。
+- **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）；dashboard 没有按库对照（G11）。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
-- **本机整套重跑（2026-11-23，产品为 `main` `06e8ee1c92`）：** 除 `InRange_Spec`（本机无法改系统日期）和 `SqlQuery`（产品性能缺陷 #82116，见 4b-J）外全部通过。
+- **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 59 个用例 51 通过、7 个 `@Ignore`，只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
-**接下来：** `SqlQuery` 等 #82116；基类记录"是否下推"（G5）；G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
+**接下来：** G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
 
 ## 2. 覆盖情况
 
@@ -144,7 +144,27 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 输出：最多 `query.preview.maxrow` = 5000 行；RUNTIME 用 `query.runtime.maxrow`（默认不限）。被截断的基线：`property_crossJoin.maxCellCount` 的 `TestData`、`Query1`，以及 `@Ignore` 的 `specialChar` 7 个。
 - 其他差异：聚合与后置条件的使用、行数上限来源、公共列选择、SQL 表达式失败的处理、超时（设计时 2 分钟，运行时 20 分钟）。
 
-**G5 记录下推的做法：** 对表的克隆调用 `AssetQuery.createAssetQuery(table, LIVE_MODE, box, false, -1L, true, true)`，取 `isQueryMergeable(false)` 和 `getQueryPlan()`（计划里有生成的 SQL 和 distinct、表达式、where、group by、having 各自的下推标记）。源不可合并时 `getQueryPlan()` 返回 null；计划模式的别名与实际执行不同；有副作用，必须在克隆上调用。先把"布尔值 + 各下推标记"纳入基线，SQL 文本以后再加。
+**G5 是否下推的断言：** `WorksheetTest.exportMergePlan = true` 时，每张导出的表另写 `<表名>.plan.txt`：`mergeable`（`isQueryMergeable(false)`）、`source`（`isSourceMergeable()`），来源可合并时再写 where、group by、having、sort、select、ranking 各步。每项判断都在表的克隆上新建查询（`createAssetQuery(t, mode, box, false, -1L, true, false)`），不影响导出的数据。来源不可合并时各步都返回 false，所以不写。某一步为 false 表示这一步没有全部下推，能下推的部分仍进 SQL（`merge CM2` 的 `CM2_3`：3 条前置条件里 SQL 表达式列和普通列的 2 条在 WHERE 里，脚本表达式列的 1 条在内存）。LIVE 与 RUNTIME 的判断结果相同。生成的 SQL 文本没有纳入基线。
+
+**判断与实际执行一致：** 对 142 张表按 sandbox 的方式执行查询并读出实际发给数据库的 SQL（一次性核对，未纳入测试）：执行后的判断与 plan 基线全部一致；判断为可合并的表，前置条件、分组、distinct、排序都出现在 SQL 里；判断为不可合并的部分都不在 SQL 里，组合表不可合并时没有合并后的 SQL。datatest 里产品的 SQL 日志不可用（slf4j-api 1.7 与 logback 1.5 不兼容，日志为空实现）。
+
+已在 `checkMergeable CM1`、`CM2` 打开（30 张表）。设计矩阵 `docs/ws/DataCompostion_matrix.xls` 的 `CheckMergeable_TestCaseList` 规划了约 108 个"不可合并"用例（`CM1_1`～`CM1_64`、`CM2_1`～`CM2_44`），资产实现了其中 20 个：
+
+| 结论 | 表 |
+|---|---|
+| 与设计一致（不可合并，原因相符） | `CM1`（设计 `CM1_4`）、`CM1_7`、`CM1_9`、`CM1_19`（Informix）、`CM1_29`、`CM1_55`（DB2）、`CM1_61`；`CM2_2`（where）、`CM2_8`（where）、`CM2_10`、`CM2_11`、`CM2_15`（group by）、`CM2_20`（having）、`CM2_30`、`CM2_44`（select，Informix） |
+| 资产没复现设计场景，按实际（可合并）记录 | `CM1_6`（设计是 FreeformSQL，资产是普通结构化 SQL）、`CM1_32`～`CM1_35`（设计是 Access；名为 Access 的数据源是 H2，产品按 JDBC 地址和驱动判断为 H2，支持集合运算下推）。以后若改资产复现设计场景，这 5 个 plan 基线会按预期变为不可合并，不是回归 |
+
+另 10 张辅助表（底表、嵌入表、外部表）没有设计预期，按实际记录。
+
+`merge CM1`～`CM8`（112 张表）也已打开。设计 `Merge_Rule`、`Merge_TestCaseList` 描述的是可合并时如何合并进 SQL，只有个别用例写明某一步不可合并。结果：109 张整体可合并；`merge CM2` 的 `CM2_3`（条件不可合并，where 为 false）、`CM2_5`（分组不可合并，group by、having 为 false）、`CM2_2`（select 为 false）。
+
+**期望值的来源：**
+- 来自设计、先于结果：用例表的整体是否可合并；`checkMergeable` 设计写明的不可合并原因；merge 系列"默认可合并"和 `CM2_3`、`CM2_5` 的例外。
+- 看到结果后对照设计核对：`merge CM2_2`（设计是可见的 SQL 表达式列；表里还有可见的 JS 表达式列 `js_M2_08`，按 `CheckMergeable_Rule` 2.5 与 Pre1 第 3 条 select 不可合并）；各表在主要原因之外的步骤值（如 `checkMergeable CM2_2` 的 select 也为 false）。
+- 按实际记录：`CM1_6`、`CM1_32`～`CM1_35`（资产没复现设计场景）和 10 张辅助表。
+
+把一行期望改错用例会失败。
 
 ## 3. 缺口与方向
 
@@ -154,7 +174,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | G2 | `WSBuildServer_Spec` 的 40 个 worksheet 不在 zip | 302 个基线代表的场景未验证 | **已完成**：spec 与基线已删除（#213） | 高 |
 | G3 | 上传用例假通过；上传无单测 | 列类型识别、分隔符、表头、unpivot 出错 | **已完成**：假通过已修（#213）；`TextUtilTypeDetectionTest`、`CSVLoaderRulesTest`、`CSVInfoDetectionTest`；上传服务不加单测（4b-G） | 高 |
 | G4 | 表上的 date in 在 CI 为 0（`InRange_Spec` 只能在保存了管理员凭据的 Windows 上改系统时间运行） | 相对日期范围算错 | 单测已补（`DateConditionBuiltinTest`、`DateConditionRelativeRangesTest`）；dashboard 等产品支持注入参考日期 | 高 |
-| G5 | 不记录是否下推 | 本应下推的退回内存；两条路径结果不一致 | 规则单测已补（4b-A）；**基类记录合并结果待做**（做法见第 2 节） | 中 |
+| G5 | 不记录是否下推 | 本应下推的退回内存；两条路径结果不一致 | 规则单测已补（4b-A）；基类已能记录（`exportMergePlan`），`DataComposition_Spec` 的 `checkMergeable`、`merge` 9 个用例已断言（第 2 节）；其他 spec 未打开 | 中 |
 | G6 | 只用 `LIVE_MODE` | 只在运行时出现的错误 | **暂缓** | 低 |
 | G7 | lens 取值 | 结果行、表头、null 处理出错 | 单测已补（4b-A）；未做 unpivot 后聚合、MV | 高 |
 | G8 | 薄弱格子：`>=` join、表上 date in、LIKE 1、starting with 2、Rotated/Unpivot/Concatenated 的后置条件、ClickHouse | 这些组合的接线出错 | dashboard 新建小 worksheet，范围待定 | 中 |
@@ -278,7 +298,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 5 处类型判断：`SelectionUpTransformer`（`:210`、`:216`、`:1630`、`:1635`）、`WSMVSelectionDownTransformer.canMoveDown`、`VSMVAnalyzer`（`:851`）、`MVDef.isColumnsShareable`。
 - `isColumnsShareable`：已有 MV 的列包含新定义的全部列，且列数相等或绑定表树里没有嵌入表、unpivot 表（相关 #52564、#60857）。套在数据库表上的旋转表没有特殊处理；重名后缀、空名按行序编号，源数据变了可能指向别的行。没有在真实 MV 上验证，是否有意要问开发。
 
-**J. 在当前产品上重跑 datatest 的结果**（本机，产品 `main` `06e8ee1c92`）
+**J. 在当前产品上重跑 datatest 的结果**（本机，产品 `main` `ad63807e37`）
 
 | 用例 | 结果 | 处理 |
 |---|---|---|
@@ -288,11 +308,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `condition2/Query1` | 3×29 → 3×200：前 29 列不变，后面是重名列，截在 sandbox 列数上限 200（`max.col.count`） | 对照 `query21` 独立推导后更新；剩余风险：同一天的行序依赖数据库 |
 | `WSAsset_Spec.varible` 的 `rotation`、`Copy of rotation1` | 6×20 → 6×200，同上 | 给来源 `query11` 加排序（`ORDER_DATE`、`CUSTOMER_ID`、`EMPLOYEE_ID`，顺序完全确定），基线由排序后的 `query11` 独立推导，与输出逐字节一致；同一 worksheet 的其他 12 张表输出不变 |
 | `range&formula/Embedded` | `f_byte`（byte，`field['byte']/0.5`）-6、-2 → 250、254 | #81200 有意修改（超出声明类型范围时保留原值）；基线已更新 |
-| `WSData_Spec.SqlQuery` | 整套里 312 秒时 sheet 过期，单独运行约 340 秒通过 | 产品性能缺陷 **#82116**（见下）；等修复 |
+| `WSData_Spec.SqlQuery` | 修复前单独运行约 340 秒，整套里 312 秒时 sheet 过期；修复后单独运行 19 秒，整套里通过，数据与基线一致 | 产品性能缺陷 **#82116**（见下），stylebi #8682 已修复，已验证 |
 | `InRange_Spec` | 系统日期没改成（无保存的管理员凭据） | 环境原因 |
 
 - `WSAsset_Spec.varible` 导出里第一次出现的列显示为 `7`、重名列为 `7.00_1`：产品里两者都按 `0.00##` 命名（`7.00`、`7.00_1`），`7` 是 datatest 导出用 `#0.####` 格式化原始 Double 表头的结果，不是产品缺陷。
-- **#82116：** 打开 worksheet 收集变量时，`oracle q21`、`sql server q11` 的派生表在 `uniform_sql` 里存成带引号的整段 SQL 文本（`issql=false`，13.7 保存），被当成物理表取列；`JDBCHandler.getTableColumns` 找不到，进入扫描所有 schema 的 `getTables` 和同义词查询，Oracle 上每次几分钟。查询本身用存好的 SQL 执行，数据正确。服务器上有元数据缓存，只有第一次打开慢。
+- **#82116：** 打开 worksheet 收集变量时，`oracle q21`、`sql server q11` 的派生表在 `uniform_sql` 里存成带引号的整段 SQL 文本（`issql=false`，13.7 保存），被当成物理表取列；`JDBCHandler.getTableColumns` 找不到，进入扫描所有 schema 的 `getTables` 和同义词查询，Oracle 上每次几分钟。查询本身用存好的 SQL 执行，数据正确。修复（stylebi #8682）：`UniformSQL.parseXML` 把这种旧格式识别为派生表，下次保存时写成 `issql=true`。
 
 ## 5. Dashboard 与机制补充
 
@@ -302,7 +322,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `WSBuildServer_Spec`（G2） | 删除 spec 与 302 个基线 | 已完成（#213）；找到资产再补回 |
 | 上传（G3） | 修好基类后重跑 | 已完成（#213） |
 | date in（G4） | 语义放单测；dashboard 留 1～2 个代表用例，不依赖改系统时间 | 等产品支持注入参考日期 |
-| 执行路径（G5） | 基类记录每张表是否合并并纳入基线，先用于 `checkMergeable` | 待做（做法见第 2 节） |
+| 执行路径（G5） | `exportMergePlan` 写 `<表名>.plan.txt` 并纳入基线 | `checkMergeable CM1`、`CM2`，`merge CM1`～`CM8` 已完成；其他 spec 未打开 |
 | 运行时取数（G6） | 基类支持 `RUNTIME_MODE` | 暂缓 |
 | 薄弱格子（G8） | 新建小 worksheet：`>=` join、date in、LIKE/starting with、Rotated/Unpivot/Concatenated 后置条件、ClickHouse | 范围待定 |
 | 各库差异（G11） | 每类代表场景在 8 个库各建一个小 worksheet，基线按库分开 | 需先有 G5；各库造数方式待定；ClickHouse 先确认 `@Ignore` 原因 |
@@ -348,7 +368,8 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
 - `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
-- 查询实际是否下推（只有静态的 `mergeable=false`）。
+- 查询是否下推只在 `DataComposition_Spec` 的 9 个用例断言；其他 spec 没有。
+- 设计矩阵里约 88 个"不可合并"用例资产没有实现（含 Access、Sybase、Ingres 等 CI 没有的库）。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 只确认了行数上限的差别。
 - 命名分组、变量、日期范围在 worksheet 里的实际用法；`InRange_Spec` 的范围名与 `DateCondition` 子类只按名字对应。
 - 49 个未运行的 worksheet 只看了表结构，没有执行。
@@ -398,7 +419,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 
 ### 7b. 补单测和 datatest 时发现的缺陷
 
-全部 Closed（版本 stylebi-2.1.0）。
+都已修复（版本 stylebi-2.1.0）；#82116 为 Resolved，其余 Closed。
 
 | bug | 问题 | 修复 | 测试 / datatest |
 |---|---|---|---|
@@ -417,7 +438,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | #81235 | 命名分组值或组名带单引号时 SQL 不转义 | stylebi #8236 | `NamedRangeRefGroupsTest` |
 | #81236 | 只含 null 的命名分组生成空 `IN ()` | stylebi #8238 | `NamedRangeRefGroupsTest` |
 | #80538 | 非 distinct union 加载中多算一行（原有） | stylebi #8209 | `UnionTableLensTest`、`SetOperationLensesTest`（stylebi #8643） |
-| #82116 | 派生表的 SQL 文本被当表名，Oracle 上打开 worksheet 要几分钟（New） | 待修 | `WSData_Spec.SqlQuery` |
+| #82116 | 派生表的 SQL 文本被当表名，Oracle 上打开 worksheet 要几分钟（Resolved，datatest 已验证） | stylebi #8682 | `UniformSQLLegacyQuotedSubQueryTest`；`WSData_Spec.SqlQuery` 从约 340 秒降到 19 秒 |
 
 ## 附：数据来源与复现
 

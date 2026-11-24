@@ -6,6 +6,7 @@ import inetsoft.graph.geo.MappedDataSet
 import inetsoft.report.TableLens
 import inetsoft.report.composition.RuntimeViewsheet
 import inetsoft.report.composition.RuntimeWorksheet
+import inetsoft.report.composition.execution.AssetQuery
 import inetsoft.report.composition.execution.AssetQuerySandbox
 import inetsoft.report.composition.execution.ViewsheetSandbox
 import inetsoft.report.composition.graph.BrushDataSet
@@ -62,6 +63,12 @@ class WorksheetTest {
    // files. A case that runs twice in one JVM is only emptied before its first run.
    private static final Set<String> cleanedExportDirs =
       Collections.synchronizedSet(new HashSet<String>())
+
+   /**
+    * When true, executeWS also writes &lt;table&gt;.plan.txt for every exported table: whether its
+    * query can be merged into SQL and, when its source can, which steps can (see exportMergePlan).
+    */
+   boolean exportMergePlan = false
 
    WorksheetTest(String caseName) {
       this.caseName = caseName
@@ -205,6 +212,45 @@ class WorksheetTest {
       }
 
       exportData(sortlens, fileName, true)
+
+      if(exportMergePlan) {
+         exportMergePlan(asset_id, tableAssembly, type, bk)
+      }
+   }
+
+   /**
+    * Write &lt;table&gt;.plan.txt: "mergeable" is PreAssetQuery.isQueryMergeable(false), "source"
+    * is isSourceMergeable(). The step lines (where, group by, having, sort, select, ranking) are
+    * written only when the source is mergeable, because every step check is false otherwise.
+    * Each check runs on a new query of a clone of the table: some checks change the table of the
+    * query (isSortInfoMergeable drops sorts, getQueryPlan merges), and the exported data must not
+    * be affected.
+    */
+   private void exportMergePlan(String asset_id, TableAssembly tableAssembly, int mode, String bk) {
+      def check = { Closure c ->
+         TableAssembly table = (TableAssembly) tableAssembly.clone()
+         setLiveData(table)
+         c(AssetQuery.createAssetQuery(table, mode, assetQuerySandbox, false, -1L, true, false))
+      }
+
+      boolean source = check { it.isSourceMergeable() }
+      StringBuffer plan = new StringBuffer()
+      plan.append('mergeable: ' + check { it.isQueryMergeable(false) } + '\n')
+      plan.append('source: ' + source + '\n')
+
+      if(source) {
+         plan.append('where: ' + check { it.isPreConditionListMergeable() } + '\n')
+         plan.append('group by: ' + check { it.isAggregateInfoMergeable() } + '\n')
+         plan.append('having: ' + check { it.isPostConditionListMergeable() } + '\n')
+         plan.append('sort: ' + check { it.isSortInfoMergeable() } + '\n')
+         plan.append('select: ' + check { it.isColumnSelectionMergeable() } + '\n')
+         plan.append('ranking: ' + check { it.isRankingMergeable() } + '\n')
+      }
+
+      // written next to the data files, so compareData compares it the same way: a changed line
+      // fails the case, and a baseline plan file that is not exported fails it too
+      String fileName = createExportFileByCase(asset_id, tableAssembly.getName() + '.plan', bk)
+      exportData(plan, fileName, false)
    }
 
    private setLiveData(TableAssembly table) {
