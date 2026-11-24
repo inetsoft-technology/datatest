@@ -33,6 +33,9 @@ class DataComposition_Spec extends Specification {
     * into SQL. The expected values of the case tables (CM1_*, CM2_*) come from the design in
     * docs/ws/DataCompostion_matrix.xls (CheckMergeable_TestCaseList), where every case is an
     * unmergeable situation; see docs/test-gap-assessment/ws.md (G5) for the per-table check.
+    * CM1_6 and CM1_32..CM1_35 do not reproduce their design case and are recorded as mergeable;
+    * if the worksheets are changed to reproduce it (FreeformSQL, a real Access source), these
+    * plan baselines change on purpose, which is not a regression.
     */
    def 'checkMergeable CM1' () {
       caseName =  specificationContext.currentIteration.name

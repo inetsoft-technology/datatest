@@ -247,6 +247,8 @@ class WorksheetTest {
          plan.append('ranking: ' + check { it.isRankingMergeable() } + '\n')
       }
 
+      // written next to the data files, so compareData compares it the same way: a changed line
+      // fails the case, and a baseline plan file that is not exported fails it too
       String fileName = createExportFileByCase(asset_id, tableAssembly.getName() + '.plan', bk)
       exportData(plan, fileName, false)
    }
