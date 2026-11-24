@@ -31,7 +31,7 @@ import spock.lang.Specification
    ]
 )
 class ScriptStateExportMatrix_Spec extends Specification {
-   /** Excel and PDF as in the tripwire, plus the other writers: each has its own code per component type (the SelectionList PDF failure is one of them) */
+   /** Excel and PDF as in the tripwire, plus the other writers: each has its own code per component type (the SelectionList PDF failure, #82105, was one of them) */
    static final Map FORMATS = [
       EXCEL     : FileFormatInfo.EXPORT_TYPE_EXCEL,
       PDF       : FileFormatInfo.EXPORT_TYPE_PDF,
@@ -44,12 +44,10 @@ class ScriptStateExportMatrix_Spec extends Specification {
 
    /**
     * component type -> formats whose export still fails with a failing script on it, with the start of the failure.
-    * SelectionList PDF, HTML and PNG: the skipped script leaves the list without a cell format and the layout code they share cannot lay it out
-    * (SelectionListVSAssemblyInfo.getRowHeights, #82105); Excel and PowerPoint work.
+    * Empty: the SelectionList PDF, HTML and PNG export was the last entry (#82105, fixed by stylebi#8671: the list is formatted even when its
+    * script fails, and getRowHeights guards a missing format). A failure that comes back must be fixed, not listed.
     */
-   static final Map<String, Map<String, String>> KNOWN_EXPORT_FAILURES = [
-      'SelectionListVSAssembly': [PDF: 'NullPointerException', HTML: 'NullPointerException', PNG: 'NullPointerException']
-   ]
+   static final Map<String, Map<String, String>> KNOWN_EXPORT_FAILURES = [:]
 
    /**
     * component types where a failing script already makes the refresh throw, so there is nothing to export (the viewsheet cannot be refreshed).
