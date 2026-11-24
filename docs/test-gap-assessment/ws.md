@@ -9,9 +9,9 @@
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）；dashboard 没有按库对照（G11）。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
-- **本机整套重跑（2026-11-23，产品为 `main` `06e8ee1c92`）：** 除 `InRange_Spec`（本机无法改系统日期）和 `SqlQuery`（产品性能缺陷 #82116，见 4b-J）外全部通过。
+- **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 59 个用例 51 通过、7 个 `@Ignore`，只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
-**接下来：** `SqlQuery` 等 #82116；G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
+**接下来：** G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
 
 ## 2. 覆盖情况
 
@@ -298,7 +298,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 5 处类型判断：`SelectionUpTransformer`（`:210`、`:216`、`:1630`、`:1635`）、`WSMVSelectionDownTransformer.canMoveDown`、`VSMVAnalyzer`（`:851`）、`MVDef.isColumnsShareable`。
 - `isColumnsShareable`：已有 MV 的列包含新定义的全部列，且列数相等或绑定表树里没有嵌入表、unpivot 表（相关 #52564、#60857）。套在数据库表上的旋转表没有特殊处理；重名后缀、空名按行序编号，源数据变了可能指向别的行。没有在真实 MV 上验证，是否有意要问开发。
 
-**J. 在当前产品上重跑 datatest 的结果**（本机，产品 `main` `06e8ee1c92`）
+**J. 在当前产品上重跑 datatest 的结果**（本机，产品 `main` `ad63807e37`）
 
 | 用例 | 结果 | 处理 |
 |---|---|---|
@@ -308,11 +308,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `condition2/Query1` | 3×29 → 3×200：前 29 列不变，后面是重名列，截在 sandbox 列数上限 200（`max.col.count`） | 对照 `query21` 独立推导后更新；剩余风险：同一天的行序依赖数据库 |
 | `WSAsset_Spec.varible` 的 `rotation`、`Copy of rotation1` | 6×20 → 6×200，同上 | 给来源 `query11` 加排序（`ORDER_DATE`、`CUSTOMER_ID`、`EMPLOYEE_ID`，顺序完全确定），基线由排序后的 `query11` 独立推导，与输出逐字节一致；同一 worksheet 的其他 12 张表输出不变 |
 | `range&formula/Embedded` | `f_byte`（byte，`field['byte']/0.5`）-6、-2 → 250、254 | #81200 有意修改（超出声明类型范围时保留原值）；基线已更新 |
-| `WSData_Spec.SqlQuery` | 整套里 312 秒时 sheet 过期，单独运行约 340 秒通过 | 产品性能缺陷 **#82116**（见下）；等修复 |
+| `WSData_Spec.SqlQuery` | 修复前单独运行约 340 秒，整套里 312 秒时 sheet 过期；修复后单独运行 19 秒，整套里通过，数据与基线一致 | 产品性能缺陷 **#82116**（见下），stylebi #8682 已修复，已验证 |
 | `InRange_Spec` | 系统日期没改成（无保存的管理员凭据） | 环境原因 |
 
 - `WSAsset_Spec.varible` 导出里第一次出现的列显示为 `7`、重名列为 `7.00_1`：产品里两者都按 `0.00##` 命名（`7.00`、`7.00_1`），`7` 是 datatest 导出用 `#0.####` 格式化原始 Double 表头的结果，不是产品缺陷。
-- **#82116：** 打开 worksheet 收集变量时，`oracle q21`、`sql server q11` 的派生表在 `uniform_sql` 里存成带引号的整段 SQL 文本（`issql=false`，13.7 保存），被当成物理表取列；`JDBCHandler.getTableColumns` 找不到，进入扫描所有 schema 的 `getTables` 和同义词查询，Oracle 上每次几分钟。查询本身用存好的 SQL 执行，数据正确。服务器上有元数据缓存，只有第一次打开慢。
+- **#82116：** 打开 worksheet 收集变量时，`oracle q21`、`sql server q11` 的派生表在 `uniform_sql` 里存成带引号的整段 SQL 文本（`issql=false`，13.7 保存），被当成物理表取列；`JDBCHandler.getTableColumns` 找不到，进入扫描所有 schema 的 `getTables` 和同义词查询，Oracle 上每次几分钟。查询本身用存好的 SQL 执行，数据正确。修复（stylebi #8682）：`UniformSQL.parseXML` 把这种旧格式识别为派生表，下次保存时写成 `issql=true`。
 
 ## 5. Dashboard 与机制补充
 
@@ -419,7 +419,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 
 ### 7b. 补单测和 datatest 时发现的缺陷
 
-全部 Closed（版本 stylebi-2.1.0）。
+都已修复（版本 stylebi-2.1.0）；#82116 为 Resolved，其余 Closed。
 
 | bug | 问题 | 修复 | 测试 / datatest |
 |---|---|---|---|
@@ -438,7 +438,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | #81235 | 命名分组值或组名带单引号时 SQL 不转义 | stylebi #8236 | `NamedRangeRefGroupsTest` |
 | #81236 | 只含 null 的命名分组生成空 `IN ()` | stylebi #8238 | `NamedRangeRefGroupsTest` |
 | #80538 | 非 distinct union 加载中多算一行（原有） | stylebi #8209 | `UnionTableLensTest`、`SetOperationLensesTest`（stylebi #8643） |
-| #82116 | 派生表的 SQL 文本被当表名，Oracle 上打开 worksheet 要几分钟（New） | 待修 | `WSData_Spec.SqlQuery` |
+| #82116 | 派生表的 SQL 文本被当表名，Oracle 上打开 worksheet 要几分钟（Resolved，datatest 已验证） | stylebi #8682 | `UniformSQLLegacyQuotedSubQueryTest`；`WSData_Spec.SqlQuery` 从约 340 秒降到 19 秒 |
 
 ## 附：数据来源与复现
 
