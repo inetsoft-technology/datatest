@@ -9,7 +9,7 @@
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 同样断言（G11 样板），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
-- **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 59 个用例 53 通过、5 个跳过（2 个 `@Ignore`，`InRange_Spec` 连带跳过 3 个），只有 `InRange_Spec` 失败（本机无法改系统日期）。之后新增的 `setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 单独运行通过。
+- **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 64 个用例 58 通过、5 个跳过（2 个 `@Ignore`，`InRange_Spec` 连带跳过 3 个），只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
 **接下来：** G11 样板是否推广到其他库和场景待定；G8、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）。
 
@@ -136,10 +136,10 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 1. 集合运算：全部下推（Oracle、PostgreSQL）、只有 union 下推（MySQL、SQL Server）、都不下推（Informix、Derby）各取 union 和 minus。**样板已做**（见下）。
 2. full outer join：内存回退（MySQL、Derby、H2）对下推（Oracle、SQL Server、DB2、PostgreSQL）。**样板已做**（见下）。
 3. 统计聚合：有函数名（Oracle、MySQL、SQL Server）对没有（DB2、PostgreSQL 等）。**样板已做**（见下）。
-4. 日期分组：补 SQL Server、PostgreSQL；Informix、Derby、ClickHouse、H2 各取一个。**样板已做**（见下；Informix 本机连不上，测试类路径缺 `org.bson`）。
+4. 日期分组：补 SQL Server、PostgreSQL；Informix、Derby、ClickHouse、H2 各取一个。**样板已做**（见下；Informix 本机连不上，测试类路径缺 `org.bson`；ClickHouse、H2 未做）。
 5. max rows：支持的库对 Informix、ClickHouse、H2。**样板已做**（见下；Informix、ClickHouse、H2 未做）。
 
-**G11 样板（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`，worksheet `DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`）：** 覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，每库一组表，打开 `exportMergePlan`。用例按 SQL 语义里容易做错的地方设计，不只照产品现有的处理：
+**G11 样板（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`，worksheet `DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`）：** 覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 另含 DB2，每库一组表，打开 `exportMergePlan`。用例按 SQL 语义里容易做错的地方设计，不只照产品现有的处理：
 - 集合运算，CUSTOMERS：A（STATE 属于 NJ、NY、CA，14 行）、B（NY、TX，8 行），union 去重 18 行，minus 10 行。
 - 集合运算，只选 PRODUCTS.DESCRIPTION：两边各有 3 个 NULL 行。集合运算把 NULL 视为相同、结果去重，所以 union 只有 1 个 NULL 行（5 行），minus 里 NULL 被减掉（2 行）。
 - full outer join，PRODUCTS 中 PA（类别 1、3）对 PB（类别 1、2）：按 DESCRIPTION 连接时 NULL 不与 NULL 匹配，产品 1、15、16 都在未匹配侧（14 行）；按 CATEGORY_ID 连接、只有 CATEGORY_ID 一列时，有 36 行完全相同的 `(1, 1)`，用 UNION 模拟 full join 会把它们去重（42 行）；对补 NULL 的一侧加 `PRODUCT_ID is null`，条件必须在连接之后生效（5 行）。

@@ -333,7 +333,7 @@ class WSData_Spec extends Specification {
       // Correlation of one pair or of a constant column is NULL.
       // Average of EMPLOYEE_ID: 9/7 for customer 7. DB2 (INTEGER column) returns 1 in DB2_basic: the SQL is a bare
       // AVG(col) and DB2 keeps the integer type (same root cause as the rejected #76921); DB2_mem gives 1.2857.
-      // DB2 is only in this worksheet (DB2 support of set operations and full join is not sampled yet).
+      // DB2 is in this worksheet, DB/dateGroup and DB/maxRows (its set operations and full join are not sampled yet).
       // <db>_basic, <db>_var, <db>_corr: aggregated in SQL (group by pushed); <db>_mem adds Median and Mode,
       // so all of its aggregates are computed in memory. A second aggregate of a column uses the expression
       // column DISCOUNT_<n> = field['DISCOUNT'], as the composer's aggregate dialog creates it.

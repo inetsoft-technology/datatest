@@ -32,7 +32,7 @@ for name, prefix, cust, prod, ords, props, upper, num_type, num_sql, char_sql, d
      [('__schema__', 'ORDERS'), ('__table_type__', 'TABLE')], False, 'double', 2, 12, 2),
     ('SQLServer', 'SQL Server', 'master.orders.customers', 'master.orders.products', 'master.orders.orders',
      [('__schema__', 'orders'), ('__table_type__', 'TABLE'), ('__catalog__', 'master')], False, 'double', 2, 1, 3),
-    # DB2 only in DB/statAggregate: INTEGER id columns (AVG of INTEGER is INTEGER in DB2), DISCOUNT DECIMAL(3,2);
+    # DB2 in DB/statAggregate, DB/dateGroup and DB/maxRows (not in setOperation, fullOuterJoin): INTEGER id columns (AVG of INTEGER is INTEGER in DB2), DISCOUNT DECIMAL(3,2);
     # its ORDERS has one more row (12101) than the others, not among the picked orders
     ('DB2', 'DB2', 'ORDERS.CUSTOMERS', 'ORDERS.PRODUCTS', 'ORDERS.ORDERS',
      [('__schema__', 'ORDERS'), ('__table_type__', 'TABLE')], True, 'integer', 4, 12, 3),
