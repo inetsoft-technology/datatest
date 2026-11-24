@@ -10,7 +10,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 **已做和已决定的**（本文不重复）：命中断言（datatest PR #188）、MV 开/关对比（`-Dmv.compare`，PR #193）、增量与全量重建对比（PR #194、#195、#229）、WS MV 的一条通路（PR #200）、golden 更新（PR #196、#197，T3）、`@Ignore` 整理与启用（PR #198、#226，T12）、`others` 每个 spec 单独 JVM（PR #199）、关联 MV 命中检查（PR #226、#228）、反向路径 `NotTransform_Spec`（PR #232）、产品单测（stylebi PR #8473）、cycle 在 `test/cluster` 验证（enterprise PR #1604、#1701，未核对）。**已决定不做**（维护者说明，仓库里没有书面记录）：datatest 各 workflow 的定时运行不恢复、`mvStorage.zip` 不清理、`where:` 数据表不改写、`@Retry` 不改、CI 只做 golden 比较。
 
-仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`viewsheetInfo` 的 `associationEnabled=false`、`full=false`（瘦 MV）、受 VPM 限制的用户在 bypass 下用 MV、`@nomv` 表达式没有用例，`meta=true` 没有单测（G13）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
+仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`viewsheetInfo` 的 `associationEnabled=false`、`full=false`（瘦 MV）、受 VPM 限制的用户在 bypass 下用 MV、`@nomv` 表达式没有用例（G13）；`meta=true` 的单测在 stylebi PR #8746（T19）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
 
 先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；组件和选项的零覆盖项（T11）。
 
@@ -77,7 +77,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 |---|---|---|---|---|
 | `viewsheetInfo associationEnabled="false"`（不建关联 MV，`TableMetaDataTransformer.java:48`-`:54`） | **0** | 0 | — | 没有用例 |
 | `viewsheetInfo bypass="true"`（建 MV、用 MV 时都不套 VPM，`ViewsheetSandbox.java:249`-`:250`、`MVManager.isVPMCompatible`） | 0 | — | 除 vpm 外全部 | 分析时由请求决定，viewsheet 里的值被覆盖（`MVSupportService.java:1478`）：`createMV(applyVPM)` 传 `bypass=!applyVPM`（`MaterializedViewResource.java:140`），除 `vpm` 外的用例都在 bypass 下建 MV；受 VPM 限制的用户在 bypass 下用 MV 没有用例 |
-| `viewsheetInfo meta="true"`（`needMV()` 为 false，`ViewsheetSandbox.java:1477`-`:1480`） | **0** | 0 | — | 只在设计态起作用（runtime 下 `needMV()` 恒为 true），datatest 以 viewer 打开，dashboard 用例走不到；由单测覆盖（T19，§4） |
+| `viewsheetInfo meta="true"`（`needMV()` 为 false，`ViewsheetSandbox.java:1477`-`:1480`） | **0** | 0 | — | 只在设计态起作用（runtime 下 `needMV()` 恒为 true），datatest 以 viewer 打开，dashboard 用例走不到；由单测覆盖（`ViewsheetSandboxMVEnabledTest`，stylebi PR #8746，T19） |
 | `viewsheetInfo full`（false 时只用于选择的表建瘦 MV，`VSMVAnalyzer.shrinkTable`，`:547`） | true 103 | — | 全部 | 分析时由请求决定：`createMV` 总传 `fullData=true`（`MaterializedViewResource.java:142`），viewsheet 里的值不起作用；EM 分析页默认也是 true。**full=false 没有用例**，产品单测也没有 |
 | `viewsheetInfo mvOnDemand` | true 598、false 206 | 428 / 181 | 各 profile | 有 |
 | 选择组件带度量（阻止瘦 MV，`VSMVAnalyzer.java:1204`-`:1220`） | 选择列表 10、选择树 5 | 8、5 | others 12、submv 1 | 有 |
@@ -140,7 +140,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | G10 | `test-mv.yml` 只能手动触发，`Jenkinsfile` 没有 mv（维护者决定不恢复定时）；本机整套约 20 分钟（topmv 2 分 43 秒、incrementalmv 2 分 58 秒、others 7 分 31 秒） | 回归在下一次手动触发前不被发现 | 不改 | 低 |
 | G11 | 195 个 viewsheet 没被字面量引用；1 个 viewsheet 有基线没被引用；`@Ignore` 只剩 `TabularSource_Spec`（5 个）和 `date range and number range`，它们的基线不被导出 | 准备好的场景没被运行；陈旧基线让人误以为被验证过 | 先核对真孤儿还是间接引用，再删除或补用例（T17，未开始；`CalcMV` 38 个已核对，测试点已被覆盖，见 §2） | 低 |
 | G12 | 按需创建、MV 过期、数据周期、集群：datatest 有意不覆盖，cycle 放在 `test/cluster`（CY-02/03/04，enterprise PR #1604、#1701）；`MVRule`、`MVManager` 已有单测（22、35 个） | MV 过期判断出错 | `mv.ondemand` 按需创建（`MVManagerFindRuntimeMVTest`，T7）；`isStale`、`isExpired` 引起的重建（stylebi PR #8677）。过期 MV 对没有 MATERIALIZATION ACCESS 的用户：照常使用、不触发重建（#82140 修复后）。只设 `mv.maxAge` 时超龄 MV 仍被使用、不重建，单测固定现状，待开发确认（#82142） | 低 |
-| G13 | 零覆盖项：`associationEnabled=false`；`full=false`（datatest 分析时总传 `full=true`）；受 VPM 限制的用户在 bypass 下用 MV（datatest 除 `vpm` 外都以 bypass 建 MV，但用户不受 VPM 限制）；`@nomv`、`parameter.` 表达式端到端；`meta=true` 只在设计态起作用，没有单测（T19）；Product、Concat 0（G7） | `associationEnabled=false` 仍建关联 MV；瘦 MV 缺列或命中了用到其他列的查询；bypass 的 MV 套了 VPM 或用户看不到全部行（#78390、#77666 同类）；设计态 `meta` 用了 MV；`@nomv` 表达式被建进 MV、参数变了结果不变 | dashboard 四组（T11）；`meta` 写单测（T19）。组件百分比、`CalcMV` 已核对，有覆盖（§2） | 中 |
+| G13 | 零覆盖项：`associationEnabled=false`；`full=false`（datatest 分析时总传 `full=true`）；受 VPM 限制的用户在 bypass 下用 MV（datatest 除 `vpm` 外都以 bypass 建 MV，但用户不受 VPM 限制）；`@nomv`、`parameter.` 表达式端到端；`meta=true` 只在设计态起作用，单测在 stylebi PR #8746（T19）；Product、Concat 0（G7） | `associationEnabled=false` 仍建关联 MV；瘦 MV 缺列或命中了用到其他列的查询；bypass 的 MV 套了 VPM 或用户看不到全部行（#78390、#77666 同类）；设计态 `meta` 用了 MV；`@nomv` 表达式被建进 MV、参数变了结果不变 | dashboard 四组（T11）；`meta` 写单测（T19）。组件百分比、`CalcMV` 已核对，有覆盖（§2） | 中 |
 | G14 | 用 MV 与不用 MV 的差异在默认 golden 下不会被发现。`both` 下发现 4 个用例不一致，都是不用 MV 的一侧不对：`SubMV_Spec.aggbase`、`crossjoin`、`rangecolumn` 是 Average 下推 DB2 不加 CAST 被截成整数（#76921，开发决定不修；#50746），`aggbase` 的 covariance 另有浮点误差 `-0`（不提 bug）；`TopMV_AggregateFormulas_Spec.datelevel_none` 是 `CoreTool.getTimeData`（`:2265`）保留了日期（#81682，已修 `b3fa4de4aa`）。同类已知差异：`formula.avg.keep.type`（#54404） | — | **已处理**：前三个去掉 `compareWithoutMV` 并注释 #76921；`datelevel_none` 在新产品上 `both` 通过（T13）；golden 都不变 | 中 |
 
 方向判断：期望值能不依赖产品输出、独立算出来 → 单测；问题出在组件、绑定、数据源之间的接线 → dashboard；验证机制本身的缺陷 → 改基类，不是加用例。
@@ -170,13 +170,13 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 
 **stylebi PR #8677（2026-11-23 合并，`bdd266f58f`）** 只加测试：`MVManagerFindRuntimeMVTest` 加 `isStale`、`isExpired` 引起的重建（后台重建时照用旧 MV、新鲜不重建、设计者不重建、不重复重建、超过 `mv.maxAge` 时等重建完成；现在共 26 个）；新类 `WSMVAnalyzerTest`（8）、`trans.AbstractTransformerTest`（25，条件是否动态、能否合并、子表列查找、排名）、`trans.NamedGroupTransformerTest`（10，聚合下移、改名加 mirror、命名分组明细列）。被固定、交给开发确认的行为：只设 `mv.maxAge` 时超龄 MV 仍被使用、不重建；`WSMVAnalyzer` 分析交叉表时改掉传入 worksheet 里表的聚合和条件（#82142）。过期 MV 对没有 MATERIALIZATION ACCESS 的用户返回 null 已作为 bug 修复（#82140，`6c96ee6865`），测试改为照常使用、不重建。`NamedGroupTransformer` 把日期分组改为按结果列的改写在单测里总被 `resetColumnSelection` 撤销，没写单测；18080 上端到端核对过改名分支结果与不用 MV 一致。
 
+**stylebi PR #8746（2026-11-24 开，未合并）** 只加测试（T19）：`ViewsheetSandboxMVEnabledTest`（4，`isMVEnabled`：设计态加 meta 不用 MV、runtime 不受影响、`setMVDisabled`、明细数据要 `mv.detail.data`）；`MVTableMetaDataTest`（5，从完整 MV 读选择列表的值、关联值、含 `/` 的树选择值 #52677、按值聚合的度量）；`SharedMVUtilTest`（16，哪些 MV 定义共用一个 MV：接管已存的或被接管、WS 和 VS 的 MV 分开、重新分析后移出、共享提示、`checkMVValid`、`removeMV`）；`MVScriptableMultiBlockTest`（3，多块时维度列的 `MV.MaxValue`/`MinValue`，移植自 13.8 `QueryAdvancedFeatureTest.mvUpdateVariablesInSql`）。每个类都对改坏的产品方法验证过会失败。固定了两个看起来不是有意的行为：#82223（`SharedMVUtil.shareCreatedMV` 合并后删除的是保留的那个 MV 的集群文件）、#82219（某一块的维度列有 NULL 时 `MV.MinValue` 为 NULL）。
+
 仍没有直接测试的类（没有以类名命名的测试文件，`inetsoft/mv` 下测试也 `grep -w` 不到）：
 
 | 被测类 | 补什么 | 用例数 | 难度 | 待开发确认 |
 |---|---|---|---|---|
 | `CalcFieldTransformer` | 不补：在 `MVTransformer.transform` 里被注释掉，没有调用 | — | — | 否 |
-| `ViewsheetSandbox.isMVEnabled`（`meta`） | runtime 加 meta 用 MV；设计态加 meta 不用 MV；设计态不加 meta 用 MV；`setMVDisabled(true)` 不用；`isMVEnabled(true)` 还要 `mv.detail.data=true`，设计态加 meta 时仍为 false。夹具同 `ApplyParameterToInputTest`（真实 `ViewsheetSandbox`，`SHEET_RUNTIME_MODE`/`SHEET_DESIGN_MODE`）。T19，用户在产品单测分支上写 | 6 | 低 | 否 |
-| `MVTableMetaData`、`SharedMVUtil` | 关联 MV 元数据、共享 MV 判断；13.8 `ActionsMvMVTest` 里 `SharedMVUtil.shareCreatedMV` 部分可参考 | 未设计（T19） | 中 / 高 | 否 |
 | `DateMVColumn`（493 行）、`RangeMVColumn`（414 行）、`MVDecimalColumn`、`MVUIntColumn`、`MVRangeIntColumn`、`AbstractMeasureColumn`、`DimValueList`、`MVRow` | 未列入设计（列类型边界已被 #79649、#76971、#77154 等修复时的测试局部覆盖，未核对完整性） | — | — | — |
 
 ### 13.8 里已有的 MV 单测（可移植的和不可移植的）
@@ -189,8 +189,8 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | `MvMapreduceFeatureTest`（29） | 块系统、任务派发/超时/取消/重试、`MVReduceTask`、`SubMVTask`、`mv.comm` 缓冲区、数据节点 | 未移植；依赖 `DUtil` 等四个类的用例不能移植；优先级低（稳定的基础设施，bug 主要是并发和集群） |
 | `ConfigMvBehaviorS2Test`（6） | `mv.metadata`、`mv.ondemand`、`mv.dispatcher.*`、`mv.required`、`mv.enabled.all` | 改写成单测（T7） |
 | `MvManageCustomerP2Test`（2） | 关联 MV：#53263、#62332 | 改写成单测（T7） |
-| `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` | `MVConditionListHandler` 在 MV 更新里处理变量，`mv.preferred.block`=2 | 未处理；是否覆盖 #79869 未核对，先读方法体（T19） |
-| `ActionsMvMVTest`（10） | `MVAction`、`SharedMVUtil.shareCreatedMV` | 只补 `SharedMVUtil` 部分（未做） |
+| `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` | `MVConditionListHandler` 在 MV 更新里处理变量，`mv.preferred.block`=2 | 多块的 `MV.MaxValue`/`MinValue` 已移植（`MVScriptableMultiBlockTest`，stylebi PR #8746）；追加条件合并、`MV.LastUpdateTime` 已在 `MVIncrementalTest` |
+| `ActionsMvMVTest`（10） | `MVAction`、`SharedMVUtil.shareCreatedMV` | `SharedMVUtil` 部分已补（`SharedMVUtilTest`，stylebi PR #8746）；`MVAction` 不移植 |
 | `customer/mv/` 其他客户场景 | 创建、读取、更新、调度、数据隔离、VPM 隐藏列 | 不移植，由 datatest 覆盖 |
 | `MvGridFeatureTest`（3） | 集群状态 | 不属于 datatest 和 core |
 
@@ -303,9 +303,9 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | #81060 | In Progress | -- | -- | 公共 API | 失败的分析任务被报告为完成 |
 | #81061 | In Progress | -- | -- | 公共 API | 更新不存在的 MV 带 cycle 时 NPE |
 
-datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）。
+datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）。
 
-## 8. 具体要做（T11、T16–T19 未开始；其余已做）
+## 8. 具体要做（T11、T16–T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 状态 / 注意 |
 |---|---|---|---|---|
@@ -327,7 +327,7 @@ datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344�
 | T16 | 不可合并公式 Product、Concat 各补一个 viewsheet（G7） | 运行时复制资产改聚合公式（做法同 `TopMV_RuntimeAssets_Spec`，不改 `mvStorage.zip`） | `both` 和 golden；断言命中、结果与不用 MV 一致，在 MV 运行的导出上断言具体值，golden 下也起作用 | **未开始**。先确认这两种公式走"读明细在内存聚合"（`AssetQuery.java:175`-`:203`） |
 | T17 | 核对 195 个没被字面量引用的 viewsheet（G11） | `mvStorage.zip`、`expectData` | 每个 viewsheet 归类为间接引用、补用例或删除；删除后整套 `both` 仍通过 | **未开始**。先查 12 个末段名字出现在 spec 文本里的；`CalcField/NotPublic_Brush1` 有基线没被引用；`CalcMV` 38 个已核对（§2），不再处理；只删除确认无用的 |
 | T18 | 组件都是纯值时 `getMVHitInfo` 退回"已定义"（G1） | `commons` 的 `MVTest.groovy`（`:455`-`:461`） | 列出走退回路径的用例；改基类后这些用例记录到真正读过的 MV，反向：不建 MV 时失败 | **未开始**。先统计走退回路径的用例，再定是否改基类 |
-| T19 | 补 `ViewsheetSandbox.isMVEnabled`（`meta`，G13）、`MVTableMetaData`、`SharedMVUtil` 单测；读 13.8 `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` 定是否移植 | 产品仓库 `core/src/test/java/inetsoft/report/composition/execution/`（`isMVEnabled`）、`core/src/test/java/inetsoft/mv/` | 单独运行通过，改坏产品代码后失败 | **未开始**。`isMVEnabled` 已设计（§4，6 个用例），用户在产品单测分支上写；`MVTableMetaData`、`SharedMVUtil` 未设计，13.8 `ActionsMvMVTest` 的 `SharedMVUtil.shareCreatedMV` 部分可参考 |
+| T19 | 补 `ViewsheetSandbox.isMVEnabled`（`meta`，G13）、`MVTableMetaData`、`SharedMVUtil` 单测；读 13.8 `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` 定是否移植 | 产品仓库 `core/src/test/java/inetsoft/report/composition/execution/`（`isMVEnabled`）、`core/src/test/java/inetsoft/mv/` | 单独运行通过，改坏产品代码后失败 | **已做（stylebi PR #8746，未合并）**：`ViewsheetSandboxMVEnabledTest`、`MVTableMetaDataTest`、`SharedMVUtilTest`、`MVScriptableMultiBlockTest` 共 28 个用例，见 §4；`mvUpdateVariablesInSql` 移植了多块 `MV.MaxValue`/`MinValue` 部分；发现 #82219、#82223 |
 
 ## 附：数据来源与复现
 
