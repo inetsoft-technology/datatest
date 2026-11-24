@@ -40,6 +40,8 @@ import spock.lang.Issue
 import spock.lang.Shared
 import spock.lang.Specification
 
+import java.sql.Types
+
 /**
  * MV cases on a worksheet and a viewsheet that the case makes at run time, as a copy of
  * existing assets with the table, columns and conditions it needs, removed when it ends;
@@ -113,12 +115,23 @@ class TopMV_RuntimeAssets_Spec extends Specification {
    // The MV column of customer_id is an int column: a bound outside its range used to wrap around
    // (3000000000 became a negative int, so "> 3000000000" kept every row; 2^32 + 1 became 1, so
    // "< 4294967297" kept none), and the default value seemed not to be applied with MV (#80155).
-   @Issue('https://issues.inetsoft.com/issues/80155')
+   // Without MV, "= 4294967297" used to narrow the value to an int too and returned the 6 rows of
+   // customer_id 1 (#82099); "= 1" checks that the equal condition still selects rows. That error
+   // was on the side without MV, so only compareWithoutMV catches it, with -Dmv.compare=both or
+   // nomv; in the default golden mode rowCount reads the MV export only.
+   @Issue(['https://issues.inetsoft.com/issues/80155', 'https://issues.inetsoft.com/issues/82099'])
    def 'Long variable default #value in customer_id #name ?v: the same rows with and without MV'() {
       given:
       copyAssets('MV_Creator/Append/mvLastUpdatetime', 'MVorders1') { Worksheet ws, BoundTableAssembly table ->
          clearMVConditions(table)
          addLongVariable(ws, 'v', value)
+
+         if(op == XCondition.EQUAL_TO) {
+            // the asset stores customer_id as VARCHAR (sqlType 12), so "=" would bind the value
+            // as a string and H2 rejects 4294967297; use the type of the H2 column, INTEGER
+            ((AttributeRef) column(table, 'customer_id').getDataRef()).setSqlType(Types.INTEGER)
+         }
+
          AssetCondition cond = new AssetCondition(XSchema.INTEGER)
          cond.setOperation(op)
          cond.addValue(new UserVariable('v'))
@@ -143,6 +156,8 @@ class TopMV_RuntimeAssets_Spec extends Specification {
       'greater than' | XCondition.GREATER_THAN | 3000000000L  | 0
       'greater than' | XCondition.GREATER_THAN | -3000000000L | 119
       'less than'    | XCondition.LESS_THAN    | 4294967297L  | 119
+      'equal to'     | XCondition.EQUAL_TO     | 4294967297L  | 0
+      'equal to'     | XCondition.EQUAL_TO     | 1L           | 6
    }
 
    // topmv/v-contains (DB2 ORDERS.PRODUCTS, PRODUCT_NAME not contains ?product_name, here "a")

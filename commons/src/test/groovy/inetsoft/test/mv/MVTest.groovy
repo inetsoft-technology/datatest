@@ -1070,15 +1070,38 @@ class MVTest {
       return event
    }
 
-   /*
-   * use to clean all properties setting for some special testing
-   */
+   /**
+    * Set SreeEnv properties for a case and return their previous values. Pass the result to
+    * {@link #restoreProperties} in {@code cleanup()}: the profiles other than {@code others} run
+    * every spec in one JVM. A null value removes the property. Call it once per case: a second
+    * call for the same name returns the value set by the first one, not the original value.
+    */
+   static Map<String, String> setProperties(Map<String, String> properties) {
+      Map<String, String> previous = [:]
 
-   static def clearEnv() {
-      if(SreeEnv.getProperty('mv.outer.moveUp') != null) {
-         SreeEnv.setProperty('mv.outer.moveUp', null)
+      properties.each { name, value ->
+         previous[name] = SreeEnv.getProperty(name)
+         putProperty(name, value)
       }
-      SreeEnv.save()
+
+      return previous
+   }
+
+   /**
+    * Restore the values returned by {@link #setProperties}; a property that had no value is
+    * removed.
+    */
+   static void restoreProperties(Map<String, String> previous) {
+      previous?.each { name, value -> putProperty(name, value) }
+   }
+
+   private static void putProperty(String name, String value) {
+      if(value == null) {
+         SreeEnv.remove(name)
+      }
+      else {
+         SreeEnv.setProperty(name, value)
+      }
    }
 
    private class MVFilter implements FileFilter {
