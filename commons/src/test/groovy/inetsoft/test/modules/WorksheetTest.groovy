@@ -360,11 +360,18 @@ class WorksheetTest {
       sandbox.shrink()
       Assembly[] assemblies = rvs.getViewsheet().getAssemblies()
 
-      def data = null
       Map<String, Throwable> failures = new LinkedHashMap<>()
 
       for(Assembly assembly : assemblies) {
          String assemblyName = assembly.getName()
+
+         // only charts and tables have data to export; any other component (text, selection,
+         // calendar, slider) would otherwise be written with the previous component's data
+         if(!(assembly instanceof ChartVSAssembly) && !(assembly instanceof TableDataVSAssembly)) {
+            continue
+         }
+
+         def data = null
 
          try {
             if(assembly instanceof ChartVSAssembly) {

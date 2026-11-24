@@ -11,7 +11,7 @@
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 59 个用例 51 通过、7 个 `@Ignore`，只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
-**接下来：** G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）；`exportVSComponentData` 缺陷（见第 6 节）。
+**接下来：** G8、G11、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）。
 
 ## 2. 覆盖情况
 
@@ -302,10 +302,10 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 
 | 用例 | 结果 | 处理 |
 |---|---|---|
-| `property_crossJoin.maxCellCount` | #81087 修复后行序确定 | `Customer1` 加排序（State、Reseller），`Query1` 基线更新；剩余风险：`All Sales1` 无 ORDER BY |
+| `property_crossJoin.maxCellCount` | #81087 修复后行序确定 | `Customer1` 加排序（State、Reseller）；`All Sales1` 加排序（`Order Number`，唯一），`Query1` 每行取它的第一行（12001），基线由 `TestData` 和这一行推导，与输出一致 |
 | `rotate/Query4`、`condition1/Query7`、`grouping1/Query1` | #81102 修复后多出以前被丢的重名列 | 对照来源核对后更新基线 |
 | `condition2/Query3` | #81193 修复后与原基线一致（3×2） | 不变 |
-| `condition2/Query1` | 3×29 → 3×200：前 29 列不变，后面是重名列，截在 sandbox 列数上限 200（`max.col.count`） | 对照 `query21` 独立推导后更新；剩余风险：同一天的行序依赖数据库 |
+| `condition2/Query1` | 3×29 → 3×200：前 29 列不变，后面是重名列，截在 sandbox 列数上限 200（`max.col.count`） | 来源 `query21` 加第二排序键 `order_id`（唯一），基线由排序后的 `query21` 逐格推导，与输出一致 |
 | `WSAsset_Spec.varible` 的 `rotation`、`Copy of rotation1` | 6×20 → 6×200，同上 | 给来源 `query11` 加排序（`ORDER_DATE`、`CUSTOMER_ID`、`EMPLOYEE_ID`，顺序完全确定），基线由排序后的 `query11` 独立推导，与输出逐字节一致；同一 worksheet 的其他 12 张表输出不变 |
 | `range&formula/Embedded` | `f_byte`（byte，`field['byte']/0.5`）-6、-2 → 250、254 | #81200 有意修改（超出声明类型范围时保留原值）；基线已更新 |
 | `WSData_Spec.SqlQuery` | 修复前单独运行约 340 秒，整套里 312 秒时 sheet 过期；修复后单独运行 19 秒，整套里通过，数据与基线一致 | 产品性能缺陷 **#82116**（见下），stylebi #8682 已修复，已验证 |
@@ -336,7 +336,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 类别 | 数量 | 结论 |
 |---|---|---|
 | 迁移前 query 等资产的原件，副本已在被测 worksheet 里（如 `oracle q1` → `Common/sql query` 的 `oracle q11`；`CM8`、`CM8_distinct` → `merge/CM8` 的 `CM8_1_1`～`CM8_1_6`） | 30 | 不是缺口 |
-| `Common/nullws`：上传用例的导入目标（`ws_scan.py` 没有建模 `importCSVToEMTable`） | 1 | 在用 |
+| `Common/nullws`：上传用例的导入目标（`ws_scan.py crosscheck` 已能识别经变量传入的 `importCSVToEMTable`） | 1 | 在用 |
 | `Examples/*`：产品示例 | 11 | 不属于 ws 数据测试 |
 | 迁移原件、没有副本：`Sample Queries` 3 个（示例）、`userInfo`（安全模块）、`db2formula`、`suquery_execute` | 6 | 只有 `suquery_execute` 需要补 |
 | `DB/clickhouse_sql`：ClickHouse 的 IPv6、Array 表，未用 | 1 | 归 G8、G11，等 `clickhouse` 用例去掉 `@Ignore` 时用上 |
@@ -348,7 +348,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `resellerTrue` | `125` / `true` / `2001-01-01 01:13:13` | 1、3、5、8、14 | 2（价格等于 125）、21 和 22（时间相等） |
 | `resellerFalse` | `30` / `false` / `2006-01-01 09:09:09` | 4、13、23 | 19（时间相等）、9 和 10（时间更晚） |
 
-基线由纯 JDBC 读出的 DB2 原始行按条件筛选得出，不来自产品输出；删掉基线一行用例会失败。剩余风险：没有 ORDER BY，行序依赖 DB2。
+基线由纯 JDBC 读出的 DB2 原始行按条件筛选得出，不来自产品输出；删掉基线一行用例会失败。查询没有 ORDER BY，但导出时按全部列排序，行序不影响基线。
 
 `WSOthers_Spec` 的 `ws group case check`（`@Ignore`）用到的 `wsCheck/ws1` 不在 zip 里，去掉 `@Ignore` 前要先补回。
 
@@ -367,14 +367,13 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
-- `exportVSComponentData` 遇到既不是图表也不是表格的组件，会把上一个组件的数据再导出一遍，未改。
 - 查询是否下推只在 `DataComposition_Spec` 的 9 个用例断言；其他 spec 没有。
 - 设计矩阵里约 88 个"不可合并"用例资产没有实现（含 Access、Sybase、Ingres 等 CI 没有的库）。
 - `LIVE_MODE` 与 `RUNTIME_MODE` 只确认了行数上限的差别。
 - 命名分组、变量、日期范围在 worksheet 里的实际用法；`InRange_Spec` 的范围名与 `DateCondition` 子类只按名字对应。
 - 49 个未运行的 worksheet 只看了表结构，没有执行。
 - 库 × 处理步骤的交叉统计没有做。
-- 依赖数据库行序的基线：`All Sales1`、`condition2/Query1`（同一天的行）、`queryVariableTypes`，本机运行稳定。
+
 ## 7. 已知 bug 对照
 
 范围：Redmine "Product"、分类 "Worksheet Execution"、Bug、2025-11-01 至 2026-11-11 创建，共 118 条（`project_id=1`、`category_id=19`、`tracker_id=1`）。按标题粗分；覆盖情况只看 datatest 一侧。
