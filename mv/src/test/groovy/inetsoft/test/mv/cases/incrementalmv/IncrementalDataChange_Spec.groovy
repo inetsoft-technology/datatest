@@ -1,6 +1,8 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.mv.MVManager
+import inetsoft.mv.fs.FSService
+import inetsoft.mv.fs.XFile
 import inetsoft.report.XSessionManager
 import inetsoft.sree.security.Organization
 import inetsoft.sree.security.Permission
@@ -208,6 +210,59 @@ class IncrementalDataChange_Spec extends Specification {
          integers(true) == (1..8).toList()
          mvtest.compareWithRebuild()
       }
+   }
+
+   // mv.preferred.block is the number of rows of an MV block (default 1000000). The MV of 5 rows
+   // is split into blocks of that size, and an update adds its 3 rows to the last block or to a
+   // new one (MVBuilder.getBlockSize); the block counts are those of the current product.
+   // Whatever the blocks, the MV has the rows 1 to 8, the same as a rebuilt MV. The MockCluster of datatest returns the block it
+   // is given, so the append of #79869 (rows lost with a non-default value) is checked by the
+   // product test LocalFileSystemAppendRecordTest, not here.
+   @Issue('https://issues.inetsoft.com/issues/79869')
+   def 'mv.preferred.block #size: #created blocks, #updated after 3 rows are appended, the rows of a rebuilt MV'() {
+      given:
+      def previous = MVTest.setProperties(['mv.preferred.block': size])
+      source.createLike('MVSCRIPT')
+      insertIntegers(1..5)
+      copyIntegerAssets()
+      mvtest = new MVTest(VS_ID)
+
+      when:
+      List<Integer> blocks = []
+      List<Integer> createdRows, updatedRows
+
+      try {
+         mvtest.createMV(false)
+         mvtest.executeVS(null, null, false, false)
+         createdRows = integers(false)
+         blocks << blockCount('MVSCRIPT1')
+
+         insertIntegers(6..8)
+         update()
+         updatedRows = integers(true)
+         blocks << blockCount('MVSCRIPT1')
+
+         mvtest.rebuildMV(null, null, false)
+      }
+      finally {
+         MVTest.restoreProperties(previous)
+      }
+
+      then:
+      verifyAll {
+         blocks == [created, updated]
+         createdRows == (1..5).toList()
+         updatedRows == (1..8).toList()
+         mvtest.takeMVHits().toSet() == ['MVSCRIPT1|TopMV'] as Set
+         mvtest.compareWithRebuild()
+      }
+
+      where:
+      size | created | updated
+      null | 1       | 1
+      '2'  | 3       | 3
+      '3'  | 2       | 2
+      '5'  | 1       | 2
    }
 
    def 'append condition > MV.LastUpdateTime: only the rows after the last update time are appended'() {
@@ -1475,6 +1530,16 @@ class IncrementalDataChange_Spec extends Specification {
       mvtest.createIncrementMV(1)
       clearCaches()
       mvtest.executeVS(null, null, true, false)
+   }
+
+   /** The number of blocks of the MV of this case on the table, in the MV file system. */
+   private int blockCount(String table) {
+      MVManager manager = MVManager.getManager()
+      List<String> names = mvtest.materializedViewNames().findAll { manager.get(it)?.getMVTable() == table }
+      assert names.size() == 1: 'expected one MV on ' + table + ': ' + names
+      XFile file = FSService.getServer().getFSystem().get(names[0])
+      assert file != null: 'no MV file ' + names[0]
+      return file.getBlocks().size()
    }
 
    private static void clearCaches() {
