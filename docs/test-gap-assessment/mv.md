@@ -98,7 +98,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | 嵌入表（拒绝，`VSMVAnalyzer.java:712`-`:718`） | 1 | 0 | — | `NOT Transform` 的两个嵌入表 viewsheet 已由 `NotTransform_Spec` 覆盖 |
 | Cube 绑定（拒绝，`VSMVAnalyzer.java:701`-`:708`） | 1（`NOT Transform/cube`） | 0 | — | 测试环境走不到 cube 规则（§6 第 6 条） |
 | 自由表（无 MV 专用代码） | 66 | 26 | others 25、topmv 1 | 不单独追 |
-| `CalcMV/Detail_*`、`CalcMV/crosstab_*`（自由表：明细模式 19、分组汇总 19，基于 `Crosstab/CalcTest2..7`，H2 orders） | 38 | 0 | — | 测试点已被覆盖，不进 spec：明细自由表（`hit mv/freehand3`）、分组汇总与各公式（`hit mv/freehand1..4`、`element binding*`）、viewsheet 计算字段（`CalcField_Spec`）、输入组件到 worksheet 变量条件（`VSCondtion_Spec` 的 `variable_ws_*`、`input5`、`vs query and condition/*`）。2026-11-24 全部以 `both` 运行一次（临时用例，未提交）：37 个命中 MV 且与不用 MV 相同；`crosstab_11` 不用 MV 时就报 `Column not found: CalcField2`（`WeightedAverage` 的权重列是 viewsheet 计算字段，`AbstractCrosstabVSAQuery.getFormula`，`:2126`），与 MV 无关，原因未查 |
+| `CalcMV/Detail_*`、`CalcMV/crosstab_*`（自由表：明细模式 19、分组汇总 19，基于 `Crosstab/CalcTest2..7`，H2 orders） | 38 | 0 | — | 测试点已被覆盖，不进 spec：明细自由表（`hit mv/freehand3`）、分组汇总与各公式（`hit mv/freehand1..4`、`element binding*`）、viewsheet 计算字段（`CalcField_Spec`）、输入组件到 worksheet 变量条件（`VSCondtion_Spec` 的 `variable_ws_*`、`input5`、`vs query and condition/*`）。2026-11-24 全部以 `both` 运行一次（临时用例，未提交）：37 个命中 MV 且与不用 MV 相同；`crosstab_11` 不用 MV 时就报 `Column not found: CalcField2`，与 MV 无关：两列公式的第二列只用到明细计算字段时，自由表的临时交叉表把它当作没用到删掉（`VSAQuery.removeUnusedCalcField`，`usedInCrosstabInfo` 看的 `getSecondaryColumn()` 这时为 null），疑为 `980291b28d`（#81627 后续）引入，已提 #82231 |
 
 动作（从书签状态看）：选择（1492 个选择列表状态，342 个 viewsheet，其中 337 个被引用）、画刷 `state_brush`（32 个书签，17 个 viewsheet）、缩放 `state_zoom`（31，16）、钻取 `drill_filter`（16，4）、adhoc 筛选（48 个节点，21 个 viewsheet）。没有被任何用例触发的 MV 专用动作：明细数据（`DataMap.DETAIL`；名字含 detail 的 19 个是 `CalcMV/Detail_*`，不是明细动作）、导出路径。静态结论。
 
@@ -303,7 +303,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | #81060 | In Progress | -- | -- | 公共 API | 失败的分析任务被报告为完成 |
 | #81061 | In Progress | -- | -- | 公共 API | 更新不存在的 MV 带 cycle 时 NPE |
 
-datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）。
+datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）。
 
 ## 8. 具体要做（T11、T16–T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
 
