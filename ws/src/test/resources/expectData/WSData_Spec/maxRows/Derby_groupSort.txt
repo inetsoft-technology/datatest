@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+CUSTOMER_ID, ORDER_ID
+33, 18
+34, 19
+35, 22

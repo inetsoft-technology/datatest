@@ -291,6 +291,96 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   def 'setOperation' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database: <db>_A = CUSTOMERS where STATE one of NJ, NY, CA (14 rows), <db>_B = STATE one of NY, TX (8 rows);
+      // <db>_union (distinct) = NJ, NY, CA, TX (18 rows), <db>_minus = NJ, CA (10 rows).
+      // <db>_DA, <db>_DB = PRODUCTS.DESCRIPTION only, each side with 3 NULL rows: set operations treat NULLs as
+      // equal and return distinct rows, so <db>_Dunion has one NULL row (5 rows) and <db>_Dminus has none (2 rows).
+      // plan: both pushed to SQL on Oracle and PostgreSQL, only union on MySQL and SQL Server, neither on Derby
+      wstest.executeWS('1^2^__NULL__^DB/setOperation', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'fullOuterJoin' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database: <db>_PA = PRODUCTS where CATEGORY_ID one of 1, 3 (9 rows), <db>_PB = one of 1, 2 (9 rows).
+      // <db>_joinNull: on DESCRIPTION; NULL never matches NULL, so products 1, 15, 16 stay unmatched (14 rows).
+      // <db>_joinDup: on CATEGORY_ID, only the two CATEGORY_ID columns: 36 identical (1, 1) rows, 3 (3, NULL),
+      // 3 (NULL, 2) - an emulation with UNION would drop the duplicates (42 rows).
+      // <db>_joinCond: <db>_joinNull with PB's PRODUCT_ID is null, which must apply after the join (5 rows).
+      // plan: pushed to SQL on Oracle, PostgreSQL and SQL Server; MySQL and Derby have no FULL OUTER JOIN
+      wstest.executeWS('1^2^__NULL__^DB/fullOuterJoin', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'statAggregate' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database: 16 picked ORDERS grouped by CUSTOMER_ID, aggregates on DISCOUNT: one value (1), all NULL (3),
+      // NULL and one value (12), NULLs and a duplicate (7), even count with a constant EMPLOYEE_ID (19).
+      // NULLs are ignored (Average of 7 divides by 5, Count of 3 is 0, its Sum and Average are NULL); sample
+      // Variance and Standard Deviation of one value are 0 on every path (#80342), not NULL as in SQL;
+      // Correlation of one pair or of a constant column is NULL.
+      // Average of EMPLOYEE_ID: 9/7 for customer 7. DB2 (INTEGER column) returns 1 in DB2_basic: the SQL is a bare
+      // AVG(col) and DB2 keeps the integer type (same root cause as the rejected #76921); DB2_mem gives 1.2857.
+      // DB2 is only in this worksheet (DB2 support of set operations and full join is not sampled yet).
+      // <db>_basic, <db>_var, <db>_corr: aggregated in SQL (group by pushed); <db>_mem adds Median and Mode,
+      // so all of its aggregates are computed in memory. A second aggregate of a column uses the expression
+      // column DISCOUNT_<n> = field['DISCOUNT'], as the composer's aggregate dialog creates it.
+      wstest.executeWS('1^2^__NULL__^DB/statAggregate', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dateGroup' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database (DB2 included): one order on each of 15 dates around the year ends, grouped by WeekOfYear,
+      // DayOfWeek, Week and Quarter of ORDER_DATE plus ORDER_ID. <db>_<option>NoSQL group a script expression copy
+      // ORDER_DATE_JS = field['ORDER_DATE'] instead, so the date part is computed in memory on the same data.
+      // DayOfWeek, Week and Quarter agree everywhere, in SQL and in memory, under the test servers' US session
+      // settings: Oracle to_char(d,'D') follows NLS_TERRITORY and SQL Server datepart(dw) follows @@DATEFIRST
+      // (GERMANY / DATEFIRST 1 make both Monday-based), while memory follows week.start (default Sunday).
+      // WeekOfYear in memory is the same in every database: Sunday-based weeks, the week of January 1 is week 1,
+      // so 2002-12-30, 2003-12-31 and 2004-12-27 are week 1. In SQL it differs from that on the same data (#82200).
+      // The baselines keep today's SQL results: MySQL, SQL Server, DB2 give 53 for those three days; PostgreSQL
+      // (ISO weeks) 53 for 2004-12-27 and 2005-01-01, 1 for 2005-01-04 and 2005-01-08; Oracle (WW, 7-day blocks
+      // from January 1) is off by one for most dates after the first Sunday of the year.
+      wstest.executeWS('1^2^__NULL__^DB/dateGroup', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'maxRows' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database: tables with a max row count, sorted against the physical order, exported at the top level and
+      // inner joined with CUSTOMERS (<db>_<table>Join), where their SQL becomes a subquery wrapped by the row limit.
+      // <db>_top: ORDER_ID descending, max 5 -> 12700..12696; <db>_distinct: distinct CUSTOMER_ID descending, max 5
+      // -> 35..31; <db>_groupSort: Count(ORDER_ID) by CUSTOMER_ID sorted descending, max 3 -> customers 35, 34, 33;
+      // <db>_groupMem: Count and Mode (never SQL) by CUSTOMER_ID, no sort, max 3 -> in memory, groups 1, 2, 3.
+      // A grouped table with max rows and no sort is left out: its SQL has no ORDER BY, so the kept groups are
+      // database-defined (known limit in #80446; Oracle, MySQL, PostgreSQL keep other groups than memory).
+      wstest.executeWS('1^2^__NULL__^DB/maxRows', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
    @Ignore
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name

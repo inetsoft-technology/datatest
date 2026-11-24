@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+PRODUCT_ID, CATEGORY_ID, DESCRIPTION
+9, 1, Java game toolkit
+13, 1, Chess game
+14, 1, Chinese Go game
+15, 1, NULL
+16, 1, NULL
+17, 2, Educational software
+18, 2, Learn ABC
+19, 2, Math tutor
+20, 1, Girl"s game

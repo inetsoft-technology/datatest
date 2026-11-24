@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 5)
+customer_id, discount, discount_1, discount_2, discount_3
+1, 0, 0, 0, 0
+3, NULL, NULL, NULL, NULL
+7, 0.01, 0.1, 0.008, 0.0894
+12, 0, 0, 0, 0
+19, 0.0173, 0.1315, 0.013, 0.1139

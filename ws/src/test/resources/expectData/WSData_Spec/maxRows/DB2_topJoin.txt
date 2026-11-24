@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+ORDER_ID, CUSTOMER_ID, CUSTOMER_ID_1, STATE
+12696, 27, 27, WA
+12697, 15, 15, NJ
+12698, 11, 11, TX
+12699, 12, 12, FL
+12700, 14, 14, MD

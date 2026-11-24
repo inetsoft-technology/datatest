@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 1)
+CUSTOMER_ID
+31
+32
+33
+34
+35

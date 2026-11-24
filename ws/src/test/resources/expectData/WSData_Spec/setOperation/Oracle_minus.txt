@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 2)
+CUSTOMER_ID, STATE
+1, NJ
+2, NJ
+9, CA
+13, CA
+15, NJ
+16, CA
+19, NJ
+21, CA
+25, NJ
+35, NJ
