@@ -54,6 +54,12 @@ class MVProperties_Spec extends Specification {
    static final String WS_ENTRY = '1^2^__NULL__^' + PATH + '^host-org'
    static final String VS_ENTRY = VS_ID + '^host-org'
 
+   // the selection columns and the expected hits of the union cases
+   static final List<String> NAMES = ['CATEGORY_NAME', 'REGION']
+   static final List<String> IDS = ['CATEGORY_ID', 'REGION_ID']
+   static final List<String> TOP = ['Query1|TopMV']
+   static final List<String> SUB = ['CATEGORIES1|SubMV', 'REGIONS1|SubMV']
+
    @Shared def admin
    def mvtest
    Map<String, String> previous
@@ -186,7 +192,7 @@ class MVProperties_Spec extends Specification {
       }
 
       where:
-      label         | value                           | real
+      label         | value                         | real
       'not set'     | null                          | ['Month(ORDER_DATETIME)', 'Year(ORDER_DATETIME)']
       'empty'       | ''                            | []
       'five levels' | 'year,quarter,month,week,day' | ['Day(ORDER_DATETIME)', 'Month(ORDER_DATETIME)', 'Quarter(ORDER_DATETIME)', 'Week(ORDER_DATETIME)', 'Year(ORDER_DATETIME)']
@@ -199,11 +205,12 @@ class MVProperties_Spec extends Specification {
    // column position (SelectionUpTransformer.isMoveableToUnionTable); the union then gets one
    // TopMV and the selections of the children are joined with OR on it. That is right only when
    // the children do not share the selected values (the code says so; the property is off by
-   // default; #6808) and, as found here, every child has a selected value (#82210). In 12.2 the move up of a union of tables with selections was refused whatever the
-   // property, and that change was reverted (#4906, #6585), so the wrong result on the ids is the
-   // documented behavior. The asset itself has its selections on different positions
-   // (CATEGORY_NAME, REGION_ID) and never moves up. The selection lists also hit TopMVs of
-   // CATEGORIES1 and REGIONS1, so the check is on the MV of the union or the SubMVs.
+   // default, #6808) and, as found here, every child has a selected value (#82210). In 12.2 the
+   // move up of a union of tables with selections was refused whatever the property, and that
+   // change was reverted (#4906, #6585), so the wrong result on the ids is the documented
+   // behavior. The asset itself has its selections on different positions (CATEGORY_NAME,
+   // REGION_ID) and never moves up. The selection lists also hit TopMVs of CATEGORIES1 and
+   // REGIONS1, so the check is on the MV of the union or the SubMVs.
    @Issue(['https://issues.inetsoft.com/issues/4906', 'https://issues.inetsoft.com/issues/6585',
            'https://issues.inetsoft.com/issues/6808', 'https://issues.inetsoft.com/issues/82210'])
    def 'union, mv.union.moveUp=#moveUp, #name: #hits'() {
@@ -235,21 +242,22 @@ class MVProperties_Spec extends Specification {
       }
 
       where:
-      name                                  | moveUp | distinct | columns                          | selected                            | same  | hits                                     | rows
+      name                                         | moveUp | distinct | columns | selected                 | same  | hits | rows
       // the names of the children differ: right
-      'selections on the names'             | true   | true     | ['CATEGORY_NAME', 'REGION']      | ['Graphics', 'USA West']            | true  | ['Query1|TopMV']                         | ['2|USA West', '5|Graphics']
-      'selections on the names'             | false  | true     | ['CATEGORY_NAME', 'REGION']      | ['Graphics', 'USA West']            | true  | ['CATEGORIES1|SubMV', 'REGIONS1|SubMV']  | ['2|USA West', '5|Graphics']
+      'names, both selected'                       | true   | true     | NAMES   | ['Graphics', 'USA West'] | true  | TOP  | ['2|USA West', '5|Graphics']
+      'names, both selected'                       | false  | true     | NAMES   | ['Graphics', 'USA West'] | true  | SUB  | ['2|USA West', '5|Graphics']
       // a union all never moves up
-      'union all, selections on the names'  | true   | false    | ['CATEGORY_NAME', 'REGION']      | ['Graphics', 'USA West']            | true  | ['CATEGORIES1|SubMV', 'REGIONS1|SubMV']  | ['2|USA West', '5|Graphics']
+      'union all, names'                           | true   | false    | NAMES   | ['Graphics', 'USA West'] | true  | SUB  | ['2|USA West', '5|Graphics']
       // ids 1 and 2 are in both children: "id in (1) or id in (2)" on the whole union also keeps
       // (1, USA East) and (2, Educational); without MV (and with false) 2 rows
-      'selections on the ids'               | true   | true     | ['CATEGORY_ID', 'REGION_ID']     | ['1', '2']                          | false | ['Query1|TopMV']                         | ['1|Games', '1|USA East', '2|Educational', '2|USA West']
-      'selections on the ids'               | false  | true     | ['CATEGORY_ID', 'REGION_ID']     | ['1', '2']                          | true  | ['CATEGORIES1|SubMV', 'REGIONS1|SubMV']  | ['1|Games', '2|USA West']
+      'ids, both selected'                         | true   | true     | IDS     | ['1', '2']               | false | TOP  | ['1|Games', '1|USA East', '2|Educational', '2|USA West']
+      'ids, both selected'                         | false  | true     | IDS     | ['1', '2']               | true  | SUB  | ['1|Games', '2|USA West']
       // only CATEGORIES1 has a selected value: the merged condition leaves out a child without a
       // condition (getRuntimeConditions skips an empty filter), so "name in (Graphics)" on the
       // whole union also drops the rows of REGIONS1, although the names do not overlap; without
-      // MV 3 rows: 1|USA East, 2|USA West, 5|Graphics; pinned until dev answers #82210
-      'a value selected on the names of one child' | true | true | ['CATEGORY_NAME', 'REGION']      | ['Graphics', null]                  | false | ['Query1|TopMV']                         | ['5|Graphics']
+      // MV 3 rows: 1|USA East, 2|USA West, 5|Graphics. Pinned: change the expected rows when
+      // #82210 is answered or fixed
+      'a value selected on the names of one child' | true   | true     | NAMES   | ['Graphics', null]       | false | TOP  | ['5|Graphics']
    }
 
    /** The names of the real date columns of the MVs of this case on the table, sorted. */

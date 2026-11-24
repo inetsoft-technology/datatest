@@ -115,6 +115,8 @@ class IncrementalDataChange_Spec extends Specification {
    @Shared def admin
    def mvtest
    MVSourceTable source
+   // properties a case sets with MVTest.setProperties, restored in cleanup()
+   Map<String, String> previous
 
    def setupSpec() {
       MVTest.initHome(this.class.getName())
@@ -134,6 +136,7 @@ class IncrementalDataChange_Spec extends Specification {
       // every step runs even when an earlier one fails, so nothing is left for the next case
       runAll(
          { mvtest?.removeMV() },
+         { MVTest.restoreProperties(previous) },
          { source.execute("DROP VIEW IF EXISTS ${VIEW}") },
          { source.execute("DROP ALIAS IF EXISTS ${SLEEP}") },
          { source.drop() },
@@ -221,7 +224,7 @@ class IncrementalDataChange_Spec extends Specification {
    @Issue('https://issues.inetsoft.com/issues/79869')
    def 'mv.preferred.block #size: #created blocks, #updated after 3 rows are appended, the rows of a rebuilt MV'() {
       given:
-      def previous = MVTest.setProperties(['mv.preferred.block': size])
+      previous = MVTest.setProperties(['mv.preferred.block': size])
       source.createLike('MVSCRIPT')
       insertIntegers(1..5)
       copyIntegerAssets()
@@ -229,24 +232,17 @@ class IncrementalDataChange_Spec extends Specification {
 
       when:
       List<Integer> blocks = []
-      List<Integer> createdRows, updatedRows
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      def createdRows = integers(false)
+      blocks << blockCount('MVSCRIPT1')
 
-      try {
-         mvtest.createMV(false)
-         mvtest.executeVS(null, null, false, false)
-         createdRows = integers(false)
-         blocks << blockCount('MVSCRIPT1')
+      insertIntegers(6..8)
+      update()
+      def updatedRows = integers(true)
+      blocks << blockCount('MVSCRIPT1')
 
-         insertIntegers(6..8)
-         update()
-         updatedRows = integers(true)
-         blocks << blockCount('MVSCRIPT1')
-
-         mvtest.rebuildMV(null, null, false)
-      }
-      finally {
-         MVTest.restoreProperties(previous)
-      }
+      mvtest.rebuildMV(null, null, false)
 
       then:
       verifyAll {
