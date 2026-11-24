@@ -199,12 +199,13 @@ class MVProperties_Spec extends Specification {
    // column position (SelectionUpTransformer.isMoveableToUnionTable); the union then gets one
    // TopMV and the selections of the children are joined with OR on it. That is right only when
    // the children do not share the selected values (the code says so; the property is off by
-   // default) and, as found here, every child has a selected value. In 12.2 the move up of a union of tables with selections was refused whatever the
+   // default; #6808) and, as found here, every child has a selected value (#82210). In 12.2 the move up of a union of tables with selections was refused whatever the
    // property, and that change was reverted (#4906, #6585), so the wrong result on the ids is the
    // documented behavior. The asset itself has its selections on different positions
    // (CATEGORY_NAME, REGION_ID) and never moves up. The selection lists also hit TopMVs of
    // CATEGORIES1 and REGIONS1, so the check is on the MV of the union or the SubMVs.
-   @Issue(['https://issues.inetsoft.com/issues/4906', 'https://issues.inetsoft.com/issues/6585'])
+   @Issue(['https://issues.inetsoft.com/issues/4906', 'https://issues.inetsoft.com/issues/6585',
+           'https://issues.inetsoft.com/issues/6808', 'https://issues.inetsoft.com/issues/82210'])
    def 'union, mv.union.moveUp=#moveUp, #name: #hits'() {
       given:
       previous = MVTest.setProperties(['mv.union.moveUp': moveUp as String])
@@ -247,7 +248,7 @@ class MVProperties_Spec extends Specification {
       // only CATEGORIES1 has a selected value: the merged condition leaves out a child without a
       // condition (getRuntimeConditions skips an empty filter), so "name in (Graphics)" on the
       // whole union also drops the rows of REGIONS1, although the names do not overlap; without
-      // MV 3 rows: 1|USA East, 2|USA West, 5|Graphics
+      // MV 3 rows: 1|USA East, 2|USA West, 5|Graphics; pinned until dev answers #82210
       'a value selected on the names of one child' | true | true | ['CATEGORY_NAME', 'REGION']      | ['Graphics', null]                  | false | ['Query1|TopMV']                         | ['5|Graphics']
    }
 
