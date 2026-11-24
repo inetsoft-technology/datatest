@@ -116,7 +116,9 @@ class TopMV_RuntimeAssets_Spec extends Specification {
    // (3000000000 became a negative int, so "> 3000000000" kept every row; 2^32 + 1 became 1, so
    // "< 4294967297" kept none), and the default value seemed not to be applied with MV (#80155).
    // Without MV, "= 4294967297" used to narrow the value to an int too and returned the 6 rows of
-   // customer_id 1 (#82099); "= 1" checks that the equal condition still selects rows.
+   // customer_id 1 (#82099); "= 1" checks that the equal condition still selects rows. That error
+   // was on the side without MV, so only compareWithoutMV catches it, with -Dmv.compare=both or
+   // nomv; in the default golden mode rowCount reads the MV export only.
    @Issue(['https://issues.inetsoft.com/issues/80155', 'https://issues.inetsoft.com/issues/82099'])
    def 'Long variable default #value in customer_id #name ?v: the same rows with and without MV'() {
       given:

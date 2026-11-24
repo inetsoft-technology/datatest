@@ -1073,7 +1073,8 @@ class MVTest {
    /**
     * Set SreeEnv properties for a case and return their previous values. Pass the result to
     * {@link #restoreProperties} in {@code cleanup()}: the profiles other than {@code others} run
-    * every spec in one JVM. A null value removes the property.
+    * every spec in one JVM. A null value removes the property. Call it once per case: a second
+    * call for the same name returns the value set by the first one, not the original value.
     */
    static Map<String, String> setProperties(Map<String, String> properties) {
       Map<String, String> previous = [:]
