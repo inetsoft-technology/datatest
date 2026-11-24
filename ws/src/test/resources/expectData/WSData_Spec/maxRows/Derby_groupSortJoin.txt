@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+CUSTOMER_ID, ORDER_ID, CUSTOMER_ID_1, STATE
+33, 18, 33, MD
+34, 19, 34, MA
+35, 22, 35, NJ

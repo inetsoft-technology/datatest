@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+CUSTOMER_ID, CUSTOMER_ID_1, STATE
+31, 31, TX
+32, 32, NV
+33, 33, MD
+34, 34, MA
+35, 35, NJ
