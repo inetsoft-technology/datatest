@@ -36,7 +36,7 @@ vsscript 原来只有“整页 PNG 像素比对”一条验证路径，但脚本
 
 手工用例（`docs/vsscript/VSScript-Manual-Case.xlsx`）56 个：42 个已自动化（含部分），3 个原来已被别的用例覆盖，3 个保留手工（上传、邮件定时任务、图片弹出位置），7 个价值低不做，1 个归 Java 单测。
 
-`state/` 现为 14 个 spec、110 个用例（2026-11-23 新增 4 个 spec 共 9 个用例，见下），本机 0 失败（2026-11-20 删去与 Java 重复的 15 个往返、差分、全局函数、PDF 文本用例和两个早期探路类）。2026-11-23 新增：`ScriptStateExportMatrix_Spec`（失败脚本放在测试存储里每种组件类型上，导出 Excel / PDF；白名单只能缩小：SelectionList PDF #82105、SelectionTree 刷新 #82107、Tab / 内嵌 Viewsheet 无警告文字）、`ScriptStateResetSweep_Spec`（alpha / tip 复位；白名单 Image / GroupContainer 的 `imageAlpha` #82098；白名单清空时已验证会红并点名这两项）、`ScriptStateScopeReads_Spec`（#81786 越界读 undefined、#81929 未设置参数读 null，及其记录在案的副作用 `'x' in parameter` 恒为 true）、`ScriptStateTriggerOrder_Spec`（D5）。
+`state/` 现为 14 个 spec、110 个用例（2026-11-23 新增 4 个 spec 共 9 个用例，见下），本机 0 失败（2026-11-20 删去与 Java 重复的 15 个往返、差分、全局函数、PDF 文本用例和两个早期探路类）。2026-11-23 新增：`ScriptStateExportMatrix_Spec`（失败脚本放在测试存储里每种组件类型上，导出 Excel / PDF；白名单只能缩小：SelectionTree 刷新 #82107、Tab / 内嵌 Viewsheet 无警告文字；SelectionList #82105 已修复，已移出）、`ScriptStateResetSweep_Spec`（alpha / tip 复位；白名单已清空（Image / GroupContainer 的 `imageAlpha`，#82098 已修复））、`ScriptStateScopeReads_Spec`（#81786 越界读 undefined、#81929 未设置参数读 null，及其记录在案的副作用 `'x' in parameter` 恒为 true）、`ScriptStateTriggerOrder_Spec`（D5）。
 
 ## 4. 成果和验收
 

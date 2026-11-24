@@ -40,13 +40,10 @@ class ScriptStateResetSweep_Spec extends Specification {
    ]
 
    /**
-    * Properties that still keep the script value after the reset, "Type.property". Image and GroupContainer imageAlpha: ImageVSAssemblyInfo.resetRuntimeValues
-    * clears alphaValue (popAlpha) but not imageAlphaValue, and GroupContainerVSAssemblyInfo has no reset for it (#82098, left open by #81835).
+    * Properties that still keep the script value after the reset, "Type.property". Empty: Image and GroupContainer imageAlpha were the last two
+    * (#82098, fixed by stylebi#8659), so every property of CASES resets. A property that keeps the value again must be fixed, not listed.
     */
-   static final Set<String> KNOWN_STAYS = [
-      'ImageVSAssembly.imageAlpha',
-      'GroupContainerVSAssembly.imageAlpha'
-   ] as Set
+   static final Set<String> KNOWN_STAYS = [] as Set
 
    static String read(ScriptStateBase t, String assembly, String key) {
       try {
