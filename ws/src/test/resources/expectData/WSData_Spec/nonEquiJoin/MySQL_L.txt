@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 5)
+product_id, price, product_name, BIG, LOW
+4, 75, Green Planet, 75, green planet
+13, 35, Easy Chess, 35, easy chess
+16, 29, Combat Hero, 29, combat hero
+21, 40, Wireless Mouse, 40, wireless mouse

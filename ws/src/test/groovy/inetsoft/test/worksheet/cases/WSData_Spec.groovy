@@ -381,6 +381,44 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   def 'nonEquiJoin' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database (DB2 included): <db>_L = PRODUCTS 4, 21, 13, 16 (PRICE 75, 40, 35, 29) with BIG = PRICE cast to
+      // BIGINT, <db>_R = PRODUCTS 18, 22, 20 (PRICE 75, 40, 79) with HALF = PRICE + 0.5 and PSTR = PRICE as a string.
+      // Each >= join is pushed to SQL (<db>_<case>) and done in memory (<db>_<case>Mem: <db>_Lm, <db>_Rm have a script
+      // column, so the join is a cross join filtered by SelfJoinTableLens); the plan files show the path.
+      // ge: PRICE >= PRICE keeps the ties, 3 rows everywhere.
+      // bigHalf: BIG >= HALF is 1 row (75 >= 40.5) in SQL. In memory 3 rows except on Oracle (BIG is a BigDecimal
+      // there): a Long against a decimal is compared as long, 75 >= 75.5 (#82263).
+      // strNumMem: PRICE >= PSTR (number vs string) keeps all 12 pairs: different column types make the comparer
+      // ignore the condition (#82264); compared as numbers it is 3 rows.
+      // caseCmp: PRODUCT_NAME >= LOWER(PRODUCT_NAME): binary order in Oracle, DB2, Derby (0 rows), case-insensitive
+      // in MySQL, SQL Server, PostgreSQL (its collation) and in memory (6 rows), as documented for #78887 / #79386.
+      wstest.executeWS('1^2^__NULL__^DB/nonEquiJoin', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'stringCompare' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database (DB2 included), PRODUCTS with one string condition: <db>_<case> on PRODUCT_NAME (pushed to SQL),
+      // <db>_<case>Mem on the script copy NAME_JS (in memory, same data).
+      // eq = 'netstorage', sw starting with 'net', ct contains 'inch' ('17 Inch LCD', '19 inch LCD'), like '%lcd':
+      // case-sensitive in Oracle, PostgreSQL, DB2, Derby, case-insensitive in MySQL, SQL Server and in memory
+      // (string.compare.casesensitive=false) - documented behaviour (#78887, #79386).
+      // padEq: PRODUCT_NAME plus a trailing space = 'NetStorage': MySQL, SQL Server, Derby, DB2 ignore the trailing
+      // space, Oracle, PostgreSQL and memory don't.
+      wstest.executeWS('1^2^__NULL__^DB/stringCompare', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
    @Ignore
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name
