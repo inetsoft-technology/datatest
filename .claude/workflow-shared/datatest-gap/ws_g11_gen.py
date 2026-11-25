@@ -36,6 +36,11 @@ for name, prefix, cust, prod, ords, props, upper, num_type, num_sql, char_sql, d
     # its ORDERS has one more row (12101) than the others, not among the picked orders
     ('DB2', 'DB2', 'ORDERS.CUSTOMERS', 'ORDERS.PRODUCTS', 'ORDERS.ORDERS',
      [('__schema__', 'ORDERS'), ('__table_type__', 'TABLE')], True, 'integer', 4, 12, 3),
+    # Informix in all five worksheets, appended last so the other databases' tables and positions stay as they were.
+    # Its data can only be read through the worksheet path (a direct JDBC read needs org.bson, which the driver plugin
+    # does not ship), so its results are checked against the other databases' instead of a JDBC read.
+    ('Informix', 'Informix', 'customers', 'products', 'orders',
+     [('__schema__', 'informix'), ('__table_type__', 'TABLE')], False, 'integer', 4, 1, 3),
 ]:
     c = (lambda s: s.upper()) if upper else (lambda s: s.lower())
     DBS.append({
@@ -412,6 +417,12 @@ for i, db in enumerate(DBS):
                            'cust', 'id', 300, y + 120),
                 inner_join(db, n + '_groupSortJoin', n + '_groupSort', ['cust', 'oid'], 'ORDERS', n + '_C', ['id', 'state'],
                            'CUSTOMERS', 'cust', 'id', 440, y + 120)]
+    # Informix has no SQL row limit, so the limit goes to the JDBC statement through HINT_MAX_ROWS in the variable
+    # table; the in-memory join runs both sides at once on one shared variable table, and the hint of one side reaches
+    # or is removed by the other (rows vary from run to run), so its join tables are left out
+    if n == 'Informix':
+        maxrows = [a for a in maxrows if not any('<name><![CDATA[%s_%s]]>' % (n, j) in a
+                                                  for j in ('topJoin', 'distinctJoin', 'groupSortJoin'))]
 
 # fixed timestamp so that regenerating gives the same blobs
 NOW =int(datetime(2026, 11, 24, tzinfo=timezone.utc).timestamp() * 1000)
@@ -432,30 +443,35 @@ sheets = [worksheet('DB/setOperation', 'Oracle_union', setop), worksheet('DB/ful
           worksheet('DB/statAggregate', 'Oracle_basic', stat), worksheet('DB/dateGroup', 'Oracle_weekOfYear', dategroup),
           worksheet('DB/maxRows', 'Oracle_topJoin', maxrows)]
 
-src, dst = sys.argv[1], sys.argv[2]
-zin = zipfile.ZipFile(src)
-raw = zin.read('blob-index.json').decode('utf-8')
-idx = json.loads(raw)
-assert json.dumps(idx, separators=(',', ':'), ensure_ascii=False) == raw
-sp = idx['host-org__indexedStorage']
-stamp = datetime.fromtimestamp(NOW / 1000, timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.') + '%03dZ' % (NOW % 1000)
-blobs = []
-for path, key, data, count in sheets:
-    assert key not in sp
-    dg = hashlib.md5(data).hexdigest()
-    sp[key] = {'path': key, 'digest': dg, 'length': len(data), 'lastModified': stamp,
-               'metadata': {'@class': 'inetsoft.util.BlobIndexedStorage' + '$' + 'Metadata', 'className': 'inetsoft.uql.asset.Worksheet',
-                            'identifier': key, 'folder': None}}
-    sp['1^1^__NULL__^DB^host-org']['metadata']['folder']['entries'].append(
-        {'scope': 1, 'type': 'WORKSHEET', 'user': None, 'path': path, 'alias': None, 'favoritesUser': '', 'identifier': key,
-         'description': 'Data Worksheet/' + path, 'folder': False, 'createdUsername': 'admin', 'createdDate': NOW,
-         'modifiedUsername': 'admin', 'modifiedDate': NOW, 'properties': {'isEdit': 'false', 'worksheet.type': '4'}})
-    blobs.append(('blobs/%s/%s' % (dg[:2], dg[2:]), data))
-    print('%s: %d tables, digest %s, %d bytes' % (path, count, dg, len(data)))
-zout = zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED)
-for info in zin.infolist():
-    payload = json.dumps(idx, separators=(',', ':'), ensure_ascii=False).encode('utf-8') if info.filename == 'blob-index.json' else zin.read(info.filename)
-    zout.writestr(info, payload, compress_type=zipfile.ZIP_DEFLATED)
-for name, data in blobs:
-    zout.writestr(zipfile.ZipInfo(name, date_time=time.gmtime(NOW / 1000)[:6]), data, compress_type=zipfile.ZIP_DEFLATED)
-zout.close()
+def main():
+    src, dst = sys.argv[1], sys.argv[2]
+    zin = zipfile.ZipFile(src)
+    raw = zin.read('blob-index.json').decode('utf-8')
+    idx = json.loads(raw)
+    assert json.dumps(idx, separators=(',', ':'), ensure_ascii=False) == raw
+    sp = idx['host-org__indexedStorage']
+    stamp = datetime.fromtimestamp(NOW / 1000, timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.') + '%03dZ' % (NOW % 1000)
+    blobs = []
+    for path, key, data, count in sheets:
+        assert key not in sp
+        dg = hashlib.md5(data).hexdigest()
+        sp[key] = {'path': key, 'digest': dg, 'length': len(data), 'lastModified': stamp,
+                   'metadata': {'@class': 'inetsoft.util.BlobIndexedStorage' + '$' + 'Metadata', 'className': 'inetsoft.uql.asset.Worksheet',
+                                'identifier': key, 'folder': None}}
+        sp['1^1^__NULL__^DB^host-org']['metadata']['folder']['entries'].append(
+            {'scope': 1, 'type': 'WORKSHEET', 'user': None, 'path': path, 'alias': None, 'favoritesUser': '', 'identifier': key,
+             'description': 'Data Worksheet/' + path, 'folder': False, 'createdUsername': 'admin', 'createdDate': NOW,
+             'modifiedUsername': 'admin', 'modifiedDate': NOW, 'properties': {'isEdit': 'false', 'worksheet.type': '4'}})
+        blobs.append(('blobs/%s/%s' % (dg[:2], dg[2:]), data))
+        print('%s: %d tables, digest %s, %d bytes' % (path, count, dg, len(data)))
+    zout = zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED)
+    for info in zin.infolist():
+        payload = json.dumps(idx, separators=(',', ':'), ensure_ascii=False).encode('utf-8') if info.filename == 'blob-index.json' else zin.read(info.filename)
+        zout.writestr(info, payload, compress_type=zipfile.ZIP_DEFLATED)
+    for name, data in blobs:
+        zout.writestr(zipfile.ZipInfo(name, date_time=time.gmtime(NOW / 1000)[:6]), data, compress_type=zipfile.ZIP_DEFLATED)
+    zout.close()
+
+
+if __name__ == '__main__':
+    main()

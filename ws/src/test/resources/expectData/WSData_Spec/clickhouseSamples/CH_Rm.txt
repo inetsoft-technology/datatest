@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 7)
+id, string_col, decimal_col, HALF, PSTR, RUP, ID_JS
+1, hello, 123.456, 123.956, 123.456, HELLO, 1
+4, house, 901.234, 901.734, 901.234, HOUSE, 4
+9, insert, 234.567, 235.067, 234.567, INSERT, 9

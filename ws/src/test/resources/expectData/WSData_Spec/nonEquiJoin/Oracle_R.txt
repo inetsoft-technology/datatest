@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 6)
+PRODUCT_ID, PRICE, PRODUCT_NAME, HALF, PSTR, LOW
+18, 75, Learn ABC, 75.5, 75, learn abc
+20, 79, Barbie"s Fashion, 79.5, 79, barbie"s fashion
+22, 40, Wireless Keyboard, 40.5, 40, wireless keyboard

@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 1)
+product_id
+2
+20
+21
+22
+23
+24
+25

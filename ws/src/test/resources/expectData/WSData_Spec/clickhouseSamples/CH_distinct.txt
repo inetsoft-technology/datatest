@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 1)
+float_col
+2.718
+3.14
+3.141

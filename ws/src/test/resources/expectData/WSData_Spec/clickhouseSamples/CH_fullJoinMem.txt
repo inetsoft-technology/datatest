@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+id, string_col, id_1, string_col_1, ID_JS, ID_JS_1
+NULL, NULL, 4, house, NULL, 4
+1, hello, NULL, NULL, 1, NULL
+2, world, 2, world, 2, 2
+3, click, 3, click, 3, 3

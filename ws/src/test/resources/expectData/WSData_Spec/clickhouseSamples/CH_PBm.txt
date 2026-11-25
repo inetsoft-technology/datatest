@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+id, string_col, ID_JS
+2, world, 2
+3, click, 3
+4, house, 4

@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 2)
+id, DayOfWeek(date_col)
+1, Wed
+2, Sat
+3, Thu
+4, Thu
+5, Mon
+6, Wed
+7, Wed
+8, Mon
+9, Tue
+10, Fri
+11, Tue
+12, Fri
+13, Thu
+14, Mon
+15, Tue
+16, Sat
+17, Tue
+18, Sat
+19, Tue
+20, Sat

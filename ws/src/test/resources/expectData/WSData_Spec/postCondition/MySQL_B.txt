@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 2)
+category_id, price
+6, 39
+6, 248
+6, 399
+7, 40
+7, 40
+7, 210
+7, 310
+7, 2850

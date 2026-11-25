@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+PRODUCT_ID, PRODUCT_NAME, NAME_JS
+23, 17 Inch LCD, 17 Inch LCD
+24, 19 inch LCD, 19 inch LCD

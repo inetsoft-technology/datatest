@@ -7,8 +7,10 @@
 set -uo pipefail
 
 DB_PORTS=(3306 5432 1433 50000 1521 9088 1527 8123)
+# clickhouse-server: the ClickHouse JDBC driver parses its URL as a URI, where "_" is not allowed in a host name
+# (with clickhouse_server it finds no host and connects to localhost), so the ClickHouse data source uses this name.
 DB_HOSTS=(mysql_server db2_server derby_server oracle_server informix_server
-          postgres_server sqlserver_server clickhouse_server)
+          postgres_server sqlserver_server clickhouse_server clickhouse-server)
 HOSTS_FILE=${HOSTS_FILE:-/etc/hosts}
 
 log() { echo "[$(date '+%H:%M:%S')] $*"; }
