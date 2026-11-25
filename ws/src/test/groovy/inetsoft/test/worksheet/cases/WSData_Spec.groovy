@@ -481,6 +481,31 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   def 'clickhouseSamples' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // ClickHouse (no ORDERS / PRODUCTS there): the G8 / G11 cases that differ on it, on default.base_type (20 rows),
+      // each pushed to ClickHouse and in memory (<table>Mem, a script copy or a script column).
+      // Case: upper(string_col) = / starting with / contains / like a lower-case value: ClickHouse none, memory id 1.
+      // CH_swUnder (starting with 'hel_') and CH_ctPercent (contains 'l%o'): ClickHouse has no ESCAPE, so _ and % stay
+      // wildcards and return hello; memory compares literally and returns nothing.
+      // CH_padEq: trailing space kept everywhere. CH_nullEmpty: a String is never NULL in ClickHouse ('' is not null),
+      // memory treats '' as null (ids 1-3).
+      // >= joins: ge 5 rows both; bigHalf 4 pushed, 5 in memory (#82263); strNumMem keeps all 9 pairs (#82264);
+      // caseCmp: binary order in ClickHouse (9 rows), case-insensitive in memory (1).
+      // CH_fullJoin: ClickHouse fills the side without a match with default values (join_use_nulls = 0): id 0 where
+      // memory (CH_fullJoinMem) has NULL.
+      // CH_minus = 1.732 pushed and in memory. Statistics by boolean_col match an independent computation; dates are
+      // not grouped in SQL on ClickHouse. CH_top / CH_distinct keep 5 / 3 rows.
+      // Not in the worksheet: CH_union (the generated UNION without ALL / DISTINCT fails on ClickHouse 22.1), CH_corr
+      // (covariance SQL adds Float64 and Decimal, which ClickHouse rejects), CH_topJoin (#82290, 20 rows instead of 5).
+      wstest.executeWS('1^2^__NULL__^DB/clickhouseSamples', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
    @Ignore
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name

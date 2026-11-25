@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 7)
+boolean_col, float_col, float_col_1, float_col_2, float_col_3, float_col_4, float_col_5
+false, 16.341, 1.6341, 10, 9, 0.707, 3.141
+true, 15.401, 1.5401, 10, 9, 0.577, 3.14

@@ -11,7 +11,7 @@ usage: python ws_ds_password.py <src.zip> <dst.zip> <data source name> <compose 
 
 Only the data source's blob changes (its <password> CDATA, the URL host, digest and length in blob-index.json); every other entry
 is copied. The password is read from the compose file and is not printed. Last step of the zip chain:
-ws_g11_gen.py -> ws_g8_gen.py -> ws_ds_password.py.
+ws_g11_gen.py -> ws_g8_gen.py -> ws_ch_gen.py -> ws_ds_password.py.
 """
 import sys, zipfile, hashlib, json, re, os
 

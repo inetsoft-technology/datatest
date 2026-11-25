@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 10)
+id, string_col, decimal_col, BIG, id_1, string_col_1, decimal_col_1, HALF, PSTR, RUP
+1, hello, 123.456, 123, 1, hello, 123.456, 123.956, 123.456, HELLO
+1, hello, 123.456, 123, 4, house, 901.234, 901.734, 901.234, HOUSE
+1, hello, 123.456, 123, 9, insert, 234.567, 235.067, 234.567, INSERT
+3, click, 345.678, 345, 1, hello, 123.456, 123.956, 123.456, HELLO
+3, click, 345.678, 345, 4, house, 901.234, 901.734, 901.234, HOUSE
+3, click, 345.678, 345, 9, insert, 234.567, 235.067, 234.567, INSERT
+5, data, 567.89, 567, 1, hello, 123.456, 123.956, 123.456, HELLO
+5, data, 567.89, 567, 4, house, 901.234, 901.734, 901.234, HOUSE
+5, data, 567.89, 567, 9, insert, 234.567, 235.067, 234.567, INSERT

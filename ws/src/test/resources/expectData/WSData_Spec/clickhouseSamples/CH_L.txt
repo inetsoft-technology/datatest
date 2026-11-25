@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 4)
+id, string_col, decimal_col, BIG
+1, hello, 123.456, 123
+3, click, 345.678, 345
+5, data, 567.89, 567

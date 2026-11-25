@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 2)
+id, string_col
+1, hello
+2, world
+3, click
+4, house
+5, data
+6, types
+7, example
+8, values
+9, insert
+10, records
+11, query
+12, update
+13, delete
+14, select
+15, create
+16, alter
+17, drop
+18, index
+19, view
+20, join
