@@ -35,6 +35,8 @@ for name, prefix, prod, props, upper, id_t, price_sql, big, pstr, concat in [
      'CAST(%s AS BIGINT)', 'CAST(%s AS VARCHAR(10))', '%s + %s'),
     ('DB2', 'DB2', 'ORDERS.PRODUCTS', [('__schema__', 'ORDERS'), ('__table_type__', 'TABLE')], True, ('integer', 4), 3,
      'CAST(%s AS BIGINT)', 'CAST(%s AS VARCHAR(10))', '%s || %s'),
+    ('Informix', 'Informix', 'products', [('__schema__', 'informix'), ('__table_type__', 'TABLE')], False, ('integer', 4), 3,
+     'CAST(%s AS BIGINT)', 'CAST(%s AS VARCHAR(10))', '%s || %s'),
 ]:
     c = (lambda s: s.upper()) if upper else (lambda s: s.lower())
     # PRODUCE_DATE is DATE, except timestamp in PostgreSQL and datetime in SQL Server
@@ -222,9 +224,9 @@ for i, db in enumerate(DBS):
         col = db[key]
         dtype = col[1] or 'string'
         js = expr(col[0] + '_JS', FIELD % col[0], dtype, sql=False)
-        # PostgreSQL and Derby have no LIKE on a number or date column: the pushed query fails and the live preview
+        # PostgreSQL, Derby and Informix have no LIKE on a number or date column: the pushed query fails and the live preview
         # only shows the placeholder row of a failed query, so those tables are left out
-        if key != 'pname' and n in ('PostgreSQL', 'Derby'):
+        if key != 'pname' and n in ('PostgreSQL', 'Derby', 'Informix'):
             sops.append(physical(db, '%s_%sMem' % (n, case), [ref(pid), ref(col) if key != 'pid' else '', js],
                                  [(js, dtype, op, [value])], 20 + j * 140, y + 120))
             continue

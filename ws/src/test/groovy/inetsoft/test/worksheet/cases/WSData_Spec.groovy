@@ -385,17 +385,20 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
-      // per database (DB2 included): <db>_L = PRODUCTS 4, 21, 13, 16 (PRICE 75, 40, 35, 29) with BIG = PRICE cast to
-      // BIGINT, <db>_R = PRODUCTS 18, 22, 20 (PRICE 75, 40, 79) with HALF = PRICE + 0.5 and PSTR = PRICE as a string.
+      // per database (DB2 and Informix included): <db>_L = PRODUCTS 4, 21, 13, 16 (PRICE 75, 40, 35, 29) with BIG =
+      // PRICE cast to BIGINT, <db>_R = PRODUCTS 18, 22, 20 (PRICE 75, 40, 79) with HALF = PRICE + 0.5 and PSTR = PRICE
+      // as a string.
       // Each >= join is pushed to SQL (<db>_<case>) and done in memory (<db>_<case>Mem: <db>_Lm, <db>_Rm have a script
-      // column, so the join is a cross join filtered by SelfJoinTableLens); the plan files show the path.
+      // column, so the join is a cross join filtered by SelfJoinTableLens); the plan files show the path. Informix
+      // pushes no join here: its <db>_<case> tables run in memory too.
       // ge: PRICE >= PRICE keeps the ties, 3 rows everywhere.
-      // bigHalf: BIG >= HALF is 1 row (75 >= 40.5) in SQL. In memory 3 rows except on Oracle (BIG is a BigDecimal
-      // there): a Long against a decimal is compared as long, 75 >= 75.5 (#82263).
-      // strNumMem: PRICE >= PSTR (number vs string) keeps all 12 pairs: different column types make the comparer
-      // ignore the condition (#82264); compared as numbers it is 3 rows.
-      // caseCmp: PRODUCT_NAME >= LOWER(PRODUCT_NAME): binary order in Oracle, DB2, Derby (0 rows), case-insensitive
-      // in MySQL, SQL Server, PostgreSQL (its collation) and in memory (6 rows), as documented for #78887 / #79386.
+      // bigHalf: BIG >= HALF is 1 row (75 >= 40.5) in SQL. In memory (and Informix_bigHalf) 3 rows except on Oracle
+      // (BIG is a BigDecimal there): a Long against a decimal is compared as long, 75 >= 75.5 (#82263).
+      // strNumMem: PRICE >= PSTR (number vs string) keeps all 12 pairs: different column types make the comparer ignore
+      // the condition (#82264); compared as numbers it is 3 rows.
+      // caseCmp: PRODUCT_NAME >= LOWER(PRODUCT_NAME): binary order in Oracle, DB2, Derby (0 rows), case-insensitive in
+      // MySQL, SQL Server, PostgreSQL (its collation) and in memory, Informix included (6 rows), as documented for
+      // #78887 / #79386.
       wstest.executeWS('1^2^__NULL__^DB/nonEquiJoin', null, null)
 
       expect:
@@ -406,13 +409,13 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
-      // per database (DB2 included), PRODUCTS with one string condition: <db>_<case> on PRODUCT_NAME (pushed to SQL),
-      // <db>_<case>Mem on the script copy NAME_JS (in memory, same data).
+      // per database (DB2 and Informix included), PRODUCTS with one string condition: <db>_<case> on PRODUCT_NAME
+      // (pushed to SQL), <db>_<case>Mem on the script copy NAME_JS (in memory, same data).
       // eq = 'netstorage', sw starting with 'net', ct contains 'inch' ('17 Inch LCD', '19 inch LCD'), like '%lcd':
-      // case-sensitive in Oracle, PostgreSQL, DB2, Derby, case-insensitive in MySQL, SQL Server and in memory
+      // case-sensitive in Oracle, PostgreSQL, DB2, Derby, Informix, case-insensitive in MySQL, SQL Server and in memory
       // (string.compare.casesensitive=false) - documented behaviour (#78887, #79386).
-      // padEq: PRODUCT_NAME plus a trailing space = 'NetStorage': MySQL, SQL Server, Derby, DB2 ignore the trailing
-      // space, Oracle, PostgreSQL and memory don't.
+      // padEq: PRODUCT_NAME plus a trailing space = 'NetStorage': MySQL, SQL Server, Derby, DB2, Informix ignore the
+      // trailing space, Oracle, PostgreSQL and memory don't.
       wstest.executeWS('1^2^__NULL__^DB/stringCompare', null, null)
 
       expect:
@@ -423,16 +426,16 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
-      // per database (DB2 included), PRODUCTS with one condition: <db>_<case> on the column (pushed to SQL),
-      // <db>_<case>Mem on a script copy of it (in memory).
-      // likeBs: like 'Green\ Planet' - PostgreSQL and MySQL read the backslash as an escape and return product 4,
-      // the others and memory don't (#82271). likeBr: like 'Green [P]lanet' - a character class in SQL Server only
-      // (#82271). swUnder: starting with 'Wireless_' matches nothing anywhere (the _ is escaped, #79610).
+      // per database (DB2 and Informix included), PRODUCTS with one condition: <db>_<case> on the column (pushed to
+      // SQL), <db>_<case>Mem on a script copy of it (in memory).
+      // likeBs: like 'Green\ Planet' - PostgreSQL, MySQL and Informix read the backslash as an escape and return
+      // product 4, the others and memory don't (#82271). likeBr: like 'Green [P]lanet' - a character class in SQL
+      // Server only (#82271). swUnder: starting with 'Wireless_' matches nothing anywhere (the _ is escaped, #79610).
       // swNum (PRODUCT_ID starting with 2), ctPrice (PRICE contains .), swDate (PRODUCE_DATE starting with 2001):
       // pushed down, the value is converted to the column type first ('2' -> 2.0, '.' -> 0.0, '2001' -> today), so
-      // Oracle and SQL Server return no row, MySQL / SQL Server / DB2 return the prices containing 0.0, and no
-      // database finds the 2001 dates; memory compares as text: 2, 20-25 / all 25 / 10 rows (#82270). PostgreSQL and
-      // Derby reject LIKE on a number or date, so only their memory tables are in the worksheet.
+      // Oracle and SQL Server return no row, MySQL / SQL Server / DB2 return the prices containing 0.0, and no database
+      // finds the 2001 dates; memory compares as text: 2, 20-25 / all 25 / 10 rows (#82270). PostgreSQL, Derby and
+      // Informix reject LIKE on a number or date, so only their memory tables are in the worksheet.
       // nullEmpty: EMPTY = '' for products 1-3 is null: Oracle (stores '' as NULL) and memory say 1-3, the other
       // databases none.
       wstest.executeWS('1^2^__NULL__^DB/stringOps', null, null)
@@ -445,12 +448,12 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
-      // per database (DB2 included): <db>_A = PRODUCTS of category 1 and 7, <db>_B = category 7 and 6 (CATEGORY_ID,
-      // PRICE), UNION, grouped by CATEGORY_ID with Sum(PRICE) between 3000 and 5000 as the post condition. The union
-      // removes duplicate rows also inside one side (two products of category 7 cost 40), so category 7 is
-      // 40 + 210 + 310 + 2850 = 3410 (6900 without the duplicates removed): only category 7 is kept.
-      // <db>_union is pushed down (HAVING) where the database takes the UNION (all but Derby), <db>_unionMem runs in
-      // memory (script column CAT_JS in both sides).
+      // per database (DB2 and Informix included): <db>_A = PRODUCTS of category 1 and 7, <db>_B = category 7 and 6
+      // (CATEGORY_ID, PRICE), UNION, grouped by CATEGORY_ID with Sum(PRICE) between 3000 and 5000 as the post
+      // condition. The union removes duplicate rows also inside one side (two products of category 7 cost 40), so
+      // category 7 is 40 + 210 + 310 + 2850 = 3410 (6900 without the duplicates removed): only category 7 is kept.
+      // <db>_union is pushed down (HAVING) where the database takes the UNION (all but Derby and Informix),
+      // <db>_unionMem runs in memory (script column CAT_JS in both sides).
       wstest.executeWS('1^2^__NULL__^DB/postCondition', null, null)
 
       expect:
