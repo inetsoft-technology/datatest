@@ -54,6 +54,9 @@ class MVViewsheetOptions_Spec extends Specification {
       }
    }
 
+   // The case changes the viewsheet TestCase_Census in the repository and cleanup() restores it. A JVM killed
+   // before cleanup() leaves the changed sheet behind, and the next run starts from it: restore
+   // mvStorage (rm -rf mv/target) and the H2 files after an aborted run.
    def cleanup() {
       Throwable failure = null
 

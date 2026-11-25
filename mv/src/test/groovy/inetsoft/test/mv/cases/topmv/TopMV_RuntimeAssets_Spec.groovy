@@ -374,6 +374,9 @@ class TopMV_RuntimeAssets_Spec extends Specification {
          [concat, product].every { it.sameAsWithoutMV }
       }
 
+      // groups: the groups of the source data (DISCOUNT of merge-average, months of chart2);
+      // checked: those whose Concat is complete and whose Product is finite (all but DISCOUNT 0).
+      // Both counts change when the source viewsheets or their data change.
       where:
       where              | source                | hits              | absent             | groups | checked
       'worksheet mirror' | 'topmv/merge-average' | ['ORDERS1|SubMV'] | ['Query1_O|TopMV'] | 8      | 7

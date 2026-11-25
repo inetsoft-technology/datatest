@@ -176,12 +176,18 @@ class VPM_Spec extends Specification {
     * its files.
     */
    private List<String> lines(def user) {
-      mvtest.executeVS(null, null, false, false, user)
       File file = new File(new File(getClass().getResource('/expectData').getPath()).getParent(),
                            'exportedData/vpm/group-user/' + user.getIdentityID().getName() + '_Query1__MV.txt')
-      List<String> rows = file.readLines('UTF-8').drop(2).findAll { it }
-      file.delete()
-      return rows
+
+      // the export is deleted even when the run or the read fails, so it never counts as an
+      // extra file in the compareData of 'group-user'
+      try {
+         mvtest.executeVS(null, null, false, false, user)
+         return file.readLines('UTF-8').drop(2).findAll { it }
+      }
+      finally {
+         file.delete()
+      }
    }
 
    //order_time is a postgres "time with time zone"; it is read as the stored wall clock with and

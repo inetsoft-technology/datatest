@@ -128,7 +128,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 | 78 个用例只断言关联 MV "已定义"（`AssociationMV_Spec` 32、`CalcField_Spec` 24、其余 22），即 PR #188 里没换的含 `ASSOCIATION_` 的断言；`getMVHitInfo` 在组件都是纯值时退回"已定义"（`MVTest.groovy:455`-`:461`） | 关联 MV 没被命中、悄悄退回实时库，结果相同，用例照样通过 | **已做**：基表 MV 命中检查（T1，PR #226）；关联 MV 命中检查（T10 (c)，PR #228，§6 第 5 条）；不再退回"已定义"，快照改记查找结果（T18） | 中 |
+| G1 | 78 个用例只断言关联 MV "已定义"（`AssociationMV_Spec` 32、`CalcField_Spec` 24、其余 22），即 PR #188 里没换的含 `ASSOCIATION_` 的断言 | 关联 MV 没被命中、悄悄退回实时库，结果相同，用例照样通过 | **已做**：基表 MV 命中检查（T1，PR #226）；关联 MV 命中检查（T10 (c)，PR #228，§6 第 5 条）；不再退回"已定义"，快照改记查找结果（T18） | 中 |
 | G2 | 反向路径（不该走 MV）几乎没有用例：只有 2 个用例断言命中为空（`VSCondtion_Spec`、`SubMV_Others_Spec`） | 分析器错误地对 cube、嵌入表、查询变量、命名分组变量的表建或命中 MV | **已做**：`NotTransform_Spec` 9 个用例（T4，§6 第 6 条），T17 又加交叉表带追加条件、带变量的物理查询共 4 个；单测 `VSMVAnalyzerAcceptableTest`（T8）。cube 规则在测试环境仍走不到 | 高 |
 | G3 | 转换层单测：`SelectionUpTransformer` 原只有 3 个测试，`MVTransformer`、`VSMVAnalyzer` 判断逻辑几乎没有；13.8 也没有，不能移植 | 选择上移、聚合下移、接受/拒绝规则出错，只有碰巧被端到端用例触发才发现 | **已做（T8，stylebi PR #8473）**：`SelectionUpTransformer` fault、`VSMVAnalyzer` 接受/拒绝、`MVTransformer.isCombinable`、`MVDef.canHitMV`/`isValidMV`、`WSMVTransformer`；`AbstractTransformer`、`NamedGroupTransformer`（stylebi PR #8677）。仍没有直接测试：`CalcFieldTransformer`（被注释掉，没有调用） | 高 |
 | G4 | `mv.*` 配置项几乎空白：只有 `ws.mv.enabled` 被设置 | 改了默认值才出现的错误，例如 #79869（`mv.preferred.block` 非默认时追加的行丢失）；`mv.union.moveUp` 关闭时的 union 选择上移；`date.common.options` 改变物化级别后没物化级别的查询 | **已做（T6）**：`MVProperties_Spec`、`IncrementalDataChange_Spec` 覆盖 `mv.outer.moveUp`、`mv.ignore.nestedSelection`、`date.common.options`、`mv.union.moveUp`、`mv.preferred.block`；`mv.ondemand`、`mv.required`、`mv.metadata`、`mv.dispatcher.*`、溢出已有单测（T7） | 中 |
@@ -220,6 +220,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 - 产品能力清单与分支来自代理读取源码，`file:line` 大部分用 `grep -n` 核对；没有检查 Ignite、`SubMVTask` 内部、`MVBuilder` 分块规则。属性名统一转成小写（`PropertiesEngine.java:582`），`mv.outer.moveUp` 与 `mv.outer.moveup` 读到同一个值。
 - §7 只看近一年（2025-11-13 起）的 165 条 Bug，分类按标题，抽样约 88% 分对，各类数量是大致数字；"提到编号"只搜文件内容，没有读测试内容。
 - 13.8 对照只查了 `epic-test-coverage` 分支，没有编译运行；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是本次所改。
+- `MVViewsheetOptions_Spec`、`NotTransform_Spec` 的对照用例在仓库里改资产、`cleanup` 还原；运行被强行中断时改过的资产会留下，下次运行前要重新解压 `mvStorage`（`rm -rf mv/target`）并还原 H2 文件。
 - T14 的用例除 #79854 的模拟反向检查外，都没有在修复前的产品上运行过，只在当前产品上通过。
 - **需要开发回答的问题：** #82322（升序排序时 NULL 用 MV 排在前、不用 MV 由 DB2 排在后，是否设计如此，T17）；#82257（整数列的 Concat 用 MV 时值带 `.0`，T16）；#82210（`mv.union.moveUp=true` 时只在一侧选值、另一侧的行全部丢失，已知限制还是 bug，T6 (5)）。其余都已有答复：`mv.outer.moveUp=true` 的结果差异是已知限制（#81658，第 2 条）；cube 绑定空指针 #81659 已修（第 6 条）；#81682 已修（G14）；`RankingConditionTest` 不改产品代码即可启用（第 4 条）；可以请开发给 `MVTableMetaData` 的关联 MV 加公开 getter（第 3 条，不是前提）。
 - **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（用户 11-18 决定暂不触发 CI）。已决定：增量删除条件也删掉 NULL 行（#80570、#81043 的规则，用户 2026-11-18 接受）；同一次更新里同时满足追加和删除条件的行先保留、下次更新删除，按设计处理（用户 2026-11-17 决定，T9）。

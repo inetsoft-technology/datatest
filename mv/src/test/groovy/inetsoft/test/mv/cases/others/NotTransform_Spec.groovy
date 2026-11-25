@@ -59,6 +59,9 @@ class NotTransform_Spec extends Specification {
       }
    }
 
+   // The case changes the worksheet M_Testcase26 (the control case) in the repository and cleanup() restores it. A JVM killed
+   // before cleanup() leaves the changed sheet behind, and the next run starts from it: restore
+   // mvStorage (rm -rf mv/target) and the H2 files after an aborted run.
    def cleanup() {
       Throwable failure = null
 

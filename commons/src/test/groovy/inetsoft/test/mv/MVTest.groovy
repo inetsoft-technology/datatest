@@ -391,9 +391,6 @@ class MVTest {
    }
 
    /**
-    * Remember the MVs the executed tables were actually read from.
-    */
-   /**
     * Remember the MVs the tables read. A table whose data is a snapshot (e.g. the data of a chart
     * with a named group) no longer carries the MV information; for it the MV the sandbox lookup
     * finds for its assembly is recorded instead, as for the components that show a plain value
