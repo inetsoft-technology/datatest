@@ -1,5 +1,6 @@
-"""Add the G8 sample worksheets to the ws storage zip: DB/nonEquiJoin and DB/stringCompare (used by WSData_Spec
-nonEquiJoin, stringCompare; see docs/test-gap-assessment/ws.md, G8).
+"""Add the G8 sample worksheets to the ws storage zip: DB/nonEquiJoin, DB/stringCompare, DB/stringOps,
+DB/postCondition and DB/dateInRolling (used by the WSData_Spec cases of the same names; see
+docs/test-gap-assessment/ws.md, G8).
 
 usage: python ws_g8_gen.py <src.zip> <dst.zip>
        src = wsStorage.zip without these worksheets (git show a8742b46:ws/src/test/resources/config/wsStorage.zip),
@@ -36,11 +37,15 @@ for name, prefix, prod, props, upper, id_t, price_sql, big, pstr, concat in [
      'CAST(%s AS BIGINT)', 'CAST(%s AS VARCHAR(10))', '%s || %s'),
 ]:
     c = (lambda s: s.upper()) if upper else (lambda s: s.lower())
+    # PRODUCE_DATE is DATE, except timestamp in PostgreSQL and datetime in SQL Server
+    ts = name in ('PostgreSQL', 'SQLServer')
     DBS.append({'name': name, 'prefix': prefix, 'source': prod, 'props': props, 'big': big, 'pstr': pstr, 'concat': concat,
                 'pid': (c('product_id'), id_t[0], id_t[1]), 'price': (c('price'), 'double', price_sql),
-                'pname': (c('product_name'), None, 12)})
+                'pname': (c('product_name'), None, 12), 'cat': (c('category_id'), id_t[0], id_t[1]),
+                'pdate': (c('produce_date'), 'timeInstant' if ts else 'date', 93 if ts else 91)})
 
-EQUAL, STARTING_WITH, CONTAINS, LIKE, ONE_OF = 1, 6, 7, 13, 2
+EQUAL, STARTING_WITH, CONTAINS, LIKE, ONE_OF, BETWEEN, IS_NULL, DATE_IN = 1, 6, 7, 13, 2, 5, 8, 11
+UNION = 1536
 GE = 35
 FIELD = "field['%s']"
 
@@ -55,10 +60,10 @@ def ref(col, entity=None, alias=None):
             'attribute="%s" sqlType="%d" ><view><![CDATA[%s]]></view>\n</dataRef>%s</dataRef>') % (dt, ent, attr, sqltype, view, al)
 
 
-def expr(name, text, dtype, sql=True):
-    return ('<dataRef class="inetsoft.uql.asset.ColumnRef" %s dataType="%s" sqlType="12"><dataRef class="inetsoft.uql.erm.ExpressionRef" '
+def expr(name, text, dtype, sql=True, visible=True):
+    return ('<dataRef class="inetsoft.uql.asset.ColumnRef" %s%s dataType="%s" sqlType="12"><dataRef class="inetsoft.uql.erm.ExpressionRef" '
             'name="%s" refType="0" ><![CDATA[%s]]>\n<view><![CDATA[%s]]></view>\n</dataRef></dataRef>') % (
-        '' if sql else ' sql="false"', dtype, name, text, name)
+        '' if visible else ' visible="false"', '' if sql else ' sql="false"', dtype, name, text, name)
 
 
 def selections(refs):
@@ -74,9 +79,14 @@ def esc(v):
 def conditions(items):
     """items: [(column ref xml, condition type, op, values)], joined with AND"""
     out = []
-    for i, (r, ctype, op, values) in enumerate(items):
+    for i, it in enumerate(items):
         if i:
             out.append('<junction junction="0" level="0"/>\n')
+        if isinstance(it, str):
+            # a condition written out already (a date range condition)
+            out.append(it)
+            continue
+        r, ctype, op, values = it
         out.append('<condition level="0" class="inetsoft.uql.asset.AssetCondition" type="%s" negated="false" '
                    'operation="%d" equal="false">\n%s%s\n</condition>\n' % (
                        ctype, op, r, ''.join('<condition_data><![CDATA[%s]]></condition_data>' % esc(v) for v in values)))
@@ -190,6 +200,125 @@ for i, db in enumerate(DBS):
                      physical(db, '%s_%sMem' % (n, case), [ref(pid), ref(pname), name_js],
                               [(name_js, 'string', op, [value])], 20 + j * 140, y + 120)]
 
+# ---------------------------------------------------------------- DB/stringOps
+# PRODUCTS (25 rows) with one condition each, <db>_<case> on the column (pushed down), <db>_<case>Mem on a script copy
+# (in memory). PRODUCT_NAME 4 is 'Green Planet', 21 and 22 start with 'Wireless '.
+#   likeBs:   PRODUCT_NAME like 'Green\ Planet'   the backslash is an escape in the LIKE of PostgreSQL and MySQL
+#   likeBr:   PRODUCT_NAME like 'Green [P]lanet'  [P] is a character class in the LIKE of SQL Server
+#   swUnder:  PRODUCT_NAME starting with 'Wireless_'   _ must match literally (ESCAPE, #79610): no row
+#   swNum:    PRODUCT_ID starting with '2'        a number column (2, 20-25 as text)
+#   ctPrice:  PRICE contains '.'                  how a NUMBER(6,2) / DECIMAL(6,2) value is turned into text
+#   swDate:   PRODUCE_DATE starting with '2001'   how a date is turned into text
+#   nullEmpty: EMPTY is null, EMPTY = '' for products 1-3, else PRODUCT_NAME   Oracle stores '' as NULL;
+#             in memory an empty string is null
+STRING_OPS = [('likeBs', 'pname', LIKE, 'Green\\ Planet'), ('likeBr', 'pname', LIKE, 'Green [P]lanet'),
+              ('swUnder', 'pname', STARTING_WITH, 'Wireless_'), ('swNum', 'pid', STARTING_WITH, '2'),
+              ('ctPrice', 'price', CONTAINS, '.'), ('swDate', 'pdate', STARTING_WITH, '2001')]
+sops = []
+for i, db in enumerate(DBS):
+    n, y = db['name'], 20 + i * 240
+    pid, pname = db['pid'], db['pname']
+    for j, (case, key, op, value) in enumerate(STRING_OPS):
+        col = db[key]
+        dtype = col[1] or 'string'
+        js = expr(col[0] + '_JS', FIELD % col[0], dtype, sql=False)
+        # PostgreSQL and Derby have no LIKE on a number or date column: the pushed query fails and the live preview
+        # only shows the placeholder row of a failed query, so those tables are left out
+        if key != 'pname' and n in ('PostgreSQL', 'Derby'):
+            sops.append(physical(db, '%s_%sMem' % (n, case), [ref(pid), ref(col) if key != 'pid' else '', js],
+                                 [(js, dtype, op, [value])], 20 + j * 140, y + 120))
+            continue
+        sops += [physical(db, '%s_%s' % (n, case), [ref(pid), ref(col) if key != 'pid' else ''],
+                          [(ref(col), dtype, op, [value])], 20 + j * 140, y),
+                 # a script column reads only columns of its table, so the copied column is in it too
+                 physical(db, '%s_%sMem' % (n, case), [ref(pid), ref(col) if key != 'pid' else '', js],
+                          [(js, dtype, op, [value])], 20 + j * 140, y + 120)]
+    empty = expr('EMPTY', "CASE WHEN %s < 4 THEN '' ELSE %s END" % (FIELD % pid[0], FIELD % pname[0]), 'string')
+    empty_js = expr('EMPTY_JS', "%s < 4 ? '' : %s" % (FIELD % pid[0], FIELD % pname[0]), 'string', sql=False)
+    x = 20 + len(STRING_OPS) * 140
+    sops += [physical(db, n + '_nullEmpty', [ref(pid), ref(pname), empty], [(empty, 'string', IS_NULL, [])], x, y),
+             physical(db, n + '_nullEmptyMem', [ref(pid), ref(pname), empty_js], [(empty_js, 'string', IS_NULL, [])], x, y + 120)]
+
+
+# ---------------------------------------------------------------- DB/postCondition
+def concat_grouped(name, left, right, cols, group, agg, post, x, y):
+    """left UNION right (distinct) over cols [(name, dataType)], grouped by group with agg = (formula, column) and a
+    post condition post = (op, values) on the aggregate"""
+    refs = ''.join(ref((c, t, 12), left) for c, t in cols)
+    types = dict(cols)
+    gref = ref((group, types[group], 12), left)
+    aref = ref((agg[1], types[agg[1]], 12), left)
+    aggregate = '<dataRef class="inetsoft.uql.asset.AggregateRef"  n="1">%s<formula><![CDATA[%s]]></formula>\n</dataRef>' % (
+        aref, agg[0])
+    op, values = post
+    postc = ('<postConditions>\n<conditions>\n<condition level="0" class="inetsoft.uql.asset.AssetCondition" type="double" '
+             'negated="false" operation="%d" equal="false">\n%s%s\n</condition>\n</conditions>\n</postConditions>\n') % (
+        op, aggregate, ''.join('<condition_data><![CDATA[%s]]></condition_data>' % esc(v) for v in values))
+    return ('<assembly class="inetsoft.uql.asset.ConcatenatedTableAssembly">\n'
+            '<assemblyInfo class="inetsoft.uql.asset.internal.CompositeTableAssemblyInfo" pixelOffX="%d" pixelOffY="%d" '
+            'pixelWidth="100" pixelHeight="60" hierarchical="false" aggregate="true" hasAggregate="true" hasCondition="true">\n'
+            '<name><![CDATA[%s]]></name><class><![CDATA[inetsoft.uql.asset.ConcatenatedTableAssembly]]></class>\n%s'
+            '<operators>\n<pairOperator>\n<pair>\n<leftTableAssembly><![CDATA[%s]]></leftTableAssembly>\n'
+            '<rightTableAssembly><![CDATA[%s]]></rightTableAssembly>\n</pair>\n<tableAssemblyOperator>\n'
+            '<operator operation="%d" distinct="true" leftTable="" rightTable="">\n</operator>\n'
+            '</tableAssemblyOperator>\n</pairOperator>\n</operators>\n%s</assemblyInfo>%s<mvForceAppendUpdates>false</mvForceAppendUpdates>\n'
+            '<groupInfo>\n<groupInfo crosstab="false">\n<groups>\n<dataRef class="inetsoft.uql.asset.GroupRef"  timeSeries="false" >%s'
+            '<groupSort sort="1" interval="1.0" option="1" others="1" sortByCol="0" info="false" cinfo="false"><otherLabel>'
+            '<![CDATA[Others]]></otherLabel>\n<manualOrderList class="inetsoft.util.ItemList"></manualOrderList></groupSort>\n'
+            '</dataRef></groups>\n<aggregates>\n%s</aggregates>\n</groupInfo>\n</groupInfo>\n<tables>\n'
+            '<oneTableAssembly><![CDATA[%s]]></oneTableAssembly>\n<oneTableAssembly><![CDATA[%s]]></oneTableAssembly>\n'
+            '</tables>\n</assembly>') % (x, y, name, selections(refs), left, right, UNION, schema_infos(left, right), postc,
+                                          gref, aggregate, left, right)
+
+
+# A = PRODUCTS of category 1 and 7, B = category 7 and 6, only CATEGORY_ID and PRICE. UNION removes duplicate rows, also
+# inside one side: category 7 has PRICE 40 twice (21, 22), and B repeats all of it. After the union, by CATEGORY_ID:
+# 1 -> 398, 35, 200, 105, 29, 79 (Sum 846); 6 -> 399, 39, 248 (686); 7 -> 40, 210, 310, 2850 (3410; 6900 without the
+# duplicates removed). <db>_union: Sum(PRICE) between 3000 and 5000 -> only category 7, 3410.
+# <db>_unionMem: the same on A and B with the script column CAT_JS = field['CATEGORY_ID'] (same for duplicate rows, so
+# the union still removes them), the union and everything after it in memory.
+postc = []
+for i, db in enumerate(DBS):
+    n, y = db['name'], 20 + i * 240
+    cat, price = db['cat'], db['price']
+    cat_js = expr('CAT_JS', FIELD % cat[0], cat[1], sql=False)
+    a_cond = [(ref(cat), cat[1], ONE_OF, [1, 7])]
+    b_cond = [(ref(cat), cat[1], ONE_OF, [7, 6])]
+    cols = [(cat[0], cat[1]), (price[0], 'double')]
+    postc += [physical(db, n + '_A', [ref(cat), ref(price)], a_cond, 20, y),
+              physical(db, n + '_B', [ref(cat), ref(price)], b_cond, 160, y),
+              physical(db, n + '_Am', [ref(cat), ref(price), cat_js], a_cond, 20, y + 120),
+              physical(db, n + '_Bm', [ref(cat), ref(price), cat_js], b_cond, 160, y + 120),
+              concat_grouped(n + '_union', n + '_A', n + '_B', cols, cat[0], ('Sum', price[0]), (BETWEEN, [3000, 5000]), 300, y),
+              concat_grouped(n + '_unionMem', n + '_Am', n + '_Bm', cols + [('CAT_JS', cat[1])], cat[0], ('Sum', price[0]),
+                             (BETWEEN, [3000, 5000]), 300, y + 120)]
+
+# ---------------------------------------------------------------- DB/dateInRolling
+# In memory only (a script column): products 1-11 get the date OFFSET days before today (OFFSET -1, 0, 1, 7, 8, 14, 15,
+# 30, 31, 60, 61), so the rows a day-based date range keeps do not depend on the day the test runs. The date column is
+# hidden, the export shows PRODUCT_ID and OFFSET.
+#   today 0; yesterday 1; tomorrow -1; last7 (Last 7 days, 0 <= OFFSET < 8) 0, 1, 7; last8to14 8, 14;
+#   last30 (0 <= OFFSET < 31) 0, 1, 7, 8, 14, 15, 30; last31to60 31, 60
+OFFSETS = '[-1, 0, 1, 7, 8, 14, 15, 30, 31, 60, 61]'
+DATE_RANGES = [('today', 'DayCondition', 'day="0"', 'Today'), ('yesterday', 'DayCondition', 'day="1"', 'Yesterday'),
+               ('tomorrow', 'DayCondition', 'day="-1"', 'Tomorrow'),
+               ('last7', 'DaysCondition', 'from="0" to="8"', 'Last 7 days'),
+               ('last8to14', 'DaysCondition', 'from="8" to="15"', 'Last 8-14 days'),
+               ('last30', 'DaysCondition', 'from="0" to="31"', 'Last 30 days'),
+               ('last31to60', 'DaysCondition', 'from="31" to="61"', 'Last 31-60 days')]
+drange = []
+db = [d for d in DBS if d['name'] == 'Derby'][0]
+pid = db['pid']
+offset = expr('OFFSET', '%s[%s - 1]' % (OFFSETS, FIELD % pid[0]), 'integer', sql=False)
+day = expr('DAY_JS', 'var d = new Date(); d.setHours(12, 0, 0, 0); d.setDate(d.getDate() - %s[%s - 1]); d' % (
+    OFFSETS, FIELD % pid[0]), 'date', sql=False, visible=False)
+for j, (case, cls, attrs, label) in enumerate(DATE_RANGES):
+    cond = ('<condition level="0" class="inetsoft.uql.asset.DateCondition$%s" type="date" negated="false" operation="%d" '
+            'equal="false" %s>\n%s<name><![CDATA[%s]]></name>\n<label><![CDATA[%s]]></label>\n</condition>\n') % (
+        cls, DATE_IN, attrs, day, label, label)
+    drange.append(physical(db, case, [ref(pid), offset, day],
+                           [(ref(pid), pid[1], ONE_OF, list(range(1, 12))), cond], 20 + j * 140, 20))
+
 # fixed timestamp so that regenerating gives the same blobs
 NOW = int(datetime(2026, 11, 25, tzinfo=timezone.utc).timestamp() * 1000)
 
@@ -205,7 +334,9 @@ def worksheet(path, primary, assemblies):
     return path, key, xml.encode('utf-8'), len(assemblies)
 
 
-sheets = [worksheet('DB/nonEquiJoin', 'Oracle_ge', nej), worksheet('DB/stringCompare', 'Oracle_eq', strc)]
+sheets = [worksheet('DB/nonEquiJoin', 'Oracle_ge', nej), worksheet('DB/stringCompare', 'Oracle_eq', strc),
+          worksheet('DB/stringOps', 'Oracle_likeBs', sops), worksheet('DB/postCondition', 'Oracle_union', postc),
+          worksheet('DB/dateInRolling', 'today', drange)]
 
 src, dst = sys.argv[1], sys.argv[2]
 zin = zipfile.ZipFile(src)

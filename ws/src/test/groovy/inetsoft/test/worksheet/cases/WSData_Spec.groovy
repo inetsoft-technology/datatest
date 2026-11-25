@@ -419,6 +419,58 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   def 'stringOps' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database (DB2 included), PRODUCTS with one condition: <db>_<case> on the column (pushed to SQL),
+      // <db>_<case>Mem on a script copy of it (in memory).
+      // likeBs: like 'Green\ Planet' - PostgreSQL and MySQL read the backslash as an escape and return product 4,
+      // the others and memory don't (#82271). likeBr: like 'Green [P]lanet' - a character class in SQL Server only
+      // (#82271). swUnder: starting with 'Wireless_' matches nothing anywhere (the _ is escaped, #79610).
+      // swNum (PRODUCT_ID starting with 2), ctPrice (PRICE contains .), swDate (PRODUCE_DATE starting with 2001):
+      // pushed down, the value is converted to the column type first ('2' -> 2.0, '.' -> 0.0, '2001' -> today), so
+      // Oracle and SQL Server return no row, MySQL / SQL Server / DB2 return the prices containing 0.0, and no
+      // database finds the 2001 dates; memory compares as text: 2, 20-25 / all 25 / 10 rows (#82270). PostgreSQL and
+      // Derby reject LIKE on a number or date, so only their memory tables are in the worksheet.
+      // nullEmpty: EMPTY = '' for products 1-3 is null: Oracle (stores '' as NULL) and memory say 1-3, the other
+      // databases none.
+      wstest.executeWS('1^2^__NULL__^DB/stringOps', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'postCondition' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // per database (DB2 included): <db>_A = PRODUCTS of category 1 and 7, <db>_B = category 7 and 6 (CATEGORY_ID,
+      // PRICE), UNION, grouped by CATEGORY_ID with Sum(PRICE) between 3000 and 5000 as the post condition. The union
+      // removes duplicate rows also inside one side (two products of category 7 cost 40), so category 7 is
+      // 40 + 210 + 310 + 2850 = 3410 (6900 without the duplicates removed): only category 7 is kept.
+      // <db>_union is pushed down (HAVING) where the database takes the UNION (all but Derby), <db>_unionMem runs in
+      // memory (script column CAT_JS in both sides).
+      wstest.executeWS('1^2^__NULL__^DB/postCondition', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dateInRolling' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // date in on a table without changing the system date: products 1-11 get a date OFFSET days before today
+      // (script column, hidden; OFFSET -1, 0, 1, 7, 8, 14, 15, 30, 31, 60, 61), and day-based ranges are applied in
+      // memory, so the kept OFFSETs do not depend on the day of the run: Today 0, Yesterday 1, Tomorrow -1,
+      // Last 7 days 0, 1, 7, Last 8-14 days 8, 14, Last 30 days 0-30, Last 31-60 days 31, 60.
+      wstest.executeWS('1^2^__NULL__^DB/dateInRolling', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
    @Ignore
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name

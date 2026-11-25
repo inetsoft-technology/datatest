@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+PRODUCT_ID, OFFSET
+2, 0
+3, 1
+4, 7
+5, 8
+6, 14
+7, 15
+8, 30

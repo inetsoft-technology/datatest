@@ -1,0 +1,2 @@
+The data size(row x col) is:(1 x 3)
+PRODUCT_ID, PRODUCT_NAME, EMPTY
