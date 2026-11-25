@@ -189,7 +189,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | G5 | 不记录是否下推 | 本应下推的退回内存；两条路径结果不一致 | 规则单测已补（4b-A）；基类已能记录（`exportMergePlan`），`DataComposition_Spec` 的 `checkMergeable`、`merge` 9 个用例已断言（第 2 节）；其他 spec 未打开 | 中 |
 | G6 | 只用 `LIVE_MODE` | 只在运行时出现的错误 | **暂缓** | 低 |
 | G7 | lens 取值 | 结果行、表头、null 处理出错 | 单测已补（4b-A）；未做 unpivot 后聚合、MV | 高 |
-| G8 | 薄弱格子：`>=` join、表上 date in、LIKE 1、starting with 2、Rotated/Unpivot/Concatenated 的后置条件、ClickHouse | 这些组合的接线出错；下推与内存规则不同 | **基本完成**（第 5 节）：5 组样板已做（#82263、#82264、#82270、#82271、#82290）；ClickHouse 另做在 `DB/clickhouseSamples` | 中 |
+| G8 | 薄弱格子：`>=` join、表上 date in、LIKE 1、starting with 2、Rotated/Unpivot/Concatenated 的后置条件、ClickHouse | 这些组合的接线出错；下推与内存规则不同 | **基本完成**（第 5 节）：5 组样板已做（#82263、#82264、#82270、#82271、#82290、#82304～#82307）；ClickHouse 另做在 `DB/clickhouseSamples` | 中 |
 | G9 | 49 个 worksheet 没有用例运行 | 准备了却没验证的场景 | **已核对**（第 5 节）：只有 `suquery_execute` 的测试点没覆盖，已补 `WSData_Spec.queryVariableTypes`；其余资产保留不删 | 低 |
 | G10 | 3 个陈旧基线 | 误以为被验证 | **已完成**：已删除（#213） | 低 |
 | G11 | 各库 SQL 差异未区分 | 某个库上生成错误或不支持的 SQL | 生成层单测已补（`DateRangeRefDialectTest`、`AggregateFormulaStatSqlTest`、`SQLHelperOperationSupportTest`，只有 Derby 真正执行）；dashboard 按"场景 × 库"对照：5 类样板已做（Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 含 DB2；`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（已报 #82200，待开发反馈）、DB2 整数 Average 截断（同 #76921，不再报）；其他库和场景待定 | 中 |
@@ -396,11 +396,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - 按天滚动的 date in（`dateInRolling`，只在内存）：产品 1-11 的隐藏脚本列取今天往前 OFFSET 天（-1、0、1、7、8、14、15、30、31、60、61），Today、Yesterday、Tomorrow、Last 7 days、Last 8-14 days、Last 30 days、Last 31-60 days 保留的 OFFSET 都正确，结果不随运行日期变化。
 - ClickHouse（`WSData_Spec.clickhouseSamples`，worksheet `DB/clickhouseSamples`，由 `ws_ch_gen.py` 生成）：服务器上没有 ORDERS、PRODUCTS，G8、G11 里在 ClickHouse 上会不同的场景都放在 `default.base_type`（20 行固定数据）上，每个场景一张下推表、一张内存表。
   - 大小写：`upper(string_col)` 上用小写值做 =、starting with、contains、like，ClickHouse 不返回，内存返回 id 1（已定的行为）。尾部空格两边都不忽略。ClickHouse 的 String 不会是 NULL，空串的 is null 下推不返回，内存返回 1-3。
-  - LIKE：ClickHouse 22.1 不支持 `ESCAPE` 语法，helper 不加转义，starting with `hel_`、contains `l%o` 下推后 `_`、`%` 仍是通配符，返回 hello；内存按字面不返回。
+  - LIKE：ClickHouse 22.1 不支持 `ESCAPE` 语法，helper 不加转义，starting with `hel_`、contains `l%o` 下推后 `_`、`%` 仍是通配符，返回 hello；内存按字面不返回（#82304）。
   - join：ge 两边 5 行；bigHalf 下推 4 行、内存 5 行（#82263）；数字对字符串保留全部 9 对（#82264）；名字对大写名字下推按二进制序 9 行、内存 1 行。
-  - full outer join：下推后没匹配上的一侧填默认值（`join_use_nulls=0`），id 为 0，内存为 NULL。
+  - full outer join：下推后没匹配上的一侧填默认值（`join_use_nulls=0`），id 为 0，内存为 NULL（#82305）。
   - minus 下推和内存都是 1.732；统计聚合下推与内存一致，并与独立计算一致；日期分组不下推；单独的 top、distinct 分别是 5、3 行。
-  - 不放进样板：union（生成的 `UNION` 不带 ALL/DISTINCT，ClickHouse 22.1 报 `Expected ALL or DISTINCT`）、Covariance/Correlation 下推（SQL 里 Float64 加 Decimal，ClickHouse 报类型错误）、带最大行数的表参与内存 join（`sqlhelper.xml` 把 ClickHouse 标为不支持 maxrows，#82290，得到 20 行而不是 5 行）。
+  - 不放进样板：union（生成的 `UNION` 不带 ALL/DISTINCT，ClickHouse 22.1 报 `Expected ALL or DISTINCT`，#82306）、Covariance/Correlation 下推（SQL 里 Float64 加 Decimal，ClickHouse 报类型错误，#82307）、带最大行数的表参与内存 join（`sqlhelper.xml` 把 ClickHouse 标为不支持 maxrows，#82290，得到 20 行而不是 5 行）。
   - ClickHouse 上 LIKE 值含 `\` 的两张表都不返回。
 
 `WSOthers_Spec` 的 `ws group case check`（`@Ignore`）用到的 `wsCheck/ws1` 不在 zip 里，去掉 `@Ignore` 前要先补回。
