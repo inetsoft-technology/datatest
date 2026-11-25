@@ -290,6 +290,8 @@ class MVTest {
       def datas = []
       def assemblyNames = []
       def tableLens = []
+      // the assembly of each table in tableLens, for the lookup when a table hides its MV
+      def lensAssemblies = []
       int n = 0
 
       assemblies.each {
@@ -323,6 +325,7 @@ class MVTest {
 
                if(data instanceof TableLens) {
                   tableLens[n] = data
+                  lensAssemblies[n] = it
                }
                else if(data != null) {
                   // plain values (text, gauge, ...): the table behind them can not be inspected
@@ -350,7 +353,7 @@ class MVTest {
                  principal, bk, incremental))
       }
 
-      recordMVHits(tableLens)
+      recordMVHits(tableLens, lensAssemblies, rvs, sandbox, principal)
       recordAssociationMVHits(sandbox)
       return tableLens
    }
@@ -388,15 +391,27 @@ class MVTest {
    }
 
    /**
-    * Remember the MVs the executed tables were actually read from.
+    * Remember the MVs the tables read. A table whose data is a snapshot (e.g. the data of a chart
+    * with a named group) no longer carries the MV information; for it the MV the sandbox lookup
+    * finds for its assembly is recorded instead, as for the components that show a plain value
+    * (see {@link #recordMVLookupHit}).
     */
-   private void recordMVHits(List tableLens) {
-      tableLens.each { lens ->
+   private void recordMVHits(List tableLens, List assemblies, RuntimeViewsheet rvs,
+                             ViewsheetSandbox sandbox, SRPrincipal principal)
+   {
+      tableLens.eachWithIndex { lens, int i ->
          if(lens != null) {
+            snapshotFound = false
             List<MVInfo> infos = findMVInfos((TableLens) lens)
 
             infos?.each { info ->
                hitMVs.add(info.getMVTable() + "|" + (info.isSub() ? "SubMV" : "TopMV"))
+            }
+
+            def assembly = i < assemblies.size() ? assemblies[i] : null
+
+            if(snapshotFound && assembly instanceof BindableVSAssembly) {
+               recordMVLookupHit(rvs, sandbox, (BindableVSAssembly) assembly, principal)
             }
          }
       }
@@ -468,6 +483,7 @@ class MVTest {
 
          // the data was already copied into memory, which drops the MV information
          hitUnobservable = true
+         snapshotFound = true
 
          if(!loggedUnobservable) {
             loggedUnobservable = true
@@ -480,20 +496,17 @@ class MVTest {
    }
 
    /**
-    * Get the MVs that the queries executed by this instance actually hit. Unlike
-    * {@link #getMVDefInfo()}, an MV that is only defined but not used by the query is not
-    * included. For selection components and components that show a plain value only the MV
-    * found by the sandbox lookup is recorded, see {@link #recordMVLookupHit}; the association MVs
-    * the selections used are recorded from the table metadata, see
-    * {@link #recordAssociationMVHits}. When nothing could
-    * be observed because every component returned a plain value (text, ...), the defined MVs are
-    * returned as before.
+    * Get the MVs that the queries executed by this instance hit. Unlike {@link #getMVDefInfo()},
+    * an MV that is only defined but not used by the query is not included. The MV of a table is
+    * read from the table itself, so it is the MV the rows came from. Selection components,
+    * components that show a plain value (text, gauge, ...) and tables whose data is a snapshot
+    * (a chart with a named group) do not carry it; for them the MV the sandbox lookup finds for
+    * the assembly is recorded (see {@link #recordMVLookupHit}), the MV the component can use.
+    * The association MVs the selections used are recorded from the table metadata, see
+    * {@link #recordAssociationMVHits}. Nothing is filled in from the defined MVs: when nothing
+    * was recorded, the list is empty.
     */
    List getMVHitInfo() {
-      if(hitMVs.isEmpty() && hitUnobservable) {
-         return getMVDefInfo()
-      }
-
       return hitMVs.toList()
    }
 
@@ -561,6 +574,14 @@ class MVTest {
 
       printWriter.flush()
       printWriter.close()
+   }
+
+   /**
+    * Set the "full data" option of the next {@link #createMV} (true by default), see
+    * {@link MaterializedViewResource#setFullData}.
+    */
+   void setFullData(boolean fullData) {
+      materializedViewResource.setFullData(fullData)
    }
 
    def createMV(boolean applyVPM, boolean ... expandGroup) {
@@ -1150,6 +1171,8 @@ class MVTest {
    private final List<String> executionErrors = []
    private final Set<String> hitMVs = new LinkedHashSet<String>()
    private boolean hitUnobservable
+   // set by findMVInfos when the table is a snapshot without the MV information
+   private boolean snapshotFound
    private boolean loggedUnobservable
    private boolean withoutMV
    private boolean mvCreated
