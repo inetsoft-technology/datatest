@@ -341,30 +341,35 @@ sheets = [worksheet('DB/nonEquiJoin', 'Oracle_ge', nej), worksheet('DB/stringCom
           worksheet('DB/stringOps', 'Oracle_likeBs', sops), worksheet('DB/postCondition', 'Oracle_union', postc),
           worksheet('DB/dateInRolling', 'today', drange)]
 
-src, dst = sys.argv[1], sys.argv[2]
-zin = zipfile.ZipFile(src)
-raw = zin.read('blob-index.json').decode('utf-8')
-idx = json.loads(raw)
-assert json.dumps(idx, separators=(',', ':'), ensure_ascii=False) == raw
-sp = idx['host-org__indexedStorage']
-stamp = datetime.fromtimestamp(NOW / 1000, timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.') + '%03dZ' % (NOW % 1000)
-blobs = []
-for path, key, data, count in sheets:
-    assert key not in sp
-    dg = hashlib.md5(data).hexdigest()
-    sp[key] = {'path': key, 'digest': dg, 'length': len(data), 'lastModified': stamp,
-               'metadata': {'@class': 'inetsoft.util.BlobIndexedStorage' + '$' + 'Metadata', 'className': 'inetsoft.uql.asset.Worksheet',
-                            'identifier': key, 'folder': None}}
-    sp['1^1^__NULL__^DB^host-org']['metadata']['folder']['entries'].append(
-        {'scope': 1, 'type': 'WORKSHEET', 'user': None, 'path': path, 'alias': None, 'favoritesUser': '', 'identifier': key,
-         'description': 'Data Worksheet/' + path, 'folder': False, 'createdUsername': 'admin', 'createdDate': NOW,
-         'modifiedUsername': 'admin', 'modifiedDate': NOW, 'properties': {'isEdit': 'false', 'worksheet.type': '4'}})
-    blobs.append(('blobs/%s/%s' % (dg[:2], dg[2:]), data))
-    print('%s: %d tables, digest %s, %d bytes' % (path, count, dg, len(data)))
-zout = zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED)
-for info in zin.infolist():
-    payload = json.dumps(idx, separators=(',', ':'), ensure_ascii=False).encode('utf-8') if info.filename == 'blob-index.json' else zin.read(info.filename)
-    zout.writestr(info, payload, compress_type=zipfile.ZIP_DEFLATED)
-for name, data in blobs:
-    zout.writestr(zipfile.ZipInfo(name, date_time=time.gmtime(NOW / 1000)[:6]), data, compress_type=zipfile.ZIP_DEFLATED)
-zout.close()
+def main():
+    src, dst = sys.argv[1], sys.argv[2]
+    zin = zipfile.ZipFile(src)
+    raw = zin.read('blob-index.json').decode('utf-8')
+    idx = json.loads(raw)
+    assert json.dumps(idx, separators=(',', ':'), ensure_ascii=False) == raw
+    sp = idx['host-org__indexedStorage']
+    stamp = datetime.fromtimestamp(NOW / 1000, timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.') + '%03dZ' % (NOW % 1000)
+    blobs = []
+    for path, key, data, count in sheets:
+        assert key not in sp
+        dg = hashlib.md5(data).hexdigest()
+        sp[key] = {'path': key, 'digest': dg, 'length': len(data), 'lastModified': stamp,
+                   'metadata': {'@class': 'inetsoft.util.BlobIndexedStorage' + '$' + 'Metadata', 'className': 'inetsoft.uql.asset.Worksheet',
+                                'identifier': key, 'folder': None}}
+        sp['1^1^__NULL__^DB^host-org']['metadata']['folder']['entries'].append(
+            {'scope': 1, 'type': 'WORKSHEET', 'user': None, 'path': path, 'alias': None, 'favoritesUser': '', 'identifier': key,
+             'description': 'Data Worksheet/' + path, 'folder': False, 'createdUsername': 'admin', 'createdDate': NOW,
+             'modifiedUsername': 'admin', 'modifiedDate': NOW, 'properties': {'isEdit': 'false', 'worksheet.type': '4'}})
+        blobs.append(('blobs/%s/%s' % (dg[:2], dg[2:]), data))
+        print('%s: %d tables, digest %s, %d bytes' % (path, count, dg, len(data)))
+    zout = zipfile.ZipFile(dst, 'w', zipfile.ZIP_DEFLATED)
+    for info in zin.infolist():
+        payload = json.dumps(idx, separators=(',', ':'), ensure_ascii=False).encode('utf-8') if info.filename == 'blob-index.json' else zin.read(info.filename)
+        zout.writestr(info, payload, compress_type=zipfile.ZIP_DEFLATED)
+    for name, data in blobs:
+        zout.writestr(zipfile.ZipInfo(name, date_time=time.gmtime(NOW / 1000)[:6]), data, compress_type=zipfile.ZIP_DEFLATED)
+    zout.close()
+
+
+if __name__ == '__main__':
+    main()

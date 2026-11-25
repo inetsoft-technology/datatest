@@ -6,8 +6,8 @@ usage: python ws_ch_gen.py <src.zip> <dst.zip>
        src = the output of ws_g8_gen.py; then run ws_ds_password.py on dst. Chain: ws_g11_gen.py -> ws_g8_gen.py ->
        ws_ch_gen.py -> ws_ds_password.py.
 
-The table XML is written with the helpers of ws_g8_gen.py and ws_g11_gen.py (loaded from those files), so it is the
-same as in the other samples. Each case is built twice where it matters: pushed to ClickHouse, and in memory (a script
+The table XML is written with the helpers of ws_g8_gen.py and ws_g11_gen.py (imported; their zip writing runs only
+when they are run as scripts), so it is the same as in the other samples. Each case is built twice where it matters: pushed to ClickHouse, and in memory (a script
 expression copy of the column, or a script column in the tables of a join / union).
 
 default.base_type: id 1-20 (Int32); string_col lower-case words (1 hello, 2 world, 3 click, 4 house, 5 data, 9 insert,
@@ -15,21 +15,22 @@ default.base_type: id 1-20 (Int32); string_col lower-case words (1 hello, 2 worl
 decimal_col Decimal(18,4) (1 123.456, 3 345.678, 4 901.234, 5 567.89, 9 234.567, ...); date_col 2025-01-01 ... 2026-08-08;
 boolean_col true for odd id.
 """
-import os, sys, zipfile, hashlib, json, time
+import importlib.util, os, sys, zipfile, hashlib, json, time
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
-def load(name, marker):
-    code = open(os.path.join(HERE, name), encoding='utf-8').read()
-    ns = {}
-    exec(code[:code.index(marker)], ns)
-    return ns
+def load(name):
+    """import a sibling generator as a module (its zip writing only runs as a script)"""
+    spec = importlib.util.spec_from_file_location(name[:-3], os.path.join(HERE, name))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return vars(module)
 
 
-g8 = load('ws_g8_gen.py', '# ---------------------------------------------------------------- DB/nonEquiJoin')
-g11 = load('ws_g11_gen.py', '# fixed timestamp so that regenerating')
+g8 = load('ws_g8_gen.py')
+g11 = load('ws_g11_gen.py')
 ref8, expr, physical, join8 = g8['ref'], g8['expr'], g8['physical'], g8['join']
 EQUAL, STARTING_WITH, CONTAINS, LIKE, ONE_OF, IS_NULL, GE = 1, 6, 7, 13, 2, 8, 35
 UNION, MINUS = 1536, 4608

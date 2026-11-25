@@ -475,6 +475,8 @@ class WSData_Spec extends Specification {
       // (script column, hidden; OFFSET -1, 0, 1, 7, 8, 14, 15, 30, 31, 60, 61), and day-based ranges are applied in
       // memory, so the kept OFFSETs do not depend on the day of the run: Today 0, Yesterday 1, Tomorrow -1,
       // Last 7 days 0, 1, 7, Last 8-14 days 8, 14, Last 30 days 0-30, Last 31-60 days 31, 60.
+      // The script column and the date range each take "today" when they run: a run that crosses midnight between
+      // the two can shift one row by a day (rerun it).
       wstest.executeWS('1^2^__NULL__^DB/dateInRolling', null, null)
 
       expect:
@@ -507,7 +509,11 @@ class WSData_Spec extends Specification {
       wstest.compareData(null)
    }
 
-   @Ignore
+   // The worksheet queries system.trace_log, which changes all the time, with conditions on 2025-08 values, so its
+   // baselines cannot be reproduced (the test server keeps a 2025-09-23 snapshot in default.trace_log). It also never
+   // reached the server before the data source host became clickhouse-server (the ClickHouse driver reads
+   // clickhouse_server as no host). The ClickHouse cases of G8 / G11 are in clickhouseSamples.
+   @Ignore('queries the changing system.trace_log with 2025-08 values; see clickhouseSamples')
    def 'clickhouse' () {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)

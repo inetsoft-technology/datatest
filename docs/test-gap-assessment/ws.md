@@ -418,7 +418,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - ws 的 CI 是否改为定时运行、失败挡合入、加入 Jenkins。
 - G8、G12 的场景范围；G11 样板推广到哪些库和场景。
 
-**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 106 的 SQL Server 上没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有），CI 镜像里有没有未核实。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
+**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 本地的 SQL Server 测试服务器 上没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有），CI 镜像里有没有未核实。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
 
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
@@ -526,7 +526,7 @@ viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块
 2. 8b 的第 1、2、3、5 项（结果静默出错、可能性最大）：先在真实库上用 probe 验证，确认后再定补单测、datatest 样板还是报 bug。
 3. G12。
 4. 8a 的机械化成对对照、方言执行检查；8b 的第 4、6、7、9 项可并入其中。
-5. `ws_scan.py crosscheck` 加一项检查：基线里出现查询失败的占位行（数字 999.99 或 999、字符串 XXXXX）就报出。现有基线只有 `specialChar/sqlserver.txt` 一个（106 的 SQL Server 上没有数据库 `test.1`，见第 6 节）；vpm 的两个是有意的。
+5. `ws_scan.py crosscheck` 加一项检查：基线里出现查询失败的占位行（数字 999.99 或 999、字符串 XXXXX）就报出。现有基线只有 `specialChar/sqlserver.txt` 一个（本地的 SQL Server 测试服务器 上没有数据库 `test.1`，见第 6 节）；vpm 的两个是有意的。
 
 ## 附：数据来源与复现
 
