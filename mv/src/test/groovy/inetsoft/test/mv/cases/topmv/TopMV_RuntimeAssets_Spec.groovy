@@ -12,6 +12,7 @@ import inetsoft.uql.ColumnSelection
 import inetsoft.uql.ConditionItem
 import inetsoft.uql.ConditionList
 import inetsoft.uql.XCondition
+import inetsoft.uql.asset.AggregateFormula
 import inetsoft.uql.asset.AggregateInfo
 import inetsoft.uql.asset.AssetCondition
 import inetsoft.uql.asset.AssetContent
@@ -33,7 +34,9 @@ import inetsoft.uql.schema.UserVariable
 import inetsoft.uql.schema.XSchema
 import inetsoft.uql.schema.XValueNode
 import inetsoft.uql.viewsheet.CalculateRef
+import inetsoft.uql.viewsheet.ChartVSAssembly
 import inetsoft.uql.viewsheet.TableVSAssembly
+import inetsoft.uql.viewsheet.VSAggregateRef
 import inetsoft.uql.viewsheet.Viewsheet
 import org.spockframework.runtime.model.parallel.ExecutionMode
 import org.springframework.test.context.ContextConfiguration
@@ -338,6 +341,89 @@ class TopMV_RuntimeAssets_Spec extends Specification {
       'viewsheet calc field' | "field['customer_id'] * 2"                    | ['MVorders1|TopMV']    | { int c, int k -> c * 2 }
       'viewsheet calc field' | "/* @nomv */ field['customer_id'] * 2"        | ['MVorders1_O|SubMV']  | { int c, int k -> c * 2 }
       'viewsheet calc field' | "field['customer_id'] + Number(parameter.k)"  | ['MVorders1_O|SubMV']  | { int c, int k -> c + k }
+   }
+
+   // Product and Concat cannot be merged from the partial results of MV blocks
+   // (AggregateFormula.isCombinable), so the MV has to give the detail rows and the aggregate is
+   // computed after it. On the aggregate of a worksheet mirror (topmv/merge-average, Average by
+   // DISCOUNT, which gets Query1_O|TopMV) the analysis keeps a SubMV of the detail table
+   // instead. On a chart aggregate (hit mv/chart/chart2, Chart2 by month) the TopMV of the
+   // table is hit and the query reads its detail rows and aggregates them in memory
+   // (AssetQuery.java:175-203). Expected, without the golden files: in each group the Product
+   // equals the product of the values that Concat lists, two formulas computed by different
+   // code; with -Dmv.compare=both also the same as without MV. A group whose Concat is cut short
+   // ("...") or whose Product overflows (∞) is not checked: DISCOUNT 0 of merge-average.
+   def 'Product and Concat on the #where: MV #hits, the product equals the product of the listed values'() {
+      when:
+      def concat = aggregate(source, where, 'Concat')
+      def product = aggregate(source, where, 'Product')
+      def checkable = concat.values.findAll { group, listed ->
+         !listed.endsWith('...') && product.values[group] != '∞'
+      }
+
+      then:
+      verifyAll {
+         [concat, product].every { it.hits.containsAll(hits) && !it.hits.any { it in absent } }
+         concat.values.keySet() == product.values.keySet()
+         concat.values.size() == groups
+         checkable.size() == checked
+         checkable.findAll { group, listed ->
+            double expected = listed.split(',').collect { it as double }.inject(1d) { a, b -> a * b }
+            Math.abs((product.values[group] as double) - expected) > 1e-9 * Math.abs(expected)
+         }.keySet() == [] as Set
+         [concat, product].every { it.sameAsWithoutMV }
+      }
+
+      where:
+      where              | source                | hits              | absent             | groups | checked
+      'worksheet mirror' | 'topmv/merge-average' | ['ORDERS1|SubMV'] | ['Query1_O|TopMV'] | 8      | 7
+      'chart'            | 'hit mv/chart/chart2' | ['Query3|TopMV']  | []                 | 46     | 46
+   }
+
+   /**
+    * Copy source with the aggregate of the worksheet mirror Query1 (worksheet mirror) or of the
+    * chart Chart2 (chart) set to the formula, create its MV and run it.
+    *
+    * @return the MV hits, the values of the MV run by group, and whether they are the same as
+    *         the run without MV (true in the default golden mode, which has no such run).
+    */
+   private Map aggregate(String source, String where, String formula) {
+      mvtest?.removeMV()
+
+      if(where == 'worksheet mirror') {
+         copyAssets(source, 'Query1') { Worksheet ws, TableAssembly mirror ->
+            mirror.getAggregateInfo().getAggregates().each { it.setFormula(AggregateFormula.getFormula(formula)) }
+         }
+      }
+      else {
+         copyAssets(source, 'Query3', { Worksheet ws, TableAssembly table -> }, { Viewsheet vs ->
+            ((ChartVSAssembly) vs.getAssembly('Chart2')).getVSChartInfo().getAggregateRefs()
+               .each { ((VSAggregateRef) it).setFormulaValue(formula) }
+         })
+      }
+
+      mvtest = new MVTest(VS_ID)
+      mvtest.executeVSWithoutMV(null, null, false, false)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      boolean same = true
+
+      try {
+         mvtest.compareWithoutMV()
+      }
+      catch(AssertionError ignore) {
+         same = false
+      }
+
+      // Query1: [CUSTOMER_ID][DISCOUNT], the aggregate first; Chart2: [Month(...)][Product(...)]
+      String name = where == 'worksheet mirror' ? 'Query1' : 'Chart2'
+      int group = where == 'worksheet mirror' ? 1 : 0
+      Map<String, String> values = exported(name).drop(2).findAll { it }.collectEntries {
+         List<String> cells = it.substring(1, it.length() - 1).split(/\]\[/, -1) as List<String>
+         [cells[group], cells[1 - group]]
+      }
+
+      return [hits: mvtest.getMVHitInfo(), values: values, sameAsWithoutMV: same]
    }
 
    private static Map<String, String[]> parameter(int k) {

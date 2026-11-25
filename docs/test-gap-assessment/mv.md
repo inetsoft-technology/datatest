@@ -12,7 +12,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`meta=true` 的单测在 stylebi PR #8746（T19，G13）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
 
-先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；不可合并公式 Product、Concat（T16）。
+先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；组件都是纯值时 `getMVHitInfo` 退回"已定义"（T18）。
 
 ## 2. 覆盖情况
 
@@ -89,7 +89,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | 图表 / 交叉表日期级别（`dlevelRValue`） | 图表 203 个 viewsheet（级别 5 有 179，其他 15 种各 2 至 9）；交叉表 56（级别 5 有 54） | 图表 115、交叉表 42 | 级别 5 各 profile 都有，其他级别几乎全在 others | topmv、submv 里只有级别 5、3、8 |
 | 组件百分比（`percentageByValue`；`VSAggregateRef.java:403` 转成 `AggregateRef.setPercentage`） | 1（`hit mv/percent of`：图表、交叉表、自由表，占总计） | 1 | others | 交叉表基线有占小计、占总计，bk1 带选择；图表导出的是原始值，百分比在出图时算，导出验证不到；占分组 0。worksheet 聚合百分比另有 `SubMV_Others_Spec` 的 `child has percentage` 等；`isAggregateCombinable` 的百分比分支有单测（`AbstractTransformerTest`，stylebi PR #8677） |
 | 排名（`rankingOptRValue` 9 或 10） | 图表 43、交叉表 3 | 23、3 | others 为主，topmv 1 | 有 |
-| 不可合并聚合公式 | DistinctCount 20、Median 12、Mode 6、NthLargest 4、NthMostFrequent 3、NthSmallest 2、PthPercentile 3；Product、Concat 0 | 10、8、4、3、2、1、2 | 几乎全在 others | topmv、submv 几乎没有 |
+| 不可合并聚合公式 | DistinctCount 20、Median 12、Mode 6、NthLargest 4、NthMostFrequent 3、NthSmallest 2、PthPercentile 3；Product、Concat 0（运行时改公式补用例，T16） | 10、8、4、3、2、1、2 | 几乎全在 others | topmv、submv 几乎没有 |
 | 表达式含 `@nomv` 或 `parameter.`（`MVTool.isExpressionMVCompatible`，`:630`） | 0 | — | topmv | 分析器的拒绝有单测（`VSMVAnalyzerAcceptableTest`）；端到端：运行时加表达式（T11，`TopMV_RuntimeAssets_Spec`） |
 | 计算字段含 `parameter.` | 1 | 1 | submv | 只有 1 个 |
 | 计算字段引用聚合（拒绝，`VSMVAnalyzer.java:865`-`:904`） | 23 | 21 | others 19、topmv 2 | 有 |
@@ -134,7 +134,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | G4 | `mv.*` 配置项几乎空白：只有 `ws.mv.enabled` 被设置 | 改了默认值才出现的错误，例如 #79869（`mv.preferred.block` 非默认时追加的行丢失）；`mv.union.moveUp` 关闭时的 union 选择上移；`date.common.options` 改变物化级别后没物化级别的查询 | **已做（T6）**：`MVProperties_Spec`、`IncrementalDataChange_Spec` 覆盖 `mv.outer.moveUp`、`mv.ignore.nestedSelection`、`date.common.options`、`mv.union.moveUp`、`mv.preferred.block`；`mv.ondemand`、`mv.required`、`mv.metadata`、`mv.dispatcher.*`、溢出已有单测（T7） | 中 |
 | G5 | 增量更新：Append、Delete、Transform 共 156 个用例是 golden + 命中，不与全量重建比较（数据库不变，本来就不该等于重建，见 T9） | 数据真正变化时增量结果错误；#80313、#80344 复发 | **已做（T9，PR #229）**：`IncrementalDataChange_Spec` 补到 41 个（按迭代计）与重建对比；T14 补 #79854、#80570/#81043。#80313、#80344（New）等修复后补 | 中 |
 | G6 | WS MV 只有 `WSMV_Path_Spec` 1 个用例（PR #200 有意只走一条通路；"是否使用 MV"由产品 `AssetQueryWorksheetMVTest` 25 个单测覆盖） | WS MV 的创建、读取在 CI 里没有保护；选择下移、聚合下移出错 | `wsmv` 进 `test-mv.yml` 已做（T2，CI 未触发）；`WSMVTransformerTest` 已做（覆盖两个 `WSMV*DownTransformer`）；`WSMVAnalyzerTest` 已做（stylebi PR #8677） | 高 |
-| G7 | 不可合并公式：Product、Concat 在 viewsheet 里 0 个；其余只验证结果与基线一致，不验证退回"读明细在内存聚合"的路径（`AssetQuery.java:175`-`:203`） | 不可合并公式被当成可合并在 MV 上直接合并，基线是 MV 输出，发现不了 | 单测已做（`MVTransformerCombinableTest`，T8）；dashboard 补 Product、Concat 各一个（T16，未开始） | 中 |
+| G7 | 不可合并公式：Product、Concat 在 viewsheet 里 0 个；其余只验证结果与基线一致，不验证退回"读明细在内存聚合"的路径（`AssetQuery.java:175`-`:203`） | 不可合并公式被当成可合并在 MV 上直接合并，基线是 MV 输出，发现不了 | **已做**：单测（`MVTransformerCombinableTest`，T8）；dashboard 的 Product、Concat（T16）。整数列的 Concat 用 MV 时值带 `.0`，见 T16 | 中 |
 | G8 | golden 跟不上产品修复 | 失败常态化后真实回归被淹没；基线固定旧行为 | **已做（T3）**：12 个用例的 golden 按 #79508、#79870、#81084、#81182、#80953、#81043 核对后更新（§6 第 7 条）；CI 未确认 | 中 |
 | G9 | 被忽略的用例：`TabularSource_Spec` 整类 5 个（继续 `@Ignore`，维护者自己重做）；`date range and number range` 按设计不可能通过（`TopMV_Others_Spec.groovy:401`-`:407`） | Tabular 数据源的 MV 创建与命中没有回归保护（#78339 已修） | 已启用：`chart-time type`、`top-aggregate-maxrow`（T5）；`composite3`、`variable in subquery`、`rangeslider-compositevalue`（T12） | 低 |
 | G10 | `test-mv.yml` 只能手动触发，`Jenkinsfile` 没有 mv（维护者决定不恢复定时）；本机整套约 20 分钟（topmv 2 分 43 秒、incrementalmv 2 分 58 秒、others 7 分 31 秒） | 回归在下一次手动触发前不被发现 | 不改 | 低 |
@@ -205,7 +205,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | `mv.*` 配置项（G4） | 用例里设属性：外连接、嵌套选择、图表用例复用现有 viewsheet；union 运行时复制资产；`mv.preferred.block` 在 `IncrementalDataChange_Spec` | 改值后命中变化，结果与不用 MV 一致或差异被固定 | **已做（T6）**；`mv.outer.moveUp`、`mv.union.moveUp` 改值后结果与不用 MV 不同的情况按已知限制固定，见 §8 |
 | 增量一致性（G5） | `IncrementalDataChange_Spec` 补数据变化场景，`rebuildMV` + `compareWithRebuild`；不给 `Append_Spec`、`Delete_Spec` 现有用例加重建对比（T9） | 增量结果与全量重建一致 | **已做（T9、T14）**；#80313、#80344 等修复后补 |
 | WS MV 进 CI（G6） | `wsmv` profile 加进 `test-mv.yml` | `WSMV_Path_Spec` 在 CI 里运行 | **已做（T2）**，CI 未触发 |
-| 不可合并公式（G7） | Product、Concat 各加一个 viewsheet | 结果与不用 MV 一致 | 未做（T16） |
+| 不可合并公式（G7） | 运行时复制资产，把 worksheet 镜像表和图表的聚合改成 Product、Concat | 命中符合预期；每组的 Product 等于 Concat 列出的值之积；结果与不用 MV 一致 | **已做（T16）** |
 | 重新启用被忽略的用例（G9） | 去掉 `@Ignore` / `@PendingFeature`，基线取不用 MV 的结果 | 已修的 bug 被固定 | **已做（T5、T12）**；Tabular 5 个由维护者重做 |
 | golden 更新（G8） | 按各 bug 核对后更新 | 失败不再常态化 | **已做（T3）** |
 | 零覆盖项（G13） | 运行时改 `viewsheetInfo`（`TestCase_Census` 在仓库里改、cleanup 还原，复制会丢书签）、运行时复制资产加表达式（不改 zip）；`MVTest.setFullData`；bypass 加在 `VPM_Spec` | 见 T11 | **已做（T11）** |
@@ -221,7 +221,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 - 13.8 对照只查了 `epic-test-coverage` 分支，没有编译运行；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是本次所改。
 - T14 的用例除 #79854 的模拟反向检查外，都没有在修复前的产品上运行过，只在当前产品上通过。
 - **需要开发回答的问题：** #82210（`mv.union.moveUp=true` 时只在一侧选值、另一侧的行全部丢失，已知限制还是 bug，T6 (5)）。其余都已有答复：`mv.outer.moveUp=true` 的结果差异是已知限制（#81658，第 2 条）；cube 绑定空指针 #81659 已修（第 6 条）；#81682 已修（G14）；`RankingConditionTest` 不改产品代码即可启用（第 4 条）；可以请开发给 `MVTableMetaData` 的关联 MV 加公开 getter（第 3 条，不是前提）。
-- **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（用户 11-18 决定暂不触发 CI）。已决定：增量删除条件也删掉 NULL 行（#80570、#81043 的规则，用户 2026-11-18 接受）；同一次更新里同时满足追加和删除条件的行先保留、下次更新删除，按设计处理（用户 2026-11-17 决定，T9）。
+- **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（用户 11-18 决定暂不触发 CI）；整数列的 Concat 用 MV 时值带 `.0`，是否提 bug（T16）。已决定：增量删除条件也删掉 NULL 行（#80570、#81043 的规则，用户 2026-11-18 接受）；同一次更新里同时满足追加和删除条件的行先保留、下次更新删除，按设计处理（用户 2026-11-17 决定，T9）。
 
 ### 读代码确认的结论（产品源码 `main` `af5a802550` 起）
 
@@ -305,7 +305,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 
 datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）。
 
-## 8. 具体要做（T16–T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
+## 8. 具体要做（T17、T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 状态 / 注意 |
 |---|---|---|---|---|
@@ -324,7 +324,7 @@ datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344�
 | T13 | 用新产品重跑（#81682、#81659 修复后） | 6 个 profile 整套；`TopMV_AggregateFormulas_Spec`、`NotTransform_Spec` 的注释 | 清空 `mv/target`、还原 H2，`both` | **已做（2026-11-23）**：core 含 `b3fa4de4aa`、`f47db94f8b`、`c4f9d75bff`；结果见 §2。`datelevel_none` 通过，golden 不变；`cube` 仍不进 spec（§6 第 6 条）。唯一失败 `CalcField_Spec.Aggregate_ForDate`：`SelectionTree2` 默认和 `bk_select` 两个基线各 30 行，度量值从 `2020-12-30 00:00:00` 变成 `2020-12-30`（#81668，聚合计算字段按声明类型转换，有意变化，与 MV 无关），基线在 T15 更新 |
 | T14 | 给已关闭、datatest 没有用例的 MV bug 补用例：#79854、#79858、#80152、#80155、#80570（含 #81043） | `IncrementalDataChange_Spec`；新建 `TopMV_RuntimeAssets_Spec`（topmv） | 单独运行，`both` 和 golden；incrementalmv 整套 `both` | **已做（2026-11-23）**：不改 `mvStorage.zip`，运行时复制资产改表/列/条件，需要时在 H2（`mvorder1`）建表用完删；断言写在 MV 运行的导出上，golden 模式下也起作用。(1) #80570/#81043：删除条件含 `MV.`，更新后空值行被删掉。(2) #79854：慢视图（每行 1.5 秒）查询执行中插入第 3 行，第二次更新后为 [1, 2, 3]；有模拟反向检查。(3) #80155：Long 变量超出 int 的 `>`、`<` 三个界值（0、119、119 行）；`=` 见 T15。(4) #80152：脚本表达式列（`setSQL(false)`）上的"不包含"条件，9 行与不用 MV 相同。(5) #79858：H2 `TIMESTAMP WITH TIME ZONE` 列设为 TimeInstant，用 MV 两行都有值；复制来的 `query11` 必须清掉原有分组和排序。验证：`TopMV_RuntimeAssets_Spec` 在 `both` 和 golden 下 6/6，incrementalmv 整套 `both` 201/0 |
 | T15 | #82099、#81668 修复后跟进 | `TopMV_RuntimeAssets_Spec`；`CalcField_Spec.Aggregate_ForDate` 及其 `SelectionTree2` 两个基线 | 单独运行，`both` 和 golden | **已做（2026-11-24）**：core 含 `835edbf02e`（#82099）、`c4f9d75bff`（#81668）。(1) #80155 用例加 `=` 两行：`= 4294967297` 0 行、`= 1` 6 行（对照，证明等于条件仍选得到行）。资产里 `customer_id` 存成 VARCHAR（sqlType 12），`=` 会把值当字符串绑定、H2 报转换错误，这两行把列的 sqlType 设成 H2 的实际类型 INTEGER；修复只作用于 INTEGER 列。错误发生在不用 MV 的一侧，只有 `both`/`nomv` 下的 `compareWithoutMV` 能发现，golden 下 `rowCount` 只看 MV 的导出；没有在修复前的产品上运行过。`TopMV_RuntimeAssets_Spec` 在 `both` 和 golden 下 8/8。(2) `Aggregate_ForDate` 去掉 `@PendingFeature`，`SelectionTree2` 默认和 `bk_select` 两个基线的度量值去掉 ` 00:00:00`（与导出逐行相同，其余基线不变），golden 下通过 |
-| T16 | 不可合并公式 Product、Concat 各补一个 viewsheet（G7） | 运行时复制资产改聚合公式（做法同 `TopMV_RuntimeAssets_Spec`，不改 `mvStorage.zip`） | `both` 和 golden；断言命中、结果与不用 MV 一致，在 MV 运行的导出上断言具体值，golden 下也起作用 | **未开始**。先确认这两种公式走"读明细在内存聚合"（`AssetQuery.java:175`-`:203`） |
+| T16 | 不可合并公式 Product、Concat（G7） | `TopMV_RuntimeAssets_Spec`：运行时复制资产改聚合公式（不改 `mvStorage.zip`） | `both` 和 golden；期望值不依赖 golden：每组的 Product 等于 Concat 列出的值之积 | **已做（2026-11-25）**：两个迭代。(1) worksheet 镜像表的聚合（`topmv/merge-average`，按 DISCOUNT）：Average（原样）建 `Query1_O|TopMV` 在 MV 上合并；Product、Concat 在分析时就不建这个 MV，改为 `ORDERS1|SubMV` 读明细。(2) 图表聚合（`hit mv/chart/chart2` 的 Chart2，按月）：命中 `Query3|TopMV`，运行时读明细在内存聚合（`AssetQuery.java:175`-`:203`）。两组结果都与不用 MV 相同；Concat 过长时截断成 `...`、Product 溢出为 `∞` 的分组（merge-average 的 DISCOUNT 0）不核对。验证：`TopMV_RuntimeAssets_Spec` 整个 spec 在 `both` 和 golden 下都是 20/20；`both` 下有一次 #79858 的用例建 MV 失败（"Error executing query for MV data"，日志不输出，原因不明），连续重跑两次都通过。**发现**：交叉表（`hit mv/crosstab1`）对整数列 `QUANTITY` 做 Concat 时，用 MV 为 `20.0,9.0,…`，不用 MV 为 `20,9,…`（同样的值、同样的顺序）：MV 的度量值以 double 传给 `ConcatFormula.addValue(double)`（`buf.append(v)`），不用 MV 时是 Integer 走 `addValue(Object)`。其他公式的结果按列类型格式化，看不出来。是否提 bug、是否固定成用例，待用户决定 |
 | T17 | 核对 195 个没被字面量引用的 viewsheet（G11） | `mvStorage.zip`、`expectData` | 每个 viewsheet 归类为间接引用、补用例或删除；删除后整套 `both` 仍通过 | **未开始**。先查 12 个末段名字出现在 spec 文本里的；`CalcField/NotPublic_Brush1` 有基线没被引用；`CalcMV` 38 个已核对（§2），不再处理；只删除确认无用的 |
 | T18 | 组件都是纯值时 `getMVHitInfo` 退回"已定义"（G1） | `commons` 的 `MVTest.groovy`（`:455`-`:461`） | 列出走退回路径的用例；改基类后这些用例记录到真正读过的 MV，反向：不建 MV 时失败 | **未开始**。先统计走退回路径的用例，再定是否改基类 |
 | T19 | 补 `ViewsheetSandbox.isMVEnabled`（`meta`，G13）、`MVTableMetaData`、`SharedMVUtil` 单测；读 13.8 `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` 定是否移植 | 产品仓库 `core/src/test/java/inetsoft/report/composition/execution/`（`isMVEnabled`）、`core/src/test/java/inetsoft/mv/` | 单独运行通过，改坏产品代码后失败 | **已做（stylebi PR #8746，未合并）**：`ViewsheetSandboxMVEnabledTest`、`MVTableMetaDataTest`、`SharedMVUtilTest`、`MVScriptableMultiBlockTest` 共 28 个用例，见 §4；`mvUpdateVariablesInSql` 移植了多块 `MV.MaxValue`/`MinValue` 部分；发现 #82219、#82223 |
