@@ -10,9 +10,9 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 **已做和已决定的**（本文不重复）：命中断言（datatest PR #188）、MV 开/关对比（`-Dmv.compare`，PR #193）、增量与全量重建对比（PR #194、#195、#229）、WS MV 的一条通路（PR #200）、golden 更新（PR #196、#197，T3）、`@Ignore` 整理与启用（PR #198、#226，T12）、`others` 每个 spec 单独 JVM（PR #199）、关联 MV 命中检查（PR #226、#228）、反向路径 `NotTransform_Spec`（PR #232）、产品单测（stylebi PR #8473）、cycle 在 `test/cluster` 验证（enterprise PR #1604、#1701，未核对）。**已决定不做**（维护者说明，仓库里没有书面记录）：datatest 各 workflow 的定时运行不恢复、`mvStorage.zip` 不清理、`where:` 数据表不改写、`@Retry` 不改、CI 只做 golden 比较。
 
-仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`meta=true` 的单测在 stylebi PR #8746（T19，G13）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）；`getMVHitInfo` 在组件都是纯值时退回"已定义"（G1）。
+仍然存在的缺口：`mv.*` 配置项只覆盖了 5 个（G4，T6）；`meta=true` 的单测在 stylebi PR #8746（T19，G13）；`CalcFieldTransformer` 没有单测（在 `MVTransformer.transform` 里被注释掉，G3）。
 
-先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；组件都是纯值时 `getMVHitInfo` 退回"已定义"（T18）。
+先做：手动触发一次 `test-mv.yml`，确认 wsmv 一步（T2）和 T3 更新后的 golden 在 CI 上的结果；没被引用的 viewsheet（T17）。
 
 ## 2. 覆盖情况
 
@@ -40,7 +40,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 - 比对遍历"实际导出"并要求文件数相等：数量不同直接失败（`MVTest.groovy:816`-`818`），导出目录或基线目录不存在也失败（`:807`-`813`），再逐文件比内容（`:836`）；不存在"导出了但没有基线"的静默情形。
 - 导出异常让用例失败：所有书签跑完后汇总抛 `AssertionError`（`:174`-`:179`）；MV 创建、分析失败在 `MaterializedViewResource.java:123`-`:126`、`:180`-`:186` 抛异常，创建失败先于"完成"判断（`:235`）。
-- 命中断言（PR #188）：`getMVHitInfo()` 只记录真正读过的 MV；所有组件都是纯值时退回 `getMVDefInfo()`，只代表"已定义"（`MVTest.groovy:455`-`461`，`hitUnobservable` 在 `:327`、`:435`）；图表数据拷成内存快照时同样丢信息（`:432`-`:435`）。关联 MV 的命中从元数据缓存记录（PR #228，§6 第 3、5 条）。
+- 命中断言（PR #188）：`getMVHitInfo()` 从表格数据上记录读过的 MV；选择组件、纯值组件（文本、仪表盘等）、数据是快照的表格（带命名分组的图表）看不到 MV，记录的是 sandbox 查找到的、这个组件能用的 MV（`recordMVLookupHit`）。不再退回 `getMVDefInfo()`（T18）。关联 MV 的命中从元数据缓存记录（PR #228，§6 第 3、5 条）。
 - 与不用 MV 比较（PR #193）：`-Dmv.compare=golden`（默认）只比基线，`nomv`、`both` 才比不用 MV 的结果（`MVTest.groovy:55`、`:856`-`:857`）。**CI 用默认 golden，`compareWithoutMV()` 在 CI 里不执行**（`:857` 直接返回）。基线是回归基线（MV 的输出），不是独立标准答案。
 - 导出目录清理：`test-mv.yml` 每个 profile 步骤开头 `rm -rf mv/target`，报告复制到 `mv-reports/<profile>/`。本机连跑多个 profile 前也必须清空 `mv/target`，否则存储互相污染（例如 `TopMV_Subquery_Spec.Subquery_Mode3_9`、`Subquery_Mode3_10` 的书签选择不生效而失败）。`Jenkinsfile` 没有 mv 阶段。H2 库（`docker/src/test/resources/H2Data`）在 `generate-test-resources` 阶段复制到 `mv/target/H2Data`，`data.home` 指向副本（`mv/pom.xml`），运行不改已跟踪的文件。
 - CI 触发：`test-mv.yml` 只有 `workflow_dispatch`，定时触发被注释掉（`:4`-`:6`）；某个 profile 失败时 `exit $status`，`!cancelled()` 保证后续 profile 照跑。`wsmv` 一步已加（T2），CI 尚未触发。
@@ -128,7 +128,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 
 | # | 缺口 | 会放过什么错误 | 方向 | 优先级 |
 |---|---|---|---|---|
-| G1 | 78 个用例只断言关联 MV "已定义"（`AssociationMV_Spec` 32、`CalcField_Spec` 24、其余 22），即 PR #188 里没换的含 `ASSOCIATION_` 的断言；`getMVHitInfo` 在组件都是纯值时退回"已定义"（`MVTest.groovy:455`-`:461`） | 关联 MV 没被命中、悄悄退回实时库，结果相同，用例照样通过 | **已做**：基表 MV 命中检查（T1，PR #226）；关联 MV 命中检查（T10 (c)，PR #228，§6 第 5 条）。仍存在：纯值组件退回"已定义"（T18） | 中 |
+| G1 | 78 个用例只断言关联 MV "已定义"（`AssociationMV_Spec` 32、`CalcField_Spec` 24、其余 22），即 PR #188 里没换的含 `ASSOCIATION_` 的断言；`getMVHitInfo` 在组件都是纯值时退回"已定义"（`MVTest.groovy:455`-`:461`） | 关联 MV 没被命中、悄悄退回实时库，结果相同，用例照样通过 | **已做**：基表 MV 命中检查（T1，PR #226）；关联 MV 命中检查（T10 (c)，PR #228，§6 第 5 条）；不再退回"已定义"，快照改记查找结果（T18） | 中 |
 | G2 | 反向路径（不该走 MV）几乎没有用例：只有 2 个用例断言命中为空（`VSCondtion_Spec`、`SubMV_Others_Spec`） | 分析器错误地对 cube、嵌入表、查询变量、命名分组变量的表建或命中 MV | **已做**：`NotTransform_Spec` 9 个用例（T4，§6 第 6 条）；单测 `VSMVAnalyzerAcceptableTest`（T8）。cube 规则在测试环境仍走不到 | 高 |
 | G3 | 转换层单测：`SelectionUpTransformer` 原只有 3 个测试，`MVTransformer`、`VSMVAnalyzer` 判断逻辑几乎没有；13.8 也没有，不能移植 | 选择上移、聚合下移、接受/拒绝规则出错，只有碰巧被端到端用例触发才发现 | **已做（T8，stylebi PR #8473）**：`SelectionUpTransformer` fault、`VSMVAnalyzer` 接受/拒绝、`MVTransformer.isCombinable`、`MVDef.canHitMV`/`isValidMV`、`WSMVTransformer`；`AbstractTransformer`、`NamedGroupTransformer`（stylebi PR #8677）。仍没有直接测试：`CalcFieldTransformer`（被注释掉，没有调用） | 高 |
 | G4 | `mv.*` 配置项几乎空白：只有 `ws.mv.enabled` 被设置 | 改了默认值才出现的错误，例如 #79869（`mv.preferred.block` 非默认时追加的行丢失）；`mv.union.moveUp` 关闭时的 union 选择上移；`date.common.options` 改变物化级别后没物化级别的查询 | **已做（T6）**：`MVProperties_Spec`、`IncrementalDataChange_Spec` 覆盖 `mv.outer.moveUp`、`mv.ignore.nestedSelection`、`date.common.options`、`mv.union.moveUp`、`mv.preferred.block`；`mv.ondemand`、`mv.required`、`mv.metadata`、`mv.dispatcher.*`、溢出已有单测（T7） | 中 |
@@ -305,7 +305,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 
 datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344（G5）。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）、#82257（T16）。
 
-## 8. 具体要做（T17、T18 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
+## 8. 具体要做（T17 未开始；T19 在 stylebi PR #8746，未合并；其余已做）
 
 | # | 要做什么 | 在哪里改 | 做完怎么验证 | 状态 / 注意 |
 |---|---|---|---|---|
@@ -326,7 +326,7 @@ datatest 能验证、两边都没提到编号的未关闭 bug：#80313、#80344�
 | T15 | #82099、#81668 修复后跟进 | `TopMV_RuntimeAssets_Spec`；`CalcField_Spec.Aggregate_ForDate` 及其 `SelectionTree2` 两个基线 | 单独运行，`both` 和 golden | **已做（2026-11-24）**：core 含 `835edbf02e`（#82099）、`c4f9d75bff`（#81668）。(1) #80155 用例加 `=` 两行：`= 4294967297` 0 行、`= 1` 6 行（对照，证明等于条件仍选得到行）。资产里 `customer_id` 存成 VARCHAR（sqlType 12），`=` 会把值当字符串绑定、H2 报转换错误，这两行把列的 sqlType 设成 H2 的实际类型 INTEGER；修复只作用于 INTEGER 列。错误发生在不用 MV 的一侧，只有 `both`/`nomv` 下的 `compareWithoutMV` 能发现，golden 下 `rowCount` 只看 MV 的导出；没有在修复前的产品上运行过。`TopMV_RuntimeAssets_Spec` 在 `both` 和 golden 下 8/8。(2) `Aggregate_ForDate` 去掉 `@PendingFeature`，`SelectionTree2` 默认和 `bk_select` 两个基线的度量值去掉 ` 00:00:00`（与导出逐行相同，其余基线不变），golden 下通过 |
 | T16 | 不可合并公式 Product、Concat（G7） | `TopMV_RuntimeAssets_Spec`：运行时复制资产改聚合公式（不改 `mvStorage.zip`） | `both` 和 golden；期望值不依赖 golden：每组的 Product 等于 Concat 列出的值之积 | **已做（2026-11-25）**：两个迭代。(1) worksheet 镜像表的聚合（`topmv/merge-average`，按 DISCOUNT）：Average（原样）建 `Query1_O|TopMV` 在 MV 上合并；Product、Concat 在分析时就不建这个 MV，改为 `ORDERS1|SubMV` 读明细。(2) 图表聚合（`hit mv/chart/chart2` 的 Chart2，按月）：命中 `Query3|TopMV`，运行时读明细在内存聚合（`AssetQuery.java:175`-`:203`）。两组结果都与不用 MV 相同；Concat 过长时截断成 `...`、Product 溢出为 `∞` 的分组（merge-average 的 DISCOUNT 0）不核对。验证：`TopMV_RuntimeAssets_Spec` 整个 spec 在 `both` 和 golden 下都是 20/20；`both` 下有一次 #79858 的用例建 MV 失败（"Error executing query for MV data"，日志不输出，原因不明），连续重跑两次都通过。**发现**：交叉表（`hit mv/crosstab1`）对整数列 `QUANTITY` 做 Concat 时，用 MV 为 `20.0,9.0,…`，不用 MV 为 `20,9,…`（同样的值、同样的顺序）：MV 的度量值以 double 传给 `ConcatFormula.addValue(double)`（`buf.append(v)`），不用 MV 时是 Integer 走 `addValue(Object)`。其他公式的结果按列类型格式化，看不出来。已提 #82257（Low），没有固定成用例 |
 | T17 | 核对 195 个没被字面量引用的 viewsheet（G11） | `mvStorage.zip`、`expectData` | 每个 viewsheet 归类为间接引用、补用例或删除；删除后整套 `both` 仍通过 | **未开始**。先查 12 个末段名字出现在 spec 文本里的；`CalcField/NotPublic_Brush1` 有基线没被引用；`CalcMV` 38 个已核对（§2），不再处理；只删除确认无用的 |
-| T18 | 组件都是纯值时 `getMVHitInfo` 退回"已定义"（G1） | `commons` 的 `MVTest.groovy`（`:455`-`:461`） | 列出走退回路径的用例；改基类后这些用例记录到真正读过的 MV，反向：不建 MV 时失败 | **未开始**。先统计走退回路径的用例，再定是否改基类 |
+| T18 | `getMVHitInfo` 看不到命中时退回"已定义"（G1） | `commons` 的 `MVTest.groovy` | 列出走退回路径的用例；改基类后记录到 MV，反向：不建 MV 时为空；6 个 profile `both` 和 golden | **已做（2026-11-25）**：6 个 profile 整套统计，走退回的只有 4 个用例，都在 others：`NOT Transform/embedded-embedded table`、`embedded-input assembly`、`vs query and condition/field` 的退回值是 `[]`（本来就断言不用 MV，没有影响）；`hit mv/chart/chart-namegroup2` 退回 `[Query2|TopMV]`，只验证了已定义——唯一的图表用了命名分组，数据是快照（`XSnapshotLens` 包 `XEmbeddedTable`），表上没有 MV 信息。改法：快照的表改记 sandbox 查找到的 MV（`recordMVLookupHit`，与纯值组件相同），`getMVHitInfo` 删掉退回，看不到就不记。`chart-namegroup2` 不建 MV 时为 `[]`、建 MV 后为 `[Query2|TopMV]`；`chart-namegroup`、`MV_Creator/Delete/Testcase10` 等有快照的用例同样。查找结果是"组件能用的 MV"，弱于从数据读到的 MV。`takeWSMVHits` 看不到命中时照旧失败。验证：6 个 profile 在 `both` 和 golden 下都 0 失败（topmv 150、submv 86、incrementalmv 206、wsmv 1、vpm 15、others 253，跳过的是原有的 `@Ignore`）；`topmv` `both` 有一次 `TopMV_RuntimeAssets_Spec` 第一个用例在 `setSheet` 报空指针（`addOuterDependency`，发生在建 MV 之前），重跑 20/20 通过 |
 | T19 | 补 `ViewsheetSandbox.isMVEnabled`（`meta`，G13）、`MVTableMetaData`、`SharedMVUtil` 单测；读 13.8 `QueryAdvancedFeatureTest.mvUpdateVariablesInSql` 定是否移植 | 产品仓库 `core/src/test/java/inetsoft/report/composition/execution/`（`isMVEnabled`）、`core/src/test/java/inetsoft/mv/` | 单独运行通过，改坏产品代码后失败 | **已做（stylebi PR #8746，未合并）**：`ViewsheetSandboxMVEnabledTest`、`MVTableMetaDataTest`、`SharedMVUtilTest`、`MVScriptableMultiBlockTest` 共 28 个用例，见 §4；`mvUpdateVariablesInSql` 移植了多块 `MV.MaxValue`/`MinValue` 部分；发现 #82219、#82223 |
 
 ## 附：数据来源与复现
