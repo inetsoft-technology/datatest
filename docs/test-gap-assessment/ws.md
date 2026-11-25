@@ -8,10 +8,10 @@
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 同样断言（G11 样板），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
-- **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
+- **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），另在 `SQLBoundTableBuiltinVariableTest` 补 2 个（#8746，已合并）；覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、查询变量按比较列定类型、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 64 个用例 58 通过、5 个跳过（2 个 `@Ignore`，`InRange_Spec` 连带跳过 3 个），只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
-**接下来：** G11 样板是否推广到其他库和场景待定；G8、G12 的 dashboard 新场景待定；产品单测补布尔、日期时间列给变量定类型（与 `queryVariableTypes` 互补）。
+**接下来：** G11 样板是否推广到其他库和场景待定；G8、G12 的 dashboard 新场景待定。
 
 ## 2. 覆盖情况
 
@@ -210,7 +210,8 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 数值分段、命名分组 | `NumericRangeRefBoundaryTest` 5、`NamedRangeRefGroupsTest` 12 |
 | 各库方言 | `DateRangeRefDialectTest` 38、`AggregateFormulaStatSqlTest` 41、`SQLHelperOperationSupportTest` 13；只有 Derby 真正执行 |
 | MV 对 rotate/unpivot | 只读代码，不加单测（4b-I） |
-| 合计 | 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），当前没有 `@Disabled` 的缺陷测试 |
+| 查询变量定类型 | `SQLBoundTableBuiltinVariableTest` 补 2 个（#8746）：布尔、时间戳、日期、时间、小数列，IN 多值保留日期类型 |
+| 合计 | 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），另补 2 个（#8746），当前没有 `@Disabled` 的缺陷测试 |
 
 ### 4b. 已补单测的细节
 
@@ -302,7 +303,6 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `DateCondition` | 夏令时切换日 |
 | `NamedRangeRefGroupsTest` | 日期类、浮点类、非等值命名分组；整条视图表路径 |
 | `PreAssetQuery*MergeableTest` | `PhysicalBoundQuery`、`LMBoundQuery`；真实 mongo helper |
-| 查询变量定类型 | `SQLBoundTableBuiltinVariableTest` 只测 INTEGER 列，没有布尔、日期时间列（datatest 侧由 `queryVariableTypes` 覆盖） |
 | 上传服务 | 预览、unpivot 选项、各种上限提示、Excel 读取 |
 
 **I. MV 对 rotate/unpivot 的处理**（只读代码，不加单测，不报）
