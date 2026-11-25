@@ -7,7 +7,7 @@
 - **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。69 个用例中，除 `InRange_Spec` 和 2 个 `@Ignore`（`clickhouse`、`ws group case check`）外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 同样断言（G11 样板），其余用例只比数据。
-- **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
+- **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），另在 `SQLBoundTableBuiltinVariableTest` 补 2 个（#8746，已合并）；覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、查询变量按比较列定类型、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 64 个用例 58 通过、5 个跳过（2 个 `@Ignore`，`InRange_Spec` 连带跳过 3 个），只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
@@ -136,10 +136,10 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 1. 集合运算：全部下推（Oracle、PostgreSQL）、只有 union 下推（MySQL、SQL Server）、都不下推（Informix、Derby）各取 union 和 minus。**样板已做**（见下）。
 2. full outer join：内存回退（MySQL、Derby、H2）对下推（Oracle、SQL Server、DB2、PostgreSQL）。**样板已做**（见下）。
 3. 统计聚合：有函数名（Oracle、MySQL、SQL Server）对没有（DB2、PostgreSQL 等）。**样板已做**（见下）。
-4. 日期分组：补 SQL Server、PostgreSQL；Informix、Derby、ClickHouse、H2 各取一个。**样板已做**（见下；Informix、ClickHouse、H2 未做。Informix 走 worksheet 能读，G8 已用上；只是直接用 JDBC 读结果集会报 `NoClassDefFoundError: org/bson/BSONObject`：驱动 `jdbc-4.50.7.1.jar` 引用 MongoDB 的 BSON 库，插件包和 datatest 类路径都没有带）。
-5. max rows：支持的库对 Informix、ClickHouse、H2。**样板已做**（见下；Informix、ClickHouse、H2 未做）。
+4. 日期分组：补 SQL Server、PostgreSQL；Informix、Derby、ClickHouse、H2 各取一个。**样板已做**（见下；ClickHouse、H2 未做。Informix 走 worksheet 能读；只是直接用 JDBC 读结果集会报 `NoClassDefFoundError: org/bson/BSONObject`：驱动 `jdbc-4.50.7.1.jar` 引用 MongoDB 的 BSON 库，插件包和 datatest 类路径都没有带）。
+5. max rows：支持的库对 Informix、ClickHouse、H2。**样板已做**（见下；ClickHouse、H2 未做）。
 
-**G11 样板（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`，worksheet `DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`）：** 覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 另含 DB2，每库一组表，打开 `exportMergePlan`。用例按 SQL 语义里容易做错的地方设计，不只照产品现有的处理：
+**G11 样板（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`，worksheet `DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`）：** 覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 另含 DB2，每库一组表，打开 `exportMergePlan`。用例按 SQL 语义里容易做错的地方设计，不只照产品现有的处理：
 - 集合运算，CUSTOMERS：A（STATE 属于 NJ、NY、CA，14 行）、B（NY、TX，8 行），union 去重 18 行，minus 10 行。
 - 集合运算，只选 PRODUCTS.DESCRIPTION：两边各有 3 个 NULL 行。集合运算把 NULL 视为相同、结果去重，所以 union 只有 1 个 NULL 行（5 行），minus 里 NULL 被减掉（2 行）。
 - full outer join，PRODUCTS 中 PA（类别 1、3）对 PB（类别 1、2）：按 DESCRIPTION 连接时 NULL 不与 NULL 匹配，产品 1、15、16 都在未匹配侧（14 行）；按 CATEGORY_ID 连接、只有 CATEGORY_ID 一列时，有 36 行完全相同的 `(1, 1)`，用 UNION 模拟 full join 会把它们去重（42 行）；对补 NULL 的一侧加 `PRODUCT_ID is null`，条件必须在连接之后生效（5 行）。
@@ -148,7 +148,8 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - max rows，6 个库（含 DB2）在 ORDERS 上建设了最大行数的表，按与物理顺序相反的方向排序，顶层导出并与 CUSTOMERS inner join（这时表的 SQL 成为子查询，被各库的限行写法包住：Oracle `rownum`、MySQL 和 PostgreSQL `limit`、SQL Server `top`、DB2 和 Derby `fetch first`）：ORDER_ID 降序取 5、去重后的 CUSTOMER_ID 降序取 5、按客户计数并按客户降序排序取 3，以及加了不能下推的 Mode、在内存分组的表（取 3，分组升序，客户 1、2、3）。42 张表在各库的顶层和子查询中都正确，派生表里的 ORDER BY 在外层限行时没有丢。没有排序、带最大行数的分组表不在用例里：SQL 只有 GROUP BY 没有 ORDER BY，保留哪些分组由数据库决定（Oracle 1、25、30，MySQL 20、26、33，PostgreSQL 1、4、35，Derby、SQL Server、DB2 1、2、3，内存为 1、2、3），即 #80446 记录的已知限制，结果随执行计划变化，不适合存基线。
 - 下推：集合运算 union、minus 在 Oracle、PostgreSQL 都下推，MySQL、SQL Server 只下推 union，Derby 都不下推；full outer join 在 Oracle、PostgreSQL、SQL Server 下推，MySQL、Derby 不下推（含 `joinCond` 的条件）。与 SQLHelper 的支持矩阵一致；统计聚合的 group by 在 6 个库都下推，`mem` 表不下推（Oracle 有 MEDIAN，所以 mem 表靠 Mode 留在内存）；日期分组在 Derby 上 WeekOfYear、DayOfWeek、Week 不下推。
 - 期望值独立得到：各库 CUSTOMERS、PRODUCTS 数据相同（JDBC 逐行核对过），用 JDBC 取原始行，在脚本里按上述 SQL 语义算出集合运算、full join、统计聚合共 99 张表，与导出逐行一致（统计聚合除 1 个值的样本方差按 #80342 取 0、DB2 整数 Average 截断外全部一致）；日期分组按 Java 周规则逐日核对（一次性核对，未纳入测试）。worksheet 由 `.claude/workflow-shared/datatest-gap/ws_g11_gen.py` 生成 XML 加入 zip（重新运行结果相同），产品能正常打开执行。
-- 没覆盖：大小写（内存默认不区分，Oracle、PostgreSQL、DB2、Derby 区分）、Oracle 把空串当 NULL、CHAR 补空格比较，现有数据没有这些值，归 G8；Informix、ClickHouse 未做；DB2 的集合运算、full join 未做。#80342 记录的 DB2 `getExpressionSub` 除以 n*n 只在 MV 转换（`NamedGroupTransformer`、`SelectionUpTransformer` 创建的 `CompositeAggregateRef`）里走到，ws 碰不到，归 mv 模块。
+- Informix：期望值不能直接用 JDBC 读（缺 `org.bson`），改为与其他库对照：除 DB2 的整数 Average 外，各表结果与另外 5 个库逐行一致，说明数据相同、结果正确。下推：集合运算、full join 都不下推；统计聚合的 group by 下推；日期分组 Quarter、DayOfWeek 下推，Week、WeekOfYear 在内存算（与 Derby 相同）。max rows：Informix 不支持 SQL 限行，单独的表由 JDBC `setMaxRows` 截断，结果正确；但 join 在内存做时，两边子查询在线程池里同时执行、共用一个变量表，一边放进的 `HINT_MAX_ROWS` 会被另一边用到或删掉，同一个 join 先后得到 35、0 行（应为 5 行），所以 Informix 的三张 join 表不放进样板（待定是否报 bug）。
+- 没覆盖：大小写（内存默认不区分，Oracle、PostgreSQL、DB2、Derby 区分）、Oracle 把空串当 NULL、CHAR 补空格比较，现有数据没有这些值，归 G8；ClickHouse 未做；DB2 的集合运算、full join 未做。#80342 记录的 DB2 `getExpressionSub` 除以 n*n 只在 MV 转换（`NamedGroupTransformer`、`SelectionUpTransformer` 创建的 `CompositeAggregateRef`）里走到，ws 碰不到，归 mv 模块。
 
 **LIVE 模式的边界**（只用 `LIVE_MODE`，G6 暂缓）：
 - 输入：每个明细表最多 `asset.sample.maxrows` = 50000 行；RUNTIME 没有这一项。
@@ -191,7 +192,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | G8 | 薄弱格子：`>=` join、表上 date in、LIKE 1、starting with 2、Rotated/Unpivot/Concatenated 的后置条件、ClickHouse | 这些组合的接线出错；下推与内存规则不同 | **基本完成**（第 5 节）：5 组样板已做（#82263、#82264、#82270、#82271）；ClickHouse 未做（环境） | 中 |
 | G9 | 49 个 worksheet 没有用例运行 | 准备了却没验证的场景 | **已核对**（第 5 节）：只有 `suquery_execute` 的测试点没覆盖，已补 `WSData_Spec.queryVariableTypes`；其余资产保留不删 | 低 |
 | G10 | 3 个陈旧基线 | 误以为被验证 | **已完成**：已删除（#213） | 低 |
-| G11 | 各库 SQL 差异未区分 | 某个库上生成错误或不支持的 SQL | 生成层单测已补（`DateRangeRefDialectTest`、`AggregateFormulaStatSqlTest`、`SQLHelperOperationSupportTest`，只有 Derby 真正执行）；dashboard 按"场景 × 库"对照：5 类样板已做（Oracle、PostgreSQL、MySQL、SQL Server、Derby，统计聚合、日期分组、max rows 含 DB2；`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（已报 #82200，待开发反馈）、DB2 整数 Average 截断（同 #76921，不再报）；其他库和场景待定 | 中 |
+| G11 | 各库 SQL 差异未区分 | 某个库上生成错误或不支持的 SQL | 生成层单测已补（`DateRangeRefDialectTest`、`AggregateFormulaStatSqlTest`、`SQLHelperOperationSupportTest`，只有 Derby 真正执行）；dashboard 按"场景 × 库"对照：5 类样板已做（Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 含 DB2；`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（已报 #82200，待开发反馈）、DB2 整数 Average 截断（同 #76921，不再报）；其他库和场景待定 | 中 |
 | G12 | 功能面零覆盖（见第 2 节"功能面差集"） | 这些能力出错无人发现 | 能手算 → 单测；接线 → dashboard；表类先向开发确认 | 中 |
 | G13 | 已知 bug 的根因类别无验证（第 7 节） | 同类 bug 复发 | 重命名、快照、提示信息需要先有机制 | 中 |
 
@@ -340,7 +341,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 执行路径（G5） | `exportMergePlan` 写 `<表名>.plan.txt` 并纳入基线 | `checkMergeable CM1`、`CM2`，`merge CM1`～`CM8` 已完成；其他 spec 未打开 |
 | 运行时取数（G6） | 基类支持 `RUNTIME_MODE` | 暂缓 |
 | 薄弱格子（G8） | 新建小 worksheet：`>=` join、date in、LIKE/starting with、Rotated/Unpivot/Concatenated 后置条件、ClickHouse | 已做，见下；ClickHouse 未做 |
-| 各库差异（G11） | 每类代表场景在各库建小 worksheet，基线带 plan，按库分表 | 5 类样板已完成（Oracle、PostgreSQL、MySQL、SQL Server、Derby，后三类含 DB2）；Informix、ClickHouse、H2 未做；推广范围待定；ClickHouse 先确认 `@Ignore` 原因 |
+| 各库差异（G11） | 每类代表场景在各库建小 worksheet，基线带 plan，按库分表 | 5 类样板已完成（Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，后三类含 DB2）；ClickHouse、H2 未做；推广范围待定；ClickHouse 先确认 `@Ignore` 原因 |
 | 功能面零覆盖（G12） | 新建小 worksheet：日期范围镜像、可复用条件 assembly、`DATE_COMBOBOX`、未覆盖的变量类型、`NamedRangeRef`、未设置的配置项 | 范围待定；表类待开发确认 |
 | 未运行的 worksheet（G9） | 核对后补用例 | 已完成，见下 |
 

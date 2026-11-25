@@ -300,6 +300,7 @@ class WSData_Spec extends Specification {
       // <db>_DA, <db>_DB = PRODUCTS.DESCRIPTION only, each side with 3 NULL rows: set operations treat NULLs as
       // equal and return distinct rows, so <db>_Dunion has one NULL row (5 rows) and <db>_Dminus has none (2 rows).
       // plan: both pushed to SQL on Oracle and PostgreSQL, only union on MySQL and SQL Server, neither on Derby
+      // and Informix
       wstest.executeWS('1^2^__NULL__^DB/setOperation', null, null)
 
       expect:
@@ -315,7 +316,8 @@ class WSData_Spec extends Specification {
       // <db>_joinDup: on CATEGORY_ID, only the two CATEGORY_ID columns: 36 identical (1, 1) rows, 3 (3, NULL),
       // 3 (NULL, 2) - an emulation with UNION would drop the duplicates (42 rows).
       // <db>_joinCond: <db>_joinNull with PB's PRODUCT_ID is null, which must apply after the join (5 rows).
-      // plan: pushed to SQL on Oracle, PostgreSQL and SQL Server; MySQL and Derby have no FULL OUTER JOIN
+      // plan: pushed to SQL on Oracle, PostgreSQL and SQL Server; MySQL and Derby have no FULL OUTER JOIN, and
+      // Informix runs these joins in memory too
       wstest.executeWS('1^2^__NULL__^DB/fullOuterJoin', null, null)
 
       expect:
@@ -334,6 +336,7 @@ class WSData_Spec extends Specification {
       // Average of EMPLOYEE_ID: 9/7 for customer 7. DB2 (INTEGER column) returns 1 in DB2_basic: the SQL is a bare
       // AVG(col) and DB2 keeps the integer type (same root cause as the rejected #76921); DB2_mem gives 1.2857.
       // DB2 is in this worksheet, DB/dateGroup and DB/maxRows (its set operations and full join are not sampled yet).
+      // Informix is in all five G11 worksheets; here it matches Oracle, MySQL, Derby, PostgreSQL and SQL Server.
       // <db>_basic, <db>_var, <db>_corr: aggregated in SQL (group by pushed); <db>_mem adds Median and Mode,
       // so all of its aggregates are computed in memory. A second aggregate of a column uses the expression
       // column DISCOUNT_<n> = field['DISCOUNT'], as the composer's aggregate dialog creates it.
@@ -347,7 +350,7 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
-      // per database (DB2 included): one order on each of 15 dates around the year ends, grouped by WeekOfYear,
+      // per database (DB2 and Informix included): one order on each of 15 dates around the year ends, grouped by WeekOfYear,
       // DayOfWeek, Week and Quarter of ORDER_DATE plus ORDER_ID. <db>_<option>NoSQL group a script expression copy
       // ORDER_DATE_JS = field['ORDER_DATE'] instead, so the date part is computed in memory on the same data.
       // DayOfWeek, Week and Quarter agree everywhere, in SQL and in memory, under the test servers' US session
@@ -357,7 +360,8 @@ class WSData_Spec extends Specification {
       // so 2002-12-30, 2003-12-31 and 2004-12-27 are week 1. In SQL it differs from that on the same data (#82200).
       // The baselines keep today's SQL results: MySQL, SQL Server, DB2 give 53 for those three days; PostgreSQL
       // (ISO weeks) 53 for 2004-12-27 and 2005-01-01, 1 for 2005-01-04 and 2005-01-08; Oracle (WW, 7-day blocks
-      // from January 1) is off by one for most dates after the first Sunday of the year.
+      // from January 1) is off by one for most dates after the first Sunday of the year. Informix pushes Quarter and
+      // DayOfWeek but not Week and WeekOfYear, which it computes in memory like Derby.
       wstest.executeWS('1^2^__NULL__^DB/dateGroup', null, null)
 
       expect:
@@ -375,6 +379,9 @@ class WSData_Spec extends Specification {
       // <db>_groupMem: Count and Mode (never SQL) by CUSTOMER_ID, no sort, max 3 -> in memory, groups 1, 2, 3.
       // A grouped table with max rows and no sort is left out: its SQL has no ORDER BY, so the kept groups are
       // database-defined (known limit in #80446; Oracle, MySQL, PostgreSQL keep other groups than memory).
+      // Informix has no SQL row limit: only its top-level tables are here. Its joins run in memory with both sides at
+      // once on one variable table, and the row limit hint of one side reaches or is removed by the other (rows vary
+      // from run to run), so <db>_<table>Join is left out for Informix.
       wstest.executeWS('1^2^__NULL__^DB/maxRows', null, null)
 
       expect:

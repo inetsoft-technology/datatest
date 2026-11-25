@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 3)
+order_id, customer_id, DayOfWeek(order_date)
+12001, 1, Sat
+12003, 1, Sun
+12171, 1, Thu
+12172, 1, Mon
+12173, 1, Wed
+12174, 1, Sun
+12175, 1, Mon
+12358, 1, Sat
+12359, 1, Wed
+12360, 1, Fri
+12394, 1, Sun
+12545, 1, Mon
+12549, 1, Sat
+12550, 1, Tue
+12552, 1, Sat

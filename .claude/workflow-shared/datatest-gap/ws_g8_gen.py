@@ -3,7 +3,8 @@ DB/postCondition and DB/dateInRolling (used by the WSData_Spec cases of the same
 docs/test-gap-assessment/ws.md, G8).
 
 usage: python ws_g8_gen.py <src.zip> <dst.zip>
-       src = wsStorage.zip without these worksheets (git show a8742b46:ws/src/test/resources/config/wsStorage.zip),
+       src = wsStorage.zip without these worksheets: the output of ws_g11_gen.py (run on
+             git show 0a2ddb4d:ws/src/test/resources/config/wsStorage.zip),
        dst = the zip to write. After replacing
        ws/src/test/resources/config/wsStorage.zip run ./mvnw clean -pl ws.
 
