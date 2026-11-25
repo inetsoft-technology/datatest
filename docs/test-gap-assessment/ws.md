@@ -11,7 +11,7 @@
 - **产品单测：** 28 个类、670 个测试（stylebi PR #8046、#8064，已合并），另在 `SQLBoundTableBuiltinVariableTest` 补 2 个（#8746，已合并）；覆盖 lens、unpivot、`RotatedQuery`、排名并列、日期级别与日期条件、数值分段与命名分组、各库日期与统计公式 SQL、上传类型识别与 `CSVLoader`、`CSVInfo`、列类型转换、查询变量按比较列定类型、`XUtil` 与 `PreAssetQuery` 的下推规则。写测试发现的 14 个缺陷全部已修（见 7b）。
 - **本机整套重跑（2026-11-24，产品为 `main` `ad63807e37`）：** 64 个用例 58 通过、5 个跳过（2 个 `@Ignore`，`InRange_Spec` 连带跳过 3 个），只有 `InRange_Spec` 失败（本机无法改系统日期）。
 
-**接下来：** G11 样板是否推广到其他库和场景待定；G8 样板已做（#82263、#82264、#82270、#82271 等开发反馈），ClickHouse 受环境所限未做；严格模式认不出查询失败的占位表（G1 漏洞，见第 6 节）；G12 的 dashboard 新场景待定。
+**接下来：** G8 样板已做（7 个库加 ClickHouse；#82263、#82264、#82270、#82271、#82290、#82304～#82307 待修或待开发反馈）；G12 的 dashboard 新场景待定；G12 以外的后续工作（缺陷暴露的测试缺口、其他易错点、建议顺序）见第 8 节。
 
 ## 2. 覆盖情况
 
@@ -493,6 +493,40 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | #81236 | 只含 null 的命名分组生成空 `IN ()` | stylebi #8238 | `NamedRangeRefGroupsTest` |
 | #80538 | 非 distinct union 加载中多算一行（原有） | stylebi #8209 | `UnionTableLensTest`、`SetOperationLensesTest`（stylebi #8643） |
 | #82116 | 派生表的 SQL 文本被当表名，Oracle 上打开 worksheet 要几分钟（Resolved，datatest 已验证） | stylebi #8682 | `UniformSQLLegacyQuotedSubQueryTest`；`WSData_Spec.SqlQuery` 从约 340 秒降到 19 秒 |
+
+## 8. 后续待做（G12 以外）
+
+### 8a. G8、G11 发现的缺陷暴露的测试缺口
+
+| 类别 | 缺陷 | 缺口 | 补法 |
+|---|---|---|---|
+| 同一操作下推与内存结果不同 | #82263、#82264、#82270、#82271、#82304、#82305、#82200 | 用例只跑一条路径对基线，两条路径不一致看不出来；G8 只手工挑了一部分场景 | 机械化成对对照：条件运算 × 列类型（字符串、整数、小数、日期、布尔）× 数据库，同一份数据各做一张下推表、一张内存表 |
+| 内存比较器遇到混合类型 | #82263（Long 对小数按 long 比）、#82264（类型不同返回 IGNORED，保留所有行对） | 单测只测同类型 | stylebi 单测：join、条件、排序、分组用到的比较器，Long、BigDecimal、Double、String、Date 两两组合 |
+| 少用数据库的方言 | ClickHouse 4 个（#82304～#82307）、Informix（#82290）、#82200 | 方言单测只断言生成的 SQL 文本，只有 Derby 真正执行；`sqlhelper.xml` 标为支持的操作在真实库上未必能执行（ClickHouse 的 union） | `sqlhelper.xml` 声明支持的每项操作在真实库上执行一次（G11 加 Informix、ClickHouse 是开头） |
+| 并发与共享状态 | #82290 | 内存 join、union 的两边在线程池里同时执行、共用一个 `VariableTable`，其中不只 `HINT_MAX_ROWS` | stylebi 单测用 H2 复现（H2 在 `sqlhelper.xml` 里同样不支持 SQL 限行），再检查其他共享状态 |
+
+### 8b. 其他容易出问题的地方（按数据库语义推断，未验证）
+
+1. **跨数据源的等值 join，数字键类型不同**：同一个值，Oracle NUMBER 读成 BigDecimal，MySQL INT 是 Integer，BIGINT 是 Long；跨源 join 只能在内存做，若哈希匹配不统一键的类型，`Integer(1)` 与 `BigDecimal(1.0)` 匹配不上，行静默丢失。G11 的 join 都在同一个库里。
+2. **超过 2^53 的整数在内存处理**：BIGINT ID 在内存分组、去重、join、比较时若转成 double，相邻值合并，分组变少、join 多出行。#82099 只修了条件值的截断。
+3. **NULL 与取反条件**：SQL 里 `<>`、`NOT IN` 不返回 NULL 行，`NOT IN` 的列表含 NULL 时一行都不返回；内存里取反对 NULL 的处理没有用例。
+4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。
+5. **不区分大小写的库上做 GROUP BY、DISTINCT**：MySQL、SQL Server 默认把 'A' 与 'a'、'a' 与 'a ' 归为同一个值；G8 只测了条件，没测分组和去重，同一份数据可能得到不同的组数。
+6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。
+7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。
+8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。
+9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。
+10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。
+
+viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块时一并检查。
+
+### 8c. 建议顺序
+
+1. stylebi 单测：8a 的混合类型比较器、内存 join 并发。
+2. 8b 的第 1、2、3、5 项（结果静默出错、可能性最大）：先在真实库上用 probe 验证，确认后再定补单测、datatest 样板还是报 bug。
+3. G12。
+4. 8a 的机械化成对对照、方言执行检查；8b 的第 4、6、7、9 项可并入其中。
+5. `ws_scan.py crosscheck` 加一项检查：基线里出现查询失败的占位行（数字 999.99 或 999、字符串 XXXXX）就报出。现有基线只有 `specialChar/sqlserver.txt` 一个（106 的 SQL Server 上没有数据库 `test.1`，见第 6 节）；vpm 的两个是有意的。
 
 ## 附：数据来源与复现
 
