@@ -379,6 +379,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 表上的 date in | 按应用服务器时钟算区间 | 区间先算成日期常量再下推（`DateConditionRelativeRangesTest` 已对照内存和 SQL） | 只做内存：脚本表达式列 `dateAdd('d', -n, new Date())` 生成相对今天的日期，只用 Today、Yesterday、最近 N 天这类按天滚动的条件，结果不随运行日期变化；下推路径的数据库时钟与应用时区可能差一天，不做 |
 | ClickHouse | — | `DB/clickhouse` 查的是 `system.trace_log`，数据一直在变，基线不可能稳定，这是 `@Ignore` 的原因 | 先确认 ClickHouse 镜像里有固定数据的表（`DB/clickhouse_sql` 的 IPv6、Array 表），再给上面各行加 ClickHouse 组 |
 
+与现有用例核对（datatest 全部资产 zip，含 mv、vsothers、vsexport 等模块；stylebi 单测）：
+- 已覆盖：内存里的非等值 join，只有同类型整数和不会撞大小写的字符串（`checkMergeable CM1` 的 `CM1_19`，=、>、<>，不可下推）；下推的非等值 join（`merge CM7` 的 `CM7_4_31`、`innerJoin1`、`innerJoin2`、`grouping1`）；Oracle 上整数列的 starting with（`innerJoin1` 的 `CONTACTS1`、`CONTACTS2`）；内存规则本身（`ConditionTest`、`ConditionIgnoreCaseLocaleTest`、`JoinLensesTest`）；ClickHouse 不加 ESCAPE（`ConditionListHandlerLikeEscapeTest`，只断言生成的文本）；相对日期条件的区间（`DateConditionBuiltinTest`、`DateConditionRelativeRangesTest`）。
+- 没覆盖：表中其余各点。现有字符串条件的值要么作用在全大写的列上（`innerJoin1` 的 `STATE contains 'A'`），要么在内存表上，没有同一数据下推与内存的大小写对照；starting with、contains 的值里没有 `%`、`_`，LIKE 的值里没有 `\`、`[`；数字列 starting with 只在 Oracle，日期列没有；非等值 join 没有类型不同、BIGINT 对小数、大小写或空格的数据；Concatenated 的后置条件只在 mv 的 `submv/postcondition-expression`（走 MV）；CI 里的 date in 只有 This year、Last year（mv、vsothers、`postprocess` 的命名分组），没有按天滚动的。
+- MV 已按数据库的 LIKE 大小写规则匹配（#79417、#80152：`SQLHelper.getLikeCaseSensitivity`，Oracle、PostgreSQL、DB2、Derby、H2 为区分），worksheet 的内存路径仍按 `string.compare.casesensitive`。同一个下推与内存的差异，产品在 MV 侧处理了，ws 侧没有。
+
 测试库现有数据里没有大小写变体、首尾空格、空串；按 G11 的做法每库一组表，用 SQL 表达式列从现有列造出这些值，条件放在表达式列上（会进 WHERE），内存对照表用脚本表达式副本或 `mergeable=false`。非等值 join 的两条内存问题（类型不同保留所有行对、Long 截断小数）是读代码得出的，先用样板实测，复现了再报 bug。
 
 `WSOthers_Spec` 的 `ws group case check`（`@Ignore`）用到的 `wsCheck/ws1` 不在 zip 里，去掉 `@Ignore` 前要先补回。
