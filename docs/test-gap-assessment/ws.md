@@ -148,7 +148,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - max rows，6 个库（含 DB2）在 ORDERS 上建设了最大行数的表，按与物理顺序相反的方向排序，顶层导出并与 CUSTOMERS inner join（这时表的 SQL 成为子查询，被各库的限行写法包住：Oracle `rownum`、MySQL 和 PostgreSQL `limit`、SQL Server `top`、DB2 和 Derby `fetch first`）：ORDER_ID 降序取 5、去重后的 CUSTOMER_ID 降序取 5、按客户计数并按客户降序排序取 3，以及加了不能下推的 Mode、在内存分组的表（取 3，分组升序，客户 1、2、3）。42 张表在各库的顶层和子查询中都正确，派生表里的 ORDER BY 在外层限行时没有丢。没有排序、带最大行数的分组表不在用例里：SQL 只有 GROUP BY 没有 ORDER BY，保留哪些分组由数据库决定（Oracle 1、25、30，MySQL 20、26、33，PostgreSQL 1、4、35，Derby、SQL Server、DB2 1、2、3，内存为 1、2、3），即 #80446 记录的已知限制，结果随执行计划变化，不适合存基线。
 - 下推：集合运算 union、minus 在 Oracle、PostgreSQL 都下推，MySQL、SQL Server 只下推 union，Derby 都不下推；full outer join 在 Oracle、PostgreSQL、SQL Server 下推，MySQL、Derby 不下推（含 `joinCond` 的条件）。与 SQLHelper 的支持矩阵一致；统计聚合的 group by 在 6 个库都下推，`mem` 表不下推（Oracle 有 MEDIAN，所以 mem 表靠 Mode 留在内存）；日期分组在 Derby 上 WeekOfYear、DayOfWeek、Week 不下推。
 - 期望值独立得到：各库 CUSTOMERS、PRODUCTS 数据相同（JDBC 逐行核对过），用 JDBC 取原始行，在脚本里按上述 SQL 语义算出集合运算、full join、统计聚合共 99 张表，与导出逐行一致（统计聚合除 1 个值的样本方差按 #80342 取 0、DB2 整数 Average 截断外全部一致）；日期分组按 Java 周规则逐日核对（一次性核对，未纳入测试）。worksheet 由 `.claude/workflow-shared/datatest-gap/ws_g11_gen.py` 生成 XML 加入 zip（重新运行结果相同），产品能正常打开执行。
-- Informix：期望值不能直接用 JDBC 读（缺 `org.bson`），改为与其他库对照：除 DB2 的整数 Average 外，各表结果与另外 5 个库逐行一致，说明数据相同、结果正确。下推：集合运算、full join 都不下推；统计聚合的 group by 下推；日期分组 Quarter、DayOfWeek 下推，Week、WeekOfYear 在内存算（与 Derby 相同）。max rows：Informix 不支持 SQL 限行，单独的表由 JDBC `setMaxRows` 截断，结果正确；但 join 在内存做时，两边子查询在线程池里同时执行、共用一个变量表，一边放进的 `HINT_MAX_ROWS` 会被另一边用到或删掉，同一个 join 先后得到 35、0 行（应为 5 行），所以 Informix 的三张 join 表不放进样板（待定是否报 bug）。
+- Informix：期望值不能直接用 JDBC 读（缺 `org.bson`），改为与其他库对照：除 DB2 的整数 Average 外，各表结果与另外 5 个库逐行一致，说明数据相同、结果正确。下推：集合运算、full join 都不下推；统计聚合的 group by 下推；日期分组 Quarter、DayOfWeek 下推，Week、WeekOfYear 在内存算（与 Derby 相同）。max rows：Informix 不支持 SQL 限行，单独的表由 JDBC `setMaxRows` 截断，结果正确；但 join 在内存做时，两边子查询在线程池里同时执行、共用一个变量表，一边放进的 `HINT_MAX_ROWS` 会被另一边用到或删掉，同一个 join 先后得到 35、0 行（应为 5 行），所以 Informix 的三张 join 表不放进样板（#82290）。
 - 没覆盖：大小写（内存默认不区分，Oracle、PostgreSQL、DB2、Derby 区分）、Oracle 把空串当 NULL、CHAR 补空格比较，现有数据没有这些值，归 G8；ClickHouse 未做；DB2 的集合运算、full join 未做。#80342 记录的 DB2 `getExpressionSub` 除以 n*n 只在 MV 转换（`NamedGroupTransformer`、`SelectionUpTransformer` 创建的 `CompositeAggregateRef`）里走到，ws 碰不到，归 mv 模块。
 
 **LIVE 模式的边界**（只用 `LIVE_MODE`，G6 暂缓）：
@@ -325,7 +325,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | `specialChar`（原 `@Ignore`：CI 上约 18 分钟） | 本机 44 秒；基线里的 `mysql.txt` 对应的表已不存在（现为 `mysql query`，列也不同） | 删除陈旧基线 `mysql.txt`，去掉 `@Ignore`；CI 上的时长待确认 |
 | `customer bugs`（原 `@Ignore`：mock 报错） | mock 问题已不存在（#213 改为真实对象）；32013 处差异全部是 datatest 导出格式（`NULL`、`#0.####`、时间戳不带 `.0`），数据、表头、行数相同 | 去掉 `@Ignore`，基线按现在的导出格式更新 |
 | `ws group case check`（`@Ignore`） | 用到的 `wsCheck/ws1`、`vsCheck/vs1` 不在 zip 里 | 保留 `@Ignore` |
-| `clickhouse`（`@Ignore`，新增时即忽略，未写原因） | 本机 hosts 未配置 `clickhouse_server`，无法运行 | 保留 `@Ignore`，原因待在 CI 环境确认（G8、G11 的前提） |
+| `clickhouse`（`@Ignore`，新增时即忽略，未写原因） | 一直连不上：ClickHouse JDBC 驱动（0.7.1）按 URI 解析地址，主机名 `clickhouse_server` 含下划线、不是合法的 URI 主机名，驱动退回 localhost（CI 同样写这个名字）；数据源密码也与测试服务器不同。另外查的是一直在变的 `system.trace_log`，条件是 2025-08 的具体时间值，服务器上的 `default.trace_log` 是 2025-09-23 的快照 | 数据源改为 `clickhouse-server`、密码取 `gcp-db-server-iac/docker-compose.yml`（`ws_ds_password.py`），CI 的 `ensure-db-server` 同时映射 `clickhouse-server`；用例改查快照需要重写条件值，待定 |
 
 - `WSAsset_Spec.varible` 导出里第一次出现的列显示为 `7`、重名列为 `7.00_1`：产品里两者都按 `0.00##` 命名（`7.00`、`7.00_1`），`7` 是 datatest 导出用 `#0.####` 格式化原始 Double 表头的结果，不是产品缺陷。
 - **#82116：** 打开 worksheet 收集变量时，`oracle q21`、`sql server q11` 的派生表在 `uniform_sql` 里存成带引号的整段 SQL 文本（`issql=false`，13.7 保存），被当成物理表取列；`JDBCHandler.getTableColumns` 找不到，进入扫描所有 schema 的 `getTables` 和同义词查询，Oracle 上每次几分钟。查询本身用存好的 SQL 执行，数据正确。修复（stylebi #8682）：`UniformSQL.parseXML` 把这种旧格式识别为派生表，下次保存时写成 `issql=true`。
@@ -394,7 +394,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - Informix：join、union 都不下推（plan 为 false），`Informix_bigHalf` 也在内存算，同样得到 #82263 的 3 行；字符串条件区分大小写，比较时忽略尾部空格（`padEq` 返回 25），LIKE 把 `\` 当转义符（`likeBs` 返回产品 4，#82271），starting with 加 `ESCAPE '!'`，`_` 按字面；数字、日期列上的 LIKE 报 `Wildcard matching may not be used with non-character types`，只保留内存表。
 - 后置条件（`postCondition`）：类别 1、7 与 7、6 的 PRODUCTS（只取 CATEGORY_ID、PRICE）做 UNION 后按类别求和，后置条件 Sum 在 3000～5000 之间。union 去重（同一边内的重复行也去掉），类别 7 为 3410（不去重为 6900），只保留类别 7。除 Derby 外以 HAVING 下推，内存表结果相同。
 - 按天滚动的 date in（`dateInRolling`，只在内存）：产品 1-11 的隐藏脚本列取今天往前 OFFSET 天（-1、0、1、7、8、14、15、30、31、60、61），Today、Yesterday、Tomorrow、Last 7 days、Last 8-14 days、Last 30 days、Last 31-60 days 保留的 OFFSET 都正确，结果不随运行日期变化。
-- 没做：ClickHouse（本机 hosts 未配置、106 服务器没有开放 8123、9000 端口；现有 `clickhouse` 用例查的是 `system.trace_log`），因此 ClickHouse 上 starting with 的 `%`、`_` 没有实测。
+- 没做：ClickHouse。连接已修好（见第 5 节 `clickhouse` 一行），但库里只有 `default.base_type`（20 行基本类型）、`complex_data`（10 行 Array、Map、Tuple）和 `trace_log` 快照，没有 ORDERS、PRODUCTS，样板要基于 `base_type` 另做；ClickHouse 上 starting with 的 `%`、`_` 还没有实测。
 
 `WSOthers_Spec` 的 `ws group case check`（`@Ignore`）用到的 `wsCheck/ws1` 不在 zip 里，去掉 `@Ignore` 前要先补回。
 

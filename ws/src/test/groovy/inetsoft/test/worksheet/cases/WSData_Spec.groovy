@@ -381,7 +381,7 @@ class WSData_Spec extends Specification {
       // database-defined (known limit in #80446; Oracle, MySQL, PostgreSQL keep other groups than memory).
       // Informix has no SQL row limit: only its top-level tables are here. Its joins run in memory with both sides at
       // once on one variable table, and the row limit hint of one side reaches or is removed by the other (rows vary
-      // from run to run), so <db>_<table>Join is left out for Informix.
+      // from run to run, #82290), so <db>_<table>Join is left out for Informix.
       wstest.executeWS('1^2^__NULL__^DB/maxRows', null, null)
 
       expect:
