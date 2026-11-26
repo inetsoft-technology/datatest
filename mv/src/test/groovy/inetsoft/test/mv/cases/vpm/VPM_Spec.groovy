@@ -1,6 +1,8 @@
 package inetsoft.test.mv.cases.vpm
 
+import inetsoft.mv.MVManager
 import inetsoft.test.mv.MVTest
+import inetsoft.uql.util.Identity
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
@@ -168,6 +170,70 @@ class VPM_Spec extends Specification {
          withMV.values().every { it[1] == ['orders1|TopMV'] }
          withMV.values().every { it[0] == noMV.admin }
       }
+   }
+
+   // An MV built for a group or a role is used by a user of that group or role only if the VPM
+   // gives the user the same query as the identity the MV is built for
+   // (MVManager.isVPMCompatible, #78390); otherwise the user would see the rows the VPM hides.
+   // The viewsheet is granted to groups (user-group) or roles (group-role, user-role), so the MVs
+   // are built for them, without the VPM of the user or the group (the VPM v1 of postgres: user
+   // user0 sees product 1 of products1, group group0 sees the orders with discount 0.05). The
+   // restricted user, user0, must not use them and gets the rows of the database through the VPM;
+   // the other user has no VPM restriction and uses the MV of its group or role. The other cases
+   // of this spec never reach the check: each user hits an MV of its own or one whose VPM is
+   // the same as the user's. No golden files: the checks are on the MV run, and with
+   // -Dmv.compare=both|nomv the result of each user is the same as without MV.
+   @Issue('https://issues.inetsoft.com/issues/78390')
+   def '#name: the MV of a #granted is not used by user0, whose VPM differs, and used by #freeUser'() {
+      given:
+      mvtest = new MVTest('1^128^__NULL__^vpm/' + name)
+      def free = [user1: user1, user2: user2][freeUser]
+
+      when:
+      [user0, free].each { mvtest.executeVSWithoutMV(null, null, false, false, it) }
+      mvtest.createMV(true, false)
+      def defs = MVTest.getMVDefInfo()
+      // the identity types each MV on the table is built for (the free user's hit names the
+      // table only, so this says which MV it read)
+      MVManager manager = MVManager.getManager()
+      List<List<Integer>> builtFor = mvtest.materializedViewNames().collect { manager.get(it) }
+         .findAll { it != null && it.getMVTable() == table.split(/\|/)[0] }
+         .collect { it.getUsers()*.getType() }
+      mvtest.executeVS(null, null, false, false, user0)
+      def restrictedHits = mvtest.takeMVHits()
+      mvtest.executeVS(null, null, false, false, free)
+      def freeHits = mvtest.takeMVHits()
+      List<String> restricted = column('user0_Query1', header)
+      List<String> all = column(freeUser + '_Query1', header)
+
+      then:
+      verifyAll {
+         defs.contains(table)
+         builtFor.size() > 0
+         builtFor.every { types -> types.size() > 0 && types.every { it == builtType } }
+         restrictedHits == []
+         freeHits == [table]
+         restricted.size() > 0
+         restricted.every { it == value }
+         all.size() > restricted.size()
+         mvtest.compareWithoutMV()
+      }
+
+      where:
+      name         | granted | builtType      | freeUser | table             | header       | value
+      'user-group' | 'group' | Identity.GROUP | 'user1'  | 'products1|TopMV' | 'product_id' | '1'
+      'group-role' | 'role'  | Identity.ROLE  | 'user2'  | 'orders1|TopMV'   | 'discount'   | '0.05'
+      'user-role'  | 'role'  | Identity.ROLE  | 'user2'  | 'products1|TopMV' | 'product_id' | '1'
+   }
+
+   /** The values of a column of a table the last executeVS exported, found by its header. */
+   private List<String> column(String name, String header) {
+      List<List<String>> rows = mvtest.exportedLines(name).drop(1).findAll { it }.collect {
+         it.substring(1, it.length() - 1).split(/\]\[/, -1) as List<String>
+      }
+      int idx = rows[0].indexOf(header)
+      assert idx >= 0: 'no column ' + header + ' in ' + rows[0]
+      return rows.drop(1).collect { it[idx] }
    }
 
    /**
