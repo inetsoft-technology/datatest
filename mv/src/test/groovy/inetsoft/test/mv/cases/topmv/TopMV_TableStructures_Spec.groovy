@@ -504,5 +504,36 @@ class TopMV_TableStructures_Spec extends Specification {
       }
    }
 
+   // Query2 is the rotated table of Query1, an embedded table grouped by Year(ORDER_DATE),
+   // DISCOUNT, PAID. A rotated column holds values of different types; its MV stored them as
+   // text (numbers without their type, dates with ".0", string order). No MV is built on a
+   // rotated table now, only on the table before the rotation (#82323). rotate1 is then the
+   // same as without MV in every component. In rotate2 the table is the same; its selection list
+   // still differs in the order and the state of the values (#82323 back in Feedback), so only
+   // the table is compared. No golden files: the checks are on the MV run.
+   @Issue('https://issues.inetsoft.com/issues/82323')
+   def '#name: no MV on the rotated table'() {
+      given:
+      String asset_id = '1^128^__NULL__^topmv/' + name
+      mvtest = new MVTest(asset_id)
+
+      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, true)
+
+      expect:
+      verifyAll {
+         MVTest.getMVDefInfo() == ['Query1|SubMV']
+         mvtest.getMVHitInfo() == ['Query1|SubMV']
+         !mvtest.exportedLines('admin_Query1').any { it.contains(' 00:00:00.0]') }
+         mvtest.compareWithoutMV(compared)
+      }
+
+      where:
+      name      | compared
+      'rotate1' | null
+      'rotate2' | ['admin_Query1']
+   }
+
    MVTest mvtest
 }

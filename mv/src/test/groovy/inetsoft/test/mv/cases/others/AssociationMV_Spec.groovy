@@ -57,6 +57,28 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
+   // SelectionList2 is bound to Query1.CUSTOMER_ID and SelectionList1 to ORDERS1.PAID, columns
+   // these worksheet tables do not have. Both lists have no data; with MV SelectionList2 used to
+   // show 12788, the sum of ORDERS.CUSTOMER_ID (#82321). No golden files: the checks are on the
+   // MV run.
+   @Issue('https://issues.inetsoft.com/issues/82321')
+   def 'TestCase_Special1'() {
+      given:
+      String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Special1'
+      mvtest = new MVTest(asset_id)
+
+      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, true)
+
+      expect:
+      verifyAll {
+         mvtest.exportedLines('admin_SelectionList1') == ['[[NULL]]']
+         mvtest.exportedLines('admin_SelectionList2') == ['[[NULL]]']
+         mvtest.compareWithoutMV()
+      }
+   }
+
    def 'TestCase_CalcField2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField2'
