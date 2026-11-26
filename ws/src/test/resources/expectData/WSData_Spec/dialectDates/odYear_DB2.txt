@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+ORDER_ID, Year(ORDER_DATE)
+1, 2005
+5, 2002
+5, 2003
+5, 2004

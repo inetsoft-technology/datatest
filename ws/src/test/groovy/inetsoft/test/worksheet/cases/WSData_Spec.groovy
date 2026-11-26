@@ -702,4 +702,92 @@ class WSData_Spec extends Specification {
       expect:
       wstest.compareData(null)
    }
+
+   // ws.md section 8: dialect execution checks. Every SQL operation sqlhelper.xml (and the helpers' code) declares
+   // for a database is used by a table <case>_<db>; its twin <case>Mem_<db> computes the same in memory (mergeable
+   // off; for date groups a script copy of the date column). The plan files show whether each one was pushed down.
+   // Worksheets from .claude/workflow-shared/datatest-gap/ws_dialect_gen.py.
+
+   def 'dialectSetOps' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // PRODUCTS 1-16 against 10-25: CATEGORY_ID (repeated values) and DESCRIPTION (NULL in both sides; set
+      // operations treat NULLs as equal) with union, union all, intersect, minus.
+      wstest.executeWS('1^2^__NULL__^DB/dialectSetOps', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectJoins' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // PRODUCTS 1-8 against 5-12 on CATEGORY_ID (repeated keys) with every join type; on DESCRIPTION (NULL never
+      // matches) with inner, left and full joins.
+      wstest.executeWS('1^2^__NULL__^DB/dialectJoins', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectOrderBy' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the export sorts each table, so an ORDER BY shows through the rows a max row count keeps: sorted by a hidden
+      // column, distinct and sorted, grouped and sorted by the aggregate value or by the group.
+      wstest.executeWS('1^2^__NULL__^DB/dialectOrderBy', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectGroupBy' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // group by an SQL expression (LOWER(STATE)); two DistinctCount in one query.
+      wstest.executeWS('1^2^__NULL__^DB/dialectGroupBy', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectDates' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the date levels on a DATE column (the group dialog offers no time level for it).
+      // #82200: WeekOfYear differs pushed and in memory on Oracle and PostgreSQL, kept as today.
+      wstest.executeWS('1^2^__NULL__^DB/dialectDates', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectTimestamps' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the date levels on a TIMESTAMP column.
+      // #82200: WeekOfYear differs pushed and in memory on Oracle, MySQL and PostgreSQL, kept as today.
+      wstest.executeWS('1^2^__NULL__^DB/dialectTimestamps', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectTimes' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the time levels on a TIMESTAMP column (a separate worksheet: a runtime worksheet expires after 3 minutes
+      // without a heartbeat, and the test sends none).
+      wstest.executeWS('1^2^__NULL__^DB/dialectTimes', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
 }

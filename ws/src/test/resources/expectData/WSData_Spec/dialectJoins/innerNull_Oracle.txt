@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+PRODUCT_ID, CATEGORY_ID, DESCRIPTION, PRODUCT_ID_1, CATEGORY_ID_1, DESCRIPTION_1
+5, 4, House hunting assistant, 5, 4, House hunting assistant
+6, 6, Lightweight email agent, 6, 6, Lightweight email agent
+7, 4, Palm power sync, 7, 4, Palm power sync
+8, 6, Web enabled calendar/org, 8, 6, Web enabled calendar/org

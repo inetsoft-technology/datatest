@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 2)
+order_id, DayOfWeek(order_date)
+1, Sat
+1, Thu
+2, Fri
+3, Mon
+3, Sun
+3, Tue
+3, Wed
