@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 11)
+flag, flag2, Address, City, Company, Contact First Name, Contact Last Name, Region, Reseller, State, Zip
+CO, false, 88 Rio Grand Ave., Boulder, Ernst Handel, Patrico, Brown, USA West, 1, CO, 38923
+MD, false, 389 Jardim Rd., Baltimore, George Services, Steven, Devon, USA East, 0, MD, 82938
+CT, false, 5 Baker's Lane, Hartford, Loctite Corp., Aria, Duz, USA East, 0, CT, 39283
+CO, false, 71 Mulberry St., Denver, Quick Stop, Richard, Isantengse, USA West, 0, CO, 98839
+CA, false, 4500 River Rd., San Francisco, Direct Sales, Luke, Baker, USA West, 1, CA, 08854
+IL, false, 88 Specialty Dr., Chicago, Specialty Retail, Simon, Supricido, USA West, 1, IL, 88938
+TX, false, 12 Woodpark Ave., Austin, The Big Cat, Michael, Kumar, USA West, 0, TX, 32343
+FL, false, 77 Druguz Blvd., Orlando, Fast Transportation, George, Kloss, USA East, 0, FL, 12343
+CA, false, 90 First Ave., Los Angeles, Computer Tech, Jean, Crowther, USA West, 1, CA, 11223
+MD, false, 822 Technology Dr., Rockville, InterLand Services, Horst, Braunschwad, USA East, 0, MD, 83923
+CA, false, 44 Islander Lane, Albany, Whittaker & Co, Inc, Giovanni, Feuter, USA West, 0, CA, 83923
+MA, false, 8300 Cleveland St., Boston, Ubermeyer, Roland, Sommer, USA East, 0, MA, 29183
+AZ, false, 345 Sewgen Dr., Tucson, Folk Mining, Janine, Lebithal, USA West, 0, AZ, 11234
+CA, false, 460 Newcomb Dr., Los Angeles, West Coast Customs, William, Alen, USA West, 0, CA, 73646
+TX, false, 23 Tasaga Ave., Houston, Big Ed's BBQ, Nick, Pantaliano, USA West, 0, TX, 23421
+MA, false, 563 Uptown Dr., Boston, World Software Resellers, Jason, Gray, USA East, 1, MA, 28275
+TX, false, 987 First Ave., Dallas, Nova Tera, Chris, Gonzalez, USA West, 0, TX, 23123
+WA, false, 32 West Boyd Ave., Seattle, Infinity Software, Jill, Oshinsky, USA West, 1, WA, 93847
+PA, false, 389 York St., York, Tricounty Auto, Nicole, Bartles, USA East, 0, PA, 48873
+WA, false, 17 Main St., Olympia, Northwest Outfitters, Adam, Curtiss, USA West, 0, WA, 93717
+MA, false, 283 Handley Rd., Springfield, AMG Logistics, Bill, Wallace, USA East, 0, MA, 01923
+TX, false, 8874 Shiphouse Rd., Dallas, BigMart Foodstores, Amy, Gillette, USA West, 0, TX, 48374
+MD, false, 9381 Mayor Brown Hwy., Baltimore, FMG Consulting, Michael, Lewis, USA East, 0, MD, 53747
+MA, false, 77 Huntington Ave., Cambridge, XO Resellers, Fran, Dreckle, USA East, 1, MA, 02938

@@ -327,6 +327,53 @@ class VS_CalcField_Spec extends Specification{
    }
 
    /*
+    check Boolean calc fields at the viewsheet level (Test Case #80957, Bug #81669 case from the
+    tester): flag = Quantity Purchased > 5 declared Boolean gives true/false, flag2 is the text
+    State; SelectionList1 on flag with true selected filters TableView1. Data only; no png until
+    the png platform is decided.
+   */
+   def 'calc_boolean'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/calc_boolean', caseName)
+      vstest.executeVS(null, ['(Home)'] as String[], true)
+
+      expect:
+      vstest.compareData(null)
+   }
+
+   /*
+    check a Boolean expression column holding text (Bug #81669): worksheet ws-calc, flag =
+    field['Customer.State'] declared Boolean keeps the state text instead of false, flag2 =
+    State starts with N gives true/false; SelectionList1 on flag2 with false selected filters
+    TableView1. Data only.
+   */
+   def 'calc_boolean_ws'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/calc_boolean_ws', caseName)
+      vstest.executeVS(null, ['(Home)'] as String[], true)
+
+      expect:
+      vstest.compareData(null)
+   }
+
+   /*
+    check the declared type of aggregate calc fields (Bug #81668): R_Int, R_Dbl, R_Str are the
+    same Sum(Number In Stock) / Sum(Reorder Level) declared Integer, Double, String. Chart1
+    (AssetQuery path) has R_Int and R_Dbl, Crosstab1 (crosstab path) all three: R_Int is cut to
+    1 (not rounded: 7 states are >= 1.5), R_Dbl keeps the fraction, R_Str is text. R_Str is not
+    on the chart (#82312). Out-of-range values (#82308) are covered by VSCalcFieldQueryTest.
+    Data only.
+   */
+   def 'calc_agg_declared_type'() {
+      caseName = specificationContext.currentIteration.name
+      vstest = new ViewsheetTest('1^128^__NULL__^vs-calcfield/calc_agg_declared_type', caseName)
+      vstest.executeVS(null, ['(Home)'] as String[])
+
+      expect:
+      vstest.compareData(null)
+   }
+
+   /*
     check data group on calcfield
    */
    def 'calc_data group'() {
