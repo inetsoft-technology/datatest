@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+product_id, category_id, CAT_JS
+17, 2, 2
+18, 2, 2
+19, 2, 2

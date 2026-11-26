@@ -549,8 +549,8 @@ class WSData_Spec extends Specification {
       // BigDecimal on Oracle and SQL Server. Correct: 35 groups, condition BIG = 2^53 + 3 keeps customer 3.
       // The baseline keeps today's results for:
       // #82378 in memory BigDecimal compares as double: condMem_ and joinGrp_ on Oracle, SQL Server (3 rows, 19 groups).
-      // #82379 '=' on a numeric SQL expression binds the value as a string: cond_MySQL compares as double (3 rows);
-      //        PostgreSQL fails (cond_, twiceEq_ left out).
+      // cond_ and twiceEq_ on PostgreSQL and MySQL check #82379 ('=' on a numeric SQL expression bound the value as a
+      // string; fixed in stylebi 202611260547).
       // #82381 group by a SQL expression with Mode runs the SQL as JavaScript: grpMode_Oracle 19 groups, the other
       //        databases fail (left out).
       // On Oracle and SQL Server the BIG value is already a double in the table (#82378), so their BIG column is
@@ -626,6 +626,78 @@ class WSData_Spec extends Specification {
       wstest.executeWS('1^2^__NULL__^DB/variableCache', [st: 'NJ'], 'NJ')
       wstest.executeWS('1^2^__NULL__^DB/variableCache', [st: 'NY'], 'NY')
       wstest.executeWS('1^2^__NULL__^DB/variableCache', [st: 'NJ'], 'NJ2')
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   // ws.md G12: features no case used before. Worksheets from .claude/workflow-shared/datatest-gap/ws_g12_gen.py;
+   // tables whose query fails are left out there (LEFT_OUT, with the bug numbers).
+
+   def 'variableTypes' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // variables of the types the variable dialog offers, with the values that dialog would create. CATEGORY_ID 2:
+      // 3 products for every integer type, double and string; 2 or 4 (vInts): 6; no value (vNull): the condition is
+      // dropped, 25. HALF = CATEGORY_ID + 0.5: '= 2' none, '> 2' 19, '= 2.5' 3. DISCOUNT = 0.15: orders 12054, 12473.
+      // STATE starting with 'N': 11 customers.
+      // The baseline keeps today's results for:
+      // #82410 a Float variable 0.15 matches in SQL but not in memory (fltDiscMem_: no row).
+      // intHalfEq_, dblHalf_, longBig_ on PostgreSQL and MySQL check #82379 for variable values (fixed).
+      // #82378 BIG is a double in the table on Oracle and SQL Server: longBigMem_ keeps no row there.
+      def params = [vInt: 2 as Integer, vInts: [2, 4] as Object[], vShort: 2 as Short, vByte: 2 as Byte,
+                    vLong: 2L, vDbl: 2.0d, vStr: '2', vHalf: 2.5d, vD15: 0.15d, vF15: 0.15f, vChar: 'N',
+                    vBig: 9007199254740995L]
+      wstest.executeWS('1^2^__NULL__^DB/variableTypes', params, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'subqueryConditions' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the 16 G11 orders, DISCOUNT NULL for 5 of them. in a subquery with NULL: the 11 non-NULL orders; not in it:
+      // none (SQL: a NULL in the list makes NOT IN unknown), the same in memory and across databases (notInX_);
+      // not in the subquery of DISCOUNT < 0.1: 6. Correlated: 3 customers with an order whose DISCOUNT is NULL, 32
+      // without. '>' a subquery of one NULL row: none.
+      // gtTwoMem_: '>' a subquery of two rows (0.25, 0.05) keeps the rows greater than either in memory (6); SQL
+      // rejects it (#82411, gtTwo_ left out).
+      wstest.executeWS('1^2^__NULL__^DB/subqueryConditions', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'avgInteger' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // Average of an INTEGER (CUSTOMER_ID) by STATE, NJ 16.1667: SQL Server and DB2 return an integer pushed (16;
+      // the database rule, as #76921, not to be fixed); memory and the other databases keep the fraction. Derby's
+      // integer Average is not pushed. With formula.avg.keep.type see WSProperty_Spec.
+      wstest.executeWS('1^2^__NULL__^DB/avgInteger', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'relativeDates' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // 26 of the built-in relative date ranges against dates relative to today (00:00): the 15th of a month for the
+      // month-based ranges, the same day (at most the 28th) of last / next year, days around today. Each table keeps
+      // only the points whose membership does not depend on the day of the run; the date is hidden, POINT is
+      // exported. pg_: computed by PostgreSQL and pushed down (its session time zone is the JVM's; the other test
+      // servers return UTC), pgMem_: a script copy of it, js_: computed by a script from the JVM time.
+      // The "to date" ranges end at the current moment, not at the end of today.
+      // PostgreSQL computes CURRENT_DATE when the query runs, the ranges take "today" when they are evaluated and the
+      // script points when the row is read: a run that crosses midnight between them can move a point by a day
+      // (rerun it).
+      wstest.executeWS('1^2^__NULL__^DB/relativeDates', null, null)
 
       expect:
       wstest.compareData(null)
