@@ -694,6 +694,9 @@ class WSData_Spec extends Specification {
       // exported. pg_: computed by PostgreSQL and pushed down (its session time zone is the JVM's; the other test
       // servers return UTC), pgMem_: a script copy of it, js_: computed by a script from the JVM time.
       // The "to date" ranges end at the current moment, not at the end of today.
+      // PostgreSQL computes CURRENT_DATE when the query runs, the ranges take "today" when they are evaluated and the
+      // script points when the row is read: a run that crosses midnight between them can move a point by a day
+      // (rerun it).
       wstest.executeWS('1^2^__NULL__^DB/relativeDates', null, null)
 
       expect:
