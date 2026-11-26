@@ -130,8 +130,8 @@ for i, (a, b) in enumerate([('MySQL', 'PostgreSQL'), ('SQLServer', 'Oracle'), ('
                      'O_' + b, [(ob['oid'][0], ob['oid'][1]), (ob['date'][0], ob['date'][1])], oa['date'][0], ob['date'][0],
                      INNER, 20 + i * 140, 380))
 
-# ---- DB/bigNumbers (8b item 2): BIG = CUSTOMER_ID + 2^53, 35 distinct values (no Informix: no BIGINT arithmetic
-# in its sample schema). Read as Long on MySQL, PostgreSQL, Derby, DB2, as BigDecimal on Oracle and SQL Server.
+# ---- DB/bigNumbers (8b item 2): BIG = CUSTOMER_ID + 2^53, 35 distinct values (Informix not sampled). Read as Long on
+# MySQL, PostgreSQL, Derby, DB2, as BigDecimal on Oracle and SQL Server, where the table holds it as a double (#82378).
 big_t = []
 for j, n in enumerate([m for m in NAMES if m != 'Informix']):
     db, cm = tdb(n, 'CUSTOMERS')

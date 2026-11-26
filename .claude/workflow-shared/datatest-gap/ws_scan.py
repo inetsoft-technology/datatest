@@ -395,8 +395,8 @@ def spec_features(path):
 # float / double, 999 short / integer / long, 99 byte, true, the current date / time. WorksheetTest
 # exports it like data, so a baseline made from a failed run passes from then on.
 PLACEHOLDER_KNOWN = {
-    # the SQL Server test server has no database test.1 (ws.md section 6)
-    'WSData_Spec/specialChar/sqlserver.txt': 'SQL Server test server has no database test.1',
+    # the SQL Server test image (inetsoft-dbs-sqlserver:2017, local and CI) has no database test.1 (ws.md section 6)
+    'WSData_Spec/specialChar/sqlserver.txt': 'the SQL Server test image has no database test.1',
 }
 _PH_VALUE = re.compile(r'^(X+|999\.99|999(\.0)?|99|true|\d{4}-\d\d-\d\d( \d\d:\d\d:\d\d(\.\d+)?)?|\d\d:\d\d:\d\d)$')
 _PH_SIZE = re.compile(r'^The data size\(row x col\) is:\(2 x (\d+)\)$')

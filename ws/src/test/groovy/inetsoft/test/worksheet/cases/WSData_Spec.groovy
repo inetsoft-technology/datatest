@@ -553,6 +553,9 @@ class WSData_Spec extends Specification {
       //        PostgreSQL fails (cond_, twiceEq_ left out).
       // #82381 group by a SQL expression with Mode runs the SQL as JavaScript: grpMode_Oracle 19 groups, the other
       //        databases fail (left out).
+      // On Oracle and SQL Server the BIG value is already a double in the table (#82378), so their BIG column is
+      // rounded (neighbours equal, also as pushed group labels) and changes with the fix. Mode between the two states
+      // of a merged group (grpMode_Oracle, joinGrp_) depends on the order the database sends the rows in.
       wstest.executeWS('1^2^__NULL__^DB/bigNumbers', null, null)
 
       expect:
@@ -567,7 +570,7 @@ class WSData_Spec extends Specification {
       // pushed and in memory. nullSort*: max rows 4, sorted by DESCRIPTION then PRODUCT_ID; ascending, NULL comes
       // first on MySQL, SQL Server, Informix, last on Oracle, PostgreSQL, DB2, Derby (database rule).
       // nullSort*Mem_: the sort is in memory and the max rows cut the source first (#82389): the first 4 products,
-      // sorted, kept in the baseline.
+      // sorted, kept in the baseline. Which 4 depends on the order the database sends the rows in (no ORDER BY).
       wstest.executeWS('1^2^__NULL__^DB/nullSemantics', null, null)
 
       expect:
@@ -582,6 +585,8 @@ class WSData_Spec extends Specification {
       // Pushed (grp_, dist_): the database rule, case-insensitive on MySQL, SQL Server, trailing space ignored on
       // MySQL, SQL Server, DB2, Derby, Informix. In memory (grpJs_): case-insensitive, trailing space kept (#82382).
       // distMem_, distJs_: distinct with a script column is pushed over the hidden columns (#82380), kept as today.
+      // Which spelling stands for a case-insensitive group (grpJs_mix_, MySQL and SQL Server grp_mix_: az or AZ)
+      // depends on the order the database sends the rows in.
       wstest.executeWS('1^2^__NULL__^DB/caseGrouping', null, null)
 
       expect:
