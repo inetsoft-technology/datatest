@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 3)
+1998, NULL, NULL
+AK_a, Sevilla, 146
+CA_a, Los Angles, 200
+FL_a, Orlando, 66
+I_a, Rome, 81
+NULL, Los Angles, 493

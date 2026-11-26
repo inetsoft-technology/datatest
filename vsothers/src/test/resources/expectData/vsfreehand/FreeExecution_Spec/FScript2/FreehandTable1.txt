@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 4)
+CA, true, A, NULL
+CO, true, A, NULL
+IL, true, A, NULL
+MA, false, A, NULL
+NJ, false, A, NULL
+WA, false, A, NULL
+NY, NULL, NULL, NULL
+CA, Albany, 298.25, 4%
+CA, Los Angeles, 788.6, 11%
+CA, San Francisco, 287.1, 4%
+CO, Boulder, 83.15, 1%
+CO, Denver, 220.15, 3%
+IL, Chicago, 215.2, 3%
+MA, Boston, 893.25, 13%
+MA, Cambridge, 463.1, 7%
+MA, Springfield, 506.15, 7%
+NJ, Camden, 265.1, 4%
+NJ, Middletown, 64.5, 1%
+NJ, New Brunswick, 531.3, 7%
+NJ, Newark, 472.95, 7%
+NJ, Plainfield, 730.35, 10%
+NJ, Wayne, 32.35, 0%
+WA, Olympia, 848.55, 12%
+WA, Seattle, 396, 6%
+NULL, NULL, 7096.05, NULL

@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 16)
+region,date, 2017, NULL, NULL, 2018, NULL, NULL, 2019, NULL, NULL, 2020, NULL, NULL, 2021, NULL, NULL
+USA East, FL, NULL, 0.15, FL, NULL, 0.15, FL, NULL, 0, FL, NULL, 0.05, FL, NULL, 0
+USA East, PA, NULL, 0, PA, NULL, 0.05, PA, NULL, 0, PA, NULL, 0.1, PA, NULL, 0
+USA East, startC, NULL, 0, startC, NULL, 0, startC, NULL, 0, startC, NULL, 0.25, startM, Boston, 0.35
+USA East, startM, Baltimore, 0.2, startM, Boston, 0, startM, Rockville, 0, startM, Boston, 0.3, startN, Wayne, 0.6
+USA East, startN, New Brunswick, 0, startN, Camden, 0.8, startN, Newark, 1.45, startN, Newark, 1.4, NULL, NULL, 0
+USA West, AZ, NULL, 0, AZ, NULL, 0, AZ, NULL, 0.25, AZ, NULL, 0.45, AZ, NULL, 0
+USA West, IL, NULL, 0, IL, NULL, 0.2, IL, NULL, 0, IL, NULL, 0, IL, NULL, 0
+USA West, startC, San Francisco, 0.1, startC, San Francisco, 0.1, startC, Albany, 0.5, startC, Denver, 0.35, startC, San Francisco, 0.2
+USA West, startN, NULL, 0, startN, NULL, 0, startN, NULL, 0.15, startN, NULL, 0.1, TX, Austin, 0
+USA West, TX, Houston, 0.2, TX, Austin, 0.25, TX, Austin, 0.35, TX, Austin, 0.1, WA, Seattle, 0
+USA West, WA, Seattle, 0.25, WA, Olympia, 0.05, WA, Seattle, 0, WA, Seattle, 0.25, NULL, NULL, 0

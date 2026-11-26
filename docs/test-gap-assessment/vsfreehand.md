@@ -197,10 +197,15 @@
 - 两个 spec 合计脚本路径约 79%，快速路径至少出现过约 21%（45/213）。
 - "两条路径都走过"是 G3 最直接的证据：同一组件在同一用例内会在两条路径间切换，现有 PNG 无法区分。日志不带书签信息，哪次调用对应哪个书签未归因；213 大于静态 182，说明归属有重叠，数字只看比例。
 
-**G1 现状：** `Freehand_Spec` 与 `FreeExecution_Spec` 共 63 个用例已加 `executeVS` + `compareData(null)`（含 2 个原有先例；`Convert_Spec` 没改）。已提交的 TXT 基线只覆盖 4 个试点和 2 个原有用例，其余 57 个缺基线。
-- 生成基线：`./mvnw clean -pl vsothers`，再 `./mvnw test -pl vsothers -Pvsfreehand -Dtest=Freehand_Spec,FreeExecution_Spec -Dupdate.baseline=true`，用 `git diff`/`git status` 审阅后提交；基线是回归基线，必须人工核对。GitHub 工作流没有传 `update.baseline` 的入口。
+**G1 现状（2026-11-26）：** 63 个用例已加 `executeVS` + `compareData(null)`（`Convert_Spec` 没改）。缺的 57 个用例共 209 个 TXT 基线已在本机生成，放在 `vsothers/src/test/resources/expectData/vsfreehand/`，与已提交的 21 个共 230 个；本机连续跑两遍逐字一致。
+- 抽查（独立重算，数据内嵌在资产里的用例）：`Freehand_manual`、`Rank4`、`FScript3` 共 5 个文件数值全部一致；其余基线只验证了稳定性，数值未独立核对。`Rank4/Crosstab1` 中 NJ、PA、FL 的 Sum(customer_id) 并列为 16，基线取 FL、NJ，并列时选谁没有规则，换版本可能变。
+- 生成基线：`update.baseline` 只在 `DcViewsheetTest` 实现，这两个 spec 不识别。先跑一遍两个 spec（数据库可达时约 5 分钟，会因缺基线和 PNG 像素差异失败），再把 `vsothers/target/test-classes/exportData/vsfreehand/<Spec>/<用例>/*.txt` 拷到 `src/test/resources/expectData/vsfreehand/` 对应位置（只拷缺的），审阅后提交。数据库必须可达：hosts 里 `mysql_server`、`db2_server` 等要指向能连的机器，否则每个用例卡十几分钟。PNG 本机有像素差异，CI 失败后再替换。
 - 有图表的 vs，`executeVS` 还会导出 `ChartN.png/txt`，`compareImage(null)` 会把图表 PNG 纳入而失败，应写 `compareImage([vs 名] as String[])`；不要在本机用 `-Dupdate.baseline.png=true` 生成图表 PNG 基线。
 - 待作者确认：`FSTopNTotal/Crosstab1` 的 `Total` 行是 2651，显示的三个州合计 2043，因为单元格公式 `sum(data['customer_id@reseller:$reseller'])` 不受州 TopN 限定。若意图是只汇总显示的州，改公式，基线随之更新。
+
+### 计算字段（G20）
+
+Java 已覆盖（`CalcTableVSAQueryPathAgreementTest` CF1–CF9，快速/脚本两路径逐格对照）；已报 #82231、#82412。聚合型计算字段在 Freehand 里怎么用不清楚，没覆盖。datatest 只补 Java 做不到的转换路径（交叉表带计算字段转 Freehand，走 `VSCalcTest.checkConvert`），建议 3 个 vs：计算字段作字符串分组、日期计算字段按月分组、`WeightedAverage` 权重为计算字段（后者等 #82231 修复）。资产要在加载 `vsfreehand-storage.zip` 的栈里造，再整包导出替换 zip。
 
 ## 6. 局限与待确认
 

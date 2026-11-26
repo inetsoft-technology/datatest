@@ -109,3 +109,9 @@ G1、G2/G21（`checkConvert` 的 `allowedDiff`）、G6–G9、G15–G17、Dashbo
 - 打开"空白补零"后：Sum、Average、Weighted Average、字符串列的 Sum/Average 变 0，Max/Min 仍为空。
 - 不一致点：全 null 数值列的 Sum 为空而字符串列的 Sum 为 0；字符串列 Sum 为 0 而 Average 为空；开关打开后 Max/Min 不补 0。
 - 新建 vs 验证这些值之前要先有开发的预期，否则基线会固化当前不一致。
+
+## 10. 补充（2026-11-26，产品仓库 community PR #8904）
+
+- 新增 `CalcTableVSAQueryPathAgreementTest`（58 个用例，2 个 `@Disabled`）：同一布局分别走快速路径（临时交叉表）和脚本路径（加一个常量公式格强制），逐格对照。覆盖汇总函数、Top N（含 Others、总计）、日期分组、合并/跨行/分页、命名格键值对、明细计算字段。`RuntimeCalcTableLensTest` 补 2 个 `IndexMap` 用例。
+- 发现：#82397（`@Disabled`）、#82404、#82412 为 bug，#82231、#82408、#82417（`@Disabled`）为开发问题。#82404、#82412 已在 main 修复（#8894、#8899），对应用例已启用并通过；#82231、#82408 在测试里以"已知失败/已知差异"固定，修复后要一并去掉。
+- 没覆盖：聚合型计算字段（Freehand 把表达式当单元格公式执行，写法不明）。

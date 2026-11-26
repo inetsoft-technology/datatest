@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 4)
+state, city, company_name, state, city - company_name
+NJ, Camden, Scheggie Services, NJ,  Camden - Scheggie Services
+NJ, Middletown, Daycare One, NJ,  Middletown - Daycare One
+NJ, New Brunswick, Rutgers Bank, NJ,  New Brunswick - Rutgers Bank
+NJ, Newark, Software Specialists, NJ,  Newark - Software Specialists
+NJ, Plainfield, Pharma Research, NJ,  Plainfield - Pharma Research
+NJ, Wayne, Interstate Shop, NJ,  Wayne - Interstate Shop
+1248 Broadway, NULL, 360, 3%
+17 Main St., NULL, 812, 6%
+23 Tasaga Ave., NULL, 484, 4%
+283 Davidson Dr., NULL, 525, 4%
+32 West Boyd Ave., NULL, 378, 3%
+389 York St., NULL, 616, 5%
+460 Newcomb Dr., NULL, 462, 4%
+563 Uptown Dr., NULL, 414, 3%
+987 First Ave., NULL, 468, 4%
+Gtotal, 12762, NULL, 35%

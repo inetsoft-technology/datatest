@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 21)
+paid, 2004, 2004, 2004, 2004, 2004, 2004, 2004, 2004, 2004, 2004, 2002, 2002, 2002, 2002, 2002, 2002, 2002, 2002, 2002, 2002
+NULL, 3rd, 3rd, 3rd, g_20041st, g_20041st, g_20041st, Others , Others , Others , Others , g_20021st, g_20021st, g_20021st, 2nd, 2nd, 2nd, Others , Others , Others , Others 
+NULL, Jul, Aug, Sep, Jan, Feb, Mar, Jun, May, Apr, Others , Jan, Feb, Mar, Jun, May, Apr, Jul, Sep, Oct, Others 
+false, 419, 468, 597, 502, 501, 515, 356, 599, 524, 1034, 540, 606, 516, 422, 528, 630, 521, 563, 460, 1154
+true, 54, 69, 38, 46, 71, 92, 109, 52, 13, 75, NULL, 94, 60, 31, 67, 65, 121, 3, 85, 162

@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 4)
+state, false, NULL, true
+AK, 146, NULL, NULL
+CA, 32, NULL, 168
+FL, 66, NULL, NULL
+I, NULL, NULL, 81
+IL, NULL, NULL, 48
+NJ, 68, NULL, NULL
+NY, 164, 2, 70
+OH, 44, NULL, NULL
+PA, 84, NULL, 19
+TX, NULL, NULL, 50

@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 3)
+NULL, NULL, id_from script
+2020, 34, 34
+2021, 19, 19
+2022, 23, 23
+2023, 35, 35
+2024, 14, 14
+Total, 125, 125

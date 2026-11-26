@@ -1,0 +1,43 @@
+The data size(row x col) is:(42 x 5)
+NULL, NULL, NULL, NULL, NULL
+NULL, NULL, 2023-03-31, NULL, NULL
+NULL, Aggregato, BONIS, DETERIORATE, NULL
+NULL, Totale Finanziamenti Banche Centrali, 26,871,121 €, 0 €, NULL
+NULL, Finanziamenti vs. Banche - Riserva obbligatoria, 26,871,121 €, NULL, NULL
+NULL, Finanziamenti vs. Banche - Depositi vincolati, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Pronti termine termine attivi, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Altri finanziamenti, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Sofferenze non ripartite, NULL, NULL, NULL
+NULL, Totale Finanziamenti Banche, 9,566,171 €, 0 €, NULL
+NULL, Finanziamenti vs. Banche - Conti correnti e depositi, 9,562,461 €, 0 €, NULL
+NULL, Finanziamenti vs. Banche - Pronti termine termine attivi, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Mutui, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Leasing finanziario, NULL, NULL, NULL
+NULL, Finanziamenti vs. Banche - Altri finanziamenti, 3,710 €, NULL, NULL
+NULL, Finanziamenti vs. Banche - Sofferenze non ripartite, NULL, NULL, NULL
+NULL, Totale Finanziamenti Clientela, 2,133,175,648 €, 101,956,867 €, NULL
+NULL, Finanziamenti vs. Clientela -  Conti correnti e depositi, 267,846,081 €, 46,012,610 €, NULL
+NULL, Finanziamenti vs. Clientela -  Pronti contro termine attivi, NULL, NULL, NULL
+NULL, Finanziamenti vs. Clientela -  Mutui, 1,411,771,707 €, 43,507,854 €, NULL
+NULL,  -  Mutui - su immobili residenziali, 483,499,904 €, 11,640,045 €, NULL
+NULL,  -  Mutui - altri, 928,271,803 €, 31,867,809 €, NULL
+NULL, Finanziamenti vs. Clientela -  Leasing finanziario, 0 €, 0 €, NULL
+NULL,  -  Leasing finanziario - crediti per contratti attivi -strumentale, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti attivi -immobiliare, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti attivi -mobiliare -autovetture, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti attivi -mobiliare -aeromobili e navi, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti attivi -mobiliare -altro, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti non attivi, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - crediti per contratti non crediti per canoni scaduti, NULL, NULL, NULL
+NULL,  -  Leasing finanziario - altri crediti, NULL, NULL, NULL
+NULL, Finanziamenti vs. Clientela -  Operazioni di factoring, 0 €, 0 €, NULL
+NULL,  -  Operazioni di factoring - con notifica al debitore, NULL, NULL, NULL
+NULL,  -  Operazioni di factoring - senza notifica al debitore, NULL, NULL, NULL
+NULL, Finanziamenti vs. Clientela -  Prestiti personali e cessioni del quinto, 264,891,119 €, 5,336,481 €, NULL
+NULL, Finanziamenti vs. Clientela -  Carte di credito, 954,626 €, 7,291 €, NULL
+NULL,  -  Carte di credito - revolving, 954,626 €, 7,291 €, NULL
+NULL,  -  Carte di credito - altre, NULL, NULL, NULL
+NULL, Finanziamenti vs. Clientela -  Altri finanziamenti, 187,712,115 €, 7,092,631 €, NULL
+NULL, Finanziamenti vs. Clientela -  Sofferenze non ripartite, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, NULL

@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 3)
+NULL, 1, 0
+AZ, NULL, 1
+CA, 2, 2
+CO, 1, 1
+CT, NULL, 1
+FL, NULL, 1
+IL, 1, NULL
+MA, 2, 2
+MD, NULL, 3
+NJ, 1, 5
+NV, NULL, 1
+NY, NULL, 4
+PA, NULL, 1
+TX, NULL, 4
+WA, 1, 1

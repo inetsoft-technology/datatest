@@ -1,0 +1,39 @@
+The data size(row x col) is:(38 x 4)
+0, NULL, 1, NULL
+AZ, 20, CA, 22
+Tucson, 20, Los Angeles, 13
+NULL, NULL, San Francisco, 9
+CA, 37, CO, 4
+Albany, 16, Boulder, 4
+Los Angeles, 21, NULL, NULL
+CO, 8, IL, 10
+Denver, 8, Chicago, 10
+CT, 6, MA, 57
+Hartford, 6, Boston, 23
+NULL, NULL, Cambridge, 34
+FL, 12, NJ, 19
+Orlando, 12, Newark, 19
+MA, 48, WA, 27
+Boston, 18, Seattle, 27
+Springfield, 30, NULL, NULL
+MD, 52, NULL, NULL
+Baltimore, 38, NULL, NULL
+Rockville, 14, NULL, NULL
+NJ, 78, NULL, NULL
+Camden, 15, NULL, NULL
+Middletown, 2, NULL, NULL
+New Brunswick, 25, NULL, NULL
+Plainfield, 35, NULL, NULL
+Wayne, 1, NULL, NULL
+NV, 32, NULL, NULL
+Las Vegas, 32, NULL, NULL
+NY, 51, NULL, NULL
+New York, 51, NULL, NULL
+PA, 28, NULL, NULL
+York, 28, NULL, NULL
+TX, 90, NULL, NULL
+Austin, 11, NULL, NULL
+Dallas, 57, NULL, NULL
+Houston, 22, NULL, NULL
+WA, 29, NULL, NULL
+Olympia, 29, NULL, NULL

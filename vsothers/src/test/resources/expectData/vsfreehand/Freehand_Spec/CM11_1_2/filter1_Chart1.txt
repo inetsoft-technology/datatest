@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 8)
+Customer:Region, Customer:State, Order:Num, Min_Order:Num, Q25_Order:Num, Medium_Order:Num, Q75_Order:Num, Max_Order:Num
+USA West, AZ, NULL, 12003, 12125, 12281, 12533.5, 12695
+USA West, CA, NULL, 12020, 12170.5, 12356, 12505, 12665

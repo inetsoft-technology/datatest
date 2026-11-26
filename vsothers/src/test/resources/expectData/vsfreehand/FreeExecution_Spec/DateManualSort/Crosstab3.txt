@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 29)
+paid, 11, 11, 11, 11, 11, 11, NULL, 8, 8, 8, 8, NULL, 5, 5, 5, 5, NULL, 1, 1, 1, 1, NULL, Others , Others , Others , Others , Others , NULL
+NULL, g_M15, g_M15, 30, 35, 59, 59, Total, 0, 2, 15, 47, Total, 23, 27, 45, 55, Total, 5, 7, 15, 25, Total, 1, 10, 10, 17, 24, Total
+NULL, g_S17, 42, 30, 25, 1, 59, NULL, 0, 59, 14, 23, NULL, 23, 43, 5, 12, NULL, 15, 10, 23, 36, NULL, 1, 15, 55, 27, 30, NULL
+false, 7, 57, 20, 7, 18, 99, 502, 71, 34, 168, 28, 301, 86, 28, 186, 118, 478, NULL, 29, 24, 49, 231, 137, 57, 77, 52, 47, 1272
+true, NULL, 23, NULL, NULL, NULL, NULL, 43, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 19, 12, 68, 34, NULL, NULL, 29, 88, NULL, NULL, NULL, NULL, NULL, 227

@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 10)
+Customer:Region, Customer:State, 2020, 2020, 2021, 2021, 2022, 2022, 2023, 2023
+NULL, NULL, Sum(Order:Paid), Sum(Order:Discount), Sum(Order:Paid), Sum(Order:Discount), Sum(Order:Paid), Sum(Order:Discount), Sum(Order:Paid), Sum(Order:Discount)
+USA East, CT, 4, 0%, 1, 0%, 4, 0%, 2, 25%
+USA East, FL, 4, 30%, 7, 0%, 1, 0%, 5, 5%
+USA East, MA, 20, 20%, 16, 0%, 17, 5%, 20, 25%
+USA East, MD, 7, 0%, 14, 0%, 15, 10%, 11, 25%
+USA East, NJ, 14, 0%, 41, 80%, 30, 105%, 26, 70%
+USA East, NY, 12, 0%, 23, 0%, 26, 65%, 16, 105%
+USA East, PA, 7, 5%, 6, 0%, 4, 0%, 3, 10%
+USA West, AZ, 5, 0%, 7, 0%, 2, 25%, 6, 45%
+USA West, CA, 17, 10%, 20, 10%, 24, 60%, 17, 15%
+USA West, CO, 5, 0%, 8, 0%, 8, 0%, 8, 30%
+USA West, IL, 3, 0%, 3, 20%, 6, 0%, 3, 0%
+USA West, NV, 2, 0%, 5, 0%, 5, 15%, 5, 10%
+USA West, TX, 17, 30%, 15, 15%, 20, 35%, 23, 10%
+USA West, WA, 10, 30%, 3, 0%, 9, 0%, 13, 25%

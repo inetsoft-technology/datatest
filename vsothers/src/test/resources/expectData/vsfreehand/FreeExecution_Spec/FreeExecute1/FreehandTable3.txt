@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 8)
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, count1
+NULL, San Francisco, San Francisco, San Francisco, San Francisco, San Francisco, San Francisco, 6
+00, 01:00, 01:25, 01:50, NULL, NULL, NULL, count1
+NULL, Tucson, San Francisco, Tucson, NULL, NULL, NULL, 3
+02, 02:00, 02:25, 02:50, 03:25, 03:50, NULL, count1
+NULL, San Francisco, Tucson, Tucson, Hartford, Tucson, NULL, 5
+04, 04:00, 04:25, 04:50, 05:00, 05:25, 05:50, count1
+NULL, Tucson, Tucson, Chicago, Tucson, Tucson, Los Angeles, 6
+06, 06:00, 06:25, 07:00, 07:25, NULL, NULL, count1
+NULL, Los Angeles, Los Angeles, Los Angeles, Los Angeles, NULL, NULL, 4
+08, 08:00, 08:25, 09:00, 09:25, 09:50, NULL, count1
+NULL, Tucson, Hartford, Tucson, Tucson, Denver, NULL, 5
+10, 10:00, 10:25, 11:00, 11:25, 11:50, NULL, count1
+NULL, San Francisco, San Francisco, Tucson, Tucson, Tucson, NULL, 5
+12, 12:25, 12:50, NULL, NULL, NULL, NULL, count1
+NULL, Camden, Los Angeles, NULL, NULL, NULL, NULL, 2
+count2, 7, 7, 6, 5, 4, 1, NULL

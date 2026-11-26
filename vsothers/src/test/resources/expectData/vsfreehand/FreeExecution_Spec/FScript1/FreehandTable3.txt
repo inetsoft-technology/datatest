@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 1)
+Daycare One
+Interstate Shop
+Pharma Research
+Rutgers Bank
+Scheggie Services
+Software Specialists
+Interstate Shop
+Software Specialists
+AZ
+CO
+MD
+NY
+TX

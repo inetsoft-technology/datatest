@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+2020, NULL, NULL
+Others, 13, 31839
+NULL, Total, 31839
+Total, NULL, 31839

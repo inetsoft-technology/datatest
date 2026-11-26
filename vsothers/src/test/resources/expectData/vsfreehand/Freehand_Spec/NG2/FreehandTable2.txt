@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+2000, NULL, 2001, NULL, 2006, NULL
+50-80, 74, 50-80, 658, 50-80, 294
+<50, 448, <50, 2615, 80-100, 154
+NULL, NULL, >=100, 129, <50, 7253
+NULL, NULL, NULL, NULL, >=100, 49

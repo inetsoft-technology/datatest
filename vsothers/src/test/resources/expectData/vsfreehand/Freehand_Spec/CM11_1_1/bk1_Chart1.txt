@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 2)
+Customer:Region, Customer:State
+USA East, CT
+USA East, FL
+USA East, MA
+USA East, MD
+USA East, NJ
+USA East, NY
+USA East, PA
+USA West, AZ
+USA West, CA
+USA West, CO
+USA West, IL
+USA West, NV
+USA West, TX
+USA West, WA

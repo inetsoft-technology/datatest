@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+2096, NULL, NULL
+FL, 240, 11%
+IL, 170, 8%
+MA, 2062, 98%
+MD, 978, 47%
+PA, 616, 29%
+startAC, NULL, 0%
+startN, NULL, 0%
+TX, 1876, 90%
+WA, 1190, 57%

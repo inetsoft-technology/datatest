@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+USA West, NULL, NULL
+USA West, Sum(Paid), 5
+NULL, Sum(Discount), 0

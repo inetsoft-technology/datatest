@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+false, NULL, true, NULL
+13-23, 16%, 13-23, 84%
+3-7, NULL, 3-7, 100%
+7-13, 84%, 7-13, 16%
+greater 23, 27%, greater 23, 73%
+NULL, NULL, lessthan 3, 100%

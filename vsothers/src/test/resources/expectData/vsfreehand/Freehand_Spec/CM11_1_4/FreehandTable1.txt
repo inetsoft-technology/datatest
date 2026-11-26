@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 5)
+NULL, NULL, NULL, NULL, NULL
+2020, CT_test, Personal, 0, $11,656.00
+2020, PA_test, Personal, 0.5, $13,718.00
+2020, AZ_test, Hardware, 0, $23,600.00
+2020, Others, Games, 6.4, $334,312.00
+2023, TX_test, Hardware, 1, $84,542.00
+2023, WA_test, Hardware, 1, $32,691.00
+2023, AZ_test, Games, 3.8, $14,471.00
+2023, Others, Games, 20.4, $331,715.00
+2021, CA_test, Hardware, 0.2, $41,552.00
+2021, MA_test, Hardware, 0, $36,134.00
+2021, NJ_test, Hardware, 5.2, $106,823.00
+2021, Others, Games, 1.85, $261,646.00
+2022, CT_test, Personal, 0, $3,573.00
+2022, FL_test, Personal, 0, $3,972.00
+2022, WA_test, Personal, 0, $7,763.00
+2022, Others, Hardware, 16.1, $406,451.00

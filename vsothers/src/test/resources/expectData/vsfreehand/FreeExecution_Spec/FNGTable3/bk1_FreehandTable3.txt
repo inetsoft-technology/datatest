@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 4)
+fromRB, NULL, true, NULL
+CA, 22%, AZ, 4%
+CO, 3%, CA, 8%
+IL, 8%, CO, 2%
+MA, 34%, fromCB, 22%
+startN, 18%, MA, 9%
+WA, 15%, MD, 9%
+NULL, 0%, PA, 5%
+NULL, 0%, startN, 32%
+NULL, 0%, WA, 8%
+RowTotal, 20%, RowTotal, 80%
+2022, NULL, 2022, NULL
+2020, NULL, 2021, NULL

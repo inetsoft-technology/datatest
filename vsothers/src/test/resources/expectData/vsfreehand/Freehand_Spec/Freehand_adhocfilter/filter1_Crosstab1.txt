@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+Employee, Count(Order Date)
+Annie, 96
+Eric, 90
+Robert, 70
+Sue, 75

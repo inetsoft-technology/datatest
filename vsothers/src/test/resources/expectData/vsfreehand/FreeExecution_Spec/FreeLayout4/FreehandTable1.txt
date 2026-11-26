@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 12)
+ndatetime -> reseller, NULL, ndatetime -> reseller, NULL, ndatetime -> reseller, NULL, ndatetime -> reseller, NULL, ndatetime -> reseller, NULL, ndatetime -> reseller, NULL
+2020, NULL, 2020, NULL, 2022, NULL, 2022, NULL, 2024, NULL, 2024, NULL
+2020 1st, 1349.65, 2020 1st, 1349.65, 2021 1st, 1303.95, 2021 1st, 1303.95, 2023 1st, 1387.05, 2023 1st, 1387.05
+2020 3rd, 1577.8, 2020 3rd, 1577.8, 2021 3rd, 1321.5, 2021 3rd, 1321.5, 2023 3rd, 891.4, 2023 3rd, 891.4
+2021 1st, 637, 2021 1st, 637, 2022 1st, 1934.05, 2022 1st, 1934.05, NULL, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, 2022 3rd, 2052.8, 2022 3rd, 2052.8, NULL, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, 2023 1st, 544.5, 2023 1st, 544.5, NULL, NULL, NULL, NULL
+false, NULL, true, NULL, false, NULL, true, NULL, false, NULL, true, NULL
+IL, 54, euqaltoPA, 176.05, IL, 134.2, euqaltoPA, 325.1, IL, 27, euqaltoPA, 59
+MA, 303.1, FL, 122.3, MA, 482.05, FL, 65.05, MA, 120.2, FL, 40
+startAorC, 192.1, MA, 282.1, startAorC, 313, MA, 449.05, startAorC, 163.3, MA, 226
+startN, 82.2, MD, 241, startN, 308.5, MD, 579.2, startN, 82.25, MD, 100.15
+WA, 214, startAorC, 365, WA, 151, startAorC, 937.2, WA, 31, startAorC, 195.6
+NULL, NULL, startN, 861, NULL, NULL, startN, 1907.7, NULL, NULL, startN, 589.85
+NULL, NULL, TX, 444.3, NULL, NULL, TX, 1079.5, NULL, NULL, TX, 448.1
+NULL, NULL, WA, 227.3, NULL, NULL, WA, 425.25, NULL, NULL, WA, 196
+seid1-seid2, 2719.05, seid1-seid2, 845.4, seid1-seid2, 5768.05, seid1-seid2, 1388.75, seid1-seid2, 1854.7, seid1-seid2, 423.75

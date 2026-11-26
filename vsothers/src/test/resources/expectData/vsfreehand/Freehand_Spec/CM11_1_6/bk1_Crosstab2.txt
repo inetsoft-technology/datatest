@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 5)
+range, NULL, 2nd, 2nd, Grand Total
+NULL, NULL, Eric, Total, NULL
+1000-5000, NthSmallest(Total, 1), 1506, 1506, 1506
+1000-5000, Count(Order Number), 13, 13, 13
+5000-10000, NthSmallest(Total, 1), 5463, 5463, 5463
+5000-10000, Count(Order Number), 14, 14, 14
+<=1000, NthSmallest(Total, 1), 855, 855, 855
+<=1000, Count(Order Number), 1, 1, 1
+>10000, NthSmallest(Total, 1), 11749, 11749, 11749
+>10000, Count(Order Number), 33, 33, 33
+Grand Total, NthSmallest(Total, 1), 855, 855, 855
+Grand Total, Count(Order Number), 61, 61, 61

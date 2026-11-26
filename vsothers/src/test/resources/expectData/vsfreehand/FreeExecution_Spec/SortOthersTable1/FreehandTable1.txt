@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 9)
+NULL, Others, NULL, 2y 1st, NULL, 3y 1st, NULL, 4y 1st, NULL
+g_CA&WA, 2202, 422, 29, 3, 50, 6, 132, 20
+NJ, 1938, 177, 19, 2, 90, 5, 49, 5
+MA, 1930, 123, 68, 3, 23, 2, 41, 2
+TX, 1771, 280, 48, 7, 26, 3, 31, 3
+Others , 4064, 630, 104, 21, 83, 16, 64, 11

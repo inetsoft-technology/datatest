@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+Employee, Max(Order Date)
+Annie, 2023-12-26 00:00:00
+Eric, 2023-12-25 00:00:00
+Robert, 2023-12-19 00:00:00
+Sue, 2023-12-30 00:00:00

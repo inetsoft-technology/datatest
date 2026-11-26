@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 6)
+state, 1997, 1998, 1999, 2000, Grand Total
+NY, 2, 54, 89, 91, 236
+CA, 0, 18, 62, 120, 200
+AK, 0, 5, 56, 85, 146
+Others, 5, 129, 140, 186, 460
+Total, NULL, NULL, NULL, NULL, 1042

@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 3)
+Employee, QuarterOfYear(Order Date), range
+Eric, 1, 1000-5000
+Eric, 1, 5000-10000
+Eric, 1, <=1000
+Eric, 1, >10000
+Eric, 2, 1000-5000
+Eric, 2, 5000-10000
+Eric, 2, <=1000
+Eric, 2, >10000
+Eric, 3, 1000-5000
+Eric, 3, 5000-10000
+Eric, 3, <=1000
+Eric, 3, >10000
+Eric, 4, 1000-5000
+Eric, 4, 5000-10000
+Eric, 4, <=1000
+Eric, 4, >10000

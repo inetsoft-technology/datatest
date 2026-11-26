@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+NULL, NULL, NULL
+false, NY, 52
+false, Others , 61
+true, I, 36
+true, Others , 57

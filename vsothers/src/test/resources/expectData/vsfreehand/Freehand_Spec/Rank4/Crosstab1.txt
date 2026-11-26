@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 4)
+reseller, state, 1998, 1998
+NULL, NULL, Sum(customer_id), Sum(price)
+false, NY, 52, 901
+false, FL, 16, 129
+false, NJ, 16, 673
+false, Others, 29, 3995
+true, I, 36, 838
+true, TX, 20, 373
+true, PA, 19, 248
+true, Others, 18, 1175

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+NULL, NULL
+MA, 34
+NV, 32
+PA, 28
+Others , 14

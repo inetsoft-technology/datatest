@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 4)
+1998, NULL, 2000, NULL
+I_t, 9, IL_t, 6
+IL_t, 6, NJ_t, 7
+NJ_t, 7, PA_t, 4
+OH_t, 11, TX_t, 3
+Others , 20, Others , 15
+total, 534, total, 504

@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 6)
+18, NULL, Northwest Outfitters, NULL, NULL, NULL
+4, 0.249, NULL, text1, 2,060%, 12 Woodpark Ave.
+NULL, NULL, NULL, 12762, NULL, NULL
+0.994, NULL, NULL, NULL, NULL, NULL
+NULL, NULL, NULL, 700, NULL, NULL

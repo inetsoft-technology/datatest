@@ -1,0 +1,29 @@
+The data size(row x col) is:(28 x 6)
+AZ, Tucson, Hartford, 405.7, NULL, -405.7
+CA, Albany, Hartford, 298.25, NULL, -298.25
+CA, Los Angeles, NULL, 788.6, 298.25, -490.35
+CA, San Francisco, NULL, 287.1, 788.6, 501.5
+CO, Boulder, Hartford, 83.15, NULL, -83.15
+CO, Denver, NULL, 220.15, 83.15, -137
+CT, Hartford, Hartford, 83.25, NULL, -83.25
+FL, Orlando, Hartford, 227.35, NULL, -227.35
+IL, Chicago, Hartford, 215.2, NULL, -215.2
+MA, Boston, Hartford, 893.25, NULL, -893.25
+MA, Cambridge, NULL, 463.1, 893.25, 430.15
+MA, Springfield, NULL, 506.15, 463.1, -43.05
+MD, Baltimore, Hartford, 625.35, NULL, -625.35
+MD, Rockville, NULL, 295, 625.35, 330.35
+NJ, Camden, Hartford, 265.1, NULL, -265.1
+NJ, Middletown, NULL, 64.5, 265.1, 200.6
+NJ, New Brunswick, NULL, 531.3, 64.5, -466.8
+NJ, Newark, NULL, 472.95, 531.3, 58.35
+NJ, Plainfield, NULL, 730.35, 472.95, -257.4
+NJ, Wayne, NULL, 32.35, 730.35, 698
+NV, Las Vegas, Hartford, 638.25, NULL, -638.25
+NY, New York, Hartford, 1096.7, NULL, -1096.7
+PA, York, Hartford, 560.15, NULL, -560.15
+TX, Austin, Hartford, 302.3, NULL, -302.3
+TX, Dallas, NULL, 1132.25, 302.3, -829.95
+TX, Houston, NULL, 537.35, 1132.25, 594.9
+WA, Olympia, Hartford, 848.55, NULL, -848.55
+WA, Seattle, NULL, 396, 848.55, 452.55

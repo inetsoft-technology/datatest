@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+Year(Order Date), Count(Employee)
+2020, 145
+2021, 184
+2022, 184
+2023, 187
