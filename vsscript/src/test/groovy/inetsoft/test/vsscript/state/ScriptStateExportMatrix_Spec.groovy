@@ -51,11 +51,9 @@ class ScriptStateExportMatrix_Spec extends Specification {
 
    /**
     * component types where a failing script already makes the refresh throw, so there is nothing to export (the viewsheet cannot be refreshed).
-    * SelectionTree: SelectionTreeVSAQuery.refreshViewSelectionValue0 runs the script outside the paths that swallow it (#82107).
+    * Empty: the SelectionTree was the last entry (#82107, fixed by stylebi#8681). A failure that comes back must be fixed, not listed.
     */
-   static final Map<String, String> KNOWN_REFRESH_FAILURES = [
-      'SelectionTreeVSAssembly': 'ScriptException'
-   ]
+   static final Map<String, String> KNOWN_REFRESH_FAILURES = [:]
 
    /**
     * component type -> formats whose document has no warning text although the export works (a PNG has no text to read and is not checked). Not traced:
