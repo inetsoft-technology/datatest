@@ -1,6 +1,8 @@
 package inetsoft.test.mv.cases.vpm
 
+import inetsoft.mv.MVManager
 import inetsoft.test.mv.MVTest
+import inetsoft.uql.util.Identity
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Issue
@@ -191,6 +193,12 @@ class VPM_Spec extends Specification {
       [user0, free].each { mvtest.executeVSWithoutMV(null, null, false, false, it) }
       mvtest.createMV(true, false)
       def defs = MVTest.getMVDefInfo()
+      // the identity types each MV on the table is built for (the free user's hit names the
+      // table only, so this says which MV it read)
+      MVManager manager = MVManager.getManager()
+      List<List<Integer>> builtFor = mvtest.materializedViewNames().collect { manager.get(it) }
+         .findAll { it != null && it.getMVTable() == table.split(/\|/)[0] }
+         .collect { it.getUsers()*.getType() }
       mvtest.executeVS(null, null, false, false, user0)
       def restrictedHits = mvtest.takeMVHits()
       mvtest.executeVS(null, null, false, false, free)
@@ -201,6 +209,8 @@ class VPM_Spec extends Specification {
       then:
       verifyAll {
          defs.contains(table)
+         builtFor.size() > 0
+         builtFor.every { types -> types.size() > 0 && types.every { it == builtType } }
          restrictedHits == []
          freeHits == [table]
          restricted.size() > 0
@@ -210,10 +220,10 @@ class VPM_Spec extends Specification {
       }
 
       where:
-      name         | granted | freeUser | table             | header       | value
-      'user-group' | 'group' | 'user1'  | 'products1|TopMV' | 'product_id' | '1'
-      'group-role' | 'role'  | 'user2'  | 'orders1|TopMV'   | 'discount'   | '0.05'
-      'user-role'  | 'role'  | 'user2'  | 'products1|TopMV' | 'product_id' | '1'
+      name         | granted | builtType      | freeUser | table             | header       | value
+      'user-group' | 'group' | Identity.GROUP | 'user1'  | 'products1|TopMV' | 'product_id' | '1'
+      'group-role' | 'role'  | Identity.ROLE  | 'user2'  | 'orders1|TopMV'   | 'discount'   | '0.05'
+      'user-role'  | 'role'  | Identity.ROLE  | 'user2'  | 'products1|TopMV' | 'product_id' | '1'
    }
 
    /** The values of a column of a table the last executeVS exported, found by its header. */
