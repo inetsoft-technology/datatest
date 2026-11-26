@@ -82,7 +82,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | `viewsheetInfo mvOnDemand` | true 598、false 206 | 428 / 181 | 各 profile | 有 |
 | 选择组件带度量（阻止瘦 MV，`VSMVAnalyzer.java:1204`-`:1220`） | 选择列表 10、选择树 5 | 8、5 | others 12、submv 1 | 有 |
 | 选择组件数据源是别的组件 | 时间滑块 5、日历 1 | 4、1 | others | 有（含义未逐项核对） |
-| adhoc 选择组件（`MVTableMetaData.java:124`-`:187`：列不在关联 MV 里时退回完整 MV；MV 也查不了时提示消息、忽略这个筛选，#53475） | viewsheet 本身 1；书签状态里 48 个节点、21 个 viewsheet | 书签所在 21 个全部被引用（4 个在 `@Ignore` 的 `TabularSource_Spec`） | others | 已核对（2026-11-26）：17 个用例里 16 个跑到 adhoc 书签，`CalcField_Spec.calcfield on crosstab` 补跑 `filter` 书签（4 个基线与不用 MV 逐字节相同）；只比 golden 的 8 个补了 `compareWithoutMV`，已知差异的组件按组件排除（`MVTest.compareWithoutMVExcept`，原因写在用例注释）：导出的图表多出计算字段用的聚合列、`First()` 依赖行序、#54404，以及滑块标签格式（数值 `1000`/`1,000`、时间 `01:01`/`1:01 AM`、按月 `3/01/2017`/`2017 Mar`，修复前就有，#82320 只修了年级别日期分组列）；`incremental adhoc filter` 有 MV 删除条件，不比较。命中断言都只看基表或关联 MV，退回完整 MV 和"忽略筛选"的提示消息没有断言（`MVTest` 不收集用户消息） |
+| adhoc 选择组件（`MVTableMetaData.java:124`-`:187`：列不在关联 MV 里时退回完整 MV；MV 也查不了时提示消息、忽略这个筛选，#53475） | viewsheet 本身 1；书签状态里 48 个节点、21 个 viewsheet | 书签所在 21 个全部被引用（4 个在 `@Ignore` 的 `TabularSource_Spec`） | others | 已核对（2026-11-26）：17 个用例里 16 个跑到 adhoc 书签，`CalcField_Spec.calcfield on crosstab` 补跑 `filter` 书签（4 个基线与不用 MV 逐字节相同）；只比 golden 的 8 个补了 `compareWithoutMV`，已知差异的组件按组件排除（`MVTest.compareWithoutMVExcept`，原因写在用例注释）：导出的图表多出计算字段用的聚合列、`First()` 依赖行序、#54404，以及滑块标签格式（数值 `1000`/`1,000`、时间 `01:01`/`1:01 AM`、按月 `3/01/2017`/`2017 Mar`，修复前就有，#82320 只修了年级别日期分组列，已提 #82398 请开发决定）；`incremental adhoc filter` 有 MV 删除条件，不比较。命中断言都只看基表或关联 MV，退回完整 MV 和"忽略筛选"的提示消息没有断言（`MVTest` 不收集用户消息） |
 | 时间滑块：单值 / 复合 | 单值 78（日期 11、时间戳 12、时间 2、数值 57，可重叠），复合 14 | 52、12 | others 为主，topmv、submv 各几个 | 有；`rangeType=16` 的日期 1 个没被引用 |
 | 时间滑块对数刻度（`RangeSelectionTransformer.java:146`-`:150`） | 1 | 1 | others | 只有 1 个 |
 | 日历 `daySelection`、`type`/`mode` | true 3、false 21；只有 type=1 的 mode=1、2 | 2、20 | others 为主，topmv 5、submv 1、vpm 1 | 有 |
@@ -222,7 +222,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 - 13.8 对照只查了 `epic-test-coverage` 分支，没有编译运行；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是本次所改。
 - `MVViewsheetOptions_Spec`、`NotTransform_Spec` 的对照用例在仓库里改资产、`cleanup` 还原；运行被强行中断时改过的资产会留下，下次运行前要重新解压 `mvStorage`（`rm -rf mv/target`）并还原 H2 文件。
 - T14 的用例除 #79854 的模拟反向检查外，都没有在修复前的产品上运行过，只在当前产品上通过。
-- **需要开发回答的问题：** #82323（Feedback：旋转表上混合类型列的选择列表，用 MV 与不用 MV 的值顺序和选择状态不同，算这张单还是另提，T17）；#82322（升序排序时 NULL 用 MV 排在前、不用 MV 由 DB2 排在后，是否设计如此，T17）；#82257（整数列的 Concat 用 MV 时值带 `.0`，T16）；#82210（`mv.union.moveUp=true` 时只在一侧选值、另一侧的行全部丢失，已知限制还是 bug，T6 (5)）。其余都已有答复：`mv.outer.moveUp=true` 的结果差异是已知限制（#81658，第 2 条）；cube 绑定空指针 #81659 已修（第 6 条）；#81682 已修（G14）；`RankingConditionTest` 不改产品代码即可启用（第 4 条）；可以请开发给 `MVTableMetaData` 的关联 MV 加公开 getter（第 3 条，不是前提）。
+- **需要开发回答的问题：** #82398（数值、时间、按月的滑块标签用 MV 与不用 MV 格式不同，是否要一致、以哪种为准）；#82323（Feedback：旋转表上混合类型列的选择列表，用 MV 与不用 MV 的值顺序和选择状态不同，算这张单还是另提，T17）；#82322（升序排序时 NULL 用 MV 排在前、不用 MV 由 DB2 排在后，是否设计如此，T17）；#82257（整数列的 Concat 用 MV 时值带 `.0`，T16）；#82210（`mv.union.moveUp=true` 时只在一侧选值、另一侧的行全部丢失，已知限制还是 bug，T6 (5)）。其余都已有答复：`mv.outer.moveUp=true` 的结果差异是已知限制（#81658，第 2 条）；cube 绑定空指针 #81659 已修（第 6 条）；#81682 已修（G14）；`RankingConditionTest` 不改产品代码即可启用（第 4 条）；可以请开发给 `MVTableMetaData` 的关联 MV 加公开 getter（第 3 条，不是前提）。
 - **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（用户 11-18 决定暂不触发 CI）。已决定：增量删除条件也删掉 NULL 行（#80570、#81043 的规则，用户 2026-11-18 接受）；同一次更新里同时满足追加和删除条件的行先保留、下次更新删除，按设计处理（用户 2026-11-17 决定，T9）。
 
 ### 读代码确认的结论（产品源码 `main` `af5a802550` 起）
@@ -305,7 +305,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 | #81060 | In Progress | -- | -- | 公共 API | 失败的分析任务被报告为完成 |
 | #81061 | In Progress | -- | -- | 公共 API | 更新不存在的 MV 带 cycle 时 NPE |
 
-datatest 能验证、两边都没提到编号的未关闭 bug：#80344（G5）；#80313 已修并补了用例。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）、#82257（T16）、#82319～#82324、#82377（T17）、#82375、#82376（T20）。
+datatest 能验证、两边都没提到编号的未关闭 bug：#80344（G5）；#80313 已修并补了用例。T14 另给已关闭、datatest 原无用例的 #79854、#79858、#80152、#80155、#80570、#81043 补了用例。公共 API、权限和 id 变更类不属于静态 datatest。新提：#81658、#81659、#81682（§6）、#82099（T14，已修，T15）、#82140、#82142（G12）、#82210（T6）、#82219、#82223（T19）、#82231（`CalcMV` 核对，与 MV 无关）、#82257（T16）、#82319～#82324、#82377（T17）、#82375、#82376（T20）、#82398（§2 adhoc 滑块标签格式）。
 
 ## 8. 具体要做（T20 的用例等 bug 答复；其余已做）
 

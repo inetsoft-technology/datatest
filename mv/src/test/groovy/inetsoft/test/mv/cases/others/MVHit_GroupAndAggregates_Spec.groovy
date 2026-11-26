@@ -517,7 +517,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
    }
 
    //RangeSlider1 (a time range) is not compared: labelled 01:01 with MV and 1:01 AM without MV,
-   //the same values and range.
+   //the same values and range (#82398).
    def 'change from'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/change from'

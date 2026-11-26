@@ -742,7 +742,7 @@ class CalcField_Spec extends Specification {
    //Not compared: Crosstab1, whose CalcField5 is First([Product:Total], [Customer:Address]); the
    //first address has several rows, and the one used depends on the row order. Chart1, whose
    //exported data also has the aggregates the calc fields use without MV. RangeSlider1
-   //(bk_select, a month range), labelled 3/01/2017 with MV and 2017 Mar without MV.
+   //(bk_select, a month range), labelled 3/01/2017 with MV and 2017 Mar without MV (#82398).
    //SelectionTree2 (default, bk_select): the measure is the aggregate calc field converted to its
    //declared Date (2020-12-30), not a Timestamp (#81668).
    def 'Aggregate_ForDate'() {

@@ -714,7 +714,7 @@ class AssociationMV_Spec extends Specification {
    //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
    // The range sliders RangeSlider2 and RangeSlider3 (bk_select, adhoc filters on numbers) are
    // labelled without the number format with MV (1000, 5100) and with it without MV (1,000,
-   // 5,100), so they are not compared; the values and the selected range are the same.
+   // 5,100), so they are not compared (#82398); the values and the selected range are the same.
    def 'TestCase_AdhocFilter'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter'
@@ -735,7 +735,7 @@ class AssociationMV_Spec extends Specification {
 
    // Not compared: Chart1, whose exported data also has the aggregate a calc field uses without
    // MV (5 columns, 4 with MV); RangeSlider2 (bk_select, a month range), labelled 3/01/2017 with
-   // MV and 2017 Mar without MV, the same values and range.
+   // MV and 2017 Mar without MV, the same values and range (#82398).
    def 'TestCase_AdhocFilter2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter2'
