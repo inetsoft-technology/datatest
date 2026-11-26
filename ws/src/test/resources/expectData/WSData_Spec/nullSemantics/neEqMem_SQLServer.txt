@@ -1,0 +1,23 @@
+The data size(row x col) is:(22 x 3)
+product_id, description, DESC_JS
+2, Database browser, Database browser
+3, Document management tool, Document management tool
+4, Personal health monitor, Personal health monitor
+5, House hunting assistant, House hunting assistant
+6, Lightweight email agent, Lightweight email agent
+7, Palm power sync, Palm power sync
+8, Web enabled calendar/org, Web enabled calendar/org
+9, Java game toolkit, Java game toolkit
+10, Collection of menus, Collection of menus
+11, Over 10,000 icons, Over 10,000 icons
+12, Application server, Application server
+13, Chess game, Chess game
+14, Chinese Go game, Chinese Go game
+17, Educational software, Educational software
+19, Math tutor, Math tutor
+20, Girl"s game, Girl"s game
+21, Wireless optical USB mouse, Wireless optical USB mouse
+22, Wireless USB keyboard, Wireless USB keyboard
+23, 17 inch LCD monitor, 17 inch LCD monitor
+24, 19 inch LCD monitor, 19 inch LCD monitor
+25, 500 GB network storage, 500 GB network storage

@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 2)
+customer_id, PAD
+1, AZ 
+1, CA 
+1, CT 
+1, FL 
+1, IL 
+1, MA
+1, MD 
+1, NJ 
+1, NV 
+1, NY 
+1, PA 
+2, CO 
+2, MD
+2, TX
+2, TX 
+2, WA
+3, CA
+3, MA 
+3, NY
+5, NJ

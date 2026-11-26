@@ -4,7 +4,7 @@
 
 ## 1. 结论
 
-- **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。70 个用例中，除 `InRange_Spec` 和 2 个 `@Ignore`（`clickhouse`、`ws group case check`）外都真正比对数据。
+- **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。77 个用例中，除 `InRange_Spec` 和 2 个 `@Ignore`（`clickhouse`、`ws group case check`）外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 同样断言（G11 样板），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
@@ -15,7 +15,7 @@
 
 ## 2. 覆盖情况
 
-**规模：** 6 个 spec、70 个用例（`DataComposition` 10、`InRange` 4、`WSAsset` 2、`WSData` 36、`WSOthers` 9、`WSProperty` 9）。`wsStorage.zip`：99 个 worksheet、4 个 viewsheet、32 个逻辑模型、13 个数据源。CI 实际运行范围（去掉 Linux 上跳过的 `InRange_Spec` 和 2 个 `@Ignore`）：49 个 worksheet、668 张可见表。下面的覆盖矩阵和统计是评估时的口径（42 个 worksheet、470 张表，不含后来加入运行的 `suquery_execute`、`specialChar`、`DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`、`DB/nonEquiJoin`、`DB/stringCompare`、`DB/stringOps`、`DB/postCondition`、`DB/dateInRolling`、`DB/clickhouseSamples`）。
+**规模：** 6 个 spec、77 个用例（`DataComposition` 10、`InRange` 4、`WSAsset` 2、`WSData` 43、`WSOthers` 9、`WSProperty` 9）。`wsStorage.zip`：112 个 worksheet、4 个 viewsheet、32 个逻辑模型、13 个数据源。CI 实际运行范围（去掉 Linux 上跳过的 `InRange_Spec` 和 2 个 `@Ignore`）：62 个 worksheet、1309 张可见表。下面的覆盖矩阵和统计是评估时的口径（42 个 worksheet、470 张表，不含后来加入运行的 `suquery_execute`、`specialChar`、`DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`、`DB/nonEquiJoin`、`DB/stringCompare`、`DB/stringOps`、`DB/postCondition`、`DB/dateInRolling`、`DB/clickhouseSamples`，以及 8b 的 7 个）。
 
 **覆盖矩阵**（CI 范围 470 张可见表，单元格为"表数（worksheet 数）"，来自 `ws_scan.py inventory`）：
 
@@ -523,7 +523,7 @@ viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块
 ### 8c. 建议顺序
 
 1. stylebi 单测：8a 的混合类型比较器、内存 join 并发。
-2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。probe 的 worksheet 未提交，做成正式样板时可沿用。
+2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。已做成样板：`WSData_Spec.crossSourceJoin`、`bigNumbers`、`nullSemantics`、`caseGrouping`、`numericEdge`、`hourGroup`、`variableCache`（worksheet 同名放在 `DB/` 下，由 `ws_8b_gen.py` 生成），基线保留上述缺陷的现状，查询失败的表不放进去（#82379 的 PostgreSQL、#82381、#82390 的 10 张）；第 9 项的结果由数据库决定，不做样板。
 3. G12。
 4. 8a 的机械化成对对照、方言执行检查；8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时可并入其中。
 5. `ws_scan.py crosscheck` 的占位表检查：**已完成**。按产品占位表的规则（`XNodeMetaTable`：只有一行，字符串 X…，数字 999.99、999、99，布尔 true，日期取当前时间）检查基线根目录下所有 txt，新出现的报为 New。已知的只有 `specialChar/sqlserver.txt`（本地的 SQL Server 测试服务器上没有数据库 `test.1`，见第 6 节）；用在 vpm 上命中 3 个，都是有意的。查询在读取行时失败（如 #82390 的溢出）只留下部分行和警告，这种基线检查不出来。

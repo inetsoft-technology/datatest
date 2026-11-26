@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+customer_id, state, BIG
+3, NY, 9007199254740996
+4, CO, 9007199254740996
+5, MD, 9007199254740996

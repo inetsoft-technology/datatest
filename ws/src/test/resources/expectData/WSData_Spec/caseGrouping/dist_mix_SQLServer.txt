@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 1)
+MIX
+az
+CA
+co
+ct
+fl
+il
+ma
+MD
+NJ
+nv
+ny
+pa
+tx
+WA
