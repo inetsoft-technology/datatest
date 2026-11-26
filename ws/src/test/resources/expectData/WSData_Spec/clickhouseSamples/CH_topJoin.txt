@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+id, string_col, id_1, string_col_1
+16, alter, 16, alter
+17, drop, 17, drop
+18, index, 18, index
+19, view, 19, view
+20, join, 20, join

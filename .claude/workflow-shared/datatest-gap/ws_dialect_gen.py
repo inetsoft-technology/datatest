@@ -1,4 +1,4 @@
-"""Add the dialect execution check worksheets to the ws storage zip: DB/dialectSetOps, DB/dialectJoins,
+"""Add the dialect execution check worksheets to the ws storage zip: DB/dialectSetOps, DB/dialectJoins, DB/dialectJoins2,
 DB/dialectOrderBy, DB/dialectGroupBy, DB/dialectDates, DB/dialectTimestamps, DB/dialectTimes (used by the WSData_Spec cases of the same names; see
 docs/test-gap-assessment/ws.md, section 8).
 
@@ -9,8 +9,9 @@ usage: python ws_dialect_gen.py <src.zip> <dst.zip>
 Every SQL operation sqlhelper.xml (and the helpers' code) declares for a database gets a small table that uses it,
 on Oracle, MySQL, Derby, PostgreSQL, SQL Server, DB2 and Informix. Each table <case>_<db> has a twin <case>Mem_<db>
 with mergeable="false" (the user's "do not merge" switch): the same table computed in memory from the same source
-rows. Date groups are the exception: there the twin groups a script copy of the date column, because a date range
-column keeps its SQL date function even when the table is not merged. exportMergePlan records which path each one took, so an operation a database declares unsupported shows up as
+rows. That works for joins and set operations; a physical table stays in SQL with it, so the twins of sorts, groups
+and date groups use a script copy of the sorted / grouped column instead (a date range column also keeps its SQL date
+function in a table that is not merged). exportMergePlan records which path each one took, so an operation a database declares unsupported shows up as
 not merged, and a supported one as merged.
 """
 import importlib.util, os, sys
@@ -27,10 +28,6 @@ ONE_OF = 2
 NAMES = b.NAMES
 INNER, LEFT, RIGHT, FULL, NE, GT, GE, LT, LE, CROSS = 3, 7, 11, 15, 17, 33, 35, 65, 67, 257
 UNION, INTERSECT, MINUS = 1536, 2560, 4608
-GSORT_VALUE_DESC = ('<groupSort sort="18" interval="1.0" option="1" others="1" sortByCol="0" info="false" cinfo="false">'
-                    '<otherLabel><![CDATA[Others]]></otherLabel>\n<manualOrderList class="inetsoft.util.ItemList">'
-                    '</manualOrderList></groupSort>\n')
-
 
 def mem(t, name, new):
     """the in-memory twin of a table: renamed, mergeable="false" on its assembly info"""
@@ -108,50 +105,72 @@ for j, n in enumerate(NAMES):
         pair(joins, g8.join(case, L, cols, R, cols, desc[0], desc[0], op, x, y + 1400 + k * 120), case)
 
 # ---------------------------------------------------------------- DB/dialectOrderBy
-# The export sorts every table, so an ORDER BY only shows through the rows a max row count keeps.
-#   sortHidden:   CUSTOMERS, sorted by the hidden CUSTOMER_ID descending, max 5: the STATE of customers 35-31
-#   sortDistinct: distinct STATE sorted descending, max 3
-#   sortAggValue: Count(CUSTOMER_ID) by STATE sorted by the count descending, max 2 (NJ 6 is the only first)
-#   sortAggKey:   the same, sorted by STATE descending, max 3
+# The export sorts every table, so an ORDER BY only shows through the rows a max row count keeps. The twins sort (and
+# group) a script copy of the column, which keeps them in memory (mergeable="false" does not take a physical table off
+# SQL). In memory the max rows cut the source before a sort (#82389), so sortHiddenMem_ and sortDistinctMem_ keep the
+# first source rows, sorted.
+#   sortHidden:   CUSTOMERS sorted by the hidden CUSTOMER_ID descending, max 5: the STATE of customers 35-31
+#   sortDistinct: distinct STATE sorted descending, max 3: WA, TX, PA
+#   sortAggKey:   Count(CUSTOMER_ID) by STATE, sorted by STATE descending (a sort on the grouped table, as the
+#                 composer does it), max 3: WA, TX, PA
+#   sortAggValue: the same sorted by the count descending, max 1: NJ (6, the only largest)
+
+
+def with_sort(t, sorts, maxrow):
+    """add a sort on the table and a max row count (after grouped())"""
+    t = t.replace('hasAggregate="true">', 'hasAggregate="true" maxRow="%d" hasSort="true">' % maxrow, 1)
+    return t.replace('<groupInfo>', '<sortInfo>\n<sortInfo>\n%s</sortInfo>\n</sortInfo>\n<groupInfo>' % ''.join(sorts), 1)
+
+
 orderby = []
 for j, n in enumerate(NAMES):
     x, y = 20 + j * 140, 20
     db, cm = tdb(n, 'CUSTOMERS')
     cid, st = cm['id'], cm['state']
-    pair(orderby, sorted_max(physical(db, 'sortHidden_' + n, [hidden_col(ref(cid)), ref(st)], [], x, y),
-                             [sortref(ref(cid), True)], 5), 'sortHidden_' + n)
-    t = b.distinct(physical(db, 'sortDistinct_' + n, [ref(st)], [], x, y + 120))
-    t = t.replace('distinct="true">', 'distinct="true" maxRow="3" hasSort="true">', 1).replace(
-        '<conditionAssemblies>', '<sortInfo>\n<sortInfo>\n%s</sortInfo>\n</sortInfo>\n<conditionAssemblies>'
-        % sortref(ref(st), True), 1)
-    pair(orderby, t, 'sortDistinct_' + n)
-    for k, (case, gsort, maxrow) in enumerate([('sortAggValue', GSORT_VALUE_DESC, 2),
-                                               ('sortAggKey', b.GSORT.replace('sort="1"', 'sort="2"', 1), 3)]):
-        t = physical(db, '%s_%s' % (case, n), [ref(cid), ref(st)], [], x, y + 240 + k * 120)
-        t = t.replace('hasExpression="true">', 'hasExpression="true" maxRow="%d" aggregate="true" hasAggregate="true">' % maxrow, 1)
-        gi = ('<groupInfo>\n<groupInfo crosstab="false">\n<groups>\n<dataRef class="inetsoft.uql.asset.GroupRef"  '
-              'timeSeries="false" >%s%s</dataRef></groups>\n<aggregates>\n<dataRef class="inetsoft.uql.asset.AggregateRef"  '
-              'n="1">%s<formula><![CDATA[Count]]></formula>\n</dataRef></aggregates>\n</groupInfo>\n</groupInfo>\n') % (
-            ref(st), gsort, ref(cid))
-        pair(orderby, t.replace('<conditionAssemblies>', gi + '<conditionAssemblies>', 1), '%s_%s' % (case, n))
+    cid_js = hidden_col(expr('CID_JS', FIELD % cid[0], cid[1] or 'double', sql=False))
+    st_js = expr('ST_JS', FIELD % st[0], 'string', sql=False)
+    orderby.append(sorted_max(physical(db, 'sortHidden_' + n, [hidden_col(ref(cid)), ref(st)], [], x, y),
+                              [sortref(ref(cid), True)], 5))
+    orderby.append(sorted_max(physical(db, 'sortHiddenMem_' + n, [hidden_col(ref(cid)), ref(st), cid_js], [], x, y + 60),
+                              [sortref(cid_js, True)], 5))
+    for k, (name, cols, col) in enumerate([('sortDistinct_', [ref(st)], ref(st)),
+                                           ('sortDistinctMem_', [hidden_col(ref(st)), st_js], st_js)]):
+        t = b.distinct(physical(db, name + n, cols, [], x, y + 120 + k * 60))
+        t = t.replace('distinct="true">', 'distinct="true" maxRow="3" hasSort="true">', 1).replace(
+            '<conditionAssemblies>', '<sortInfo>\n<sortInfo>\n%s</sortInfo>\n</sortInfo>\n<conditionAssemblies>'
+            % sortref(col, True), 1)
+        orderby.append(t)
+    for k, (case, by_value, maxrow) in enumerate([('sortAggKey', False, 3), ('sortAggValue', True, 1)]):
+        for m, mem in enumerate([False, True]):
+            g = st_js if mem else ref(st)
+            cols = [ref(cid), ref(st)] + ([st_js] if mem else [])
+            t = grouped(physical(db, '%s%s_%s' % (case, 'Mem' if mem else '', n), cols, [], x, y + 240 + (k * 2 + m) * 60),
+                        g, [('Count', ref(cid))])
+            orderby.append(with_sort(t, [sortref(ref(cid) if by_value else g, True)], maxrow))
 
 # ---------------------------------------------------------------- DB/dialectGroupBy
-#   grpExpr:      group by the SQL expression LOWER(STATE), Count
-#   multiDistinct: two DistinctCount (CUSTOMER_ID, EMPLOYEE_ID) in one query, by DISCOUNT, on the 16 G11 orders
+#   grpExpr:       group by the SQL expression LOWER(STATE), Count; the twin groups a script copy of it
+#   multiDistinct: two DistinctCount (CUSTOMER_ID, EMPLOYEE_ID) in one query, by DISCOUNT, on the 16 G11 orders; the
+#                  twin counts script copies of the two columns
 LOWER = {n: 'LOWER(%s)' for n in NAMES}
 grp = []
 for j, n in enumerate(NAMES):
     x, y = 20 + j * 140, 20
     db, cm = tdb(n, 'CUSTOMERS')
     low = expr('LST', LOWER[n] % (FIELD % cm['state'][0]), 'string')
-    pair(grp, grouped(physical(db, 'grpExpr_' + n, [ref(cm['id']), ref(cm['state']), low], [], x, y), low,
-                      [('Count', ref(cm['id']))]),
-         'grpExpr_' + n)
+    low_js = expr('LST_JS', FIELD % 'LST', 'string', sql=False)
+    base = [ref(cm['id']), ref(cm['state']), low]
+    grp.append(grouped(physical(db, 'grpExpr_' + n, base, [], x, y), low, [('Count', ref(cm['id']))]))
+    grp.append(grouped(physical(db, 'grpExprMem_' + n, base + [low_js], [], x, y + 60), low_js, [('Count', ref(cm['id']))]))
     db, om = tdb(n, 'ORDERS')
     sel = cond(ref(om['oid']), om['oid'][1], ONE_OF, g11.ORDER_IDS)
     base = [ref(om['oid']), ref(om['cust']), ref(om['emp']), ref(om['disc'])]
-    pair(grp, grouped(physical(db, 'multiDistinct_' + n, base, [sel], x, y + 120), ref(om['disc']),
-                      [('DistinctCount', ref(om['cust'])), ('DistinctCount', ref(om['emp']))]), 'multiDistinct_' + n)
+    cust_js = expr('CUST_JS', FIELD % om['cust'][0], om['cust'][1] or 'double', sql=False)
+    emp_js = expr('EMP_JS', FIELD % om['emp'][0], om['emp'][1] or 'double', sql=False)
+    grp.append(grouped(physical(db, 'multiDistinct_' + n, base, [sel], x, y + 120), ref(om['disc']),
+                       [('DistinctCount', ref(om['cust'])), ('DistinctCount', ref(om['emp']))]))
+    grp.append(grouped(physical(db, 'multiDistinctMem_' + n, base + [cust_js, emp_js], [sel], x, y + 180), ref(om['disc']),
+                       [('DistinctCount', cust_js), ('DistinctCount', emp_js)]))
 
 # ---------------------------------------------------------------- DB/dialectDates
 # Every date group level that has an SQL function somewhere in sqlhelper.xml on a TIMESTAMP column
@@ -184,13 +203,22 @@ for j, n in enumerate(NAMES):
 LEFT_OUT = {}
 
 
+J2 = ('SQLServer', 'DB2', 'Informix')
+
+
+def by_db(assemblies, dbs, inside):
+    return [a for a in assemblies if (a.split('<name><![CDATA[', 1)[1].split(']]>', 1)[0].rsplit('_', 1)[1] in dbs) == inside]
+
+
 def keep(assemblies):
     return [a for a in assemblies if a.split('<name><![CDATA[', 1)[1].split(']]>', 1)[0] not in LEFT_OUT]
 
 
 g8.NOW = b.NOW
 sheets = [g8.worksheet('DB/dialectSetOps', 'unionCat_Oracle', keep(setops)),
-          g8.worksheet('DB/dialectJoins', 'inner_Oracle', keep(joins)),
+          # joins in two worksheets (all seven databases took about 3 minutes, as long as a runtime worksheet lives)
+          g8.worksheet('DB/dialectJoins', 'inner_Oracle', keep(by_db(joins, J2, False))),
+          g8.worksheet('DB/dialectJoins2', 'inner_SQLServer', keep(by_db(joins, J2, True))),
           g8.worksheet('DB/dialectOrderBy', 'sortHidden_Oracle', keep(orderby)),
           g8.worksheet('DB/dialectGroupBy', 'grpExpr_Oracle', keep(grp)),
           g8.worksheet('DB/dialectDates', 'odYear_Oracle', keep(dates)),

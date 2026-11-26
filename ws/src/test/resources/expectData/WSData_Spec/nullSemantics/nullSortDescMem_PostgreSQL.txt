@@ -1,6 +1,6 @@
 The data size(row x col) is:(5 x 3)
 product_id, description, DESC_JS
-1, NULL, NULL
-2, Database browser, Database browser
-3, Document management tool, Document management tool
 4, Personal health monitor, Personal health monitor
+8, Web enabled calendar/org, Web enabled calendar/org
+21, Wireless optical USB mouse, Wireless optical USB mouse
+22, Wireless USB keyboard, Wireless USB keyboard

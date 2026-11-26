@@ -1,8 +1,8 @@
-mergeable: true
+mergeable: false
 source: true
 where: true
 group by: true
 having: true
-sort: true
-select: true
+sort: false
+select: false
 ranking: true

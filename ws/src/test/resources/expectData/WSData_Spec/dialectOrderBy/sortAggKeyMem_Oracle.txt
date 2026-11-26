@@ -1,5 +1,5 @@
 The data size(row x col) is:(4 x 2)
-CUSTOMER_ID, STATE
-4, CA
-4, MA
-6, NJ
+CUSTOMER_ID, ST_JS
+1, PA
+2, WA
+4, TX

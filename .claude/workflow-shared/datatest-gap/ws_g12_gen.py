@@ -1,4 +1,4 @@
-"""Add the G12 sample worksheets to the ws storage zip: DB/variableTypes, DB/subqueryConditions, DB/avgInteger,
+"""Add the G12 sample worksheets to the ws storage zip: DB/variableTypes, DB/variableTypes2, DB/subqueryConditions, DB/avgInteger,
 DB/avgKeepType, DB/relativeDates (used by WSData_Spec.variableTypes, subqueryConditions, avgInteger, relativeDates and
 WSProperty_Spec 'property_formula.avg.keep.type'; see docs/test-gap-assessment/ws.md, G12).
 
@@ -247,7 +247,17 @@ def keep(assemblies):
 
 
 g8.NOW = b.NOW
-sheets = [g8.worksheet('DB/variableTypes', 'intCat_Oracle', keep(vt)),
+# two worksheets: a runtime worksheet without a heartbeat expires after 3 minutes, and all seven databases in one took
+# about that long
+VT2 = ('SQLServer', 'DB2', 'Informix')
+
+
+def by_db(assemblies, dbs, inside):
+    return [a for a in assemblies if (a.split('<name><![CDATA[', 1)[1].split(']]>', 1)[0].rsplit('_', 1)[1] in dbs) == inside]
+
+
+sheets = [g8.worksheet('DB/variableTypes', 'intCat_Oracle', keep(by_db(vt, VT2, False))),
+          g8.worksheet('DB/variableTypes2', 'intCat_SQLServer', keep(by_db(vt, VT2, True))),
           g8.worksheet('DB/subqueryConditions', 'in_Oracle', keep(sq)),
           g8.worksheet('DB/avgInteger', 'avg_Oracle', avg_tables()),
           g8.worksheet('DB/avgKeepType', 'avg_Oracle', avg_tables()),

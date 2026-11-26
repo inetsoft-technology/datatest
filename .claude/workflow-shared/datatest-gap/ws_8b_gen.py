@@ -178,7 +178,7 @@ for j, n in enumerate(NAMES):
                             [cond(djs, 'string', op, vals, True)], x, 80 + k * 120))
     # NULL position with max rows 4: sorted by DESCRIPTION, then PRODUCT_ID (so the kept rows are defined).
     # Ascending: NULL first on MySQL, SQL Server, Informix and in memory, last on Oracle, PostgreSQL, DB2, Derby.
-    # In memory the max rows cut the source before the sort (#82389): the first 4 products, sorted.
+    # In memory NULL comes first ascending (the max rows cut the source before the sort until #82389 was fixed).
     for k, desc in enumerate([False, True]):
         tag = 'Desc' if desc else 'Asc'
         nul.append(sorted_max(physical(db, 'nullSort%s_%s' % (tag, n), [ref(pm['pid']), d], [], x, 260 + k * 120),

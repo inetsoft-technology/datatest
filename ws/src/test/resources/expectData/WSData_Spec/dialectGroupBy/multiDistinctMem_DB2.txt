@@ -1,9 +1,9 @@
 The data size(row x col) is:(8 x 3)
-CUSTOMER_ID, EMPLOYEE_ID, DISCOUNT
-1, 1, 0.05
-1, 1, 0.1
-1, 1, 0.2
-2, 1, 0.15
-2, 2, 0
-2, 2, 0.25
-3, 2, NULL
+DISCOUNT, CUST_JS, EMP_JS
+NULL, 3, 2
+0, 2, 2
+0.05, 1, 1
+0.1, 1, 1
+0.15, 2, 1
+0.2, 1, 1
+0.25, 2, 2

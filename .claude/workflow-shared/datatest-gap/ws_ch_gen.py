@@ -183,11 +183,9 @@ out += [g11['ptable'](DB, 'T', 'CH_C', ['id', 's'], 20, y + 120),
         g11['inner_join'](DB, 'CH_topJoin', 'CH_top', ['id', 's'], 'T', 'CH_C', ['id', 's'], 'T', 'id', 'id', 160, y + 120)]
 
 # left out (their export would be the placeholder row of a failed query, or vary from run to run):
-#   CH_union: the generated "(select ...) UNION (select ...)" fails on ClickHouse 22.1 (needs ALL / DISTINCT, #82306)
 #   CH_corr: Covariance / Correlation SQL adds Float64 and Decimal ("0.0E0 + decimal_col"), rejected (#82307)
-#   CH_topJoin: ClickHouse is marked without SQL max rows, the join runs in memory and its sides share the
-#   HINT_MAX_ROWS of one variable table (#82290): 20 rows instead of 5
-LEFT_OUT = ('CH_union', 'CH_corr', 'CH_topJoin')
+# (CH_union, #82306, and CH_topJoin, #82290, were left out until those were fixed)
+LEFT_OUT = ('CH_corr',)
 out = [a for a in out if not any('<name><![CDATA[%s]]>' % n in a for n in LEFT_OUT)]
 
 # fixed timestamp so that regenerating gives the same blobs
