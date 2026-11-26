@@ -1,0 +1,26 @@
+The data size(row x col) is:(25 x 6)
+Calc_state, Hour(ftime), 3, 1, 4, Others 
+Others , Others , 1196, 948, 1347, 723
+Others , 02, 272, 142, 368, 86
+Others , 08, 147, 197, 412, 52
+Others , 00, 166, 76, 206, 78
+Others , NULL, 18, NULL, 104, 57
+Others , 12, NULL, 17, 21, 95
+NJ, Others , NULL, 572, NULL, 616
+NJ, 00, NULL, 95, NULL, 151
+NJ, 08, NULL, 116, NULL, 110
+NJ, 12, NULL, 87, NULL, 127
+NJ, 06, NULL, 50, NULL, 147
+NJ, NULL, NULL, 25, NULL, NULL
+MA, Others , NULL, 345, NULL, 766
+MA, 02, NULL, 123, NULL, 165
+MA, 06, NULL, 105, NULL, 130
+MA, 00, NULL, 89, NULL, 139
+MA, NULL, NULL, 64, NULL, 68
+MA, 12, NULL, 34, NULL, 34
+TX, Others , 455, NULL, 605, NULL
+TX, 06, 154, NULL, 75, NULL
+TX, 00, 112, NULL, 117, NULL
+TX, 08, 116, NULL, 99, NULL
+TX, 12, 53, NULL, 42, NULL
+TX, NULL, 48, NULL, NULL, NULL

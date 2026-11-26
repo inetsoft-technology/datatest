@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 18)
+CA, NULL, NULL, CO, NULL, NULL, IL, NULL, NULL, MA, NULL, NULL, NJ, NULL, NULL, WA, NULL, NULL
+Albany, 336, 22%, Boulder, 83, 26%, Chicago, 229, 100%, Boston, 913, 42%, Camden, 281, 12%, Olympia, 913, 68%
+Los Angeles, 888, 58%, Denver, 232, 74%, NULL, NULL, 0%, Cambridge, 678, 31%, Middletown, 68, 3%, Seattle, 427, 32%
+San Francisco, 300, 20%, NULL, NULL, 0%, NULL, NULL, 0%, Springfield, 601, 27%, New Brunswick, 557, 24%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Newark, 535, 23%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Plainfield, 804, 35%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Wayne, 40, 2%, NULL, NULL, 0%
+total, 1524, NULL, total, 315, NULL, total, 229, NULL, total, 2192, NULL, total, 2285, NULL, total, 1340, NULL
+1, NULL, NULL, 2, NULL, NULL, 3, NULL, NULL, 4, NULL, NULL, 5, NULL, NULL, 6, NULL, NULL
+CA, NULL, NULL, CO, NULL, NULL, IL, NULL, NULL, MA, NULL, NULL, NJ, NULL, NULL, WA, NULL, NULL
+Boulder, 60, 4%, Chicago, 170, 54%, Boston, 846, 369%, Camden, 255, 12%, Olympia, 812, 36%, NULL, NULL, 0%
+Denver, 160, 10%, NULL, NULL, 0%, Cambridge, 646, 282%, Middletown, 36, 2%, Seattle, 378, 17%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, Springfield, 570, 249%, New Brunswick, 525, 24%, NULL, NULL, 0%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Newark, 494, 23%, NULL, NULL, 0%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Plainfield, 770, 35%, NULL, NULL, 0%, NULL, NULL, 0%
+NULL, NULL, 0%, NULL, NULL, 0%, NULL, NULL, 0%, Wayne, 16, 1%, NULL, NULL, 0%, NULL, NULL, 0%

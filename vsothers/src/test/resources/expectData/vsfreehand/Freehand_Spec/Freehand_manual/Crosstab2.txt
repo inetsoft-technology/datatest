@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 5)
+state, 1997, 1998, 1999, 2000
+I, NULL, 36, 18, 27
+Name_Group, NULL, 39, 168, 205
+IL, NULL, 6, 18, 24
+NJ, 2, 16, 9, 41
+NY, 2, 54, 89, 91
+OH, NULL, NULL, 22, 22
+PA, NULL, 35, 20, 48
+TX, 3, 20, 3, 24

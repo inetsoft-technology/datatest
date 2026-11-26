@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 6)
+USA East, NULL, NULL, USA West, NULL, NULL
+CT, Sum(Paid), 4, AZ, Sum(Paid), 5
+NULL, Sum(Discount), 0, NULL, Sum(Discount), 0
+FL, Sum(Paid), 4, CA, Sum(Paid), 17
+NULL, Sum(Discount), 0.3, NULL, Sum(Discount), 0.1
+MA, Sum(Paid), 20, CO, Sum(Paid), 5
+NULL, Sum(Discount), 0.2, NULL, Sum(Discount), 0
+MD, Sum(Paid), 7, IL, Sum(Paid), 3
+NULL, Sum(Discount), 0, NULL, Sum(Discount), 0
+NJ, Sum(Paid), 14, NV, Sum(Paid), 2
+NULL, Sum(Discount), 0, NULL, Sum(Discount), 0
+NY, Sum(Paid), 12, TX, Sum(Paid), 17
+NULL, Sum(Discount), 0, NULL, Sum(Discount), 0.3
+PA, Sum(Paid), 7, WA, Sum(Paid), 10
+NULL, Sum(Discount), 0.05, NULL, Sum(Discount), 0.3

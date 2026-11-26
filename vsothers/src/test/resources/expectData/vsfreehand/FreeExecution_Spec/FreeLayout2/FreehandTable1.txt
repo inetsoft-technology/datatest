@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 10)
+startN, NULL, MA, NULL, startAorC, NULL, TX, NULL, WA, NULL
+Wayne, 180, Boston, 105, Boulder, 97, Austin, 90, Seattle, 56
+Middletown, 180, Boston, 105, Hartford, 97, Houston, 90, Olympia, 56
+New York, 180, Springfield, 105, Denver, 97, Dallas, 90, NULL, 56
+New York, 180, Cambridge, 105, San Francisco, 97, Dallas, 90, NULL, 56
+Camden, 180, NULL, 105, Los Angeles, 97, NULL, 90, NULL, 56
+New York, 180, NULL, 105, Albany, 97, NULL, 90, NULL, 56
+Newark, 180, NULL, 105, Tucson, 97, NULL, 90, NULL, 56
+New York, 180, NULL, 105, Los Angeles, 97, NULL, 90, NULL, 56
+New Brunswick, 180, NULL, 105, NULL, 97, NULL, 90, NULL, 56
+Las Vegas, 180, NULL, 105, NULL, 97, NULL, 90, NULL, 56
+Plainfield, 180, NULL, 105, NULL, 97, NULL, 90, NULL, 56
+8, 34%, 3, 20%, 7, 18%, 3, 17%, 2, 11%
+630, NULL, 630, NULL, 630, NULL, 630, NULL, 630, NULL

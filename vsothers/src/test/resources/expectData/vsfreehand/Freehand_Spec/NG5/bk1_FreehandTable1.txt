@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 6)
+NULL, NULL, NULL, false, NULL, NULL
+2000 1st, Others, 1, 1997 3rd, Others, 2
+2000 3rd, Others, 1, 1998 1st, includeN, 16
+2000 3rd, NULL, NULL, 1998 1st, Others, 49
+NULL, Others, NULL, 1998 3rd, includeN, 8
+NULL, NULL, NULL, 1998 3rd, Others, 40
+NULL, Others, NULL, 1999 1st, includeN, 56
+NULL, NULL, NULL, 1999 1st, Others, 114
+NULL, Others, NULL, 1999 3rd, includeN, 16
+NULL, NULL, NULL, 1999 3rd, Others, 57
+NULL, Others, NULL, 2000 1st, includeN, 8
+NULL, NULL, NULL, 2000 1st, Others, 100
+NULL, Others, NULL, 2000 3rd, includeN, 38
+NULL, NULL, NULL, 2000 3rd, Others, 100

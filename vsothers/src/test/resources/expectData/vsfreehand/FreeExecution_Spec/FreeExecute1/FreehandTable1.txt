@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 12)
+2002, NULL, NULL, 2005, NULL, NULL, 2003, NULL, NULL, 2004, NULL, NULL
+3210, NULL, NULL, 2629, NULL, NULL, 3418, NULL, NULL, 3505, NULL, NULL
+2002 Feb, 398, 12%, 2005 Mar, 317, 12%, 2003 Jul, 347, 10%, 2004 Sep, 375, 11%
+2002 Apr, 392, 12%, 2005 Apr, 314, 12%, 2003 Oct, 338, 10%, 2004 May, 344, 10%
+2002 Mar, 306, 10%, 2005 May, 307, 12%, 2003 May, 309, 9%, 2004 Feb, 330, 9%
+2002 Jul, 295, 9%, 2005 Jun, 269, 10%, 2003 Apr, 303, 9%, 2004 Dec, 330, 9%
+Others , 1819, 57%, Others , 1422, 54%, Others , 2121, 62%, Others , 2126, 61%
+total, NULL, 100%, total, NULL, 100%, total, NULL, 100%, total, NULL, 100%

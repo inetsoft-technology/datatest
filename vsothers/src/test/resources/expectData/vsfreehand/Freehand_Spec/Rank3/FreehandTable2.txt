@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 6)
+USA East, NULL, NULL, USA West, NULL, NULL
+CT, Hartford, 25%, AZ, Tucson, 70%
+FL, Orlando, 35%, CA, Los Angeles, 95%
+MA, Boston, 50%, CO, Denver, 30%
+MD, Baltimore, 35%, IL, Chicago, 20%
+NJ, Newark, 255%, NV, Las Vegas, 25%
+NY, New York, 170%, TX, Dallas, 90%
+PA, York, 15%, WA, Olympia, 55%

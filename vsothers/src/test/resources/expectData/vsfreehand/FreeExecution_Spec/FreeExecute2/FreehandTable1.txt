@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 8)
+containsP, NULL, Others, NULL, startAorC, NULL, startN, NULL
+between2023~2024, 63%, between2023~2024, 52%, between2023~2024, 57%, between2023~2024, 60%
+lessthan2022, 26%, lessthan2022, 25%, lessthan2022, 23%, lessthan2022, 17%
+2025-09-23, 5%, 2025-06-01, 1%, 2025-06-05, 1%, 2025-08-16, 1%
+2025-03-23, 5%, 2025-09-11, 1%, 2025-05-01, 1%, 2025-03-13, 1%
+NULL, 0%, 2025-05-03, 1%, 2025-01-12, 1%, 2025-04-03, 1%
+NULL, 0%, Others , 20%, Others , 17%, Others , 20%
+4%, NULL, 50%, NULL, 17%, NULL, 29%, NULL

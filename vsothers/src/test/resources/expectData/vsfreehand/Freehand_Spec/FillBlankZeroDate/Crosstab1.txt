@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 3)
+name, Max(date), Sum(num)
+emptydate, 0, 45
+example, 09/28/2021, 5
+last, 01/19/2000, 0
+test, 11/01/2004, 1234

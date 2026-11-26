@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 5)
+NULL, NULL, NULL, NULL, NULL
+2023, MA_test, Games, 1.65, $62,757.00
+2023, NJ_test, Games, 5.3, $63,996.00
+2023, TX_test, Hardware, 1, $84,542.00
+2023, Others , Games, 18.25, $252,124.00

@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 3)
+2020, NULL, NULL
+Annie, NULL, 4
+Eric, NULL, 4
+Robert, NULL, 2
+Total, NULL, 10
+2020 Mar, 1000-5000, 2
+2020 Mar, 5000-10000, 1
+2020 Mar, >10000, 7
+NULL, Total, 10

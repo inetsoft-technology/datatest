@@ -1,0 +1,10 @@
+The data size(row x col) is:(5 x 5)
+Functional Description, 24-48 hours, 12-24 hours, Modified, Return to work was not a goal of rehabilitation program
+Switch, NULL, 1000046, NULL, NULL
+Others, NULL, NULL, 1000022, 2000069
+Application Server
+Inetsoft Reporting Server
+Hosts help menu application for erm + alm, NULL, NULL, NULL, 1000056
+ERM Application Server
+Inetsoft Server
+, 1000060, 1000058, NULL, NULL

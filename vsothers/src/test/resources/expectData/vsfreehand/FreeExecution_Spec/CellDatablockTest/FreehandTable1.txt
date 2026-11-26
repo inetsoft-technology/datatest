@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 3)
+NULL, subentry (string), groupid (int)
+script, 5062, 212
+bound, 5062, 212

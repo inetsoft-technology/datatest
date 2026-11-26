@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 9)
+Year_ndate_, false, false.1, false.6, false.7, false.8, false.9, Grand Total, Grand Total.1
+2023, 205, -8, 32, -37, 467, 67, 3418, 441
+2025, 148, -12, 127, -14, 478, 80, 2629, 397
+2024, 342, 8, 198, 32, 876, 120, 3505, 478
+2022, 365, NULL, 251, NULL, 830, 124, 3210, 425

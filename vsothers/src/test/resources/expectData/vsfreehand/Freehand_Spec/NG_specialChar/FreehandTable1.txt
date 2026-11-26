@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 6)
+NULL, NULL, NULL, 1, NULL, NULL
+Retails'share, NULL, NULL, Retails'share, NULL, NULL
+0.4443, 243.5, 260.8, NG1, 263.9, 290.7
+0.4456, 259.4, 281.4, NULL, 0, 0
+0.4545, 265, 291.8, NULL, 0, 0
+NG1, 524, 568.9, NULL, 0, 0
+Grand Total1, 1291.9, 1402.9, Grand Total1, 263.9, 290.7
+Grand Total2, NULL, 316,600%, Grand Total2, NULL, 59,630%
+2021, NULL, 724.9, 2016, NULL, 596.3
+2017, NULL, 590.8, NULL, NULL, 0
+2018, NULL, 592.4, NULL, NULL, 0
+2019, NULL, 604.3, NULL, NULL, 0
+Others , NULL, 653.6, NULL, NULL, 0

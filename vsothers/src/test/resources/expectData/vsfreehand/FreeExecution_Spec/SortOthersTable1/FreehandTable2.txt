@@ -1,0 +1,11 @@
+The data size(row x col) is:(10 x 3)
+NULL, false, true
+NULL, eid, eid
+CA, 159, 142
+NJ, 41, 148
+Others , 191, 767
+TX, NULL, 293
+NULL, cid, cid
+1hour, 364, 865
+2hour, 139, 1076
+Others, 2148, 8170

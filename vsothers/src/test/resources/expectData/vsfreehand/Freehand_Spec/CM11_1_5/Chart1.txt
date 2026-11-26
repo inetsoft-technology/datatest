@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 3)
+Employee, range, DistinctCount(Total)
+Annie, 1000-5000, 32
+Annie, 5000-10000, 33
+Annie, <=1000, 10
+Annie, >10000, 99
+Eric, 1000-5000, 36
+Eric, 5000-10000, 28
+Eric, <=1000, 11
+Eric, >10000, 118
+Robert, 1000-5000, 24
+Robert, 5000-10000, 22
+Robert, <=1000, 10
+Robert, >10000, 85
+Sue, 1000-5000, 27
+Sue, 5000-10000, 24
+Sue, <=1000, 14
+Sue, >10000, 100

@@ -1,0 +1,22 @@
+The data size(row x col) is:(21 x 3)
+USA East, NULL, NULL
+2020, FL, 30%
+2020, PA, 5%
+2020, startC, 0%
+2020, startM, 20%
+2020, startN, 0%
+2021, FL, 0%
+2021, PA, 0%
+2021, startC, 0%
+2021, startM, 0%
+2021, startN, 80%
+2022, FL, 0%
+2022, PA, 0%
+2022, startC, 0%
+2022, startM, 15%
+2022, startN, 170%
+2023, FL, 5%
+2023, PA, 10%
+2023, startC, 25%
+2023, startM, 50%
+2023, startN, 175%

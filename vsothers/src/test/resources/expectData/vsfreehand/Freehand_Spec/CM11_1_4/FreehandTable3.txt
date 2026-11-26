@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 4)
+USA East, NULL, USA West, NULL
+Others, Games, Others, Hardware
+startC, Personal, startC, Games
+startM, Games, startN, Hardware
+startN, Hardware, NULL, NULL
+2020, 12144, 2020, 12145
+2021, 12329, 2021, 12328
+2022, 12513, 2022, 12510
+2023, 12700, 2023, 12698

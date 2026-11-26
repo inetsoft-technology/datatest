@@ -1,0 +1,24 @@
+The data size(row x col) is:(23 x 13)
+false, Software Specialists, NULL, Software Specialists, NULL, Software Specialists, NULL, Software Specialists, NULL, Software Specialists, NULL, Software Specialists, NULL
+true, Northwest Outfitters, NULL, Northwest Outfitters, NULL, Northwest Outfitters, NULL, Northwest Outfitters, NULL, Northwest Outfitters, NULL, Northwest Outfitters, NULL
+00, 01:25, NULL, 01:50, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+NULL, 88, NJ, 9, MA, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL
+NULL, 91%, Tucson, 9%, Cambridge, 0%, NULL, 0%, NULL, 0%, NULL, 0%, NULL
+02, 02:00, NULL, 02:25, NULL, 02:50, NULL, 03:00, NULL, 03:25, NULL, NULL, NULL
+NULL, 52, MA, 53, MA, 89, MA, 36, NJ, 12, AZ, NULL, NULL
+NULL, 21%, San Francisco, 22%, Tucson, 37%, San Francisco, 15%, Tucson, 5%, Tucson, 0%, NULL
+04, 04:00, NULL, 04:25, NULL, 04:50, NULL, 05:00, NULL, 05:25, NULL, 05:50, NULL
+NULL, 4, CT, 75, TX, 36, CA, 60, NJ, 4, IL, 23, MA
+NULL, 2%, Hartford, 37%, Tucson, 18%, San Francisco, 30%, Tucson, 2%, Chicago, 11%, San Francisco
+06, 06:00, NULL, 06:25, NULL, 07:00, NULL, 07:25, NULL, 07:50, NULL, NULL, NULL
+NULL, 64, NY, 229, NJ, 21, TX, 12, CA, 12, NY, NULL, NULL
+NULL, 19%, Tucson, 68%, Tucson, 6%, Albany, 4%, Los Angeles, 4%, Albany, 0%, NULL
+08, 08:00, NULL, 08:25, NULL, 08:50, NULL, 09:25, NULL, 09:50, NULL, NULL, NULL
+NULL, 127, CA, 42, MA, 69, NJ, 20, NY, 56, MA, NULL, NULL
+NULL, 40%, Los Angeles, 13%, Los Angeles, 22%, Tucson, 6%, Albany, 18%, Tucson, 0%, NULL
+10, 10:25, NULL, 10:50, NULL, 11:00, NULL, 11:25, NULL, 11:50, NULL, NULL, NULL
+NULL, 22, MA, 9, MD, 77, NJ, 149, NY, 20, MA, NULL, NULL
+NULL, 8%, Tucson, 3%, Rockville, 28%, San Francisco, 54%, Tucson, 7%, San Francisco, 0%, NULL
+12, 12:00, NULL, 12:25, NULL, 13:00, NULL, 13:25, NULL, NULL, NULL, NULL, NULL
+NULL, 105, NY, 70, CA, 10, NJ, 39, NJ, NULL, NULL, NULL, NULL
+NULL, 47%, Tucson, 31%, Tucson, 4%, Camden, 17%, Los Angeles, 0%, NULL, 0%, NULL

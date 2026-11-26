@@ -1,0 +1,9 @@
+The data size(row x col) is:(8 x 24)
+euqaltoPA, NULL, NULL, FL, NULL, NULL, MA, NULL, NULL, MD, NULL, NULL, startAorC, NULL, NULL, startN, NULL, NULL, TX, NULL, NULL, WA, NULL, NULL
+2022 Feb, 14%, 7%, 2022 Jul, 8%, 8%, 2022 Feb, 26%, 14%, 2022 Feb, 17%, 9%, 2022 Feb, 15%, 30%, 2022 Feb, 8%, 16%, 2022 Feb, 21%, 23%, 2022 Mar, 9%, 10%
+2022 Mar, 18%, 7%, NULL, NULL, NULL, 2022 Mar, 31%, 22%, 2022 Mar, 5%, 5%, 2022 Mar, 20%, 39%, 2022 Mar, 8%, 7%, 2022 Mar, 8%, 10%, 2022 Jul, 29%, 30%
+2023 Mar, 21%, 11%, NULL, NULL, NULL, 2023 Mar, 32%, 19%, 2023 Jul, 14%, 23%, 2022 Jul, 16%, 24%, 2022 Jul, 8%, 3%, 2022 Jul, 39%, 35%, 2023 Jul, 8%, 8%
+2023 Nov, 12%, 6%, NULL, NULL, NULL, 2023 Jul, 14%, 4%, 2023 Nov, 18%, 15%, 2023 Mar, 4%, 19%, 2023 Mar, 22%, 26%, 2023 Mar, 21%, 26%, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2023 Jul, 13%, 23%, 2023 Jul, 30%, 26%, 2023 Jul, 21%, 17%, NULL, NULL, NULL
+NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2023 Nov, 20%, 38%, 2023 Nov, 36%, 21%, 2023 Nov, 14%, 21%, NULL, NULL, NULL
+total, 65%, 31%, total, 8%, 8%, total, 102%, 58%, total, 53%, 52%, total, 88%, 173%, total, 112%, 99%, total, 124%, 132%, total, 47%, 47%

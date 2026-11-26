@@ -1,0 +1,18 @@
+The data size(row x col) is:(17 x 3)
+USA East, NULL, NULL
+2020, Others, 0.35
+2020, startC, 0
+2020, startM, 0.2
+2020, startN, 0
+2021, Others, 0
+2021, startC, 0
+2021, startM, 0
+2021, startN, 0.8
+2022, Others, 0
+2022, startC, 0
+2022, startM, 0.15
+2022, startN, 1.7
+2023, Others, 0.15
+2023, startC, 0.25
+2023, startM, 0.5
+2023, startN, 1.75

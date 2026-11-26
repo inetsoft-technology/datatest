@@ -1,0 +1,12 @@
+The data size(row x col) is:(11 x 6)
+2002, NULL, NULL, 2004, NULL, NULL
+euqaltoPA, York, 476.51, euqaltoPA, York, 140.15
+FL, Orlando, 156.39, FL, Orlando, 84.21
+IL, Chicago, 70.21, IL, Chicago, 100.3
+MA, Cambridge, 1093.29, MA, Boston, 971.11
+MD, Baltimore, 524.87, MD, Baltimore, 454.84
+startAorC, Tucson, 1031.4, startAorC, Tucson, 934.22
+startN, Newark, 1925.45, startN, Camden, 1750.27
+TX, Dallas, 881.14, TX, Dallas, 997.38
+WA, Olympia, 479.51, WA, Seattle, 711.75
+9, York, 6638.77, 9, York, 6144.23

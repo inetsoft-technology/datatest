@@ -1,0 +1,17 @@
+The data size(row x col) is:(16 x 5)
+NULL, dateFromRB, NULL, Others, NULL
+1Hour, startNJ, 2, startAorC, 87
+1Hour, Others, 22, startForO, 24
+1Hour, NULL, NULL, startNJ, 360
+1Hour, NULL, NULL, Others, 734
+NULL, total, 24, total, 1205
+equals020510, startNJ, 1, startAorC, 16
+equals020510, Others, 29, startNJ, 17
+equals020510, NULL, NULL, Others, 116
+NULL, total, 30, total, 149
+Others, startForO, 24, startAorC, 1120
+Others, startNJ, 28, startForO, 192
+Others, Others, 74, startNJ, 2685
+Others, NULL, NULL, Others, 7231
+NULL, total, 126, total, 11228
+GandTotal, NULL, 180, NULL, 12582

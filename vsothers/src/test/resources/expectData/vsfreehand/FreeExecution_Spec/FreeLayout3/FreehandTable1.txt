@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 6)
+false, NULL, NULL, true, NULL, NULL
+1, 12999.7, NULL, 1, 12999.7, NULL
+2020, 830, 6%, 2020, 2380, 18%
+2021, 467, 4%, 2021, 2951, 23%
+2022, 876, 7%, 2022, 2629, 20%
+2023, 478, 4%, 2023, 2151, 17%
+C, IL, 1%, C, euqaltoPA, 5%
+C, MA, 16%, C, FL, 2%
+C, startAorC, 15%, C, MA, 16%
+C, startN, 28%, C, MD, 8%
+C, WA, 9%, C, startAorC, 15%
+C, NULL, 0%, C, startN, 28%
+C, NULL, 0%, C, TX, 14%
+C, NULL, 0%, C, WA, 9%
+total, NULL, 70%, total, NULL, 97%

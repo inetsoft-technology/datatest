@@ -1,0 +1,10 @@
+The data size(row x col) is:(9 x 6)
+is2022, NULL, is2023, NULL, Others, NULL
+eid-cid, -26, eid-cid, -18, eid-cid, -13
+count, 16, count, 15, count, 669
+NULL, NULL, NULL, NULL, NULL, NULL
+13-23, 173, 13-23, 64, 13-23, 3718
+3to13, 25, 3to13, 53, 3to13, 1605
+greater 23, 119, greater 23, 110, greater 23, 6768
+NULL, NULL, lessthan3, 4, lessthan3, 123
+Total, 317, Total, 231, Total, 12214

@@ -1,0 +1,20 @@
+The data size(row x col) is:(19 x 3)
+NULL, eid, NULL
+startN, between2023~2024, 18%
+startN, lessthan2022, 5%
+startN, 2025-10-20, 0%
+NULL, Ptotal, 23%
+containsP, between2023~2024, 3%
+containsP, lessthan2022, 1%
+NULL, Ptotal, 4%
+Others, between2023~2024, 26%
+Others, lessthan2022, 13%
+Others, 2025-10-25, NULL
+Others, 2025-10-24, NULL
+Others, 2025-10-21, NULL
+Others, 2025-10-18, NULL
+NULL, Ptotal, 38%
+startAorC, between2023~2024, 9%
+startAorC, lessthan2022, 4%
+NULL, Ptotal, 13%
+Total, NULL, 78%

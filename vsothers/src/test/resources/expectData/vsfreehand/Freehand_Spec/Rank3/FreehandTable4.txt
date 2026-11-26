@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 6)
+USA East, NULL, NULL, USA West, NULL, NULL
+FL, Orlando, 0.35, AZ, Tucson, 0.7
+NJ, Newark, 2.55, CA, Los Angeles, 0.95
+PA, York, 0.15, WA, Olympia, 0.55

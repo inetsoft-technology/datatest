@@ -1,0 +1,7 @@
+The data size(row x col) is:(6 x 4)
+Year(orderdate), NULL, false, true
+1997, 0, 2, 5
+1998, 0, 113, 93
+1999, 0, 243, 104
+2000, 2, 246, 234
+Grand Total, 2, 604, 436
