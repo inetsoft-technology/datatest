@@ -19,7 +19,8 @@ inventory   per table assembly: query type (the AssetQuery class that runs it), 
 crosscheck  spec feature -> worksheet -> baseline folder: worksheets no feature uses (over ALL the
             specs given, so pass every spec that shares the zip), features whose worksheet is missing,
             and per feature the visible tables (each one is exported as <table>.txt) against the
-            baseline txt files.
+            baseline txt files. Then every baseline txt (all specs, not only the ones given) that looks like
+            the placeholder table of a failed query (see PLACEHOLDER_KNOWN).
 capability  what the PRODUCT can do (lists read from its source, with file:line) against what the
             worksheets use: table classes, non-table assemblies (variable, named group, date range,
             condition), condition operations by place (table / named group / date range assembly),
@@ -59,6 +60,9 @@ Limits (check before trusting a number):
     that feature reads that database, not that the feature is what the table's result depends on.
   * crosscheck reads executeWS('<asset id>', ...) with a literal asset id; other calls
     (importCSVToEMTable, exportVSComponentData, non-literal ids) are listed as not mapped.
+  * the placeholder check only finds a whole failed table (one row of example values). A query that
+    fails while its rows are read (e.g. an overflow on SQL Server or DB2) keeps the rows read before the
+    failure and only adds a warning: that baseline looks like real data and is not found.
 """
 import collections
 import json
@@ -386,6 +390,41 @@ def spec_features(path):
     return out
 
 
+# A failed LIVE query returns XNodeMetaTable (report/internal/XNodeMetaTable.java, getExampler): the
+# header and ONE row of example values, X... for strings (or one "Unknown" column with XXXXX), 999.99
+# float / double, 999 short / integer / long, 99 byte, true, the current date / time. WorksheetTest
+# exports it like data, so a baseline made from a failed run passes from then on.
+PLACEHOLDER_KNOWN = {
+    # the SQL Server test server has no database test.1 (ws.md section 6)
+    'WSData_Spec/specialChar/sqlserver.txt': 'SQL Server test server has no database test.1',
+}
+_PH_VALUE = re.compile(r'^(X+|999\.99|999(\.0)?|99|true|\d{4}-\d\d-\d\d( \d\d:\d\d:\d\d(\.\d+)?)?|\d\d:\d\d:\d\d)$')
+_PH_SIZE = re.compile(r'^The data size\(row x col\) is:\(2 x (\d+)\)$')
+
+
+def is_placeholder(path):
+    """True if a WorksheetTest txt export is the one-row example table of a failed query"""
+    try:
+        with open(path, encoding='utf-8') as f:
+            lines = f.read().splitlines()
+    except (OSError, UnicodeDecodeError):
+        return False
+    if len(lines) != 3 or not _PH_SIZE.match(lines[0]):
+        return False
+    cells = [c.strip() for c in lines[2].split(', ')]
+    return (all(_PH_VALUE.match(c) for c in cells)
+            and any(re.match(r'^(X+|999\.99|999)$', c) for c in cells))
+
+
+def placeholder_baselines(baseline):
+    found = []
+    for d, _, fs in os.walk(baseline):
+        for fn in fs:
+            if fn.endswith('.txt') and not fn.endswith('.plan.txt') and is_placeholder(os.path.join(d, fn)):
+                found.append(os.path.relpath(os.path.join(d, fn), baseline).replace(os.sep, '/'))
+    return sorted(found)
+
+
 def crosscheck(zpath, baseline, specs):
     wss, _ = load_worksheets(zpath)
     byid = {re.sub(r'\^[^^]*$', '', k): k for k in wss}
@@ -437,6 +476,16 @@ def crosscheck(zpath, baseline, specs):
     print('Names are matched literally. WorksheetTest also writes <bk>_<table>.txt, '
           '<table>_<value>.txt (in range cases) and VS/<assembly>.txt, so the last two columns are '
           'candidates to read, not findings.')
+    ph = placeholder_baselines(baseline)
+    new = [f for f in ph if f not in PLACEHOLDER_KNOWN]
+    print('\n## Baselines that are the placeholder table of a failed query\n')
+    print('New (a failed run captured as the expected data; fix the cause, then the baseline): %s\n'
+          % (', '.join(new) if new else 'none'))
+    print('Known: %s\n' % ('; '.join('%s (%s)' % (f, PLACEHOLDER_KNOWN[f]) for f in ph if f in PLACEHOLDER_KNOWN)
+                           or 'none'))
+    gone = sorted(set(PLACEHOLDER_KNOWN) - set(ph))
+    if gone:
+        print('Known but no longer a placeholder (remove from PLACEHOLDER_KNOWN): %s\n' % ', '.join(gone))
 
 
 # ---------------------------------------------------------------------------------------------
