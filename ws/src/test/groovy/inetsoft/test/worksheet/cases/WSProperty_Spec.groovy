@@ -70,6 +70,27 @@ class WSProperty_Spec extends Specification {
       wstest.compareData(null)
    }
 
+   def 'property_formula.avg.keep.type' () {
+      // G12: the tables of WSData_Spec.avgInteger (Average of an INTEGER by STATE, NJ 16.1667) in their own worksheet,
+      // so no result cached under the default is reused. In memory the Average now keeps the integer type (16), as
+      // SQL Server, DB2 and Derby do pushed; Oracle, MySQL, PostgreSQL, Informix return the fraction pushed.
+      def properties = ["formula.avg.keep.type":"true"]
+      wstest = new WorksheetTest('property_formula.avg.keep.type')
+      wstest.exportMergePlan = true
+
+      wstest.initHome(this.class.getName(), properties)
+
+      try {
+         wstest.executeWS('1^2^__NULL__^DB/avgKeepType', null, null)
+      }
+      finally {
+         wstest.clearEnv(properties)
+      }
+
+      expect:
+      wstest.compareData(null)
+   }
+
    /**
     * upload xlsx file
     * check all col type, no header, specail name/col/sheet name

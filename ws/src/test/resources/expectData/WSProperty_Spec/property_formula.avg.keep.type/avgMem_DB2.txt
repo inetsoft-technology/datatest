@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 2)
+STATE, IV_JS
+AZ, 20
+CA, 14
+CO, 6
+CT, 6
+FL, 12
+IL, 10
+MA, 26
+MD, 17
+NJ, 16
+NV, 32
+NY, 12
+PA, 28
+TX, 22
+WA, 28

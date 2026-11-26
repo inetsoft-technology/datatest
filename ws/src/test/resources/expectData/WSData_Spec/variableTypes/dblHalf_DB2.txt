@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 3)
+PRODUCT_ID, CATEGORY_ID, HALF
+17, 2, 2.5
+18, 2, 2.5
+19, 2, 2.5

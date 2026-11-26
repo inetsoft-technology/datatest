@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 2)
+order_id, discount
+12054, 0.15
+12473, 0.15

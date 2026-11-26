@@ -157,7 +157,7 @@ for j, n in enumerate([m for m in NAMES if m != 'Informix']):
                               ref(('BIG', 'long', 12), 'L_' + n),
                               [('Count', ref((cm['id'][0], cm['id'][1], 12), 'L_' + n)),
                                ('Mode', ref((cm['state'][0], None, 12), 'L_' + n))]))
-# a small numeric SQL expression column TWICE = id * 2: '=' binds the value as a string (#82379), '>' does not
+# a small numeric SQL expression column TWICE = id * 2 with '=' and '>' (the value was bound as a string, #82379, fixed)
 for j, n in enumerate(NAMES):
     db, cm = tdb(n, 'CUSTOMERS')
     tw = expr('TWICE', '%s * 2' % (FIELD % cm['id'][0]), 'integer')
@@ -270,8 +270,6 @@ LEFT_OUT = {
     # it runs without an error as double arithmetic (19 groups) and is kept
     'grpMode_MySQL': '#82381', 'grpMode_Derby': '#82381', 'grpMode_PostgreSQL': '#82381',
     'grpMode_SQLServer': '#82381', 'grpMode_DB2': '#82381',
-    # bigNumbers: '=' on a numeric SQL expression binds the value as a string, PostgreSQL rejects it (#82379)
-    'cond_PostgreSQL': '#82379', 'twiceEq_PostgreSQL': '#82379',
     # numericEdge: SUM(INTEGER) pushed overflows (#82390)
     'sumInt_Derby': '#82390', 'sumInt_SQLServer': '#82390', 'sumInt_DB2': '#82390',
 }

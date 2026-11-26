@@ -1,0 +1,13 @@
+The data size(row x col) is:(12 x 3)
+customer_id, state, ST_JS
+1, NJ, NJ
+2, NJ, NJ
+3, NY, NY
+7, NY, NY
+15, NJ, NJ
+17, NY, NY
+19, NJ, NJ
+24, NY, NY
+25, NJ, NJ
+32, NV, NV
+35, NJ, NJ
