@@ -9,4 +9,4 @@ month, fromFormula, quarter
 1976 May, 1976, 3
 1971 May, 1971, 3
 1971 Mar, 1971, 2
-NULL, NULL, 1
+NULL, NULL, -1
