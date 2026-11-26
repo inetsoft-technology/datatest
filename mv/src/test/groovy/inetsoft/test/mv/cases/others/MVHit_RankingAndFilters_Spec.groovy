@@ -550,8 +550,6 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
-   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
    // RangeSlider1 (range type month) is on a worksheet date range column of ORDER_DATE at the
    // year level; its labels take the format of the column, yyyy. With MV the format was lost
    // and the labels were 2002 Jan / 2005 Jan, which the golden files had recorded (#82320).

@@ -1,6 +1,7 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.mv.MVManager
+import inetsoft.mv.data.MVStorage
 import inetsoft.mv.fs.FSService
 import inetsoft.mv.fs.XFile
 import inetsoft.report.XSessionManager
@@ -220,8 +221,11 @@ class IncrementalDataChange_Spec extends Specification {
    // update logged "Unsupported data type" and the viewsheet failed with "Index 0 out of bounds
    // for length 0" (#80313, fixed by the change of #79854). The sequences that broke the MV: two
    // updates with no new rows after the creation, and an update whose rows start a new block
-   // (mv.preferred.block 5, 5 rows) followed by one with no new rows. After each update the
-   // viewsheet is opened and its rows checked; at the end the MV equals a rebuilt one.
+   // (mv.preferred.block 5, 5 rows) followed by one with no new rows. After each update the MV
+   // is dropped from the MV cache, so the viewsheet reads it from its file, as after a restart
+   // or a cache eviction: with the damaged file the old code read a wrong definition (length 430,
+   // shareable false, written 428 / true) and failed. The rows are checked after each update; at
+   // the end the MV equals a rebuilt one.
    @Issue(['https://issues.inetsoft.com/issues/80313', 'https://issues.inetsoft.com/issues/79854'])
    def 'updates with no new rows #sequence: the MV keeps its rows'() {
       given:
@@ -243,6 +247,8 @@ class IncrementalDataChange_Spec extends Specification {
          }
 
          update()
+         reloadMVs()
+         mvtest.executeVS(null, null, true, false)
          rows << integers(true)
       }
 
@@ -1566,6 +1572,12 @@ class IncrementalDataChange_Spec extends Specification {
       finally {
          conn.close()
       }
+   }
+
+   /** Drop the MVs of this case from the MV cache, so the next query reads them from their files. */
+   private void reloadMVs() {
+      mvtest.materializedViewNames().each { MVStorage.getInstance().invalidate(MVStorage.getFile(it)) }
+      clearCaches()
    }
 
    private void update() {

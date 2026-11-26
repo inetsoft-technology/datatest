@@ -222,6 +222,7 @@ T7 的 `ConfigMvBehaviorS2Test`、`MvManageCustomerP2Test` 没有移植 13.8 夹
 - 13.8 对照只查了 `epic-test-coverage` 分支，没有编译运行；`E:\style-intelligence` 有一个未提交的 `java/build.gradle` 改动，不是本次所改。
 - `MVViewsheetOptions_Spec`、`NotTransform_Spec` 的对照用例在仓库里改资产、`cleanup` 还原；运行被强行中断时改过的资产会留下，下次运行前要重新解压 `mvStorage`（`rm -rf mv/target`）并还原 H2 文件。
 - T14 的用例除 #79854 的模拟反向检查外，都没有在修复前的产品上运行过，只在当前产品上通过。
+- 2026-11-26 已修 bug 的用例（`top_rotate`、`table1`、`otherassembly-plaintable`、`TestCase_Special1`、`rotate1`/`rotate2`、#80313 的两个更新顺序）在撤掉修复的 core 上（今天的 main 撤掉 #82319、#82320、#82321、#82323、#82324 的提交和 #79854 的主代码部分）都失败，失败原因与各 bug 一致。#80313 的用例要在每次更新后把 MV 移出缓存、从文件读取（`MVStorage.invalidate`），否则损坏的文件不被读到，修复前也通过。
 - **需要开发回答的问题：** #82398（数值、时间、按月的滑块标签用 MV 与不用 MV 格式不同，是否要一致、以哪种为准）；#82323（Feedback：旋转表上混合类型列的选择列表，用 MV 与不用 MV 的值顺序和选择状态不同，算这张单还是另提，T17）；#82322（升序排序时 NULL 用 MV 排在前、不用 MV 由 DB2 排在后，是否设计如此，T17）；#82257（整数列的 Concat 用 MV 时值带 `.0`，T16）；#82210（`mv.union.moveUp=true` 时只在一侧选值、另一侧的行全部丢失，已知限制还是 bug，T6 (5)）。其余都已有答复：`mv.outer.moveUp=true` 的结果差异是已知限制（#81658，第 2 条）；cube 绑定空指针 #81659 已修（第 6 条）；#81682 已修（G14）；`RankingConditionTest` 不改产品代码即可启用（第 4 条）；可以请开发给 `MVTableMetaData` 的关联 MV 加公开 getter（第 3 条，不是前提）。
 - **需要用户决定的事：** T3 更新后的 golden 在 CI 上确认（用户 11-18 决定暂不触发 CI）。已决定：增量删除条件也删掉 NULL 行（#80570、#81043 的规则，用户 2026-11-18 接受）；同一次更新里同时满足追加和删除条件的行先保留、下次更新删除，按设计处理（用户 2026-11-17 决定，T9）。
 

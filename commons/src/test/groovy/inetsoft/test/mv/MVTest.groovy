@@ -960,14 +960,12 @@ class MVTest {
       File[] files = exported(MV_EXT)
 
       if(names != null) {
-         def missing = names.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
-         assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
+         assertExported(files, names)
          files = files.findAll { names.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
       }
 
       if(except != null) {
-         def missing = except.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
-         assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
+         assertExported(files, except)
          files = files.findAll { !except.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
       }
 
@@ -1002,6 +1000,12 @@ class MVTest {
          assert false: asset_id + " MV results differ from the results without MV:\n" +
                  failures.join("\n")
       }
+   }
+
+   /** Fail if one of the named files (without the suffix) is not among the exported ones. */
+   private void assertExported(File[] files, Collection<String> names) {
+      def missing = names.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
+      assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
    }
 
    /**

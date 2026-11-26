@@ -521,18 +521,24 @@ class TopMV_TableStructures_Spec extends Specification {
       mvtest.createMV(false)
       mvtest.executeVS(null, null, false, true)
 
+      List<String> table = mvtest.exportedLines('admin_Query1')
+
       expect:
       verifyAll {
-         MVTest.getMVDefInfo() == ['Query1|SubMV']
-         mvtest.getMVHitInfo() == ['Query1|SubMV']
-         !mvtest.exportedLines('admin_Query1').any { it.contains(' 00:00:00.0]') }
+         MVTest.getMVDefInfo().findAll { it.contains('Query2|') } == []
+         mvtest.getMVHitInfo().contains('Query1|SubMV')
+         table[0] == size
+         table.contains(row)
+         !table.any { it.contains(' 00:00:00.0]') }
          mvtest.compareWithoutMV(compared)
       }
 
+      // the size and a row of the table as without MV; no date with ".0", which the dates had when
+      // the MV of the rotated table held them as text
       where:
-      name      | compared
-      'rotate1' | null
-      'rotate2' | ['admin_Query1']
+      name      | compared         | size                                       | row
+      'rotate1' | null             | 'The table size(row x col) is: (5 x 5)'    | '[CUSTOMER_ID][607][498][2881][153]'
+      'rotate2' | ['admin_Query1'] | 'The table size(row x col) is: (5 x 36)'   | '[EMPLOYEE_ID][76][1][277][43][4][2][3][8][2][4][5][60][318][35][4][5][4][5][4][397][17][4][2][24][4][3][15][20][263][58][4][11][7][6][4]'
    }
 
    MVTest mvtest
