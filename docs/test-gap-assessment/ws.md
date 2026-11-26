@@ -418,7 +418,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - ws 的 CI 是否改为定时运行、失败挡合入、加入 Jenkins。
 - G8、G12 的场景范围；G11 样板推广到哪些库和场景。
 
-**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 本地的 SQL Server 测试服务器上没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有），CI 镜像里有没有未核实。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
+**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 SQL Server 测试库没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有）；本地测试服务器与 CI 用同一镜像 `inetsoft-dbs-sqlserver:2017`，CI 上同样没有。暂不处理。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
 
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
@@ -526,7 +526,7 @@ viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块
 2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。已做成样板：`WSData_Spec.crossSourceJoin`、`bigNumbers`、`nullSemantics`、`caseGrouping`、`numericEdge`、`hourGroup`、`variableCache`（worksheet 同名放在 `DB/` 下，由 `ws_8b_gen.py` 生成），基线保留上述缺陷的现状，查询失败的表不放进去（#82379 的 PostgreSQL、#82381、#82390 的 10 张）；第 9 项的结果由数据库决定，不做样板。
 3. G12。
 4. 8a 的机械化成对对照、方言执行检查；8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时可并入其中。
-5. `ws_scan.py crosscheck` 的占位表检查：**已完成**。按产品占位表的规则（`XNodeMetaTable`：只有一行，字符串 X…，数字 999.99、999、99，布尔 true，日期取当前时间）检查基线根目录下所有 txt，新出现的报为 New。已知的只有 `specialChar/sqlserver.txt`（本地的 SQL Server 测试服务器上没有数据库 `test.1`，见第 6 节）；用在 vpm 上命中 3 个，都是有意的。查询在读取行时失败（如 #82390 的溢出）只留下部分行和警告，这种基线检查不出来。
+5. `ws_scan.py crosscheck` 的占位表检查：**已完成**。按产品占位表的规则（`XNodeMetaTable`：只有一行，字符串 X…，数字 999.99、999、99，布尔 true，日期取当前时间）检查基线根目录下所有 txt，新出现的报为 New。已知的只有 `specialChar/sqlserver.txt`（SQL Server 测试镜像里没有数据库 `test.1`，见第 6 节）；用在 vpm 上命中 3 个，都是有意的。查询在读取行时失败（如 #82390 的溢出）只留下部分行和警告，这种基线检查不出来。
 
 ## 附：数据来源与复现
 
