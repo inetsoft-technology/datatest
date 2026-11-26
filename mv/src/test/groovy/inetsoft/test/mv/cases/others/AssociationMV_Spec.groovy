@@ -57,6 +57,28 @@ class AssociationMV_Spec extends Specification {
       }
    }
 
+   // SelectionList2 is bound to Query1.CUSTOMER_ID and SelectionList1 to ORDERS1.PAID, columns
+   // these worksheet tables do not have. Both lists have no data; with MV SelectionList2 used to
+   // show 12788, the sum of ORDERS.CUSTOMER_ID (#82321). No golden files: the checks are on the
+   // MV run.
+   @Issue('https://issues.inetsoft.com/issues/82321')
+   def 'TestCase_Special1'() {
+      given:
+      String asset_id = '1^128^__NULL__^AssociationMV/TestCase_Special1'
+      mvtest = new MVTest(asset_id)
+
+      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, true)
+
+      expect:
+      verifyAll {
+         mvtest.exportedLines('admin_SelectionList1') == ['[[NULL]]']
+         mvtest.exportedLines('admin_SelectionList2') == ['[[NULL]]']
+         mvtest.compareWithoutMV()
+      }
+   }
+
    def 'TestCase_CalcField2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_CalcField2'
@@ -690,11 +712,15 @@ class AssociationMV_Spec extends Specification {
 
    //No compareWithoutMV: the range slider labels are formatted differently with and without MV
    //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
+   // The range sliders RangeSlider2 and RangeSlider3 (bk_select, adhoc filters on numbers) are
+   // labelled without the number format with MV (1000, 5100) and with it without MV (1,000,
+   // 5,100), so they are not compared (#82398); the values and the selected range are the same.
    def 'TestCase_AdhocFilter'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -703,17 +729,19 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|TopMV', 'OrdersAndReturns|TopMV'])
          mvtest.getMVHitInfo().containsAll(['OrdersAndReturns|TopMV', 'ASSOCIATION_OrdersAndReturns|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_RangeSlider2_bk_select', 'admin_RangeSlider3_bk_select'])
       }
    }
 
-   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
-   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
-   //The exported chart data also has the aggregate a calc field uses without MV.
+   // Not compared: Chart1, whose exported data also has the aggregate a calc field uses without
+   // MV (5 columns, 4 with MV); RangeSlider2 (bk_select, a month range), labelled 3/01/2017 with
+   // MV and 2017 Mar without MV, the same values and range (#82398).
    def 'TestCase_AdhocFilter2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -721,6 +749,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_bk_select', 'admin_RangeSlider2_bk_select'])
       }
    }
 

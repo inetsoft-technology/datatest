@@ -550,13 +550,16 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
-   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
+   // RangeSlider1 (range type month) is on a worksheet date range column of ORDER_DATE at the
+   // year level; its labels take the format of the column, yyyy. With MV the format was lost
+   // and the labels were 2002 Jan / 2005 Jan, which the golden files had recorded (#82320).
+   @Issue('https://issues.inetsoft.com/issues/82320')
    def 'otherassembly-plaintable'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/otherassembly-plaintable'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -564,6 +567,29 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Query1|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
+      }
+   }
+
+   // The same range slider as otherassembly-plaintable (worksheet table, ORDERS1.range): year
+   // labels with MV (#82320). No golden files: the checks are on the MV run.
+   @Issue('https://issues.inetsoft.com/issues/82320')
+   def 'table1'() {
+      given:
+      String asset_id = '1^128^__NULL__^hit mv/table1'
+      mvtest = new MVTest(asset_id)
+
+      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, true)
+      List<String> slider = mvtest.exportedLines('admin_RangeSlider1')
+
+      expect:
+      verifyAll {
+         mvtest.getMVHitInfo().containsAll(['ORDERS1|TopMV', 'Query1|TopMV'])
+         slider[0] == 'The min value is: [2002]'
+         slider[1] == 'The max value is: [2005]'
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -589,6 +615,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       String asset_id = '1^128^__NULL__^hit mv/otherassembly-selectaggrcol'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -596,6 +623,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['All Sales1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -813,6 +841,8 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: CUSTOMERS1 has MV delete conditions (CITY Los Angeles, STATE CA), which
+   //the creation of the MV applies, so the MV does not hold all the rows of the database.
    @Issue('https://issues.inetsoft.com/issues/54918')
    def 'incremental adhoc filter'() {
       given:

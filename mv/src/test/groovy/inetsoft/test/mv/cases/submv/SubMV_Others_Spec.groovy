@@ -559,6 +559,32 @@ class SubMV_Others_Spec extends Specification {
       }
    }
 
+   // Query1 = ORDERS1 grouped by Year(ORDER_DATE), PAID, DISCOUNT with Sum(ORDER_ID), Query2 =
+   // Query1 rotated. The rotated column names are the Sum values, and the viewsheet table Query1
+   // selects 43 of them (12101, 12024, ...). The Sum of the integer ORDER_ID came back as a Double
+   // from the SubMV, so the names became 12101.0, ... and the table lost every data column
+   // (4 x 1, #82319). The table Query2 still differs: NULL sorts first with MV and last in DB2
+   // (#82322), so it is not compared. No golden files: the checks are on the MV run.
+   @Issue(['https://issues.inetsoft.com/issues/82319', 'https://issues.inetsoft.com/issues/82322'])
+   def 'top_rotate'() {
+      given:
+      String asset_id = '1^128^__NULL__^submv/top_rotate'
+      mvtest = new MVTest(asset_id)
+
+      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, true)
+      List<String> table = mvtest.exportedLines('admin_Query1')
+
+      expect:
+      verifyAll {
+         mvtest.getMVHitInfo().containsAll(['Query1|SubMV', 'Query3|SubMV', 'Query5|SubMV'])
+         table[0] == 'The table size(row x col) is: (4 x 44)'
+         table[1].startsWith('[ORDER_ID][12101][12024][12031]')
+         mvtest.compareWithoutMV(['admin_Query1', 'admin_Query3', 'admin_SelectionList1'])
+      }
+   }
+
    def 'select on aggregate used col'() {
       String asset_id = '1^128^__NULL__^submv/select on aggregate used col'
       mvtest = new MVTest(asset_id)

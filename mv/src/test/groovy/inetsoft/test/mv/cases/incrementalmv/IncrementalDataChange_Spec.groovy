@@ -1,6 +1,7 @@
 package inetsoft.test.mv.cases.incrementalmv
 
 import inetsoft.mv.MVManager
+import inetsoft.mv.data.MVStorage
 import inetsoft.mv.fs.FSService
 import inetsoft.mv.fs.XFile
 import inetsoft.report.XSessionManager
@@ -213,6 +214,57 @@ class IncrementalDataChange_Spec extends Specification {
          integers(true) == (1..8).toList()
          mvtest.compareWithRebuild()
       }
+   }
+
+   // An update with no new rows rewrote the last update time of the MV file at a wrong offset (the
+   // MV definition has a string after it), so the second such write damaged the dictionary: the
+   // update logged "Unsupported data type" and the viewsheet failed with "Index 0 out of bounds
+   // for length 0" (#80313, fixed by the change of #79854). The sequences that broke the MV: two
+   // updates with no new rows after the creation, and an update whose rows start a new block
+   // (mv.preferred.block 5, 5 rows) followed by one with no new rows. After each update the MV
+   // is dropped from the MV cache, so the viewsheet reads it from its file, as after a restart
+   // or a cache eviction: with the damaged file the old code read a wrong definition (length 430,
+   // shareable false, written 428 / true) and failed. The rows are checked after each update; at
+   // the end the MV equals a rebuilt one.
+   @Issue(['https://issues.inetsoft.com/issues/80313', 'https://issues.inetsoft.com/issues/79854'])
+   def 'updates with no new rows #sequence: the MV keeps its rows'() {
+      given:
+      previous = MVTest.setProperties(['mv.preferred.block': block])
+      source.createLike('MVSCRIPT')
+      insertIntegers(1..5)
+      copyIntegerAssets()
+      mvtest = new MVTest(VS_ID)
+      List<List<Integer>> rows = []
+
+      when:
+      mvtest.createMV(false)
+      mvtest.executeVS(null, null, false, false)
+      rows << integers(false)
+
+      steps.each { int added ->
+         if(added > 0) {
+            insertIntegers((rows[-1].size() + 1)..(rows[-1].size() + added))
+         }
+
+         update()
+         reloadMVs()
+         mvtest.executeVS(null, null, true, false)
+         rows << integers(true)
+      }
+
+      mvtest.rebuildMV(null, null, false)
+
+      then:
+      verifyAll {
+         rows == expected
+         mvtest.takeMVHits().toSet() == ['MVSCRIPT1|TopMV'] as Set
+         mvtest.compareWithRebuild()
+      }
+
+      where:
+      sequence                                 | block | steps        | expected
+      'after the creation, then new rows'      | null  | [0, 0, 3]    | [1..5, 1..5, 1..5, 1..8]*.toList()
+      'after new rows that start a new block'  | '5'   | [3, 0, 0]    | [1..5, 1..8, 1..8, 1..8]*.toList()
    }
 
    // mv.preferred.block is the number of rows of an MV block (default 1000000). The MV of 5 rows
@@ -1520,6 +1572,12 @@ class IncrementalDataChange_Spec extends Specification {
       finally {
          conn.close()
       }
+   }
+
+   /** Drop the MVs of this case from the MV cache, so the next query reads them from their files. */
+   private void reloadMVs() {
+      mvtest.materializedViewNames().each { MVStorage.getInstance().invalidate(MVStorage.getFile(it)) }
+      clearCaches()
    }
 
    private void update() {

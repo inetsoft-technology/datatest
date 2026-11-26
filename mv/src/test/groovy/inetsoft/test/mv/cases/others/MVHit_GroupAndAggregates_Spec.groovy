@@ -516,13 +516,14 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
-   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
+   //RangeSlider1 (a time range) is not compared: labelled 01:01 with MV and 1:01 AM without MV,
+   //the same values and range (#82398).
    def 'change from'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/change from'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -530,6 +531,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll('l1|TopMV')
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_RangeSlider1', 'admin_RangeSlider1_bk1'])
       }
    }
 
@@ -569,14 +571,15 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
 
    //A postgres "time with time zone" is read as the stored wall clock, so 23:59:59+07:36:36 is in
    //hour 23 with and without MV (#79508).
-   //No compareWithoutMV: Average keeps the integer type with MV (formula.avg.keep.type), so 73 with MV is
-   //73.5 without MV (Bug #54404).
+   //Chart1 is not compared: Average keeps the integer type with MV (formula.avg.keep.type), so 73
+   //with MV is 73.5 without MV (Bug #54404).
    @Issue('https://issues.inetsoft.com/issues/79508')
    def 'running total'() {
       given:
       String asset_id = '1^128^__NULL__^hit mv/running total'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1'] as String[], false, true)
 
@@ -584,6 +587,7 @@ class MVHit_GroupAndAggregates_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll('lm1|TopMV')
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_bk1'])
       }
    }
 

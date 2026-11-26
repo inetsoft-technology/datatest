@@ -922,6 +922,31 @@ class MVTest {
     * Does nothing when {@link #COMPARE_MODE} is {@code golden}.
     */
    void compareWithoutMV() {
+      compareWithoutMV(null)
+   }
+
+   /**
+    * {@link #compareWithoutMV()} for some of the exported files only, for a viewsheet where
+    * another component still differs for a known reason.
+    *
+    * @param names the names of the files without the suffix (e.g. {@code admin_Query1}), or
+    *              null for all files.
+    */
+   void compareWithoutMV(Collection<String> names) {
+      compareFilesWithoutMV(names, null)
+   }
+
+   /**
+    * {@link #compareWithoutMV()} for all exported files but some, for a viewsheet where these
+    * components differ for a known reason (the reason belongs in a comment of the case).
+    *
+    * @param names the names of the files without the suffix (e.g. {@code admin_Chart1}).
+    */
+   void compareWithoutMVExcept(Collection<String> names) {
+      compareFilesWithoutMV(null, names)
+   }
+
+   private void compareFilesWithoutMV(Collection<String> names, Collection<String> except) {
       if(COMPARE_MODE == 'golden') {
          return
       }
@@ -933,6 +958,16 @@ class MVTest {
       File folder = new File(getExportFolderPath())
       // the files this instance exported, see compareWithRebuild
       File[] files = exported(MV_EXT)
+
+      if(names != null) {
+         assertExported(files, names)
+         files = files.findAll { names.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
+      }
+
+      if(except != null) {
+         assertExported(files, except)
+         files = files.findAll { !except.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
+      }
 
       if(files.length == 0) {
          assert false: asset_id + " nothing was exported with MV: " + folder
@@ -965,6 +1000,24 @@ class MVTest {
          assert false: asset_id + " MV results differ from the results without MV:\n" +
                  failures.join("\n")
       }
+   }
+
+   /** Fail if one of the named files (without the suffix) is not among the exported ones. */
+   private void assertExported(File[] files, Collection<String> names) {
+      def missing = names.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
+      assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
+   }
+
+   /**
+    * The lines of a file the last {@link #executeVS} exported, for the checks of a case that has
+    * no golden file.
+    *
+    * @param name the name of the file without the suffix, e.g. {@code admin_Query1}.
+    */
+   List<String> exportedLines(String name) {
+      File file = new File(getExportFolderPath(), name + MV_EXT + ".txt")
+      assert exportedFiles.contains(file.getCanonicalPath()): asset_id + " did not export " + file
+      return file.readLines('UTF-8')
    }
 
    /**
