@@ -1,0 +1,3 @@
+value | state | measure
+true | selected+compatible | NULL
+false | compatible | NULL

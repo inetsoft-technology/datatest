@@ -150,9 +150,20 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 | 验证机制（G1） | 不改 spec，改 `ViewsheetTest`（第 3 节 G1 方案）。就 vscalc 而言，`strictcheck` 静态预测 22 个用例的基线与导出文件集合完全一致（基线多出 0 个、导出缺基线 0 个），所以预计不会因文件集合失败 | 导出失败、基线缺失不再静默通过 | 各模块自行运行并处理变红的用例 |
 | 孤儿 vs（G2） | **已完成**：用例 `aggregate_trendcomparison`，书签 `(Home)`、`bk1`，4 个 txt 基线（Chart1、Crosstab1）。只比数据：PNG 基线要等第 6 节"PNG 在哪个平台生成"定了再加 | 趋势/比较聚合的计算字段 | 基线用 `-Dupdate.baseline=true` 生成，按内部关系核对一致：`Calc_agg` 等于 Average(CUSTOMER_ID)；% of total、Value of previous 按图表可见行手算一致；Crosstab 的 Change from previous 与 Moving Average of 5（前后各 2 个，居中窗口）可由同一组 Sum 反推，14 行全部一致 |
 | 条件、TopN、高亮、Gauge（G8） | **已完成**：新 vs `vs-calcfield/calc_condition`（数据源 `Examples/Analysis` 的 `OrdersAndReturns`；计算字段 `D_Number` 明细 integer `field['Quantity Purchased']`、`D_String` 明细 string `field['Category']`、`A_Ratio` 聚合 double `Sum(TotalReturned)/Sum(TotalPurchased)`，都是 `sql="false"`，不受 #81223 影响）。Crosstab1 过滤条件 `D_Number > 10`；Crosstab2 高亮 `A_Ratio > 0.6` 与按 A_Ratio 的 Top 4；FreehandTable1 过滤条件 `D_String` 不等于 `Hardware` 与按 A_Ratio 的 Top 4（历史 bug #49829 的场景）；Gauge1 绑定 A_Ratio；Crosstab3 用单元格右键 Filter 对 A_Ratio 做即席过滤（生成 RangeSlider1，放进 Selection Container，选中 0.55 到 0.70，历史 bug #48876 的场景），与 Crosstab2 分开，避免和 TopN 的先后顺序混在一起。用例 `calc_condition`，5 个 txt 基线（含 G7 导出的 RangeSlider1）和 1 个 PNG 基线；高亮和 Gauge 只在 PNG 里。PNG 基线是本机生成的，CI 平台像素不同时直接替换 | 计算字段用于过滤条件、TopN、高亮、Gauge | 条件对话框只列明细型计算字段（Crosstab、Freehand 都如此），聚合层的过滤由 TopN、高亮和即席过滤覆盖。独立核对：worksheet 执行计划里 Orders、Returns 的 SQL 直接在 Derby `orders_133` 上执行（2622、197 行），按 City、State、Company、Category 做 FULL OUTER JOIN（3395 行）后自算，与基线逐值一致（USA East 28733、USA West 18802；A_Ratio Hardware 0.7685、Office Tools 0.7464、Games 0.6760、Graphics 0.5771、Educational 0.5259、Personal 0.5164；整体 0.5762；即席过滤 0.55 到 0.70 只留 Games、Graphics）。zip 只合并了新 vs、它的书签存储和 `Examples/Analysis` 的依赖条目，EM 备份里的 license、jwt 密钥、权限键迁移、本地数据源等没有带入 |
-| 其余 G8 场景 | **不做**：Redmine 历史 bug（标题检索）中条件/高亮/TopN 约 23 个、Gauge/Text 14 个，以错误数据为主；视觉绑定 8 个、新图表类型 12 个，以渲染和报错为主，用户能直接看到。聚合型日期已有 6 个 vs（含 `chart` 的 `Calc_Max_Date`），聚合型布尔的声明类型问题在 #81632 | | 有需要时单独评估 |
+| 布尔计算字段（#81669） | **已完成**：测试负责人提供的用例（[#80957](https://issues.inetsoft.com/issues/80957) 附件，按 #81669 的人工步骤），移入 `vs-calcfield/`。`calc_boolean`（Order Model）：vs 计算字段 `flag` = `Quantity Purchased > 5`，声明 Boolean；`flag2` = State（String）；SelectionList1 绑 `flag` 选中 true。`calc_boolean_ws`：worksheet `ws-calc`（根目录）的表达式列 `flag` = `field['Customer.State']` 声明 Boolean（文本保留原值，#81669 的场景）、`flag2` = State 以 N 开头；SelectionList1 绑 `flag2` 选中 false。两个用例只比数据，开 G7 选择导出，共 4 个 txt 基线 | 声明 Boolean 的计算字段：真假值、文本保留、选择列表过滤 | 独立核对（Derby `orders_133`）：Quantity > 5 的明细行 2965 行（共 3934），`calc_boolean` TableView1 2965 行，`flag` 全为 true、`flag2` 全等于 State；客户 35 个，State 以 N 开头 11 个，`calc_boolean_ws` TableView1 24 行，`flag` 全等于 State 文本、`flag2` 全为 false |
+| 聚合型计算字段的声明类型（#81668） | **已完成**：新 vs `vs-calcfield/calc_agg_declared_type`（Order Model）。三个聚合型计算字段表达式相同，`Sum(Number In Stock) / Sum(Reorder Level)`，分别声明 Integer（`R_Int`）、Double（`R_Dbl`）、String（`R_Str`）。Chart1（AssetQuery 路径）放 `R_Int`、`R_Dbl`；Crosstab1（交叉表路径）放三个。选这两列是因为它们在模型里没有格式（Total、Quantity Purchased 带货币或 `#,##0` 格式，导出会四舍五入，看不出截断）。`R_Str` 不放图表（[#82312](https://issues.inetsoft.com/issues/82312)）。超出范围（#82308）由 `VSCalcFieldQueryTest` 覆盖，不放 dashboard。2 个 txt 基线 | 声明类型在图表和交叉表上生效：Integer 截断（不是四舍五入），Double 保留小数，String 为文本 | 独立核对（Derby `orders_133`，CUSTOMERS-ORDERS-ORDER_DETAILS-PRODUCTS 按 State 分组）：14 个州比值 1.4511 到 1.5255，`R_Dbl` 逐值一致；`R_Int` 全为 1，其中 7 个州 ≥ 1.5（四舍五入会得 2）。**`R_Str` 的基线按正确行为写成文本（如 `1.466388888888889`），在 [#82428](https://issues.inetsoft.com/issues/82428) 修复前失败**：声明 String 保存后不写 `dataType`，加载后不转换，导出为 Double 1.4664 |
+| 其余 G8 场景 | **不做**：Redmine 历史 bug（标题检索）中条件/高亮/TopN 约 23 个、Gauge/Text 14 个，以错误数据为主；视觉绑定 8 个、新图表类型 12 个，以渲染和报错为主，用户能直接看到。聚合型日期已有 6 个 vs（含 `chart` 的 `Calc_Max_Date`）；布尔和聚合型声明类型见上两行 | | 有需要时单独评估 |
 | 选择类组件自身内容（G7） | **已完成**：`executeVS(params, bks, true)` 额外把 SelectionList / SelectionTree（值、状态、度量）、RangeSlider（值个数、首尾值、选中范围）、Calendar（范围、选中日期）导出为 txt（`ExportUtil.exportSelection`）。默认关闭，其他 spec 不受影响。vscalc 里有选择类组件绑定计算字段的 12 个用例打开，新增 53 个基线 | 选择列表的取值列表、度量等 | 原有 `exportSelectionList` 不含度量，没有复用。抽样核对：`parent-child tree` 的 `CalcField1`（Sum(label_number)）13 个节点与 worksheet 嵌入数据逐个一致；`filter` 的 `max_time` 按自身分组取 Max，等于值本身 |
 | 个别计算字段未入基线（G9） | 已核对，并入 G7（第 2 节），随 G7 完成 | | 无 |
+
+**产品修复让已有基线过期（2026-11-26，本地 MySQL、DB2 上运行 `testModel`、`testQuery`、`testWorksheet`）：**
+
+| 用例/文件 | 变化 | 原因 | 处理 |
+|---|---|---|---|
+| `testWorksheet` FreehandTable1、zoom_FreehandTable1 | Date 为空的一行 `quarter` 1 → -1 | [#81204](https://issues.inetsoft.com/issues/81204) 修复：`CALC.quarter(null)` 返回 -1 | 基线改为 -1 |
+| `testModel` Chart1 | `CalcField`（聚合型，声明 integer，`Average*Average`）60.5 → 60 等 17 行，"% of concat state" 随之微调 | [#81668](https://issues.inetsoft.com/issues/81668) 修复：声明类型生效 | 基线更新；新值逐行等于旧值截断，百分比列等于新值 / 州合计 |
+| `testModel` Crosstab1 | OH/Cleveland "% of subtotal" 100% → 101% | **缺陷 [#82427](https://issues.inetsoft.com/issues/82427)**（#81668 的回归）：百分比的分子未转换，分母（合计）已转换 | 基线不改，修复后应回到 100% |
+| `testQuery` Crosstab1 | "% of total by row: CalcField" 50 行变化（如 147% → 176%），Grand Total 100% → 120% | 同上，#82427 | 基线不改；修复后的正确值取决于修法，修复后重新生成并核对 |
 
 做法原则：**新建小 vs，不改已有 vs**（改已有 vs 会让已有基线整体变动，混进噪声）；每个新用例只验证"接线"，边界和语义放在产品单测里（[vscalc-java-unit-tests.md](vscalc-java-unit-tests.md)），不为边界值堆 vs。zip 是整个 storage 的二进制备份，改完后用 `vs_backup_scan.py inventory` 前后对比，确认只有预期的 vs 变了。
 
@@ -195,7 +206,9 @@ donut chart：有意为之。产品的 donut 就是 `chartType=PIE`（3）加 `d
 **没验证的：**
 - 严格模式已跑过 vscalc、vspara 和 chart 的两个 spec（见第 3 节）；其余 spec 由各模块自己运行处理。
 - 单测盘点按类名、文件名、方法名静态匹配，没有逐个读测试内容。
-- 基线独立核对只抽了 `aggregate_with`、`aggregate_date` 两个 vs；DB2、MySQL 上的 vs（`testDB2`、`testModel`、`testQuery` 等）未核对。
+- 基线独立核对只抽了 `aggregate_with`、`aggregate_date` 两个 vs；DB2、MySQL 上的 vs（`testDB2`、`testModel`、`testQuery` 等）没有用 SQL 核对，`testModel`、`testQuery`、`testWorksheet` 只按产品修复的语义核对了变化的行（第 5 节）。
+- 本地运行 `testModel`、`testQuery` 要先启动 MySQL、DB2 容器；`-Duse.testcontainers=true` 在本机没有起来（查询全部失败，原因未查），改用已有的 `vscalc-mysql`、`mydb2` 容器。存储 zip 改过后要 `clean`，否则 `configure-server` 不会重新导入。
+- 行级计算字段声明 String 是否也有 #82428 的问题，没有验证。
 - 只覆盖 vscalc 一个 spec，其他模块未评估。
 
 ## 附：数据来源与复现
@@ -216,4 +229,9 @@ SELECT od.QUANTITY, o.CUSTOMER_ID, o.ORDERDATE, c.COMPANY FROM ORDERDETAILS od, 
 -- Orders 分组：DISTINCT City, State, Company, 年月(ORDER_DATE), LAST_NAME, CATEGORY_NAME（ORDERS-CUSTOMERS-REGIONS-SALES_EMPLOYEES-ORDER_DETAILS-PRODUCTS-CATEGORIES）
 -- Returns 分组：DISTINCT City, State, Company, CATEGORY_NAME, 年月(ORDER_DATE)（RETURNS-ORDERS-CUSTOMERS，RETURNS-PRODUCTS-CATEGORIES）
 -- calc_date_count(销售员) = Σ 该销售员的 Orders 分组 × max(1, 同 City/State/Company/Category 的 Returns 分组数)
+-- calc_agg_declared_type（Derby）：R_Dbl = Sum(NUMBER_INSTOCK) / Sum(REORDER_LEVEL)，R_Int = 1（截断）
+SELECT C.STATE, SUM(P.NUMBER_INSTOCK), SUM(P.REORDER_LEVEL), CAST(SUM(P.NUMBER_INSTOCK) AS DOUBLE) / SUM(P.REORDER_LEVEL)
+  FROM CUSTOMERS C JOIN ORDERS O ON O.CUSTOMER_ID = C.CUSTOMER_ID JOIN ORDER_DETAILS D ON D.ORDER_ID = O.ORDER_ID
+  JOIN PRODUCTS P ON P.PRODUCT_ID = D.PRODUCT_ID GROUP BY C.STATE ORDER BY C.STATE;
+-- calc_boolean：上面的连接中 D.QUANTITY > 5 的行数（2965）；calc_boolean_ws：CUSTOMERS 共 35 行，STATE LIKE 'N%' 11 行
 ```
