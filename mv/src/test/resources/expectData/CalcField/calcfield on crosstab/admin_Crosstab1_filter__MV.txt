@@ -1,0 +1,12 @@
+The table size(row x col) is: (10 x 6)
+[Region][[NULL]][2017-01-01 00:00:00][2019-01-01 00:00:00][2020-01-01 00:00:00][Grand Total]
+[USA East][CalcField1][5406][0][0][5406]
+[USA East][CalcField2][302][0][0][302]
+[USA East][Running Sum by row: CalcField1][5406][0][0][5406]
+[USA West][CalcField1][0][4084][5231][9315]
+[USA West][CalcField2][0][256][298][554]
+[USA West][Running Sum by row: CalcField1][5406][4084][5231][9315]
+[Grand Total][CalcField1][5406][4084][5231][14721]
+[Grand Total][Running Sum by row: CalcField1][5406][4084][5231][14721]
+[Grand Total][CalcField2][302][256][298][856]
+

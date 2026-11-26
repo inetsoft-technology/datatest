@@ -617,6 +617,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       String asset_id = '1^128^__NULL__^hit mv/otherassembly-selectaggrcol'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk1', 'bk2'] as String[], false, true)
 
@@ -624,6 +625,7 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['All Sales1|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMV()
       }
    }
 
@@ -841,6 +843,8 @@ class MVHit_RankingAndFilters_Spec extends Specification {
       }
    }
 
+   //No compareWithoutMV: CUSTOMERS1 has MV delete conditions (CITY Los Angeles, STATE CA), which
+   //the creation of the MV applies, so the MV does not hold all the rows of the database.
    @Issue('https://issues.inetsoft.com/issues/54918')
    def 'incremental adhoc filter'() {
       given:

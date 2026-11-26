@@ -82,7 +82,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | `viewsheetInfo mvOnDemand` | true 598、false 206 | 428 / 181 | 各 profile | 有 |
 | 选择组件带度量（阻止瘦 MV，`VSMVAnalyzer.java:1204`-`:1220`） | 选择列表 10、选择树 5 | 8、5 | others 12、submv 1 | 有 |
 | 选择组件数据源是别的组件 | 时间滑块 5、日历 1 | 4、1 | others | 有（含义未逐项核对） |
-| adhoc 选择组件（`MVTableMetaData.java:124`-`:187`） | viewsheet 本身 1；书签状态里 48 个节点、21 个 viewsheet | 书签所在 21 个全部被引用 | others | 有；是否断言命中或回退消息未核对 |
+| adhoc 选择组件（`MVTableMetaData.java:124`-`:187`：列不在关联 MV 里时退回完整 MV；MV 也查不了时提示消息、忽略这个筛选，#53475） | viewsheet 本身 1；书签状态里 48 个节点、21 个 viewsheet | 书签所在 21 个全部被引用（4 个在 `@Ignore` 的 `TabularSource_Spec`） | others | 已核对（2026-11-26）：17 个用例里 16 个跑到 adhoc 书签，`CalcField_Spec.calcfield on crosstab` 补跑 `filter` 书签（4 个基线与不用 MV 逐字节相同）；只比 golden 的 8 个补了 `compareWithoutMV`，已知差异的组件按组件排除（`MVTest.compareWithoutMVExcept`，原因写在用例注释）：导出的图表多出计算字段用的聚合列、`First()` 依赖行序、#54404，以及滑块标签格式（数值 `1000`/`1,000`、时间 `01:01`/`1:01 AM`、按月 `3/01/2017`/`2017 Mar`，修复前就有，#82320 只修了年级别日期分组列）；`incremental adhoc filter` 有 MV 删除条件，不比较。命中断言都只看基表或关联 MV，退回完整 MV 和"忽略筛选"的提示消息没有断言（`MVTest` 不收集用户消息） |
 | 时间滑块：单值 / 复合 | 单值 78（日期 11、时间戳 12、时间 2、数值 57，可重叠），复合 14 | 52、12 | others 为主，topmv、submv 各几个 | 有；`rangeType=16` 的日期 1 个没被引用 |
 | 时间滑块对数刻度（`RangeSelectionTransformer.java:146`-`:150`） | 1 | 1 | others | 只有 1 个 |
 | 日历 `daySelection`、`type`/`mode` | true 3、false 21；只有 type=1 的 mode=1、2 | 2、20 | others 为主，topmv 5、submv 1、vpm 1 | 有 |
@@ -93,7 +93,7 @@ mv 的验证机制是各模块里最严的：导出文件数必须等于基线�
 | 表达式含 `@nomv` 或 `parameter.`（`MVTool.isExpressionMVCompatible`，`:630`） | 0 | — | topmv | 分析器的拒绝有单测（`VSMVAnalyzerAcceptableTest`）；端到端：运行时加表达式（T11，`TopMV_RuntimeAssets_Spec`） |
 | 计算字段含 `parameter.` | 1 | 1 | submv | 只有 1 个 |
 | 计算字段引用聚合（拒绝，`VSMVAnalyzer.java:865`-`:904`） | 23 | 21 | others 19、topmv 2 | 有 |
-| 列表输入组件绑定表（动态表，`VSMVAnalyzer.java:666`-`:669`、`:816`-`:819`） | 17 | 12 | others | 有；是否断言不命中未核对 |
+| 列表输入组件的取值来源表（`bindingInfo/table`，`VSMVAnalyzer.java:666`-`:669`，可以建 MV） | 17 | 12 | others | 已核对：可选值和标签都导出（`MVTest.export(ListData)`），12 个用例都与不用 MV 比较（`otherassembly-selectaggrcol` 补了）；未引用的 5 个在 T17 一致。分析器拒绝的"动态表"是输入组件写回的表（`assemblyInfo/table` 加列，`TransformationDescriptor.java:203`，`VSMVAnalyzer.java:818`），只有 `NOT Transform/embedded-input assembly` 一个，`NotTransform_Spec` 断言不建 MV 和警告；其余输入组件写回的是参数 `$(...)`，不是表 |
 | 输出组件标量绑定（`MVDef.java:1163`-`:1181`） | 29 | 19 | others | 有 |
 | 嵌入表（拒绝，`VSMVAnalyzer.java:712`-`:718`） | 1 | 0 | — | `NOT Transform` 的两个嵌入表 viewsheet 已由 `NotTransform_Spec` 覆盖 |
 | Cube 绑定（拒绝，`VSMVAnalyzer.java:701`-`:708`） | 1（`NOT Transform/cube`） | 0 | — | 测试环境走不到 cube 规则（§6 第 6 条） |

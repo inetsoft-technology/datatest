@@ -933,6 +933,20 @@ class MVTest {
     *              null for all files.
     */
    void compareWithoutMV(Collection<String> names) {
+      compareFilesWithoutMV(names, null)
+   }
+
+   /**
+    * {@link #compareWithoutMV()} for all exported files but some, for a viewsheet where these
+    * components differ for a known reason (the reason belongs in a comment of the case).
+    *
+    * @param names the names of the files without the suffix (e.g. {@code admin_Chart1}).
+    */
+   void compareWithoutMVExcept(Collection<String> names) {
+      compareFilesWithoutMV(null, names)
+   }
+
+   private void compareFilesWithoutMV(Collection<String> names, Collection<String> except) {
       if(COMPARE_MODE == 'golden') {
          return
       }
@@ -949,6 +963,12 @@ class MVTest {
          def missing = names.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
          assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
          files = files.findAll { names.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
+      }
+
+      if(except != null) {
+         def missing = except.findAll { name -> !files.any { it.getName() == name + MV_EXT + ".txt" } }
+         assert missing.isEmpty(): asset_id + " not exported with MV: " + missing
+         files = files.findAll { !except.contains(it.getName() - (MV_EXT + ".txt")) } as File[]
       }
 
       if(files.length == 0) {

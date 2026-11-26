@@ -616,14 +616,15 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
-   //fields are computed from; the shared columns are the same.
+   //The charts are not compared: without MV the exported chart data also has the aggregates the
+   //calc fields are computed from; the shared columns are the same.
    @Issue('https://issues.inetsoft.com/issues/49832')
    def 'chart_namegroup'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/chart_namegroup'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'b1'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'b1'] as String[], false, true)
 
@@ -632,6 +633,7 @@ class CalcField_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_Order Model|TopMV', 'Order Model|TopMV'])
          mvtest.getMVHitInfo().containsAll(['Order Model|TopMV', 'ASSOCIATION_Order Model|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_b1'])
       }
    }
 
@@ -672,14 +674,15 @@ class CalcField_Spec extends Specification {
       }
    }
 
-   //No compareWithoutMV: without MV the exported chart data also has the aggregates the calc
-   //fields are computed from; the shared columns are the same.
+   //The charts are not compared: without MV the exported chart data also has the aggregates the
+   //calc fields are computed from; the shared columns are the same.
    @Issue('https://issues.inetsoft.com/issues/51346')
    def 'multiple calc on chart'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/multiple calc on chart'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'filter'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
@@ -688,6 +691,7 @@ class CalcField_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|SubMV', 'OrdersAndReturns_O|SubMV'])
          mvtest.getMVHitInfo().containsAll(['OrdersAndReturns_O|SubMV', 'ASSOCIATION_OrdersAndReturns|SubMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_filter', 'admin_Chart2', 'admin_Chart2_filter'])
       }
    }
 
@@ -708,14 +712,15 @@ class CalcField_Spec extends Specification {
       }
    }
 
+   // The bookmark filter has the adhoc filters (RangeSlider1, RangeSlider2) of the viewsheet.
    def 'calcfield on crosstab'() {
       given:
       String asset_id = '1^128^__NULL__^CalcField/calcfield on crosstab'
       mvtest = new MVTest(asset_id)
 
-      mvtest.executeVSWithoutMV(null, null, false, true)
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'filter'] as String[], false, true)
       mvtest.createMV(false)
-      mvtest.executeVS(null, null, false, true)
+      mvtest.executeVS(null, ['(Home)', 'filter'] as String[], false, true)
 
       expect:
       verifyAll {
@@ -734,9 +739,10 @@ class CalcField_Spec extends Specification {
     * Making `FIRST`/`LAST` non-combinable would force detail materialization to make the two paths agree,
     * but the performance cost is not justified.
     */
-   //No compareWithoutMV: CalcField5 is First([Product:Total], [Customer:Address]); the first
-   //address has several rows, and the one used depends on the row order. The range slider
-   //labels and the exported chart data also differ in representation.
+   //Not compared: Crosstab1, whose CalcField5 is First([Product:Total], [Customer:Address]); the
+   //first address has several rows, and the one used depends on the row order. Chart1, whose
+   //exported data also has the aggregates the calc fields use without MV. RangeSlider1
+   //(bk_select, a month range), labelled 3/01/2017 with MV and 2017 Mar without MV.
    //SelectionTree2 (default, bk_select): the measure is the aggregate calc field converted to its
    //declared Date (2020-12-30), not a Timestamp (#81668).
    def 'Aggregate_ForDate'() {
@@ -744,6 +750,7 @@ class CalcField_Spec extends Specification {
       String asset_id = '1^128^__NULL__^CalcField/Aggregate_ForDate'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -751,6 +758,7 @@ class CalcField_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_bk_select', 'admin_Crosstab1', 'admin_Crosstab1_bk_select', 'admin_RangeSlider1_bk_select'])
       }
    }
 

@@ -712,11 +712,15 @@ class AssociationMV_Spec extends Specification {
 
    //No compareWithoutMV: the range slider labels are formatted differently with and without MV
    //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
+   // The range sliders RangeSlider2 and RangeSlider3 (bk_select, adhoc filters on numbers) are
+   // labelled without the number format with MV (1000, 5100) and with it without MV (1,000,
+   // 5,100), so they are not compared; the values and the selected range are the same.
    def 'TestCase_AdhocFilter'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -725,17 +729,19 @@ class AssociationMV_Spec extends Specification {
          mvtest.getMVDefInfo().containsAll(['ASSOCIATION_OrdersAndReturns|TopMV', 'OrdersAndReturns|TopMV'])
          mvtest.getMVHitInfo().containsAll(['OrdersAndReturns|TopMV', 'ASSOCIATION_OrdersAndReturns|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_RangeSlider2_bk_select', 'admin_RangeSlider3_bk_select'])
       }
    }
 
-   //No compareWithoutMV: the range slider labels are formatted differently with and without MV
-   //(e.g. 1000 / 1,000, 01:01 / 1:01 AM, 2002 Jan / 2002).
-   //The exported chart data also has the aggregate a calc field uses without MV.
+   // Not compared: Chart1, whose exported data also has the aggregate a calc field uses without
+   // MV (5 columns, 4 with MV); RangeSlider2 (bk_select, a month range), labelled 3/01/2017 with
+   // MV and 2017 Mar without MV, the same values and range.
    def 'TestCase_AdhocFilter2'() {
       given:
       String asset_id = '1^128^__NULL__^AssociationMV/TestCase_AdhocFilter2'
       mvtest = new MVTest(asset_id)
 
+      mvtest.executeVSWithoutMV(null, ['(Home)', 'bk_select'] as String[], false, true)
       mvtest.createMV(false)
       mvtest.executeVS(null, ['(Home)', 'bk_select'] as String[], false, true)
 
@@ -743,6 +749,7 @@ class AssociationMV_Spec extends Specification {
       verifyAll {
          mvtest.getMVHitInfo().containsAll(['Order Model|TopMV'])
          mvtest.compareData(false)
+         mvtest.compareWithoutMVExcept(['admin_Chart1', 'admin_Chart1_bk_select', 'admin_RangeSlider2_bk_select'])
       }
    }
 
