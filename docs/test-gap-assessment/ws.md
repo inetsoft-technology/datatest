@@ -505,27 +505,27 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 少用数据库的方言 | ClickHouse 4 个（#82304～#82307）、Informix（#82290）、#82200 | 方言单测只断言生成的 SQL 文本，只有 Derby 真正执行；`sqlhelper.xml` 标为支持的操作在真实库上未必能执行（ClickHouse 的 union） | `sqlhelper.xml` 声明支持的每项操作在真实库上执行一次（G11 加 Informix、ClickHouse 是开头） |
 | 并发与共享状态 | #82290 | 内存 join、union 的两边在线程池里同时执行、共用一个 `VariableTable`，其中不只 `HINT_MAX_ROWS` | stylebi 单测用 H2 复现（H2 在 `sqlhelper.xml` 里同样不支持 SQL 限行），再检查其他共享状态 |
 
-### 8b. 其他容易出问题的地方（按数据库语义推断；第 1、2、3、5 项已在 7 个库上用 probe 验证）
+### 8b. 其他容易出问题的地方（按数据库语义推断；10 项都已在 7 个库上用 probe 验证）
 
 1. **跨数据源的等值 join，数字键类型不同**：同一个值，Oracle NUMBER 读成 BigDecimal，MySQL INT 是 Integer，BIGINT 是 Long；跨源 join 只能在内存做，若哈希匹配不统一键的类型，`Integer(1)` 与 `BigDecimal(1.0)` 匹配不上，行静默丢失。**已验证，无问题**：跨库按 CUSTOMER_ID 的等值 join 6 组都是 35 行，按日期（DATE 对 TIMESTAMP）3 组都是 3 行。
 2. **超过 2^53 的整数在内存处理**：BIGINT ID 在内存分组、去重、join、比较时若转成 double，相邻值合并，分组变少、join 多出行。#82099 只修了条件值的截断。**已验证，有问题**：值为 `CUSTOMER_ID + 2^53` 时，读成 Long（MySQL、PostgreSQL、DB2、Derby 的 BIGINT）在内存里分组、join、比较都正确；读成 BigDecimal（Oracle NUMBER、SQL Server numeric）时内存分组 19 组（应为 35）、内存等值条件 3 行（应为 1），按 double 比较（#82378）。同时发现：数值型 SQL 表达式列上的等于条件，值按字符串绑定（表达式列的 sqlType 是 VARCHAR），PostgreSQL 报错，MySQL 按 double 比较（#82379）；分组列是 SQL 表达式而聚合不能下推（Median、Mode）时，SQL 文本按 JavaScript 执行，报错或在 Oracle 上静默按 double 算（#82381，同 #75698 一类）。
 3. **NULL 与取反条件**：SQL 里 `<>`、`NOT IN` 不返回 NULL 行，`NOT IN` 的列表含 NULL 时一行都不返回；内存里取反对 NULL 的处理没有用例。**已验证，无问题**：`<>`、not one of、not between 在 7 个库上下推与内存一致，NULL 都被排除（21、20、8、7 行，与手算一致）。
-4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。
+4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。**已验证**：升序时 MySQL、SQL Server、Informix 和内存把 NULL 放最前，Oracle、PostgreSQL、DB2、Derby 放最后，降序相反；属于数据库规则。同时发现：排序在内存做（如按脚本列排序）时，最大行数先作用到源查询，表保留的是数据库返回的前 N 行再排序，不是排序后的前 N 行，7 个库都一样（#82389）。
 5. **不区分大小写的库上做 GROUP BY、DISTINCT**：MySQL、SQL Server 默认把 'A' 与 'a'、'a' 与 'a ' 归为同一个值；G8 只测了条件，没测分组和去重，同一份数据可能得到不同的组数。**已验证**：下推分组时 Oracle、PostgreSQL、DB2、Derby、Informix 区分大小写，MySQL、SQL Server 不区分；尾部空格 MySQL、SQL Server、DB2、Derby、Informix 忽略，Oracle、PostgreSQL 不忽略；内存分组不区分大小写、保留尾部空格。属于已定的行为（#78887），文档补充为 #82382。内存去重没测成：带脚本列的去重被下推到 SQL，作用在脚本读取的隐藏列上，可见结果不去重（#82380）。
-6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。
-7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。
-8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。
-9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。
-10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。
+6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。**已验证**：单精度列上 one of 0.15，DB2 下推 0 行（REAL 提升为 DOUBLE 后比较），其他 6 个库下推和内存都是 2 行；属于数据库规则。
+7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。**已验证，无问题**：按 Hour、HourOfDay 分组，7 个库下推与内存一致，无时区偏移（毫秒精度、夏令时未测）。下推的日期分组没有 ORDER BY，行序与内存（已排序）不同。PRODUCE_DATETIME 只有 Derby、Informix 有 12 点以后的时间，其他库都在 12 点以内，是测试库数据的差异。
+8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。**已验证，有问题**：INT 列求和超过 2^31，下推在 SQL Server、DB2、Derby 上报溢出，Oracle、MySQL、PostgreSQL、Informix 和内存求和正确（#82390，待开发确定是否放宽类型）。查询失败时 SQL Server、DB2 显示失败前已读到的行加警告，不是占位表，第 8c 第 5 项的占位行检查发现不了。
+9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。**已验证**：7 个库保留的行各不相同；做基线时排序要加唯一列。
+10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。**已验证变量部分，无问题**：同一 worksheet 的变量条件依次换成 NJ、NY、NJ、CA、NY，按产品方式刷新变量并重置、或每次新开沙盒，结果都正确（换用户、多数据源未测）。
 
 viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块时一并检查。
 
 ### 8c. 建议顺序
 
 1. stylebi 单测：8a 的混合类型比较器、内存 join 并发。
-2. 8b 的第 1、2、3、5 项：**已完成**（2026-11-26，在 `202611252340` 构建上复核）。第 1、3 项无问题；第 2、5 项及同时发现的问题报为 #82378～#82381、文档 #82382。probe 的 worksheet 未提交，做成正式样板时可沿用。
+2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。probe 的 worksheet 未提交，做成正式样板时可沿用。
 3. G12。
-4. 8a 的机械化成对对照、方言执行检查；8b 的第 4、6、7、9 项可并入其中。
+4. 8a 的机械化成对对照、方言执行检查；8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时可并入其中。
 5. `ws_scan.py crosscheck` 加一项检查：基线里出现查询失败的占位行（数字 999.99 或 999、字符串 XXXXX）就报出。现有基线只有 `specialChar/sqlserver.txt` 一个（本地的 SQL Server 测试服务器上没有数据库 `test.1`，见第 6 节）；vpm 的两个是有意的。
 
 ## 附：数据来源与复现
