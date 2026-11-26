@@ -1,0 +1,6 @@
+The data size(row x col) is:(5 x 2)
+product_id, description
+12, Application server
+23, 17 inch LCD monitor
+24, 19 inch LCD monitor
+25, 500 GB network storage

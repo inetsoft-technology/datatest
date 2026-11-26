@@ -4,7 +4,7 @@
 
 ## 1. 结论
 
-- **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。70 个用例中，除 `InRange_Spec` 和 2 个 `@Ignore`（`clickhouse`、`ws group case check`）外都真正比对数据。
+- **验证机制：** `WorksheetTest` 已是严格模式（PR #213）：导出失败、少导出、上传失败都会让用例失败。77 个用例中，除 `InRange_Spec` 和 2 个 `@Ignore`（`clickhouse`、`ws group case check`）外都真正比对数据。
 - **CI：** `test-ws.yml` 只能手动触发、失败不挡合入；Jenkins 没有 ws 阶段；`InRange_Spec` 在 Linux 上整个跳过，所以**表条件里的 date in 在 CI 上是 0 覆盖**。严格模式之后 CI 没有跑过（最后一次 2026-10-13）。
 - **执行路径：** 全部用 `LIVE_MODE`，没有 `RUNTIME_MODE`。`DataComposition_Spec` 的 9 个用例（`checkMergeable CM1`、`CM2`，`merge CM1`～`CM8`）已断言每张表能否下推到 SQL（G5，期望值主要来自设计矩阵，判断已与实际执行的 SQL 核对一致），`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows` 同样断言（G11 样板），其余用例只比数据。
 - **各库差异：** CI 范围绑 8 个服务器库的 212 张表里 Oracle 占 122 张，SQL Server、Informix、PostgreSQL 很薄，ClickHouse 为 0（`@Ignore`）。按库对照（G11）5 类代表场景都有样板，覆盖 Oracle、PostgreSQL、MySQL、SQL Server、Derby、Informix，统计聚合、日期分组、max rows 另含 DB2（`WSData_Spec.setOperation`、`fullOuterJoin`、`statAggregate`、`dateGroup`、`maxRows`）；发现 WeekOfYear 下推与内存不一致（#82200）、DB2 整数列 Average 截断（见 G11 样板）；其余场景和库待定。
@@ -15,7 +15,7 @@
 
 ## 2. 覆盖情况
 
-**规模：** 6 个 spec、70 个用例（`DataComposition` 10、`InRange` 4、`WSAsset` 2、`WSData` 36、`WSOthers` 9、`WSProperty` 9）。`wsStorage.zip`：99 个 worksheet、4 个 viewsheet、32 个逻辑模型、13 个数据源。CI 实际运行范围（去掉 Linux 上跳过的 `InRange_Spec` 和 2 个 `@Ignore`）：49 个 worksheet、668 张可见表。下面的覆盖矩阵和统计是评估时的口径（42 个 worksheet、470 张表，不含后来加入运行的 `suquery_execute`、`specialChar`、`DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`、`DB/nonEquiJoin`、`DB/stringCompare`、`DB/stringOps`、`DB/postCondition`、`DB/dateInRolling`、`DB/clickhouseSamples`）。
+**规模：** 6 个 spec、77 个用例（`DataComposition` 10、`InRange` 4、`WSAsset` 2、`WSData` 43、`WSOthers` 9、`WSProperty` 9）。`wsStorage.zip`：112 个 worksheet、4 个 viewsheet、32 个逻辑模型、13 个数据源。CI 实际运行范围（去掉 Linux 上跳过的 `InRange_Spec` 和 2 个 `@Ignore`）：62 个 worksheet、1309 张可见表。下面的覆盖矩阵和统计是评估时的口径（42 个 worksheet、470 张表，不含后来加入运行的 `suquery_execute`、`specialChar`、`DB/setOperation`、`DB/fullOuterJoin`、`DB/statAggregate`、`DB/dateGroup`、`DB/maxRows`、`DB/nonEquiJoin`、`DB/stringCompare`、`DB/stringOps`、`DB/postCondition`、`DB/dateInRolling`、`DB/clickhouseSamples`，以及 8b 的 7 个）。
 
 **覆盖矩阵**（CI 范围 470 张可见表，单元格为"表数（worksheet 数）"，来自 `ws_scan.py inventory`）：
 
@@ -418,7 +418,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - ws 的 CI 是否改为定时运行、失败挡合入、加入 Jenkins。
 - G8、G12 的场景范围；G11 样板推广到哪些库和场景。
 
-**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 本地的 SQL Server 测试服务器 上没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有），CI 镜像里有没有未核实。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
+**严格模式的漏洞（G1）：** LIVE 模式下查询失败时，产品不抛异常，返回失败查询的占位表（数字 999.99 或 999，字符串 XXXXX，`AssetQuery.getDesignTableLens(vars, true)`），错误只作为一条警告（`common.table.getDataFailed`）。`WorksheetTest` 把占位表当正常结果导出，用例照常通过。现有基线里 `specialChar/sqlserver.txt` 就是占位行：2024-08 的基线有 11 行数据，2025-11-25 更新基线时变成占位行；原因是 SQL Server 测试库没有数据库 `test.1`（表 `"test.1".dbo."test.tb"` 不存在，`sys.databases` 里没有）；本地测试服务器与 CI 用同一镜像 `inetsoft-dbs-sqlserver:2017`，CI 上同样没有。暂不处理。vpm 的 `disable default connection in worksheet` 两个占位基线是有意的（禁用连接后查询应失败），它走 `AdditionalConnectionTest`，不经过 `WorksheetTest`。
 
 **没验证的：**
 - 严格模式后 CI 上的结果（只在本机 Windows 跑过）。
@@ -501,32 +501,32 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 | 类别 | 缺陷 | 缺口 | 补法 |
 |---|---|---|---|
 | 同一操作下推与内存结果不同 | #82263、#82264、#82270、#82271、#82304、#82305、#82200 | 用例只跑一条路径对基线，两条路径不一致看不出来；G8 只手工挑了一部分场景 | 机械化成对对照：条件运算 × 列类型（字符串、整数、小数、日期、布尔）× 数据库，同一份数据各做一张下推表、一张内存表 |
-| 内存比较器遇到混合类型 | #82263（Long 对小数按 long 比）、#82264（类型不同返回 IGNORED，保留所有行对） | 单测只测同类型 | stylebi 单测：join、条件、排序、分组用到的比较器，Long、BigDecimal、Double、String、Date 两两组合 |
+| 内存比较器遇到混合类型 | #82263（Long 对小数按 long 比）、#82264（类型不同返回 IGNORED，保留所有行对）、#82378（超过 2^53 的 BigDecimal 按 double 比） | 单测只测同类型 | stylebi 单测：join、条件、排序、分组用到的比较器，Long、BigDecimal、Double、String、Date 两两组合 |
 | 少用数据库的方言 | ClickHouse 4 个（#82304～#82307）、Informix（#82290）、#82200 | 方言单测只断言生成的 SQL 文本，只有 Derby 真正执行；`sqlhelper.xml` 标为支持的操作在真实库上未必能执行（ClickHouse 的 union） | `sqlhelper.xml` 声明支持的每项操作在真实库上执行一次（G11 加 Informix、ClickHouse 是开头） |
 | 并发与共享状态 | #82290 | 内存 join、union 的两边在线程池里同时执行、共用一个 `VariableTable`，其中不只 `HINT_MAX_ROWS` | stylebi 单测用 H2 复现（H2 在 `sqlhelper.xml` 里同样不支持 SQL 限行），再检查其他共享状态 |
 
-### 8b. 其他容易出问题的地方（按数据库语义推断，未验证）
+### 8b. 其他容易出问题的地方（按数据库语义推断；10 项都已在 7 个库上用 probe 验证）
 
-1. **跨数据源的等值 join，数字键类型不同**：同一个值，Oracle NUMBER 读成 BigDecimal，MySQL INT 是 Integer，BIGINT 是 Long；跨源 join 只能在内存做，若哈希匹配不统一键的类型，`Integer(1)` 与 `BigDecimal(1.0)` 匹配不上，行静默丢失。G11 的 join 都在同一个库里。
-2. **超过 2^53 的整数在内存处理**：BIGINT ID 在内存分组、去重、join、比较时若转成 double，相邻值合并，分组变少、join 多出行。#82099 只修了条件值的截断。
-3. **NULL 与取反条件**：SQL 里 `<>`、`NOT IN` 不返回 NULL 行，`NOT IN` 的列表含 NULL 时一行都不返回；内存里取反对 NULL 的处理没有用例。
-4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。
-5. **不区分大小写的库上做 GROUP BY、DISTINCT**：MySQL、SQL Server 默认把 'A' 与 'a'、'a' 与 'a ' 归为同一个值；G8 只测了条件，没测分组和去重，同一份数据可能得到不同的组数。
-6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。
-7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。
-8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。
-9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。
-10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。
+1. **跨数据源的等值 join，数字键类型不同**：同一个值，Oracle NUMBER 读成 BigDecimal，MySQL INT 是 Integer，BIGINT 是 Long；跨源 join 只能在内存做，若哈希匹配不统一键的类型，`Integer(1)` 与 `BigDecimal(1.0)` 匹配不上，行静默丢失。**已验证，无问题**：跨库按 CUSTOMER_ID 的等值 join 6 组都是 35 行，按日期（DATE 对 TIMESTAMP）3 组都是 3 行。
+2. **超过 2^53 的整数在内存处理**：BIGINT ID 在内存分组、去重、join、比较时若转成 double，相邻值合并，分组变少、join 多出行。#82099 只修了条件值的截断。**已验证，有问题**：值为 `CUSTOMER_ID + 2^53` 时，读成 Long（MySQL、PostgreSQL、DB2、Derby 的 BIGINT）在内存里分组、join、比较都正确；读成 BigDecimal（Oracle NUMBER、SQL Server numeric）时内存分组 19 组（应为 35）、内存等值条件 3 行（应为 1），按 double 比较；Oracle、SQL Server 上这个值在表里已经是 double，显示值和下推分组的标签同样被舍入（#82378）。同时发现：数值型 SQL 表达式列上的等于条件，值按字符串绑定（表达式列的 sqlType 是 VARCHAR），PostgreSQL 报错，MySQL 按 double 比较（#82379）；分组列是 SQL 表达式而聚合不能下推（Median、Mode）时，SQL 文本按 JavaScript 执行，报错或在 Oracle 上静默按 double 算（#82381，同 #75698 一类）。
+3. **NULL 与取反条件**：SQL 里 `<>`、`NOT IN` 不返回 NULL 行，`NOT IN` 的列表含 NULL 时一行都不返回；内存里取反对 NULL 的处理没有用例。**已验证，无问题**：`<>`、not one of、not between 在 7 个库上下推与内存一致，NULL 都被排除（21、20、8、7 行，与手算一致）。
+4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。**已验证**：升序时 MySQL、SQL Server、Informix 和内存把 NULL 放最前，Oracle、PostgreSQL、DB2、Derby 放最后，降序相反；属于数据库规则。同时发现：排序在内存做（如按脚本列排序）时，最大行数先作用到源查询，表保留的是数据库返回的前 N 行再排序，不是排序后的前 N 行，7 个库都一样（#82389）。
+5. **不区分大小写的库上做 GROUP BY、DISTINCT**：MySQL、SQL Server 默认把 'A' 与 'a'、'a' 与 'a ' 归为同一个值；G8 只测了条件，没测分组和去重，同一份数据可能得到不同的组数。**已验证**：下推分组时 Oracle、PostgreSQL、DB2、Derby、Informix 区分大小写，MySQL、SQL Server 不区分；尾部空格 MySQL、SQL Server、DB2、Derby、Informix 忽略，Oracle、PostgreSQL 不忽略；内存分组不区分大小写、保留尾部空格。属于已定的行为（#78887），文档补充为 #82382。内存去重没测成：带脚本列的去重被下推到 SQL，作用在脚本读取的隐藏列上，可见结果不去重（#82380）。
+6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。**已验证**：单精度列上 one of 0.15，DB2 下推 0 行（REAL 提升为 DOUBLE 后比较），其他 6 个库下推和内存都是 2 行；属于数据库规则。
+7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。**已验证，无问题**：按 Hour、HourOfDay 分组，7 个库下推与内存一致，无时区偏移（毫秒精度、夏令时未测）。下推的日期分组没有 ORDER BY，行序与内存（已排序）不同。PRODUCE_DATETIME 只有 Derby、Informix 有 12 点以后的时间，其他库都在 12 点以内，是测试库数据的差异。
+8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。**已验证，有问题**：INT 列求和超过 2^31，下推在 SQL Server、DB2、Derby 上报溢出，Oracle、MySQL、PostgreSQL、Informix 和内存求和正确（#82390，待开发确定是否放宽类型）。查询失败时 SQL Server、DB2 显示失败前已读到的行加警告，不是占位表，第 8c 第 5 项的占位行检查发现不了。
+9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。**已验证**：7 个库保留的行各不相同；做基线时排序要加唯一列。
+10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。**已验证变量部分，无问题**：同一 worksheet 的变量条件依次换成 NJ、NY、NJ、CA、NY，按产品方式刷新变量并重置、或每次新开沙盒，结果都正确（换用户、多数据源未测）。
 
 viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块时一并检查。
 
 ### 8c. 建议顺序
 
 1. stylebi 单测：8a 的混合类型比较器、内存 join 并发。
-2. 8b 的第 1、2、3、5 项（结果静默出错、可能性最大）：先在真实库上用 probe 验证，确认后再定补单测、datatest 样板还是报 bug。
+2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。已做成样板：`WSData_Spec.crossSourceJoin`、`bigNumbers`、`nullSemantics`、`caseGrouping`、`numericEdge`、`hourGroup`、`variableCache`（worksheet 同名放在 `DB/` 下，由 `ws_8b_gen.py` 生成），基线保留上述缺陷的现状，查询失败的表不放进去（#82379 的 PostgreSQL、#82381、#82390 的 10 张）；第 9 项的结果由数据库决定，不做样板。
 3. G12。
-4. 8a 的机械化成对对照、方言执行检查；8b 的第 4、6、7、9 项可并入其中。
-5. `ws_scan.py crosscheck` 加一项检查：基线里出现查询失败的占位行（数字 999.99 或 999、字符串 XXXXX）就报出。现有基线只有 `specialChar/sqlserver.txt` 一个（本地的 SQL Server 测试服务器 上没有数据库 `test.1`，见第 6 节）；vpm 的两个是有意的。
+4. 8a 的机械化成对对照、方言执行检查；8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时可并入其中。
+5. `ws_scan.py crosscheck` 的占位表检查：**已完成**。按产品占位表的规则（`XNodeMetaTable`：只有一行，字符串 X…，数字 999.99、999、99，布尔 true，日期取当前时间）检查基线根目录下所有 txt，新出现的报为 New。已知的只有 `specialChar/sqlserver.txt`（SQL Server 测试镜像里没有数据库 `test.1`，见第 6 节）；用在 vpm 上命中 3 个，都是有意的。查询在读取行时失败（如 #82390 的溢出）只留下部分行和警告，这种基线检查不出来。
 
 ## 附：数据来源与复现
 
