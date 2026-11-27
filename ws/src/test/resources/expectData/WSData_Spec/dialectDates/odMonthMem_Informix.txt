@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 2)
+order_id, Month(order_date_JS)
+1, 2002 Apr
+1, 2002 Aug
+1, 2002 Jan
+1, 2002 Nov
+1, 2002 Oct
+1, 2003 Apr
+1, 2003 Oct
+1, 2004 Apr
+1, 2004 Aug
+1, 2004 Jan
+1, 2004 Jul
+1, 2004 Jun
+1, 2005 Jan
+3, 2003 Sep

@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 1)
+category_id
+4
+6

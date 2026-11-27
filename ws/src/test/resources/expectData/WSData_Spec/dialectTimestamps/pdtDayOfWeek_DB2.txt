@@ -1,0 +1,5 @@
+The data size(row x col) is:(4 x 2)
+PRODUCT_ID, DayOfWeek(PRODUCE_DATETIME)
+4, Tue
+10, Mon
+11, Sun

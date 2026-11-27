@@ -1,0 +1,25 @@
+The data size(row x col) is:(24 x 1)
+description
+NULL
+17 inch LCD monitor
+19 inch LCD monitor
+500 GB network storage
+Application server
+Chess game
+Chinese Go game
+Collection of menus
+Database browser
+Document management tool
+Educational software
+Girl"s game
+House hunting assistant
+Java game toolkit
+Learn ABC
+Lightweight email agent
+Math tutor
+Over 10,000 icons
+Palm power sync
+Personal health monitor
+Web enabled calendar/org
+Wireless optical USB mouse
+Wireless USB keyboard

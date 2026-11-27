@@ -379,9 +379,8 @@ class WSData_Spec extends Specification {
       // <db>_groupMem: Count and Mode (never SQL) by CUSTOMER_ID, no sort, max 3 -> in memory, groups 1, 2, 3.
       // A grouped table with max rows and no sort is left out: its SQL has no ORDER BY, so the kept groups are
       // database-defined (known limit in #80446; Oracle, MySQL, PostgreSQL keep other groups than memory).
-      // Informix has no SQL row limit: only its top-level tables are here. Its joins run in memory with both sides at
-      // once on one variable table, and the row limit hint of one side reaches or is removed by the other (rows vary
-      // from run to run, #82290), so <db>_<table>Join is left out for Informix.
+      // Informix has no SQL row limit: its joins run in memory with both sides at once (their row limit hints shared
+      // one variable table and the rows varied from run to run until #82290 was fixed).
       wstest.executeWS('1^2^__NULL__^DB/maxRows', null, null)
 
       expect:
@@ -490,19 +489,19 @@ class WSData_Spec extends Specification {
       // ClickHouse (no ORDERS / PRODUCTS there): the G8 / G11 cases that differ on it, on default.base_type (20 rows),
       // each pushed to ClickHouse and in memory (<table>Mem, a script copy or a script column).
       // Case: upper(string_col) = / starting with / contains / like a lower-case value: ClickHouse none, memory id 1.
-      // CH_swUnder (starting with 'hel_') and CH_ctPercent (contains 'l%o'): ClickHouse has no ESCAPE, so _ and % stay
-      // wildcards and return hello; memory compares literally and returns nothing (#82304).
+      // CH_swUnder (starting with 'hel_') and CH_ctPercent (contains 'l%o'): _ and % are literal pushed and in memory,
+      // nothing matches (ClickHouse has no ESCAPE; the wildcards used to stay, #82304, fixed).
       // CH_padEq: trailing space kept everywhere. CH_nullEmpty: a String is never NULL in ClickHouse ('' is not null),
       // memory treats '' as null (ids 1-3).
       // >= joins: ge 5 rows both; bigHalf 4 pushed, 5 in memory (#82263); strNumMem keeps all 9 pairs (#82264);
       // caseCmp: binary order in ClickHouse (9 rows), case-insensitive in memory (1).
-      // CH_fullJoin: ClickHouse fills the side without a match with default values (join_use_nulls = 0): id 0 where
-      // memory (CH_fullJoinMem) has NULL (#82305).
+      // CH_fullJoin: the side without a match is NULL pushed and in memory (ClickHouse used to fill default values,
+      // join_use_nulls = 0, #82305, fixed).
       // CH_minus = 1.732 pushed and in memory. Statistics by boolean_col match an independent computation; dates are
       // not grouped in SQL on ClickHouse. CH_top / CH_distinct keep 5 / 3 rows.
-      // Not in the worksheet: CH_union (the generated UNION without ALL / DISTINCT fails on ClickHouse 22.1, #82306),
-      // CH_corr (covariance SQL adds Float64 and Decimal, which ClickHouse rejects, #82307), CH_topJoin (#82290, 20 rows
-      // instead of 5).
+      // CH_union (the generated UNION failed on ClickHouse 22.1, #82306) and CH_topJoin (20 rows instead of 5, #82290)
+      // are back since those were fixed. Not in the worksheet: CH_corr (covariance SQL adds Float64 and Decimal, which
+      // ClickHouse rejects, #82307).
       wstest.executeWS('1^2^__NULL__^DB/clickhouseSamples', null, null)
 
       expect:
@@ -569,8 +568,8 @@ class WSData_Spec extends Specification {
       // DESCRIPTION is NULL for products 1, 15, 16. Negated conditions (<>, not one of, not between) exclude NULL
       // pushed and in memory. nullSort*: max rows 4, sorted by DESCRIPTION then PRODUCT_ID; ascending, NULL comes
       // first on MySQL, SQL Server, Informix, last on Oracle, PostgreSQL, DB2, Derby (database rule).
-      // nullSort*Mem_: the sort is in memory and the max rows cut the source first (#82389): the first 4 products,
-      // sorted, kept in the baseline. Which 4 depends on the order the database sends the rows in (no ORDER BY).
+      // nullSort*Mem_: the sort is in memory, NULL first ascending (the max rows used to cut the source before the
+      // sort, #82389, fixed in stylebi 202611260547).
       wstest.executeWS('1^2^__NULL__^DB/nullSemantics', null, null)
 
       expect:
@@ -638,6 +637,7 @@ class WSData_Spec extends Specification {
       caseName =  specificationContext.currentIteration.name
       wstest = new WorksheetTest(caseName)
       wstest.exportMergePlan = true
+      // Oracle, MySQL, Derby, PostgreSQL (the other databases in variableTypes2).
       // variables of the types the variable dialog offers, with the values that dialog would create. CATEGORY_ID 2:
       // 3 products for every integer type, double and string; 2 or 4 (vInts): 6; no value (vNull): the condition is
       // dropped, 25. HALF = CATEGORY_ID + 0.5: '= 2' none, '> 2' 19, '= 2.5' 3. DISCOUNT = 0.15: orders 12054, 12473.
@@ -650,6 +650,21 @@ class WSData_Spec extends Specification {
                     vLong: 2L, vDbl: 2.0d, vStr: '2', vHalf: 2.5d, vD15: 0.15d, vF15: 0.15f, vChar: 'N',
                     vBig: 9007199254740995L]
       wstest.executeWS('1^2^__NULL__^DB/variableTypes', params, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'variableTypes2' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the tables of variableTypes on SQL Server, DB2 and Informix (one worksheet with all seven databases ran longer
+      // than a runtime worksheet lives without a heartbeat, 3 minutes)
+      def params = [vInt: 2 as Integer, vInts: [2, 4] as Object[], vShort: 2 as Short, vByte: 2 as Byte,
+                    vLong: 2L, vDbl: 2.0d, vStr: '2', vHalf: 2.5d, vD15: 0.15d, vF15: 0.15f, vChar: 'N',
+                    vBig: 9007199254740995L]
+      wstest.executeWS('1^2^__NULL__^DB/variableTypes2', params, null)
 
       expect:
       wstest.compareData(null)
@@ -698,6 +713,109 @@ class WSData_Spec extends Specification {
       // script points when the row is read: a run that crosses midnight between them can move a point by a day
       // (rerun it).
       wstest.executeWS('1^2^__NULL__^DB/relativeDates', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   // ws.md section 8: dialect execution checks. Every SQL operation sqlhelper.xml (and the helpers' code) declares
+   // for a database is used by a table <case>_<db>; its twin <case>Mem_<db> computes the same in memory (mergeable off
+   // for joins and set operations; a script copy of the sorted / grouped column for sorts, groups and date groups,
+   // because a physical table stays in SQL with mergeable off). Every twin's plan file says mergeable: false.
+   // Worksheets from .claude/workflow-shared/datatest-gap/ws_dialect_gen.py.
+
+   def 'dialectSetOps' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // PRODUCTS 1-16 against 10-25: CATEGORY_ID (repeated values) and DESCRIPTION (NULL in both sides; set
+      // operations treat NULLs as equal) with union, union all, intersect, minus.
+      wstest.executeWS('1^2^__NULL__^DB/dialectSetOps', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectJoins' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // PRODUCTS 1-8 against 5-12 on CATEGORY_ID (repeated keys) with every join type; on DESCRIPTION (NULL never
+      // matches) with inner, left and full joins. Oracle, MySQL, Derby, PostgreSQL (the others in dialectJoins2).
+      wstest.executeWS('1^2^__NULL__^DB/dialectJoins', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectJoins2' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the tables of dialectJoins on SQL Server, DB2 and Informix (all seven in one worksheet took about 3 minutes,
+      // as long as a runtime worksheet lives without a heartbeat).
+      wstest.executeWS('1^2^__NULL__^DB/dialectJoins2', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectOrderBy' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the export sorts each table, so an ORDER BY shows through the rows a max row count keeps: sorted by a hidden
+      // column (customers 35-31), distinct and sorted (WA, TX, PA), grouped and sorted by the group (WA, TX, PA) or by
+      // the count (NJ, 6, max 1). The twins sort in memory, where the max rows used to cut the source first (#82389,
+      // fixed in stylebi 202611260547).
+      wstest.executeWS('1^2^__NULL__^DB/dialectOrderBy', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectGroupBy' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // group by an SQL expression (LOWER(STATE)); two DistinctCount in one query.
+      wstest.executeWS('1^2^__NULL__^DB/dialectGroupBy', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectDates' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the date levels on a DATE column (the group dialog offers no time level for it).
+      // #82200: WeekOfYear differs pushed and in memory on Oracle and PostgreSQL, kept as today.
+      wstest.executeWS('1^2^__NULL__^DB/dialectDates', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectTimestamps' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the date levels on a TIMESTAMP column.
+      // #82200: WeekOfYear differs pushed and in memory on Oracle, MySQL and PostgreSQL, kept as today.
+      wstest.executeWS('1^2^__NULL__^DB/dialectTimestamps', null, null)
+
+      expect:
+      wstest.compareData(null)
+   }
+
+   def 'dialectTimes' () {
+      caseName =  specificationContext.currentIteration.name
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // the time levels on a TIMESTAMP column (a separate worksheet: a runtime worksheet expires after 3 minutes
+      // without a heartbeat, and the test sends none).
+      wstest.executeWS('1^2^__NULL__^DB/dialectTimes', null, null)
 
       expect:
       wstest.compareData(null)

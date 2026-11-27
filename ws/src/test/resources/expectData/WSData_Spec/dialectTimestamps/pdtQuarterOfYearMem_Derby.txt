@@ -1,0 +1,4 @@
+The data size(row x col) is:(3 x 2)
+PRODUCT_ID, QuarterOfYear(PRODUCE_DATETIME_JS)
+4, 4th
+21, 1st

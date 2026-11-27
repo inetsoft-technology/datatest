@@ -418,11 +418,8 @@ for i, db in enumerate(DBS):
                 inner_join(db, n + '_groupSortJoin', n + '_groupSort', ['cust', 'oid'], 'ORDERS', n + '_C', ['id', 'state'],
                            'CUSTOMERS', 'cust', 'id', 440, y + 120)]
     # Informix has no SQL row limit, so the limit goes to the JDBC statement through HINT_MAX_ROWS in the variable
-    # table; the in-memory join runs both sides at once on one shared variable table, and the hint of one side reaches
-    # or is removed by the other (rows vary from run to run), so its join tables are left out
-    if n == 'Informix':
-        maxrows = [a for a in maxrows if not any('<name><![CDATA[%s_%s]]>' % (n, j) in a
-                                                  for j in ('topJoin', 'distinctJoin', 'groupSortJoin'))]
+    # table; its joins run in memory with both sides at once (they shared that hint and varied from run to run until
+    # #82290 was fixed)
 
 # fixed timestamp so that regenerating gives the same blobs
 NOW =int(datetime(2026, 11, 24, tzinfo=timezone.utc).timestamp() * 1000)

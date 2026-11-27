@@ -1,0 +1,15 @@
+The data size(row x col) is:(14 x 2)
+order_id, DayOfMonth(order_date)
+1, 2
+1, 8
+1, 9
+1, 12
+1, 14
+1, 15
+1, 16
+1, 28
+1, 29
+1, 30
+2, 10
+2, 20
+2, 24

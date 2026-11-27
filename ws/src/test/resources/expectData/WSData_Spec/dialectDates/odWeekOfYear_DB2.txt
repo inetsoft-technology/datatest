@@ -1,0 +1,14 @@
+The data size(row x col) is:(13 x 2)
+ORDER_ID, WeekOfYear(ORDER_DATE)
+1, 2
+1, 4
+1, 5
+1, 16
+1, 39
+1, 42
+1, 43
+1, 46
+2, 15
+2, 27
+2, 33
+2, 40

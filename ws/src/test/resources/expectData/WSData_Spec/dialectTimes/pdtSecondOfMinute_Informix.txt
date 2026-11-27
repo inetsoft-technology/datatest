@@ -1,0 +1,8 @@
+The data size(row x col) is:(7 x 2)
+product_id, SecondOfMinute(produce_datetime)
+3, 13
+4, 9
+4, 17
+4, 59
+5, 1
+5, 12

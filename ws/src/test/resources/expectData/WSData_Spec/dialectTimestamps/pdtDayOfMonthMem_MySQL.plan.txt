@@ -1,0 +1,8 @@
+mergeable: false
+source: true
+where: true
+group by: false
+having: false
+sort: true
+select: false
+ranking: true

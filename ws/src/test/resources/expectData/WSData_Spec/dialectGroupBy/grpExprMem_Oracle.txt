@@ -1,0 +1,16 @@
+The data size(row x col) is:(15 x 2)
+CUSTOMER_ID, LST_JS
+1, az
+1, ct
+1, fl
+1, il
+1, nv
+1, pa
+2, co
+2, wa
+3, md
+4, ca
+4, ma
+4, ny
+4, tx
+6, nj
