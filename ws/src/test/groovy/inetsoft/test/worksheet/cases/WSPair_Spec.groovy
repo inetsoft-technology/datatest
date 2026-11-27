@@ -28,6 +28,7 @@ import spock.lang.Specification
    ]
 )
 class WSPair_Spec extends Specification {
+   static final List<String> DBS = ['Oracle', 'MySQL', 'Derby', 'PostgreSQL', 'SQLServer', 'DB2', 'Informix']
    static WorksheetTest wstest
    static String caseName
 
@@ -37,14 +38,14 @@ class WSPair_Spec extends Specification {
    static final Map<String, String> ALLOWED = allowed()
 
    /**
-    * every allowed difference of pairDates; a case name stands for the case and its negation
+    * every allowed difference of pairDates and pairNumbers; a case name stands for the case and its negation
     */
    private static Map<String, String> allowed() {
       Map<String, String> map = [:]
       def allow = { String reason, List<String> dbs, List<String> cases ->
          dbs.each { db -> cases.each { c -> [c, c + 'Not'].each { map[it + '_' + db] = reason } } }
       }
-      List<String> all = ['Oracle', 'MySQL', 'Derby', 'PostgreSQL', 'SQLServer', 'DB2', 'Informix']
+      List<String> all = DBS
       String sw = '#82270: starting with on a date pushed with the current date or time as the value; in memory a ' +
          'date-like value (2020-02) is parsed to a date first'
       allow(sw, all, ['pdSw', 'pdtSw'])
@@ -60,6 +61,16 @@ class WSPair_Spec extends Specification {
          'value is lost, IN gives no row (database rule)'
       allow(mysqlTime, ['MySQL'], ['tmLe', 'tmGt', 'tmBetween'])
       allow('#82477 and ' + mysqlTime, ['MySQL'], ['tmOneOf'])
+
+      // pairNumbers
+      String numSw = '#82270: starting with on a number column: the value is converted to the column type (1 -> 1.0) ' +
+         'on a double column, LIKE on a number fails on Derby, PostgreSQL, Informix'
+      allow(numSw, ['Oracle', 'Derby', 'PostgreSQL', 'SQLServer', 'Informix'], ['catSw'])
+      allow(numSw, ['Derby', 'PostgreSQL', 'Informix'], ['intSw'])
+      allow('#82378: in memory a BigDecimal above 2^53 (Oracle NUMBER(19)) is compared as a double', ['Oracle'],
+            ['bigEq', 'bigOneOf', 'bigLt', 'bigGe'])
+      allow('DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)', ['DB2'],
+            ['rlEqInexact', 'rlOneOf', 'rlGt'])
       return map
    }
 
@@ -76,14 +87,32 @@ class WSPair_Spec extends Specification {
       // two worksheets: each must run in less than the 3 minutes a runtime worksheet lives without a heartbeat
       wstest.executeWS('1^2^__NULL__^DB/pairDates1_' + db, null, null)
       wstest.executeWS('1^2^__NULL__^DB/pairDates2_' + db, null, null)
-      List<String> problems = summarize(db)
+      List<String> problems = summarize(db, 'pairDates1_' + db)
 
       expect:
       wstest.compareData(null)
       problems.isEmpty()
 
       where:
-      db << ['Oracle', 'MySQL', 'Derby', 'PostgreSQL', 'SQLServer', 'DB2', 'Informix']
+      db << DBS
+   }
+
+   def 'pairNumbers_#db' () {
+      caseName = 'pairNumbers_' + db
+      wstest = new WorksheetTest(caseName)
+      wstest.exportMergePlan = true
+      // INTEGER, DECIMAL(12,4), BIGINT around 2^53 and REAL made by an SQL CASE on PRODUCT_ID 1-11 (NULL for the
+      // others) and the real CATEGORY_ID; =, one of, <, <=, >, >=, between, is null, starting with, each also negated.
+      wstest.executeWS('1^2^__NULL__^DB/pairNumbers1_' + db, null, null)
+      wstest.executeWS('1^2^__NULL__^DB/pairNumbers2_' + db, null, null)
+      List<String> problems = summarize(db, 'pairNumbers1_' + db)
+
+      expect:
+      wstest.compareData(null)
+      problems.isEmpty()
+
+      where:
+      db << DBS
    }
 
    /**
@@ -91,8 +120,8 @@ class WSPair_Spec extends Specification {
     * @return the problems: an unexpected difference, an allowed difference that is gone, a twin that is missing or
     * was not computed in memory
     */
-   private static List<String> summarize(String db) {
-      File summary = wstest.createExportFileByCase('1^2^__NULL__^DB/pairDates1_' + db, 'summary', null)
+   private static List<String> summarize(String db, String firstSheet) {
+      File summary = wstest.createExportFileByCase('1^2^__NULL__^DB/' + firstSheet, 'summary', null)
       File dir = summary.parentFile
       File tables = new File(dir, 'tables')
       tables.mkdirs()
@@ -121,8 +150,8 @@ class WSPair_Spec extends Specification {
 
          List<String> a = rows(pushed)
          List<String> b = rows(twin)
-         // a failed query exports the placeholder row of XNodeMetaTable (999.99, XXXXX)
-         String path = a.size() == 1 && a[0].startsWith('999.99') ? 'failed' :
+         // a failed query exports the placeholder row of XNodeMetaTable: PRODUCT_ID 999.99 or 999 (no such product)
+         String path = ids(a) == '(1) 999' ? 'failed' :
             pushedPlan['where'] == 'true' ? 'sql' : 'memory'
          String reason = ALLOWED[table]
 
@@ -150,7 +179,10 @@ class WSPair_Spec extends Specification {
          }
       }
 
-      ALLOWED.keySet().findAll { it.endsWith('_' + db) && !names.contains(it + '.txt') }.each {
+      // ALLOWED holds the tables of every case: only those of this case's columns can be missing
+      Set<String> cols = names.collect { it.replaceAll(/^([a-z]+).*$/, '$1') } as Set
+      ALLOWED.keySet().findAll { it.endsWith('_' + db) && cols.contains(it.replaceAll(/^([a-z]+).*$/, '$1')) &&
+                                 !names.contains(it + '.txt') }.each {
          problems << it + ': in ALLOWED but not in the worksheet'
       }
 

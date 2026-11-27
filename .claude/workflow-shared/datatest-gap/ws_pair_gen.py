@@ -1,6 +1,7 @@
-"""Add the pushed / in-memory pair worksheets of ws.md 8c step 5 to the ws storage zip: DB/pairDates1_<db> (TS, DT) and DB/pairDates2_<db> (TM, PDT, PD) for Oracle,
-MySQL, Derby, PostgreSQL, SQL Server, DB2 and Informix (used by WSPair_Spec.pairDates; see docs/test-gap-assessment/ws.md,
-section 8).
+"""Add the pushed / in-memory pair worksheets of ws.md 8c step 5 to the ws storage zip, for Oracle, MySQL, Derby,
+PostgreSQL, SQL Server, DB2 and Informix (used by WSPair_Spec; see docs/test-gap-assessment/ws.md, section 8):
+DB/pairDates1_<db> (TS, DT), DB/pairDates2_<db> (TM, PDT, PD), DB/pairNumbers1_<db> (INT, DEC, CAT) and
+DB/pairNumbers2_<db> (BIG, RL).
 
 usage: python ws_pair_gen.py <src.zip> <dst.zip>
        src = the output of ws_dialect_gen.py (the step before this one in the zip chain, see the README),
@@ -17,8 +18,13 @@ Columns (PRODUCTS, one row per PRODUCT_ID):
   DT  a DATE made the same way; on Oracle the DATE keeps a time of day (rows 3, 9, 10)
   TM  a TIME made the same way (no TIME type on Oracle); milliseconds where the database keeps them
   PDT PRODUCE_DATETIME, PD PRODUCE_DATE (the real columns; PRODUCE_DATE is a TIMESTAMP in PostgreSQL and SQL Server)
-Operators: =, one of, <, <=, >, >=, between, is null, starting with, each also negated. Condition values have no
-milliseconds (the condition dialog has none).
+  INT an INTEGER made the same way: 0, negatives, duplicates, +-2147483647 (-2^31 is NULL in an Informix INTEGER)
+  DEC a DECIMAL(12,4): 2.5 and 2.5000, 1 against 1.0000, 0.1, -0.0001, 12345678.9999
+  CAT CATEGORY_ID (the real column: double on Oracle, Derby, PostgreSQL, SQL Server, integer elsewhere)
+  BIG a BIGINT (NUMBER(19) on Oracle) around 2^53 and 2^63 - 1
+  RL  a REAL (as in ws_8b_gen.py: BINARY_FLOAT, SMALLFLOAT; DOUBLE on MySQL): 0.5 exact, 0.1 and 0.15 not, 1E10
+Operators: =, one of, <, <=, >, >=, between, is null, starting with (one number column), each also negated.
+Condition values have no milliseconds (the condition dialog has none).
 """
 import importlib.util, os, sys
 
@@ -136,25 +142,93 @@ OPS = {
            ('Sw', STARTING_WITH, ['2006'], False)],
 }
 
+# ---------------------------------------------------------------- numbers (batch 2)
+P53 = 2 ** 53
+INT = {1: 0, 2: 0, 3: -5, 4: 7, 5: 100, 6: 2147483647, 7: -2147483647, 8: 7, 9: 1, 10: -1, 11: 99}
+DEC = {1: '2.5', 2: '2.5000', 3: '0.1', 4: '-0.0001', 5: '12345678.9999', 6: '0', 7: '1', 8: '2.4999', 9: '2.5001',
+       10: '-2.5', 11: '100'}
+BIG = {1: P53, 2: P53, 3: P53 + 1, 4: P53 + 2, 5: P53 + 3, 6: -(P53 + 1), 7: 0, 8: 1, 9: 2 ** 63 - 1, 10: -1,
+       11: P53 - 1}
+RL = {1: '0.1', 2: '0.1', 3: '0.15', 4: '0.5', 5: '1', 6: '-0.1', 7: '2.718', 8: '100.25', 9: '0', 10: '0.3333333',
+      11: '1E10'}
+
+
+def int_lit(n, v):
+    return ('CAST(%s AS SIGNED)' if n == 'MySQL' else 'CAST(%s AS INTEGER)') % v
+
+
+def dec_lit(n, v):
+    return ('CAST(%s AS NUMBER(12, 4))' if n == 'Oracle' else 'CAST(%s AS DECIMAL(12, 4))') % v
+
+
+def big_lit(n, v):
+    return {'Oracle': 'CAST(%s AS NUMBER(19))', 'MySQL': 'CAST(%s AS SIGNED)'}.get(n, 'CAST(%s AS BIGINT)') % v
+
+
+def real_lit(n, v):
+    return b.REAL[n] % v
+
+
+OPS.update({
+    'int': [('Eq', EQUAL, [7], False),
+            ('EqMax', EQUAL, [2147483647], False),
+            ('OneOf', ONE_OF, [0, 7, 99], False),
+            ('Lt', LESS, [0], False),
+            ('Le', LESS, [0], True),
+            ('Gt', GREATER, [7], False),
+            ('Ge', GREATER, [7], True),
+            ('Between', BETWEEN, [-5, 7], False),
+            ('Null', IS_NULL, [], False),
+            ('Sw', STARTING_WITH, ['1'], False)],
+    'dec': [('Eq', EQUAL, ['2.5'], False),
+            ('EqOne', EQUAL, ['1'], False),
+            ('EqBig', EQUAL, ['12345678.9999'], False),
+            ('OneOf', ONE_OF, ['0.1', '2.5'], False),
+            ('Lt', LESS, ['2.5'], False),
+            ('Le', LESS, ['2.5'], True),
+            ('Gt', GREATER, ['2.5'], False),
+            ('Ge', GREATER, ['2.5'], True),
+            ('Between', BETWEEN, ['-2.5', '2.5'], False),
+            ('Null', IS_NULL, [], False)],
+    'cat': [('Eq', EQUAL, [3], False),
+            ('OneOf', ONE_OF, [1, 3], False),
+            ('Lt', LESS, [3], False),
+            ('Le', LESS, [3], True),
+            ('Gt', GREATER, [3], False),
+            ('Ge', GREATER, [3], True),
+            ('Between', BETWEEN, [2, 4], False),
+            ('Sw', STARTING_WITH, ['1'], False)],
+    'big': [('Eq', EQUAL, [P53 + 1], False),
+            ('EqMax', EQUAL, [2 ** 63 - 1], False),
+            ('OneOf', ONE_OF, [P53, P53 + 3], False),
+            ('Lt', LESS, [P53 + 1], False),
+            ('Le', LESS, [P53 + 1], True),
+            ('Gt', GREATER, [P53 + 1], False),
+            ('Ge', GREATER, [P53 + 1], True),
+            ('Between', BETWEEN, [P53, P53 + 2], False),
+            ('Null', IS_NULL, [], False)],
+    'rl': [('Eq', EQUAL, ['0.5'], False),
+           ('EqInexact', EQUAL, ['0.1'], False),
+           ('OneOf', ONE_OF, ['0.15', '2.718'], False),
+           ('Lt', LESS, ['0.5'], False),
+           ('Le', LESS, ['0.5'], True),
+           ('Gt', GREATER, ['0.1'], False),
+           ('Ge', GREATER, ['0.1'], True),
+           ('Between', BETWEEN, ['0.1', '1'], False),
+           ('Null', IS_NULL, [], False)],
+})
+
 F_JS = expr('F_JS', '0', 'integer', sql=False, visible=False)
 NEVER = cond(F_JS, 'integer', EQUAL, [1])
 OR = '<junction junction="1" level="0"/>\n'
 
 sheets = []
-for n in NAMES:
-    db, pm = tdb(n, 'PRODUCTS')
-    pid = pm['pid']
-    up = n in ('Oracle', 'Derby', 'DB2')
-    pdt_type = 'timeInstant'
-    pd_type = 'timeInstant' if n in ('PostgreSQL', 'SQLServer') else 'date'
-    cols = {'ts': (expr('TS', case_sql(n, pid[0], TS, ts_lit), 'timeInstant'), 'timeInstant'),
-            'dt': (expr('DT', case_sql(n, pid[0], DT, dt_lit), 'date'), 'date'),
-            'pdt': (ref(('PRODUCE_DATETIME' if up else 'produce_datetime', pdt_type, 93)), pdt_type),
-            'pd': (ref(('PRODUCE_DATE' if up else 'produce_date', pd_type, 93 if pd_type == 'timeInstant' else 91)), pd_type)}
-    if n != 'Oracle':
-        cols['tm'] = (expr('TM', case_sql(n, pid[0], TM, tm_lit), 'time'), 'time')
-    # two worksheets per database: one with every table ran close to the 3 minutes a runtime worksheet lives
-    for part, part_cols in ((1, ('ts', 'dt')), (2, ('tm', 'pdt', 'pd'))):
+
+
+def add_sheets(name, n, db, pid, cols, parts):
+    """one worksheet DB/<name><part>_<n> per part: each must run in less than the 3 minutes a runtime worksheet
+    lives without a heartbeat"""
+    for part, part_cols in enumerate(parts, 1):
         out = []
         primary = None
         for col in part_cols:
@@ -169,7 +243,32 @@ for n in NAMES:
                     primary = primary or '%s_%s' % (case, n)
                     out.append(physical(db, '%s_%s' % (case, n), [ref(pid), r], [c], 20, y))
                     out.append(physical(db, '%sMem_%s' % (case, n), [ref(pid), r, F_JS], [c + OR + NEVER], 160, y))
-        sheets.append(g8.worksheet('DB/pairDates%d_%s' % (part, n), primary, out))
+        sheets.append(g8.worksheet('DB/%s%d_%s' % (name, part, n), primary, out))
+
+
+for n in NAMES:
+    db, pm = tdb(n, 'PRODUCTS')
+    pid = pm['pid']
+    up = n in ('Oracle', 'Derby', 'DB2')
+    pdt_type = 'timeInstant'
+    pd_type = 'timeInstant' if n in ('PostgreSQL', 'SQLServer') else 'date'
+    cols = {'ts': (expr('TS', case_sql(n, pid[0], TS, ts_lit), 'timeInstant'), 'timeInstant'),
+            'dt': (expr('DT', case_sql(n, pid[0], DT, dt_lit), 'date'), 'date'),
+            'pdt': (ref(('PRODUCE_DATETIME' if up else 'produce_datetime', pdt_type, 93)), pdt_type),
+            'pd': (ref(('PRODUCE_DATE' if up else 'produce_date', pd_type, 93 if pd_type == 'timeInstant' else 91)), pd_type)}
+    if n != 'Oracle':
+        cols['tm'] = (expr('TM', case_sql(n, pid[0], TM, tm_lit), 'time'), 'time')
+    add_sheets('pairDates', n, db, pid, cols, [('ts', 'dt'), ('tm', 'pdt', 'pd')])
+
+for n in NAMES:
+    db, pm = tdb(n, 'PRODUCTS')
+    pid = pm['pid']
+    cols = {'int': (expr('INT', case_sql(n, pid[0], INT, int_lit), 'integer'), 'integer'),
+            'dec': (expr('DEC', case_sql(n, pid[0], DEC, dec_lit), 'double'), 'double'),
+            'cat': (ref(pm['cat']), pm['cat'][1]),
+            'big': (expr('BIG', case_sql(n, pid[0], BIG, big_lit), 'long'), 'long'),
+            'rl': (expr('RL', case_sql(n, pid[0], RL, real_lit), 'float'), 'float')}
+    add_sheets('pairNumbers', n, db, pid, cols, [('int', 'dec', 'cat'), ('big', 'rl')])
 
 
 def main():

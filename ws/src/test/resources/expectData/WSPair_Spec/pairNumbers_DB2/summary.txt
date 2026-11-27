@@ -1,0 +1,92 @@
+bigBetweenNot      sql    (7) 5-11
+bigBetween         sql    (4) 1-4
+bigEqMaxNot        sql    (10) 1-8, 10, 11
+bigEqMax           sql    (1) 9
+bigEqNot           sql    (10) 1, 2, 4-11
+bigEq              sql    (1) 3
+bigGeNot           sql    (7) 1, 2, 6-8, 10, 11
+bigGe              sql    (4) 3-5, 9
+bigGtNot           sql    (8) 1-3, 6-8, 10, 11
+bigGt              sql    (3) 4, 5, 9
+bigLeNot           sql    (3) 4, 5, 9
+bigLe              sql    (8) 1-3, 6-8, 10, 11
+bigLtNot           sql    (4) 3-5, 9
+bigLt              sql    (7) 1, 2, 6-8, 10, 11
+bigNullNot         sql    (11) 1-11
+bigNull            sql    (14) 12-25
+bigOneOfNot        sql    (8) 3, 4, 6-11
+bigOneOf           sql    (3) 1, 2, 5
+catBetweenNot      sql    (16) 3, 6, 8-11, 13-16, 20-25
+catBetween         sql    (9) 1, 2, 4, 5, 7, 12, 17-19
+catEqNot           sql    (22) 3-11, 13-25
+catEq              sql    (3) 1, 2, 12
+catGeNot           sql    (9) 9, 13-20
+catGe              sql    (16) 1-8, 10-12, 21-25
+catGtNot           sql    (12) 1, 2, 9, 12-20
+catGt              sql    (13) 3-8, 10, 11, 21-25
+catLeNot           sql    (13) 3-8, 10, 11, 21-25
+catLe              sql    (12) 1, 2, 9, 12-20
+catLtNot           sql    (16) 1-8, 10-12, 21-25
+catLt              sql    (9) 9, 13-20
+catOneOfNot        sql    (16) 3-8, 10, 11, 17-19, 21-25
+catOneOf           sql    (9) 1, 2, 9, 12-16, 20
+catSwNot           sql    (19) 1-8, 10-12, 17-19, 21-25
+catSw              sql    (6) 9, 13-16, 20
+decBetweenNot      sql    (3) 5, 9, 11
+decBetween         sql    (8) 1-4, 6-8, 10
+decEqBigNot        sql    (10) 1-4, 6-11
+decEqBig           sql    (1) 5
+decEqNot           sql    (9) 3-11
+decEqOneNot        sql    (10) 1-6, 8-11
+decEqOne           sql    (1) 7
+decEq              sql    (2) 1, 2
+decGeNot           sql    (6) 3, 4, 6-8, 10
+decGe              sql    (5) 1, 2, 5, 9, 11
+decGtNot           sql    (8) 1-4, 6-8, 10
+decGt              sql    (3) 5, 9, 11
+decLeNot           sql    (3) 5, 9, 11
+decLe              sql    (8) 1-4, 6-8, 10
+decLtNot           sql    (5) 1, 2, 5, 9, 11
+decLt              sql    (6) 3, 4, 6-8, 10
+decNullNot         sql    (11) 1-11
+decNull            sql    (14) 12-25
+decOneOfNot        sql    (8) 4-11
+decOneOf           sql    (3) 1-3
+intBetweenNot      sql    (4) 5-7, 11
+intBetween         sql    (7) 1-4, 8-10
+intEqMaxNot        sql    (10) 1-5, 7-11
+intEqMax           sql    (1) 6
+intEqNot           sql    (9) 1-3, 5-7, 9-11
+intEq              sql    (2) 4, 8
+intGeNot           sql    (6) 1-3, 7, 9, 10
+intGe              sql    (5) 4-6, 8, 11
+intGtNot           sql    (8) 1-4, 7-10
+intGt              sql    (3) 5, 6, 11
+intLeNot           sql    (6) 4-6, 8, 9, 11
+intLe              sql    (5) 1-3, 7, 10
+intLtNot           sql    (8) 1, 2, 4-6, 8, 9, 11
+intLt              sql    (3) 3, 7, 10
+intNullNot         sql    (11) 1-11
+intNull            sql    (14) 12-25
+intOneOfNot        sql    (6) 3, 5-7, 9, 10
+intOneOf           sql    (5) 1, 2, 4, 8, 11
+intSwNot           sql    (9) 1-4, 6-8, 10, 11
+intSw              sql    (2) 5, 9
+rlBetweenNot       sql    (5) 6-9, 11
+rlBetween          sql    (6) 1-5, 10
+rlEqInexactNot     sql    (11) 1-11 | memory (9) 3-11 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
+rlEqInexact        sql    (0)  | memory (2) 1, 2 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
+rlEqNot            sql    (10) 1-3, 5-11
+rlEq               sql    (1) 4
+rlGeNot            sql    (2) 6, 9
+rlGe               sql    (9) 1-5, 7, 8, 10, 11
+rlGtNot            sql    (2) 6, 9 | memory (4) 1, 2, 6, 9 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
+rlGt               sql    (9) 1-5, 7, 8, 10, 11 | memory (7) 3-5, 7, 8, 10, 11 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
+rlLeNot            sql    (4) 5, 7, 8, 11
+rlLe               sql    (7) 1-4, 6, 9, 10
+rlLtNot            sql    (5) 4, 5, 7, 8, 11
+rlLt               sql    (6) 1-3, 6, 9, 10
+rlNullNot          sql    (11) 1-11
+rlNull             sql    (14) 12-25
+rlOneOfNot         sql    (11) 1-11 | memory (9) 1, 2, 4-6, 8-11 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
+rlOneOf            sql    (0)  | memory (2) 3, 7 | DB2 compares a REAL with the condition value as DOUBLE: 0.1, 0.15 do not match (database rule)
