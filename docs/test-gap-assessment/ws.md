@@ -416,6 +416,11 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 - intersect、minus 的"保留重复行"在对话框里只对 union 可用，所以只测去重版；Oracle 上手写成不去重会生成 11g 不支持的 `INTERSECT ALL`。DATE 列在分组对话框里没有小时、分、秒级别，所以时间级别只测 TIMESTAMP 列（Derby 对 DATE 取小时会报错）。
 - 测试框架不发心跳，运行时 worksheet 3 分钟后过期（`RuntimeSheet.isTimeout`），单个 worksheet 要在 3 分钟内跑完，所以日期分成 3 个 worksheet，join 按库分成 2 个。
 
+**成对对照（`WSPair_Spec.pairDates_<库>`，worksheet `DB/pairDates1_<库>`、`DB/pairDates2_<库>`，由 `ws_pair_gen.py` 生成）：** 每个条件建两张表：下推版；内存版是同一张表，把条件和一个永不为真的隐藏脚本列条件用 OR 连起来，整组条件留在内存，作用在同一列上（plan 为 `where: false`；不用脚本列副本，因为 Oracle DATE 的副本会丢掉时分秒）。spec 逐对比较，差异只允许出现在白名单 `ALLOWED` 里（写明 bug 号或数据库规则）；每个库只存一个 `summary.txt` 作基线（每对保留的 PRODUCT_ID、下推还是内存、查询失败标为 failed），表文件移到导出目录的 `tables/` 下，不比较。第一批：用 SQL CASE 造的 TIMESTAMP、DATE、TIME 列（含重复值、NULL、午夜、闰日、毫秒、跨日、跨年，Oracle 的 DATE 带时分秒），以及真实的 PRODUCE_DATETIME、PRODUCE_DATE；运算为 =、one of、<、<=、>、>=、between、is null、starting with 及其取反；覆盖 7 个服务器库。
+- 结果：时间戳列全部一致，也与按 SQL 语义独立算出的结果一致；DATE 列除 Oracle 外全部一致；is null 和取反对 NULL 的处理都正确。
+- 不一致的（都在白名单里）：starting with 两边都错（#82270：下推时值被换成当前日期或时间；内存会先把像日期的值 `2020-02` 解析成日期）；SQL Server 上 TIME 列的比较条件下推后全部失败（#82475）；Oracle 的 DATE 带时分秒时，下推精确比较，内存按天比较（#82476，待开发决定）；TIME 带毫秒时，内存的 =、one of 忽略毫秒，MySQL、Informix 读出来时就已丢掉毫秒（#82477）；MySQL 把 TIME(3) 的 CASE 表达式和 `{t}` 当字符串比较，等于边界值的行会丢失，IN 不返回任何行，属于数据库规则。
+- Derby、DB2 的 TIME 没有小数秒。每个库分成两个 worksheet，各在 3 分钟内跑完。
+
 `WSOthers_Spec` 的 `ws group case check`（`@Ignore`）用到的 `wsCheck/ws1` 不在 zip 里，去掉 `@Ignore` 前要先补回。
 
 ## 6. 局限与待确认
@@ -527,7 +532,7 @@ spec 里设置的上传 `fileType` 不起作用：类型由 `TextUtil.detectType
 4. **NULL 排序位置与最大行数、Top N**：升序时 Oracle、PostgreSQL 把 NULL 放最后，MySQL、SQL Server、Derby 放最前，内存另有规则；配合最大行数或 Top N 时，下推和内存截出不同的行。**已验证**：升序时 MySQL、SQL Server、Informix 和内存把 NULL 放最前，Oracle、PostgreSQL、DB2、Derby 放最后，降序相反；属于数据库规则。同时发现：排序在内存做（如按脚本列排序）时，最大行数先作用到源查询，表保留的是数据库返回的前 N 行再排序，不是排序后的前 N 行，7 个库都一样（#82389，`202611260547` 已修复，基线已更新）。
 5. **不区分大小写的库上做 GROUP BY、DISTINCT**：MySQL、SQL Server 默认把 'A' 与 'a'、'a' 与 'a ' 归为同一个值；G8 只测了条件，没测分组和去重，同一份数据可能得到不同的组数。**已验证**：下推分组时 Oracle、PostgreSQL、DB2、Derby、Informix 区分大小写，MySQL、SQL Server 不区分；尾部空格 MySQL、SQL Server、DB2、Derby、Informix 忽略，Oracle、PostgreSQL 不忽略；内存分组不区分大小写、保留尾部空格。属于已定的行为（#78887），文档补充为 #82382。内存去重没测成：带脚本列的去重被下推到 SQL，作用在脚本读取的隐藏列上，可见结果不去重（#82380）。
 6. **浮点列的等值条件**：REAL、Float32 存近似值（ClickHouse 上 2.718 读成 2.71799993），`= 2.718` 下推可能不匹配，内存比较若带容差则结果不同。**已验证**：单精度列上 one of 0.15，DB2 下推 0 行（REAL 提升为 DOUBLE 后比较），其他 6 个库下推和内存都是 2 行；属于数据库规则。
-7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。**已验证，无问题**：按 Hour、HourOfDay 分组，7 个库下推与内存一致，无时区偏移（毫秒精度、夏令时未测）。下推的日期分组没有 ORDER BY，行序与内存（已排序）不同。PRODUCE_DATETIME 只有 Derby、Informix 有 12 点以后的时间，其他库都在 12 点以内，是测试库数据的差异。
+7. **时间精度与时区**：SQL Server DATETIME 精度约 3 毫秒，MySQL 默认不存小数秒，带毫秒的等值条件对不上；Oracle DATE 带时分秒，"等于某天"很少匹配；会话时区与 JVM 时区不同时，按小时、按天分组和夏令时切换日的下推与内存相差一小时或一天。**已验证，无问题**：按 Hour、HourOfDay 分组，7 个库下推与内存一致，无时区偏移（夏令时未测；毫秒见第 5 节成对对照，#82477）。下推的日期分组没有 ORDER BY，行序与内存（已排序）不同。PRODUCE_DATETIME 只有 Derby、Informix 有 12 点以后的时间，其他库都在 12 点以内，是测试库数据的差异。
 8. **整数求和溢出**：SQL Server 对 INT 求 SUM 超出范围报错，其他库自动放宽类型，内存按 long 或 double 算。**已验证，有问题**：INT 列求和超过 2^31，下推在 SQL Server、DB2、Derby 上报溢出，Oracle、MySQL、PostgreSQL、Informix 和内存求和正确（#82390，待开发确定是否放宽类型）。查询失败时 SQL Server、DB2 显示失败前已读到的行加警告，不是占位表，第 8c 第 5 项的占位行检查发现不了。
 9. **有并列值的排序加限行**：排序列有重复值时保留哪几行由数据库决定，下推与内存可能不同（#80446 只记了分组不排序的情况）。**已验证**：7 个库保留的行各不相同；做基线时排序要加唯一列。
 10. **LIVE 数据缓存**：缓存键由 SQL 文本、变量等组成；变量改变、换用户或两个数据源执行同一段 SQL 时是否取到别人的结果，没有用例。**已验证变量部分，无问题**：同一 worksheet 的变量条件依次换成 NJ、NY、NJ、CA、NY，按产品方式刷新变量并重置、或每次新开沙盒，结果都正确（换用户、多数据源未测）。
@@ -540,7 +545,7 @@ viewsheet 的条件、过滤同样有下推和内存两条路径，做 vs 模块
 2. 8b 的 10 项：**已完成**（2026-11-26，`202611252340` 构建）。第 1、3、7、10 项无问题；第 4、6、9 项是数据库规则；报为 #82378～#82381、#82389、#82390，文档 #82382。已做成样板：`WSData_Spec.crossSourceJoin`、`bigNumbers`、`nullSemantics`、`caseGrouping`、`numericEdge`、`hourGroup`、`variableCache`（worksheet 同名放在 `DB/` 下，由 `ws_8b_gen.py` 生成），基线保留上述缺陷的现状（#82389 修复后 `nullSort*Mem_` 已更新），查询失败的表不放进去（#82381、#82390 的 8 张；#82379 修复后 PostgreSQL 的 2 张已放回）；第 9 项的结果由数据库决定，不做样板。
 3. G12：**已完成**（2026-11-26，`202611260547` 构建），见第 5 节；报为 #82410、#82411。
 4. 方言执行检查：7 个服务器库**已完成**（2026-11-26，第 5 节），ClickHouse 待扩充测试数据。
-5. 机械化成对对照：条件运算（=、one of、<、>、<=、>=、between、null 及取反；starting with、contains、like 只在字符串列，数字、日期列各留一个代表）× 列类型（整数、小数、BIGINT、REAL、VARCHAR、CHAR、DATE、TIMESTAMP、TIME、BOOLEAN，缺的用 SQL 表达式造）× 7 个服务器库，取值压在 NULL、重复值、between 两端、大小写、尾部空格、REAL 的 0.1、带时分秒的 Oracle DATE、毫秒上。约 2400 张表，不逐表存基线：单独的 spec 直接比较每对下推与内存的结果，只允许白名单（写明 bug 号或数据库规则）里的差异，每个库导出一个汇总文件作基线；第一批做日期、时间戳、TIME。8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时并入其中。
+5. 机械化成对对照：条件运算（=、one of、<、>、<=、>=、between、null 及取反；starting with、contains、like 只在字符串列，数字、日期列各留一个代表）× 列类型（整数、小数、BIGINT、REAL、VARCHAR、CHAR、DATE、TIMESTAMP、TIME、BOOLEAN，缺的用 SQL 表达式造）× 7 个服务器库，取值压在 NULL、重复值、between 两端、大小写、尾部空格、REAL 的 0.1、带时分秒的 Oracle DATE、毫秒上。约 2400 张表，不逐表存基线：单独的 spec 直接比较每对下推与内存的结果，只允许白名单（写明 bug 号或数据库规则）里的差异，每个库导出一个汇总文件作基线；第一批做日期、时间戳、TIME：**已完成**（2026-11-27，`202611260547` 构建），见第 5 节；报为 #82475～#82477，#82270 补充了内存一侧的问题。8b 第 4、6、9 项的数据库差异、第 7 项未测的毫秒和夏令时并入其中。
 6. `ws_scan.py crosscheck` 的占位表检查：**已完成**。按产品占位表的规则（`XNodeMetaTable`：只有一行，字符串 X…，数字 999.99、999、99，布尔 true，日期取当前时间）检查基线根目录下所有 txt，新出现的报为 New。已知的只有 `specialChar/sqlserver.txt`（SQL Server 测试镜像里没有数据库 `test.1`，见第 6 节）；用在 vpm 上命中 3 个，都是有意的。查询在读取行时失败（如 #82390 的溢出）只留下部分行和警告，这种基线检查不出来。
 
 ## 附：数据来源与复现

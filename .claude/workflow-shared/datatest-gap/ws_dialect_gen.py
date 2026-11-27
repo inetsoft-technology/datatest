@@ -107,8 +107,7 @@ for j, n in enumerate(NAMES):
 # ---------------------------------------------------------------- DB/dialectOrderBy
 # The export sorts every table, so an ORDER BY only shows through the rows a max row count keeps. The twins sort (and
 # group) a script copy of the column, which keeps them in memory (mergeable="false" does not take a physical table off
-# SQL). In memory the max rows cut the source before a sort (#82389), so sortHiddenMem_ and sortDistinctMem_ keep the
-# first source rows, sorted.
+# SQL). In memory the max rows apply after the sort (#82389, fixed), so the twins keep the same rows.
 #   sortHidden:   CUSTOMERS sorted by the hidden CUSTOMER_ID descending, max 5: the STATE of customers 35-31
 #   sortDistinct: distinct STATE sorted descending, max 3: WA, TX, PA
 #   sortAggKey:   Count(CUSTOMER_ID) by STATE, sorted by STATE descending (a sort on the grouped table, as the
