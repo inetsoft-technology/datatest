@@ -55,8 +55,6 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Tables/CTable1', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'TableView1': [reason: 'TODO T1, see vsfreehand-g2-convert-probe.md section 7: row count differs',
-            rows: '21 -> 108'],
          'TableView3': [reason: 'TODO T1, see vsfreehand-g2-convert-probe.md section 7: row count differs',
             rows: '15 -> 16']
       ])
@@ -274,6 +272,8 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable8', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
+         // every column is a todoCol, so only the row and column count (9 -> 9, stable in six
+         // runs) are checked for Crosstab1; no cell is, until #82463 is answered
          'Crosstab1': [reason: 'TODO T4 / #82463, see vsfreehand-g2-convert-probe.md section 7: the row count is the same, but the year order, the Top N orderno, the Others split and the Grand Total row differ',
             todoCols: [0, 1, 2, 3, 4, 5, 6]],
          'Crosstab2': [reason: 'calculator is cleared by the conversion (product design, col 4); the change of % of total by row is TODO T2 / #82462, see vsfreehand-g2-convert-probe.md section 7 (col 3)',

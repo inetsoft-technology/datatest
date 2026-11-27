@@ -122,6 +122,8 @@ cat vsothers/target/g2_convert_probe.txt
 
 涉及：`CTable1/TableView1`（21→108）、`CTable1/TableView3`（15→16）、`ETable1/TableView1`、`ETable1/TableView3`（701→51，内容不同）。口径：静态读 zip + 读导出文本，未单步跑转换。
 
+**2026-11-27 更新：** 在最新 main（含 #8935 的 Max Rows 修复）上，`CTable1/TableView1` 转换后行数不再变化，与源完全相同（连跑 4 次），已从 `allowedDiff` 去掉；`CTable1/TableView3`（15→16）、`ETable1`（701→51）未变。
+
 - **`CTable1/TableView1`：** 条件很可能没带到转换后的 Freehand。源 20 行的 `numRangeID` 只有 `greater 23`（11）、`13-23`（4）、`7-13`（3）、`3-7`（2），转换后 107 行里多出 `lessthan 3`（6 行）等源里不存在的类别，不同行从 16 个变成 97 个；源里该组件有 `date_range1` 上的 `timeInstant` 条件（`operation=3`）。
 - **`CTable1/TableView3`：** 转换后末尾多一行 `MA_MD`（源里 AZ…WA 共 14 个州，没有；`TableView2` 里 `MA_MD` 是一个列，疑似命名分组），其余相同。
 - **`ETable1/TableView1`、`TableView3`：** 转换后 50 行数据**全是源行的子集**，按 `ndate` 升序；源 700 行未排序，且 `ETable1` 源里没有 `conditions`。即转换后只有前 50 行且被排序。50 是否来自默认上限/元数据模式（`ComposerVSTableService.getMetadata` 用 `calc_metadata`）**未确认**。
@@ -151,7 +153,7 @@ cat vsothers/target/g2_convert_probe.txt
 - **不是钻取：** 三个 vs 的 `drill_filters` 全空（CroTable2 0/6、CroTable3 0/4、CroTable8 0/4；只有 `DrillCroTable1` 非空）。
 - **② `CroTable2/Crosstab1`（13→22）：** 源里小时 01、02 展开出 Mini 的前 3 + Others，03–05 只有一行、Mini 为 `NULL`；转换后 03–05 也展开成前 3 + Others。**总量一致**：03 时 `false/2002` 源 80.0 = 转换后 36+0+13+31；`false/2004` 源 55.0 = 0+20+35+0。是"源里没展开的明细，转换后展开了"，不是数据错；为什么源里 03–05 没展开未确认。
 - **③ `CroTable3/Crosstab1`（8→17）：** 源里 2002/2004/2005 的季度列是 `NULL`（一行），只有 2003 展开 1st–4th；转换后每年都展开 4 个季度。聚合为 `none`（B1 已确认设计），只剩"行集多了"。疑似转换用日期部分（`QuarterOfYear`）列出全部取值，而源交叉表只输出数据里存在的组合；未确认。
-- **④ `CroTable8/Crosstab1`（本机 2026-11-27 两次运行都是 9→9，行数没变，下面的数字是 9→12 那次的）：不只是行数，最像真问题；这次的差异：年份顺序 1998/2000 对调，TopN 的 orderno 不同（2000 年源 4、21，转换后 4、40），Grand Total 行 `$14/$8` 变 `$12/$20`，声明在 `todoCols` 0–6。** TopN 选中的 orderno 不同（1998 年：源 58、59；转换后 59、118），同一订单落在 `false` 还是 `Others` 列也不同；转换后多出外层 `Others` 年份组（109、73、Others），源里没有；Grand Total 行 `Others` 列 `First(...)` 由 8 变 2。对应转换分支 7（`fixTopN`）和 10（百分比）。`CroTable8` 还带 `=parameter.RadioButton3` 参数，是否与参数默认值有关未排除。
+- **④ `CroTable8/Crosstab1`（本机 2026-11-27 共六次运行（最新 main 上四次）都是 9→9，行数没变，下面的数字是 9→12 那次（更早的一次构建）的）：不只是行数，最像真问题；这次的差异：年份顺序 1998/2000 对调，TopN 的 orderno 不同（2000 年源 4、21，转换后 4、40），Grand Total 行 `$14/$8` 变 `$12/$20`，声明在 `todoCols` 0–6。** TopN 选中的 orderno 不同（1998 年：源 58、59；转换后 59、118），同一订单落在 `false` 还是 `Others` 列也不同；转换后多出外层 `Others` 年份组（109、73、Others），源里没有；Grand Total 行 `Others` 列 `First(...)` 由 8 变 2。对应转换分支 7（`fixTopN`）和 10（百分比）。`CroTable8` 还带 `=parameter.RadioButton3` 参数，是否与参数默认值有关未排除。
   - `fixTopN` 对非最内层维度会关掉 Others（`VSTableConverter.java:548-565`），普通维度和日期级别维度（`Year(date)`，N=3）单测都成立；`year.getFullName()` 与 `createGroupRef(null).getName()` 都是 `Year(date)`，名字匹配没问题。外层 Others 出现在 `fixTopN` 之外。
   - **2026-11-27 更新：** #81258 已在 2026-11-16 由 PR #8245 修复并关闭，本机 core jar（2026-11-27 构建）含该修复，`CroTable8/Crosstab1` 的差异仍在，所以它不是原因。已报 #82463，诊断（运行时表头、转换后布局的 TopN/排序设置，序号对应一致；年份按 `First` 降序在源里是 1998→2000，转换后是 2000→1998）见该单评论；Java 侧 `ComposerVSTableConvertTest` 新增 6 个回归用例（Top N + Others、按值排序、变量绑定的列维度、双列排名、并列排名），在 Hurricane 表上全部一致，未复现；行维度由变量展开、日期级别分组还没试（Hurricane 表没有日期列）。
 - **候选原因（单测证据，Bug #81258，Low；已修复，见上）：** `isNotInnerDimRef` 读设计态表头（`cinfo.getRowHeaders/getColHeaders`，`VSCrosstabInfo:1704-1710`），布局用运行时表头（`getPeriodRuntimeRowHeaders`/`getRuntimeColHeaders`，`VSTableConverter:227-229`），孪生 `CalcTableVSAQuery:1521` 按布局判断；两者不同时 Others 标志落在错的维度上。日期比较在转换前已被清除（`ComposerVSTableService:483`），所以只有动态维度绑定这类设计态与运行时不同的情况才触发。**真实 vs 未复现，`CroTable8/Crosstab1` 是不是这个原因没验证。**
