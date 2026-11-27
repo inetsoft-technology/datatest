@@ -19,12 +19,17 @@ class VSCalcTest extends ViewsheetTest {
     * Convert every visible table/crosstab to a freehand table, export the page as PNG, and check
     * that the data of each converted component equals the data it had before the conversion.
     * @param params viewsheet parameters
-    * @param allowedDiff component name -> reason, for the components that may differ from their
-    *        source (known differences, e.g. the conversion clears date comparison, drill and
-    *        calculators); any other component that differs fails the case. A listed component
-    *        must keep its row count: with a plain reason the row count must not change, with
-    *        [reason: '...', rows: '21 -> 108'] it must change exactly like that, so a different
-    *        change (for example losing rows) still fails the case.
+    * @param allowedDiff component name -> declaration, for the components that may differ from
+    *        their source (known differences, e.g. the conversion clears date comparison, drill and
+    *        calculators); any other component that differs fails the case. The declaration is
+    *        [reason: '...', rows: '21 -> 108', colCount: '5 -> 6', cols: [1, 2], todoCols: [3]]:
+    *        rows / colCount are the declared change of the row / column count (unchanged when
+    *        left out, so losing rows by accident still fails). When the shape is unchanged only
+    *        the listed grid columns (0-based) may differ, every other column must be identical:
+    *        cols are differences by design (labels, formats), todoCols are tracked differences
+    *        (a bug or an open question, remove the column when it is fixed). When the shape
+    *        changes the rows cannot be aligned and the cells are not compared. A plain string
+    *        is a reason with nothing allowed to differ.
     */
    def checkConvert(Map<String, String[]> params, Map<String, Object> allowedDiff = [:]) {
       checkConvert0(params, allowedDiff)
@@ -158,21 +163,9 @@ class VSCalcTest extends ViewsheetTest {
          List<String> cells = []
 
          for(int j = 0; j < sc.size(); j++) {
-            String s = sc[j]
-            String c = cc[j]
-
-            if(sameCell(s, c)) {
-               continue
+            if(cellDiffers(sc, cc, prev, j)) {
+               cells << ("c${j}: '${sc[j]}' -> '${cc[j]}'".toString())
             }
-
-            // merged span: the source repeats its left/upper neighbor, the freehand cell is empty
-            if(c == 'NULL' && s != 'NULL' &&
-               ((j > 0 && sc[j - 1] == s) || (prev != null && j < prev.size() && prev[j] == s)))
-            {
-               continue
-            }
-
-            cells << ("c${j}: '${s}' -> '${c}'".toString())
          }
 
          if(!cells.isEmpty()) {
@@ -189,6 +182,62 @@ class VSCalcTest extends ViewsheetTest {
       }
 
       return out.isEmpty() ? 'SAME' : out.join(' | ')
+   }
+
+   private static String shapeChange(List<Integer> change) {
+      return change[0] == change[1] ? null : change[0] + ' -> ' + change[1]
+   }
+
+   /**
+    * Whether cell j of a source row differs from the converted row. A merged span is not a
+    * difference: the source repeats its left/upper neighbor, the freehand cell is empty.
+    * @param prev the previous source row, null for the first row
+    */
+   private static boolean cellDiffers(List<String> sc, List<String> cc, List<String> prev, int j) {
+      String s = sc[j]
+      String c = cc[j]
+
+      if(sameCell(s, c)) {
+         return false
+      }
+
+      return !(c == 'NULL' && s != 'NULL' &&
+         ((j > 0 && sc[j - 1] == s) || (prev != null && j < prev.size() && prev[j] == s)))
+   }
+
+   /**
+    * The shape and the per-column differences of a conversion.
+    * @return rows: [before, after], cols: [before, after] (the cells of the first row), and, when
+    *         the shape is unchanged, cells: column index -> 'row r: before -> after' per differing
+    *         cell (empty when the shape changed, the rows cannot be aligned then)
+    */
+   private static Map<String, Object> diffStats(String src, String calc) {
+      List<String> a = src.readLines()
+      List<String> b = calc.readLines()
+      int colsA = a.isEmpty() ? 0 : a[0].split(' \\| ', -1).length
+      int colsB = b.isEmpty() ? 0 : b[0].split(' \\| ', -1).length
+      Map<Integer, List<String>> cells = new TreeMap<>()
+
+      if(a.size() == b.size() && colsA == colsB) {
+         for(int i = 0; i < a.size(); i++) {
+            List<String> sc = a[i].split(' \\| ', -1).toList()
+            List<String> cc = b[i].split(' \\| ', -1).toList()
+            List<String> prev = i > 0 ? a[i - 1].split(' \\| ', -1).toList() : null
+
+            if(sc.size() != cc.size()) {
+               cells.computeIfAbsent(-1) { [] }.add("row ${i}: ${sc.size()} -> ${cc.size()} cells".toString())
+               continue
+            }
+
+            for(int j = 0; j < sc.size(); j++) {
+               if(cellDiffers(sc, cc, prev, j)) {
+                  cells.computeIfAbsent(j) { [] }.add("row ${i}: '${sc[j]}' -> '${cc[j]}'".toString())
+               }
+            }
+         }
+      }
+
+      return [rows: [a.size(), b.size()], cols: [colsA, colsB], cells: cells]
    }
 
    /** equal as text, as numbers (22 vs 22.0), or as time with/without trailing .0 */
@@ -301,22 +350,52 @@ class VSCalcTest extends ViewsheetTest {
             return
          }
 
-         // a listed component may differ, but its row count must change exactly as declared
-         // (unchanged when nothing is declared), losing rows is never accepted by accident
-         String reason = allowed instanceof Map ? allowed.get('reason') : allowed
-         String expectedRows = allowed instanceof Map ? allowed.get('rows') : null
-         int rowsBefore = before[name].readLines().size()
-         int rowsAfter = text.readLines().size()
-         String rowChange = rowsBefore == rowsAfter ? null : rowsBefore + ' -> ' + rowsAfter
+         // a listed component may differ only as declared: its row and column count change
+         // exactly as declared (unchanged when nothing is declared), and when the shape is
+         // unchanged only the declared columns may differ, every other column must be identical
+         Map<String, Object> decl = allowed instanceof Map ? allowed : [reason: allowed]
+         String reason = decl.get('reason')
+         Map<String, Object> stats = diffStats(before[name], text)
+         String rowChange = shapeChange(stats.rows)
+         String colChange = shapeChange(stats.cols)
+         String expectedRows = decl.get('rows')
+         String expectedCols = decl.get('colCount')
 
-         if(rowChange != expectedRows) {
+         if(rowChange != expectedRows || colChange != expectedCols) {
             failures.put(name, 'allowed to differ (' + reason + '), but the rows changed ' +
                (rowChange ?: 'not at all') + ' where ' + (expectedRows ?: 'no change') +
-               ' was declared')
+               ' was declared, and the columns changed ' + (colChange ?: 'not at all') +
+               ' where ' + (expectedCols ?: 'no change') + ' was declared')
+            return
          }
-         else if(diff == 'SAME') {
-            System.err.println("checkConvert: " + name + " no longer differs from its source, " +
-               "remove it from allowedDiff (" + reason + ")")
+
+         // design columns differ by design, todo columns are tracked differences (a bug or an
+         // open question); both are the only columns allowed to differ
+         Set<Integer> designCols = (decl.get('cols') ?: []) as Set<Integer>
+         Set<Integer> todoCols = (decl.get('todoCols') ?: []) as Set<Integer>
+         Map<Integer, List<String>> cells = stats.cells
+         List<String> bad = cells.findAll { col, list ->
+            !designCols.contains(col) && !todoCols.contains(col)
+         }.collect { col, list ->
+            "column ${col} (${list.size()} cells, e.g. ${list[0]})".toString()
+         }
+
+         if(!bad.isEmpty()) {
+            failures.put(name, 'allowed to differ (' + reason + '), but not in ' +
+               bad.join('; ') + '; allowed: cols ' + designCols + ', todoCols ' + todoCols)
+         }
+         else if(rowChange == null && colChange == null) {
+            if(diff == 'SAME') {
+               System.err.println("checkConvert: " + name + " no longer differs from its source, " +
+                  "remove it from allowedDiff (" + reason + ")")
+            }
+            else {
+               (designCols + todoCols).findAll { !cells.containsKey(it) }.each {
+                  System.err.println("checkConvert: " + name + " column " + it +
+                     " no longer differs from its source, remove it from allowedDiff (" +
+                     reason + ")")
+               }
+            }
          }
       }
 
