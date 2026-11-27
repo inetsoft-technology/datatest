@@ -1,0 +1,68 @@
+dtBetweenNot       sql    (6) 5-8, 10, 11 | memory (5) 5-8, 11 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtBetween          sql    (5) 1-4, 9 | memory (6) 1-4, 9, 10 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtEqNot            sql    (9) 3-11 | memory (7) 4-8, 10, 11 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtEq               sql    (2) 1, 2 | memory (4) 1-3, 9 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtGeNot            sql    (7) 1-3, 5, 7-9
+dtGe               sql    (4) 4, 6, 10, 11
+dtGtNot            sql    (8) 1-5, 7-9 | memory (9) 1-5, 7-10 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtGt               sql    (3) 6, 10, 11 | memory (2) 6, 11 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtLeNot            sql    (3) 6, 10, 11 | memory (2) 6, 11 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtLe               sql    (8) 1-5, 7-9 | memory (9) 1-5, 7-10 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtLtNot            sql    (4) 4, 6, 10, 11
+dtLt               sql    (7) 1-3, 5, 7-9
+dtNullNot          sql    (11) 1-11
+dtNull             sql    (14) 12-25
+dtOneOfNot         sql    (8) 3, 5-11 | memory (5) 5-8, 11 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtOneOf            sql    (3) 1, 2, 4 | memory (6) 1-4, 9, 10 | #82476: Oracle DATE with a time of day compared exactly in SQL, by day in memory
+dtSwNot            sql    (11) 1-11
+dtSw               sql    (0) 
+pdBetweenNot       sql    (11) 7, 9-12, 17-20, 24, 25
+pdBetween          sql    (14) 1-6, 8, 13-16, 21-23
+pdEqNot            sql    (15) 6-14, 17-20, 24, 25
+pdEq               sql    (10) 1-5, 15, 16, 21-23
+pdGtNot            sql    (14) 1-6, 8, 13-16, 21-23
+pdGt               sql    (11) 7, 9-12, 17-20, 24, 25
+pdLeNot            sql    (11) 7, 9-12, 17-20, 24, 25
+pdLe               sql    (14) 1-6, 8, 13-16, 21-23
+pdLtNot            sql    (21) 1-5, 7, 9-12, 15-25
+pdLt               sql    (4) 6, 8, 13, 14
+pdOneOfNot         sql    (10) 1-5, 15, 16, 21-23
+pdOneOf            sql    (15) 6-14, 17-20, 24, 25
+pdSwNot            sql    (25) 1-25 | memory (14) 1-6, 8, 13-16, 21-23 | #82270: starting with on a date pushed with the current date or time as the value; in memory a date-like value (2020-02) is parsed to a date first
+pdSw               sql    (0)  | memory (11) 7, 9-12, 17-20, 24, 25 | #82270: starting with on a date pushed with the current date or time as the value; in memory a date-like value (2020-02) is parsed to a date first
+pdtBetweenNot      sql    (15) 6-14, 17-20, 24, 25
+pdtBetween         sql    (10) 1-5, 15, 16, 21-23
+pdtEqNot           sql    (20) 6-25
+pdtEq              sql    (5) 1-5
+pdtGeNot           sql    (14) 1-6, 8, 13-16, 21-23
+pdtGe              sql    (11) 7, 9-12, 17-20, 24, 25
+pdtGtNot           sql    (16) 1-6, 8, 13-18, 21-23
+pdtGt              sql    (9) 7, 9-12, 19, 20, 24, 25
+pdtLeNot           sql    (11) 7, 9-12, 17-20, 24, 25
+pdtLe              sql    (14) 1-6, 8, 13-16, 21-23
+pdtLtNot           sql    (13) 7, 9-12, 15-20, 24, 25
+pdtLt              sql    (12) 1-6, 8, 13, 14, 21-23
+pdtOneOfNot        sql    (16) 6-18, 21-23
+pdtOneOf           sql    (9) 1-5, 19, 20, 24, 25
+pdtSwNot           sql    (25) 1-25 | memory (14) 1-6, 8, 13-16, 21-23 | #82270: starting with on a date pushed with the current date or time as the value; in memory a date-like value (2020-02) is parsed to a date first
+pdtSw              sql    (0)  | memory (11) 7, 9-12, 17-20, 24, 25 | #82270: starting with on a date pushed with the current date or time as the value; in memory a date-like value (2020-02) is parsed to a date first
+tsBetweenNot       sql    (6) 6-11
+tsBetween          sql    (5) 1-5
+tsEqMsNot          sql    (11) 1-11
+tsEqMs             sql    (0) 
+tsEqNot            sql    (9) 3-11
+tsEq               sql    (2) 1, 2
+tsGeNot            sql    (7) 1-4, 7, 9, 10
+tsGe               sql    (4) 5, 6, 8, 11
+tsGtNot            sql    (8) 1-5, 7, 9, 10
+tsGt               sql    (3) 6, 8, 11
+tsLeNot            sql    (3) 6, 8, 11
+tsLe               sql    (8) 1-5, 7, 9, 10
+tsLtNot            sql    (4) 5, 6, 8, 11
+tsLt               sql    (7) 1-4, 7, 9, 10
+tsNullNot          sql    (11) 1-11
+tsNull             sql    (14) 12-25
+tsOneOfNot         sql    (8) 3, 4, 6-11
+tsOneOf            sql    (3) 1, 2, 5
+tsSwNot            sql    (11) 1-11
+tsSw               sql    (0) 
