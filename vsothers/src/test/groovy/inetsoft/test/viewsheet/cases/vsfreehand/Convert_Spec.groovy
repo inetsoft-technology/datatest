@@ -4,9 +4,7 @@ import inetsoft.test.modules.VSCalcTest
 import spock.lang.Ignore
 import spock.lang.IgnoreRest
 import spock.lang.Specification
-import spock.lang.Timeout
 
-import java.util.concurrent.TimeUnit
 import inetsoft.test.core.DatatestBaseConfiguration
 import inetsoft.test.core.DatatestSpringDuplicateFixConfiguration
 import inetsoft.test.IntegrationTestConfiguration
@@ -33,27 +31,17 @@ class Convert_Spec extends Specification {
 
    /**
     * test crosstab binding query, then convert to freehand, setRowHeight=0 to hide header
-    *
-    * The timeout covers the Thread.sleep below (added in 52fc77e7, its purpose is not known) plus
-    * the conversion, the PNG export and the data check of checkConvert; 80 seconds was already
-    * exceeded on a local machine (86.7 s), so it is raised to 120.
     */
-   @Timeout(value = 120, unit = TimeUnit.SECONDS)
    def 'CroTable2'() {
       caseName = specificationContext.currentIteration.name
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable2', caseName)
       vsCalcTest.exportAsPNG(null, null)
-      try {
-         vsCalcTest.checkConvert(null, [
-            'Crosstab1': [reason: 'TODO T4, see vsfreehand-g2-convert-probe.md section 7: row count differs',
-               rows: '13 -> 22'],
-            'Crosstab2': 'range group label differs after the conversion (product design)'
-         ])
-         Thread.sleep(70000)
-      }
-      catch (InterruptedException ex) {
-         Thread.currentThread().interrupt()
-      }
+      vsCalcTest.checkConvert(null, [
+         'Crosstab1': [reason: 'TODO T4 / #82464, see vsfreehand-g2-convert-probe.md section 7: row count differs',
+            rows: '13 -> 22'],
+         'Crosstab2': [reason: 'range group label and date format differ after the conversion (product design, cols); TODO: NthLarge and We_Ave values differ, see vsfreehand-g2-convert-probe.md section 7 (G21)',
+            cols: [1, 2], todoCols: [3, 4]]
+      ])
 
       expect:
       vsCalcTest.compareImage(null)
@@ -116,7 +104,8 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Tables/ComTable1', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'TableView1': 'hour group label differs after the conversion (product design)'
+         'TableView1': [reason: 'hour group label differs after the conversion (product design)',
+            cols: [0]]
       ])
 
       expect:
@@ -146,9 +135,10 @@ class Convert_Spec extends Specification {
       vsCalcTest.checkConvert(null, [
          'Crosstab1': [reason: 'drill is cleared by the conversion (product design)',
             rows: '18 -> 55'],
-         'Crosstab2': 'drill is cleared by the conversion (product design)',
+         'Crosstab2': [reason: 'drill is cleared by the conversion (product design)',
+            colCount: '9 -> 17'],
          'Crosstab3': [reason: 'drill is cleared by the conversion (product design)',
-            rows: '4 -> 47']
+            rows: '4 -> 47', colCount: '5 -> 6']
       ])
 
       expect:
@@ -164,8 +154,9 @@ class Convert_Spec extends Specification {
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
          'Crosstab1': [reason: 'date comparison is cleared by the conversion (product design)',
-            rows: '13 -> 5'],
-         'Crosstab2': 'date comparison is cleared by the conversion (product design)'
+            rows: '13 -> 5', colCount: '4 -> 2'],
+         'Crosstab2': [reason: 'date comparison is cleared by the conversion (product design)',
+            cols: [3]]
       ])
 
       expect:
@@ -193,8 +184,10 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable1', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'Crosstab2': 'date/quarter group label differs after the conversion (product design)',
-         'Crosstab4': 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design)'
+         'Crosstab2': [reason: 'date/quarter group label differs after the conversion (product design)',
+            cols: [1]],
+         'Crosstab4': [reason: 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design)',
+            cols: [2]]
       ])
 
       expect:
@@ -209,7 +202,7 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable3', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'Crosstab1': [reason: 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design); the row count change is TODO T4, see vsfreehand-g2-convert-probe.md section 7',
+         'Crosstab1': [reason: 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design); the row count change is TODO T4 / #82464, see vsfreehand-g2-convert-probe.md section 7',
             rows: '8 -> 17']
       ])
 
@@ -251,7 +244,8 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable6', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'Crosstab3': 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design)'
+         'Crosstab3': [reason: 'aggregate formula none shows the label \'Aggregate\' after the conversion (product design)',
+            cols: [2]]
       ])
 
       expect:
@@ -280,9 +274,10 @@ class Convert_Spec extends Specification {
       vsCalcTest = new VSCalcTest('1^128^__NULL__^ConvertToCalc/Crosstabs/CroTable8', caseName)
       vsCalcTest.exportAsPNG(null, null)
       vsCalcTest.checkConvert(null, [
-         'Crosstab1': [reason: 'TODO T4, see vsfreehand-g2-convert-probe.md section 7: row count differs',
-            rows: '9 -> 12'],
-         'Crosstab2': 'calculator is cleared by the conversion (product design); the change of % of total by row is TODO T2, see vsfreehand-g2-convert-probe.md section 7'
+         'Crosstab1': [reason: 'TODO T4 / #82463, see vsfreehand-g2-convert-probe.md section 7: the row count is the same, but the year order, the Top N orderno, the Others split and the Grand Total row differ',
+            todoCols: [0, 1, 2, 3, 4, 5, 6]],
+         'Crosstab2': [reason: 'calculator is cleared by the conversion (product design, col 4); the change of % of total by row is TODO T2 / #82462, see vsfreehand-g2-convert-probe.md section 7 (col 3)',
+            cols: [4], todoCols: [3]]
       ])
 
       expect:
